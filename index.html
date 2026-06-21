@@ -23,7 +23,7 @@
   .edge-fade.top{top:0;background:linear-gradient(to bottom,#000,transparent)}
   .edge-fade.bot{bottom:0;height:220px;background:linear-gradient(to top,#000,transparent)}
   #particles{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:4;opacity:.7}
-  #mascot{position:fixed;inset:0;z-index:5;pointer-events:none}
+  #mascot{position:fixed;inset:0;z-index:12;pointer-events:none}
   #mascot canvas{position:absolute;inset:0;width:100%!important;height:100%!important}
 
   /* ---------- liquid glass ---------- */
@@ -143,7 +143,7 @@
 <div id="mascot"></div>
 
 <nav>
-  <div class="brand"><span class="o"></span>MindGains</div>
+  <div class="brand">MindGains</div>
 </nav>
 
 <div class="panel">
@@ -269,16 +269,17 @@ let setHappy=()=>{}, setSad=()=>{}, setPlayful=()=>{}, setTalking=()=>{}, setMou
   app.stage.addChild(model);
   let centered=false,targetX=0,targetY=0,targetS=1,firstFit=true;
   function fit(){const cw=innerWidth,ch=innerHeight,im=model.internalModel,mw=(im&&im.originalWidth)||model.width||1,mh=(im&&im.originalHeight)||model.height||1;
-    const wide=cw>860; targetS=Math.min(cw/mw,ch/mh)*(centered?(wide?0.95:0.74):(wide?0.86:0.7)); model.anchor.set(0.5,1);
-    targetX = centered ? cw*0.5 : (wide ? cw*0.30 : cw*0.5); targetY=ch+ch*(centered?0.03:0.01);
+    const wide=cw>860; targetS=Math.min(cw/mw,ch/mh)*(centered?(wide?0.95:0.78):(wide?0.86:0.78)); model.anchor.set(0.5,1);
+    targetX = centered ? cw*0.5 : (wide ? cw*0.30 : cw*0.5);
+    targetY = wide ? ch+ch*(centered?0.03:0.01) : ch*(centered?0.96:0.88);
     if(firstFit){firstFit=false;model.scale.set(targetS);model.x=targetX;model.y=targetY;}}
   fit();addEventListener('resize',fit);
   const core=model.internalModel.coreModel, set=(id,vv)=>{try{core.setParameterValueById(id,vv)}catch(e){}};
-  let talking=false,mouth=0,mouthForm=0.1,blink=1,nb=performance.now()+1800,speechPulse=0,audioMouth=0,audioUntil=0,poseOpen=0,poseForm=0.1,poseUntil=0;
+  let talking=false,mouth=0,mouthForm=0.1,blink=1,nb=performance.now()+1800,speechPulse=0,audioMouth=0,audioUntil=0,poseOpen=0,poseForm=0.1,poseUntil=0,happyUntil=0;
   setTalking=(b,pulse,duration)=>{talking=b;if(pulse)speechPulse=performance.now()+(duration||190);};
   setMouthLevel=level=>{audioMouth=Math.max(0,Math.min(.46,level));audioUntil=performance.now()+90;talking=level>.018;};
   setMouthPose=(open,form,duration)=>{poseOpen=Math.max(0,Math.min(.62,open));poseForm=Math.max(-.45,Math.min(.45,form));poseUntil=performance.now()+(duration||120);talking=open>.025;};
-  setHappy=()=>{try{model.expression('happy')}catch(e){}};
+  setHappy=()=>{happyUntil=performance.now()+4200;try{model.expression('happy')}catch(e){} set('Param5',1);};
   setSad=()=>{try{model.expression('sad')}catch(e){}};
   setPlayful=()=>{try{model.expression('playful')}catch(e){}};
   setMascotCenter=()=>{centered=true;fit();};
@@ -291,7 +292,8 @@ let setHappy=()=>{}, setSad=()=>{}, setPlayful=()=>{}, setTalking=()=>{}, setMou
     const fg=poseLive?poseForm:(talking?0.14:0.08);
     mouth+=(tg-mouth)*(poseLive ? .46 : audioLive ? .5 : pulse ? .34 : .24);
     mouthForm+=(fg-mouthForm)*.28;
-    set('ParamMouthOpenY',Math.max(0,Math.min(.62,mouth))); set('ParamMouthForm',mouthForm);});
+    set('ParamMouthOpenY',Math.max(0,Math.min(.62,mouth))); set('ParamMouthForm',mouthForm);
+    set('Param5',t<happyUntil?1:0);});
   hideLoader();
 }catch(e){console.warn('Live2D failed',e); hideLoader();}})();
 
@@ -515,7 +517,7 @@ let quizSet=[],quizIndex=0,quizScore=0;
 function shuffled(arr){return arr.map(v=>[Math.random(),v]).sort((a,b)=>a[0]-b[0]).map(v=>v[1]);}
 function showQuizInvite(){
   document.querySelector('.panel').classList.add('exit');
-  setMascotCenter(); setPlayful();
+  setMascotCenter();
   setTimeout(()=>$('quiz-stage').classList.add('show'),420);
 }
 function startQuiz(){
@@ -547,7 +549,7 @@ function finishQuiz(){
   $('quiz-result-kicker').textContent=passed?'Daily habit unlocked':'Good attempt';
   $('quiz-result-title').textContent=passed?'You scored '+quizScore+'/5. Nice work!':'You scored '+quizScore+'/5. Good luck next time!';
   $('quiz-result-copy').textContent=passed?'That is why the daily learning habit matters. Wait until MindGains drops on the Play Store. See you soon!':'Daily practice compounds fast. Wait until MindGains drops on the Play Store. See you soon!';
-  passed?(setHappy(),burst()):setSad();
+  if(passed) burst();
 }
 
 const grid=$('lang-grid');
@@ -557,9 +559,9 @@ Object.entries(LANGS).forEach(([code,l])=>{const b=document.createElement('div')
   grid.appendChild(b);});
 $('back-lang').onclick=()=>{step('step-lang');$('card-t').textContent='Join the early-access waitlist';$('card-badge').textContent='Free';say(LANGS[chosenLang].greet, LANGS[chosenLang].tag,2600,{voice:true,lang:chosenLang,audio:VOICE_LINES[chosenLang]?.greet});};
 $('quiz-yes').onclick=startQuiz;
-$('quiz-skip').onclick=()=>{$('quiz-stage').classList.remove('show');setHappy();};
+$('quiz-skip').onclick=()=>{$('quiz-stage').classList.remove('show');};
 $('quiz-again').onclick=startQuiz;
-$('quiz-done').onclick=()=>{$('quiz-stage').classList.remove('show');setPlayful();};
+$('quiz-done').onclick=()=>{$('quiz-stage').classList.remove('show');};
 
 async function save(email){try{await fetch(SUPABASE_URL+'/rest/v1/waitlist',{method:'POST',
   headers:{apikey:SUPABASE_ANON,Authorization:'Bearer '+SUPABASE_ANON,'Content-Type':'application/json',Prefer:'return=minimal'},
