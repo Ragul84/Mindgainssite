@@ -53,8 +53,8 @@
   @media(max-width:860px){ .panel{left:0;right:0;bottom:0;padding:0 16px 22px;align-items:center;text-align:center} }
   .panel.exit{opacity:0;transform:translate(42px,-50%) scale(.96);filter:blur(10px);pointer-events:none;transition:opacity .72s cubic-bezier(.2,.8,.2,1),transform .72s cubic-bezier(.2,.8,.2,1),filter .72s cubic-bezier(.2,.8,.2,1)}
   @media(max-width:860px){.panel.exit{transform:translateY(42px) scale(.96)}}
-  #speech{opacity:0;transition:opacity .6s ease}
-  #speech.show{opacity:1}
+  #speech{opacity:0;transform:translateX(34px) scale(.985);filter:blur(10px);transition:opacity .72s cubic-bezier(.2,.8,.2,1),transform .72s cubic-bezier(.2,.8,.2,1),filter .72s cubic-bezier(.2,.8,.2,1)}
+  #speech.show{opacity:1;transform:translateX(0) scale(1);filter:blur(0)}
   #speech .q{font-style:italic;font-weight:400;font-family:'Instrument Serif',serif;font-size:clamp(30px,4.6vw,52px);line-height:1.03;letter-spacing:0;text-shadow:0 8px 50px rgba(0,0,0,.6);overflow-wrap:anywhere}
   #speech.compact .q{font-family:'Barlow',sans-serif;font-style:normal;font-weight:500;font-size:clamp(18px,2.2vw,28px);line-height:1.35;max-width:min(560px,88vw)}
   #speech .qs{margin-top:8px;font-family:'Barlow';font-weight:300;font-size:clamp(13.5px,1.7vw,17px);color:rgba(255,255,255,.74);letter-spacing:.2px}
@@ -121,6 +121,7 @@
   @media (max-width:560px){
     nav{padding:16px 18px}
     .langs{gap:7px}
+    #speech{position:fixed;left:16px;right:16px;top:13.5vh;z-index:26;text-align:center;pointer-events:none}
     #speech .q{font-size:clamp(24px,6.6vw,34px);line-height:1.08}
     #speech.compact .q{font-size:clamp(16px,4.8vw,21px);line-height:1.38;max-width:calc(100vw - 32px)}
     #speech .qs{font-size:13px;line-height:1.35}
@@ -238,13 +239,16 @@ let chosenLang='en-IN';
 /* ---------- loader ---------- */
 let loaderHidden=false;
 function hideLoader(){ if(loaderHidden) return; loaderHidden=true; document.getElementById('loader').classList.add('hide'); setTimeout(()=>{ const l=document.getElementById('loader'); if(l) l.style.display='none'; },800);
-  document.getElementById('speech').classList.add('show');
-  document.getElementById('speech').classList.remove('compact');
-  document.getElementById('speech-line').textContent=LANGS['en-IN'].greet;
-  document.getElementById('speech-sub').textContent=LANGS['en-IN'].tag;
   clearTimeout(hideLoader._talk);
-  hideLoader._talk=setTimeout(()=>playVoice(VOICE_LINES['en-IN'].greet,3600),1000); }
-setTimeout(hideLoader, 9000); // safety fallback
+  clearTimeout(hideLoader._speech);
+  hideLoader._speech=setTimeout(()=>{
+    document.getElementById('speech').classList.add('show');
+    document.getElementById('speech').classList.remove('compact');
+    document.getElementById('speech-line').textContent=LANGS['en-IN'].greet;
+    document.getElementById('speech-sub').textContent=LANGS['en-IN'].tag;
+    hideLoader._talk=setTimeout(()=>playVoice(VOICE_LINES['en-IN'].greet,3600),450);
+  },620); }
+setTimeout(hideLoader, 3600); // safety fallback
 
 /* ---------- bg image ---------- */
 document.documentElement.style.setProperty('--bg-image', `url("${BG_IMAGE}")`);
@@ -303,9 +307,14 @@ const speech=$('speech'), speechLine=$('speech-line');
 let voiceList=[];
 let lipTimer=null;
 let currentVoice=null, audioCtx=null, analyser=null, analyserData=null, analyserSource=null, mouthEnv=0, noiseFloor=.012, pendingVoice=null;
-function unlockPendingVoice(){
+function unlockPendingVoice(e){
   if(audioCtx) audioCtx.resume().catch(()=>{});
   if(!pendingVoice) return;
+  const target=e&&e.target;
+  if(target&&target.closest&&target.closest('.lang,button,input,.card')){
+    pendingVoice=null;
+    return;
+  }
   const next=pendingVoice;
   pendingVoice=null;
   playVoice(next.src,next.ms);
