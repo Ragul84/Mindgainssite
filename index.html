@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MindGains! Join the Waitlist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%;overflow:hidden;background:#05060a;color:#fff;font-family:'Barlow',sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,.serif{font-family:'Instrument Serif',serif}
+  :root{ --glow:#7d6cff; --cy:#37e0ff; }
+
+  /* ---------- background ---------- */
+  #bg-image{position:fixed;inset:0;width:100%;height:100%;height:100dvh;z-index:1;background-image:var(--bg-image);background-size:cover;background-position:center;background-repeat:no-repeat;filter:brightness(1.05) saturate(1.08) contrast(1.04)}
+  #bg-image::before{content:'';position:absolute;inset:-28px;background-image:var(--bg-image);background-size:cover;background-position:center;background-repeat:no-repeat;z-index:-1;filter:blur(32px) brightness(.78) saturate(1.08);transform:scale(1.04)}
+  #bg-tint{position:fixed;inset:0;z-index:2;pointer-events:none;background:
+     radial-gradient(120% 75% at 50% 8%, rgba(125,108,255,.12), transparent 55%),
+     linear-gradient(180deg, rgba(0,0,0,.28) 0%, rgba(0,0,0,.06) 38%, rgba(0,0,0,.28) 64%, rgba(0,0,0,.72) 100%)}
+  .edge-fade{position:fixed;left:0;right:0;z-index:3;height:160px;pointer-events:none}
+  .edge-fade.top{top:0;background:linear-gradient(to bottom,#000,transparent)}
+  .edge-fade.bot{bottom:0;height:220px;background:linear-gradient(to top,#000,transparent)}
+  #particles{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:4;opacity:.7}
+  #mascot{position:fixed;inset:0;z-index:5;pointer-events:none}
+  #mascot canvas{position:absolute;inset:0;width:100%!important;height:100%!important}
+
+  /* ---------- liquid glass ---------- */
+  .glass{position:relative;overflow:hidden;background:rgba(255,255,255,.012);background-blend-mode:luminosity;
+     backdrop-filter:blur(50px);-webkit-backdrop-filter:blur(50px);
+     box-shadow:4px 4px 16px rgba(0,0,0,.35), inset 0 1px 1px rgba(255,255,255,.14)}
+  .glass::before{content:'';position:absolute;inset:0;border-radius:inherit;padding:1.4px;
+     background:linear-gradient(180deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,.18) 22%,rgba(255,255,255,0) 42%,rgba(255,255,255,0) 60%,rgba(255,255,255,.18) 80%,rgba(255,255,255,.5) 100%);
+     -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+
+  /* ---------- nav ---------- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;align-items:center;justify-content:space-between;padding:22px 30px}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:600;font-size:18px;letter-spacing:.2px}
+  .brand .o{width:9px;height:9px;border-radius:50%;background:linear-gradient(135deg,var(--glow),var(--cy));box-shadow:0 0 16px var(--glow)}
+  .tag{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#c9d2e3;border:1px solid rgba(255,255,255,.16);padding:7px 13px;border-radius:999px}
+
+  /* ---------- hero (top, above mascot head) ---------- */
+  #hero{position:fixed;top:11vh;left:0;right:0;z-index:20;text-align:center;padding:0 20px;pointer-events:none}
+  #hero .eyebrow{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--cy);margin-bottom:12px}
+  #hero h1{font-style:italic;font-weight:400;font-size:clamp(40px,8.5vw,86px);line-height:.92;letter-spacing:-.5px;text-shadow:0 6px 40px rgba(0,0,0,.6)}
+  #hero .sub{margin:16px auto 0;max-width:520px;font-weight:300;font-size:clamp(13px,1.7vw,15.5px);color:rgba(255,255,255,.72);line-height:1.55}
+
+  /* ---------- mascot speech (lower-middle, below face, above card) ---------- */
+  /* ---------- right panel: greeting + card (mascot stands on the left) ---------- */
+  .panel{position:fixed;z-index:25;display:flex;flex-direction:column;gap:18px}
+  @media(min-width:861px){ .panel{right:6vw;top:50%;transform:translateY(-50%);width:min(430px,42vw);align-items:stretch} #speech .q,#speech .qs{text-align:left} }
+  @media(max-width:860px){ .panel{left:0;right:0;bottom:0;padding:0 16px 22px;align-items:center;text-align:center} }
+  .panel.exit{opacity:0;transform:translate(42px,-50%) scale(.96);filter:blur(10px);pointer-events:none;transition:opacity .72s cubic-bezier(.2,.8,.2,1),transform .72s cubic-bezier(.2,.8,.2,1),filter .72s cubic-bezier(.2,.8,.2,1)}
+  @media(max-width:860px){.panel.exit{transform:translateY(42px) scale(.96)}}
+  #speech{opacity:0;transition:opacity .6s ease}
+  #speech.show{opacity:1}
+  #speech .q{font-style:italic;font-weight:400;font-family:'Instrument Serif',serif;font-size:clamp(30px,4.6vw,52px);line-height:1.03;letter-spacing:0;text-shadow:0 8px 50px rgba(0,0,0,.6);overflow-wrap:anywhere}
+  #speech.compact .q{font-family:'Barlow',sans-serif;font-style:normal;font-weight:500;font-size:clamp(18px,2.2vw,28px);line-height:1.35;max-width:min(560px,88vw)}
+  #speech .qs{margin-top:8px;font-family:'Barlow';font-weight:300;font-size:clamp(13.5px,1.7vw,17px);color:rgba(255,255,255,.74);letter-spacing:.2px}
+  .card{width:100%;border-radius:22px;padding:20px 20px 18px}
+  .card .head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+  .card .head .t{font-size:13px;letter-spacing:.3px;color:#e7ecf6;font-weight:500}
+  .card .head .s{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#8b94a8}
+
+  .step{display:none}
+  .step.active{display:block;animation:rise .5s cubic-bezier(.2,.9,.3,1) both}
+  @keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+  .langs{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+  .lang{cursor:pointer;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.03);border-radius:14px;padding:13px 6px;text-align:center;transition:.18s}
+  .lang:hover{border-color:rgba(125,108,255,.75);background:rgba(125,108,255,.16);transform:translateY(-2px)}
+  .lang .n{font-size:16px;font-weight:500}
+  .lang .e{font-size:10.5px;color:#9099ac;margin-top:3px;letter-spacing:.4px}
+
+  .field{display:flex;gap:9px}
+  .field input{flex:1;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);border-radius:13px;padding:15px 16px;color:#fff;font-size:15px;font-family:'Barlow';outline:none;transition:.18s}
+  .field input:focus{border-color:var(--glow);background:rgba(125,108,255,.10)}
+  .field input::placeholder{color:#7f8aa0}
+  .btn{cursor:pointer;border:none;border-radius:13px;padding:15px 22px;font-weight:600;font-size:14.5px;font-family:'Barlow';display:inline-flex;align-items:center;gap:8px;white-space:nowrap;color:#000;background:#fff;transition:.18s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn .arr{font-size:17px;line-height:0}
+  .btn:disabled{opacity:.55;transform:none;cursor:default}
+  .err{min-height:16px;color:#fca5a5;font-size:12.5px;margin-top:9px;text-align:center}
+  .back{display:block;margin-top:13px;text-align:center;color:#8b94a8;font-size:12px;cursor:pointer}
+  .back:hover{color:#fff}
+
+  #success .em{display:inline-flex;align-items:center;gap:7px;color:#67e8f9;font-size:12px;letter-spacing:1px;text-transform:uppercase;font-weight:600;margin-bottom:12px}
+  #success p{color:#d7ddea;font-size:14px;line-height:1.62;font-weight:300}
+  #success p b{font-weight:600;color:#fff;font-style:normal}
+  #success .foot{margin-top:14px;font-size:11px;color:#717a8c}
+
+  /* ---------- quiz moment ---------- */
+  #quiz-stage{position:fixed;left:50%;bottom:5.5vh;z-index:28;width:min(520px,calc(100vw - 32px));transform:translate(-50%,26px) scale(.96);opacity:0;pointer-events:none;transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+  #quiz-stage.show{opacity:1;transform:translate(-50%,0) scale(1);pointer-events:auto}
+  .quiz-box{border-radius:24px;padding:22px}
+  .quiz-kicker{font-size:11px;letter-spacing:1.8px;text-transform:uppercase;color:#67e8f9;font-weight:600;margin-bottom:10px}
+  .quiz-title{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:clamp(24px,4.2vw,38px);line-height:1.06;text-shadow:0 8px 40px rgba(0,0,0,.5);overflow-wrap:anywhere}
+  .quiz-copy{margin-top:10px;color:rgba(255,255,255,.74);font-size:14px;line-height:1.55}
+  .quiz-actions{display:flex;gap:10px;margin-top:18px}
+  .glass-btn{cursor:pointer;flex:1;border:1px solid rgba(255,255,255,.18);border-radius:15px;padding:14px 16px;color:#fff;background:rgba(255,255,255,.06);font-family:'Barlow';font-size:14px;font-weight:600;transition:transform .18s,border-color .18s,background .18s}
+  .glass-btn:hover{transform:translateY(-1px);border-color:rgba(55,224,255,.55);background:rgba(55,224,255,.12)}
+  .glass-btn.primary{color:#05060a;background:#fff;border-color:#fff}
+  .quiz-progress{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;color:#98a3b8;font-size:12px}
+  .quiz-options{display:grid;gap:9px;margin-top:16px}
+  .quiz-option{cursor:pointer;border:1px solid rgba(255,255,255,.13);border-radius:14px;padding:13px 14px;background:rgba(255,255,255,.045);color:#f8fbff;text-align:left;font-family:'Barlow';font-size:14px;line-height:1.35;transition:.18s}
+  .quiz-option:hover{border-color:rgba(125,108,255,.7);background:rgba(125,108,255,.13)}
+  .quiz-option.correct{border-color:rgba(52,211,153,.8);background:rgba(52,211,153,.16)}
+  .quiz-option.wrong{border-color:rgba(248,113,113,.8);background:rgba(248,113,113,.15)}
+  .quiz-result{display:none}
+  .quiz-result.show{display:block}
+
+  /* ---------- loader ---------- */
+  #loader{position:fixed;inset:0;z-index:100;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;transition:opacity .7s ease}
+  #loader.hide{opacity:0;pointer-events:none}
+  #loader .lw{font-family:'Instrument Serif',serif;font-style:italic;font-size:34px;letter-spacing:.5px}
+  #loader .ring{width:34px;height:34px;border-radius:50%;border:2px solid rgba(255,255,255,.15);border-top-color:var(--cy);animation:spin .8s linear infinite}
+  #loader .lt{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#8b94a8}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  @media (max-width:560px){
+    nav{padding:16px 18px}
+    .langs{gap:7px}
+    #speech .q{font-size:clamp(24px,6.6vw,34px);line-height:1.08}
+    #speech.compact .q{font-size:clamp(16px,4.8vw,21px);line-height:1.38;max-width:calc(100vw - 32px)}
+    #speech .qs{font-size:13px;line-height:1.35}
+    .quiz-box{padding:18px}
+    .quiz-title{font-size:clamp(22px,6.4vw,30px);line-height:1.08}
+    .quiz-copy{font-size:13px;line-height:1.45}
+    .quiz-option{font-size:13px;padding:11px 12px}
+    .quiz-actions{gap:8px}
+    .glass-btn{font-size:13px;padding:12px 13px}
+  }
+</style>
+</head>
+<body>
+
+<div id="bg-image" aria-hidden="true"></div>
+<div id="bg-tint"></div>
+<div class="edge-fade top"></div>
+<div class="edge-fade bot"></div>
+<canvas id="particles"></canvas>
+<div id="mascot"></div>
+
+<nav>
+  <div class="brand"><span class="o"></span>MindGains</div>
+</nav>
+
+<div class="panel">
+  <div id="speech"><div class="q" id="speech-line"></div><div class="qs" id="speech-sub"></div></div>
+  <div class="card glass">
+    <div class="head"><span class="t" id="card-t">Join the early-access waitlist</span><span class="s" id="card-badge">Free</span></div>
+
+    <div class="step active" id="step-lang">
+      <div class="langs" id="lang-grid"></div>
+    </div>
+
+    <div class="step" id="step-email">
+      <div class="field">
+        <input id="email" type="email" inputmode="email" placeholder="you@email.com" autocomplete="email" />
+        <button class="btn" id="join-btn">Join <span class="arr">&rarr;</span></button>
+      </div>
+      <div class="err" id="err"></div>
+      <span class="back" id="back-lang">&larr; change language</span>
+    </div>
+
+    <div class="step" id="success">
+      <div class="em"><span id="em-text">You're on the list</span></div>
+      <p id="success-text"></p>
+      <div class="foot">We'll email you the moment MindGains hits the Play Store.</div>
+    </div>
+  </div>
+</div>
+
+<section id="quiz-stage" aria-live="polite">
+  <div class="quiz-box glass" id="quiz-box">
+    <div id="quiz-invite">
+      <div class="quiz-kicker">Daily learning habit</div>
+      <div class="quiz-title">Want to try 5 quick UPSC quizzes?</div>
+      <p class="quiz-copy">A tiny challenge while you wait for MindGains to drop on the Play Store.</p>
+      <div class="quiz-actions">
+        <button class="glass-btn primary" id="quiz-yes">Yes</button>
+        <button class="glass-btn" id="quiz-skip">Not now</button>
+      </div>
+    </div>
+    <div id="quiz-play" style="display:none">
+      <div class="quiz-progress"><span id="quiz-count">Question 1 of 5</span><span id="quiz-score">0 correct</span></div>
+      <div class="quiz-title" id="quiz-question"></div>
+      <div class="quiz-options" id="quiz-options"></div>
+    </div>
+    <div class="quiz-result" id="quiz-result">
+      <div class="quiz-kicker" id="quiz-result-kicker"></div>
+      <div class="quiz-title" id="quiz-result-title"></div>
+      <p class="quiz-copy" id="quiz-result-copy"></p>
+      <div class="quiz-actions">
+        <button class="glass-btn primary" id="quiz-again">Try another 5</button>
+        <button class="glass-btn" id="quiz-done">Skip</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="loader">
+  <div class="lw">MindGains</div>
+  <div class="ring"></div>
+  <div class="lt">Waking up MIGA…</div>
+</div>
+
+<script src="https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pixi.js@7.3.2/dist/pixi.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pixi-live2d-display@0.4.0/dist/cubism4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+<script>
+/* ============================ CONFIG ============================ */
+const BG_IMAGE = 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260613_174304_aa498866-89cf-4cf5-994d-7fa1d2986c72.png&w=1920&q=85';
+const MODEL_BASE = 'https://yuntwerxahgmaoduxvqc.supabase.co/storage/v1/object/public/mascot/wolf_live2d/';
+const SUPABASE_URL = 'https://yuntwerxahgmaoduxvqc.supabase.co';
+const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl1bnR3ZXJ4YWhnbWFvZHV4dnFjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU3OTk4OTMsImV4cCI6MjA3MTM3NTg5M30.1mFUH9yp55uxN8n9tyRHLFbve36_kpaJs41nPU85S74';
+const VOICE_LINES = {
+  'en-IN': {
+    greet: 'assets/voice/miga-greet.mp3',
+    invite: 'assets/voice/miga-invite.mp3',
+    done: 'assets/voice/miga-success.mp3',
+  },
+};
+
+const LANGS = {
+  'en-IN':{name:'English', en:'English', greet:"Hi, I'm MIGA!", tag:'Your daily learning companion.', invite:"Great! Drop your email and I'll save your early-access spot.", done:"🎉 You're in!", success:"You're in! MindGains, India's daily learning habit, launches soon on the Play Store, and you're one of our earliest users who gets to experience it first."},
+  'ta-IN':{name:'தமிழ்', en:'Tamil', greet:'வணக்கம், நான் MIGA!', tag:'உங்கள் AI கற்றல் துணை.', invite:'அருமை! உங்கள் இ-மெயிலைக் கொடுங்கள், உங்கள் இடத்தைப் பதிவு செய்கிறேன்.', done:'🎉 இணைந்துவிட்டீர்கள்!', success:'நீங்கள் இணைந்துவிட்டீர்கள்! MindGains, இந்தியாவின் தினசரி கற்றல் பழக்கம், விரைவில் Play Store-ல் வெளியாகும். முதன்மை பயனர்களில் நீங்களும் ஒருவர்!'},
+  'hi-IN':{name:'हिन्दी', en:'Hindi', greet:'नमस्ते, मैं MIGA!', tag:'आपका AI लर्निंग साथी।', invite:'बढ़िया! अपना ईमेल दीजिए, मैं आपकी अर्ली-एक्सेस जगह सुरक्षित कर देता हूँ।', done:'🎉 आप शामिल हो गए!', success:'आप शामिल हो गए! MindGains, भारत की रोज़ सीखने की आदत, जल्द ही Play Store पर आ रही है, और आप हमारे सबसे शुरुआती उपयोगकर्ताओं में से एक हैं!'},
+  'te-IN':{name:'తెలుగు', en:'Telugu', greet:'నమస్తే, నేను MIGA!', tag:'మీ AI లెర్నింగ్ తోడు.', invite:'అద్భుతం! మీ ఇమెయిల్ ఇవ్వండి, మీ స్థానాన్ని సేవ్ చేస్తాను.', done:'🎉 మీరు చేరారు!', success:'మీరు చేరారు! MindGains, భారత దేశ రోజువారీ నేర్చుకునే అలవాటు, త్వరలో Play Store లో వస్తుంది, మీరు మా తొలి వినియోగదారుల్లో ఒకరు!'},
+  'kn-IN':{name:'ಕನ್ನಡ', en:'Kannada', greet:'ನಮಸ್ಕಾರ, ನಾನು MIGA!', tag:'ನಿಮ್ಮ AI ಕಲಿಕಾ ಸಂಗಾತಿ.', invite:'ಅದ್ಭುತ! ನಿಮ್ಮ ಇಮೇಲ್ ಕೊಡಿ, ನಿಮ್ಮ ಸ್ಥಾನವನ್ನು ಉಳಿಸುತ್ತೇನೆ.', done:'🎉 ನೀವು ಸೇರಿದ್ದೀರಿ!', success:'ನೀವು ಸೇರಿದ್ದೀರಿ! MindGains, ಭಾರತದ ದೈನಂದಿನ ಕಲಿಕೆಯ ಅಭ್ಯಾಸ, ಶೀಘ್ರದಲ್ಲೇ Play Store ನಲ್ಲಿ ಬರಲಿದೆ, ನೀವು ನಮ್ಮ ಮೊದಲ ಬಳಕೆದಾರರಲ್ಲಿ ಒಬ್ಬರು!'},
+  'ml-IN':{name:'മലയാളം', en:'Malayalam', greet:'നമസ്കാരം, ഞാൻ MIGA!', tag:'നിങ്ങളുടെ AI പഠന കൂട്ടുകാരൻ.', invite:'കൊള്ളാം! നിങ്ങളുടെ ഇമെയിൽ തരൂ, നിങ്ങളുടെ സ്ഥാനം സേവ് ചെയ്യാം.', done:'🎉 നിങ്ങൾ ചേർന്നു!', success:'നിങ്ങൾ ചേർന്നു! MindGains, ഇന്ത്യയുടെ ദിവസേനയുള്ള പഠന ശീലം, ഉടൻ Play Store ൽ വരുന്നു, നിങ്ങൾ ഞങ്ങളുടെ ആദ്യ ഉപയോക്താക്കളിൽ ഒരാളാണ്!'},
+};
+let chosenLang='en-IN';
+
+/* ---------- loader ---------- */
+let loaderHidden=false;
+function hideLoader(){ if(loaderHidden) return; loaderHidden=true; document.getElementById('loader').classList.add('hide'); setTimeout(()=>{ const l=document.getElementById('loader'); if(l) l.style.display='none'; },800);
+  document.getElementById('speech').classList.add('show');
+  document.getElementById('speech').classList.remove('compact');
+  document.getElementById('speech-line').textContent=LANGS['en-IN'].greet;
+  document.getElementById('speech-sub').textContent=LANGS['en-IN'].tag;
+  clearTimeout(hideLoader._talk);
+  hideLoader._talk=setTimeout(()=>playVoice(VOICE_LINES['en-IN'].greet,3600),1000); }
+setTimeout(hideLoader, 9000); // safety fallback
+
+/* ---------- bg image ---------- */
+document.documentElement.style.setProperty('--bg-image', `url("${BG_IMAGE}")`);
+
+/* ---------- particles ---------- */
+(function(){const c=document.getElementById('particles'),x=c.getContext('2d');let ps=[];
+ function sz(){c.width=innerWidth;c.height=innerHeight;ps=[];const n=Math.floor(c.width*c.height/15000);for(let i=0;i<n;i++)ps.push({x:Math.random()*c.width,y:Math.random()*c.height,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25,s:Math.random()*1.5+.4,o:Math.random()*.45+.15});}
+ function lp(){x.clearRect(0,0,c.width,c.height);for(const p of ps){p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=c.width;if(p.x>c.width)p.x=0;if(p.y<0)p.y=c.height;if(p.y>c.height)p.y=0;x.beginPath();x.arc(p.x,p.y,p.s,0,7);x.fillStyle='rgba(190,205,255,'+p.o+')';x.fill();}requestAnimationFrame(lp);}
+ sz();addEventListener('resize',sz);lp();})();
+
+/* ---------- live2d ---------- */
+let setHappy=()=>{}, setSad=()=>{}, setPlayful=()=>{}, setTalking=()=>{}, setMouthLevel=()=>{}, setMouthPose=()=>{}, setMascotCenter=()=>{};
+(async function(){try{
+  const PIXI=window.PIXI;
+  const app=new PIXI.Application({resizeTo:window,backgroundAlpha:0,antialias:true,resolution:Math.min(devicePixelRatio,2)||1});
+  document.getElementById('mascot').appendChild(app.view);
+  const model3={Version:3,FileReferences:{Moc:MODEL_BASE+'wolf.moc3',Textures:[MODEL_BASE+'wolf.4096/texture_00.png'],Physics:MODEL_BASE+'wolf.physics3',
+    Expressions:[{Name:'happy',File:MODEL_BASE+'happy.exp3'},{Name:'proud',File:MODEL_BASE+'proud.exp3'},{Name:'playful',File:MODEL_BASE+'playful.exp3'},{Name:'sad',File:MODEL_BASE+'sad.exp3'},{Name:'angry',File:MODEL_BASE+'angry.exp3'}]}};
+  const url=URL.createObjectURL(new Blob([JSON.stringify(model3)],{type:'application/json'}));
+  if(PIXI.Assets&&PIXI.Assets.settings)PIXI.Assets.settings.crossOrigin='anonymous';
+  const model=await PIXI.live2d.Live2DModel.from(url,{autoInteract:false});
+  app.stage.addChild(model);
+  let centered=false,targetX=0,targetY=0,targetS=1,firstFit=true;
+  function fit(){const cw=innerWidth,ch=innerHeight,im=model.internalModel,mw=(im&&im.originalWidth)||model.width||1,mh=(im&&im.originalHeight)||model.height||1;
+    const wide=cw>860; targetS=Math.min(cw/mw,ch/mh)*(centered?(wide?0.95:0.74):(wide?0.86:0.7)); model.anchor.set(0.5,1);
+    targetX = centered ? cw*0.5 : (wide ? cw*0.30 : cw*0.5); targetY=ch+ch*(centered?0.03:0.01);
+    if(firstFit){firstFit=false;model.scale.set(targetS);model.x=targetX;model.y=targetY;}}
+  fit();addEventListener('resize',fit);
+  const core=model.internalModel.coreModel, set=(id,vv)=>{try{core.setParameterValueById(id,vv)}catch(e){}};
+  let talking=false,mouth=0,mouthForm=0.1,blink=1,nb=performance.now()+1800,speechPulse=0,audioMouth=0,audioUntil=0,poseOpen=0,poseForm=0.1,poseUntil=0;
+  setTalking=(b,pulse,duration)=>{talking=b;if(pulse)speechPulse=performance.now()+(duration||190);};
+  setMouthLevel=level=>{audioMouth=Math.max(0,Math.min(.46,level));audioUntil=performance.now()+90;talking=level>.018;};
+  setMouthPose=(open,form,duration)=>{poseOpen=Math.max(0,Math.min(.62,open));poseForm=Math.max(-.45,Math.min(.45,form));poseUntil=performance.now()+(duration||120);talking=open>.025;};
+  setHappy=()=>{try{model.expression('happy')}catch(e){}};
+  setSad=()=>{try{model.expression('sad')}catch(e){}};
+  setPlayful=()=>{try{model.expression('playful')}catch(e){}};
+  setMascotCenter=()=>{centered=true;fit();};
+  app.ticker.add(()=>{const t=performance.now();
+    model.x+=(targetX-model.x)*0.055; model.y+=(targetY-model.y)*0.055; model.scale.set(model.scale.x+(targetS-model.scale.x)*0.055);
+    set('ParamBreath',(Math.sin(t*0.002)+1)/2); set('ParamAngleX',Math.sin(t*0.0006)*4); set('ParamAngleZ',Math.sin(t*0.0005)*2); set('ParamBodyAngleX',Math.sin(t*0.0008)*3);
+    if(t>nb){blink=0;if(t>nb+110){blink=1;nb=t+1800+Math.random()*2600;}} set('ParamEyeLOpen',blink);set('ParamEyeROpen',blink);
+    const poseLive=t<poseUntil, pulse=t<speechPulse, audioLive=t<audioUntil;
+    const tg=poseLive?poseOpen:audioLive?audioMouth:(talking?(pulse ? .34 : .015):0);
+    const fg=poseLive?poseForm:(talking?0.14:0.08);
+    mouth+=(tg-mouth)*(poseLive ? .46 : audioLive ? .5 : pulse ? .34 : .24);
+    mouthForm+=(fg-mouthForm)*.28;
+    set('ParamMouthOpenY',Math.max(0,Math.min(.62,mouth))); set('ParamMouthForm',mouthForm);});
+  hideLoader();
+}catch(e){console.warn('Live2D failed',e); hideLoader();}})();
+
+/* ---------- flow ---------- */
+const $=id=>document.getElementById(id);
+const speech=$('speech'), speechLine=$('speech-line');
+let voiceList=[];
+let lipTimer=null;
+let currentVoice=null, audioCtx=null, analyser=null, analyserData=null, analyserSource=null, mouthEnv=0, noiseFloor=.012, pendingVoice=null;
+function unlockPendingVoice(){
+  if(audioCtx) audioCtx.resume().catch(()=>{});
+  if(!pendingVoice) return;
+  const next=pendingVoice;
+  pendingVoice=null;
+  playVoice(next.src,next.ms);
+}
+addEventListener('pointerdown',unlockPendingVoice,{passive:true});
+addEventListener('keydown',unlockPendingVoice);
+function loadVoices(){ if('speechSynthesis' in window) voiceList=window.speechSynthesis.getVoices(); }
+loadVoices();
+if('speechSynthesis' in window) window.speechSynthesis.onvoiceschanged=loadVoices;
+function voiceScore(v,lang){
+  const name=(v.name||'').toLowerCase();
+  const voiceLang=(v.lang||'').toLowerCase();
+  const target=(lang||chosenLang||'en-IN').toLowerCase();
+  const base=target.split('-')[0];
+  let score=0;
+  if(voiceLang===target) score+=80;
+  else if(voiceLang.startsWith(base)) score+=45;
+  if(/female|woman|girl|zira|jenny|aria|sonia|natasha|samantha|susan|victoria|karen|moira|tessa|veena|heera|neerja|swara|shruti|kalpana|ananya|lekha|google uk english female/.test(name)) score+=45;
+  if(/google|microsoft|natural|online/.test(name)) score+=18;
+  if(/male|man|david|mark|ravi|raj|alex/.test(name)) score-=35;
+  return score;
+}
+function pickVoice(lang){
+  return voiceList.slice().sort((a,b)=>voiceScore(b,lang)-voiceScore(a,lang))[0]||null;
+}
+function playVoice(src,ms){
+  if(!src) return false;
+  try{
+    if(currentVoice){currentVoice.pause();currentVoice=null;}
+    if(analyserSource){try{analyserSource.disconnect();}catch(e){} analyserSource=null;}
+    if(analyser){try{analyser.disconnect();}catch(e){} analyser=null;}
+    if(!audioCtx) audioCtx=new (window.AudioContext||window.webkitAudioContext)();
+    const audio=new Audio(src);
+    audio.preload='auto';
+    if(/^https?:\/\//.test(src)) audio.crossOrigin='anonymous';
+    currentVoice=audio;
+    analyser=audioCtx.createAnalyser();
+    analyser.fftSize=1024;
+    analyser.smoothingTimeConstant=.18;
+    analyserData=new Float32Array(analyser.fftSize);
+    analyserSource=audioCtx.createMediaElementSource(audio);
+    analyserSource.connect(analyser);
+    analyser.connect(audioCtx.destination);
+    setTalking(true);
+    const sample=()=>{
+      if(audio.paused||audio.ended){setMouthLevel(0);setTalking(false);return;}
+      analyser.getFloatTimeDomainData(analyserData);
+      let sum=0, peak=0;
+      for(let i=0;i<analyserData.length;i++){
+        const v=analyserData[i];
+        sum+=v*v;
+        const a=Math.abs(v);
+        if(a>peak) peak=a;
+      }
+      const rms=Math.sqrt(sum/analyserData.length);
+      if(rms<noiseFloor*1.8) noiseFloor=noiseFloor*.985+rms*.015;
+      const voiced=Math.max(0,rms-noiseFloor);
+      const raw=Math.min(1,(voiced*8.5)+(peak*0.18));
+      const shaped=Math.pow(raw,.78);
+      mouthEnv += (shaped-mouthEnv) * (shaped>mouthEnv ? .52 : .16);
+      setMouthLevel(mouthEnv*.64);
+      requestAnimationFrame(sample);
+    };
+    audio.onplay=()=>{mouthEnv=0;sample();};
+    audio.onended=audio.onerror=()=>{mouthEnv=0;setMouthLevel(0);setTalking(false);};
+    audioCtx.resume().catch(()=>{});
+    audio.play().catch(()=>{pendingVoice={src,ms};mouthEnv=0;setMouthLevel(0);setTalking(false);});
+    return true;
+  }catch(e){
+    console.warn('voice playback failed',e);
+    return false;
+  }
+}
+function stopLipSync(){
+  if(lipTimer){clearTimeout(lipTimer);lipTimer=null;}
+  setMouthPose(0,.08,120);
+  setTalking(false);
+}
+function visemeFor(token){
+  const t=token.toLowerCase();
+  if(/\s/.test(token)) return {open:0,form:.08,dur:65};
+  if(/[.!?।॥]/.test(token)) return {open:0,form:.08,dur:260};
+  if(/[,;:]/.test(token)) return {open:0,form:.08,dur:150};
+  if(/[bmp]/.test(t)) return {open:.015,form:-.38,dur:95};
+  if(/[fv]/.test(t)) return {open:.12,form:-.18,dur:105};
+  if(/[szx]/.test(t)) return {open:.055,form:.34,dur:85};
+  if(/[tdn]/.test(t)) return {open:.13,form:.18,dur:88};
+  if(/[lr]/.test(t)) return {open:.2,form:.22,dur:105};
+  if(/[kgcqjh]/.test(t)) return {open:.16,form:.04,dur:90};
+  if(/[aeiou]/.test(t)) return {open:.5,form:.26,dur:125};
+  return {open:.09,form:.08,dur:75};
+}
+function buildVisemes(text){
+  const chars=Array.from(text||'');
+  const items=[];
+  for(let i=0;i<chars.length;i++){
+    const ch=chars[i];
+    const next=chars[i+1]||'';
+    const v=visemeFor(ch);
+    if(/[aeiou]/i.test(ch)&&/[aeiou]/i.test(next)) v.dur=95;
+    items.push(v);
+  }
+  return items;
+}
+function startLipSync(text,ms){
+  if(lipTimer) clearTimeout(lipTimer);
+  const items=buildVisemes(text);
+  const naturalTotal=items.reduce((sum,item)=>sum+item.dur,0)||1;
+  const targetTotal=ms||naturalTotal;
+  const scale=Math.max(.72,Math.min(1.22,targetTotal/naturalTotal));
+  let i=0;
+  setTalking(true);
+  const tick=()=>{
+    if(i>=items.length){lipTimer=setTimeout(stopLipSync,180);return;}
+    const item=items[i];
+    const hold=Math.round(item.dur*scale);
+    setMouthPose(item.open,item.form,hold+45);
+    i++;
+    lipTimer=setTimeout(tick,hold);
+  };
+  tick();
+}
+function speak(text,lang,ms){
+  if(!('speechSynthesis' in window)) return false;
+  window.speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang=lang||chosenLang;
+  u.rate=.94; u.pitch=1.14; u.volume=1;
+  u.voice=pickVoice(u.lang);
+  clearTimeout(say._t);
+  startLipSync(text,ms);
+  say._t=setTimeout(stopLipSync,ms||Math.max(1800,text.length*70));
+  u.onstart=()=>{clearTimeout(say._t);startLipSync(text,ms);};
+  u.onboundary=()=>setTalking(true);
+  u.onmark=()=>setTalking(true);
+  u.onend=u.onerror=()=>{stopLipSync();};
+  window.speechSynthesis.speak(u);
+  return true;
+}
+function say(main,sub,ms,opts){
+  ms=ms||2200;
+  opts=opts||{};
+  speech.classList.add('show');
+  speech.classList.toggle('compact',(opts.lang&&opts.lang!=='en-IN')||(main||'').length>42);
+  speechLine.textContent=main;
+  $('speech-sub').textContent=sub||'';
+  if(opts.audio&&playVoice(opts.audio,ms)) return;
+  if(opts.voice&&speak(main,opts.lang||chosenLang,ms)) return;
+  setTalking(true);
+  clearTimeout(say._t);
+  say._t=setTimeout(()=>setTalking(false),ms);
+}
+function step(id){document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));$(id).classList.add('active');}
+
+const UPSC_POOL=[
+  {q:'Which body conducts elections to the Lok Sabha?',o:['Election Commission of India','Union Public Service Commission','Finance Commission','NITI Aayog'],a:0},
+  {q:'The Preamble declares India to be a:',o:['Sovereign socialist secular democratic republic','Federal monarchy','Unitary republic only','Confederation of states'],a:0},
+  {q:'Who is known as the Father of the Indian Constitution?',o:['B. R. Ambedkar','M. K. Gandhi','Jawaharlal Nehru','Sardar Patel'],a:0},
+  {q:'Fundamental Rights are mainly contained in which part?',o:['Part III','Part IV','Part V','Part IX'],a:0},
+  {q:'Directive Principles of State Policy are in:',o:['Part IV','Part II','Part III','Part VI'],a:0},
+  {q:'The Rajya Sabha is a:',o:['Permanent house','House dissolved every 5 years','Local body','Judicial chamber'],a:0},
+  {q:'Money Bills can be introduced only in:',o:['Lok Sabha','Rajya Sabha','Supreme Court','State Legislative Council'],a:0},
+  {q:'The basic structure doctrine was laid down in:',o:['Kesavananda Bharati case','Golaknath case','Minerva Mills only','Maneka Gandhi case'],a:0},
+  {q:'Which article deals with abolition of untouchability?',o:['Article 17','Article 14','Article 19','Article 21'],a:0},
+  {q:'Right to life and personal liberty is under:',o:['Article 21','Article 20','Article 22','Article 32'],a:0},
+  {q:'The writ jurisdiction of Supreme Court is under:',o:['Article 32','Article 40','Article 50','Article 368'],a:0},
+  {q:'The constitutional amendment procedure is in:',o:['Article 368','Article 356','Article 352','Article 360'],a:0},
+  {q:'Panchayati Raj institutions were constitutionalized by:',o:['73rd Amendment','42nd Amendment','44th Amendment','61st Amendment'],a:0},
+  {q:'Municipalities were constitutionalized by:',o:['74th Amendment','73rd Amendment','86th Amendment','97th Amendment'],a:0},
+  {q:'The Finance Commission is constituted under:',o:['Article 280','Article 324','Article 315','Article 110'],a:0},
+  {q:'Which is not a Fundamental Duty?',o:['Paying income tax','Respecting the Constitution','Protecting public property','Developing scientific temper'],a:0},
+  {q:'The President of India is elected by:',o:['An electoral college','Direct popular vote','Only Lok Sabha','Only Rajya Sabha'],a:0},
+  {q:'Council of Ministers is collectively responsible to:',o:['Lok Sabha','Rajya Sabha','President alone','Supreme Court'],a:0},
+  {q:'Emergency due to war is called:',o:['National Emergency','Financial Emergency','State Emergency','Local Emergency'],a:0},
+  {q:'Article 356 relates to:',o:['President’s Rule','National Emergency','Finance Commission','Election Commission'],a:0},
+  {q:'The tropical evergreen forests are mainly found in:',o:['Western Ghats and Northeast India','Thar Desert','Punjab plains','Deccan rain shadow only'],a:0},
+  {q:'The largest peninsular river of India is:',o:['Godavari','Krishna','Kaveri','Narmada'],a:0},
+  {q:'Black soil is best known for growing:',o:['Cotton','Tea','Jute','Apple'],a:0},
+  {q:'The Indian monsoon is mainly caused by:',o:['Differential heating of land and sea','Ocean salinity only','Earthquakes','Western disturbances only'],a:0},
+  {q:'Western Disturbances bring winter rainfall mainly to:',o:['Northwestern India','Tamil Nadu coast only','Andaman Islands','Central Deccan only'],a:0},
+  {q:'The Great Barrier Reef is located near:',o:['Australia','India','Brazil','Japan'],a:0},
+  {q:'El Nino is associated with warming of:',o:['Central and eastern Pacific Ocean','Arctic Ocean','Indian Ocean only','Mediterranean Sea'],a:0},
+  {q:'The ozone layer is mainly found in the:',o:['Stratosphere','Troposphere','Mesosphere','Lithosphere'],a:0},
+  {q:'The Kyoto Protocol is related to:',o:['Climate change','Nuclear disarmament','Trade tariffs','Human rights courts'],a:0},
+  {q:'Biodiversity hotspots are regions with high endemism and:',o:['High threat levels','No human activity','Only desert species','Only marine species'],a:0},
+  {q:'The Harappan script is:',o:['Undeciphered','Fully translated','Greek-based','Brahmi-derived with certainty'],a:0},
+  {q:'Ashoka’s inscriptions were mostly in:',o:['Prakrit','Persian','Tamil only','Sanskrit only'],a:0},
+  {q:'The capital of the Mauryan Empire was:',o:['Pataliputra','Ujjain','Taxila','Kanchi'],a:0},
+  {q:'The Gupta period is known for advances in:',o:['Science, art and literature','Only naval warfare','Only stone tools','Only foreign trade'],a:0},
+  {q:'The Bhakti movement emphasized:',o:['Personal devotion','Ritual sacrifice only','Imperial expansion','Caste hierarchy'],a:0},
+  {q:'The Permanent Settlement was introduced by:',o:['Lord Cornwallis','Lord Dalhousie','Lord Ripon','Lord Curzon'],a:0},
+  {q:'The Revolt of 1857 began at:',o:['Meerut','Delhi','Kanpur','Lucknow'],a:0},
+  {q:'Indian National Congress was founded in:',o:['1885','1905','1919','1942'],a:0},
+  {q:'The Swadeshi movement followed the partition of:',o:['Bengal','Punjab','Bombay Presidency','Madras Presidency'],a:0},
+  {q:'The Quit India Movement was launched in:',o:['1942','1930','1919','1946'],a:0},
+  {q:'GDP at market price includes:',o:['Net product taxes','Only wages','Only exports','Only subsidies'],a:0},
+  {q:'Inflation means:',o:['Sustained rise in general price level','Fall in population','Rise in rainfall','Decline in money supply only'],a:0},
+  {q:'Repo rate is set by:',o:['Reserve Bank of India','Finance Ministry alone','SEBI','NABARD'],a:0},
+  {q:'Fiscal deficit is:',o:['Borrowings requirement of government','Total tax revenue','Only capital expenditure','Only subsidy bill'],a:0},
+  {q:'The Human Development Index includes:',o:['Health, education and income','Only GDP','Only literacy','Only life expectancy'],a:0},
+  {q:'SEBI regulates:',o:['Securities market','Insurance sector','Bank deposits','Telecom spectrum'],a:0},
+  {q:'MSP stands for:',o:['Minimum Support Price','Maximum Sale Price','Market Stabilization Policy','Minimum Savings Plan'],a:0},
+  {q:'NITI Aayog replaced:',o:['Planning Commission','Finance Commission','Election Commission','CAG'],a:0},
+  {q:'The Paris Agreement aims to address:',o:['Climate change','Maritime piracy','Cybercrime only','Refugee law only'],a:0},
+  {q:'The Sustainable Development Goals were adopted by:',o:['United Nations','World Bank only','IMF only','G20 only'],a:0}
+];
+
+let quizSet=[],quizIndex=0,quizScore=0;
+function shuffled(arr){return arr.map(v=>[Math.random(),v]).sort((a,b)=>a[0]-b[0]).map(v=>v[1]);}
+function showQuizInvite(){
+  document.querySelector('.panel').classList.add('exit');
+  setMascotCenter(); setPlayful();
+  setTimeout(()=>$('quiz-stage').classList.add('show'),420);
+}
+function startQuiz(){
+  quizSet=shuffled(UPSC_POOL).slice(0,5);quizIndex=0;quizScore=0;
+  $('quiz-invite').style.display='none';$('quiz-result').classList.remove('show');$('quiz-play').style.display='block';
+  renderQuiz();
+}
+function renderQuiz(){
+  const item=quizSet[quizIndex];
+  $('quiz-count').textContent='Question '+(quizIndex+1)+' of 5';
+  $('quiz-score').textContent=quizScore+' correct';
+  $('quiz-question').textContent=item.q;
+  const options=shuffled(item.o.map((text,i)=>({text,correct:i===item.a})));
+  $('quiz-options').innerHTML='';
+  options.forEach(opt=>{const b=document.createElement('button');b.className='quiz-option';b.textContent=opt.text;
+    b.onclick=()=>answerQuiz(b,opt.correct);$('quiz-options').appendChild(b);});
+}
+function answerQuiz(btn,correct){
+  [...document.querySelectorAll('.quiz-option')].forEach(b=>b.disabled=true);
+  btn.classList.add(correct?'correct':'wrong');
+  if(correct) quizScore++;
+  setTimeout(()=>{quizIndex++;quizIndex<quizSet.length?renderQuiz():finishQuiz();},650);
+}
+function finishQuiz(){
+  $('quiz-play').style.display='none';$('quiz-result').classList.add('show');
+  const passed=quizScore>=3;
+  const result={score:quizScore,total:5,passed,at:new Date().toISOString()};
+  localStorage.setItem('mindgains_quiz_result',JSON.stringify(result));
+  $('quiz-result-kicker').textContent=passed?'Daily habit unlocked':'Good attempt';
+  $('quiz-result-title').textContent=passed?'You scored '+quizScore+'/5. Nice work!':'You scored '+quizScore+'/5. Good luck next time!';
+  $('quiz-result-copy').textContent=passed?'That is why the daily learning habit matters. Wait until MindGains drops on the Play Store. See you soon!':'Daily practice compounds fast. Wait until MindGains drops on the Play Store. See you soon!';
+  passed?(setHappy(),burst()):setSad();
+}
+
+const grid=$('lang-grid');
+Object.entries(LANGS).forEach(([code,l])=>{const b=document.createElement('div');b.className='lang';
+  b.innerHTML='<div class="n">'+l.name+'</div><div class="e">'+l.en+'</div>';
+  b.onclick=()=>{chosenLang=code;say(l.invite,'',3000,{voice:true,lang:code,audio:VOICE_LINES[code]?.invite});$('card-t').textContent='Almost there! Your email';$('card-badge').textContent='Early access';step('step-email');setTimeout(()=>$('email').focus(),60);};
+  grid.appendChild(b);});
+$('back-lang').onclick=()=>{step('step-lang');$('card-t').textContent='Join the early-access waitlist';$('card-badge').textContent='Free';say(LANGS[chosenLang].greet, LANGS[chosenLang].tag,2600,{voice:true,lang:chosenLang,audio:VOICE_LINES[chosenLang]?.greet});};
+$('quiz-yes').onclick=startQuiz;
+$('quiz-skip').onclick=()=>{$('quiz-stage').classList.remove('show');setHappy();};
+$('quiz-again').onclick=startQuiz;
+$('quiz-done').onclick=()=>{$('quiz-stage').classList.remove('show');setPlayful();};
+
+async function save(email){try{await fetch(SUPABASE_URL+'/rest/v1/waitlist',{method:'POST',
+  headers:{apikey:SUPABASE_ANON,Authorization:'Bearer '+SUPABASE_ANON,'Content-Type':'application/json',Prefer:'return=minimal'},
+  body:JSON.stringify({email,language:chosenLang,source:'web_waitlist'})});}catch(e){console.warn('save failed (table?)',e);}}
+
+$('join-btn').onclick=async()=>{const email=$('email').value.trim();
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){$('err').textContent='Please enter a valid email.';return;}
+  $('err').textContent='';$('join-btn').disabled=true;$('join-btn').innerHTML='…';
+  await save(email); const l=LANGS[chosenLang];
+  $('card-t').textContent='See you inside!';
+  $('card-badge').textContent='Confirmed';
+  $('success-text').innerHTML=l.success.replace(/MindGains/g,'<b>MindGains</b>');
+  step('success'); setHappy(); say(l.done,'',3200,{voice:true,lang:chosenLang,audio:VOICE_LINES[chosenLang]?.done}); burst(); setTimeout(showQuizInvite,3900);};
+$('email').addEventListener('keydown',e=>{if(e.key==='Enter')$('join-btn').click();});
+
+/* ---------- confetti ---------- */
+function burst(){const end=Date.now()+1300;(function f(){
+  confetti({particleCount:5,angle:60,spread:62,origin:{x:0},colors:['#7d6cff','#37e0ff','#a98bff']});
+  confetti({particleCount:5,angle:120,spread:62,origin:{x:1},colors:['#7d6cff','#37e0ff','#fff']});
+  if(Date.now()<end)requestAnimationFrame(f);})();
+  confetti({particleCount:130,spread:95,origin:{y:.72},colors:['#7d6cff','#37e0ff','#a98bff','#fff']});}
+</script>
+</body>
+</html>
