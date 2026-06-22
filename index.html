@@ -220,9 +220,34 @@ const SUPABASE_URL = 'https://yuntwerxahgmaoduxvqc.supabase.co';
 const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl1bnR3ZXJ4YWhnbWFvZHV4dnFjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU3OTk4OTMsImV4cCI6MjA3MTM3NTg5M30.1mFUH9yp55uxN8n9tyRHLFbve36_kpaJs41nPU85S74';
 const VOICE_LINES = {
   'en-IN': {
-    greet: 'assets/voice/miga-greet.mp3',
-    invite: 'assets/voice/miga-invite.mp3',
-    done: 'assets/voice/miga-success.mp3',
+    greet: 'assets/voice/miga-en-greet.mp3',
+    invite: 'assets/voice/miga-en-invite.mp3',
+    done: 'assets/voice/miga-en-success.mp3',
+  },
+  'ta-IN': {
+    greet: 'assets/voice/miga-ta-greet.mp3',
+    invite: 'assets/voice/miga-ta-invite.mp3',
+    done: 'assets/voice/miga-ta-success.mp3',
+  },
+  'hi-IN': {
+    greet: 'assets/voice/miga-hi-greet.mp3',
+    invite: 'assets/voice/miga-hi-invite.mp3',
+    done: 'assets/voice/miga-hi-success.mp3',
+  },
+  'te-IN': {
+    greet: 'assets/voice/miga-te-greet.mp3',
+    invite: 'assets/voice/miga-te-invite.mp3',
+    done: 'assets/voice/miga-te-success.mp3',
+  },
+  'kn-IN': {
+    greet: 'assets/voice/miga-kn-greet.mp3',
+    invite: 'assets/voice/miga-kn-invite.mp3',
+    done: 'assets/voice/miga-kn-success.mp3',
+  },
+  'ml-IN': {
+    greet: 'assets/voice/miga-ml-greet.mp3',
+    invite: 'assets/voice/miga-ml-invite.mp3',
+    done: 'assets/voice/miga-ml-success.mp3',
   },
 };
 
@@ -275,7 +300,7 @@ let setHappy=()=>{}, setSad=()=>{}, setPlayful=()=>{}, setTalking=()=>{}, setMou
   function fit(){const cw=innerWidth,ch=innerHeight,im=model.internalModel,mw=(im&&im.originalWidth)||model.width||1,mh=(im&&im.originalHeight)||model.height||1;
     const wide=cw>860; targetS=Math.min(cw/mw,ch/mh)*(centered?(wide?0.95:0.78):(wide?0.86:0.78)); model.anchor.set(0.5,1);
     targetX = centered ? cw*0.5 : (wide ? cw*0.30 : cw*0.5);
-    targetY = wide ? ch+ch*(centered?0.03:0.01) : ch*(centered?0.96:0.88);
+    targetY = wide ? ch+ch*(centered?0.03:0.01) : ch*(centered?0.92:0.80);
     if(firstFit){firstFit=false;model.scale.set(targetS);model.x=targetX;model.y=targetY;}}
   fit();addEventListener('resize',fit);
   const core=model.internalModel.coreModel, set=(id,vv)=>{try{core.setParameterValueById(id,vv)}catch(e){}};
