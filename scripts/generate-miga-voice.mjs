@@ -14,25 +14,25 @@ const lines = [
   { file: 'miga-en-invite.mp3', text: "Great! Drop your email and I'll save your early-access spot." },
   { file: 'miga-en-success.mp3', text: "You're in! I'll email you the moment MindGains is ready." },
 
-  { file: 'miga-ta-greet.mp3', text: 'வணக்கம், நான் MIGA! உங்கள் தினசரி கற்றல் துணை.' },
-  { file: 'miga-ta-invite.mp3', text: 'அருமை! உங்கள் இ-மெயிலைக் கொடுங்கள், உங்கள் இடத்தைப் பதிவு செய்கிறேன்.' },
-  { file: 'miga-ta-success.mp3', text: 'நீங்கள் இணைந்துவிட்டீர்கள்! MindGains தயாரானதும் உங்களுக்கு மெயில் அனுப்புகிறேன்.' },
+  { file: 'miga-ta-greet.mp3', text: 'வணக்கம்... நான் MIGA. தினமும் கொஞ்சம் கொஞ்சமாக கற்க உங்களுடன் இருப்பேன்.' },
+  { file: 'miga-ta-invite.mp3', text: 'சூப்பர்! உங்கள் இமெயிலை கொடுங்கள். உங்கள் early access இடத்தை நான் சேமிக்கிறேன்.' },
+  { file: 'miga-ta-success.mp3', text: 'நீங்கள் லிஸ்டில் சேர்ந்துவிட்டீர்கள்! MindGains தயாரானதும் உடனே உங்களுக்கு மெயில் வரும்.' },
 
-  { file: 'miga-hi-greet.mp3', text: 'नमस्ते, मैं MIGA हूँ! आपका रोज़ सीखने वाला साथी।' },
-  { file: 'miga-hi-invite.mp3', text: 'बढ़िया! अपना ईमेल दीजिए, मैं आपकी अर्ली-एक्सेस जगह सुरक्षित कर देता हूँ।' },
-  { file: 'miga-hi-success.mp3', text: 'आप शामिल हो गए! MindGains तैयार होते ही मैं आपको ईमेल करूँगी।' },
+  { file: 'miga-hi-greet.mp3', text: 'नमस्ते... मैं MIGA हूँ। रोज़ थोड़ा-थोड़ा सीखने में मैं आपकी साथी रहूँगी।' },
+  { file: 'miga-hi-invite.mp3', text: 'बहुत बढ़िया! अपना ईमेल डालिए। मैं आपकी early access जगह सेव कर देती हूँ।' },
+  { file: 'miga-hi-success.mp3', text: 'आप लिस्ट में आ गए हैं! MindGains तैयार होते ही आपको ईमेल मिल जाएगा।' },
 
-  { file: 'miga-te-greet.mp3', text: 'నమస్తే, నేను MIGA! మీ రోజువారీ నేర్చుకునే తోడు.' },
-  { file: 'miga-te-invite.mp3', text: 'అద్భుతం! మీ ఇమెయిల్ ఇవ్వండి, మీ స్థానాన్ని సేవ్ చేస్తాను.' },
-  { file: 'miga-te-success.mp3', text: 'మీరు చేరారు! MindGains సిద్ధమైన వెంటనే మీకు ఇమెయిల్ చేస్తాను.' },
+  { file: 'miga-te-greet.mp3', text: 'నమస్తే... నేను MIGA. ప్రతి రోజు కొంచెం నేర్చుకోవడానికి నేను మీతో ఉంటాను.' },
+  { file: 'miga-te-invite.mp3', text: 'బాగుంది! మీ ఇమెయిల్ ఇవ్వండి. మీ early access స్థానాన్ని నేను సేవ్ చేస్తాను.' },
+  { file: 'miga-te-success.mp3', text: 'మీరు లిస్ట్‌లో చేరారు! MindGains సిద్ధమైన వెంటనే మీకు ఇమెయిల్ వస్తుంది.' },
 
-  { file: 'miga-kn-greet.mp3', text: 'ನಮಸ್ಕಾರ, ನಾನು MIGA! ನಿಮ್ಮ ದೈನಂದಿನ ಕಲಿಕಾ ಸಂಗಾತಿ.' },
-  { file: 'miga-kn-invite.mp3', text: 'ಅದ್ಭುತ! ನಿಮ್ಮ ಇಮೇಲ್ ಕೊಡಿ, ನಿಮ್ಮ ಸ್ಥಾನವನ್ನು ಉಳಿಸುತ್ತೇನೆ.' },
-  { file: 'miga-kn-success.mp3', text: 'ನೀವು ಸೇರಿದ್ದೀರಿ! MindGains ಸಿದ್ಧವಾದ ಕೂಡಲೇ ನಿಮಗೆ ಇಮೇಲ್ ಮಾಡುತ್ತೇನೆ.' },
+  { file: 'miga-kn-greet.mp3', text: 'ನಮಸ್ಕಾರ... ನಾನು MIGA. ಪ್ರತಿದಿನ ಸ್ವಲ್ಪ ಕಲಿಯಲು ನಾನು ನಿಮ್ಮ ಜೊತೆಯಲ್ಲಿರುತ್ತೇನೆ.' },
+  { file: 'miga-kn-invite.mp3', text: 'ಚೆನ್ನಾಗಿದೆ! ನಿಮ್ಮ ಇಮೇಲ್ ಕೊಡಿ. ನಿಮ್ಮ early access ಸ್ಥಾನವನ್ನು ನಾನು ಉಳಿಸುತ್ತೇನೆ.' },
+  { file: 'miga-kn-success.mp3', text: 'ನೀವು ಲಿಸ್ಟ್‌ಗೆ ಸೇರಿದ್ದೀರಿ! MindGains ಸಿದ್ಧವಾದ ಕೂಡಲೇ ನಿಮಗೆ ಇಮೇಲ್ ಬರುತ್ತದೆ.' },
 
-  { file: 'miga-ml-greet.mp3', text: 'നമസ്കാരം, ഞാൻ MIGA! നിങ്ങളുടെ ദിവസേനയുള്ള പഠന കൂട്ടുകാരൻ.' },
-  { file: 'miga-ml-invite.mp3', text: 'കൊള്ളാം! നിങ്ങളുടെ ഇമെയിൽ തരൂ, നിങ്ങളുടെ സ്ഥാനം സേവ് ചെയ്യാം.' },
-  { file: 'miga-ml-success.mp3', text: 'നിങ്ങൾ ചേർന്നു! MindGains തയ്യാറായാൽ ഉടൻ ഞാൻ നിങ്ങൾക്ക് ഇമെയിൽ അയക്കും.' },
+  { file: 'miga-ml-greet.mp3', text: 'നമസ്കാരം... ഞാൻ MIGA. ദിവസവും കുറച്ച് പഠിക്കാൻ ഞാൻ നിങ്ങളോടൊപ്പം ഉണ്ടാകും.' },
+  { file: 'miga-ml-invite.mp3', text: 'കൊള്ളാം! നിങ്ങളുടെ ഇമെയിൽ തരൂ. നിങ്ങളുടെ early access സ്ഥാനം ഞാൻ സേവ് ചെയ്യാം.' },
+  { file: 'miga-ml-success.mp3', text: 'നിങ്ങൾ ലിസ്റ്റിൽ ചേർന്നു! MindGains തയ്യാറായാൽ ഉടൻ നിങ്ങൾക്ക് ഇമെയിൽ വരും.' },
 ];
 
 await mkdir(outDir, { recursive: true });
