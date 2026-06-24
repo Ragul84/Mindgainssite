@@ -10,29 +10,29 @@ const modelId = process.env.ELEVENLABS_MODEL_ID || 'eleven_multilingual_v2';
 const outDir = new URL('../assets/voice/', import.meta.url);
 
 const lines = [
-  { file: 'miga-en-greet.mp3', text: "Hiiii... I'm MIGA! Your daily learning companion." },
-  { file: 'miga-en-invite.mp3', text: "Great! Drop your email and I'll save your early-access spot." },
-  { file: 'miga-en-success.mp3', text: "You're in! I'll email you the moment MindGains is ready." },
+  { file: 'miga-en-greet.mp3', text: "Hey there! I'm MIGA, your daily learning partner." },
+  { file: 'miga-en-invite.mp3', text: 'Awesome! Drop your email below to lock in your early access spot.' },
+  { file: 'miga-en-success.mp3', text: "You're officially in! I'll buzz you the second MindGains launches on the Play Store." },
 
-  { file: 'miga-ta-greet.mp3', text: 'வணக்கம்... நான் MIGA. தினமும் கொஞ்சம் கொஞ்சமாக கற்க உங்களுடன் இருப்பேன்.' },
-  { file: 'miga-ta-invite.mp3', text: 'சூப்பர்! உங்கள் இமெயிலை கொடுங்கள். உங்கள் early access இடத்தை நான் சேமிக்கிறேன்.' },
-  { file: 'miga-ta-success.mp3', text: 'நீங்கள் லிஸ்டில் சேர்ந்துவிட்டீர்கள்! MindGains தயாரானதும் உடனே உங்களுக்கு மெயில் வரும்.' },
+  { file: 'miga-ta-greet.mp3', text: 'வணக்கம்! நான் MIGA. தினமும் சூப்பரா படிக்க நான் உங்க கூட இருப்பேன்.' },
+  { file: 'miga-ta-invite.mp3', text: 'செம்ம! உங்க இமெயிலை கொடுங்க, உங்க early access ஸ்பாட்டை நான் புக் பண்ணிடுறேன்.' },
+  { file: 'miga-ta-success.mp3', text: 'லிஸ்ட்ல சேர்ந்தாச்சு! MindGains ப்ளேஸ்டோர்ல (Play Store) லான்ச் ஆன உடனே உங்களுக்கு இமெயில் அனுப்பிடுறேன்.' },
 
-  { file: 'miga-hi-greet.mp3', text: 'नमस्ते... मैं MIGA हूँ। रोज़ थोड़ा-थोड़ा सीखने में मैं आपकी साथी रहूँगी।' },
-  { file: 'miga-hi-invite.mp3', text: 'बहुत बढ़िया! अपना ईमेल डालिए। मैं आपकी early access जगह सेव कर देती हूँ।' },
-  { file: 'miga-hi-success.mp3', text: 'आप लिस्ट में आ गए हैं! MindGains तैयार होते ही आपको ईमेल मिल जाएगा।' },
+  { file: 'miga-hi-greet.mp3', text: 'नमस्ते! मैं हूँ MIGA, आपकी डेली लर्निंग पार्टनर।' },
+  { file: 'miga-hi-invite.mp3', text: 'अरे वाह! अपना ईमेल डालिए, मैं आपकी early access सीट बुक कर देती हूँ।' },
+  { file: 'miga-hi-success.mp3', text: 'बधाई हो, आपकी सीट पक्की! MindGains जैसे ही Play Store पर लॉन्च होगा, आपको तुरंत ईमेल मिल जाएगा।' },
 
-  { file: 'miga-te-greet.mp3', text: 'నమస్తే... నేను MIGA. ప్రతి రోజు కొంచెం నేర్చుకోవడానికి నేను మీతో ఉంటాను.' },
-  { file: 'miga-te-invite.mp3', text: 'బాగుంది! మీ ఇమెయిల్ ఇవ్వండి. మీ early access స్థానాన్ని నేను సేవ్ చేస్తాను.' },
-  { file: 'miga-te-success.mp3', text: 'మీరు లిస్ట్‌లో చేరారు! MindGains సిద్ధమైన వెంటనే మీకు ఇమెయిల్ వస్తుంది.' },
+  { file: 'miga-te-greet.mp3', text: 'నమస్తే! నేను MIGA. ప్రతిరోజూ ఈజీగా నేర్చుకోవడానికి నేను మీతో ఉంటాను.' },
+  { file: 'miga-te-invite.mp3', text: 'సూపర్! మీ ఇమెయిల్ ఇవ్వండి, మీ early access స్లాట్ నేను రిజర్వ్ చేస్తాను.' },
+  { file: 'miga-te-success.mp3', text: 'మీరు లిస్ట్‌లో చేరిపోయారు! MindGains ప్లేస్టోర్‌లో (Play Store) లాంచ్ అయిన వెంటనే మీకు ఇమెయిల్ వచ్చేస్తుంది.' },
 
-  { file: 'miga-kn-greet.mp3', text: 'ನಮಸ್ಕಾರ... ನಾನು MIGA. ಪ್ರತಿದಿನ ಸ್ವಲ್ಪ ಕಲಿಯಲು ನಾನು ನಿಮ್ಮ ಜೊತೆಯಲ್ಲಿರುತ್ತೇನೆ.' },
-  { file: 'miga-kn-invite.mp3', text: 'ಚೆನ್ನಾಗಿದೆ! ನಿಮ್ಮ ಇಮೇಲ್ ಕೊಡಿ. ನಿಮ್ಮ early access ಸ್ಥಾನವನ್ನು ನಾನು ಉಳಿಸುತ್ತೇನೆ.' },
-  { file: 'miga-kn-success.mp3', text: 'ನೀವು ಲಿಸ್ಟ್‌ಗೆ ಸೇರಿದ್ದೀರಿ! MindGains ಸಿದ್ಧವಾದ ಕೂಡಲೇ ನಿಮಗೆ ಇಮೇಲ್ ಬರುತ್ತದೆ.' },
+  { file: 'miga-kn-greet.mp3', text: 'ನಮಸ್ಕಾರ! ನಾನು MIGA. ಪ್ರತಿದಿನ ಸೂಪರ್ ಆಗಿ ಕಲಿಯಲು ನಾನು ನಿಮ್ಮ ಜೊತೆಯಿರುತ್ತೇನೆ.' },
+  { file: 'miga-kn-invite.mp3', text: 'ಮಸ್ತ್! ನಿಮ್ಮ ಇಮೇಲ್ ಕೊಡಿ, ನಿಮ್ಮ early access ಸ್ಪಾಟ್ ನಾನು ಬುಕ್ ಮಾಡ್ತೀನಿ.' },
+  { file: 'miga-kn-success.mp3', text: 'ನೀವು ಲಿಸ್ಟ್‌ಗೆ ಸೇರಿದ್ರಿ! MindGains ಪ್ಲೇಸ್ಟೋರ್‌ನಲ್ಲಿ (Play Store) ಲಾಂಚ್ ಆದ ತಕ್ಷಣ ನಿಮಗೆ ಇಮೇಲ್ ಕಳುಹಿಸ್ತೀನಿ.' },
 
-  { file: 'miga-ml-greet.mp3', text: 'നമസ്കാരം... ഞാൻ MIGA. ദിവസവും കുറച്ച് പഠിക്കാൻ ഞാൻ നിങ്ങളോടൊപ്പം ഉണ്ടാകും.' },
-  { file: 'miga-ml-invite.mp3', text: 'കൊള്ളാം! നിങ്ങളുടെ ഇമെയിൽ തരൂ. നിങ്ങളുടെ early access സ്ഥാനം ഞാൻ സേവ് ചെയ്യാം.' },
-  { file: 'miga-ml-success.mp3', text: 'നിങ്ങൾ ലിസ്റ്റിൽ ചേർന്നു! MindGains തയ്യാറായാൽ ഉടൻ നിങ്ങൾക്ക് ഇമെയിൽ വരും.' },
+  { file: 'miga-ml-greet.mp3', text: 'നമസ്കാരം! ഞാൻ MIGA. ദിവസവും അടിപൊളിയായി പഠിക്കാൻ ഞാൻ നിങ്ങളോടൊപ്പം ഉണ്ടാകും.' },
+  { file: 'miga-ml-invite.mp3', text: 'പൊളി! നിങ്ങളുടെ ഇമെയിൽ തരൂ, നിങ്ങളുടെ early access സ്പോട്ട് ഞാൻ ഉറപ്പാക്കാം.' },
+  { file: 'miga-ml-success.mp3', text: 'നിങ്ങൾ ലിസ്റ്റിൽ കയറിപ്പറ്റി! MindGains പ്ലേസ്റ്റോറിൽ (Play Store) ലോഞ്ച് ചെയ്ത ഉടൻ തന്നെ നിങ്ങൾക്ക് ഇമെയിൽ എത്തും.' },
 ];
 
 await mkdir(outDir, { recursive: true });

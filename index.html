@@ -73,8 +73,8 @@
   .lang .n{font-size:16px;font-weight:500}
   .lang .e{font-size:10.5px;color:#9099ac;margin-top:3px;letter-spacing:.4px}
 
-  .field{display:flex;gap:9px}
-  .field input{flex:1;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);border-radius:13px;padding:15px 16px;color:#fff;font-size:15px;font-family:'Inter','Barlow',sans-serif;outline:none;transition:.18s}
+  .field{display:flex;gap:9px;align-items:stretch}
+  .field input{flex:1;min-width:0;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);border-radius:13px;padding:15px 16px;color:#fff;font-size:15px;font-family:'Inter','Barlow',sans-serif;outline:none;transition:.18s}
   .field input:focus{border-color:var(--glow);background:rgba(125,108,255,.10)}
   .field input::placeholder{color:#7f8aa0}
   .btn{cursor:pointer;border:none;border-radius:13px;padding:15px 22px;font-weight:650;font-size:14.5px;font-family:'Inter','Barlow',sans-serif;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;color:#000;background:#fff;transition:.18s}
@@ -125,6 +125,9 @@
     #speech .q{font-size:clamp(24px,6.6vw,34px);line-height:1.08}
     #speech.compact .q{font-size:clamp(16px,4.8vw,21px);line-height:1.38;max-width:calc(100vw - 32px)}
     #speech .qs{font-size:13px;line-height:1.35}
+    .field{flex-direction:column;gap:10px}
+    .field input{width:100%;min-height:52px}
+    .btn{width:100%;min-height:52px;justify-content:center;padding:15px 18px}
     .quiz-box{padding:18px}
     .quiz-title{font-size:clamp(22px,6.4vw,30px);line-height:1.08}
     .quiz-copy{font-size:13px;line-height:1.45}
@@ -252,12 +255,60 @@ const VOICE_LINES = {
 };
 
 const LANGS = {
-  'en-IN':{name:'English', en:'English', greet:"Hi, I'm MIGA!", tag:'Your daily learning companion.', invite:"Great! Drop your email and I'll save your early-access spot.", done:"🎉 You're in!", success:"You're in! MindGains, India's daily learning habit, launches soon on the Play Store, and you're one of our earliest users who gets to experience it first."},
-  'ta-IN':{name:'தமிழ்', en:'Tamil', greet:'வணக்கம், நான் MIGA!', tag:'உங்கள் தினசரி கற்றல் துணை.', invite:'அருமை! உங்கள் இ-மெயிலைக் கொடுங்கள், உங்கள் early-access இடத்தை நான் சேமிக்கிறேன்.', done:'🎉 இணைந்துவிட்டீர்கள்!', success:'நீங்கள் லிஸ்டில் இருக்கிறீர்கள்! MindGains தயாரான உடனே உங்களுக்கு மெயில் வரும்.'},
-  'hi-IN':{name:'हिन्दी', en:'Hindi', greet:'नमस्ते, मैं MIGA!', tag:'आपकी रोज़ सीखने वाली साथी।', invite:'बढ़िया! अपना ईमेल दीजिए, मैं आपकी early-access जगह सेव कर देती हूँ।', done:'🎉 आप शामिल हो गए!', success:'आप लिस्ट में आ गए! MindGains तैयार होते ही आपको ईमेल मिल जाएगा.'},
-  'te-IN':{name:'తెలుగు', en:'Telugu', greet:'నమస్తే, నేను MIGA!', tag:'మీ రోజువారీ లెర్నింగ్ తోడు.', invite:'సూపర్! మీ ఇమెయిల్ ఇవ్వండి, మీ early-access స్పాట్ సేవ్ చేస్తాను.', done:'🎉 మీరు చేరారు!', success:'మీరు లిస్ట్‌లో చేరారు! MindGains సిద్ధమైన వెంటనే మీకు ఇమెయిల్ వస్తుంది.'},
-  'kn-IN':{name:'ಕನ್ನಡ', en:'Kannada', greet:'ನಮಸ್ಕಾರ, ನಾನು MIGA!', tag:'ನಿಮ್ಮ ಪ್ರತಿದಿನದ ಕಲಿಕಾ ಜೊತೆಗಾರ್ತಿ.', invite:'ಚೆನ್ನಾಗಿದೆ! ನಿಮ್ಮ ಇಮೇಲ್ ಕೊಡಿ. ನಿಮ್ಮ early access ಸ್ಥಾನವನ್ನು ನಾನು ಉಳಿಸುತ್ತೇನೆ.', done:'🎉 ನೀವು ಸೇರಿದ್ದೀರಿ!', success:'ನೀವು ಲಿಸ್ಟ್‌ಗೆ ಸೇರಿದ್ದೀರಿ! MindGains ಸಿದ್ಧವಾದ ಕೂಡಲೇ ನಿಮಗೆ ಇಮೇಲ್ ಬರುತ್ತದೆ.'},
-  'ml-IN':{name:'മലയാളം', en:'Malayalam', greet:'നമസ്കാരം, ഞാൻ MIGA!', tag:'നിങ്ങളുടെ ദിവസവും പഠിക്കുന്ന കൂട്ടുകാരി.', invite:'കൊള്ളാം! നിങ്ങളുടെ ഇമെയിൽ തരൂ. നിങ്ങളുടെ early access സ്ഥാനം ഞാൻ സേവ് ചെയ്യാം.', done:'🎉 നിങ്ങൾ ചേർന്നു!', success:'നിങ്ങൾ ലിസ്റ്റിൽ ചേർന്നു! MindGains തയ്യാറായാൽ ഉടൻ നിങ്ങൾക്ക് ഇമെയിൽ വരും.'},
+  'en-IN': {
+    name: 'English',
+    en: 'English',
+    greet: "Hey there! I'm MIGA, your daily learning partner.",
+    tag: 'Your daily learning partner.',
+    invite: 'Awesome! Drop your email below to lock in your early access spot.',
+    done: "You're officially in!",
+    success: "You're officially in! I'll buzz you the second MindGains launches on the Play Store.",
+  },
+  'ta-IN': {
+    name: 'தமிழ்',
+    en: 'Tamil',
+    greet: 'வணக்கம்! நான் MIGA. தினமும் சூப்பரா படிக்க நான் உங்க கூட இருப்பேன்.',
+    tag: 'தினமும் சூப்பரா படிக்க நான் உங்க கூட இருப்பேன்.',
+    invite: 'செம்ம! உங்க இமெயிலை கொடுங்க, உங்க early access ஸ்பாட்டை நான் புக் பண்ணிடுறேன்.',
+    done: 'லிஸ்ட்ல சேர்ந்தாச்சு!',
+    success: 'லிஸ்ட்ல சேர்ந்தாச்சு! MindGains ப்ளேஸ்டோர்ல (Play Store) லான்ச் ஆன உடனே உங்களுக்கு இமெயில் அனுப்பிடுறேன்.',
+  },
+  'hi-IN': {
+    name: 'हिंदी',
+    en: 'Hindi',
+    greet: 'नमस्ते! मैं हूँ MIGA, आपकी डेली लर्निंग पार्टनर।',
+    tag: 'आपकी डेली लर्निंग पार्टनर।',
+    invite: 'अरे वाह! अपना ईमेल डालिए, मैं आपकी early access सीट बुक कर देती हूँ।',
+    done: 'बधाई हो, आपकी सीट पक्की!',
+    success: 'बधाई हो, आपकी सीट पक्की! MindGains जैसे ही Play Store पर लॉन्च होगा, आपको तुरंत ईमेल मिल जाएगा।',
+  },
+  'te-IN': {
+    name: 'తెలుగు',
+    en: 'Telugu',
+    greet: 'నమస్తే! నేను MIGA. ప్రతిరోజూ ఈజీగా నేర్చుకోవడానికి నేను మీతో ఉంటాను.',
+    tag: 'ప్రతిరోజూ ఈజీగా నేర్చుకోవడానికి నేను మీతో ఉంటాను.',
+    invite: 'సూపర్! మీ ఇమెయిల్ ఇవ్వండి, మీ early access స్లాట్ నేను రిజర్వ్ చేస్తాను.',
+    done: 'మీరు లిస్ట్‌లో చేరిపోయారు!',
+    success: 'మీరు లిస్ట్‌లో చేరిపోయారు! MindGains ప్లేస్టోర్‌లో (Play Store) లాంచ్ అయిన వెంటనే మీకు ఇమెయిల్ వచ్చేస్తుంది.',
+  },
+  'kn-IN': {
+    name: 'ಕನ್ನಡ',
+    en: 'Kannada',
+    greet: 'ನಮಸ್ಕಾರ! ನಾನು MIGA. ಪ್ರತಿದಿನ ಸೂಪರ್ ಆಗಿ ಕಲಿಯಲು ನಾನು ನಿಮ್ಮ ಜೊತೆಯಿರುತ್ತೇನೆ.',
+    tag: 'ಪ್ರತಿದಿನ ಸೂಪರ್ ಆಗಿ ಕಲಿಯಲು ನಾನು ನಿಮ್ಮ ಜೊತೆಯಿರುತ್ತೇನೆ.',
+    invite: 'ಮಸ್ತ್! ನಿಮ್ಮ ಇಮೇಲ್ ಕೊಡಿ, ನಿಮ್ಮ early access ಸ್ಪಾಟ್ ನಾನು ಬುಕ್ ಮಾಡ್ತೀನಿ.',
+    done: 'ನೀವು ಲಿಸ್ಟ್‌ಗೆ ಸೇರಿದ್ರಿ!',
+    success: 'ನೀವು ಲಿಸ್ಟ್‌ಗೆ ಸೇರಿದ್ರಿ! MindGains ಪ್ಲೇಸ್ಟೋರ್‌ನಲ್ಲಿ (Play Store) ಲಾಂಚ್ ಆದ ತಕ್ಷಣ ನಿಮಗೆ ಇಮೇಲ್ ಕಳುಹಿಸ್ತೀನಿ.',
+  },
+  'ml-IN': {
+    name: 'മലയാളം',
+    en: 'Malayalam',
+    greet: 'നമസ്കാരം! ഞാൻ MIGA. ദിവസവും അടിപൊളിയായി പഠിക്കാൻ ഞാൻ നിങ്ങളോടൊപ്പം ഉണ്ടാകും.',
+    tag: 'ദിവസവും അടിപൊളിയായി പഠിക്കാൻ ഞാൻ നിങ്ങളോടൊപ്പം ഉണ്ടാകും.',
+    invite: 'പൊളി! നിങ്ങളുടെ ഇമെയിൽ തരൂ, നിങ്ങളുടെ early access സ്പോട്ട് ഞാൻ ഉറപ്പാക്കാം.',
+    done: 'നിങ്ങൾ ലിസ്റ്റിൽ കയറിപ്പറ്റി!',
+    success: 'നിങ്ങൾ ലിസ്റ്റിൽ കയറിപ്പറ്റി! MindGains പ്ലേസ്റ്റോറിൽ (Play Store) ലോഞ്ച് ചെയ്ത ഉടൻ തന്നെ നിങ്ങൾക്ക് ഇമെയിൽ എത്തും.',
+  },
 };
 let chosenLang='en-IN';
 
@@ -597,18 +648,38 @@ $('quiz-skip').onclick=()=>{$('quiz-stage').classList.remove('show');};
 $('quiz-again').onclick=startQuiz;
 $('quiz-done').onclick=()=>{$('quiz-stage').classList.remove('show');};
 
-async function save(email){try{await fetch(SUPABASE_URL+'/rest/v1/waitlist',{method:'POST',
-  headers:{apikey:SUPABASE_ANON,Authorization:'Bearer '+SUPABASE_ANON,'Content-Type':'application/json',Prefer:'return=minimal'},
-  body:JSON.stringify({email,language:chosenLang,source:'web_waitlist'})});}catch(e){console.warn('save failed (table?)',e);}}
+async function save(email){
+  try{
+    const response=await fetch(SUPABASE_URL+'/rest/v1/waitlist',{method:'POST',
+      headers:{apikey:SUPABASE_ANON,Authorization:'Bearer '+SUPABASE_ANON,'Content-Type':'application/json',Prefer:'return=minimal'},
+      body:JSON.stringify({email,language:chosenLang,source:'web_waitlist'})});
+    if(response.ok) return {status:'joined'};
+    const body=await response.text().catch(()=>'');
+    if(response.status===409||/23505|duplicate key|waitlist_email_uniq/i.test(body)) return {status:'already'};
+    console.warn('save failed',response.status,body);
+    return {status:'error'};
+  }catch(e){console.warn('save failed (network?)',e);return {status:'error'};}
+}
 
 $('join-btn').onclick=async()=>{const email=$('email').value.trim();
   if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){$('err').textContent='Please enter a valid email.';return;}
-  $('err').textContent='';$('join-btn').disabled=true;$('join-btn').innerHTML='…';
-  await save(email); const l=LANGS[chosenLang];
-  $('card-t').textContent='See you inside!';
-  $('card-badge').textContent='Confirmed';
-  $('success-text').innerHTML=l.success.replace(/MindGains/g,'<b>MindGains</b>');
-  step('success'); setHappy(); say(l.done,'',3200,{voice:true,lang:chosenLang,audio:VOICE_LINES[chosenLang]?.done}); burst(); setTimeout(showQuizInvite,3900);};
+  const btn=$('join-btn');
+  $('err').textContent='';btn.disabled=true;btn.innerHTML='...';
+  const result=await save(email); const l=LANGS[chosenLang];
+  if(result.status==='error'){
+    $('err').textContent='Could not confirm your spot. Please try again.';
+    btn.disabled=false;btn.innerHTML='Join <span class="arr">&rarr;</span>';
+    return;
+  }
+  const already=result.status==='already';
+  $('card-t').textContent=already?'You are already in':'See you inside!';
+  $('card-badge').textContent=already?'Earliest adopter':'Confirmed';
+  $('em-text').textContent=already?'Already joined':'You are on the list';
+  const successText=already
+    ? 'You have already joined the MindGains early-access waitlist. You are still counted among our earliest adopters, and we will email you the moment MindGains hits the Play Store.'
+    : l.success;
+  $('success-text').innerHTML=successText.replace(/MindGains/g,'<b>MindGains</b>');
+  step('success'); setHappy(); say(already?'You are already in!':l.done,'',3200,{voice:true,lang:chosenLang,audio:already?null:VOICE_LINES[chosenLang]?.done}); if(!already) burst(); setTimeout(showQuizInvite,3900);};
 $('email').addEventListener('keydown',e=>{if(e.key==='Enter')$('join-btn').click();});
 
 /* ---------- confetti ---------- */
