@@ -273,7 +273,7 @@ const LANGS = {
     en: 'Tamil',
     greet: 'வணக்கம்! நான் MIGA. தினமும் சூப்பரா படிக்க நான் உங்க கூட இருப்பேன்.',
     tag: 'தினமும் சூப்பரா படிக்க நான் உங்க கூட இருப்பேன்.',
-    invite: 'Semma! உங்க இமெயிலை கொடுங்க, உங்க early access ஸ்பாட்டை நான் புக் பண்ணிடுறேன்.',
+    invite: 'சூப்பர்! உங்க இமெயிலை கொடுங்க, உங்க early access ஸ்பாட்டை நான் புக் பண்ணிடுறேன்.',
     done: 'லிஸ்ட்ல சேர்ந்தாச்சு!',
     success: 'லிஸ்ட்ல சேர்ந்தாச்சு! MindGains ப்ளேஸ்டோர்ல (Play Store) லான்ச் ஆன உடனே உங்களுக்கு இமெயில் அனுப்பிடுறேன்.',
   },
@@ -637,7 +637,7 @@ function answerQuiz(btn,correct,chosenText){
   $('quiz-score').textContent=quizScore+' correct';
   $('quiz-explain').innerHTML='<b>'+prefix+'.</b> '+explain;
   $('quiz-explain').classList.add('show');
-  setTimeout(()=>{quizIndex++;quizIndex<quizSet.length?renderQuiz():finishQuiz();},2300);
+  setTimeout(()=>{quizIndex++;quizIndex<quizSet.length?renderQuiz():finishQuiz();},4200);
 }
 function finishQuiz(){
   $('quiz-play').style.display='none';$('quiz-result').classList.add('show');
@@ -692,7 +692,7 @@ $('join-btn').onclick=async()=>{const email=$('email').value.trim();
     ? 'You have already joined the MindGains early-access waitlist. You are still counted among our earliest adopters, and we will email you the moment MindGains hits the Play Store.'
     : l.success;
   $('success-text').innerHTML=successText.replace(/MindGains/g,'<b>MindGains</b>');
-  step('success'); setHappy(); say(already?'You are already in!':l.done,'',3200,{voice:true,lang:chosenLang,audio:already?null:VOICE_LINES[chosenLang]?.done}); if(!already) burst(); setTimeout(showQuizInvite,3900);};
+  step('success'); setHappy(); if(!already){ say(l.done,'',3200,{voice:true,lang:chosenLang,audio:VOICE_LINES[chosenLang]?.done}); burst(); } setTimeout(showQuizInvite,3900);};
 $('email').addEventListener('keydown',e=>{if(e.key==='Enter')$('join-btn').click();});
 
 /* ---------- confetti ---------- */

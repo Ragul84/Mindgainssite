@@ -16,7 +16,7 @@ const lines = [
   { file: 'miga-en-success.mp3', text: "You're officially in! I'll buzz you the second MindGains launches on the Play Store." },
 
   { file: 'miga-ta-greet.mp3', text: 'வணக்கம்! நான் MIGA. தினமும் சூப்பரா படிக்க நான் உங்க கூட இருப்பேன்.' },
-  { file: 'miga-ta-invite.mp3', text: 'Semma! உங்க இமெயிலை கொடுங்க, உங்க early access ஸ்பாட்டை நான் புக் பண்ணிடுறேன்.' },
+  { file: 'miga-ta-invite.mp3', text: 'சூப்பர்! உங்க இமெயிலை கொடுங்க, உங்க early access ஸ்பாட்டை நான் புக் பண்ணிடுறேன்.' },
   { file: 'miga-ta-success.mp3', text: 'லிஸ்ட்ல சேர்ந்தாச்சு! MindGains ப்ளேஸ்டோர்ல (Play Store) லான்ச் ஆன உடனே உங்களுக்கு இமெயில் அனுப்பிடுறேன்.' },
 
   { file: 'miga-hi-greet.mp3', text: 'नमस्ते! मैं हूँ MIGA, आपकी डेली लर्निंग पार्टनर।' },
