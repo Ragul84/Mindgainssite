@@ -8,6 +8,7 @@ if (!apiKey) {
 const voiceId = process.env.ELEVENLABS_VOICE_ID || 'EXAVITQu4vr4xnSDxMaL';
 const modelId = process.env.ELEVENLABS_MODEL_ID || 'eleven_multilingual_v2';
 const outDir = new URL('../assets/voice/', import.meta.url);
+const onlyFile = process.argv.includes('--file') ? process.argv[process.argv.indexOf('--file') + 1] : null;
 
 const lines = [
   { file: 'miga-en-greet.mp3', text: "Hey there! I'm MIGA, your daily learning partner." },
@@ -15,7 +16,7 @@ const lines = [
   { file: 'miga-en-success.mp3', text: "You're officially in! I'll buzz you the second MindGains launches on the Play Store." },
 
   { file: 'miga-ta-greet.mp3', text: 'வணக்கம்! நான் MIGA. தினமும் சூப்பரா படிக்க நான் உங்க கூட இருப்பேன்.' },
-  { file: 'miga-ta-invite.mp3', text: 'செம்ம! உங்க இமெயிலை கொடுங்க, உங்க early access ஸ்பாட்டை நான் புக் பண்ணிடுறேன்.' },
+  { file: 'miga-ta-invite.mp3', text: 'Semma! உங்க இமெயிலை கொடுங்க, உங்க early access ஸ்பாட்டை நான் புக் பண்ணிடுறேன்.' },
   { file: 'miga-ta-success.mp3', text: 'லிஸ்ட்ல சேர்ந்தாச்சு! MindGains ப்ளேஸ்டோர்ல (Play Store) லான்ச் ஆன உடனே உங்களுக்கு இமெயில் அனுப்பிடுறேன்.' },
 
   { file: 'miga-hi-greet.mp3', text: 'नमस्ते! मैं हूँ MIGA, आपकी डेली लर्निंग पार्टनर।' },
@@ -37,7 +38,7 @@ const lines = [
 
 await mkdir(outDir, { recursive: true });
 
-for (const line of lines) {
+for (const line of lines.filter((item) => !onlyFile || item.file === onlyFile)) {
   const response = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`, {
     method: 'POST',
     headers: {

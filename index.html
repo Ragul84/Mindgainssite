@@ -107,6 +107,9 @@
   .quiz-option:hover{border-color:rgba(125,108,255,.7);background:rgba(125,108,255,.13)}
   .quiz-option.correct{border-color:rgba(52,211,153,.8);background:rgba(52,211,153,.16)}
   .quiz-option.wrong{border-color:rgba(248,113,113,.8);background:rgba(248,113,113,.15)}
+  .quiz-explain{display:none;margin-top:12px;border:1px solid rgba(55,224,255,.24);border-radius:14px;padding:12px 13px;background:rgba(55,224,255,.08);color:rgba(245,251,255,.88);font-size:13px;line-height:1.48;text-align:left}
+  .quiz-explain.show{display:block;animation:rise .32s cubic-bezier(.2,.9,.3,1) both}
+  .quiz-explain b{color:#67e8f9;font-weight:700}
   .quiz-result{display:none}
   .quiz-result.show{display:block}
 
@@ -191,6 +194,7 @@
       <div class="quiz-progress"><span id="quiz-count">Question 1 of 5</span><span id="quiz-score">0 correct</span></div>
       <div class="quiz-title" id="quiz-question"></div>
       <div class="quiz-options" id="quiz-options"></div>
+      <div class="quiz-explain" id="quiz-explain"></div>
     </div>
     <div class="quiz-result" id="quiz-result">
       <div class="quiz-kicker" id="quiz-result-kicker"></div>
@@ -269,7 +273,7 @@ const LANGS = {
     en: 'Tamil',
     greet: 'வணக்கம்! நான் MIGA. தினமும் சூப்பரா படிக்க நான் உங்க கூட இருப்பேன்.',
     tag: 'தினமும் சூப்பரா படிக்க நான் உங்க கூட இருப்பேன்.',
-    invite: 'செம்ம! உங்க இமெயிலை கொடுங்க, உங்க early access ஸ்பாட்டை நான் புக் பண்ணிடுறேன்.',
+    invite: 'Semma! உங்க இமெயிலை கொடுங்க, உங்க early access ஸ்பாட்டை நான் புக் பண்ணிடுறேன்.',
     done: 'லிஸ்ட்ல சேர்ந்தாச்சு!',
     success: 'லிஸ்ட்ல சேர்ந்தாச்சு! MindGains ப்ளேஸ்டோர்ல (Play Store) லான்ச் ஆன உடனே உங்களுக்கு இமெயில் அனுப்பிடுறேன்.',
   },
@@ -615,16 +619,25 @@ function renderQuiz(){
   $('quiz-count').textContent='Question '+(quizIndex+1)+' of 5';
   $('quiz-score').textContent=quizScore+' correct';
   $('quiz-question').textContent=item.q;
+  $('quiz-explain').classList.remove('show');
+  $('quiz-explain').innerHTML='';
   const options=shuffled(item.o.map((text,i)=>({text,correct:i===item.a})));
   $('quiz-options').innerHTML='';
   options.forEach(opt=>{const b=document.createElement('button');b.className='quiz-option';b.textContent=opt.text;
-    b.onclick=()=>answerQuiz(b,opt.correct);$('quiz-options').appendChild(b);});
+    b.onclick=()=>answerQuiz(b,opt.correct,opt.text);$('quiz-options').appendChild(b);});
 }
-function answerQuiz(btn,correct){
-  [...document.querySelectorAll('.quiz-option')].forEach(b=>b.disabled=true);
-  btn.classList.add(correct?'correct':'wrong');
+function answerQuiz(btn,correct,chosenText){
+  const item=quizSet[quizIndex];
+  [...document.querySelectorAll('.quiz-option')].forEach(b=>{b.disabled=true;if(b.textContent===item.o[item.a])b.classList.add('correct');});
+  if(!correct) btn.classList.add('wrong');
   if(correct) quizScore++;
-  setTimeout(()=>{quizIndex++;quizIndex<quizSet.length?renderQuiz():finishQuiz();},650);
+  const answer=item.o[item.a];
+  const prefix=correct?'Correct':'Not quite';
+  const explain=item.e||('Correct answer: '+answer+'. This is the key exam fact to remember from this quick drill.');
+  $('quiz-score').textContent=quizScore+' correct';
+  $('quiz-explain').innerHTML='<b>'+prefix+'.</b> '+explain;
+  $('quiz-explain').classList.add('show');
+  setTimeout(()=>{quizIndex++;quizIndex<quizSet.length?renderQuiz():finishQuiz();},2300);
 }
 function finishQuiz(){
   $('quiz-play').style.display='none';$('quiz-result').classList.add('show');
