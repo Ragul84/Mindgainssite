@@ -328,7 +328,7 @@ function hideLoader(){ if(loaderHidden) return; loaderHidden=true; document.getE
     document.getElementById('speech-sub').textContent=LANGS['en-IN'].tag;
     hideLoader._talk=setTimeout(()=>playVoice(VOICE_LINES['en-IN'].greet,3600),450);
   },620); }
-setTimeout(hideLoader, 3600); // safety fallback
+setTimeout(hideLoader, 9000); // safety fallback; model usually hides this earlier when ready
 
 /* ---------- bg image ---------- */
 document.documentElement.style.setProperty('--bg-image', `url("${BG_IMAGE}")`);
@@ -353,9 +353,9 @@ let setHappy=()=>{}, setSad=()=>{}, setPlayful=()=>{}, setTalking=()=>{}, setMou
   app.stage.addChild(model);
   let centered=false,targetX=0,targetY=0,targetS=1,firstFit=true;
   function fit(){const cw=innerWidth,ch=innerHeight,im=model.internalModel,mw=(im&&im.originalWidth)||model.width||1,mh=(im&&im.originalHeight)||model.height||1;
-    const wide=cw>860; targetS=Math.min(cw/mw,ch/mh)*(centered?(wide?0.95:0.78):(wide?0.86:0.78)); model.anchor.set(0.5,1);
+    const wide=cw>860; targetS=Math.min(cw/mw,ch/mh)*(centered?(wide?0.78:0.58):(wide?0.86:0.78)); model.anchor.set(0.5,1);
     targetX = centered ? cw*0.5 : (wide ? cw*0.30 : cw*0.5);
-    targetY = wide ? ch+ch*(centered?0.03:0.01) : ch*(centered?0.94:0.83);
+    targetY = centered ? (wide ? ch*0.96 : ch*0.72) : (wide ? ch*1.01 : ch*0.83);
     if(firstFit){firstFit=false;model.scale.set(targetS);model.x=targetX;model.y=targetY;}}
   fit();addEventListener('resize',fit);
   const core=model.internalModel.coreModel, set=(id,vv)=>{try{core.setParameterValueById(id,vv)}catch(e){}};
