@@ -5,6 +5,7 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const CONTENT_DIR = path.join(ROOT, 'content', 'blog');
 const SITE_URL = (process.env.BASE_URL || process.env.SITE_URL || 'https://mindgains.ai').replace(/\/$/, '');
+const EDITORIAL_CATEGORIES = ['Learning Psychology', 'Exams', 'Current Affairs', 'AI in Education', 'Daily Learning', 'Quiz Practice'];
 
 function htmlEscape(value) {
   return String(value ?? '')
@@ -21,6 +22,14 @@ function attr(value) {
 
 function canonical(pathname) {
   return SITE_URL + pathname;
+}
+
+function slugify(value) {
+  return String(value || '')
+    .toLowerCase()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
 }
 
 function iconMeta() {
@@ -46,7 +55,7 @@ function parsePost(filePath) {
   }
   return {
     ...meta,
-    author: meta.author || 'Ragul Arvind',
+    author: meta.author || 'MindGains Editorial',
     category: meta.category || 'Learning',
     readingTime: meta.readingTime || estimateReadingTime(match[2]),
     relatedQuizzes: (meta.relatedQuizzes || '').split('|').map((x) => x.trim()).filter(Boolean),
@@ -141,6 +150,7 @@ function pageShell({ title, description, pathname, image, body, schema }) {
 <meta name="twitter:title" content="${attr(title)}" />
 <meta name="twitter:description" content="${attr(description)}" />
 <meta name="twitter:image" content="${attr(absoluteImage)}" />
+<link rel="alternate" type="application/rss+xml" title="MindGains Editorial" href="/feed.xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -192,7 +202,7 @@ function articlePage(post, prev, next) {
     image,
     datePublished: post.publishedDate,
     dateModified: post.publishedDate,
-    author: { '@type': 'Person', name: post.author },
+    author: { '@type': 'Organization', name: post.author },
     publisher: { '@type': 'Organization', name: 'MindGains', logo: { '@type': 'ImageObject', url: SITE_URL + '/assets/icons/mindgains-logo-512.png' } },
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
   };
@@ -205,13 +215,13 @@ function articlePage(post, prev, next) {
     <p class="eyebrow">MindGains Editorial</p>
     <h1>${htmlEscape(post.title)}</h1>
     <p class="dek">${htmlEscape(post.description)}</p>
-    <div class="meta-row"><span>MindGains Editorial</span><span>${htmlEscape(post.author)}</span><span>Published ${htmlEscape(formatDate(post.publishedDate))}</span><span>${htmlEscape(post.readingTime)}</span></div>
+    <div class="meta-row"><span>${htmlEscape(post.author)}</span><span>Published ${htmlEscape(formatDate(post.publishedDate))}</span><span>${htmlEscape(post.readingTime)}</span></div>
   </section>
   <figure class="hero-image"><img src="${attr(post.heroImage)}" alt="${attr(post.heroAlt || post.title)}" width="1600" height="900" /></figure>
   <div class="article-wrap">
     <article class="article">${markdownToHtml(post.body)}
-      <section class="related"><h2>Related Quizzes</h2><div class="quiz-links">${related}</div></section>
-      <section class="cta"><p class="eyebrow">Continue Your Learning Journey</p><h2>Make Learning a Daily Habit.</h2><p>Join the MindGains Early Access Waitlist.</p><a class="button" href="/#join">Join the Waitlist</a></section>
+      <section class="related"><h2>Practice Next</h2><p>Turn this idea into recall with related quizzes, then continue the learning loop inside MindGains.</p><div class="quiz-links">${related}<a href="/daily-dose/">Continue with Daily Dose</a><a href="/study-lab/">Generate revision in Study Lab</a></div></section>
+      <section class="cta"><p class="eyebrow">Article &rarr; Quiz &rarr; App</p><h2>Make Learning a Daily Habit.</h2><p>Join the MindGains Early Access Waitlist to connect articles, quizzes, Daily Dose, Study Lab and mistake revision in one daily loop.</p><a class="button" href="/#join">Join the Waitlist</a></section>
       ${postNav}
     </article>
     <aside class="side"><h2>Practice after reading</h2><p>Turn ideas into recall with MindGains public quizzes.</p><a href="/quiz/">Open Quiz Hub</a></aside>
@@ -227,6 +237,10 @@ function articleHref(post) {
   return `/blog/${post.slug}`;
 }
 
+function categoryHref(category) {
+  return `/editorial/${slugify(category)}/`;
+}
+
 function indexPage(posts) {
   const body = `<section class="blog-hero"><p class="eyebrow">MindGains Editorial</p><h1>Ideas for India's daily learning habit.</h1><p class="dek">Research, product thinking and practical learning notes from the MindGains team.</p></section><section class="blog-list"><h2>Latest Articles</h2>${posts.map((post) => `<a class="blog-card" href="${articleHref(post)}"><h2>${htmlEscape(post.title)}</h2><p>${htmlEscape(post.description)}</p><div class="meta-row"><span>${htmlEscape(post.category)}</span><span>${htmlEscape(post.author)}</span><span>Published ${htmlEscape(formatDate(post.publishedDate))}</span><span>${htmlEscape(post.readingTime)}</span></div></a>`).join('')}</section>`;
   const breadcrumb = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL + '/' }, { '@type': 'ListItem', position: 2, name: 'Editorial', item: SITE_URL + '/blog/' }] };
@@ -235,7 +249,6 @@ function indexPage(posts) {
 
 function editorialPage(posts) {
   const featured = posts[0];
-  const categories = ['Learning Psychology', 'Exams', 'Current Affairs', 'AI in Education', 'Daily Learning', 'Quiz Practice'];
   const featuredHtml = featured ? `<section class="featured">
     <p class="eyebrow">Featured</p>
     <a class="featured-card" href="${articleHref(featured)}">
@@ -255,7 +268,7 @@ function editorialPage(posts) {
     <p>${htmlEscape(post.description)}</p>
   </a>`).join('');
   const body = `<section class="blog-hero"><p class="eyebrow">MindGains Editorial</p><h1>India's daily learning publication.</h1><p class="dek">Essays and field notes on learning psychology, exams, current affairs, AI in education and the habit systems Indian learners need.</p></section>
-  <section class="category-strip">${categories.map((category) => `<span class="chip">${htmlEscape(category)}</span>`).join('')}</section>
+  <section class="category-strip">${EDITORIAL_CATEGORIES.map((category) => `<a class="chip" href="${categoryHref(category)}">${htmlEscape(category)}</a>`).join('')}</section>
   ${featuredHtml}
   <section class="editorial-grid"><h2>Latest from Editorial</h2><div class="card-grid">${cards}</div></section>`;
   const breadcrumb = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL + '/' }, { '@type': 'ListItem', position: 2, name: 'Editorial', item: SITE_URL + '/editorial/' }] };
@@ -263,12 +276,57 @@ function editorialPage(posts) {
   return pageShell({ title: 'MindGains Editorial | Learning Psychology, Exams and AI in Education', description: 'MindGains Editorial publishes thoughtful essays on Indian learning habits, exams, current affairs, quiz practice and AI in education.', pathname: '/editorial/', image: featured?.heroImage || '/assets/icons/mindgains-logo-512.png', body, schema: [collection, breadcrumb] });
 }
 
+function categoryPage(category, posts) {
+  const pathname = categoryHref(category);
+  const cards = posts.map((post) => `<a class="editorial-card" href="${articleHref(post)}">
+    <img src="${attr(post.heroImage)}" alt="${attr(post.heroAlt || post.title)}" width="800" height="500" />
+    <div class="meta-row"><span>${htmlEscape(post.category)}</span><span>${htmlEscape(post.readingTime)}</span></div>
+    <h3>${htmlEscape(post.title)}</h3>
+    <p>${htmlEscape(post.description)}</p>
+  </a>`).join('');
+  const totalMinutes = posts.reduce((sum, post) => sum + (parseInt(post.readingTime, 10) || 0), 0);
+  const empty = `<p class="dek">This collection is being built. New MindGains Editorial articles in ${htmlEscape(category.toLowerCase())} will appear here automatically.</p>`;
+  const body = `<section class="blog-hero"><div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/editorial/">Editorial</a></div><p class="eyebrow">Reading Collection</p><h1>${htmlEscape(category)}</h1><p class="dek">A MindGains Editorial collection for readers who want a deeper path through ${htmlEscape(category.toLowerCase())}. ${posts.length} article${posts.length === 1 ? '' : 's'}${totalMinutes ? ` · ${totalMinutes} min total` : ''}.</p></section>
+  <section class="editorial-grid"><h2>${htmlEscape(category)} Articles</h2>${cards ? `<div class="card-grid">${cards}</div>` : empty}</section>`;
+  const breadcrumb = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL + '/' }, { '@type': 'ListItem', position: 2, name: 'Editorial', item: SITE_URL + '/editorial/' }, { '@type': 'ListItem', position: 3, name: category, item: canonical(pathname) }] };
+  const collection = { '@context': 'https://schema.org', '@type': 'CollectionPage', name: `${category} | MindGains Editorial`, description: `MindGains Editorial articles about ${category}.`, url: canonical(pathname) };
+  return pageShell({ title: `${category} | MindGains Editorial`, description: `MindGains Editorial articles about ${category.toLowerCase()} for Indian learners and exam aspirants.`, pathname, image: posts[0]?.heroImage || '/assets/icons/mindgains-logo-512.png', body, schema: [collection, breadcrumb] });
+}
+
+function rssDate(value) {
+  return new Date(value + 'T00:00:00Z').toUTCString();
+}
+
+function writeFeed(posts) {
+  const items = posts.map((post) => {
+    const url = canonical(articleHref(post));
+    return `<item>
+      <title>${htmlEscape(post.title)}</title>
+      <link>${htmlEscape(url)}</link>
+      <guid>${htmlEscape(url)}</guid>
+      <pubDate>${rssDate(post.publishedDate)}</pubDate>
+      <author>editorial@mindgains.ai (${htmlEscape(post.author)})</author>
+      <category>${htmlEscape(post.category)}</category>
+      <description>${htmlEscape(post.description)}</description>
+    </item>`;
+  }).join('\n');
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel>
+    <title>MindGains Editorial</title>
+    <link>${SITE_URL}/editorial/</link>
+    <description>Essays on Indian learning habits, exams, current affairs, quiz practice and AI in education.</description>
+    <language>en-IN</language>
+    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+    ${items}
+  </channel></rss>\n`;
+  fs.writeFileSync(path.join(ROOT, 'feed.xml'), xml, 'utf8');
+}
+
 function writeFile(file, content) {
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, content, 'utf8');
 }
 
-function updateHome() {
+function updateHome(posts) {
   const home = path.join(ROOT, 'index.html');
   if (!fs.existsSync(home)) return;
   let html = fs.readFileSync(home, 'utf8');
@@ -277,6 +335,22 @@ function updateHome() {
   }
   html = html.replace(/<a href="\/blog\/">Blog<\/a>/g, '<a href="/editorial/">Editorial</a>');
   html = html.replace(/<a href="\/blog\/">Editorial<\/a>/g, '<a href="/editorial/">Editorial</a>');
+  if (!html.includes('.editorial-teaser{')) {
+    html = html.replace('  @media (max-width:560px){', `  .editorial-teaser{position:fixed;left:30px;bottom:28px;z-index:24;width:min(330px,calc(100vw - 60px));border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:16px;background:rgba(5,6,10,.52);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);box-shadow:0 18px 60px rgba(0,0,0,.34)}
+  .editorial-teaser .k{font-size:10px;letter-spacing:1.7px;text-transform:uppercase;color:#67e8f9;font-weight:700;margin-bottom:8px}
+  .editorial-teaser h2{font-family:'Inter','Barlow',sans-serif;font-size:15px;line-height:1.25;margin:0 0 8px;font-weight:700}
+  .editorial-teaser a{color:#dffbff;text-decoration:none;font-size:12px}
+  @media (max-width:860px){.editorial-teaser{display:none}}
+
+  @media (max-width:560px){`);
+  }
+  const latest = posts[0];
+  const teaser = `<aside class="editorial-teaser"><div class="k">Latest from Editorial</div><h2>${htmlEscape(latest.title)}</h2><a href="/editorial/">View latest insights &rarr;</a></aside>`;
+  if (!html.includes('class="editorial-teaser"')) {
+    html = html.replace('</nav>\n\n<div class="panel">', `</nav>\n\n${teaser}\n\n<div class="panel">`);
+  } else {
+    html = html.replace(/<aside class="editorial-teaser">[\s\S]*?<\/aside>/, teaser);
+  }
   fs.writeFileSync(home, html, 'utf8');
 }
 
@@ -290,7 +364,7 @@ function updateSitemap(paths) {
     const url = canonical(p);
     if (!locs.includes(url)) locs.push(url);
   }
-  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${locs.map((loc) => `  <url><loc>${htmlEscape(loc)}</loc><changefreq>weekly</changefreq><priority>${loc.endsWith('/editorial/') ? '0.85' : loc.endsWith('/blog/') ? '0.6' : loc.includes('/blog/') ? '0.7' : loc.endsWith('/quiz/') ? '0.9' : '0.8'}</priority></url>`).join('\n')}\n</urlset>\n`;
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${locs.map((loc) => `  <url><loc>${htmlEscape(loc)}</loc><changefreq>weekly</changefreq><priority>${loc.endsWith('/editorial/') ? '0.85' : loc.includes('/editorial/') ? '0.75' : loc.endsWith('/blog/') ? '0.6' : loc.includes('/blog/') ? '0.7' : loc.endsWith('/quiz/') ? '0.9' : '0.8'}</priority></url>`).join('\n')}\n</urlset>\n`;
   fs.writeFileSync(sitemap, xml, 'utf8');
 }
 
@@ -304,14 +378,25 @@ function main() {
   writeFile(path.join(ROOT, 'assets', 'blog.css'), blogCss());
   writeFile(path.join(ROOT, 'blog', 'index.html'), indexPage(posts));
   writeFile(path.join(ROOT, 'editorial', 'index.html'), editorialPage(posts));
+  writeFeed(posts);
+
+  const byCategory = new Map();
+  for (const post of posts) {
+    if (!byCategory.has(post.category)) byCategory.set(post.category, []);
+    byCategory.get(post.category).push(post);
+  }
+  for (const category of EDITORIAL_CATEGORIES) {
+    const categoryPosts = byCategory.get(category) || [];
+    writeFile(path.join(ROOT, 'editorial', slugify(category), 'index.html'), categoryPage(category, categoryPosts));
+  }
 
   for (let i = 0; i < posts.length; i++) {
     const post = posts[i];
     writeFile(path.join(ROOT, 'blog', post.slug, 'index.html'), articlePage(post, posts[i + 1], posts[i - 1]));
   }
 
-  updateHome();
-  updateSitemap(['/editorial/', ...posts.map((post) => `/blog/${post.slug}`)]);
+  updateHome(posts);
+  updateSitemap(['/editorial/', ...EDITORIAL_CATEGORIES.map(categoryHref), ...posts.map((post) => `/blog/${post.slug}`), '/feed.xml']);
   console.log(`Generated ${posts.length} blog article(s).`);
 }
 

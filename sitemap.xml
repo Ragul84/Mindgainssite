@@ -386,6 +386,13 @@
   <url><loc>https://mindgains.ai/daily-dose/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://mindgains.ai/study-lab/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://mindgains.ai/misa/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mindgains.ai/feed.xml</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://mindgains.ai/editorial/</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://mindgains.ai/editorial/learning-psychology/</loc><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://mindgains.ai/editorial/exams/</loc><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://mindgains.ai/editorial/current-affairs/</loc><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://mindgains.ai/editorial/ai-in-education/</loc><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://mindgains.ai/editorial/daily-learning/</loc><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://mindgains.ai/editorial/quiz-practice/</loc><changefreq>weekly</changefreq><priority>0.75</priority></url>
   <url><loc>https://mindgains.ai/blog/india-learning-crisis</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
 </urlset>
