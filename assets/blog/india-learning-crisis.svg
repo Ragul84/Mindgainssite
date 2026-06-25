@@ -1,0 +1,69 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#05060A"/>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1180" cy="180" r="330" fill="url(#cyanGlow)" opacity=".62"/>
+  <circle cx="305" cy="690" r="360" fill="url(#violetGlow)" opacity=".42"/>
+  <path d="M168 706C332 532 498 462 666 496C834 530 930 413 1032 323C1134 233 1246 204 1418 244" stroke="url(#path)" stroke-width="10" stroke-linecap="round" opacity=".9"/>
+  <path d="M168 706C332 532 498 462 666 496C834 530 930 413 1032 323C1134 233 1246 204 1418 244" stroke="#37E0FF" stroke-width="2" stroke-linecap="round" opacity=".45"/>
+  <g filter="url(#cardShadow)">
+    <rect x="132" y="126" width="456" height="276" rx="30" fill="white" fill-opacity=".08" stroke="white" stroke-opacity=".16"/>
+    <rect x="176" y="172" width="220" height="18" rx="9" fill="#67E8F9"/>
+    <rect x="176" y="218" width="346" height="14" rx="7" fill="white" fill-opacity=".62"/>
+    <rect x="176" y="252" width="304" height="14" rx="7" fill="white" fill-opacity=".34"/>
+    <rect x="176" y="286" width="330" height="14" rx="7" fill="white" fill-opacity=".34"/>
+    <rect x="176" y="336" width="132" height="38" rx="19" fill="#37E0FF"/>
+    <circle cx="474" cy="344" r="30" fill="#7D6CFF"/>
+    <path d="M462 344L472 354L490 330" stroke="white" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g filter="url(#cardShadow)">
+    <rect x="982" y="510" width="476" height="240" rx="30" fill="white" fill-opacity=".08" stroke="white" stroke-opacity=".16"/>
+    <rect x="1026" y="556" width="168" height="16" rx="8" fill="#67E8F9"/>
+    <rect x="1026" y="604" width="366" height="42" rx="21" fill="white" fill-opacity=".08" stroke="white" stroke-opacity=".13"/>
+    <rect x="1026" y="664" width="252" height="42" rx="21" fill="#37E0FF" fill-opacity=".96"/>
+    <circle cx="1370" cy="568" r="34" fill="#05060A" stroke="#37E0FF" stroke-width="4"/>
+    <path d="M1353 568H1387M1370 551V585" stroke="#37E0FF" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <g filter="url(#soft)">
+    <circle cx="790" cy="430" r="150" fill="#06111D" stroke="#37E0FF" stroke-width="4"/>
+    <circle cx="790" cy="430" r="104" fill="#37E0FF" fill-opacity=".13"/>
+    <path d="M741 438C741 405 761 379 790 379C819 379 839 405 839 438C839 475 813 502 790 522C767 502 741 475 741 438Z" fill="#37E0FF"/>
+    <circle cx="766" cy="430" r="11" fill="#05060A"/>
+    <circle cx="814" cy="430" r="11" fill="#05060A"/>
+    <path d="M767 464C782 477 802 477 816 464" stroke="#05060A" stroke-width="9" stroke-linecap="round"/>
+  </g>
+  <g opacity=".76">
+    <circle cx="256" cy="526" r="8" fill="#37E0FF"/>
+    <circle cx="438" cy="603" r="5" fill="#FACC15"/>
+    <circle cx="1130" cy="400" r="6" fill="#37E0FF"/>
+    <circle cx="1300" cy="330" r="5" fill="#F472B6"/>
+    <circle cx="710" cy="204" r="7" fill="#A78BFA"/>
+  </g>
+  <text x="132" y="804" fill="white" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700">MindGains</text>
+  <text x="132" y="844" fill="#AFC3D8" font-family="Inter, Arial, sans-serif" font-size="22">From content overload to daily learning habit</text>
+  <defs>
+    <linearGradient id="bg" x1="800" y1="0" x2="800" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#091223"/>
+      <stop offset=".55" stop-color="#07111D"/>
+      <stop offset="1" stop-color="#030407"/>
+    </linearGradient>
+    <radialGradient id="cyanGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1180 180) rotate(90) scale(330)">
+      <stop stop-color="#37E0FF"/>
+      <stop offset="1" stop-color="#37E0FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="violetGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(305 690) rotate(90) scale(360)">
+      <stop stop-color="#7D6CFF"/>
+      <stop offset="1" stop-color="#7D6CFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="path" x1="168" y1="706" x2="1418" y2="244" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7D6CFF"/>
+      <stop offset=".5" stop-color="#37E0FF"/>
+      <stop offset="1" stop-color="#00D4C7"/>
+    </linearGradient>
+    <filter id="cardShadow" x="82" y="76" width="1426" height="724" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="22" stdDeviation="30" flood-color="#000" flood-opacity=".36"/>
+    </filter>
+    <filter id="soft" x="600" y="240" width="380" height="380" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="0" stdDeviation="26" flood-color="#37E0FF" flood-opacity=".34"/>
+    </filter>
+  </defs>
+</svg>
