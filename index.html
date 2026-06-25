@@ -112,6 +112,8 @@
   .quiz-title{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:clamp(24px,4.2vw,38px);line-height:1.06;text-shadow:0 8px 40px rgba(0,0,0,.5);overflow-wrap:anywhere}
   .quiz-copy{margin-top:10px;color:rgba(255,255,255,.74);font-size:14px;line-height:1.55}
   .quiz-actions{display:flex;gap:10px;margin-top:18px}
+  .quiz-actions.result-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .quiz-actions.result-actions #quiz-again{grid-column:1/-1}
   .glass-btn{cursor:pointer;flex:1;border:1px solid rgba(255,255,255,.18);border-radius:15px;padding:14px 16px;color:#fff;background:rgba(255,255,255,.06);font-family:'Inter','Barlow',sans-serif;font-size:14px;font-weight:650;transition:transform .18s,border-color .18s,background .18s}
   .glass-btn:hover{transform:translateY(-1px);border-color:rgba(55,224,255,.55);background:rgba(55,224,255,.12)}
   .glass-btn.primary{color:#05060a;background:#fff;border-color:#fff}
@@ -142,20 +144,30 @@
   @media (max-width:860px){.editorial-teaser{display:none}}
 
   @media (max-width:560px){
-    nav{padding:16px 18px}
-    .langs{gap:7px}
-    #speech{position:fixed;left:16px;right:16px;top:13.5vh;z-index:26;text-align:center;pointer-events:none}
+    html,body{overflow:hidden}
+    nav{padding:14px 16px;align-items:flex-start}
+    .brand{font-size:16px;padding-top:2px}
+    .nav-links{gap:8px;max-width:58vw}
+    .nav-links a{padding:7px 10px;font-size:12px}
+    .panel{padding:0 14px calc(18px + env(safe-area-inset-bottom));gap:12px}
+    .card{border-radius:20px;padding:16px}
+    .card .head{margin-bottom:12px}
+    .langs{grid-template-columns:repeat(2,1fr);gap:8px}
+    .lang{padding:12px 6px;border-radius:13px}
+    #speech{position:fixed;left:16px;right:16px;top:11.5vh;z-index:26;text-align:center;pointer-events:none}
     #speech .q{font-size:clamp(24px,6.6vw,34px);line-height:1.08}
     #speech.compact .q{font-size:clamp(16px,4.8vw,21px);line-height:1.38;max-width:calc(100vw - 32px)}
     #speech .qs{font-size:13px;line-height:1.35}
     .field{flex-direction:column;gap:10px}
     .field input{width:100%;min-height:52px}
     .btn{width:100%;min-height:52px;justify-content:center;padding:15px 18px}
+    #quiz-stage{bottom:calc(16px + env(safe-area-inset-bottom));width:calc(100vw - 28px);max-height:72dvh;overflow-y:auto}
     .quiz-box{padding:18px}
     .quiz-title{font-size:clamp(22px,6.4vw,30px);line-height:1.08}
     .quiz-copy{font-size:13px;line-height:1.45}
     .quiz-option{font-size:13px;padding:11px 12px}
-    .quiz-actions{gap:8px}
+    .quiz-actions{gap:8px;flex-direction:column}
+    .quiz-actions.result-actions{grid-template-columns:1fr}
     .glass-btn{font-size:13px;padding:12px 13px}
     .nav-links a:nth-child(1),.nav-links a:nth-child(2),.nav-links a:nth-child(3){display:none}
   }
@@ -230,9 +242,10 @@
       <div class="quiz-kicker" id="quiz-result-kicker"></div>
       <div class="quiz-title" id="quiz-result-title"></div>
       <p class="quiz-copy" id="quiz-result-copy"></p>
-      <div class="quiz-actions">
-        <button class="glass-btn primary" id="quiz-again">Try another 5</button>
-        <button class="glass-btn" id="quiz-done">Skip</button>
+      <div class="quiz-actions result-actions">
+        <button class="glass-btn primary" id="quiz-hub">Open Quiz Hub</button>
+        <button class="glass-btn" id="quiz-editorial">Read Editorial</button>
+        <button class="glass-btn" id="quiz-again">Try another 5</button>
       </div>
     </div>
   </div>
@@ -295,8 +308,8 @@ const LANGS = {
     greet: "Hey there! I'm MIGA, your daily learning partner.",
     tag: 'Your daily learning partner.',
     invite: 'Awesome! Drop your email below to lock in your early access spot.',
-    done: "You're officially in!",
-    success: "You're officially in! I'll buzz you the second MindGains launches on the Play Store.",
+    done: "You're in. I'll email you the moment MindGains launches on the Play Store.",
+    success: "You're officially in. I'll email you the moment MindGains launches on the Play Store.",
   },
   'ta-IN': {
     name: 'தமிழ்',
@@ -689,7 +702,8 @@ $('back-lang').onclick=()=>{step('step-lang');$('card-t').textContent='Join the 
 $('quiz-yes').onclick=startQuiz;
 $('quiz-skip').onclick=()=>{$('quiz-stage').classList.remove('show');};
 $('quiz-again').onclick=startQuiz;
-$('quiz-done').onclick=()=>{$('quiz-stage').classList.remove('show');};
+$('quiz-hub').onclick=()=>{location.href='/quiz/';};
+$('quiz-editorial').onclick=()=>{location.href='/editorial/';};
 
 async function save(email){
   try{
@@ -722,7 +736,14 @@ $('join-btn').onclick=async()=>{const email=$('email').value.trim();
     ? 'You have already joined the MindGains early-access waitlist. You are still counted among our earliest adopters, and we will email you the moment MindGains hits the Play Store.'
     : l.success;
   $('success-text').innerHTML=successText.replace(/MindGains/g,'<b>MindGains</b>');
-  step('success'); setHappy(); if(!already){ say(l.done,'',3200,{voice:true,lang:chosenLang,audio:VOICE_LINES[chosenLang]?.done}); burst(); } setTimeout(showQuizInvite,3900);};
+  step('success'); setHappy();
+  if(!already){
+    say(l.done,'',5200,{voice:true,lang:chosenLang,audio:VOICE_LINES[chosenLang]?.done});
+    burst();
+  } else {
+    say(successText,'',4200,{voice:false,lang:chosenLang});
+  }
+  setTimeout(showQuizInvite,already?5600:7200);};
 $('email').addEventListener('keydown',e=>{if(e.key==='Enter')$('join-btn').click();});
 
 /* ---------- confetti ---------- */
