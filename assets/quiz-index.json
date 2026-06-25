@@ -1,0 +1,2300 @@
+[
+  {
+    "title": "Quiz Hub",
+    "type": "Hub",
+    "url": "/quiz/",
+    "copy": "Search exams, subjects and topics."
+  },
+  {
+    "title": "NCERT",
+    "type": "Exam",
+    "url": "/quiz/ncert/",
+    "copy": "Class 6 to 12 NCERT foundation quizzes"
+  },
+  {
+    "title": "NCERT Biology",
+    "type": "Subject",
+    "url": "/quiz/ncert/biology/",
+    "copy": "2 topics."
+  },
+  {
+    "title": "Class11 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/biology/class11/",
+    "copy": "NCERT Biology · 420 questions"
+  },
+  {
+    "title": "Class12 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/biology/class12/",
+    "copy": "NCERT Biology · 380 questions"
+  },
+  {
+    "title": "NCERT Chemistry",
+    "type": "Subject",
+    "url": "/quiz/ncert/chemistry/",
+    "copy": "2 topics."
+  },
+  {
+    "title": "Class11 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/chemistry/class11/",
+    "copy": "NCERT Chemistry · 887 questions"
+  },
+  {
+    "title": "Class12 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/chemistry/class12/",
+    "copy": "NCERT Chemistry · 1084 questions"
+  },
+  {
+    "title": "NCERT Economy",
+    "type": "Subject",
+    "url": "/quiz/ncert/economics/",
+    "copy": "4 topics."
+  },
+  {
+    "title": "Class10 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/economics/class10/",
+    "copy": "NCERT Economy · 300 questions"
+  },
+  {
+    "title": "Class11 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/economics/class11/",
+    "copy": "NCERT Economy · 337 questions"
+  },
+  {
+    "title": "Class12 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/economics/class12/",
+    "copy": "NCERT Economy · 330 questions"
+  },
+  {
+    "title": "Class9 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/economics/class9/",
+    "copy": "NCERT Economy · 300 questions"
+  },
+  {
+    "title": "NCERT English",
+    "type": "Subject",
+    "url": "/quiz/ncert/english/",
+    "copy": "5 topics."
+  },
+  {
+    "title": "Class10 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/english/class10/",
+    "copy": "NCERT English · 300 questions"
+  },
+  {
+    "title": "Class6 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/english/class6/",
+    "copy": "NCERT English · 300 questions"
+  },
+  {
+    "title": "Class7 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/english/class7/",
+    "copy": "NCERT English · 300 questions"
+  },
+  {
+    "title": "Class8 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/english/class8/",
+    "copy": "NCERT English · 300 questions"
+  },
+  {
+    "title": "Class9 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/english/class9/",
+    "copy": "NCERT English · 300 questions"
+  },
+  {
+    "title": "NCERT Geography",
+    "type": "Subject",
+    "url": "/quiz/ncert/geography/",
+    "copy": "7 topics."
+  },
+  {
+    "title": "Class10 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/geography/class10/",
+    "copy": "NCERT Geography · 305 questions"
+  },
+  {
+    "title": "Class11 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/geography/class11/",
+    "copy": "NCERT Geography · 392 questions"
+  },
+  {
+    "title": "Class12 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/geography/class12/",
+    "copy": "NCERT Geography · 400 questions"
+  },
+  {
+    "title": "Class6 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/geography/class6/",
+    "copy": "NCERT Geography · 300 questions"
+  },
+  {
+    "title": "Class7 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/geography/class7/",
+    "copy": "NCERT Geography · 300 questions"
+  },
+  {
+    "title": "Class8 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/geography/class8/",
+    "copy": "NCERT Geography · 300 questions"
+  },
+  {
+    "title": "Class9 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/geography/class9/",
+    "copy": "NCERT Geography · 311 questions"
+  },
+  {
+    "title": "NCERT History",
+    "type": "Subject",
+    "url": "/quiz/ncert/history/",
+    "copy": "7 topics."
+  },
+  {
+    "title": "Class10 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/history/class10/",
+    "copy": "NCERT History · 300 questions"
+  },
+  {
+    "title": "Class11 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/history/class11/",
+    "copy": "NCERT History · 455 questions"
+  },
+  {
+    "title": "Class12 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/history/class12/",
+    "copy": "NCERT History · 466 questions"
+  },
+  {
+    "title": "Class6 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/history/class6/",
+    "copy": "NCERT History · 300 questions"
+  },
+  {
+    "title": "Class7 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/history/class7/",
+    "copy": "NCERT History · 300 questions"
+  },
+  {
+    "title": "Class8 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/history/class8/",
+    "copy": "NCERT History · 300 questions"
+  },
+  {
+    "title": "Class9 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/history/class9/",
+    "copy": "NCERT History · 300 questions"
+  },
+  {
+    "title": "NCERT Mathematics",
+    "type": "Subject",
+    "url": "/quiz/ncert/maths/",
+    "copy": "5 topics."
+  },
+  {
+    "title": "Class10 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/maths/class10/",
+    "copy": "NCERT Mathematics · 1197 questions"
+  },
+  {
+    "title": "Class6 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/maths/class6/",
+    "copy": "NCERT Mathematics · 1060 questions"
+  },
+  {
+    "title": "Class7 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/maths/class7/",
+    "copy": "NCERT Mathematics · 1059 questions"
+  },
+  {
+    "title": "Class8 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/maths/class8/",
+    "copy": "NCERT Mathematics · 1069 questions"
+  },
+  {
+    "title": "Class9 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/maths/class9/",
+    "copy": "NCERT Mathematics · 1064 questions"
+  },
+  {
+    "title": "NCERT Physics",
+    "type": "Subject",
+    "url": "/quiz/ncert/physics/",
+    "copy": "2 topics."
+  },
+  {
+    "title": "Class11 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/physics/class11/",
+    "copy": "NCERT Physics · 1057 questions"
+  },
+  {
+    "title": "Class12 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/physics/class12/",
+    "copy": "NCERT Physics · 933 questions"
+  },
+  {
+    "title": "NCERT Polity",
+    "type": "Subject",
+    "url": "/quiz/ncert/polity/",
+    "copy": "7 topics."
+  },
+  {
+    "title": "Class10 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/polity/class10/",
+    "copy": "NCERT Polity · 300 questions"
+  },
+  {
+    "title": "Class11 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/polity/class11/",
+    "copy": "NCERT Polity · 410 questions"
+  },
+  {
+    "title": "Class12 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/polity/class12/",
+    "copy": "NCERT Polity · 390 questions"
+  },
+  {
+    "title": "Class6 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/polity/class6/",
+    "copy": "NCERT Polity · 335 questions"
+  },
+  {
+    "title": "Class7 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/polity/class7/",
+    "copy": "NCERT Polity · 299 questions"
+  },
+  {
+    "title": "Class8 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/polity/class8/",
+    "copy": "NCERT Polity · 300 questions"
+  },
+  {
+    "title": "Class9 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/polity/class9/",
+    "copy": "NCERT Polity · 300 questions"
+  },
+  {
+    "title": "NCERT Science",
+    "type": "Subject",
+    "url": "/quiz/ncert/science/",
+    "copy": "5 topics."
+  },
+  {
+    "title": "Class10 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/science/class10/",
+    "copy": "NCERT Science · 300 questions"
+  },
+  {
+    "title": "Class6 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/science/class6/",
+    "copy": "NCERT Science · 359 questions"
+  },
+  {
+    "title": "Class7 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/science/class7/",
+    "copy": "NCERT Science · 358 questions"
+  },
+  {
+    "title": "Class8 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/science/class8/",
+    "copy": "NCERT Science · 284 questions"
+  },
+  {
+    "title": "Class9 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/science/class9/",
+    "copy": "NCERT Science · 300 questions"
+  },
+  {
+    "title": "NCERT Social Science",
+    "type": "Subject",
+    "url": "/quiz/ncert/social-science/",
+    "copy": "5 topics."
+  },
+  {
+    "title": "Class10 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/social-science/class10/",
+    "copy": "NCERT Social Science · 321 questions"
+  },
+  {
+    "title": "Class6 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/social-science/class6/",
+    "copy": "NCERT Social Science · 242 questions"
+  },
+  {
+    "title": "Class7 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/social-science/class7/",
+    "copy": "NCERT Social Science · 249 questions"
+  },
+  {
+    "title": "Class8 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/social-science/class8/",
+    "copy": "NCERT Social Science · 291 questions"
+  },
+  {
+    "title": "Class9 Quiz",
+    "type": "Topic",
+    "url": "/quiz/ncert/social-science/class9/",
+    "copy": "NCERT Social Science · 287 questions"
+  },
+  {
+    "title": "Samacheer",
+    "type": "Exam",
+    "url": "/quiz/samacheer/",
+    "copy": "Tamil Nadu school curriculum quizzes"
+  },
+  {
+    "title": "Samacheer Biology",
+    "type": "Subject",
+    "url": "/quiz/samacheer/biology/",
+    "copy": "2 topics."
+  },
+  {
+    "title": "Class11 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/biology/class11/",
+    "copy": "Samacheer Biology · 1063 questions"
+  },
+  {
+    "title": "Class12 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/biology/class12/",
+    "copy": "Samacheer Biology · 997 questions"
+  },
+  {
+    "title": "Samacheer Chemistry",
+    "type": "Subject",
+    "url": "/quiz/samacheer/chemistry/",
+    "copy": "2 topics."
+  },
+  {
+    "title": "Class11 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/chemistry/class11/",
+    "copy": "Samacheer Chemistry · 508 questions"
+  },
+  {
+    "title": "Class12 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/chemistry/class12/",
+    "copy": "Samacheer Chemistry · 604 questions"
+  },
+  {
+    "title": "Samacheer Computer Science",
+    "type": "Subject",
+    "url": "/quiz/samacheer/computer/",
+    "copy": "7 topics."
+  },
+  {
+    "title": "Class10 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/computer/class10/",
+    "copy": "Samacheer Computer Science · 254 questions"
+  },
+  {
+    "title": "Class11 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/computer/class11/",
+    "copy": "Samacheer Computer Science · 506 questions"
+  },
+  {
+    "title": "Class12 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/computer/class12/",
+    "copy": "Samacheer Computer Science · 332 questions"
+  },
+  {
+    "title": "Class6 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/computer/class6/",
+    "copy": "Samacheer Computer Science · 134 questions"
+  },
+  {
+    "title": "Class7 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/computer/class7/",
+    "copy": "Samacheer Computer Science · 193 questions"
+  },
+  {
+    "title": "Class8 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/computer/class8/",
+    "copy": "Samacheer Computer Science · 194 questions"
+  },
+  {
+    "title": "Class9 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/computer/class9/",
+    "copy": "Samacheer Computer Science · 231 questions"
+  },
+  {
+    "title": "Samacheer Economy",
+    "type": "Subject",
+    "url": "/quiz/samacheer/economics/",
+    "copy": "2 topics."
+  },
+  {
+    "title": "Class11 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/economics/class11/",
+    "copy": "Samacheer Economy · 473 questions"
+  },
+  {
+    "title": "Class12 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/economics/class12/",
+    "copy": "Samacheer Economy · 431 questions"
+  },
+  {
+    "title": "Samacheer English",
+    "type": "Subject",
+    "url": "/quiz/samacheer/english/",
+    "copy": "7 topics."
+  },
+  {
+    "title": "Class10 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/english/class10/",
+    "copy": "Samacheer English · 913 questions"
+  },
+  {
+    "title": "Class11 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/english/class11/",
+    "copy": "Samacheer English · 792 questions"
+  },
+  {
+    "title": "Class12 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/english/class12/",
+    "copy": "Samacheer English · 823 questions"
+  },
+  {
+    "title": "Class6 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/english/class6/",
+    "copy": "Samacheer English · 878 questions"
+  },
+  {
+    "title": "Class7 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/english/class7/",
+    "copy": "Samacheer English · 877 questions"
+  },
+  {
+    "title": "Class8 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/english/class8/",
+    "copy": "Samacheer English · 835 questions"
+  },
+  {
+    "title": "Class9 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/english/class9/",
+    "copy": "Samacheer English · 837 questions"
+  },
+  {
+    "title": "Samacheer Geography",
+    "type": "Subject",
+    "url": "/quiz/samacheer/geography/",
+    "copy": "7 topics."
+  },
+  {
+    "title": "Class10 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/geography/class10/",
+    "copy": "Samacheer Geography · 215 questions"
+  },
+  {
+    "title": "Class11 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/geography/class11/",
+    "copy": "Samacheer Geography · 258 questions"
+  },
+  {
+    "title": "Class12 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/geography/class12/",
+    "copy": "Samacheer Geography · 459 questions"
+  },
+  {
+    "title": "Class6 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/geography/class6/",
+    "copy": "Samacheer Geography · 157 questions"
+  },
+  {
+    "title": "Class7 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/geography/class7/",
+    "copy": "Samacheer Geography · 218 questions"
+  },
+  {
+    "title": "Class8 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/geography/class8/",
+    "copy": "Samacheer Geography · 255 questions"
+  },
+  {
+    "title": "Class9 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/geography/class9/",
+    "copy": "Samacheer Geography · 260 questions"
+  },
+  {
+    "title": "Samacheer History",
+    "type": "Subject",
+    "url": "/quiz/samacheer/history/",
+    "copy": "7 topics."
+  },
+  {
+    "title": "Class10 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/history/class10/",
+    "copy": "Samacheer History · 523 questions"
+  },
+  {
+    "title": "Class11 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/history/class11/",
+    "copy": "Samacheer History · 361 questions"
+  },
+  {
+    "title": "Class12 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/history/class12/",
+    "copy": "Samacheer History · 540 questions"
+  },
+  {
+    "title": "Class6 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/history/class6/",
+    "copy": "Samacheer History · 365 questions"
+  },
+  {
+    "title": "Class7 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/history/class7/",
+    "copy": "Samacheer History · 375 questions"
+  },
+  {
+    "title": "Class8 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/history/class8/",
+    "copy": "Samacheer History · 429 questions"
+  },
+  {
+    "title": "Class9 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/history/class9/",
+    "copy": "Samacheer History · 561 questions"
+  },
+  {
+    "title": "Samacheer Mathematics",
+    "type": "Subject",
+    "url": "/quiz/samacheer/maths/",
+    "copy": "7 topics."
+  },
+  {
+    "title": "Class10 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/maths/class10/",
+    "copy": "Samacheer Mathematics · 300 questions"
+  },
+  {
+    "title": "Class11 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/maths/class11/",
+    "copy": "Samacheer Mathematics · 407 questions"
+  },
+  {
+    "title": "Class12 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/maths/class12/",
+    "copy": "Samacheer Mathematics · 410 questions"
+  },
+  {
+    "title": "Class6 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/maths/class6/",
+    "copy": "Samacheer Mathematics · 494 questions"
+  },
+  {
+    "title": "Class7 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/maths/class7/",
+    "copy": "Samacheer Mathematics · 517 questions"
+  },
+  {
+    "title": "Class8 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/maths/class8/",
+    "copy": "Samacheer Mathematics · 504 questions"
+  },
+  {
+    "title": "Class9 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/maths/class9/",
+    "copy": "Samacheer Mathematics · 368 questions"
+  },
+  {
+    "title": "Samacheer Physics",
+    "type": "Subject",
+    "url": "/quiz/samacheer/physics/",
+    "copy": "2 topics."
+  },
+  {
+    "title": "Class11 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/physics/class11/",
+    "copy": "Samacheer Physics · 359 questions"
+  },
+  {
+    "title": "Class12 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/physics/class12/",
+    "copy": "Samacheer Physics · 392 questions"
+  },
+  {
+    "title": "Samacheer Polity",
+    "type": "Subject",
+    "url": "/quiz/samacheer/polity/",
+    "copy": "7 topics."
+  },
+  {
+    "title": "Class10 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/polity/class10/",
+    "copy": "Samacheer Polity · 204 questions"
+  },
+  {
+    "title": "Class11 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/polity/class11/",
+    "copy": "Samacheer Polity · 222 questions"
+  },
+  {
+    "title": "Class12 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/polity/class12/",
+    "copy": "Samacheer Polity · 341 questions"
+  },
+  {
+    "title": "Class6 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/polity/class6/",
+    "copy": "Samacheer Polity · 89 questions"
+  },
+  {
+    "title": "Class7 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/polity/class7/",
+    "copy": "Samacheer Polity · 109 questions"
+  },
+  {
+    "title": "Class8 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/polity/class8/",
+    "copy": "Samacheer Polity · 178 questions"
+  },
+  {
+    "title": "Class9 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/polity/class9/",
+    "copy": "Samacheer Polity · 140 questions"
+  },
+  {
+    "title": "Samacheer Science",
+    "type": "Subject",
+    "url": "/quiz/samacheer/science/",
+    "copy": "5 topics."
+  },
+  {
+    "title": "Class10 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/science/class10/",
+    "copy": "Samacheer Science · 520 questions"
+  },
+  {
+    "title": "Class6 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/science/class6/",
+    "copy": "Samacheer Science · 452 questions"
+  },
+  {
+    "title": "Class7 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/science/class7/",
+    "copy": "Samacheer Science · 589 questions"
+  },
+  {
+    "title": "Class8 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/science/class8/",
+    "copy": "Samacheer Science · 531 questions"
+  },
+  {
+    "title": "Class9 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/science/class9/",
+    "copy": "Samacheer Science · 595 questions"
+  },
+  {
+    "title": "Samacheer Social Science",
+    "type": "Subject",
+    "url": "/quiz/samacheer/social-science/",
+    "copy": "5 topics."
+  },
+  {
+    "title": "Class10 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/social-science/class10/",
+    "copy": "Samacheer Social Science · 89 questions"
+  },
+  {
+    "title": "Class6 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/social-science/class6/",
+    "copy": "Samacheer Social Science · 138 questions"
+  },
+  {
+    "title": "Class7 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/social-science/class7/",
+    "copy": "Samacheer Social Science · 131 questions"
+  },
+  {
+    "title": "Class8 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/social-science/class8/",
+    "copy": "Samacheer Social Science · 174 questions"
+  },
+  {
+    "title": "Class9 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/social-science/class9/",
+    "copy": "Samacheer Social Science · 7 questions"
+  },
+  {
+    "title": "Samacheer Tamil",
+    "type": "Subject",
+    "url": "/quiz/samacheer/tamil/",
+    "copy": "7 topics."
+  },
+  {
+    "title": "Class10 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/tamil/class10/",
+    "copy": "Samacheer Tamil · 492 questions"
+  },
+  {
+    "title": "Class11 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/tamil/class11/",
+    "copy": "Samacheer Tamil · 161 questions"
+  },
+  {
+    "title": "Class12 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/tamil/class12/",
+    "copy": "Samacheer Tamil · 189 questions"
+  },
+  {
+    "title": "Class6 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/tamil/class6/",
+    "copy": "Samacheer Tamil · 652 questions"
+  },
+  {
+    "title": "Class7 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/tamil/class7/",
+    "copy": "Samacheer Tamil · 618 questions"
+  },
+  {
+    "title": "Class8 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/tamil/class8/",
+    "copy": "Samacheer Tamil · 615 questions"
+  },
+  {
+    "title": "Class9 Quiz",
+    "type": "Topic",
+    "url": "/quiz/samacheer/tamil/class9/",
+    "copy": "Samacheer Tamil · 620 questions"
+  },
+  {
+    "title": "UPSC",
+    "type": "Exam",
+    "url": "/quiz/upsc/",
+    "copy": "Union Public Service Commission prelims practice"
+  },
+  {
+    "title": "UPSC CSAT Comprehension",
+    "type": "Subject",
+    "url": "/quiz/upsc/csat-english/",
+    "copy": "2 topics."
+  },
+  {
+    "title": "Comprehension Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/csat-english/comprehension/",
+    "copy": "UPSC CSAT Comprehension · 764 questions"
+  },
+  {
+    "title": "Logical Deduction Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/csat-english/logical-deduction/",
+    "copy": "UPSC CSAT Comprehension · 692 questions"
+  },
+  {
+    "title": "UPSC CSAT Quantitative Aptitude",
+    "type": "Subject",
+    "url": "/quiz/upsc/csat-quant/",
+    "copy": "6 topics."
+  },
+  {
+    "title": "Data Sufficiency Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/csat-quant/data-sufficiency/",
+    "copy": "UPSC CSAT Quantitative Aptitude · 400 questions"
+  },
+  {
+    "title": "Logical Reasoning Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/csat-quant/logical-reasoning/",
+    "copy": "UPSC CSAT Quantitative Aptitude · 400 questions"
+  },
+  {
+    "title": "Number System Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/csat-quant/number-system/",
+    "copy": "UPSC CSAT Quantitative Aptitude · 400 questions"
+  },
+  {
+    "title": "Percentage Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/csat-quant/percentage/",
+    "copy": "UPSC CSAT Quantitative Aptitude · 400 questions"
+  },
+  {
+    "title": "Speed Distance Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/csat-quant/speed-distance/",
+    "copy": "UPSC CSAT Quantitative Aptitude · 400 questions"
+  },
+  {
+    "title": "Time Work Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/csat-quant/time-work/",
+    "copy": "UPSC CSAT Quantitative Aptitude · 400 questions"
+  },
+  {
+    "title": "UPSC Economy",
+    "type": "Subject",
+    "url": "/quiz/upsc/economics/",
+    "copy": "9 topics."
+  },
+  {
+    "title": "Agriculture Eco Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/economics/agriculture-eco/",
+    "copy": "UPSC Economy · 689 questions"
+  },
+  {
+    "title": "Budget Fiscal Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/economics/budget-fiscal/",
+    "copy": "UPSC Economy · 700 questions"
+  },
+  {
+    "title": "Economic Reforms Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/economics/economic-reforms/",
+    "copy": "UPSC Economy · 699 questions"
+  },
+  {
+    "title": "Industry Msme Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/economics/industry-msme/",
+    "copy": "UPSC Economy · 688 questions"
+  },
+  {
+    "title": "Inflation Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/economics/inflation/",
+    "copy": "UPSC Economy · 700 questions"
+  },
+  {
+    "title": "Money Banking Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/economics/money-banking/",
+    "copy": "UPSC Economy · 700 questions"
+  },
+  {
+    "title": "National Income Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/economics/national-income/",
+    "copy": "UPSC Economy · 654 questions"
+  },
+  {
+    "title": "Poverty Inclusion Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/economics/poverty-inclusion/",
+    "copy": "UPSC Economy · 692 questions"
+  },
+  {
+    "title": "Trade Balance Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/economics/trade-balance/",
+    "copy": "UPSC Economy · 553 questions"
+  },
+  {
+    "title": "UPSC Environment",
+    "type": "Subject",
+    "url": "/quiz/upsc/environment/",
+    "copy": "6 topics."
+  },
+  {
+    "title": "Biodiversity Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/environment/biodiversity/",
+    "copy": "UPSC Environment · 400 questions"
+  },
+  {
+    "title": "Climate Change Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/environment/climate-change/",
+    "copy": "UPSC Environment · 400 questions"
+  },
+  {
+    "title": "Ecology Basics Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/environment/ecology-basics/",
+    "copy": "UPSC Environment · 400 questions"
+  },
+  {
+    "title": "Env Laws Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/environment/env-laws/",
+    "copy": "UPSC Environment · 400 questions"
+  },
+  {
+    "title": "Pollution Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/environment/pollution/",
+    "copy": "UPSC Environment · 400 questions"
+  },
+  {
+    "title": "Protected Areas Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/environment/protected-areas/",
+    "copy": "UPSC Environment · 400 questions"
+  },
+  {
+    "title": "UPSC Geography",
+    "type": "Subject",
+    "url": "/quiz/upsc/geography/",
+    "copy": "10 topics."
+  },
+  {
+    "title": "Agriculture Geo Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/geography/agriculture-geo/",
+    "copy": "UPSC Geography · 460 questions"
+  },
+  {
+    "title": "Climate Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/geography/climate/",
+    "copy": "UPSC Geography · 460 questions"
+  },
+  {
+    "title": "Environment Eco Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/geography/environment-eco/",
+    "copy": "UPSC Geography · 400 questions"
+  },
+  {
+    "title": "Map Based Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/geography/map-based/",
+    "copy": "UPSC Geography · 400 questions"
+  },
+  {
+    "title": "Natural Resources Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/geography/natural-resources/",
+    "copy": "UPSC Geography · 400 questions"
+  },
+  {
+    "title": "Physical India Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/geography/physical-india/",
+    "copy": "UPSC Geography · 400 questions"
+  },
+  {
+    "title": "Physical World Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/geography/physical-world/",
+    "copy": "UPSC Geography · 400 questions"
+  },
+  {
+    "title": "Population Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/geography/population/",
+    "copy": "UPSC Geography · 400 questions"
+  },
+  {
+    "title": "Rivers Drainage Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/geography/rivers-drainage/",
+    "copy": "UPSC Geography · 400 questions"
+  },
+  {
+    "title": "Transport Infra Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/geography/transport-infra/",
+    "copy": "UPSC Geography · 400 questions"
+  },
+  {
+    "title": "UPSC History",
+    "type": "Subject",
+    "url": "/quiz/upsc/history/",
+    "copy": "11 topics."
+  },
+  {
+    "title": "1857 Revolt Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/history/1857-revolt/",
+    "copy": "UPSC History · 400 questions"
+  },
+  {
+    "title": "Ancient Kingdoms Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/history/ancient-kingdoms/",
+    "copy": "UPSC History · 400 questions"
+  },
+  {
+    "title": "Art Culture Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/history/art-culture/",
+    "copy": "UPSC History · 400 questions"
+  },
+  {
+    "title": "British Conquest Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/history/british-conquest/",
+    "copy": "UPSC History · 400 questions"
+  },
+  {
+    "title": "Gandhi Era Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/history/gandhi-era/",
+    "copy": "UPSC History · 400 questions"
+  },
+  {
+    "title": "Indus Valley Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/history/indus-valley/",
+    "copy": "UPSC History · 400 questions"
+  },
+  {
+    "title": "Medieval India Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/history/medieval-india/",
+    "copy": "UPSC History · 400 questions"
+  },
+  {
+    "title": "National Movement Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/history/national-movement/",
+    "copy": "UPSC History · 400 questions"
+  },
+  {
+    "title": "Post 1947 Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/history/post-1947/",
+    "copy": "UPSC History · 400 questions"
+  },
+  {
+    "title": "Prehistoric Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/history/prehistoric/",
+    "copy": "UPSC History · 400 questions"
+  },
+  {
+    "title": "World History Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/history/world-history/",
+    "copy": "UPSC History · 400 questions"
+  },
+  {
+    "title": "UPSC Polity",
+    "type": "Subject",
+    "url": "/quiz/upsc/polity/",
+    "copy": "10 topics."
+  },
+  {
+    "title": "Constitution Features Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/polity/constitution-features/",
+    "copy": "UPSC Polity · 400 questions"
+  },
+  {
+    "title": "Constitutional Bodies Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/polity/constitutional-bodies/",
+    "copy": "UPSC Polity · 400 questions"
+  },
+  {
+    "title": "DPSP Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/polity/dpsp/",
+    "copy": "UPSC Polity · 400 questions"
+  },
+  {
+    "title": "Executive Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/polity/executive/",
+    "copy": "UPSC Polity · 400 questions"
+  },
+  {
+    "title": "Federalism Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/polity/federalism/",
+    "copy": "UPSC Polity · 401 questions"
+  },
+  {
+    "title": "Fundamental Rights Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/polity/fundamental-rights/",
+    "copy": "UPSC Polity · 420 questions"
+  },
+  {
+    "title": "Int Relations Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/polity/int-relations/",
+    "copy": "UPSC Polity · 407 questions"
+  },
+  {
+    "title": "Judiciary Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/polity/judiciary/",
+    "copy": "UPSC Polity · 407 questions"
+  },
+  {
+    "title": "Local Govt Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/polity/local-govt/",
+    "copy": "UPSC Polity · 400 questions"
+  },
+  {
+    "title": "Parliament Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/polity/parliament/",
+    "copy": "UPSC Polity · 400 questions"
+  },
+  {
+    "title": "UPSC Science",
+    "type": "Subject",
+    "url": "/quiz/upsc/science/",
+    "copy": "8 topics."
+  },
+  {
+    "title": "Biology Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/science/biology/",
+    "copy": "UPSC Science · 400 questions"
+  },
+  {
+    "title": "Biotech Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/science/biotech/",
+    "copy": "UPSC Science · 400 questions"
+  },
+  {
+    "title": "Chemistry Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/science/chemistry/",
+    "copy": "UPSC Science · 400 questions"
+  },
+  {
+    "title": "Defence Tech Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/science/defence-tech/",
+    "copy": "UPSC Science · 400 questions"
+  },
+  {
+    "title": "Disease Health Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/science/disease-health/",
+    "copy": "UPSC Science · 400 questions"
+  },
+  {
+    "title": "Energy Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/science/energy/",
+    "copy": "UPSC Science · 400 questions"
+  },
+  {
+    "title": "Physics Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/science/physics/",
+    "copy": "UPSC Science · 400 questions"
+  },
+  {
+    "title": "Space Tech Quiz",
+    "type": "Topic",
+    "url": "/quiz/upsc/science/space-tech/",
+    "copy": "UPSC Science · 400 questions"
+  },
+  {
+    "title": "TNPSC",
+    "type": "Exam",
+    "url": "/quiz/tnpsc/",
+    "copy": "Tamil Nadu Public Service Commission practice"
+  },
+  {
+    "title": "TNPSC Economy",
+    "type": "Subject",
+    "url": "/quiz/tnpsc/economics/",
+    "copy": "10 topics."
+  },
+  {
+    "title": "Agriculture Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/economics/agriculture/",
+    "copy": "TNPSC Economy · 581 questions"
+  },
+  {
+    "title": "Banking Finance Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/economics/banking-finance/",
+    "copy": "TNPSC Economy · 644 questions"
+  },
+  {
+    "title": "Budget Taxation Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/economics/budget-taxation/",
+    "copy": "TNPSC Economy · 580 questions"
+  },
+  {
+    "title": "Current Schemes Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/economics/current-schemes/",
+    "copy": "TNPSC Economy · 580 questions"
+  },
+  {
+    "title": "Industry Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/economics/industry/",
+    "copy": "TNPSC Economy · 700 questions"
+  },
+  {
+    "title": "International Trade Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/economics/international-trade/",
+    "copy": "TNPSC Economy · 300 questions"
+  },
+  {
+    "title": "National Income Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/economics/national-income/",
+    "copy": "TNPSC Economy · 300 questions"
+  },
+  {
+    "title": "Planning Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/economics/planning/",
+    "copy": "TNPSC Economy · 300 questions"
+  },
+  {
+    "title": "Poverty Welfare Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/economics/poverty-welfare/",
+    "copy": "TNPSC Economy · 300 questions"
+  },
+  {
+    "title": "Tn Economy Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/economics/tn-economy/",
+    "copy": "TNPSC Economy · 300 questions"
+  },
+  {
+    "title": "TNPSC Geography",
+    "type": "Subject",
+    "url": "/quiz/tnpsc/geography/",
+    "copy": "11 topics."
+  },
+  {
+    "title": "Earth Universe Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/geography/earth-universe/",
+    "copy": "TNPSC Geography · 300 questions"
+  },
+  {
+    "title": "India Climate Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/geography/india-climate/",
+    "copy": "TNPSC Geography · 300 questions"
+  },
+  {
+    "title": "India Physical Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/geography/india-physical/",
+    "copy": "TNPSC Geography · 300 questions"
+  },
+  {
+    "title": "India Resources Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/geography/india-resources/",
+    "copy": "TNPSC Geography · 300 questions"
+  },
+  {
+    "title": "India Rivers Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/geography/india-rivers/",
+    "copy": "TNPSC Geography · 300 questions"
+  },
+  {
+    "title": "India Soils Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/geography/india-soils/",
+    "copy": "TNPSC Geography · 299 questions"
+  },
+  {
+    "title": "Tn Districts Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/geography/tn-districts/",
+    "copy": "TNPSC Geography · 300 questions"
+  },
+  {
+    "title": "Tn Geography Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/geography/tn-geography/",
+    "copy": "TNPSC Geography · 300 questions"
+  },
+  {
+    "title": "Transport Trade Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/geography/transport-trade/",
+    "copy": "TNPSC Geography · 300 questions"
+  },
+  {
+    "title": "World Geography Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/geography/world-geography/",
+    "copy": "TNPSC Geography · 300 questions"
+  },
+  {
+    "title": "World Oceans Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/geography/world-oceans/",
+    "copy": "TNPSC Geography · 300 questions"
+  },
+  {
+    "title": "TNPSC History",
+    "type": "Subject",
+    "url": "/quiz/tnpsc/history/",
+    "copy": "16 topics."
+  },
+  {
+    "title": "Art Culture Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/history/art-culture/",
+    "copy": "TNPSC History · 300 questions"
+  },
+  {
+    "title": "British Rule Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/history/british-rule/",
+    "copy": "TNPSC History · 300 questions"
+  },
+  {
+    "title": "Chola Pandya Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/history/chola-pandya/",
+    "copy": "TNPSC History · 300 questions"
+  },
+  {
+    "title": "Freedom Struggle Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/history/freedom-struggle/",
+    "copy": "TNPSC History · 300 questions"
+  },
+  {
+    "title": "Gupta Post Gupta Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/history/gupta-post-gupta/",
+    "copy": "TNPSC History · 300 questions"
+  },
+  {
+    "title": "Indus Valley Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/history/indus-valley/",
+    "copy": "TNPSC History · 300 questions"
+  },
+  {
+    "title": "Jainism Buddhism Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/history/jainism-buddhism/",
+    "copy": "TNPSC History · 300 questions"
+  },
+  {
+    "title": "Maratha Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/history/maratha/",
+    "copy": "TNPSC History · 300 questions"
+  },
+  {
+    "title": "Mauryan Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/history/mauryan/",
+    "copy": "TNPSC History · 307 questions"
+  },
+  {
+    "title": "Medieval India Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/history/medieval-india/",
+    "copy": "TNPSC History · 314 questions"
+  },
+  {
+    "title": "Mughal Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/history/mughal/",
+    "copy": "TNPSC History · 311 questions"
+  },
+  {
+    "title": "Post Independence Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/history/post-independence/",
+    "copy": "TNPSC History · 300 questions"
+  },
+  {
+    "title": "Social Reform Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/history/social-reform/",
+    "copy": "TNPSC History · 306 questions"
+  },
+  {
+    "title": "Tamil History Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/history/tamil-history/",
+    "copy": "TNPSC History · 322 questions"
+  },
+  {
+    "title": "Vedic Age Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/history/vedic-age/",
+    "copy": "TNPSC History · 300 questions"
+  },
+  {
+    "title": "Vijayanagara Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/history/vijayanagara/",
+    "copy": "TNPSC History · 300 questions"
+  },
+  {
+    "title": "TNPSC Mathematics",
+    "type": "Subject",
+    "url": "/quiz/tnpsc/maths/",
+    "copy": "13 topics."
+  },
+  {
+    "title": "Algebra Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/maths/algebra/",
+    "copy": "TNPSC Mathematics · 1963 questions"
+  },
+  {
+    "title": "Data Interpretation Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/maths/data-interpretation/",
+    "copy": "TNPSC Mathematics · 1962 questions"
+  },
+  {
+    "title": "Geometry Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/maths/geometry/",
+    "copy": "TNPSC Mathematics · 1773 questions"
+  },
+  {
+    "title": "Hcf Lcm Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/maths/hcf-lcm/",
+    "copy": "TNPSC Mathematics · 1828 questions"
+  },
+  {
+    "title": "Number System Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/maths/number-system/",
+    "copy": "TNPSC Mathematics · 1939 questions"
+  },
+  {
+    "title": "Percentage Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/maths/percentage/",
+    "copy": "TNPSC Mathematics · 1919 questions"
+  },
+  {
+    "title": "Profit Loss Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/maths/profit-loss/",
+    "copy": "TNPSC Mathematics · 1940 questions"
+  },
+  {
+    "title": "Ratio Proportion Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/maths/ratio-proportion/",
+    "copy": "TNPSC Mathematics · 1393 questions"
+  },
+  {
+    "title": "Series Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/maths/series/",
+    "copy": "TNPSC Mathematics · 1642 questions"
+  },
+  {
+    "title": "Simple Interest Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/maths/simple-interest/",
+    "copy": "TNPSC Mathematics · 1677 questions"
+  },
+  {
+    "title": "Simplification Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/maths/simplification/",
+    "copy": "TNPSC Mathematics · 1110 questions"
+  },
+  {
+    "title": "Time Distance Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/maths/time-distance/",
+    "copy": "TNPSC Mathematics · 807 questions"
+  },
+  {
+    "title": "Time Work Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/maths/time-work/",
+    "copy": "TNPSC Mathematics · 428 questions"
+  },
+  {
+    "title": "TNPSC Polity",
+    "type": "Subject",
+    "url": "/quiz/tnpsc/polity/",
+    "copy": "12 topics."
+  },
+  {
+    "title": "Constitution Making Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/polity/constitution-making/",
+    "copy": "TNPSC Polity · 300 questions"
+  },
+  {
+    "title": "DPSP Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/polity/dpsp/",
+    "copy": "TNPSC Polity · 300 questions"
+  },
+  {
+    "title": "Elections Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/polity/elections/",
+    "copy": "TNPSC Polity · 300 questions"
+  },
+  {
+    "title": "Fundamental Rights Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/polity/fundamental-rights/",
+    "copy": "TNPSC Polity · 300 questions"
+  },
+  {
+    "title": "Governance Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/polity/governance/",
+    "copy": "TNPSC Polity · 300 questions"
+  },
+  {
+    "title": "Judiciary Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/polity/judiciary/",
+    "copy": "TNPSC Polity · 300 questions"
+  },
+  {
+    "title": "Local Bodies Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/polity/local-bodies/",
+    "copy": "TNPSC Polity · 300 questions"
+  },
+  {
+    "title": "Parliament Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/polity/parliament/",
+    "copy": "TNPSC Polity · 300 questions"
+  },
+  {
+    "title": "Preamble Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/polity/preamble/",
+    "copy": "TNPSC Polity · 280 questions"
+  },
+  {
+    "title": "President Pm Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/polity/president-pm/",
+    "copy": "TNPSC Polity · 269 questions"
+  },
+  {
+    "title": "State Govt Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/polity/state-govt/",
+    "copy": "TNPSC Polity · 211 questions"
+  },
+  {
+    "title": "Tn Polity Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/polity/tn-polity/",
+    "copy": "TNPSC Polity · 137 questions"
+  },
+  {
+    "title": "TNPSC Science",
+    "type": "Subject",
+    "url": "/quiz/tnpsc/science/",
+    "copy": "12 topics."
+  },
+  {
+    "title": "Biology Cells Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/science/biology-cells/",
+    "copy": "TNPSC Science · 70 questions"
+  },
+  {
+    "title": "Biology Human Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/science/biology-human/",
+    "copy": "TNPSC Science · 72 questions"
+  },
+  {
+    "title": "Biology Plants Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/science/biology-plants/",
+    "copy": "TNPSC Science · 60 questions"
+  },
+  {
+    "title": "Chemistry Acids Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/science/chemistry-acids/",
+    "copy": "TNPSC Science · 109 questions"
+  },
+  {
+    "title": "Chemistry Matter Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/science/chemistry-matter/",
+    "copy": "TNPSC Science · 78 questions"
+  },
+  {
+    "title": "Chemistry Reactions Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/science/chemistry-reactions/",
+    "copy": "TNPSC Science · 60 questions"
+  },
+  {
+    "title": "Computer Basics Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/science/computer-basics/",
+    "copy": "TNPSC Science · 60 questions"
+  },
+  {
+    "title": "Environment Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/science/environment/",
+    "copy": "TNPSC Science · 80 questions"
+  },
+  {
+    "title": "Physics Electricity Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/science/physics-electricity/",
+    "copy": "TNPSC Science · 78 questions"
+  },
+  {
+    "title": "Physics Motion Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/science/physics-motion/",
+    "copy": "TNPSC Science · 70 questions"
+  },
+  {
+    "title": "Physics Optics Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/science/physics-optics/",
+    "copy": "TNPSC Science · 92 questions"
+  },
+  {
+    "title": "Science Tech Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/science/science-tech/",
+    "copy": "TNPSC Science · 87 questions"
+  },
+  {
+    "title": "TNPSC Tamil",
+    "type": "Subject",
+    "url": "/quiz/tnpsc/tamil/",
+    "copy": "10 topics."
+  },
+  {
+    "title": "Bhakti Literature Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/tamil/bhakti-literature/",
+    "copy": "TNPSC Tamil · 70 questions"
+  },
+  {
+    "title": "Epic Literature Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/tamil/epic-literature/",
+    "copy": "TNPSC Tamil · 70 questions"
+  },
+  {
+    "title": "Ezhuthu Ilakkanam Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/tamil/ezhuthu-ilakkanam/",
+    "copy": "TNPSC Tamil · 90 questions"
+  },
+  {
+    "title": "Modern Tamil Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/tamil/modern-tamil/",
+    "copy": "TNPSC Tamil · 67 questions"
+  },
+  {
+    "title": "Porul Ilakkanam Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/tamil/porul-ilakkanam/",
+    "copy": "TNPSC Tamil · 80 questions"
+  },
+  {
+    "title": "Post Sangam Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/tamil/post-sangam/",
+    "copy": "TNPSC Tamil · 60 questions"
+  },
+  {
+    "title": "Sangam Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/tamil/sangam/",
+    "copy": "TNPSC Tamil · 70 questions"
+  },
+  {
+    "title": "Sol Ilakkanam Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/tamil/sol-ilakkanam/",
+    "copy": "TNPSC Tamil · 90 questions"
+  },
+  {
+    "title": "Thirukkural Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/tamil/thirukkural/",
+    "copy": "TNPSC Tamil · 80 questions"
+  },
+  {
+    "title": "Tolkappiyam Quiz",
+    "type": "Topic",
+    "url": "/quiz/tnpsc/tamil/tolkappiyam/",
+    "copy": "TNPSC Tamil · 80 questions"
+  },
+  {
+    "title": "SSC",
+    "type": "Exam",
+    "url": "/quiz/ssc/",
+    "copy": "CGL, CHSL, MTS, CPO and GD practice"
+  },
+  {
+    "title": "SSC Economy",
+    "type": "Subject",
+    "url": "/quiz/ssc/economy/",
+    "copy": "2 topics."
+  },
+  {
+    "title": "Banking Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/economy/banking/",
+    "copy": "SSC Economy · 400 questions"
+  },
+  {
+    "title": "Economy Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/economy/economy/",
+    "copy": "SSC Economy · 410 questions"
+  },
+  {
+    "title": "SSC English",
+    "type": "Subject",
+    "url": "/quiz/ssc/english/",
+    "copy": "8 topics."
+  },
+  {
+    "title": "Cloze Test Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/english/cloze-test/",
+    "copy": "SSC English · 400 questions"
+  },
+  {
+    "title": "Comprehension Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/english/comprehension/",
+    "copy": "SSC English · 400 questions"
+  },
+  {
+    "title": "Fill Blanks Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/english/fill-blanks/",
+    "copy": "SSC English · 400 questions"
+  },
+  {
+    "title": "Grammar Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/english/grammar/",
+    "copy": "SSC English · 400 questions"
+  },
+  {
+    "title": "One Word Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/english/one-word/",
+    "copy": "SSC English · 400 questions"
+  },
+  {
+    "title": "Sentence Correction Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/english/sentence-correction/",
+    "copy": "SSC English · 400 questions"
+  },
+  {
+    "title": "Synonyms Antonyms Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/english/synonyms-antonyms/",
+    "copy": "SSC English · 109 questions"
+  },
+  {
+    "title": "Vocabulary Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/english/vocabulary/",
+    "copy": "SSC English · 400 questions"
+  },
+  {
+    "title": "SSC Geography",
+    "type": "Subject",
+    "url": "/quiz/ssc/geography/",
+    "copy": "3 topics."
+  },
+  {
+    "title": "Environment Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/geography/environment/",
+    "copy": "SSC Geography · 412 questions"
+  },
+  {
+    "title": "India Geo Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/geography/india-geo/",
+    "copy": "SSC Geography · 433 questions"
+  },
+  {
+    "title": "World Geo Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/geography/world-geo/",
+    "copy": "SSC Geography · 149 questions"
+  },
+  {
+    "title": "SSC History",
+    "type": "Subject",
+    "url": "/quiz/ssc/history/",
+    "copy": "4 topics."
+  },
+  {
+    "title": "Ancient Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/history/ancient/",
+    "copy": "SSC History · 400 questions"
+  },
+  {
+    "title": "Medieval Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/history/medieval/",
+    "copy": "SSC History · 400 questions"
+  },
+  {
+    "title": "Modern Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/history/modern/",
+    "copy": "SSC History · 400 questions"
+  },
+  {
+    "title": "World Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/history/world/",
+    "copy": "SSC History · 400 questions"
+  },
+  {
+    "title": "SSC Polity",
+    "type": "Subject",
+    "url": "/quiz/ssc/polity/",
+    "copy": "3 topics."
+  },
+  {
+    "title": "Constitution Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/polity/constitution/",
+    "copy": "SSC Polity · 701 questions"
+  },
+  {
+    "title": "Current GK Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/polity/current-gk/",
+    "copy": "SSC Polity · 421 questions"
+  },
+  {
+    "title": "Governance Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/polity/governance/",
+    "copy": "SSC Polity · 424 questions"
+  },
+  {
+    "title": "SSC Quantitative Aptitude",
+    "type": "Subject",
+    "url": "/quiz/ssc/quant/",
+    "copy": "12 topics."
+  },
+  {
+    "title": "Algebra Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/quant/algebra/",
+    "copy": "SSC Quantitative Aptitude · 1502 questions"
+  },
+  {
+    "title": "Geometry Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/quant/geometry/",
+    "copy": "SSC Quantitative Aptitude · 1243 questions"
+  },
+  {
+    "title": "Number System Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/quant/number-system/",
+    "copy": "SSC Quantitative Aptitude · 2787 questions"
+  },
+  {
+    "title": "Percentage Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/quant/percentage/",
+    "copy": "SSC Quantitative Aptitude · 3415 questions"
+  },
+  {
+    "title": "Profit Loss Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/quant/profit-loss/",
+    "copy": "SSC Quantitative Aptitude · 3493 questions"
+  },
+  {
+    "title": "Ratio Proportion Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/quant/ratio-proportion/",
+    "copy": "SSC Quantitative Aptitude · 3402 questions"
+  },
+  {
+    "title": "SI CI Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/quant/si-ci/",
+    "copy": "SSC Quantitative Aptitude · 3210 questions"
+  },
+  {
+    "title": "Simplification Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/quant/simplification/",
+    "copy": "SSC Quantitative Aptitude · 267 questions"
+  },
+  {
+    "title": "Speed Distance Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/quant/speed-distance/",
+    "copy": "SSC Quantitative Aptitude · 1523 questions"
+  },
+  {
+    "title": "Statistics Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/quant/statistics/",
+    "copy": "SSC Quantitative Aptitude · 1302 questions"
+  },
+  {
+    "title": "Time Work Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/quant/time-work/",
+    "copy": "SSC Quantitative Aptitude · 1776 questions"
+  },
+  {
+    "title": "Trigonometry Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/quant/trigonometry/",
+    "copy": "SSC Quantitative Aptitude · 1319 questions"
+  },
+  {
+    "title": "SSC Reasoning",
+    "type": "Subject",
+    "url": "/quiz/ssc/reasoning/",
+    "copy": "9 topics."
+  },
+  {
+    "title": "Analogy Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/reasoning/analogy/",
+    "copy": "SSC Reasoning · 539 questions"
+  },
+  {
+    "title": "Blood Relations Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/reasoning/blood-relations/",
+    "copy": "SSC Reasoning · 500 questions"
+  },
+  {
+    "title": "Coding Decoding Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/reasoning/coding-decoding/",
+    "copy": "SSC Reasoning · 640 questions"
+  },
+  {
+    "title": "Direction Sense Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/reasoning/direction-sense/",
+    "copy": "SSC Reasoning · 500 questions"
+  },
+  {
+    "title": "Matrix Puzzle Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/reasoning/matrix-puzzle/",
+    "copy": "SSC Reasoning · 500 questions"
+  },
+  {
+    "title": "Non Verbal Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/reasoning/non-verbal/",
+    "copy": "SSC Reasoning · 500 questions"
+  },
+  {
+    "title": "Series Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/reasoning/series/",
+    "copy": "SSC Reasoning · 540 questions"
+  },
+  {
+    "title": "Syllogism Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/reasoning/syllogism/",
+    "copy": "SSC Reasoning · 500 questions"
+  },
+  {
+    "title": "Venn Diagram Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/reasoning/venn-diagram/",
+    "copy": "SSC Reasoning · 500 questions"
+  },
+  {
+    "title": "SSC Science",
+    "type": "Subject",
+    "url": "/quiz/ssc/science/",
+    "copy": "4 topics."
+  },
+  {
+    "title": "Biology Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/science/biology/",
+    "copy": "SSC Science · 284 questions"
+  },
+  {
+    "title": "Chemistry Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/science/chemistry/",
+    "copy": "SSC Science · 1339 questions"
+  },
+  {
+    "title": "Physics Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/science/physics/",
+    "copy": "SSC Science · 1118 questions"
+  },
+  {
+    "title": "Science Tech Quiz",
+    "type": "Topic",
+    "url": "/quiz/ssc/science/science-tech/",
+    "copy": "SSC Science · 417 questions"
+  },
+  {
+    "title": "Railway",
+    "type": "Exam",
+    "url": "/quiz/rrb/",
+    "copy": "RRB NTPC, Group D, ALP and JE practice"
+  },
+  {
+    "title": "Railway General Aware",
+    "type": "Subject",
+    "url": "/quiz/rrb/general-aware/",
+    "copy": "2 topics."
+  },
+  {
+    "title": "Current Affairs Quiz",
+    "type": "Topic",
+    "url": "/quiz/rrb/general-aware/current-affairs/",
+    "copy": "Railway General Aware · 5 questions"
+  },
+  {
+    "title": "Sports Awards Quiz",
+    "type": "Topic",
+    "url": "/quiz/rrb/general-aware/sports-awards/",
+    "copy": "Railway General Aware · 3 questions"
+  },
+  {
+    "title": "Railway Mathematics",
+    "type": "Subject",
+    "url": "/quiz/rrb/maths/",
+    "copy": "6 topics."
+  },
+  {
+    "title": "Algebra Quiz",
+    "type": "Topic",
+    "url": "/quiz/rrb/maths/algebra/",
+    "copy": "Railway Mathematics · 2039 questions"
+  },
+  {
+    "title": "Arithmetic Quiz",
+    "type": "Topic",
+    "url": "/quiz/rrb/maths/arithmetic/",
+    "copy": "Railway Mathematics · 1645 questions"
+  },
+  {
+    "title": "Geometry Quiz",
+    "type": "Topic",
+    "url": "/quiz/rrb/maths/geometry/",
+    "copy": "Railway Mathematics · 1864 questions"
+  },
+  {
+    "title": "Number System Quiz",
+    "type": "Topic",
+    "url": "/quiz/rrb/maths/number-system/",
+    "copy": "Railway Mathematics · 3093 questions"
+  },
+  {
+    "title": "Statistics Quiz",
+    "type": "Topic",
+    "url": "/quiz/rrb/maths/statistics/",
+    "copy": "Railway Mathematics · 3 questions"
+  },
+  {
+    "title": "Time Work Quiz",
+    "type": "Topic",
+    "url": "/quiz/rrb/maths/time-work/",
+    "copy": "Railway Mathematics · 1893 questions"
+  },
+  {
+    "title": "Railway Polity",
+    "type": "Subject",
+    "url": "/quiz/rrb/polity/",
+    "copy": "1 topics."
+  },
+  {
+    "title": "Polity Quiz",
+    "type": "Topic",
+    "url": "/quiz/rrb/polity/polity/",
+    "copy": "Railway Polity · 25 questions"
+  },
+  {
+    "title": "Railway Reasoning",
+    "type": "Subject",
+    "url": "/quiz/rrb/reasoning/",
+    "copy": "3 topics."
+  },
+  {
+    "title": "Coding Quiz",
+    "type": "Topic",
+    "url": "/quiz/rrb/reasoning/coding/",
+    "copy": "Railway Reasoning · 109 questions"
+  },
+  {
+    "title": "Direction Quiz",
+    "type": "Topic",
+    "url": "/quiz/rrb/reasoning/direction/",
+    "copy": "Railway Reasoning · 2 questions"
+  },
+  {
+    "title": "Series Quiz",
+    "type": "Topic",
+    "url": "/quiz/rrb/reasoning/series/",
+    "copy": "Railway Reasoning · 40 questions"
+  },
+  {
+    "title": "Railway Science",
+    "type": "Subject",
+    "url": "/quiz/rrb/science/",
+    "copy": "3 topics."
+  },
+  {
+    "title": "Biology Quiz",
+    "type": "Topic",
+    "url": "/quiz/rrb/science/biology/",
+    "copy": "Railway Science · 8 questions"
+  },
+  {
+    "title": "Chemistry Quiz",
+    "type": "Topic",
+    "url": "/quiz/rrb/science/chemistry/",
+    "copy": "Railway Science · 6 questions"
+  },
+  {
+    "title": "Physics Quiz",
+    "type": "Topic",
+    "url": "/quiz/rrb/science/physics/",
+    "copy": "Railway Science · 19 questions"
+  }
+]
