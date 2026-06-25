@@ -3,7 +3,7 @@ title: India Has More Educational Content Than Ever. So Why Are Learning Gaps St
 slug: india-learning-crisis
 description: India has more lessons, videos, PDFs and test prep than ever before. The real crisis is not access to content. It is consistency, practice, feedback and revision.
 publishedDate: 2026-06-25
-author: MindGains Team
+author: Ragul Arvind
 readingTime: 8 min read
 heroImage: /assets/blog/blog1.jpeg
 heroAlt: A premium MindGains illustration showing Indian learners, digital content, quizzes and a glowing learning path.

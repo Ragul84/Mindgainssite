@@ -25,21 +25,22 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <link rel="manifest" href="/site.webmanifest" />
 <meta name="theme-color" content="#37e0ff" />
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"India Has More Educational Content Than Ever. So Why Are Learning Gaps Still Massive?","description":"India has more lessons, videos, PDFs and test prep than ever before. The real crisis is not access to content. It is consistency, practice, feedback and revision.","image":"https://mindgains.ai/assets/blog/blog1.jpeg","datePublished":"2026-06-25","dateModified":"2026-06-25","author":{"@type":"Organization","name":"MindGains Team"},"publisher":{"@type":"Organization","name":"MindGains","logo":{"@type":"ImageObject","url":"https://mindgains.ai/assets/icons/mindgains-logo-512.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mindgains.ai/blog/india-learning-crisis"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mindgains.ai/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://mindgains.ai/blog/"},{"@type":"ListItem","position":3,"name":"India Has More Educational Content Than Ever. So Why Are Learning Gaps Still Massive?","item":"https://mindgains.ai/blog/india-learning-crisis"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"India Has More Educational Content Than Ever. So Why Are Learning Gaps Still Massive?","description":"India has more lessons, videos, PDFs and test prep than ever before. The real crisis is not access to content. It is consistency, practice, feedback and revision.","image":"https://mindgains.ai/assets/blog/blog1.jpeg","datePublished":"2026-06-25","dateModified":"2026-06-25","author":{"@type":"Person","name":"Ragul Arvind"},"publisher":{"@type":"Organization","name":"MindGains","logo":{"@type":"ImageObject","url":"https://mindgains.ai/assets/icons/mindgains-logo-512.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://mindgains.ai/blog/india-learning-crisis"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mindgains.ai/"},{"@type":"ListItem","position":2,"name":"Editorial","item":"https://mindgains.ai/blog/"},{"@type":"ListItem","position":3,"name":"India Has More Educational Content Than Ever. So Why Are Learning Gaps Still Massive?","item":"https://mindgains.ai/blog/india-learning-crisis"}]}</script>
 </head>
 <body>
 <div class="bg"></div>
+<div class="reading-progress" aria-hidden="true"><span></span></div>
 <header class="site-nav">
   <a class="brand" href="/"><span></span>MindGains</a>
-  <nav><a href="/blog/">Blog</a><a href="/quiz/">Quiz Hub</a><a href="/#join">Waitlist</a></nav>
+  <nav><a href="/blog/">Editorial</a><a href="/quiz/">Quiz Hub</a><a href="/#join">Waitlist</a></nav>
 </header>
 <main><section class="blog-hero">
-    <div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/blog/">Blog</a></div>
-    <p class="eyebrow">MindGains Blog</p>
+    <div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/blog/">Editorial</a></div>
+    <p class="eyebrow">MindGains Editorial</p>
     <h1>India Has More Educational Content Than Ever. So Why Are Learning Gaps Still Massive?</h1>
     <p class="dek">India has more lessons, videos, PDFs and test prep than ever before. The real crisis is not access to content. It is consistency, practice, feedback and revision.</p>
-    <div class="meta-row"><span>MindGains Team</span><span>25 June 2026</span><span>8 min read</span></div>
+    <div class="meta-row"><span>MindGains Editorial</span><span>Ragul Arvind</span><span>Published June 25, 2026</span><span>8 min read</span></div>
   </section>
   <figure class="hero-image"><img src="/assets/blog/blog1.jpeg" alt="A premium MindGains illustration showing Indian learners, digital content, quizzes and a glowing learning path." width="1600" height="900" /></figure>
   <div class="article-wrap">
@@ -114,9 +115,16 @@
 <p>The next challenge is turning that content into consistent learning.</p>
       <section class="related"><h2>Related Quizzes</h2><div class="quiz-links"><a href="https://mindgains.ai/quiz/upsc/polity/fundamental-rights/">Fundamental Rights Quiz</a><a href="https://mindgains.ai/quiz/tnpsc/history/freedom-struggle/">Freedom Struggle Quiz</a><a href="https://mindgains.ai/quiz/ncert/science/class10/">Class 10 Quiz</a></div></section>
       <section class="cta"><p class="eyebrow">Continue Your Learning Journey</p><h2>Make Learning a Daily Habit.</h2><p>Join the MindGains Early Access Waitlist.</p><a class="button" href="/#join">Join the Waitlist</a></section>
-      <nav class="post-nav"><div>Previous<br />More articles coming soon</div><div>Next<br />More articles coming soon</div></nav>
+      
     </article>
     <aside class="side"><h2>Practice after reading</h2><p>Turn ideas into recall with MindGains public quizzes.</p><a href="/quiz/">Open Quiz Hub</a></aside>
   </div></main>
+<script>
+const progress=document.querySelector('.reading-progress span');
+function updateReadingProgress(){const doc=document.documentElement;const max=doc.scrollHeight-doc.clientHeight;progress.style.transform='scaleX('+(max>0?window.scrollY/max:0)+')';}
+updateReadingProgress();
+window.addEventListener('scroll',updateReadingProgress,{passive:true});
+window.addEventListener('resize',updateReadingProgress);
+</script>
 </body>
 </html>
