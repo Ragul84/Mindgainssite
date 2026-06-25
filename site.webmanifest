@@ -1,7 +1,7 @@
 {
   "name": "MindGains",
   "short_name": "MindGains",
-  "description": "India's daily learning habit",
+  "description": "AI-powered learning for Indian students, competitive exam aspirants, and lifelong learners building a daily learning habit.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

@@ -5,7 +5,7 @@ description: India has more lessons, videos, PDFs and test prep than ever before
 publishedDate: 2026-06-25
 author: MindGains Team
 readingTime: 8 min read
-heroImage: /assets/blog/india-learning-crisis.png
+heroImage: /assets/blog/blog1.jpeg
 heroAlt: A premium MindGains illustration showing Indian learners, digital content, quizzes and a glowing learning path.
 relatedQuizzes: https://mindgains.ai/quiz/upsc/polity/fundamental-rights/|https://mindgains.ai/quiz/tnpsc/history/freedom-struggle/|https://mindgains.ai/quiz/ncert/science/class10/
 ---
