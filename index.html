@@ -50,7 +50,7 @@
   .brand{display:flex;align-items:center;gap:9px;font-weight:600;font-size:18px;letter-spacing:.2px}
   .brand .o{width:9px;height:9px;border-radius:50%;background:linear-gradient(135deg,var(--glow),var(--cy));box-shadow:0 0 16px var(--glow)}
   .tag{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#c9d2e3;border:1px solid rgba(255,255,255,.16);padding:7px 13px;border-radius:999px}
-  .nav-links{display:flex;align-items:center;gap:12px;font-size:13px;color:#c9d2e3}
+  .nav-links{display:flex;align-items:center;gap:12px;font-size:13px;color:#c9d2e3;flex-wrap:wrap;justify-content:flex-end}
   .nav-links a{color:#dffbff;text-decoration:none;border:1px solid rgba(55,224,255,.28);background:rgba(55,224,255,.08);padding:8px 12px;border-radius:999px;transition:.18s}
   .nav-links a:hover{border-color:rgba(55,224,255,.65);background:rgba(55,224,255,.14)}
 
@@ -151,6 +151,7 @@
     .quiz-option{font-size:13px;padding:11px 12px}
     .quiz-actions{gap:8px}
     .glass-btn{font-size:13px;padding:12px 13px}
+    .nav-links a:nth-child(1),.nav-links a:nth-child(2),.nav-links a:nth-child(3){display:none}
   }
 </style>
 <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -171,7 +172,7 @@
 
 <nav>
   <div class="brand">MindGains</div>
-  <div class="nav-links"><a href="/blog/">Editorial</a><a href="/quiz/">Quiz Hub</a></div>
+  <div class="nav-links"><a href="/daily-dose/">Daily Dose</a><a href="/study-lab/">Study Lab</a><a href="/misa/">MISA</a><a href="/blog/">Editorial</a><a href="/quiz/">Quiz Hub</a></div>
 </nav>
 
 <div class="panel">

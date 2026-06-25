@@ -383,6 +383,9 @@
   <url><loc>https://mindgains.ai/quiz/rrb/science/biology/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://mindgains.ai/quiz/rrb/science/chemistry/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://mindgains.ai/quiz/rrb/science/physics/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mindgains.ai/daily-dose/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mindgains.ai/study-lab/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mindgains.ai/misa/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://mindgains.ai/blog/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://mindgains.ai/blog/india-learning-crisis</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
 </urlset>
