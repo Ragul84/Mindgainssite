@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://mindgainssite.pages.dev/sitemap.xml
+Sitemap: https://mindgains.ai/sitemap.xml

@@ -4,7 +4,7 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
 const ENV_PATH = process.env.MINDGAINS_ENV || 'D:/mindwhite/.env';
-const SITE_URL = (process.env.SITE_URL || 'https://mindgainssite.pages.dev').replace(/\/$/, '');
+const SITE_URL = (process.env.BASE_URL || process.env.SITE_URL || 'https://mindgains.ai').replace(/\/$/, '');
 
 function readEnv(file) {
   const out = {};
@@ -155,6 +155,15 @@ function canonical(pathname) {
   return SITE_URL + pathname;
 }
 
+function iconMeta() {
+  return `<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#37e0ff" />`;
+}
+
 function pageShell({ title, description, pathname, body, crumbs = [] }) {
   const url = canonical(pathname);
   const crumbItems = [{ name: 'Home', url: SITE_URL + '/' }, { name: 'Quiz', url: SITE_URL + '/quiz/' }, ...crumbs];
@@ -189,6 +198,7 @@ function pageShell({ title, description, pathname, body, crumbs = [] }) {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/assets/quiz-hub.css" />
+${iconMeta()}
 <script type="application/ld+json">${JSON.stringify(orgJson)}</script>
 <script type="application/ld+json">${JSON.stringify(breadcrumbJson)}</script>
 </head>
