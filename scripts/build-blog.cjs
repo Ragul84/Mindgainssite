@@ -220,7 +220,7 @@ function articlePage(post, prev, next) {
   <figure class="hero-image"><img src="${attr(post.heroImage)}" alt="${attr(post.heroAlt || post.title)}" width="1600" height="900" /></figure>
   <div class="article-wrap">
     <article class="article">${markdownToHtml(post.body)}
-      <section class="related"><h2>Practice Next</h2><p>Turn this idea into recall with related quizzes, then continue the learning loop inside MindGains.</p><div class="quiz-links">${related}<a href="/daily-dose/">Continue with Daily Dose</a><a href="/study-lab/">Generate revision in Study Lab</a></div></section>
+      <section class="related"><h2>Practice Next</h2><p>Turn this idea into recall with related quizzes, then continue the learning loop inside MindGains.</p><div class="quiz-links">${related}<a href="/upsc/">Explore UPSC AI learning hub</a><a href="/tnpsc/">Explore TNPSC AI learning hub</a><a href="/ncert/">Explore NCERT study hub</a><a href="/daily-dose/">Continue with Daily Dose</a><a href="/study-lab/">Generate revision in Study Lab</a></div></section>
       <section class="cta"><p class="eyebrow">Article &rarr; Quiz &rarr; App</p><h2>Make Learning a Daily Habit.</h2><p>Join the MindGains Early Access Waitlist to connect articles, quizzes, Daily Dose, Study Lab and mistake revision in one daily loop.</p><a class="button" href="/#join">Join the Waitlist</a></section>
       ${postNav}
     </article>

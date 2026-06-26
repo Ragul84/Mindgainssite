@@ -143,6 +143,12 @@
   .editorial-teaser a{color:#dffbff;text-decoration:none;font-size:12px}
   @media (max-width:860px){.editorial-teaser{display:none}}
 
+
+  .exam-teaser{position:fixed;left:30px;bottom:154px;z-index:24;width:min(330px,calc(100vw - 60px));border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:16px;background:rgba(5,6,10,.52);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);box-shadow:0 18px 60px rgba(0,0,0,.34)}
+  .exam-teaser .k{font-size:10px;letter-spacing:1.7px;text-transform:uppercase;color:#67e8f9;font-weight:700;margin-bottom:10px}
+  .exam-links{display:flex;flex-wrap:wrap;gap:8px}.exam-links a{color:#dffbff;text-decoration:none;font-size:12px;border:1px solid rgba(55,224,255,.22);border-radius:999px;padding:7px 9px;background:rgba(55,224,255,.08)}
+  @media (max-width:860px){.exam-teaser{display:none}}
+
   @media (max-width:560px){
     html,body{overflow:hidden}
     nav{padding:14px 16px;align-items:flex-start}
@@ -190,8 +196,10 @@
 
 <nav>
   <div class="brand">MindGains</div>
-  <div class="nav-links"><a href="/daily-dose/">Daily Dose</a><a href="/study-lab/">Study Lab</a><a href="/misa/">MISA</a><a href="/editorial/">Editorial</a><a href="/quiz/">Quiz Hub</a></div>
+  <div class="nav-links"><a href="/upsc/">UPSC</a><a href="/tnpsc/">TNPSC</a><a href="/daily-dose/">Daily Dose</a><a href="/study-lab/">Study Lab</a><a href="/misa/">MISA</a><a href="/editorial/">Editorial</a><a href="/quiz/">Quiz Hub</a></div>
 </nav>
+
+<aside class="exam-teaser"><div class="k">Explore by Exam</div><div class="exam-links"><a href="/upsc/">UPSC</a><a href="/tnpsc/">TNPSC</a><a href="/ssc/">SSC</a><a href="/ncert/">NCERT</a><a href="/samacheer/">Samacheer</a></div></aside>
 
 <aside class="editorial-teaser"><div class="k">Latest from Editorial</div><h2>India Has More Educational Content Than Ever. So Why Are Learning Gaps Still Massive?</h2><a href="/editorial/">View latest insights &rarr;</a></aside>
 

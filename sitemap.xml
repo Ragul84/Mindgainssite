@@ -394,5 +394,10 @@
   <url><loc>https://mindgains.ai/editorial/ai-in-education/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://mindgains.ai/editorial/daily-learning/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://mindgains.ai/editorial/quiz-practice/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mindgains.ai/upsc/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mindgains.ai/tnpsc/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mindgains.ai/ssc/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mindgains.ai/ncert/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mindgains.ai/samacheer/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://mindgains.ai/blog/india-learning-crisis/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 </urlset>
