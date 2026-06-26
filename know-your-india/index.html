@@ -27,6 +27,7 @@
 <meta name="theme-color" content="#37e0ff" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Know Your India","description":"Explore India facts, constitution, states, rivers, history and civic knowledge with MindGains.","url":"https://mindgains.ai/know-your-india/","isPartOf":{"@type":"WebSite","name":"MindGains","url":"https://mindgains.ai/"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mindgains.ai/"},{"@type":"ListItem","position":2,"name":"Know Your India","item":"https://mindgains.ai/know-your-india/"}]}</script>
+<script src="/assets/kyi-app.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
 <script src="https://cdn.jsdelivr.net/npm/globe.gl"></script>
 <style>
@@ -57,7 +58,7 @@ body{font-family:Inter,system-ui,sans-serif}
   <div id="ld"><div class="sp"></div></div>
 </div>
 <script>
-  var post=function(m){try{if(window.ReactNativeWebView&&window.ReactNativeWebView.postMessage){window.ReactNativeWebView.postMessage(JSON.stringify(m));}}catch(e){}};
+  var post=function(m){try{if(window.__kyiBridge){var t=m&&m.type; if(t==='ready')window.__kyiBridge.indiaReady&&window.__kyiBridge.indiaReady(); else if(t==='level'&&m.level==='states')window.__kyiBridge.indiaView&&window.__kyiBridge.indiaView(); else if(t==='statePreview')window.__kyiBridge.statePreview&&window.__kyiBridge.statePreview(m.state); else if(t==='stateSelected')window.__kyiBridge.stateSelected&&window.__kyiBridge.stateSelected(m.state); else if(t==='districtClick')window.__kyiBridge.district&&window.__kyiBridge.district({district:m.district,state:m.state}); else if(t==='pcClick')window.__kyiBridge.pc&&window.__kyiBridge.pc({pc:m.pc,state:m.state}); else if(t==='acClick')window.__kyiBridge.ac&&window.__kyiBridge.ac({ac:m.ac,district:m.district,parentPc:m.parentPc,state:m.state}); else if(t==='acLoading')window.__kyiBridge.acLoading&&window.__kyiBridge.acLoading(); else if(t==='acReady')window.__kyiBridge.acReady&&window.__kyiBridge.acReady(); else if(t==='acError')window.__kyiBridge.acError&&window.__kyiBridge.acError({state:m.state}); else if(t==='pcLoading')window.__kyiBridge.pcLoading&&window.__kyiBridge.pcLoading(); else if(t==='error')window.__kyiBridge.hint&&window.__kyiBridge.hint('Could not load the map. Check connection.'); }}catch(e){}}};
   var world,states=[],districts=[],pcAll=[],pcByState={},acCache={},mode='dist',kind='states',selectedState=null;
   var GRAPHITE='rgba(74,82,138,0.50)',GRAPHITE_DIM='rgba(48,52,82,0.36)',VIOLET='rgba(143,104,255,0.78)',TINT='rgba(122,94,248,0.26)';
   function nrm(s){return (s||'').toUpperCase().replace(/&/g,'AND').replace(/[^A-Z0-9]+/g,'');}
@@ -148,7 +149,7 @@ body{font-family:Inter,system-ui,sans-serif}
     setTimeout(function(){world.pointOfView({lat:27.5,lng:81,altitude:1.35},2900);},450);
     document.getElementById('ld').style.display='none';
   }).catch(function(){document.getElementById('ld').innerHTML='<div class="sp"></div>';});
-  window.__kyi={explore:function(){if(selectedState)openSecond(selectedState);},back:function(){showStates();},setMode:function(m){mode=(m==='ac'?'dist':m);if(kind!=='states'&&selectedState)openSecond(selectedState);},zoom:function(fac){var p=world.pointOfView();world.pointOfView({lat:p.lat,lng:p.lng,altitude:Math.max(0.15,Math.min(2.4,p.altitude*fac))},420);},clearSel:function(){selFeat=null;reapply();}};
+  window.__kyi={explore:function(){if(selectedState)openSecond(selectedState);},back:function(){showStates();},setMode:function(m){mode=m;if(kind!=='states'&&selectedState)openSecond(selectedState);},zoom:function(fac){var p=world.pointOfView();world.pointOfView({lat:p.lat,lng:p.lng,altitude:Math.max(0.15,Math.min(2.4,p.altitude*fac))},420);},clearSel:function(){selFeat=null;reapply();}};
 </script>
 </body>
 </html>

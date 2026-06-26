@@ -1,0 +1,135 @@
+[
+  {
+    "id": "how-india-governed",
+    "title": "How India is Governed",
+    "icon": "business",
+    "color": "#4F46E5",
+    "blurb": "The three tiers of government & separation of powers.",
+    "sections": [
+      {
+        "head": "Three tiers",
+        "body": "India is governed at three levels: the Union government, the state governments, and local self-government."
+      },
+      {
+        "head": "Three organs",
+        "body": "Power is split across the Legislature, Executive and Judiciary so no single organ becomes too strong."
+      },
+      {
+        "head": "Who does what",
+        "body": "The Union List, State List and Concurrent List divide subjects between Centre and States."
+      }
+    ]
+  },
+  {
+    "id": "mp-mla-ward",
+    "title": "MP vs MLA vs Ward Member",
+    "icon": "people",
+    "color": "#0EA5E9",
+    "blurb": "Who represents you, and at which level.",
+    "sections": [
+      {
+        "head": "Your MP",
+        "body": "A Member of Parliament represents your Lok Sabha constituency in the national Parliament."
+      },
+      {
+        "head": "Your MLA",
+        "body": "A Member of the Legislative Assembly represents your state constituency and works on state subjects."
+      },
+      {
+        "head": "Your Ward Member / Sarpanch",
+        "body": "At the local level you elect ward members and a panchayat president or municipal councillor."
+      },
+      {
+        "head": "You elect all three",
+        "body": "One citizen, three votes across different elections, each tier solving different problems."
+      }
+    ]
+  },
+  {
+    "id": "amendment-73-74",
+    "title": "73rd & 74th Amendments",
+    "icon": "home",
+    "color": "#10B981",
+    "blurb": "How local self-government got constitutional power.",
+    "sections": [
+      {
+        "head": "The big idea",
+        "body": "The 73rd Amendment gave constitutional status to Panchayats and the 74th to Municipalities."
+      },
+      {
+        "head": "Guaranteed elections",
+        "body": "Both mandate elections every five years, conducted by a State Election Commission."
+      },
+      {
+        "head": "Reservation",
+        "body": "Reserved seats for women and for SCs and STs make local politics more representative."
+      },
+      {
+        "head": "The Gram Sabha",
+        "body": "The Gram Sabha is the assembly of all adult voters in a village and approves plans and budgets."
+      },
+      {
+        "head": "11th & 12th Schedules",
+        "body": "The 11th and 12th Schedules list subjects for panchayats and municipalities."
+      }
+    ]
+  },
+  {
+    "id": "bill-to-law",
+    "title": "How a Bill Becomes Law",
+    "icon": "document-text",
+    "color": "#7C5CFC",
+    "blurb": "The journey from idea to Act of Parliament.",
+    "sections": [
+      {
+        "head": "Introduction",
+        "body": "A proposed law is a Bill. It can be introduced in either House, except Money Bills."
+      },
+      {
+        "head": "Three readings",
+        "body": "Each House debates the Bill in stages before voting on it."
+      },
+      {
+        "head": "President's assent",
+        "body": "After both Houses pass it, the Bill goes to the President and becomes an Act when assented."
+      },
+      {
+        "head": "Why it matters",
+        "body": "This process ensures laws are debated, checked and revised before they become law."
+      }
+    ]
+  },
+  {
+    "id": "fundamental-rights",
+    "title": "Your Fundamental Rights",
+    "icon": "shield-checkmark",
+    "color": "#059669",
+    "blurb": "The six rights every Indian holds.",
+    "sections": [
+      {
+        "head": "Right to Equality",
+        "body": "Equality before law, non-discrimination and equal opportunity in public jobs."
+      },
+      {
+        "head": "Right to Freedom",
+        "body": "Freedom of speech, assembly, movement, residence and profession."
+      },
+      {
+        "head": "Against Exploitation",
+        "body": "Bans human trafficking, forced labour and hazardous child labour."
+      },
+      {
+        "head": "Freedom of Religion",
+        "body": "Freedom to practise, profess and propagate any religion."
+      },
+      {
+        "head": "Cultural & Educational",
+        "body": "Protects the language, script and culture of minorities."
+      },
+      {
+        "head": "Right to Constitutional Remedies",
+        "body": "Article 32 lets you go to court if a fundamental right is violated."
+      }
+    ]
+  }
+]
