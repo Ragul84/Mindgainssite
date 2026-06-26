@@ -476,8 +476,8 @@ body{font-family:Inter,system-ui,sans-serif}
     draw(states);
     var c=world.controls();c.autoRotate=false;c.enableDamping=true;c.minDistance=101;c.maxDistance=700;c.zoomSpeed=1.3;
     var lastLbl=0;world.onZoom(function(){var t=Date.now();if(t-lastLbl>120){lastLbl=t;refreshLabels();}});
-    world.pointOfView({lat:16,lng:-62,altitude:3.3},0);
-    setTimeout(function(){world.pointOfView({lat:27.5,lng:81,altitude:1.35},2900);},450);
+    world.pointOfView({lat:0,lng:0,altitude:2.9},0);
+    setTimeout(function(){world.pointOfView({lat:27.5,lng:81,altitude:1.15},2900);},450);
     document.getElementById('ld').style.display='none';
     clearTimeout(bootTimer);
   }).catch(function(){clearTimeout(bootTimer);var ld=document.getElementById('ld');if(ld)ld.innerHTML='<div class="sp"></div><div>Map load failed. Please refresh.</div>';});
