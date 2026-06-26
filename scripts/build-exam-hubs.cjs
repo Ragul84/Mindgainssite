@@ -309,77 +309,164 @@ function atlasCards(items) {
   return items.map((item) => `<span class="atlas-chip">${esc(item)}</span>`).join('');
 }
 
-function indiaAtlasPage(id, hub, count) {
-  const states = INDIA_REGIONS.map((region) => `<article class="atlas-region"><h3>${esc(region.name)}</h3><div class="atlas-chip-row">${atlasCards(region.items)}</div></article>`).join('');
-  const statesList = atlasCards(INDIA_STATES);
-  const utsList = atlasCards(INDIA_UTS);
-  const related = hub.related.map(([href, label]) => `<a href="${attr(href)}">${esc(label)}<span>Open</span></a>`).join('');
-  const faq = hub.faqs.map(([question, answer]) => `<details><summary>${esc(question)}</summary><p>${esc(answer)}</p></details>`).join('');
-  const body = `<main>
-  <section class="hero atlas-hero">
-    <div class="atlas-hero-copy">
-      <p class="eyebrow">${esc(hub.heroEyebrow)}</p>
-      <h1>${esc(hub.heroTitle)}</h1>
-      <p class="dek">${esc(hub.heroDek)}</p>
-      <div class="hero-actions"><a class="button" href="/#join">Join Waitlist</a><a class="button secondary" href="${attr(hub.quiz)}">${esc(hub.quizLabel)}</a></div>
-      <div class="atlas-stats">
-        <div><strong>28</strong><span>States</span></div>
-        <div><strong>8</strong><span>Union Territories</span></div>
-        <div><strong>6</strong><span>Regions</span></div>
-      </div>
-    </div>
-    ${orbMarkup()}
-  </section>
-  <section class="section atlas-section">
-    <div>
-      <p class="eyebrow">India atlas</p>
-      <h2>States, union territories and regional memory</h2>
-      <p>Use the map-inspired orb as a quick anchor, then move through every state and union territory in grouped regions so the list is easier to remember.</p>
-    </div>
-    <div class="atlas-side">
-      <div class="atlas-panel">
-        <h3>All states</h3>
-        <div class="atlas-chip-row dense">${statesList}</div>
-      </div>
-      <div class="atlas-panel">
-        <h3>Union territories</h3>
-        <div class="atlas-chip-row dense">${utsList}</div>
-      </div>
-    </div>
-  </section>
-  <section class="atlas-regions">
-    ${states}
-  </section>
-  <section class="section quiz-preview">
-    <div>
-      <p class="eyebrow">Quiz Hub</p>
-      <h2>Practice India questions by topic and region</h2>
-      <p>Use civics, geography and constitution quizzes to reinforce the atlas. Each quiz page becomes a practical recall loop for the map.</p>
-    </div>
-    <a class="stat-card" href="${attr(hub.quiz)}"><strong>${esc(count?.topics ? `${count.topics.toLocaleString('en-IN')} topic pages` : 'Topic-wise public quizzes')}</strong><span>${esc(hub.quizLabel)}</span></a>
-  </section>
-  <section class="cards">
-    <article><h2>Study Lab preview</h2><p>Enter a topic, PDF, YouTube link or text and generate notes, flashcards, mindmaps and quizzes for civics and geography revision.</p><a href="/study-lab/">Explore Study Lab</a></article>
-    <article><h2>MIGA preview</h2><p>MIGA is the multilingual AI learning companion inside MindGains. It helps learners recall facts, explain concepts and stay consistent.</p><a href="/misa/">Explore MISA</a></article>
-  </section>
-  <section class="section">
-    <p class="eyebrow">Continue practicing</p>
-    <h2>Start with a quiz or a deeper read</h2>
-    <div class="link-grid">${related}</div>
-  </section>
-  <section class="section faq">
-    <p class="eyebrow">FAQ</p>
-    <h2>${esc(hub.faqTitle)}</h2>
-    ${faq}
-  </section>
-  <section class="cta">
-    <p class="eyebrow">Early access</p>
-    <h2>Start building your daily learning habit with MindGains.</h2>
-    <p>Join the early access waitlist and be among the first learners to try Daily Dose, Study Lab, MIGA and the full app experience.</p>
-    <a class="button" href="/#join">Join the Waitlist</a>
-  </section>
-</main>`;
-  return pageShell(id, hub, body);
+function indiaAtlasPage(id, hub) {
+  const url = `${SITE_URL}/${id}/`;
+  const breadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: hub.exam, item: url },
+    ],
+  };
+  const webPage = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: hub.title.replace(' | MindGains', ''),
+    description: hub.description,
+    url,
+    isPartOf: { '@type': 'WebSite', name: 'MindGains', url: `${SITE_URL}/` },
+  };
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>${esc(hub.title)}</title>
+<meta name="description" content="${attr(hub.description)}" />
+<link rel="canonical" href="${attr(url)}" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="${attr(hub.title)}" />
+<meta property="og:description" content="${attr(hub.description)}" />
+<meta property="og:url" content="${attr(url)}" />
+<meta property="og:image" content="${SITE_URL}/assets/icons/mindgains-logo-512.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="${attr(hub.title)}" />
+<meta name="twitter:description" content="${attr(hub.description)}" />
+<meta name="twitter:image" content="${SITE_URL}/assets/icons/mindgains-logo-512.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/exam-hubs.css" />
+${iconMeta()}
+<script type="application/ld+json">${JSON.stringify(webPage)}</script>
+<script type="application/ld+json">${JSON.stringify(breadcrumb)}</script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+<script src="https://cdn.jsdelivr.net/npm/globe.gl"></script>
+<style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#05070F}
+body{font-family:Inter,system-ui,sans-serif}
+.kyi-stage{position:fixed;inset:0;background:
+  radial-gradient(circle at 50% 38%, rgba(55,224,255,.16), transparent 28%),
+  radial-gradient(circle at 50% 50%, rgba(18,24,40,.22), transparent 62%),
+  linear-gradient(180deg,#04050a 0%, #060914 42%, #04050a 100%)}
+#g{position:absolute;inset:0}
+#ld{position:absolute;inset:0;display:flex;flex-direction:column;gap:14px;align-items:center;justify-content:center;color:#aab3c9;font-size:14px;letter-spacing:.2px}
+.sp{width:36px;height:36px;border:3px solid rgba(255,255,255,.14);border-top-color:#37e0ff;border-radius:50%;animation:s .9s linear infinite}
+@keyframes s{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<div class="kyi-stage">
+  <div id="g"></div>
+  <div id="ld"><div class="sp"></div></div>
+</div>
+<script>
+  var post=function(m){try{if(window.ReactNativeWebView&&window.ReactNativeWebView.postMessage){window.ReactNativeWebView.postMessage(JSON.stringify(m));}}catch(e){}};
+  var world,states=[],districts=[],pcAll=[],pcByState={},acCache={},mode='dist',kind='states',selectedState=null;
+  var GRAPHITE='rgba(74,82,138,0.50)',GRAPHITE_DIM='rgba(48,52,82,0.36)',VIOLET='rgba(143,104,255,0.78)',TINT='rgba(122,94,248,0.26)';
+  function nrm(s){return (s||'').toUpperCase().replace(/&/g,'AND').replace(/[^A-Z0-9]+/g,'');}
+  var selFeat=null;
+  function featKey(f){ if(kind==='ac')return f.properties.AC_NAME; if(kind==='pc')return f.properties.pc_name; if(kind==='districts')return f.properties.district; return null; }
+  function isSelFeat(f){ return selFeat && kind!=='states' && featKey(f)===selFeat; }
+  function reapply(){ if(world) world.polygonCapColor(ck).polygonSideColor(sd).polygonStrokeColor(st).polygonAltitude(al); }
+  function ck(f){ if(kind==='states'){ if(selectedState) return f.properties.st_nm===selectedState?VIOLET:GRAPHITE_DIM; return GRAPHITE; } return isSelFeat(f)?'rgba(150,112,255,0.88)':TINT; }
+  function sd(f){ if(kind==='states'&&selectedState===f.properties.st_nm) return 'rgba(124,92,252,0.5)'; if(kind==='states') return 'rgba(96,106,166,0.35)'; return isSelFeat(f)?'rgba(124,92,252,0.55)':'rgba(70,80,140,0.22)'; }
+  function st(f){ if(kind==='states'&&selectedState===f.properties.st_nm) return 'rgba(214,200,255,1)'; if(kind==='states') return 'rgba(172,184,236,0.62)'; return isSelFeat(f)?'rgba(222,210,255,1)':'rgba(200,208,244,0.4)'; }
+  function al(f){ if(kind==='states') return selectedState===f.properties.st_nm?0.05:0.006; return isSelFeat(f)?0.045:0.006; }
+  function nameOf(f){ if(kind==='states')return f.properties.st_nm; if(kind==='districts')return f.properties.district; if(kind==='ac')return (f.properties.AC_NAME||'').replace(/\\s*\\((SC|ST)\\)/i,''); return f.properties.pc_name; }
+  function polys(f){var g=f.geometry;if(!g)return [];return g.type==='Polygon'?[g.coordinates]:g.coordinates;}
+  function ringArea(r){var a=0;for(var i=0,n=r.length-1;i<n;i++){a+=r[i][0]*r[i+1][1]-r[i+1][0]*r[i][1];}return a/2;}
+  function ringCentroid(r){var a=0,cx=0,cy=0;for(var i=0,n=r.length-1;i<n;i++){var ff=r[i][0]*r[i+1][1]-r[i+1][0]*r[i][1];a+=ff;cx+=(r[i][0]+r[i+1][0])*ff;cy+=(r[i][1]+r[i+1][1])*ff;}a=a/2;if(Math.abs(a)<1e-9)return [r[0][0],r[0][1]];return [cx/(6*a),cy/(6*a)];}
+  function centerOf(f){var best=null,bestA=-1;polys(f).forEach(function(p){var r=p[0];var a=Math.abs(ringArea(r));if(a>bestA){bestA=a;best=r;}});if(!best)return {lat:22,lng:80};var c=ringCentroid(best);return {lat:c[1],lng:c[0]};}
+  var curSorted=[];
+  function area(f){var best=0;polys(f).forEach(function(p){var a=Math.abs(ringArea(p[0]));if(a>best)best=a;});return best;}
+  function makeLabel(d){
+    var el=document.createElement('div');el.textContent=d.t;
+    el.style.cssText='white-space:nowrap;transform:translate(-50%,-50%);font-family:Inter,system-ui,sans-serif;';
+    el.style.cssText+='pointer-events:none;font-size:'+(d.sel?13:10.5)+'px;font-weight:'+(d.sel?'700':'600')+';color:'+(d.sel?'#fff':'rgba(232,236,248,0.92)')+';text-shadow:0 1px 5px rgba(0,0,0,0.98);padding:5px 7px;';
+    return el;
+  }
+  function refreshLabels(){
+    if(!world)return;
+    if(!curSorted.length){world.htmlElementsData([]);return;}
+    var pov=world.pointOfView();var alt=pov.altitude||1.25;
+    var coslat=Math.max(0.3,Math.cos(pov.lat*Math.PI/180));
+    var half=Math.max(2.5,alt*42);
+    var cap=Math.max(8,Math.min(40,Math.round(28/alt)));
+    var arr=[];
+    for(var i=0;i<curSorted.length && arr.length<cap;i++){
+      var d=curSorted[i];
+      if(Math.abs(d.lat-pov.lat)<half && Math.abs(d.lng-pov.lng)<half/coslat){
+        arr.push({lat:d.lat,lng:d.lng,t:d.t,st:d.st,k:d.k,sel:(d.k==='states'&&d.st===selectedState),small:d.small});
+      }
+    }
+    if(kind==='states'&&selectedState){var has=false,a2;for(a2=0;a2<arr.length;a2++){if(arr[a2].st===selectedState){arr[a2].sel=true;has=true;break;}}if(!has){for(a2=0;a2<curSorted.length;a2++){if(curSorted[a2].st===selectedState){var sf=curSorted[a2];arr.push({lat:sf.lat,lng:sf.lng,t:sf.t,st:sf.st,k:'states',sel:true,small:sf.small});break;}}}}
+    world.htmlElementsData(arr).htmlLat('lat').htmlLng('lng').htmlAltitude(function(d){return d.sel?0.055:0.008;}).htmlElement(makeLabel);
+  }
+  function setLabels(fs){
+    curSorted=fs.map(function(f){var c=centerOf(f);return {f:f,lat:c.lat,lng:c.lng,t:nameOf(f),st:f.properties.st_nm,k:kind,ar:area(f),small:false};}).sort(function(a,b){return b.ar-a.ar;});
+    if(kind==='states'){for(var i=0;i<curSorted.length;i++)curSorted[i].small=(i>=16);}
+    refreshLabels();
+  }
+  function draw(fs){world.polygonsData(fs).polygonAltitude(al).polygonCapColor(ck).polygonSideColor(sd).polygonStrokeColor(st).polygonLabel(function(){return '';});setLabels(fs);}
+  function fitFly(fs,ms,latShift,tighten){
+    var mnx=180,mny=90,mxx=-180,mxy=-90;
+    fs.forEach(function(f){polys(f).forEach(function(p){p[0].forEach(function(c){if(c[0]<60||c[0]>100||c[1]<5||c[1]>40)return;if(c[0]<mnx)mnx=c[0];if(c[0]>mxx)mxx=c[0];if(c[1]<mny)mny=c[1];if(c[1]>mxy)mxy=c[1];});});});
+    if(mxx<mnx){world.pointOfView({lat:27.5,lng:81,altitude:1.35},ms||1200);return;}
+    var midLat=(mny+mxy)/2,midLng=(mnx+mxx)/2;
+    var dx=(mxx-mnx)*Math.cos(midLat*Math.PI/180),dy=mxy-mny,span=Math.max(dx,dy);
+    var alt=Math.max(0.14,Math.min(1.35,span/26)); if(tighten)alt*=0.78;
+    var shift=latShift?dy*0.22:0;
+    world.pointOfView({lat:midLat+shift,lng:midLng,altitude:alt},ms||1300);
+    setTimeout(refreshLabels,(ms||1300)+80);
+  }
+  function showStates(){kind='states';selectedState=null;draw(states);world.pointOfView({lat:27.5,lng:81,altitude:1.35},1100);}
+  function stateFeat(s){return states.filter(function(f){return f.properties.st_nm===s;});}
+  function districtsFor(s){return districts.filter(function(f){return f.properties.st_nm===s;});}
+  function pcsFor(s){var k=nrm(s);if(pcByState[k])return pcByState[k];for(var kk in pcByState){if(kk.indexOf(k)>=0||k.indexOf(kk)>=0)return pcByState[kk];}return [];}
+  function previewState(s){selectedState=s;kind='states';draw(states);var c=centerOf(stateFeat(s)[0]||states[0]);world.pointOfView({lat:c.lat-2.5,lng:c.lng,altitude:1.0},1100);}
+  function openSecond(s){
+    selectedState=s;selFeat=null;
+    if(mode==='dist'){kind='districts';var d=districtsFor(s);draw(d);fitFly(d.length?d:stateFeat(s),1400,0.4);}
+    else if(mode==='pc'){kind='pc';ensurePC(function(){var p=pcsFor(s);draw(p);fitFly(p.length?p:districtsFor(s),1400,0.4);});}
+    else if(mode==='ac'){loadAC(s);}
+  }
+  function ensurePC(cb){if(pcAll.length){cb();return;}fetch('https://cdn.jsdelivr.net/gh/datameet/maps@master/parliamentary-constituencies/india_pc_2019_simplified.geojson').then(function(r){return r.json();}).then(function(g){pcAll=g.features||[];pcAll.forEach(function(f){var k=nrm(f.properties.st_name);(pcByState[k]=pcByState[k]||[]).push(f);});cb();}).catch(function(){});}
+  function stKey(name){var k=(name||'').toLowerCase().replace(/&/g,'').replace(/\\band\\b/g,'').replace(/[^a-z]/g,'');var ov={jammuandkashmir:'jammukashmir',nctofdelhi:'delhi',orissa:'odisha',pondicherry:'puducherry',uttaranchal:'uttarakhand',dadraandnagarhavelianddamananddiu:'dadranagarhaveli'};return ov[k]||k;}
+  function loadAC(s){kind='ac';selFeat=null;var key=stKey(s);if(acCache[key]){draw(acCache[key]);fitFly(acCache[key],1400,0.3,1);return;}fetch('https://cdn.jsdelivr.net/gh/HindustanTimesLabs/shapefiles@master/state_ut/'+key+'/assembly/'+key+'_AC.json').then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(g){acCache[key]=g.features||[];draw(acCache[key]);fitFly(acCache[key],1400,0.3,1);}).catch(function(){mode='dist';openSecond(s);});}
+  function onClick(f){
+    if(kind==='states'){previewState(f.properties.st_nm);return;}
+    selFeat=featKey(f);reapply();fitFly([f],800,0);
+  }
+  fetch('https://cdn.jsdelivr.net/gh/udit-001/india-maps-data@main/topojson/india.json').then(function(r){return r.json();}).then(function(topo){
+    states=topojson.feature(topo,topo.objects.states).features;
+    districts=topojson.feature(topo,topo.objects.districts).features;
+    world=Globe()(document.getElementById('g'))
+      .globeImageUrl('https://cdn.jsdelivr.net/npm/three-globe/example/img/earth-night.jpg')
+      .backgroundColor('rgba(0,0,0,0)').showAtmosphere(true).atmosphereColor('#7aa2ff').atmosphereAltitude(0.18)
+      .polygonsTransitionDuration(0).onPolygonClick(onClick);
+    draw(states);
+    var c=world.controls();c.autoRotate=false;c.enableDamping=true;c.minDistance=101;c.maxDistance=700;c.zoomSpeed=1.3;
+    var lastLbl=0;world.onZoom(function(){var t=Date.now();if(t-lastLbl>120){lastLbl=t;refreshLabels();}});
+    world.pointOfView({lat:16,lng:-62,altitude:3.3},0);
+    setTimeout(function(){world.pointOfView({lat:27.5,lng:81,altitude:1.35},2900);},450);
+    document.getElementById('ld').style.display='none';
+  }).catch(function(){document.getElementById('ld').innerHTML='<div class="sp"></div>';});
+  window.__kyi={explore:function(){if(selectedState)openSecond(selectedState);},back:function(){showStates();},setMode:function(m){mode=(m==='ac'?'dist':m);if(kind!=='states'&&selectedState)openSecond(selectedState);},zoom:function(fac){var p=world.pointOfView();world.pointOfView({lat:p.lat,lng:p.lng,altitude:Math.max(0.15,Math.min(2.4,p.altitude*fac))},420);},clearSel:function(){selFeat=null;reapply();}};
+</script>
+</body>
+</html>`;
 }
 
 function hubPage(id, hub, count) {
