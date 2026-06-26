@@ -116,6 +116,37 @@ const HUBS = {
       ['Does MindGains support Tamil learning?', 'Samacheer and TNPSC pathways include Tamil-focused quiz and learning experiences.'],
     ],
   },
+  'know-your-india': {
+    exam: 'Know Your India',
+    title: 'Know Your India | MindGains',
+    description: 'Explore India facts, constitution, states, rivers, history and civic knowledge with MindGains.',
+    audience: 'students and exam aspirants',
+    scope: 'Constitution, states, rivers, freedom movement, parliament and current affairs',
+    exams: 'Civics and India knowledge practice',
+    quiz: '/quiz/upsc/',
+    quizLabel: 'Open India Quizzes',
+    subjects: ['Constitution', 'States', 'Rivers', 'History', 'Geography', 'Current Affairs'],
+    heroEyebrow: 'Public India Knowledge Hub',
+    heroTitle: 'Know Your India',
+    heroDek: 'A premium public space from MindGains for learners who want to understand India deeply and practice civic knowledge daily.',
+    beyondTitle: 'Why India knowledge needs more than content',
+    dailyTitle: 'Know Your India',
+    dailyCopy: 'Build a reusable civic memory with one India fact every day, quick revision, quiz practice and map-minded recall.',
+    quizHeading: 'Practice India questions topic by topic',
+    continueTitle: 'Start with a quiz or a deeper read',
+    faqTitle: 'Know Your India FAQs',
+    related: [
+      ['/quiz/upsc/polity/preamble/', 'Preamble Quiz'],
+      ['/quiz/tnpsc/history/freedom-struggle/', 'Freedom Struggle Quiz'],
+      ['/quiz/ncert/social-science/class10/', 'Class 10 Social Science Quiz'],
+      ['/blog/india-learning-crisis', 'Why learning gaps persist'],
+    ],
+    faqs: [
+      ['What is Know Your India?', 'Know Your India is a public MindGains page for India facts, civics and connected learning across states, constitution and history.'],
+      ['Is it useful for exams?', 'Yes. The page connects well with UPSC, TNPSC and school social science foundations.'],
+      ['Where should I start?', 'Begin with the India quizzes, then move into the editorial and the app experience when you want deeper daily practice.'],
+    ],
+  },
 };
 
 function esc(value) {
@@ -210,7 +241,7 @@ ${iconMeta()}
 <div class="bg"></div>
 <header class="site-nav">
   <a class="brand" href="/">MindGains</a>
-  <nav><a href="/upsc/">UPSC</a><a href="/tnpsc/">TNPSC</a><a href="/ssc/">SSC</a><a href="/quiz/">Quiz Hub</a><a href="/#join">Waitlist</a></nav>
+  <nav><a href="/upsc/">UPSC</a><a href="/tnpsc/">TNPSC</a><a href="/ssc/">SSC</a><a href="/quiz/">Quiz Hub</a><a href="/know-your-india/">Know India</a><a href="/#join">Waitlist</a></nav>
 </header>
 ${body}
 </body>
@@ -218,29 +249,41 @@ ${body}
 }
 
 function hubPage(id, hub, count) {
+  const heroEyebrow = hub.heroEyebrow || `${hub.exam} AI Learning Hub`;
+  const heroTitle = hub.heroTitle || `Best AI for ${hub.exam} Preparation`;
+  const heroDek = hub.heroDek || `MindGains helps ${hub.audience} build a daily learning habit through personalized lessons, quizzes, revision, current affairs and AI-powered study tools.`;
+  const beyondTitle = hub.beyondTitle || `Why ${hub.exam} preparation needs more than content`;
+  const dailyTitle = hub.dailyTitle || `Daily Dose for ${hub.exam}`;
+  const dailyCopy = hub.dailyCopy || 'Build a personalized path with one focused lesson every day, revision notes, flashcards, practice questions and exam-aware current affairs where relevant.';
+  const quizHeading = hub.quizHeading || `Practice ${hub.exam} questions topic by topic`;
+  const compareTitle = hub.compareTitle || 'Why MindGains vs generic AI tools';
+  const continueTitle = hub.continueTitle || 'Start with a quiz or a deeper read';
+  const faqTitle = hub.faqTitle || `${hub.exam} preparation FAQs`;
+  const ctaTitle = hub.ctaTitle || 'Start building your daily learning habit with MindGains.';
+  const ctaCopy = hub.ctaCopy || 'Join the early access waitlist and be among the first learners to try Daily Dose, Study Lab, MIGA and the full app experience.';
   const subjectPills = hub.subjects.map((item) => `<span>${esc(item)}</span>`).join('');
   const related = hub.related.map(([href, label]) => `<a href="${attr(href)}">${esc(label)}<span>Open</span></a>`).join('');
   const faq = hub.faqs.map(([question, answer]) => `<details><summary>${esc(question)}</summary><p>${esc(answer)}</p></details>`).join('');
   const topicText = count?.topics ? `${count.topics.toLocaleString('en-IN')} topic pages` : 'Topic-wise public quizzes';
   const body = `<main>
   <section class="hero">
-    <p class="eyebrow">${esc(hub.exam)} AI Learning Hub</p>
-    <h1>Best AI for ${esc(hub.exam)} Preparation</h1>
-    <p class="dek">MindGains helps ${esc(hub.audience)} build a daily learning habit through personalized lessons, quizzes, revision, current affairs and AI-powered study tools.</p>
+    <p class="eyebrow">${esc(heroEyebrow)}</p>
+    <h1>${esc(heroTitle)}</h1>
+    <p class="dek">${esc(heroDek)}</p>
     <div class="hero-actions"><a class="button" href="/#join">Join Waitlist</a><a class="button secondary" href="${attr(hub.quiz)}">${esc(hub.quizLabel)}</a></div>
   </section>
   <section class="section two">
     <div>
       <p class="eyebrow">Beyond content</p>
-      <h2>Why ${esc(hub.exam)} preparation needs more than content</h2>
+      <h2>${esc(beyondTitle)}</h2>
     </div>
     <p>Most learners already have videos, PDFs, notes and question banks. The gap is turning that content into a repeatable system: one focused lesson, one practice set, one revision loop and one visible reason to return tomorrow.</p>
   </section>
   <section class="section daily">
     <div>
       <p class="eyebrow">Daily Dose</p>
-      <h2>Daily Dose for ${esc(hub.exam)}</h2>
-      <p>Build a personalized path with one focused lesson every day, revision notes, flashcards, practice questions and exam-aware current affairs where relevant.</p>
+      <h2>${esc(dailyTitle)}</h2>
+      <p>${esc(dailyCopy)}</p>
       <div class="pill-row">${subjectPills}</div>
     </div>
     <div class="mini-phone">
@@ -252,7 +295,7 @@ function hubPage(id, hub, count) {
   <section class="section quiz-preview">
     <div>
       <p class="eyebrow">Quiz Hub</p>
-      <h2>Practice ${esc(hub.exam)} questions topic by topic</h2>
+      <h2>${esc(quizHeading)}</h2>
       <p>The public Quiz Hub gives learners a searchable route into focused practice before they join the full app experience.</p>
     </div>
     <a class="stat-card" href="${attr(hub.quiz)}"><strong>${esc(topicText)}</strong><span>${esc(hub.quizLabel)}</span></a>
@@ -263,7 +306,7 @@ function hubPage(id, hub, count) {
   </section>
   <section class="section">
     <p class="eyebrow">Comparison</p>
-    <h2>Why MindGains vs generic AI tools</h2>
+    <h2>${esc(compareTitle)}</h2>
     <div class="compare">
       <div><h3>Generic AI chatbot</h3><p>Flexible answers, but no exam path, habit loop, quiz history or structured revision system.</p></div>
       <div><h3>Random notes/videos</h3><p>Useful content, but easy to consume passively and forget without practice or feedback.</p></div>
@@ -272,18 +315,18 @@ function hubPage(id, hub, count) {
   </section>
   <section class="section links">
     <p class="eyebrow">Continue practicing</p>
-    <h2>Start with a quiz or a deeper read</h2>
+    <h2>${esc(continueTitle)}</h2>
     <div class="link-grid">${related}</div>
   </section>
   <section class="section faq">
     <p class="eyebrow">FAQ</p>
-    <h2>${esc(hub.exam)} preparation FAQs</h2>
+    <h2>${esc(faqTitle)}</h2>
     ${faq}
   </section>
   <section class="cta">
     <p class="eyebrow">Early access</p>
-    <h2>Start building your daily learning habit with MindGains.</h2>
-    <p>Join the early access waitlist and be among the first learners to try Daily Dose, Study Lab, MIGA and the full app experience.</p>
+    <h2>${esc(ctaTitle)}</h2>
+    <p>${esc(ctaCopy)}</p>
     <a class="button" href="/#join">Join the Waitlist</a>
   </section>
 </main>`;
@@ -312,6 +355,9 @@ function updateHome() {
   let html = fs.readFileSync(file, 'utf8');
   if (!html.includes('/upsc/')) {
     html = html.replace('<a href="/daily-dose/">Daily Dose</a>', '<a href="/upsc/">UPSC</a><a href="/tnpsc/">TNPSC</a><a href="/daily-dose/">Daily Dose</a>');
+  }
+  if (!html.includes('/know-your-india/')) {
+    html = html.replace('<a href="/quiz/">Quiz Hub</a>', '<a href="/quiz/">Quiz Hub</a><a href="/know-your-india/">Know India</a>');
   }
   if (!html.includes('class="exam-teaser"')) {
     const css = `\n  .exam-teaser{position:fixed;left:30px;bottom:154px;z-index:24;width:min(330px,calc(100vw - 60px));border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:16px;background:rgba(5,6,10,.52);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);box-shadow:0 18px 60px rgba(0,0,0,.34)}\n  .exam-teaser .k{font-size:10px;letter-spacing:1.7px;text-transform:uppercase;color:#67e8f9;font-weight:700;margin-bottom:10px}\n  .exam-links{display:flex;flex-wrap:wrap;gap:8px}.exam-links a{color:#dffbff;text-decoration:none;font-size:12px;border:1px solid rgba(55,224,255,.22);border-radius:999px;padding:7px 9px;background:rgba(55,224,255,.08)}\n  @media (max-width:860px){.exam-teaser{display:none}}\n`;
