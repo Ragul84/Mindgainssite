@@ -149,6 +149,44 @@ const HUBS = {
   },
 };
 
+const INDIA_REGIONS = [
+  {
+    name: 'North',
+    items: ['Haryana', 'Himachal Pradesh', 'Punjab', 'Rajasthan', 'Uttarakhand', 'Uttar Pradesh', 'Delhi', 'Chandigarh', 'Jammu and Kashmir', 'Ladakh'],
+  },
+  {
+    name: 'West',
+    items: ['Goa', 'Gujarat', 'Maharashtra', 'Dadra and Nagar Haveli and Daman and Diu'],
+  },
+  {
+    name: 'Central',
+    items: ['Chhattisgarh', 'Madhya Pradesh'],
+  },
+  {
+    name: 'East',
+    items: ['Bihar', 'Jharkhand', 'Odisha', 'West Bengal', 'Andaman and Nicobar Islands'],
+  },
+  {
+    name: 'Northeast',
+    items: ['Arunachal Pradesh', 'Assam', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland', 'Sikkim', 'Tripura'],
+  },
+  {
+    name: 'South',
+    items: ['Andhra Pradesh', 'Karnataka', 'Kerala', 'Tamil Nadu', 'Telangana', 'Lakshadweep', 'Puducherry'],
+  },
+];
+
+const INDIA_STATES = [
+  'Andhra Pradesh','Arunachal Pradesh','Assam','Bihar','Chhattisgarh','Goa','Gujarat','Haryana','Himachal Pradesh','Jharkhand',
+  'Karnataka','Kerala','Madhya Pradesh','Maharashtra','Manipur','Meghalaya','Mizoram','Nagaland','Odisha','Punjab',
+  'Rajasthan','Sikkim','Tamil Nadu','Telangana','Tripura','Uttar Pradesh','Uttarakhand','West Bengal'
+];
+
+const INDIA_UTS = [
+  'Andaman and Nicobar Islands','Chandigarh','Dadra and Nagar Haveli and Daman and Diu','Delhi',
+  'Jammu and Kashmir','Ladakh','Lakshadweep','Puducherry'
+];
+
 function esc(value) {
   return String(value ?? '')
     .replace(/&/g, '&amp;')
@@ -248,7 +286,104 @@ ${body}
 </html>`;
 }
 
+function orbMarkup() {
+  return `<div class="india-orb">
+    <div class="orb-shell">
+      <div class="orb-container">
+        <div class="orb">
+          <div class="orb-inner"></div>
+          <div class="orb-inner"></div>
+        </div>
+      </div>
+      <div class="orb-labels">
+        <span>States</span>
+        <span>Union Territories</span>
+        <span>Capitals</span>
+        <span>Rivers</span>
+      </div>
+    </div>
+  </div>`;
+}
+
+function atlasCards(items) {
+  return items.map((item) => `<span class="atlas-chip">${esc(item)}</span>`).join('');
+}
+
+function indiaAtlasPage(id, hub, count) {
+  const states = INDIA_REGIONS.map((region) => `<article class="atlas-region"><h3>${esc(region.name)}</h3><div class="atlas-chip-row">${atlasCards(region.items)}</div></article>`).join('');
+  const statesList = atlasCards(INDIA_STATES);
+  const utsList = atlasCards(INDIA_UTS);
+  const related = hub.related.map(([href, label]) => `<a href="${attr(href)}">${esc(label)}<span>Open</span></a>`).join('');
+  const faq = hub.faqs.map(([question, answer]) => `<details><summary>${esc(question)}</summary><p>${esc(answer)}</p></details>`).join('');
+  const body = `<main>
+  <section class="hero atlas-hero">
+    <div class="atlas-hero-copy">
+      <p class="eyebrow">${esc(hub.heroEyebrow)}</p>
+      <h1>${esc(hub.heroTitle)}</h1>
+      <p class="dek">${esc(hub.heroDek)}</p>
+      <div class="hero-actions"><a class="button" href="/#join">Join Waitlist</a><a class="button secondary" href="${attr(hub.quiz)}">${esc(hub.quizLabel)}</a></div>
+      <div class="atlas-stats">
+        <div><strong>28</strong><span>States</span></div>
+        <div><strong>8</strong><span>Union Territories</span></div>
+        <div><strong>6</strong><span>Regions</span></div>
+      </div>
+    </div>
+    ${orbMarkup()}
+  </section>
+  <section class="section atlas-section">
+    <div>
+      <p class="eyebrow">India atlas</p>
+      <h2>States, union territories and regional memory</h2>
+      <p>Use the map-inspired orb as a quick anchor, then move through every state and union territory in grouped regions so the list is easier to remember.</p>
+    </div>
+    <div class="atlas-side">
+      <div class="atlas-panel">
+        <h3>All states</h3>
+        <div class="atlas-chip-row dense">${statesList}</div>
+      </div>
+      <div class="atlas-panel">
+        <h3>Union territories</h3>
+        <div class="atlas-chip-row dense">${utsList}</div>
+      </div>
+    </div>
+  </section>
+  <section class="atlas-regions">
+    ${states}
+  </section>
+  <section class="section quiz-preview">
+    <div>
+      <p class="eyebrow">Quiz Hub</p>
+      <h2>Practice India questions by topic and region</h2>
+      <p>Use civics, geography and constitution quizzes to reinforce the atlas. Each quiz page becomes a practical recall loop for the map.</p>
+    </div>
+    <a class="stat-card" href="${attr(hub.quiz)}"><strong>${esc(count?.topics ? `${count.topics.toLocaleString('en-IN')} topic pages` : 'Topic-wise public quizzes')}</strong><span>${esc(hub.quizLabel)}</span></a>
+  </section>
+  <section class="cards">
+    <article><h2>Study Lab preview</h2><p>Enter a topic, PDF, YouTube link or text and generate notes, flashcards, mindmaps and quizzes for civics and geography revision.</p><a href="/study-lab/">Explore Study Lab</a></article>
+    <article><h2>MIGA preview</h2><p>MIGA is the multilingual AI learning companion inside MindGains. It helps learners recall facts, explain concepts and stay consistent.</p><a href="/misa/">Explore MISA</a></article>
+  </section>
+  <section class="section">
+    <p class="eyebrow">Continue practicing</p>
+    <h2>Start with a quiz or a deeper read</h2>
+    <div class="link-grid">${related}</div>
+  </section>
+  <section class="section faq">
+    <p class="eyebrow">FAQ</p>
+    <h2>${esc(hub.faqTitle)}</h2>
+    ${faq}
+  </section>
+  <section class="cta">
+    <p class="eyebrow">Early access</p>
+    <h2>Start building your daily learning habit with MindGains.</h2>
+    <p>Join the early access waitlist and be among the first learners to try Daily Dose, Study Lab, MIGA and the full app experience.</p>
+    <a class="button" href="/#join">Join the Waitlist</a>
+  </section>
+</main>`;
+  return pageShell(id, hub, body);
+}
+
 function hubPage(id, hub, count) {
+  if (id === 'know-your-india') return indiaAtlasPage(id, hub, count);
   const heroEyebrow = hub.heroEyebrow || `${hub.exam} AI Learning Hub`;
   const heroTitle = hub.heroTitle || `Best AI for ${hub.exam} Preparation`;
   const heroDek = hub.heroDek || `MindGains helps ${hub.audience} build a daily learning habit through personalized lessons, quizzes, revision, current affairs and AI-powered study tools.`;
@@ -334,7 +469,7 @@ function hubPage(id, hub, count) {
 }
 
 function writeCss() {
-  const css = `*,*:before,*:after{box-sizing:border-box}body{margin:0;background:#05060a;color:#f8fbff;font-family:Inter,Barlow,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.bg{position:fixed;inset:0;z-index:-1;background:radial-gradient(circle at 50% 0%,rgba(55,224,255,.2),transparent 34%),radial-gradient(circle at 12% 16%,rgba(8,145,178,.14),transparent 32%),linear-gradient(180deg,#05060a,#08111c 56%,#030407)}.site-nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px clamp(16px,4vw,56px);backdrop-filter:blur(22px);background:rgba(5,6,10,.74);border-bottom:1px solid rgba(255,255,255,.08)}.brand{font-weight:800}.site-nav nav{display:flex;gap:16px;flex-wrap:wrap;justify-content:flex-end;color:#cbd5e1;font-size:14px}.site-nav nav a:hover{color:#fff}main{width:min(1120px,calc(100% - 32px));margin:0 auto;padding:0 0 72px}.hero{padding:18px 0 26px}.eyebrow{margin:0 0 10px;color:#67e8f9;text-transform:uppercase;letter-spacing:2.4px;font-size:12px;font-weight:800}.hero h1,.section h2,.cta h2{max-width:980px;font-family:"Instrument Serif",serif;font-style:italic;font-size:clamp(42px,7vw,84px);line-height:.95;margin:0;font-weight:400}.dek{max-width:780px;color:rgba(248,251,255,.78);font-size:clamp(16px,1.8vw,20px);line-height:1.58;margin:16px 0 0}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.button{display:inline-flex;align-items:center;justify-content:center;padding:14px 18px;border-radius:16px;background:#0891b2;color:#fff;font-weight:850}.button.secondary{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);color:#e8fbff}.section,.cta,.cards article{border:1px solid rgba(255,255,255,.12);border-radius:24px;background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));padding:24px;margin-top:22px}.section.two,.section.daily,.section.quiz-preview{display:grid;grid-template-columns:minmax(0,.82fr) minmax(300px,1fr);gap:26px;align-items:center}.section h2,.cta h2{font-size:clamp(32px,4.5vw,54px)}.section p,.cta p,.cards p,.faq p{color:#d7e2f2;font-size:17px;line-height:1.68}.pill-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}.pill-row span{padding:9px 12px;border-radius:999px;background:rgba(55,224,255,.09);border:1px solid rgba(55,224,255,.2);color:#dffbff;font-size:13px}.mini-phone,.stat-card{border:1px solid rgba(255,255,255,.13);border-radius:24px;background:radial-gradient(circle at 50% 0%,rgba(55,224,255,.18),transparent 42%),rgba(5,6,10,.45);padding:18px}.phone-top{display:flex;justify-content:space-between;color:#91a4bd;font-size:12px;margin-bottom:18px}.mission{border-radius:18px;background:rgba(255,255,255,.06);padding:18px}.mission b{display:block;font-size:18px;margin-bottom:8px}.mission p{margin:0;color:#aebbd0}.metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.metric-grid div{padding:12px;border-radius:16px;background:rgba(55,224,255,.08);border:1px solid rgba(55,224,255,.18);text-align:center}.metric-grid b{display:block;color:#67e8f9}.metric-grid span{display:block;color:#91a4bd;font-size:11px;margin-top:4px}.stat-card{display:grid;align-content:center;gap:8px;min-height:160px}.stat-card strong{font-size:30px;color:#fff}.stat-card span{color:#67e8f9;font-weight:800}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:22px}.cards article{margin-top:0}.cards h2{font-size:28px;margin:0 0 12px}.cards a{display:inline-flex;margin-top:10px;color:#67e8f9;font-weight:800}.compare{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}.compare div{padding:18px;border-radius:18px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1)}.compare .highlight{background:rgba(55,224,255,.09);border-color:rgba(55,224,255,.25)}.compare h3{margin:0 0 8px;font-size:18px}.compare p{font-size:15px;margin:0}.link-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}.link-grid a{display:flex;justify-content:space-between;gap:12px;padding:16px;border-radius:16px;background:rgba(55,224,255,.08);border:1px solid rgba(55,224,255,.18);color:#e8fbff;font-weight:800}.link-grid span{color:#67e8f9}.faq details{border-top:1px solid rgba(255,255,255,.1);padding:16px 0}.faq details:first-of-type{margin-top:12px}.faq summary{cursor:pointer;font-weight:850;color:#fff}.faq p{margin:10px 0 0}.cta{text-align:left;padding:28px}.cta h2{max-width:760px}.cta p{max-width:720px}@media(max-width:860px){.site-nav{align-items:flex-start}.site-nav nav{gap:10px;font-size:13px}.section.two,.section.daily,.section.quiz-preview,.cards,.compare,.link-grid{grid-template-columns:1fr}.hero{padding-top:14px}.site-nav nav a:nth-child(1),.site-nav nav a:nth-child(2),.site-nav nav a:nth-child(3){display:none}.metric-grid{grid-template-columns:1fr}.hero-actions{display:grid}.button{width:100%}.section,.cta,.cards article{padding:20px}}`;
+  const css = `*,*:before,*:after{box-sizing:border-box}body{margin:0;background:#05060a;color:#f8fbff;font-family:Inter,Barlow,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.bg{position:fixed;inset:0;z-index:-1;background:radial-gradient(circle at 50% 0%,rgba(55,224,255,.2),transparent 34%),radial-gradient(circle at 12% 16%,rgba(8,145,178,.14),transparent 32%),linear-gradient(180deg,#05060a,#08111c 56%,#030407)}.site-nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px clamp(16px,4vw,56px);backdrop-filter:blur(22px);background:rgba(5,6,10,.74);border-bottom:1px solid rgba(255,255,255,.08)}.brand{font-weight:800}.site-nav nav{display:flex;gap:16px;flex-wrap:wrap;justify-content:flex-end;color:#cbd5e1;font-size:14px}.site-nav nav a:hover{color:#fff}main{width:min(1120px,calc(100% - 32px));margin:0 auto;padding:0 0 72px}.hero{padding:18px 0 26px}.eyebrow{margin:0 0 10px;color:#67e8f9;text-transform:uppercase;letter-spacing:2.4px;font-size:12px;font-weight:800}.hero h1,.section h2,.cta h2{max-width:980px;font-family:"Instrument Serif",serif;font-style:italic;font-size:clamp(42px,7vw,84px);line-height:.95;margin:0;font-weight:400}.dek{max-width:780px;color:rgba(248,251,255,.78);font-size:clamp(16px,1.8vw,20px);line-height:1.58;margin:16px 0 0}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.button{display:inline-flex;align-items:center;justify-content:center;padding:14px 18px;border-radius:16px;background:#0891b2;color:#fff;font-weight:850}.button.secondary{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);color:#e8fbff}.section,.cta,.cards article{border:1px solid rgba(255,255,255,.12);border-radius:24px;background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));padding:24px;margin-top:22px}.section.two,.section.daily,.section.quiz-preview{display:grid;grid-template-columns:minmax(0,.82fr) minmax(300px,1fr);gap:26px;align-items:center}.section h2,.cta h2{font-size:clamp(32px,4.5vw,54px)}.section p,.cta p,.cards p,.faq p{color:#d7e2f2;font-size:17px;line-height:1.68}.pill-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}.pill-row span{padding:9px 12px;border-radius:999px;background:rgba(55,224,255,.09);border:1px solid rgba(55,224,255,.2);color:#dffbff;font-size:13px}.mini-phone,.stat-card{border:1px solid rgba(255,255,255,.13);border-radius:24px;background:radial-gradient(circle at 50% 0%,rgba(55,224,255,.18),transparent 42%),rgba(5,6,10,.45);padding:18px}.phone-top{display:flex;justify-content:space-between;color:#91a4bd;font-size:12px;margin-bottom:18px}.mission{border-radius:18px;background:rgba(255,255,255,.06);padding:18px}.mission b{display:block;font-size:18px;margin-bottom:8px}.mission p{margin:0;color:#aebbd0}.metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.metric-grid div{padding:12px;border-radius:16px;background:rgba(55,224,255,.08);border:1px solid rgba(55,224,255,.18);text-align:center}.metric-grid b{display:block;color:#67e8f9}.metric-grid span{display:block;color:#91a4bd;font-size:11px;margin-top:4px}.stat-card{display:grid;align-content:center;gap:8px;min-height:160px}.stat-card strong{font-size:30px;color:#fff}.stat-card span{color:#67e8f9;font-weight:800}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:22px}.cards article{margin-top:0}.cards h2{font-size:28px;margin:0 0 12px}.cards a{display:inline-flex;margin-top:10px;color:#67e8f9;font-weight:800}.compare{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}.compare div{padding:18px;border-radius:18px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1)}.compare .highlight{background:rgba(55,224,255,.09);border-color:rgba(55,224,255,.25)}.compare h3{margin:0 0 8px;font-size:18px}.compare p{font-size:15px;margin:0}.link-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}.link-grid a{display:flex;justify-content:space-between;gap:12px;padding:16px;border-radius:16px;background:rgba(55,224,255,.08);border:1px solid rgba(55,224,255,.18);color:#e8fbff;font-weight:800}.link-grid span{color:#67e8f9}.faq details{border-top:1px solid rgba(255,255,255,.1);padding:16px 0}.faq details:first-of-type{margin-top:12px}.faq summary{cursor:pointer;font-weight:850;color:#fff}.faq p{margin:10px 0 0}.cta{text-align:left;padding:28px}.cta h2{max-width:760px}.cta p{max-width:720px}.atlas-hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);gap:24px;align-items:center}.atlas-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:22px;max-width:520px}.atlas-stats div{padding:14px 12px;border-radius:18px;background:rgba(55,224,255,.08);border:1px solid rgba(55,224,255,.16);text-align:center}.atlas-stats strong{display:block;font-size:28px;color:#fff}.atlas-stats span{display:block;color:#91a4bd;font-size:12px;margin-top:2px}.atlas-section{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:22px;align-items:start}.atlas-side{display:grid;gap:14px}.atlas-panel{padding:18px;border-radius:20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}.atlas-panel h3,.atlas-region h3{margin:0 0 12px;font-size:16px;color:#f4fbff}.atlas-chip-row{display:flex;flex-wrap:wrap;gap:8px}.atlas-chip-row.dense{gap:7px}.atlas-chip{padding:9px 11px;border-radius:999px;background:rgba(55,224,255,.08);border:1px solid rgba(55,224,255,.18);color:#e7fbff;font-size:12px;line-height:1.1}.atlas-regions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:22px}.atlas-region{padding:18px;border-radius:20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}.india-orb{display:flex;justify-content:center;align-items:center}.orb-shell{display:flex;flex-direction:column;align-items:center;gap:14px}.orb-container{position:relative;width:240px;height:240px;display:flex;justify-content:center;align-items:center;overflow:hidden;border-radius:50%;cursor:pointer;filter:drop-shadow(0 0 10px #ff3e1c66) drop-shadow(0 0 10px #1c8cff66);transition:all .3s ease;animation:orbFloat 8s ease-in-out infinite}.orb{position:absolute;width:240px;aspect-ratio:1;border-radius:50%;background:#060606;filter:blur(24px);transition:all .3s ease}.orb-container:hover .orb,.orb-container:focus-within .orb{width:260px;animation:rotatePulse 6s infinite}.orb-inner{position:absolute;left:-120%;top:-25%;width:160%;aspect-ratio:1;border-radius:50%;background:#ff3e1c;clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);animation:rotateSpin 6s linear infinite;transition:all .3s ease}.orb-inner:nth-child(2){left:auto;right:-120%;top:auto;bottom:-25%;background:#1c8cff;animation-duration:8s;clip-path:polygon(20% 0%,0% 20%,30% 50%,0% 80%,20% 100%,50% 70%,80% 100%,100% 80%,70% 50%,100% 20%,80% 0%,50% 30%)}.orb-container:hover .orb .orb-inner,.orb-container:focus-within .orb .orb-inner{width:170%}.orb-labels{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:340px}.orb-labels span{padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#d8e7ff;font-size:11px;letter-spacing:.2px}@keyframes rotateSpin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}@keyframes rotatePulse{50%{transform:rotate(180deg)}}@keyframes orbFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}@media(max-width:860px){.site-nav{align-items:flex-start}.site-nav nav{gap:10px;font-size:13px}.section.two,.section.daily,.section.quiz-preview,.cards,.compare,.link-grid,.atlas-hero,.atlas-section,.atlas-regions{grid-template-columns:1fr}.hero{padding-top:14px}.site-nav nav a:nth-child(1),.site-nav nav a:nth-child(2),.site-nav nav a:nth-child(3){display:none}.metric-grid{grid-template-columns:1fr}.hero-actions{display:grid}.button{width:100%}.section,.cta,.cards article{padding:20px}.atlas-stats{grid-template-columns:1fr 1fr}.orb-container{width:210px;height:210px}.orb{width:210px}.orb-labels{max-width:none}}`;
   fs.writeFileSync(path.join(ROOT, 'assets', 'exam-hubs.css'), css, 'utf8');
 }
 
