@@ -356,6 +356,11 @@ ${iconMeta()}
 <style>
 html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#05070F}
 body{font-family:Inter,system-ui,sans-serif}
+.site-nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px clamp(16px,4vw,56px);backdrop-filter:blur(22px);background:rgba(5,6,10,.62);border-bottom:1px solid rgba(255,255,255,.08)}
+.site-nav .brand{font-weight:800;color:#fff;text-decoration:none}
+.site-nav nav{display:flex;gap:16px;flex-wrap:wrap;justify-content:flex-end;color:#cbd5e1;font-size:14px}
+.site-nav nav a{color:inherit;text-decoration:none}
+.site-nav nav a:hover{color:#fff}
 .kyi-stage{position:fixed;inset:0;background:
   radial-gradient(circle at 50% 38%, rgba(55,224,255,.16), transparent 28%),
   radial-gradient(circle at 50% 50%, rgba(18,24,40,.22), transparent 62%),
@@ -367,6 +372,10 @@ body{font-family:Inter,system-ui,sans-serif}
 </style>
 </head>
 <body>
+<header class="site-nav">
+  <a class="brand" href="/">MindGains</a>
+  <nav><a href="/upsc/">UPSC</a><a href="/tnpsc/">TNPSC</a><a href="/ssc/">SSC</a><a href="/quiz/">Quiz Hub</a><a href="/know-your-india/">Know India</a><a href="/#join">Waitlist</a></nav>
+</header>
 <div class="kyi-stage">
   <div id="g"></div>
   <div id="ld"><div class="sp"></div></div>
