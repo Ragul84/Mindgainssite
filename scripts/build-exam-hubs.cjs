@@ -354,10 +354,9 @@ ${iconMeta()}
 <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
 <script src="https://cdn.jsdelivr.net/npm/globe.gl"></script>
 <script>
-  window.addEventListener('load', function () {
+  window.addEventListener('DOMContentLoaded', function () {
     var s = document.createElement('script');
     s.src = '/assets/kyi-app.js';
-    s.defer = true;
     document.head.appendChild(s);
   }, { once: true });
 </script>
@@ -466,6 +465,7 @@ body{font-family:Inter,system-ui,sans-serif}
     if(kind==='states'){previewState(f.properties.st_nm);return;}
     selFeat=featKey(f);reapply();fitFly([f],800,0);
   }
+  var bootTimer=setTimeout(function(){var ld=document.getElementById('ld');if(ld)ld.innerHTML='<div class="sp"></div><div>Loading the map is taking longer than usual.</div>';},12000);
   fetch('https://cdn.jsdelivr.net/gh/udit-001/india-maps-data@main/topojson/india.json').then(function(r){return r.json();}).then(function(topo){
     states=topojson.feature(topo,topo.objects.states).features;
     districts=topojson.feature(topo,topo.objects.districts).features;
@@ -479,7 +479,8 @@ body{font-family:Inter,system-ui,sans-serif}
     world.pointOfView({lat:16,lng:-62,altitude:3.3},0);
     setTimeout(function(){world.pointOfView({lat:27.5,lng:81,altitude:1.35},2900);},450);
     document.getElementById('ld').style.display='none';
-  }).catch(function(){document.getElementById('ld').innerHTML='<div class="sp"></div>';});
+    clearTimeout(bootTimer);
+  }).catch(function(){clearTimeout(bootTimer);var ld=document.getElementById('ld');if(ld)ld.innerHTML='<div class="sp"></div><div>Map load failed. Please refresh.</div>';});
   window.__kyi={explore:function(){if(selectedState)openSecond(selectedState);},back:function(){showStates();},setMode:function(m){mode=m;if(kind!=='states'&&selectedState)openSecond(selectedState);},zoom:function(fac){var p=world.pointOfView();world.pointOfView({lat:p.lat,lng:p.lng,altitude:Math.max(0.15,Math.min(2.4,p.altitude*fac))},420);},clearSel:function(){selFeat=null;reapply();}};
 </script>
 </body>
