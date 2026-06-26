@@ -27,9 +27,16 @@
 <meta name="theme-color" content="#37e0ff" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Know Your India","description":"Explore India facts, constitution, states, rivers, history and civic knowledge with MindGains.","url":"https://mindgains.ai/know-your-india/","isPartOf":{"@type":"WebSite","name":"MindGains","url":"https://mindgains.ai/"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mindgains.ai/"},{"@type":"ListItem","position":2,"name":"Know Your India","item":"https://mindgains.ai/know-your-india/"}]}</script>
-<script src="/assets/kyi-app.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
 <script src="https://cdn.jsdelivr.net/npm/globe.gl"></script>
+<script>
+  window.addEventListener('load', function () {
+    var s = document.createElement('script');
+    s.src = '/assets/kyi-app.js';
+    s.defer = true;
+    document.head.appendChild(s);
+  }, { once: true });
+</script>
 <style>
 html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#05070F}
 body{font-family:Inter,system-ui,sans-serif}

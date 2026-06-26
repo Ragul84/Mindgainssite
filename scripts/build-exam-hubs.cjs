@@ -351,9 +351,16 @@ function indiaAtlasPage(id, hub) {
 ${iconMeta()}
 <script type="application/ld+json">${JSON.stringify(webPage)}</script>
 <script type="application/ld+json">${JSON.stringify(breadcrumb)}</script>
-<script src="/assets/kyi-app.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
 <script src="https://cdn.jsdelivr.net/npm/globe.gl"></script>
+<script>
+  window.addEventListener('load', function () {
+    var s = document.createElement('script');
+    s.src = '/assets/kyi-app.js';
+    s.defer = true;
+    document.head.appendChild(s);
+  }, { once: true });
+</script>
 <style>
 html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#05070F}
 body{font-family:Inter,system-ui,sans-serif}
