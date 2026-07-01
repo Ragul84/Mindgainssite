@@ -1,0 +1,107 @@
+# OSX
+.DS_Store
+
+# Xcode
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+ios/.xcode.env.local
+
+# Android/IntelliJ
+android/build/
+android/.gradle/
+android/app/build/
+android/local.properties
+*.iml
+.idea
+.gradle
+local.properties
+
+# node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Yarn PnP / unplugged (large, platform-specific)
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# Expo
+.expo/
+dist/
+web-build/
+
+# Native
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS
+.DS_Store
+*.pem
+
+# local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# typescript
+*.tsbuildinfo
+
+# Temporary build/scratch files
+bot-server-err.log
+bot-server.log
+expo-mascot-8082.log
+expo-mascot.log
+expo-mobile.log
+extracted_step_*.txt
+final_clean_up.js
+global_patch_v2.js
+home_original_step_*.txt
+home_original_step_*.txt
+patch_auth.js
+patch_home.js
+patch_mascot.js
+quiz_hub_inspection_report.txt
+remove-duplicates.js
+scratch/
+step_*.txt
+step_*.json
+study_lab_*.json
+study_lab_*.wav
+study_lab_*.txt
+temp_fetch.cjs
+test_out.txt
+thirukkural_*.log
+ts_errors.txt
+ultimate_patch.js
+chroma_db/
+bot/

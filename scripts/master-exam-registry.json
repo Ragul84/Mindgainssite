@@ -1,0 +1,81 @@
+{
+  "exams": [
+    {
+      "id": "upsc",
+      "name": "UPSC Civil Services",
+      "subjects": ["Polity", "History", "Economy", "Geography", "Environment", "SciTech", "CSAT"]
+    },
+    {
+      "id": "ssc",
+      "name": "SSC CGL / CHSL",
+      "subjects": ["Quant", "Reasoning", "English", "GeneralAwareness"]
+    },
+    {
+      "id": "tnpsc",
+      "name": "TNPSC Group 1, 2, 4",
+      "subjects": ["Tamil", "Unit8", "Unit9", "Aptitude", "GeneralStudies"]
+    },
+    {
+      "id": "banking",
+      "name": "IBPS / SBI / RBI",
+      "subjects": ["Reasoning", "QuantitativeAptitude", "EnglishLanguage", "BankingAwareness", "CurrentAffairs"]
+    },
+    {
+      "id": "railways",
+      "name": "RRB NTPC / Group D",
+      "subjects": ["GeneralAwareness", "Arithmetic", "GeneralIntelligence", "GeneralScience"]
+    },
+    {
+      "id": "defence",
+      "name": "NDA / CDS / AFCAT",
+      "subjects": ["Mathematics", "GeneralAbilityTest", "English", "GeneralKnowledge"]
+    },
+    {
+      "id": "teaching",
+      "name": "CTET / TET",
+      "subjects": ["ChildDevelopment", "EVS", "Mathematics", "LanguageI", "LanguageII"]
+    },
+    {
+      "id": "management",
+      "name": "CAT / MAT / CMAT",
+      "subjects": ["VARC", "DILR", "Quants"]
+    }
+  ],
+  "school_classes": [
+    {
+      "id": "class_6",
+      "name": "Class 6",
+      "subjects": ["Math", "Science", "SocialScience", "English"]
+    },
+    {
+      "id": "class_7",
+      "name": "Class 7",
+      "subjects": ["Math", "Science", "SocialScience", "English"]
+    },
+    {
+      "id": "class_8",
+      "name": "Class 8",
+      "subjects": ["Math", "Science", "SocialScience", "English"]
+    },
+    {
+      "id": "class_9",
+      "name": "Class 9",
+      "subjects": ["Math", "Science", "SocialScience", "English"]
+    },
+    {
+      "id": "class_10",
+      "name": "Class 10",
+      "subjects": ["Math", "Science", "SocialScience", "English"]
+    },
+    {
+      "id": "class_11",
+      "name": "Class 11",
+      "subjects": ["Physics", "Chemistry", "Biology", "Mathematics", "Economics", "Accountancy", "PoliticalScience"]
+    },
+    {
+      "id": "class_12",
+      "name": "Class 12",
+      "subjects": ["Physics", "Chemistry", "Biology", "Mathematics", "Economics", "Accountancy", "PoliticalScience"]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+# Large non-app directories
+node_modules/
+.yarn/
+yarn.lock
+android/build/
+android/.gradle/
+ios/build/
+chroma_db/
+bot/
+scratch/
+wolf_companion_web/
+data/
+
+# Junk binaries / installers accidentally in assets
+**/*.msi
+**/*.exe
+**/*.zip
+**/*.tar
+**/*.tar.gz
+**/*.csv
+assets/mascot/newhome/
+assets/mascot/mascotrig/
+assets/fontawesome-pro-7.0.0-desktop/
+
+# Logs and temp files
+*.log
+*.err.log
+bot-server*.log
+expo-*.log
+
+# Test/scratch files
+extracted_step_*.txt
+home_original_step_*.txt
+step_*.txt
+step_*.json
+study_lab_*.json
+study_lab_*.wav
+study_lab_*.txt
+test_out.txt
+ts_errors.txt
+quiz_hub_inspection_report.txt
+
+# One-off patch scripts
+final_clean_up.js
+global_patch_v2.js
+patch_*.js
+remove-duplicates.js
+ultimate_patch.js
+temp_fetch.cjs
