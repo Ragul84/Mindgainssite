@@ -433,18 +433,118 @@
     .foot-logo .ms { font-size:13px; color:#000; font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 20; }
     footer span { font-size:12px; color:rgba(255,255,255,.3); }
 
-    /* === GOOGLE SIGN-IN MODAL === */
-    #auth-modal { display:none; position:fixed; inset:0; z-index:200; background:rgba(0,0,0,.75); backdrop-filter:blur(8px); align-items:center; justify-content:center; }
-    .auth-card { background:#141414; border:1px solid rgba(255,255,255,.12); border-radius:22px; padding:36px 32px; max-width:380px; width:100%; text-align:center; box-shadow:0 30px 80px rgba(0,0,0,.7); }
-    .auth-logo { width:52px; height:52px; border-radius:14px; background:linear-gradient(135deg,#7BE3B0,#38bdf8); display:flex; align-items:center; justify-content:center; margin:0 auto 16px; }
-    .auth-logo .ms { font-size:26px; color:#000; font-variation-settings:'FILL' 1,'wght' 500,'GRAD' 0,'opsz' 24; }
-    .auth-card h3 { font-size:20px; font-weight:700; margin-bottom:8px; }
-    .auth-card p { font-size:14px; color:var(--muted); line-height:1.6; margin-bottom:24px; }
-    .google-btn { width:100%; display:flex; align-items:center; justify-content:center; gap:10px; padding:13px 20px; border-radius:12px; background:#fff; color:#333; font-size:14px; font-weight:600; font-family:'Inter',sans-serif; border:none; cursor:pointer; transition:background .18s; }
-    .google-btn:hover { background:#f0f0f0; }
-    .google-btn img { width:20px; height:20px; }
-    .auth-note { font-size:12px; color:rgba(255,255,255,.3); margin-top:14px; }
-    .auth-close { position:absolute; top:16px; right:16px; background:transparent; border:none; color:rgba(255,255,255,.4); cursor:pointer; font-size:20px; }
+    /* === GOOGLE SIGN-IN MODAL (APPLE + GOOGLE LUXURY DESIGN) === */
+    #auth-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(4, 7, 12, 0.82);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .auth-card {
+      position: relative;
+      background: linear-gradient(165deg, rgba(20, 24, 35, 0.95), rgba(10, 14, 22, 0.98)) padding-box,
+                  linear-gradient(90deg, #7BE3B0, #38BDF8, #A78BFA, #F472B6, #7BE3B0) border-box;
+      background-size: 200% 200%;
+      border: 2px solid transparent;
+      border-radius: 28px;
+      padding: 42px 36px 32px;
+      max-width: 440px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 32px 90px rgba(0,0,0,0.85), 0 0 60px rgba(123,227,176,0.18);
+      animation: borderGlowRotate 4s ease infinite;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    .auth-logo {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+    .auth-card h3 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+    .auth-card p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.65;
+      margin-bottom: 28px;
+    }
+    .google-btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 16px 24px;
+      border-radius: 999px;
+      background: #FFFFFF;
+      color: #0F172A;
+      font-size: 15.5px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 6px 24px rgba(255,255,255,0.2);
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+    }
+    .google-btn:hover {
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 10px 32px rgba(255,255,255,0.35);
+    }
+    .auth-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #7BE3B0;
+      background: rgba(123,227,176,0.12);
+      border: 1px solid rgba(123,227,176,0.28);
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-top: 20px;
+    }
+    .auth-note {
+      font-size: 12px;
+      color: rgba(255,255,255,0.45);
+      margin-top: 14px;
+      line-height: 1.5;
+    }
+    .auth-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      color: rgba(255,255,255,0.6);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .auth-close:hover {
+      background: rgba(255,255,255,0.18);
+      color: #fff;
+    }
     #auth-modal > div { position:relative; }
 
     @media (max-width:600px) {
@@ -492,6 +592,23 @@
 
     document.addEventListener('DOMContentLoaded', async () => {
       if (supabaseClient) {
+        // Handle OAuth redirect back cleanly so tokens in hash don't hang page
+        if (window.location.hash.includes('access_token') || window.location.search.includes('code=')) {
+          const { data: { session } } = await supabaseClient.auth.getSession();
+          if (session?.user) {
+            history.replaceState(null, '', window.location.pathname);
+            const u = session.user;
+            const meta = u.user_metadata || {};
+            if (window.__mgOnSignIn) {
+              window.__mgOnSignIn({
+                displayName: meta.full_name || meta.name || u.email,
+                email: u.email,
+                photoURL: meta.avatar_url || meta.picture || null
+              });
+            }
+          }
+        }
+
         const { data: { session } } = await supabaseClient.auth.getSession();
         if (session?.user) {
           const u = session.user;
@@ -521,6 +638,8 @@
           }
         });
       }
+
+      if (window.updateAuthAccessUI) window.updateAuthAccessUI();
     });
   </script>
 
@@ -862,18 +981,22 @@
 
 
 
-<!-- AUTH MODAL -->
+<!-- AUTH MODAL (APPLE + GOOGLE LUXURY DESIGN) -->
 <div id="auth-modal" onclick="if(event.target===this)closeAuthModal()">
   <div>
     <div class="auth-card">
-      <div class="auth-logo" style="background:transparent;"><img src="assets/icons/mindgains-logo-apple.png" alt="MindGains Logo" style="width:52px;height:52px;border-radius:14px;object-fit:cover;" /></div>
+      <button class="auth-close" onclick="closeAuthModal()" aria-label="Close modal">✕</button>
+      <div class="auth-logo" style="background:transparent;"><img src="assets/icons/mindgains-logo-apple.png" alt="MindGains Logo" style="width:64px;height:64px;border-radius:18px;object-fit:cover;" /></div>
       <h3>Continue with MindGains AI</h3>
-      <p>Sign in with Google to get unlimited access to your exam-focused AI. Free forever.</p>
+      <p>Sign in with Google to get 10 free daily exam-focused AI practice messages.</p>
       <button class="google-btn" onclick="window.__mgSignIn()">
         <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#4285F4" d="M43.6 20.5H42V20H24v8h11.3C33.6 33 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.5 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.2-.1-2.5-.4-3.5z"/><path fill="#34A853" d="M6.3 14.7l6.6 4.8C14.5 16 19 12 24 12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.5 29.3 4 24 4 16.3 4 9.7 8.4 6.3 14.7z"/><path fill="#FBBC05" d="M24 44c5.2 0 9.9-1.7 13.6-4.5l-6.3-5.2C29.3 36 26.8 37 24 37c-5.2 0-9.6-3.4-11.3-8l-6.6 5.1C9.7 39.6 16.3 44 24 44z"/><path fill="#EA4335" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4 5.4l6.3 5.2C42.1 35.4 44 30 44 24c0-1.2-.1-2.5-.4-3.5z"/></svg>
-        Continue with Google
+        <span>Continue with Google</span>
       </button>
-      <div class="auth-note">10 free messages per day without signing in · No spam · Free forever</div>
+      <div>
+        <span class="auth-badge-pill">⚡ 10 Free Daily AI Messages for Signed-in Users</span>
+      </div>
+      <div class="auth-note">Sign in required to access AI • No password needed • Free forever</div>
     </div>
   </div>
 </div>
@@ -904,7 +1027,47 @@ function saveMsgCount(n) { localStorage.setItem('mg_msgs', JSON.stringify({date:
 
 msgCount = loadMsgCount();
 
-/* ═══ AUTH HOOKS ═══ */
+/* ═══ AUTH HOOKS & ACCESS CONTROL ═══ */
+window.updateAuthAccessUI = function() {
+  const inputEl = document.getElementById('chat-input');
+  const limitBar = document.getElementById('limit-bar');
+  const remaining = Math.max(0, MSG_LIMIT - msgCount);
+
+  if (!isSignedIn) {
+    if (inputEl) {
+      inputEl.placeholder = "🔒 Sign in with Google to chat with MindGains AI...";
+    }
+    if (limitBar) {
+      limitBar.style.display = 'flex';
+      limitBar.innerHTML = `
+        <span style="font-size:12.5px;color:rgba(255,255,255,0.78);display:flex;align-items:center;gap:6px;"><span class="material-symbols-outlined ms" style="font-size:16px;color:#7BE3B0;">lock</span> <strong>Sign in required to access AI</strong> (10 free messages/day for signed-in users)</span>
+        <button id="limit-signin" onclick="openAuthModal()" style="font-size:12px;font-weight:700;padding:6px 16px;border-radius:999px;background:#FFFFFF;color:#0F172A;border:none;cursor:pointer;box-shadow:0 2px 10px rgba(255,255,255,0.2);">Sign in with Google</button>
+      `;
+    }
+  } else {
+    if (inputEl) {
+      inputEl.placeholder = "Ask MIGA anything about your syllabus, textbooks, or PYQs...";
+    }
+    if (remaining > 0) {
+      if (limitBar) {
+        limitBar.style.display = 'flex';
+        limitBar.innerHTML = `
+          <span style="font-size:12.5px;color:rgba(255,255,255,0.85);display:flex;align-items:center;gap:6px;"><span class="material-symbols-outlined ms" style="font-size:16px;color:#7BE3B0;">bolt</span> <strong>Daily Free Web AI Messages:</strong> ${remaining} of 10 remaining today</span>
+          <a href="/waitlist.html" style="color:#7BE3B0;font-weight:700;font-size:12px;text-decoration:none;background:rgba(123,227,176,0.12);border:1px solid rgba(123,227,176,0.28);padding:5px 14px;border-radius:999px;">Get Unlimited on Android →</a>
+        `;
+      }
+    } else {
+      if (limitBar) {
+        limitBar.style.display = 'flex';
+        limitBar.innerHTML = `
+          <span style="font-size:12.5px;color:rgba(255,255,255,0.85);display:flex;align-items:center;gap:6px;"><span class="material-symbols-outlined ms" style="font-size:16px;color:#F472B6;">local_fire_department</span> <strong>10 Daily Web Messages Reached!</strong> For unlimited textbook AI, get the official Android app.</span>
+          <a href="/waitlist.html" style="background:#7BE3B0;color:#000;font-weight:800;font-size:12px;padding:6px 16px;border-radius:999px;text-decoration:none;box-shadow:0 0 15px rgba(123,227,176,0.4);">Join Whitelist →</a>
+        `;
+      }
+    }
+  }
+};
+
 window.__mgOnSignIn = (user) => {
   isSignedIn = true;
   document.getElementById('signin-btn').style.display = 'none';
@@ -913,14 +1076,15 @@ window.__mgOnSignIn = (user) => {
   const av = document.getElementById('user-avatar');
   if (user.photoURL) { av.src = user.photoURL; av.style.display = 'block'; } else av.style.display = 'none';
   document.getElementById('user-name').textContent = (user.displayName || user.email || '').split(' ')[0];
-  document.getElementById('limit-bar').style.display = 'none';
   closeAuthModal();
+  updateAuthAccessUI();
 };
 
 window.__mgOnSignOut = () => {
   isSignedIn = false;
   document.getElementById('signin-btn').style.display = 'flex';
   document.getElementById('user-info').style.display = 'none';
+  updateAuthAccessUI();
 };
 
 function openAuthModal()  { document.getElementById('auth-modal').style.display = 'flex'; }
@@ -948,6 +1112,11 @@ function needsLimitBar() { return !isSignedIn && msgCount >= MSG_LIMIT; }
 const thread  = document.getElementById('thread');
 const inputEl = document.getElementById('chat-input');
 const sendBtn = document.getElementById('send-btn');
+
+if (inputEl) {
+  inputEl.addEventListener('focus', () => { if (!isSignedIn) openAuthModal(); });
+  inputEl.addEventListener('click', () => { if (!isSignedIn) openAuthModal(); });
+}
 
 const EXAM_SYSTEM = `You are MIGA, a warm, brilliant tutor and study buddy for Indian exam aspirants (UPSC, TNPSC, SSC, banking, state PSCs).
 
@@ -1228,19 +1397,28 @@ function scrollToTop(row) {
 
 async function sendMsg(override) {
   if (currentMode !== 'chat') return;
+
+  // 1. Guests (Not signed in) -> 0 messages allowed, open Auth Modal
+  if (!isSignedIn) {
+    openAuthModal();
+    return;
+  }
+
+  // 2. Signed-in users -> 10 messages max per day
+  if (msgCount >= MSG_LIMIT) {
+    if (window.updateAuthAccessUI) window.updateAuthAccessUI();
+    return;
+  }
+
   const text = override || inputEl.value.trim();
   if (!text) return;
-
-  // Guest limit check
-  if (!isSignedIn && msgCount >= MSG_LIMIT) {
-    document.getElementById('limit-bar').style.display = 'flex';
-    openAuthModal(); return;
-  }
 
   inputEl.value = '';
   sendBtn.disabled = true;
   msgCount++;
   saveMsgCount(msgCount);
+  if (window.updateAuthAccessUI) window.updateAuthAccessUI();
+
   const es = document.getElementById('empty-state');
   if (es) es.remove();
 
