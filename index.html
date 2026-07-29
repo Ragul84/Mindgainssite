@@ -457,51 +457,71 @@
     }
   </style>
 
-  <!-- Firebase Auth SDK -->
-  <script type="module">
-    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
-    import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
+  <!-- Supabase Auth SDK (Real Google Sign-In) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const SUPABASE_AUTH_URL = 'https://yuntwerxahgmaoduxvqc.supabase.co';
+    const SUPABASE_AUTH_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl1bnR3ZXJ4YWhnbWFvZHV4dnFjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU3OTk4OTMsImV4cCI6MjA3MTM3NTg5M30.1mFUH9yp55uxN8n9tyRHLFbve36_kpaJs41nPU85S74';
+    let supabaseClient = null;
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyDLTojohr7zh_dHHrnlZPDREUd3Y-DhNqQ",
-      authDomain: "mindgains-ai.firebaseapp.com",
-      projectId: "mindgains-ai",
-      storageBucket: "mindgains-ai.appspot.com",
-      messagingSenderId: "1234567890",
-      appId: "1:1234567890:web:abcdef"
+    if (window.supabase) {
+      supabaseClient = window.supabase.createClient(SUPABASE_AUTH_URL, SUPABASE_AUTH_KEY);
+    }
+
+    window.__mgSignIn = async () => {
+      const redirectUrl = window.location.origin + window.location.pathname;
+      if (supabaseClient) {
+        const { error } = await supabaseClient.auth.signInWithOAuth({
+          provider: 'google',
+          options: { redirectTo: redirectUrl }
+        });
+        if (error) {
+          window.location.href = `${SUPABASE_AUTH_URL}/auth/v1/authorize?provider=google&redirect_to=${encodeURIComponent(redirectUrl)}`;
+        }
+      } else {
+        window.location.href = `${SUPABASE_AUTH_URL}/auth/v1/authorize?provider=google&redirect_to=${encodeURIComponent(redirectUrl)}`;
+      }
     };
 
-    let currentUser = null;
+    window.__mgSignOut = async () => {
+      if (supabaseClient) {
+        await supabaseClient.auth.signOut();
+      }
+      if (window.__mgOnSignOut) window.__mgOnSignOut();
+    };
 
-    try {
-      const app = initializeApp(firebaseConfig);
-      const auth = getAuth(app);
-      const provider = new GoogleAuthProvider();
+    document.addEventListener('DOMContentLoaded', async () => {
+      if (supabaseClient) {
+        const { data: { session } } = await supabaseClient.auth.getSession();
+        if (session?.user) {
+          const u = session.user;
+          const meta = u.user_metadata || {};
+          if (window.__mgOnSignIn) {
+            window.__mgOnSignIn({
+              displayName: meta.full_name || meta.name || u.email,
+              email: u.email,
+              photoURL: meta.avatar_url || meta.picture || null
+            });
+          }
+        }
 
-      window.__mgSignIn = async () => {
-        try {
-          const result = await signInWithPopup(auth, provider);
-          currentUser = result.user;
-          window.__mgOnSignIn(currentUser);
-        } catch(e) { console.log('Sign in error', e.message); }
-      };
-
-      window.__mgSignOut = async () => {
-        await signOut(auth);
-        currentUser = null;
-        window.__mgOnSignOut();
-      };
-
-      onAuthStateChanged(auth, (user) => {
-        currentUser = user;
-        if (user) window.__mgOnSignIn(user);
-        else window.__mgOnSignOut();
-      });
-    } catch(e) {
-      // Firebase config not set — sign-in will use demo mode
-      window.__mgSignIn = () => { window.__mgOnSignIn({ displayName: 'Demo User', email: 'demo@mindgains.ai', photoURL: null }); };
-      window.__mgSignOut = () => { window.__mgOnSignOut(); };
-    }
+        supabaseClient.auth.onAuthStateChange((_event, session) => {
+          if (session?.user) {
+            const u = session.user;
+            const meta = u.user_metadata || {};
+            if (window.__mgOnSignIn) {
+              window.__mgOnSignIn({
+                displayName: meta.full_name || meta.name || u.email,
+                email: u.email,
+                photoURL: meta.avatar_url || meta.picture || null
+              });
+            }
+          } else {
+            if (window.__mgOnSignOut) window.__mgOnSignOut();
+          }
+        });
+      }
+    });
   </script>
 
   <script type="application/ld+json">
