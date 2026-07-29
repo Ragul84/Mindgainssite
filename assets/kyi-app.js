@@ -111,15 +111,14 @@
     root.className = 'kyi-ui';
     root.innerHTML = `
       <div class="kyi-topbar">
-        <button class="kyi-icon" data-action="back" aria-label="Back">‹</button>
-        <div class="kyi-titlewrap">
-          <div class="kyi-title">Know Your India</div>
-          <div class="kyi-subtitle" data-bind="subtitle">Tap a state to begin</div>
+        <button class="kyi-icon" data-action="back" aria-label="Back" hidden>‹</button>
+        <div style="flex:1"></div>
+        <div style="display:flex;gap:8px">
+          <button class="kyi-icon" data-action="open-civics" aria-label="Civics" title="Civics Lessons">📖</button>
+          <button class="kyi-icon amber" data-action="open-badges" aria-label="Badges" title="Civic Badges">★</button>
         </div>
-        <button class="kyi-icon" data-action="open-civics" aria-label="Civics">C</button>
-        <button class="kyi-icon amber" data-action="open-badges" aria-label="Badges">★</button>
       </div>
-      <div class="kyi-hero" data-bind="hero"></div>
+      <div class="kyi-hero" data-bind="hero" hidden></div>
       <div class="kyi-tabs" data-bind="tabs" hidden></div>
       <div class="kyi-hint" data-bind="hint" hidden></div>
       <div class="kyi-preview" data-bind="preview" hidden></div>
@@ -135,106 +134,115 @@
         font-family: Inter, system-ui, sans-serif;
       }
       #${ROOT_ID} .kyi-topbar{
-        position:fixed; top:0; left:0; right:0; z-index:25;
-        display:flex; align-items:center; gap:10px;
-        padding: calc(10px + env(safe-area-inset-top)) 14px 10px;
-        backdrop-filter: blur(22px);
-        background: rgba(5,6,10,.62);
-        border-bottom:1px solid rgba(255,255,255,.08);
-        pointer-events:auto;
+        position:fixed; top:68px; left:16px; right:16px; z-index:25;
+        display:flex; align-items:center; justify-content:space-between; gap:10px;
+        padding:0; background:transparent; border-bottom:none;
+        pointer-events:none;
       }
+      #${ROOT_ID} .kyi-topbar > *{ pointer-events:auto; }
       #${ROOT_ID} .kyi-icon{
-        width:40px;height:40px;border-radius:20px;border:1px solid rgba(255,255,255,.12);
-        background:rgba(18,22,38,.55); color:#fff; display:grid; place-items:center;
-        font-size:20px; line-height:1; cursor:pointer;
+        width:40px;height:40px;border-radius:20px;border:1px solid rgba(255,255,255,.14);
+        background:rgba(10,10,10,.75); backdrop-filter:blur(20px); color:#fff; display:grid; place-items:center;
+        font-size:20px; line-height:1; cursor:pointer; transition:transform .18s, background .18s;
       }
+      #${ROOT_ID} .kyi-icon:hover{ background:rgba(123,227,176,.18); transform:scale(1.05); }
       #${ROOT_ID} .kyi-icon.amber{ color:#fbbf24; }
-      #${ROOT_ID} .kyi-titlewrap{ flex:1; text-align:center; min-width:0; }
-      #${ROOT_ID} .kyi-title{ color:#fff; font-weight:800; font-size:15px; }
-      #${ROOT_ID} .kyi-subtitle{ color:rgba(235,238,248,.62); font-size:11.5px; margin-top:1px; }
+      #${ROOT_ID} .kyi-titlewrap{
+        background:rgba(10,10,10,.75); backdrop-filter:blur(20px);
+        border:1px solid rgba(255,255,255,.12); border-radius:999px;
+        padding:6px 20px; text-align:center; min-width:0;
+      }
+      #${ROOT_ID} .kyi-title{ color:#fff; font-weight:800; font-size:14px; letter-spacing:-.2px; }
+      #${ROOT_ID} .kyi-subtitle{ color:rgba(123,227,176,.9); font-size:11px; margin-top:1px; font-weight:600; }
       #${ROOT_ID} .kyi-hero,
       #${ROOT_ID} .kyi-preview{
-        position:fixed; left:12px; right:12px; pointer-events:auto;
-        border:1px solid rgba(255,255,255,.1);
-        background:rgba(14,17,30,.9);
+        position:fixed; left:16px; right:16px; pointer-events:auto;
+        border:1px solid rgba(255,255,255,.12);
+        background:rgba(10,10,10,.92); backdrop-filter:blur(24px);
         border-radius:24px; overflow:hidden;
-        box-shadow:0 18px 44px rgba(0,0,0,.24);
+        box-shadow:0 24px 60px rgba(0,0,0,.5);
       }
       #${ROOT_ID} .kyi-hero{
-        top: calc(66px + env(safe-area-inset-top));
+        top: 68px;
         padding: 14px;
-        background: rgba(12,16,30,.52);
+        background: rgba(10,10,10,.82);
         backdrop-filter: blur(20px);
       }
       #${ROOT_ID} .kyi-hero-head{ display:flex; align-items:center; gap:8px; }
       #${ROOT_ID} .kyi-hero-flag{
-        width:24px; height:24px; border-radius:8px; background:#7C5CFC; display:grid; place-items:center; color:#fff; font-size:14px;
+        width:24px; height:24px; border-radius:8px; background:#7BE3B0; display:grid; place-items:center; color:#000; font-size:14px;
       }
       #${ROOT_ID} .kyi-hero-title{ color:#fff; font-weight:700; font-size:16px; }
       #${ROOT_ID} .kyi-hero-stats{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px; margin-top:12px; }
       #${ROOT_ID} .kyi-stat{
         text-align:center; padding:10px 8px; border-radius:16px;
-        border:1px solid rgba(55,224,255,.15); background:rgba(55,224,255,.07);
+        border:1px solid rgba(123,227,176,.2); background:rgba(123,227,176,.06);
       }
       #${ROOT_ID} .kyi-stat b{ display:block; color:#fff; font-size:15px; }
-      #${ROOT_ID} .kyi-stat span{ display:block; color:#91a4bd; font-size:10px; margin-top:3px; }
+      #${ROOT_ID} .kyi-stat span{ display:block; color:rgba(255,255,255,.5); font-size:10px; margin-top:3px; }
       #${ROOT_ID} .kyi-learn{
         margin-top:12px; display:flex; align-items:center; gap:8px;
         padding-top:11px; border-top:1px solid rgba(255,255,255,.09);
-        color:#cdbcff; font-weight:700; font-size:12.5px; cursor:pointer;
+        color:#7BE3B0; font-weight:700; font-size:12.5px; cursor:pointer;
       }
       #${ROOT_ID} .kyi-tabs{
         position:fixed; left:50%; transform:translateX(-50%);
-        top: calc(238px + env(safe-area-inset-top));
-        display:flex; gap:8px; pointer-events:auto;
-        padding:4px; border:1px solid rgba(255,255,255,.12);
-        border-radius:15px; background:rgba(16,20,34,.34); backdrop-filter:blur(18px);
+        top: 72px; z-index:26;
+        display:flex; gap:6px; pointer-events:auto;
+        padding:4px; border:1px solid rgba(123,227,176,.25);
+        border-radius:999px; background:rgba(10,10,10,.85); backdrop-filter:blur(20px);
+        box-shadow:0 10px 30px rgba(0,0,0,.5);
       }
       #${ROOT_ID} .kyi-tab{
-        border:none; color:rgba(235,238,248,.74); background:transparent;
-        padding:10px 15px; border-radius:12px; cursor:pointer; font-size:12.5px; font-weight:700;
+        border:none; color:rgba(255,255,255,.65); background:transparent;
+        padding:8px 16px; border-radius:999px; cursor:pointer; font-size:12.5px; font-weight:700;
+        transition:color .18s, background .18s;
       }
-      #${ROOT_ID} .kyi-tab.active{ color:#fff; background:#7C5CFC; }
+      #${ROOT_ID} .kyi-tab.active{ color:#001014; background:#7BE3B0; }
       #${ROOT_ID} .kyi-hint{
         position:fixed; left:50%; transform:translateX(-50%);
-        bottom:20px; padding:10px 16px; border-radius:18px;
-        background:rgba(18,22,38,.74); color:#e7ecf7; border:1px solid rgba(255,255,255,.12);
-        font-size:12.5px; font-weight:700; pointer-events:none;
+        bottom:24px; z-index:20;
+        padding:10px 20px; border-radius:999px;
+        background:rgba(10,10,10,.88); color:#7BE3B0; border:1px solid rgba(123,227,176,.3);
+        font-size:13px; font-weight:600; backdrop-filter:blur(20px);
+        box-shadow:0 12px 36px rgba(0,0,0,.5); pointer-events:none;
+        white-space:nowrap;
       }
-      #${ROOT_ID} .kyi-preview{ bottom: 18px; }
-      #${ROOT_ID} .kyi-preview .hero{
-        height: 140px; position:relative; display:flex; align-items:flex-end; overflow:hidden;
+      #${ROOT_ID} .kyi-preview{
+        position:fixed; bottom:20px; left:50%; transform:translateX(-50%);
+        width:calc(100% - 32px); max-width:440px; pointer-events:auto; z-index:25;
+        border:1px solid rgba(123,227,176,.3);
+        background:rgba(10,10,10,.94); backdrop-filter:blur(24px);
+        border-radius:20px; overflow:hidden; padding:16px 18px;
+        box-shadow:0 24px 60px rgba(0,0,0,.6);
       }
-      #${ROOT_ID} .kyi-preview .hero img,
-      #${ROOT_ID} .kyi-preview .hero .fallback{
-        position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+      #${ROOT_ID} .kyi-preview-head{ display:flex; align-items:flex-start; justify-content:space-between; gap:12px; margin-bottom:12px; }
+      #${ROOT_ID} .kyi-preview-title .name{ font-size:19px; font-weight:800; color:#fff; letter-spacing:-.4px; }
+      #${ROOT_ID} .kyi-preview-title .tagline{ font-size:12px; color:rgba(123,227,176,.9); margin-top:2px; font-weight:600; }
+      #${ROOT_ID} .kyi-preview-close{
+        border:none; background:rgba(255,255,255,.08); color:rgba(255,255,255,.6);
+        width:28px; height:28px; border-radius:50%; display:grid; place-items:center;
+        font-size:13px; cursor:pointer; transition:background .18s, color .18s; flex-shrink:0;
       }
-      #${ROOT_ID} .kyi-preview .hero .overlay{
-        position:absolute; inset:0;
-        background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(14,17,30,.56) 60%, rgba(14,17,30,.96) 100%);
+      #${ROOT_ID} .kyi-preview-close:hover{ background:rgba(255,255,255,.18); color:#fff; }
+      #${ROOT_ID} .kyi-preview-stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin-bottom:12px; }
+      #${ROOT_ID} .kyi-preview-stats .stat{
+        text-align:center; padding:8px 4px; border-radius:12px;
+        background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08);
       }
-      #${ROOT_ID} .kyi-preview .hero .copy{ position:relative; padding:16px; z-index:1; }
-      #${ROOT_ID} .kyi-preview .hero .name{ color:#fff; font-size:26px; font-weight:800; letter-spacing:-.5px; }
-      #${ROOT_ID} .kyi-preview .hero .tagline{ color:rgba(202,192,255,.95); font-size:13px; margin-top:3px; }
-      #${ROOT_ID} .kyi-preview .stats,
-      #${ROOT_ID} .kyi-preview .gk{ display:flex; gap:10px; padding:14px 18px; }
-      #${ROOT_ID} .kyi-preview .stat,
-      #${ROOT_ID} .kyi-preview .gk .item{
-        flex:1; text-align:center; border-radius:16px; padding:10px;
-        background:rgba(55,224,255,.08); border:1px solid rgba(55,224,255,.16);
-      }
-      #${ROOT_ID} .kyi-preview .stat b,
-      #${ROOT_ID} .kyi-preview .gk .val{ display:block; color:#fff; font-size:16px; font-weight:800; }
-      #${ROOT_ID} .kyi-preview .stat span,
-      #${ROOT_ID} .kyi-preview .gk .key{ display:block; color:#91a4bd; font-size:10px; margin-top:3px; }
-      #${ROOT_ID} .kyi-preview .row{ display:flex; gap:10px; padding:0 18px 18px; }
+      #${ROOT_ID} .kyi-preview-stats .stat b{ display:block; color:#fff; font-size:14px; font-weight:800; }
+      #${ROOT_ID} .kyi-preview-stats .stat span{ display:block; color:rgba(255,255,255,.45); font-size:10px; margin-top:2px; }
+      #${ROOT_ID} .kyi-preview-actions{ display:flex; gap:8px; }
       #${ROOT_ID} .kyi-btn{
-        flex:1; border:none; border-radius:16px; padding:13px 14px; cursor:pointer;
-        font-weight:800; font-size:13.5px; color:#fff; background:#7C5CFC;
+        flex:1; border:none; border-radius:14px; padding:11px 14px; cursor:pointer;
+        font-weight:700; font-size:13px; color:#001014; background:#7BE3B0;
+        transition:background .18s, transform .15s;
       }
+      #${ROOT_ID} .kyi-btn:hover{ background:#5dd49a; transform:scale(1.02); }
       #${ROOT_ID} .kyi-btn.secondary{
-        background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.14); color:#e8fbff;
+        background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.14); color:#fff;
       }
+      #${ROOT_ID} .kyi-btn.secondary:hover{ background:rgba(255,255,255,.14); transform:scale(1.02); }
       #${ROOT_ID} .kyi-sheet,
       #${ROOT_ID} .kyi-modal{
         position:fixed; left:0; right:0; bottom:0; z-index:30;
@@ -406,56 +414,33 @@
     const meta = state.previewing ? stateMeta(state.previewing) : null;
     const gk = state.previewing ? stateGk(state.previewing) : null;
     if (!showPreview) {
-      ui.hero.hidden = false;
-      ui.hero.innerHTML = `
-        <div class="kyi-hero-head"><div class="kyi-hero-flag">🌏</div><div class="kyi-hero-title">India</div></div>
-        <div class="kyi-hero-stats">
-          <div class="kyi-stat"><b>1.43B+</b><span>Population</span></div>
-          <div class="kyi-stat"><b>28</b><span>States</span></div>
-          <div class="kyi-stat"><b>8</b><span>UTs</span></div>
-          <div class="kyi-stat"><b>785+</b><span>Districts</span></div>
-        </div>
-        <div class="kyi-learn" data-action="open-civics">Learn how India is governed</div>
-      `;
+      ui.hero.hidden = true;
       ui.preview.hidden = true;
       return;
     }
     ui.hero.hidden = true;
-    const stats = meta ? `
-      <div class="stats">
-        <div class="stat"><b>${meta.districts}</b><span>Districts</span></div>
-        <div class="stat"><b>${meta.assembly || '—'}</b><span>Assembly</span></div>
-        <div class="stat"><b>${meta.lokSabha}</b><span>Lok Sabha</span></div>
-        <div class="stat"><b>${meta.population}</b><span>People</span></div>
-      </div>` : '';
-    const gkStrip = gk ? `
-      <div class="gk">
-        <div class="item"><div class="val">${esc(gk.capital)}</div><div class="key">Capital</div></div>
-        <div class="item"><div class="val">${esc(gk.language)}</div><div class="key">Language</div></div>
-        <div class="item"><div class="val">${esc(gk.formed)}</div><div class="key">Formed</div></div>
-      </div>` : '';
     const title = meta?.state || state.previewing;
     const tagline = meta?.tagline || 'State snapshot';
-    const img = state.heroImg ? `<img src="${esc(state.heroImg)}" alt="${esc(title)}">` : `<div class="fallback" style="background: linear-gradient(135deg,#4f46e5,#0ea5e9)"></div>`;
     ui.preview.hidden = false;
     ui.preview.innerHTML = `
-      <div class="hero">
-        ${img}
-        <div class="overlay"></div>
-        <div class="copy">
-          <div class="name">${esc(title)}</div>
-          <div class="tagline">${esc(tagline)}</div>
+      <div class="kyi-preview-card">
+        <div class="kyi-preview-head">
+          <div class="kyi-preview-title">
+            <div class="name">${esc(title)}</div>
+            <div class="tagline">${esc(tagline)}</div>
+          </div>
+          <button class="kyi-preview-close" data-action="back" aria-label="Close">✕</button>
         </div>
-      </div>
-      ${stats}
-      ${gkStrip}
-      <div class="row">
-        <button class="kyi-btn secondary" data-action="open-gk">Facts & GK</button>
-        <button class="kyi-btn secondary" data-action="open-civics">Civics lessons</button>
-      </div>
-      <div class="row">
-        <button class="kyi-btn" data-action="explore">Explore</button>
-        <button class="kyi-btn secondary" data-action="open-badges">Badges</button>
+        <div class="kyi-preview-stats">
+          <div class="stat"><b>${meta?.districts || '—'}</b><span>Districts</span></div>
+          <div class="stat"><b>${meta?.assembly || '—'}</b><span>Assembly</span></div>
+          <div class="stat"><b>${meta?.lokSabha || '—'}</b><span>Lok Sabha</span></div>
+          <div class="stat"><b>${esc(gk?.capital || '—')}</b><span>Capital</span></div>
+        </div>
+        <div class="kyi-preview-actions">
+          <button class="kyi-btn" data-action="explore">Explore State Map →</button>
+          <button class="kyi-btn secondary" data-action="open-gk">Facts & GK</button>
+        </div>
       </div>
     `;
   }
@@ -475,6 +460,11 @@
   }
 
   function renderHint() {
+    if (!state.hint && !state.previewing && !state.activeState) {
+      ui.hint.hidden = false;
+      ui.hint.textContent = 'Tap any state on the globe to explore';
+      return;
+    }
     if (!state.hint) {
       ui.hint.hidden = true;
       ui.hint.textContent = '';
@@ -832,6 +822,8 @@
   }
 
   function renderState() {
+    const backBtn = ui.root?.querySelector('[data-action="back"]');
+    if (backBtn) backBtn.hidden = !state.activeState;
     renderHero();
     renderTabs();
     renderHint();

@@ -132,6 +132,128 @@
 
   function current() { return quiz.questions[order[idx]]; }
 
+  // ── Confetti Particle Burst Engine ──────────────────────────────────────────
+  function triggerCorrectConfetti() {
+    try {
+      const canvas = document.createElement('canvas');
+      canvas.style.position = 'fixed';
+      canvas.style.inset = '0';
+      canvas.style.width = '100vw';
+      canvas.style.height = '100vh';
+      canvas.style.pointerEvents = 'none';
+      canvas.style.zIndex = '999999';
+      document.body.appendChild(canvas);
+
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const particles = [];
+      const colors = ['#7BE3B0', '#38BDF8', '#A78BFA', '#F472B6', '#FACC15'];
+
+      for (let i = 0; i < 45; i++) {
+        particles.push({
+          x: canvas.width / 2 + (Math.random() - 0.5) * 200,
+          y: canvas.height * 0.42,
+          vx: (Math.random() - 0.5) * 14,
+          vy: (Math.random() - 0.8) * 13,
+          size: Math.random() * 8 + 4,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          rotation: Math.random() * Math.PI * 2,
+          vRot: (Math.random() - 0.5) * 0.25,
+          opacity: 1
+        });
+      }
+
+      let frame = 0;
+      function anim() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        let alive = false;
+        particles.forEach(p => {
+          p.x += p.vx;
+          p.y += p.vy;
+          p.vy += 0.38;
+          p.opacity -= 0.022;
+          p.rotation += p.vRot;
+          if (p.opacity > 0) {
+            alive = true;
+            ctx.save();
+            ctx.translate(p.x, p.y);
+            ctx.rotate(p.rotation);
+            ctx.globalAlpha = Math.max(0, p.opacity);
+            ctx.fillStyle = p.color;
+            ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+            ctx.restore();
+          }
+        });
+        if (alive && frame < 55) {
+          frame++;
+          requestAnimationFrame(anim);
+        } else {
+          canvas.remove();
+        }
+      }
+      requestAnimationFrame(anim);
+    } catch(e) {}
+  }
+
+  // ── Multi-Statement Exam Formatting Helper ──────────────────────────────
+  function formatExamQuestionText(questionText) {
+    if (!questionText) return '';
+    let raw = String(questionText).trim();
+
+    const statementPattern = /(?:Statement\s*\d+|Statement\s*[I|V|X]+|\b[1-9]\.|\(\d+\))/i;
+    if (!statementPattern.test(raw)) {
+      return `<div style="font-size:16px;line-height:1.65;font-weight:600;margin-bottom:16px;">${esc(raw)}</div>`;
+    }
+
+    let leadText = 'Consider the following statements:';
+    const leadMatch = raw.match(/^(Consider the following statements?:?|Which of the following statements is\/are correct\??|With reference to [^,]+, consider the following statements?:?)/i);
+    if (leadMatch) {
+      leadText = leadMatch[0];
+      raw = raw.slice(leadText.length).trim();
+    }
+
+    const statementRegex = /(?:Statement\s*\d+|Statement\s*[I|V|X]+|\b[1-9]\.|\(\d+\))/gi;
+    const matches = [...raw.matchAll(statementRegex)];
+    let statementsHtml = '';
+    let closingText = '';
+
+    if (matches.length > 0) {
+      for (let i = 0; i < matches.length; i++) {
+        const label = matches[i][0];
+        const startIdx = matches[i].index + label.length;
+        const endIdx = (i + 1 < matches.length) ? matches[i + 1].index : raw.length;
+        let stmtContent = raw.slice(startIdx, endIdx).trim();
+
+        if (i === matches.length - 1) {
+          const closingMatch = stmtContent.match(/(Which of the (?:statements|above)[^?]*\??)/i);
+          if (closingMatch) {
+            closingText = `<div style="font-weight:700;margin-top:18px;color:#FFFFFF;font-size:15px;line-height:1.5;">${esc(closingMatch[0])}</div>`;
+            stmtContent = stmtContent.slice(0, closingMatch.index).trim();
+          }
+        }
+
+        statementsHtml += `
+          <div class="exam-stmt-row" style="display:flex;align-items:flex-start;gap:14px;margin:12px 0;padding:14px 18px;background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.1);border-radius:14px;border-left:4px solid #7BE3B0;box-shadow:0 4px 16px rgba(0,0,0,0.2);">
+            <span style="font-family:'Poppins',sans-serif;font-weight:700;font-size:12px;color:#7BE3B0;background:rgba(123,227,176,0.14);padding:4px 10px;border-radius:7px;white-space:nowrap;letter-spacing:0.4px;">${esc(label)}</span>
+            <span style="font-size:15px;color:rgba(255,255,255,0.95);line-height:1.65;flex:1;">${esc(stmtContent)}</span>
+          </div>`;
+      }
+    } else {
+      statementsHtml = `<div style="font-size:15.5px;line-height:1.65;">${esc(raw)}</div>`;
+    }
+
+    if (!closingText && !raw.toLowerCase().includes('which of the')) {
+      closingText = '<div style="font-weight:700;margin-top:18px;color:#FFFFFF;font-size:15px;">Which of the statements given above is/are correct?</div>';
+    }
+
+    return `
+      <div style="font-weight:700;color:#7BE3B0;font-size:15px;margin-bottom:14px;letter-spacing:0.2px;">${esc(leadText)}</div>
+      <div style="display:flex;flex-direction:column;gap:6px;margin:14px 0;">${statementsHtml}</div>
+      ${closingText}`;
+  }
+
   // ── render question ──────────────────────────────────────────────────────
   function render() {
     const q = current();
@@ -142,38 +264,15 @@
     nextBtn.disabled = true;
 
     // Update status
-    progress.textContent = `Q ${idx + 1} of ${order.length}`;
+    progress.textContent = `Question ${idx + 1}`;
     scoreEl.textContent  = `✦ ${score} pts`;
-    meter.style.width    = Math.round((idx / order.length) * 100) + '%';
+    meter.style.width    = Math.round(((idx + 1) / order.length) * 100) + '%';
 
-    // ── Render question text with statement parsing ────────────────────────
-    const isStmt    = isStatementQuestion(q);
+    // ── Render question text with structured statement formatting ─────────
+    const isStmt = isStatementQuestion(q);
     const effectiveOptions = isStmt ? STATEMENT_OPTIONS : q.options;
 
-    if (isStmt) {
-      const parsed = parseStatements(q.question);
-      if (parsed && parsed.length >= 2) {
-        // Grab any text before "Statement 1:" as prefix (safe with indexOf)
-        const firstIdx = q.question.search(/Statement\s*1\s*:/i);
-        const prefix   = firstIdx > 0 ? q.question.slice(0, firstIdx).trim() : '';
-
-        const stmtHTML = parsed
-          .map(
-            (s) =>
-              `<span class="stmt-item"><span class="stmt-label">${esc(s.label)}</span><span>${esc(s.text)}</span></span>`
-          )
-          .join('');
-
-        qEl.innerHTML =
-          (prefix ? '<span style="font-style:normal;font-size:15px;font-family:Inter,sans-serif;color:var(--text-muted)">' + esc(prefix) + '</span><br><br>' : '') +
-          'Consider the following statements:<div class="stmt-block">' + stmtHTML + '</div>' +
-          '<br>Which of the following is correct?';
-      } else {
-        qEl.textContent = q.question;
-      }
-    } else {
-      qEl.textContent = q.question;
-    }
+    qEl.innerHTML = formatExamQuestionText(q.question);
 
     // ── Render options with badge labels ──────────────────────────────────
     optsEl.innerHTML = effectiveOptions
@@ -204,8 +303,12 @@
     });
 
     const ok = choice === q.answer_index;
-    if (ok) score++;
-    else mistakes.push({ q, choice, effectiveOptions });
+    if (ok) {
+      score++;
+      triggerCorrectConfetti();
+    } else {
+      mistakes.push({ q, choice, effectiveOptions });
+    }
 
     const correctText = effectiveOptions[q.answer_index];
 
@@ -224,6 +327,14 @@
 
     scoreEl.textContent = `✦ ${score} pts`;
     nextBtn.disabled = false;
+
+    // Auto-scroll explanation and Next button smoothly into view so user doesn't need to scroll!
+    setTimeout(() => {
+      const target = !feedback.hidden ? feedback : nextBtn;
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }, 70);
   }
 
   // ── finish screen ────────────────────────────────────────────────────────
