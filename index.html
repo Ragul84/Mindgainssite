@@ -86,6 +86,12 @@
     .logo-mark .ms { font-size:17px; color:#000; font-variation-settings:'FILL' 1,'wght' 500,'GRAD' 0,'opsz' 24; }
     .logo-name { font-size:16px; font-weight:700; letter-spacing:-.02em; }
     .nav-right { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+    .nav-toggle { display:none; align-items:center; justify-content:center; width:44px; height:44px; border-radius:14px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.05); cursor:pointer; }
+    .nav-toggle span { display:block; width:18px; height:2px; background:#fff; border-radius:999px; transition:all .2s ease; }
+    .nav-toggle span + span { margin-top:4px; }
+    nav.open .nav-toggle span:nth-child(1) { transform:translateY(6px) rotate(45deg); }
+    nav.open .nav-toggle span:nth-child(2) { opacity:0; }
+    nav.open .nav-toggle span:nth-child(3) { transform:translateY(-6px) rotate(-45deg); }
     .nav-glass-btn { display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:rgba(255,255,255,.85); background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.12); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); padding:7px 16px; border-radius:999px; text-decoration:none; transition:all .2s ease; white-space:nowrap; flex-shrink:0; }
     .nav-glass-btn:hover { background:rgba(255,255,255,.12); border-color:rgba(123,227,176,.38); color:#fff; transform:translateY(-1px); box-shadow:0 4px 16px rgba(0,0,0,.3); }
     .nav-cta-btn { font-size:13px; font-weight:700; color:#001014; background:#7BE3B0; padding:7px 18px; border-radius:999px; text-decoration:none; transition:all .18s; white-space:nowrap; flex-shrink:0; }
@@ -671,18 +677,46 @@
     });
   </script>
 
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const topNav = document.getElementById('site-nav');
+      const toggle = topNav?.querySelector('.nav-toggle');
+      const backdrop = document.querySelector('.site-nav-backdrop');
+      const closeMenu = () => {
+        topNav?.classList.remove('open');
+        document.body.classList.remove('menu-open');
+        toggle && toggle.setAttribute('aria-expanded', 'false');
+      };
+      toggle?.addEventListener('click', () => {
+        const isOpen = topNav?.classList.toggle('open');
+        document.body.classList.toggle('menu-open', Boolean(isOpen));
+        toggle.setAttribute('aria-expanded', String(Boolean(isOpen)));
+      });
+      backdrop?.addEventListener('click', closeMenu);
+      document.querySelectorAll('#site-nav .nav-right a, #site-nav .nav-right button').forEach(el => el.addEventListener('click', closeMenu));
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 900) closeMenu();
+      });
+    });
+  </script>
+
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"EducationalApplication","name":"MindGains AI","applicationCategory":"EducationalApplication","description":"The AI Built for Indian Exams. Grounded in textbooks, aligned with curriculum, enhanced by PYQ intelligence.","url":"https://mindgains.ai/"}
   </script>
+  <link rel="stylesheet" href="/assets/site-responsive.css" />
 </head>
 <body>
+<div class="site-nav-backdrop" aria-hidden="true"></div>
 
 <!-- NAV -->
-<nav>
+<nav id="site-nav">
   <a class="nav-logo" href="#">
     <div class="logo-mark" style="background:transparent;"><img src="assets/icons/mindgains-logo-apple.png" alt="MindGains Logo" style="width:32px;height:32px;border-radius:10px;object-fit:cover;" /></div>
     <span class="logo-name">MindGains AI</span>
   </a>
+  <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
   <div class="nav-right">
     <a href="/quiz/" class="nav-glass-btn">
       <span class="material-symbols-outlined ms" style="font-size:15px;color:var(--accent);">quiz</span>Quiz Hub

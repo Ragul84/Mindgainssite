@@ -28,13 +28,18 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Best AI Study App for NCERT Learning","description":"Study NCERT with MindGains, an AI-powered learning platform for Class 6 to 12 Science, Maths, Social Science, quizzes, notes and revision.","url":"https://mindgains.ai/ncert/","isPartOf":{"@type":"WebSite","name":"MindGains","url":"https://mindgains.ai/"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mindgains.ai/"},{"@type":"ListItem","position":2,"name":"NCERT","item":"https://mindgains.ai/ncert/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is MindGains useful for NCERT students?","acceptedAnswer":{"@type":"Answer","text":"MindGains helps NCERT learners practice concepts with quizzes and AI-powered study workflows for notes, flashcards and revision."}},{"@type":"Question","name":"Which classes are supported?","acceptedAnswer":{"@type":"Answer","text":"The public Quiz Hub includes NCERT Class 6 to 12 topic pages across major school subjects."}},{"@type":"Question","name":"Can students generate quizzes from their own notes?","acceptedAnswer":{"@type":"Answer","text":"Study Lab is designed to help learners turn topics, PDFs, YouTube links or text into study material and practice."}}]}</script>
+  <link rel="stylesheet" href="/assets/site-responsive.css" />
 </head>
 <body>
 <div class="bg"></div>
-<header class="site-nav">
+<div class="site-nav-backdrop" aria-hidden="true"></div>
+<header class="site-nav" id="site-nav">
   <a class="brand" href="/"><img src="/assets/icons/mindgains-logo-192.png" alt="MindGains Logo" />MindGains AI</a>
-  <nav><a href="/upsc/">UPSC</a><a href="/tnpsc/">TNPSC</a><a href="/ssc/">SSC</a><a href="/quiz/">Quiz Hub</a><a href="/editorial/">Editorial</a><a href="/know-your-india/">Know India</a><a href="/samacheer/">Samacheer</a></nav>
-  <a class="nav-cta" href="/waitlist.html">Join Whitelist</a>
+  <button class="site-nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav><a href="/upsc/">UPSC</a><a href="/tnpsc/">TNPSC</a><a href="/ssc/">SSC</a><a href="/quiz/">Quiz Hub</a><a href="/know-your-india/">Know India</a><a href="/editorial/">Editorial</a><a href="/samacheer/">Samacheer</a></nav>
+  <a class="nav-cta" href="/waitlist.html">Join Waitlist</a>
 </header>
 <main>
   <section class="hero">
@@ -171,5 +176,75 @@
     <span style="font-size:11px;color:rgba(255,255,255,.28);">All official PYQs are property of respective government exam boards.</span>
   </div>
 </footer>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-brand-row">
+        <img src="/assets/icons/mindgains-logo-192.png" alt="MindGains Logo" />
+        <strong>MindGains AI</strong>
+      </div>
+      <p>The AI Built for Indian Exams. Grounded in your textbooks, aligned with your curriculum, enhanced by PYQ intelligence.</p>
+      <span class="footer-badge">BETA · India&rsquo;s 1st Textbook-Aware Exam AI</span>
+    </div>
+
+    <div class="footer-col">
+      <h4>Exams</h4>
+      <ul>
+        <li><a href="/tnpsc/">TNPSC Group 1, 2 &amp; 4</a></li>
+        <li><a href="/upsc/">UPSC CSE Prelims</a></li>
+        <li><a href="/ssc/">SSC &amp; Railway</a></li>
+        <li><a href="/waitlist.html">Join Whitelist</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Textbooks</h4>
+      <ul>
+        <li><a href="/samacheer/">Samacheer Kalvi</a></li>
+        <li><a href="/ncert/">NCERT Notes</a></li>
+        <li><a href="/editorial/">Editorial Summaries</a></li>
+        <li><a href="/daily-dose/">Daily Dose</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Tools</h4>
+      <ul>
+        <li><a href="/quiz/">Adaptive Quiz Hub</a></li>
+        <li><a href="/know-your-india/">Know Your India</a></li>
+        <li><a href="/study-lab/">Study Lab</a></li>
+        <li><a href="/misa/">MISA AI Tutor</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 MindGains AI &middot; All rights reserved.</span>
+    <span>All official PYQs are property of respective government exam boards.</span>
+  </div>
+</footer>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const nav = document.getElementById('site-nav');
+    const toggle = nav?.querySelector('.site-nav-toggle');
+    const backdrop = document.querySelector('.site-nav-backdrop');
+    const closeMenu = () => {
+      nav?.classList.remove('open');
+      document.body.classList.remove('menu-open');
+      toggle && (toggle.setAttribute('aria-expanded', 'false'));
+    };
+    toggle?.addEventListener('click', () => {
+      const isOpen = nav?.classList.toggle('open');
+      document.body.classList.toggle('menu-open', Boolean(isOpen));
+      toggle.setAttribute('aria-expanded', String(Boolean(isOpen)));
+    });
+    backdrop?.addEventListener('click', closeMenu);
+    document.querySelectorAll('.site-nav nav a').forEach(link => link.addEventListener('click', closeMenu));
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) closeMenu();
+    });
+  });
+</script>
 </body>
 </html>
