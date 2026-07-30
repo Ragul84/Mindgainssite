@@ -744,5 +744,60 @@ body.menu-open .site-nav-backdrop {
   section.section.dark {
     padding: 36px 16px !important;
   }
+
+  /* ── CHAT PANEL CLUTTER REDUCTION ── */
+
+  /* Hide "Exam Intelligence · Textbook-Aware" subtitle in chat topbar */
+  .ctop-sub { display: none !important; }
+
+  /* Chat topbar: tighter layout */
+  .ctopbar {
+    padding: 8px 12px !important;
+    gap: 8px !important;
+  }
+
+  /* Mode tabs: icon only on mobile (hide text label) */
+  .mode-tab .mode-tab-label,
+  .mode-tab span:not(.material-symbols-outlined) {
+    display: none !important;
+  }
+
+  .mode-tab {
+    padding: 6px 10px !important;
+    min-width: 36px !important;
+    gap: 0 !important;
+  }
+
+  /* Chat title stays but shrinks slightly */
+  .ctop-title { font-size: 13px !important; }
+  .ctop-icon img { width: 26px !important; height: 26px !important; border-radius: 7px !important; }
+
+  /* Prompt card arrows — hide on mobile to save space */
+  .prompt-card-arrow { display: none !important; }
+
+  /* Prompt card subtitle text — truncate */
+  .type-target {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: 100% !important;
+    display: block !important;
+  }
+
+  /* Hide "Exam Intelligence · Textbook-Aware" variant anywhere else */
+  [class*="ctop-sub"],
+  .chat-sub,
+  .ai-sub-label { display: none !important; }
+
+  /* Nav: hide logo text on very small screens to fit */
+  .logo-name { font-size: 14px !important; }
+
+  /* Reduce hero-pill padding so it doesn't wrap */
+  .hero-pill {
+    font-size: 9px !important;
+    padding: 3px 9px !important;
+    letter-spacing: 0.03em !important;
+  }
 }
+
 
