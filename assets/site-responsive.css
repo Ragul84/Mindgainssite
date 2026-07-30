@@ -1,11 +1,10 @@
 /* ================================================================
-   MINDGAINS AI — MOBILE DESIGN SYSTEM
-   Apple-level minimal, Material You–inspired, zero clutter
+   MINDGAINS AI — SITE-WIDE RESPONSIVE CSS
+   Nav + Footer + All inner pages
+   (Hero/Chat/Features are handled in index.html's own <style>)
    ================================================================ */
 
 :root {
-  --nav-bg: rgba(5, 6, 10, 0.86);
-  --nav-border: rgba(255, 255, 255, 0.10);
   --accent: #7BE3B0;
   --accent-bg: rgba(123, 227, 176, 0.10);
   --accent-border: rgba(123, 227, 176, 0.22);
@@ -14,26 +13,27 @@
 /* Desktop: hide mobile-only elements */
 .footer-mobile-links { display: none; }
 
-/* ── Desktop nav skeleton ── */
+/* ── Hide pill sparkle globally ── */
+.pill-sparkle { display: none !important; }
+
+/* ── Desktop nav (#site-nav) skeleton ── */
 nav#site-nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   z-index: 1100;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
   padding: 12px clamp(16px, 4vw, 36px);
-  background: rgba(5, 6, 10, 0.86);
+  background: rgba(5, 6, 10, 0.88);
   backdrop-filter: blur(22px) saturate(160%);
   -webkit-backdrop-filter: blur(22px) saturate(160%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
-  box-shadow: 0 1px 0 rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.04);
 }
 
-/* ── Site backdrop ── */
+/* ── Backdrop ── */
 .site-nav-backdrop {
   position: fixed;
   inset: 0;
@@ -46,14 +46,8 @@ nav#site-nav {
   transition: opacity 0.25s ease;
 }
 
-body.menu-open {
-  overflow: hidden;
-}
-
-body.menu-open .site-nav-backdrop {
-  opacity: 1;
-  pointer-events: auto;
-}
+body.menu-open { overflow: hidden; }
+body.menu-open .site-nav-backdrop { opacity: 1; pointer-events: auto; }
 
 
 /* ================================================================
@@ -61,13 +55,12 @@ body.menu-open .site-nav-backdrop {
    ================================================================ */
 @media (max-width: 768px) {
 
-  /* ── 1. NAV ── */
+  /* ── NAV ── */
   nav#site-nav {
     padding: 0 16px;
     height: 56px;
   }
 
-  /* Show hamburger */
   nav#site-nav .nav-toggle {
     display: inline-flex !important;
     flex-direction: column;
@@ -84,16 +77,13 @@ body.menu-open .site-nav-backdrop {
     flex-shrink: 0;
   }
 
-  /* Hide desktop nav links */
   nav#site-nav .nav-glass-btn,
   nav#site-nav .nav-center { display: none !important; }
 
-  /* Slide-down menu */
   nav#site-nav .nav-right {
     position: fixed;
     top: 56px;
-    left: 12px;
-    right: 12px;
+    left: 12px; right: 12px;
     display: flex !important;
     flex-direction: column;
     align-items: stretch;
@@ -135,7 +125,7 @@ body.menu-open .site-nav-backdrop {
   }
 
   nav#site-nav .nav-right .nav-cta-btn {
-    background: var(--accent) !important;
+    background: #7BE3B0 !important;
     color: #001014 !important;
     border-color: transparent !important;
     font-weight: 700 !important;
@@ -146,244 +136,7 @@ body.menu-open .site-nav-backdrop {
     border-color: rgba(255,255,255,0.10) !important;
   }
 
-  /* ── 2. HERO ── */
-  #hero {
-    min-height: auto !important;
-    height: auto !important;
-    padding: 80px 20px 0 !important;
-    justify-content: flex-start !important;
-    align-items: flex-start !important;
-    text-align: left !important;
-  }
-
-  /* Shrink glow */
-  #hero .google-glow {
-    width: 280px !important;
-    height: 200px !important;
-    top: -20px !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    filter: blur(50px) !important;
-  }
-
-  /* Badge */
-  #hero .a1 { margin-bottom: 0; }
-
-  #hero .hero-pill {
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 5px !important;
-    font-size: 10px !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.04em !important;
-    text-transform: uppercase !important;
-    color: var(--accent) !important;
-    background: rgba(123,227,176,0.08) !important;
-    border: 1px solid rgba(123,227,176,0.2) !important;
-    padding: 4px 10px !important;
-    border-radius: 999px !important;
-    margin-bottom: 0 !important;
-  }
-
-  /* Headline */
-  #hero h1 {
-    font-size: 32px !important;
-    line-height: 1.1 !important;
-    letter-spacing: -0.03em !important;
-    margin: 10px 0 10px !important;
-    max-width: 100% !important;
-  }
-
-  #hero h1 em {
-    font-style: italic !important;
-    color: rgba(255,255,255,0.4) !important;
-    background: none !important;
-    -webkit-background-clip: unset !important;
-    background-clip: unset !important;
-  }
-
-  /* Subtitle */
-  #hero .sub {
-    font-size: 14px !important;
-    line-height: 1.55 !important;
-    color: rgba(255,255,255,0.55) !important;
-    max-width: 100% !important;
-    margin: 0 0 20px !important;
-  }
-
-  /* Hide forced line breaks */
-  .hero-br { display: none !important; }
-
-  /* CTA Buttons — side by side, full row */
-  .hero-btns {
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 10px !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-bottom: 24px !important;
-  }
-
-  .hero-btns .btn-primary {
-    flex: 1 !important;
-    justify-content: center !important;
-    height: 44px !important;
-    font-size: 13.5px !important;
-    padding: 0 16px !important;
-    border-radius: 12px !important;
-    white-space: nowrap !important;
-  }
-
-  .hero-btns .btn-outline {
-    flex: 1 !important;
-    justify-content: center !important;
-    height: 44px !important;
-    font-size: 13.5px !important;
-    padding: 0 16px !important;
-    border-radius: 12px !important;
-    white-space: nowrap !important;
-  }
-
-  /* ── 3. FEATURE STATS — Single Glass Tile ── */
-  .stats {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 1px !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 0 0 0 !important;
-    padding: 0 !important;
-    background: rgba(255,255,255,0.06) !important;
-    border: 1px solid rgba(255,255,255,0.07) !important;
-    border-radius: 18px !important;
-    overflow: hidden !important;
-    box-shadow: none !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-  }
-
-  .stat {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    gap: 10px !important;
-    padding: 14px 14px !important;
-    background: rgba(10,10,14,0.9) !important;
-    border: none !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    margin: 0 !important;
-    text-align: left !important;
-  }
-
-  /* Thin dividers between cells */
-  .stat:nth-child(1) { border-bottom: 1px solid rgba(255,255,255,0.06) !important; }
-  .stat:nth-child(2) { border-left: 1px solid rgba(255,255,255,0.06) !important; border-bottom: 1px solid rgba(255,255,255,0.06) !important; }
-  .stat:nth-child(4) { border-left: 1px solid rgba(255,255,255,0.06) !important; }
-
-  .stat-icon-wrapper {
-    width: 30px !important;
-    height: 30px !important;
-    border-radius: 8px !important;
-    background: rgba(123,227,176,0.08) !important;
-    border: 1px solid rgba(123,227,176,0.18) !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    color: var(--accent) !important;
-    flex-shrink: 0 !important;
-  }
-
-  .stat-icon-wrapper .material-symbols-outlined {
-    font-size: 16px !important;
-  }
-
-  .stat-info {
-    display: flex !important;
-    flex-direction: column !important;
-    min-width: 0 !important;
-  }
-
-  .stat-label {
-    font-size: 11.5px !important;
-    font-weight: 700 !important;
-    color: #fff !important;
-    line-height: 1.2 !important;
-    white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-  }
-
-  .stat-sub {
-    font-size: 9.5px !important;
-    color: rgba(255,255,255,0.42) !important;
-    margin-top: 2px !important;
-    line-height: 1.2 !important;
-    white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-  }
-
-  /* ── 4. CHAT PANEL ── */
-  #chat-section {
-    padding: 12px 0 0 !important;
-    margin: 0 !important;
-  }
-
-  .chat-panel-container {
-    padding: 0 !important;
-  }
-
-  .chat-panel {
-    height: 480px !important;
-    border-radius: 0 !important;
-    border-left: none !important;
-    border-right: none !important;
-  }
-
-  /* ── 5. FEATURES SECTION ── */
-  .section.dark, #features {
-    padding: 40px 16px !important;
-  }
-
-  .feat-grid {
-    grid-template-columns: 1fr !important;
-    gap: 12px !important;
-  }
-
-  .feat-card {
-    padding: 20px 18px !important;
-  }
-
-  .feat-card-hero {
-    grid-column: span 1 !important;
-  }
-
-  /* ── 6. BOTTOM CTA ── */
-  #cta-bottom {
-    padding: 40px 20px !important;
-    text-align: left !important;
-  }
-
-  #cta-bottom h2 {
-    font-size: clamp(26px, 7vw, 36px) !important;
-    margin-bottom: 10px !important;
-  }
-
-  #cta-bottom p {
-    font-size: 14px !important;
-    margin-bottom: 20px !important;
-  }
-
-  #cta-bottom .btn-primary {
-    width: 100% !important;
-    justify-content: center !important;
-    height: 48px !important;
-    font-size: 15px !important;
-    border-radius: 14px !important;
-  }
-
-  /* ── 7. FOOTER — Apple-style minimal ── */
+  /* ── FOOTER — Apple minimal ── */
   footer {
     margin: 0 !important;
     border-radius: 0 !important;
@@ -395,41 +148,31 @@ body.menu-open .site-nav-backdrop {
     box-shadow: none !important;
   }
 
-  /* Hide the fancy liquid glass border overlay on mobile */
-  footer > div:first-of-type[style*="position:absolute"] {
-    display: none !important;
-  }
+  footer > div[style*="position:absolute"] { display: none !important; }
 
-  /* Collapse footer grid to single column */
   footer > div[style*="grid-template-columns"] {
     display: flex !important;
     flex-direction: column !important;
     gap: 0 !important;
   }
 
-  /* Brand block */
   footer > div > div:first-child {
     padding-bottom: 20px !important;
     border-bottom: 1px solid rgba(255,255,255,0.06) !important;
-    margin-bottom: 0 !important;
   }
 
-  /* Footer link columns — hide on mobile to keep it Apple-minimal */
   footer > div > div:not(:first-child):not([style*="display:flex"]) {
     display: none !important;
   }
 
-  /* Quick links row instead */
   footer .footer-mobile-links {
     display: flex !important;
     flex-wrap: wrap !important;
     gap: 8px !important;
     padding: 16px 0 !important;
     border-bottom: 1px solid rgba(255,255,255,0.06) !important;
-    margin-bottom: 0 !important;
   }
 
-  /* Bottom bar */
   footer > div[style*="padding-top:22px"],
   footer > div[style*="padding-top: 22px"] {
     flex-direction: column !important;
@@ -438,29 +181,8 @@ body.menu-open .site-nav-backdrop {
     margin-top: 16px !important;
     padding-top: 16px !important;
   }
-}
 
-/* ── Tiny phones ── */
-@media (max-width: 360px) {
-  #hero { padding: 72px 16px 0 !important; }
-  #hero h1 { font-size: 28px !important; }
-  .hero-btns .btn-primary,
-  .hero-btns .btn-outline { font-size: 12.5px !important; height: 40px !important; }
-}
-
-
-/* ================================================================
-   ALL PAGES — QUIZ HUB, WAITLIST, EDITORIAL, EXAM HUBS, BLOG
-   Mobile design system for inner pages
-   ================================================================ */
-
-/* ── Hide pill icon globally ── */
-.pill-sparkle { display: none !important; }
-
-/* ── All page navs: quiz-hub .site-nav ── */
-@media (max-width: 768px) {
-
-  /* Quiz Hub nav (different from #site-nav) */
+  /* ── ALL INNER PAGE NAVS (.site-nav) ── */
   .site-nav {
     padding: 0 16px !important;
     height: 56px !important;
@@ -471,11 +193,9 @@ body.menu-open .site-nav-backdrop {
 
   .site-nav .brand { font-size: 14px !important; }
   .site-nav .brand img { width: 26px !important; height: 26px !important; }
-
-  /* Hide all nav links on quiz hub pages */
   .site-nav nav { display: none !important; }
 
-  /* ── QUIZ HUB PAGE ── */
+  /* ── QUIZ HUB ── */
   main {
     padding: 16px 14px 80px !important;
     width: 100% !important;
@@ -495,15 +215,12 @@ body.menu-open .site-nav-backdrop {
     line-height: 1.2 !important;
   }
 
-  .topic-hero p,
-  .topic-hero .dek {
+  .topic-hero p, .topic-hero .dek {
     font-size: 13.5px !important;
     line-height: 1.5 !important;
   }
 
-  .hero {
-    padding: 20px 0 16px !important;
-  }
+  .hero { padding: 20px 0 16px !important; }
 
   .hero h1 {
     font-size: 24px !important;
@@ -517,9 +234,8 @@ body.menu-open .site-nav-backdrop {
     margin-top: 6px !important;
   }
 
-  /* Search bar */
   .search-panel {
-    padding: 14px 14px !important;
+    padding: 14px !important;
     border-radius: 16px !important;
     margin-bottom: 12px !important;
   }
@@ -530,7 +246,6 @@ body.menu-open .site-nav-backdrop {
     padding: 0 14px !important;
   }
 
-  /* Pill row filters */
   .pill-row {
     display: flex !important;
     flex-wrap: nowrap !important;
@@ -543,9 +258,7 @@ body.menu-open .site-nav-backdrop {
 
   .pill-row::-webkit-scrollbar { display: none !important; }
 
-  .pill-row a,
-  .pill-row button,
-  .filter-pill {
+  .pill-row a, .pill-row button, .filter-pill {
     flex-shrink: 0 !important;
     white-space: nowrap !important;
     font-size: 12px !important;
@@ -553,57 +266,31 @@ body.menu-open .site-nav-backdrop {
     height: auto !important;
   }
 
-  /* Quiz cards grid */
   .grid {
     grid-template-columns: 1fr !important;
     gap: 10px !important;
   }
 
-  .card,
-  .quiz-shell {
-    padding: 16px 16px !important;
+  .card, .quiz-shell {
+    padding: 16px !important;
     border-radius: 16px !important;
   }
 
   .card h3 { font-size: 15px !important; }
   .card p { font-size: 13px !important; }
 
-  /* App bridge / banner */
   .app-bridge {
     padding: 20px 16px !important;
     border-radius: 18px !important;
     text-align: center !important;
   }
 
-  /* Quiz shell (single question view) */
-  .quiz-shell {
-    padding: 20px 16px !important;
-    border-radius: 18px !important;
-  }
-
   .quiz-shell h2 { font-size: 16px !important; line-height: 1.45 !important; }
-
   .options { gap: 8px !important; }
+  .option { padding: 12px 14px !important; font-size: 13.5px !important; border-radius: 12px !important; }
+  .quiz-nav { gap: 10px !important; }
+  .quiz-nav button { flex: 1 !important; height: 44px !important; font-size: 13.5px !important; border-radius: 12px !important; }
 
-  .option {
-    padding: 12px 14px !important;
-    font-size: 13.5px !important;
-    border-radius: 12px !important;
-  }
-
-  /* Quiz footer nav */
-  .quiz-nav {
-    gap: 10px !important;
-  }
-
-  .quiz-nav button {
-    flex: 1 !important;
-    height: 44px !important;
-    font-size: 13.5px !important;
-    border-radius: 12px !important;
-  }
-
-  /* Footer */
   .site-footer {
     margin: 20px 10px 16px !important;
     padding: 20px 16px !important;
@@ -617,81 +304,30 @@ body.menu-open .site-nav-backdrop {
 
   .footer-brand p { max-width: 100% !important; }
 
-  /* ── WAITLIST PAGE ── */
-  .waitlist-card,
-  .form-card,
-  [class*="waitlist"],
-  [class*="form-wrap"] {
-    padding: 24px 18px !important;
-    border-radius: 20px !important;
-    margin: 12px 14px !important;
-  }
-
-  .wl-hero,
-  .page-hero {
-    padding: 80px 20px 28px !important;
-    text-align: left !important;
-  }
-
-  .wl-hero h1,
-  .page-hero h1 {
-    font-size: 26px !important;
-    letter-spacing: -0.025em !important;
-    line-height: 1.2 !important;
-  }
-
-  .wl-hero p,
-  .page-hero p {
-    font-size: 14px !important;
-    margin-top: 8px !important;
-  }
-
-  /* Form inputs */
-  input[type="text"],
-  input[type="email"],
-  input[type="tel"],
-  select,
-  textarea {
-    font-size: 16px !important; /* prevents iOS zoom */
+  /* ── WAITLIST ── */
+  input[type="text"], input[type="email"], input[type="tel"],
+  select, textarea {
+    font-size: 16px !important;
     padding: 13px 14px !important;
     border-radius: 12px !important;
     width: 100% !important;
   }
 
   /* ── EDITORIAL / BLOG ── */
-  .editorial-hero,
-  .blog-hero {
-    padding: 76px 18px 24px !important;
-    text-align: left !important;
-  }
-
-  .article-grid,
-  .blog-grid,
-  .cards {
+  .article-grid, .blog-grid, .cards {
     grid-template-columns: 1fr !important;
     gap: 12px !important;
     padding: 0 !important;
   }
 
-  .article-card,
-  .blog-card,
-  .cards article {
+  .article-card, .blog-card, .cards article {
     border-radius: 16px !important;
     padding: 18px 16px !important;
   }
 
-  .article-card h2,
-  .blog-card h2 { font-size: 16px !important; }
+  .article-card h2, .blog-card h2 { font-size: 16px !important; }
 
-  /* ── EXAM HUB PAGES (tnpsc, upsc, etc.) ── */
-  .exam-hero {
-    padding: 76px 18px 28px !important;
-    text-align: left !important;
-  }
-
-  .exam-hero h1 { font-size: 26px !important; line-height: 1.15 !important; }
-  .exam-hero .dek { font-size: 14px !important; }
-
+  /* ── EXAM HUBS ── */
   .compare {
     grid-template-columns: 1fr !important;
     gap: 10px !important;
@@ -702,102 +338,23 @@ body.menu-open .site-nav-backdrop {
     border-radius: 16px !important;
   }
 
-  /* Section headings */
-  .section h2,
-  .section-head h2,
-  h2[class] {
+  .section h2, .section-head h2, h2[class] {
     font-size: clamp(20px, 5.5vw, 28px) !important;
     letter-spacing: -0.02em !important;
     line-height: 1.2 !important;
   }
 
-  /* Feature cards */
-  .feat-grid,
-  .feature-grid {
-    grid-template-columns: 1fr !important;
-    gap: 10px !important;
-  }
-
-  .feat-card,
-  .feature-card {
-    padding: 18px 16px !important;
-    border-radius: 16px !important;
-  }
-
-  /* ── MISA / STUDY LAB / KYI ── */
-  .misa-hero,
-  .lab-hero,
-  .kyi-hero {
-    padding: 76px 18px 24px !important;
-  }
-
-  .misa-hero h1,
-  .lab-hero h1,
-  .kyi-hero h1 { font-size: 26px !important; }
-
-  /* Generic section padding fix */
-  .section,
-  section.section {
-    padding: 36px 16px !important;
-  }
-
+  /* ── GENERIC SECTIONS ── */
+  .section, section.section,
   section.section.dark {
     padding: 36px 16px !important;
   }
-
-  /* ── CHAT PANEL CLUTTER REDUCTION ── */
-
-  /* Hide "Exam Intelligence · Textbook-Aware" subtitle in chat topbar */
-  .ctop-sub { display: none !important; }
-
-  /* Chat topbar: tighter layout */
-  .ctopbar {
-    padding: 8px 12px !important;
-    gap: 8px !important;
-  }
-
-  /* Mode tabs: icon only on mobile (hide text label) */
-  .mode-tab .mode-tab-label,
-  .mode-tab span:not(.material-symbols-outlined) {
-    display: none !important;
-  }
-
-  .mode-tab {
-    padding: 6px 10px !important;
-    min-width: 36px !important;
-    gap: 0 !important;
-  }
-
-  /* Chat title stays but shrinks slightly */
-  .ctop-title { font-size: 13px !important; }
-  .ctop-icon img { width: 26px !important; height: 26px !important; border-radius: 7px !important; }
-
-  /* Prompt card arrows — hide on mobile to save space */
-  .prompt-card-arrow { display: none !important; }
-
-  /* Prompt card subtitle text — truncate */
-  .type-target {
-    white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    max-width: 100% !important;
-    display: block !important;
-  }
-
-  /* Hide "Exam Intelligence · Textbook-Aware" variant anywhere else */
-  [class*="ctop-sub"],
-  .chat-sub,
-  .ai-sub-label { display: none !important; }
-
-  /* Nav: hide logo text on very small screens to fit */
-  .logo-name { font-size: 14px !important; }
-
-  /* Reduce hero-pill padding so it doesn't wrap */
-  .hero-pill {
-    font-size: 9px !important;
-    padding: 3px 9px !important;
-    letter-spacing: 0.03em !important;
-  }
 }
 
-
+/* ── Tiny phones ── */
+@media (max-width: 360px) {
+  #hero { padding: 66px 16px 0 !important; }
+  #hero h1 { font-size: 22px !important; }
+  .hero-btns .btn-primary,
+  .hero-btns .btn-outline { font-size: 12px !important; height: 38px !important; padding: 0 10px !important; }
+}

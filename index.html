@@ -284,9 +284,9 @@
     #send-btn:disabled .ms { color:rgba(255,255,255,.3); }
 
     /* msg limit bar */
-    #limit-bar { display:none; align-items:center; justify-content:space-between; padding:10px 16px; background:rgba(248,113,113,.08); border-top:1px solid rgba(248,113,113,.2); flex-shrink:0; }
-    #limit-bar span { font-size:12px; color:var(--danger); }
-    #limit-signin { font-family:'Inter',sans-serif; font-size:12px; font-weight:600; color:#fff; background:var(--danger); border:none; padding:5px 14px; border-radius:999px; cursor:pointer; }
+    #limit-bar { display:none; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; padding:8px 14px; background:rgba(20,20,28,0.9); border-top:1px solid rgba(255,255,255,.07); flex-shrink:0; }
+    #limit-bar span { font-size:12px; color:rgba(255,255,255,0.7); flex:1; min-width:0; }
+    #limit-signin { font-family:'Inter',sans-serif; font-size:11.5px; font-weight:700; color:#0F172A; background:#fff; border:none; padding:5px 13px; border-radius:999px; cursor:pointer; white-space:nowrap; flex-shrink:0; }
 
     /* === QUIZ MODE (Full Spread App Style) === */
     #quiz-panel { width:100%; max-width:1140px; margin:0 auto; display:none; }
@@ -586,16 +586,20 @@
       opacity: 1;
     }
 
-    /* === MOBILE OPTIMIZED (PRO LEVEL DESIGN) === */
+    /* === MOBILE (768px and below) — Full Pro Redesign === */
     @media (max-width: 768px) {
-      nav { padding: 10px 16px; height: 54px; }
-      
-      /* Eliminate huge top void & reset 100vh flex-centering on mobile */
+
+      /* ── NAV ── */
+      nav { padding: 0 16px; height: 56px; }
+
+      /* ── HERO: no more void, left-aligned like Apple ── */
       #hero {
         min-height: auto !important;
         height: auto !important;
-        padding: 68px 16px 28px !important;
+        padding: 72px 20px 20px !important;
         justify-content: flex-start !important;
+        align-items: flex-start !important;
+        text-align: left !important;
       }
       
       .google-glow {
@@ -635,33 +639,35 @@
       }
 
       #hero .sub {
-        font-size: 13px !important;
-        line-height: 1.5 !important;
-        color: rgba(255, 255, 255, 0.68) !important;
-        max-width: 300px !important;
-        margin: 0 auto 20px !important;
+        font-size: 13.5px !important;
+        line-height: 1.55 !important;
+        color: rgba(255, 255, 255, 0.6) !important;
+        max-width: 100% !important;
+        margin: 0 0 20px !important;
+        text-align: left !important;
       }
 
       .hero-br { display: none !important; }
 
       .hero-btns {
         display: flex !important;
-        flex-direction: row;
-        width: 100%;
-        max-width: 320px;
-        gap: 8px;
-        margin-bottom: 24px;
+        flex-direction: row !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        gap: 8px !important;
+        margin-bottom: 24px !important;
+        justify-content: flex-start !important;
       }
 
       .hero-btns .btn-primary, .hero-btns .btn-outline {
-        flex: 1;
-        min-width: 0;
-        justify-content: center;
-        height: 42px;
-        padding: 0 14px;
-        font-size: 13px;
-        border-radius: 999px;
-        white-space: nowrap;
+        flex: 1 !important;
+        min-width: 0 !important;
+        justify-content: center !important;
+        height: 42px !important;
+        padding: 0 12px !important;
+        font-size: 13px !important;
+        border-radius: 12px !important;
+        white-space: nowrap !important;
       }
 
       .hero-btns .btn-primary .ms, .hero-btns .btn-outline .ms {
@@ -742,17 +748,131 @@
         text-overflow: ellipsis !important;
       }
 
-      .chat-panel { height: 490px; border-radius: 16px; }
-      .quiz-pick { padding: 16px; }
-      .quiz-body { padding: 16px; }
+      /* ── CHAT SECTION: clear gap above ── */
+      #chat-section {
+        padding: 32px 0 0 !important;
+        border-top: 1px solid rgba(255,255,255,0.06) !important;
+      }
+
+      /* ── CHAT PANEL: full-width, no rounding on sides ── */
+      .chat-panel {
+        height: calc(100svh - 180px) !important;
+        min-height: 420px !important;
+        max-height: 580px !important;
+        border-radius: 16px !important;
+        margin: 0 14px !important;
+        width: calc(100% - 28px) !important;
+      }
+
+      /* ── CHAT TOPBAR ── */
+      .ctopbar { padding: 8px 12px !important; }
+      .ctop-sub { display: none !important; }
+      .ctop-title { font-size: 13px !important; }
+      .ctop-icon img { width: 24px !important; height: 24px !important; }
+
+      /* Mode tabs: icon-only */
+      .mode-tab { padding: 5px 10px !important; gap: 0 !important; }
+      .mode-tab span:last-child:not(.material-symbols-outlined) { display: none !important; }
+
+      /* ── EMPTY STATE / SIGN-IN GATE: the big crowded area ── */
+      .empty-state {
+        padding: 16px 14px !important;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+        height: auto !important;
+      }
+
+      .empty-title {
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        margin-bottom: 12px !important;
+        color: rgba(255,255,255,0.8) !important;
+      }
+
+      /* Prompt cards: single column, compact */
+      .empty-grid {
+        grid-template-columns: 1fr !important;
+        gap: 7px !important;
+        max-width: 100% !important;
+        width: 100% !important;
+      }
+
+      .prompt-card {
+        padding: 9px 12px !important;
+        border-radius: 10px !important;
+        gap: 9px !important;
+      }
+
+      .prompt-card-icon { font-size: 16px !important; }
+
+      .prompt-card-text strong {
+        font-size: 12px !important;
+        margin-bottom: 0 !important;
+      }
+
+      .prompt-card-text span {
+        font-size: 10.5px !important;
+      }
+
+      .prompt-card-arrow { display: none !important; }
+
+      /* Sign-in required wall — reduce to a compact bar */
+      #sign-in-gate,
+      .sign-in-gate,
+      [id*="gate"],
+      .auth-gate {
+        padding: 12px 14px !important;
+        border-radius: 12px !important;
+        margin: 8px 0 0 !important;
+        text-align: center !important;
+      }
+
+      /* ── CHAT INPUT ── */
+      .cinput-wrap { padding: 6px 10px 8px !important; }
+      #chat-input { font-size: 14px !important; }
+      #chat-input::placeholder { font-size: 13px !important; }
+
+      /* ── QUIZ PANELS ── */
+      .quiz-pick { padding: 14px !important; }
+      .quiz-body { padding: 14px !important; }
+      .quiz-pick-grid { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
+      .qcat-btn { padding: 10px 12px !important; gap: 8px !important; border-radius: 12px !important; }
+      .qcat-icon { width: 30px !important; height: 30px !important; border-radius: 9px !important; }
+      .qcat-icon .ms { font-size: 16px !important; }
+      .qcat-name { font-size: 12px !important; }
+      .qcat-sub { font-size: 10px !important; }
+
+      /* ── FEATURES SECTION ── */
+      #features { padding: 32px 14px 48px !important; }
+      .feat-grid { gap: 10px !important; }
+      .feat-card { padding: 20px 16px !important; border-radius: 18px !important; }
+      .feat-card-hero { grid-column: span 1 !important; }
+      .feat-card h3 { font-size: 15px !important; }
+      .feat-card p { font-size: 13px !important; }
+
+      /* ── BOTTOM CTA ── */
+      #cta-bottom {
+        padding: 40px 20px 52px !important;
+        text-align: left !important;
+      }
+      #cta-bottom h2 { font-size: clamp(24px,7vw,36px) !important; }
+      #cta-bottom p { font-size: 13.5px !important; margin: 0 0 20px !important; max-width: 100% !important; }
+      #cta-bottom .btn-primary {
+        width: 100% !important;
+        justify-content: center !important;
+        height: 48px !important;
+        font-size: 14.5px !important;
+        border-radius: 12px !important;
+      }
     }
 
     @media (max-width: 360px) {
-      #hero { padding-top: 62px !important; }
+      #hero { padding-top: 66px !important; }
       #hero h1 { font-size: 22px !important; }
       .stat-sub { display: none !important; }
       .stat-label { font-size: 10.5px !important; }
-      .hero-btns .btn-primary, .hero-btns .btn-outline { font-size: 12px; height: 38px; padding: 0 10px; }
+      .hero-btns .btn-primary, .hero-btns .btn-outline { font-size: 12px !important; height: 38px !important; padding: 0 10px !important; }
     }
   </style>
 
@@ -1309,8 +1429,8 @@ window.updateAuthAccessUI = function() {
     if (limitBar) {
       limitBar.style.display = 'flex';
       limitBar.innerHTML = `
-        <span style="font-size:12.5px;color:rgba(255,255,255,0.78);display:flex;align-items:center;gap:6px;"><span class="material-symbols-outlined ms" style="font-size:16px;color:#7BE3B0;">lock</span> <strong>Sign in required to access AI</strong> (10 free messages/day for signed-in users)</span>
-        <button id="limit-signin" onclick="openAuthModal()" style="font-size:12px;font-weight:700;padding:6px 16px;border-radius:999px;background:#FFFFFF;color:#0F172A;border:none;cursor:pointer;box-shadow:0 2px 10px rgba(255,255,255,0.2);">Sign in with Google</button>
+        <span style="font-size:12px;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:5px;"><span class="material-symbols-outlined ms" style="font-size:14px;color:#7BE3B0;">lock</span><span><strong style="color:#fff;">Sign in to use AI</strong> &nbsp;·&nbsp; 10 free messages/day</span></span>
+        <button id="limit-signin" onclick="openAuthModal()" style="font-size:11.5px;font-weight:700;padding:5px 14px;border-radius:999px;background:#FFFFFF;color:#0F172A;border:none;cursor:pointer;white-space:nowrap;flex-shrink:0;">Sign in</button>
       `;
     }
   } else {
