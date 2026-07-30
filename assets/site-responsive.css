@@ -447,3 +447,302 @@ body.menu-open .site-nav-backdrop {
   .hero-btns .btn-primary,
   .hero-btns .btn-outline { font-size: 12.5px !important; height: 40px !important; }
 }
+
+
+/* ================================================================
+   ALL PAGES — QUIZ HUB, WAITLIST, EDITORIAL, EXAM HUBS, BLOG
+   Mobile design system for inner pages
+   ================================================================ */
+
+/* ── Hide pill icon globally ── */
+.pill-sparkle { display: none !important; }
+
+/* ── All page navs: quiz-hub .site-nav ── */
+@media (max-width: 768px) {
+
+  /* Quiz Hub nav (different from #site-nav) */
+  .site-nav {
+    padding: 0 16px !important;
+    height: 56px !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1100 !important;
+  }
+
+  .site-nav .brand { font-size: 14px !important; }
+  .site-nav .brand img { width: 26px !important; height: 26px !important; }
+
+  /* Hide all nav links on quiz hub pages */
+  .site-nav nav { display: none !important; }
+
+  /* ── QUIZ HUB PAGE ── */
+  main {
+    padding: 16px 14px 80px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .topic-hero {
+    margin: 12px 0 16px !important;
+    padding: 22px 18px !important;
+    border-radius: 18px !important;
+    gap: 10px !important;
+  }
+
+  .topic-hero h1 {
+    font-size: 22px !important;
+    letter-spacing: -0.02em !important;
+    line-height: 1.2 !important;
+  }
+
+  .topic-hero p,
+  .topic-hero .dek {
+    font-size: 13.5px !important;
+    line-height: 1.5 !important;
+  }
+
+  .hero {
+    padding: 20px 0 16px !important;
+  }
+
+  .hero h1 {
+    font-size: 24px !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.025em !important;
+  }
+
+  .hero .dek {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    margin-top: 6px !important;
+  }
+
+  /* Search bar */
+  .search-panel {
+    padding: 14px 14px !important;
+    border-radius: 16px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .search-panel input {
+    font-size: 14px !important;
+    height: 44px !important;
+    padding: 0 14px !important;
+  }
+
+  /* Pill row filters */
+  .pill-row {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    gap: 8px !important;
+    padding-bottom: 8px !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .pill-row::-webkit-scrollbar { display: none !important; }
+
+  .pill-row a,
+  .pill-row button,
+  .filter-pill {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    font-size: 12px !important;
+    padding: 6px 14px !important;
+    height: auto !important;
+  }
+
+  /* Quiz cards grid */
+  .grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .card,
+  .quiz-shell {
+    padding: 16px 16px !important;
+    border-radius: 16px !important;
+  }
+
+  .card h3 { font-size: 15px !important; }
+  .card p { font-size: 13px !important; }
+
+  /* App bridge / banner */
+  .app-bridge {
+    padding: 20px 16px !important;
+    border-radius: 18px !important;
+    text-align: center !important;
+  }
+
+  /* Quiz shell (single question view) */
+  .quiz-shell {
+    padding: 20px 16px !important;
+    border-radius: 18px !important;
+  }
+
+  .quiz-shell h2 { font-size: 16px !important; line-height: 1.45 !important; }
+
+  .options { gap: 8px !important; }
+
+  .option {
+    padding: 12px 14px !important;
+    font-size: 13.5px !important;
+    border-radius: 12px !important;
+  }
+
+  /* Quiz footer nav */
+  .quiz-nav {
+    gap: 10px !important;
+  }
+
+  .quiz-nav button {
+    flex: 1 !important;
+    height: 44px !important;
+    font-size: 13.5px !important;
+    border-radius: 12px !important;
+  }
+
+  /* Footer */
+  .site-footer {
+    margin: 20px 10px 16px !important;
+    padding: 20px 16px !important;
+    border-radius: 18px !important;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .footer-brand p { max-width: 100% !important; }
+
+  /* ── WAITLIST PAGE ── */
+  .waitlist-card,
+  .form-card,
+  [class*="waitlist"],
+  [class*="form-wrap"] {
+    padding: 24px 18px !important;
+    border-radius: 20px !important;
+    margin: 12px 14px !important;
+  }
+
+  .wl-hero,
+  .page-hero {
+    padding: 80px 20px 28px !important;
+    text-align: left !important;
+  }
+
+  .wl-hero h1,
+  .page-hero h1 {
+    font-size: 26px !important;
+    letter-spacing: -0.025em !important;
+    line-height: 1.2 !important;
+  }
+
+  .wl-hero p,
+  .page-hero p {
+    font-size: 14px !important;
+    margin-top: 8px !important;
+  }
+
+  /* Form inputs */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    font-size: 16px !important; /* prevents iOS zoom */
+    padding: 13px 14px !important;
+    border-radius: 12px !important;
+    width: 100% !important;
+  }
+
+  /* ── EDITORIAL / BLOG ── */
+  .editorial-hero,
+  .blog-hero {
+    padding: 76px 18px 24px !important;
+    text-align: left !important;
+  }
+
+  .article-grid,
+  .blog-grid,
+  .cards {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    padding: 0 !important;
+  }
+
+  .article-card,
+  .blog-card,
+  .cards article {
+    border-radius: 16px !important;
+    padding: 18px 16px !important;
+  }
+
+  .article-card h2,
+  .blog-card h2 { font-size: 16px !important; }
+
+  /* ── EXAM HUB PAGES (tnpsc, upsc, etc.) ── */
+  .exam-hero {
+    padding: 76px 18px 28px !important;
+    text-align: left !important;
+  }
+
+  .exam-hero h1 { font-size: 26px !important; line-height: 1.15 !important; }
+  .exam-hero .dek { font-size: 14px !important; }
+
+  .compare {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .compare .panel {
+    padding: 18px 16px !important;
+    border-radius: 16px !important;
+  }
+
+  /* Section headings */
+  .section h2,
+  .section-head h2,
+  h2[class] {
+    font-size: clamp(20px, 5.5vw, 28px) !important;
+    letter-spacing: -0.02em !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Feature cards */
+  .feat-grid,
+  .feature-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .feat-card,
+  .feature-card {
+    padding: 18px 16px !important;
+    border-radius: 16px !important;
+  }
+
+  /* ── MISA / STUDY LAB / KYI ── */
+  .misa-hero,
+  .lab-hero,
+  .kyi-hero {
+    padding: 76px 18px 24px !important;
+  }
+
+  .misa-hero h1,
+  .lab-hero h1,
+  .kyi-hero h1 { font-size: 26px !important; }
+
+  /* Generic section padding fix */
+  .section,
+  section.section {
+    padding: 36px 16px !important;
+  }
+
+  section.section.dark {
+    padding: 36px 16px !important;
+  }
+}
+
