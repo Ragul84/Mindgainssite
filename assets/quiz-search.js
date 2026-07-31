@@ -16,6 +16,9 @@
         box-shadow: 0 4px 16px rgba(0,0,0,0.2);
         transition: all 0.2s;
       }
+      #quiz-player {
+        scroll-margin-top: 84px;
+      }
       .exam-stmt-label {
         font-family: 'Poppins', sans-serif;
         font-weight: 700;
@@ -51,6 +54,41 @@
         .exam-stmt-text {
           font-size: 13px;
           line-height: 1.45;
+        }
+      }
+
+      .quiz-feedback {
+        font-size: 13px !important;
+        line-height: 1.5 !important;
+        padding: 12px 14px !important;
+        margin-top: 12px !important;
+      }
+      .quiz-feedback .explanation {
+        font-size: 12.5px !important;
+        line-height: 1.5 !important;
+        margin-top: 6px !important;
+        color: rgba(255, 255, 255, 0.7) !important;
+      }
+      .quiz-feedback .correct-ans {
+        font-size: 12.5px !important;
+        margin-top: 4px !important;
+      }
+      
+      @media (max-width: 600px) {
+        .quiz-feedback {
+          font-size: 12px !important;
+          line-height: 1.4 !important;
+          padding: 8px 10px !important;
+          margin-top: 8px !important;
+        }
+        .quiz-feedback .explanation {
+          font-size: 11.5px !important;
+          line-height: 1.4 !important;
+          margin-top: 4px !important;
+        }
+        .quiz-feedback .correct-ans {
+          font-size: 11.5px !important;
+          margin-top: 2px !important;
         }
       }
     `;
@@ -456,9 +494,9 @@
     if (idx >= order.length - 1) { finish(); return; }
     idx++;
     render();
-    // Smooth scroll to question on mobile
-    if (window.innerWidth < 600) {
-      qEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Smooth scroll the entire player into view (clears sticky headers using scroll-margin-top)
+    if (player) {
+      player.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 
