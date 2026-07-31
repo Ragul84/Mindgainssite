@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>MindGains AI | Gamified Textbook AI Tutor for Aspirants</title>
+  <title>MindGains AI | India's First Textbook-Aware AI Tutor for Aspirants</title>
   <meta name="description" content="Master UPSC, TNPSC, SSC, and state exams with MindGains AI. Duolingo-style gamified learning grounded in SCERT Samacheer Kalvi & NCERT textbooks." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://mindgains.ai/" />
@@ -17,7 +17,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
 
   <!-- Supabase Auth SDK (Real Google Sign-In) -->
@@ -60,12 +60,10 @@
       --duo-blue-dark: #0080D6;
       --duo-blue-shadow: #0070BC;
       --duo-green: #58CC02;
-      --duo-green-dark: #46A302;
       --duo-gold: #FFC800;
       --duo-gold-dark: #E69D00;
       --duo-violet: #CE82FF;
       --duo-violet-dark: #A541EE;
-      --duo-red: #FF4B4B;
       --accent: #7BE3B0;
       --bg: #0A0C12;
       --surface: rgba(22, 26, 38, 0.9);
@@ -166,6 +164,10 @@
     .nav-logo { width: 32px; height: 32px; border-radius: 9px; object-fit: cover; }
     .nav-title { font-size: 17px; font-weight: 900; letter-spacing: -0.02em; color: #fff; }
 
+    .nav-links { display: flex; align-items: center; gap: 20px; list-style: none; }
+    .nav-link { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 13.5px; font-weight: 600; transition: color 0.18s; }
+    .nav-link:hover { color: #fff; }
+
     .nav-stats-bar { display: flex; align-items: center; gap: 12px; }
     .stat-badge {
       display: flex; align-items: center; gap: 6px;
@@ -175,7 +177,6 @@
     }
     .stat-badge.fire { color: #FF9600; border-color: rgba(255,150,0,0.3); background: rgba(255,150,0,0.1); }
     .stat-badge.xp { color: #38BDF8; border-color: rgba(56,189,248,0.3); background: rgba(56,189,248,0.1); }
-    .stat-badge.msg { color: #7BE3B0; border-color: rgba(123,227,176,0.3); background: rgba(123,227,176,0.1); }
 
     .nav-right { display: flex; align-items: center; gap: 12px; }
     #signin-btn { display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); color: #fff; font-size: 12.5px; font-weight: 700; padding: 7px 16px; border-radius: 999px; cursor: pointer; transition: all 0.18s; }
@@ -189,204 +190,124 @@
     #hero {
       position: relative;
       margin-top: 60px;
-      padding: 40px 24px 56px;
+      padding: 40px 24px 48px;
       max-width: 1080px;
       margin-left: auto;
       margin-right: auto;
       text-align: center;
     }
+    .hero-pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(28,176,246,0.12); border: 1px solid rgba(28,176,246,0.3);
+      color: var(--duo-blue); font-size: 12px; font-weight: 800; letter-spacing: 0.04em;
+      padding: 5px 16px; border-radius: 999px; margin-bottom: 20px;
+    }
     .hero-mascot-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 18px;
-      margin-bottom: 24px;
-      flex-wrap: wrap;
+      display: flex; align-items: center; justify-content: center; gap: 18px;
+      margin-bottom: 20px; flex-wrap: wrap;
     }
     .mascot-avatar-frame {
-      width: 76px; height: 76px;
-      border-radius: 22px;
-      background: linear-gradient(135deg, var(--duo-blue), var(--cyan));
-      padding: 3px;
-      box-shadow: 0 10px 30px rgba(28,176,246,0.35);
-      flex-shrink: 0;
+      width: 72px; height: 72px; border-radius: 20px;
+      background: linear-gradient(135deg, var(--duo-blue), var(--accent));
+      padding: 3px; box-shadow: 0 10px 30px rgba(28,176,246,0.35); flex-shrink: 0;
     }
-    .mascot-avatar-img {
-      width: 100%; height: 100%;
-      border-radius: 19px;
-      object-fit: cover;
-    }
+    .mascot-avatar-img { width: 100%; height: 100%; border-radius: 17px; object-fit: cover; }
     .mascot-speech-bubble {
-      position: relative;
-      background: rgba(22, 28, 42, 0.95);
-      border: 2px solid var(--duo-blue);
-      border-radius: 20px;
-      padding: 14px 20px;
-      font-size: 14px;
-      font-weight: 700;
-      color: #ffffff;
-      max-width: 460px;
-      text-align: left;
-      box-shadow: 0 12px 36px rgba(0,0,0,0.6);
+      position: relative; background: rgba(22, 28, 42, 0.95);
+      border: 2px solid var(--duo-blue); border-radius: 20px;
+      padding: 14px 20px; font-size: 14px; font-weight: 700; color: #ffffff;
+      max-width: 460px; text-align: left; box-shadow: 0 12px 36px rgba(0,0,0,0.6);
     }
     .mascot-speech-bubble::before {
-      content: '';
-      position: absolute;
-      left: -10px; top: 50%;
-      transform: translateY(-50%) rotate(45deg);
-      width: 14px; height: 14px;
-      background: rgba(22, 28, 42, 0.95);
-      border-left: 2px solid var(--duo-blue);
-      border-bottom: 2px solid var(--duo-blue);
+      content: ''; position: absolute; left: -10px; top: 50%;
+      transform: translateY(-50%) rotate(45deg); width: 14px; height: 14px;
+      background: rgba(22, 28, 42, 0.95); border-left: 2px solid var(--duo-blue); border-bottom: 2px solid var(--duo-blue);
     }
 
     .hero-title {
-      font-size: clamp(30px, 4.8vw, 52px);
-      font-weight: 900;
-      line-height: 1.14;
-      letter-spacing: -0.03em;
-      color: #ffffff;
-      max-width: 860px;
-      margin: 0 auto 16px;
+      font-size: clamp(34px, 5.5vw, 68px);
+      font-weight: 900; line-height: 1.05; letter-spacing: -0.035em; color: #ffffff;
+      max-width: 860px; margin: 0 auto 14px;
     }
-    .hero-title span {
-      color: var(--duo-blue);
-      background: linear-gradient(135deg, var(--duo-blue) 0%, var(--accent) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .hero-subtitle {
-      font-size: clamp(15px, 1.8vw, 17.5px);
-      color: var(--muted);
-      line-height: 1.6;
-      max-width: 680px;
-      margin: 0 auto 32px;
-    }
+    .hero-title em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--muted); }
+    .hero-subtitle { font-size: clamp(15px, 1.8vw, 17.5px); color: var(--muted); line-height: 1.6; max-width: 660px; margin: 0 auto 28px; }
 
-    .hero-actions {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
+    .hero-actions { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 40px; }
+
+    /* === PROOF STATS BAR === */
+    .stats-proof-bar {
+      display: flex; align-items: center; justify-content: center; gap: 40px;
+      padding: 24px 20px; background: rgba(255,255,255,0.03); border: 2px solid var(--border);
+      border-radius: 24px; max-width: 860px; margin: 0 auto 20px; flex-wrap: wrap;
     }
+    .proof-item { text-align: center; }
+    .proof-val { font-size: 24px; font-weight: 900; color: #fff; }
+    .proof-lbl { font-size: 12px; color: var(--muted); font-weight: 600; margin-top: 2px; }
 
     /* === DUOLINGO-STYLE EXAM LEARNING PATH (TREE NODES) === */
-    .tree-section {
-      padding: 64px 24px;
-      border-top: 2px solid var(--border);
-      background: rgba(8, 10, 15, 0.6);
-    }
-    .tree-container {
-      max-width: 720px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 32px;
-      position: relative;
-    }
+    .tree-section { padding: 64px 24px; border-top: 2px solid var(--border); background: rgba(8, 10, 15, 0.6); }
+    .tree-container { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 28px; position: relative; }
     .tree-path-line {
-      position: absolute;
-      top: 40px; bottom: 40px; left: 50%;
-      transform: translateX(-50%);
-      width: 6px;
-      background: linear-gradient(180deg, var(--duo-blue) 0%, var(--duo-gold) 50%, var(--duo-violet) 100%);
-      border-radius: 999px;
-      z-index: 0;
+      position: absolute; top: 40px; bottom: 40px; left: 50%; transform: translateX(-50%);
+      width: 6px; background: linear-gradient(180deg, var(--duo-blue) 0%, var(--duo-gold) 50%, var(--duo-violet) 100%);
+      border-radius: 999px; z-index: 0;
     }
 
     .tree-node-card {
-      position: relative;
-      z-index: 1;
-      background: var(--surface);
-      border: 2px solid var(--border);
-      border-radius: 24px;
-      padding: 20px 24px;
-      width: 100%;
-      max-width: 480px;
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      cursor: pointer;
-      backdrop-filter: blur(20px);
-      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative; z-index: 1; background: var(--surface);
+      border: 2px solid var(--border); border-radius: 24px; padding: 20px 24px;
+      width: 100%; max-width: 480px; display: flex; align-items: center; gap: 18px;
+      cursor: pointer; backdrop-filter: blur(20px); transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
       box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
-    .tree-node-card:hover {
-      transform: translateY(-4px) scale(1.02);
-      border-color: var(--duo-blue);
-      box-shadow: 0 16px 40px rgba(28,176,246,0.25);
-    }
-    .tree-node-icon {
-      width: 56px; height: 56px;
-      border-radius: 18px;
-      background: rgba(28,176,246,0.14);
-      border: 2px solid var(--duo-blue);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 26px; flex-shrink: 0;
-      box-shadow: 0 6px 16px rgba(28,176,246,0.3);
-    }
+    .tree-node-card:hover { transform: translateY(-4px) scale(1.02); border-color: var(--duo-blue); box-shadow: 0 16px 40px rgba(28,176,246,0.25); }
+    .tree-node-icon { width: 56px; height: 56px; border-radius: 18px; background: rgba(28,176,246,0.14); border: 2px solid var(--duo-blue); display: flex; align-items: center; justify-content: center; font-size: 26px; flex-shrink: 0; box-shadow: 0 6px 16px rgba(28,176,246,0.3); }
     .tree-node-content { flex: 1; min-width: 0; text-align: left; }
     .tree-node-title { font-size: 15.5px; font-weight: 800; color: #fff; margin-bottom: 4px; }
     .tree-node-sub { font-size: 12.5px; color: var(--muted); line-height: 1.4; }
     .tree-node-xp { font-size: 11.5px; font-weight: 800; color: var(--duo-gold); display: flex; align-items: center; gap: 4px; margin-top: 6px; }
 
     /* === FROSTED GLASS BLURRED CHAT PREVIEW OVERLAY === */
-    #chat-section {
-      padding: 80px 24px;
-      border-top: 2px solid var(--border);
-    }
+    #chat-section { padding: 80px 24px; border-top: 2px solid var(--border); }
     .chat-panel-container { max-width: 900px; margin: 0 auto; position: relative; }
-    .chat-panel {
-      position: relative;
-      border-radius: 26px;
-      overflow: hidden;
-      height: 520px;
-      display: flex; flex-direction: column;
-      background: rgba(14, 18, 26, 0.94);
-      border: 2px solid var(--border);
-      box-shadow: 0 24px 64px rgba(0,0,0,0.8);
-    }
+    .chat-panel { position: relative; border-radius: 26px; overflow: hidden; height: 520px; display: flex; flex-direction: column; background: rgba(14, 18, 26, 0.94); border: 2px solid var(--border); box-shadow: 0 24px 64px rgba(0,0,0,0.8); }
 
     .chat-blur-overlay {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      z-index: 60;
-      background: rgba(10, 12, 18, 0.75);
-      backdrop-filter: blur(16px) saturate(180%);
-      -webkit-backdrop-filter: blur(16px) saturate(180%);
-      display: flex; align-items: center; justify-content: center;
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 60;
+      background: rgba(10, 12, 18, 0.75); backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%); display: flex; align-items: center; justify-content: center;
       padding: 20px; cursor: pointer;
     }
     .chat-blur-card {
-      background: rgba(18, 24, 36, 0.96);
-      border: 2px solid var(--duo-blue);
-      border-radius: 26px;
-      padding: 36px 28px;
-      max-width: 440px; width: 100%;
-      text-align: center;
-      box-shadow: 0 24px 60px rgba(0,0,0,0.8), 0 0 35px rgba(28,176,246,0.2);
+      background: rgba(18, 24, 36, 0.96); border: 2px solid var(--duo-blue);
+      border-radius: 26px; padding: 36px 28px; max-width: 440px; width: 100%;
+      text-align: center; box-shadow: 0 24px 60px rgba(0,0,0,0.8), 0 0 35px rgba(28,176,246,0.2);
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .chat-blur-overlay:hover .chat-blur-card {
-      transform: translateY(-4px) scale(1.02);
-      box-shadow: 0 32px 80px rgba(0,0,0,0.9), 0 0 50px rgba(28,176,246,0.35);
-    }
-    .chat-blur-icon {
-      width: 56px; height: 56px; border-radius: 18px;
-      background: rgba(28,176,246,0.15); border: 2px solid var(--duo-blue);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--duo-blue); margin: 0 auto 14px; overflow: hidden;
-    }
-    .chat-blur-badge {
-      font-size: 11px; font-weight: 900; letter-spacing: 0.08em;
-      color: var(--duo-blue); background: rgba(28,176,246,0.12);
-      padding: 4px 14px; border-radius: 999px; display: inline-block; margin-bottom: 10px;
-    }
+    .chat-blur-overlay:hover .chat-blur-card { transform: translateY(-4px) scale(1.02); box-shadow: 0 32px 80px rgba(0,0,0,0.9), 0 0 50px rgba(28,176,246,0.35); }
+    .chat-blur-icon { width: 56px; height: 56px; border-radius: 18px; background: rgba(28,176,246,0.15); border: 2px solid var(--duo-blue); display: flex; align-items: center; justify-content: center; color: var(--duo-blue); margin: 0 auto 14px; overflow: hidden; }
+    .chat-blur-badge { font-size: 11px; font-weight: 900; letter-spacing: 0.08em; color: var(--duo-blue); background: rgba(28,176,246,0.12); padding: 4px 14px; border-radius: 999px; display: inline-block; margin-bottom: 10px; }
     .chat-blur-title { font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 8px; }
     .chat-blur-desc { font-size: 13.5px; color: var(--muted); line-height: 1.55; margin-bottom: 24px; }
+
+    /* === FEATURES GRID (3D CARDS) === */
+    .features-section { padding: 80px 24px; border-top: 2px solid var(--border); background: #07080D; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1080px; margin: 0 auto; }
+    .feat-card {
+      background: var(--surface); border: 2px solid var(--border); border-radius: 24px;
+      padding: 28px 24px; text-align: left; transition: all 0.2s; box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+    .feat-card:hover { transform: translateY(-4px); border-color: var(--duo-blue); box-shadow: 0 16px 40px rgba(28,176,246,0.2); }
+    .feat-icon-wrap { width: 48px; height: 48px; border-radius: 16px; background: rgba(28,176,246,0.14); border: 1px solid var(--duo-blue); display: flex; align-items: center; justify-content: center; color: var(--duo-blue); margin-bottom: 16px; }
+    .feat-card h3 { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .feat-card p { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+
+    /* === SYLLABUS & TEXTBOOK COVERAGE GRID === */
+    .syllabus-section { padding: 80px 24px; border-top: 2px solid var(--border); }
+    .syll-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; max-width: 1080px; margin: 0 auto; }
+    .syll-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 20px; padding: 22px 20px; text-align: left; }
+    .syll-card h4 { font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+    .syll-card p { font-size: 13px; color: var(--muted); line-height: 1.5; }
 
     /* === FOOTER === */
     footer { border-top: 2px solid var(--border); padding: 60px 24px 40px; background: #05060A; }
@@ -396,37 +317,14 @@
     .footer-link { color: var(--muted); font-size: 13px; text-decoration: none; transition: color 0.18s; }
     .footer-link:hover { color: #fff; }
 
-    /* === TOP FLOATING TOAST NOTIFICATION === */
-    #toast-notification {
-      position: fixed;
-      top: 76px; right: 24px;
-      z-index: 9000;
-      width: auto;
-      background: rgba(18, 24, 36, 0.96);
-      backdrop-filter: blur(24px);
-      border: 1px solid rgba(123, 227, 176, 0.4);
-      border-radius: 999px;
-      padding: 8px 18px;
-      display: flex; align-items: center; gap: 8px;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(123, 227, 176, 0.2);
-      transform: translateY(-24px) scale(0.96);
-      opacity: 0; pointer-events: none;
-      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
-      font-family: 'Inter', sans-serif;
-    }
-    #toast-notification.show { transform: translateY(0) scale(1); opacity: 1; pointer-events: auto; }
-
-    /* === RESPONSIVE BREAKPOINTS === */
+    /* === RESPONSIVE === */
     @media (max-width: 768px) {
       nav { padding: 0 14px; height: 56px; }
-      .nav-stats-bar { gap: 6px; }
-      .stat-badge span:last-child { display: none; }
+      .nav-links { display: none; }
       #hero { padding: 24px 16px 36px; margin-top: 56px; }
       .mascot-speech-bubble::before { display: none; }
       .mascot-speech-bubble { text-align: center; }
-      .tree-node-card { padding: 16px 18px; }
-      #toast-notification { top: 68px !important; left: 50% !important; right: auto !important; transform: translateX(-50%) translateY(-16px) scale(0.96) !important; max-width: 90vw !important; }
-      #toast-notification.show { transform: translateX(-50%) translateY(0) scale(1) !important; }
+      .stats-proof-bar { gap: 20px; }
     }
   </style>
 </head>
@@ -439,6 +337,13 @@
       <span class="nav-title">MindGains AI</span>
     </a>
 
+    <ul class="nav-links">
+      <li><a href="#learning-path" class="nav-link">Learning Path</a></li>
+      <li><a href="#features" class="nav-link">Features</a></li>
+      <li><a href="#syllabus" class="nav-link">Textbooks</a></li>
+      <li><a href="chat/" class="nav-link">AI Workspace</a></li>
+    </ul>
+
     <!-- LIVE STREAK & XP BADGES -->
     <div class="nav-stats-bar">
       <div class="stat-badge fire" title="Daily Streak">
@@ -448,10 +353,6 @@
       <div class="stat-badge xp" title="Learning XP">
         <span class="material-symbols-outlined ms" style="font-size:16px;">bolt</span>
         <span>240 XP</span>
-      </div>
-      <div class="stat-badge msg" title="Free Daily Web Messages">
-        <span class="material-symbols-outlined ms" style="font-size:16px;">chat</span>
-        <span>10/10</span>
       </div>
     </div>
 
@@ -472,6 +373,11 @@
 
   <!-- BLUE FOX MASCOT HERO BANNER -->
   <section id="hero">
+    <div class="hero-pill">
+      <span class="material-symbols-outlined ms" style="font-size:14px;">verified</span>
+      GROUNDED IN OFFICIAL SYLLABUS FRAMEWORK
+    </div>
+
     <div class="hero-mascot-container">
       <div class="mascot-avatar-frame">
         <img src="assets/icons/ai-avatar.png" alt="Blue Fox Mascot" class="mascot-avatar-img" />
@@ -482,11 +388,11 @@
     </div>
 
     <h1 class="hero-title">
-      Master Your Exam Syllabus with <span>Duolingo-Style Gamified AI</span>
+      The AI Built<br><em>for Indian Exams.</em>
     </h1>
 
     <p class="hero-subtitle">
-      Instant explanations strictly grounded in SCERT Samacheer Kalvi & NCERT textbooks. Earn streak rewards, level up your XP, and solve official PYQs with your AI study buddy.
+      India's first textbook-aware AI tutor. Instant answers with precise textbook citations for UPSC, TNPSC, SSC, and State Exams.
     </p>
 
     <div class="hero-actions">
@@ -498,6 +404,22 @@
         <span class="material-symbols-outlined ms">quiz</span>
         <span>Try Adaptive Quiz</span>
       </a>
+    </div>
+
+    <!-- PROOF STATS BAR -->
+    <div class="stats-proof-bar">
+      <div class="proof-item">
+        <div class="proof-val">10,000+</div>
+        <div class="proof-lbl">Active Aspirants</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-val">100%</div>
+        <div class="proof-lbl">Textbook Grounded</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-val">50,000+</div>
+        <div class="proof-lbl">Solved PYQs</div>
+      </div>
     </div>
   </section>
 
@@ -563,6 +485,67 @@
     </div>
   </section>
 
+  <!-- FEATURES SECTION -->
+  <section class="features-section" id="features">
+    <div style="text-align:center;margin-bottom:40px;">
+      <span style="font-size:12px;font-weight:900;color:var(--duo-blue);letter-spacing:0.08em;background:rgba(28,176,246,0.12);padding:4px 14px;border-radius:999px;">BUILT FOR ASPIRANTS</span>
+      <h2 style="font-size:32px;font-weight:900;color:#fff;margin-top:8px;">Everything you need. Zero fluff.</h2>
+    </div>
+
+    <div class="features-grid">
+      <div class="feat-card">
+        <div class="feat-icon-wrap"><span class="material-symbols-outlined ms">menu_book</span></div>
+        <h3>NCERT &amp; SCERT Grounded</h3>
+        <p>Learn from answers strictly grounded in NCERT and SCERT Samacheer Kalvi textbooks, aligned with your exam syllabus.</p>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon-wrap" style="color:var(--duo-violet);border-color:var(--duo-violet);background:rgba(206,130,255,0.14);"><span class="material-symbols-outlined ms">account_balance</span></div>
+        <h3>UPSC &amp; State PSC PYQs</h3>
+        <p>Topic-wise previous year questions with step-by-step explanations and official answer key validations.</p>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon-wrap" style="color:var(--duo-gold);border-color:var(--duo-gold);background:rgba(255,200,0,0.14);"><span class="material-symbols-outlined ms">psychology</span></div>
+        <h3>Adaptive Quiz Engine</h3>
+        <p>Generate instant topic quizzes with instant feedback, streak multipliers, and XP rewards.</p>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon-wrap" style="color:var(--accent);border-color:var(--accent);background:rgba(123,227,176,0.14);"><span class="material-symbols-outlined ms">translate</span></div>
+        <h3>Learn in Your Language</h3>
+        <p>Study seamlessly in English, Tamil, Tanglish, and regional languages with zero compromise on accuracy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEXTBOOK SYLLABUS SECTION -->
+  <section class="syllabus-section" id="syllabus">
+    <div style="text-align:center;margin-bottom:40px;">
+      <span style="font-size:12px;font-weight:900;color:var(--duo-blue);letter-spacing:0.08em;background:rgba(28,176,246,0.12);padding:4px 14px;border-radius:999px;">PRESCRIBED SOURCES</span>
+      <h2 style="font-size:32px;font-weight:900;color:#fff;margin-top:8px;">Complete Syllabus Coverage</h2>
+    </div>
+
+    <div class="syll-grid">
+      <div class="syll-card">
+        <h4>SCERT Samacheer Kalvi</h4>
+        <p>Classes 6th to 12th Tamil, History, Science, Social Science & Polity textbooks.</p>
+      </div>
+      <div class="syll-card">
+        <h4>NCERT Standard Textbooks</h4>
+        <p>Classes 6th to 12th Political Science, Ancient/Modern History, Indian Economy & Geography.</p>
+      </div>
+      <div class="syll-card">
+        <h4>Standard Reference Books</h4>
+        <p>M. Laxmikanth Indian Polity, Bipin Chandra Modern India, Ramesh Singh Indian Economy.</p>
+      </div>
+      <div class="syll-card">
+        <h4>Exam Syllabus Mapping</h4>
+        <p>TNPSC Group 1, 2, 4, UPSC CSE Prelims, SSC CGL & State PSC exams.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- FROSTED GLASS BLURRED CHAT PREVIEW SECTION -->
   <section id="chat-section">
     <div style="text-align:center;margin-bottom:32px;">
@@ -600,8 +583,9 @@
 
       <ul class="footer-links">
         <li><a href="#learning-path" class="footer-link">Learning Tree</a></li>
-        <li><a href="chat/" class="footer-link">AI Tutor</a></li>
-        <li><a href="waitlist.html" class="footer-link">Android App</a></li>
+        <li><a href="#features" class="footer-link">Features</a></li>
+        <li><a href="#syllabus" class="footer-link">Textbooks</a></li>
+        <li><a href="chat/" class="footer-link">AI Workspace</a></li>
       </ul>
     </div>
   </footer>
