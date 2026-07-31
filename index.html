@@ -102,9 +102,9 @@
     #user-avatar { width:28px; height:28px; border-radius:50%; object-fit:cover; }
     #user-name { font-size:13px; color:rgba(255,255,255,.75); }
 
-    /* === HERO (BALANCED APPLE-LEVEL CLEARANCE) === */
-    #hero { position:relative; min-height:auto; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; margin-top:60px; padding:76px 24px 64px; text-align:center; background:#0a0a0a; overflow:hidden; }
-    #hero h1 { font-family:'Instrument Serif',serif; font-size:clamp(36px,6.5vw,76px); font-weight:400; line-height:.97; letter-spacing:-.035em; color:#fff; margin:16px 0 18px; max-width:800px; position:relative; z-index:1; }
+    /* === HERO (COMPACT CLEAN CLEARANCE BELOW FIXED NAV) === */
+    #hero { position:relative; min-height:auto; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; margin-top:60px; padding:24px 24px 40px; text-align:center; background:#0a0a0a; overflow:hidden; }
+    #hero h1 { font-family:'Instrument Serif',serif; font-size:clamp(36px,6.5vw,76px); font-weight:400; line-height:.97; letter-spacing:-.035em; color:#fff; margin:12px 0 14px; max-width:800px; position:relative; z-index:1; }
     #hero h1 em { font-style:italic; color:rgba(255,255,255,.45); }
     #hero .sub { font-size:17px; line-height:1.7; color:var(--muted); max-width:500px; margin:0 auto 36px; position:relative; z-index:1; }
     .hero-btns { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-bottom:56px; position:relative; z-index:1; }
@@ -625,12 +625,12 @@
       /* ── NAV ── */
       nav { padding: 0 16px; height: 56px; }
 
-      /* ── HERO: balanced 48px top padding ── */
+      /* ── HERO: compact 18px top padding ── */
       #hero {
         min-height: auto !important;
         height: auto !important;
         margin-top: 56px !important;
-        padding: 48px 20px 32px !important;
+        padding: 18px 20px 24px !important;
         justify-content: flex-start !important;
         align-items: flex-start !important;
         text-align: left !important;
@@ -652,7 +652,7 @@
       #hero h1 {
         font-size: clamp(26px, 7.5vw, 34px) !important;
         line-height: 1.15 !important;
-        margin: 12px 0 14px !important;
+        margin: 6px 0 12px !important;
         letter-spacing: -0.025em !important;
         max-width: 340px !important;
       }
@@ -1035,7 +1035,7 @@
 <!-- NAV -->
 <nav id="site-nav">
   <a class="nav-logo" href="#">
-    <div class="logo-mark" style="background:transparent;"><img src="assets/icons/mindgains-logo-apple.png" alt="MindGains Logo" style="width:32px;height:32px;border-radius:10px;object-fit:cover;" /></div>
+    <div class="logo-mark" style="background:transparent;"><img src="assets/icons/mindgains-header-logo.png" alt="MindGains Logo" style="width:32px;height:32px;border-radius:10px;object-fit:cover;" /></div>
     <span class="logo-name">MindGains AI</span>
   </a>
   <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
@@ -1133,7 +1133,7 @@
       <!-- Top bar -->
     <div class="ctopbar">
       <div class="ctop-left">
-        <div class="ctop-icon" style="background:transparent;"><img src="assets/icons/mindgains-logo-apple.png" alt="MindGains Logo" style="width:30px;height:30px;border-radius:9px;object-fit:cover;" /></div>
+        <div class="ctop-icon" style="background:transparent;"><img src="assets/icons/mindgains-header-logo.png" alt="MindGains Logo" style="width:30px;height:30px;border-radius:9px;object-fit:cover;" /></div>
         <div>
           <div class="ctop-title">MindGains AI</div>
           <div class="ctop-sub">Exam Intelligence · Textbook-Aware</div>
@@ -1417,7 +1417,7 @@
   <div>
     <div class="auth-card">
       <button class="auth-close" onclick="closeAuthModal()" aria-label="Close modal">✕</button>
-      <div class="auth-logo" style="background:transparent;"><img src="assets/icons/mindgains-logo-apple.png" alt="MindGains Logo" style="width:64px;height:64px;border-radius:18px;object-fit:cover;" /></div>
+      <div class="auth-logo" style="background:transparent;"><img src="assets/icons/mindgains-header-logo.png" alt="MindGains Logo" style="width:64px;height:64px;border-radius:18px;object-fit:cover;" /></div>
       <h3>Continue with MindGains AI</h3>
       <p style="font-size:14px;color:rgba(255,255,255,0.78);line-height:1.65;margin-bottom:24px;">Sign in with Google to access the <strong style="color:#7BE3B0;">Beta V1</strong> of <strong style="color:#fff;">India's First Textbook-Aware AI</strong>, built to help you learn smarter with trusted, curriculum-grounded answers and reliable previous year questions.</p>
       <button class="google-btn" onclick="window.__mgSignIn()">
@@ -1621,7 +1621,7 @@ function addAv(row, role) {
   const av = document.createElement('div');
   av.className = 'av ' + (role==='ai' ? 'ai' : 'user');
   if (role==='ai') {
-    av.innerHTML = '<img src="assets/icons/mindgains-logo-apple.png" alt="MindGains AI" style="width:28px;height:28px;border-radius:8px;object-fit:cover;" />';
+    av.innerHTML = '<img src="assets/icons/ai-avatar.png" alt="AI Avatar" style="width:30px;height:30px;border-radius:10px;object-fit:cover;" />';
   } else {
     const userPhoto = (window.__mgUser && window.__mgUser.photoURL) ? window.__mgUser.photoURL : null;
     if (userPhoto) {

@@ -30,6 +30,7 @@
       --accent: #7BE3B0;
       --accent-bg: rgba(123,227,176,0.12);
       --accent-border: rgba(123,227,176,0.3);
+      --cyan: #38BDF8;
       --bg: #08080C;
       --surface: rgba(255,255,255,0.04);
       --border: rgba(255,255,255,0.08);
@@ -49,7 +50,7 @@
 
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: transparent; }
-    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 9px; }
+    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 999px; }
 
     .ms { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; line-height: 1; display: inline-block; user-select: none; }
 
@@ -66,31 +67,31 @@
       position: relative;
     }
 
-    /* === ULTRA-CLEAN 44px HEADER === */
+    /* === SLEEK HEADER (CYAN INFINITY LOGO) === */
     .nav-header {
-      height: 44px;
+      height: 48px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 16px;
       background: rgba(10, 12, 18, 0.95);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       flex-shrink: 0;
       z-index: 100;
     }
-    .nav-header-left { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
-    .nav-brand-logo { width: 22px; height: 22px; border-radius: 6px; object-fit: cover; }
-    .nav-brand-title { font-size: 13px; font-weight: 700; color: #fff; letter-spacing: -0.01em; white-space: nowrap; }
+    .nav-header-left { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .nav-brand-logo { width: 26px; height: 26px; border-radius: 7px; object-fit: cover; }
+    .nav-brand-title { font-size: 13.5px; font-weight: 800; color: #fff; letter-spacing: -0.01em; white-space: nowrap; }
 
     .nav-header-center { display: flex; align-items: center; justify-content: center; }
     .mode-tabs { display: flex; gap: 2px; background: rgba(255,255,255,0.06); padding: 2px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.08); }
-    .mode-tab { padding: 4px 12px; border-radius: 999px; font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.55); background: transparent; border: none; cursor: pointer; transition: all 0.18s; display: flex; align-items: center; gap: 4px; font-family: 'Inter', sans-serif; }
-    .mode-tab.active { background: #FFFFFF; color: #000000; font-weight: 700; box-shadow: 0 2px 8px rgba(255,255,255,0.2); }
+    .mode-tab { padding: 4px 14px; border-radius: 999px; font-size: 11.5px; font-weight: 600; color: rgba(255,255,255,0.6); background: transparent; border: none; cursor: pointer; transition: all 0.18s; display: flex; align-items: center; gap: 5px; font-family: 'Inter', sans-serif; }
+    .mode-tab.active { background: #FFFFFF; color: #000000; font-weight: 700; box-shadow: 0 2px 8px rgba(255,255,255,0.25); }
 
     .nav-header-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
-    .exit-btn { width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.8); display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.18s; }
+    .exit-btn { width: 30px; height: 30px; border-radius: 50%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.8); display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.18s; }
     .exit-btn:hover { background: rgba(255,255,255,0.14); color: #fff; transform: scale(1.05); }
 
     /* === CHAT THREAD === */
@@ -113,7 +114,7 @@
     .empty-title { font-size: 22px; font-weight: 700; margin-bottom: 20px; color: #ffffff; letter-spacing: -0.02em; }
 
     .empty-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 780px; width: 100%; }
-    .prompt-card { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 14px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); text-align: left; cursor: pointer; transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1); color: inherit; font-family: 'Inter', sans-serif; }
+    .prompt-card { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 16px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); text-align: left; cursor: pointer; transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1); color: inherit; font-family: 'Inter', sans-serif; }
     .prompt-card:hover { background: rgba(255,255,255,0.06); border-color: rgba(123,227,176,0.35); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.4); }
     .prompt-card-icon { font-size: 18px; flex-shrink: 0; }
     .prompt-card-text { flex: 1; min-width: 0; }
@@ -122,14 +123,14 @@
     .prompt-card-arrow { font-size: 15px; color: rgba(255,255,255,0.25); transition: all 0.18s; flex-shrink: 0; }
     .prompt-card:hover .prompt-card-arrow { color: var(--accent); transform: translateX(3px); }
 
-    /* === MESSAGE ROWS & BUBBLES === */
+    /* === MESSAGE ROWS & BUBBLES (BLUE FOX AI AVATAR) === */
     .msg-row { display: flex; align-items: flex-start; gap: 10px; animation: slide-up .22s ease-out both; width: 100%; }
     .msg-row.user-row { flex-direction: row-reverse; margin-left: auto; max-width: 86%; }
-    .av { width: 28px; height: 28px; border-radius: 8px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; margin-top: 2px; }
-    .av.ai { background: transparent; border-radius: 8px; overflow: hidden; }
-    .av.ai img { width: 28px; height: 28px; border-radius: 8px; object-fit: cover; }
-    .av.user { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.85); border-radius: 50%; overflow: hidden; }
-    .av.user img { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; }
+    .av { width: 30px; height: 30px; border-radius: 10px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; margin-top: 2px; overflow: hidden; }
+    .av.ai { background: transparent; border-radius: 10px; }
+    .av.ai img { width: 30px; height: 30px; border-radius: 10px; object-fit: cover; }
+    .av.user { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.85); border-radius: 50%; }
+    .av.user img { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; }
 
     .bubble { max-width: 88%; padding: 12px 16px; font-size: 14px; line-height: 1.58; font-family: 'Inter', sans-serif; }
     .ai-bub { background: rgba(18, 22, 32, 0.88); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 4px 16px 16px 16px; color: rgba(255,255,255,0.94); box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
@@ -157,28 +158,78 @@
     .typing-dot:nth-child(3) { background: #34d399; animation-delay: 360ms; }
     .typing-label { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.65); letter-spacing: 0.02em; animation: pulseThinkingText 1.6s ease-in-out infinite alternate; }
 
-    /* === MODERN HIGH-END INPUT CAPSULE === */
+    /* === ULTRA-PREMIUM MODERN FLOATING INPUT CAPSULE === */
     .cinput-wrap {
       padding: 12px 16px max(16px, env(safe-area-inset-bottom, 16px));
       background: rgba(10, 12, 18, 0.96);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
       flex-shrink: 0;
       position: relative;
       z-index: 10;
     }
     .cinput-inner-container { max-width: 860px; width: 100%; margin: 0 auto; }
-    .cinput-row { display: flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 22px; padding: 6px 8px 6px 14px; transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1); }
-    .cinput-row:focus-within { border-color: rgba(123,227,176,0.45); box-shadow: 0 0 20px rgba(123,227,176,0.14); background: rgba(255, 255, 255, 0.09); }
-    .cinput-action-btn { background: transparent; border: none; border-radius: 10px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.18s; flex-shrink: 0; }
-    .cinput-action-btn:hover { background: rgba(255,255,255,0.10); transform: scale(1.05); }
-    #chat-input { flex: 1; background: transparent; border: none; outline: none; color: #fff; font-size: 14px; font-family: 'Inter', sans-serif; caret-color: var(--accent); padding: 4px 0; }
-    #chat-input::placeholder { color: rgba(255,255,255,0.38); font-size: 13.5px; }
-    #send-btn { width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(135deg, #7BE3B0, #38bdf8); color: #000; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.18s cubic-bezier(0.34, 1.56, 0.64, 1); flex-shrink: 0; box-shadow: 0 4px 12px rgba(123,227,176,0.35); }
-    #send-btn:hover:not(:disabled) { transform: scale(1.06); box-shadow: 0 6px 16px rgba(123,227,176,0.5); }
+    .cinput-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(123, 227, 176, 0.22);
+      border-radius: 999px;
+      padding: 6px 8px 6px 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .cinput-row:focus-within {
+      border-color: rgba(123, 227, 176, 0.55);
+      box-shadow: 0 0 24px rgba(123, 227, 176, 0.2), 0 12px 36px rgba(0,0,0,0.6);
+      background: rgba(255, 255, 255, 0.08);
+    }
+    .cinput-action-btn {
+      background: transparent;
+      border: none;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.18s;
+      flex-shrink: 0;
+    }
+    .cinput-action-btn:hover { background: rgba(255,255,255,0.12); transform: scale(1.08); }
+    #chat-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #fff;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      caret-color: var(--accent);
+      padding: 6px 0;
+    }
+    #chat-input::placeholder { color: rgba(255,255,255,0.42); font-size: 13.5px; }
+    #send-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #7BE3B0, #38bdf8);
+      color: #000;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
+      flex-shrink: 0;
+      box-shadow: 0 4px 14px rgba(123,227,176,0.4);
+    }
+    #send-btn:hover:not(:disabled) { transform: scale(1.08); box-shadow: 0 6px 20px rgba(123,227,176,0.6); }
     #send-btn:disabled { background: rgba(255,255,255,0.10); cursor: default; box-shadow: none; }
-    #send-btn .ms { font-size: 18px; color: #000; font-weight: 700; }
+    #send-btn .ms { font-size: 19px; color: #000; font-weight: 800; }
     #send-btn:disabled .ms { color: rgba(255,255,255,0.3); }
 
     /* === MOBILE RESPONSIVE === */
@@ -189,7 +240,7 @@
       .empty-state { padding: 12px 8px; }
       .empty-title { font-size: 19px; margin-bottom: 16px; }
       .empty-grid { grid-template-columns: 1fr; gap: 8px; }
-      .prompt-card { padding: 10px 12px; border-radius: 12px; }
+      .prompt-card { padding: 10px 12px; border-radius: 14px; }
       .prompt-card-arrow { display: none; }
       .cinput-wrap { padding: 10px 12px max(14px, env(safe-area-inset-bottom, 14px)); }
     }
@@ -199,10 +250,10 @@
 
 <div class="app-viewport">
 
-  <!-- SLEEK 44px HEADER -->
+  <!-- SLEEK 48px HEADER (CYAN INFINITY LOGO) -->
   <header class="nav-header">
     <div class="nav-header-left">
-      <img src="../assets/icons/mindgains-logo-apple.png" alt="Logo" class="nav-brand-logo" />
+      <img src="../assets/icons/mindgains-header-logo.png" alt="MindGains Logo" class="nav-brand-logo" />
       <span class="nav-brand-title">AI Tutor</span>
     </div>
 
@@ -289,10 +340,10 @@
     <div class="cinput-inner-container">
       <div class="cinput-row">
         <button class="cinput-action-btn" title="Add attachment or textbook excerpt" onclick="pastePrompt(1)">
-          <span class="material-symbols-outlined ms" style="font-size:18px;color:rgba(255,255,255,.55);">add_circle</span>
+          <span class="material-symbols-outlined ms" style="font-size:19px;color:rgba(255,255,255,.6);">add_circle</span>
         </button>
         <button class="cinput-action-btn" title="Ask AI Tutor" onclick="pastePrompt(3)">
-          <span class="material-symbols-outlined ms" style="font-size:18px;color:var(--accent);">auto_awesome</span>
+          <span class="material-symbols-outlined ms" style="font-size:19px;color:var(--accent);">auto_awesome</span>
         </button>
         <input type="text" id="chat-input" placeholder="Ask anything about your syllabus, topics, or PYQs..." autocomplete="off" />
         <button id="send-btn" onclick="sendMsg()" title="Send Message">
@@ -308,7 +359,7 @@
 <div id="auth-modal" onclick="if(event.target===this)closeAuthModal()" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:99999;background:rgba(0,0,0,0.75);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);align-items:center;justify-content:center;padding:20px;">
   <div style="background:rgba(14,18,26,0.96);border:1px solid rgba(123,227,176,0.25);border-radius:24px;padding:30px 24px;max-width:420px;width:100%;box-shadow:0 30px 80px rgba(0,0,0,0.9);position:relative;text-align:center;">
     <button onclick="closeAuthModal()" style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);width:32px;height:32px;border-radius:50%;cursor:pointer;" aria-label="Close modal">✕</button>
-    <img src="../assets/icons/mindgains-logo-apple.png" alt="Logo" style="width:56px;height:56px;border-radius:16px;object-fit:cover;margin-bottom:14px;" />
+    <img src="../assets/icons/mindgains-header-logo.png" alt="Logo" style="width:56px;height:56px;border-radius:16px;object-fit:cover;margin-bottom:14px;" />
     <h3 style="font-size:19px;font-weight:700;color:#fff;margin-bottom:8px;">Continue to AI Tutor</h3>
     <p style="font-size:13px;color:rgba(255,255,255,0.75);line-height:1.6;margin-bottom:20px;">Sign in with Google to access textbook-aware AI tutoring, curriculum-grounded answers, and PYQs.</p>
     <button onclick="window.__mgSignIn()" style="width:100%;display:flex;align-items:center;justify-content:center;gap:10px;background:#ffffff;color:#0F172A;font-weight:700;font-size:14px;padding:12px;border-radius:14px;border:none;cursor:pointer;">
@@ -423,13 +474,13 @@ function addAv(row, role) {
   const av = document.createElement('div');
   av.className = 'av ' + (role==='ai' ? 'ai' : 'user');
   if (role==='ai') {
-    av.innerHTML = '<img src="../assets/icons/mindgains-logo-apple.png" alt="AI" style="width:28px;height:28px;border-radius:8px;object-fit:cover;" />';
+    av.innerHTML = '<img src="../assets/icons/ai-avatar.png" alt="AI" style="width:30px;height:30px;border-radius:10px;object-fit:cover;" />';
   } else {
     const userPhoto = (window.__mgUser && window.__mgUser.photoURL) ? window.__mgUser.photoURL : null;
     if (userPhoto) {
-      av.innerHTML = `<img src="${userPhoto}" alt="User" style="width:28px;height:28px;border-radius:50%;object-fit:cover;" />`;
+      av.innerHTML = `<img src="${userPhoto}" alt="User" style="width:30px;height:30px;border-radius:50%;object-fit:cover;" />`;
     } else {
-      av.innerHTML = `<span class="material-symbols-outlined ms" style="font-size:15px;color:rgba(255,255,255,0.75);">person</span>`;
+      av.innerHTML = `<span class="material-symbols-outlined ms" style="font-size:16px;color:rgba(255,255,255,0.75);">person</span>`;
     }
   }
   row.appendChild(av);
