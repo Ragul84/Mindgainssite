@@ -631,6 +631,15 @@ main {
   .site-nav nav a:nth-child(n+5) { display: none; }
 }
 
+@media (max-width: 768px) {
+  main {
+    margin-top: 0 !important;
+  }
+  .editorial-hero {
+    padding: 32px 0 24px !important;
+  }
+}
+
 @media (max-width: 540px) {
   .articles-grid { grid-template-columns: 1fr; }
   .site-nav nav { display: none; }
@@ -646,7 +655,7 @@ main {
 <!-- NAV -->
 <div class="site-nav-backdrop" aria-hidden="true"></div>
 <header class="site-nav" id="site-nav">
-  <a class="brand" href="/"><img src="/assets/icons/mindgains-logo-192.png" alt="MindGains Logo" />MindGains AI</a>
+  <a class="brand" href="/"><img src="/assets/icons/mindgains-logo-192.png" alt="MindGains Logo" /></a>
   <button class="site-nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -684,11 +693,11 @@ main {
           <span class="read-time">8 min read</span>
         </div>
         <h2>India Has More Educational Content Than Ever. So Why Are Learning Gaps Still Massive?</h2>
-        <p>India has more lessons, videos, PDFs and test prep than ever before. The real crisis is not access to content — it is consistency, practice, feedback and revision.</p>
+        <p>India has more lessons, videos, PDFs and test prep than ever before. The real crisis is not access to content; it is consistency, practice, feedback and revision.</p>
         <div class="byline">
           <div class="byline-avatar">MG</div>
           <div class="byline-info">
-            <span class="byline-name">MindGains Editorial</span>
+            <span class="byline-name">D.Ragul Arvind</span>
             <span class="byline-date">June 25, 2026</span>
           </div>
         </div>
@@ -718,7 +727,7 @@ main {
           <span class="read-time">8 min</span>
         </div>
         <h3>India Has More Educational Content Than Ever. So Why Are Learning Gaps Still Massive?</h3>
-        <p>The real crisis is not access to content. It is consistency, practice, feedback and revision — the systems most learners don't have.</p>
+        <p>The real crisis is not access to content. It is consistency, practice, feedback and revision, the systems most learners do not have.</p>
         <div class="article-card-footer">
           <span class="article-card-date">June 25, 2026</span>
           <span class="article-card-arrow">→</span>
@@ -726,24 +735,24 @@ main {
       </div>
     </a>
 
-    <!-- Card 2 — placeholder -->
-    <a class="article-card" href="/editorial/">
-      <div class="article-card-img">
+    <!-- Card 2 — locked placeholder -->
+    <div class="article-card" style="opacity: 0.75; cursor: not-allowed; pointer-events: none;">
+      <div class="article-card-img" style="filter: grayscale(0.55);">
         <img src="/assets/blog/blog1.jpeg" alt="TNPSC preparation strategy" width="600" height="375" loading="lazy" style="filter:hue-rotate(40deg) saturate(.8);" />
       </div>
       <div class="article-card-body">
         <div class="article-card-meta">
           <span class="tag-pill">Exams</span>
-          <span class="read-time">6 min</span>
+          <span class="read-time">🔒 Coming Soon</span>
         </div>
-        <h3>Why Most TNPSC Aspirants Fail in the Final Month — and How to Not Be One of Them</h3>
+        <h3>Why Most TNPSC Aspirants Fail in the Final Month, and How to Not Be One of Them</h3>
         <p>The revision trap, mock test paralysis, and why doing less is often the key to scoring more in the final stretch.</p>
         <div class="article-card-footer">
           <span class="article-card-date">Coming soon</span>
-          <span class="article-card-arrow">→</span>
+          <span class="article-card-arrow" style="opacity: 0.3;">→</span>
         </div>
       </div>
-    </a>
+    </div>
 
     <!-- Card 3 -->
     <a class="article-card" href="/blog/why-serious-aspirants-dont-trust-ai/">
@@ -773,13 +782,13 @@ main {
     <div class="topic-block">
       <div class="topic-block-icon">🧠</div>
       <h3>Learning Psychology</h3>
-      <p>Spaced repetition, active recall, the forgetting curve, habit loops — the science behind why some learners retain everything and others forget by morning.</p>
+      <p>Spaced repetition, active recall, the forgetting curve, habit loops: the science behind why some learners retain everything and others forget by morning.</p>
       <a class="topic-block-link" href="/editorial/learning-psychology/">Explore essays →</a>
     </div>
     <div class="topic-block">
       <div class="topic-block-icon">📋</div>
       <h3>Exam Strategy</h3>
-      <p>TNPSC, UPSC, TET, SSC — what toppers do differently, how to read the syllabus, and why your preparation system matters more than your content volume.</p>
+      <p>TNPSC, UPSC, TET, SSC: what toppers do differently, how to read the syllabus, and why your preparation system matters more than your content volume.</p>
       <a class="topic-block-link" href="/editorial/exams/">Explore essays →</a>
     </div>
     <div class="topic-block">
@@ -791,7 +800,7 @@ main {
     <div class="topic-block">
       <div class="topic-block-icon">📰</div>
       <h3>Current Affairs</h3>
-      <p>Editorial summaries of the news that matters for exams — filtered through the lens of UPSC and TNPSC syllabus relevance, not click-bait.</p>
+      <p>Editorial summaries of the news that matters for exams, filtered through the lens of UPSC and TNPSC syllabus relevance, not click-bait.</p>
       <a class="topic-block-link" href="/editorial/current-affairs/">Explore essays →</a>
     </div>
   </div>
