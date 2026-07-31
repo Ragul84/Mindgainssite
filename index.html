@@ -197,31 +197,32 @@
     .mode-tab { padding:5px 14px; border-radius:999px; font-size:11.5px; font-weight:600; color:rgba(255,255,255,.5); background:transparent; border:none; cursor:pointer; transition:all .18s; display:flex; align-items:center; gap:5px; font-family:'Inter',sans-serif; }
     .mode-tab.active { background:var(--accent); color:#000; }
 
-    #thread { position:relative; z-index:2; flex:1; overflow-y:auto; padding:16px 20px; display:flex; flex-direction:column; gap:12px; }
-    .empty-state { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; text-align:center; padding:10px 16px; }
-    .empty-title { font-size:19px; font-weight:700; margin-bottom:18px; color:#fff; }
+    #thread { position:relative; z-index:2; flex:1; min-height:0; overflow-y:auto; padding:16px 20px; display:flex; flex-direction:column; gap:16px; scroll-behavior:smooth; }
+    .empty-state { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; text-align:center; padding:16px; margin:auto 0; }
+    .empty-title { font-size:22px; font-weight:700; margin-bottom:20px; color:#fff; letter-spacing:-0.02em; }
 
     .empty-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; max-width:840px; width:100%; }
-    .prompt-card { display:flex; align-items:center; gap:10px; padding:11px 14px; border-radius:12px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.09); text-align:left; cursor:pointer; transition:all .18s; color:inherit; font-family:'Inter',sans-serif; }
+    .prompt-card { display:flex; align-items:center; gap:10px; padding:12px 14px; border-radius:14px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.09); text-align:left; cursor:pointer; transition:all .18s; color:inherit; font-family:'Inter',sans-serif; }
     .prompt-card:hover { background:rgba(255,255,255,.08); border-color:rgba(123,227,176,.3); transform:translateY(-1px); }
     .prompt-card-icon { font-size:18px; flex-shrink:0; }
     .prompt-card-text { flex:1; min-width:0; }
-    .prompt-card-text strong { display:block; font-size:12.5px; color:#fff; font-weight:600; margin-bottom:1px; }
+    .prompt-card-text strong { display:block; font-size:12.5px; color:#fff; font-weight:600; margin-bottom:2px; }
     .prompt-card-text span { display:block; font-size:11px; color:rgba(255,255,255,.45); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
     .prompt-card-arrow { font-size:15px; color:rgba(255,255,255,.3); transition:all .18s; flex-shrink:0; }
     .prompt-card:hover .prompt-card-arrow { color:var(--accent); transform:translateX(3px); }
 
-    .msg-row { display:flex; align-items:flex-end; gap:10px; animation: slide-up .25s ease-out both; }
-    .msg-row.user-row { flex-direction:row-reverse; }
-    .av { width:28px; height:28px; border-radius:9px; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:10.5px; font-weight:700; }
-    .av.ai { background:linear-gradient(135deg,#7BE3B0,#38bdf8); color:#000; }
-    .av.ai .ms { font-size:14px; font-variation-settings:'FILL' 1,'wght' 500,'GRAD' 0,'opsz' 20; }
-    .av.user { background:rgba(255,255,255,.10); color:rgba(255,255,255,.6); }
+    .msg-row { display:flex; align-items:flex-start; gap:10px; animation: slide-up .25s ease-out both; width:100%; }
+    .msg-row.user-row { flex-direction:row-reverse; margin-left:auto; max-width:86%; }
+    .av { width:28px; height:28px; border-radius:8px; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; margin-top:2px; }
+    .av.ai { background:transparent; border-radius:8px; overflow:hidden; }
+    .av.ai img { width:28px; height:28px; border-radius:8px; object-fit:cover; }
+    .av.user { background:rgba(255,255,255,.12); color:rgba(255,255,255,.85); border-radius:50%; overflow:hidden; }
+    .av.user img { width:28px; height:28px; border-radius:50%; object-fit:cover; }
 
-    /* Elegant Modern Typography & Compact Spacing */
-    .bubble { max-width:88%; padding:12px 18px; font-size:13.5px; line-height:1.55; font-family:'Inter',sans-serif; }
-    .ai-bub { background:rgba(18, 18, 24, 0.92); border:1px solid rgba(255,255,255,.10); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-radius:16px 16px 16px 4px; color:rgba(255,255,255,.92); }
-    .ai-bub p { margin:6px 0; line-height:1.55; color:rgba(255,255,255,.90); }
+    /* Elegant Modern Typography & Spacing */
+    .bubble { max-width:88%; padding:12px 16px; font-size:14px; line-height:1.55; font-family:'Inter',sans-serif; }
+    .ai-bub { background:rgba(16, 20, 28, 0.88); border:1px solid rgba(255,255,255,.10); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border-radius:4px 18px 18px 18px; color:rgba(255,255,255,.92); box-shadow:0 6px 24px rgba(0,0,0,0.35); }
+    .ai-bub p { margin:6px 0; line-height:1.58; color:rgba(255,255,255,.90); }
     .ai-bub h2, .ai-bub h3, .ai-bub h4 { margin-top:12px; margin-bottom:4px; font-weight:700; color:#fff; line-height:1.35; }
     .ai-bub h2 { font-size:16px; border-bottom:1px solid rgba(255,255,255,.1); padding-bottom:4px; margin-top:14px; }
     .ai-bub h3 { font-size:14.5px; color:#7BE3B0; }
@@ -237,7 +238,7 @@
     .ai-bub tr:last-child td { border-bottom:none; }
     .ai-bub tr:hover td { background:rgba(255,255,255,.03); }
 
-    .user-bub { background:var(--accent-bg); border:1px solid var(--accent-border); border-radius:16px 16px 4px 16px; color:#fff; line-height:1.5; }
+    .user-bub { background:rgba(123, 227, 176, 0.14); border:1px solid rgba(123, 227, 176, 0.32); border-radius:18px 4px 18px 18px; color:#FFFFFF; line-height:1.55; font-weight:450; box-shadow:0 4px 14px rgba(0,0,0,0.22); }
 
     /* suggestion chips inside chat */
     .sug-row { display:flex; flex-wrap:wrap; gap:7px; margin-top:8px; }
@@ -270,23 +271,21 @@
     .typing-label { font-size:12.5px; font-weight:600; color:rgba(255,255,255,.65); letter-spacing:.02em; animation: pulseThinkingText 1.6s ease-in-out infinite alternate; }
 
     /* input */
-    .cinput-wrap { padding:4px 10px 4px; border-top:1px solid rgba(255,255,255,.07); flex-shrink:0; margin:0; }
-    .cinput-row { display:flex; align-items:center; gap:6px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.11); border-radius:14px; padding:4px 6px 4px 10px; transition:all .2s ease; }
-    .cinput-row:focus-within { border-color:rgba(123,227,176,.4); box-shadow:0 0 20px rgba(123,227,176,.12); background:rgba(255,255,255,.08); }
+    .cinput-wrap { padding:10px 14px 12px; border-top:1px solid rgba(255,255,255,.08); background:rgba(10,10,14,0.95); backdrop-filter:blur(20px); flex-shrink:0; margin:0; position:relative; z-index:5; }
+    .cinput-row { display:flex; align-items:center; gap:8px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:5px 6px 5px 12px; transition:all .2s cubic-bezier(0.16, 1, 0.3, 1); }
+    .cinput-row:focus-within { border-color:rgba(123,227,176,.5); box-shadow:0 0 20px rgba(123,227,176,.14); background:rgba(255,255,255,.08); }
     .cinput-action-btn { background:transparent; border:none; border-radius:10px; width:32px; height:32px; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all .18s; flex-shrink:0; }
     .cinput-action-btn:hover { background:rgba(255,255,255,.10); transform:scale(1.05); }
-    #chat-input { flex:1; background:transparent; border:none; outline:none; color:#fff; font-size:13.5px; font-family:'Inter',sans-serif; caret-color:var(--accent); }
-    #chat-input::placeholder { color:rgba(255,255,255,.36); }
-    #send-btn { width:34px; height:34px; border-radius:10px; background:linear-gradient(135deg, #7BE3B0, #38bdf8); color:#000; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all .18s cubic-bezier(0.34, 1.56, 0.64, 1); flex-shrink:0; box-shadow:0 4px 12px rgba(123,227,176,.3); }
-    #send-btn:hover:not(:disabled) { transform:scale(1.08); box-shadow:0 6px 18px rgba(123,227,176,.45); }
+    #chat-input { flex:1; background:transparent; border:none; outline:none; color:#fff; font-size:14px; font-family:'Inter',sans-serif; caret-color:var(--accent); padding:4px 0; }
+    #chat-input::placeholder { color:rgba(255,255,255,.38); font-size:13.5px; }
+    #send-btn { width:36px; height:36px; border-radius:11px; background:linear-gradient(135deg, #7BE3B0, #38bdf8); color:#000; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all .18s cubic-bezier(0.34, 1.56, 0.64, 1); flex-shrink:0; box-shadow:0 4px 14px rgba(123,227,176,.35); }
+    #send-btn:hover:not(:disabled) { transform:scale(1.06); box-shadow:0 6px 18px rgba(123,227,176,.5); }
     #send-btn:disabled { background:rgba(255,255,255,.10); cursor:default; box-shadow:none; }
     #send-btn .ms { font-size:18px; color:#000; font-weight:700; }
     #send-btn:disabled .ms { color:rgba(255,255,255,.3); }
 
-    /* msg limit bar */
-    #limit-bar { display:none; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; padding:8px 14px; background:rgba(20,20,28,0.9); border-top:1px solid rgba(255,255,255,.07); flex-shrink:0; }
-    #limit-bar span { font-size:12px; color:rgba(255,255,255,0.7); flex:1; min-width:0; }
-    #limit-signin { font-family:'Inter',sans-serif; font-size:11.5px; font-weight:700; color:#0F172A; background:#fff; border:none; padding:5px 13px; border-radius:999px; cursor:pointer; white-space:nowrap; flex-shrink:0; }
+    /* msg limit bar hidden permanently from input top */
+    #limit-bar { display:none !important; }
 
     /* === QUIZ MODE (Full Spread App Style) === */
     #quiz-panel { width:100%; max-width:1140px; margin:0 auto; display:none; }
@@ -558,32 +557,33 @@
     }
     #auth-modal > div { position:relative; }
 
-    /* === TOP FLOATING TOAST NOTIFICATION === */
+    /* === TOP FLOATING TOAST NOTIFICATION (PROFESSIONAL MOBILE & DESKTOP CARD) === */
     #toast-notification {
       position: fixed;
-      top: 24px;
-      left: 50%;
-      transform: translateX(-50%) translateY(-100px);
-      z-index: 300;
-      background: linear-gradient(135deg, rgba(16, 22, 34, 0.95), rgba(10, 14, 22, 0.98)) padding-box,
-                  linear-gradient(90deg, #7BE3B0, #38BDF8, #A78BFA, #F472B6, #7BE3B0) border-box;
-      background-size: 200% 200%;
-      border: 1.5px solid transparent;
-      border-radius: 999px;
-      padding: 12px 24px;
+      top: 20px;
+      right: 20px;
+      z-index: 999;
+      width: clamp(300px, 92vw, 420px);
+      background: rgba(14, 18, 26, 0.94);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(123, 227, 176, 0.32);
+      border-radius: 16px;
+      padding: 12px 16px;
       display: flex;
       align-items: center;
       gap: 12px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 35px rgba(123,227,176,0.25);
-      animation: borderGlowRotate 4s ease infinite;
-      transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 25px rgba(123, 227, 176, 0.18);
+      transform: translateY(-24px) scale(0.96);
       opacity: 0;
       pointer-events: none;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
     }
     #toast-notification.show {
-      transform: translateX(-50%) translateY(0);
+      transform: translateY(0) scale(1);
       opacity: 1;
+      pointer-events: auto;
     }
 
     /* === MOBILE (768px and below) — Full Pro Redesign === */
@@ -743,18 +743,31 @@
 
       /* ── CHAT SECTION: clear gap above ── */
       #chat-section {
-        padding: 32px 0 0 !important;
+        padding: 20px 0 0 !important;
         border-top: 1px solid rgba(255,255,255,0.06) !important;
       }
 
-      /* ── CHAT PANEL: full-width, no rounding on sides ── */
+      /* ── CHAT PANEL: full-width & immersive height ── */
       .chat-panel {
-        height: calc(100svh - 180px) !important;
-        min-height: 420px !important;
-        max-height: 580px !important;
-        border-radius: 16px !important;
-        margin: 0 14px !important;
-        width: calc(100% - 28px) !important;
+        height: calc(100svh - 120px) !important;
+        min-height: 520px !important;
+        max-height: 720px !important;
+        border-radius: 18px !important;
+        margin: 0 12px !important;
+        width: calc(100% - 24px) !important;
+      }
+
+      /* ── TOAST NOTIFICATION MOBILE ── */
+      #toast-notification {
+        top: 14px !important;
+        left: 14px !important;
+        right: 14px !important;
+        width: auto !important;
+        max-width: calc(100% - 28px) !important;
+        transform: translateY(-20px) scale(0.96);
+      }
+      #toast-notification.show {
+        transform: translateY(0) scale(1) !important;
       }
 
       /* ── CHAT TOPBAR ── */
@@ -767,41 +780,49 @@
       .mode-tab { padding: 5px 10px !important; gap: 0 !important; }
       .mode-tab span:last-child:not(.material-symbols-outlined) { display: none !important; }
 
-      /* ── EMPTY STATE / SIGN-IN GATE: the big crowded area ── */
+      #thread {
+        padding: 14px 12px !important;
+        gap: 14px !important;
+      }
+
+      .msg-row.user-row {
+        max-width: 90% !important;
+      }
+
+      /* ── EMPTY STATE / PROMPT CARDS ── */
       .empty-state {
-        padding: 16px 14px !important;
-        justify-content: flex-start !important;
-        align-items: flex-start !important;
-        text-align: left !important;
-        height: auto !important;
+        padding: 14px 12px !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
       }
 
       .empty-title {
-        font-size: 14px !important;
-        font-weight: 600 !important;
-        margin-bottom: 12px !important;
-        color: rgba(255,255,255,0.8) !important;
+        font-size: 17px !important;
+        font-weight: 700 !important;
+        margin-bottom: 14px !important;
+        color: rgba(255,255,255,0.95) !important;
       }
 
       /* Prompt cards: single column, compact */
       .empty-grid {
         grid-template-columns: 1fr !important;
-        gap: 7px !important;
+        gap: 8px !important;
         max-width: 100% !important;
         width: 100% !important;
       }
 
       .prompt-card {
-        padding: 9px 12px !important;
-        border-radius: 10px !important;
-        gap: 9px !important;
+        padding: 10px 12px !important;
+        border-radius: 12px !important;
+        gap: 10px !important;
       }
 
-      .prompt-card-icon { font-size: 16px !important; }
+      .prompt-card-icon { font-size: 17px !important; }
 
       .prompt-card-text strong {
         font-size: 12px !important;
-        margin-bottom: 0 !important;
+        margin-bottom: 1px !important;
       }
 
       .prompt-card-text span {
@@ -810,19 +831,8 @@
 
       .prompt-card-arrow { display: none !important; }
 
-      /* Sign-in required wall — reduce to a compact bar */
-      #sign-in-gate,
-      .sign-in-gate,
-      [id*="gate"],
-      .auth-gate {
-        padding: 12px 14px !important;
-        border-radius: 12px !important;
-        margin: 8px 0 0 !important;
-        text-align: center !important;
-      }
-
       /* ── CHAT INPUT ── */
-      .cinput-wrap { padding: 6px 10px 8px !important; }
+      .cinput-wrap { padding: 8px 10px 10px !important; }
       #chat-input { font-size: 14px !important; }
       #chat-input::placeholder { font-size: 13px !important; }
 
@@ -1135,15 +1145,6 @@
       </div>
     </div>
 
-    <!-- Limit bar (shows when guest hits 10 msgs limit) -->
-    <div id="limit-bar">
-      <span>Beta Limit Reached: You've used your 10 free messages. Join the Whitelist for unlimited access.</span>
-      <div style="display:flex;align-items:center;gap:8px;">
-        <a href="waitlist.html" id="limit-whitelist-btn" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:600;color:#000;background:var(--accent);text-decoration:none;padding:5px 14px;border-radius:999px;white-space:nowrap;">Join Whitelist</a>
-        <button id="limit-signin" onclick="openAuthModal()">Sign in</button>
-      </div>
-    </div>
-
     <!-- Input -->
     <div class="cinput-wrap" id="chat-input-area">
       <div class="cinput-row">
@@ -1383,6 +1384,27 @@
   </div>
 </div>
 
+<!-- DAILY LIMIT REACHED MODAL -->
+<div id="limit-modal" onclick="if(event.target===this)closeLimitModal()" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:400;background:rgba(0,0,0,0.75);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:20px;">
+  <div style="background:rgba(14,18,26,0.96);border:1px solid rgba(123,227,176,0.25);border-radius:24px;padding:28px 24px;max-width:440px;width:100%;box-shadow:0 30px 80px rgba(0,0,0,0.9),0 0 30px rgba(123,227,176,0.15);position:relative;text-align:center;">
+    <button onclick="closeLimitModal()" style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;transition:all 0.2s;" aria-label="Close modal">✕</button>
+    <div style="width:56px;height:56px;border-radius:18px;background:rgba(244,114,182,0.12);border:1px solid rgba(244,114,182,0.3);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;color:#F472B6;">
+      <span class="material-symbols-outlined ms" style="font-size:30px;">local_fire_department</span>
+    </div>
+    <h3 style="font-size:20px;font-weight:700;color:#fff;margin-bottom:8px;letter-spacing:-0.02em;">Daily Web Limit Reached (10/10)</h3>
+    <p style="font-size:13.5px;color:rgba(255,255,255,0.72);line-height:1.6;margin-bottom:24px;">You have used all 10 free daily web AI study messages for today. For unlimited textbook-aware AI tutoring, PYQ access, and adaptive quizzes, get the official Android App!</p>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <a href="waitlist.html" style="display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#7BE3B0,#38BDF8);color:#000;font-weight:800;font-size:14px;padding:13px 20px;border-radius:14px;text-decoration:none;box-shadow:0 6px 20px rgba(123,227,176,0.35);transition:transform 0.2s;">
+        <span>Get Unlimited on Android App</span>
+        <span class="material-symbols-outlined ms" style="font-size:18px;">arrow_forward</span>
+      </a>
+      <button onclick="closeLimitModal()" style="background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.1);font-weight:600;font-size:13px;padding:11px 20px;border-radius:14px;cursor:pointer;transition:all 0.2s;">
+        Got it, thanks
+      </button>
+    </div>
+  </div>
+</div>
+
 <script>
 /* ═══ OPENROUTER KEY ROTATION & FALLBACKS ═══ */
 const OR_KEYS = [
@@ -1412,40 +1434,11 @@ msgCount = loadMsgCount();
 /* ═══ AUTH HOOKS & ACCESS CONTROL ═══ */
 window.updateAuthAccessUI = function() {
   const inputEl = document.getElementById('chat-input');
-  const limitBar = document.getElementById('limit-bar');
-  const remaining = Math.max(0, MSG_LIMIT - msgCount);
-
-  if (!isSignedIn) {
-    if (inputEl) {
-      inputEl.placeholder = "🔒 Sign in with Google to chat with MindGains AI...";
-    }
-    if (limitBar) {
-      limitBar.style.display = 'flex';
-      limitBar.innerHTML = `
-        <span style="font-size:12px;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:5px;"><span class="material-symbols-outlined ms" style="font-size:14px;color:#7BE3B0;">lock</span><span><strong style="color:#fff;">Sign in to use AI</strong> &nbsp;·&nbsp; 10 free messages/day</span></span>
-        <button id="limit-signin" onclick="openAuthModal()" style="font-size:11.5px;font-weight:700;padding:5px 14px;border-radius:999px;background:#FFFFFF;color:#0F172A;border:none;cursor:pointer;white-space:nowrap;flex-shrink:0;">Sign in</button>
-      `;
-    }
-  } else {
-    if (inputEl) {
-      inputEl.placeholder = "Ask MIGA anything about your syllabus, textbooks, or PYQs...";
-    }
-    if (remaining > 0) {
-      if (limitBar) {
-        limitBar.style.display = 'flex';
-        limitBar.innerHTML = `
-          <span style="font-size:12.5px;color:rgba(255,255,255,0.85);display:flex;align-items:center;gap:6px;"><span class="material-symbols-outlined ms" style="font-size:16px;color:#7BE3B0;">bolt</span> <strong>Daily Free Web AI Messages:</strong> ${remaining} of 10 remaining today</span>
-          <a href="/waitlist.html" style="color:#7BE3B0;font-weight:700;font-size:12px;text-decoration:none;background:rgba(123,227,176,0.12);border:1px solid rgba(123,227,176,0.28);padding:5px 14px;border-radius:999px;">Get Unlimited on Android →</a>
-        `;
-      }
+  if (inputEl) {
+    if (!isSignedIn) {
+      inputEl.placeholder = "Sign in with Google to chat with MindGains AI...";
     } else {
-      if (limitBar) {
-        limitBar.style.display = 'flex';
-        limitBar.innerHTML = `
-          <span style="font-size:12.5px;color:rgba(255,255,255,0.85);display:flex;align-items:center;gap:6px;"><span class="material-symbols-outlined ms" style="font-size:16px;color:#F472B6;">local_fire_department</span> <strong>10 Daily Web Messages Reached!</strong> For unlimited textbook AI, get the official Android app.</span>
-          <a href="/waitlist.html" style="background:#7BE3B0;color:#000;font-weight:800;font-size:12px;padding:6px 16px;border-radius:999px;text-decoration:none;box-shadow:0 0 15px rgba(123,227,176,0.4);">Join Whitelist →</a>
-        `;
-      }
+      inputEl.placeholder = "Ask MIGA anything about your syllabus, textbooks, or PYQs...";
     }
   }
 };
@@ -1459,8 +1452,21 @@ window.showAuthToast = function(name, email) {
   }
   const firstName = (name || email || 'Learner').split(' ')[0];
   toast.innerHTML = `
-    <div style="width:24px;height:24px;border-radius:50%;background:#7BE3B0;display:flex;align-items:center;justify-content:center;color:#000;font-weight:900;font-size:12px;flex-shrink:0;">✓</div>
-    <span style="font-size:13.5px;color:#fff;font-weight:600;">Welcome, <strong style="color:#7BE3B0;">${firstName}</strong>! Signed in with Google • 10 free daily web AI messages unlocked.</span>
+    <div style="width:34px;height:34px;border-radius:10px;background:rgba(123,227,176,0.15);border:1px solid rgba(123,227,176,0.35);display:flex;align-items:center;justify-content:center;color:#7BE3B0;flex-shrink:0;">
+      <span class="material-symbols-outlined ms" style="font-size:20px;">check_circle</span>
+    </div>
+    <div style="display:flex;flex-direction:column;min-width:0;flex:1;">
+      <div style="font-size:13px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:8px;">
+        <span>Signed In Successfully</span>
+        <span style="font-size:10px;font-weight:600;padding:2px 8px;border-radius:99px;background:rgba(123,227,176,0.15);color:#7BE3B0;border:1px solid rgba(123,227,176,0.3);">Verified</span>
+      </div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.72);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+        Welcome, <strong style="color:#fff;">${firstName}</strong> · 10 free daily web AI messages active
+      </div>
+    </div>
+    <button onclick="document.getElementById('toast-notification').classList.remove('show')" style="background:transparent;border:none;color:rgba(255,255,255,0.4);cursor:pointer;padding:4px;display:flex;align-items:center;margin-left:auto;" aria-label="Close">
+      <span class="material-symbols-outlined ms" style="font-size:16px;">close</span>
+    </button>
   `;
   toast.classList.add('show');
   setTimeout(() => {
@@ -1468,9 +1474,11 @@ window.showAuthToast = function(name, email) {
   }, 4500);
 };
 
+window.__mgUser = null;
 window.__mgOnSignIn = (user) => {
   const wasAlreadySignedIn = isSignedIn;
   isSignedIn = true;
+  window.__mgUser = user;
   document.getElementById('signin-btn').style.display = 'none';
   const ui = document.getElementById('user-info');
   ui.style.display = 'flex';
@@ -1487,6 +1495,7 @@ window.__mgOnSignIn = (user) => {
 
 window.__mgOnSignOut = () => {
   isSignedIn = false;
+  window.__mgUser = null;
   document.getElementById('signin-btn').style.display = 'flex';
   document.getElementById('user-info').style.display = 'none';
   updateAuthAccessUI();
@@ -1494,6 +1503,8 @@ window.__mgOnSignOut = () => {
 
 function openAuthModal()  { document.getElementById('auth-modal').style.display = 'flex'; }
 function closeAuthModal() { document.getElementById('auth-modal').style.display = 'none'; }
+function openLimitModal()  { document.getElementById('limit-modal').style.display = 'flex'; }
+function closeLimitModal() { document.getElementById('limit-modal').style.display = 'none'; }
 
 /* ═══ SCROLL HELPERS ═══ */
 function scrollToChat() { document.getElementById('chat-section').scrollIntoView({behavior:'smooth'}); }
@@ -1506,12 +1517,10 @@ function switchMode(mode) {
   document.getElementById('tab-chat').classList.toggle('active', mode==='chat');
   document.getElementById('tab-quiz').classList.toggle('active', mode==='quiz');
   document.getElementById('thread').style.display         = mode==='chat' ? 'flex'  : 'none';
-  document.getElementById('limit-bar').style.display      = mode==='chat' ? (needsLimitBar() ? 'flex' : 'none') : 'none';
   document.getElementById('chat-input-area').style.display = mode==='chat' ? 'block' : 'none';
   document.getElementById('quiz-panel-inner').style.display = mode==='quiz' ? 'flex'  : 'none';
   if (mode==='quiz' && !quizStarted) renderQuizPicker();
 }
-function needsLimitBar() { return !isSignedIn && msgCount >= MSG_LIMIT; }
 
 /* ═══ CHAT ENGINE ═══ */
 const thread  = document.getElementById('thread');
@@ -1577,8 +1586,16 @@ function addRow(role) {
 function addAv(row, role) {
   const av = document.createElement('div');
   av.className = 'av ' + (role==='ai' ? 'ai' : 'user');
-  if (role==='ai') av.innerHTML = '<img src="assets/icons/mindgains-logo-192.png" alt="MindGains AI" style="width:26px;height:26px;border-radius:8px;object-fit:cover;" />';
-  else av.textContent = 'You';
+  if (role==='ai') {
+    av.innerHTML = '<img src="assets/icons/mindgains-logo-apple.png" alt="MindGains AI" style="width:28px;height:28px;border-radius:8px;object-fit:cover;" />';
+  } else {
+    const userPhoto = (window.__mgUser && window.__mgUser.photoURL) ? window.__mgUser.photoURL : null;
+    if (userPhoto) {
+      av.innerHTML = `<img src="${userPhoto}" alt="User" style="width:28px;height:28px;border-radius:50%;object-fit:cover;" />`;
+    } else {
+      av.innerHTML = `<span class="material-symbols-outlined ms" style="font-size:16px;color:rgba(255,255,255,0.75);">person</span>`;
+    }
+  }
   row.appendChild(av);
 }
 function addBubble(row, role, html) {
@@ -1811,7 +1828,7 @@ async function sendMsg(override) {
 
   // 2. Signed-in users -> 10 messages max per day
   if (msgCount >= MSG_LIMIT) {
-    if (window.updateAuthAccessUI) window.updateAuthAccessUI();
+    openLimitModal();
     return;
   }
 
@@ -1846,7 +1863,7 @@ async function sendMsg(override) {
       model: modelName,
       messages: messagesPayload,
       stream: true,
-      max_tokens: 950
+      max_tokens: 4096
     };
 
     const controller = new AbortController();
