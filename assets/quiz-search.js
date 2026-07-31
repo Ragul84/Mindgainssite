@@ -298,7 +298,7 @@
     if (!questionText) return '';
     let raw = String(questionText).trim();
 
-    const statementPattern = /(?:Statement\s*\d+|Statement\s*[I|V|X]+|\b[1-9]\.|\(\d+\))/i;
+    const statementPattern = /(?:Statement\s*\d+|Statement\s*[I|V|X]+|\b[1-9]\.|\(\d{1,2}\))/i;
     if (!statementPattern.test(raw)) {
       return `<div style="font-size:16px;line-height:1.65;font-weight:600;margin-bottom:16px;">${esc(raw)}</div>`;
     }
@@ -310,7 +310,7 @@
       raw = raw.slice(leadText.length).trim();
     }
 
-    const statementRegex = /(?:Statement\s*\d+|Statement\s*[I|V|X]+|\b[1-9]\.|\(\d+\))/gi;
+    const statementRegex = /(?:Statement\s*\d+|Statement\s*[I|V|X]+|\b[1-9]\.|\(\d{1,2}\))/gi;
     const matches = [...raw.matchAll(statementRegex)];
     let statementsHtml = '';
     let closingText = '';
