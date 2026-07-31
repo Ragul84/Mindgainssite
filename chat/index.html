@@ -506,6 +506,7 @@ const PROMPT_SETS = {
 };
 
 const currentPromptTexts = { 1: PROMPT_SETS[1][0], 2: PROMPT_SETS[2][0], 3: PROMPT_SETS[3][0], 4: PROMPT_SETS[4][0] };
+const activeFullPromptTexts = { 1: PROMPT_SETS[1][0], 2: PROMPT_SETS[2][0], 3: PROMPT_SETS[3][0], 4: PROMPT_SETS[4][0] };
 
 function startTypewriter(cardId) {
   const el = document.getElementById(`ptype-${cardId}`);
@@ -515,6 +516,7 @@ function startTypewriter(cardId) {
 
   function step() {
     const targetText = list[listIdx];
+    activeFullPromptTexts[cardId] = targetText;
     if (isDeleting) {
       charIdx--;
       el.textContent = targetText.substring(0, charIdx) + '▌';
@@ -534,7 +536,7 @@ function startTypewriter(cardId) {
 [1, 2, 3, 4].forEach(startTypewriter);
 
 function pastePrompt(cardId) {
-  const text = currentPromptTexts[cardId] || PROMPT_SETS[cardId][0];
+  const text = activeFullPromptTexts[cardId] || PROMPT_SETS[cardId][0];
   inputEl.value = text;
   inputEl.focus();
   inputEl.setSelectionRange(text.length, text.length);
