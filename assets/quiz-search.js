@@ -1,5 +1,62 @@
 (() => {
-  // ── helpers ─────────────────────────────────────────────────────────────
+  // Inject custom stylesheet for responsive statements
+  if (typeof document !== 'undefined') {
+    const style = document.createElement('style');
+    style.textContent = `
+      .exam-stmt-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin: 10px 0;
+        padding: 12px 16px;
+        background: rgba(255,255,255,0.035);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 12px;
+        border-left: 4px solid #7BE3B0;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+        transition: all 0.2s;
+      }
+      .exam-stmt-label {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: 11px;
+        color: #7BE3B0;
+        background: rgba(123,227,176,0.14);
+        padding: 3px 8px;
+        border-radius: 6px;
+        white-space: nowrap;
+        letter-spacing: 0.4px;
+        flex-shrink: 0;
+      }
+      .exam-stmt-text {
+        font-size: 14.5px;
+        color: rgba(255,255,255,0.95);
+        line-height: 1.55;
+        flex: 1;
+      }
+      
+      @media (max-width: 600px) {
+        .exam-stmt-row {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 6px;
+          margin: 6px 0;
+          padding: 8px 12px;
+          border-radius: 8px;
+        }
+        .exam-stmt-label {
+          font-size: 10px;
+          padding: 2px 6px;
+        }
+        .exam-stmt-text {
+          font-size: 13px;
+          line-height: 1.45;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
   const esc = (s) =>
     String(s ?? '').replace(/[&<>"']/g, (m) =>
       ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m])
@@ -235,9 +292,9 @@
         }
 
         statementsHtml += `
-          <div class="exam-stmt-row" style="display:flex;align-items:flex-start;gap:14px;margin:12px 0;padding:14px 18px;background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.1);border-radius:14px;border-left:4px solid #7BE3B0;box-shadow:0 4px 16px rgba(0,0,0,0.2);">
-            <span style="font-family:'Poppins',sans-serif;font-weight:700;font-size:12px;color:#7BE3B0;background:rgba(123,227,176,0.14);padding:4px 10px;border-radius:7px;white-space:nowrap;letter-spacing:0.4px;">${esc(label)}</span>
-            <span style="font-size:15px;color:rgba(255,255,255,0.95);line-height:1.65;flex:1;">${esc(stmtContent)}</span>
+          <div class="exam-stmt-row">
+            <span class="exam-stmt-label">${esc(label)}</span>
+            <span class="exam-stmt-text">${esc(stmtContent)}</span>
           </div>`;
       }
     } else {
