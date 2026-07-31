@@ -103,7 +103,7 @@
     #user-name { font-size:13px; color:rgba(255,255,255,.75); }
 
     /* === HERO === */
-    #hero { position:relative; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:120px 24px 64px; text-align:center; background:#0a0a0a; overflow:hidden; }
+    #hero { position:relative; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:140px 24px 72px; text-align:center; background:#0a0a0a; overflow:hidden; }
     #hero h1 { font-family:'Instrument Serif',serif; font-size:clamp(36px,6.5vw,76px); font-weight:400; line-height:.97; letter-spacing:-.035em; color:#fff; margin:18px 0 20px; max-width:800px; position:relative; z-index:1; }
     #hero h1 em { font-style:italic; color:rgba(255,255,255,.45); }
     #hero .sub { font-size:17px; line-height:1.7; color:var(--muted); max-width:500px; margin:0 auto 36px; position:relative; z-index:1; }
@@ -111,7 +111,7 @@
     .stats { display:grid; grid-template-columns:repeat(2, 1fr); gap:14px 20px; width:100%; max-width:480px; margin:32px auto 0; padding:16px 20px; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.07); border-radius:18px; backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px); box-shadow:0 16px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08); position:relative; z-index:1; text-align:left; }
     .stat { display:flex; align-items:center; gap:10px; background:transparent; border:none; padding:0; border-radius:0; box-shadow:none; transition:all 0.2s ease; }
     .stat:hover { transform:translateY(-1px); }
-    .stat-icon-wrapper { width:32px; height:32px; border-radius:9px; background:rgba(123,227,176,0.1); border:1px solid rgba(123,227,176,0.22); display:flex; align-items:center; justify-content:center; color:#7BE3B0; flex-shrink:0; }
+    .stat-icon-wrapper { width:32px; height:32px; border-radius:999px; background:rgba(123,227,176,0.1); border:1px solid rgba(123,227,176,0.22); display:flex; align-items:center; justify-content:center; color:#7BE3B0; flex-shrink:0; }
     .stat-icon-wrapper .material-symbols-outlined { font-size:17px; }
     .stat-info { display:flex; flex-direction:column; min-width:0; }
     .stat-label { font-size:12.5px; font-weight:700; color:#fff; line-height:1.25; }
@@ -121,7 +121,8 @@
     /* === CHAT SECTION (Single-Screen Viewport Fit & Compact Empty State) === */
     #chat-section {
       position: relative;
-      padding: 40px 16px 16px;
+      padding: 64px 24px 32px;
+      margin-top: 36px;
       border-top: 1px solid rgba(255, 255, 255, 0.08);
       background: #070707;
       overflow: hidden;
@@ -571,11 +572,11 @@
       /* ── NAV ── */
       nav { padding: 0 16px; height: 56px; }
 
-      /* ── HERO: no more void, left-aligned like Apple ── */
+      /* ── HERO: clean clearance below fixed nav ── */
       #hero {
         min-height: auto !important;
         height: auto !important;
-        padding: 84px 20px 24px !important;
+        padding: 104px 20px 32px !important;
         justify-content: flex-start !important;
         align-items: flex-start !important;
         text-align: left !important;
@@ -722,8 +723,9 @@
 
       /* ── CHAT SECTION: clear gap above ── */
       #chat-section {
-        padding: 20px 0 0 !important;
-        border-top: 1px solid rgba(255,255,255,0.06) !important;
+        padding: 48px 0 24px !important;
+        margin-top: 28px !important;
+        border-top: 1px solid rgba(255,255,255,0.08) !important;
       }
 
       /* ── CHAT PANEL: full-width & immersive height ── */
