@@ -161,6 +161,59 @@
                   border-color: rgba(123, 227, 176, 0.2);
     }
 
+    /* === FROSTED GLASS BLURRED OVERLAY === */
+    .chat-blur-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 60;
+      background: rgba(10, 12, 18, 0.72);
+      backdrop-filter: blur(14px) saturate(160%);
+      -webkit-backdrop-filter: blur(14px) saturate(160%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      cursor: pointer;
+    }
+    .chat-blur-card {
+      background: rgba(14, 18, 26, 0.94);
+      border: 1px solid rgba(123, 227, 176, 0.35);
+      border-radius: 24px;
+      padding: 32px 24px;
+      max-width: 440px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.8), 0 0 30px rgba(123,227,176,0.15);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .chat-blur-overlay:hover .chat-blur-card {
+      transform: translateY(-4px) scale(1.02);
+      border-color: rgba(123,227,176,0.6);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.9), 0 0 40px rgba(123,227,176,0.25);
+    }
+    .chat-blur-icon {
+      width: 52px; height: 52px;
+      border-radius: 16px;
+      background: rgba(123,227,176,0.14);
+      border: 1px solid rgba(123,227,176,0.3);
+      display: flex; align-items: center; justify-content: center;
+      color: #7BE3B0; margin: 0 auto 14px;
+    }
+    .chat-blur-badge {
+      font-size: 11px; font-weight: 800; letter-spacing: 0.08em;
+      color: #7BE3B0; background: rgba(123,227,176,0.12);
+      padding: 4px 12px; border-radius: 999px; display: inline-block; margin-bottom: 10px;
+    }
+    .chat-blur-title { font-size: 19px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .chat-blur-desc { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.55; margin-bottom: 22px; }
+    .btn-blur-cta {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: linear-gradient(135deg, #7BE3B0, #38BDF8);
+      color: #000; font-size: 14px; font-weight: 800;
+      padding: 12px 24px; border-radius: 999px; border: none; cursor: pointer;
+      box-shadow: 0 6px 20px rgba(123,227,176,0.35); width: 100%;
+    }
+
     #chat-liquid-canvas,
     .chat-panel-aura {
       display: none !important;
@@ -1063,6 +1116,20 @@
   <div class="google-glow"></div>
   <div class="chat-panel-container">
     <div class="chat-panel">
+      <!-- FROSTED GLASS BLUR OVERLAY & INTERACTIVE FULL WORKSPACE CARD -->
+      <div class="chat-blur-overlay" onclick="window.location.href='chat/'">
+        <div class="chat-blur-card">
+          <div class="chat-blur-icon"><span class="material-symbols-outlined ms" style="font-size:26px;">auto_awesome</span></div>
+          <span class="chat-blur-badge">INTERACTIVE AI TUTOR</span>
+          <h3 class="chat-blur-title">Tap to Open Full AI Workspace</h3>
+          <p class="chat-blur-desc">Instant textbook-grounded explanations, SCERT & NCERT citations, solved PYQs, and adaptive quizzes.</p>
+          <button class="btn-blur-cta">
+            <span>Open AI Workspace</span>
+            <span class="material-symbols-outlined ms" style="font-size:18px;">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+
       <!-- Top bar -->
     <div class="ctopbar">
       <div class="ctop-left">
@@ -1774,9 +1841,8 @@ function startTypewriter(cardId) {
 
 function pastePrompt(cardId) {
   const text = currentPromptTexts[cardId] || PROMPT_SETS[cardId][0];
-  inputEl.value = text;
-  inputEl.focus();
-  inputEl.setSelectionRange(text.length, text.length);
+  sessionStorage.setItem('mg_auto_prompt', text);
+  window.location.href = 'chat/';
 }
 
 function scrollToTop(row) {

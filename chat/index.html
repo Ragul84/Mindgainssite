@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>AI Tutor | Dedicated Textbook AI Workspace</title>
+  <meta name="description" content="Dedicated textbook-aware AI chat workspace for UPSC, TNPSC, SSC, and state exam aspirants." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://mindgains.ai/chat/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+
+  <!-- Supabase Auth SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const SUPABASE_AUTH_URL = 'https://yuntwerxahgmaoduxvqc.supabase.co';
+    const SUPABASE_AUTH_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl1bnR3ZXJ4YWhnbWFvZHV4dnFjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU3OTk4OTMsImV4cCI6MjA3MTM3NTg5M30.1mFUH9yp55uxN8n9tyRHLFbve36_kpaJs41nPU85S74';
+    let supabaseClient = null;
+    if (window.supabase) {
+      supabaseClient = window.supabase.createClient(SUPABASE_AUTH_URL, SUPABASE_AUTH_KEY);
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --accent: #7BE3B0;
+      --accent-bg: rgba(123,227,176,0.12);
+      --accent-border: rgba(123,227,176,0.3);
+      --bg: #08080C;
+      --surface: rgba(255,255,255,0.04);
+      --border: rgba(255,255,255,0.08);
+      --text: #ffffff;
+      --muted: rgba(255,255,255,0.5);
+    }
+    html, body {
+      height: 100%;
+      height: 100dvh;
+      width: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow: hidden;
+    }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 9px; }
+
+    .ms { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; line-height: 1; display: inline-block; user-select: none; }
+
+    @keyframes slide-up { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+
+    /* === FULL VIEWPORT APP CONTAINER === */
+    .app-viewport {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      height: 100dvh;
+      width: 100vw;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* === ULTRA-CLEAN 44px HEADER === */
+    .nav-header {
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      background: rgba(10, 12, 18, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      flex-shrink: 0;
+      z-index: 100;
+    }
+    .nav-header-left { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .nav-brand-logo { width: 22px; height: 22px; border-radius: 6px; object-fit: cover; }
+    .nav-brand-title { font-size: 13px; font-weight: 700; color: #fff; letter-spacing: -0.01em; white-space: nowrap; }
+
+    .nav-header-center { display: flex; align-items: center; justify-content: center; }
+    .mode-tabs { display: flex; gap: 2px; background: rgba(255,255,255,0.06); padding: 2px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.08); }
+    .mode-tab { padding: 4px 12px; border-radius: 999px; font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.55); background: transparent; border: none; cursor: pointer; transition: all 0.18s; display: flex; align-items: center; gap: 4px; font-family: 'Inter', sans-serif; }
+    .mode-tab.active { background: #FFFFFF; color: #000000; font-weight: 700; box-shadow: 0 2px 8px rgba(255,255,255,0.2); }
+
+    .nav-header-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .exit-btn { width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.8); display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.18s; }
+    .exit-btn:hover { background: rgba(255,255,255,0.14); color: #fff; transform: scale(1.05); }
+
+    /* === CHAT THREAD === */
+    #thread {
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+      padding: 16px clamp(12px, 3vw, 36px);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      scroll-behavior: smooth;
+      max-width: 860px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    /* === EMPTY STATE & PROMPT CARDS === */
+    .empty-state { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center; padding: 16px 12px; margin: auto 0; }
+    .empty-title { font-size: 22px; font-weight: 700; margin-bottom: 20px; color: #ffffff; letter-spacing: -0.02em; }
+
+    .empty-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 780px; width: 100%; }
+    .prompt-card { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 14px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); text-align: left; cursor: pointer; transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1); color: inherit; font-family: 'Inter', sans-serif; }
+    .prompt-card:hover { background: rgba(255,255,255,0.06); border-color: rgba(123,227,176,0.35); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.4); }
+    .prompt-card-icon { font-size: 18px; flex-shrink: 0; }
+    .prompt-card-text { flex: 1; min-width: 0; }
+    .prompt-card-text strong { display: block; font-size: 12.5px; color: #fff; font-weight: 600; margin-bottom: 2px; }
+    .prompt-card-text span { display: block; font-size: 11px; color: rgba(255,255,255,0.5); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .prompt-card-arrow { font-size: 15px; color: rgba(255,255,255,0.25); transition: all 0.18s; flex-shrink: 0; }
+    .prompt-card:hover .prompt-card-arrow { color: var(--accent); transform: translateX(3px); }
+
+    /* === MESSAGE ROWS & BUBBLES === */
+    .msg-row { display: flex; align-items: flex-start; gap: 10px; animation: slide-up .22s ease-out both; width: 100%; }
+    .msg-row.user-row { flex-direction: row-reverse; margin-left: auto; max-width: 86%; }
+    .av { width: 28px; height: 28px; border-radius: 8px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; margin-top: 2px; }
+    .av.ai { background: transparent; border-radius: 8px; overflow: hidden; }
+    .av.ai img { width: 28px; height: 28px; border-radius: 8px; object-fit: cover; }
+    .av.user { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.85); border-radius: 50%; overflow: hidden; }
+    .av.user img { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; }
+
+    .bubble { max-width: 88%; padding: 12px 16px; font-size: 14px; line-height: 1.58; font-family: 'Inter', sans-serif; }
+    .ai-bub { background: rgba(18, 22, 32, 0.88); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 4px 16px 16px 16px; color: rgba(255,255,255,0.94); box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+    .ai-bub p { margin: 5px 0; line-height: 1.58; color: rgba(255,255,255,0.92); }
+    .ai-bub h2, .ai-bub h3, .ai-bub h4 { margin-top: 12px; margin-bottom: 5px; font-weight: 700; color: #fff; line-height: 1.35; }
+    .ai-bub h2 { font-size: 16px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px; margin-top: 14px; }
+    .ai-bub h3 { font-size: 14.5px; color: #7BE3B0; }
+    .ai-bub h4 { font-size: 13.5px; color: rgba(255,255,255,0.95); }
+    .ai-bub ul, .ai-bub ol { margin: 6px 0; padding-left: 18px; }
+    .ai-bub li { margin-bottom: 4px; line-height: 1.5; color: rgba(255,255,255,0.88); }
+
+    .user-bub { background: rgba(123, 227, 176, 0.15); border: 1px solid rgba(123, 227, 176, 0.35); border-radius: 16px 4px 16px 16px; color: #FFFFFF; line-height: 1.55; font-weight: 450; box-shadow: 0 3px 14px rgba(0,0,0,0.2); }
+
+    /* Typing Dots */
+    @keyframes waveDot {
+      0%, 100% { transform: translateY(0) scale(0.8); opacity: 0.35; }
+      50% { transform: translateY(-4px) scale(1.1); opacity: 1; filter: drop-shadow(0 0 4px rgba(123, 227, 176, 0.8)); }
+    }
+    @keyframes pulseThinkingText { 0% { opacity: 0.45; } 100% { opacity: 0.9; } }
+    .typing { display: flex; align-items: center; gap: 8px; padding: 4px 6px; }
+    .typing-dots { display: flex; align-items: center; gap: 4px; }
+    .typing-dot { width: 6px; height: 6px; border-radius: 50%; animation: waveDot 1.2s ease-in-out infinite; }
+    .typing-dot:nth-child(1) { background: #7BE3B0; animation-delay: 0ms; }
+    .typing-dot:nth-child(2) { background: #38bdf8; animation-delay: 180ms; }
+    .typing-dot:nth-child(3) { background: #34d399; animation-delay: 360ms; }
+    .typing-label { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.65); letter-spacing: 0.02em; animation: pulseThinkingText 1.6s ease-in-out infinite alternate; }
+
+    /* === MODERN HIGH-END INPUT CAPSULE === */
+    .cinput-wrap {
+      padding: 12px 16px max(16px, env(safe-area-inset-bottom, 16px));
+      background: rgba(10, 12, 18, 0.96);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      flex-shrink: 0;
+      position: relative;
+      z-index: 10;
+    }
+    .cinput-inner-container { max-width: 860px; width: 100%; margin: 0 auto; }
+    .cinput-row { display: flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 22px; padding: 6px 8px 6px 14px; transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1); }
+    .cinput-row:focus-within { border-color: rgba(123,227,176,0.45); box-shadow: 0 0 20px rgba(123,227,176,0.14); background: rgba(255, 255, 255, 0.09); }
+    .cinput-action-btn { background: transparent; border: none; border-radius: 10px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.18s; flex-shrink: 0; }
+    .cinput-action-btn:hover { background: rgba(255,255,255,0.10); transform: scale(1.05); }
+    #chat-input { flex: 1; background: transparent; border: none; outline: none; color: #fff; font-size: 14px; font-family: 'Inter', sans-serif; caret-color: var(--accent); padding: 4px 0; }
+    #chat-input::placeholder { color: rgba(255,255,255,0.38); font-size: 13.5px; }
+    #send-btn { width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(135deg, #7BE3B0, #38bdf8); color: #000; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.18s cubic-bezier(0.34, 1.56, 0.64, 1); flex-shrink: 0; box-shadow: 0 4px 12px rgba(123,227,176,0.35); }
+    #send-btn:hover:not(:disabled) { transform: scale(1.06); box-shadow: 0 6px 16px rgba(123,227,176,0.5); }
+    #send-btn:disabled { background: rgba(255,255,255,0.10); cursor: default; box-shadow: none; }
+    #send-btn .ms { font-size: 18px; color: #000; font-weight: 700; }
+    #send-btn:disabled .ms { color: rgba(255,255,255,0.3); }
+
+    /* === MOBILE RESPONSIVE === */
+    @media (max-width: 768px) {
+      .nav-header { padding: 0 12px; }
+      #thread { padding: 14px 12px; gap: 12px; }
+      .msg-row.user-row { max-width: 90%; }
+      .empty-state { padding: 12px 8px; }
+      .empty-title { font-size: 19px; margin-bottom: 16px; }
+      .empty-grid { grid-template-columns: 1fr; gap: 8px; }
+      .prompt-card { padding: 10px 12px; border-radius: 12px; }
+      .prompt-card-arrow { display: none; }
+      .cinput-wrap { padding: 10px 12px max(14px, env(safe-area-inset-bottom, 14px)); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="app-viewport">
+
+  <!-- SLEEK 44px HEADER -->
+  <header class="nav-header">
+    <div class="nav-header-left">
+      <img src="../assets/icons/mindgains-logo-apple.png" alt="Logo" class="nav-brand-logo" />
+      <span class="nav-brand-title">AI Tutor</span>
+    </div>
+
+    <div class="nav-header-center">
+      <div class="mode-tabs">
+        <button class="mode-tab active" id="tab-chat" onclick="switchMode('chat')">
+          <span class="material-symbols-outlined ms" style="font-size:15px;">chat</span>Chat
+        </button>
+        <button class="mode-tab" id="tab-quiz" onclick="switchMode('quiz')">
+          <span class="material-symbols-outlined ms" style="font-size:15px;">quiz</span>Quiz
+        </button>
+      </div>
+    </div>
+
+    <div class="nav-header-right">
+      <a href="../index.html" class="exit-btn" title="Exit to Home">
+        <span class="material-symbols-outlined ms" style="font-size:18px;">close</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- CHAT THREAD (FULL VIEWPORT HEIGHT) -->
+  <div id="thread">
+    <div class="empty-state" id="empty-state">
+      <h1 class="empty-title">What are you studying today?</h1>
+
+      <div class="empty-grid">
+        <button class="prompt-card" id="pcard-1" onclick="pastePrompt(1)">
+          <span class="prompt-card-icon">📖</span>
+          <div class="prompt-card-text">
+            <strong>Explain a Topic</strong>
+            <span class="type-target" id="ptype-1">Directive Principles of State Policy</span>
+          </div>
+          <span class="material-symbols-outlined ms prompt-card-arrow">edit_note</span>
+        </button>
+        <button class="prompt-card" id="pcard-2" onclick="pastePrompt(2)">
+          <span class="prompt-card-icon">📝</span>
+          <div class="prompt-card-text">
+            <strong>Previous Year Questions</strong>
+            <span class="type-target" id="ptype-2">TNPSC Group 1 Indian Polity PYQs</span>
+          </div>
+          <span class="material-symbols-outlined ms prompt-card-arrow">edit_note</span>
+        </button>
+        <button class="prompt-card" id="pcard-3" onclick="pastePrompt(3)">
+          <span class="prompt-card-icon">🧠</span>
+          <div class="prompt-card-text">
+            <strong>Generate Quiz</strong>
+            <span class="type-target" id="ptype-3">20 MCQs on Indian Constitution</span>
+          </div>
+          <span class="material-symbols-outlined ms prompt-card-arrow">edit_note</span>
+        </button>
+        <button class="prompt-card" id="pcard-4" onclick="pastePrompt(4)">
+          <span class="prompt-card-icon">📚</span>
+          <div class="prompt-card-text">
+            <strong>Chapter Summary</strong>
+            <span class="type-target" id="ptype-4">Samacheer Kalvi Class 10 Science Chapter 8</span>
+          </div>
+          <span class="material-symbols-outlined ms prompt-card-arrow">edit_note</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUIZ MODE BODY -->
+  <div id="quiz-panel-inner" style="display:none; flex-direction:column; flex:1; overflow:hidden; padding:16px; max-width:860px; width:100%; margin:0 auto;">
+    <div class="quiz-pick" id="quiz-picker" style="overflow-y:auto; flex:1;">
+      <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:12px;">Choose a topic for adaptive practice</h3>
+      <div class="quiz-pick-grid" id="quiz-cat-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;"></div>
+    </div>
+    <div class="quiz-body" id="quiz-body" style="display:none;flex-direction:column;gap:10px;overflow-y:auto;flex:1;">
+      <div class="q-progress" style="height:4px;background:rgba(255,255,255,0.1);border-radius:99px;overflow:hidden;"><div class="q-progress-bar" id="q-progress-bar" style="width:0%;height:100%;background:#7BE3B0;transition:width 0.3s;"></div></div>
+      <div class="q-text" id="q-text" style="font-size:14.5px;font-weight:600;color:#fff;margin-top:6px;"></div>
+      <div class="q-opts" id="q-opts"></div>
+      <div class="q-expl" id="q-expl" style="font-size:12.5px;color:rgba(255,255,255,0.8);background:rgba(255,255,255,0.05);padding:10px;border-radius:10px;display:none;"></div>
+      <div class="quiz-footer" style="display:flex;align-items:center;justify-content:space-between;margin-top:10px;">
+        <div class="quiz-score" id="quiz-score" style="font-size:12.5px;font-weight:700;color:#7BE3B0;">Score: 0</div>
+        <button id="next-btn" onclick="nextQuestion()" style="background:#7BE3B0;color:#000;font-weight:700;padding:7px 16px;border-radius:99px;border:none;cursor:pointer;">Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING ELEVATED CAPSULE INPUT -->
+  <div class="cinput-wrap" id="chat-input-area">
+    <div class="cinput-inner-container">
+      <div class="cinput-row">
+        <button class="cinput-action-btn" title="Add attachment or textbook excerpt" onclick="pastePrompt(1)">
+          <span class="material-symbols-outlined ms" style="font-size:18px;color:rgba(255,255,255,.55);">add_circle</span>
+        </button>
+        <button class="cinput-action-btn" title="Ask AI Tutor" onclick="pastePrompt(3)">
+          <span class="material-symbols-outlined ms" style="font-size:18px;color:var(--accent);">auto_awesome</span>
+        </button>
+        <input type="text" id="chat-input" placeholder="Ask anything about your syllabus, topics, or PYQs..." autocomplete="off" />
+        <button id="send-btn" onclick="sendMsg()" title="Send Message">
+          <span class="material-symbols-outlined ms">arrow_upward</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- AUTH MODAL -->
+<div id="auth-modal" onclick="if(event.target===this)closeAuthModal()" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:99999;background:rgba(0,0,0,0.75);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);align-items:center;justify-content:center;padding:20px;">
+  <div style="background:rgba(14,18,26,0.96);border:1px solid rgba(123,227,176,0.25);border-radius:24px;padding:30px 24px;max-width:420px;width:100%;box-shadow:0 30px 80px rgba(0,0,0,0.9);position:relative;text-align:center;">
+    <button onclick="closeAuthModal()" style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);width:32px;height:32px;border-radius:50%;cursor:pointer;" aria-label="Close modal">✕</button>
+    <img src="../assets/icons/mindgains-logo-apple.png" alt="Logo" style="width:56px;height:56px;border-radius:16px;object-fit:cover;margin-bottom:14px;" />
+    <h3 style="font-size:19px;font-weight:700;color:#fff;margin-bottom:8px;">Continue to AI Tutor</h3>
+    <p style="font-size:13px;color:rgba(255,255,255,0.75);line-height:1.6;margin-bottom:20px;">Sign in with Google to access textbook-aware AI tutoring, curriculum-grounded answers, and PYQs.</p>
+    <button onclick="window.__mgSignIn()" style="width:100%;display:flex;align-items:center;justify-content:center;gap:10px;background:#ffffff;color:#0F172A;font-weight:700;font-size:14px;padding:12px;border-radius:14px;border:none;cursor:pointer;">
+      <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#4285F4" d="M43.6 20.5H42V20H24v8h11.3C33.6 33 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.5 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.2-.1-2.5-.4-3.5z"/><path fill="#34A853" d="M6.3 14.7l6.6 4.8C14.5 16 19 12 24 12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.5 29.3 4 24 4 16.3 4 9.7 8.4 6.3 14.7z"/><path fill="#FBBC05" d="M24 44c5.2 0 9.9-1.7 13.6-4.5l-6.3-5.2C29.3 36 26.8 37 24 37c-5.2 0-9.6-3.4-11.3-8l-6.6 5.1C9.7 39.6 16.3 44 24 44z"/><path fill="#EA4335" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4 5.4l6.3 5.2C42.1 35.4 44 30 44 24c0-1.2-.1-2.5-.4-3.5z"/></svg>
+      <span>Continue with Google</span>
+    </button>
+  </div>
+</div>
+
+<script>
+/* ═══ OPENROUTER KEYS & MODELS ═══ */
+const OR_KEYS = [
+  atob('c2stb3ItdjEtYmIyMmJiMWQ4MTMxYThmNGEzNTFhOWExM2M0MzU4ZDk4MWEyMjI2ZjJjOTcyOTg0NGNiOGU4NjljNTk5Njc0Nw=='),
+  atob('c2stb3ItdjEtODBlNTVlZTAwMzMyYmExOTM1NmU2NTMzNTVlMGE2M2EwNzUwN2U1ZjMwZDM0OWVkNjJhMjdhMWZhYjllZDJmYw=='),
+  atob('c2stb3ItdjEtZGI3MmVhZjdhNjY2Y2Q2YzQ3ZmE4ZTdkNGQ2OGE3NzZmYjkzMjM4MTllMmIyMzk3ODAwZWM1YjZiNTJmNDRlYw==')
+];
+const OR_MODELS = ['google/gemini-2.5-flash', 'deepseek/deepseek-chat', 'openai/gpt-4o-mini'];
+
+let isSignedIn = false;
+let msgCount = 0;
+const MSG_LIMIT = 10;
+const TODAY = new Date().toDateString();
+
+function loadMsgCount() {
+  const stored = JSON.parse(localStorage.getItem('mg_msgs') || '{}');
+  if (stored.date !== TODAY) { localStorage.setItem('mg_msgs', JSON.stringify({date:TODAY,count:0})); return 0; }
+  return stored.count || 0;
+}
+function saveMsgCount(n) { localStorage.setItem('mg_msgs', JSON.stringify({date:TODAY,count:n})); }
+msgCount = loadMsgCount();
+
+window.__mgUser = null;
+window.applyUserState = function(user) {
+  if (!user) return;
+  isSignedIn = true;
+  window.__mgUser = user;
+  closeAuthModal();
+};
+
+window.__mgOnSignIn = (user) => {
+  localStorage.setItem('mg_user', JSON.stringify(user));
+  applyUserState(user);
+};
+
+function openAuthModal()  { document.getElementById('auth-modal').style.display = 'flex'; }
+function closeAuthModal() { document.getElementById('auth-modal').style.display = 'none'; }
+
+document.addEventListener('DOMContentLoaded', async () => {
+  const cached = localStorage.getItem('mg_user');
+  if (cached) {
+    try { applyUserState(JSON.parse(cached)); } catch(e) {}
+  }
+  if (supabaseClient) {
+    if (window.location.hash.includes('access_token') || window.location.search.includes('code=')) {
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      if (session?.user) {
+        history.replaceState(null, '', window.location.pathname);
+        const u = { email: session.user.email, displayName: session.user.user_metadata?.full_name || session.user.email, photoURL: session.user.user_metadata?.avatar_url || null };
+        localStorage.setItem('mg_user', JSON.stringify(u));
+        applyUserState(u);
+      }
+    } else {
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      if (session?.user) {
+        const u = { email: session.user.email, displayName: session.user.user_metadata?.full_name || session.user.email, photoURL: session.user.user_metadata?.avatar_url || null };
+        localStorage.setItem('mg_user', JSON.stringify(u));
+        applyUserState(u);
+      }
+    }
+  }
+});
+
+let currentMode = 'chat';
+function switchMode(mode) {
+  currentMode = mode;
+  document.getElementById('tab-chat').classList.toggle('active', mode==='chat');
+  document.getElementById('tab-quiz').classList.toggle('active', mode==='quiz');
+  document.getElementById('thread').style.display         = mode==='chat' ? 'flex'  : 'none';
+  document.getElementById('chat-input-area').style.display = mode==='chat' ? 'block' : 'none';
+  document.getElementById('quiz-panel-inner').style.display = mode==='quiz' ? 'flex'  : 'none';
+}
+
+const thread  = document.getElementById('thread');
+const inputEl = document.getElementById('chat-input');
+const sendBtn = document.getElementById('send-btn');
+
+if (inputEl) {
+  inputEl.addEventListener('focus', () => {
+    if (!isSignedIn) openAuthModal();
+    setTimeout(() => { inputEl.scrollIntoView({ behavior: 'smooth', block: 'end' }); }, 300);
+  });
+  inputEl.addEventListener('click', () => {
+    if (!isSignedIn) openAuthModal();
+  });
+  inputEl.addEventListener('keydown', e => { if (e.key==='Enter') sendMsg(); });
+}
+
+const EXAM_SYSTEM = `You are a warm, brilliant tutor and study buddy for Indian exam aspirants (UPSC, TNPSC, SSC, banking, state PSCs).
+
+SOURCE VERIFICATION POLICY:
+- Ground answers strictly in SCERT Samacheer Kalvi and NCERT textbooks, citing chapter, class, or syllabus unit.
+- Provide clear definitions, key points, simple examples, and bold mark-bearing terms, Articles, Acts, committees, and years.`;
+
+let chatHistory = [];
+
+function addRow(role) {
+  const row = document.createElement('div');
+  row.className = 'msg-row' + (role==='user' ? ' user-row' : '');
+  thread.appendChild(row); return row;
+}
+function addAv(row, role) {
+  const av = document.createElement('div');
+  av.className = 'av ' + (role==='ai' ? 'ai' : 'user');
+  if (role==='ai') {
+    av.innerHTML = '<img src="../assets/icons/mindgains-logo-apple.png" alt="AI" style="width:28px;height:28px;border-radius:8px;object-fit:cover;" />';
+  } else {
+    const userPhoto = (window.__mgUser && window.__mgUser.photoURL) ? window.__mgUser.photoURL : null;
+    if (userPhoto) {
+      av.innerHTML = `<img src="${userPhoto}" alt="User" style="width:28px;height:28px;border-radius:50%;object-fit:cover;" />`;
+    } else {
+      av.innerHTML = `<span class="material-symbols-outlined ms" style="font-size:15px;color:rgba(255,255,255,0.75);">person</span>`;
+    }
+  }
+  row.appendChild(av);
+}
+function addBubble(row, role, html) {
+  const b = document.createElement('div');
+  b.className = 'bubble ' + (role==='ai' ? 'ai-bub' : 'user-bub');
+  b.innerHTML = html;
+  row.appendChild(b); return b;
+}
+function showTyping() {
+  const r = addRow('ai'); r.id = 'typing-row';
+  addAv(r, 'ai');
+  const b = document.createElement('div');
+  b.className = 'bubble ai-bub';
+  b.innerHTML = `
+    <div class="typing">
+      <div class="typing-dots">
+        <span class="typing-dot"></span>
+        <span class="typing-dot"></span>
+        <span class="typing-dot"></span>
+      </div>
+      <span class="typing-label">Thinking...</span>
+    </div>
+  `;
+  r.appendChild(b);
+}
+function removeTyping() { const t=document.getElementById('typing-row'); if(t)t.remove(); }
+
+function scrollToTop(row) {
+  if (!row || !thread) return;
+  const topPos = Math.max(0, row.offsetTop - 12);
+  thread.scrollTo({ top: topPos, behavior: 'smooth' });
+}
+
+function formatAIResponse(rawText) {
+  if (!rawText) return '';
+  let text = rawText.replace(/INTERACTIVE\s+PYQ\s+PRACTICE/gi, '');
+  text = text.replace(/```([\s\S]*?)```/g, '<pre style="background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:12px;font-family:monospace;font-size:12px;color:#7BE3B0;overflow-x:auto;margin:10px 0;"><code>$1</code></pre>');
+  text = text.replace(/^### (.*$)/gim, '<h4 style="font-size:14px;font-weight:700;color:#7BE3B0;margin:12px 0 5px;">$1</h4>');
+  text = text.replace(/^## (.*$)/gim, '<h3 style="font-size:15.5px;font-weight:700;color:#fff;margin:14px 0 6px;">$1</h3>');
+  text = text.replace(/^# (.*$)/gim, '<h2 style="font-size:17px;font-weight:800;color:#fff;margin:16px 0 8px;">$1</h2>');
+  text = text.replace(/`([^`]+)`/g, '<code style="background:rgba(255,255,255,.08);padding:2px 5px;border-radius:4px;font-family:monospace;font-size:12px;color:#7BE3B0;">$1</code>');
+  text = text.replace(/\*\*(.*?)\*\*/g, '<strong style="color:#fff;font-weight:700;">$1</strong>');
+  text = text.replace(/\*(.*?)\*/g, '<em>$1</em>');
+  text = text.replace(/^>\s*(.*$)/gim, '<blockquote style="border-left:3px solid #7BE3B0;background:rgba(123,227,176,.06);padding:8px 12px;border-radius:0 8px 8px 0;margin:8px 0;color:rgba(255,255,255,.85);font-size:12.5px;">$1</blockquote>');
+  text = text.replace(/^\s*[-*•]\s+(.*$)/gim, '<li style="margin-bottom:3px;color:rgba(255,255,255,.85);"><span style="color:#7BE3B0;margin-right:5px;">•</span>$1</li>');
+  text = text.replace(/(<li[\s\S]*?<\/li>)/gi, '<ul style="list-style:none;padding-left:4px;margin:6px 0;">$1</ul>');
+  text = text.replace(/<\/ul>\s*<ul style="list-style:none;padding-left:4px;margin:6px 0;">/gi, '');
+  return text.replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>');
+}
+
+const PROMPT_SETS = {
+  1: ["Directive Principles of State Policy", "Harappan Civilization — SCERT Samacheer", "Photosynthesis — NCERT Class 11", "Sangam Literature & History"],
+  2: ["TNPSC Group 1 Indian Polity PYQs", "UPSC CSE Prelims Economy Solved Questions", "General Tamil Thirukkural PYQs", "TNPSC Group 2 General English PYQs"],
+  3: ["20 MCQs on Indian Constitution", "Test me on Sangam Age & Tamil Literature", "Mixed UPSC Prelims Environment Quiz", "TNPSC Aptitude & Shape Counting Quiz"],
+  4: ["Samacheer Kalvi Class 10 Science Chapter 8", "NCERT Indian Polity Quick Revision Notes", "Samacheer Kalvi Tamil Grammar Summary", "UPSC History 1857 Revolt Key Points"]
+};
+
+const currentPromptTexts = { 1: PROMPT_SETS[1][0], 2: PROMPT_SETS[2][0], 3: PROMPT_SETS[3][0], 4: PROMPT_SETS[4][0] };
+
+function startTypewriter(cardId) {
+  const el = document.getElementById(`ptype-${cardId}`);
+  if (!el) return;
+  const list = PROMPT_SETS[cardId];
+  let listIdx = 0, charIdx = list[0].length, isDeleting = false;
+
+  function step() {
+    const targetText = list[listIdx];
+    if (isDeleting) {
+      charIdx--;
+      el.textContent = targetText.substring(0, charIdx) + '▌';
+      currentPromptTexts[cardId] = targetText.substring(0, charIdx);
+      if (charIdx <= 0) { isDeleting = false; listIdx = (listIdx + 1) % list.length; setTimeout(step, 400); return; }
+      setTimeout(step, 20);
+    } else {
+      charIdx++;
+      el.textContent = targetText.substring(0, charIdx) + '▌';
+      currentPromptTexts[cardId] = targetText.substring(0, charIdx);
+      if (charIdx >= targetText.length) { el.textContent = targetText; currentPromptTexts[cardId] = targetText; isDeleting = true; setTimeout(step, 2200); return; }
+      setTimeout(step, 45 + Math.random() * 35);
+    }
+  }
+  setTimeout(step, cardId * 250);
+}
+[1, 2, 3, 4].forEach(startTypewriter);
+
+function pastePrompt(cardId) {
+  const text = currentPromptTexts[cardId] || PROMPT_SETS[cardId][0];
+  inputEl.value = text;
+  inputEl.focus();
+  inputEl.setSelectionRange(text.length, text.length);
+}
+
+async function sendMsg(override) {
+  if (currentMode !== 'chat') return;
+  if (!isSignedIn) { openAuthModal(); return; }
+
+  const text = override || inputEl.value.trim();
+  if (!text) return;
+
+  inputEl.value = '';
+  sendBtn.disabled = true;
+  msgCount++;
+  saveMsgCount(msgCount);
+
+  const es = document.getElementById('empty-state');
+  if (es) es.remove();
+
+  chatHistory.push({ role: 'user', content: text });
+  const uRow = addRow('user'); addAv(uRow, 'user'); addBubble(uRow, 'user', text);
+  scrollToTop(uRow);
+  showTyping();
+
+  let aiRow = null, aiBub = null;
+
+  async function tryORStream(key, keyNum, modelName) {
+    const body = { model: modelName, messages: [{ role: 'system', content: EXAM_SYSTEM }, ...chatHistory.slice(-10)], stream: true, max_tokens: 4096 };
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 3500);
+
+    const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${key}`, 'HTTP-Referer': 'https://mindgains.ai', 'X-Title': 'MindGains AI' },
+      body: JSON.stringify(body),
+      signal: controller.signal
+    });
+    clearTimeout(timer);
+    if (!res.ok) return null;
+
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder('utf-8');
+    let fullText = '', buffer = '';
+
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      buffer += decoder.decode(value, { stream: true });
+      const lines = buffer.split('\n');
+      buffer = lines.pop();
+      for (const line of lines) {
+        const trimmed = line.trim();
+        if (!trimmed || trimmed.startsWith(':') || trimmed === 'data: [DONE]') continue;
+        if (trimmed.startsWith('data: ')) {
+          try {
+            const parsed = JSON.parse(trimmed.slice(6));
+            const delta = parsed.choices?.[0]?.delta?.content || '';
+            if (delta) {
+              if (!aiRow) {
+                removeTyping();
+                aiRow = addRow('ai'); addAv(aiRow, 'ai');
+                aiBub = addBubble(aiRow, 'ai', '');
+                scrollToTop(uRow);
+              }
+              fullText += delta;
+              aiBub.innerHTML = formatAIResponse(fullText);
+            }
+          } catch(e) {}
+        }
+      }
+    }
+    return fullText.trim() ? fullText : null;
+  }
+
+  let finalReply = null;
+  for (let i = 0; i < OR_KEYS.length; i++) {
+    for (let m = 0; m < OR_MODELS.length; m++) {
+      try { finalReply = await tryORStream(OR_KEYS[i], i + 1, OR_MODELS[m]); if (finalReply) break; } catch(e) {}
+    }
+    if (finalReply) break;
+  }
+
+  removeTyping();
+  sendBtn.disabled = false;
+  if (finalReply) {
+    chatHistory.push({ role: 'assistant', content: finalReply });
+    if (aiBub) aiBub.innerHTML = formatAIResponse(finalReply);
+    scrollToTop(uRow);
+  } else {
+    chatHistory.pop();
+    if (!aiRow) { aiRow = addRow('ai'); addAv(aiRow, 'ai'); addBubble(aiRow, 'ai', '<strong>AI is temporarily busy.</strong> Please try asking again.'); }
+    scrollToTop(uRow);
+  }
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const autoPrompt = sessionStorage.getItem('mg_auto_prompt');
+  if (autoPrompt) {
+    sessionStorage.removeItem('mg_auto_prompt');
+    inputEl.value = autoPrompt;
+    setTimeout(() => {
+      if (isSignedIn) { sendMsg(autoPrompt); } else { openAuthModal(); }
+    }, 450);
+  }
+});
+</script>
+</body>
+</html>
