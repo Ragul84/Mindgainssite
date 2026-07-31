@@ -986,6 +986,7 @@
     }
 
     window.__mgSignIn = async () => {
+      sessionStorage.setItem('mg_signin_triggered', 'true');
       const redirectUrl = window.location.origin + window.location.pathname;
       if (supabaseClient) {
         const { error } = await supabaseClient.auth.signInWithOAuth({
@@ -1641,7 +1642,7 @@ window.__mgOnSignIn = (user) => {
   const wasAlreadySignedIn = isSignedIn;
   isSignedIn = true;
   window.__mgUser = user;
-  document.getElementById('signin-btn').style.display = 'none';
+  document.getElementById('signin-btn').style.setProperty('display', 'none', 'important');
   const ui = document.getElementById('user-info');
   ui.style.display = 'flex';
   const av = document.getElementById('user-avatar');
@@ -1650,15 +1651,19 @@ window.__mgOnSignIn = (user) => {
   closeAuthModal();
   updateAuthAccessUI();
 
-  if (!wasAlreadySignedIn) {
+  const signinTriggered = sessionStorage.getItem('mg_signin_triggered') === 'true';
+  const isRedirect = window.location.hash.includes('access_token') || window.location.search.includes('code=');
+
+  if (!wasAlreadySignedIn && (signinTriggered || isRedirect)) {
     showAuthToast(user.displayName, user.email);
+    sessionStorage.removeItem('mg_signin_triggered');
   }
 };
 
 window.__mgOnSignOut = () => {
   isSignedIn = false;
   window.__mgUser = null;
-  document.getElementById('signin-btn').style.display = 'flex';
+  document.getElementById('signin-btn').style.removeProperty('display');
   document.getElementById('user-info').style.display = 'none';
   updateAuthAccessUI();
 };
