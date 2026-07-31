@@ -14,8 +14,8 @@
   <meta property="og:url" content="https://mindgains.ai/" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin = "anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
 
   <style>
@@ -79,12 +79,45 @@
     .btn-outline { display:inline-flex; align-items:center; gap:7px; background:transparent; color:rgba(255,255,255,.65); font-family:'Inter',sans-serif; font-size:13.5px; font-weight:500; padding:11px 24px; border-radius:999px; border:1px solid rgba(255,255,255,.14); cursor:pointer; transition:all .2s; }
     .btn-outline:hover { border-color:rgba(255,255,255,.32); color:#fff; }
 
+    /* === LUXURY THEME UTILITIES === */
+    .font-cursive { font-family: 'Dancing Script', cursive !important; }
+    .font-instrument { font-family: 'Instrument Serif', serif !important; }
+    .font-inter { font-family: 'Inter', sans-serif !important; }
+    .liquid-glass {
+      background: rgba(255, 255, 255, 0.01) !important;
+      background-blend-mode: luminosity !important;
+      backdrop-filter: blur(4px) !important;
+      -webkit-backdrop-filter: blur(4px) !important;
+      border: none !important;
+      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1) !important;
+      position: relative !important;
+      overflow: hidden !important;
+    }
+    .liquid-glass::before {
+      content: '' !important;
+      position: absolute !important;
+      inset: 0 !important;
+      border-radius: inherit !important;
+      padding: 1.4px !important;
+      background: linear-gradient(180deg, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.15) 20%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%, rgba(255,255,255,0.15) 80%, rgba(255,255,255,0.45) 100%) !important;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) !important;
+      -webkit-mask-composite: xor !important;
+      mask-composite: exclude !important;
+      pointer-events: none !important;
+    }
+    .text-glow {
+      text-shadow: 0 0 40px rgba(255, 255, 255, 0.4), 0 0 80px rgba(255, 255, 255, 0.2), 0 0 120px rgba(255, 255, 255, 0.1) !important;
+    }
+    .button-glow {
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 0 40px rgba(255, 255, 255, 0.1) !important;
+    }
+
     /* === NAV === */
     nav { position:fixed; top:0; left:0; right:0; z-index:10000; display:flex; align-items:center; justify-content:space-between; padding:12px clamp(16px, 4vw, 36px); background:rgba(10,10,10,.85); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px); border-bottom:1px solid rgba(255,255,255,.07); }
     .nav-logo { display:flex; align-items:center; gap:9px; text-decoration:none; color:#fff; flex-shrink:0; }
     .logo-mark { width:32px; height:32px; border-radius:10px; background:linear-gradient(135deg,#7BE3B0,#38bdf8); display:flex; align-items:center; justify-content:center; }
     .logo-mark .ms { font-size:17px; color:#000; font-variation-settings:'FILL' 1,'wght' 500,'GRAD' 0,'opsz' 24; }
-    .logo-name { font-size:16px; font-weight:700; letter-spacing:-.02em; }
+    .logo-name { font-family: 'Dancing Script', cursive !important; font-size: 25px !important; font-weight: 700 !important; letter-spacing:-.02em; }
     .nav-right { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
     .nav-toggle { display:none; align-items:center; justify-content:center; width:44px; height:44px; border-radius:14px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.05); cursor:pointer; }
     .nav-toggle span { display:block; width:18px; height:2px; background:#fff; border-radius:999px; transition:all .2s ease; }
@@ -102,21 +135,25 @@
     #user-avatar { width:28px; height:28px; border-radius:50%; object-fit:cover; }
     #user-name { font-size:13px; color:rgba(255,255,255,.75); }
 
-    /* === HERO (COMPACT CLEAN CLEARANCE BELOW FIXED NAV) === */
-    #hero { position:relative; min-height:auto; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; margin-top:60px; padding:24px 24px 40px; text-align:center; background:#0a0a0a; overflow:hidden; }
-    #hero h1 { font-family:'Instrument Serif',serif; font-size:clamp(36px,6.5vw,76px); font-weight:400; line-height:.97; letter-spacing:-.035em; color:#fff; margin:12px 0 14px; max-width:800px; position:relative; z-index:1; }
-    #hero h1 em { font-style:italic; color:rgba(255,255,255,.45); }
+    /* === HERO (BACKGROUND VIDEO IMMERSIVE HEIGHT) === */
+    #hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 24px;
+      text-align: center;
+      background: #0a0608;
+      overflow: hidden;
+      margin-top: 0;
+    }
+    #hero h1 { font-family:'Instrument Serif',serif; font-size:clamp(36px,6.5vw,110px); font-weight:400; line-height:.9; letter-spacing:-.035em; color:#fff; position:relative; z-index:1; }
     #hero .sub { font-size:17px; line-height:1.7; color:var(--muted); max-width:500px; margin:0 auto 36px; position:relative; z-index:1; }
     .hero-btns { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-bottom:56px; position:relative; z-index:1; }
-    .stats { display:grid; grid-template-columns:repeat(2, 1fr); gap:14px 20px; width:100%; max-width:480px; margin:32px auto 0; padding:16px 20px; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.07); border-radius:18px; backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px); box-shadow:0 16px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08); position:relative; z-index:1; text-align:left; }
-    .stat { display:flex; align-items:center; gap:10px; background:transparent; border:none; padding:0; border-radius:0; box-shadow:none; transition:all 0.2s ease; }
-    .stat:hover { transform:translateY(-1px); }
-    .stat-icon-wrapper { width:32px; height:32px; border-radius:999px; background:rgba(123,227,176,0.1); border:1px solid rgba(123,227,176,0.22); display:flex; align-items:center; justify-content:center; color:#7BE3B0; flex-shrink:0; }
-    .stat-icon-wrapper .material-symbols-outlined { font-size:17px; }
-    .stat-info { display:flex; flex-direction:column; min-width:0; }
-    .stat-label { font-size:12.5px; font-weight:700; color:#fff; line-height:1.25; }
-    .stat-sub { font-size:10.5px; color:rgba(255,255,255,.48); margin-top:2px; line-height:1.2; }
-    .pill-sparkle { font-size:14px !important; color:#7BE3B0; margin-right:2px; }
+    .stats { display:none !important; }
+    .pill-sparkle { display:none !important; }
 
     /* === CHAT SECTION (Single-Screen Viewport Fit & Compact Empty State) === */
     #chat-section {
@@ -625,15 +662,15 @@
       /* ── NAV ── */
       nav { padding: 0 16px; height: 56px; }
 
-      /* ── HERO: compact 18px top padding ── */
+      /* ── HERO ── */
       #hero {
+        height: 100vh !important;
         min-height: auto !important;
-        height: auto !important;
-        margin-top: 56px !important;
-        padding: 18px 20px 24px !important;
-        justify-content: flex-start !important;
-        align-items: flex-start !important;
-        text-align: left !important;
+        margin-top: 0 !important;
+        padding: 0 20px !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
       }
       
       .google-glow {
@@ -650,11 +687,12 @@
       }
 
       #hero h1 {
-        font-size: clamp(26px, 7.5vw, 34px) !important;
-        line-height: 1.15 !important;
-        margin: 6px 0 12px !important;
+        font-size: clamp(28px, 7.5vw, 42px) !important;
+        line-height: 1.05 !important;
+        margin: 0 auto 16px !important;
         letter-spacing: -0.025em !important;
-        max-width: 340px !important;
+        max-width: 100% !important;
+        text-align: center !important;
       }
 
       #hero h1 em {
@@ -670,8 +708,8 @@
         line-height: 1.55 !important;
         color: rgba(255, 255, 255, 0.6) !important;
         max-width: 100% !important;
-        margin: 0 0 20px !important;
-        text-align: left !important;
+        margin: 0 auto 20px !important;
+        text-align: center !important;
       }
 
       .hero-br { display: none !important; }
@@ -1021,7 +1059,81 @@
   </script>
 
   <script>
+    // Volume Control for background video
+    window.toggleHeroVolume = () => {
+      const video = document.getElementById('hero-video');
+      const icon = document.getElementById('sound-icon');
+      const text = document.getElementById('sound-text');
+      if (video) {
+        video.muted = !video.muted;
+        if (video.muted) {
+          icon.textContent = 'volume_off';
+          text.textContent = 'with sound';
+        } else {
+          icon.textContent = 'volume_up';
+          text.textContent = 'sound on';
+        }
+      }
+    };
+
+    // requestAnimationFrame based parallax scroll animations with lerp smoothing
+    let currentRainbowY = 120;
+    let currentCloudX = -200;
+    let currentCloudY = 0;
+
+    const lerp = (start, end, amt) => (1 - amt) * start + amt * end;
+
+    function animateParallax() {
+      const quoteSection = document.getElementById('quote-section');
+      const rainbow = document.getElementById('parallax-rainbow');
+      const leftCloud = document.getElementById('parallax-left-cloud');
+      const rightCloud = document.getElementById('parallax-right-cloud');
+
+      if (quoteSection) {
+        const rect = quoteSection.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        // Progress value (0 to 1) based on viewport position
+        const progress = Math.max(0, Math.min(1, (windowHeight - rect.top) / (windowHeight + rect.height)));
+        
+        // Target translations
+        const targetRainbowY = 120 + (progress * (-160 - 120)); // +120px to -160px
+        
+        let targetCloudX = -200;
+        if (progress >= 0.12 && progress <= 0.92) {
+          targetCloudX = 0; // slide in
+        }
+        const targetCloudY = progress * -50; // drift up
+
+        // Lerp interpolation
+        currentRainbowY = lerp(currentRainbowY, targetRainbowY, 0.06);
+        currentCloudX = lerp(currentCloudX, targetCloudX, 0.04);
+        currentCloudY = lerp(currentCloudY, targetCloudY, 0.04);
+
+        if (rainbow) {
+          rainbow.style.transform = `translate3d(0, ${currentRainbowY}px, 0)`;
+        }
+
+        // Opacity tied to slide-in progress
+        const cloudOpacity = Math.max(0, Math.min(1, 1 - Math.abs(currentCloudX) / 200));
+
+        if (leftCloud) {
+          leftCloud.style.transform = `translate3d(${currentCloudX}px, ${currentCloudY}px, 0)`;
+          leftCloud.style.opacity = cloudOpacity;
+        }
+        if (rightCloud) {
+          rightCloud.style.transform = `translate3d(${-currentCloudX}px, ${currentCloudY}px, 0) scaleX(-1)`;
+          rightCloud.style.opacity = cloudOpacity;
+        }
+      }
+
+      requestAnimationFrame(animateParallax);
+    }
+
     window.addEventListener('DOMContentLoaded', () => {
+      // Start parallax loop
+      requestAnimationFrame(animateParallax);
+
       const topNav = document.getElementById('site-nav');
       const toggle = topNav?.querySelector('.nav-toggle');
       const backdrop = document.querySelector('.site-nav-backdrop');
@@ -1081,51 +1193,60 @@
 </nav>
 
 <!-- HERO -->
-<section id="hero">
-  <div class="google-glow"></div>
-  <div class="a1">
-    <span class="pill hero-pill">
-      <span>INDIA'S 1ST TEXTBOOK-AWARE EXAM AI</span>
-    </span>
+<section id="hero" style="position: relative; height: 100vh; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; margin-top: 0; padding: 0 24px; background: #0a0608;">
+  <!-- Background video -->
+  <video id="hero-video" autoplay muted loop playsinline class="hero-video-bg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
+    <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260613_180732_a54afbf6-b30d-470e-861f-669871f09f67.mp4" type="video/mp4" />
+  </video>
+  
+  <!-- Dark overlay -->
+  <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.35); z-index: 2;"></div>
+
+  <!-- Center Content -->
+  <div style="position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; max-width: 1000px; margin-top: -80px; width: 100%; padding: 0 20px;">
+    <h1 class="font-instrument text-glow" style="color: #fff; font-size: clamp(34px, 5.5vw, 100px); line-height: 0.95; font-weight: 400; letter-spacing: -0.03em; max-width: 900px; font-style: italic;">
+      The AI Built<br><span style="font-family: 'Inter', sans-serif; font-weight: 900; font-style: normal; text-transform: uppercase; font-size: 0.85em; letter-spacing: -0.04em;">for Indian Exams.</span>
+    </h1>
+    <p style="font-size: clamp(13.5px, 1.8vw, 16px); color: rgba(255,255,255,0.7); max-width: 640px; line-height: 1.6; margin-top: 24px; font-family: 'Inter', sans-serif;">
+      Grounded in your textbooks, aligned with your curriculum, enhanced by previous-year question intelligence.
+    </p>
+    <div style="margin-top: 32px;">
+      <button class="btn-primary button-glow" onclick="scrollToChat()" style="background: #ffffff; color: #000000; padding: 14px 36px; border-radius: 999px; font-weight: 600; font-size: 14px; border: none; cursor: pointer; transition: all 0.3s; letter-spacing: 0.03em; text-transform: uppercase; font-family: 'Inter', sans-serif;">
+        Ask AI — Free
+      </button>
+    </div>
   </div>
-  <h1 class="a2">The AI Built<br class="hero-br"> <em>for Indian Exams.</em></h1>
-  <p class="sub a3">Grounded in your textbooks, aligned with your curriculum,<br class="hero-br"> enhanced by previous-year question intelligence.</p>
-  <div class="hero-btns a4">
-    <button class="btn-primary" onclick="scrollToChat()">
-      <span class="material-symbols-outlined ms fill">bolt</span>Ask AI — Free
-    </button>
-    <button class="btn-outline" onclick="scrollToQuiz()">
-      <span class="material-symbols-outlined ms fill">quiz</span>Try a Quiz
-    </button>
+
+  <!-- Sound Indicator (Desktop only) -->
+  <div class="sound-indicator-desktop" onclick="toggleHeroVolume()" style="position: absolute; bottom: 32px; left: 32px; display: flex; align-items: center; gap: 12px; cursor: pointer; z-index: 10;">
+    <div style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.3); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
+      <span id="sound-icon" class="material-symbols-outlined text-white" style="font-size: 18px; vertical-align: middle;">volume_off</span>
+    </div>
+    <div style="display: flex; flex-direction: column; text-align: left;">
+      <span style="font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.1em; line-height: 1.2;">Experience</span>
+      <span id="sound-text" style="font-size: 10px; color: rgba(255,255,255,0.4); line-height: 1.2;">with sound</span>
+    </div>
   </div>
-  <div class="stats a4">
-    <div class="stat">
-      <div class="stat-icon-wrapper"><span class="material-symbols-outlined">auto_stories</span></div>
-      <div class="stat-info">
-        <div class="stat-label">Textbook-Grounded</div>
-        <div class="stat-sub">SCERT Samacheer · NCERT</div>
-      </div>
-    </div>
-    <div class="stat">
-      <div class="stat-icon-wrapper"><span class="material-symbols-outlined">psychology</span></div>
-      <div class="stat-info">
-        <div class="stat-label">PYQ Intelligence</div>
-        <div class="stat-sub">TNPSC · UPSC · TET</div>
-      </div>
-    </div>
-    <div class="stat">
-      <div class="stat-icon-wrapper"><span class="material-symbols-outlined">translate</span></div>
-      <div class="stat-info">
-        <div class="stat-label">Multilingual</div>
-        <div class="stat-sub">English · தமிழ் · हिंदी · More</div>
-      </div>
-    </div>
-    <div class="stat">
-      <div class="stat-icon-wrapper"><span class="material-symbols-outlined">verified</span></div>
-      <div class="stat-info">
-        <div class="stat-label">Curriculum-Aligned</div>
-        <div class="stat-sub">Your Syllabus, Your Exam</div>
-      </div>
+</section>
+
+<!-- QUOTE SECTION WITH PARALLAX CLOUDS -->
+<section id="quote-section" style="position: relative; height: 100vh; overflow: hidden; display: flex; align-items: center; justify-content: center; width: 100%; background: linear-gradient(to bottom, #010A17 0%, #0A4267 30%, #20658E 60%, #6BADC4 100%); z-index: 5;">
+  <!-- Rainbow image (Parallax layer 1) -->
+  <img id="parallax-rainbow" src="https://soft-zoom-63098134.figma.site/_assets/v11/8d520a7515d06cbfc403d0125e3d05b1a7ccd29c.png" alt="Rainbow" style="position: absolute; left: 0; right: 0; top: 0; width: 100%; height: auto; z-index: 10; pointer-events: none; will-change: transform;" />
+
+  <!-- Left cloud (Parallax layer 2) -->
+  <img id="parallax-left-cloud" class="hidden-mobile" src="https://soft-zoom-63098134.figma.site/_assets/v11/0d6dfd3f90b930f21726f2ed56a3320d79b7a797.png" alt="Left Cloud" style="position: absolute; left: 0; bottom: 10%; width: min(650px, 50vw); margin-left: -15%; z-index: 12; pointer-events: none; opacity: 0; will-change: transform;" />
+
+  <!-- Right cloud (Parallax layer 3) -->
+  <img id="parallax-right-cloud" class="hidden-mobile" src="https://soft-zoom-63098134.figma.site/_assets/v11/0d6dfd3f90b930f21726f2ed56a3320d79b7a797.png" alt="Right Cloud" style="position: absolute; right: 0; bottom: 15%; width: min(650px, 50vw); margin-right: -15%; z-index: 12; pointer-events: none; opacity: 0; transform: scaleX(-1); will-change: transform;" />
+
+  <!-- Quote Content (z-index 20) -->
+  <div style="position: relative; z-index: 20; max-width: 900px; width: 100%; text-align: center; padding: 0 28px;">
+    <p class="font-instrument" style="color: #ffffff; font-size: clamp(18px, 4vw, 40px); line-height: 1.45; font-style: italic; font-weight: 300;">
+      “MindGains was founded on a belief in learning that honors your nature. We pursue refined outcomes, considered approaches, and lasting cognitive vitality. We spend time learning what matters to you before deciding what serves you best. No rushing, no excess — just support that lets you feel confident.”
+    </p>
+    <div class="font-inter" style="margin-top: 32px; font-size: clamp(13px, 1.8vw, 16px); color: rgba(255,255,255,0.8); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;">
+      MindGains Team — Founders
     </div>
   </div>
 </section>
