@@ -40,20 +40,21 @@
       
       @media (max-width: 600px) {
         .exam-stmt-row {
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 6px;
-          margin: 6px 0;
-          padding: 8px 12px;
-          border-radius: 8px;
+          display: block !important;
+          margin: 4px 0 !important;
+          padding: 6px 10px !important;
+          border-radius: 6px !important;
         }
         .exam-stmt-label {
-          font-size: 10px;
-          padding: 2px 6px;
+          display: inline-block !important;
+          font-size: 9.5px !important;
+          padding: 1px 5px !important;
+          margin-bottom: 4px !important;
         }
         .exam-stmt-text {
-          font-size: 13px;
-          line-height: 1.45;
+          display: block !important;
+          font-size: 11.5px !important;
+          line-height: 1.35 !important;
         }
       }
 
@@ -76,18 +77,18 @@
       
       @media (max-width: 600px) {
         .quiz-feedback {
-          font-size: 12px !important;
-          line-height: 1.4 !important;
-          padding: 8px 10px !important;
-          margin-top: 8px !important;
+          font-size: 11.5px !important;
+          line-height: 1.35 !important;
+          padding: 6px 10px !important;
+          margin-top: 6px !important;
         }
         .quiz-feedback .explanation {
-          font-size: 11.5px !important;
-          line-height: 1.4 !important;
+          font-size: 11px !important;
+          line-height: 1.35 !important;
           margin-top: 4px !important;
         }
         .quiz-feedback .correct-ans {
-          font-size: 11.5px !important;
+          font-size: 11px !important;
           margin-top: 2px !important;
         }
       }
