@@ -505,7 +505,55 @@
     startBtn.disabled = true;
     startBtn.textContent = 'Loading…';
     await load();
-    order   = shuffle(quiz.questions.map((_, i) => i));
+    
+    // Split questions into statement-based and direct MCQs
+    const pattern = /(?:Statement\s*\d+|Statement\s*[I|V|X]+|\b[1-9]\.|\(\d{1,2}\))/i;
+    const statements = [];
+    const directs = [];
+    
+    quiz.questions.forEach((q, i) => {
+      if (pattern.test(q.question)) {
+        statements.push(i);
+      } else {
+        directs.push(i);
+      }
+    });
+    
+    // Target 20 questions total (10 statements, 10 directs)
+    const targetHalf = 10;
+    const shuffledStmts = shuffle(statements);
+    const shuffledDirects = shuffle(directs);
+    
+    let selectedStmts = [];
+    let selectedDirects = [];
+    
+    if (shuffledStmts.length >= targetHalf && shuffledDirects.length >= targetHalf) {
+      selectedStmts = shuffledStmts.slice(0, targetHalf);
+      selectedDirects = shuffledDirects.slice(0, targetHalf);
+    } else {
+      const limit = Math.min(shuffledStmts.length, shuffledDirects.length);
+      if (limit > 0) {
+        selectedStmts = shuffledStmts.slice(0, Math.max(targetHalf, limit));
+        selectedDirects = shuffledDirects.slice(0, Math.max(targetHalf, limit));
+      } else {
+        // Fallback: shuffle all and take first 20 if one pool is completely empty
+        const all = shuffle(quiz.questions.map((_, i) => i));
+        order = all.slice(0, 20);
+        idx = 0;
+        score = 0;
+        mistakes = [];
+        started = Date.now();
+        nextBtn.textContent = 'Next →';
+        player.hidden = false;
+        startBtn.textContent = 'Restart Quiz';
+        startBtn.disabled = false;
+        render();
+        player.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+    }
+    
+    order = shuffle([...selectedStmts, ...selectedDirects]).slice(0, 20);
     idx     = 0;
     score   = 0;
     mistakes = [];
@@ -520,4 +568,26 @@
 
   startBtn.addEventListener('click', begin);
   nextBtn.addEventListener('click', goNext);
+
+  // Keyboard Shortcuts for Speedrunning
+  window.addEventListener('keydown', (e) => {
+    if (!player || player.hidden) return;
+    
+    const key = e.key.toLowerCase();
+    if (!answered) {
+      const keyMap = { 'a': 0, 'b': 1, 'c': 2, 'd': 3, '1': 0, '2': 1, '3': 2, '4': 3 };
+      if (key in keyMap) {
+        const optionIdx = keyMap[key];
+        const buttons = optsEl.querySelectorAll('button');
+        if (buttons && buttons[optionIdx] && !buttons[optionIdx].disabled) {
+          buttons[optionIdx].click();
+        }
+      }
+    } else if (!nextBtn.disabled) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        nextBtn.click();
+      }
+    }
+  });
 })();
