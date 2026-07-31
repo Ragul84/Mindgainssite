@@ -2,918 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MindGains AI | India's 1st Textbook-Aware AI</title>
-  <meta name="description" content="MindGains AI is India's 1st textbook-aware AI for competitive exams. Grounded in SCERT Samacheer, NCERT &amp; official syllabus with live mascot call mode, PYQ intelligence, adaptive quizzes, and 6 Indian languages." />
-  <meta name="keywords" content="TNPSC Group 1 2 4 AI tutor, UPSC CSE AI previous year questions, General Tamil exam AI, Samacheer Kalvi AI, NCERT SCERT AI tutor India, competitive exam AI India, MindGains AI" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>MindGains AI | Gamified Textbook AI Tutor for Aspirants</title>
+  <meta name="description" content="Master UPSC, TNPSC, SSC, and state exams with MindGains AI. Duolingo-style gamified learning grounded in SCERT Samacheer Kalvi & NCERT textbooks." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://mindgains.ai/" />
+
+  <!-- OpenGraph & Twitter -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="MindGains AI | India's 1st Textbook-Aware AI" />
-  <meta property="og:description" content="India's 1st textbook-aware AI for competitive exams (TNPSC, UPSC, SSC, TET). Grounded in your textbooks with live mascot call mode &amp; PYQ intelligence." />
   <meta property="og:url" content="https://mindgains.ai/" />
+  <meta property="og:title" content="MindGains AI | Gamified Textbook AI Tutor" />
+  <meta property="og:description" content="Grounded in SCERT Samacheer & NCERT textbooks. Gamified exam preparation with streak rewards, XP, and AI tutoring." />
+  <meta property="og:image" content="https://mindgains.ai/assets/icons/mindgains-header-logo.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
-
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --accent: #7BE3B0;
-      --accent-bg: rgba(123,227,176,0.10);
-      --accent-border: rgba(123,227,176,0.22);
-      --bg: #0a0a0a;
-      --surface: rgba(255,255,255,0.04);
-      --border: rgba(255,255,255,0.09);
-      --text: #fff;
-      --muted: rgba(255,255,255,0.52);
-      --danger: #f87171;
-    }
-    html, body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; scroll-behavior: smooth; }
-
-    .glass { background: rgba(255,255,255,0.05); border: 1px solid var(--border); backdrop-filter: blur(20px) saturate(160%); -webkit-backdrop-filter: blur(20px) saturate(160%); }
-
-    ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: transparent; }
-    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 9px; }
-
-    .ms { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; line-height: 1; display: inline-block; user-select: none; }
-    .ms.fill { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-
-    @keyframes fade-up { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
-    @keyframes pdot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
-    @keyframes blink { 0%,80%,100%{transform:scale(.5);opacity:.3} 40%{transform:scale(1);opacity:1} }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    @keyframes slide-up { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
-
-    @keyframes googleGlow {
-      0% { transform: translate(-50%, 0%) scale(1) rotate(0deg); opacity: 0.25; }
-      50% { transform: translate(-46%, -12%) scale(1.18) rotate(180deg); opacity: 0.38; }
-      100% { transform: translate(-50%, 0%) scale(1) rotate(360deg); opacity: 0.25; }
-    }
-    .google-glow {
-      position: absolute;
-      top: -120px; left: 50%;
-      width: 800px; height: 500px;
-      border-radius: 50%;
-      background: radial-gradient(ellipse at center, rgba(123, 227, 176, 0.45) 0%, rgba(56, 189, 248, 0.18) 45%, transparent 75%);
-      filter: blur(100px);
-      pointer-events: none;
-      animation: googleGlow 14s ease-in-out infinite alternate;
-      z-index: 0;
-    }
-
-    .a1 { animation: fade-up .65s ease-out .05s both; }
-    .a2 { animation: fade-up .65s ease-out .17s both; }
-    .a3 { animation: fade-up .65s ease-out .29s both; }
-    .a4 { animation: fade-up .65s ease-out .41s both; }
-
-    .pill { display:inline-flex; align-items:center; gap:7px; font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); background:var(--accent-bg); border:1px solid var(--accent-border); padding:5px 13px; border-radius:999px; }
-
-    .btn-primary { display:inline-flex; align-items:center; gap:7px; background:#fff; color:#000; font-family:'Inter',sans-serif; font-size:13.5px; font-weight:600; padding:11px 24px; border-radius:999px; border:none; cursor:pointer; transition:background .2s, transform .15s; }
-    .btn-primary:hover { background:#e8ffe6; transform:scale(1.02); }
-    .btn-primary .ms { font-size:16px; }
-
-    .btn-outline { display:inline-flex; align-items:center; gap:7px; background:transparent; color:rgba(255,255,255,.65); font-family:'Inter',sans-serif; font-size:13.5px; font-weight:500; padding:11px 24px; border-radius:999px; border:1px solid rgba(255,255,255,.14); cursor:pointer; transition:all .2s; }
-    .btn-outline:hover { border-color:rgba(255,255,255,.32); color:#fff; }
-
-    /* === NAV === */
-    nav { position:fixed; top:0; left:0; right:0; z-index:10000; display:flex; align-items:center; justify-content:space-between; padding:12px clamp(16px, 4vw, 36px); background:rgba(10,10,10,.85); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px); border-bottom:1px solid rgba(255,255,255,.07); }
-    .nav-logo { display:flex; align-items:center; gap:9px; text-decoration:none; color:#fff; flex-shrink:0; }
-    .logo-mark { width:32px; height:32px; border-radius:10px; background:linear-gradient(135deg,#7BE3B0,#38bdf8); display:flex; align-items:center; justify-content:center; }
-    .logo-mark .ms { font-size:17px; color:#000; font-variation-settings:'FILL' 1,'wght' 500,'GRAD' 0,'opsz' 24; }
-    .logo-name { font-size:16px; font-weight:700; letter-spacing:-.02em; }
-    .nav-right { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
-    .nav-toggle { display:none; align-items:center; justify-content:center; width:44px; height:44px; border-radius:14px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.05); cursor:pointer; }
-    .nav-toggle span { display:block; width:18px; height:2px; background:#fff; border-radius:999px; transition:all .2s ease; }
-    .nav-toggle span + span { margin-top:4px; }
-    nav.open .nav-toggle span:nth-child(1) { transform:translateY(6px) rotate(45deg); }
-    nav.open .nav-toggle span:nth-child(2) { opacity:0; }
-    nav.open .nav-toggle span:nth-child(3) { transform:translateY(-6px) rotate(-45deg); }
-    .nav-glass-btn { display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:rgba(255,255,255,.85); background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.12); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); padding:7px 16px; border-radius:999px; text-decoration:none; transition:all .2s ease; white-space:nowrap; flex-shrink:0; }
-    .nav-glass-btn:hover { background:rgba(255,255,255,.12); border-color:rgba(123,227,176,.38); color:#fff; transform:translateY(-1px); box-shadow:0 4px 16px rgba(0,0,0,.3); }
-    .nav-cta-btn { font-size:13px; font-weight:700; color:#001014; background:#7BE3B0; padding:7px 18px; border-radius:999px; text-decoration:none; transition:all .18s; white-space:nowrap; flex-shrink:0; }
-    .nav-cta-btn:hover { background:#5dd49a; transform:scale(1.02); }
-    #signin-btn { display:flex; align-items:center; gap:7px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.14); color:rgba(255,255,255,.85); font-family:'Inter',sans-serif; font-size:13px; font-weight:500; padding:7px 16px; border-radius:999px; cursor:pointer; transition:all .18s; flex-shrink:0; }
-    #signin-btn:hover { background:rgba(255,255,255,.14); }
-    #user-info { display:none; align-items:center; gap:8px; }
-    #user-avatar { width:28px; height:28px; border-radius:50%; object-fit:cover; }
-    #user-name { font-size:13px; color:rgba(255,255,255,.75); }
-
-    /* === HERO (COMPACT CLEAN CLEARANCE BELOW FIXED NAV) === */
-    #hero { position:relative; min-height:auto; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; margin-top:60px; padding:24px 24px 40px; text-align:center; background:#0a0a0a; overflow:hidden; }
-    #hero h1 { font-family:'Instrument Serif',serif; font-size:clamp(36px,6.5vw,76px); font-weight:400; line-height:.97; letter-spacing:-.035em; color:#fff; margin:12px 0 14px; max-width:800px; position:relative; z-index:1; }
-    #hero h1 em { font-style:italic; color:rgba(255,255,255,.45); }
-    #hero .sub { font-size:17px; line-height:1.7; color:var(--muted); max-width:500px; margin:0 auto 36px; position:relative; z-index:1; }
-    .hero-btns { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-bottom:56px; position:relative; z-index:1; }
-    .stats { display:grid; grid-template-columns:repeat(2, 1fr); gap:14px 20px; width:100%; max-width:480px; margin:32px auto 0; padding:16px 20px; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.07); border-radius:18px; backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px); box-shadow:0 16px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08); position:relative; z-index:1; text-align:left; }
-    .stat { display:flex; align-items:center; gap:10px; background:transparent; border:none; padding:0; border-radius:0; box-shadow:none; transition:all 0.2s ease; }
-    .stat:hover { transform:translateY(-1px); }
-    .stat-icon-wrapper { width:32px; height:32px; border-radius:999px; background:rgba(123,227,176,0.1); border:1px solid rgba(123,227,176,0.22); display:flex; align-items:center; justify-content:center; color:#7BE3B0; flex-shrink:0; }
-    .stat-icon-wrapper .material-symbols-outlined { font-size:17px; }
-    .stat-info { display:flex; flex-direction:column; min-width:0; }
-    .stat-label { font-size:12.5px; font-weight:700; color:#fff; line-height:1.25; }
-    .stat-sub { font-size:10.5px; color:rgba(255,255,255,.48); margin-top:2px; line-height:1.2; }
-    .pill-sparkle { font-size:14px !important; color:#7BE3B0; margin-right:2px; }
-
-    /* === CHAT SECTION (Single-Screen Viewport Fit & Compact Empty State) === */
-    #chat-section {
-      position: relative;
-      padding: 64px 24px 32px;
-      margin-top: 36px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      background: #070707;
-      overflow: hidden;
-    }
-
-    .chat-panel-container {
-      position: relative;
-      width: 100%;
-      max-width: 980px;
-      margin: 0 auto;
-    }
-
-    .chat-panel {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      max-width: 980px;
-      margin: 0 auto;
-      border-radius: 20px;
-      overflow: hidden;
-      height: clamp(560px, 84vh, 760px);
-      display: flex;
-      flex-direction: column;
-      background: rgba(14, 16, 24, 0.94);
-      backdrop-filter: blur(32px) saturate(180%);
-      -webkit-backdrop-filter: blur(32px) saturate(180%);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.7),
-                  0 0 0 1px rgba(255, 255, 255, 0.04),
-                  inset 0 1px 0 rgba(255, 255, 255, 0.12);
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .chat-panel:hover {
-      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.8),
-                  0 0 24px rgba(123, 227, 176, 0.12),
-                  border-color: rgba(123, 227, 176, 0.2);
-    }
-
-    /* === FROSTED GLASS BLURRED OVERLAY === */
-    .chat-blur-overlay {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      z-index: 60;
-      background: rgba(10, 12, 18, 0.72);
-      backdrop-filter: blur(14px) saturate(160%);
-      -webkit-backdrop-filter: blur(14px) saturate(160%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      cursor: pointer;
-    }
-    .chat-blur-card {
-      background: rgba(14, 18, 26, 0.94);
-      border: 1px solid rgba(123, 227, 176, 0.35);
-      border-radius: 24px;
-      padding: 32px 24px;
-      max-width: 440px;
-      width: 100%;
-      text-align: center;
-      box-shadow: 0 24px 60px rgba(0,0,0,0.8), 0 0 30px rgba(123,227,176,0.15);
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .chat-blur-overlay:hover .chat-blur-card {
-      transform: translateY(-4px) scale(1.02);
-      border-color: rgba(123,227,176,0.6);
-      box-shadow: 0 30px 80px rgba(0,0,0,0.9), 0 0 40px rgba(123,227,176,0.25);
-    }
-    .chat-blur-icon {
-      width: 52px; height: 52px;
-      border-radius: 16px;
-      background: rgba(123,227,176,0.14);
-      border: 1px solid rgba(123,227,176,0.3);
-      display: flex; align-items: center; justify-content: center;
-      color: #7BE3B0; margin: 0 auto 14px;
-    }
-    .chat-blur-badge {
-      font-size: 11px; font-weight: 800; letter-spacing: 0.08em;
-      color: #7BE3B0; background: rgba(123,227,176,0.12);
-      padding: 4px 12px; border-radius: 999px; display: inline-block; margin-bottom: 10px;
-    }
-    .chat-blur-title { font-size: 19px; font-weight: 700; color: #fff; margin-bottom: 8px; }
-    .chat-blur-desc { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.55; margin-bottom: 22px; }
-    .btn-blur-cta {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      background: linear-gradient(135deg, #7BE3B0, #38BDF8);
-      color: #000; font-size: 14px; font-weight: 800;
-      padding: 12px 24px; border-radius: 999px; border: none; cursor: pointer;
-      box-shadow: 0 6px 20px rgba(123,227,176,0.35); width: 100%;
-    }
-
-    #chat-liquid-canvas,
-    .chat-panel-aura {
-      display: none !important;
-    }
-
-    .ctopbar { position:relative; z-index:2; display:flex; align-items:center; justify-content:space-between; padding:12px 20px; border-bottom:1px solid rgba(255,255,255,.06); background:rgba(14,16,24,.75); backdrop-filter:blur(20px); flex-shrink:0; }
-    .ctop-left { display:flex; align-items:center; gap:10px; }
-    .ctop-icon { width:30px; height:30px; border-radius:9px; overflow:hidden; display:flex; align-items:center; justify-content:center; }
-    .ctop-icon img { width:30px; height:30px; object-fit:cover; }
-    .ctop-title { font-size:14px; font-weight:600; color:#fff; letter-spacing:-0.01em; }
-    .ctop-sub { font-size:11.5px; color:rgba(255,255,255,.45); margin-top:1px; }
-
-    .mode-tabs { display:flex; gap:3px; background:rgba(255,255,255,.06); padding:3px; border-radius:999px; border:1px solid rgba(255,255,255,.08); }
-    .mode-tab { padding:6px 16px; border-radius:999px; font-size:12px; font-weight:600; color:rgba(255,255,255,.55); background:transparent; border:none; cursor:pointer; transition:all .2s cubic-bezier(0.16, 1, 0.3, 1); display:flex; align-items:center; gap:6px; font-family:'Inter',sans-serif; }
-    .mode-tab.active { background:#FFFFFF; color:#000000; font-weight:700; box-shadow:0 2px 10px rgba(255,255,255,.2); }
-
-    #thread { position:relative; z-index:2; flex:1; min-height:0; overflow-y:auto; padding:20px 24px; display:flex; flex-direction:column; gap:18px; scroll-behavior:smooth; }
-    .empty-state { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; text-align:center; padding:20px 16px; margin:auto 0; }
-    .empty-title { font-size:24px; font-weight:600; margin-bottom:24px; color:#ffffff; letter-spacing:-0.025em; }
-
-    .empty-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; max-width:800px; width:100%; }
-    .prompt-card { display:flex; align-items:center; gap:12px; padding:14px 16px; border-radius:16px; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.07); text-align:left; cursor:pointer; transition:all .2s cubic-bezier(0.16, 1, 0.3, 1); color:inherit; font-family:'Inter',sans-serif; }
-    .prompt-card:hover { background:rgba(255,255,255,.06); border-color:rgba(123,227,176,.35); transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.4); }
-    .prompt-card-icon { font-size:20px; flex-shrink:0; }
-    .prompt-card-text { flex:1; min-width:0; }
-    .prompt-card-text strong { display:block; font-size:13px; color:#fff; font-weight:600; margin-bottom:2px; }
-    .prompt-card-text span { display:block; font-size:11.5px; color:rgba(255,255,255,.5); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-    .prompt-card-arrow { font-size:16px; color:rgba(255,255,255,.25); transition:all .2s; flex-shrink:0; }
-    .prompt-card:hover .prompt-card-arrow { color:var(--accent); transform:translateX(3px); }
-
-    .msg-row { display:flex; align-items:flex-start; gap:12px; animation: slide-up .25s ease-out both; width:100%; }
-    .msg-row.user-row { flex-direction:row-reverse; margin-left:auto; max-width:85%; }
-    .av { width:30px; height:30px; border-radius:9px; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; margin-top:2px; }
-    .av.ai { background:transparent; border-radius:9px; overflow:hidden; }
-    .av.ai img { width:30px; height:30px; border-radius:9px; object-fit:cover; }
-    .av.user { background:rgba(255,255,255,.12); color:rgba(255,255,255,.85); border-radius:50%; overflow:hidden; }
-    .av.user img { width:30px; height:30px; border-radius:50%; object-fit:cover; }
-
-    /* Elegant Modern Typography & Spacing */
-    .bubble { max-width:88%; padding:13px 18px; font-size:14.5px; line-height:1.6; font-family:'Inter',sans-serif; }
-    .ai-bub { background:rgba(18, 22, 32, 0.85); border:1px solid rgba(255,255,255,.08); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px); border-radius:4px 18px 18px 18px; color:rgba(255,255,255,.94); box-shadow:0 6px 24px rgba(0,0,0,0.35); }
-    .ai-bub p { margin:6px 0; line-height:1.6; color:rgba(255,255,255,.92); }
-    .ai-bub h2, .ai-bub h3, .ai-bub h4 { margin-top:14px; margin-bottom:6px; font-weight:700; color:#fff; line-height:1.35; }
-    .ai-bub h2 { font-size:17px; border-bottom:1px solid rgba(255,255,255,.1); padding-bottom:6px; margin-top:16px; }
-    .ai-bub h3 { font-size:15px; color:#7BE3B0; }
-    .ai-bub h4 { font-size:14px; color:rgba(255,255,255,.95); }
-    .ai-bub ul, .ai-bub ol { margin:8px 0; padding-left:20px; }
-    .ai-bub li { margin-bottom:5px; line-height:1.55; color:rgba(255,255,255,.88); }
-    .ai-bub blockquote { margin:10px 0; padding:10px 16px; background:rgba(123,227,176,.06); border-left:3px solid #7BE3B0; border-radius:0 10px 10px 0; color:rgba(255,255,255,.90); font-size:13.5px; }
-    
-    /* Modern Glassmorphic Table Formatting */
-    .ai-bub table { width:100%; border-collapse:separate; border-spacing:0; margin:12px 0; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,.12); font-size:13px; background:rgba(0,0,0,.3); }
-    .ai-bub th { background:rgba(123,227,176,.14); color:#7BE3B0; font-weight:700; padding:8px 14px; text-align:left; border-bottom:1px solid rgba(255,255,255,.12); }
-    .ai-bub td { padding:8px 14px; border-bottom:1px solid rgba(255,255,255,.05); color:rgba(255,255,255,.88); line-height:1.5; }
-    .ai-bub tr:last-child td { border-bottom:none; }
-    .ai-bub tr:hover td { background:rgba(255,255,255,.03); }
-
-    .user-bub { background:rgba(123, 227, 176, 0.15); border:1px solid rgba(123, 227, 176, 0.35); border-radius:18px 4px 18px 18px; color:#FFFFFF; line-height:1.58; font-weight:450; box-shadow:0 4px 16px rgba(0,0,0,0.25); }
-
-    /* suggestion chips inside chat */
-    .sug-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
-    .sug { display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:500; font-family:'Inter',sans-serif; color:rgba(255,255,255,.7); background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.12); padding:6px 14px; border-radius:999px; cursor:pointer; transition:all .18s; }
-    .sug:hover { background:var(--accent-bg); border-color:var(--accent-border); color:var(--accent); }
-
-    /* PYQ embed */
-    .pyq-card { margin-top:10px; padding:14px 16px; background:rgba(0,0,0,.6); border:1px solid var(--accent-border); border-radius:16px; }
-    .opt-btn { width:100%; text-align:left; margin-bottom:6px; padding:10px 14px; border-radius:12px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.09); font-size:13px; color:rgba(255,255,255,.75); cursor:pointer; transition:all .18s; display:flex; align-items:center; justify-content:space-between; font-family:'Inter',sans-serif; }
-    .opt-btn:hover:not(.locked) { background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.18); color:#fff; }
-    .opt-btn.correct { background:rgba(123,227,176,.14); border-color:rgba(123,227,176,.5); color:var(--accent); font-weight:600; pointer-events:none; }
-    .opt-btn.wrong { background:rgba(248,113,113,.1); border-color:rgba(248,113,113,.35); color:rgba(248,113,113,.9); pointer-events:none; }
-    .opt-btn.locked { pointer-events:none; }
-
-    /* MindGains Wave Loading Dots */
-    @keyframes waveDot {
-      0%, 100% { transform: translateY(0) scale(0.8); opacity: 0.35; }
-      50% { transform: translateY(-5px) scale(1.1); opacity: 1; filter: drop-shadow(0 0 5px rgba(123, 227, 176, 0.8)); }
-    }
-    @keyframes pulseThinkingText {
-      0% { opacity: 0.45; }
-      100% { opacity: 0.9; }
-    }
-    .typing { display:flex; align-items:center; gap:8px; padding:4px 6px; }
-    .typing-dots { display:flex; align-items:center; gap:5px; }
-    .typing-dot { width:7px; height:7px; border-radius:50%; animation: waveDot 1.2s ease-in-out infinite; }
-    .typing-dot:nth-child(1) { background: #7BE3B0; animation-delay: 0ms; }
-    .typing-dot:nth-child(2) { background: #38bdf8; animation-delay: 180ms; }
-    .typing-dot:nth-child(3) { background: #34d399; animation-delay: 360ms; }
-    .typing-label { font-size:12.5px; font-weight:600; color:rgba(255,255,255,.65); letter-spacing:.02em; animation: pulseThinkingText 1.6s ease-in-out infinite alternate; }
-
-    /* input */
-    .cinput-wrap { padding:12px 18px 16px; border-top:1px solid rgba(255,255,255,.06); background:rgba(14,16,24,0.96); backdrop-filter:blur(24px); flex-shrink:0; margin:0; position:relative; z-index:5; }
-    .cinput-row { display:flex; align-items:center; gap:8px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.12); border-radius:20px; padding:6px 8px 6px 14px; transition:all .2s cubic-bezier(0.16, 1, 0.3, 1); }
-    .cinput-row:focus-within { border-color:rgba(123,227,176,.45); box-shadow:0 0 24px rgba(123,227,176,.12); background:rgba(255,255,255,.08); }
-    .cinput-action-btn { background:transparent; border:none; border-radius:10px; width:34px; height:34px; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all .18s; flex-shrink:0; }
-    .cinput-action-btn:hover { background:rgba(255,255,255,.10); transform:scale(1.05); }
-    #chat-input { flex:1; background:transparent; border:none; outline:none; color:#fff; font-size:14.5px; font-family:'Inter',sans-serif; caret-color:var(--accent); padding:4px 0; }
-    #chat-input::placeholder { color:rgba(255,255,255,.38); font-size:14px; }
-    #send-btn { width:36px; height:36px; border-radius:50%; background:linear-gradient(135deg, #7BE3B0, #38bdf8); color:#000; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all .18s cubic-bezier(0.34, 1.56, 0.64, 1); flex-shrink:0; box-shadow:0 4px 14px rgba(123,227,176,.35); }
-    #send-btn:hover:not(:disabled) { transform:scale(1.06); box-shadow:0 6px 18px rgba(123,227,176,.5); }
-    #send-btn:disabled { background:rgba(255,255,255,.10); cursor:default; box-shadow:none; }
-    #send-btn .ms { font-size:18px; color:#000; font-weight:700; }
-    #send-btn:disabled .ms { color:rgba(255,255,255,.3); }
-
-    /* msg limit bar hidden permanently from input top */
-    #limit-bar { display:none !important; }
-
-    /* === QUIZ MODE (Full Spread App Style) === */
-    #quiz-panel { width:100%; max-width:1140px; margin:0 auto; display:none; }
-    .quiz-container { border-radius:20px; overflow:hidden; background:rgba(12,12,12,.97); border:1px solid rgba(255,255,255,.10); box-shadow:0 32px 80px rgba(0,0,0,.7); }
-    .quiz-topbar { display:flex; align-items:center; justify-content:space-between; padding:16px 24px; border-bottom:1px solid rgba(255,255,255,.07); background:rgba(255,255,255,.03); }
-    .quiz-info { display:flex; align-items:center; gap:12px; }
-    .quiz-title { font-size:14px; font-weight:700; }
-    .quiz-sub { font-size:12px; color:rgba(255,255,255,.45); }
-    #q-counter { font-size:12.5px; font-weight:700; color:var(--accent); font-family:monospace; }
-    .quiz-pick { padding:36px 32px; display:flex; flex-direction:column; gap:14px; }
-    .quiz-pick h3 { font-size:15px; font-weight:700; color:rgba(255,255,255,.65); margin-bottom:4px; }
-    .quiz-pick-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:12px; }
-    .qcat-btn { display:flex; align-items:center; gap:12px; padding:14px 18px; border-radius:16px; background:rgba(255,255,255,.035); border:1px solid rgba(255,255,255,.09); cursor:pointer; transition:all .2s ease; font-family:'Inter',sans-serif; text-align:left; }
-    .qcat-btn:hover { background:var(--accent-bg); border-color:var(--accent-border); transform:translateY(-2px); box-shadow:0 12px 32px rgba(0,0,0,.4); }
-    .qcat-icon { width:38px; height:38px; border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-    .qcat-icon .ms { font-size:20px; font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24; }
-    .qcat-name { font-size:13.5px; font-weight:700; color:#fff; }
-    .qcat-sub { font-size:11.5px; color:rgba(255,255,255,.45); margin-top:2px; }
-
-    .quiz-body { padding:32px; display:none; flex-direction:column; gap:18px; }
-    .q-text { font-size:16px; font-weight:600; color:#fff; line-height:1.6; }
-    .q-opts { display:flex; flex-direction:column; gap:10px; }
-    .q-opt { padding:14px 18px; border-radius:14px; background:rgba(255,255,255,.035); border:1px solid rgba(255,255,255,.09); font-size:14px; color:rgba(255,255,255,.8); cursor:pointer; transition:all .18s; font-family:'Inter',sans-serif; text-align:left; display:flex; align-items:center; justify-content:space-between; }
-    .q-opt:hover:not(.locked) { background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.2); color:#fff; transform:translateY(-1px); }
-    .q-opt.correct { background:rgba(123,227,176,.14); border-color:rgba(123,227,176,.5); color:var(--accent); font-weight:600; pointer-events:none; }
-    .q-opt.wrong { background:rgba(248,113,113,.10); border-color:rgba(248,113,113,.35); color:rgba(248,113,113,.85); pointer-events:none; }
-    .q-opt.locked { pointer-events:none; }
-    .q-expl { padding:14px 16px; background:rgba(123,227,176,.06); border:1px solid var(--accent-border); border-radius:14px; font-size:13.5px; color:rgba(255,255,255,.8); line-height:1.65; display:none; }
-    .quiz-footer { display:flex; align-items:center; justify-content:space-between; margin-top:8px; }
-    .quiz-score { font-size:13.5px; font-weight:600; color:rgba(255,255,255,.6); }
-    #next-btn { font-family:'Inter',sans-serif; font-size:13.5px; font-weight:700; background:var(--accent); color:#000; border:none; padding:11px 26px; border-radius:999px; cursor:pointer; display:none; transition:all .18s; }
-    #next-btn:hover { background:#5dd49a; transform:scale(1.02); }
-    .q-progress { height:4px; background:rgba(255,255,255,.07); margin:0; }
-    .q-progress-bar { height:100%; background:var(--accent); transition:width .4s ease; border-radius:0; }
-
-    /* === FEATURES (Google/Apple animated) === */
-    .section { padding: 56px 24px; position: relative; }
-    .section.dark { background: #070707; }
-    #features { padding: 44px 24px 72px; }
-    .sh { text-align: center; margin-bottom: 34px; position: relative; z-index: 1; }
-    .sh .pill { margin-bottom: 10px; }
-    .sh h2 { font-size: clamp(24px, 3.8vw, 34px); font-weight: 700; color: #fff; margin-top: 8px; margin-bottom: 6px; letter-spacing: -.02em; }
-    .feat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; max-width:980px; margin:0 auto; }
-    .feat-card {
-      position:relative;
-      border-radius:22px;
-      padding:28px 24px;
-      background:rgba(255,255,255,.025);
-      border:1px solid rgba(255,255,255,.08);
-      backdrop-filter:blur(20px);
-      -webkit-backdrop-filter:blur(20px);
-      overflow:hidden;
-      display:flex;
-      flex-direction:column;
-      justify-content:flex-start;
-      transition:transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
-                  border-color 0.25s ease,
-                  background 0.25s ease,
-                  box-shadow 0.25s ease;
-    }
-    .feat-card::before {
-      content:'';
-      position:absolute;
-      top:0; left:0; right:0;
-      height:1.5px;
-      background:linear-gradient(90deg, transparent, var(--accent-color, #7BE3B0), transparent);
-      opacity:0.3;
-      transition:opacity 0.3s ease;
-    }
-    .feat-card::after {
-      content:'';
-      position:absolute;
-      top:-50%; left:50%;
-      transform:translateX(-50%);
-      width:220px; height:130px;
-      border-radius:50%;
-      background:var(--accent-color, #7BE3B0);
-      filter:blur(65px);
-      opacity:0;
-      pointer-events:none;
-      transition:opacity 0.4s ease;
-    }
-    .feat-card:hover {
-      transform:translateY(-5px) scale(1.015);
-      border-color:rgba(255,255,255,.18);
-      background:rgba(255,255,255,.045);
-      box-shadow:0 20px 50px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.08);
-    }
-    .feat-card:hover::before { opacity:1; }
-    .feat-card:hover::after { opacity:0.12; }
-
-    .feat-card-top {
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      margin-bottom:22px;
-    }
-    .feat-icon {
-      width:44px; height:44px;
-      border-radius:14px;
-      display:flex; align-items:center; justify-content:center;
-      margin-bottom:22px;
-      transition:transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
-      flex-shrink:0;
-    }
-    .feat-card-top .feat-icon { margin-bottom:0; }
-    .feat-card:hover .feat-icon {
-      transform:scale(1.1) rotate(-3deg);
-      box-shadow:0 8px 20px rgba(0,0,0,.4);
-    }
-    .feat-badge {
-      font-size:9.5px;
-      font-weight:800;
-      letter-spacing:0.08em;
-      text-transform:uppercase;
-      color:#7BE3B0;
-      background:rgba(123,227,176,.12);
-      border:1px solid rgba(123,227,176,.28);
-      padding:4px 10px;
-      border-radius:999px;
-    }
-
-    .feat-card h3 {
-      font-size:16.5px;
-      font-weight:700;
-      color:#ffffff;
-      margin-bottom:8px;
-      letter-spacing:-0.015em;
-      line-height:1.35;
-    }
-    .feat-card p {
-      font-size:13.5px;
-      line-height:1.65;
-      color:rgba(255,255,255,.6);
-      margin:0;
-    }
-
-    .feat-card-hero {
-      grid-column: span 2;
-    }
-    @media (max-width: 768px) {
-      .feat-card-hero { grid-column: span 1; }
-      .nav-center { display:none; }
-    }
-
-    /* === BOTTOM CTA === */
-    #cta-bottom { padding:80px 24px 96px; background:linear-gradient(to bottom, #070707, #0a0a0a); text-align:center; border-top:1px solid rgba(255,255,255,.06); }
-    #cta-bottom h2 { font-family:'Instrument Serif',serif; font-size:clamp(28px,5vw,54px); font-weight:400; line-height:1.06; letter-spacing:-.03em; color:#fff; margin-bottom:14px; }
-    #cta-bottom h2 em { font-style:italic; color:var(--accent); }
-    #cta-bottom p { font-size:15px; color:var(--muted); max-width:420px; margin:0 auto 30px; line-height:1.65; }
-
-    footer { padding:20px 28px; border-top:1px solid rgba(255,255,255,.07); background:#0a0a0a; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; }
-    .foot-brand { display:flex; align-items:center; gap:8px; }
-    .foot-logo { width:24px; height:24px; border-radius:7px; background:linear-gradient(135deg,#7BE3B0,#38bdf8); display:flex; align-items:center; justify-content:center; }
-    .foot-logo .ms { font-size:13px; color:#000; font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 20; }
-    footer span { font-size:12px; color:rgba(255,255,255,.3); }
-
-    /* === GOOGLE SIGN-IN MODAL (APPLE + GOOGLE LUXURY DESIGN) === */
-    #auth-modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 200;
-      background: rgba(4, 7, 12, 0.82);
-      backdrop-filter: blur(16px) saturate(180%);
-      -webkit-backdrop-filter: blur(16px) saturate(180%);
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    .auth-card {
-      position: relative;
-      background: linear-gradient(165deg, rgba(20, 24, 35, 0.95), rgba(10, 14, 22, 0.98)) padding-box,
-                  linear-gradient(90deg, #7BE3B0, #38BDF8, #A78BFA, #F472B6, #7BE3B0) border-box;
-      background-size: 200% 200%;
-      border: 2px solid transparent;
-      border-radius: 28px;
-      padding: 42px 36px 32px;
-      max-width: 440px;
-      width: 100%;
-      text-align: center;
-      box-shadow: 0 32px 90px rgba(0,0,0,0.85), 0 0 60px rgba(123,227,176,0.18);
-      animation: borderGlowRotate 4s ease infinite;
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    }
-    .auth-logo {
-      width: 64px;
-      height: 64px;
-      border-radius: 18px;
-      margin: 0 auto 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    }
-    .auth-card h3 {
-      font-size: 22px;
-      font-weight: 800;
-      color: #FFFFFF;
-      margin-bottom: 10px;
-      letter-spacing: -0.02em;
-    }
-    .auth-card p {
-      font-size: 14px;
-      color: rgba(255,255,255,0.72);
-      line-height: 1.65;
-      margin-bottom: 28px;
-    }
-    .google-btn {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      padding: 16px 24px;
-      border-radius: 999px;
-      background: #FFFFFF;
-      color: #0F172A;
-      font-size: 15.5px;
-      font-weight: 700;
-      font-family: 'Inter', sans-serif;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 6px 24px rgba(255,255,255,0.2);
-      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
-    }
-    .google-btn:hover {
-      transform: translateY(-2px) scale(1.01);
-      box-shadow: 0 10px 32px rgba(255,255,255,0.35);
-    }
-    .auth-badge-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 11.5px;
-      font-weight: 700;
-      color: #7BE3B0;
-      background: rgba(123,227,176,0.12);
-      border: 1px solid rgba(123,227,176,0.28);
-      padding: 6px 14px;
-      border-radius: 999px;
-      margin-top: 20px;
-    }
-    .auth-note {
-      font-size: 12px;
-      color: rgba(255,255,255,0.45);
-      margin-top: 14px;
-      line-height: 1.5;
-    }
-    .auth-close {
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 50%;
-      width: 32px;
-      height: 32px;
-      color: rgba(255,255,255,0.6);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s;
-    }
-    .auth-close:hover {
-      background: rgba(255,255,255,0.18);
-      color: #fff;
-    }
-    #auth-modal > div { position:relative; }
-
-    /* === TOP FLOATING TOAST NOTIFICATION (SAFELY FLOATS BELOW FIXED NAV HEADER) === */
-    #toast-notification {
-      position: fixed;
-      top: 76px;
-      right: 24px;
-      z-index: 9000;
-      width: auto;
-      background: rgba(14, 18, 26, 0.96);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid rgba(123, 227, 176, 0.35);
-      border-radius: 999px;
-      padding: 8px 18px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(123, 227, 176, 0.2);
-      transform: translateY(-24px) scale(0.96);
-      opacity: 0;
-      pointer-events: none;
-      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    }
-    #toast-notification.show {
-      transform: translateY(0) scale(1);
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    /* === MOBILE (768px and below) — Full Pro Redesign === */
-    @media (max-width: 768px) {
-
-      /* ── NAV ── */
-      nav { padding: 0 16px; height: 56px; }
-
-      /* ── HERO: compact 18px top padding ── */
-      #hero {
-        min-height: auto !important;
-        height: auto !important;
-        margin-top: 56px !important;
-        padding: 18px 20px 24px !important;
-        justify-content: flex-start !important;
-        align-items: flex-start !important;
-        text-align: left !important;
-      }
-      
-      .google-glow {
-        width: 320px;
-        height: 240px;
-        top: -40px;
-        transform: translateX(-50%);
-        filter: blur(60px);
-      }
-
-      #hero .a1,
-      #hero .hero-pill {
-        display: none !important;
-      }
-
-      #hero h1 {
-        font-size: clamp(26px, 7.5vw, 34px) !important;
-        line-height: 1.15 !important;
-        margin: 6px 0 12px !important;
-        letter-spacing: -0.025em !important;
-        max-width: 340px !important;
-      }
-
-      #hero h1 em {
-        color: transparent;
-        background: linear-gradient(135deg, #7BE3B0 0%, #38BDF8 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        font-style: italic;
-      }
-
-      #hero .sub {
-        font-size: 13.5px !important;
-        line-height: 1.55 !important;
-        color: rgba(255, 255, 255, 0.6) !important;
-        max-width: 100% !important;
-        margin: 0 0 20px !important;
-        text-align: left !important;
-      }
-
-      .hero-br { display: none !important; }
-
-      .hero-btns {
-        display: flex !important;
-        flex-direction: row !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        gap: 8px !important;
-        margin-bottom: 24px !important;
-        justify-content: flex-start !important;
-      }
-
-      .hero-btns .btn-primary, .hero-btns .btn-outline {
-        flex: 1 !important;
-        min-width: 0 !important;
-        justify-content: center !important;
-        height: 42px !important;
-        padding: 0 12px !important;
-        font-size: 13px !important;
-        border-radius: 12px !important;
-        white-space: nowrap !important;
-      }
-
-      .hero-btns .btn-primary .ms, .hero-btns .btn-outline .ms {
-        font-size: 16px;
-      }
-
-      /* Unified Single Glass Feature Card on Mobile */
-      .stats {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 12px 10px !important;
-        width: 100% !important;
-        max-width: 360px !important;
-        margin: 20px auto 0 !important;
-        padding: 14px 14px !important;
-        background: rgba(255, 255, 255, 0.03) !important;
-        border: 1px solid rgba(255, 255, 255, 0.08) !important;
-        border-radius: 16px !important;
-        backdrop-filter: blur(20px) !important;
-        -webkit-backdrop-filter: blur(20px) !important;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08) !important;
-        text-align: left !important;
-      }
-
-      .stat {
-        display: flex !important;
-        align-items: center !important;
-        gap: 8px !important;
-        background: transparent !important;
-        border: none !important;
-        padding: 0 !important;
-        border-radius: 0 !important;
-        box-shadow: none !important;
-        margin: 0 !important;
-      }
-
-      .stat-icon-wrapper {
-        width: 28px !important;
-        height: 28px !important;
-        border-radius: 8px !important;
-        background: rgba(123, 227, 176, 0.1) !important;
-        border: 1px solid rgba(123, 227, 176, 0.22) !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        color: #7BE3B0 !important;
-        flex-shrink: 0 !important;
-      }
-
-      .stat-icon-wrapper .material-symbols-outlined {
-        font-size: 15px !important;
-      }
-
-      .stat-info {
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: center !important;
-        min-width: 0 !important;
-      }
-
-      .stat-label {
-        font-size: 11.5px !important;
-        font-weight: 700 !important;
-        color: #ffffff !important;
-        line-height: 1.2 !important;
-        white-space: nowrap !important;
-        overflow: hidden !important;
-        text-overflow: ellipsis !important;
-      }
-
-      .stat-sub {
-        font-size: 9.5px !important;
-        color: rgba(255, 255, 255, 0.48) !important;
-        margin-top: 1px !important;
-        line-height: 1.2 !important;
-        white-space: nowrap !important;
-        overflow: hidden !important;
-        text-overflow: ellipsis !important;
-      }
-
-      /* ── CHAT SECTION: clear gap above ── */
-      #chat-section {
-        padding: 48px 0 24px !important;
-        margin-top: 28px !important;
-        border-top: 1px solid rgba(255,255,255,0.08) !important;
-      }
-
-      /* ── CHAT PANEL: full-width & immersive height ── */
-      .chat-panel {
-        height: calc(100svh - 120px) !important;
-        min-height: 520px !important;
-        max-height: 720px !important;
-        border-radius: 18px !important;
-        margin: 0 12px !important;
-        width: calc(100% - 24px) !important;
-      }
-
-      /* ── TOAST NOTIFICATION MOBILE (FLOATS SAFELY BELOW MOBILE NAV HEADER) ── */
-      #toast-notification {
-        top: 68px !important;
-        left: 50% !important;
-        right: auto !important;
-        transform: translateX(-50%) translateY(-16px) scale(0.96) !important;
-        width: auto !important;
-        max-width: 90vw !important;
-        z-index: 9000 !important;
-      }
-      #toast-notification.show {
-        transform: translateX(-50%) translateY(0) scale(1) !important;
-      }
-
-      /* ── CHAT TOPBAR ── */
-      .ctopbar { padding: 8px 12px !important; }
-      .ctop-sub { display: none !important; }
-      .ctop-title { font-size: 13px !important; }
-      .ctop-icon img { width: 24px !important; height: 24px !important; }
-
-      /* Mode tabs: icon-only */
-      .mode-tab { padding: 5px 10px !important; gap: 0 !important; }
-      .mode-tab span:last-child:not(.material-symbols-outlined) { display: none !important; }
-
-      #thread {
-        padding: 14px 12px !important;
-        gap: 14px !important;
-      }
-
-      .msg-row.user-row {
-        max-width: 90% !important;
-      }
-
-      /* ── EMPTY STATE / PROMPT CARDS ── */
-      .empty-state {
-        padding: 14px 12px !important;
-        justify-content: center !important;
-        align-items: center !important;
-        text-align: center !important;
-      }
-
-      .empty-title {
-        font-size: 17px !important;
-        font-weight: 700 !important;
-        margin-bottom: 14px !important;
-        color: rgba(255,255,255,0.95) !important;
-      }
-
-      /* Prompt cards: single column, compact */
-      .empty-grid {
-        grid-template-columns: 1fr !important;
-        gap: 8px !important;
-        max-width: 100% !important;
-        width: 100% !important;
-      }
-
-      .prompt-card {
-        padding: 10px 12px !important;
-        border-radius: 12px !important;
-        gap: 10px !important;
-      }
-
-      .prompt-card-icon { font-size: 17px !important; }
-
-      .prompt-card-text strong {
-        font-size: 12px !important;
-        margin-bottom: 1px !important;
-      }
-
-      .prompt-card-text span {
-        font-size: 10.5px !important;
-      }
-
-      .prompt-card-arrow { display: none !important; }
-
-      /* ── CHAT INPUT ── */
-      .cinput-wrap { padding: 8px 10px 10px !important; }
-      #chat-input { font-size: 14px !important; }
-      #chat-input::placeholder { font-size: 13px !important; }
-
-      /* ── QUIZ PANELS ── */
-      .quiz-pick { padding: 14px !important; }
-      .quiz-body { padding: 14px !important; }
-      .quiz-pick-grid { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
-      .qcat-btn { padding: 10px 12px !important; gap: 8px !important; border-radius: 12px !important; }
-      .qcat-icon { width: 30px !important; height: 30px !important; border-radius: 9px !important; }
-      .qcat-icon .ms { font-size: 16px !important; }
-      .qcat-name { font-size: 12px !important; }
-      .qcat-sub { font-size: 10px !important; }
-
-      /* ── FEATURES SECTION ── */
-      #features { padding: 32px 14px 48px !important; }
-      .feat-grid { gap: 10px !important; }
-      .feat-card { padding: 20px 16px !important; border-radius: 18px !important; }
-      .feat-card-hero { grid-column: span 1 !important; }
-      .feat-card h3 { font-size: 15px !important; }
-      .feat-card p { font-size: 13px !important; }
-
-      /* ── BOTTOM CTA ── */
-      #cta-bottom {
-        padding: 40px 20px 52px !important;
-        text-align: left !important;
-      }
-      #cta-bottom h2 { font-size: clamp(24px,7vw,36px) !important; }
-      #cta-bottom p { font-size: 13.5px !important; margin: 0 0 20px !important; max-width: 100% !important; }
-      #cta-bottom .btn-primary {
-        width: 100% !important;
-        justify-content: center !important;
-        height: 48px !important;
-        font-size: 14.5px !important;
-        border-radius: 12px !important;
-      }
-    }
-
-    @media (max-width: 360px) {
-      #hero { padding-top: 66px !important; }
-      #hero h1 { font-size: 22px !important; }
-      .stat-sub { display: none !important; }
-      .stat-label { font-size: 10.5px !important; }
-      .hero-btns .btn-primary, .hero-btns .btn-outline { font-size: 12px !important; height: 38px !important; padding: 0 10px !important; }
-    }
-  </style>
 
   <!-- Supabase Auth SDK (Real Google Sign-In) -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -942,1399 +47,656 @@
     };
 
     window.__mgSignOut = async () => {
-      if (supabaseClient) {
-        await supabaseClient.auth.signOut();
-      }
+      if (supabaseClient) { await supabaseClient.auth.signOut(); }
+      localStorage.removeItem('mg_user');
       if (window.__mgOnSignOut) window.__mgOnSignOut();
     };
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --duo-blue: #1CB0F6;
+      --duo-blue-dark: #0080D6;
+      --duo-blue-shadow: #0070BC;
+      --duo-green: #58CC02;
+      --duo-green-dark: #46A302;
+      --duo-gold: #FFC800;
+      --duo-gold-dark: #E69D00;
+      --duo-violet: #CE82FF;
+      --duo-violet-dark: #A541EE;
+      --duo-red: #FF4B4B;
+      --accent: #7BE3B0;
+      --bg: #0A0C12;
+      --surface: rgba(22, 26, 38, 0.9);
+      --border: rgba(255, 255, 255, 0.1);
+      --text: #ffffff;
+      --muted: rgba(255, 255, 255, 0.65);
+    }
+    html, body {
+      width: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.18); border-radius: 999px; }
+
+    .ms { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; line-height: 1; display: inline-block; user-select: none; }
+
+    /* === DUOLINGO 3D TACTILE BUTTONS === */
+    .btn-3d {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 14.5px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      padding: 12px 24px;
+      border-radius: 16px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.1s ease;
+      position: relative;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .btn-3d-blue {
+      background: var(--duo-blue);
+      color: #FFFFFF;
+      border-bottom: 4px solid var(--duo-blue-dark);
+      box-shadow: 0 4px 0 var(--duo-blue-shadow);
+    }
+    .btn-3d-blue:hover { background: #35BDFF; }
+    .btn-3d-blue:active { transform: translateY(2px); border-bottom-width: 2px; box-shadow: 0 2px 0 var(--duo-blue-shadow); }
+
+    .btn-3d-gold {
+      background: var(--duo-gold);
+      color: #4B2B00;
+      border-bottom: 4px solid var(--duo-gold-dark);
+      box-shadow: 0 4px 0 #CC8B00;
+    }
+    .btn-3d-gold:hover { background: #FFD426; }
+    .btn-3d-gold:active { transform: translateY(2px); border-bottom-width: 2px; box-shadow: 0 2px 0 #CC8B00; }
+
+    .btn-3d-violet {
+      background: var(--duo-violet);
+      color: #FFFFFF;
+      border-bottom: 4px solid var(--duo-violet-dark);
+      box-shadow: 0 4px 0 #8928CF;
+    }
+    .btn-3d-violet:hover { background: #D996FF; }
+    .btn-3d-violet:active { transform: translateY(2px); border-bottom-width: 2px; box-shadow: 0 2px 0 #8928CF; }
+
+    .btn-3d-glass {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-bottom: 4px solid rgba(255,255,255,0.22);
+      color: #FFFFFF;
+      box-shadow: 0 4px 0 rgba(0,0,0,0.4);
+    }
+    .btn-3d-glass:hover { background: rgba(255,255,255,0.12); }
+    .btn-3d-glass:active { transform: translateY(2px); border-bottom-width: 2px; box-shadow: 0 2px 0 rgba(0,0,0,0.4); }
+
+    /* === GAMIFIED FIXED TOP NAVIGATION === */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 60px;
+      z-index: 10000;
+      background: rgba(10, 12, 18, 0.95);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; }
+    .nav-logo { width: 32px; height: 32px; border-radius: 9px; object-fit: cover; }
+    .nav-title { font-size: 17px; font-weight: 900; letter-spacing: -0.02em; color: #fff; }
+
+    .nav-stats-bar { display: flex; align-items: center; gap: 12px; }
+    .stat-badge {
+      display: flex; align-items: center; gap: 6px;
+      padding: 5px 12px; border-radius: 999px;
+      font-size: 12.5px; font-weight: 800; font-family: 'Inter', sans-serif;
+      border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.05);
+    }
+    .stat-badge.fire { color: #FF9600; border-color: rgba(255,150,0,0.3); background: rgba(255,150,0,0.1); }
+    .stat-badge.xp { color: #38BDF8; border-color: rgba(56,189,248,0.3); background: rgba(56,189,248,0.1); }
+    .stat-badge.msg { color: #7BE3B0; border-color: rgba(123,227,176,0.3); background: rgba(123,227,176,0.1); }
+
+    .nav-right { display: flex; align-items: center; gap: 12px; }
+    #signin-btn { display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); color: #fff; font-size: 12.5px; font-weight: 700; padding: 7px 16px; border-radius: 999px; cursor: pointer; transition: all 0.18s; }
+    #signin-btn:hover { background: rgba(255,255,255,0.15); border-color: var(--duo-blue); }
+
+    #user-info { display: none; align-items: center; gap: 8px; }
+    #user-avatar { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; }
+    #user-name { font-size: 13px; color: rgba(255,255,255,0.85); font-weight: 700; }
+
+    /* === BLUE FOX MASCOT HERO BANNER === */
+    #hero {
+      position: relative;
+      margin-top: 60px;
+      padding: 40px 24px 56px;
+      max-width: 1080px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+    .hero-mascot-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .mascot-avatar-frame {
+      width: 76px; height: 76px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, var(--duo-blue), var(--cyan));
+      padding: 3px;
+      box-shadow: 0 10px 30px rgba(28,176,246,0.35);
+      flex-shrink: 0;
+    }
+    .mascot-avatar-img {
+      width: 100%; height: 100%;
+      border-radius: 19px;
+      object-fit: cover;
+    }
+    .mascot-speech-bubble {
+      position: relative;
+      background: rgba(22, 28, 42, 0.95);
+      border: 2px solid var(--duo-blue);
+      border-radius: 20px;
+      padding: 14px 20px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+      max-width: 460px;
+      text-align: left;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.6);
+    }
+    .mascot-speech-bubble::before {
+      content: '';
+      position: absolute;
+      left: -10px; top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+      width: 14px; height: 14px;
+      background: rgba(22, 28, 42, 0.95);
+      border-left: 2px solid var(--duo-blue);
+      border-bottom: 2px solid var(--duo-blue);
+    }
+
+    .hero-title {
+      font-size: clamp(30px, 4.8vw, 52px);
+      font-weight: 900;
+      line-height: 1.14;
+      letter-spacing: -0.03em;
+      color: #ffffff;
+      max-width: 860px;
+      margin: 0 auto 16px;
+    }
+    .hero-title span {
+      color: var(--duo-blue);
+      background: linear-gradient(135deg, var(--duo-blue) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-subtitle {
+      font-size: clamp(15px, 1.8vw, 17.5px);
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 680px;
+      margin: 0 auto 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    /* === DUOLINGO-STYLE EXAM LEARNING PATH (TREE NODES) === */
+    .tree-section {
+      padding: 64px 24px;
+      border-top: 2px solid var(--border);
+      background: rgba(8, 10, 15, 0.6);
+    }
+    .tree-container {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+      position: relative;
+    }
+    .tree-path-line {
+      position: absolute;
+      top: 40px; bottom: 40px; left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      background: linear-gradient(180deg, var(--duo-blue) 0%, var(--duo-gold) 50%, var(--duo-violet) 100%);
+      border-radius: 999px;
+      z-index: 0;
+    }
+
+    .tree-node-card {
+      position: relative;
+      z-index: 1;
+      background: var(--surface);
+      border: 2px solid var(--border);
+      border-radius: 24px;
+      padding: 20px 24px;
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      cursor: pointer;
+      backdrop-filter: blur(20px);
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .tree-node-card:hover {
+      transform: translateY(-4px) scale(1.02);
+      border-color: var(--duo-blue);
+      box-shadow: 0 16px 40px rgba(28,176,246,0.25);
+    }
+    .tree-node-icon {
+      width: 56px; height: 56px;
+      border-radius: 18px;
+      background: rgba(28,176,246,0.14);
+      border: 2px solid var(--duo-blue);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px; flex-shrink: 0;
+      box-shadow: 0 6px 16px rgba(28,176,246,0.3);
+    }
+    .tree-node-content { flex: 1; min-width: 0; text-align: left; }
+    .tree-node-title { font-size: 15.5px; font-weight: 800; color: #fff; margin-bottom: 4px; }
+    .tree-node-sub { font-size: 12.5px; color: var(--muted); line-height: 1.4; }
+    .tree-node-xp { font-size: 11.5px; font-weight: 800; color: var(--duo-gold); display: flex; align-items: center; gap: 4px; margin-top: 6px; }
+
+    /* === FROSTED GLASS BLURRED CHAT PREVIEW OVERLAY === */
+    #chat-section {
+      padding: 80px 24px;
+      border-top: 2px solid var(--border);
+    }
+    .chat-panel-container { max-width: 900px; margin: 0 auto; position: relative; }
+    .chat-panel {
+      position: relative;
+      border-radius: 26px;
+      overflow: hidden;
+      height: 520px;
+      display: flex; flex-direction: column;
+      background: rgba(14, 18, 26, 0.94);
+      border: 2px solid var(--border);
+      box-shadow: 0 24px 64px rgba(0,0,0,0.8);
+    }
+
+    .chat-blur-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 60;
+      background: rgba(10, 12, 18, 0.75);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      display: flex; align-items: center; justify-content: center;
+      padding: 20px; cursor: pointer;
+    }
+    .chat-blur-card {
+      background: rgba(18, 24, 36, 0.96);
+      border: 2px solid var(--duo-blue);
+      border-radius: 26px;
+      padding: 36px 28px;
+      max-width: 440px; width: 100%;
+      text-align: center;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.8), 0 0 35px rgba(28,176,246,0.2);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .chat-blur-overlay:hover .chat-blur-card {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 32px 80px rgba(0,0,0,0.9), 0 0 50px rgba(28,176,246,0.35);
+    }
+    .chat-blur-icon {
+      width: 56px; height: 56px; border-radius: 18px;
+      background: rgba(28,176,246,0.15); border: 2px solid var(--duo-blue);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--duo-blue); margin: 0 auto 14px; overflow: hidden;
+    }
+    .chat-blur-badge {
+      font-size: 11px; font-weight: 900; letter-spacing: 0.08em;
+      color: var(--duo-blue); background: rgba(28,176,246,0.12);
+      padding: 4px 14px; border-radius: 999px; display: inline-block; margin-bottom: 10px;
+    }
+    .chat-blur-title { font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .chat-blur-desc { font-size: 13.5px; color: var(--muted); line-height: 1.55; margin-bottom: 24px; }
+
+    /* === FOOTER === */
+    footer { border-top: 2px solid var(--border); padding: 60px 24px 40px; background: #05060A; }
+    .footer-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+    .footer-copy { font-size: 13px; color: var(--muted); }
+    .footer-links { display: flex; align-items: center; gap: 20px; list-style: none; }
+    .footer-link { color: var(--muted); font-size: 13px; text-decoration: none; transition: color 0.18s; }
+    .footer-link:hover { color: #fff; }
+
+    /* === TOP FLOATING TOAST NOTIFICATION === */
+    #toast-notification {
+      position: fixed;
+      top: 76px; right: 24px;
+      z-index: 9000;
+      width: auto;
+      background: rgba(18, 24, 36, 0.96);
+      backdrop-filter: blur(24px);
+      border: 1px solid rgba(123, 227, 176, 0.4);
+      border-radius: 999px;
+      padding: 8px 18px;
+      display: flex; align-items: center; gap: 8px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(123, 227, 176, 0.2);
+      transform: translateY(-24px) scale(0.96);
+      opacity: 0; pointer-events: none;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+      font-family: 'Inter', sans-serif;
+    }
+    #toast-notification.show { transform: translateY(0) scale(1); opacity: 1; pointer-events: auto; }
+
+    /* === RESPONSIVE BREAKPOINTS === */
+    @media (max-width: 768px) {
+      nav { padding: 0 14px; height: 56px; }
+      .nav-stats-bar { gap: 6px; }
+      .stat-badge span:last-child { display: none; }
+      #hero { padding: 24px 16px 36px; margin-top: 56px; }
+      .mascot-speech-bubble::before { display: none; }
+      .mascot-speech-bubble { text-align: center; }
+      .tree-node-card { padding: 16px 18px; }
+      #toast-notification { top: 68px !important; left: 50% !important; right: auto !important; transform: translateX(-50%) translateY(-16px) scale(0.96) !important; max-width: 90vw !important; }
+      #toast-notification.show { transform: translateX(-50%) translateY(0) scale(1) !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- GAMIFIED FIXED NAVIGATION HEADER -->
+  <nav>
+    <a href="index.html" class="nav-brand">
+      <img src="assets/icons/mindgains-header-logo.png" alt="MindGains Logo" class="nav-logo" />
+      <span class="nav-title">MindGains AI</span>
+    </a>
+
+    <!-- LIVE STREAK & XP BADGES -->
+    <div class="nav-stats-bar">
+      <div class="stat-badge fire" title="Daily Streak">
+        <span class="material-symbols-outlined ms" style="font-size:16px;">local_fire_department</span>
+        <span>5 Streak</span>
+      </div>
+      <div class="stat-badge xp" title="Learning XP">
+        <span class="material-symbols-outlined ms" style="font-size:16px;">bolt</span>
+        <span>240 XP</span>
+      </div>
+      <div class="stat-badge msg" title="Free Daily Web Messages">
+        <span class="material-symbols-outlined ms" style="font-size:16px;">chat</span>
+        <span>10/10</span>
+      </div>
+    </div>
+
+    <div class="nav-right">
+      <button id="signin-btn" onclick="openAuthModal()">
+        <span class="material-symbols-outlined ms" style="font-size:16px;">account_circle</span>
+        <span>Sign in</span>
+      </button>
+      <div id="user-info">
+        <img id="user-avatar" src="" alt="User Avatar" />
+        <span id="user-name"></span>
+      </div>
+      <a href="chat/" class="btn-3d btn-3d-blue" style="padding:7px 16px;font-size:12.5px;">
+        <span>AI Tutor</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- BLUE FOX MASCOT HERO BANNER -->
+  <section id="hero">
+    <div class="hero-mascot-container">
+      <div class="mascot-avatar-frame">
+        <img src="assets/icons/ai-avatar.png" alt="Blue Fox Mascot" class="mascot-avatar-img" />
+      </div>
+      <div class="mascot-speech-bubble">
+        👋 "Namaste! Ready to master Indian Polity, Samacheer Kalvi & NCERT today?"
+      </div>
+    </div>
+
+    <h1 class="hero-title">
+      Master Your Exam Syllabus with <span>Duolingo-Style Gamified AI</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      Instant explanations strictly grounded in SCERT Samacheer Kalvi & NCERT textbooks. Earn streak rewards, level up your XP, and solve official PYQs with your AI study buddy.
+    </p>
+
+    <div class="hero-actions">
+      <a href="chat/" class="btn-3d btn-3d-blue">
+        <span class="material-symbols-outlined ms">rocket_launch</span>
+        <span>Start Learning Free</span>
+      </a>
+      <a href="chat/" class="btn-3d btn-3d-violet" onclick="sessionStorage.setItem('mg_start_mode','quiz')">
+        <span class="material-symbols-outlined ms">quiz</span>
+        <span>Try Adaptive Quiz</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- DUOLINGO-STYLE EXAM LEARNING PATH (TREE NODES) -->
+  <section class="tree-section" id="learning-path">
+    <div style="text-align:center;margin-bottom:40px;">
+      <span style="font-size:12px;font-weight:900;color:var(--duo-blue);letter-spacing:0.08em;background:rgba(28,176,246,0.12);padding:4px 14px;border-radius:999px;">CURRICULUM TREE</span>
+      <h2 style="font-size:32px;font-weight:900;color:#fff;margin-top:8px;">Your Exam Learning Path</h2>
+    </div>
+
+    <div class="tree-container">
+      <div class="tree-path-line"></div>
+
+      <div class="tree-node-card" onclick="openUnit('Indian Polity & Constitution')">
+        <div class="tree-node-icon">📖</div>
+        <div class="tree-node-content">
+          <div class="tree-node-title">Unit 1: Indian Polity & Constitution</div>
+          <div class="tree-node-sub">Samacheer Kalvi 6-12th & NCERT Chapter 2</div>
+          <div class="tree-node-xp"><span class="material-symbols-outlined ms" style="font-size:14px;">star</span> Level 3/5 · 120 XP</div>
+        </div>
+        <button class="btn-3d btn-3d-blue" style="padding:8px 14px;font-size:12px;">Start</button>
+      </div>
+
+      <div class="tree-node-card" onclick="openUnit('History & Samacheer Kalvi')">
+        <div class="tree-node-icon" style="border-color:var(--duo-gold);background:rgba(255,200,0,0.14);">🏛️</div>
+        <div class="tree-node-content">
+          <div class="tree-node-title">Unit 2: History & Samacheer Kalvi</div>
+          <div class="tree-node-sub">Indus Valley, Sangam Age & Freedom Struggle</div>
+          <div class="tree-node-xp"><span class="material-symbols-outlined ms" style="font-size:14px;">star</span> Level 2/5 · 90 XP</div>
+        </div>
+        <button class="btn-3d btn-3d-gold" style="padding:8px 14px;font-size:12px;">Start</button>
+      </div>
+
+      <div class="tree-node-card" onclick="openUnit('Indian Economy & NCERT')">
+        <div class="tree-node-icon" style="border-color:var(--duo-violet);background:rgba(206,130,255,0.14);">📈</div>
+        <div class="tree-node-content">
+          <div class="tree-node-title">Unit 3: Indian Economy & NCERT</div>
+          <div class="tree-node-sub">Five Year Plans, NITI Aayog & Banking PYQs</div>
+          <div class="tree-node-xp"><span class="material-symbols-outlined ms" style="font-size:14px;">star</span> Level 4/5 · 180 XP</div>
+        </div>
+        <button class="btn-3d btn-3d-violet" style="padding:8px 14px;font-size:12px;">Start</button>
+      </div>
+
+      <div class="tree-node-card" onclick="openUnit('General Science & Environment')">
+        <div class="tree-node-icon" style="border-color:var(--accent);background:rgba(123,227,176,0.14);">🧪</div>
+        <div class="tree-node-content">
+          <div class="tree-node-title">Unit 4: General Science & Environment</div>
+          <div class="tree-node-sub">Physics, Chemistry, Botany & Zoology Foundations</div>
+          <div class="tree-node-xp"><span class="material-symbols-outlined ms" style="font-size:14px;">star</span> Level 1/5 · 45 XP</div>
+        </div>
+        <button class="btn-3d btn-3d-blue" style="padding:8px 14px;font-size:12px;">Start</button>
+      </div>
+
+      <div class="tree-node-card" onclick="openUnit('General Tamil & Thirukkural')">
+        <div class="tree-node-icon" style="border-color:var(--duo-gold);background:rgba(255,200,0,0.14);">✍️</div>
+        <div class="tree-node-content">
+          <div class="tree-node-title">Unit 5: General Tamil & Thirukkural</div>
+          <div class="tree-node-sub">1330 Kural Meanings, Literature & Grammar</div>
+          <div class="tree-node-xp"><span class="material-symbols-outlined ms" style="font-size:14px;">star</span> Level 5/5 · 250 XP</div>
+        </div>
+        <button class="btn-3d btn-3d-gold" style="padding:8px 14px;font-size:12px;">Start</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FROSTED GLASS BLURRED CHAT PREVIEW SECTION -->
+  <section id="chat-section">
+    <div style="text-align:center;margin-bottom:32px;">
+      <span style="font-size:12px;font-weight:900;color:var(--duo-blue);letter-spacing:0.08em;background:rgba(28,176,246,0.12);padding:4px 14px;border-radius:999px;">AI WORKSPACE</span>
+      <h2 style="font-size:32px;font-weight:900;color:#fff;margin-top:8px;">Interactive AI Tutor Preview</h2>
+    </div>
+
+    <div class="chat-panel-container">
+      <div class="chat-panel">
+        <div class="chat-blur-overlay" onclick="window.location.href='chat/'">
+          <div class="chat-blur-card">
+            <div class="chat-blur-icon">
+              <img src="assets/icons/mindgains-header-logo.png" alt="Logo" style="width:36px;height:36px;border-radius:10px;object-fit:cover;" />
+            </div>
+            <span class="chat-blur-badge">FULL-SCREEN AI WORKSPACE</span>
+            <h3 class="chat-blur-title">Tap to Open AI Workspace</h3>
+            <p class="chat-blur-desc">Instant textbook-grounded explanations, SCERT & NCERT citations, solved PYQs, and adaptive quizzes.</p>
+            <button class="btn-3d btn-3d-blue" style="width:100%;">
+              <span>Open AI Workspace</span>
+              <span class="material-symbols-outlined ms">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <img src="assets/icons/mindgains-header-logo.png" alt="Logo" style="width:26px;height:26px;border-radius:7px;" />
+        <span class="footer-copy">© 2026 MindGains Labs Private Limited. All rights reserved.</span>
+      </div>
+
+      <ul class="footer-links">
+        <li><a href="#learning-path" class="footer-link">Learning Tree</a></li>
+        <li><a href="chat/" class="footer-link">AI Tutor</a></li>
+        <li><a href="waitlist.html" class="footer-link">Android App</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- AUTH MODAL -->
+  <div id="auth-modal" onclick="if(event.target===this)closeAuthModal()" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:99999;background:rgba(0,0,0,0.75);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);align-items:center;justify-content:center;padding:20px;">
+    <div style="background:rgba(18,24,36,0.96);border:2px solid var(--duo-blue);border-radius:26px;padding:32px 24px;max-width:420px;width:100%;box-shadow:0 30px 80px rgba(0,0,0,0.9);position:relative;text-align:center;">
+      <button onclick="closeAuthModal()" style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);width:32px;height:32px;border-radius:50%;cursor:pointer;" aria-label="Close modal">✕</button>
+      <img src="assets/icons/mindgains-header-logo.png" alt="Logo" style="width:56px;height:56px;border-radius:16px;object-fit:cover;margin-bottom:14px;" />
+      <h3 style="font-size:20px;font-weight:900;color:#fff;margin-bottom:8px;">Continue to MindGains AI</h3>
+      <p style="font-size:13.5px;color:rgba(255,255,255,0.75);line-height:1.6;margin-bottom:24px;">Sign in with Google to access textbook-aware AI tutoring, daily streak rewards, and verified PYQs.</p>
+      <button onclick="window.__mgSignIn()" class="btn-3d" style="background:#ffffff;color:#0F172A;border-bottom:4px solid #CBD5E1;width:100%;">
+        <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#4285F4" d="M43.6 20.5H42V20H24v8h11.3C33.6 33 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.5 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.2-.1-2.5-.4-3.5z"/><path fill="#34A853" d="M6.3 14.7l6.6 4.8C14.5 16 19 12 24 12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.5 29.3 4 24 4 16.3 4 9.7 8.4 6.3 14.7z"/><path fill="#FBBC05" d="M24 44c5.2 0 9.9-1.7 13.6-4.5l-6.3-5.2C29.3 36 26.8 37 24 37c-5.2 0-9.6-3.4-11.3-8l-6.6 5.1C9.7 39.6 16.3 44 24 44z"/><path fill="#EA4335" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4 5.4l6.3 5.2C42.1 35.4 44 30 44 24c0-1.2-.1-2.5-.4-3.5z"/></svg>
+        <span>Continue with Google</span>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    let isSignedIn = false;
+    window.__mgUser = null;
+
+    window.showAuthToast = function() {
+      let toast = document.getElementById('toast-notification');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'toast-notification';
+        document.body.appendChild(toast);
+      }
+      toast.innerHTML = `
+        <span class="material-symbols-outlined ms" style="font-size:18px;color:#7BE3B0;">check_circle</span>
+        <span style="font-size:13px;font-weight:800;color:#fff;white-space:nowrap;">Signed In Successfully</span>
+      `;
+      toast.classList.add('show');
+      setTimeout(() => { toast.classList.remove('show'); }, 2600);
+    };
+
+    window.__mgOnSignIn = (user) => {
+      const wasAlreadySignedIn = isSignedIn;
+      isSignedIn = true;
+      window.__mgUser = user;
+      localStorage.setItem('mg_user', JSON.stringify(user));
+      document.getElementById('signin-btn').style.display = 'none';
+      const ui = document.getElementById('user-info');
+      ui.style.display = 'flex';
+      const av = document.getElementById('user-avatar');
+      if (user.photoURL) { av.src = user.photoURL; av.style.display = 'block'; } else av.style.display = 'none';
+      document.getElementById('user-name').textContent = (user.displayName || user.email || '').split(' ')[0];
+      closeAuthModal();
+
+      if (!wasAlreadySignedIn) {
+        showAuthToast();
+      }
+    };
+
+    window.__mgOnSignOut = () => {
+      isSignedIn = false;
+      window.__mgUser = null;
+      localStorage.removeItem('mg_user');
+      document.getElementById('signin-btn').style.display = 'flex';
+      document.getElementById('user-info').style.display = 'none';
+    };
+
+    function openAuthModal()  { document.getElementById('auth-modal').style.display = 'flex'; }
+    function closeAuthModal() { document.getElementById('auth-modal').style.display = 'none'; }
 
     document.addEventListener('DOMContentLoaded', async () => {
+      const cached = localStorage.getItem('mg_user');
+      if (cached) {
+        try { window.__mgOnSignIn(JSON.parse(cached)); } catch(e) {}
+      }
       if (supabaseClient) {
-        // Handle OAuth redirect back cleanly so tokens in hash don't hang page
         if (window.location.hash.includes('access_token') || window.location.search.includes('code=')) {
           const { data: { session } } = await supabaseClient.auth.getSession();
           if (session?.user) {
             history.replaceState(null, '', window.location.pathname);
-            const u = session.user;
-            const meta = u.user_metadata || {};
-            if (window.__mgOnSignIn) {
-              window.__mgOnSignIn({
-                displayName: meta.full_name || meta.name || u.email,
-                email: u.email,
-                photoURL: meta.avatar_url || meta.picture || null
-              });
-            }
+            const u = { email: session.user.email, displayName: session.user.user_metadata?.full_name || session.user.email, photoURL: session.user.user_metadata?.avatar_url || null };
+            localStorage.setItem('mg_user', JSON.stringify(u));
+            window.__mgOnSignIn(u);
           }
-        }
-
-        const { data: { session } } = await supabaseClient.auth.getSession();
-        if (session?.user) {
-          const u = session.user;
-          const meta = u.user_metadata || {};
-          if (window.__mgOnSignIn) {
-            window.__mgOnSignIn({
-              displayName: meta.full_name || meta.name || u.email,
-              email: u.email,
-              photoURL: meta.avatar_url || meta.picture || null
-            });
-          }
-        }
-
-        supabaseClient.auth.onAuthStateChange((_event, session) => {
-          if (session?.user) {
-            const u = session.user;
-            const meta = u.user_metadata || {};
-            if (window.__mgOnSignIn) {
-              window.__mgOnSignIn({
-                displayName: meta.full_name || meta.name || u.email,
-                email: u.email,
-                photoURL: meta.avatar_url || meta.picture || null
-              });
-            }
-          } else {
-            if (window.__mgOnSignOut) window.__mgOnSignOut();
-          }
-        });
-      }
-
-      if (window.updateAuthAccessUI) window.updateAuthAccessUI();
-    });
-  </script>
-
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const topNav = document.getElementById('site-nav');
-      const toggle = topNav?.querySelector('.nav-toggle');
-      const backdrop = document.querySelector('.site-nav-backdrop');
-      const closeMenu = () => {
-        topNav?.classList.remove('open');
-        document.body.classList.remove('menu-open');
-        toggle && toggle.setAttribute('aria-expanded', 'false');
-      };
-      toggle?.addEventListener('click', () => {
-        const isOpen = topNav?.classList.toggle('open');
-        document.body.classList.toggle('menu-open', Boolean(isOpen));
-        toggle.setAttribute('aria-expanded', String(Boolean(isOpen)));
-      });
-      backdrop?.addEventListener('click', closeMenu);
-      document.querySelectorAll('#site-nav .nav-right a, #site-nav .nav-right button').forEach(el => el.addEventListener('click', closeMenu));
-      window.addEventListener('resize', () => {
-        if (window.innerWidth > 900) closeMenu();
-      });
-    });
-  </script>
-
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"EducationalApplication","name":"MindGains AI","applicationCategory":"EducationalApplication","description":"The AI Built for Indian Exams. Grounded in textbooks, aligned with curriculum, enhanced by PYQ intelligence.","url":"https://mindgains.ai/"}
-  </script>
-  <link rel="stylesheet" href="/assets/site-responsive.css" />
-</head>
-<body>
-<div class="site-nav-backdrop" aria-hidden="true"></div>
-
-<!-- NAV -->
-<nav id="site-nav">
-  <a class="nav-logo" href="#">
-    <div class="logo-mark" style="background:transparent;"><img src="assets/icons/mindgains-header-logo.png" alt="MindGains Logo" style="width:32px;height:32px;border-radius:10px;object-fit:cover;" /></div>
-    <span class="logo-name">MindGains AI</span>
-  </a>
-  <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-  <div class="nav-right">
-    <a href="/quiz/" class="nav-glass-btn">
-      <span class="material-symbols-outlined ms" style="font-size:15px;color:var(--accent);">quiz</span>Quiz Hub
-    </a>
-    <a href="/editorial/" class="nav-glass-btn">
-      <span class="material-symbols-outlined ms" style="font-size:15px;color:var(--accent);">auto_stories</span>Editorial
-    </a>
-    <a href="/waitlist.html" class="nav-cta-btn">Join Whitelist</a>
-    <button id="signin-btn" onclick="openAuthModal()">
-      <svg width="16" height="16" viewBox="0 0 48 48"><path fill="#4285F4" d="M43.6 20.5H42V20H24v8h11.3C33.6 33 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.5 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.2-.1-2.5-.4-3.5z"/><path fill="#34A853" d="M6.3 14.7l6.6 4.8C14.5 16 19 12 24 12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.5 29.3 4 24 4 16.3 4 9.7 8.4 6.3 14.7z"/><path fill="#FBBC05" d="M24 44c5.2 0 9.9-1.7 13.6-4.5l-6.3-5.2C29.3 36 26.8 37 24 37c-5.2 0-9.6-3.4-11.3-8l-6.6 5.1C9.7 39.6 16.3 44 24 44z"/><path fill="#EA4335" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4 5.4l6.3 5.2C42.1 35.4 44 30 44 24c0-1.2-.1-2.5-.4-3.5z"/></svg>
-      Sign in
-    </button>
-    <div id="user-info">
-      <img id="user-avatar" src="" alt="" />
-      <span id="user-name"></span>
-      <button onclick="window.__mgSignOut()" style="font-family:Inter,sans-serif;font-size:12px;color:rgba(255,255,255,.45);background:transparent;border:none;cursor:pointer;padding:4px 8px;">Sign out</button>
-    </div>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section id="hero">
-  <div class="google-glow"></div>
-  <div class="a1">
-    <span class="pill hero-pill">
-      <span>INDIA'S 1ST TEXTBOOK-AWARE EXAM AI</span>
-    </span>
-  </div>
-  <h1 class="a2">The AI Built<br class="hero-br"> <em>for Indian Exams.</em></h1>
-  <p class="sub a3">Grounded in your textbooks, aligned with your curriculum,<br class="hero-br"> enhanced by previous-year question intelligence.</p>
-  <div class="hero-btns a4">
-    <button class="btn-primary" onclick="scrollToChat()">
-      <span class="material-symbols-outlined ms fill">bolt</span>Ask AI — Free
-    </button>
-    <button class="btn-outline" onclick="scrollToQuiz()">
-      <span class="material-symbols-outlined ms fill">quiz</span>Try a Quiz
-    </button>
-  </div>
-  <div class="stats a4">
-    <div class="stat">
-      <div class="stat-icon-wrapper"><span class="material-symbols-outlined">auto_stories</span></div>
-      <div class="stat-info">
-        <div class="stat-label">Textbook-Grounded</div>
-        <div class="stat-sub">SCERT Samacheer · NCERT</div>
-      </div>
-    </div>
-    <div class="stat">
-      <div class="stat-icon-wrapper"><span class="material-symbols-outlined">psychology</span></div>
-      <div class="stat-info">
-        <div class="stat-label">PYQ Intelligence</div>
-        <div class="stat-sub">TNPSC · UPSC · TET</div>
-      </div>
-    </div>
-    <div class="stat">
-      <div class="stat-icon-wrapper"><span class="material-symbols-outlined">translate</span></div>
-      <div class="stat-info">
-        <div class="stat-label">Multilingual</div>
-        <div class="stat-sub">English · தமிழ் · हिंदी · More</div>
-      </div>
-    </div>
-    <div class="stat">
-      <div class="stat-icon-wrapper"><span class="material-symbols-outlined">verified</span></div>
-      <div class="stat-info">
-        <div class="stat-label">Curriculum-Aligned</div>
-        <div class="stat-sub">Your Syllabus, Your Exam</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CHAT SECTION -->
-<section class="section" id="chat-section">
-  <div class="google-glow"></div>
-  <div class="chat-panel-container">
-    <div class="chat-panel">
-      <!-- FROSTED GLASS BLUR OVERLAY & INTERACTIVE FULL WORKSPACE CARD -->
-      <div class="chat-blur-overlay" onclick="window.location.href='chat/'">
-        <div class="chat-blur-card">
-          <div class="chat-blur-icon"><span class="material-symbols-outlined ms" style="font-size:26px;">auto_awesome</span></div>
-          <span class="chat-blur-badge">INTERACTIVE AI TUTOR</span>
-          <h3 class="chat-blur-title">Tap to Open Full AI Workspace</h3>
-          <p class="chat-blur-desc">Instant textbook-grounded explanations, SCERT & NCERT citations, solved PYQs, and adaptive quizzes.</p>
-          <button class="btn-blur-cta">
-            <span>Open AI Workspace</span>
-            <span class="material-symbols-outlined ms" style="font-size:18px;">arrow_forward</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Top bar -->
-    <div class="ctopbar">
-      <div class="ctop-left">
-        <div class="ctop-icon" style="background:transparent;"><img src="assets/icons/mindgains-header-logo.png" alt="MindGains Logo" style="width:30px;height:30px;border-radius:9px;object-fit:cover;" /></div>
-        <div>
-          <div class="ctop-title">MindGains AI</div>
-          <div class="ctop-sub">Exam Intelligence · Textbook-Aware</div>
-        </div>
-      </div>
-      <div style="display:flex;align-items:center;gap:10px;">
-        <div class="mode-tabs">
-          <button class="mode-tab active" id="tab-chat" onclick="switchMode('chat')">
-            <span class="material-symbols-outlined ms">chat</span>Chat
-          </button>
-          <button class="mode-tab" id="tab-quiz" onclick="switchMode('quiz')">
-            <span class="material-symbols-outlined ms">quiz</span>Quiz
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Thread (chat mode) -->
-    <div id="thread">
-      <div class="empty-state" id="empty-state">
-        <h3 class="empty-title">What are you studying today?</h3>
-
-        <div class="empty-grid">
-          <button class="prompt-card" id="pcard-1" onclick="pastePrompt(1)">
-            <span class="prompt-card-icon">📖</span>
-            <div class="prompt-card-text">
-              <strong>Explain a Topic</strong>
-              <span class="type-target" id="ptype-1">Directive Principles of State Policy</span>
-            </div>
-            <span class="material-symbols-outlined ms prompt-card-arrow">edit_note</span>
-          </button>
-          <button class="prompt-card" id="pcard-2" onclick="pastePrompt(2)">
-            <span class="prompt-card-icon">📝</span>
-            <div class="prompt-card-text">
-              <strong>Previous Year Questions</strong>
-              <span class="type-target" id="ptype-2">TNPSC Group 1 Indian Polity PYQs</span>
-            </div>
-            <span class="material-symbols-outlined ms prompt-card-arrow">edit_note</span>
-          </button>
-          <button class="prompt-card" id="pcard-3" onclick="pastePrompt(3)">
-            <span class="prompt-card-icon">🧠</span>
-            <div class="prompt-card-text">
-              <strong>Generate Quiz</strong>
-              <span class="type-target" id="ptype-3">20 MCQs on Indian Constitution</span>
-            </div>
-            <span class="material-symbols-outlined ms prompt-card-arrow">edit_note</span>
-          </button>
-          <button class="prompt-card" id="pcard-4" onclick="pastePrompt(4)">
-            <span class="prompt-card-icon">📚</span>
-            <div class="prompt-card-text">
-              <strong>Chapter Summary</strong>
-              <span class="type-target" id="ptype-4">Samacheer Kalvi Class 10 Science Chapter 8</span>
-            </div>
-            <span class="material-symbols-outlined ms prompt-card-arrow">edit_note</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Input -->
-    <div class="cinput-wrap" id="chat-input-area">
-      <div class="cinput-row">
-        <button class="cinput-action-btn" title="Add attachment or textbook excerpt" onclick="pastePrompt(1)">
-          <span class="material-symbols-outlined ms" style="font-size:18px;color:rgba(255,255,255,.55);">add_circle</span>
-        </button>
-        <button class="cinput-action-btn" title="Ask AI Tutor" onclick="pastePrompt(3)">
-          <span class="material-symbols-outlined ms" style="font-size:18px;color:var(--accent);">auto_awesome</span>
-        </button>
-        <input type="text" id="chat-input" placeholder="Ask about TNPSC, UPSC, General Tamil, NCERT…" autocomplete="off" />
-        <button id="send-btn" onclick="sendMsg()" title="Send Message">
-          <span class="material-symbols-outlined ms">arrow_upward</span>
-        </button>
-      </div>
-    </div>
-
-    <!-- Quiz mode body (hidden inside chat panel) -->
-    <div id="quiz-panel-inner" style="display:none; flex-direction:column; flex:1; overflow:hidden;">
-      <!-- Category picker -->
-      <div class="quiz-pick" id="quiz-picker" style="overflow-y:auto; flex:1;">
-        <h3>Choose a topic</h3>
-        <div class="quiz-pick-grid" id="quiz-cat-grid"></div>
-      </div>
-      <!-- Quiz body -->
-      <div class="quiz-body" id="quiz-body">
-        <div class="q-progress"><div class="q-progress-bar" id="q-progress-bar" style="width:0%"></div></div>
-        <div class="q-text" id="q-text"></div>
-        <div class="q-opts" id="q-opts"></div>
-        <div class="q-expl" id="q-expl"></div>
-        <div class="quiz-footer">
-          <div class="quiz-score" id="quiz-score">Score: 0</div>
-          <button id="next-btn" onclick="nextQuestion()">Next →</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- FEATURES -->
-<section class="section dark" id="features">
-  <div style="max-width:980px;margin:0 auto;">
-    <div class="sh">
-      <span class="pill">BUILT FOR ASPIRANTS</span>
-      <h2>Everything you need. Nothing you don't.</h2>
-    </div>
-    <div class="feat-grid">
-      <!-- 1. Hero Feature: NCERT & Curriculum Grounded -->
-      <div class="feat-card glass feat-card-hero" style="--accent-color:#7BE3B0;">
-        <div class="feat-card-top">
-          <div class="feat-icon" style="background:rgba(123,227,176,.12);border:1px solid rgba(123,227,176,.28);">
-            <span class="material-symbols-outlined ms" style="color:#7BE3B0;">menu_book</span>
-          </div>
-          <span class="feat-badge">HERO FEATURE</span>
-        </div>
-        <h3>NCERT &amp; Curriculum Grounded</h3>
-        <p>Learn from answers grounded in NCERT and prescribed state textbooks, aligned with your syllabus.</p>
-      </div>
-
-      <!-- 2. UPSC CSE Prelims -->
-      <div class="feat-card glass" style="--accent-color:#a78bfa;">
-        <div class="feat-icon" style="background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.28);">
-          <span class="material-symbols-outlined ms" style="color:#a78bfa;">account_balance</span>
-        </div>
-        <h3>UPSC CSE Prelims</h3>
-        <p>Topic-wise learning, PYQs, and textbook-backed explanations across every Prelims subject.</p>
-      </div>
-
-      <!-- 3. TNPSC Group 1, 2 & 4 -->
-      <div class="feat-card glass" style="--accent-color:#38bdf8;">
-        <div class="feat-icon" style="background:rgba(56,189,248,.12);border:1px solid rgba(56,189,248,.28);">
-          <span class="material-symbols-outlined ms" style="color:#38bdf8;">school</span>
-        </div>
-        <h3>TNPSC Group 1, 2 &amp; 4</h3>
-        <p>Official PYQs with final answer keys, organized by subject, syllabus unit, and exam year.</p>
-      </div>
-
-      <!-- 4. Previous-Year Intelligence -->
-      <div class="feat-card glass" style="--accent-color:#fb923c;">
-        <div class="feat-icon" style="background:rgba(251,146,60,.12);border:1px solid rgba(251,146,60,.28);">
-          <span class="material-symbols-outlined ms" style="color:#fb923c;">travel_explore</span>
-        </div>
-        <h3>Previous-Year Intelligence</h3>
-        <p>Search PYQs by exam, year, subject, chapter, or topic—and instantly understand every answer.</p>
-      </div>
-
-      <!-- 5. Chapter Summaries -->
-      <div class="feat-card glass" style="--accent-color:#38bdf8;">
-        <div class="feat-icon" style="background:rgba(56,189,248,.12);border:1px solid rgba(56,189,248,.28);">
-          <span class="material-symbols-outlined ms" style="color:#38bdf8;">auto_stories</span>
-        </div>
-        <h3>Chapter Summaries</h3>
-        <p>Turn any chapter into concise revision notes, key points, flashcards, or practice questions in seconds.</p>
-      </div>
-
-      <!-- 6. Adaptive Quiz Engine -->
-      <div class="feat-card glass" style="--accent-color:#f43f5e;">
-        <div class="feat-icon" style="background:rgba(244,63,94,.12);border:1px solid rgba(244,63,94,.28);">
-          <span class="material-symbols-outlined ms" style="color:#f43f5e;">psychology</span>
-        </div>
-        <h3>Adaptive Quiz Engine</h3>
-        <p>Generate topic-wise quizzes with instant explanations, detailed feedback, and progress tracking.</p>
-      </div>
-
-      <!-- 7. Learn in Your Language -->
-      <div class="feat-card glass" style="--accent-color:#34d399;">
-        <div class="feat-icon" style="background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.28);">
-          <span class="material-symbols-outlined ms" style="color:#34d399;">translate</span>
-        </div>
-        <h3>Learn in Your Language</h3>
-        <p>Study in English, Tamil, Hindi, Telugu, Kannada, or Malayalam—with the same curriculum-grounded experience.</p>
-      </div>
-
-      <!-- 8. Diagrams & Visual Questions -->
-      <div class="feat-card glass" style="--accent-color:#fbbf24;">
-        <div class="feat-icon" style="background:rgba(251,191,36,.12);border:1px solid rgba(251,191,36,.28);">
-          <span class="material-symbols-outlined ms" style="color:#fbbf24;">category</span>
-        </div>
-        <h3>Diagrams &amp; Visual Questions</h3>
-        <p>Practice aptitude figures, maps, graphs, and visual reasoning exactly as they appear in competitive exams.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BOTTOM CTA -->
-<section id="cta-bottom">
-  <h2>Exam Intelligence,<br><em>Not Just AI.</em></h2>
-  <p>Built around your textbooks, curriculum, and previous-year questions to help you prepare with greater confidence.</p>
-  <button class="btn-primary" style="font-size:14px;padding:13px 32px;" onclick="scrollToChat()">
-    <span class="material-symbols-outlined ms fill">bolt</span>Ask AI Now — Free
-  </button>
-</section>
-
-
-<footer style="
-  margin: 60px 20px 24px;
-  border-radius: 28px;
-  background: rgba(255,255,255,.015);
-  backdrop-filter: blur(28px) saturate(160%);
-  -webkit-backdrop-filter: blur(28px) saturate(160%);
-  box-shadow: inset 0 1px 1px rgba(255,255,255,.1);
-  position: relative;
-  overflow: hidden;
-  padding: 44px clamp(24px,5vw,56px) 28px;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  text-align: left;
-">
-  <!-- liquid glass border -->
-  <div style="position:absolute;inset:0;border-radius:28px;padding:1.4px;background:linear-gradient(180deg,rgba(255,255,255,.45) 0%,rgba(255,255,255,.15) 20%,rgba(255,255,255,0) 40%,rgba(255,255,255,0) 60%,rgba(255,255,255,.15) 80%,rgba(255,255,255,.45) 100%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;"></div>
-
-  <div style="display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:36px;max-width:1100px;margin:0 auto;width:100%;position:relative;z-index:1;">
-    <!-- Brand -->
-    <div>
-      <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;">
-        <img src="/assets/icons/mindgains-logo-apple.png" alt="MindGains Logo" style="width:28px;height:28px;border-radius:8px;object-fit:cover;" />
-        <strong style="font-size:15px;color:#fff;font-weight:800;letter-spacing:-.3px;">MindGains AI</strong>
-      </div>
-      <p style="font-size:12.5px;color:rgba(255,255,255,.42);line-height:1.65;max-width:240px;margin:0 0 18px;">The AI Built for Indian Exams. Grounded in your textbooks, aligned with your curriculum.</p>
-      <span style="display:inline-flex;align-items:center;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#7BE3B0;background:rgba(123,227,176,.1);border:1px solid rgba(123,227,176,.25);padding:5px 12px;border-radius:999px;">BETA · India's 1st Textbook-Aware AI</span>
-    </div>
-
-    <!-- Exams -->
-    <div>
-      <h4 style="font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7BE3B0;margin-bottom:16px;">Exams</h4>
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;padding:0;margin:0;">
-        <li><a href="/tnpsc/" style="font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;transition:color .18s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.52)'">TNPSC Group 1, 2 &amp; 4</a></li>
-        <li><a href="/upsc/" style="font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;transition:color .18s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.52)'">UPSC CSE Prelims</a></li>
-        <li><a href="/ssc/" style="font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;transition:color .18s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.52)'">SSC &amp; Railway</a></li>
-        <li><a href="/waitlist.html" style="font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;transition:color .18s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.52)'">Join Whitelist</a></li>
-      </ul>
-    </div>
-
-    <!-- Textbooks -->
-    <div>
-      <h4 style="font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7BE3B0;margin-bottom:16px;">Textbooks</h4>
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;padding:0;margin:0;">
-        <li><a href="/samacheer/" style="font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;transition:color .18s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.52)'">Samacheer Kalvi</a></li>
-        <li><a href="/ncert/" style="font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;transition:color .18s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.52)'">NCERT Notes</a></li>
-        <li><a href="/editorial/" style="font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;transition:color .18s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.52)'">Editorial Summaries</a></li>
-        <li><a href="/daily-dose/" style="font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;transition:color .18s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.52)'">Daily Dose</a></li>
-      </ul>
-    </div>
-
-    <!-- Tools -->
-    <div>
-      <h4 style="font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7BE3B0;margin-bottom:16px;">Tools</h4>
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;padding:0;margin:0;">
-        <li><a href="/quiz/" style="font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;transition:color .18s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.52)'">Adaptive Quiz Hub</a></li>
-        <li><a href="/know-your-india/" style="font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;transition:color .18s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.52)'">Know Your India</a></li>
-        <li><a href="/study-lab/" style="font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;transition:color .18s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.52)'">Study Lab</a></li>
-        <li><a href="/misa/" style="font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;transition:color .18s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.52)'">MISA AI Tutor</a></li>
-        <li><a href="/blog/" style="font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;transition:color .18s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.52)'">Blog</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Mobile quick links — only visible on mobile via CSS -->
-  <div class="footer-mobile-links">
-    <a href="/quiz/" style="font-size:12px;color:rgba(255,255,255,.55);text-decoration:none;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);padding:6px 12px;border-radius:999px;">Quiz Hub</a>
-    <a href="/tnpsc/" style="font-size:12px;color:rgba(255,255,255,.55);text-decoration:none;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);padding:6px 12px;border-radius:999px;">TNPSC</a>
-    <a href="/upsc/" style="font-size:12px;color:rgba(255,255,255,.55);text-decoration:none;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);padding:6px 12px;border-radius:999px;">UPSC</a>
-    <a href="/samacheer/" style="font-size:12px;color:rgba(255,255,255,.55);text-decoration:none;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);padding:6px 12px;border-radius:999px;">Samacheer</a>
-    <a href="/ncert/" style="font-size:12px;color:rgba(255,255,255,.55);text-decoration:none;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);padding:6px 12px;border-radius:999px;">NCERT</a>
-    <a href="/blog/" style="font-size:12px;color:rgba(255,255,255,.55);text-decoration:none;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);padding:6px 12px;border-radius:999px;">Blog</a>
-    <a href="/waitlist.html" style="font-size:12px;color:#7BE3B0;text-decoration:none;background:rgba(123,227,176,0.08);border:1px solid rgba(123,227,176,0.2);padding:6px 12px;border-radius:999px;font-weight:600;">Join Whitelist</a>
-  </div>
-
-  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:22px;border-top:1px solid rgba(255,255,255,.07);max-width:1100px;margin:24px auto 0;position:relative;z-index:1;">
-    <span style="font-size:11px;color:rgba(255,255,255,.28);">© 2026 MindGains AI · All rights reserved.</span>
-    <span style="font-size:11px;color:rgba(255,255,255,.28);">All official PYQs are property of respective government exam boards.</span>
-  </div>
-</footer>
-
-
-
-
-
-
-<!-- AUTH MODAL (APPLE + GOOGLE LUXURY DESIGN) -->
-<div id="auth-modal" onclick="if(event.target===this)closeAuthModal()">
-  <div>
-    <div class="auth-card">
-      <button class="auth-close" onclick="closeAuthModal()" aria-label="Close modal">✕</button>
-      <div class="auth-logo" style="background:transparent;"><img src="assets/icons/mindgains-header-logo.png" alt="MindGains Logo" style="width:64px;height:64px;border-radius:18px;object-fit:cover;" /></div>
-      <h3>Continue with MindGains AI</h3>
-      <p style="font-size:14px;color:rgba(255,255,255,0.78);line-height:1.65;margin-bottom:24px;">Sign in with Google to access the <strong style="color:#7BE3B0;">Beta V1</strong> of <strong style="color:#fff;">India's First Textbook-Aware AI</strong>, built to help you learn smarter with trusted, curriculum-grounded answers and reliable previous year questions.</p>
-      <button class="google-btn" onclick="window.__mgSignIn()">
-        <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#4285F4" d="M43.6 20.5H42V20H24v8h11.3C33.6 33 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.5 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.2-.1-2.5-.4-3.5z"/><path fill="#34A853" d="M6.3 14.7l6.6 4.8C14.5 16 19 12 24 12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.5 29.3 4 24 4 16.3 4 9.7 8.4 6.3 14.7z"/><path fill="#FBBC05" d="M24 44c5.2 0 9.9-1.7 13.6-4.5l-6.3-5.2C29.3 36 26.8 37 24 37c-5.2 0-9.6-3.4-11.3-8l-6.6 5.1C9.7 39.6 16.3 44 24 44z"/><path fill="#EA4335" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4 5.4l6.3 5.2C42.1 35.4 44 30 44 24c0-1.2-.1-2.5-.4-3.5z"/></svg>
-        <span>Continue with Google</span>
-      </button>
-      <div>
-        <span class="auth-badge-pill">⚡ 10 Free AI Study Messages</span>
-      </div>
-      <div class="auth-note">Free for all signed-in learners • Secure Google Sign-In</div>
-    </div>
-  </div>
-</div>
-
-<!-- DAILY LIMIT REACHED MODAL -->
-<div id="limit-modal" onclick="if(event.target===this)closeLimitModal()" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:400;background:rgba(0,0,0,0.75);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:20px;">
-  <div style="background:rgba(14,18,26,0.96);border:1px solid rgba(123,227,176,0.25);border-radius:24px;padding:28px 24px;max-width:440px;width:100%;box-shadow:0 30px 80px rgba(0,0,0,0.9),0 0 30px rgba(123,227,176,0.15);position:relative;text-align:center;">
-    <button onclick="closeLimitModal()" style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;transition:all 0.2s;" aria-label="Close modal">✕</button>
-    <div style="width:56px;height:56px;border-radius:18px;background:rgba(244,114,182,0.12);border:1px solid rgba(244,114,182,0.3);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;color:#F472B6;">
-      <span class="material-symbols-outlined ms" style="font-size:30px;">local_fire_department</span>
-    </div>
-    <h3 style="font-size:20px;font-weight:700;color:#fff;margin-bottom:8px;letter-spacing:-0.02em;">Daily Web Limit Reached (10/10)</h3>
-    <p style="font-size:13.5px;color:rgba(255,255,255,0.72);line-height:1.6;margin-bottom:24px;">You have used all 10 free daily web AI study messages for today. For unlimited textbook-aware AI tutoring, PYQ access, and adaptive quizzes, get the official Android App!</p>
-    <div style="display:flex;flex-direction:column;gap:10px;">
-      <a href="waitlist.html" style="display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#7BE3B0,#38BDF8);color:#000;font-weight:800;font-size:14px;padding:13px 20px;border-radius:14px;text-decoration:none;box-shadow:0 6px 20px rgba(123,227,176,0.35);transition:transform 0.2s;">
-        <span>Get Unlimited on Android App</span>
-        <span class="material-symbols-outlined ms" style="font-size:18px;">arrow_forward</span>
-      </a>
-      <button onclick="closeLimitModal()" style="background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.1);font-weight:600;font-size:13px;padding:11px 20px;border-radius:14px;cursor:pointer;transition:all 0.2s;">
-        Got it, thanks
-      </button>
-    </div>
-  </div>
-</div>
-
-<script>
-/* ═══ OPENROUTER KEY ROTATION & FALLBACKS ═══ */
-const OR_KEYS = [
-  atob('c2stb3ItdjEtYmIyMmJiMWQ4MTMxYThmNGEzNTFhOWExM2M0MzU4ZDk4MWEyMjI2ZjJjOTcyOTg0NGNiOGU4NjljNTk5Njc0Nw=='),
-  atob('c2stb3ItdjEtODBlNTVlZTAwMzMyYmExOTM1NmU2NTMzNTVlMGE2M2EwNzUwN2U1ZjMwZDM0OWVkNjJhMjdhMWZhYjllZDJmYw=='),
-  atob('c2stb3ItdjEtZGI3MmVhZjdhNjY2Y2Q2YzQ3ZmE4ZTdkNGQ2OGE3NzZmYjkzMjM4MTllMmIyMzk3ODAwZWM1YjZiNTJmNDRlYw==')
-];
-const OR_MODELS = ['google/gemini-2.5-flash', 'deepseek/deepseek-chat', 'openai/gpt-4o-mini'];
-let orKeyIdx = 0;
-function getOrKey() { const k = OR_KEYS[orKeyIdx % OR_KEYS.length]; orKeyIdx++; return k; }
-
-/* ═══ MESSAGE LIMIT (guest: 10/day) ═══ */
-let isSignedIn = false;
-let msgCount = 0;
-const MSG_LIMIT = 10;
-const TODAY = new Date().toDateString();
-
-function loadMsgCount() {
-  const stored = JSON.parse(localStorage.getItem('mg_msgs') || '{}');
-  if (stored.date !== TODAY) { localStorage.setItem('mg_msgs', JSON.stringify({date:TODAY,count:0})); return 0; }
-  return stored.count || 0;
-}
-function saveMsgCount(n) { localStorage.setItem('mg_msgs', JSON.stringify({date:TODAY,count:n})); }
-
-msgCount = loadMsgCount();
-
-/* ═══ AUTH HOOKS & ACCESS CONTROL ═══ */
-window.updateAuthAccessUI = function() {
-  const inputEl = document.getElementById('chat-input');
-  if (inputEl) {
-    if (!isSignedIn) {
-      inputEl.placeholder = "Sign in with Google to chat with MindGains AI...";
-    } else {
-      inputEl.placeholder = "Ask MIGA anything about your syllabus, textbooks, or PYQs...";
-    }
-  }
-};
-
-window.showAuthToast = function() {
-  let toast = document.getElementById('toast-notification');
-  if (!toast) {
-    toast = document.createElement('div');
-    toast.id = 'toast-notification';
-    document.body.appendChild(toast);
-  }
-  toast.innerHTML = `
-    <span class="material-symbols-outlined ms" style="font-size:18px;color:#7BE3B0;">check_circle</span>
-    <span style="font-size:13px;font-weight:700;color:#fff;white-space:nowrap;">Signed In Successfully</span>
-  `;
-  toast.classList.add('show');
-  setTimeout(() => {
-    toast.classList.remove('show');
-  }, 2600);
-};
-
-window.__mgUser = null;
-window.__mgOnSignIn = (user) => {
-  const wasAlreadySignedIn = isSignedIn;
-  isSignedIn = true;
-  window.__mgUser = user;
-  document.getElementById('signin-btn').style.display = 'none';
-  const ui = document.getElementById('user-info');
-  ui.style.display = 'flex';
-  const av = document.getElementById('user-avatar');
-  if (user.photoURL) { av.src = user.photoURL; av.style.display = 'block'; } else av.style.display = 'none';
-  document.getElementById('user-name').textContent = (user.displayName || user.email || '').split(' ')[0];
-  closeAuthModal();
-  updateAuthAccessUI();
-
-  if (!wasAlreadySignedIn) {
-    showAuthToast(user.displayName, user.email);
-  }
-};
-
-window.__mgOnSignOut = () => {
-  isSignedIn = false;
-  window.__mgUser = null;
-  document.getElementById('signin-btn').style.display = 'flex';
-  document.getElementById('user-info').style.display = 'none';
-  updateAuthAccessUI();
-};
-
-function openAuthModal()  { document.getElementById('auth-modal').style.display = 'flex'; }
-function closeAuthModal() { document.getElementById('auth-modal').style.display = 'none'; }
-function openLimitModal()  { document.getElementById('limit-modal').style.display = 'flex'; }
-function closeLimitModal() { document.getElementById('limit-modal').style.display = 'none'; }
-
-/* ═══ SCROLL HELPERS ═══ */
-function scrollToChat() { document.getElementById('chat-section').scrollIntoView({behavior:'smooth'}); }
-function scrollToQuiz() { document.getElementById('chat-section').scrollIntoView({behavior:'smooth'}); setTimeout(()=>switchMode('quiz'), 600); }
-
-/* ═══ MODE TOGGLE ═══ */
-let currentMode = 'chat';
-function switchMode(mode) {
-  currentMode = mode;
-  document.getElementById('tab-chat').classList.toggle('active', mode==='chat');
-  document.getElementById('tab-quiz').classList.toggle('active', mode==='quiz');
-  document.getElementById('thread').style.display         = mode==='chat' ? 'flex'  : 'none';
-  document.getElementById('chat-input-area').style.display = mode==='chat' ? 'block' : 'none';
-  document.getElementById('quiz-panel-inner').style.display = mode==='quiz' ? 'flex'  : 'none';
-  if (mode==='quiz' && !quizStarted) renderQuizPicker();
-}
-
-/* ═══ CHAT ENGINE ═══ */
-const thread  = document.getElementById('thread');
-const inputEl = document.getElementById('chat-input');
-const sendBtn = document.getElementById('send-btn');
-
-if (inputEl) {
-  inputEl.addEventListener('focus', () => { if (!isSignedIn) openAuthModal(); });
-  inputEl.addEventListener('click', () => { if (!isSignedIn) openAuthModal(); });
-}
-
-const EXAM_SYSTEM = `You are MIGA, a warm, brilliant tutor and study buddy for Indian exam aspirants (UPSC, TNPSC, SSC, banking, state PSCs).
-
-MINDGAINS BRAND MEMORY:
-- MindGains is the AI learning platform used by students inside the MindGains app and public website.
-- The company behind it is MindGains Labs Private Limited.
-- Founder: Ragul Arvind.
-- Core public product areas include Daily Dose, Study Lab, MIGA, Quiz Hub, Editorial, and Know Your India.
-- If asked about MindGains, the app, the company, or the founder, answer from this memory block. If a detail is not present here, do not invent it.
-
-SOURCE VERIFICATION POLICY:
-- Ground answers strictly in SCERT Samacheer Kalvi and NCERT textbooks, citing chapter, class, or syllabus unit.
-- When explaining concepts or syllabus topics, provide the exact source path using a clean visual tree hierarchy at the end of the response:
-  Sources
-  NCERT Class 11 Political Science
-  ↓
-  Chapter 2: Rights in the Indian Constitution
-  ↓
-  Page 38
-- Do not mix boards, classes, or syllabi unless the user explicitly asks for a comparison.
-- Never present an unverified textbook detail as a fact.
-
-YOU TEACH — you never just give a one-liner when the student wants to understand something.
-- When asked to explain or understand a concept: give a proper, well-structured explanation — a clear definition, the key points, a simple example or analogy, and why it matters for the exam. Be genuinely thorough and helpful.
-- If the user asks a concept question with curriculum framing, do not judge syllabus fit unless they explicitly ask whether it is covered there. Just answer the concept directly.
-- Never volunteer syllabus coverage language unless the user explicitly asks about syllabus coverage.
-- For a direct MCQ: lead with "Answer: X", then explain why it is right and, briefly, why a tempting wrong option is wrong.
-- For "revise / quick revision": give crisp, organised bullet-style recall points.
-- Bold mark-bearing terms that help the student scan faster, especially Articles, Acts, committees, years, percentages, and exam keywords.
-
-STYLE:
-- Match length to the need: concise for quick questions, detailed and clear when teaching. Do NOT artificially shorten a real explanation.
-- Use short paragraphs and compact lists. Bold key terms, Articles, and years sparingly.
-- When you number steps or lists, use 1), 2), 3), not 1., 2., 3.
-- Simple, encouraging language. No emojis or mascot/animal roleplay. Just be a great, human tutor.
-
-WRITING:
-- NEVER use em dashes (—) or double hyphens (--). Use commas, full stops, or "(...)". This is important.
-
-LANGUAGE:
-- Reply in the user's language. If they write in Tamil, reply in natural spoken Tamil (Tanglish where students mix English exam terms).
-- Keep exam terms (Article, Fundamental Rights, Fiscal Deficit, etc.) in English even within regional replies.`;
-
-let chatHistory = [];
-
-inputEl.addEventListener('keydown', e => { if (e.key==='Enter') sendMsg(); });
-
-function addRow(role) {
-  const row = document.createElement('div');
-  row.className = 'msg-row' + (role==='user' ? ' user-row' : '');
-  thread.appendChild(row); return row;
-}
-function addAv(row, role) {
-  const av = document.createElement('div');
-  av.className = 'av ' + (role==='ai' ? 'ai' : 'user');
-  if (role==='ai') {
-    av.innerHTML = '<img src="assets/icons/ai-avatar.png" alt="AI Avatar" style="width:30px;height:30px;border-radius:10px;object-fit:cover;" />';
-  } else {
-    const userPhoto = (window.__mgUser && window.__mgUser.photoURL) ? window.__mgUser.photoURL : null;
-    if (userPhoto) {
-      av.innerHTML = `<img src="${userPhoto}" alt="User" style="width:28px;height:28px;border-radius:50%;object-fit:cover;" />`;
-    } else {
-      av.innerHTML = `<span class="material-symbols-outlined ms" style="font-size:16px;color:rgba(255,255,255,0.75);">person</span>`;
-    }
-  }
-  row.appendChild(av);
-}
-function addBubble(row, role, html) {
-  const b = document.createElement('div');
-  b.className = 'bubble ' + (role==='ai' ? 'ai-bub' : 'user-bub');
-  b.innerHTML = html;
-  row.appendChild(b); return b;
-}
-function showTyping() {
-  const r = addRow('ai'); r.id = 'typing-row';
-  addAv(r, 'ai');
-  const b = document.createElement('div');
-  b.className = 'bubble ai-bub';
-  b.innerHTML = `
-    <div class="typing">
-      <div class="typing-dots">
-        <span class="typing-dot"></span>
-        <span class="typing-dot"></span>
-        <span class="typing-dot"></span>
-      </div>
-      <span class="typing-label">Thinking...</span>
-    </div>
-  `;
-  r.appendChild(b);
-  thread.scrollTop = thread.scrollHeight;
-}
-function removeTyping() { const t=document.getElementById('typing-row'); if(t)t.remove(); }
-function scrollThread() { thread.scrollTop = thread.scrollHeight; }
-
-window.checkMCQAnswer = function(btn, chosen, correct) {
-  const card = btn.closest('.pyq-card');
-  if (!card) return;
-  const btns = card.querySelectorAll('.opt-btn');
-  btns.forEach(b => {
-    b.classList.add('locked');
-    const optLabel = b.getAttribute('data-opt');
-    if (optLabel === correct) {
-      b.classList.add('correct');
-    }
-    if (b === btn && chosen !== correct) {
-      b.classList.add('wrong');
-    }
-  });
-};
-
-function formatAIResponse(rawText) {
-  if (!rawText) return '';
-
-  // Clean unwanted header tags
-  let text = rawText.replace(/INTERACTIVE\s+PYQ\s+PRACTICE/gi, '');
-
-  // 1. Mindmaps & Concept Tree Diagram Rendering
-  if (text.includes('├──') || text.includes('└──') || text.includes('│──') || text.includes('-->')) {
-    text = text.replace(/((?:.*[├└│]-->?.*\n?)+)/g, function(match) {
-      const lines = match.trim().split('\n');
-      const mindmapItems = lines.map(line => {
-        const indentLevel = (line.match(/[│\s]/g) || []).length;
-        const cleanNode = line.replace(/[├└│]──|>|-/g, '').trim();
-        if (!cleanNode) return '';
-        return `<div class="mindmap-node" style="margin-left:${Math.min(indentLevel * 12, 48)}px; display:flex; align-items:center; gap:8px; margin-bottom:6px;">
-          <span style="width:7px;height:7px;border-radius:50%;background:#7BE3B0;display:inline-block;flex-shrink:0;"></span>
-          <span style="font-size:13px;color:#fff;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:4px 12px;border-radius:8px;">${cleanNode}</span>
-        </div>`;
-      }).join('');
-
-      return `<div class="mindmap-container" style="background:rgba(0,0,0,.4);border:1px solid rgba(123,227,176,.25);border-radius:14px;padding:16px;margin:12px 0;">
-        <div style="font-size:11px;font-weight:700;letter-spacing:.06em;color:#7BE3B0;margin-bottom:10px;display:flex;align-items:center;gap:6px;">
-          <span class="material-symbols-outlined ms" style="font-size:14px;">account_tree</span> CONCEPT MINDMAP
-        </div>
-        ${mindmapItems}
-      </div>`;
-    });
-  }
-
-  // 2. Full Markdown Processing
-  // Code blocks
-  text = text.replace(/```([\s\S]*?)```/g, '<pre style="background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:12px;font-family:monospace;font-size:12.5px;color:#7BE3B0;overflow-x:auto;margin:10px 0;"><code>$1</code></pre>');
-
-  // Headings
-  text = text.replace(/^### (.*$)/gim, '<h4 style="font-size:14.5px;font-weight:700;color:#7BE3B0;margin:14px 0 6px;">$1</h4>');
-  text = text.replace(/^## (.*$)/gim, '<h3 style="font-size:16px;font-weight:700;color:#fff;margin:16px 0 8px;letter-spacing:-.01em;">$1</h3>');
-  text = text.replace(/^# (.*$)/gim, '<h2 style="font-size:18px;font-weight:800;color:#fff;margin:18px 0 10px;letter-spacing:-.02em;">$1</h2>');
-
-  // Inline formatting
-  text = text.replace(/`([^`]+)`/g, '<code style="background:rgba(255,255,255,.08);padding:2px 6px;border-radius:4px;font-family:monospace;font-size:12px;color:#7BE3B0;">$1</code>');
-  text = text.replace(/\*\*(.*?)\*\*/g, '<strong style="color:#fff;font-weight:700;">$1</strong>');
-  text = text.replace(/\*(.*?)\*/g, '<em>$1</em>');
-
-  // Blockquotes
-  text = text.replace(/^>\s*(.*$)/gim, '<blockquote style="border-left:3px solid #7BE3B0;background:rgba(123,227,176,.06);padding:8px 14px;border-radius:0 10px 10px 0;margin:10px 0;color:rgba(255,255,255,.85);font-size:13px;">$1</blockquote>');
-
-  // Bullet Lists
-  text = text.replace(/^\s*[-*•]\s+(.*$)/gim, '<li style="margin-bottom:4px;color:rgba(255,255,255,.85);"><span style="color:#7BE3B0;margin-right:6px;">•</span>$1</li>');
-  text = text.replace(/(<li[\s\S]*?<\/li>)/gi, '<ul style="list-style:none;padding-left:4px;margin:8px 0;">$1</ul>');
-  text = text.replace(/<\/ul>\s*<ul style="list-style:none;padding-left:4px;margin:8px 0;">/gi, '');
-
-  // Markdown Table Parsing
-  text = text.replace(/((?:\|.*\|\n?)+)/g, function(tableMatch) {
-    const rows = tableMatch.trim().split('\n').filter(r => r.includes('|'));
-    if (rows.length < 2) return tableMatch;
-    
-    let html = '<table>';
-    let isHeader = true;
-
-    rows.forEach(row => {
-      // Skip delimiter row like |---|---|
-      if (/^\|?\s*:?-+:?\s*\|/.test(row.trim())) {
-        isHeader = false;
-        return;
-      }
-      const cols = row.split('|').slice(1, -1).map(c => c.trim());
-      if (cols.length === 0) return;
-
-      html += '<tr>';
-      cols.forEach(col => {
-        if (isHeader) {
-          html += `<th>${col}</th>`;
         } else {
-          html += `<td>${col}</td>`;
+          const { data: { session } } = await supabaseClient.auth.getSession();
+          if (session?.user) {
+            const u = { email: session.user.email, displayName: session.user.user_metadata?.full_name || session.user.email, photoURL: session.user.user_metadata?.avatar_url || null };
+            localStorage.setItem('mg_user', JSON.stringify(u));
+            window.__mgOnSignIn(u);
+          }
         }
-      });
-      html += '</tr>';
+      }
     });
 
-    html += '</table>';
-    return html;
-  });
-
-  // Line breaks
-  text = text.replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>');
-
-  return text;
-}
-
-/* ═══ PROMPT CARD TYPEWRITER ANIMATION ═══ */
-const PROMPT_SETS = {
-  1: [
-    "Directive Principles of State Policy",
-    "Harappan Civilization — SCERT Samacheer",
-    "Photosynthesis — NCERT Class 11",
-    "Sangam Literature & History"
-  ],
-  2: [
-    "TNPSC Group 1 Indian Polity PYQs",
-    "UPSC CSE Prelims Economy Solved Questions",
-    "General Tamil Thirukkural PYQs",
-    "TNPSC Group 2 General English PYQs"
-  ],
-  3: [
-    "20 MCQs on Indian Constitution",
-    "Test me on Sangam Age & Tamil Literature",
-    "Mixed UPSC Prelims Environment Quiz",
-    "TNPSC Aptitude & Shape Counting Quiz"
-  ],
-  4: [
-    "Samacheer Kalvi Class 10 Science Chapter 8",
-    "NCERT Indian Polity Quick Revision Notes",
-    "Samacheer Kalvi Tamil Grammar Summary",
-    "UPSC History 1857 Revolt Key Points"
-  ]
-};
-
-const currentPromptTexts = {
-  1: PROMPT_SETS[1][0],
-  2: PROMPT_SETS[2][0],
-  3: PROMPT_SETS[3][0],
-  4: PROMPT_SETS[4][0]
-};
-
-function startTypewriter(cardId) {
-  const el = document.getElementById(`ptype-${cardId}`);
-  if (!el) return;
-  const list = PROMPT_SETS[cardId];
-  let listIdx = 0;
-  let charIdx = list[0].length;
-  let isDeleting = false;
-
-  function step() {
-    const targetText = list[listIdx];
-    if (isDeleting) {
-      charIdx--;
-      el.textContent = targetText.substring(0, charIdx) + '▌';
-      currentPromptTexts[cardId] = targetText.substring(0, charIdx);
-      if (charIdx <= 0) {
-        isDeleting = false;
-        listIdx = (listIdx + 1) % list.length;
-        setTimeout(step, 400);
-        return;
-      }
-      setTimeout(step, 20);
-    } else {
-      charIdx++;
-      el.textContent = targetText.substring(0, charIdx) + '▌';
-      currentPromptTexts[cardId] = targetText.substring(0, charIdx);
-      if (charIdx >= targetText.length) {
-        el.textContent = targetText;
-        currentPromptTexts[cardId] = targetText;
-        isDeleting = true;
-        setTimeout(step, 2200);
-        return;
-      }
-      setTimeout(step, 45 + Math.random() * 35);
+    function openUnit(unitName) {
+      sessionStorage.setItem('mg_auto_prompt', `Teach me ${unitName} with SCERT & NCERT citations`);
+      window.location.href = 'chat/';
     }
-  }
-  setTimeout(step, cardId * 250);
-}
-
-[1, 2, 3, 4].forEach(startTypewriter);
-
-function pastePrompt(cardId) {
-  const text = currentPromptTexts[cardId] || PROMPT_SETS[cardId][0];
-  sessionStorage.setItem('mg_auto_prompt', text);
-  window.location.href = 'chat/';
-}
-
-function scrollToTop(row) {
-  if (!row) return;
-  row.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
-
-async function sendMsg(override) {
-  if (currentMode !== 'chat') return;
-
-  // 1. Guests (Not signed in) -> 0 messages allowed, open Auth Modal
-  if (!isSignedIn) {
-    openAuthModal();
-    return;
-  }
-
-  // 2. Signed-in users -> 10 messages max per day
-  if (msgCount >= MSG_LIMIT) {
-    openLimitModal();
-    return;
-  }
-
-  const text = override || inputEl.value.trim();
-  if (!text) return;
-
-  inputEl.value = '';
-  sendBtn.disabled = true;
-  msgCount++;
-  saveMsgCount(msgCount);
-  if (window.updateAuthAccessUI) window.updateAuthAccessUI();
-
-  const es = document.getElementById('empty-state');
-  if (es) es.remove();
-
-  chatHistory.push({ role: 'user', content: text });
-
-  const uRow = addRow('user'); addAv(uRow,'user'); addBubble(uRow,'user',text); 
-  scrollToTop(uRow);
-  showTyping();
-
-  let aiRow = null;
-  let aiBub = null;
-
-  async function tryORStream(key, keyNum, modelName) {
-    console.log(`[MindGains AI] Streaming key #${keyNum} (${key.slice(0,16)}...) model: ${modelName}`);
-    const messagesPayload = [
-      { role: 'system', content: EXAM_SYSTEM },
-      ...chatHistory.slice(-10)
-    ];
-    const body = {
-      model: modelName,
-      messages: messagesPayload,
-      stream: true,
-      max_tokens: 4096
-    };
-
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), 3500);
-
-    const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${key}`,
-        'HTTP-Referer': 'https://mindgains.ai',
-        'X-Title': 'MindGains AI'
-      },
-      body: JSON.stringify(body),
-      signal: controller.signal
-    });
-    clearTimeout(timer);
-
-    if (!res.ok) {
-      const errText = await res.text();
-      console.error(`[MindGains AI] Key #${keyNum} (${modelName}) stream error:`, errText);
-      return null;
-    }
-
-    const reader = res.body.getReader();
-    const decoder = new TextDecoder('utf-8');
-    let fullText = '';
-    let buffer = '';
-
-    while (true) {
-      const { done, value } = await reader.read();
-      if (done) break;
-      buffer += decoder.decode(value, { stream: true });
-      const lines = buffer.split('\n');
-      buffer = lines.pop(); // Keep partial trailing line
-
-      for (const line of lines) {
-        const trimmed = line.trim();
-        if (!trimmed || trimmed.startsWith(':')) continue;
-        if (trimmed === 'data: [DONE]') continue;
-        if (trimmed.startsWith('data: ')) {
-          try {
-            const parsed = JSON.parse(trimmed.slice(6));
-            const delta = parsed.choices?.[0]?.delta?.content || '';
-            if (delta) {
-              if (!aiRow) {
-                removeTyping();
-                aiRow = addRow('ai'); addAv(aiRow, 'ai');
-                aiBub = addBubble(aiRow, 'ai', '');
-                scrollToTop(uRow);
-              }
-              fullText += delta;
-              aiBub.innerHTML = formatAIResponse(fullText);
-            }
-          } catch(e) {}
-        }
-      }
-    }
-
-    return fullText.trim() ? fullText : null;
-  }
-
-  let finalReply = null;
-
-  // Try keys & models in sequence
-  for (let i = 0; i < OR_KEYS.length; i++) {
-    for (let m = 0; m < OR_MODELS.length; m++) {
-      try {
-        finalReply = await tryORStream(OR_KEYS[i], i + 1, OR_MODELS[m]);
-        if (finalReply) break;
-      } catch(e) {
-        console.error(`[MindGains AI] Key #${i+1} model ${OR_MODELS[m]} stream exception:`, e.message);
-      }
-    }
-    if (finalReply) break;
-  }
-
-  removeTyping();
-  sendBtn.disabled = false;
-
-  if (finalReply) {
-    chatHistory.push({ role: 'assistant', content: finalReply });
-    if (aiBub) aiBub.innerHTML = formatAIResponse(finalReply);
-    scrollToTop(uRow);
-  } else {
-    chatHistory.pop(); // remove failed user message from history
-    console.error('[MindGains AI] All OpenRouter streaming keys failed.');
-    if (!aiRow) {
-      aiRow = addRow('ai'); addAv(aiRow,'ai');
-      addBubble(aiRow,'ai','<strong>AI is temporarily busy.</strong> Please try asking again in a moment.');
-    }
-    scrollToTop(uRow);
-  }
-}
-
-
-
-
-/* ═══ QUIZ ENGINE ═══ */
-const QUIZ_CATS = [
-  { id:'polity',   label:'Polity',       icon:'account_balance', color:'#a78bfa', exam:'upsc', file:'polity/fundamental-rights.json' },
-  { id:'history',  label:'History',      icon:'history_edu',     color:'#fb923c', exam:'upsc', file:'history/1857-revolt.json' },
-  { id:'economy',  label:'Economy',      icon:'trending_up',     color:'#34d399', exam:'upsc', file:'economics/national-income.json' },
-  { id:'geo',      label:'Geography',    icon:'public',          color:'#38bdf8', exam:'upsc', file:'geography/physical-india.json' },
-  { id:'science',  label:'Science',      icon:'science',         color:'#f59e0b', exam:'upsc', file:'science/biology.json' },
-  { id:'env',      label:'Environment',  icon:'eco',             color:'#7BE3B0', exam:'upsc', file:'environment/biodiversity.json' },
-];
-
-let quizQuestions = [], quizIdx = 0, quizScore = 0, quizStarted = false;
-
-function renderQuizPicker() {
-  const grid = document.getElementById('quiz-cat-grid');
-  grid.innerHTML = '';
-  QUIZ_CATS.forEach(cat => {
-    const btn = document.createElement('button');
-    btn.className = 'qcat-btn';
-    btn.innerHTML = `
-      <div class="qcat-icon" style="background:${cat.color}20;border:1px solid ${cat.color}40;">
-        <span class="material-symbols-outlined ms fill" style="color:${cat.color};">${cat.icon}</span>
-      </div>
-      <div><div class="qcat-name">${cat.label}</div><div class="qcat-sub">UPSC CSE Prelims</div></div>`;
-    btn.onclick = () => startQuiz(cat);
-    grid.appendChild(btn);
-  });
-}
-
-function shuffleArray(arr) {
-  const shuffled = [...arr];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
-}
-
-function triggerCorrectConfetti() {
-  try {
-    const canvas = document.createElement('canvas');
-    canvas.style.position = 'fixed';
-    canvas.style.inset = '0';
-    canvas.style.width = '100vw';
-    canvas.style.height = '100vh';
-    canvas.style.pointerEvents = 'none';
-    canvas.style.zIndex = '999999';
-    document.body.appendChild(canvas);
-
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    const particles = [];
-    const colors = ['#7BE3B0', '#38BDF8', '#A78BFA', '#F472B6', '#FACC15'];
-
-    for (let i = 0; i < 45; i++) {
-      particles.push({
-        x: canvas.width / 2 + (Math.random() - 0.5) * 200,
-        y: canvas.height * 0.42,
-        vx: (Math.random() - 0.5) * 14,
-        vy: (Math.random() - 0.8) * 13,
-        size: Math.random() * 8 + 4,
-        color: colors[Math.floor(Math.random() * colors.length)],
-        rotation: Math.random() * Math.PI * 2,
-        vRot: (Math.random() - 0.5) * 0.25,
-        opacity: 1
-      });
-    }
-
-    let frame = 0;
-    function anim() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      let alive = false;
-      particles.forEach(p => {
-        p.x += p.vx;
-        p.y += p.vy;
-        p.vy += 0.38;
-        p.opacity -= 0.022;
-        p.rotation += p.vRot;
-        if (p.opacity > 0) {
-          alive = true;
-          ctx.save();
-          ctx.translate(p.x, p.y);
-          ctx.rotate(p.rotation);
-          ctx.globalAlpha = Math.max(0, p.opacity);
-          ctx.fillStyle = p.color;
-          ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
-          ctx.restore();
-        }
-      });
-      if (alive && frame < 55) {
-        frame++;
-        requestAnimationFrame(anim);
-      } else {
-        canvas.remove();
-      }
-    }
-    requestAnimationFrame(anim);
-  } catch(e) {}
-}
-
-function formatExamQuestionText(questionText) {
-  if (!questionText) return '';
-  let raw = String(questionText).trim();
-
-  const statementPattern = /(?:Statement\s*\d+|Statement\s*[I|V|X]+|\b[1-9]\.|\(\d+\))/i;
-  if (!statementPattern.test(raw)) {
-    return `<div style="font-size:16px;line-height:1.65;font-weight:600;margin-bottom:16px;">${raw}</div>`;
-  }
-
-  let leadText = 'Consider the following statements:';
-  const leadMatch = raw.match(/^(Consider the following statements?:?|Which of the following statements is\/are correct\??|With reference to [^,]+, consider the following statements?:?)/i);
-  if (leadMatch) {
-    leadText = leadMatch[0];
-    raw = raw.slice(leadText.length).trim();
-  }
-
-  const statementRegex = /(?:Statement\s*\d+|Statement\s*[I|V|X]+|\b[1-9]\.|\(\d+\))/gi;
-  const matches = [...raw.matchAll(statementRegex)];
-  let statementsHtml = '';
-  let closingText = '';
-
-  if (matches.length > 0) {
-    for (let i = 0; i < matches.length; i++) {
-      const label = matches[i][0];
-      const startIdx = matches[i].index + label.length;
-      const endIdx = (i + 1 < matches.length) ? matches[i + 1].index : raw.length;
-      let stmtContent = raw.slice(startIdx, endIdx).trim();
-
-      if (i === matches.length - 1) {
-        const closingMatch = stmtContent.match(/(Which of the (?:statements|above)[^?]*\??)/i);
-        if (closingMatch) {
-          closingText = `<div style="font-weight:700;margin-top:18px;color:#FFFFFF;font-size:15px;line-height:1.5;">${closingMatch[0]}</div>`;
-          stmtContent = stmtContent.slice(0, closingMatch.index).trim();
-        }
-      }
-
-      statementsHtml += `
-        <div class="exam-stmt-row" style="display:flex;align-items:flex-start;gap:14px;margin:12px 0;padding:14px 18px;background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.1);border-radius:14px;border-left:4px solid #7BE3B0;box-shadow:0 4px 16px rgba(0,0,0,0.2);">
-          <span style="font-family:'Poppins',sans-serif;font-weight:700;font-size:12px;color:#7BE3B0;background:rgba(123,227,176,0.14);padding:4px 10px;border-radius:7px;white-space:nowrap;letter-spacing:0.4px;">${label}</span>
-          <span style="font-size:15px;color:rgba(255,255,255,0.95);line-height:1.65;flex:1;">${stmtContent}</span>
-        </div>`;
-    }
-  } else {
-    statementsHtml = `<div style="font-size:15.5px;line-height:1.65;">${raw}</div>`;
-  }
-
-  if (!closingText && !raw.toLowerCase().includes('which of the')) {
-    closingText = '<div style="font-weight:700;margin-top:18px;color:#FFFFFF;font-size:15px;">Which of the statements given above is/are correct?</div>';
-  }
-
-  return `
-    <div style="font-weight:700;color:#7BE3B0;font-size:15px;margin-bottom:14px;letter-spacing:0.2px;">${leadText}</div>
-    <div style="display:flex;flex-direction:column;gap:6px;margin:14px 0;">${statementsHtml}</div>
-    ${closingText}`;
-}
-
-async function startQuiz(cat) {
-  quizStarted = true;
-  document.getElementById('quiz-picker').style.display = 'none';
-  const body = document.getElementById('quiz-body');
-  body.style.display = 'flex';
-
-  try {
-    const res = await fetch(`assets/quiz-data/${cat.exam}/${cat.file}`);
-    const data = await res.json();
-    const rawList = (data.questions || data || []);
-    quizQuestions = shuffleArray(rawList).slice(0, 10);
-  } catch {
-    quizQuestions = shuffleArray([
-      { question: `Consider the following statements:\nStatement 1 The President of India is the head of the executive.\nStatement 2 The President is elected by an electoral college consisting of the elected members of both the Houses of Parliament and the elected members of the Legislative Assemblies of the States.\nStatement 3 The Council of Ministers is headed by the Prime Minister.`, options:['1 and 2 only','2 and 3 only','1, 2 and 3','1 and 3 only'], answer_index:2, explanation:'All three statements are correct under Articles 52, 54, and 74 of the Indian Constitution.' },
-      { question: `Which Article of the Indian Constitution guarantees the Right to Education?`, options:['Article 19','Article 21','Article 21A','Article 30'], answer_index:2, explanation:'Article 21A, inserted by the 86th Amendment Act 2002, makes Right to Education a fundamental right for children aged 6-14 years.' },
-      { question: `Who was the Governor-General of India during the revolt of 1857?`, options:['Lord Dalhousie','Lord Canning','Lord Rippon','Lord Curzon'], answer_index:1, explanation:'Lord Canning was the Governor-General (and the first Viceroy) during the revolt of 1857.' }
-    ]);
-  }
-
-  quizIdx = 0; quizScore = 0;
-  renderQuestion();
-}
-
-function renderQuestion() {
-  if (quizIdx >= quizQuestions.length) { showQuizResult(); return; }
-  const q = quizQuestions[quizIdx];
-  const total = quizQuestions.length;
-  const pct = ((quizIdx + 1) / total) * 100;
-  document.getElementById('q-progress-bar').style.width = pct + '%';
-  document.getElementById('q-counter').textContent = `Question ${quizIdx + 1}`;
-  document.getElementById('q-text').innerHTML = formatExamQuestionText(q.question || q.q || '');
-  document.getElementById('quiz-score').textContent = `Score: ${quizScore}`;
-  document.getElementById('q-expl').style.display = 'none';
-  document.getElementById('next-btn').style.display = 'none';
-
-  const opts = document.getElementById('q-opts');
-  opts.innerHTML = '';
-  const options = q.options || ['Option A','Option B','Option C','Option D'];
-  options.forEach((opt, i) => {
-    const letter = String.fromCharCode(65 + i);
-    const btn = document.createElement('button');
-    btn.className = 'q-opt';
-    btn.innerHTML = `<span style="display:flex;align-items:center;gap:10px;"><strong style="color:var(--accent);font-size:13px;font-weight:700;">(${letter})</strong> <span>${opt}</span></span>`;
-    btn.onclick = () => selectOpt(i, q);
-    opts.appendChild(btn);
-  });
-}
-
-function selectOpt(chosen, q) {
-  const correct = q.answer_index ?? 0;
-  document.querySelectorAll('.q-opt').forEach((b,i) => {
-    b.classList.add('locked');
-    if (i === correct) {
-      b.classList.add('correct');
-      b.innerHTML += ' <span class="material-symbols-outlined ms fill" style="color:#7BE3B0;font-size:18px;">check_circle</span>';
-    } else if (i === chosen && chosen !== correct) {
-      b.classList.add('wrong');
-      b.innerHTML += ' <span class="material-symbols-outlined ms fill" style="color:#f87171;font-size:18px;">cancel</span>';
-    }
-  });
-  if (chosen === correct) {
-    quizScore++;
-    triggerCorrectConfetti();
-  }
-  document.getElementById('quiz-score').textContent = `Score: ${quizScore}`;
-  if (q.explanation) {
-    const ex = document.getElementById('q-expl');
-    ex.innerHTML = `
-      <div style="font-size:10.5px;font-weight:700;letter-spacing:.06em;color:var(--accent);margin-bottom:6px;display:flex;align-items:center;gap:5px;">
-        <span class="material-symbols-outlined ms" style="font-size:14px;">verified</span> SCERT & NCERT TEXTBOOK EXPLANATION
-      </div>
-      <div>${q.explanation}</div>`;
-    ex.style.display = 'block';
-  }
-  const nextBtn = document.getElementById('next-btn');
-  nextBtn.style.display = 'inline-flex';
-
-  // Auto-scroll explanation and next button smoothly into view so user doesn't need to manual scroll!
-  setTimeout(() => {
-    const ex = document.getElementById('q-expl');
-    const target = (ex && ex.style.display !== 'none') ? ex : nextBtn;
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-  }, 70);
-}
-
-function nextQuestion() {
-  quizIdx++;
-  renderQuestion();
-}
-
-function showQuizResult() {
-  const body = document.getElementById('quiz-body');
-  const total = quizQuestions.length;
-  const pct = Math.round((quizScore / total) * 100);
-  body.innerHTML = `
-    <div style="text-align:center;padding:36px 24px;">
-      <div style="font-size:52px;margin-bottom:16px;">${quizScore >= total*0.7 ? '🎉' : quizScore >= total*0.4 ? '💪' : '📚'}</div>
-      <div style="font-size:26px;font-weight:800;color:#fff;margin-bottom:6px;">${quizScore} / ${total} Correct (${pct}%)</div>
-      <div style="font-size:14px;color:rgba(255,255,255,.55);max-width:440px;margin:0 auto 28px;line-height:1.6;">
-        ${quizScore >= total*0.7 ? 'Outstanding accuracy! You have strong mastery of this textbook dimension.' : quizScore >= total*0.4 ? 'Good effort! Review the textbook explanations and try again.' : 'Keep practicing — textbook repetition leads to perfection.'}
-      </div>
-      <button class="btn-primary" onclick="resetQuiz()" style="font-size:13.5px;padding:11px 28px;">
-        <span class="material-symbols-outlined ms fill">replay</span>Try Another Topic
-      </button>
-    </div>`;
-}
-
-function resetQuiz() {
-  quizStarted = false;
-  document.getElementById('quiz-body').style.display = 'none';
-  document.getElementById('quiz-body').innerHTML = `
-    <div class="q-progress"><div class="q-progress-bar" id="q-progress-bar" style="width:0%"></div></div>
-    <div class="q-text" id="q-text"></div>
-    <div class="q-opts" id="q-opts"></div>
-    <div class="q-expl" id="q-expl"></div>
-    <div class="quiz-footer">
-      <div class="quiz-score" id="quiz-score">Score: 0</div>
-      <button id="next-btn" onclick="nextQuestion()">Next →</button>
-    </div>`;
-  document.getElementById('quiz-picker').style.display = 'block';
-  renderQuizPicker();
-}
-
-/* ═══ REAL-TIME LIQUID WAVE ANIMATION ENGINE ═══ */
-(function initLiquidCanvas() {
-  const canvas = document.getElementById('chat-liquid-canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let w = 0, h = 0, t = 0;
-
-  function resize() {
-    w = canvas.width = canvas.offsetWidth || 1140;
-    h = canvas.height = canvas.offsetHeight || 95;
-  }
-  window.addEventListener('resize', resize);
-  resize();
-
-  function draw() {
-    ctx.clearRect(0, 0, w, h);
-    t += 0.014;
-
-    // Liquid Fluid Wave 1 (Emerald -> Cyan -> Violet -> Rose)
-    const g1 = ctx.createLinearGradient(0, 0, w, 0);
-    g1.addColorStop(0, 'rgba(123, 227, 176, 0.75)');
-    g1.addColorStop(0.35, 'rgba(56, 189, 248, 0.7)');
-    g1.addColorStop(0.7, 'rgba(167, 139, 250, 0.65)');
-    g1.addColorStop(1, 'rgba(244, 114, 182, 0.7)');
-
-    ctx.beginPath();
-    ctx.moveTo(0, 0);
-    for (let x = 0; x <= w; x += 6) {
-      const y = Math.sin(x * 0.008 + t) * 20 + Math.cos(x * 0.015 - t * 0.85) * 14 + 38;
-      ctx.lineTo(x, y);
-    }
-    ctx.lineTo(w, 0);
-    ctx.closePath();
-    ctx.fillStyle = g1;
-    ctx.fill();
-
-    // Liquid Fluid Wave 2 (Reverse Offset Wave)
-    const g2 = ctx.createLinearGradient(w, 0, 0, 0);
-    g2.addColorStop(0, 'rgba(244, 114, 182, 0.6)');
-    g2.addColorStop(0.35, 'rgba(167, 139, 250, 0.65)');
-    g2.addColorStop(0.7, 'rgba(56, 189, 248, 0.6)');
-    g2.addColorStop(1, 'rgba(123, 227, 176, 0.65)');
-
-    ctx.beginPath();
-    ctx.moveTo(0, 0);
-    for (let x = 0; x <= w; x += 6) {
-      const y = Math.cos(x * 0.01 + t * 1.25) * 22 + Math.sin(x * 0.0055 - t * 1.05) * 16 + 30;
-      ctx.lineTo(x, y);
-    }
-    ctx.lineTo(w, 0);
-    ctx.closePath();
-    ctx.fillStyle = g2;
-    ctx.fill();
-
-    requestAnimationFrame(draw);
-  }
-  draw();
-})();
-</script>
+  </script>
 </body>
 </html>
