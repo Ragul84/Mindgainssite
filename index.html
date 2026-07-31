@@ -80,7 +80,7 @@
     .btn-outline:hover { border-color:rgba(255,255,255,.32); color:#fff; }
 
     /* === NAV === */
-    nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:12px clamp(16px, 4vw, 36px); background:rgba(10,10,10,.85); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px); border-bottom:1px solid rgba(255,255,255,.07); }
+    nav { position:fixed; top:0; left:0; right:0; z-index:10000; display:flex; align-items:center; justify-content:space-between; padding:12px clamp(16px, 4vw, 36px); background:rgba(10,10,10,.85); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px); border-bottom:1px solid rgba(255,255,255,.07); }
     .nav-logo { display:flex; align-items:center; gap:9px; text-decoration:none; color:#fff; flex-shrink:0; }
     .logo-mark { width:32px; height:32px; border-radius:10px; background:linear-gradient(135deg,#7BE3B0,#38bdf8); display:flex; align-items:center; justify-content:center; }
     .logo-mark .ms { font-size:17px; color:#000; font-variation-settings:'FILL' 1,'wght' 500,'GRAD' 0,'opsz' 24; }
@@ -537,23 +537,23 @@
     }
     #auth-modal > div { position:relative; }
 
-    /* === TOP FLOATING TOAST NOTIFICATION (PROFESSIONAL MOBILE & DESKTOP CARD) === */
+    /* === TOP FLOATING TOAST NOTIFICATION (SAFELY FLOATS BELOW FIXED NAV HEADER) === */
     #toast-notification {
       position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 999;
-      width: clamp(300px, 92vw, 420px);
-      background: rgba(14, 18, 26, 0.94);
+      top: 76px;
+      right: 24px;
+      z-index: 9000;
+      width: auto;
+      background: rgba(14, 18, 26, 0.96);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
-      border: 1px solid rgba(123, 227, 176, 0.32);
-      border-radius: 16px;
-      padding: 12px 16px;
+      border: 1px solid rgba(123, 227, 176, 0.35);
+      border-radius: 999px;
+      padding: 8px 18px;
       display: flex;
       align-items: center;
-      gap: 12px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 25px rgba(123, 227, 176, 0.18);
+      gap: 8px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(123, 227, 176, 0.2);
       transform: translateY(-24px) scale(0.96);
       opacity: 0;
       pointer-events: none;
@@ -738,17 +738,18 @@
         width: calc(100% - 24px) !important;
       }
 
-      /* ── TOAST NOTIFICATION MOBILE ── */
+      /* ── TOAST NOTIFICATION MOBILE (FLOATS SAFELY BELOW MOBILE NAV HEADER) ── */
       #toast-notification {
-        top: 14px !important;
-        left: 14px !important;
-        right: 14px !important;
+        top: 68px !important;
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%) translateY(-16px) scale(0.96) !important;
         width: auto !important;
-        max-width: calc(100% - 28px) !important;
-        transform: translateY(-20px) scale(0.96);
+        max-width: 90vw !important;
+        z-index: 9000 !important;
       }
       #toast-notification.show {
-        transform: translateY(0) scale(1) !important;
+        transform: translateX(-50%) translateY(0) scale(1) !important;
       }
 
       /* ── CHAT TOPBAR ── */
@@ -1422,35 +1423,21 @@ window.updateAuthAccessUI = function() {
   }
 };
 
-window.showAuthToast = function(name, email) {
+window.showAuthToast = function() {
   let toast = document.getElementById('toast-notification');
   if (!toast) {
     toast = document.createElement('div');
     toast.id = 'toast-notification';
     document.body.appendChild(toast);
   }
-  const firstName = (name || email || 'Learner').split(' ')[0];
   toast.innerHTML = `
-    <div style="width:34px;height:34px;border-radius:10px;background:rgba(123,227,176,0.15);border:1px solid rgba(123,227,176,0.35);display:flex;align-items:center;justify-content:center;color:#7BE3B0;flex-shrink:0;">
-      <span class="material-symbols-outlined ms" style="font-size:20px;">check_circle</span>
-    </div>
-    <div style="display:flex;flex-direction:column;min-width:0;flex:1;">
-      <div style="font-size:13px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:8px;">
-        <span>Signed In Successfully</span>
-        <span style="font-size:10px;font-weight:600;padding:2px 8px;border-radius:99px;background:rgba(123,227,176,0.15);color:#7BE3B0;border:1px solid rgba(123,227,176,0.3);">Verified</span>
-      </div>
-      <div style="font-size:12px;color:rgba(255,255,255,0.72);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
-        Welcome, <strong style="color:#fff;">${firstName}</strong> · 10 free daily web AI messages active
-      </div>
-    </div>
-    <button onclick="document.getElementById('toast-notification').classList.remove('show')" style="background:transparent;border:none;color:rgba(255,255,255,0.4);cursor:pointer;padding:4px;display:flex;align-items:center;margin-left:auto;" aria-label="Close">
-      <span class="material-symbols-outlined ms" style="font-size:16px;">close</span>
-    </button>
+    <span class="material-symbols-outlined ms" style="font-size:18px;color:#7BE3B0;">check_circle</span>
+    <span style="font-size:13px;font-weight:700;color:#fff;white-space:nowrap;">Signed In Successfully</span>
   `;
   toast.classList.add('show');
   setTimeout(() => {
     toast.classList.remove('show');
-  }, 4500);
+  }, 2600);
 };
 
 window.__mgUser = null;
