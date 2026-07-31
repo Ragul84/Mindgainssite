@@ -136,6 +136,49 @@ body.menu-open .site-nav-backdrop { opacity: 1; pointer-events: auto; }
     border-color: rgba(255,255,255,0.10) !important;
   }
 
+  nav#site-nav .nav-right #user-info {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    padding: 10px 14px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 14px !important;
+    width: 100% !important;
+    margin-top: 4px !important;
+  }
+  nav#site-nav .nav-right #user-info img {
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 50% !important;
+    border: 1px solid var(--accent) !important;
+    margin: 0 !important;
+  }
+  nav#site-nav .nav-right #user-info span {
+    font-size: 13.5px !important;
+    font-weight: 700 !important;
+    color: #fff !important;
+    flex: 1 !important;
+    text-align: left !important;
+    margin-left: 8px !important;
+  }
+  nav#site-nav .nav-right #user-info button {
+    width: auto !important;
+    display: inline-flex !important;
+    padding: 6px 12px !important;
+    font-size: 11px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 8px !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    cursor: pointer !important;
+    text-transform: uppercase !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.05em !important;
+  }
+
   /* ── FOOTER — Apple minimal ── */
   footer {
     margin: 0 !important;
@@ -197,6 +240,7 @@ body.menu-open .site-nav-backdrop { opacity: 1; pointer-events: auto; }
 
   /* ── QUIZ HUB ── */
   main {
+    margin-top: 56px !important;
     padding: 16px 14px 80px !important;
     width: 100% !important;
     max-width: 100% !important;

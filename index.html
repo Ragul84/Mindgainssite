@@ -784,9 +784,9 @@
 
       /* ── CHAT PANEL: full-width & immersive height ── */
       .chat-panel {
-        height: calc(100svh - 120px) !important;
-        min-height: 520px !important;
-        max-height: 720px !important;
+        height: 520px !important;
+        min-height: auto !important;
+        max-height: 75vh !important;
         border-radius: 18px !important;
         margin: 0 12px !important;
         width: calc(100% - 24px) !important;
@@ -822,8 +822,27 @@
       }
 
       .msg-row.user-row {
-        max-width: 90% !important;
+        max-width: 92% !important;
       }
+
+      .bubble {
+        max-width: 94% !important;
+        padding: 10px 14px !important;
+        font-size: 13.5px !important;
+        line-height: 1.5 !important;
+      }
+
+      .sug-row {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        gap: 8px !important;
+        padding-bottom: 6px !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+        width: 100% !important;
+      }
+      .sug-row::-webkit-scrollbar { display: none !important; }
 
       /* ── EMPTY STATE / PROMPT CARDS ── */
       .empty-state {
