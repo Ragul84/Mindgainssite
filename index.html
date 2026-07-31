@@ -124,6 +124,15 @@
     .btn-3d-violet:hover { background: #D996FF; }
     .btn-3d-violet:active { transform: translateY(2px); border-bottom-width: 2px; box-shadow: 0 2px 0 #8928CF; }
 
+    .btn-3d-gold {
+      background: var(--duo-gold);
+      color: #4B2B00;
+      border-bottom: 4px solid #E69D00;
+      box-shadow: 0 4px 0 #CC8B00;
+    }
+    .btn-3d-gold:hover { background: #FFD426; }
+    .btn-3d-gold:active { transform: translateY(2px); border-bottom-width: 2px; box-shadow: 0 2px 0 #CC8B00; }
+
     /* === CLEAN NAVIGATION HEADER (NO STREAK/XP BS) === */
     nav {
       position: fixed;
@@ -246,20 +255,54 @@
     .empty-state { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center; margin: auto 0; }
     .empty-title { font-size: 20px; font-weight: 800; margin-bottom: 20px; color: #fff; }
     .empty-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 780px; width: 100%; }
-    .prompt-card { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 16px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); text-align: left; cursor: pointer; transition: all 0.18s; color: inherit; font-family: 'Inter', sans-serif; }
-    .prompt-card:hover { background: rgba(255,255,255,0.07); border-color: var(--duo-blue); transform: translateY(-2px); }
-    .prompt-card-text strong { display: block; font-size: 12.5px; color: #fff; font-weight: 700; }
-    .prompt-card-text span { display: block; font-size: 11px; color: rgba(255,255,255,0.5); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .prompt-card {
+      display: flex; align-items: center; gap: 12px; padding: 14px 16px;
+      border-radius: 18px; background: rgba(255,255,255,0.04);
+      border: 2px solid rgba(255,255,255,0.1);
+      border-bottom: 4px solid var(--duo-blue-dark);
+      text-align: left; cursor: pointer; transition: all 0.1s ease;
+      color: inherit; font-family: 'Inter', sans-serif;
+      box-shadow: 0 4px 0 var(--duo-blue-shadow);
+    }
+    .prompt-card:hover {
+      background: rgba(28,176,246,0.12);
+      border-color: var(--duo-blue);
+    }
+    .prompt-card:active {
+      transform: translateY(2px);
+      border-bottom-width: 2px;
+      box-shadow: 0 2px 0 var(--duo-blue-shadow);
+    }
+    .prompt-card-icon {
+      font-size: 20px; width: 38px; height: 38px;
+      border-radius: 12px; background: rgba(28,176,246,0.15);
+      border: 1px solid var(--duo-blue); display: flex;
+      align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .prompt-card-text strong { display: block; font-size: 13px; color: #fff; font-weight: 800; }
+    .prompt-card-text span { display: block; font-size: 11px; color: rgba(255,255,255,0.55); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-    .msg-row { display: flex; align-items: flex-start; gap: 10px; width: 100%; }
+    .msg-row { display: flex; align-items: flex-start; gap: 12px; width: 100%; }
     .msg-row.user-row { flex-direction: row-reverse; margin-left: auto; max-width: 86%; }
-    .av { width: 32px; height: 32px; border-radius: 10px; flex-shrink: 0; overflow: hidden; }
-    .av.ai img { width: 32px; height: 32px; border-radius: 10px; object-fit: cover; border: 1px solid var(--duo-blue); }
-    .av.user img { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
+    .av { width: 36px; height: 36px; border-radius: 12px; flex-shrink: 0; overflow: hidden; }
+    .av.ai img { width: 36px; height: 36px; border-radius: 12px; object-fit: cover; border: 2px solid var(--duo-blue); box-shadow: 0 4px 12px rgba(28,176,246,0.3); }
+    .av.user img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; }
 
-    .bubble { max-width: 88%; padding: 12px 16px; font-size: 14px; line-height: 1.58; }
-    .ai-bub { background: rgba(18, 24, 36, 0.94); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px 18px 18px 18px; color: rgba(255,255,255,0.94); }
-    .user-bub { background: rgba(28, 176, 246, 0.16); border: 2px solid var(--duo-blue); border-radius: 18px 4px 18px 18px; color: #FFFFFF; }
+    .bubble { max-width: 88%; padding: 14px 18px; font-size: 14px; line-height: 1.6; font-family: 'Inter', sans-serif; }
+    .ai-bub {
+      background: rgba(18, 24, 36, 0.96);
+      border: 2px solid var(--duo-blue);
+      border-radius: 6px 20px 20px 20px;
+      color: rgba(255,255,255,0.95);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    }
+    .user-bub {
+      background: rgba(28, 176, 246, 0.2);
+      border: 2px solid var(--duo-blue);
+      border-radius: 20px 6px 20px 20px;
+      color: #FFFFFF; font-weight: 600;
+      box-shadow: 0 4px 16px rgba(28,176,246,0.25);
+    }
 
     .cinput-wrap { padding: 12px 20px; background: rgba(10, 12, 18, 0.96); border-top: 1px solid rgba(255, 255, 255, 0.08); }
     .cinput-row { display: flex; align-items: center; gap: 10px; background: rgba(255, 255, 255, 0.05); border: 2px solid var(--duo-blue); border-radius: 999px; padding: 6px 8px 6px 16px; }
@@ -419,31 +462,37 @@
         <!-- Thread (chat mode) -->
         <div id="thread">
           <div class="empty-state" id="empty-state">
-            <h3 class="empty-title">What are you studying today?</h3>
+            <div style="display:flex;align-items:center;gap:14px;background:rgba(22,28,42,0.96);border:2px solid var(--duo-blue);border-radius:22px;padding:16px 20px;max-width:540px;width:100%;margin-bottom:24px;text-align:left;box-shadow:0 10px 30px rgba(0,0,0,0.6);">
+              <img src="assets/icons/ai-avatar.png" alt="Blue Fox Mascot" style="width:52px;height:52px;border-radius:15px;object-fit:cover;border:2px solid var(--duo-blue);flex-shrink:0;" />
+              <div style="font-size:13.5px;font-weight:800;color:#fff;line-height:1.5;">
+                👋 "What topic are we mastering today? Pick a starter card below or ask any question from SCERT Samacheer & NCERT!"
+              </div>
+            </div>
+
             <div class="empty-grid">
               <button class="prompt-card" id="pcard-1" onclick="pastePrompt(1)">
-                <span style="font-size:18px;">📖</span>
+                <span class="prompt-card-icon">📖</span>
                 <div class="prompt-card-text">
                   <strong>Explain a Topic</strong>
                   <span class="type-target" id="ptype-1">Directive Principles of State Policy</span>
                 </div>
               </button>
               <button class="prompt-card" id="pcard-2" onclick="pastePrompt(2)">
-                <span style="font-size:18px;">📝</span>
+                <span class="prompt-card-icon">📝</span>
                 <div class="prompt-card-text">
                   <strong>Previous Year Questions</strong>
                   <span class="type-target" id="ptype-2">TNPSC Group 1 Indian Polity PYQs</span>
                 </div>
               </button>
               <button class="prompt-card" id="pcard-3" onclick="pastePrompt(3)">
-                <span style="font-size:18px;">🧠</span>
+                <span class="prompt-card-icon">🧠</span>
                 <div class="prompt-card-text">
                   <strong>Generate Quiz</strong>
                   <span class="type-target" id="ptype-3">20 MCQs on Indian Constitution</span>
                 </div>
               </button>
               <button class="prompt-card" id="pcard-4" onclick="pastePrompt(4)">
-                <span style="font-size:18px;">📚</span>
+                <span class="prompt-card-icon">📚</span>
                 <div class="prompt-card-text">
                   <strong>Chapter Summary</strong>
                   <span class="type-target" id="ptype-4">Samacheer Kalvi Class 10 Science Chapter 8</span>
