@@ -2170,8 +2170,9 @@ function pastePrompt(cardId) {
 }
 
 function scrollToTop(row) {
-  if (!row) return;
-  row.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  if (!row || !thread) return;
+  const topPos = Math.max(0, row.offsetTop - 12);
+  thread.scrollTo({ top: topPos, behavior: 'smooth' });
 }
 
 function setAiBubHtml(bub, text) {
