@@ -33,6 +33,10 @@
 
   <!-- Supabase Auth SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- KaTeX Math Rendering SDK -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
   <script>
     const SUPABASE_AUTH_URL = 'https://yuntwerxahgmaoduxvqc.supabase.co';
     const SUPABASE_AUTH_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl1bnR3ZXJ4YWhnbWFvZHV4dnFjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU3OTk4OTMsImV4cCI6MjA3MTM3NTg5M30.1mFUH9yp55uxN8n9tyRHLFbve36_kpaJs41nPU85S74';
@@ -422,11 +426,33 @@ if (inputEl) {
   inputEl.addEventListener('keydown', e => { if (e.key==='Enter') sendMsg(); });
 }
 
-const EXAM_SYSTEM = `You are a warm, brilliant tutor and study buddy for Indian exam aspirants (UPSC, TNPSC, SSC, banking, state PSCs).
+const EXAM_SYSTEM = `You are MIGA, a warm, brilliant tutor and study buddy for Indian exam aspirants (UPSC, TNPSC, SSC, banking, state PSCs).
+
+MINDGAINS BRAND MEMORY:
+- MindGains is the AI learning platform used by students inside the MindGains app and public website.
+- The company behind it is MindGains Labs Private Limited.
+- Founder: Ragul Arvind.
+- Core public product areas include Daily Dose, Study Lab, MIGA, Quiz Hub, Editorial, and Know Your India.
+- If asked about MindGains, the app, the company, or the founder, answer from this memory block. If a detail is not present here, do not invent it.
 
 SOURCE VERIFICATION POLICY:
 - Ground answers strictly in SCERT Samacheer Kalvi and NCERT textbooks, citing chapter, class, or syllabus unit.
-- Provide clear definitions, key points, simple examples, and bold mark-bearing terms, Articles, Acts, committees, and years.`;
+- When explaining concepts or syllabus topics, provide the exact source path as a single-line horizontal breadcrumb at the very end of your response:
+  📚 **Source:** [Board & Class] › [Subject / Book] › [Chapter] › [Section/Page]
+  (Example: 📚 **Source:** SCERT Samacheer Class 10 › Science › Ch 4: Electricity › §4.4 Joule's Law)
+- Provide clear definitions, key points, simple examples, and bold mark-bearing terms, Articles, Acts, committees, and years.
+
+STEP-BY-STEP MATH & PHYSICS WHITEBOARD POLICY:
+- For mathematical, physics, or numerical problem-solving, structure your answer into clean, high-yield whiteboard steps:
+  ### 📐 Step 1: Given Data & Known Variables
+  ### 🧮 Step 2: Formula & Equation
+  ### ⚡ Step 3: Step-by-Step Calculation & Substitution
+  ### 🎯 Final Answer & SI Units
+- MATH FORMULAS & LATEX RULES:
+  * ALWAYS use LaTeX formatting for all mathematical expressions, equations, variables, and formulas.
+  * Use inline delimiters $ ... $ for inline math (e.g. $E = mc^2$ or $x$) and $$ ... $$ for block/centered math.
+  * For fractions and division operations, ALWAYS use LaTeX fraction notation: \\frac{numerator}{denominator} (e.g. \\frac{GM}{r^2} or \\frac{n}{d}) rather than raw division symbols like n/d or numerator/denominator, so they render with a beautiful stacked numerator over denominator.
+  * Never leave math symbols as unformatted text (like $/- or raw * or ^). Use proper LaTeX.`;
 
 let chatHistory = [];
 
@@ -481,9 +507,42 @@ function scrollToTop(row) {
   thread.scrollTo({ top: topPos, behavior: 'smooth' });
 }
 
+function setAiBubHtml(bub, text) {
+  if (!bub) return;
+  bub.innerHTML = formatAIResponse(text);
+  if (window.renderMathInElement) {
+    try {
+      window.renderMathInElement(bub, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false},
+          {left: '\\(', right: '\\)', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ],
+        throwOnError: false
+      });
+    } catch(e) {
+      console.error('[KaTeX Error]', e);
+    }
+  }
+}
+
 function formatAIResponse(rawText) {
   if (!rawText) return '';
   let text = rawText.replace(/INTERACTIVE\s+PYQ\s+PRACTICE/gi, '');
+
+  // Beautiful Horizontal Breadcrumb Source pill
+  text = text.replace(/([📚\s]*\*\*Source:\*\*\s*|\bSource:\s*)(.*?)(?=\n|<br>|<div|$)/gi, function(match, label, path) {
+    const parts = path.split(/[›>]/).map(p => p.trim()).filter(Boolean);
+    if (parts.length === 0) return match;
+    const pillsHtml = parts.map(part => `<span style="font-size:11.5px; font-weight:600; color:#fff; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); padding:4px 10px; border-radius:8px; white-space:nowrap;">${part}</span>`).join('<span style="color:rgba(255,255,255,0.3); font-size:14px; font-weight:bold; display:inline-flex; align-items:center;">&rsaquo;</span>');
+    return `<div class="source-breadcrumb" style="display:flex; flex-wrap:wrap; align-items:center; gap:6px 8px; background:rgba(123,227,176,0.05); border:1px solid rgba(123,227,176,0.15); border-radius:12px; padding:10px 14px; margin:14px 0 6px;">
+      <span style="font-size:11px; font-weight:800; color:var(--duo-blue); display:inline-flex; align-items:center; gap:4px; text-transform:uppercase; letter-spacing:0.05em; margin-right:4px;">
+        <span class="material-symbols-outlined ms" style="font-size:14px; color:var(--duo-blue);">menu_book</span> Textbook Source
+      </span>
+      ${pillsHtml}
+    </div>`;
+  });
   text = text.replace(/```([\s\S]*?)```/g, '<pre style="background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:12px;font-family:monospace;font-size:12px;color:var(--duo-blue);overflow-x:auto;margin:10px 0;"><code>$1</code></pre>');
   text = text.replace(/^### (.*$)/gim, '<h4 style="font-size:14px;font-weight:800;color:var(--duo-blue);margin:12px 0 5px;">$1</h4>');
   text = text.replace(/^## (.*$)/gim, '<h3 style="font-size:15.5px;font-weight:800;color:#fff;margin:14px 0 6px;">$1</h3>');
@@ -603,7 +662,7 @@ async function sendMsg(override) {
                 scrollToTop(uRow);
               }
               fullText += delta;
-              aiBub.innerHTML = formatAIResponse(fullText);
+              setAiBubHtml(aiBub, fullText);
             }
           } catch(e) {}
         }
@@ -624,7 +683,7 @@ async function sendMsg(override) {
   sendBtn.disabled = false;
   if (finalReply) {
     chatHistory.push({ role: 'assistant', content: finalReply });
-    if (aiBub) aiBub.innerHTML = formatAIResponse(finalReply);
+    if (aiBub) setAiBubHtml(aiBub, finalReply);
     scrollToTop(uRow);
   } else {
     chatHistory.pop();

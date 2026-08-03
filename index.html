@@ -619,6 +619,41 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    /* === MIGA QUICK-TAP ACTION CHIPS (PRELIMS VS MAINS TOGGLE) === */
+    .miga-action-chips {
+      margin-top: 14px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .miga-chip-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 999px;
+      padding: 6px 14px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 12px;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .miga-chip-btn:hover {
+      background: rgba(123, 227, 176, 0.12);
+      border-color: rgba(123, 227, 176, 0.35);
+      color: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(123, 227, 176, 0.18);
+    }
+      justify-content: center;
       transition: all 0.2s;
     }
     .auth-close:hover {
@@ -971,11 +1006,34 @@
       .stat-sub { display: none !important; }
       .stat-label { font-size: 10.5px !important; }
       .hero-btns .btn-primary, .hero-btns .btn-outline { font-size: 12px !important; height: 38px !important; padding: 0 10px !important; }
+      .hero-lottie-badge {
+        position: absolute;
+        top: -38px;
+        right: -38px;
+        pointer-events: none;
+        z-index: 100;
+        width: 56px;
+        height: 56px;
+      }
+      @media (max-width: 768px) {
+        .hero-lottie-badge {
+          top: -24px;
+          right: -24px;
+          width: 38px;
+          height: 38px;
+        }
+      }
     }
   </style>
 
   <!-- Supabase Auth SDK (Real Google Sign-In) -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- Lottie Player Component SDK -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <!-- KaTeX Math Rendering SDK -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
   <script>
     const SUPABASE_AUTH_URL = 'https://yuntwerxahgmaoduxvqc.supabase.co';
     const SUPABASE_AUTH_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl1bnR3ZXJ4YWhnbWFvZHV4dnFjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU3OTk4OTMsImV4cCI6MjA3MTM3NTg5M30.1mFUH9yp55uxN8n9tyRHLFbve36_kpaJs41nPU85S74';
@@ -1208,7 +1266,11 @@
   <!-- Center Content -->
   <div style="position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; max-width: 1000px; margin-top: -80px; width: 100%; padding: 0 20px;">
     <h1 class="font-instrument text-glow" style="color: #fff; font-size: clamp(34px, 5.5vw, 100px); line-height: 0.95; font-weight: 400; letter-spacing: -0.03em; max-width: 900px; font-style: italic;">
-      The AI Built<br><span style="font-family: 'Inter', sans-serif; font-weight: 900; font-style: normal; text-transform: uppercase; font-size: 0.85em; letter-spacing: -0.04em;">for Indian Exams.</span>
+      The AI Built<br><span style="font-family: 'Inter', sans-serif; font-weight: 900; font-style: normal; text-transform: uppercase; font-size: 0.85em; letter-spacing: -0.04em; position: relative; display: inline-block;">for Indian Exams.
+        <span class="hero-lottie-badge">
+          <lottie-player src="/assets/lotties/dailydose.json" background="transparent" speed="1" loop autoplay></lottie-player>
+        </span>
+      </span>
     </h1>
     <p class="sub" style="font-size: clamp(13.5px, 1.8vw, 16px); color: rgba(255,255,255,0.7); max-width: 640px; line-height: 1.6; margin-top: 24px; font-family: 'Inter', sans-serif;">
       Grounded in your textbooks, aligned with your curriculum, enhanced by previous-year question intelligence.
@@ -1361,6 +1423,61 @@
 </div>
 </section>
 
+<!-- COMPARISON SECTION: Generic AI vs MindGains AI -->
+<section class="section" id="comparison" style="padding: 64px 20px; background: #070B12; border-top: 1px solid rgba(255,255,255,0.06);">
+  <div style="max-width: 1040px; margin: 0 auto;">
+    <div class="sh" style="text-align: center; margin-bottom: 40px;">
+      <span class="pill" style="color: #7BE3B0; background: rgba(123,227,176,0.1); border: 1px solid rgba(123,227,176,0.25);">EMPIRICAL EXAM BENCHMARK</span>
+      <h2 style="font-size: clamp(26px, 4vw, 42px); color: #fff; margin-top: 12px;">Generic AI vs. MindGains AI</h2>
+      <p style="color: rgba(255,255,255,0.6); max-width: 620px; margin: 10px auto 0; font-size: 14.5px;">
+        Generic AI talks broadly. MindGains AI explains the exact way your exam expects, backed by real textbook sources and PYQ frequency intelligence.
+      </p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; align-items: stretch;">
+      <!-- Generic AI Card -->
+      <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 24px; display: flex; flex-direction: column;">
+        <div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 16px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span class="material-symbols-outlined" style="color: #ef4444; font-size: 20px;">cancel</span>
+            <strong style="color: rgba(255,255,255,0.7); font-size: 14px;">Generic AI (ChatGPT / DeepSeek)</strong>
+          </div>
+          <span style="font-size: 11px; font-weight: 700; color: #ef4444; background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.25); padding: 3px 10px; border-radius: 999px;">UNGROUNDED</span>
+        </div>
+        <p style="font-size: 12px; color: rgba(255,255,255,0.4); font-weight: 600; margin-bottom: 8px;">Prompt: "Explain Ohm's Law for Class 10 Science Exam"</p>
+        <div style="background: rgba(0,0,0,0.3); border-radius: 12px; padding: 16px; font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.6; flex: 1;">
+          "Ohm's law is a fundamental principle of electricity. It states that current is directly proportional to voltage and inversely proportional to resistance. The formula is V=IR. Ohm's law applies to many electrical circuits in physics..."
+          <div style="margin-top: 14px; padding-top: 10px; border-top: 1px dashed rgba(255,255,255,0.1); color: #ef4444; font-size: 11.5px;">
+            ⚠️ <strong>Missing:</strong> No textbook page, no SCERT/NCERT chapter, no PYQ history, no step-by-step exam formula structure.
+          </div>
+        </div>
+      </div>
+
+      <!-- MindGains AI Card -->
+      <div style="background: rgba(123,227,176,0.03); border: 1px solid rgba(123,227,176,0.3); border-radius: 20px; padding: 24px; display: flex; flex-direction: column; position: relative; box-shadow: 0 8px 32px rgba(123,227,176,0.08);">
+        <div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 16px; border-bottom: 1px solid rgba(123,227,176,0.18); margin-bottom: 16px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span class="material-symbols-outlined" style="color: #7BE3B0; font-size: 20px;">check_circle</span>
+            <strong style="color: #ffffff; font-size: 14px;">MindGains AI (MIGA-v1)</strong>
+          </div>
+          <span style="font-size: 11px; font-weight: 700; color: #7BE3B0; background: rgba(123,227,176,0.12); border: 1px solid rgba(123,227,176,0.3); padding: 3px 10px; border-radius: 999px;">TEXTBOOK-GROUNDED</span>
+        </div>
+        <p style="font-size: 12px; color: #7BE3B0; font-weight: 600; margin-bottom: 8px;">Prompt: "Explain Ohm's Law for Class 10 Science Exam"</p>
+        <div style="background: rgba(10,14,23,0.8); border: 1px solid rgba(123,227,176,0.15); border-radius: 12px; padding: 16px; font-size: 13px; color: rgba(255,255,255,0.9); line-height: 1.6; flex: 1;">
+          <div style="color: #fb923c; font-weight: 700; font-size: 11.5px; margin-bottom: 8px;">🔥 High-Yield PYQ • Appeared 3 times in TNPSC & SCERT Board Exams</div>
+          <strong>Definition:</strong> At constant temperature, the steady current ($I$) flowing through a conductor is directly proportional to the potential difference ($V$) across its ends.<br><br>
+          <strong>Formula:</strong> $V = I \times R \implies R = \frac{V}{I}$<br><br>
+          📚 <strong>Source:</strong> SCERT Samacheer Class 10 › Science › Ch 4: Electricity › §4.2 Ohm's Law
+          <div style="margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; gap: 6px; flex-wrap: wrap;">
+            <span style="font-size: 10.5px; background: rgba(56,189,248,0.12); color: #38bdf8; border: 1px solid rgba(56,189,248,0.25); padding: 4px 10px; border-radius: 999px;">📝 Expand for Mains (150-Word)</span>
+            <span style="font-size: 10.5px; background: rgba(123,227,176,0.12); color: #7BE3B0; border: 1px solid rgba(123,227,176,0.25); padding: 4px 10px; border-radius: 999px;">⚡ Practice 3 MCQs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FEATURES -->
 <section class="section dark" id="features">
   <div style="max-width:980px;margin:0 auto;">
@@ -1399,13 +1516,13 @@
         <p>Official PYQs with final answer keys, organized by subject, syllabus unit, and exam year.</p>
       </div>
 
-      <!-- 4. Previous-Year Intelligence -->
-      <div class="feat-card glass" style="--accent-color:#fb923c;">
-        <div class="feat-icon" style="background:rgba(251,146,60,.12);border:1px solid rgba(251,146,60,.28);">
-          <span class="material-symbols-outlined ms" style="color:#fb923c;">travel_explore</span>
+      <!-- 4. Camera & Paper Scan -->
+      <div class="feat-card glass" style="--accent-color:#1CB0F6;">
+        <div class="feat-icon" style="background:rgba(28,176,246,.12);border:1px solid rgba(28,176,246,.28);">
+          <span class="material-symbols-outlined ms" style="color:#1CB0F6;">photo_camera</span>
         </div>
-        <h3>Previous-Year Intelligence</h3>
-        <p>Search PYQs by exam, year, subject, chapter, or topic—and instantly understand every answer.</p>
+        <h3>Camera &amp; Paper Scan</h3>
+        <p>Snap a photo of any textbook page or question paper to receive instant, grounded step-by-step solutions.</p>
       </div>
 
       <!-- 5. Chapter Summaries -->
@@ -1417,13 +1534,13 @@
         <p>Turn any chapter into concise revision notes, key points, flashcards, or practice questions in seconds.</p>
       </div>
 
-      <!-- 6. Adaptive Quiz Engine -->
-      <div class="feat-card glass" style="--accent-color:#f43f5e;">
-        <div class="feat-icon" style="background:rgba(244,63,94,.12);border:1px solid rgba(244,63,94,.28);">
-          <span class="material-symbols-outlined ms" style="color:#f43f5e;">psychology</span>
+      <!-- 6. Gamified Weak-Topic Sprints -->
+      <div class="feat-card glass" style="--accent-color:#FF9600;">
+        <div class="feat-icon" style="background:rgba(255,150,0,.12);border:1px solid rgba(255,150,0,.28);">
+          <span class="material-symbols-outlined ms" style="color:#FF9600;">fitness_center</span>
         </div>
-        <h3>Adaptive Quiz Engine</h3>
-        <p>Generate topic-wise quizzes with instant explanations, detailed feedback, and progress tracking.</p>
+        <h3>Weak-Topic Sprint Engine</h3>
+        <p>Missed quiz questions automatically generate a personalized 5-question daily revision sprint.</p>
       </div>
 
       <!-- 7. Learn in Your Language -->
@@ -1695,8 +1812,19 @@ const inputEl = document.getElementById('chat-input');
 const sendBtn = document.getElementById('send-btn');
 
 if (inputEl) {
-  inputEl.addEventListener('focus', () => { if (!isSignedIn) openAuthModal(); });
+  inputEl.addEventListener('focus', () => {
+    if (!isSignedIn) { openAuthModal(); return; }
+    setTimeout(() => { inputEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 200);
+  });
   inputEl.addEventListener('click', () => { if (!isSignedIn) openAuthModal(); });
+}
+
+if (window.visualViewport) {
+  window.visualViewport.addEventListener('resize', () => {
+    if (document.activeElement === inputEl) {
+      inputEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  });
 }
 
 const EXAM_SYSTEM = `You are MIGA, a warm, brilliant tutor and study buddy for Indian exam aspirants (UPSC, TNPSC, SSC, banking, state PSCs).
@@ -1710,15 +1838,28 @@ MINDGAINS BRAND MEMORY:
 
 SOURCE VERIFICATION POLICY:
 - Ground answers strictly in SCERT Samacheer Kalvi and NCERT textbooks, citing chapter, class, or syllabus unit.
-- When explaining concepts or syllabus topics, provide the exact source path using a clean visual tree hierarchy at the end of the response:
-  Sources
-  NCERT Class 11 Political Science
-  ↓
-  Chapter 2: Rights in the Indian Constitution
-  ↓
-  Page 38
+- When explaining concepts or syllabus topics, provide the exact source path as a single-line horizontal breadcrumb at the very end of your response:
+  📚 **Source:** [Board & Class] › [Subject / Book] › [Chapter] › [Section/Page]
+  (Example: 📚 **Source:** SCERT Samacheer Class 10 › Science › Ch 4: Electricity › §4.4 Joule's Law)
 - Do not mix boards, classes, or syllabi unless the user explicitly asks for a comparison.
 - Never present an unverified textbook detail as a fact.
+
+PYQ FREQUENCY & RECENCY BADGE POLICY:
+- If the topic or question has appeared in official past year question papers (UPSC CSE, TNPSC Groups 1/2/4, SSC), include a verified high-yield PYQ badge right under the title:
+  🔥 **High-Yield PYQ** • Appeared [X] times in [Exam Name] ([Years])
+  (Example: 🔥 **High-Yield PYQ** • Appeared 4 times in UPSC Prelims: 2017, 2019, 2021, 2024)
+
+STEP-BY-STEP MATH & PHYSICS WHITEBOARD POLICY:
+- For mathematical, physics, or numerical problem-solving, structure your answer into clean, high-yield whiteboard steps:
+  ### 📐 Step 1: Given Data & Known Variables
+  ### 🧮 Step 2: Formula & Equation
+  ### ⚡ Step 3: Step-by-Step Calculation & Substitution
+  ### 🎯 Final Answer & SI Units
+- MATH FORMULAS & LATEX RULES:
+  * ALWAYS use LaTeX formatting for all mathematical expressions, equations, variables, and formulas.
+  * Use inline delimiters $ ... $ for inline math (e.g. $E = mc^2$ or $x$) and $$ ... $$ for block/centered math.
+  * For fractions and division operations, ALWAYS use LaTeX fraction notation: \\frac{numerator}{denominator} (e.g. \\frac{GM}{r^2} or \\frac{n}{d}) rather than raw division symbols like n/d or numerator/denominator, so they render with a beautiful stacked numerator over denominator.
+  * Never leave math symbols as unformatted text (like $/- or raw * or ^). Use proper LaTeX.
 
 YOU TEACH — you never just give a one-liner when the student wants to understand something.
 - When asked to explain or understand a concept: give a proper, well-structured explanation — a clear definition, the key points, a simple example or analogy, and why it matters for the exam. Be genuinely thorough and helpful.
@@ -1814,6 +1955,19 @@ function formatAIResponse(rawText) {
   // Clean unwanted header tags
   let text = rawText.replace(/INTERACTIVE\s+PYQ\s+PRACTICE/gi, '');
 
+  // Beautiful Horizontal Breadcrumb Source pill
+  text = text.replace(/([📚\s]*\*\*Source:\*\*\s*|\bSource:\s*)(.*?)(?=\n|<br>|<div|$)/gi, function(match, label, path) {
+    const parts = path.split(/[›>]/).map(p => p.trim()).filter(Boolean);
+    if (parts.length === 0) return match;
+    const pillsHtml = parts.map(part => `<span style="font-size:11.5px; font-weight:600; color:#fff; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); padding:4px 10px; border-radius:8px; white-space:nowrap;">${part}</span>`).join('<span style="color:rgba(255,255,255,0.3); font-size:14px; font-weight:bold; display:inline-flex; align-items:center;">&rsaquo;</span>');
+    return `<div class="source-breadcrumb" style="display:flex; flex-wrap:wrap; align-items:center; gap:6px 8px; background:rgba(123,227,176,0.05); border:1px solid rgba(123,227,176,0.15); border-radius:12px; padding:10px 14px; margin:14px 0 6px;">
+      <span style="font-size:11px; font-weight:800; color:#7BE3B0; display:inline-flex; align-items:center; gap:4px; text-transform:uppercase; letter-spacing:0.05em; margin-right:4px;">
+        <span class="material-symbols-outlined ms" style="font-size:14px; color:#7BE3B0;">menu_book</span> Textbook Source
+      </span>
+      ${pillsHtml}
+    </div>`;
+  });
+
   // 1. Mindmaps & Concept Tree Diagram Rendering
   if (text.includes('├──') || text.includes('└──') || text.includes('│──') || text.includes('-->')) {
     text = text.replace(/((?:.*[├└│]-->?.*\n?)+)/g, function(match) {
@@ -1894,8 +2048,36 @@ function formatAIResponse(rawText) {
   // Line breaks
   text = text.replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>');
 
-  return text;
+  // Append Interactive Action Chips (Prelims vs Mains Toggle)
+  const actionChips = `
+    <div class="miga-action-chips">
+      <button class="miga-chip-btn" onclick="window.triggerMainsExpand(this)">
+        <span class="material-symbols-outlined ms" style="font-size:14px;color:#38bdf8;">edit_note</span> 📝 Expand for Mains (150-Word Essay)
+      </button>
+      <button class="miga-chip-btn" onclick="window.triggerMCQPractice(this)">
+        <span class="material-symbols-outlined ms" style="font-size:14px;color:#7BE3B0;">quiz</span> ⚡ Practice 3 MCQs
+      </button>
+    </div>
+  `;
+
+  return text + actionChips;
 }
+
+window.triggerMainsExpand = function(btn) {
+  const row = btn.closest('.msg-row');
+  const uRow = row ? row.previousElementSibling : null;
+  const userText = uRow ? uRow.innerText.replace(/[\n\r]+/g, ' ').trim() : 'this topic';
+  const prompt = `Convert the explanation of ${userText} into a formal UPSC/TNPSC Mains essay answer format with: 1) Introduction, 2) Core Arguments / Body Points, 3) Policy Impact, and 4) Way Forward / Conclusion.`;
+  sendMsg(prompt);
+};
+
+window.triggerMCQPractice = function(btn) {
+  const row = btn.closest('.msg-row');
+  const uRow = row ? row.previousElementSibling : null;
+  const userText = uRow ? uRow.innerText.replace(/[\n\r]+/g, ' ').trim() : 'this topic';
+  const prompt = `Generate 3 practice MCQs on ${userText} with 4 options (A, B, C, D) each, along with the correct answer and a brief explanation.`;
+  sendMsg(prompt);
+};
 
 /* ═══ PROMPT CARD TYPEWRITER ANIMATION ═══ */
 const PROMPT_SETS = {
@@ -1990,6 +2172,26 @@ function pastePrompt(cardId) {
 function scrollToTop(row) {
   if (!row) return;
   row.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function setAiBubHtml(bub, text) {
+  if (!bub) return;
+  bub.innerHTML = formatAIResponse(text);
+  if (window.renderMathInElement) {
+    try {
+      window.renderMathInElement(bub, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false},
+          {left: '\\(', right: '\\)', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ],
+        throwOnError: false
+      });
+    } catch(e) {
+      console.error('[KaTeX Error]', e);
+    }
+  }
 }
 
 async function sendMsg(override) {
@@ -2091,7 +2293,7 @@ async function sendMsg(override) {
                 scrollToTop(uRow);
               }
               fullText += delta;
-              aiBub.innerHTML = formatAIResponse(fullText);
+              setAiBubHtml(aiBub, fullText);
             }
           } catch(e) {}
         }
@@ -2121,7 +2323,7 @@ async function sendMsg(override) {
 
   if (finalReply) {
     chatHistory.push({ role: 'assistant', content: finalReply });
-    if (aiBub) aiBub.innerHTML = formatAIResponse(finalReply);
+    if (aiBub) setAiBubHtml(aiBub, finalReply);
     scrollToTop(uRow);
   } else {
     chatHistory.pop(); // remove failed user message from history
