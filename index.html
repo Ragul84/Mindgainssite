@@ -1990,7 +1990,7 @@
             Live model demo
           </span>
           <div class="compare-live-title">Same question, two prompt styles.</div>
-          <div class="compare-live-desc">This runs a real OpenRouter request on demand. The left side uses a generic prompt. The right side uses the MindGains exam-grounded prompt on the same model, so the difference is visible without guessing.</div>
+          <div class="compare-live-desc">Example view first, then one click to replace it with a live side by side reply. The left side is a generic prompt, the right side is the MindGains exam-grounded prompt on the same model.</div>
         </div>
         <button class="compare-live-action" onclick="runCompareDemo()">
           Run live compare
@@ -2002,14 +2002,28 @@
             <span class="compare-live-label">Generic model</span>
             <span class="compare-live-pill bad">Ungrounded</span>
           </div>
-          <div class="compare-live-output muted" id="compare-generic-output">A generic assistant answer appears here after you run the demo.</div>
+          <div class="compare-live-output" id="compare-generic-output">
+            <div class="live-label" style="color:#FCA5A5;">Generic prompt</div>
+            <div class="live-body">
+              <div class="live-line">Directive Principles are broad guidelines that help the State govern.</div>
+              <div class="live-line">They are important, but the answer stops at a general definition.</div>
+              <div class="live-line">No exam framing, no source trail, no next practice step.</div>
+            </div>
+          </div>
         </article>
         <article class="compare-live-card">
           <div class="compare-live-head">
             <span class="compare-live-label">MindGains AI</span>
             <span class="compare-live-pill good">Exam-aware</span>
           </div>
-          <div class="compare-live-output muted" id="compare-mindgains-output">The grounded answer appears here after you run the demo.</div>
+          <div class="compare-live-output" id="compare-mindgains-output">
+            <div class="live-label" style="color:#7BE3B0;">MindGains prompt</div>
+            <div class="live-body">
+              <div class="live-line"><strong>Article 36 to 51</strong> are the DPSP, they guide the State in governance.</div>
+              <div class="live-line">For exams, remember they are <strong>non-justiciable</strong> but still constitutionally important.</div>
+              <div class="live-line">Next step: practice related questions on Fundamental Rights vs DPSP.</div>
+            </div>
+          </div>
         </article>
       </div>
     </div>
