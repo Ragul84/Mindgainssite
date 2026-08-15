@@ -1,0 +1,3 @@
+/quiz /upsc/ 301
+/quiz/ /upsc/ 301
+/quiz/* /:splat 301

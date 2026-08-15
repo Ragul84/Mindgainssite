@@ -13,19 +13,19 @@ const HUBS = {
     audience: 'UPSC aspirants',
     scope: 'Polity, History, Economy, Geography, Environment and Current Affairs',
     exams: 'Prelims-focused daily preparation',
-    quiz: '/quiz/upsc/',
+    quiz: '/upsc/polity/',
     quizLabel: 'Explore UPSC Quizzes',
     subjects: ['Polity', 'History', 'Economy', 'Geography', 'Environment', 'Current Affairs'],
     related: [
-      ['/quiz/upsc/polity/fundamental-rights/', 'Fundamental Rights Quiz'],
-      ['/quiz/upsc/polity/dpsp/', 'DPSP Quiz'],
-      ['/quiz/upsc/history/national-movement/', 'National Movement Quiz'],
+      ['/upsc/polity/fundamental-rights/', 'Fundamental Rights Quiz'],
+      ['/upsc/polity/dpsp/', 'DPSP Quiz'],
+      ['/upsc/history/national-movement/', 'National Movement Quiz'],
       ['/blog/india-learning-crisis', 'Why learning gaps persist'],
     ],
     faqs: [
       ['Is MindGains useful for UPSC preparation?', 'MindGains is designed to help UPSC aspirants build a daily learning habit with lessons, quizzes, revision and current-affairs-aware practice.'],
       ['Does MindGains replace standard UPSC books?', 'No. MindGains works best as a daily practice and revision layer alongside standard books, classes and notes.'],
-      ['Can I practice UPSC quizzes on the website?', 'Yes. The public Quiz Hub includes UPSC topic quizzes, while the app experience adds Daily Dose, revision and AI study tools.'],
+      ['Can I practice UPSC quizzes on the website?', 'Yes. The public practice pages include UPSC topic quizzes, while the app experience adds Daily Dose, revision and AI study tools.'],
     ],
   },
   tnpsc: {
@@ -35,18 +35,18 @@ const HUBS = {
     audience: 'TNPSC aspirants',
     scope: 'Group 1, Group 2, Group 4, Tamil, History, Polity and General Studies',
     exams: 'Group 1, Group 2 and Group 4 preparation',
-    quiz: '/quiz/tnpsc/',
+    quiz: '/tnpsc/tamil/',
     quizLabel: 'Explore TNPSC Quizzes',
     subjects: ['Tamil', 'History', 'Polity', 'General Studies', 'Maths', 'Science'],
     related: [
-      ['/quiz/tnpsc/history/freedom-struggle/', 'Freedom Struggle Quiz'],
-      ['/quiz/tnpsc/tamil/thirukkural/', 'Thirukkural Quiz'],
-      ['/quiz/tnpsc/polity/fundamental-rights/', 'Fundamental Rights Quiz'],
+      ['/tnpsc/history/freedom-struggle/', 'Freedom Struggle Quiz'],
+      ['/tnpsc/tamil/thirukkural/', 'Thirukkural Quiz'],
+      ['/tnpsc/polity/fundamental-rights/', 'Fundamental Rights Quiz'],
       ['/blog/india-learning-crisis', 'Why learning gaps persist'],
     ],
     faqs: [
       ['Is MindGains useful for TNPSC Group exams?', 'MindGains supports TNPSC learners with daily lessons, public quizzes and AI-powered revision workflows for Group exam preparation.'],
-      ['Does MindGains support Tamil preparation?', 'The TNPSC pathway includes Tamil-focused topics in the public Quiz Hub and app-oriented daily learning support.'],
+      ['Does MindGains support Tamil preparation?', 'The TNPSC pathway includes Tamil-focused topics in the public practice pages and app-oriented daily learning support.'],
       ['Can I use MindGains for Group 4 basics?', 'Yes. MindGains is positioned for consistent daily preparation across TNPSC Group 1, Group 2 and Group 4 learning needs.'],
     ],
   },
@@ -57,18 +57,18 @@ const HUBS = {
     audience: 'SSC aspirants',
     scope: 'Reasoning, Quant, English and General Awareness',
     exams: 'CGL, CHSL, MTS, CPO and GD practice',
-    quiz: '/quiz/ssc/',
+    quiz: '/ssc/quant/',
     quizLabel: 'Explore SSC Quizzes',
     subjects: ['Reasoning', 'Quant', 'English', 'General Awareness', 'Science', 'Economy'],
     related: [
-      ['/quiz/ssc/quant/percentage/', 'Percentage Quiz'],
-      ['/quiz/ssc/reasoning/coding-decoding/', 'Coding Decoding Quiz'],
-      ['/quiz/ssc/english/grammar/', 'English Grammar Quiz'],
+      ['/ssc/quant/percentage/', 'Percentage Quiz'],
+      ['/ssc/reasoning/coding-decoding/', 'Coding Decoding Quiz'],
+      ['/ssc/english/grammar/', 'English Grammar Quiz'],
       ['/blog/india-learning-crisis', 'Why learning gaps persist'],
     ],
     faqs: [
       ['Is MindGains useful for SSC preparation?', 'MindGains helps SSC learners practice daily with quizzes, revision workflows and AI-generated study support.'],
-      ['Which SSC subjects does MindGains cover?', 'The public Quiz Hub includes SSC Quant, Reasoning, English, General Awareness and Science topic pages.'],
+      ['Which SSC subjects does MindGains cover?', 'The public practice pages include SSC Quant, Reasoning, English, General Awareness and Science topic pages.'],
       ['Can MindGains help with daily SSC practice?', 'Yes. The product is built around a daily learning habit, which fits SSC practice and revision routines well.'],
     ],
   },
@@ -79,18 +79,18 @@ const HUBS = {
     audience: 'NCERT school students',
     scope: 'Class 6 to 12 Science, Maths and Social Science',
     exams: 'Class 6 to 12 concept practice',
-    quiz: '/quiz/ncert/',
+    quiz: '/ncert/science/class10/',
     quizLabel: 'Explore NCERT Quizzes',
     subjects: ['Science', 'Maths', 'Social Science', 'History', 'Geography', 'Economics'],
     related: [
-      ['/quiz/ncert/science/class10/', 'Class 10 Science Quiz'],
-      ['/quiz/ncert/maths/class10/', 'Class 10 Maths Quiz'],
-      ['/quiz/ncert/history/class10/', 'Class 10 History Quiz'],
+      ['/ncert/science/class10/', 'Class 10 Science Quiz'],
+      ['/ncert/maths/class10/', 'Class 10 Maths Quiz'],
+      ['/ncert/history/class10/', 'Class 10 History Quiz'],
       ['/blog/india-learning-crisis', 'Why learning gaps persist'],
     ],
     faqs: [
       ['Is MindGains useful for NCERT students?', 'MindGains helps NCERT learners practice concepts with quizzes and AI-powered study workflows for notes, flashcards and revision.'],
-      ['Which classes are supported?', 'The public Quiz Hub includes NCERT Class 6 to 12 topic pages across major school subjects.'],
+      ['Which classes are supported?', 'The public practice pages include NCERT Class 6 to 12 topic pages across major school subjects.'],
       ['Can students generate quizzes from their own notes?', 'Study Lab is designed to help learners turn topics, PDFs, YouTube links or text into study material and practice.'],
     ],
   },
@@ -101,18 +101,18 @@ const HUBS = {
     audience: 'Tamil Nadu school students',
     scope: 'Class 6 to 12 Science, Maths, Social Science and Tamil',
     exams: 'Tamil Nadu school curriculum practice',
-    quiz: '/quiz/samacheer/',
+    quiz: '/samacheer/science/class10/',
     quizLabel: 'Explore Samacheer Quizzes',
     subjects: ['Tamil', 'Science', 'Maths', 'Social Science', 'History', 'Computer Science'],
     related: [
-      ['/quiz/samacheer/science/class10/', 'Class 10 Science Quiz'],
-      ['/quiz/samacheer/tamil/class10/', 'Class 10 Tamil Quiz'],
-      ['/quiz/samacheer/maths/class10/', 'Class 10 Maths Quiz'],
+      ['/samacheer/science/class10/', 'Class 10 Science Quiz'],
+      ['/samacheer/tamil/class10/', 'Class 10 Tamil Quiz'],
+      ['/samacheer/maths/class10/', 'Class 10 Maths Quiz'],
       ['/blog/india-learning-crisis', 'Why learning gaps persist'],
     ],
     faqs: [
       ['Is MindGains useful for Samacheer students?', 'MindGains supports Tamil Nadu school learners with Samacheer quizzes and app-oriented daily lessons and revision tools.'],
-      ['Which Samacheer classes are covered?', 'The public Quiz Hub includes Samacheer Class 6 to 12 topic pages across major subjects.'],
+      ['Which Samacheer classes are covered?', 'The public practice pages include Samacheer Class 6 to 12 topic pages across major subjects.'],
       ['Does MindGains support Tamil learning?', 'Samacheer and TNPSC pathways include Tamil-focused quiz and learning experiences.'],
     ],
   },
@@ -123,7 +123,7 @@ const HUBS = {
     audience: 'students and exam aspirants',
     scope: 'Constitution, states, rivers, freedom movement, parliament and current affairs',
     exams: 'Civics and India knowledge practice',
-    quiz: '/quiz/upsc/',
+    quiz: '/upsc/polity/preamble/',
     quizLabel: 'Open India Quizzes',
     subjects: ['Constitution', 'States', 'Rivers', 'History', 'Geography', 'Current Affairs'],
     heroEyebrow: 'Public India Knowledge Hub',
@@ -136,9 +136,9 @@ const HUBS = {
     continueTitle: 'Start with a quiz or a deeper read',
     faqTitle: 'Know Your India FAQs',
     related: [
-      ['/quiz/upsc/polity/preamble/', 'Preamble Quiz'],
-      ['/quiz/tnpsc/history/freedom-struggle/', 'Freedom Struggle Quiz'],
-      ['/quiz/ncert/social-science/class10/', 'Class 10 Social Science Quiz'],
+      ['/upsc/polity/preamble/', 'Preamble Quiz'],
+      ['/tnpsc/history/freedom-struggle/', 'Freedom Struggle Quiz'],
+      ['/ncert/social-science/class10/', 'Class 10 Social Science Quiz'],
       ['/blog/india-learning-crisis', 'Why learning gaps persist'],
     ],
     faqs: [
@@ -206,8 +206,8 @@ function readQuizCounts() {
   const index = JSON.parse(fs.readFileSync(indexFile, 'utf8'));
   const counts = {};
   for (const id of Object.keys(HUBS)) {
-    const exam = index.find((item) => item.type === 'Exam' && item.url === `/quiz/${id}/`);
-    const topics = index.filter((item) => item.type === 'Topic' && item.url.startsWith(`/quiz/${id}/`)).length;
+    const exam = index.find((item) => item.type === 'Exam' && item.url === `/${id}/`);
+    const topics = index.filter((item) => item.type === 'Topic' && item.url.startsWith(`/${id}/`)).length;
     counts[id] = { topics, label: exam?.copy || '' };
   }
   return counts;
@@ -279,7 +279,7 @@ ${iconMeta()}
 <div class="bg"></div>
 <header class="site-nav">
   <a class="brand" href="/">MindGains</a>
-  <nav><a href="/upsc/">UPSC</a><a href="/tnpsc/">TNPSC</a><a href="/ssc/">SSC</a><a href="/quiz/">Quiz Hub</a><a href="/know-your-india/">Know India</a><a href="/#join">Waitlist</a></nav>
+  <nav><a href="/upsc/">UPSC</a><a href="/tnpsc/">TNPSC</a><a href="/ssc/">SSC</a><a href="/upsc/polity/">Practice</a><a href="/know-your-india/">Know India</a><a href="/#join">Waitlist</a></nav>
 </header>
 ${body}
 </body>
@@ -381,7 +381,7 @@ body{font-family:Inter,system-ui,sans-serif}
 <body>
 <header class="site-nav">
   <a class="brand" href="/">MindGains</a>
-  <nav><a href="/upsc/">UPSC</a><a href="/tnpsc/">TNPSC</a><a href="/ssc/">SSC</a><a href="/quiz/">Quiz Hub</a><a href="/know-your-india/">Know India</a><a href="/#join">Waitlist</a></nav>
+  <nav><a href="/upsc/">UPSC</a><a href="/tnpsc/">TNPSC</a><a href="/ssc/">SSC</a><a href="/upsc/polity/">Practice</a><a href="/know-your-india/">Know India</a><a href="/#join">Waitlist</a></nav>
 </header>
 <div class="kyi-stage">
   <div id="g"></div>
@@ -597,7 +597,7 @@ function updateHome() {
     html = html.replace('<a href="/daily-dose/">Daily Dose</a>', '<a href="/upsc/">UPSC</a><a href="/tnpsc/">TNPSC</a><a href="/daily-dose/">Daily Dose</a>');
   }
   if (!html.includes('/know-your-india/')) {
-    html = html.replace('<a href="/quiz/">Quiz Hub</a>', '<a href="/quiz/">Quiz Hub</a><a href="/know-your-india/">Know India</a>');
+    html = html.replace('<a href="/upsc/polity/">Practice</a>', '<a href="/upsc/polity/">Practice</a><a href="/know-your-india/">Know India</a>');
   }
   if (!html.includes('class="exam-teaser"')) {
     const css = `\n  .exam-teaser{position:fixed;left:30px;bottom:154px;z-index:24;width:min(330px,calc(100vw - 60px));border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:16px;background:rgba(5,6,10,.52);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);box-shadow:0 18px 60px rgba(0,0,0,.34)}\n  .exam-teaser .k{font-size:10px;letter-spacing:1.7px;text-transform:uppercase;color:#67e8f9;font-weight:700;margin-bottom:10px}\n  .exam-links{display:flex;flex-wrap:wrap;gap:8px}.exam-links a{color:#dffbff;text-decoration:none;font-size:12px;border:1px solid rgba(55,224,255,.22);border-radius:999px;padding:7px 9px;background:rgba(55,224,255,.08)}\n  @media (max-width:860px){.exam-teaser{display:none}}\n`;

@@ -41,6 +41,20 @@ const EXAM_HUBS = {
   samacheer: '/samacheer/',
 };
 
+function canonicalPracticePath(examId, subjectId = null, topicSlug = null) {
+  const parts = [examId];
+  if (subjectId) parts.push(subjectId);
+  if (topicSlug) parts.push(topicSlug);
+  return `/${parts.join('/')}/`;
+}
+
+function legacyQuizPath(examId, subjectId = null, topicSlug = null) {
+  const parts = ['quiz', examId];
+  if (subjectId) parts.push(subjectId);
+  if (topicSlug) parts.push(topicSlug);
+  return `/${parts.join('/')}/`;
+}
+
 const SUBJECT_NAMES = {
   maths: 'Mathematics',
   quant: 'Quantitative Aptitude',
@@ -174,7 +188,7 @@ function iconMeta() {
 
 function pageShell({ title, description, pathname, body, crumbs = [] }) {
   const url = canonical(pathname);
-  const crumbItems = [{ name: 'Home', url: SITE_URL + '/' }, { name: 'Quiz', url: SITE_URL + '/quiz/' }, ...crumbs];
+  const crumbItems = [{ name: 'Home', url: SITE_URL + '/' }, { name: 'Practice', url: SITE_URL + '/upsc/' }, ...crumbs];
   const breadcrumbJson = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -214,7 +228,7 @@ ${iconMeta()}
 <div class="bg"></div>
 <header class="site-nav">
   <a class="brand" href="/">MindGains</a>
-  <nav><a href="/quiz/">Quiz Hub</a><a href="/#join">Waitlist</a></nav>
+  <nav><a href="/upsc/">Practice</a><a href="/#join">Waitlist</a></nav>
 </header>
 <main>${body}</main>
 <script src="/assets/quiz-search.js" defer></script>
@@ -227,6 +241,31 @@ function writePage(pathname, html, urls) {
   fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, html, 'utf8');
   urls.push(pathname.endsWith('/') ? pathname : pathname + '/');
+}
+
+function redirectPage(pathname, target) {
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MindGains</title>
+<meta http-equiv="refresh" content="0; url=${attr(target)}" />
+<link rel="canonical" href="${attr(target)}" />
+<script>location.replace(${JSON.stringify(target)});</script>
+</head>
+<body>
+<p>Redirecting to <a href="${attr(target)}">${htmlEscape(target)}</a>...</p>
+</body>
+</html>`;
+  const out = path.join(ROOT, pathname.replace(/^\//, ''), 'index.html');
+  fs.mkdirSync(path.dirname(out), { recursive: true });
+  fs.writeFileSync(out, html, 'utf8');
+}
+
+function writeCanonicalAndLegacy(urls, canonicalPath, legacyPath, html, legacyTarget) {
+  writePage(canonicalPath, html, urls);
+  if (legacyPath && legacyTarget) redirectPage(legacyPath, legacyTarget);
 }
 
 function statLine(items) {
@@ -273,8 +312,8 @@ function updateHomeLink() {
   if (!html.includes('.nav-links')) {
     html = html.replace("  .tag{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#c9d2e3;border:1px solid rgba(255,255,255,.16);padding:7px 13px;border-radius:999px}", "  .tag{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#c9d2e3;border:1px solid rgba(255,255,255,.16);padding:7px 13px;border-radius:999px}\n  .nav-links{display:flex;align-items:center;gap:12px;font-size:13px;color:#c9d2e3}\n  .nav-links a{color:#dffbff;text-decoration:none;border:1px solid rgba(55,224,255,.28);background:rgba(55,224,255,.08);padding:8px 12px;border-radius:999px;transition:.18s}\n  .nav-links a:hover{border-color:rgba(55,224,255,.65);background:rgba(55,224,255,.14)}");
   }
-  if (!html.includes('href="/quiz/"')) {
-    html = html.replace('<nav>\n  <div class="brand">MindGains</div>\n</nav>', '<nav>\n  <div class="brand">MindGains</div>\n  <div class="nav-links"><a href="/quiz/">Quiz Hub</a></div>\n</nav>');
+  if (!html.includes('href="/upsc/"')) {
+    html = html.replace('<nav>\n  <div class="brand">MindGains</div>\n</nav>', '<nav>\n  <div class="brand">MindGains</div>\n  <div class="nav-links"><a href="/upsc/">Practice</a></div>\n</nav>');
   }
   fs.writeFileSync(home, html, 'utf8');
 }
@@ -327,16 +366,23 @@ async function main() {
     .filter(([id]) => byExam.has(id))
     .map(([id, exam]) => {
       const s = statLine(byExam.get(id));
-      return { title: exam.name, kicker: 'Exam', copy: exam.desc, meta: `${s.topics.toLocaleString('en-IN')} topics · ${s.questions.toLocaleString('en-IN')} questions`, href: `/quiz/${id}/` };
+      return { title: exam.name, kicker: 'Exam', copy: exam.desc, meta: `${s.topics.toLocaleString('en-IN')} topics · ${s.questions.toLocaleString('en-IN')} questions`, href: EXAM_HUBS[id] || `/${id}/` };
     });
 
-  writePage('/quiz/', pageShell({
-    title: 'MindGains Quiz Hub | Public Exam Quiz Library',
-    description: `Practice ${totalQuestions.toLocaleString('en-IN')} exam questions across UPSC, TNPSC, SSC, Railway, Samacheer and NCERT.`,
-    pathname: '/quiz/',
-    body: `<section class="hero"><p class="eyebrow">Public Quiz Hub</p><h1>India's searchable exam quiz library.</h1><p>Practice real MCQs from the same QuizHub content system used inside MindGains. Pick an exam, choose a topic, and start answering immediately.</p></section>${searchBox()}<section><div class="section-head"><h2>Popular Exams</h2><p>${topicEntries.length.toLocaleString('en-IN')} topic pages generated from Upstash Redis.</p></div>${cards(homeCards)}</section>`,
-  }), urls);
-  searchIndex.push({ title: 'Quiz Hub', type: 'Hub', url: '/quiz/', copy: 'Search exams, subjects and topics.' });
+  writePage('/quiz/', `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MindGains Practice | Legacy Redirect</title>
+<meta name="robots" content="noindex,follow" />
+<meta http-equiv="refresh" content="0; url=/upsc/" />
+<link rel="canonical" href="https://mindgains.ai/upsc/" />
+<script>location.replace('/upsc/');</script>
+</head>
+<body><p>Redirecting to <a href="/upsc/">MindGains Practice</a>...</p></body>
+</html>`, urls);
+  searchIndex.push({ title: 'Quiz Hub', type: 'Hub', url: '/upsc/', copy: 'Search exams, subjects and topics.' });
 
   for (const [examId, entries] of byExam) {
     const exam = EXAMS[examId];
@@ -349,16 +395,9 @@ async function main() {
     const subjectCards = [...subjectMap.entries()].map(([subjectId, list]) => {
       const st = statLine(list);
       const first = list[0];
-      return { title: first.subjectName, kicker: exam.name, copy: `${first.subjectName} practice for ${exam.name}.`, meta: `${st.topics} topics · ${st.questions.toLocaleString('en-IN')} questions`, href: `/quiz/${examId}/${subjectId}/` };
+      return { title: first.subjectName, kicker: exam.name, copy: `${first.subjectName} practice for ${exam.name}.`, meta: `${st.topics} topics · ${st.questions.toLocaleString('en-IN')} questions`, href: canonicalPracticePath(examId, subjectId) };
     });
-    writePage(`/quiz/${examId}/`, pageShell({
-      title: `${exam.name} Quiz Practice | MindGains`,
-      description: `${exam.name} quiz practice by subject. ${s.questions.toLocaleString('en-IN')} MCQs across ${s.topics} topics.`,
-      pathname: `/quiz/${examId}/`,
-      crumbs: [{ name: exam.name, url: canonical(`/quiz/${examId}/`) }],
-      body: `<section class="hero compact"><p class="eyebrow">${htmlEscape(exam.name)}</p><h1>${htmlEscape(exam.name)} Quiz Practice</h1><p>${htmlEscape(exam.desc)}. Browse subjects and start focused practice.</p>${EXAM_HUBS[examId] ? `<a class="hub-link" href="${EXAM_HUBS[examId]}">Explore MindGains for ${htmlEscape(exam.name)} &rarr;</a>` : ''}</section>${searchBox()}<section>${cards(subjectCards)}</section>`,
-    }), urls);
-    searchIndex.push({ title: exam.name, type: 'Exam', url: `/quiz/${examId}/`, copy: exam.desc });
+    searchIndex.push({ title: exam.name, type: 'Exam', url: EXAM_HUBS[examId] || `/${examId}/`, copy: exam.desc });
 
     for (const [subjectId, list] of subjectMap) {
       const subjectName = list[0].subjectName;
@@ -367,33 +406,37 @@ async function main() {
         kicker: subjectName,
         copy: `${t.topicName} quiz questions for ${exam.name}.`,
         meta: 'Start practice',
-        href: `/quiz/${examId}/${subjectId}/${t.topicSlug}/`,
+        href: canonicalPracticePath(examId, subjectId, t.topicSlug),
       }));
       const st = statLine(list);
-      writePage(`/quiz/${examId}/${subjectId}/`, pageShell({
+      const canonicalSubjectPath = canonicalPracticePath(examId, subjectId);
+      const legacySubjectPath = legacyQuizPath(examId, subjectId);
+      writeCanonicalAndLegacy(urls, canonicalSubjectPath, legacySubjectPath, pageShell({
         title: `${exam.name} ${subjectName} Quizzes | MindGains`,
         description: `${st.questions.toLocaleString('en-IN')} ${exam.name} ${subjectName} MCQs across ${st.topics} topics.`,
-        pathname: `/quiz/${examId}/${subjectId}/`,
-        crumbs: [{ name: exam.name, url: canonical(`/quiz/${examId}/`) }, { name: subjectName, url: canonical(`/quiz/${examId}/${subjectId}/`) }],
+        pathname: canonicalSubjectPath,
+        crumbs: [{ name: exam.name, url: canonical(EXAM_HUBS[examId] || `/${examId}/`) }, { name: subjectName, url: canonical(canonicalSubjectPath) }],
         body: `<section class="hero compact"><p class="eyebrow">${htmlEscape(exam.name)} · ${htmlEscape(subjectName)}</p><h1>${htmlEscape(subjectName)} Quizzes</h1><p>Choose a focused topic and practice all available questions.</p></section>${searchBox()}<section>${cards(topicCards)}</section>`,
-      }), urls);
-      searchIndex.push({ title: `${exam.name} ${subjectName}`, type: 'Subject', url: `/quiz/${examId}/${subjectId}/`, copy: `${st.topics} topics.` });
+      }), canonicalSubjectPath);
+      searchIndex.push({ title: `${exam.name} ${subjectName}`, type: 'Subject', url: canonicalSubjectPath, copy: `${st.topics} topics.` });
 
       for (const t of list) {
-        const related = list.filter((x) => x !== t).slice(0, 6).map((x) => ({ title: x.topicName, href: `/quiz/${examId}/${subjectId}/${x.topicSlug}/` }));
+        const related = list.filter((x) => x !== t).slice(0, 6).map((x) => ({ title: x.topicName, href: canonicalPracticePath(examId, subjectId, x.topicSlug) }));
         const dataPath = writeQuizData(examId, subjectId, t.topicSlug, t, t.questions);
-        writePage(`/quiz/${examId}/${subjectId}/${t.topicSlug}/`, pageShell({
+        const canonicalTopicPath = canonicalPracticePath(examId, subjectId, t.topicSlug);
+        const legacyTopicPath = legacyQuizPath(examId, subjectId, t.topicSlug);
+        writeCanonicalAndLegacy(urls, canonicalTopicPath, legacyTopicPath, pageShell({
           title: `${t.topicName} Quiz | ${exam.name} ${subjectName} | MindGains`,
           description: `Practice ${t.questions.length.toLocaleString('en-IN')} ${t.topicName} MCQs for ${exam.name}. Shuffle questions, answer one at a time, and review explanations.`,
-          pathname: `/quiz/${examId}/${subjectId}/${t.topicSlug}/`,
+          pathname: canonicalTopicPath,
           crumbs: [
-            { name: exam.name, url: canonical(`/quiz/${examId}/`) },
-            { name: subjectName, url: canonical(`/quiz/${examId}/${subjectId}/`) },
-            { name: t.topicName, url: canonical(`/quiz/${examId}/${subjectId}/${t.topicSlug}/`) },
+            { name: exam.name, url: canonical(EXAM_HUBS[examId] || `/${examId}/`) },
+            { name: subjectName, url: canonical(canonicalSubjectPath) },
+            { name: t.topicName, url: canonical(canonicalTopicPath) },
           ],
           body: `<section class="topic-hero"><p class="eyebrow">${htmlEscape(exam.name)} · ${htmlEscape(subjectName)}</p><h1>${htmlEscape(t.topicName)} Quiz</h1><p>Practice ${htmlEscape(t.topicName)} one question at a time. Every attempt is shuffled, explanations appear after you answer, and mistakes are saved for review in this session.</p><button class="start" type="button" data-start-quiz>Start Quiz</button></section><section class="quiz-player" id="quiz-player" data-quiz-src="${attr(dataPath)}" hidden><div class="quiz-shell"><div class="quiz-status"><span data-progress>Question 1 / ${t.questions.length}</span><span data-score>Score 0</span></div><div class="quiz-meter"><span data-meter></span></div><h2 data-question></h2><div class="quiz-options" data-options></div><div class="quiz-feedback" data-feedback hidden></div><div class="quiz-actions"><button type="button" data-next disabled>Next</button></div></div></section>${related.length ? `<section><div class="section-head"><h2>Related Topics</h2></div><div class="related">${related.map((r) => `<a href="${attr(r.href)}">${htmlEscape(r.title)}</a>`).join('')}</div></section>` : ''}<section class="app-bridge"><h2>Finished this quiz?</h2><p>Imagine doing this every day with personalized lessons, revision, streaks, AI guidance and a growing community of learners across India.</p><p>Join the MindGains Early Access Waitlist and be among the first to experience India's daily learning habit platform.</p><ul><li>Daily Dose - one focused lesson every day</li><li>Personalized AI-generated learning from any PDF, YouTube video or topic</li><li>AI companion MIGA in 5 Indian languages</li><li>200,000+ quizzes with mistake revision</li><li>XP, streaks and state leaderboards</li><li>Current affairs, flashcards and smart practice</li></ul><a class="start" href="/#join">Join the Waitlist</a></section>`,
-        }), urls);
-        searchIndex.push({ title: `${t.topicName} Quiz`, type: 'Topic', url: `/quiz/${examId}/${subjectId}/${t.topicSlug}/`, copy: `${exam.name} ${subjectName} · ${t.questions.length} questions` });
+        }), canonicalTopicPath);
+        searchIndex.push({ title: `${t.topicName} Quiz`, type: 'Topic', url: canonicalTopicPath, copy: `${exam.name} ${subjectName} · ${t.questions.length} questions` });
       }
     }
   }
@@ -475,10 +518,10 @@ async function main() {
   fs.writeFileSync(path.join(ROOT, 'assets', 'quiz-index.json'), JSON.stringify(searchIndex, null, 2), 'utf8');
 
   fs.writeFileSync(path.join(ROOT, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${SITE_URL}/sitemap.xml\n`, 'utf8');
-  const sitemapUrls = [...new Set([...urls, ...existingNonQuizSitemapPaths()])];
-  fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapUrls.map((u) => `  <url><loc>${htmlEscape(canonical(u))}</loc><changefreq>weekly</changefreq><priority>${u === '/quiz/' ? '0.9' : u.split('/').length > 5 ? '0.7' : '0.8'}</priority></url>`).join('\n')}\n</urlset>\n`, 'utf8');
+  const sitemapUrls = [...new Set([...urls, ...existingNonQuizSitemapPaths()])].filter((u) => !u.startsWith('/quiz/'));
+  fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapUrls.map((u) => `  <url><loc>${htmlEscape(canonical(u))}</loc><changefreq>weekly</changefreq><priority>${u === '/' ? '1.0' : u.split('/').length > 5 ? '0.7' : '0.8'}</priority></url>`).join('\n')}\n</urlset>\n`, 'utf8');
   updateHomeLink();
-  console.log(`Generated ${urls.length} quiz pages from ${topicEntries.length} Redis topics with ${totalQuestions} questions.`);
+  console.log(`Generated ${urls.length} practice pages from ${topicEntries.length} Redis topics with ${totalQuestions} questions.`);
 }
 
 main().catch((error) => {
