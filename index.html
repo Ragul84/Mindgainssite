@@ -55,14 +55,35 @@
     }
     .google-glow {
       position: absolute;
-      top: -120px; left: 50%;
-      width: 800px; height: 500px;
-      border-radius: 50%;
-      background: radial-gradient(ellipse at center, rgba(123, 227, 176, 0.45) 0%, rgba(56, 189, 248, 0.18) 45%, transparent 75%);
-      filter: blur(100px);
+      top: 22px;
+      left: 50%;
+      width: min(1080px, calc(100% - 24px));
+      height: 190px;
+      border-radius: 40px;
+      background:
+        linear-gradient(90deg,
+          rgba(123, 227, 176, 0.08) 0%,
+          rgba(56, 189, 248, 0.18) 18%,
+          rgba(167, 139, 250, 0.22) 40%,
+          rgba(244, 114, 182, 0.16) 62%,
+          rgba(52, 211, 153, 0.14) 82%,
+          rgba(123, 227, 176, 0.08) 100%);
+      background-size: 240% 100%;
+      filter: blur(42px);
       pointer-events: none;
-      animation: googleGlow 14s ease-in-out infinite alternate;
+      animation: googleGlow 18s ease-in-out infinite alternate;
+      transform: translateX(-50%);
       z-index: 0;
+    }
+    @keyframes geminiRibbon {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    @keyframes geminiBorder {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .a1 { animation: fade-up .65s ease-out .05s both; }
@@ -149,9 +170,69 @@
       overflow: hidden;
       margin-top: 0;
     }
-    #hero h1 { font-family:'Instrument Serif',serif; font-size:clamp(36px,6.5vw,110px); font-weight:400; line-height:.9; letter-spacing:-.035em; color:#fff; position:relative; z-index:1; }
-    #hero .sub { font-size:17px; line-height:1.7; color:var(--muted); max-width:500px; margin:0 auto 36px; position:relative; z-index:1; }
-    .hero-btns { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-bottom:56px; position:relative; z-index:1; }
+    #hero .hero-copy {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+      width: min(100%, 1060px);
+      margin-top: -40px;
+      padding-inline: 6px;
+      text-align: left;
+    }
+    #hero .hero-kicker {
+      font-size: 11px;
+      padding: 6px 12px;
+      letter-spacing: .08em;
+      width: fit-content;
+    }
+    #hero .hero-title {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+      font-family:'Instrument Serif',serif;
+      font-size: clamp(38px, 6.4vw, 104px);
+      line-height: .88;
+      letter-spacing:-.04em;
+      color:#fff;
+      position:relative;
+      z-index:1;
+      text-wrap: balance;
+      max-width: 960px;
+      font-weight: 400;
+    }
+    #hero .hero-title-emphasis {
+      font-family: 'Inter', sans-serif;
+      font-weight: 900;
+      font-style: normal;
+      text-transform: uppercase;
+      font-size: .84em;
+      letter-spacing: -.05em;
+      display: inline-block;
+    }
+    #hero .hero-sub {
+      font-size: clamp(14px, 1.55vw, 17px);
+      line-height: 1.68;
+      color: rgba(255,255,255,.72);
+      max-width: 640px;
+      margin: 0;
+      position:relative;
+      z-index:1;
+      text-wrap: pretty;
+    }
+    #hero .hero-actions {
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-start;
+      margin-top: 12px;
+      margin-bottom: 56px;
+      position:relative;
+      z-index:1;
+    }
     .stats { display:none !important; }
     .pill-sparkle { display:none !important; }
 
@@ -251,9 +332,56 @@
       box-shadow: 0 6px 20px rgba(123,227,176,0.35); width: 100%;
     }
 
-    #chat-liquid-canvas,
+    #chat-liquid-canvas { display: none !important; }
     .chat-panel-aura {
-      display: none !important;
+      position: absolute;
+      inset: -24px -12px auto;
+      height: 160px;
+      border-radius: 30px;
+      background:
+        linear-gradient(90deg,
+          rgba(123, 227, 176, 0.00) 0%,
+          rgba(123, 227, 176, 0.16) 18%,
+          rgba(56, 189, 248, 0.22) 36%,
+          rgba(167, 139, 250, 0.24) 58%,
+          rgba(244, 114, 182, 0.18) 76%,
+          rgba(123, 227, 176, 0.00) 100%);
+      background-size: 240% 100%;
+      filter: blur(34px);
+      opacity: .8;
+      pointer-events: none;
+      animation: geminiRibbon 16s linear infinite;
+      z-index: 0;
+      transform: translateZ(0);
+    }
+
+    .chat-panel {
+      isolation: isolate;
+    }
+    .chat-panel::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      padding: 1px;
+      border-radius: 20px;
+      background: linear-gradient(120deg, rgba(123,227,176,.18), rgba(56,189,248,.32), rgba(167,139,250,.28), rgba(244,114,182,.24), rgba(123,227,176,.18));
+      background-size: 300% 300%;
+      animation: geminiBorder 16s linear infinite;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+      z-index: 0;
+      opacity: .9;
+    }
+    .chat-panel::after {
+      content: '';
+      position: absolute;
+      inset: 1px;
+      border-radius: 19px;
+      background: linear-gradient(180deg, rgba(123,227,176,.04), transparent 18%, transparent 72%, rgba(56,189,248,.04));
+      pointer-events: none;
+      z-index: 0;
     }
 
     .ctopbar { position:relative; z-index:2; display:flex; align-items:center; justify-content:space-between; padding:12px 20px; border-bottom:1px solid rgba(255,255,255,.06); background:rgba(14,16,24,.75); backdrop-filter:blur(20px); flex-shrink:0; }
@@ -453,8 +581,8 @@
       justify-content:space-between;
       margin-bottom:22px;
     }
-    .feat-icon {
-      width:44px; height:44px;
+      .feat-icon {
+        width:44px; height:44px;
       border-radius:14px;
       display:flex; align-items:center; justify-content:center;
       margin-bottom:22px;
@@ -691,13 +819,13 @@
       pointer-events: auto;
     }
 
-    /* === MOBILE (768px and below) — Full Pro Redesign === */
+    /* === MOBILE (768px and below) Ã¢â‚¬â€ Full Pro Redesign === */
     @media (max-width: 768px) {
 
-      /* ── NAV ── */
+      /* Ã¢â€â‚¬Ã¢â€â‚¬ NAV Ã¢â€â‚¬Ã¢â€â‚¬ */
       nav { padding: 0 16px; height: 56px; }
 
-      /* ── HERO ── */
+      /* Ã¢â€â‚¬Ã¢â€â‚¬ HERO Ã¢â€â‚¬Ã¢â€â‚¬ */
       #hero {
         height: 100vh !important;
         min-height: auto !important;
@@ -850,14 +978,14 @@
         text-overflow: ellipsis !important;
       }
 
-      /* ── CHAT SECTION: clear gap above ── */
+      /* Ã¢â€â‚¬Ã¢â€â‚¬ CHAT SECTION: clear gap above Ã¢â€â‚¬Ã¢â€â‚¬ */
       #chat-section {
         padding: 48px 0 24px !important;
         margin-top: 28px !important;
         border-top: 1px solid rgba(255,255,255,0.08) !important;
       }
 
-      /* ── CHAT PANEL: full-width & immersive height ── */
+      /* Ã¢â€â‚¬Ã¢â€â‚¬ CHAT PANEL: full-width & immersive height Ã¢â€â‚¬Ã¢â€â‚¬ */
       .chat-panel {
         height: 520px !important;
         min-height: auto !important;
@@ -867,7 +995,7 @@
         width: calc(100% - 24px) !important;
       }
 
-      /* ── TOAST NOTIFICATION MOBILE (FLOATS SAFELY BELOW MOBILE NAV HEADER) ── */
+      /* Ã¢â€â‚¬Ã¢â€â‚¬ TOAST NOTIFICATION MOBILE (FLOATS SAFELY BELOW MOBILE NAV HEADER) Ã¢â€â‚¬Ã¢â€â‚¬ */
       #toast-notification {
         top: 68px !important;
         left: 50% !important;
@@ -881,7 +1009,7 @@
         transform: translateX(-50%) translateY(0) scale(1) !important;
       }
 
-      /* ── CHAT TOPBAR ── */
+      /* Ã¢â€â‚¬Ã¢â€â‚¬ CHAT TOPBAR Ã¢â€â‚¬Ã¢â€â‚¬ */
       .ctopbar { padding: 8px 12px !important; }
       .ctop-sub { display: none !important; }
       .ctop-title { font-size: 13px !important; }
@@ -919,7 +1047,7 @@
       }
       .sug-row::-webkit-scrollbar { display: none !important; }
 
-      /* ── EMPTY STATE / PROMPT CARDS ── */
+      /* Ã¢â€â‚¬Ã¢â€â‚¬ EMPTY STATE / PROMPT CARDS Ã¢â€â‚¬Ã¢â€â‚¬ */
       .empty-state {
         padding: 14px 12px !important;
         justify-content: center !important;
@@ -961,12 +1089,12 @@
 
       .prompt-card-arrow { display: none !important; }
 
-      /* ── CHAT INPUT ── */
+      /* Ã¢â€â‚¬Ã¢â€â‚¬ CHAT INPUT Ã¢â€â‚¬Ã¢â€â‚¬ */
       .cinput-wrap { padding: 8px 10px 10px !important; }
       #chat-input { font-size: 14px !important; }
       #chat-input::placeholder { font-size: 13px !important; }
 
-      /* ── QUIZ PANELS ── */
+      /* Ã¢â€â‚¬Ã¢â€â‚¬ QUIZ PANELS Ã¢â€â‚¬Ã¢â€â‚¬ */
       .quiz-pick { padding: 14px !important; }
       .quiz-body { padding: 14px !important; }
       .quiz-pick-grid { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
@@ -976,7 +1104,7 @@
       .qcat-name { font-size: 12px !important; }
       .qcat-sub { font-size: 10px !important; }
 
-      /* ── FEATURES SECTION ── */
+      /* Ã¢â€â‚¬Ã¢â€â‚¬ FEATURES SECTION Ã¢â€â‚¬Ã¢â€â‚¬ */
       #features { padding: 32px 14px 48px !important; }
       .feat-grid { gap: 10px !important; }
       .feat-card { padding: 20px 16px !important; border-radius: 18px !important; }
@@ -984,7 +1112,7 @@
       .feat-card h3 { font-size: 15px !important; }
       .feat-card p { font-size: 13px !important; }
 
-      /* ── BOTTOM CTA ── */
+      /* Ã¢â€â‚¬Ã¢â€â‚¬ BOTTOM CTA Ã¢â€â‚¬Ã¢â€â‚¬ */
       #cta-bottom {
         padding: 40px 20px 52px !important;
         text-align: left !important;
@@ -1006,6 +1134,202 @@
       .stat-sub { display: none !important; }
       .stat-label { font-size: 10.5px !important; }
       .hero-btns .btn-primary, .hero-btns .btn-outline { font-size: 12px !important; height: 38px !important; padding: 0 10px !important; }
+    }
+
+    .compare-hero {
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 1;
+    }
+    .compare-hero h2 {
+      font-size: clamp(28px, 4vw, 44px);
+      color: #fff;
+      margin-top: 12px;
+      letter-spacing: -.03em;
+      line-height: 1.05;
+    }
+    .compare-hero p {
+      color: rgba(255,255,255,.62);
+      max-width: 680px;
+      margin: 12px auto 0;
+      font-size: 14.5px;
+      line-height: 1.65;
+    }
+    .compare-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      align-items: stretch;
+    }
+    .compare-card {
+      position: relative;
+      border-radius: 24px;
+      padding: 26px 24px 22px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.09);
+      overflow: hidden;
+      box-shadow: 0 16px 42px rgba(0,0,0,.34);
+      transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease, background .22s ease;
+    }
+    .compare-card::before {
+      content: '';
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 1.5px;
+      background: linear-gradient(90deg, transparent, rgba(123,227,176,.8), rgba(56,189,248,.9), rgba(167,139,250,.9), transparent);
+      background-size: 250% 100%;
+      animation: geminiRibbon 14s linear infinite;
+      opacity: .7;
+    }
+    .compare-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 54px rgba(0,0,0,.48);
+      border-color: rgba(255,255,255,.16);
+    }
+    .compare-card.generic {
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+    }
+    .compare-card.mindgains {
+      background: linear-gradient(180deg, rgba(123,227,176,.05), rgba(255,255,255,.03));
+      border-color: rgba(123,227,176,.22);
+      box-shadow: 0 18px 52px rgba(123,227,176,.08);
+    }
+    .compare-headline {
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 12px;
+      padding-bottom: 16px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .compare-brand {
+      display:flex;
+      flex-direction:column;
+      gap: 4px;
+      min-width: 0;
+    }
+    .compare-brand strong {
+      font-size: 15px;
+      letter-spacing: -.01em;
+      color: #fff;
+    }
+    .compare-brand span {
+      font-size: 12px;
+      color: rgba(255,255,255,.55);
+    }
+    .compare-badge {
+      display:inline-flex;
+      align-items:center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .compare-badge.bad { color: #fca5a5; background: rgba(248,113,113,.12); border: 1px solid rgba(248,113,113,.18); }
+    .compare-badge.good { color: #7BE3B0; background: rgba(123,227,176,.12); border: 1px solid rgba(123,227,176,.22); }
+    .compare-card h3 {
+      font-size: 24px;
+      line-height: 1.1;
+      letter-spacing: -.03em;
+      margin: 0 0 10px;
+    }
+    .compare-card p {
+      color: rgba(255,255,255,.72);
+      line-height: 1.6;
+      font-size: 14.5px;
+      margin: 0;
+    }
+    .compare-list {
+      margin-top: 18px;
+      display: grid;
+      gap: 10px;
+    }
+    .compare-list div {
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.045);
+      border: 1px solid rgba(255,255,255,.06);
+      color: rgba(255,255,255,.82);
+      font-size: 13.5px;
+      line-height: 1.55;
+    }
+    .compare-list .ms {
+      font-size: 18px;
+      color: var(--accent);
+      margin-top: 1px;
+    }
+    .compare-stats {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .compare-stats span {
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.08);
+      color: rgba(255,255,255,.76);
+      font-size: 12px;
+    }
+    .compare-note {
+      margin-top: 18px;
+      text-align:center;
+      color: rgba(255,255,255,.52);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    @media (max-width: 900px) {
+      #hero .hero-copy {
+        align-items: center;
+        text-align: center;
+        margin-top: -20px;
+      }
+      #hero .hero-title {
+        align-items: center;
+      }
+      #hero .hero-actions {
+        justify-content: center;
+      }
+      .compare-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 640px) {
+      #hero {
+        padding: 0 16px;
+      }
+      #hero .hero-copy {
+        gap: 14px;
+      }
+      #hero .hero-title {
+        font-size: clamp(34px, 12vw, 58px);
+        line-height: .9;
+      }
+      #hero .hero-sub {
+        max-width: 560px;
+      }
+      .compare-card {
+        padding: 22px 18px 18px;
+        border-radius: 20px;
+      }
+      .compare-card h3 {
+        font-size: 21px;
+      }
+      .compare-note {
+        padding: 0 8px;
+      }
     }
   </style>
 
@@ -1244,18 +1568,19 @@
   <!-- Dark overlay -->
   <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.35); z-index: 2;"></div>
 
-  <!-- Center Content -->
-  <div style="position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; max-width: 1000px; margin-top: -80px; width: 100%; padding: 0 20px;">
-    <h1 class="font-instrument text-glow" style="color: #fff; font-size: clamp(34px, 5.5vw, 100px); line-height: 0.95; font-weight: 400; letter-spacing: -0.03em; max-width: 900px; font-style: italic;">
-      The AI Built<br><span style="font-family: 'Inter', sans-serif; font-weight: 900; font-style: normal; text-transform: uppercase; font-size: 0.85em; letter-spacing: -0.04em; position: relative; display: inline-block;">for Indian Exams.
-      </span>
+    <!-- Center Content -->
+  <div class="hero-copy">
+    <span class="hero-kicker pill a1">Textbook-aware AI for Indian exams</span>
+    <h1 class="hero-title font-instrument text-glow a2">
+      <span>The AI Built</span>
+      <span class="hero-title-emphasis">for Indian Exams.</span>
     </h1>
-    <p class="sub" style="font-size: clamp(13.5px, 1.8vw, 16px); color: rgba(255,255,255,0.7); max-width: 640px; line-height: 1.6; margin-top: 24px; font-family: 'Inter', sans-serif;">
+    <p class="hero-sub a3">
       Grounded in your textbooks, aligned with your curriculum, enhanced by previous-year question intelligence.
     </p>
-    <div class="hero-btns" style="margin-top: 32px;">
+    <div class="hero-actions a4">
       <button class="btn-primary button-glow" onclick="scrollToChat()" style="background: #ffffff; color: #000000; padding: 14px 36px; border-radius: 999px; font-weight: 600; font-size: 14px; border: none; cursor: pointer; transition: all 0.3s; letter-spacing: 0.03em; text-transform: uppercase; font-family: 'Inter', sans-serif;">
-        Access our AI — Free
+        Access our AI - Free
       </button>
     </div>
   </div>
@@ -1286,7 +1611,7 @@
   <!-- Quote Content (z-index 20) -->
   <div style="position: relative; z-index: 20; max-width: 900px; width: 100%; text-align: center; padding: 0 28px;">
     <p class="font-instrument" style="color: #ffffff; font-size: clamp(18px, 4vw, 40px); line-height: 1.45; font-style: italic; font-weight: 300;">
-      “MindGains began with a simple observation: students spend more time searching for the right resource than actually learning. We wanted to change that. Instead of building another general-purpose AI, we built one around the textbooks, syllabi, and previous-year questions students already rely on. Every feature exists for a single reason—to help you spend less time figuring out what to study, and more time making progress.”
+      Ã¢â‚¬Å“MindGains began with a simple observation: students spend more time searching for the right resource than actually learning. We wanted to change that. Instead of building another general-purpose AI, we built one around the textbooks, syllabi, and previous-year questions students already rely on. Every feature exists for a single reasonÃ¢â‚¬â€to help you spend less time figuring out what to study, and more time making progress.Ã¢â‚¬Â
     </p>
     <div class="font-inter" style="margin-top: 32px; font-size: clamp(13px, 1.8vw, 16px); color: rgba(255,255,255,0.8); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;">
       MindGains Founder
@@ -1297,6 +1622,7 @@
 <!-- CHAT SECTION -->
 <section class="section" id="chat-section">
   <div class="google-glow"></div>
+  <div class="chat-panel-aura" aria-hidden="true"></div>
   <div class="chat-panel-container">
     <div class="chat-panel">
       <!-- Top bar -->
@@ -1305,7 +1631,7 @@
         <div class="ctop-icon" style="background:transparent;"><img src="assets/icons/mindgains-header-logo.png" alt="MindGains Logo" style="width:30px;height:30px;border-radius:9px;object-fit:cover;" /></div>
         <div>
           <div class="ctop-title">MindGains AI</div>
-          <div class="ctop-sub">Exam Intelligence · Textbook-Aware</div>
+          <div class="ctop-sub">Exam Intelligence | Textbook-Aware</div>
         </div>
       </div>
       <div style="display:flex;align-items:center;gap:10px;">
@@ -1327,7 +1653,7 @@
 
         <div class="empty-grid">
           <button class="prompt-card" id="pcard-1" onclick="pastePrompt(1)">
-            <span class="prompt-card-icon">📖</span>
+            <span class="prompt-card-icon">Ã°Å¸â€œâ€“</span>
             <div class="prompt-card-text">
               <strong>Explain a Topic</strong>
               <span class="type-target" id="ptype-1">Directive Principles of State Policy</span>
@@ -1335,7 +1661,7 @@
             <span class="material-symbols-outlined ms prompt-card-arrow">edit_note</span>
           </button>
           <button class="prompt-card" id="pcard-2" onclick="pastePrompt(2)">
-            <span class="prompt-card-icon">📝</span>
+            <span class="prompt-card-icon">Ã°Å¸â€œÂ</span>
             <div class="prompt-card-text">
               <strong>Previous Year Questions</strong>
               <span class="type-target" id="ptype-2">TNPSC Group 1 Indian Polity PYQs</span>
@@ -1343,7 +1669,7 @@
             <span class="material-symbols-outlined ms prompt-card-arrow">edit_note</span>
           </button>
           <button class="prompt-card" id="pcard-3" onclick="pastePrompt(3)">
-            <span class="prompt-card-icon">🧠</span>
+            <span class="prompt-card-icon">Ã°Å¸Â§Â </span>
             <div class="prompt-card-text">
               <strong>Generate Quiz</strong>
               <span class="type-target" id="ptype-3">20 MCQs on Indian Constitution</span>
@@ -1351,7 +1677,7 @@
             <span class="material-symbols-outlined ms prompt-card-arrow">edit_note</span>
           </button>
           <button class="prompt-card" id="pcard-4" onclick="pastePrompt(4)">
-            <span class="prompt-card-icon">📚</span>
+            <span class="prompt-card-icon">Ã°Å¸â€œÅ¡</span>
             <div class="prompt-card-text">
               <strong>Chapter Summary</strong>
               <span class="type-target" id="ptype-4">Samacheer Kalvi Class 10 Science Chapter 8</span>
@@ -1371,7 +1697,7 @@
         <button class="cinput-action-btn" title="Ask AI Tutor" onclick="pastePrompt(3)">
           <span class="material-symbols-outlined ms" style="font-size:18px;color:var(--accent);">auto_awesome</span>
         </button>
-        <input type="text" id="chat-input" placeholder="Ask about TNPSC, UPSC, General Tamil, NCERT…" autocomplete="off" />
+        <input type="text" id="chat-input" placeholder="Ask about TNPSC, UPSC, General Tamil, NCERTÃ¢â‚¬Â¦" autocomplete="off" />
         <button id="send-btn" onclick="sendMsg()" title="Send Message">
           <span class="material-symbols-outlined ms">arrow_upward</span>
         </button>
@@ -1393,7 +1719,7 @@
         <div class="q-expl" id="q-expl"></div>
         <div class="quiz-footer">
           <div class="quiz-score" id="quiz-score">Score: 0</div>
-          <button id="next-btn" onclick="nextQuestion()">Next →</button>
+          <button id="next-btn" onclick="nextQuestion()">Next Ã¢â€ â€™</button>
         </div>
       </div>
     </div>
@@ -1402,60 +1728,63 @@
 </section>
 
 <!-- COMPARISON SECTION: Generic AI vs MindGains AI -->
-<section class="section" id="comparison" style="padding: 64px 20px; background: #070B12; border-top: 1px solid rgba(255,255,255,0.06);">
-  <div style="max-width: 1040px; margin: 0 auto;">
-    <div class="sh" style="text-align: center; margin-bottom: 40px;">
-      <span class="pill" style="color: #7BE3B0; background: rgba(123,227,176,0.1); border: 1px solid rgba(123,227,176,0.25);">EMPIRICAL EXAM BENCHMARK</span>
-      <h2 style="font-size: clamp(26px, 4vw, 42px); color: #fff; margin-top: 12px;">Generic AI vs. MindGains AI</h2>
-      <p style="color: rgba(255,255,255,0.6); max-width: 620px; margin: 10px auto 0; font-size: 14.5px;">
-        Generic AI talks broadly. MindGains AI explains the exact way your exam expects, backed by real textbook sources and PYQ frequency intelligence.
-      </p>
+<section class="section" id="comparison" style="padding: 72px 20px; background: #070B12; border-top: 1px solid rgba(255,255,255,0.06);">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <div class="compare-hero">
+      <span class="pill" style="color: #7BE3B0; background: rgba(123,227,176,0.1); border: 1px solid rgba(123,227,176,0.25);">How the product differs</span>
+      <h2>Generic AI vs MindGains AI</h2>
+      <p>Generic AI talks broadly. MindGains answers in the language of the exam, with source breadcrumbs, syllabus context and question patterns that actually help a student study.</p>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; align-items: stretch;">
-      <!-- Generic AI Card -->
-      <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 24px; display: flex; flex-direction: column;">
-        <div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 16px;">
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <span class="material-symbols-outlined" style="color: #ef4444; font-size: 20px;">cancel</span>
-            <strong style="color: rgba(255,255,255,0.7); font-size: 14px;">Generic AI (ChatGPT / DeepSeek)</strong>
+    <div class="compare-grid">
+      <article class="compare-card generic">
+        <div class="compare-headline">
+          <div class="compare-brand">
+            <strong>Generic AI</strong>
+            <span>Fast, but context-light</span>
           </div>
-          <span style="font-size: 11px; font-weight: 700; color: #ef4444; background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.25); padding: 3px 10px; border-radius: 999px;">UNGROUNDED</span>
+          <span class="compare-badge bad">Ungrounded</span>
         </div>
-        <p style="font-size: 12px; color: rgba(255,255,255,0.4); font-weight: 600; margin-bottom: 8px;">Prompt: "Explain Ohm's Law for Class 10 Science Exam"</p>
-        <div style="background: rgba(0,0,0,0.3); border-radius: 12px; padding: 16px; font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.6; flex: 1;">
-          "Ohm's law is a fundamental principle of electricity. It states that current is directly proportional to voltage and inversely proportional to resistance. The formula is V=IR. Ohm's law applies to many electrical circuits in physics..."
-          <div style="margin-top: 14px; padding-top: 10px; border-top: 1px dashed rgba(255,255,255,0.1); color: #ef4444; font-size: 11.5px;">
-            ⚠️ <strong>Missing:</strong> No textbook page, no SCERT/NCERT chapter, no PYQ history, no step-by-step exam formula structure.
-          </div>
+        <h3>Broad answer, little exam memory.</h3>
+        <p>Useful for a quick definition. Weak when the student needs syllabus fit, source grounding, or a cleaner route into revision.</p>
+        <div class="compare-list">
+          <div><span class="material-symbols-outlined ms">close</span><span>No chapter breadcrumb, no source path, no exam history.</span></div>
+          <div><span class="material-symbols-outlined ms">close</span><span>No PYQ signal, so it cannot show what the exam keeps repeating.</span></div>
+          <div><span class="material-symbols-outlined ms">close</span><span>No study loop, so a student leaves with an answer but not a next step.</span></div>
         </div>
-      </div>
+        <div class="compare-stats">
+          <span>Broad</span>
+          <span>Ungrounded</span>
+          <span>Low recall for study intent</span>
+        </div>
+      </article>
 
-      <!-- MindGains AI Card -->
-      <div style="background: rgba(123,227,176,0.03); border: 1px solid rgba(123,227,176,0.3); border-radius: 20px; padding: 24px; display: flex; flex-direction: column; position: relative; box-shadow: 0 8px 32px rgba(123,227,176,0.08);">
-        <div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 16px; border-bottom: 1px solid rgba(123,227,176,0.18); margin-bottom: 16px;">
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <span class="material-symbols-outlined" style="color: #7BE3B0; font-size: 20px;">check_circle</span>
-            <strong style="color: #ffffff; font-size: 14px;">MindGains AI (MIGA-v1)</strong>
+      <article class="compare-card mindgains">
+        <div class="compare-headline">
+          <div class="compare-brand">
+            <strong>MindGains AI</strong>
+            <span>Textbook-aware and exam specific</span>
           </div>
-          <span style="font-size: 11px; font-weight: 700; color: #7BE3B0; background: rgba(123,227,176,0.12); border: 1px solid rgba(123,227,176,0.3); padding: 3px 10px; border-radius: 999px;">TEXTBOOK-GROUNDED</span>
+          <span class="compare-badge good">Grounded</span>
         </div>
-        <p style="font-size: 12px; color: #7BE3B0; font-weight: 600; margin-bottom: 8px;">Prompt: "Explain Ohm's Law for Class 10 Science Exam"</p>
-        <div style="background: rgba(10,14,23,0.8); border: 1px solid rgba(123,227,176,0.15); border-radius: 12px; padding: 16px; font-size: 13px; color: rgba(255,255,255,0.9); line-height: 1.6; flex: 1;">
-          <div style="color: #fb923c; font-weight: 700; font-size: 11.5px; margin-bottom: 8px;">🔥 High-Yield PYQ • Appeared 3 times in TNPSC & SCERT Board Exams</div>
-          <strong>Definition:</strong> At constant temperature, the steady current ($I$) flowing through a conductor is directly proportional to the potential difference ($V$) across its ends.<br><br>
-          <strong>Formula:</strong> $V = I \times R \implies R = \frac{V}{I}$<br><br>
-          📚 <strong>Source:</strong> SCERT Samacheer Class 10 › Science › Ch 4: Electricity › §4.2 Ohm's Law
-          <div style="margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; gap: 6px; flex-wrap: wrap;">
-            <span style="font-size: 10.5px; background: rgba(56,189,248,0.12); color: #38bdf8; border: 1px solid rgba(56,189,248,0.25); padding: 4px 10px; border-radius: 999px;">📝 Expand for Mains (150-Word)</span>
-            <span style="font-size: 10.5px; background: rgba(123,227,176,0.12); color: #7BE3B0; border: 1px solid rgba(123,227,176,0.25); padding: 4px 10px; border-radius: 999px;">⚡ Practice 3 MCQs</span>
-          </div>
+        <h3>Exam-first answers, built for revision.</h3>
+        <p>Shows exactly what the student should learn next, with source breadcrumbs, PYQ context and a route into more practice when needed.</p>
+        <div class="compare-list">
+          <div><span class="material-symbols-outlined ms">check_circle</span><span>Source-aware explanation tied to the exact book, chapter or syllabus unit.</span></div>
+          <div><span class="material-symbols-outlined ms">check_circle</span><span>PYQ-aware structure that shows why this topic matters for the exam.</span></div>
+          <div><span class="material-symbols-outlined ms">check_circle</span><span>Clear next step, more practice, retry mistakes, or continue in the app when deeper memory is useful.</span></div>
         </div>
-      </div>
+        <div class="compare-stats">
+          <span>Source-backed</span>
+          <span>PYQ-aware</span>
+          <span>Built for study loops</span>
+        </div>
+      </article>
     </div>
+
+    <div class="compare-note">The difference is not more text. The difference is that the answer is already wired into the student's study path.</div>
   </div>
 </section>
-
 <!-- FEATURES -->
 <section class="section dark" id="features">
   <div style="max-width:980px;margin:0 auto;">
@@ -1527,7 +1856,7 @@
           <span class="material-symbols-outlined ms" style="color:#34d399;">translate</span>
         </div>
         <h3>Learn in Your Language</h3>
-        <p>Study in English, Tamil, Hindi, Telugu, Kannada, or Malayalam—with the same curriculum-grounded experience.</p>
+        <p>Study in English, Tamil, Hindi, Telugu, Kannada, or MalayalamÃ¢â‚¬â€with the same curriculum-grounded experience.</p>
       </div>
 
       <!-- 8. Diagrams & Visual Questions -->
@@ -1547,7 +1876,7 @@
   <h2>Exam Intelligence,<br><em>Not Just AI.</em></h2>
   <p>Built around your textbooks, curriculum, and previous-year questions to help you prepare with greater confidence.</p>
   <button class="btn-primary" style="font-size:14px;padding:13px 32px;" onclick="scrollToChat()">
-    <span class="material-symbols-outlined ms fill">bolt</span>Ask AI Now — Free
+    <span class="material-symbols-outlined ms fill">bolt</span>Ask AI Now Ã¢â‚¬â€ Free
   </button>
 </section>
 
@@ -1576,7 +1905,7 @@
         <strong style="font-size:15px;color:#fff;font-weight:800;letter-spacing:-.3px;">MindGains AI</strong>
       </div>
       <p style="font-size:12.5px;color:rgba(255,255,255,.42);line-height:1.65;max-width:240px;margin:0 0 18px;">The AI Built for Indian Exams. Grounded in your textbooks, aligned with your curriculum.</p>
-      <span style="display:inline-flex;align-items:center;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#7BE3B0;background:rgba(123,227,176,.1);border:1px solid rgba(123,227,176,.25);padding:5px 12px;border-radius:999px;">BETA · India's 1st Textbook-Aware AI</span>
+      <span style="display:inline-flex;align-items:center;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#7BE3B0;background:rgba(123,227,176,.1);border:1px solid rgba(123,227,176,.25);padding:5px 12px;border-radius:999px;">BETA Ã‚Â· India's 1st Textbook-Aware AI</span>
     </div>
 
     <!-- Exams -->
@@ -1614,7 +1943,7 @@
     </div>
   </div>
 
-  <!-- Mobile quick links — only visible on mobile via CSS -->
+  <!-- Mobile quick links Ã¢â‚¬â€ only visible on mobile via CSS -->
   <div class="footer-mobile-links">
     <a href="/quiz/" style="font-size:12px;color:rgba(255,255,255,.55);text-decoration:none;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);padding:6px 12px;border-radius:999px;">Quiz Hub</a>
     <a href="/tnpsc/" style="font-size:12px;color:rgba(255,255,255,.55);text-decoration:none;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);padding:6px 12px;border-radius:999px;">TNPSC</a>
@@ -1626,7 +1955,7 @@
   </div>
 
   <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:22px;border-top:1px solid rgba(255,255,255,.07);max-width:1100px;margin:24px auto 0;position:relative;z-index:1;">
-    <span style="font-size:11px;color:rgba(255,255,255,.28);">© 2026 MindGains AI · All rights reserved.</span>
+    <span style="font-size:11px;color:rgba(255,255,255,.28);">Ã‚Â© 2026 MindGains AI Ã‚Â· All rights reserved.</span>
     <span style="font-size:11px;color:rgba(255,255,255,.28);">All official PYQs are property of respective government exam boards.</span>
   </div>
 </footer>
@@ -1640,7 +1969,7 @@
 <div id="auth-modal" onclick="if(event.target===this)closeAuthModal()">
   <div>
     <div class="auth-card">
-      <button class="auth-close" onclick="closeAuthModal()" aria-label="Close modal">✕</button>
+      <button class="auth-close" onclick="closeAuthModal()" aria-label="Close modal">Ã¢Å“â€¢</button>
       <div class="auth-logo" style="background:transparent;"><img src="assets/icons/mindgains-header-logo.png" alt="MindGains Logo" style="width:64px;height:64px;border-radius:18px;object-fit:cover;" /></div>
       <h3>Continue with MindGains AI</h3>
       <p style="font-size:14px;color:rgba(255,255,255,0.78);line-height:1.65;margin-bottom:24px;">Sign in with Google to access the <strong style="color:#7BE3B0;">Beta V1</strong> of <strong style="color:#fff;">India's First Textbook-Aware AI</strong>, built to help you learn smarter with trusted, curriculum-grounded answers and reliable previous year questions.</p>
@@ -1649,9 +1978,9 @@
         <span>Continue with Google</span>
       </button>
       <div>
-        <span class="auth-badge-pill">⚡ 10 Free AI Study Messages</span>
+        <span class="auth-badge-pill">Ã¢Å¡Â¡ 10 Free AI Study Messages</span>
       </div>
-      <div class="auth-note">Free for all signed-in learners • Secure Google Sign-In</div>
+      <div class="auth-note">Free for all signed-in learners Ã¢â‚¬Â¢ Secure Google Sign-In</div>
     </div>
   </div>
 </div>
@@ -1659,7 +1988,7 @@
 <!-- DAILY LIMIT REACHED MODAL -->
 <div id="limit-modal" onclick="if(event.target===this)closeLimitModal()" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:400;background:rgba(0,0,0,0.75);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:20px;">
   <div style="background:rgba(14,18,26,0.96);border:1px solid rgba(123,227,176,0.25);border-radius:24px;padding:28px 24px;max-width:440px;width:100%;box-shadow:0 30px 80px rgba(0,0,0,0.9),0 0 30px rgba(123,227,176,0.15);position:relative;text-align:center;">
-    <button onclick="closeLimitModal()" style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;transition:all 0.2s;" aria-label="Close modal">✕</button>
+    <button onclick="closeLimitModal()" style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;transition:all 0.2s;" aria-label="Close modal">Ã¢Å“â€¢</button>
     <div style="width:56px;height:56px;border-radius:18px;background:rgba(244,114,182,0.12);border:1px solid rgba(244,114,182,0.3);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;color:#F472B6;">
       <span class="material-symbols-outlined ms" style="font-size:30px;">local_fire_department</span>
     </div>
@@ -1678,7 +2007,7 @@
 </div>
 
 <script>
-/* ═══ OPENROUTER KEY ROTATION & FALLBACKS ═══ */
+/* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â OPENROUTER KEY ROTATION & FALLBACKS Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */
 const OR_KEYS = [
   atob('c2stb3ItdjEtYmIyMmJiMWQ4MTMxYThmNGEzNTFhOWExM2M0MzU4ZDk4MWEyMjI2ZjJjOTcyOTg0NGNiOGU4NjljNTk5Njc0Nw=='),
   atob('c2stb3ItdjEtODBlNTVlZTAwMzMyYmExOTM1NmU2NTMzNTVlMGE2M2EwNzUwN2U1ZjMwZDM0OWVkNjJhMjdhMWZhYjllZDJmYw=='),
@@ -1688,7 +2017,7 @@ const OR_MODELS = ['google/gemini-2.5-flash', 'deepseek/deepseek-chat', 'openai/
 let orKeyIdx = 0;
 function getOrKey() { const k = OR_KEYS[orKeyIdx % OR_KEYS.length]; orKeyIdx++; return k; }
 
-/* ═══ MESSAGE LIMIT (guest: 10/day) ═══ */
+/* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â MESSAGE LIMIT (guest: 10/day) Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */
 let isSignedIn = false;
 let msgCount = 0;
 const MSG_LIMIT = 10;
@@ -1703,7 +2032,7 @@ function saveMsgCount(n) { localStorage.setItem('mg_msgs', JSON.stringify({date:
 
 msgCount = loadMsgCount();
 
-/* ═══ AUTH HOOKS & ACCESS CONTROL ═══ */
+/* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â AUTH HOOKS & ACCESS CONTROL Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */
 window.updateAuthAccessUI = function() {
   const inputEl = document.getElementById('chat-input');
   if (inputEl) {
@@ -1768,11 +2097,11 @@ function closeAuthModal() { document.getElementById('auth-modal').style.display 
 function openLimitModal()  { document.getElementById('limit-modal').style.display = 'flex'; }
 function closeLimitModal() { document.getElementById('limit-modal').style.display = 'none'; }
 
-/* ═══ SCROLL HELPERS ═══ */
+/* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â SCROLL HELPERS Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */
 function scrollToChat() { document.getElementById('chat-section').scrollIntoView({behavior:'smooth'}); }
 function scrollToQuiz() { document.getElementById('chat-section').scrollIntoView({behavior:'smooth'}); setTimeout(()=>switchMode('quiz'), 600); }
 
-/* ═══ MODE TOGGLE ═══ */
+/* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â MODE TOGGLE Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */
 let currentMode = 'chat';
 function switchMode(mode) {
   currentMode = mode;
@@ -1784,7 +2113,7 @@ function switchMode(mode) {
   if (mode==='quiz' && !quizStarted) renderQuizPicker();
 }
 
-/* ═══ CHAT ENGINE ═══ */
+/* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â CHAT ENGINE Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */
 const thread  = document.getElementById('thread');
 const inputEl = document.getElementById('chat-input');
 const sendBtn = document.getElementById('send-btn');
@@ -1817,30 +2146,30 @@ MINDGAINS BRAND MEMORY:
 SOURCE VERIFICATION POLICY:
 - Ground answers strictly in SCERT Samacheer Kalvi and NCERT textbooks, citing chapter, class, or syllabus unit.
 - When explaining concepts or syllabus topics, provide the exact source path as a single-line horizontal breadcrumb at the very end of your response:
-  📚 **Source:** [Board & Class] › [Subject / Book] › [Chapter] › [Section/Page]
-  (Example: 📚 **Source:** SCERT Samacheer Class 10 › Science › Ch 4: Electricity › §4.4 Joule's Law)
+  Ã°Å¸â€œÅ¡ **Source:** [Board & Class] Ã¢â‚¬Âº [Subject / Book] Ã¢â‚¬Âº [Chapter] Ã¢â‚¬Âº [Section/Page]
+  (Example: Ã°Å¸â€œÅ¡ **Source:** SCERT Samacheer Class 10 Ã¢â‚¬Âº Science Ã¢â‚¬Âº Ch 4: Electricity Ã¢â‚¬Âº Ã‚Â§4.4 Joule's Law)
 - Do not mix boards, classes, or syllabi unless the user explicitly asks for a comparison.
 - Never present an unverified textbook detail as a fact.
 
 PYQ FREQUENCY & RECENCY BADGE POLICY:
 - If the topic or question has appeared in official past year question papers (UPSC CSE, TNPSC Groups 1/2/4, SSC), include a verified high-yield PYQ badge right under the title:
-  🔥 **High-Yield PYQ** • Appeared [X] times in [Exam Name] ([Years])
-  (Example: 🔥 **High-Yield PYQ** • Appeared 4 times in UPSC Prelims: 2017, 2019, 2021, 2024)
+  Ã°Å¸â€Â¥ **High-Yield PYQ** Ã¢â‚¬Â¢ Appeared [X] times in [Exam Name] ([Years])
+  (Example: Ã°Å¸â€Â¥ **High-Yield PYQ** Ã¢â‚¬Â¢ Appeared 4 times in UPSC Prelims: 2017, 2019, 2021, 2024)
 
 STEP-BY-STEP MATH & PHYSICS WHITEBOARD POLICY:
 - For mathematical, physics, or numerical problem-solving, structure your answer into clean, high-yield whiteboard steps:
-  ### 📐 Step 1: Given Data & Known Variables
-  ### 🧮 Step 2: Formula & Equation
-  ### ⚡ Step 3: Step-by-Step Calculation & Substitution
-  ### 🎯 Final Answer & SI Units
+  ### Ã°Å¸â€œÂ Step 1: Given Data & Known Variables
+  ### Ã°Å¸Â§Â® Step 2: Formula & Equation
+  ### Ã¢Å¡Â¡ Step 3: Step-by-Step Calculation & Substitution
+  ### Ã°Å¸Å½Â¯ Final Answer & SI Units
 - MATH FORMULAS & LATEX RULES:
   * ALWAYS use LaTeX formatting for all mathematical expressions, equations, variables, and formulas.
   * Use inline delimiters $ ... $ for inline math (e.g. $E = mc^2$ or $x$) and $$ ... $$ for block/centered math.
   * For fractions and division operations, ALWAYS use LaTeX fraction notation: \\frac{numerator}{denominator} (e.g. \\frac{GM}{r^2} or \\frac{n}{d}) rather than raw division symbols like n/d or numerator/denominator, so they render with a beautiful stacked numerator over denominator.
   * Never leave math symbols as unformatted text (like $/- or raw * or ^). Use proper LaTeX.
 
-YOU TEACH — you never just give a one-liner when the student wants to understand something.
-- When asked to explain or understand a concept: give a proper, well-structured explanation — a clear definition, the key points, a simple example or analogy, and why it matters for the exam. Be genuinely thorough and helpful.
+YOU TEACH Ã¢â‚¬â€ you never just give a one-liner when the student wants to understand something.
+- When asked to explain or understand a concept: give a proper, well-structured explanation Ã¢â‚¬â€ a clear definition, the key points, a simple example or analogy, and why it matters for the exam. Be genuinely thorough and helpful.
 - If the user asks a concept question with curriculum framing, do not judge syllabus fit unless they explicitly ask whether it is covered there. Just answer the concept directly.
 - Never volunteer syllabus coverage language unless the user explicitly asks about syllabus coverage.
 - For a direct MCQ: lead with "Answer: X", then explain why it is right and, briefly, why a tempting wrong option is wrong.
@@ -1854,7 +2183,7 @@ STYLE:
 - Simple, encouraging language. No emojis or mascot/animal roleplay. Just be a great, human tutor.
 
 WRITING:
-- NEVER use em dashes (—) or double hyphens (--). Use commas, full stops, or "(...)". This is important.
+- NEVER use em dashes (Ã¢â‚¬â€) or double hyphens (--). Use commas, full stops, or "(...)". This is important.
 
 LANGUAGE:
 - Reply in the user's language. If they write in Tamil, reply in natural spoken Tamil (Tanglish where students mix English exam terms).
@@ -1934,8 +2263,8 @@ function formatAIResponse(rawText) {
   let text = rawText.replace(/INTERACTIVE\s+PYQ\s+PRACTICE/gi, '');
 
   // Beautiful Horizontal Breadcrumb Source pill
-  text = text.replace(/([📚\s]*\*\*Source:\*\*\s*|\bSource:\s*)(.*?)(?=\n|<br>|<div|$)/gi, function(match, label, path) {
-    const parts = path.split(/[›>]/).map(p => p.trim()).filter(Boolean);
+  text = text.replace(/([Ã°Å¸â€œÅ¡\s]*\*\*Source:\*\*\s*|\bSource:\s*)(.*?)(?=\n|<br>|<div|$)/gi, function(match, label, path) {
+    const parts = path.split(/[Ã¢â‚¬Âº>]/).map(p => p.trim()).filter(Boolean);
     if (parts.length === 0) return match;
     const pillsHtml = parts.map(part => `<span style="font-size:11.5px; font-weight:600; color:#fff; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); padding:4px 10px; border-radius:8px; white-space:nowrap;">${part}</span>`).join('<span style="color:rgba(255,255,255,0.3); font-size:14px; font-weight:bold; display:inline-flex; align-items:center;">&rsaquo;</span>');
     return `<div class="source-breadcrumb" style="display:flex; flex-wrap:wrap; align-items:center; gap:6px 8px; background:rgba(123,227,176,0.05); border:1px solid rgba(123,227,176,0.15); border-radius:12px; padding:10px 14px; margin:14px 0 6px;">
@@ -1947,12 +2276,12 @@ function formatAIResponse(rawText) {
   });
 
   // 1. Mindmaps & Concept Tree Diagram Rendering
-  if (text.includes('├──') || text.includes('└──') || text.includes('│──') || text.includes('-->')) {
-    text = text.replace(/((?:.*[├└│]-->?.*\n?)+)/g, function(match) {
+  if (text.includes('Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬') || text.includes('Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬') || text.includes('Ã¢â€â€šÃ¢â€â‚¬Ã¢â€â‚¬') || text.includes('-->')) {
+    text = text.replace(/((?:.*[Ã¢â€Å“Ã¢â€â€Ã¢â€â€š]-->?.*\n?)+)/g, function(match) {
       const lines = match.trim().split('\n');
       const mindmapItems = lines.map(line => {
-        const indentLevel = (line.match(/[│\s]/g) || []).length;
-        const cleanNode = line.replace(/[├└│]──|>|-/g, '').trim();
+        const indentLevel = (line.match(/[Ã¢â€â€š\s]/g) || []).length;
+        const cleanNode = line.replace(/[Ã¢â€Å“Ã¢â€â€Ã¢â€â€š]Ã¢â€â‚¬Ã¢â€â‚¬|>|-/g, '').trim();
         if (!cleanNode) return '';
         return `<div class="mindmap-node" style="margin-left:${Math.min(indentLevel * 12, 48)}px; display:flex; align-items:center; gap:8px; margin-bottom:6px;">
           <span style="width:7px;height:7px;border-radius:50%;background:#7BE3B0;display:inline-block;flex-shrink:0;"></span>
@@ -1987,7 +2316,7 @@ function formatAIResponse(rawText) {
   text = text.replace(/^>\s*(.*$)/gim, '<blockquote style="border-left:3px solid #7BE3B0;background:rgba(123,227,176,.06);padding:8px 14px;border-radius:0 10px 10px 0;margin:10px 0;color:rgba(255,255,255,.85);font-size:13px;">$1</blockquote>');
 
   // Bullet Lists
-  text = text.replace(/^\s*[-*•]\s+(.*$)/gim, '<li style="margin-bottom:4px;color:rgba(255,255,255,.85);"><span style="color:#7BE3B0;margin-right:6px;">•</span>$1</li>');
+  text = text.replace(/^\s*[-*Ã¢â‚¬Â¢]\s+(.*$)/gim, '<li style="margin-bottom:4px;color:rgba(255,255,255,.85);"><span style="color:#7BE3B0;margin-right:6px;">Ã¢â‚¬Â¢</span>$1</li>');
   text = text.replace(/(<li[\s\S]*?<\/li>)/gi, '<ul style="list-style:none;padding-left:4px;margin:8px 0;">$1</ul>');
   text = text.replace(/<\/ul>\s*<ul style="list-style:none;padding-left:4px;margin:8px 0;">/gi, '');
 
@@ -2030,10 +2359,10 @@ function formatAIResponse(rawText) {
   const actionChips = `
     <div class="miga-action-chips">
       <button class="miga-chip-btn" onclick="window.triggerMainsExpand(this)">
-        <span class="material-symbols-outlined ms" style="font-size:14px;color:#38bdf8;">edit_note</span> 📝 Expand for Mains (150-Word Essay)
+        <span class="material-symbols-outlined ms" style="font-size:14px;color:#38bdf8;">edit_note</span> Ã°Å¸â€œÂ Expand for Mains (150-Word Essay)
       </button>
       <button class="miga-chip-btn" onclick="window.triggerMCQPractice(this)">
-        <span class="material-symbols-outlined ms" style="font-size:14px;color:#7BE3B0;">quiz</span> ⚡ Practice 3 MCQs
+        <span class="material-symbols-outlined ms" style="font-size:14px;color:#7BE3B0;">quiz</span> Ã¢Å¡Â¡ Practice 3 MCQs
       </button>
     </div>
   `;
@@ -2057,12 +2386,12 @@ window.triggerMCQPractice = function(btn) {
   sendMsg(prompt);
 };
 
-/* ═══ PROMPT CARD TYPEWRITER ANIMATION ═══ */
+/* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â PROMPT CARD TYPEWRITER ANIMATION Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */
 const PROMPT_SETS = {
   1: [
     "Directive Principles of State Policy",
-    "Harappan Civilization — SCERT Samacheer",
-    "Photosynthesis — NCERT Class 11",
+    "Harappan Civilization Ã¢â‚¬â€ SCERT Samacheer",
+    "Photosynthesis Ã¢â‚¬â€ NCERT Class 11",
     "Sangam Literature & History"
   ],
   2: [
@@ -2112,7 +2441,7 @@ function startTypewriter(cardId) {
     activeFullPromptTexts[cardId] = targetText;
     if (isDeleting) {
       charIdx--;
-      el.textContent = targetText.substring(0, charIdx) + '▌';
+      el.textContent = targetText.substring(0, charIdx) + 'Ã¢â€“Å’';
       currentPromptTexts[cardId] = targetText.substring(0, charIdx);
       if (charIdx <= 0) {
         isDeleting = false;
@@ -2123,7 +2452,7 @@ function startTypewriter(cardId) {
       setTimeout(step, 20);
     } else {
       charIdx++;
-      el.textContent = targetText.substring(0, charIdx) + '▌';
+      el.textContent = targetText.substring(0, charIdx) + 'Ã¢â€“Å’';
       currentPromptTexts[cardId] = targetText.substring(0, charIdx);
       if (charIdx >= targetText.length) {
         el.textContent = targetText;
@@ -2318,7 +2647,7 @@ async function sendMsg(override) {
 
 
 
-/* ═══ QUIZ ENGINE ═══ */
+/* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â QUIZ ENGINE Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */
 const QUIZ_CATS = [
   { id:'polity',   label:'Polity',       icon:'account_balance', color:'#a78bfa', exam:'upsc', file:'polity/fundamental-rights.json' },
   { id:'history',  label:'History',      icon:'history_edu',     color:'#fb923c', exam:'upsc', file:'history/1857-revolt.json' },
@@ -2573,10 +2902,10 @@ function showQuizResult() {
   const pct = Math.round((quizScore / total) * 100);
   body.innerHTML = `
     <div style="text-align:center;padding:36px 24px;">
-      <div style="font-size:52px;margin-bottom:16px;">${quizScore >= total*0.7 ? '🎉' : quizScore >= total*0.4 ? '💪' : '📚'}</div>
+      <div style="font-size:52px;margin-bottom:16px;">${quizScore >= total*0.7 ? 'Ã°Å¸Å½â€°' : quizScore >= total*0.4 ? 'Ã°Å¸â€™Âª' : 'Ã°Å¸â€œÅ¡'}</div>
       <div style="font-size:26px;font-weight:800;color:#fff;margin-bottom:6px;">${quizScore} / ${total} Correct (${pct}%)</div>
       <div style="font-size:14px;color:rgba(255,255,255,.55);max-width:440px;margin:0 auto 28px;line-height:1.6;">
-        ${quizScore >= total*0.7 ? 'Outstanding accuracy! You have strong mastery of this textbook dimension.' : quizScore >= total*0.4 ? 'Good effort! Review the textbook explanations and try again.' : 'Keep practicing — textbook repetition leads to perfection.'}
+        ${quizScore >= total*0.7 ? 'Outstanding accuracy! You have strong mastery of this textbook dimension.' : quizScore >= total*0.4 ? 'Good effort! Review the textbook explanations and try again.' : 'Keep practicing Ã¢â‚¬â€ textbook repetition leads to perfection.'}
       </div>
       <button class="btn-primary" onclick="resetQuiz()" style="font-size:13.5px;padding:11px 28px;">
         <span class="material-symbols-outlined ms fill">replay</span>Try Another Topic
@@ -2594,13 +2923,13 @@ function resetQuiz() {
     <div class="q-expl" id="q-expl"></div>
     <div class="quiz-footer">
       <div class="quiz-score" id="quiz-score">Score: 0</div>
-      <button id="next-btn" onclick="nextQuestion()">Next →</button>
+      <button id="next-btn" onclick="nextQuestion()">Next Ã¢â€ â€™</button>
     </div>`;
   document.getElementById('quiz-picker').style.display = 'block';
   renderQuizPicker();
 }
 
-/* ═══ REAL-TIME LIQUID WAVE ANIMATION ENGINE ═══ */
+/* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â REAL-TIME LIQUID WAVE ANIMATION ENGINE Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */
 (function initLiquidCanvas() {
   const canvas = document.getElementById('chat-liquid-canvas');
   if (!canvas) return;
