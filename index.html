@@ -2086,9 +2086,6 @@
               <div class="compare-answer-kicker" style="color:#FCA5A5;"><span class="compare-answer-dot"></span>Generic explanation</div>
               <div class="compare-answer-title">Directive Principles of State Policy</div>
               <div class="compare-answer-copy" id="compare-generic-copy">DPSPs are constitutional guidelines contained in Part IV of the Constitution. They are non-justiciable and guide the State in promoting social and economic welfare.</div>
-              <div class="compare-proof-chips">
-                <span class="compare-proof-chip bad">General explanation</span>
-              </div>
             </div>
           </div>
         </article>
@@ -2113,12 +2110,6 @@
                 <span style="font-size:11.5px; font-weight:600; color:#fff; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); padding:4px 10px; border-radius:8px; white-space:nowrap;">Political Science</span>
                 <span style="color:rgba(255,255,255,0.3); font-size:14px; font-weight:bold; display:inline-flex; align-items:center;">&rsaquo;</span>
                 <span style="font-size:11.5px; font-weight:600; color:#fff; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); padding:4px 10px; border-radius:8px; white-space:nowrap;">DPSP</span>
-              </div>
-              <div class="compare-proof-chips">
-                <span class="compare-proof-chip good">Textbook-aware</span>
-                <span class="compare-proof-chip good">Exam-aligned</span>
-                <span class="compare-proof-chip good">NCERT / Samacheer grounded</span>
-                <span class="compare-proof-chip good">PYQ context</span>
               </div>
               <div class="compare-live-cta" style="justify-content:flex-start;margin-top:4px;">
                 <a class="compare-live-action" href="/chat/">Practice DPSP questions -&gt;</a>
@@ -2934,23 +2925,14 @@ window.runCompareDemo = async function() {
       tone: 'Other AI live response',
       accent: '#FCA5A5',
       body: genericReply,
-      chips: [
-        { label: 'Generic explanation', kind: 'bad' },
-        { label: 'No syllabus context', kind: 'bad' },
-        { label: 'No PYQ connection', kind: 'bad' }
-      ]
+      chips: []
     });
     mindgainsOut.innerHTML = renderCompareCard({
       title: extractLead(mindgainsReply) || 'MindGains exam-aware response',
       tone: 'MindGains live response',
       accent: '#7BE3B0',
       body: mindgainsReply,
-      chips: [
-        { label: 'Textbook-aware', kind: 'good' },
-        { label: 'Exam-aligned', kind: 'good' },
-        { label: 'NCERT / Samacheer grounded', kind: 'good' },
-        { label: 'PYQ context', kind: 'good' }
-      ]
+      chips: []
     });
     renderMathSafe(genericOut);
     renderMathSafe(mindgainsOut);
@@ -2961,23 +2943,14 @@ window.runCompareDemo = async function() {
       tone: 'Example response',
       accent: '#FCA5A5',
       body: 'DPSPs are constitutional guidelines contained in Part IV of the Constitution. They are non-justiciable and guide the State in promoting social and economic welfare.',
-      chips: [
-        { label: 'Generic explanation', kind: 'bad' },
-        { label: 'No textbook grounding', kind: 'bad' },
-        { label: 'No PYQ connection', kind: 'bad' }
-      ]
+      chips: []
     });
     mindgainsOut.innerHTML = renderCompareCard({
       title: 'Directive Principles of State Policy',
       tone: 'Example response',
       accent: '#7BE3B0',
       body: '**TNPSC | Indian Polity**\n\n**Part IV | Articles 36-51**\n\nDPSPs are principles fundamental to the governance of the country. Article 37 makes them non-justiciable, while requiring the State to apply them in making laws.\n\n**Three classifications**\n\n**Socialist** - Arts. 38, 39, 39A, 41, 42...\n**Gandhian** - Arts. 40, 43, 46, 47, 48...\n**Liberal-Intellectual** - Arts. 44, 45, 48A, 50, 51...\n\n**Why TNPSC asks this**\n\nDirect Article questions | Match the following | Amendments | Classification\n\n**Quick Revision**\n\nPart IV | 36-51 | Irish Constitution | Non-justiciable | Welfare State',
-      chips: [
-        { label: 'Textbook-aware', kind: 'good' },
-        { label: 'Exam-aligned', kind: 'good' },
-        { label: 'NCERT / Samacheer grounded', kind: 'good' },
-        { label: 'PYQ context', kind: 'good' }
-      ]
+      chips: []
     });
     renderMathSafe(genericOut);
     renderMathSafe(mindgainsOut);
