@@ -1397,11 +1397,10 @@
       line-height:1.6;
       color:rgba(255,255,255,.58);
     }
-    .compare-live-note {
-      margin-top:8px;
-      font-size:11.5px;
-      line-height:1.55;
-      color:rgba(255,255,255,.46);
+    .compare-live-cta {
+      display:flex;
+      justify-content:flex-end;
+      margin-top:18px;
     }
     .compare-live-action {
       display:inline-flex;
@@ -1418,6 +1417,7 @@
       box-shadow:0 10px 28px rgba(123,227,176,.22);
       white-space:nowrap;
       flex-shrink:0;
+      text-decoration:none;
     }
     .compare-live-grid {
       display:grid;
@@ -1571,46 +1571,6 @@
       color:#FCA5A5;
       border-color:rgba(248,113,113,.18);
       background:rgba(248,113,113,.08);
-    }
-    .compare-request {
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-      margin-bottom:12px;
-      padding:12px;
-      border-radius:14px;
-      background:rgba(255,255,255,.03);
-      border:1px solid rgba(255,255,255,.08);
-    }
-    .compare-request-row {
-      display:flex;
-      flex-direction:column;
-      gap:4px;
-    }
-    .compare-request-label {
-      font-size:10px;
-      font-weight:800;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      color:rgba(255,255,255,.48);
-    }
-    .compare-request-value {
-      font-size:12px;
-      line-height:1.7;
-      color:rgba(255,255,255,.82);
-      white-space:pre-wrap;
-      overflow-wrap:anywhere;
-    }
-    .compare-request-value code {
-      display:block;
-      margin-top:4px;
-      padding:10px 11px;
-      border-radius:12px;
-      background:rgba(0,0,0,.28);
-      border:1px solid rgba(255,255,255,.06);
-      color:rgba(255,255,255,.92);
-      white-space:pre-wrap;
-      overflow-wrap:anywhere;
     }
     .compare-live-output .muted {
       color:rgba(255,255,255,.48);
@@ -2094,39 +2054,32 @@
   <div style="max-width: 1100px; margin: 0 auto;">
     <div class="compare-hero">
       <span class="pill" style="color: #7BE3B0; background: rgba(123,227,176,0.1); border: 1px solid rgba(123,227,176,0.25);">How the product differs</span>
-      <h2>Same question. Very different answer.</h2>
-      <p>Generic AI gives a usable explanation. MindGains gives a study answer that is exam-aware, textbook-aware and tied to the way Indian aspirants actually revise.</p>
+      <h2>One question. Two very different answers.</h2>
+      <p>Generic AI gives a usable explanation. MindGains gives the answer in exam language, with textbook structure and the details students actually need to remember.</p>
     </div>
 
     <div class="compare-live">
       <div class="compare-live-top">
         <div>
-          <span class="compare-live-kicker">
-            Side-by-side proof
-          </span>
-          <div class="compare-live-title">One question, two answers.</div>
-          <div class="compare-live-desc">The button can refresh the demo with live replies, but the cards only show the student-facing result.</div>
-          <div class="compare-live-note">No model names. No prompts. No payloads. Just the answer a student would read.</div>
+          <span class="compare-live-kicker">Side-by-side proof</span>
+          <div class="compare-live-title">Same question. Different usefulness.</div>
+          <div class="compare-live-desc">The left side stays plain. The right side shows how MindGains organizes an answer for actual exam revision.</div>
         </div>
-        <button class="compare-live-action" onclick="runCompareDemo()">
-          Run live compare
-        </button>
       </div>
       <div class="compare-live-grid">
         <article class="compare-live-card">
           <div class="compare-live-head">
             <span class="compare-live-label">Other AI</span>
-            <span class="compare-live-pill bad">Generic explanation</span>
+            <span class="compare-live-pill bad">Generic</span>
           </div>
           <div class="compare-live-output" id="compare-generic-output">
             <div class="compare-answer-body">
-              <div class="compare-answer-kicker" style="color:#FCA5A5;"><span class="compare-answer-dot"></span>Generic answer</div>
+              <div class="compare-answer-kicker" style="color:#FCA5A5;"><span class="compare-answer-dot"></span>Generic explanation</div>
               <div class="compare-answer-title">Directive Principles are broad constitutional guidelines.</div>
-              <div class="compare-answer-copy" id="compare-generic-copy">They sit in Part IV of the Constitution, are not enforceable by courts, and aim to promote welfare, equality and good governance.</div>
+              <div class="compare-answer-copy" id="compare-generic-copy">Directive Principles are in Part IV of the Constitution. They are not enforceable by courts and are meant to guide welfare and governance.</div>
               <div class="compare-proof-chips">
                 <span class="compare-proof-chip bad">No syllabus context</span>
                 <span class="compare-proof-chip bad">No textbook grounding</span>
-                <span class="compare-proof-chip bad">No PYQ connection</span>
               </div>
             </div>
           </div>
@@ -2134,22 +2087,27 @@
         <article class="compare-live-card">
           <div class="compare-live-head">
             <span class="compare-live-label">MindGains AI</span>
-            <span class="compare-live-pill good">Exam-aware</span>
+            <span class="compare-live-pill good">Built for your exam</span>
           </div>
           <div class="compare-live-output" id="compare-mindgains-output">
             <div class="compare-answer-body">
               <div class="compare-answer-kicker" style="color:#7BE3B0;"><span class="compare-answer-dot"></span>MindGains answer</div>
-              <div class="compare-answer-title">Directive Principles sit in Part IV, Articles 36 to 51.</div>
-              <div class="compare-answer-copy" id="compare-mindgains-copy">For UPSC and TNPSC, remember the usual high-yield anchors: Articles 39, 40, 44 and 48A. They are non-justiciable, but they matter because they shape governance, welfare policy and many repeated exam questions.</div>
+              <div class="compare-answer-title">DPSPs live in Part IV, Articles 36 to 51.</div>
+              <div class="compare-answer-copy" id="compare-mindgains-copy"><strong>DPSPs are non-justiciable but fundamental in governance.</strong><br><br>For UPSC and TNPSC, remember the main clusters: Socialist, Gandhian and Liberal-Intellectual. The high-yield anchors are Articles 39, 40, 44 and 48A, especially when questions compare DPSP with Fundamental Rights.</div>
               <div class="compare-proof-chips">
                 <span class="compare-proof-chip good">Textbook-aware</span>
                 <span class="compare-proof-chip good">Exam-aligned</span>
                 <span class="compare-proof-chip good">NCERT / Samacheer grounded</span>
-                <span class="compare-proof-chip good">Related PYQs</span>
+                <span class="compare-proof-chip good">Verified PYQs</span>
               </div>
             </div>
           </div>
         </article>
+      </div>
+      <div class="compare-live-cta">
+        <a class="compare-live-action" href="/chat/">
+          Ask MindGains →
+        </a>
       </div>
     </div>
 
