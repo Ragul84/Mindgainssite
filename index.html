@@ -1397,11 +1397,21 @@
       line-height:1.6;
       color:rgba(255,255,255,.58);
     }
-    .compare-live-cta {
-      display:flex;
-      justify-content:flex-end;
-      margin-top:18px;
+    .compare-query {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.04);
+      color:rgba(255,255,255,.88);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:-0.01em;
+      margin-top:14px;
     }
+    .compare-query .material-symbols-outlined { font-size:14px; color:#7BE3B0; }
     .compare-live-action {
       display:inline-flex;
       align-items:center;
@@ -2053,33 +2063,25 @@
 <section class="section" id="comparison" style="padding: 72px 20px; background: #070B12; border-top: 1px solid rgba(255,255,255,0.06);">
   <div style="max-width: 1100px; margin: 0 auto;">
     <div class="compare-hero">
-      <span class="pill" style="color: #7BE3B0; background: rgba(123,227,176,0.1); border: 1px solid rgba(123,227,176,0.25);">How the product differs</span>
-      <h2>One question. Two very different answers.</h2>
-      <p>Generic AI gives a usable explanation. MindGains gives the answer in exam language, with textbook structure and the details students actually need to remember.</p>
+      <span class="pill" style="color: #7BE3B0; background: rgba(123,227,176,0.1); border: 1px solid rgba(123,227,176,0.25);">Why MindGains</span>
+      <h2>Ask the same question.<br/>Get a study-ready answer.</h2>
+      <div class="compare-query"><span class="material-symbols-outlined ms">search</span>Explain Directive Principles of State Policy for TNPSC.</div>
     </div>
 
     <div class="compare-live">
-      <div class="compare-live-top">
-        <div>
-          <span class="compare-live-kicker">Side-by-side proof</span>
-          <div class="compare-live-title">Same question. Different usefulness.</div>
-          <div class="compare-live-desc">The left side stays plain. The right side shows how MindGains organizes an answer for actual exam revision.</div>
-        </div>
-      </div>
       <div class="compare-live-grid">
         <article class="compare-live-card">
           <div class="compare-live-head">
             <span class="compare-live-label">Other AI</span>
-            <span class="compare-live-pill bad">Generic</span>
+            <span class="compare-live-pill bad">General explanation</span>
           </div>
           <div class="compare-live-output" id="compare-generic-output">
             <div class="compare-answer-body">
               <div class="compare-answer-kicker" style="color:#FCA5A5;"><span class="compare-answer-dot"></span>Generic explanation</div>
-              <div class="compare-answer-title">Directive Principles are broad constitutional guidelines.</div>
-              <div class="compare-answer-copy" id="compare-generic-copy">Directive Principles are in Part IV of the Constitution. They are not enforceable by courts and are meant to guide welfare and governance.</div>
+              <div class="compare-answer-title">Directive Principles of State Policy</div>
+              <div class="compare-answer-copy" id="compare-generic-copy">Directive Principles are guidelines in Part IV of the Indian Constitution. They are not enforceable by courts and aim to establish social and economic democracy and promote public welfare.</div>
               <div class="compare-proof-chips">
-                <span class="compare-proof-chip bad">No syllabus context</span>
-                <span class="compare-proof-chip bad">No textbook grounding</span>
+                <span class="compare-proof-chip bad">General explanation</span>
               </div>
             </div>
           </div>
@@ -2092,72 +2094,33 @@
           <div class="compare-live-output" id="compare-mindgains-output">
             <div class="compare-answer-body">
               <div class="compare-answer-kicker" style="color:#7BE3B0;"><span class="compare-answer-dot"></span>MindGains answer</div>
-              <div class="compare-answer-title">DPSPs live in Part IV, Articles 36 to 51.</div>
-              <div class="compare-answer-copy" id="compare-mindgains-copy"><strong>DPSPs are non-justiciable but fundamental in governance.</strong><br><br>For UPSC and TNPSC, remember the main clusters: Socialist, Gandhian and Liberal-Intellectual. The high-yield anchors are Articles 39, 40, 44 and 48A, especially when questions compare DPSP with Fundamental Rights.</div>
+              <div class="compare-answer-title">DPSPs live in Part IV, Articles 36-51</div>
+              <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,.64);letter-spacing:-0.01em;">TNPSC &middot; Indian Polity</div>
+              <div class="compare-answer-copy" id="compare-mindgains-copy"><strong>Remember for TNPSC</strong><br><br>- <strong>Article 39</strong> - key principles of economic justice<br>- <strong>Article 40</strong> - organisation of village panchayats<br>- <strong>Article 44</strong> - Uniform Civil Code<br>- <strong>Article 48A</strong> - environment and wildlife protection<br><br><strong>Exam takeaway:</strong> DPSPs are non-justiciable but fundamental in governance, and often appear in Articles, classification, and FR-vs-DPSP questions.</div>
+              <div class="source-breadcrumb" style="display:flex; flex-wrap:wrap; align-items:center; gap:6px 8px; background:rgba(123,227,176,0.05); border:1px solid rgba(123,227,176,0.15); border-radius:12px; padding:10px 12px; margin-top:4px;">
+                <span style="font-size:11px; font-weight:800; color:var(--duo-blue); display:inline-flex; align-items:center; gap:4px; text-transform:uppercase; letter-spacing:0.05em; margin-right:4px;">
+                  <span class="material-symbols-outlined ms" style="font-size:14px; color:var(--duo-blue);">menu_book</span> Textbook Source
+                </span>
+                <span style="font-size:11.5px; font-weight:600; color:#fff; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); padding:4px 10px; border-radius:8px; white-space:nowrap;">SCERT Samacheer</span>
+                <span style="color:rgba(255,255,255,0.3); font-size:14px; font-weight:bold; display:inline-flex; align-items:center;">&rsaquo;</span>
+                <span style="font-size:11.5px; font-weight:600; color:#fff; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); padding:4px 10px; border-radius:8px; white-space:nowrap;">Indian Polity</span>
+                <span style="color:rgba(255,255,255,0.3); font-size:14px; font-weight:bold; display:inline-flex; align-items:center;">&rsaquo;</span>
+                <span style="font-size:11.5px; font-weight:600; color:#fff; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); padding:4px 10px; border-radius:8px; white-space:nowrap;">DPSP</span>
+              </div>
               <div class="compare-proof-chips">
                 <span class="compare-proof-chip good">Textbook-aware</span>
                 <span class="compare-proof-chip good">Exam-aligned</span>
                 <span class="compare-proof-chip good">NCERT / Samacheer grounded</span>
-                <span class="compare-proof-chip good">Verified PYQs</span>
+                <span class="compare-proof-chip good">PYQ context</span>
+              </div>
+              <div class="compare-live-cta" style="justify-content:flex-start;margin-top:4px;">
+                <a class="compare-live-action" href="/chat/">Practice DPSP -&gt;</a>
               </div>
             </div>
           </div>
         </article>
       </div>
-      <div class="compare-live-cta">
-        <a class="compare-live-action" href="/chat/">
-          Ask MindGains →
-        </a>
-      </div>
     </div>
-
-    <div class="compare-grid">
-      <article class="compare-card generic">
-        <div class="compare-headline">
-          <div class="compare-brand">
-            <strong>Generic AI</strong>
-            <span>Fast, but context-light</span>
-          </div>
-          <span class="compare-badge bad">Ungrounded</span>
-        </div>
-        <h3>Broad answer, little exam memory.</h3>
-        <p>Useful for a quick definition. Weak when the student needs syllabus fit, source grounding, or a cleaner route into revision.</p>
-        <div class="compare-list">
-          <div><span class="material-symbols-outlined ms">close</span><span>No chapter breadcrumb, no source path, no exam history.</span></div>
-          <div><span class="material-symbols-outlined ms">close</span><span>No PYQ signal, so it cannot show what the exam keeps repeating.</span></div>
-          <div><span class="material-symbols-outlined ms">close</span><span>No study loop, so a student leaves with an answer but not a next step.</span></div>
-        </div>
-        <div class="compare-stats">
-          <span>Broad</span>
-          <span>Ungrounded</span>
-          <span>Low recall for study intent</span>
-        </div>
-      </article>
-
-      <article class="compare-card mindgains">
-        <div class="compare-headline">
-          <div class="compare-brand">
-            <strong>MindGains AI</strong>
-            <span>Textbook-aware and exam specific</span>
-          </div>
-          <span class="compare-badge good">Grounded</span>
-        </div>
-        <h3>Exam-first answers, built for revision.</h3>
-        <p>Shows exactly what the student should learn next, with source breadcrumbs, PYQ context and a route into more practice when needed.</p>
-        <div class="compare-list">
-          <div><span class="material-symbols-outlined ms">check_circle</span><span>Source-aware explanation tied to the exact book, chapter or syllabus unit.</span></div>
-          <div><span class="material-symbols-outlined ms">check_circle</span><span>PYQ-aware structure that shows why this topic matters for the exam.</span></div>
-          <div><span class="material-symbols-outlined ms">check_circle</span><span>Clear next step, more practice, retry mistakes, or continue in the app when deeper memory is useful.</span></div>
-        </div>
-        <div class="compare-stats">
-          <span>Source-backed</span>
-          <span>PYQ-aware</span>
-          <span>Built for study loops</span>
-        </div>
-      </article>
-    </div>
-
-    <div class="compare-note">The difference is not more text. The difference is that the answer is already wired into the student's study path.</div>
   </div>
 </section>
 <!-- FEATURES -->
