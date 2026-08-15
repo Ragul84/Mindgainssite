@@ -1,3 +1,2 @@
-/quiz /upsc/ 301
-/quiz/ /upsc/ 301
-/quiz/* /:splat 301
+# /quiz/ stays as the main Quiz Hub.
+# Deep legacy redirects are handled by generated legacy pages.

@@ -533,8 +533,8 @@ function formatAIResponse(rawText) {
   let text = rawText.replace(/INTERACTIVE\s+PYQ\s+PRACTICE/gi, '');
 
   // Beautiful Horizontal Breadcrumb Source pill
-  text = text.replace(/([📚\s]*\*\*Source:\*\*\s*|\bSource:\s*)(.*?)(?=\n|<br>|<div|$)/gi, function(match, label, path) {
-    const parts = path.split(/[›>]/).map(p => p.trim()).filter(Boolean);
+  text = text.replace(/(?:\*\*Source:\*\*|\bSource:\s*)(.*?)(?=\n|<br>|<div|$)/gi, function(match, path) {
+    const parts = path.split('>').map(p => p.trim()).filter(Boolean);
     if (parts.length === 0) return match;
     const pillsHtml = parts.map(part => `<span style="font-size:11.5px; font-weight:600; color:#fff; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); padding:4px 10px; border-radius:8px; white-space:nowrap;">${part}</span>`).join('<span style="color:rgba(255,255,255,0.3); font-size:14px; font-weight:bold; display:inline-flex; align-items:center;">&rsaquo;</span>');
     return `<div class="source-breadcrumb" style="display:flex; flex-wrap:wrap; align-items:center; gap:6px 8px; background:rgba(123,227,176,0.05); border:1px solid rgba(123,227,176,0.15); border-radius:12px; padding:10px 14px; margin:14px 0 6px;">
@@ -552,14 +552,14 @@ function formatAIResponse(rawText) {
   text = text.replace(/\*\*(.*?)\*\*/g, '<strong style="color:#fff;font-weight:800;">$1</strong>');
   text = text.replace(/\*(.*?)\*/g, '<em>$1</em>');
   text = text.replace(/^>\s*(.*$)/gim, '<blockquote style="border-left:3px solid var(--duo-blue);background:rgba(28,176,246,.08);padding:8px 12px;border-radius:0 8px 8px 0;margin:8px 0;color:rgba(255,255,255,.9);font-size:13px;">$1</blockquote>');
-  text = text.replace(/^\s*[-*•]\s+(.*$)/gim, '<li style="margin-bottom:3px;color:rgba(255,255,255,.88);"><span style="color:var(--duo-blue);margin-right:5px;">•</span>$1</li>');
+  text = text.replace(/^\s*[-*]\s+(.*$)/gim, '<li style="margin-bottom:3px;color:rgba(255,255,255,.88);"><span style="color:var(--duo-blue);margin-right:5px;">&bull;</span>$1</li>');
   text = text.replace(/(<li[\s\S]*?<\/li>)/gi, '<ul style="list-style:none;padding-left:4px;margin:6px 0;">$1</ul>');
   text = text.replace(/<\/ul>\s*<ul style="list-style:none;padding-left:4px;margin:6px 0;">/gi, '');
   return text.replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>');
 }
 
 const PROMPT_SETS = {
-  1: ["Directive Principles of State Policy", "Harappan Civilization — SCERT Samacheer", "Photosynthesis — NCERT Class 11", "Sangam Literature & History"],
+  1: ["Directive Principles of State Policy", "Harappan Civilization - SCERT Samacheer", "Photosynthesis - NCERT Class 11", "Sangam Literature & History"],
   2: ["TNPSC Group 1 Indian Polity PYQs", "UPSC CSE Prelims Economy Solved Questions", "General Tamil Thirukkural PYQs", "TNPSC Group 2 General English PYQs"],
   3: ["20 MCQs on Indian Constitution", "Test me on Sangam Age & Tamil Literature", "Mixed UPSC Prelims Environment Quiz", "TNPSC Aptitude & Shape Counting Quiz"],
   4: ["Samacheer Kalvi Class 10 Science Chapter 8", "NCERT Indian Polity Quick Revision Notes", "Samacheer Kalvi Tamil Grammar Summary", "UPSC History 1857 Revolt Key Points"]
@@ -579,13 +579,13 @@ function startTypewriter(cardId) {
     activeFullPromptTexts[cardId] = targetText;
     if (isDeleting) {
       charIdx--;
-      el.textContent = targetText.substring(0, charIdx) + '▌';
+      el.textContent = targetText.substring(0, charIdx) + '|'
       currentPromptTexts[cardId] = targetText.substring(0, charIdx);
       if (charIdx <= 0) { isDeleting = false; listIdx = (listIdx + 1) % list.length; setTimeout(step, 400); return; }
       setTimeout(step, 20);
     } else {
       charIdx++;
-      el.textContent = targetText.substring(0, charIdx) + '▌';
+      el.textContent = targetText.substring(0, charIdx) + '|'
       currentPromptTexts[cardId] = targetText.substring(0, charIdx);
       if (charIdx >= targetText.length) { el.textContent = targetText; currentPromptTexts[cardId] = targetText; isDeleting = true; setTimeout(step, 2200); return; }
       setTimeout(step, 45 + Math.random() * 35);

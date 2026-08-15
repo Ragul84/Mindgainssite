@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
-const ENV_PATH = process.env.MINDGAINS_ENV || 'D:/mindwhite/.env';
+const ENV_PATH = process.env.MINDGAINS_ENV || path.join(ROOT, '.env');
 const SITE_URL = (process.env.BASE_URL || process.env.SITE_URL || 'https://mindgains.ai').replace(/\/$/, '');
 
 function readEnv(file) {
@@ -188,7 +188,7 @@ function iconMeta() {
 
 function pageShell({ title, description, pathname, body, crumbs = [] }) {
   const url = canonical(pathname);
-  const crumbItems = [{ name: 'Home', url: SITE_URL + '/' }, { name: 'Practice', url: SITE_URL + '/upsc/' }, ...crumbs];
+  const crumbItems = [{ name: 'Home', url: SITE_URL + '/' }, { name: 'Quiz Hub', url: SITE_URL + '/quiz/' }, ...crumbs];
   const breadcrumbJson = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -228,7 +228,7 @@ ${iconMeta()}
 <div class="bg"></div>
 <header class="site-nav">
   <a class="brand" href="/">MindGains</a>
-  <nav><a href="/upsc/">Practice</a><a href="/#join">Waitlist</a></nav>
+  <nav><a href="/quiz/">Quiz Hub</a><a href="/#join">Waitlist</a></nav>
 </header>
 <main>${body}</main>
 <script src="/assets/quiz-search.js" defer></script>
@@ -312,8 +312,8 @@ function updateHomeLink() {
   if (!html.includes('.nav-links')) {
     html = html.replace("  .tag{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#c9d2e3;border:1px solid rgba(255,255,255,.16);padding:7px 13px;border-radius:999px}", "  .tag{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#c9d2e3;border:1px solid rgba(255,255,255,.16);padding:7px 13px;border-radius:999px}\n  .nav-links{display:flex;align-items:center;gap:12px;font-size:13px;color:#c9d2e3}\n  .nav-links a{color:#dffbff;text-decoration:none;border:1px solid rgba(55,224,255,.28);background:rgba(55,224,255,.08);padding:8px 12px;border-radius:999px;transition:.18s}\n  .nav-links a:hover{border-color:rgba(55,224,255,.65);background:rgba(55,224,255,.14)}");
   }
-  if (!html.includes('href="/upsc/"')) {
-    html = html.replace('<nav>\n  <div class="brand">MindGains</div>\n</nav>', '<nav>\n  <div class="brand">MindGains</div>\n  <div class="nav-links"><a href="/upsc/">Practice</a></div>\n</nav>');
+  if (!html.includes('href="/quiz/"')) {
+    html = html.replace('<nav>\n  <div class="brand">MindGains</div>\n</nav>', '<nav>\n  <div class="brand">MindGains</div>\n  <div class="nav-links"><a href="/quiz/">Quiz Hub</a></div>\n</nav>');
   }
   fs.writeFileSync(home, html, 'utf8');
 }
@@ -369,20 +369,8 @@ async function main() {
       return { title: exam.name, kicker: 'Exam', copy: exam.desc, meta: `${s.topics.toLocaleString('en-IN')} topics · ${s.questions.toLocaleString('en-IN')} questions`, href: EXAM_HUBS[id] || `/${id}/` };
     });
 
-  writePage('/quiz/', `<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>MindGains Practice | Legacy Redirect</title>
-<meta name="robots" content="noindex,follow" />
-<meta http-equiv="refresh" content="0; url=/upsc/" />
-<link rel="canonical" href="https://mindgains.ai/upsc/" />
-<script>location.replace('/upsc/');</script>
-</head>
-<body><p>Redirecting to <a href="/upsc/">MindGains Practice</a>...</p></body>
-</html>`, urls);
-  searchIndex.push({ title: 'Quiz Hub', type: 'Hub', url: '/upsc/', copy: 'Search exams, subjects and topics.' });
+  urls.push('/quiz/');
+  searchIndex.push({ title: 'Quiz Hub', type: 'Hub', url: '/quiz/', copy: 'Search exams, subjects and topics.' });
 
   for (const [examId, entries] of byExam) {
     const exam = EXAMS[examId];

@@ -788,7 +788,7 @@ main {
   .orb-container, .orb { width: 200px; height: 200px; }
   .orb-labels { max-width: none; }
 
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 24px; }
   .footer-brand { grid-column: 1 / -1; }
   .footer-brand p { max-width: none; }
 }
