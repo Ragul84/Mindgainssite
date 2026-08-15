@@ -334,6 +334,77 @@
       padding: 12px 24px; border-radius: 999px; border: none; cursor: pointer;
       box-shadow: 0 6px 20px rgba(123,227,176,0.35); width: 100%;
     }
+    .chat-blur-form {
+      display: none;
+      margin-top: 16px;
+      gap: 10px;
+      flex-direction: column;
+    }
+    .chat-blur-form.is-open {
+      display: flex;
+    }
+    .chat-blur-input {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      color: #fff;
+      border-radius: 16px;
+      padding: 14px 16px;
+      font-size: 14px;
+      outline: none;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+    }
+    .chat-blur-input::placeholder {
+      color: rgba(255,255,255,0.42);
+    }
+    .chat-blur-input:focus {
+      border-color: rgba(123,227,176,0.45);
+      box-shadow: 0 0 0 4px rgba(123,227,176,0.08);
+    }
+    .chat-blur-actions {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+    }
+    .chat-blur-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      color: rgba(255,255,255,0.88);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .chat-blur-status {
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04);
+      color: rgba(255,255,255,0.78);
+      font-size: 12.5px;
+      line-height: 1.55;
+      display: none;
+    }
+    .chat-blur-status.is-visible {
+      display: block;
+    }
+    .chat-blur-status.is-success {
+      border-color: rgba(123,227,176,0.22);
+      background: rgba(123,227,176,0.08);
+      color: rgba(255,255,255,0.9);
+    }
+    .chat-blur-status.is-error {
+      border-color: rgba(248,113,113,0.2);
+      background: rgba(248,113,113,0.08);
+      color: rgba(255,255,255,0.9);
+    }
 
     #chat-liquid-canvas { display: none !important; }
     .chat-panel-aura {
@@ -1422,6 +1493,17 @@
       .compare-mobile-head {
         padding-top: 0;
       }
+      .chat-blur-card {
+        padding: 24px 18px;
+        border-radius: 20px;
+      }
+      .chat-blur-actions {
+        grid-template-columns: 1fr;
+      }
+      .chat-blur-link,
+      .btn-blur-cta {
+        width: 100%;
+      }
     }
   </style>
 
@@ -1717,6 +1799,34 @@
   <div class="chat-panel-aura" aria-hidden="true"></div>
   <div class="chat-panel-container">
     <div class="chat-panel">
+      <div class="chat-blur-overlay" id="chat-blur-overlay">
+        <div class="chat-blur-card" onclick="event.stopPropagation()">
+          <div class="chat-blur-icon">
+            <span class="material-symbols-outlined ms" style="font-size:26px;">lock</span>
+          </div>
+          <div class="chat-blur-badge">Whitelist Access</div>
+          <div class="chat-blur-title">Textbook-aware AI is opening in stages.</div>
+          <div class="chat-blur-desc">Join the whitelist to get first access to MindGains AI with textbook grounding, PYQ-aware help, and exam-focused responses.</div>
+          <button class="btn-blur-cta" id="chat-blur-cta" type="button" onclick="openChatWaitlistForm()">
+            <span class="material-symbols-outlined ms" style="font-size:18px;">mail</span>
+            Sign up for whitelist
+          </button>
+          <form class="chat-blur-form" id="chat-blur-form" onsubmit="submitChatWaitlist(event)">
+            <input class="chat-blur-input" id="chat-blur-email" type="email" placeholder="Enter your email address" autocomplete="email" required />
+            <div class="chat-blur-actions">
+              <button class="btn-blur-cta" id="chat-blur-submit" type="submit">
+                <span class="material-symbols-outlined ms" style="font-size:18px;">arrow_forward</span>
+                Join whitelist
+              </button>
+              <a class="chat-blur-link" href="/waitlist.html">
+                Full access page
+                <span class="material-symbols-outlined ms" style="font-size:16px;">open_in_new</span>
+              </a>
+            </div>
+          </form>
+          <div class="chat-blur-status" id="chat-blur-status" aria-live="polite"></div>
+        </div>
+      </div>
       <!-- Top bar -->
     <div class="ctopbar">
       <div class="ctop-left">
@@ -2159,6 +2269,8 @@ const OR_KEYS = [
   atob('c2stb3ItdjEtZGI3MmVhZjdhNjY2Y2Q2YzQ3ZmE4ZTdkNGQ2OGE3NzZmYjkzMjM4MTllMmIyMzk3ODAwZWM1YjZiNTJmNDRlYw==')
 ];
 const OR_MODELS = ['google/gemini-2.5-flash', 'deepseek/deepseek-chat', 'openai/gpt-4o-mini'];
+const HOMEPAGE_WAITLIST_URL = 'https://yuntwerxahgmaoduxvqc.supabase.co/rest/v1/waitlist';
+const HOMEPAGE_WAITLIST_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl1bnR3ZXJ4YWhnbWFvZHV4dnFjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU3OTk4OTMsImV4cCI6MjA3MTM3NTg5M30.1mFUH9yp55uxN8n9tyRHLFbve36_kpaJs41nPU85S74';
 let orKeyIdx = 0;
 function getOrKey() { const k = OR_KEYS[orKeyIdx % OR_KEYS.length]; orKeyIdx++; return k; }
 
@@ -2245,6 +2357,63 @@ function closeLimitModal() { document.getElementById('limit-modal').style.displa
 /* cleaned comment */
 function scrollToChat() { document.getElementById('chat-section').scrollIntoView({behavior:'smooth'}); }
 function scrollToQuiz() { document.getElementById('chat-section').scrollIntoView({behavior:'smooth'}); setTimeout(()=>switchMode('quiz'), 600); }
+
+function openChatWaitlistForm() {
+  const form = document.getElementById('chat-blur-form');
+  const cta = document.getElementById('chat-blur-cta');
+  const input = document.getElementById('chat-blur-email');
+  if (!form || !cta) return;
+  form.classList.add('is-open');
+  cta.style.display = 'none';
+  if (input) setTimeout(() => input.focus(), 60);
+}
+
+function setChatWaitlistStatus(message, kind = 'success') {
+  const status = document.getElementById('chat-blur-status');
+  if (!status) return;
+  status.className = `chat-blur-status is-visible ${kind === 'error' ? 'is-error' : 'is-success'}`;
+  status.innerHTML = message;
+}
+
+async function submitChatWaitlist(event) {
+  event.preventDefault();
+  const emailInput = document.getElementById('chat-blur-email');
+  const submitBtn = document.getElementById('chat-blur-submit');
+  if (!emailInput || !submitBtn) return;
+
+  const email = emailInput.value.trim();
+  if (!email) return;
+
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '<span class="material-symbols-outlined ms" style="font-size:18px;">progress_activity</span>Joining...';
+
+  try {
+    const res = await fetch(HOMEPAGE_WAITLIST_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': HOMEPAGE_WAITLIST_KEY,
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify({ email, source: 'homepage-chat-lock', language: 'general' })
+    });
+
+    if (res.status === 201) {
+      setChatWaitlistStatus(`Saved <strong style="color:#7BE3B0;">${escapeHtml(email)}</strong>. You are on the whitelist for first access to MindGains AI.`, 'success');
+    } else if (res.status === 409) {
+      setChatWaitlistStatus(`<strong style="color:#7BE3B0;">${escapeHtml(email)}</strong> is already registered. Your whitelist access is already secured.`, 'success');
+    } else {
+      setChatWaitlistStatus(`Saved <strong style="color:#7BE3B0;">${escapeHtml(email)}</strong>. We will notify you when access opens.`, 'success');
+    }
+
+    emailInput.value = '';
+  } catch (error) {
+    setChatWaitlistStatus('We could not confirm the request right now. Use the full whitelist page if needed, or try again in a moment.', 'error');
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = '<span class="material-symbols-outlined ms" style="font-size:18px;">arrow_forward</span>Join whitelist';
+  }
+}
 
 /* cleaned comment */
 let currentMode = 'chat';
