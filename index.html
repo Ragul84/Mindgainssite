@@ -1204,9 +1204,13 @@
       .hero-btns .btn-primary, .hero-btns .btn-outline { font-size: 12px !important; height: 38px !important; padding: 0 10px !important; }
     }
 
+    .compare-section-shell {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
     .compare-hero {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 28px;
       position: relative;
       z-index: 1;
     }
@@ -1219,408 +1223,108 @@
     }
     .compare-hero p {
       color: rgba(255,255,255,.62);
-      max-width: 680px;
-      margin: 12px auto 0;
+      max-width: 720px;
+      margin: 14px auto 0;
       font-size: 14.5px;
-      line-height: 1.65;
+      line-height: 1.68;
     }
-    .compare-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      align-items: stretch;
-    }
-    .compare-card {
+    .compare-shell {
       position: relative;
       border-radius: 24px;
-      padding: 26px 24px 22px;
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(255,255,255,.09);
+      background: rgba(255,255,255,.028);
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: 0 18px 42px rgba(0,0,0,.28);
       overflow: hidden;
-      box-shadow: 0 16px 42px rgba(0,0,0,.34);
-      transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease, background .22s ease;
     }
-    .compare-card::before {
-      content: '';
-      position: absolute;
-      inset: 0 auto auto 0;
-      width: 100%;
-      height: 1.5px;
-      background: linear-gradient(90deg, transparent, rgba(123,227,176,.8), rgba(56,189,248,.9), rgba(167,139,250,.9), transparent);
-      background-size: 250% 100%;
-      animation: geminiRibbon 14s linear infinite;
-      opacity: .7;
+    .compare-shell::before {
+      content:'';
+      position:absolute;
+      inset:0 auto auto 0;
+      width:100%;
+      height:1px;
+      background: linear-gradient(90deg, transparent, rgba(123,227,176,.55), rgba(56,189,248,.45), transparent);
+      opacity:.9;
+      pointer-events:none;
     }
-    .compare-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 54px rgba(0,0,0,.48);
-      border-color: rgba(255,255,255,.16);
+    .compare-table {
+      display:grid;
+      grid-template-columns: minmax(220px, 1.45fr) minmax(180px, 1fr) minmax(180px, 1fr);
     }
-    .compare-card.generic {
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-    }
-    .compare-card.mindgains {
-      background: linear-gradient(180deg, rgba(123,227,176,.05), rgba(255,255,255,.03));
-      border-color: rgba(123,227,176,.22);
-      box-shadow: 0 18px 52px rgba(123,227,176,.08);
-    }
-    .compare-headline {
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap: 12px;
-      padding-bottom: 16px;
-      margin-bottom: 16px;
+    .compare-col-head {
+      padding: 18px 20px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.5);
       border-bottom: 1px solid rgba(255,255,255,.08);
     }
-    .compare-brand {
-      display:flex;
-      flex-direction:column;
-      gap: 4px;
-      min-width: 0;
+    .compare-col-head.mindgains {
+      background: rgba(123,227,176,.07);
+      color: #7BE3B0;
     }
-    .compare-brand strong {
-      font-size: 15px;
-      letter-spacing: -.01em;
+    .compare-row-label,
+    .compare-cell {
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+    .compare-row-label {
       color: #fff;
-    }
-    .compare-brand span {
-      font-size: 12px;
-      color: rgba(255,255,255,.55);
-    }
-    .compare-badge {
-      display:inline-flex;
-      align-items:center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-    .compare-badge.bad { color: #fca5a5; background: rgba(248,113,113,.12); border: 1px solid rgba(248,113,113,.18); }
-    .compare-badge.good { color: #7BE3B0; background: rgba(123,227,176,.12); border: 1px solid rgba(123,227,176,.22); }
-    .compare-card h3 {
-      font-size: 24px;
-      line-height: 1.1;
-      letter-spacing: -.03em;
-      margin: 0 0 10px;
-    }
-    .compare-card p {
-      color: rgba(255,255,255,.72);
-      line-height: 1.6;
-      font-size: 14.5px;
-      margin: 0;
-    }
-    .compare-list {
-      margin-top: 18px;
-      display: grid;
-      gap: 10px;
-    }
-    .compare-list div {
-      display:flex;
-      gap: 10px;
-      align-items:flex-start;
-      padding: 12px 14px;
-      border-radius: 14px;
-      background: rgba(255,255,255,.045);
-      border: 1px solid rgba(255,255,255,.06);
-      color: rgba(255,255,255,.82);
       font-size: 13.5px;
-      line-height: 1.55;
+      font-weight: 650;
+      line-height: 1.5;
     }
-    .compare-list .ms {
-      font-size: 18px;
-      color: var(--accent);
-      margin-top: 1px;
-    }
-    .compare-stats {
-      display:flex;
-      flex-wrap:wrap;
-      gap: 8px;
-      margin-top: 16px;
-    }
-    .compare-stats span {
-      padding: 8px 11px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.08);
-      color: rgba(255,255,255,.76);
-      font-size: 12px;
-    }
-    .compare-note {
-      margin-top: 18px;
-      text-align:center;
-      color: rgba(255,255,255,.52);
+    .compare-cell {
       font-size: 13px;
       line-height: 1.55;
-    }
-    .compare-live {
-      margin-top: 20px;
-      padding: 18px;
-      border-radius: 22px;
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(255,255,255,.08);
-      box-shadow: 0 18px 40px rgba(0,0,0,.32);
-    }
-    .compare-live-top {
+      color: rgba(255,255,255,.76);
       display:flex;
       align-items:flex-start;
-      justify-content:space-between;
-      gap:16px;
-      margin-bottom: 14px;
+      gap:10px;
+      min-height: 100%;
     }
-    .compare-live-kicker {
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      font-size:11px;
-      font-weight:800;
-      letter-spacing:0.08em;
-      text-transform:uppercase;
-      color:#7BE3B0;
+    .compare-cell.mindgains {
+      background: rgba(123,227,176,.05);
+      color: rgba(255,255,255,.9);
     }
-    .compare-live-title {
-      margin-top:6px;
-      font-size:18px;
-      font-weight:700;
+    .compare-mark {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      flex: 0 0 auto;
+      margin-top: 1px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: rgba(255,255,255,.78);
+    }
+    .compare-cell.mindgains .compare-mark {
+      border-color: rgba(123,227,176,.28);
+      background: rgba(123,227,176,.12);
+      color: #7BE3B0;
+    }
+    .compare-mark .ms {
+      font-size: 13px;
+      font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 20;
+    }
+    .compare-cell strong {
+      display:block;
       color:#fff;
-      letter-spacing:-0.02em;
-    }
-    .compare-live-desc {
-      margin-top:6px;
-      max-width:760px;
-      font-size:13.5px;
-      line-height:1.6;
-      color:rgba(255,255,255,.58);
-    }
-    .compare-query {
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.08);
-      background:rgba(255,255,255,.04);
-      color:rgba(255,255,255,.88);
-      font-size:12px;
+      font-size:13px;
       font-weight:700;
       letter-spacing:-0.01em;
-      margin-top:14px;
+      margin-bottom:2px;
     }
-    .compare-query .material-symbols-outlined { font-size:14px; color:#7BE3B0; }
-    .compare-live-action {
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 14px;
-      border-radius:14px;
-      border:none;
-      background:linear-gradient(135deg,#7BE3B0,#38BDF8);
-      color:#000;
-      font-weight:800;
-      font-size:13px;
-      cursor:pointer;
-      box-shadow:0 10px 28px rgba(123,227,176,.22);
-      white-space:nowrap;
-      flex-shrink:0;
-      text-decoration:none;
+    .compare-footnote {
+      padding: 16px 20px 18px;
+      font-size: 12px;
+      line-height: 1.6;
+      color: rgba(255,255,255,.48);
     }
-    .compare-live-grid {
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-    }
-    .compare-live-card {
-      min-height:220px;
-      padding:18px;
-      border-radius:20px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)) padding-box,
-        linear-gradient(120deg, rgba(123,227,176,.2), rgba(56,189,248,.18), rgba(167,139,250,.18), rgba(244,114,182,.16), rgba(123,227,176,.14)) border-box;
-      border:1px solid transparent;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-      box-shadow:0 16px 42px rgba(0,0,0,.32);
-      overflow:hidden;
-      position:relative;
-    }
-    .compare-live-card::before {
-      content:'';
-      position:absolute;
-      inset:-1px -1px auto;
-      height:1.5px;
-      background:linear-gradient(90deg, transparent, rgba(123,227,176,.75), rgba(56,189,248,.9), rgba(167,139,250,.85), rgba(244,114,182,.75), transparent);
-      background-size:240% 100%;
-      animation: geminiRibbon 16s linear infinite;
-      pointer-events:none;
-    }
-    .compare-live-card::after {
-      content:'';
-      position:absolute;
-      inset:auto -10px -12px;
-      height:72px;
-      background:linear-gradient(90deg, rgba(123,227,176,.08), rgba(56,189,248,.12), rgba(167,139,250,.1), rgba(244,114,182,.08), rgba(123,227,176,.08));
-      filter:blur(26px);
-      opacity:.85;
-      pointer-events:none;
-    }
-    .compare-live-head {
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      position:relative;
-      z-index:1;
-    }
-    .compare-live-label {
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      font-size:11px;
-      font-weight:800;
-      letter-spacing:0.08em;
-      text-transform:uppercase;
-      color:rgba(255,255,255,.65);
-    }
-    .compare-live-pill {
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding:4px 10px;
-      border-radius:999px;
-      font-size:10.5px;
-      font-weight:800;
-      letter-spacing:0.05em;
-      text-transform:uppercase;
-    }
-    .compare-live-pill.bad { color:#fca5a5; background:rgba(248,113,113,.12); border:1px solid rgba(248,113,113,.18); }
-    .compare-live-pill.good { color:#7BE3B0; background:rgba(123,227,176,.12); border:1px solid rgba(123,227,176,.22); }
-    .compare-live-output {
-      position:relative;
-      z-index:1;
-      font-size:13px;
-      line-height:1.7;
-      color:rgba(255,255,255,.82);
-      background:rgba(0,0,0,.22);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:16px;
-      padding:14px 14px 13px;
-      min-height:128px;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
-    .compare-answer-body {
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-    .compare-answer-kicker {
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      font-size:11px;
-      font-weight:800;
-      letter-spacing:0.08em;
-      text-transform:uppercase;
-      color:rgba(255,255,255,.5);
-    }
-    .compare-answer-dot {
-      width:8px;
-      height:8px;
-      border-radius:999px;
-      background:currentColor;
-      box-shadow:0 0 0 4px rgba(255,255,255,.05);
-      flex:0 0 auto;
-    }
-    .compare-answer-title {
-      font-size:15px;
-      font-weight:800;
-      letter-spacing:-0.02em;
-      color:#fff;
-    }
-    .compare-answer-copy {
-      font-size:13px;
-      line-height:1.72;
-      color:rgba(255,255,255,.82);
-      white-space:pre-wrap;
-      overflow-wrap:anywhere;
-    }
-    .compare-proof-chips {
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin-top:2px;
-    }
-    .compare-proof-chip {
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding:5px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.08);
-      background:rgba(255,255,255,.04);
-      color:rgba(255,255,255,.72);
-      font-size:10.5px;
-      font-weight:800;
-      letter-spacing:0.04em;
-      text-transform:uppercase;
-      white-space:nowrap;
-    }
-    .compare-proof-chip.good {
-      color:#7BE3B0;
-      border-color:rgba(123,227,176,.22);
-      background:rgba(123,227,176,.08);
-    }
-    .compare-proof-chip.bad {
-      color:#FCA5A5;
-      border-color:rgba(248,113,113,.18);
-      background:rgba(248,113,113,.08);
-    }
-    .compare-live-output .muted {
-      color:rgba(255,255,255,.48);
-    }
-    .compare-live-output .live-label {
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      margin-bottom:10px;
-      font-size:10.5px;
-      font-weight:800;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      color:#7BE3B0;
-    }
-    .compare-live-output .live-body {
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-    .compare-live-output .live-line {
-      padding:10px 12px;
-      border-radius:12px;
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.06);
-    }
-    .compare-live-state {
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      font-size:12px;
-      color:rgba(255,255,255,.52);
-    }
-    .compare-live-spinner {
-      width:14px;
-      height:14px;
-      border-radius:50%;
-      border:2px solid rgba(123,227,176,.25);
-      border-top-color:#7BE3B0;
-      animation: spin 0.8s linear infinite;
+    .compare-mobile-list {
+      display:none;
     }
     @media (max-width: 900px) {
       #hero .hero-copy {
@@ -1634,8 +1338,68 @@
       #hero .hero-actions {
         justify-content: center;
       }
-      .compare-grid {
-        grid-template-columns: 1fr;
+    }
+    @media (max-width: 720px) {
+      .compare-shell {
+        border-radius: 20px;
+      }
+      .compare-table {
+        display:none;
+      }
+      .compare-mobile-list {
+        display:grid;
+      }
+      .compare-mobile-item {
+        padding: 16px 16px 18px;
+        border-bottom: 1px solid rgba(255,255,255,.07);
+      }
+      .compare-mobile-item:last-child {
+        border-bottom: none;
+      }
+      .compare-mobile-label {
+        font-size: 13.5px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.45;
+        margin-bottom: 10px;
+      }
+      .compare-mobile-values {
+        display:grid;
+        gap: 10px;
+      }
+      .compare-mobile-value {
+        display:grid;
+        grid-template-columns: 110px 1fr;
+        gap: 10px;
+        align-items:flex-start;
+      }
+      .compare-mobile-head {
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,.52);
+        padding-top: 2px;
+      }
+      .compare-mobile-head.mindgains {
+        color: #7BE3B0;
+      }
+      .compare-mobile-card {
+        display:flex;
+        align-items:flex-start;
+        gap: 10px;
+        padding: 10px 12px;
+        border-radius: 14px;
+        background: rgba(255,255,255,.03);
+        border: 1px solid rgba(255,255,255,.07);
+        color: rgba(255,255,255,.76);
+        font-size: 12.5px;
+        line-height: 1.55;
+      }
+      .compare-mobile-card.mindgains {
+        background: rgba(123,227,176,.06);
+        border-color: rgba(123,227,176,.14);
+        color: rgba(255,255,255,.9);
       }
     }
     @media (max-width: 640px) {
@@ -1652,15 +1416,11 @@
       #hero .hero-sub {
         max-width: 560px;
       }
-      .compare-card {
-        padding: 22px 18px 18px;
-        border-radius: 20px;
+      .compare-mobile-value {
+        grid-template-columns: 1fr;
       }
-      .compare-card h3 {
-        font-size: 21px;
-      }
-      .compare-note {
-        padding: 0 8px;
+      .compare-mobile-head {
+        padding-top: 0;
       }
     }
   </style>
@@ -2059,65 +1819,114 @@
 </div>
 </section>
 
-<!-- COMPARISON SECTION: Generic AI vs MindGains AI -->
+<!-- COMPARISON SECTION -->
 <section class="section" id="comparison" style="padding: 72px 20px; background: #070B12; border-top: 1px solid rgba(255,255,255,0.06);">
-  <div style="max-width: 1100px; margin: 0 auto;">
+  <div class="compare-section-shell">
     <div class="compare-hero">
-      <span class="pill" style="color: #7BE3B0; background: rgba(123,227,176,0.1); border: 1px solid rgba(123,227,176,0.25);">Why MindGains</span>
-      <h2>Ask the same question.<br/>Get a study-ready answer.</h2>
-      <div style="margin-top:18px; display:flex; flex-direction:column; align-items:center; gap:10px;">
-        <div style="font-size:11px; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,.5);">Question</div>
-        <div class="compare-query" style="max-width:780px;">
-          <span class="material-symbols-outlined ms">search</span>
-          Explain Directive Principles of State Policy for TNPSC.
-        </div>
-      </div>
+      <span class="pill" style="color:#7BE3B0; background:rgba(123,227,176,0.1); border:1px solid rgba(123,227,176,0.25);">Why MindGains</span>
+      <h2>Built for exams.<br/>Not adapted to them.</h2>
+      <p>MindGains combines textbook grounding, syllabus intelligence and previous-year questions in a study system designed specifically for Indian exams.</p>
     </div>
 
-    <div class="compare-live">
-      <div class="compare-live-grid">
-        <article class="compare-live-card">
-          <div class="compare-live-head">
-            <span class="compare-live-label">Other AI</span>
-            <span class="compare-live-pill bad">General explanation</span>
-          </div>
-          <div class="compare-live-output" id="compare-generic-output">
-            <div class="compare-answer-body">
-              <div class="compare-answer-kicker" style="color:#FCA5A5;"><span class="compare-answer-dot"></span>Generic explanation</div>
-              <div class="compare-answer-title">Directive Principles of State Policy</div>
-              <div class="compare-answer-copy" id="compare-generic-copy">DPSPs are constitutional guidelines contained in Part IV of the Constitution. They are non-justiciable and guide the State in promoting social and economic welfare.</div>
-            </div>
-          </div>
-        </article>
-        <article class="compare-live-card">
-          <div class="compare-live-head">
-            <span class="compare-live-label">MindGains AI</span>
-            <span class="compare-live-pill good">Built for your exam</span>
-          </div>
-          <div class="compare-live-output" id="compare-mindgains-output">
-            <div class="compare-answer-body">
-              <div class="compare-answer-kicker" style="color:#7BE3B0;"><span class="compare-answer-dot"></span>MindGains answer</div>
-              <div class="compare-answer-title">Directive Principles of State Policy</div>
-              <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,.64);letter-spacing:-0.01em;">TNPSC &middot; Indian Polity</div>
-              <div class="compare-answer-copy" id="compare-mindgains-copy"><strong>Part IV &middot; Articles 36-51</strong><br><br>DPSPs are principles fundamental to the governance of the country. Article 37 makes them non-justiciable, while requiring the State to apply them in making laws.<br><br><strong>Three classifications</strong><br><br><strong>Socialist</strong> - Arts. 38, 39, 39A, 41, 42...<br><strong>Gandhian</strong> - Arts. 40, 43, 46, 47, 48...<br><strong>Liberal-Intellectual</strong> - Arts. 44, 45, 48A, 50, 51...<br><br><strong>Why TNPSC asks this</strong><br><br>Direct Article questions &middot; Match the following &middot; Amendments &middot; Classification<br><br><strong>Quick Revision</strong><br><br>Part IV &middot; 36-51 &middot; Irish Constitution &middot; Non-justiciable &middot; Welfare State</div>
-              <div style="font-size:11px; font-weight:800; color:rgba(255,255,255,.52); text-transform:uppercase; letter-spacing:0.12em; margin:2px 0 2px;">Sources</div>
-              <div class="source-breadcrumb" style="display:flex; flex-wrap:wrap; align-items:center; gap:6px 8px; background:rgba(123,227,176,0.05); border:1px solid rgba(123,227,176,0.15); border-radius:12px; padding:10px 12px; margin-top:4px;">
-                <span style="font-size:11px; font-weight:800; color:var(--duo-blue); display:inline-flex; align-items:center; gap:4px; text-transform:uppercase; letter-spacing:0.05em; margin-right:4px;">
-                  <span class="material-symbols-outlined ms" style="font-size:14px; color:var(--duo-blue);">menu_book</span> Textbook Source
-                </span>
-                <span style="font-size:11.5px; font-weight:600; color:#fff; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); padding:4px 10px; border-radius:8px; white-space:nowrap;">SCERT Class 12</span>
-                <span style="color:rgba(255,255,255,0.3); font-size:14px; font-weight:bold; display:inline-flex; align-items:center;">&rsaquo;</span>
-                <span style="font-size:11.5px; font-weight:600; color:#fff; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); padding:4px 10px; border-radius:8px; white-space:nowrap;">Political Science</span>
-                <span style="color:rgba(255,255,255,0.3); font-size:14px; font-weight:bold; display:inline-flex; align-items:center;">&rsaquo;</span>
-                <span style="font-size:11.5px; font-weight:600; color:#fff; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); padding:4px 10px; border-radius:8px; white-space:nowrap;">DPSP</span>
-              </div>
-              <div class="compare-live-cta" style="justify-content:flex-start;margin-top:4px;">
-                <a class="compare-live-action" href="/chat/">Practice DPSP questions -&gt;</a>
-              </div>
-            </div>
-          </div>
-        </article>
+    <div class="compare-shell">
+      <div class="compare-table" role="table" aria-label="MindGains compared with general AI assistants">
+        <div class="compare-col-head" role="columnheader">Capability</div>
+        <div class="compare-col-head mindgains" role="columnheader">MindGains</div>
+        <div class="compare-col-head" role="columnheader">General AI Assistants</div>
+
+        <div class="compare-row-label" role="rowheader">Built specifically for Indian exams</div>
+        <div class="compare-cell mindgains" role="cell"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>Yes</strong>Designed around exam preparation workflows from the start.</div></div>
+        <div class="compare-cell" role="cell"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>General-purpose</strong>Useful broadly, but not built around exam prep by default.</div></div>
+
+        <div class="compare-row-label" role="rowheader">NCERT and Samacheer grounding</div>
+        <div class="compare-cell mindgains" role="cell"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>Built in</strong>Grounded around SCERT Samacheer and NCERT study flows.</div></div>
+        <div class="compare-cell" role="cell"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>Not exam-specific by default</strong>Can discuss textbooks, but the workflow is not built around them.</div></div>
+
+        <div class="compare-row-label" role="rowheader">Official PYQ intelligence</div>
+        <div class="compare-cell mindgains" role="cell"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>Integrated</strong>Previous-year question relevance is part of the product model.</div></div>
+        <div class="compare-cell" role="cell"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>Not the core workflow</strong>Not built around official answer-key and PYQ practice systems.</div></div>
+
+        <div class="compare-row-label" role="rowheader">TNPSC and UPSC syllabus alignment</div>
+        <div class="compare-cell mindgains" role="cell"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>Aligned</strong>Structured around exam subjects, topics and practice routes.</div></div>
+        <div class="compare-cell" role="cell"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>Requires prompting</strong>The user has to supply exam context and study framing.</div></div>
+
+        <div class="compare-row-label" role="rowheader">Topic-wise exam practice</div>
+        <div class="compare-cell mindgains" role="cell"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>Yes</strong>Practice is part of the product, not an extra step.</div></div>
+        <div class="compare-cell" role="cell"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>General Q&amp;A</strong>Strong at conversation, not primarily organized around topic drills.</div></div>
+
+        <div class="compare-row-label" role="rowheader">Exam-focused response structure</div>
+        <div class="compare-cell mindgains" role="cell"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>Designed for study</strong>Answers are shaped around recall, practice and revision value.</div></div>
+        <div class="compare-cell" role="cell"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>Varies by prompt</strong>Output quality depends more heavily on user prompting and setup.</div></div>
+
+        <div class="compare-row-label" role="rowheader">Tamil and Indian-language study experience</div>
+        <div class="compare-cell mindgains" role="cell"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>Study-oriented</strong>Built for multilingual Indian exam learners, not just translation.</div></div>
+        <div class="compare-cell" role="cell"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>General multilingual capability</strong>Language support exists, but not as an exam-native experience.</div></div>
+
+        <div class="compare-row-label" role="rowheader">Study from PDFs, notes, and links</div>
+        <div class="compare-cell mindgains" role="cell"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>Supported</strong>Built to work with real study material and textbook context.</div></div>
+        <div class="compare-cell" role="cell"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>Varies by product</strong>Support depends on the assistant and the connected tools available.</div></div>
       </div>
+
+      <div class="compare-mobile-list" aria-label="MindGains compared with general AI assistants">
+        <div class="compare-mobile-item">
+          <div class="compare-mobile-label">Built specifically for Indian exams</div>
+          <div class="compare-mobile-values">
+            <div class="compare-mobile-value"><div class="compare-mobile-head mindgains">MindGains</div><div class="compare-mobile-card mindgains"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>Yes</strong>Designed around exam preparation workflows from the start.</div></div></div>
+            <div class="compare-mobile-value"><div class="compare-mobile-head">General AI Assistants</div><div class="compare-mobile-card"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>General-purpose</strong>Useful broadly, but not built around exam prep by default.</div></div></div>
+          </div>
+        </div>
+        <div class="compare-mobile-item">
+          <div class="compare-mobile-label">NCERT and Samacheer grounding</div>
+          <div class="compare-mobile-values">
+            <div class="compare-mobile-value"><div class="compare-mobile-head mindgains">MindGains</div><div class="compare-mobile-card mindgains"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>Built in</strong>Grounded around SCERT Samacheer and NCERT study flows.</div></div></div>
+            <div class="compare-mobile-value"><div class="compare-mobile-head">General AI Assistants</div><div class="compare-mobile-card"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>Not exam-specific by default</strong>Can discuss textbooks, but the workflow is not built around them.</div></div></div>
+          </div>
+        </div>
+        <div class="compare-mobile-item">
+          <div class="compare-mobile-label">Official PYQ intelligence</div>
+          <div class="compare-mobile-values">
+            <div class="compare-mobile-value"><div class="compare-mobile-head mindgains">MindGains</div><div class="compare-mobile-card mindgains"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>Integrated</strong>Previous-year question relevance is part of the product model.</div></div></div>
+            <div class="compare-mobile-value"><div class="compare-mobile-head">General AI Assistants</div><div class="compare-mobile-card"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>Not the core workflow</strong>Not built around official answer-key and PYQ practice systems.</div></div></div>
+          </div>
+        </div>
+        <div class="compare-mobile-item">
+          <div class="compare-mobile-label">TNPSC and UPSC syllabus alignment</div>
+          <div class="compare-mobile-values">
+            <div class="compare-mobile-value"><div class="compare-mobile-head mindgains">MindGains</div><div class="compare-mobile-card mindgains"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>Aligned</strong>Structured around exam subjects, topics and practice routes.</div></div></div>
+            <div class="compare-mobile-value"><div class="compare-mobile-head">General AI Assistants</div><div class="compare-mobile-card"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>Requires prompting</strong>The user has to supply exam context and study framing.</div></div></div>
+          </div>
+        </div>
+        <div class="compare-mobile-item">
+          <div class="compare-mobile-label">Topic-wise exam practice</div>
+          <div class="compare-mobile-values">
+            <div class="compare-mobile-value"><div class="compare-mobile-head mindgains">MindGains</div><div class="compare-mobile-card mindgains"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>Yes</strong>Practice is part of the product, not an extra step.</div></div></div>
+            <div class="compare-mobile-value"><div class="compare-mobile-head">General AI Assistants</div><div class="compare-mobile-card"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>General Q&amp;A</strong>Strong at conversation, not primarily organized around topic drills.</div></div></div>
+          </div>
+        </div>
+        <div class="compare-mobile-item">
+          <div class="compare-mobile-label">Exam-focused response structure</div>
+          <div class="compare-mobile-values">
+            <div class="compare-mobile-value"><div class="compare-mobile-head mindgains">MindGains</div><div class="compare-mobile-card mindgains"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>Designed for study</strong>Answers are shaped around recall, practice and revision value.</div></div></div>
+            <div class="compare-mobile-value"><div class="compare-mobile-head">General AI Assistants</div><div class="compare-mobile-card"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>Varies by prompt</strong>Output quality depends more heavily on user prompting and setup.</div></div></div>
+          </div>
+        </div>
+        <div class="compare-mobile-item">
+          <div class="compare-mobile-label">Tamil and Indian-language study experience</div>
+          <div class="compare-mobile-values">
+            <div class="compare-mobile-value"><div class="compare-mobile-head mindgains">MindGains</div><div class="compare-mobile-card mindgains"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>Study-oriented</strong>Built for multilingual Indian exam learners, not just translation.</div></div></div>
+            <div class="compare-mobile-value"><div class="compare-mobile-head">General AI Assistants</div><div class="compare-mobile-card"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>General multilingual capability</strong>Language support exists, but not as an exam-native experience.</div></div></div>
+          </div>
+        </div>
+        <div class="compare-mobile-item">
+          <div class="compare-mobile-label">Study from PDFs, notes, and links</div>
+          <div class="compare-mobile-values">
+            <div class="compare-mobile-value"><div class="compare-mobile-head mindgains">MindGains</div><div class="compare-mobile-card mindgains"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>Supported</strong>Built to work with real study material and textbook context.</div></div></div>
+            <div class="compare-mobile-value"><div class="compare-mobile-head">General AI Assistants</div><div class="compare-mobile-card"><span class="compare-mark"><span class="material-symbols-outlined ms">done</span></span><div><strong>Varies by product</strong>Support depends on the assistant and the connected tools available.</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="compare-footnote">General AI assistants can often help with many of these tasks. The difference is that MindGains is organized around the exam workflow itself rather than relying on the student to supply all of the context.</div>
     </div>
   </div>
 </section>
@@ -2126,7 +1935,7 @@
   <div style="max-width:980px;margin:0 auto;">
     <div class="sh">
       <span class="pill">BUILT FOR ASPIRANTS</span>
-      <h2>Everything you need. Nothing you don't.</h2>
+      <h2>What you can do with MindGains.</h2>
     </div>
     <div class="feat-grid">
       <!-- 1. Hero Feature: NCERT & Curriculum Grounded -->
@@ -2850,116 +2659,6 @@ function setAiBubHtml(bub, text) {
     }
   }
 }
-
-async function fetchOpenRouterReply({ key, modelName, messages, maxTokens = 512 }) {
-  const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${key}`,
-      'HTTP-Referer': 'https://mindgains.ai',
-      'X-Title': 'MindGains AI'
-    },
-    body: JSON.stringify({
-      model: modelName,
-      messages,
-      max_tokens: maxTokens,
-      stream: false
-    })
-  });
-
-  if (!res.ok) {
-    const errText = await res.text();
-    throw new Error(errText || `OpenRouter request failed (${res.status})`);
-  }
-
-  const data = await res.json();
-  return (data.choices?.[0]?.message?.content || '').trim();
-}
-
-window.runCompareDemo = async function() {
-  const genericOut = document.getElementById('compare-generic-output');
-  const mindgainsOut = document.getElementById('compare-mindgains-output');
-  const trigger = document.querySelector('.compare-live-action');
-
-  if (!genericOut || !mindgainsOut || !trigger) return;
-
-  const loading = '<span class="compare-live-state"><span class="compare-live-spinner"></span>Refreshing live compare...</span>';
-  genericOut.innerHTML = loading;
-  mindgainsOut.innerHTML = loading;
-  trigger.disabled = true;
-  trigger.style.opacity = '0.75';
-  trigger.style.cursor = 'default';
-
-  const prompt = 'Explain Directive Principles of State Policy for TNPSC.';
-  const modelName = 'google/gemini-2.5-flash';
-  const genericSystemPrompt = 'You are a general-purpose assistant. Answer clearly and briefly.';
-  const mindgainsSystemPrompt = EXAM_SYSTEM;
-
-  try {
-    const genericKey = getOrKey();
-    const mindgainsKey = getOrKey();
-    const [genericReply, mindgainsReply] = await Promise.all([
-      fetchOpenRouterReply({
-        key: genericKey,
-        modelName,
-        messages: [
-          { role: 'system', content: genericSystemPrompt },
-          { role: 'user', content: prompt }
-        ],
-        maxTokens: 320
-      }),
-      fetchOpenRouterReply({
-        key: mindgainsKey,
-        modelName,
-        messages: [
-          { role: 'system', content: mindgainsSystemPrompt },
-          { role: 'user', content: prompt }
-        ],
-        maxTokens: 420
-      })
-    ]);
-
-    genericOut.innerHTML = renderCompareCard({
-      title: extractLead(genericReply) || 'Generic explanation',
-      tone: 'Other AI live response',
-      accent: '#FCA5A5',
-      body: genericReply,
-      chips: []
-    });
-    mindgainsOut.innerHTML = renderCompareCard({
-      title: extractLead(mindgainsReply) || 'MindGains exam-aware response',
-      tone: 'MindGains live response',
-      accent: '#7BE3B0',
-      body: mindgainsReply,
-      chips: []
-    });
-    renderMathSafe(genericOut);
-    renderMathSafe(mindgainsOut);
-  } catch (err) {
-    console.error('[Compare demo] live request failed:', err);
-    genericOut.innerHTML = renderCompareCard({
-      title: 'Directive Principles of State Policy',
-      tone: 'Example response',
-      accent: '#FCA5A5',
-      body: 'DPSPs are constitutional guidelines contained in Part IV of the Constitution. They are non-justiciable and guide the State in promoting social and economic welfare.',
-      chips: []
-    });
-    mindgainsOut.innerHTML = renderCompareCard({
-      title: 'Directive Principles of State Policy',
-      tone: 'Example response',
-      accent: '#7BE3B0',
-      body: '**TNPSC | Indian Polity**\n\n**Part IV | Articles 36-51**\n\nDPSPs are principles fundamental to the governance of the country. Article 37 makes them non-justiciable, while requiring the State to apply them in making laws.\n\n**Three classifications**\n\n**Socialist** - Arts. 38, 39, 39A, 41, 42...\n**Gandhian** - Arts. 40, 43, 46, 47, 48...\n**Liberal-Intellectual** - Arts. 44, 45, 48A, 50, 51...\n\n**Why TNPSC asks this**\n\nDirect Article questions | Match the following | Amendments | Classification\n\n**Quick Revision**\n\nPart IV | 36-51 | Irish Constitution | Non-justiciable | Welfare State',
-      chips: []
-    });
-    renderMathSafe(genericOut);
-    renderMathSafe(mindgainsOut);
-  } finally {
-    trigger.disabled = false;
-    trigger.style.opacity = '';
-    trigger.style.cursor = '';
-  }
-};
 
 async function sendMsg(override) {
   if (currentMode !== 'chat') return;
