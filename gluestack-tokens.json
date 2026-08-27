@@ -1,0 +1,32 @@
+{
+  "tokens": {
+    "colors": {
+      "primaryDark": "#010B1E",
+      "primary": "#041437",
+      "surface": "#0B1F3E",
+      "accentTurquoise": "#4ECDC4",
+      "accentCyan": "#22D3EE",
+      "accentBlue": "#38BDF8",
+      "accentSaffron": "#FACC15",
+      "accentOrange": "#FF9933",
+      "accentHeart": "#FF6B6B",
+      "paper": "#FDF6E3",
+      "paperBorder": "#B8860B",
+      "textPrimary": "#F8FAFC",
+      "textMuted": "rgba(203,213,255,0.8)"
+    },
+    "radii": {
+      "xl": 32,
+      "lg": 24,
+      "md": 16,
+      "pill": 999
+    },
+    "space": {
+      "xs": 4,
+      "sm": 8,
+      "md": 16,
+      "lg": 24,
+      "xl": 32
+    }
+  }
+}

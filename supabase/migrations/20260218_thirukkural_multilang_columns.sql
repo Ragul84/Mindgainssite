@@ -1,0 +1,23 @@
+-- Add multi-language columns to thirukkural table
+ALTER TABLE public.thirukkural
+  ADD COLUMN IF NOT EXISTS meaning_hi TEXT,
+  ADD COLUMN IF NOT EXISTS meaning_te TEXT,
+  ADD COLUMN IF NOT EXISTS meaning_kn TEXT,
+  ADD COLUMN IF NOT EXISTS meaning_ml TEXT,
+  ADD COLUMN IF NOT EXISTS meaning_mr TEXT,
+  ADD COLUMN IF NOT EXISTS meaning_bn TEXT,
+  ADD COLUMN IF NOT EXISTS meaning_gu TEXT,
+  ADD COLUMN IF NOT EXISTS explanation_modern_hi TEXT,
+  ADD COLUMN IF NOT EXISTS explanation_modern_te TEXT,
+  ADD COLUMN IF NOT EXISTS explanation_modern_kn TEXT,
+  ADD COLUMN IF NOT EXISTS explanation_modern_ml TEXT,
+  ADD COLUMN IF NOT EXISTS explanation_modern_mr TEXT,
+  ADD COLUMN IF NOT EXISTS explanation_modern_bn TEXT,
+  ADD COLUMN IF NOT EXISTS explanation_modern_gu TEXT,
+  ADD COLUMN IF NOT EXISTS life_application_hi TEXT,
+  ADD COLUMN IF NOT EXISTS life_application_te TEXT,
+  ADD COLUMN IF NOT EXISTS life_application_kn TEXT,
+  ADD COLUMN IF NOT EXISTS life_application_ml TEXT,
+  ADD COLUMN IF NOT EXISTS life_application_mr TEXT,
+  ADD COLUMN IF NOT EXISTS life_application_bn TEXT,
+  ADD COLUMN IF NOT EXISTS life_application_gu TEXT;

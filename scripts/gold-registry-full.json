@@ -1,0 +1,1508 @@
+{
+  "upsc_ecosystem": [
+    {
+      "day": 1,
+      "topic": "Preamble",
+      "subject": "Polity"
+    },
+    {
+      "day": 2,
+      "topic": "Articles 12-13: State & Judicial Review",
+      "subject": "Polity"
+    },
+    {
+      "day": 3,
+      "topic": "Right to Equality Art 14-18",
+      "subject": "Polity"
+    },
+    {
+      "day": 4,
+      "topic": "Right to Freedom Art 19-22",
+      "subject": "Polity"
+    },
+    {
+      "day": 5,
+      "topic": "Rights Against Exploitation & Religion Art 23-28",
+      "subject": "Polity"
+    },
+    {
+      "day": 6,
+      "topic": "Cultural Educational Rights & Art 32",
+      "subject": "Polity"
+    },
+    {
+      "day": 7,
+      "topic": "DPSP Art 36-51",
+      "subject": "Polity"
+    },
+    {
+      "day": 8,
+      "topic": "Fundamental Duties Art 51A",
+      "subject": "Polity"
+    },
+    {
+      "day": 9,
+      "topic": "Basic Structure Doctrine",
+      "subject": "Polity"
+    },
+    {
+      "day": 10,
+      "topic": "Parliament: Lok Sabha & Rajya Sabha",
+      "subject": "Polity"
+    },
+    {
+      "day": 11,
+      "topic": "Money Bill vs Financial Bill",
+      "subject": "Polity"
+    },
+    {
+      "day": 12,
+      "topic": "President Powers & Emergency",
+      "subject": "Polity"
+    },
+    {
+      "day": 13,
+      "topic": "Federalism: Union-State Relations",
+      "subject": "Polity"
+    },
+    {
+      "day": 14,
+      "topic": "Supreme Court & Judicial Review",
+      "subject": "Polity"
+    },
+    {
+      "day": 15,
+      "topic": "Constitutional Bodies: EC CAG UPSC",
+      "subject": "Polity"
+    },
+    {
+      "day": 16,
+      "topic": "Indus Valley Civilisation",
+      "subject": "AncientHistory"
+    },
+    {
+      "day": 17,
+      "topic": "Buddhism: Philosophy Councils Spread",
+      "subject": "AncientHistory"
+    },
+    {
+      "day": 18,
+      "topic": "Mauryan Empire: Ashoka & Admin",
+      "subject": "AncientHistory"
+    },
+    {
+      "day": 19,
+      "topic": "Gupta Empire: Golden Age",
+      "subject": "AncientHistory"
+    },
+    {
+      "day": 20,
+      "topic": "Post-Mauryan Kingdoms",
+      "subject": "AncientHistory"
+    },
+    {
+      "day": 21,
+      "topic": "Delhi Sultanate: Dynasties & Admin",
+      "subject": "MedievalHistory"
+    },
+    {
+      "day": 22,
+      "topic": "Mughal Empire: Akbar to Aurangzeb",
+      "subject": "MedievalHistory"
+    },
+    {
+      "day": 23,
+      "topic": "Bhakti & Sufi Movements",
+      "subject": "MedievalHistory"
+    },
+    {
+      "day": 24,
+      "topic": "Vijayanagara Empire",
+      "subject": "MedievalHistory"
+    },
+    {
+      "day": 25,
+      "topic": "Maratha Empire & Shivaji",
+      "subject": "MedievalHistory"
+    },
+    {
+      "day": 26,
+      "topic": "Advent of Europeans in India",
+      "subject": "ModernHistory"
+    },
+    {
+      "day": 27,
+      "topic": "1857 Revolt: Causes & Consequences",
+      "subject": "ModernHistory"
+    },
+    {
+      "day": 28,
+      "topic": "Socio-Religious Reform 19th Century",
+      "subject": "ModernHistory"
+    },
+    {
+      "day": 29,
+      "topic": "INC Foundation to Partition of Bengal",
+      "subject": "ModernHistory"
+    },
+    {
+      "day": 30,
+      "topic": "Swadeshi & Extremist Phase",
+      "subject": "ModernHistory"
+    },
+    {
+      "day": 31,
+      "topic": "Gandhi Entry & Non-Cooperation",
+      "subject": "ModernHistory"
+    },
+    {
+      "day": 32,
+      "topic": "Civil Disobedience Movement",
+      "subject": "ModernHistory"
+    },
+    {
+      "day": 33,
+      "topic": "Round Table Conferences",
+      "subject": "ModernHistory"
+    },
+    {
+      "day": 34,
+      "topic": "Quit India Movement 1942",
+      "subject": "ModernHistory"
+    },
+    {
+      "day": 35,
+      "topic": "Subhas Bose & INA",
+      "subject": "ModernHistory"
+    },
+    {
+      "day": 36,
+      "topic": "Indian Geography: Physical Features",
+      "subject": "Geography"
+    },
+    {
+      "day": 37,
+      "topic": "Himalayan Rivers & Peninsular Rivers",
+      "subject": "Geography"
+    },
+    {
+      "day": 38,
+      "topic": "Indian Climate & Monsoon",
+      "subject": "Geography"
+    },
+    {
+      "day": 39,
+      "topic": "Soil Types & Agriculture",
+      "subject": "Geography"
+    },
+    {
+      "day": 40,
+      "topic": "Minerals & Energy Resources",
+      "subject": "Geography"
+    },
+    {
+      "day": 41,
+      "topic": "Forest & Wildlife Resources",
+      "subject": "Geography"
+    },
+    {
+      "day": 42,
+      "topic": "Industry & Economic Geography",
+      "subject": "Geography"
+    },
+    {
+      "day": 43,
+      "topic": "Transport & Infrastructure",
+      "subject": "Geography"
+    },
+    {
+      "day": 44,
+      "topic": "Population & Census Data",
+      "subject": "Geography"
+    },
+    {
+      "day": 45,
+      "topic": "World Geography: Continents & Oceans",
+      "subject": "Geography"
+    },
+    {
+      "day": 46,
+      "topic": "GDP GNP NNP National Income",
+      "subject": "Economy"
+    },
+    {
+      "day": 47,
+      "topic": "Inflation: CPI WPI RBI Policy",
+      "subject": "Economy"
+    },
+    {
+      "day": 48,
+      "topic": "Banking: RBI CRR SLR Repo Rate",
+      "subject": "Economy"
+    },
+    {
+      "day": 49,
+      "topic": "Fiscal Policy Budget FRBM Deficits",
+      "subject": "Economy"
+    },
+    {
+      "day": 50,
+      "topic": "Poverty & Inclusive Growth",
+      "subject": "Economy"
+    },
+    {
+      "day": 51,
+      "topic": "Agriculture: MSP Land Reforms",
+      "subject": "Economy"
+    },
+    {
+      "day": 52,
+      "topic": "Industry Policy & Make in India",
+      "subject": "Economy"
+    },
+    {
+      "day": 53,
+      "topic": "Capital Markets SEBI Stock Exchange",
+      "subject": "Economy"
+    },
+    {
+      "day": 54,
+      "topic": "External Sector: BOP & Trade",
+      "subject": "Economy"
+    },
+    {
+      "day": 55,
+      "topic": "International Orgs: WTO IMF World Bank",
+      "subject": "Economy"
+    },
+    {
+      "day": 56,
+      "topic": "Ecology & Ecosystem Basics",
+      "subject": "Environment"
+    },
+    {
+      "day": 57,
+      "topic": "Biodiversity: Flora Fauna Hotspots",
+      "subject": "Environment"
+    },
+    {
+      "day": 58,
+      "topic": "Climate Change: Kyoto Paris Agreements",
+      "subject": "Environment"
+    },
+    {
+      "day": 59,
+      "topic": "Pollution Types & Control Acts",
+      "subject": "Environment"
+    },
+    {
+      "day": 60,
+      "topic": "Wildlife Protection Act 1972",
+      "subject": "Environment"
+    },
+    {
+      "day": 61,
+      "topic": "National Parks & Biosphere Reserves",
+      "subject": "Environment"
+    },
+    {
+      "day": 62,
+      "topic": "Wetlands & Mangroves",
+      "subject": "Environment"
+    },
+    {
+      "day": 63,
+      "topic": "Environmental Laws in India",
+      "subject": "Environment"
+    },
+    {
+      "day": 64,
+      "topic": "Disaster Management Act & NDMA",
+      "subject": "Environment"
+    },
+    {
+      "day": 65,
+      "topic": "Green Economy & Carbon Credits",
+      "subject": "Environment"
+    },
+    {
+      "day": 66,
+      "topic": "Physics: Motion Laws & Gravitation",
+      "subject": "SciTech"
+    },
+    {
+      "day": 67,
+      "topic": "Chemistry: Elements Periodic Table",
+      "subject": "SciTech"
+    },
+    {
+      "day": 68,
+      "topic": "Biology: Cell Structure & Functions",
+      "subject": "SciTech"
+    },
+    {
+      "day": 69,
+      "topic": "Human Diseases: Bacterial Viral Parasitic",
+      "subject": "SciTech"
+    },
+    {
+      "day": 70,
+      "topic": "Nutrition Deficiency Diseases",
+      "subject": "SciTech"
+    },
+    {
+      "day": 71,
+      "topic": "Space Technology: ISRO Missions",
+      "subject": "SciTech"
+    },
+    {
+      "day": 72,
+      "topic": "Defence Technology: Missiles Agni Prithvi",
+      "subject": "SciTech"
+    },
+    {
+      "day": 73,
+      "topic": "Nuclear Technology: Fission Fusion Reactors",
+      "subject": "SciTech"
+    },
+    {
+      "day": 74,
+      "topic": "Biotechnology & GMO Crops",
+      "subject": "SciTech"
+    },
+    {
+      "day": 75,
+      "topic": "AI Robotics & Emerging Tech",
+      "subject": "SciTech"
+    },
+    {
+      "day": 76,
+      "topic": "Art & Culture: Classical Dance Forms",
+      "subject": "Culture"
+    },
+    {
+      "day": 77,
+      "topic": "Architecture: Temples Mosques Forts",
+      "subject": "Culture"
+    },
+    {
+      "day": 78,
+      "topic": "Indian Literature & Languages",
+      "subject": "Culture"
+    },
+    {
+      "day": 79,
+      "topic": "Music: Carnatic Hindustani",
+      "subject": "Culture"
+    },
+    {
+      "day": 80,
+      "topic": "Paintings Schools of India",
+      "subject": "Culture"
+    },
+    {
+      "day": 81,
+      "topic": "UNESCO Heritage Sites in India",
+      "subject": "Culture"
+    },
+    {
+      "day": 82,
+      "topic": "Awards Bharat Ratna Padma",
+      "subject": "Culture"
+    },
+    {
+      "day": 83,
+      "topic": "Sports: Olympics Asian Games",
+      "subject": "Culture"
+    },
+    {
+      "day": 84,
+      "topic": "Important Days & National Symbols",
+      "subject": "Culture"
+    },
+    {
+      "day": 85,
+      "topic": "Current Affairs Integration Day",
+      "subject": "CurrentAffairs"
+    },
+    {
+      "day": 86,
+      "topic": "Revision Day: Polity Flashcards",
+      "subject": "Revision"
+    },
+    {
+      "day": 87,
+      "topic": "Revision Day: History Flashcards",
+      "subject": "Revision"
+    },
+    {
+      "day": 88,
+      "topic": "Revision Day: Economy Flashcards",
+      "subject": "Revision"
+    },
+    {
+      "day": 89,
+      "topic": "Revision Day: Geography Flashcards",
+      "subject": "Revision"
+    },
+    {
+      "day": 90,
+      "topic": "Revision Day: Environment Flashcards",
+      "subject": "Revision"
+    },
+    {
+      "day": 91,
+      "topic": "Mock PYQ Battle: Polity",
+      "subject": "MockPYQ"
+    },
+    {
+      "day": 92,
+      "topic": "Mock PYQ Battle: History",
+      "subject": "MockPYQ"
+    },
+    {
+      "day": 93,
+      "topic": "Mock PYQ Battle: Economy",
+      "subject": "MockPYQ"
+    },
+    {
+      "day": 94,
+      "topic": "Mock PYQ Battle: Science & Tech",
+      "subject": "MockPYQ"
+    },
+    {
+      "day": 95,
+      "topic": "Full Prelims Mock: 100Q Simulation",
+      "subject": "MockPYQ"
+    },
+    {
+      "day": 96,
+      "topic": "Rapid Fire: Constitutional Bodies",
+      "subject": "RapidFire"
+    },
+    {
+      "day": 97,
+      "topic": "Rapid Fire: National Movements",
+      "subject": "RapidFire"
+    },
+    {
+      "day": 98,
+      "topic": "Rapid Fire: Economic Indicators",
+      "subject": "RapidFire"
+    },
+    {
+      "day": 99,
+      "topic": "Rapid Fire: Geography Facts",
+      "subject": "RapidFire"
+    },
+    {
+      "day": 100,
+      "topic": "Rapid Fire: Environment Acts",
+      "subject": "RapidFire"
+    },
+    {
+      "day": 101,
+      "topic": "Ultimate Revision: Polity 360",
+      "subject": "MasteryDay"
+    },
+    {
+      "day": 102,
+      "topic": "Ultimate Revision: History 360",
+      "subject": "MasteryDay"
+    },
+    {
+      "day": 103,
+      "topic": "Ultimate Revision: Economy 360",
+      "subject": "MasteryDay"
+    },
+    {
+      "day": 104,
+      "topic": "Ultimate Revision: Geography 360",
+      "subject": "MasteryDay"
+    },
+    {
+      "day": 105,
+      "topic": "Ultimate Revision: Full Prelims 360",
+      "subject": "MasteryDay"
+    }
+  ],
+  "ssc_ecosystem": [
+    {
+      "day": 1,
+      "topic": "Unit Digit & Cyclicity Rules",
+      "subject": "Quant"
+    },
+    {
+      "day": 2,
+      "topic": "LCM & HCF Word Problems",
+      "subject": "Quant"
+    },
+    {
+      "day": 3,
+      "topic": "Surds Indices & Simplification",
+      "subject": "Quant"
+    },
+    {
+      "day": 4,
+      "topic": "Percentage Fraction Mastery",
+      "subject": "Quant"
+    },
+    {
+      "day": 5,
+      "topic": "Profit Loss & Discount",
+      "subject": "Quant"
+    },
+    {
+      "day": 6,
+      "topic": "Simple Interest Basics",
+      "subject": "Quant"
+    },
+    {
+      "day": 7,
+      "topic": "Compound Interest & Growth",
+      "subject": "Quant"
+    },
+    {
+      "day": 8,
+      "topic": "Ratio Proportion & Partnership",
+      "subject": "Quant"
+    },
+    {
+      "day": 9,
+      "topic": "Average Mixture & Alligation",
+      "subject": "Quant"
+    },
+    {
+      "day": 10,
+      "topic": "Time Work Pipes Cisterns",
+      "subject": "Quant"
+    },
+    {
+      "day": 11,
+      "topic": "Time Speed Distance Trains Boats",
+      "subject": "Quant"
+    },
+    {
+      "day": 12,
+      "topic": "Algebra Identities & Value Substitution",
+      "subject": "Quant"
+    },
+    {
+      "day": 13,
+      "topic": "Geometry Lines Angles Triangles",
+      "subject": "Quant"
+    },
+    {
+      "day": 14,
+      "topic": "Geometry Circles & Quadrilaterals",
+      "subject": "Quant"
+    },
+    {
+      "day": 15,
+      "topic": "Trigonometry Ratios & Tables",
+      "subject": "Quant"
+    },
+    {
+      "day": 16,
+      "topic": "Height & Distance Problems",
+      "subject": "Quant"
+    },
+    {
+      "day": 17,
+      "topic": "Mensuration 2D: Area Perimeter",
+      "subject": "Quant"
+    },
+    {
+      "day": 18,
+      "topic": "Mensuration 3D: Volume Surface Area",
+      "subject": "Quant"
+    },
+    {
+      "day": 19,
+      "topic": "Data Interpretation: Bar Graph",
+      "subject": "Quant"
+    },
+    {
+      "day": 20,
+      "topic": "Data Interpretation: Pie Chart & Table",
+      "subject": "Quant"
+    },
+    {
+      "day": 21,
+      "topic": "Number System: Divisibility Rules",
+      "subject": "Quant"
+    },
+    {
+      "day": 22,
+      "topic": "Square Root Cube Root Tricks",
+      "subject": "Quant"
+    },
+    {
+      "day": 23,
+      "topic": "Percentage Advanced Applications",
+      "subject": "Quant"
+    },
+    {
+      "day": 24,
+      "topic": "Profit Loss Advanced: Dishonest Dealers",
+      "subject": "Quant"
+    },
+    {
+      "day": 25,
+      "topic": "Time Work Advanced: Efficiency Method",
+      "subject": "Quant"
+    },
+    {
+      "day": 26,
+      "topic": "Analogy & Classification",
+      "subject": "Reasoning"
+    },
+    {
+      "day": 27,
+      "topic": "Coding-Decoding Letter Shift",
+      "subject": "Reasoning"
+    },
+    {
+      "day": 28,
+      "topic": "Blood Relations Family Tree",
+      "subject": "Reasoning"
+    },
+    {
+      "day": 29,
+      "topic": "Syllogism 100-50 Method",
+      "subject": "Reasoning"
+    },
+    {
+      "day": 30,
+      "topic": "Direction Distance Clock Problems",
+      "subject": "Reasoning"
+    },
+    {
+      "day": 31,
+      "topic": "Number Series & Missing Term",
+      "subject": "Reasoning"
+    },
+    {
+      "day": 32,
+      "topic": "Alphabet Series & Letter Patterns",
+      "subject": "Reasoning"
+    },
+    {
+      "day": 33,
+      "topic": "Mirror Image Water Image",
+      "subject": "Reasoning"
+    },
+    {
+      "day": 34,
+      "topic": "Paper Folding & Cube Counting",
+      "subject": "Reasoning"
+    },
+    {
+      "day": 35,
+      "topic": "Ranking Arrangement Puzzles",
+      "subject": "Reasoning"
+    },
+    {
+      "day": 36,
+      "topic": "Matrix & Word Formation",
+      "subject": "Reasoning"
+    },
+    {
+      "day": 37,
+      "topic": "Venn Diagrams Set Theory",
+      "subject": "Reasoning"
+    },
+    {
+      "day": 38,
+      "topic": "Input-Output Machine",
+      "subject": "Reasoning"
+    },
+    {
+      "day": 39,
+      "topic": "Calendar Puzzles & Days",
+      "subject": "Reasoning"
+    },
+    {
+      "day": 40,
+      "topic": "Age Problems & Equations",
+      "subject": "Reasoning"
+    },
+    {
+      "day": 41,
+      "topic": "Non-Verbal: Pattern Completion",
+      "subject": "Reasoning"
+    },
+    {
+      "day": 42,
+      "topic": "Non-Verbal: Embedded Figures",
+      "subject": "Reasoning"
+    },
+    {
+      "day": 43,
+      "topic": "Non-Verbal: Figure Classification",
+      "subject": "Reasoning"
+    },
+    {
+      "day": 44,
+      "topic": "Logical Sequence Alphabet Test",
+      "subject": "Reasoning"
+    },
+    {
+      "day": 45,
+      "topic": "Statement Conclusion Assumptions",
+      "subject": "Reasoning"
+    },
+    {
+      "day": 46,
+      "topic": "Noun Types & Usage",
+      "subject": "English"
+    },
+    {
+      "day": 47,
+      "topic": "Pronoun Agreement Rules",
+      "subject": "English"
+    },
+    {
+      "day": 48,
+      "topic": "Verb: Transitive Intransitive",
+      "subject": "English"
+    },
+    {
+      "day": 49,
+      "topic": "Adjective Adverb Comparison",
+      "subject": "English"
+    },
+    {
+      "day": 50,
+      "topic": "Articles a an the Rules",
+      "subject": "English"
+    },
+    {
+      "day": 51,
+      "topic": "Tenses 12-Tense Framework",
+      "subject": "English"
+    },
+    {
+      "day": 52,
+      "topic": "Subject-Verb Agreement 15 Rules",
+      "subject": "English"
+    },
+    {
+      "day": 53,
+      "topic": "Active Passive Voice Formula",
+      "subject": "English"
+    },
+    {
+      "day": 54,
+      "topic": "Direct Indirect Speech Rules",
+      "subject": "English"
+    },
+    {
+      "day": 55,
+      "topic": "Prepositions Fixed Phrases",
+      "subject": "English"
+    },
+    {
+      "day": 56,
+      "topic": "Conjunctions & Parallelism",
+      "subject": "English"
+    },
+    {
+      "day": 57,
+      "topic": "Modals: Can Could May Might",
+      "subject": "English"
+    },
+    {
+      "day": 58,
+      "topic": "Sentence Improvement Patterns",
+      "subject": "English"
+    },
+    {
+      "day": 59,
+      "topic": "Error Spotting Strategies",
+      "subject": "English"
+    },
+    {
+      "day": 60,
+      "topic": "Fill in the Blanks: Double Blank",
+      "subject": "English"
+    },
+    {
+      "day": 61,
+      "topic": "Cloze Test Strategy",
+      "subject": "English"
+    },
+    {
+      "day": 62,
+      "topic": "Idioms & Phrases High-Frequency 50",
+      "subject": "English"
+    },
+    {
+      "day": 63,
+      "topic": "One Word Substitution 50",
+      "subject": "English"
+    },
+    {
+      "day": 64,
+      "topic": "Synonyms Antonyms Strategy",
+      "subject": "English"
+    },
+    {
+      "day": 65,
+      "topic": "Reading Comprehension Tricks",
+      "subject": "English"
+    },
+    {
+      "day": 66,
+      "topic": "Para Jumbles PQRS Method",
+      "subject": "English"
+    },
+    {
+      "day": 67,
+      "topic": "Spelling Rules & Common Errors",
+      "subject": "English"
+    },
+    {
+      "day": 68,
+      "topic": "Phrase Replacement Patterns",
+      "subject": "English"
+    },
+    {
+      "day": 69,
+      "topic": "Column Matching Exercises",
+      "subject": "English"
+    },
+    {
+      "day": 70,
+      "topic": "Vocabulary: Root Word Method",
+      "subject": "English"
+    },
+    {
+      "day": 71,
+      "topic": "History for SSC: Ancient Quick Hits",
+      "subject": "GS"
+    },
+    {
+      "day": 72,
+      "topic": "History for SSC: Medieval Quick Hits",
+      "subject": "GS"
+    },
+    {
+      "day": 73,
+      "topic": "History for SSC: Modern Movements",
+      "subject": "GS"
+    },
+    {
+      "day": 74,
+      "topic": "Polity for SSC: Parliament & President",
+      "subject": "GS"
+    },
+    {
+      "day": 75,
+      "topic": "Polity for SSC: Constitutional Bodies",
+      "subject": "GS"
+    },
+    {
+      "day": 76,
+      "topic": "Geography for SSC: India Physical",
+      "subject": "GS"
+    },
+    {
+      "day": 77,
+      "topic": "Geography for SSC: Rivers & Dams",
+      "subject": "GS"
+    },
+    {
+      "day": 78,
+      "topic": "Geography for SSC: Climate & Soils",
+      "subject": "GS"
+    },
+    {
+      "day": 79,
+      "topic": "Science for SSC: Physics Laws",
+      "subject": "GS"
+    },
+    {
+      "day": 80,
+      "topic": "Science for SSC: Chemistry Elements",
+      "subject": "GS"
+    },
+    {
+      "day": 81,
+      "topic": "Science for SSC: Biology Cell Disease",
+      "subject": "GS"
+    },
+    {
+      "day": 82,
+      "topic": "Science for SSC: Inventions Discoveries",
+      "subject": "GS"
+    },
+    {
+      "day": 83,
+      "topic": "Current Affairs: Govt Schemes 2024",
+      "subject": "GS"
+    },
+    {
+      "day": 84,
+      "topic": "Current Affairs: Awards & Sports 2024",
+      "subject": "GS"
+    },
+    {
+      "day": 85,
+      "topic": "GS Rapid Fire: National Symbols Firsts",
+      "subject": "GS"
+    },
+    {
+      "day": 86,
+      "topic": "Mock Test: Quant 50Q Speed Drill",
+      "subject": "Mock"
+    },
+    {
+      "day": 87,
+      "topic": "Mock Test: Reasoning 50Q Speed Drill",
+      "subject": "Mock"
+    },
+    {
+      "day": 88,
+      "topic": "Mock Test: English 50Q Speed Drill",
+      "subject": "Mock"
+    },
+    {
+      "day": 89,
+      "topic": "Mock Test: GS 50Q Speed Drill",
+      "subject": "Mock"
+    },
+    {
+      "day": 90,
+      "topic": "Full Mock CGL Tier 1 Pattern",
+      "subject": "Mock"
+    },
+    {
+      "day": 91,
+      "topic": "Revision: Quant Formula Sheet",
+      "subject": "Revision"
+    },
+    {
+      "day": 92,
+      "topic": "Revision: English Rules Summary",
+      "subject": "Revision"
+    },
+    {
+      "day": 93,
+      "topic": "Revision: Reasoning Shortcut Bank",
+      "subject": "Revision"
+    },
+    {
+      "day": 94,
+      "topic": "Revision: GS Flash Facts",
+      "subject": "Revision"
+    },
+    {
+      "day": 95,
+      "topic": "Speed Drill: Mixed 100Q Battle",
+      "subject": "Revision"
+    },
+    {
+      "day": 96,
+      "topic": "Mastery: Percentage-Profit Combo",
+      "subject": "MasteryDay"
+    },
+    {
+      "day": 97,
+      "topic": "Mastery: Tenses-Voice-Speech Combo",
+      "subject": "MasteryDay"
+    },
+    {
+      "day": 98,
+      "topic": "Mastery: Series-Coding Combo",
+      "subject": "MasteryDay"
+    },
+    {
+      "day": 99,
+      "topic": "Mastery: Geometry-Mensuration Combo",
+      "subject": "MasteryDay"
+    },
+    {
+      "day": 100,
+      "topic": "Ultimate Full Revision Day 100",
+      "subject": "MasteryDay"
+    }
+  ],
+  "tnpsc_ecosystem": [
+    {
+      "day": 1,
+      "topic": "இலக்கணம்: எழுத்து முதல் & சார்பு",
+      "subject": "Tamil"
+    },
+    {
+      "day": 2,
+      "topic": "இலக்கணம்: சொல் பெயர் வினை இடை",
+      "subject": "Tamil"
+    },
+    {
+      "day": 3,
+      "topic": "வேற்றுமை உருபுகள் 8 Case Markers",
+      "subject": "Tamil"
+    },
+    {
+      "day": 4,
+      "topic": "திருக்குறள்: அறத்துப்பால்",
+      "subject": "Tamil"
+    },
+    {
+      "day": 5,
+      "topic": "திருக்குறள்: பொருட்பால் & காமத்துப்பால்",
+      "subject": "Tamil"
+    },
+    {
+      "day": 6,
+      "topic": "நாலடியார் & பழமொழி நானூறு",
+      "subject": "Tamil"
+    },
+    {
+      "day": 7,
+      "topic": "சங்க இலக்கியம்: எட்டுத்தொகை",
+      "subject": "Tamil"
+    },
+    {
+      "day": 8,
+      "topic": "பத்துப்பாட்டு Overview",
+      "subject": "Tamil"
+    },
+    {
+      "day": 9,
+      "topic": "பாரதியார்: கவிதைகள் & வாழ்க்கை",
+      "subject": "Tamil"
+    },
+    {
+      "day": 10,
+      "topic": "பாரதிதாசன்: இலக்கியம் & சிந்தனை",
+      "subject": "Tamil"
+    },
+    {
+      "day": 11,
+      "topic": "கவிமணி & சுரதா",
+      "subject": "Tamil"
+    },
+    {
+      "day": 12,
+      "topic": "மரபுச்சொற்கள் & திணை இலக்கியம்",
+      "subject": "Tamil"
+    },
+    {
+      "day": 13,
+      "topic": "தமிழ் அறிஞர்கள்: நூல்-ஆசிரியர் பட்டியல்",
+      "subject": "Tamil"
+    },
+    {
+      "day": 14,
+      "topic": "இலக்கண பிழை நீக்கம்",
+      "subject": "Tamil"
+    },
+    {
+      "day": 15,
+      "topic": "பிரித்தெழுதுதல் & சேர்த்தெழுதுதல்",
+      "subject": "Tamil"
+    },
+    {
+      "day": 16,
+      "topic": "எதுகை மோனை அணி இலக்கணம்",
+      "subject": "Tamil"
+    },
+    {
+      "day": 17,
+      "topic": "பொருள் வேறுபாடு: ஓரெழுத்து ஒரு மொழிகள்",
+      "subject": "Tamil"
+    },
+    {
+      "day": 18,
+      "topic": "வல்லினம் மிகும் மிகா இடங்கள்",
+      "subject": "Tamil"
+    },
+    {
+      "day": 19,
+      "topic": "தமிழ் மொழி வரலாறு & சிறப்பு",
+      "subject": "Tamil"
+    },
+    {
+      "day": 20,
+      "topic": "சொல் வகைகள்: Noun Verb Advanced",
+      "subject": "Tamil"
+    },
+    {
+      "day": 21,
+      "topic": "கீழடி அகழாய்வு & Sangam Context",
+      "subject": "Unit8"
+    },
+    {
+      "day": 22,
+      "topic": "சோழர்: ராஜராஜன் & ராஜேந்திரன்",
+      "subject": "Unit8"
+    },
+    {
+      "day": 23,
+      "topic": "பாண்டியர் வரலாறு",
+      "subject": "Unit8"
+    },
+    {
+      "day": 24,
+      "topic": "பல்லவர் கட்டடக்கலை & Mammalapuram",
+      "subject": "Unit8"
+    },
+    {
+      "day": 25,
+      "topic": "நீதிக்கட்சி & Communal GO 1921",
+      "subject": "Unit8"
+    },
+    {
+      "day": 26,
+      "topic": "ஈ.வெ.ரா பெரியார் & சுயமரியாதை",
+      "subject": "Unit8"
+    },
+    {
+      "day": 27,
+      "topic": "வ.உ.சி & சுப்பிரமணிய சிவா",
+      "subject": "Unit8"
+    },
+    {
+      "day": 28,
+      "topic": "அண்ணா & திராவிட இயக்கம்",
+      "subject": "Unit8"
+    },
+    {
+      "day": 29,
+      "topic": "தமிழ்நாட்டில் காங்கிரஸ் & விடுதலை",
+      "subject": "Unit8"
+    },
+    {
+      "day": 30,
+      "topic": "Montagu-Chelmsford Reform & Dyarchy",
+      "subject": "Unit8"
+    },
+    {
+      "day": 31,
+      "topic": "இந்திய அரசியலமைப்பு முகவுரை",
+      "subject": "Unit9"
+    },
+    {
+      "day": 32,
+      "topic": "அடிப்படை உரிமைகள் Part III",
+      "subject": "Unit9"
+    },
+    {
+      "day": 33,
+      "topic": "DPSP & Fundamental Duties",
+      "subject": "Unit9"
+    },
+    {
+      "day": 34,
+      "topic": "மத்திய அரசு குடியரசுத்தலைவர் பிரதமர்",
+      "subject": "Unit9"
+    },
+    {
+      "day": 35,
+      "topic": "மாநில அரசு ஆளுநர் முதலமைச்சர்",
+      "subject": "Unit9"
+    },
+    {
+      "day": 36,
+      "topic": "தமிழ்நாடு சட்டமன்றம் & நிர்வாகம்",
+      "subject": "Unit9"
+    },
+    {
+      "day": 37,
+      "topic": "உள்ளாட்சி: பஞ்சாயத்து ராஜ்",
+      "subject": "Unit9"
+    },
+    {
+      "day": 38,
+      "topic": "நகராட்சி & மாவட்ட நிர்வாகம்",
+      "subject": "Unit9"
+    },
+    {
+      "day": 39,
+      "topic": "தேர்தல் ஆணையம் & தேர்தல் முறை",
+      "subject": "Unit9"
+    },
+    {
+      "day": 40,
+      "topic": "அலுவல் மொழிகள் & 8th Schedule",
+      "subject": "Unit9"
+    },
+    {
+      "day": 41,
+      "topic": "ஆதிமனிதன் & சிந்துவெளி நாகரீகம்",
+      "subject": "History"
+    },
+    {
+      "day": 42,
+      "topic": "வேத காலம் & அர்த்தசாஸ்திரம்",
+      "subject": "History"
+    },
+    {
+      "day": 43,
+      "topic": "அசோகர் & மௌரிய நிர்வாகம்",
+      "subject": "History"
+    },
+    {
+      "day": 44,
+      "topic": "குப்தர் கால இலக்கியம் & கலை",
+      "subject": "History"
+    },
+    {
+      "day": 45,
+      "topic": "டெல்லி சுல்தான்கள் Quick Hits",
+      "subject": "History"
+    },
+    {
+      "day": 46,
+      "topic": "முகலாயர் & அக்பரின் நிர்வாகம்",
+      "subject": "History"
+    },
+    {
+      "day": 47,
+      "topic": "மராட்டியர் & சிவாஜி",
+      "subject": "History"
+    },
+    {
+      "day": 48,
+      "topic": "ஐரோப்பியர் வருகை & ஆங்கிலேயர்",
+      "subject": "History"
+    },
+    {
+      "day": 49,
+      "topic": "1857 எழுச்சி & தமிழ்நாடு",
+      "subject": "History"
+    },
+    {
+      "day": 50,
+      "topic": "காந்தியடிகள் & இந்திய விடுதலை",
+      "subject": "History"
+    },
+    {
+      "day": 51,
+      "topic": "தமிழ்நாட்டின் நதிகள் & பாசன திட்டங்கள்",
+      "subject": "Geography"
+    },
+    {
+      "day": 52,
+      "topic": "தமிழ்நாடு மலைகள் & காடுகள்",
+      "subject": "Geography"
+    },
+    {
+      "day": 53,
+      "topic": "தமிழ்நாடு மாவட்டங்கள் & தலைமை நகரங்கள்",
+      "subject": "Geography"
+    },
+    {
+      "day": 54,
+      "topic": "இந்தியாவின் நதிகள் & அணைகள்",
+      "subject": "Geography"
+    },
+    {
+      "day": 55,
+      "topic": "தமிழ்நாடு வேளாண்மை & பயிர்கள்",
+      "subject": "Geography"
+    },
+    {
+      "day": 56,
+      "topic": "தமிழ்நாடு தொழில் & துறைமுகங்கள்",
+      "subject": "Geography"
+    },
+    {
+      "day": 57,
+      "topic": "தட்பவெப்பம் & மழைப்பொழிவு",
+      "subject": "Geography"
+    },
+    {
+      "day": 58,
+      "topic": "உலக நாடுகள் & தலைநகரங்கள்",
+      "subject": "Geography"
+    },
+    {
+      "day": 59,
+      "topic": "தமிழ்நாட்டில் சுற்றுலா & கோயில்கள்",
+      "subject": "Geography"
+    },
+    {
+      "day": 60,
+      "topic": "அலகுகள் & அளவீடுகள்",
+      "subject": "Geography"
+    },
+    {
+      "day": 61,
+      "topic": "ஒளிச்சேர்க்கை & தாவர உறுப்புகள்",
+      "subject": "Science"
+    },
+    {
+      "day": 62,
+      "topic": "உயிரணு கட்டமைப்பு & பகுப்பு",
+      "subject": "Science"
+    },
+    {
+      "day": 63,
+      "topic": "இரத்தம் & இரத்த ஓட்ட மண்டலம்",
+      "subject": "Science"
+    },
+    {
+      "day": 64,
+      "topic": "நோய்கள்: பாக்டீரியா வைரஸ்",
+      "subject": "Science"
+    },
+    {
+      "day": 65,
+      "topic": "ஊட்டச்சத்து குறைபாடு நோய்கள்",
+      "subject": "Science"
+    },
+    {
+      "day": 66,
+      "topic": "இயக்கம் & நியூட்டன் விதிகள்",
+      "subject": "Science"
+    },
+    {
+      "day": 67,
+      "topic": "ஒலி & ஒளி பண்புகள்",
+      "subject": "Science"
+    },
+    {
+      "day": 68,
+      "topic": "அணுக்கரு & கதிரியக்கம்",
+      "subject": "Science"
+    },
+    {
+      "day": 69,
+      "topic": "வேதியியல்: அமிலம் காரம் உப்பு",
+      "subject": "Science"
+    },
+    {
+      "day": 70,
+      "topic": "தனிம அட்டவணை முக்கிய தனிமங்கள்",
+      "subject": "Science"
+    },
+    {
+      "day": 71,
+      "topic": "தமிழ்நாட்டின் GDP & பொருளாதாரம்",
+      "subject": "Economy"
+    },
+    {
+      "day": 72,
+      "topic": "வேளாண் பொருளாதாரம் & MSP",
+      "subject": "Economy"
+    },
+    {
+      "day": 73,
+      "topic": "வங்கிகள் & நிதி நிறுவனங்கள்",
+      "subject": "Economy"
+    },
+    {
+      "day": 74,
+      "topic": "மத்திய & மாநில வரவுசெலவு திட்டம்",
+      "subject": "Economy"
+    },
+    {
+      "day": 75,
+      "topic": "அரசு திட்டங்கள்: MGNREGS PM-KISAN",
+      "subject": "Economy"
+    },
+    {
+      "day": 76,
+      "topic": "கல்வி: இடஒதுக்கீடு & RTE சட்டம்",
+      "subject": "Economy"
+    },
+    {
+      "day": 77,
+      "topic": "சுகாதாரம்: TNHSP & Ayushman",
+      "subject": "Economy"
+    },
+    {
+      "day": 78,
+      "topic": "TNPSC Exam Pattern & Strategy",
+      "subject": "Strategy"
+    },
+    {
+      "day": 79,
+      "topic": "TNPSC Group 4 PYQ Battle 2022",
+      "subject": "MockPYQ"
+    },
+    {
+      "day": 80,
+      "topic": "TNPSC Group 2 PYQ Battle 2023",
+      "subject": "MockPYQ"
+    },
+    {
+      "day": 81,
+      "topic": "Rapid Fire: தமிழ் இலக்கணம்",
+      "subject": "Revision"
+    },
+    {
+      "day": 82,
+      "topic": "Rapid Fire: Unit 8 Dates & Events",
+      "subject": "Revision"
+    },
+    {
+      "day": 83,
+      "topic": "Rapid Fire: Unit 9 Polity Terms",
+      "subject": "Revision"
+    },
+    {
+      "day": 84,
+      "topic": "Rapid Fire: Science Flash Facts",
+      "subject": "Revision"
+    },
+    {
+      "day": 85,
+      "topic": "Rapid Fire: Geography Quick Hits",
+      "subject": "Revision"
+    },
+    {
+      "day": 86,
+      "topic": "Mock Test: Tamil 50Q",
+      "subject": "Mock"
+    },
+    {
+      "day": 87,
+      "topic": "Mock Test: Unit 8 & 9 50Q",
+      "subject": "Mock"
+    },
+    {
+      "day": 88,
+      "topic": "Mock Test: GS History Science 50Q",
+      "subject": "Mock"
+    },
+    {
+      "day": 89,
+      "topic": "Mock Test: Geography Economy 50Q",
+      "subject": "Mock"
+    },
+    {
+      "day": 90,
+      "topic": "Full TNPSC Group 4 Simulation",
+      "subject": "Mock"
+    },
+    {
+      "day": 91,
+      "topic": "Mastery: Tamil Grammar 360",
+      "subject": "MasteryDay"
+    },
+    {
+      "day": 92,
+      "topic": "Mastery: Unit 8 Full Revision",
+      "subject": "MasteryDay"
+    },
+    {
+      "day": 93,
+      "topic": "Mastery: Polity Deep Dive",
+      "subject": "MasteryDay"
+    },
+    {
+      "day": 94,
+      "topic": "Mastery: Science & Economy Combo",
+      "subject": "MasteryDay"
+    },
+    {
+      "day": 95,
+      "topic": "Ultimate Day 100: Full Revision",
+      "subject": "MasteryDay"
+    }
+  ]
+}

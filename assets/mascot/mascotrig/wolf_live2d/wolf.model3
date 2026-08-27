@@ -1,0 +1,46 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "wolf.moc3",
+		"Textures": [
+			"wolf.4096/texture_00.png"
+		],
+		"Physics": "wolf.physics3",
+		"DisplayInfo": "wolf.cdi3",
+		"Expressions": [
+			{
+				"Name": "sad",
+				"File": "sad.exp3"
+			},
+			{
+				"Name": "proud",
+				"File": "proud.exp3"
+			},
+			{
+				"Name": "angry",
+				"File": "angry.exp3"
+			},
+			{
+				"Name": "playful",
+				"File": "playful.exp3"
+			},
+			{
+				"Name": "happy",
+				"File": "happy.exp3"
+			}
+		]
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		}
+	],
+	"HitAreas": []
+}
