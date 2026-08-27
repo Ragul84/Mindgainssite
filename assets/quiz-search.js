@@ -330,7 +330,7 @@
         text: premiseText.slice(match.index + match[0].length, i + 1 < matches.length ? matches[i + 1].index : premiseText.length).trim(),
       })).filter(({ text }) => text);
     } else if (/^statements\s*:/i.test(premiseText)) {
-      const sentences = premiseText.replace(/^statements\s*:\s*/i, '').match(/[^.!?]+[.!?]+/g) || [];
+      const sentences = premiseText.replace(/^statements\s*:\s*/i, '').match(/[^.!?]+(?:[.!?]+|$)/g) || [];
       lead = 'Consider the following statements';
       statements = sentences.map((text, i) => ({ label: `Statement ${i + 1}`, text: text.trim() }));
     } else {
@@ -338,6 +338,7 @@
     }
 
     if (statements.length < 2) return `<div class="quiz-question-copy">${esc(raw)}</div>`;
+    lead = `Read the following ${statements.length} statements`;
 
     return `
       ${lead ? `<div class="quiz-question-lead">${esc(lead)}</div>` : ''}

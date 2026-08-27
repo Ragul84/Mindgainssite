@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/assets/quiz-hub.css?v=20260728_v3" />
+<link rel="stylesheet" href="/assets/quiz-hub.css?v=20260827_v4" />
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png" />
@@ -114,11 +114,10 @@ button.start, a.start {
   gap: 8px !important;
   padding: 12px 26px !important;
   border-radius: 999px !important;
-  background: linear-gradient(135deg, #0D1520, #0B111A) padding-box,
-              linear-gradient(90deg, #7BE3B0, #38BDF8, #A78BFA, #F472B6, #7BE3B0) border-box !important;
-  background-size: 200% 200% !important;
-  border: 2.5px solid transparent !important;
-  color: #FFFFFF !important;
+  background: #7BE3B0 !important;
+  background-size: auto !important;
+  border: 1px solid #7BE3B0 !important;
+  color: #07130d !important;
   font-family: 'Inter', system-ui, sans-serif !important;
   font-size: 14px !important;
   font-weight: 700 !important;
@@ -128,13 +127,13 @@ button.start, a.start {
   width: auto !important;
   max-width: 200px !important;
   white-space: nowrap !important;
-  animation: borderGlowRotate 3s ease infinite !important;
-  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  animation: none !important;
+  transition: transform 0.16s ease, background 0.16s ease !important;
 }
 
 button.start:hover, a.start:hover {
-  transform: translateY(-2px) scale(1.03) !important;
-  box-shadow: 0 0 35px rgba(123, 227, 176, 0.8), 0 0 65px rgba(56, 189, 248, 0.5) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: none !important;
 }
 
 .exam-stmt-row {
@@ -169,7 +168,7 @@ button.start:hover, a.start:hover {
       <button class="start" type="button" data-start-quiz><span class="material-symbols-outlined" style="font-size:18px;color:#7BE3B0;">play_arrow</span><span>Start Quiz</span></button>
     </div>
   </section><section class="quiz-player" id="quiz-player" data-quiz-src="/assets/quiz-data/samacheer/chemistry/class11.json" hidden><div class="quiz-shell"><div class="quiz-status"><span data-progress>Question 1 / 508</span><span data-score>Score 0</span></div><div class="quiz-meter"><span data-meter></span></div><h2 data-question></h2><div class="quiz-options" data-options></div><div class="quiz-feedback" data-feedback hidden></div><div class="quiz-actions"><button type="button" data-next disabled>Next</button></div></div></section><section><div class="section-head"><h2>Related Topics</h2></div><div class="related"><a href="/samacheer/chemistry/class12/">Class12</a></div></section><section class="app-bridge"><h2>Finished this quiz?</h2><p>Imagine doing this every day with personalized lessons, revision, streaks, AI guidance and a growing community of learners across India.</p><p>Join the MindGains Early Access Waitlist and be among the first to experience India's daily learning habit platform.</p><ul><li>Daily Dose - one focused lesson every day</li><li>Personalized AI-generated learning from any PDF, YouTube video or topic</li><li>AI companion MIGA in 5 Indian languages</li><li>200,000+ quizzes with mistake revision</li><li>XP, streaks and state leaderboards</li><li>Current affairs, flashcards and smart practice</li></ul><a class="start" href="/waitlist.html">Join the Waitlist</a></section></main>
-<script src="/assets/quiz-search.js?v=20260728_v3" defer></script>
+<script src="/assets/quiz-search.js?v=20260827_v4" defer></script>
 
 <footer style="
   margin: 60px 20px 24px;
