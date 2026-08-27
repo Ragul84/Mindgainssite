@@ -37,25 +37,34 @@
         line-height: 1.55;
         flex: 1;
       }
+      .exam-stmt-list { display: grid; gap: 8px; margin: 14px 0; }
+      .quiz-question-copy { font-size: 16px; line-height: 1.6; font-weight: 600; }
+      .quiz-question-lead { color: #7BE3B0; font-size: 14px; font-weight: 700; letter-spacing: .01em; }
+      .quiz-question-prompt { margin-top: 18px; color: #fff; font-size: 16px; font-weight: 700; line-height: 1.5; }
       
       @media (max-width: 600px) {
         .exam-stmt-row {
-          display: block !important;
-          margin: 4px 0 !important;
-          padding: 6px 10px !important;
-          border-radius: 6px !important;
+          margin: 8px 0 !important;
+          padding: 13px 14px !important;
+          border-radius: 12px !important;
         }
         .exam-stmt-label {
           display: inline-block !important;
-          font-size: 9.5px !important;
-          padding: 1px 5px !important;
-          margin-bottom: 4px !important;
+          font-size: 11px !important;
+          padding: 3px 7px !important;
+          margin-bottom: 7px !important;
         }
         .exam-stmt-text {
           display: block !important;
-          font-size: 11.5px !important;
-          line-height: 1.35 !important;
+          font-size: 14px !important;
+          line-height: 1.5 !important;
         }
+        .quiz-question-copy { font-size: 16px; line-height: 1.55; }
+        .quiz-question-lead { font-size: 13px; }
+        .quiz-question-prompt { margin-top: 16px; font-size: 16px; line-height: 1.5; }
+        .quiz-options { gap: 10px; }
+        .quiz-options button { min-height: 58px; padding: 14px; font-size: 14px; line-height: 1.4; align-items: flex-start; }
+        .opt-badge { flex: 0 0 28px; height: 28px; display: inline-grid; place-items: center; }
       }
 
       .quiz-feedback {
@@ -100,26 +109,6 @@
     String(s ?? '').replace(/[&<>"']/g, (m) =>
       ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m])
     );
-
-  // Standard UPSC assertion-reason / statement options
-  const STATEMENT_OPTIONS = [
-    'Both Statement 1 and Statement 2 are correct, and Statement 2 is the correct explanation of Statement 1',
-    'Both Statement 1 and Statement 2 are correct, but Statement 2 is NOT the correct explanation of Statement 1',
-    'Statement 1 is correct but Statement 2 is incorrect',
-    'Statement 1 is incorrect but Statement 2 is correct',
-  ];
-
-  /**
-   * Detect if a question is a "Statement 1 / Statement 2" type
-   * with broken bare-letter options like ["A","B","C","D"].
-   */
-  function isStatementQuestion(q) {
-    if (!q || !q.options || q.options.length !== 4) return false;
-    const bareLetters = q.options.every((o, i) =>
-      o.trim() === String.fromCharCode(65 + i) || o.trim().length <= 2
-    );
-    return bareLetters && /statement\s*[12]/i.test(q.question);
-  }
 
   /**
    * Parse "Statement 1: … Statement 2: …" out of a question string.
@@ -226,7 +215,35 @@
     return quiz;
   }
 
-  function current() { return quiz.questions[order[idx]]; }
+  const QUESTION_REPAIRS = {
+    'Consider: (A) All botanists are scientists. (B) No scientist is a mathematician. (C) Some botanists are mathematicians. Which statement is contradictory to the premises?': {
+      question: 'Consider: (A) All botanists are scientists. (B) No scientist is a mathematician. Which conclusion follows?',
+      options: [
+        'No botanist is a mathematician.',
+        'Some scientists are mathematicians.',
+        'All botanists are mathematicians.',
+        'Some botanists are not scientists.',
+      ],
+      answer_index: 0,
+      explanation: 'All botanists are scientists, and no scientist is a mathematician. Therefore, no botanist can be a mathematician.',
+    },
+    'Given: (1) Some athletes are not mathematicians. (2) All mathematicians are scientists. Which of the following must be true?': {
+      question: 'Given: (1) Some athletes are not mathematicians. (2) All mathematicians are scientists. Which of the following must be true?',
+      options: [
+        'All athletes are scientists.',
+        'No scientist is an athlete.',
+        'Some athletes are not mathematicians.',
+        'Some scientists are athletes.',
+      ],
+      answer_index: 2,
+      explanation: 'The first premise directly guarantees that some athletes are not mathematicians. The second premise does not establish any athlete–scientist relationship.',
+    },
+  };
+
+  function current() {
+    const q = quiz.questions[order[idx]];
+    return QUESTION_REPAIRS[q.question] ? { ...q, ...QUESTION_REPAIRS[q.question] } : q;
+  }
 
   // ── Confetti Particle Burst Engine ──────────────────────────────────────────
   function triggerCorrectConfetti() {
@@ -296,58 +313,33 @@
   // ── Multi-Statement Exam Formatting Helper ──────────────────────────────
   function formatExamQuestionText(questionText) {
     if (!questionText) return '';
-    let raw = String(questionText).trim();
+    const raw = String(questionText).replace(/\s+/g, ' ').trim();
+    const promptPattern = /\b(Which of the following|Which statement|Which conclusion|Which inference|What follows|What can be deduced|What is the logical conclusion|What is a valid deduction)[^?]*\??/i;
+    const promptMatch = raw.match(promptPattern);
+    const premiseText = (promptMatch ? raw.slice(0, promptMatch.index) : raw).trim();
+    const prompt = promptMatch ? promptMatch[0].trim() : '';
+    const marker = /(?:\(\d{1,2}\)|\b\d{1,2}[.)]|\b(?:I|II|III|IV|V|VI|VII|VIII|IX|X)[.)]|Statement\s*\d+\s*:)/gi;
+    const matches = [...premiseText.matchAll(marker)];
 
-    const statementPattern = /(?:Statement\s*\d+|Statement\s*[I|V|X]+|\b[1-9]\.|\(\d{1,2}\))/i;
-    if (!statementPattern.test(raw)) {
-      return `<div style="font-size:16px;line-height:1.65;font-weight:600;margin-bottom:16px;">${esc(raw)}</div>`;
+    // Only create statement cards when there are at least two explicit numbered
+    // premises. Ordinary questions must always retain their original prose.
+    if (matches.length < 2) {
+      return `<div class="quiz-question-copy">${esc(raw)}</div>`;
     }
 
-    let leadText = 'Consider the following statements:';
-    const leadMatch = raw.match(/^(Consider the following statements?:?|Which of the following statements is\/are correct\??|With reference to [^,]+, consider the following statements?:?)/i);
-    if (leadMatch) {
-      leadText = leadMatch[0];
-      raw = raw.slice(leadText.length).trim();
-    }
+    const lead = premiseText.slice(0, matches[0].index).replace(/[:\s]+$/, '').trim();
+    const statements = matches.map((match, i) => ({
+      label: match[0].replace(/:$/, ''),
+      text: premiseText.slice(match.index + match[0].length, i + 1 < matches.length ? matches[i + 1].index : premiseText.length).trim(),
+    })).filter(({ text }) => text);
 
-    const statementRegex = /(?:Statement\s*\d+|Statement\s*[I|V|X]+|\b[1-9]\.|\(\d{1,2}\))/gi;
-    const matches = [...raw.matchAll(statementRegex)];
-    let statementsHtml = '';
-    let closingText = '';
-
-    if (matches.length > 0) {
-      for (let i = 0; i < matches.length; i++) {
-        const label = matches[i][0];
-        const startIdx = matches[i].index + label.length;
-        const endIdx = (i + 1 < matches.length) ? matches[i + 1].index : raw.length;
-        let stmtContent = raw.slice(startIdx, endIdx).trim();
-
-        if (i === matches.length - 1) {
-          const closingMatch = stmtContent.match(/(Which of the (?:statements|above)[^?]*\??)/i);
-          if (closingMatch) {
-            closingText = `<div style="font-weight:700;margin-top:18px;color:#FFFFFF;font-size:15px;line-height:1.5;">${esc(closingMatch[0])}</div>`;
-            stmtContent = stmtContent.slice(0, closingMatch.index).trim();
-          }
-        }
-
-        statementsHtml += `
-          <div class="exam-stmt-row">
-            <span class="exam-stmt-label">${esc(label)}</span>
-            <span class="exam-stmt-text">${esc(stmtContent)}</span>
-          </div>`;
-      }
-    } else {
-      statementsHtml = `<div style="font-size:15.5px;line-height:1.65;">${esc(raw)}</div>`;
-    }
-
-    if (!closingText && !raw.toLowerCase().includes('which of the')) {
-      closingText = '<div style="font-weight:700;margin-top:18px;color:#FFFFFF;font-size:15px;">Which of the statements given above is/are correct?</div>';
-    }
+    if (statements.length < 2) return `<div class="quiz-question-copy">${esc(raw)}</div>`;
 
     return `
-      <div style="font-weight:700;color:#7BE3B0;font-size:15px;margin-bottom:14px;letter-spacing:0.2px;">${esc(leadText)}</div>
-      <div style="display:flex;flex-direction:column;gap:6px;margin:14px 0;">${statementsHtml}</div>
-      ${closingText}`;
+      ${lead ? `<div class="quiz-question-lead">${esc(lead)}</div>` : ''}
+      <div class="exam-stmt-list">${statements.map(({ label, text }) => `
+        <div class="exam-stmt-row"><span class="exam-stmt-label">${esc(label)}</span><span class="exam-stmt-text">${esc(text)}</span></div>`).join('')}</div>
+      ${prompt ? `<div class="quiz-question-prompt">${esc(prompt)}</div>` : ''}`;
   }
 
   // ── render question ──────────────────────────────────────────────────────
@@ -365,8 +357,7 @@
     meter.style.width    = Math.round(((idx + 1) / order.length) * 100) + '%';
 
     // ── Render question text with structured statement formatting ─────────
-    const isStmt = isStatementQuestion(q);
-    const effectiveOptions = isStmt ? STATEMENT_OPTIONS : q.options;
+    const effectiveOptions = q.options;
 
     qEl.innerHTML = formatExamQuestionText(q.question);
 
@@ -511,7 +502,16 @@
     const statements = [];
     const directs = [];
     
+    const usable = (q) => Array.isArray(q.options)
+      && q.options.length === 4
+      && Number.isInteger(q.answer_index)
+      && q.answer_index >= 0
+      && q.answer_index < q.options.length
+      && q.options.every((option) => String(option).trim().length > 2)
+      && new Set(q.options.map((option) => String(option).trim().toLowerCase())).size === q.options.length;
+
     quiz.questions.forEach((q, i) => {
+      if (!usable(q)) return;
       if (pattern.test(q.question)) {
         statements.push(i);
       } else {
@@ -537,7 +537,7 @@
         selectedDirects = shuffledDirects.slice(0, Math.max(targetHalf, limit));
       } else {
         // Fallback: shuffle all and take first 20 if one pool is completely empty
-        const all = shuffle(quiz.questions.map((_, i) => i));
+        const all = shuffle(quiz.questions.map((_, i) => i).filter((i) => usable(quiz.questions[i])));
         order = all.slice(0, 20);
         idx = 0;
         score = 0;
