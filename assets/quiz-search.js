@@ -9,11 +9,11 @@
         gap: 12px;
         margin: 10px 0;
         padding: 12px 16px;
-        background: rgba(255,255,255,0.035);
-        border: 1px solid rgba(255,255,255,0.1);
+        background: #f1fcfa;
+        border: 1px solid #b7ece5;
         border-radius: 12px;
-        border-left: 4px solid #7BE3B0;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+        border-left: 4px solid #00bdae;
+        box-shadow: 0 4px 12px rgba(10,91,84,.06);
         transition: all 0.2s;
       }
       #quiz-player {
@@ -23,8 +23,8 @@
         font-family: 'Poppins', sans-serif;
         font-weight: 700;
         font-size: 11px;
-        color: #7BE3B0;
-        background: rgba(123,227,176,0.14);
+        color: #087c75 !important;
+        background: #d4f7f0;
         padding: 3px 8px;
         border-radius: 6px;
         white-space: nowrap;
@@ -33,37 +33,40 @@
       }
       .exam-stmt-text {
         font-size: 14.5px;
-        color: rgba(255,255,255,0.95);
+        color: #17363a !important;
+        font-weight: 650;
         line-height: 1.55;
         flex: 1;
       }
       .exam-stmt-list { display: grid; gap: 8px; margin: 14px 0; }
       .quiz-question-copy { font-size: 16px; line-height: 1.6; font-weight: 600; }
-      .quiz-question-lead { color: #7BE3B0; font-size: 14px; font-weight: 700; letter-spacing: .01em; }
-      .quiz-question-prompt { margin-top: 18px; color: #fff; font-size: 16px; font-weight: 700; line-height: 1.5; }
+      .quiz-question-lead { color: #102c30 !important; font-size: 14px; font-weight: 700; letter-spacing: .01em; }
+      .quiz-question-prompt { margin-top: 18px; color: #17363a !important; font-size: 16px; font-weight: 700; line-height: 1.5; }
       
       @media (max-width: 600px) {
         .exam-stmt-row {
-          margin: 8px 0 !important;
-          padding: 13px 14px !important;
-          border-radius: 12px !important;
+          margin: 0 !important;
+          padding: 9px 10px !important;
+          border-radius: 10px !important;
+          gap: 8px !important;
         }
         .exam-stmt-label {
           display: inline-block !important;
-          font-size: 11px !important;
-          padding: 3px 7px !important;
-          margin-bottom: 7px !important;
+          font-size: 10px !important;
+          padding: 3px 6px !important;
+          margin-bottom: 0 !important;
         }
         .exam-stmt-text {
           display: block !important;
-          font-size: 14px !important;
-          line-height: 1.5 !important;
+          font-size: 13px !important;
+          line-height: 1.38 !important;
         }
-        .quiz-question-copy { font-size: 16px; line-height: 1.55; }
+        .exam-stmt-list { gap: 7px !important; margin: 9px 0 !important; }
+        .quiz-question-copy { font-size: 16px; line-height: 1.4; }
         .quiz-question-lead { font-size: 13px; }
-        .quiz-question-prompt { margin-top: 16px; font-size: 16px; line-height: 1.5; }
-        .quiz-options { gap: 10px; }
-        .quiz-options button { min-height: 58px; padding: 14px; font-size: 14px; line-height: 1.4; align-items: flex-start; }
+        .quiz-question-prompt { margin-top: 10px; font-size: 14px; line-height: 1.4; }
+        .quiz-options { gap: 7px; }
+        .quiz-options button { min-height: 48px; padding: 10px 12px; font-size: 13px; line-height: 1.3; align-items: center; }
         .opt-badge { flex: 0 0 28px; height: 28px; display: inline-grid; place-items: center; }
       }
 
@@ -77,7 +80,8 @@
         font-size: 12.5px !important;
         line-height: 1.5 !important;
         margin-top: 6px !important;
-        color: rgba(255, 255, 255, 0.7) !important;
+        color: #17363a !important;
+        font-weight: 600;
       }
       .quiz-feedback .correct-ans {
         font-size: 12.5px !important;
@@ -86,10 +90,10 @@
       
       @media (max-width: 600px) {
         .quiz-feedback {
-          font-size: 11.5px !important;
+          font-size: 12px !important;
           line-height: 1.35 !important;
-          padding: 6px 10px !important;
-          margin-top: 6px !important;
+          padding: 9px 10px !important;
+          margin-top: 8px !important;
         }
         .quiz-feedback .explanation {
           font-size: 11px !important;
@@ -313,38 +317,73 @@
   // ── Multi-Statement Exam Formatting Helper ──────────────────────────────
   function formatExamQuestionText(questionText) {
     if (!questionText) return '';
-    const raw = String(questionText).replace(/\s+/g, ' ').trim();
-    const promptPattern = /\b(Which of the following|Which statement|Which conclusion|Which inference|What follows|What can be deduced|What is the logical conclusion|What is a valid deduction)[^?]*\??/i;
-    const promptMatch = raw.match(promptPattern);
-    const premiseText = (promptMatch ? raw.slice(0, promptMatch.index) : raw).trim();
-    const prompt = promptMatch ? promptMatch[0].trim() : '';
-    const marker = /(?:\(\d{1,2}\)|\b\d{1,2}[.)]|\b(?:I|II|III|IV|V|VI|VII|VIII|IX|X)[.)]|Statement\s*\d+\s*:)/gi;
-    const matches = [...premiseText.matchAll(marker)];
+    // Preserve line boundaries: some UPSC source questions describe labels
+    // as "I and II" before the actual statements. The real I./II. labels
+    // begin on their own lines.
+    let raw = String(questionText).replace(/\r\n?/g, '\n').replace(/[ \t]+/g, ' ').replace(/\n{2,}/g, '\n').trim();
+    // Do not present an unverified exam claim as provenance. If imported copy
+    // says “A question in the TNPSC mains asks…”, this is an adapted practice
+    // item unless the data record carries verified PYQ metadata.
+    const practiceClaim = /^A question in (?:the )?(?:TNPSC|UPSC|SSC)[^:]*\s+asks:\s*/i.test(raw);
+    if (practiceClaim) raw = raw.replace(/^A question in (?:the )?(?:TNPSC|UPSC|SSC)[^:]*\s+asks:\s*/i, '');
+    const plainQuestion = () => `<div class="${practiceClaim ? 'quiz-practice-question ' : ''}quiz-question-copy${raw.length > 260 ? ' quiz-question-copy--dense' : ''}">${practiceClaim ? '<span class="question-kind">Practice question</span>' : ''}${esc(raw)}</div>`;
+    // A second source convention puts Roman labels directly after one
+    // "Statements:" heading: "Statements: I: … II: …". Turn those into
+    // line labels before detecting statement boundaries.
+    if (/\bStatements\s*:/i.test(raw)) {
+      raw = raw.replace(/\bStatements\s*:\s*/gi, 'Statements:\n');
+      raw = raw.replace(/\b(VIII|VII|VI|IV|III|II|IX|V|X|I)\s*:/gi, '\n$1.');
+    }
+    const promptPattern = /\b(Select the correct answer(?:\s+using the codes below)?|Which of the following|Which statement|Which conclusion|Which inference|What follows|What can be deduced|What is the logical conclusion|What is a valid deduction)[^?]*\??/i;
+    // Only accept a number as a label at a genuine list boundary. This avoids
+    // splitting normal prose such as "between 10 and 20." into fake cards.
+    const marker = /(?:(?:^|\n|;)\s*\d{1,2}[.)]|(?:^|\n)\s*(?:VIII|VII|VI|IV|III|II|IX|V|X|I)[.)]|Statement\s*(?:\d+|VIII|VII|VI|IV|III|II|IX|V|X|I)\s*:)/gim;
+    let matches = [...raw.matchAll(marker)];
+    // Parenthesised labels are valid only in an explicit list-like question.
+    // Limiting them to (1)–(9) prevents maths such as (23)^56 + (47)^23
+    // from being rendered as fake statements.
+    if (/\b(?:statements?|given|pairs?|sentences|premises?)\b/i.test(raw)) {
+      // Some source files put "1. … 2. … 3. …" after a question on one
+      // line. Once an explicit statements context is present, those are list
+      // labels—not sentence numbers—so give each one its own line boundary.
+      const inlineLabels = [...raw.matchAll(/\s([1-9])[.)]\s+/g)];
+      if (inlineLabels.length >= 2) {
+        raw = raw.replace(/\s([1-9])[.)]\s+/g, '\n$1. ');
+        matches = [...raw.matchAll(marker)];
+      }
+      matches = matches.concat([...raw.matchAll(/\([1-9]\)/g)]).sort((a, b) => a.index - b.index);
+    }
     let lead;
     let statements;
 
     if (matches.length >= 2) {
-      lead = premiseText.slice(0, matches[0].index).replace(/[:\s]+$/, '').trim();
+      lead = raw.slice(0, matches[0].index).replace(/(?:Statements?)?[:\s]+$/i, '').trim();
       statements = matches.map((match, i) => ({
-        label: match[0].replace(/:$/, ''),
-        text: premiseText.slice(match.index + match[0].length, i + 1 < matches.length ? matches[i + 1].index : premiseText.length).trim(),
+        label: match[0].trim().replace(/^;\s*/, '').replace(/:$/, ''),
+        text: raw.slice(match.index + match[0].length, i + 1 < matches.length ? matches[i + 1].index : raw.length).trim(),
       })).filter(({ text }) => text);
-    } else if (/^statements\s*:/i.test(premiseText)) {
-      const sentences = premiseText.replace(/^statements\s*:\s*/i, '').match(/[^.!?]+(?:[.!?]+|$)/g) || [];
+    } else if (/^statements\s*:/i.test(raw)) {
+      const sentences = raw.replace(/^statements\s*:\s*/i, '').replace(/\bconclusion\s*:\s*$/i, '').match(/[^.!?]+(?:[.!?]+|$)/g) || [];
       lead = 'Consider the following statements';
       statements = sentences.map((text, i) => ({ label: `Statement ${i + 1}`, text: text.trim() }));
     } else {
-      return `<div class="quiz-question-copy">${esc(raw)}</div>`;
+      return plainQuestion();
     }
 
-    if (statements.length < 2) return `<div class="quiz-question-copy">${esc(raw)}</div>`;
-    lead = `Read the following ${statements.length} statements`;
+    if (statements.length < 2) return plainQuestion();
+    // Separate an instruction following the final statement ("Select the
+    // correct answer …") so it never gets swallowed into statement text.
+    const last = statements[statements.length - 1];
+    const tailPrompt = last.text.match(promptPattern);
+    const prompt = tailPrompt ? tailPrompt[0].trim() : '';
+    if (tailPrompt) last.text = last.text.slice(0, tailPrompt.index).trim();
+    const dense = raw.length > 340 || statements.length >= 3;
 
-    return `
-      ${lead ? `<div class="quiz-question-lead">${esc(lead)}</div>` : ''}
-      <div class="exam-stmt-list">${statements.map(({ label, text }) => `
+    return `<div class="exam-question${dense ? ' exam-question--dense' : ''}">
+      ${lead ? `<div class="quiz-question-lead">${esc(lead)}</div>` : `<div class="quiz-question-lead">Read the following ${statements.length} statements</div>`}
+      <div class="exam-stmt-list exam-stmt-list--${statements.length}">${statements.map(({ label, text }) => `
         <div class="exam-stmt-row"><span class="exam-stmt-label">${esc(label)}</span><span class="exam-stmt-text">${esc(text)}</span></div>`).join('')}</div>
-      ${prompt ? `<div class="quiz-question-prompt">${esc(prompt)}</div>` : ''}`;
+      ${prompt ? `<div class="quiz-question-prompt">${esc(prompt)}</div>` : ''}</div>`;
   }
 
   // ── render question ──────────────────────────────────────────────────────
@@ -391,7 +430,7 @@
     buttons.forEach((b, i) => {
       b.disabled = true;
       if (i === q.answer_index) b.classList.add('correct');
-      if (i === choice && i !== q.answer_index) b.classList.add('wrong');
+      if (i === choice && i !== q.answer_index) b.classList.add('wrong', 'shake');
     });
 
     const ok = choice === q.answer_index;
@@ -402,20 +441,11 @@
       mistakes.push({ q, choice, effectiveOptions });
     }
 
-    const correctText = effectiveOptions[q.answer_index];
-
     feedback.hidden = false;
     feedback.className = `quiz-feedback ${ok ? 'is-correct' : 'is-wrong'}`;
-    feedback.innerHTML =
-      `<strong class="${ok ? 'correct-label' : 'wrong-label'}">
-        ${ok ? '✓ Correct!' : '✗ Incorrect'}
-      </strong>` +
-      (!ok
-        ? `<div class="correct-ans">✓ Correct answer: ${esc(correctText)}</div>`
-        : '') +
-      (q.explanation
-        ? `<div class="explanation">${esc(q.explanation)}</div>`
-        : '');
+    feedback.innerHTML = q.explanation
+      ? `<div class="explanation"><span class="explanation-label">Explanation</span>${esc(q.explanation)}</div>`
+      : '';
 
     scoreEl.textContent = `✦ ${score} pts`;
     nextBtn.disabled = false;
@@ -550,6 +580,17 @@
         started = Date.now();
         nextBtn.textContent = 'Next →';
         player.hidden = false;
+        document.documentElement.classList.add('mg-quiz-active');
+        let restartBtn = player.querySelector('[data-restart-quiz]');
+        if (!restartBtn) {
+          restartBtn = document.createElement('button');
+          restartBtn.type = 'button';
+          restartBtn.className = 'quiz-restart';
+          restartBtn.dataset.restartQuiz = '';
+          restartBtn.textContent = 'Restart';
+          restartBtn.addEventListener('click', begin);
+          player.querySelector('.quiz-status')?.appendChild(restartBtn);
+        }
         startBtn.textContent = 'Restart Quiz';
         startBtn.disabled = false;
         render();
@@ -565,6 +606,17 @@
     started = Date.now();
     nextBtn.textContent = 'Next →';
     player.hidden = false;
+    document.documentElement.classList.add('mg-quiz-active');
+    let restartBtn = player.querySelector('[data-restart-quiz]');
+    if (!restartBtn) {
+      restartBtn = document.createElement('button');
+      restartBtn.type = 'button';
+      restartBtn.className = 'quiz-restart';
+      restartBtn.dataset.restartQuiz = '';
+      restartBtn.textContent = 'Restart';
+      restartBtn.addEventListener('click', begin);
+      player.querySelector('.quiz-status')?.appendChild(restartBtn);
+    }
     startBtn.textContent = 'Restart Quiz';
     startBtn.disabled = false;
     render();
@@ -596,3 +648,5 @@
     }
   });
 })();
+
+window.addEventListener('DOMContentLoaded',()=>{if(new URLSearchParams(location.search).get('start')==='1'){document.querySelector('[data-start-quiz]')?.click()}});
