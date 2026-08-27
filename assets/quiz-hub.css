@@ -984,4 +984,57 @@ button.start:hover, a.start:hover {
   .topic-hero h1 { font-size: 30px; }
   .footer-grid { grid-template-columns: 1fr; }
   .site-nav nav { display: none; }
+
+  /* Quiz pages use a shared inline footer. Override its desktop grid so it
+     remains a clean, readable stack on phones. */
+  footer[style] {
+    margin: 28px 12px 20px !important;
+    padding: 28px 22px 22px !important;
+    border-radius: 22px !important;
+  }
+
+  footer[style] > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 26px !important;
+  }
+
+  footer[style] > div[style*="grid-template-columns"] > div {
+    min-width: 0 !important;
+  }
+
+  footer[style] p[style] { max-width: 100% !important; }
+
+  footer[style] > div[style*="padding-top"] {
+    align-items: flex-start !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    margin-top: 28px !important;
+    padding-top: 18px !important;
+  }
+}
+
+/* Some Android browsers report a desktop-width layout viewport while still
+   being used on a phone. Keep the inline QuizHub footer usable there too. */
+@media (hover: none) and (pointer: coarse) {
+  footer[style] {
+    margin: 28px 12px 20px !important;
+    padding: 28px 22px 22px !important;
+    border-radius: 22px !important;
+  }
+
+  footer[style] > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 26px !important;
+  }
+
+  footer[style] > div[style*="grid-template-columns"] > div { min-width: 0 !important; }
+  footer[style] p[style] { max-width: 100% !important; }
+
+  footer[style] > div[style*="padding-top"] {
+    align-items: flex-start !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    margin-top: 28px !important;
+    padding-top: 18px !important;
+  }
 }

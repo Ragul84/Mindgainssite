@@ -320,18 +320,22 @@
     const prompt = promptMatch ? promptMatch[0].trim() : '';
     const marker = /(?:\(\d{1,2}\)|\b\d{1,2}[.)]|\b(?:I|II|III|IV|V|VI|VII|VIII|IX|X)[.)]|Statement\s*\d+\s*:)/gi;
     const matches = [...premiseText.matchAll(marker)];
+    let lead;
+    let statements;
 
-    // Only create statement cards when there are at least two explicit numbered
-    // premises. Ordinary questions must always retain their original prose.
-    if (matches.length < 2) {
+    if (matches.length >= 2) {
+      lead = premiseText.slice(0, matches[0].index).replace(/[:\s]+$/, '').trim();
+      statements = matches.map((match, i) => ({
+        label: match[0].replace(/:$/, ''),
+        text: premiseText.slice(match.index + match[0].length, i + 1 < matches.length ? matches[i + 1].index : premiseText.length).trim(),
+      })).filter(({ text }) => text);
+    } else if (/^statements\s*:/i.test(premiseText)) {
+      const sentences = premiseText.replace(/^statements\s*:\s*/i, '').match(/[^.!?]+[.!?]+/g) || [];
+      lead = 'Consider the following statements';
+      statements = sentences.map((text, i) => ({ label: `Statement ${i + 1}`, text: text.trim() }));
+    } else {
       return `<div class="quiz-question-copy">${esc(raw)}</div>`;
     }
-
-    const lead = premiseText.slice(0, matches[0].index).replace(/[:\s]+$/, '').trim();
-    const statements = matches.map((match, i) => ({
-      label: match[0].replace(/:$/, ''),
-      text: premiseText.slice(match.index + match[0].length, i + 1 < matches.length ? matches[i + 1].index : premiseText.length).trim(),
-    })).filter(({ text }) => text);
 
     if (statements.length < 2) return `<div class="quiz-question-copy">${esc(raw)}</div>`;
 
