@@ -99,6 +99,12 @@
     .freeline a{font-weight:600;color:var(--teal-700)}
     .freeline a:hover{text-decoration:underline}
 
+    .why{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:44px 0 0}
+    @media(max-width:720px){.why{grid-template-columns:1fr;gap:16px}}
+    .why h3{font-family:Poppins,sans-serif;font-weight:600;font-size:15px;letter-spacing:-.01em;margin:0 0 4px;color:var(--ink)}
+    .why h3::before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--teal);margin-right:9px;vertical-align:middle}
+    .why p{margin:0;font-size:13.5px;color:var(--ink-2);line-height:1.55}
+
     /* app band */
     .band{margin:40px 0 0;background:linear-gradient(120deg,#f0fbfa,#eef7ff);border:1px solid var(--line-2);
       border-radius:24px;padding:32px;display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center}
@@ -187,6 +193,12 @@
   </div>
 
   <p class="freeline">Not sure yet? <a href="/quiz/">Browse every exam in the free Quiz Hub →</a></p>
+
+  <div class="why">
+    <div><h3>Grounded in your books</h3><p>Every answer is cited to NCERT or Samacheer — not guessed.</p></div>
+    <div><h3>Real previous-year questions</h3><p>Verified PYQs, tagged to the topic that actually matters.</p></div>
+    <div><h3>One connected loop</h3><p>Plan, learn, practise, test, revise, compete — nothing you study is wasted.</p></div>
+  </div>
 
   <div class="band">
     <div>
