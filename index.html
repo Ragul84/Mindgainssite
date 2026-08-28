@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MindGains — Which exam are you preparing for?</title>
-  <meta name="description" content="Pick your exam and get a daily learning habit built for it: a Daily Dose lesson, verified previous-year questions, and free topic practice you can start right now. UPSC, TNPSC, SSC, RRB, NCERT, Samacheer.">
+  <title>MindGains — Choose your exam</title>
+  <meta name="description" content="Choose your exam and start free: a daily dose, verified previous-year questions and topic practice built for it. UPSC, TNPSC, SSC, RRB, NCERT, Samacheer.">
   <link rel="canonical" href="https://mindgains.ai/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="MindGains — Which exam are you preparing for?">
-  <meta property="og:description" content="A daily learning habit for Indian competitive exams. Pick your exam, start free practice, get the app.">
+  <meta property="og:title" content="MindGains — Choose your exam">
+  <meta property="og:description" content="A daily learning habit for Indian competitive exams. Choose your exam, practise free, get the app.">
   <meta property="og:url" content="https://mindgains.ai/">
   <meta property="og:image" content="https://mindgains.ai/assets/icons/mindgains-logo-512.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
@@ -25,206 +25,181 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"MindGains Labs Private Limited","url":"https://mindgains.ai/"}</script>
   <style>
     :root{
-      --teal:#00d4c7;--teal-deep:#0ba79e;--teal-ink:#087c75;
-      --ink:#0f172a;--muted:#5b6b7f;--faint:#8a99ab;
-      --paper:#f6faf9;--white:#fff;--line:rgba(15,23,42,.09);--line-soft:rgba(15,23,42,.06);
-      --gold:#f8bb22;
-      --shadow:0 1px 2px rgba(15,23,42,.05),0 14px 40px rgba(15,23,42,.07);
-      --r-sm:12px;--r-md:18px;--r-lg:26px;--r-xl:34px;
+      --teal:#00d4c7;--teal-600:#0ba79e;--teal-700:#087c75;
+      --bg:#fbfcfd;--surface:#ffffff;
+      --ink:#0d1b2a;--ink-2:#475569;--ink-3:#8a97a8;
+      --line:rgba(13,27,42,.08);--line-2:rgba(13,27,42,.05);
+      --ring:rgba(0,212,199,.55);
+      --sh-card:0 1px 2px rgba(13,27,42,.04), 0 6px 16px -6px rgba(13,27,42,.10);
+      --sh-card-h:0 2px 4px rgba(13,27,42,.05), 0 22px 44px -14px rgba(13,27,42,.20);
+      --sh-btn:0 1px 2px rgba(13,27,42,.10), 0 10px 24px -8px rgba(11,167,158,.5);
+      --ease:cubic-bezier(.22,1,.36,1);
     }
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-    body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+    html{-webkit-text-size-adjust:100%}
+    body{margin:0;background:var(--bg);color:var(--ink);
+      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+      font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
     a{color:inherit;text-decoration:none}
-    button{font:inherit}
-    .wrap{width:min(1120px,calc(100% - 40px));margin:0 auto}
-    .skip{position:absolute;left:-999px}
-    .skip:focus{left:16px;top:16px;z-index:99;background:#fff;padding:10px 14px;border-radius:10px}
+    .wrap{width:min(1040px,calc(100% - 44px));margin:0 auto}
 
-    /* nav */
-    .nav{position:sticky;top:0;z-index:20;background:rgba(246,250,249,.86);backdrop-filter:blur(16px);border-bottom:1px solid var(--line-soft)}
-    .navin{height:70px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-    .brand{font:800 20px/1 Poppins,sans-serif;letter-spacing:-.5px;display:flex;align-items:center;gap:9px}
-    .brand i{width:28px;height:28px;border-radius:9px;background:linear-gradient(135deg,var(--teal),#4aded9);position:relative}
-    .brand i:after{content:'✦';position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-style:normal;font-size:15px}
-    .nav-links{display:flex;align-items:center;gap:22px;font-weight:600;font-size:14px;color:#42536a}
-    .nav-links a:hover{color:var(--teal-ink)}
-    .nav-cta{display:inline-flex;align-items:center;min-height:42px;padding:0 18px;border-radius:999px;background:var(--teal-deep);color:#fff;font-weight:800;font-size:14px;box-shadow:0 5px 0 var(--teal-ink)}
-    .nav-cta:active{transform:translateY(3px);box-shadow:0 2px 0 var(--teal-ink)}
-    @media(max-width:680px){.nav-links a:not(.nav-cta){display:none}}
+    /* header */
+    header{position:sticky;top:0;z-index:20;background:rgba(251,252,253,.8);backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line-2)}
+    .hin{height:64px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-family:Poppins,sans-serif;font-weight:700;font-size:19px;letter-spacing:-.02em;display:flex;align-items:center;gap:8px}
+    .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px rgba(0,212,199,.16)}
+    .hnav{display:flex;align-items:center;gap:20px}
+    .hnav .lnk{font-size:14px;font-weight:500;color:var(--ink-2)}
+    .hnav .lnk:hover{color:var(--ink)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;height:40px;padding:0 18px;border-radius:11px;
+      font-family:Inter,sans-serif;font-weight:600;font-size:14px;letter-spacing:-.01em;
+      background:var(--teal-600);color:#fff;box-shadow:var(--sh-btn);transition:transform .18s var(--ease),filter .18s var(--ease)}
+    .btn:hover{transform:translateY(-1px);filter:saturate(1.08) brightness(1.03)}
+    .btn:active{transform:translateY(0)}
+    @media(max-width:520px){.hnav .lnk{display:none}}
 
-    /* hero */
-    .hero{padding:56px 0 30px;text-align:center}
-    .eyebrow{display:inline-block;padding:7px 12px;border-radius:999px;background:#e6faf8;color:var(--teal-ink);font-size:11px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
-    .hero h1{font-family:Poppins,sans-serif;font-size:clamp(30px,5.4vw,50px);line-height:1.05;letter-spacing:-.03em;margin:18px auto 0;max-width:16ch}
-    .hero p{max-width:56ch;margin:16px auto 0;color:var(--muted);font-size:clamp(15px,2vw,18px)}
+    /* intro */
+    .intro{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:36px 0 24px}
+    .intro h1{font-family:Poppins,sans-serif;font-weight:700;font-size:clamp(30px,4.6vw,44px);line-height:1.06;
+      letter-spacing:-.035em;margin:0}
+    .intro p{margin:12px 0 0;color:var(--ink-2);font-size:clamp(15px,1.8vw,17px);max-width:48ch}
+    .intro .meta{color:var(--ink-3);font-size:13px;font-weight:500;white-space:nowrap;padding-bottom:4px}
 
-    /* exam grid */
-    .exams{padding:10px 0 8px}
-    .exam-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    @media(max-width:880px){.exam-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:560px){.exam-grid{grid-template-columns:1fr}}
-    .exam-card{display:flex;flex-direction:column;gap:6px;background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px 22px 20px;box-shadow:var(--shadow);transition:transform .15s ease,border-color .15s ease}
-    .exam-card:hover{transform:translateY(-3px);border-color:rgba(0,212,199,.5)}
-    .exam-card .ex-name{font:800 21px/1.1 Poppins,sans-serif;letter-spacing:-.02em}
-    .exam-card .ex-scope{color:var(--muted);font-size:13.5px;min-height:2.6em}
-    .exam-card .ex-foot{margin-top:8px;display:flex;align-items:center;justify-content:space-between;font-weight:700;font-size:13px;color:var(--teal-ink)}
-    .exam-card .ex-foot .arrow{width:26px;height:26px;border-radius:999px;background:#e6faf8;display:grid;place-items:center;color:var(--teal-deep)}
+    /* grid */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-top:8px}
+    @media(max-width:860px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:560px){.grid{grid-template-columns:1fr}}
+    .card{position:relative;display:flex;flex-direction:column;gap:12px;background:var(--surface);
+      border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--sh-card);
+      transition:transform .22s var(--ease),box-shadow .22s var(--ease),border-color .22s var(--ease);
+      opacity:0;transform:translateY(12px);animation:in .55s var(--ease) forwards}
+    .card:nth-child(1){animation-delay:.03s}.card:nth-child(2){animation-delay:.07s}.card:nth-child(3){animation-delay:.11s}
+    .card:nth-child(4){animation-delay:.15s}.card:nth-child(5){animation-delay:.19s}.card:nth-child(6){animation-delay:.23s}
+    @keyframes in{to{opacity:1;transform:translateY(0)}}
+    .card:hover{transform:translateY(-4px);box-shadow:var(--sh-card-h);border-color:var(--ring)}
+    .tile{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;color:#fff;
+      box-shadow:inset 0 -3px 8px rgba(0,0,0,.16), 0 8px 18px -6px rgba(13,27,42,.28)}
+    .tile svg{width:26px;height:26px}
+    .t-upsc{background:linear-gradient(150deg,#6d63ff,#8a7bff)}
+    .t-tnpsc{background:linear-gradient(150deg,#0bb7a8,#22d3c4)}
+    .t-ssc{background:linear-gradient(150deg,#8b5cf6,#a78bfa)}
+    .t-rrb{background:linear-gradient(150deg,#3b82f6,#60a5fa)}
+    .t-ncert{background:linear-gradient(150deg,#10b981,#34d399)}
+    .t-samacheer{background:linear-gradient(150deg,#f43f5e,#fb7185)}
+    .card h2{font-family:Poppins,sans-serif;font-weight:600;font-size:18px;letter-spacing:-.02em;margin:0}
+    .card .scope{color:var(--ink-2);font-size:13.5px;line-height:1.5;flex:1}
+    .card .foot{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid var(--line-2)}
+    .card .count{font-size:12.5px;font-weight:600;color:var(--teal-700)}
+    .card .arrow{color:var(--ink-3);transition:transform .22s var(--ease),color .22s var(--ease)}
+    .card:hover .arrow{transform:translateX(4px);color:var(--teal-600)}
 
-    /* free strip */
-    .freestrip{margin:34px 0 0}
-    .freestrip a{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:linear-gradient(120deg,#0e2630,#123a44);color:#eafcfa;border-radius:var(--r-lg);padding:22px 26px;box-shadow:var(--shadow)}
-    .freestrip b{font:800 18px/1.25 Poppins,sans-serif}
-    .freestrip span{color:#a9d8d3;font-size:14px}
-    .freestrip .go{display:inline-flex;align-items:center;min-height:46px;padding:0 20px;border-radius:999px;background:var(--teal);color:#04231f;font-weight:800;font-size:14px}
-
-    /* inside the app */
-    .inside{padding:62px 0 20px}
-    .inside .head{text-align:center;margin-bottom:30px}
-    .inside .head .eyebrow{background:#fff5e0;color:#a9741b}
-    .inside .head h2{font-family:Poppins,sans-serif;font-size:clamp(24px,3.6vw,36px);letter-spacing:-.025em;margin:14px auto 0;max-width:20ch}
-    .inside .head p{max-width:52ch;margin:12px auto 0;color:var(--muted)}
-    .feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-    @media(max-width:720px){.feat-grid{grid-template-columns:1fr}}
-    .feat{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px;box-shadow:var(--shadow)}
-    .feat .ic{width:40px;height:40px;border-radius:12px;background:#e6faf8;display:grid;place-items:center;font-size:20px;margin-bottom:12px}
-    .feat h3{font:800 17px/1.25 Poppins,sans-serif;margin:0 0 6px;letter-spacing:-.01em}
-    .feat p{margin:0;color:var(--muted);font-size:14px}
+    /* free line */
+    .freeline{padding:22px 0 0;font-size:14.5px;color:var(--ink-2)}
+    .freeline a{font-weight:600;color:var(--teal-700)}
+    .freeline a:hover{text-decoration:underline}
 
     /* app band */
-    .appband{margin:46px 0 0;background:var(--white);border:1px solid var(--line);border-radius:var(--r-xl);padding:34px 28px;text-align:center;box-shadow:var(--shadow)}
-    .appband h2{font-family:Poppins,sans-serif;font-size:clamp(22px,3.2vw,30px);letter-spacing:-.02em;margin:0 auto;max-width:22ch}
-    .appband p{max-width:46ch;margin:10px auto 20px;color:var(--muted)}
-    .appband .btn{display:inline-flex;align-items:center;min-height:52px;padding:0 26px;border-radius:999px;background:var(--teal-deep);color:#fff;font-weight:800;box-shadow:0 6px 0 var(--teal-ink)}
-    .appband .btn:active{transform:translateY(4px);box-shadow:0 2px 0 var(--teal-ink)}
-    .appband small{display:block;margin-top:12px;color:var(--faint);font-size:12.5px}
+    .band{margin:40px 0 0;background:linear-gradient(120deg,#f0fbfa,#eef7ff);border:1px solid var(--line-2);
+      border-radius:24px;padding:32px;display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center}
+    @media(max-width:640px){.band{grid-template-columns:1fr}}
+    .band h2{font-family:Poppins,sans-serif;font-weight:600;font-size:clamp(19px,2.4vw,24px);letter-spacing:-.02em;margin:0}
+    .band p{margin:8px 0 0;color:var(--ink-2);font-size:14.5px;max-width:52ch}
+    .band .btn{height:44px;padding:0 22px;font-size:14.5px}
 
     /* footer */
-    footer{margin-top:64px;border-top:1px solid var(--line-soft);background:var(--white)}
-    .foot{display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-between;padding:36px 0}
-    .foot .fbrand{font:800 18px Poppins,sans-serif}
-    .foot .fbrand span{display:block;font:400 13px Inter;color:var(--faint);margin-top:4px}
-    .foot nav{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13.5px;color:var(--muted)}
-    .foot nav a:hover{color:var(--teal-ink)}
-    .foot .legal{width:100%;border-top:1px solid var(--line-soft);padding-top:16px;color:var(--faint);font-size:12px}
+    footer{margin-top:52px;border-top:1px solid var(--line-2)}
+    .fin{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;padding:26px 0 38px;font-size:13px;color:var(--ink-3)}
+    .fin .fb{font-family:Poppins,sans-serif;font-weight:700;color:var(--ink);letter-spacing:-.02em}
+    .fin nav{display:flex;flex-wrap:wrap;gap:6px 16px}
+    .fin nav a:hover{color:var(--ink-2)}
+    .fin .cc{margin-left:auto}
+    @media(max-width:560px){.fin .cc{margin-left:0;width:100%}}
 
-    :focus-visible{outline:2px solid var(--teal-deep);outline-offset:2px;border-radius:4px}
-    @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+    :focus-visible{outline:2px solid var(--teal-600);outline-offset:3px;border-radius:8px}
+    @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.card{opacity:1;transform:none}}
   </style>
 </head>
 <body>
-<a class="skip" href="#exams">Skip to exam list</a>
 
-<header class="nav">
-  <div class="wrap navin">
-    <a class="brand" href="/"><i aria-hidden="true"></i>MindGains</a>
-    <div class="nav-links">
-      <a href="/quiz/">Quiz Hub</a>
-      <a href="/editorial/">Editorial</a>
-      <a class="nav-cta" href="/get/">Get early access</a>
+<header>
+  <div class="wrap hin">
+    <a class="brand" href="/"><span class="dot" aria-hidden="true"></span>MindGains</a>
+    <div class="hnav">
+      <a class="lnk" href="/quiz/">Quiz Hub</a>
+      <a class="lnk" href="/editorial/">Editorial</a>
+      <a class="btn" href="/get/">Get the app</a>
     </div>
   </div>
 </header>
 
-<main>
-  <section class="hero">
-    <div class="wrap">
-      <span class="eyebrow">MindGains · India's daily learning habit</span>
-      <h1>Which exam are you preparing for?</h1>
-      <p>Pick your exam. Get a Daily Dose built for it, verified previous-year questions, and free topic practice you can start right now — no signup.</p>
+<main class="wrap">
+  <div class="intro">
+    <div>
+      <h1>Choose your exam</h1>
+      <p>Pick your exam and start free — a daily dose, verified previous-year questions and topic practice built for it.</p>
     </div>
-  </section>
+    <span class="meta">6 exams · 300+ free topics</span>
+  </div>
 
-  <section class="exams" id="exams">
-    <div class="wrap">
-      <div class="exam-grid">
-        <a class="exam-card" href="/upsc/">
-          <span class="ex-name">UPSC</span>
-          <span class="ex-scope">Civil Services — Prelims &amp; Mains foundation. Polity, History, Economy, Geography, Environment.</span>
-          <span class="ex-foot">62 topics · free practice <span class="arrow" aria-hidden="true">→</span></span>
-        </a>
-        <a class="exam-card" href="/tnpsc/">
-          <span class="ex-name">TNPSC</span>
-          <span class="ex-scope">Group 1, 2, 2A, 4 &amp; VAO. Tamil, History, Polity, General Studies, Aptitude.</span>
-          <span class="ex-foot">84 topics · free practice <span class="arrow" aria-hidden="true">→</span></span>
-        </a>
-        <a class="exam-card" href="/ssc/">
-          <span class="ex-name">SSC</span>
-          <span class="ex-scope">CGL, CHSL, MTS, CPO &amp; GD. Reasoning, Quant, English, General Awareness.</span>
-          <span class="ex-foot">45 topics · free practice <span class="arrow" aria-hidden="true">→</span></span>
-        </a>
-        <a class="exam-card" href="/rrb/">
-          <span class="ex-name">RRB / Railway</span>
-          <span class="ex-scope">NTPC, Group D &amp; ALP. Reasoning, Maths, Science and General Awareness.</span>
-          <span class="ex-foot">15 topics · free practice <span class="arrow" aria-hidden="true">→</span></span>
-        </a>
-        <a class="exam-card" href="/ncert/">
-          <span class="ex-name">NCERT Foundation</span>
-          <span class="ex-scope">Class 6–12, UPSC-aligned. Science, Maths, Social Science, History, Geography.</span>
-          <span class="ex-foot">51 topics · free practice <span class="arrow" aria-hidden="true">→</span></span>
-        </a>
-        <a class="exam-card" href="/samacheer/">
-          <span class="ex-name">Samacheer Kalvi</span>
-          <span class="ex-scope">Tamil Nadu board, Class 6–12, TNPSC-aligned. Tamil, Science, Maths, Social Science.</span>
-          <span class="ex-foot">67 topics · free practice <span class="arrow" aria-hidden="true">→</span></span>
-        </a>
-      </div>
+  <div class="grid">
+    <a class="card" href="/upsc/">
+      <span class="tile t-upsc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M4 21V10l8-5 8 5v11M9 21v-6h6v6"/></svg></span>
+      <h2>UPSC</h2>
+      <span class="scope">Civil Services — Prelims &amp; Mains foundation. Polity, History, Economy, Geography, Environment.</span>
+      <span class="foot"><span class="count">62 topics</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+    </a>
 
-      <div class="freestrip">
-        <a href="/quiz/">
-          <span>
-            <b>Not sure yet? Just start practising.</b><br>
-            <span>Browse every exam and topic in the free Quiz Hub — no account needed.</span>
-          </span>
-          <span class="go">Open Quiz Hub →</span>
-        </a>
-      </div>
+    <a class="card" href="/tnpsc/">
+      <span class="tile t-tnpsc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 21h10M12 6l-7 2 3 5a3 3 0 0 1-6 0M12 6l7 2-3 5a3 3 0 0 0 6 0"/></svg></span>
+      <h2>TNPSC</h2>
+      <span class="scope">Group 1, 2, 2A, 4 &amp; VAO. Tamil, History, Polity, General Studies, Aptitude.</span>
+      <span class="foot"><span class="count">84 topics</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+    </a>
+
+    <a class="card" href="/ssc/">
+      <span class="tile t-ssc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></span>
+      <h2>SSC</h2>
+      <span class="scope">CGL, CHSL, MTS, CPO &amp; GD. Reasoning, Quant, English, General Awareness.</span>
+      <span class="foot"><span class="count">45 topics</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+    </a>
+
+    <a class="card" href="/rrb/">
+      <span class="tile t-rrb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 10h14M9 21l-2-3M15 21l2-3M9.5 13.5h.01M14.5 13.5h.01"/></svg></span>
+      <h2>RRB / Railway</h2>
+      <span class="scope">NTPC, Group D &amp; ALP. Reasoning, Maths, Science and General Awareness.</span>
+      <span class="foot"><span class="count">15 topics</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+    </a>
+
+    <a class="card" href="/ncert/">
+      <span class="tile t-ncert" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19a2 2 0 0 0 2 2h13M9 7h6"/></svg></span>
+      <h2>NCERT Foundation</h2>
+      <span class="scope">Class 6–12, UPSC-aligned path. Science, Maths, Social Science, History, Geography.</span>
+      <span class="foot"><span class="count">51 topics</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+    </a>
+
+    <a class="card" href="/samacheer/">
+      <span class="tile t-samacheer" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9 12 5 2 9l10 4 10-4Z"/><path d="M6 11v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5M22 9v5"/></svg></span>
+      <h2>Samacheer Kalvi</h2>
+      <span class="scope">Tamil Nadu board, Class 6–12, TNPSC-aligned. Tamil, Science, Maths, Social Science.</span>
+      <span class="foot"><span class="count">67 topics</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+    </a>
+  </div>
+
+  <p class="freeline">Not sure yet? <a href="/quiz/">Browse every exam in the free Quiz Hub →</a></p>
+
+  <div class="band">
+    <div>
+      <h2>Build the daily habit in the app</h2>
+      <p>Daily Dose for your exam, verified PYQs, Miga — a tutor you can call in your language — and a State League you play for your home state. Private beta on Android.</p>
     </div>
-  </section>
-
-  <section class="inside">
-    <div class="wrap">
-      <div class="head">
-        <span class="eyebrow">What's inside the app</span>
-        <h2>A daily habit built around your exam</h2>
-        <p>The website is your free practice ground. The MindGains app turns it into a daily routine.</p>
-      </div>
-      <div class="feat-grid">
-        <div class="feat">
-          <div class="ic" aria-hidden="true">☀️</div>
-          <h3>Daily Dose, tailored to your exam</h3>
-          <p>One short lesson, a recall prompt and a question — chosen for exactly the exam you picked. A new one every day.</p>
-        </div>
-        <div class="feat">
-          <div class="ic" aria-hidden="true">📚</div>
-          <h3>Grounded in your books &amp; real PYQs</h3>
-          <p>Every explanation is cited to NCERT / SCERT, and previous-year questions are tagged to the topic that matters.</p>
-        </div>
-        <div class="feat">
-          <div class="ic" aria-hidden="true">🎙️</div>
-          <h3>Miga — a tutor you can call</h3>
-          <p>Ask a doubt by voice and get a clear answer in your language: Tamil, Hindi, Telugu, Kannada, Malayalam or English.</p>
-        </div>
-        <div class="feat">
-          <div class="ic" aria-hidden="true">🏳️</div>
-          <h3>Play for your state</h3>
-          <p>Every question you answer earns XP for your state on the leaderboard. Learning, made a little competitive.</p>
-        </div>
-      </div>
-
-      <div class="appband">
-        <h2>The app is in private beta on Android</h2>
-        <p>Join the early-access list and we'll let you in as spots open. Tell us your exam and we'll set it up for you.</p>
-        <a class="btn" href="/get/">Get early access</a>
-        <small>Free while in beta · we'll only email you about access</small>
-      </div>
-    </div>
-  </section>
+    <a class="btn" href="/get/">Get early access</a>
+  </div>
 </main>
 
 <footer>
-  <div class="wrap foot">
-    <div class="fbrand">MindGains<span>Small study wins, every day.</span></div>
+  <div class="wrap fin">
+    <span class="fb">MindGains</span>
     <nav>
       <a href="/upsc/">UPSC</a>
       <a href="/tnpsc/">TNPSC</a>
@@ -234,13 +209,13 @@
       <a href="/samacheer/">Samacheer</a>
       <a href="/quiz/">Quiz Hub</a>
       <a href="/editorial/">Editorial</a>
-      <a href="/know-your-india/">Know Your India</a>
-      <a href="/get/">Get early access</a>
+      <a href="/get/">Get the app</a>
       <a href="/privacy.html">Privacy</a>
       <a href="/terms.html">Terms</a>
     </nav>
-    <div class="legal">© 2026 MindGains Labs Private Limited · Built for Indian learners.</div>
+    <span class="cc">© 2026 MindGains Labs Private Limited</span>
   </div>
 </footer>
+
 </body>
 </html>
