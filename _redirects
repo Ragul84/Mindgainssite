@@ -1,2 +1,6 @@
 # /quiz/ stays as the main Quiz Hub.
 # Deep legacy redirects are handled by generated legacy pages.
+
+# Early-access form moved from /waitlist.html to /get/
+/waitlist.html  /get/  301
+/waitlist       /get/  301
