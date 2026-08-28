@@ -1,623 +1,632 @@
 #!/usr/bin/env node
+/**
+ * Builds the per-exam landing pages (/upsc/, /tnpsc/, /ssc/, /rrb/, /ncert/, /samacheer/)
+ * in the "connected" style: hero + Daily Dose scene, the connected loop, a Quiz Rooms
+ * scene, an Ask-Miga scene, a live in-page question, an Android band and an FAQ.
+ *
+ * /know-your-india/ is a separate globe experience and is NOT generated here.
+ */
 const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
-const SITE_URL = (process.env.BASE_URL || process.env.SITE_URL || 'https://mindgains.ai').replace(/\/$/, '');
+const SITE = (process.env.BASE_URL || process.env.SITE_URL || 'https://mindgains.ai').replace(/\/$/, '');
+
+/* ---------------------------------------------------------------- config ---- */
 
 const HUBS = {
   upsc: {
     exam: 'UPSC',
-    title: 'Best AI for UPSC Preparation | MindGains',
-    description: 'Prepare for UPSC with MindGains, an AI-powered daily learning platform with Daily Dose lessons, quizzes, revision tools, current affairs, Study Lab and MIGA.',
-    audience: 'UPSC aspirants',
-    scope: 'Polity, History, Economy, Geography, Environment and Current Affairs',
-    exams: 'Prelims-focused daily preparation',
-    quiz: '/upsc/polity/',
-    quizLabel: 'Explore UPSC Quizzes',
-    subjects: ['Polity', 'History', 'Economy', 'Geography', 'Environment', 'Current Affairs'],
-    related: [
-      ['/upsc/polity/fundamental-rights/', 'Fundamental Rights Quiz'],
-      ['/upsc/polity/dpsp/', 'DPSP Quiz'],
-      ['/upsc/history/national-movement/', 'National Movement Quiz'],
-      ['/blog/india-learning-crisis', 'Why learning gaps persist'],
+    code: 'UPSC · Civil Services — Prelims &amp; Mains',
+    title: 'UPSC preparation, connected | MindGains',
+    description: 'Textbooks, verified PYQs, Miga in your language, smart revision and Quiz Rooms with friends — one connected loop built around the UPSC syllabus. Practise free now; the Android app is coming soon.',
+    h1: 'Your UPSC preparation, connected.',
+    heroP: 'Textbooks, verified PYQs, Miga in your language, smart revision and competition with friends — one loop, built around the exam you’re actually preparing for.',
+    quizStart: '/upsc/polity/',
+    quizHub: ['/upsc/polity/', 'Open UPSC Quiz Hub'],
+    source: 'NCERT / standard sources',
+    dose: {
+      day: 14, streak: 12,
+      topic: 'Judicial Review &amp; the Basic Structure',
+      mins: 5,
+      learn: 'Arts. 13 &amp; 368 — grounded in NCERT XI Indian Constitution at Work',
+      pyq: 'UPSC 2021 PYQ · which case established the Basic Structure doctrine?',
+    },
+    miga: {
+      title: 'Ask Miga. In your language.',
+      langOn: 'हिंदी',
+      q: 'बेसिक स्ट्रक्चर डॉक्ट्रिन का मतलब क्या है, आसान शब्दों में?',
+      a: 'संविधान का एक "मूल ढाँचा" है जिसे संसद संशोधन से भी नहीं बदल सकती — जैसे न्यायिक समीक्षा, संघवाद, धर्मनिरपेक्षता। ये केशवानंद भारती (1973) में तय हुआ।',
+      p: 'Say the doubt out loud and get a clear, exam-focused answer back — in Hindi, Tamil, Telugu, Kannada, Malayalam or English. Grounded in your books, not a guess.',
+    },
+    liveQ: {
+      tag: 'UPSC · Polity · Judicial Review',
+      q: 'The ‘Basic Structure’ doctrine of the Constitution was propounded by the Supreme Court in which case?',
+      opts: ['Golaknath v. State of Punjab (1967)', 'Kesavananda Bharati v. State of Kerala (1973)', 'Minerva Mills v. Union of India (1980)', 'Maneka Gandhi v. Union of India (1978)'],
+      answer: 1,
+      expl: 'Kesavananda Bharati (1973) held that Parliament can amend the Constitution but cannot alter its ‘basic structure’. Minerva Mills later reinforced it; Golaknath preceded and was overruled on this point.',
+      next: ['/upsc/polity/', 'Keep going in the Quiz Hub →'],
+    },
+    chips: [
+      ['/upsc/polity/fundamental-rights/', 'Fundamental Rights'],
+      ['/upsc/polity/dpsp/', 'DPSP'],
+      ['/upsc/history/national-movement/', 'National Movement'],
+      ['/upsc/polity/', 'Polity'],
+      ['/upsc/history/', 'History'],
+      ['/upsc/geography/', 'Geography'],
     ],
+    androidP: 'Daily Dose, connected revision, Miga in your language and Quiz Rooms with friends — the full loop. Private beta, opening soon.',
     faqs: [
-      ['Is MindGains useful for UPSC preparation?', 'MindGains is designed to help UPSC aspirants build a daily learning habit with lessons, quizzes, revision and current-affairs-aware practice.'],
-      ['Does MindGains replace standard UPSC books?', 'No. MindGains works best as a daily practice and revision layer alongside standard books, classes and notes.'],
-      ['Can I practice UPSC quizzes on the website?', 'Yes. The public practice pages include UPSC topic quizzes, while the app experience adds Daily Dose, revision and AI study tools.'],
+      ['How is this different from a normal UPSC quiz app?', 'MindGains connects the whole loop: a textbook explanation leads into a previous-year question, a wrong answer becomes spaced revision, revision earns XP, and XP feeds live Quiz Rooms with friends. Nothing you study is thrown away.'],
+      ['Does MindGains replace standard UPSC books?', 'No. It works as a daily practice and revision layer alongside NCERT, standard books and classes — connecting what you read to real previous-year questions and keeping your mistakes coming back until they stick.'],
+      ['Can I use MindGains for free?', 'Yes. Every UPSC topic quiz on the website is free with no sign-up. The Android app adds the Daily Dose, connected revision, Miga and Quiz Rooms.'],
     ],
   },
+
   tnpsc: {
     exam: 'TNPSC',
-    title: 'Best AI for TNPSC Preparation | MindGains',
-    description: 'Prepare for TNPSC Group 1, Group 2 and Group 4 with MindGains, an AI-powered learning app for daily lessons, quizzes, Tamil, General Studies and revision.',
-    audience: 'TNPSC aspirants',
-    scope: 'Group 1, Group 2, Group 4, Tamil, History, Polity and General Studies',
-    exams: 'Group 1, Group 2 and Group 4 preparation',
-    quiz: '/tnpsc/tamil/',
-    quizLabel: 'Explore TNPSC Quizzes',
-    subjects: ['Tamil', 'History', 'Polity', 'General Studies', 'Maths', 'Science'],
-    related: [
-      ['/tnpsc/history/freedom-struggle/', 'Freedom Struggle Quiz'],
-      ['/tnpsc/tamil/thirukkural/', 'Thirukkural Quiz'],
-      ['/tnpsc/polity/fundamental-rights/', 'Fundamental Rights Quiz'],
-      ['/blog/india-learning-crisis', 'Why learning gaps persist'],
+    code: 'TNPSC · Group 1, 2, 2A, 4 &amp; VAO',
+    title: 'TNPSC preparation, connected | MindGains',
+    description: 'Textbooks, verified PYQs, Miga in Tamil, smart revision and Quiz Rooms with friends — one connected loop built around the TNPSC syllabus. Practise free now; the Android app is coming soon.',
+    h1: 'Your TNPSC preparation, connected.',
+    heroP: 'Textbooks, verified PYQs, Miga in Tamil, smart revision and competition with friends — one loop, built around the exam you’re actually preparing for.',
+    quizStart: '/tnpsc/tamil/',
+    quizHub: ['/tnpsc/tamil/', 'Open TNPSC Quiz Hub'],
+    source: 'Samacheer / NCERT',
+    dose: {
+      day: 9, streak: 8,
+      topic: 'Directive Principles &amp; the Amendment Map',
+      mins: 4,
+      learn: 'Part IV, Articles 36–51 — grounded in Samacheer XI Polity',
+      pyq: 'TNPSC 2022 PYQ · which amendment added Art. 51A?',
+    },
+    miga: {
+      title: 'Ask Miga. In Tamil.',
+      langOn: 'தமிழ்',
+      q: 'டைரக்டிவ் ப்ரின்சிபிள்ஸ் ஏன் நீதிமன்றத்தில் அமல்படுத்த முடியாது?',
+      a: '"Non-justiciable" — அதாவது அரசுக்கு வழிகாட்டுதல்கள், ஆனால் மீறினால் நீதிமன்றம் தலையிடாது. Art. 37 இதை தெளிவாக சொல்கிறது.',
+      p: 'Say the doubt out loud and get a clear, exam-focused answer back — in Tamil, Hindi, Telugu, Kannada, Malayalam or English. Grounded in your books, not a guess.',
+    },
+    liveQ: {
+      tag: 'TNPSC · Polity · Directive Principles',
+      q: 'The Directive Principles of State Policy are contained in which Part of the Constitution?',
+      opts: ['Part III', 'Part IV', 'Part IVA', 'Part II'],
+      answer: 1,
+      expl: 'Part IV (Articles 36–51) holds the Directive Principles. Part III is Fundamental Rights; Part IVA (Article 51A) is Fundamental Duties.',
+      next: ['/tnpsc/polity/', 'Keep going in the Quiz Hub →'],
+    },
+    chips: [
+      ['/tnpsc/tamil/thirukkural/', 'Thirukkural'],
+      ['/tnpsc/history/freedom-struggle/', 'Freedom Struggle'],
+      ['/tnpsc/polity/fundamental-rights/', 'Fundamental Rights'],
+      ['/tnpsc/tamil/', 'Tamil'],
+      ['/tnpsc/history/', 'History'],
+      ['/tnpsc/polity/', 'Polity'],
     ],
+    androidP: 'Daily Dose for TNPSC, verified PYQs, Miga you can call in Tamil, and the State League. Private beta on Android.',
     faqs: [
-      ['Is MindGains useful for TNPSC Group exams?', 'MindGains supports TNPSC learners with daily lessons, public quizzes and AI-powered revision workflows for Group exam preparation.'],
-      ['Does MindGains support Tamil preparation?', 'The TNPSC pathway includes Tamil-focused topics in the public practice pages and app-oriented daily learning support.'],
-      ['Can I use MindGains for Group 4 basics?', 'Yes. MindGains is positioned for consistent daily preparation across TNPSC Group 1, Group 2 and Group 4 learning needs.'],
+      ['How is this different from a normal TNPSC quiz app?', 'MindGains connects the whole loop: a textbook explanation leads into a previous-year question, a wrong answer becomes spaced revision, revision earns XP, and XP feeds live Quiz Rooms with friends. Nothing you study is thrown away.'],
+      ['Does MindGains support Tamil preparation?', 'Tamil is a first-class TNPSC track. Thirukkural, Sangam literature, grammar and modern Tamil all have dedicated topic quizzes, and you can ask Miga to explain in Tamil.'],
+      ['Can I use MindGains for free?', 'Yes. Every TNPSC topic quiz on the website is free with no sign-up. The Android app adds the Daily Dose, connected revision, Miga and Quiz Rooms.'],
     ],
   },
+
   ssc: {
     exam: 'SSC',
-    title: 'Best AI for SSC Preparation | MindGains',
-    description: 'Prepare for SSC with MindGains, an AI-powered daily learning app for Quant, Reasoning, English, General Awareness, quizzes and revision.',
-    audience: 'SSC aspirants',
-    scope: 'Reasoning, Quant, English and General Awareness',
-    exams: 'CGL, CHSL, MTS, CPO and GD practice',
-    quiz: '/ssc/quant/',
-    quizLabel: 'Explore SSC Quizzes',
-    subjects: ['Reasoning', 'Quant', 'English', 'General Awareness', 'Science', 'Economy'],
-    related: [
-      ['/ssc/quant/percentage/', 'Percentage Quiz'],
-      ['/ssc/reasoning/coding-decoding/', 'Coding Decoding Quiz'],
-      ['/ssc/english/grammar/', 'English Grammar Quiz'],
-      ['/blog/india-learning-crisis', 'Why learning gaps persist'],
+    code: 'SSC · CGL, CHSL, MTS, CPO &amp; GD',
+    title: 'SSC preparation, connected | MindGains',
+    description: 'Reasoning, quant, English and GK practice, verified PYQs, Miga in your language, smart revision and Quiz Rooms with friends — one connected loop for SSC CGL, CHSL, MTS and GD.',
+    h1: 'Your SSC preparation, connected.',
+    heroP: 'Concepts, verified PYQs, Miga in your language, smart revision and speed rounds with friends — one loop, built around the exam you’re actually preparing for.',
+    quizStart: '/ssc/quant/',
+    quizHub: ['/ssc/quant/', 'Open SSC Quiz Hub'],
+    source: 'standard quant &amp; GK sources',
+    dose: {
+      day: 11, streak: 10,
+      topic: 'Number System — remainders &amp; divisibility',
+      mins: 4,
+      learn: 'The remainder theorem, cyclicity and last-digit tricks — with worked shortcuts',
+      pyq: 'SSC CGL 2023 PYQ · find the remainder when 7^103 is divided by 5',
+    },
+    miga: {
+      title: 'Ask Miga. In your language.',
+      langOn: 'हिंदी',
+      q: '7 की घात का last digit कैसे निकालें जल्दी से?',
+      a: '7 की घातों का आखिरी अंक हर 4 पर दोहराता है: 7, 9, 3, 1। तो घात को 4 से भाग दो, शेषफल देखो — शेष 1→7, 2→9, 3→3, 0→1।',
+      p: 'Say the doubt out loud and get the method, the working and a shortcut — in Hindi, Tamil, Telugu, Kannada, Malayalam or English.',
+    },
+    liveQ: {
+      tag: 'SSC · Quant · Number System',
+      q: 'What is the remainder when 7¹⁰³ is divided by 5?',
+      opts: ['1', '2', '3', '4'],
+      answer: 2,
+      expl: 'The last digit of powers of 7 cycles every 4: 7, 9, 3, 1. 103 ÷ 4 leaves remainder 3, so the last digit is 3, and 3 mod 5 = 3.',
+      next: ['/ssc/quant/', 'Keep going in the Quiz Hub →'],
+    },
+    chips: [
+      ['/ssc/quant/number-system/', 'Number System'],
+      ['/ssc/reasoning/syllogism/', 'Syllogism'],
+      ['/ssc/english/synonyms-antonyms/', 'Synonyms &amp; Antonyms'],
+      ['/ssc/quant/', 'Quant'],
+      ['/ssc/reasoning/', 'Reasoning'],
+      ['/ssc/history/', 'History'],
     ],
+    androidP: 'Daily Dose for SSC, verified PYQs, Miga you can call in your language, and Quiz Rooms for speed rounds with friends. Private beta on Android.',
     faqs: [
-      ['Is MindGains useful for SSC preparation?', 'MindGains helps SSC learners practice daily with quizzes, revision workflows and AI-generated study support.'],
-      ['Which SSC subjects does MindGains cover?', 'The public practice pages include SSC Quant, Reasoning, English, General Awareness and Science topic pages.'],
-      ['Can MindGains help with daily SSC practice?', 'Yes. The product is built around a daily learning habit, which fits SSC practice and revision routines well.'],
+      ['How is this different from a normal SSC quiz app?', 'MindGains connects the loop: a concept explanation leads into a real previous-year question, a wrong answer becomes spaced revision, revision earns XP, and XP feeds live Quiz Rooms with friends. Practice never goes to waste.'],
+      ['Which SSC subjects are covered?', 'The public quizzes cover SSC Quant, Reasoning, English, General Awareness, Science, History and Economy — topic by topic.'],
+      ['Is it free?', 'Yes. Every SSC topic quiz on the website is free with no sign-up. The Android app adds the Daily Dose, connected revision, Miga and Quiz Rooms.'],
     ],
   },
+
+  rrb: {
+    exam: 'RRB / Railway',
+    code: 'RRB · NTPC, Group D &amp; ALP',
+    title: 'RRB / Railway preparation, connected | MindGains',
+    description: 'Reasoning, maths, science and general awareness practice for RRB NTPC, Group D and ALP — verified PYQs, Miga in your language, smart revision and Quiz Rooms with friends.',
+    h1: 'Your RRB preparation, connected.',
+    heroP: 'Concepts, verified PYQs, Miga in your language, smart revision and speed rounds with friends — one loop, built around the exam you’re actually preparing for.',
+    quizStart: '/rrb/maths/',
+    quizHub: ['/rrb/maths/', 'Open RRB Quiz Hub'],
+    source: 'standard maths &amp; science sources',
+    dose: {
+      day: 7, streak: 6,
+      topic: 'Time, Speed &amp; Distance — the ratio trick',
+      mins: 4,
+      learn: 'When time is constant, distance ∝ speed — solve trains and boats without equations',
+      pyq: 'RRB NTPC 2021 PYQ · two trains, relative speed and crossing time',
+    },
+    miga: {
+      title: 'Ask Miga. In your language.',
+      langOn: 'हिंदी',
+      q: 'Relative speed कब जोड़ते हैं और कब घटाते हैं?',
+      a: 'उलटी दिशा में चल रहे हों तो speeds जोड़ो; एक ही दिशा में हों तो घटाओ। फिर समय = कुल लंबाई ÷ relative speed।',
+      p: 'Say the doubt out loud and get the method, the working and a shortcut — in Hindi, Tamil, Telugu, Kannada, Malayalam or English.',
+    },
+    liveQ: {
+      tag: 'RRB · Maths · Time, Speed &amp; Distance',
+      q: 'Two trains 120 m and 130 m long run towards each other at 40 km/h and 50 km/h. How long do they take to cross?',
+      opts: ['8 seconds', '10 seconds', '12 seconds', '15 seconds'],
+      answer: 1,
+      expl: 'Relative speed = 40 + 50 = 90 km/h = 25 m/s. Total length = 120 + 130 = 250 m. Time = 250 ÷ 25 = 10 seconds.',
+      next: ['/rrb/maths/', 'Keep going in the Quiz Hub →'],
+    },
+    chips: [
+      ['/rrb/maths/time-work/', 'Time &amp; Work'],
+      ['/rrb/reasoning/series/', 'Series'],
+      ['/rrb/science/physics/', 'Physics'],
+      ['/rrb/maths/', 'Maths'],
+      ['/rrb/reasoning/', 'Reasoning'],
+      ['/rrb/science/', 'Science'],
+    ],
+    androidP: 'Daily Dose for RRB, verified PYQs, Miga you can call in your language, and Quiz Rooms for speed rounds with friends. Private beta on Android.',
+    faqs: [
+      ['How is this different from a normal railway exam app?', 'MindGains connects the loop: a concept leads into a real previous-year question, a wrong answer becomes spaced revision, revision earns XP, and XP feeds live Quiz Rooms with friends. Nothing you practise is wasted.'],
+      ['Which RRB subjects are covered?', 'The public quizzes cover RRB Maths, Reasoning, Science and General Awareness — topic by topic, for NTPC, Group D and ALP.'],
+      ['Is it free?', 'Yes. Every RRB topic quiz on the website is free with no sign-up. The Android app adds the Daily Dose, connected revision, Miga and Quiz Rooms.'],
+    ],
+  },
+
   ncert: {
-    exam: 'NCERT',
-    title: 'Best AI Study App for NCERT Learning | MindGains',
-    description: 'Study NCERT with MindGains, an AI-powered learning platform for Class 6 to 12 Science, Maths, Social Science, quizzes, notes and revision.',
-    audience: 'NCERT school students',
-    scope: 'Class 6 to 12 Science, Maths and Social Science',
-    exams: 'Class 6 to 12 concept practice',
-    quiz: '/ncert/science/class10/',
-    quizLabel: 'Explore NCERT Quizzes',
-    subjects: ['Science', 'Maths', 'Social Science', 'History', 'Geography', 'Economics'],
-    related: [
-      ['/ncert/science/class10/', 'Class 10 Science Quiz'],
-      ['/ncert/maths/class10/', 'Class 10 Maths Quiz'],
-      ['/ncert/history/class10/', 'Class 10 History Quiz'],
-      ['/blog/india-learning-crisis', 'Why learning gaps persist'],
+    exam: 'NCERT Foundation',
+    code: 'NCERT · Class 6–12 · UPSC-aligned',
+    title: 'NCERT foundation, connected | MindGains',
+    description: 'Build a strong NCERT foundation for Class 6–12 and UPSC — cited explanations, chapter questions, Miga in your language, smart revision and Quiz Rooms with friends.',
+    h1: 'Your NCERT foundation, connected.',
+    heroP: 'Chapter explanations, questions, Miga in your language, smart revision and quizzes with friends — one loop, built around the books your exam is actually based on.',
+    quizStart: '/ncert/science/',
+    quizHub: ['/ncert/science/', 'Open NCERT Quiz Hub'],
+    source: 'NCERT textbooks',
+    dose: {
+      day: 6, streak: 5,
+      topic: 'Photosynthesis — light &amp; dark reactions',
+      mins: 4,
+      learn: 'Where each stage happens and what it makes — grounded in NCERT XI Biology, Ch. 13',
+      pyq: 'NCERT-based PYQ · in which part of the chloroplast does the Calvin cycle occur?',
+    },
+    miga: {
+      title: 'Ask Miga. In your language.',
+      langOn: 'हिंदी',
+      q: 'Light reaction और dark reaction में फर्क क्या है?',
+      a: 'Light reaction thylakoid में होती है, प्रकाश चाहिए, ATP और NADPH बनते हैं। Dark reaction (Calvin cycle) stroma में होती है, प्रकाश की जरूरत नहीं, ग्लूकोज़ बनता है।',
+      p: 'Ask any chapter doubt out loud and get a clear answer — in Hindi, Tamil, Telugu, Kannada, Malayalam or English. Cited to the NCERT line.',
+    },
+    liveQ: {
+      tag: 'NCERT · Class 11 Biology · Photosynthesis',
+      q: 'In which part of the chloroplast does the Calvin cycle (dark reaction) take place?',
+      opts: ['Thylakoid membrane', 'Stroma', 'Outer membrane', 'Intermembrane space'],
+      answer: 1,
+      expl: 'The Calvin cycle occurs in the stroma, the fluid around the thylakoids. The light reactions happen on the thylakoid membranes.',
+      next: ['/ncert/science/', 'Keep going in the Quiz Hub →'],
+    },
+    chips: [
+      ['/ncert/science/class10/', 'Class 10 Science'],
+      ['/ncert/history/class9/', 'Class 9 History'],
+      ['/ncert/geography/class11/', 'Class 11 Geography'],
+      ['/ncert/science/', 'Science'],
+      ['/ncert/maths/', 'Maths'],
+      ['/ncert/social-science/', 'Social Science'],
     ],
+    androidP: 'Daily Dose from your NCERT chapters, connected revision, Miga in your language, and Quiz Rooms with friends. Private beta on Android.',
     faqs: [
-      ['Is MindGains useful for NCERT students?', 'MindGains helps NCERT learners practice concepts with quizzes and AI-powered study workflows for notes, flashcards and revision.'],
-      ['Which classes are supported?', 'The public practice pages include NCERT Class 6 to 12 topic pages across major school subjects.'],
-      ['Can students generate quizzes from their own notes?', 'Study Lab is designed to help learners turn topics, PDFs, YouTube links or text into study material and practice.'],
+      ['Which classes are covered?', 'The public quizzes cover NCERT Class 6 to 12 across Science, Maths, Social Science, History, Geography and Economics — chapter by chapter.'],
+      ['Is this useful for UPSC?', 'Yes. NCERT is the foundation of the UPSC syllabus, and every quiz here is tagged so you can move from a class chapter into UPSC-level practice.'],
+      ['Is it free?', 'Yes. Every NCERT topic quiz on the website is free with no sign-up. The Android app adds the Daily Dose, connected revision, Miga and Quiz Rooms.'],
     ],
   },
+
   samacheer: {
-    exam: 'Samacheer',
-    title: 'Best AI Study App for Samacheer Students | MindGains',
-    description: 'Study Samacheer with MindGains, an AI-powered learning platform for Tamil Nadu Class 6 to 12 students with quizzes, daily lessons, notes and revision.',
-    audience: 'Tamil Nadu school students',
-    scope: 'Class 6 to 12 Science, Maths, Social Science and Tamil',
-    exams: 'Tamil Nadu school curriculum practice',
-    quiz: '/samacheer/science/class10/',
-    quizLabel: 'Explore Samacheer Quizzes',
-    subjects: ['Tamil', 'Science', 'Maths', 'Social Science', 'History', 'Computer Science'],
-    related: [
-      ['/samacheer/science/class10/', 'Class 10 Science Quiz'],
-      ['/samacheer/tamil/class10/', 'Class 10 Tamil Quiz'],
-      ['/samacheer/maths/class10/', 'Class 10 Maths Quiz'],
-      ['/blog/india-learning-crisis', 'Why learning gaps persist'],
+    exam: 'Samacheer Kalvi',
+    code: 'Samacheer Kalvi · TN Board · Class 6–12',
+    title: 'Samacheer Kalvi, connected | MindGains',
+    description: 'Tamil Nadu board practice for Class 6–12, TNPSC-aligned — cited explanations, chapter questions, Miga in Tamil, smart revision and Quiz Rooms with friends.',
+    h1: 'Your Samacheer prep, connected.',
+    heroP: 'Chapter explanations, questions, Miga in Tamil, smart revision and quizzes with friends — one loop, built around the Tamil Nadu board syllabus.',
+    quizStart: '/samacheer/tamil/',
+    quizHub: ['/samacheer/tamil/', 'Open Samacheer Quiz Hub'],
+    source: 'Samacheer Kalvi textbooks',
+    dose: {
+      day: 5, streak: 4,
+      topic: 'Tamil Nadu — rivers &amp; major dams',
+      mins: 4,
+      learn: 'Cauvery, Vaigai, Thamirabarani and the dams on them — grounded in Samacheer X Geography',
+      pyq: 'Samacheer / TNPSC-style PYQ · the Mettur dam is built across which river?',
+    },
+    miga: {
+      title: 'Ask Miga. In Tamil.',
+      langOn: 'தமிழ்',
+      q: 'மேட்டூர் அணை எந்த ஆற்றில் கட்டப்பட்டுள்ளது?',
+      a: 'மேட்டூர் அணை காவிரி (Cauvery) ஆற்றில் கட்டப்பட்டது, சேலம் மாவட்டத்தில். இது உலகின் மிகப்பெரிய அணைகளில் ஒன்று.',
+      p: 'Ask any chapter doubt out loud and get a clear answer back in Tamil — or Hindi, Telugu, Kannada, Malayalam and English.',
+    },
+    liveQ: {
+      tag: 'Samacheer · Class 10 Geography · Tamil Nadu',
+      q: 'The Mettur Dam in Tamil Nadu is built across which river?',
+      opts: ['Vaigai', 'Cauvery', 'Thamirabarani', 'Palar'],
+      answer: 1,
+      expl: 'The Mettur Dam (Stanley Reservoir) is built across the Cauvery in Salem district — one of the largest dams in India.',
+      next: ['/samacheer/tamil/', 'Keep going in the Quiz Hub →'],
+    },
+    chips: [
+      ['/samacheer/tamil/class10/', 'Class 10 Tamil'],
+      ['/samacheer/science/class9/', 'Class 9 Science'],
+      ['/samacheer/social-science/class10/', 'Class 10 Social Science'],
+      ['/samacheer/tamil/', 'Tamil'],
+      ['/samacheer/maths/', 'Maths'],
+      ['/samacheer/science/', 'Science'],
     ],
+    androidP: 'Daily Dose from your Samacheer chapters, connected revision, Miga in Tamil, and Quiz Rooms with friends. Private beta on Android.',
     faqs: [
-      ['Is MindGains useful for Samacheer students?', 'MindGains supports Tamil Nadu school learners with Samacheer quizzes and app-oriented daily lessons and revision tools.'],
-      ['Which Samacheer classes are covered?', 'The public practice pages include Samacheer Class 6 to 12 topic pages across major subjects.'],
-      ['Does MindGains support Tamil learning?', 'Samacheer and TNPSC pathways include Tamil-focused quiz and learning experiences.'],
-    ],
-  },
-  'know-your-india': {
-    exam: 'Know Your India',
-    title: 'Know Your India | MindGains',
-    description: 'Explore India facts, constitution, states, rivers, history and civic knowledge with MindGains.',
-    audience: 'students and exam aspirants',
-    scope: 'Constitution, states, rivers, freedom movement, parliament and current affairs',
-    exams: 'Civics and India knowledge practice',
-    quiz: '/upsc/polity/preamble/',
-    quizLabel: 'Open India Quizzes',
-    subjects: ['Constitution', 'States', 'Rivers', 'History', 'Geography', 'Current Affairs'],
-    heroEyebrow: 'Public India Knowledge Hub',
-    heroTitle: 'Know Your India',
-    heroDek: 'A premium public space from MindGains for learners who want to understand India deeply and practice civic knowledge daily.',
-    beyondTitle: 'Why India knowledge needs more than content',
-    dailyTitle: 'Know Your India',
-    dailyCopy: 'Build a reusable civic memory with one India fact every day, quick revision, quiz practice and map-minded recall.',
-    quizHeading: 'Practice India questions topic by topic',
-    continueTitle: 'Start with a quiz or a deeper read',
-    faqTitle: 'Know Your India FAQs',
-    related: [
-      ['/upsc/polity/preamble/', 'Preamble Quiz'],
-      ['/tnpsc/history/freedom-struggle/', 'Freedom Struggle Quiz'],
-      ['/ncert/social-science/class10/', 'Class 10 Social Science Quiz'],
-      ['/blog/india-learning-crisis', 'Why learning gaps persist'],
-    ],
-    faqs: [
-      ['What is Know Your India?', 'Know Your India is a public MindGains page for India facts, civics and connected learning across states, constitution and history.'],
-      ['Is it useful for exams?', 'Yes. The page connects well with UPSC, TNPSC and school social science foundations.'],
-      ['Where should I start?', 'Begin with the India quizzes, then move into the editorial and the app experience when you want deeper daily practice.'],
+      ['Which Samacheer classes are covered?', 'The public quizzes cover Samacheer Kalvi Class 6 to 12 across Tamil, Science, Maths, Social Science, History and Computer Science — chapter by chapter.'],
+      ['Does it help with TNPSC?', 'Yes. The Samacheer syllabus is the base of the TNPSC General Studies paper, and quizzes are tagged so you can move from a school chapter into TNPSC-level practice.'],
+      ['Is it free?', 'Yes. Every Samacheer topic quiz on the website is free with no sign-up. The Android app adds the Daily Dose, connected revision, Miga and Quiz Rooms.'],
     ],
   },
 };
 
-const INDIA_REGIONS = [
-  {
-    name: 'North',
-    items: ['Haryana', 'Himachal Pradesh', 'Punjab', 'Rajasthan', 'Uttarakhand', 'Uttar Pradesh', 'Delhi', 'Chandigarh', 'Jammu and Kashmir', 'Ladakh'],
-  },
-  {
-    name: 'West',
-    items: ['Goa', 'Gujarat', 'Maharashtra', 'Dadra and Nagar Haveli and Daman and Diu'],
-  },
-  {
-    name: 'Central',
-    items: ['Chhattisgarh', 'Madhya Pradesh'],
-  },
-  {
-    name: 'East',
-    items: ['Bihar', 'Jharkhand', 'Odisha', 'West Bengal', 'Andaman and Nicobar Islands'],
-  },
-  {
-    name: 'Northeast',
-    items: ['Arunachal Pradesh', 'Assam', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland', 'Sikkim', 'Tripura'],
-  },
-  {
-    name: 'South',
-    items: ['Andhra Pradesh', 'Karnataka', 'Kerala', 'Tamil Nadu', 'Telangana', 'Lakshadweep', 'Puducherry'],
-  },
-];
+/* --------------------------------------------------------------- helpers ---- */
 
-const INDIA_STATES = [
-  'Andhra Pradesh','Arunachal Pradesh','Assam','Bihar','Chhattisgarh','Goa','Gujarat','Haryana','Himachal Pradesh','Jharkhand',
-  'Karnataka','Kerala','Madhya Pradesh','Maharashtra','Manipur','Meghalaya','Mizoram','Nagaland','Odisha','Punjab',
-  'Rajasthan','Sikkim','Tamil Nadu','Telangana','Tripura','Uttar Pradesh','Uttarakhand','West Bengal'
-];
-
-const INDIA_UTS = [
-  'Andaman and Nicobar Islands','Chandigarh','Dadra and Nagar Haveli and Daman and Diu','Delhi',
-  'Jammu and Kashmir','Ladakh','Lakshadweep','Puducherry'
-];
-
-function esc(value) {
-  return String(value ?? '')
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
+function esc(v) {
+  return String(v ?? '')
+    .replace(/&(?!(amp|lt|gt|quot|#\d+|#x[0-9a-fA-F]+);)/g, '&amp;')
+    .replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
-
-function attr(value) {
-  return esc(value).replace(/\n/g, ' ');
+function attr(v) {
+  return String(v ?? '').replace(/&(?!(amp|lt|gt|quot|#\d+|#x[0-9a-fA-F]+);)/g, '&amp;').replace(/"/g, '&quot;').replace(/\n/g, ' ');
 }
+// text that is already trusted markup-lite (kept from config, may contain &amp; / entities)
+function raw(v) { return String(v ?? ''); }
+
+function stripTags(v) { return String(v ?? '').replace(/<[^>]+>/g, '').replace(/&amp;/g, '&'); }
 
 function readQuizCounts() {
-  const indexFile = path.join(ROOT, 'assets', 'quiz-index.json');
-  if (!fs.existsSync(indexFile)) return {};
-  const index = JSON.parse(fs.readFileSync(indexFile, 'utf8'));
-  const counts = {};
+  const f = path.join(ROOT, 'assets', 'quiz-index.json');
+  if (!fs.existsSync(f)) return {};
+  const idx = JSON.parse(fs.readFileSync(f, 'utf8'));
+  const out = {};
   for (const id of Object.keys(HUBS)) {
-    const exam = index.find((item) => item.type === 'Exam' && item.url === `/${id}/`);
-    const topics = index.filter((item) => item.type === 'Topic' && item.url.startsWith(`/${id}/`)).length;
-    counts[id] = { topics, label: exam?.copy || '' };
+    out[id] = idx.filter((it) => it.type === 'Topic' && it.url.startsWith(`/${id}/`)).length;
   }
-  return counts;
+  return out;
 }
 
-function iconMeta() {
-  return `<link rel="icon" href="/favicon.ico" sizes="any" />
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png" />
-<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-<link rel="manifest" href="/site.webmanifest" />
-<meta name="theme-color" content="#37e0ff" />`;
+/* SVG glyphs (stroke, currentColor) */
+const IC = {
+  book: '<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19a2 2 0 0 0 2 2h13"/>',
+  check: '<path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>',
+  target: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/>',
+  loop: '<path d="M3 12a9 9 0 1 0 9-9M3 12V6M3 12h6"/>',
+  star: '<path d="m12 3 2.5 5 5.5.8-4 3.9 1 5.5L12 21l-5 -2.9 1-5.5-4-3.9 5.5-.8Z"/>',
+  users: '<path d="M16 3a4 4 0 0 1 0 8M8 3a4 4 0 0 0 0 8M2 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2M18 15h.5a3.5 3.5 0 0 1 3.5 3.5V21"/>',
+  spark: '<circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/>',
+  mic: '<path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/>',
+  flag: '<path d="M4 21V4h9l1 2h6v9h-7l-1-2H4"/>',
+};
+function svg(paths, cls) {
+  return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"${cls ? ` class="${cls}"` : ''}>${paths}</svg>`;
 }
 
-function pageShell(id, hub, body) {
-  const url = `${SITE_URL}/${id}/`;
-  const breadcrumb = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
-      { '@type': 'ListItem', position: 2, name: hub.exam, item: url },
-    ],
-  };
-  const webPage = {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    name: hub.title.replace(' | MindGains', ''),
-    description: hub.description,
-    url,
-    isPartOf: { '@type': 'WebSite', name: 'MindGains', url: `${SITE_URL}/` },
-  };
-  const faq = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: hub.faqs.map(([question, answer]) => ({
-      '@type': 'Question',
-      name: question,
-      acceptedAnswer: { '@type': 'Answer', text: answer },
-    })),
-  };
-  return `<!DOCTYPE html>
+/* --------------------------------------------------------------- template --- */
+
+function page(id, hub, count) {
+  const url = `${SITE}/${id}/`;
+  const jsonld = [
+    { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: stripTags(hub.exam), item: url },
+    ] },
+    { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: hub.faqs.map(([q, a]) => ({
+      '@type': 'Question', name: stripTags(q), acceptedAnswer: { '@type': 'Answer', text: stripTags(a) },
+    })) },
+  ];
+
+  const verbs = ['Learn', 'Ask', 'Practise', 'Fix', 'Challenge', 'Climb']
+    .map((v) => `<span><b>${v}</b></span>`).join('');
+
+  const loopNodes = [
+    ['n1', IC.book, 'Textbook', `A cited explanation from ${hub.source}.`],
+    ['n2', IC.check, 'PYQ', 'A real past question on that exact idea.'],
+    ['n3', IC.target, 'Mistake', "Get it wrong? It's saved, not forgotten."],
+    ['n4', IC.loop, 'Revision', 'It returns on a spaced schedule until it sticks.'],
+    ['n5', IC.star, 'XP', 'Every correct answer counts toward your score.'],
+    ['n6', IC.users, 'Quiz Rooms', 'Your XP feeds a live match against friends.'],
+  ].map(([c, ic, h, p], i, arr) => `      <div class="node">
+        <span class="nt ${c}" aria-hidden="true">${svg(ic)}</span>
+        <h4>${h}</h4><p>${p}</p>${i < arr.length - 1 ? '\n        <span class="lead" aria-hidden="true">→</span>' : ''}
+      </div>`).join('\n');
+
+  const opts = hub.liveQ.opts.map((o, i) => `        <button class="opt" data-i="${i}">${esc(o)}</button>`).join('\n');
+  const chips = hub.chips.map(([href, label]) => `      <a href="${attr(href)}">${raw(label)}</a>`).join('\n');
+  const faqs = hub.faqs.map(([q, a]) => `    <details>
+      <summary>${raw(q)}</summary>
+      <p>${raw(a)}</p>
+    </details>`).join('\n');
+
+  return `<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(hub.title)}</title>
-<meta name="description" content="${attr(hub.description)}" />
-<link rel="canonical" href="${attr(url)}" />
-<meta property="og:type" content="website" />
-<meta property="og:title" content="${attr(hub.title)}" />
-<meta property="og:description" content="${attr(hub.description)}" />
-<meta property="og:url" content="${attr(url)}" />
-<meta property="og:image" content="${SITE_URL}/assets/icons/mindgains-logo-512.png" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="${attr(hub.title)}" />
-<meta name="twitter:description" content="${attr(hub.description)}" />
-<meta name="twitter:image" content="${SITE_URL}/assets/icons/mindgains-logo-512.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/assets/exam-hubs.css" />
-${iconMeta()}
-<script type="application/ld+json">${JSON.stringify(webPage)}</script>
-<script type="application/ld+json">${JSON.stringify(breadcrumb)}</script>
-<script type="application/ld+json">${JSON.stringify(faq)}</script>
+<meta name="description" content="${attr(hub.description)}">
+<link rel="canonical" href="${attr(url)}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="${attr(hub.title)}">
+<meta property="og:description" content="${attr(hub.description)}">
+<meta property="og:url" content="${attr(url)}">
+<meta property="og:image" content="${SITE}/assets/icons/mindgains-logo-512.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#00d4c7">
+<link rel="stylesheet" href="/assets/exam-hubs.css">
+<script type="application/ld+json">${JSON.stringify(jsonld[0])}</script>
+<script type="application/ld+json">${JSON.stringify(jsonld[1])}</script>
 </head>
 <body>
-<div class="bg"></div>
-<header class="site-nav">
-  <a class="brand" href="/">MindGains</a>
-  <nav><a href="/upsc/">UPSC</a><a href="/tnpsc/">TNPSC</a><a href="/ssc/">SSC</a><a href="/upsc/polity/">Practice</a><a href="/know-your-india/">Know India</a><a href="/#join">Waitlist</a></nav>
-</header>
-${body}
-</body>
-</html>`;
-}
 
-function orbMarkup() {
-  return `<div class="india-orb">
-    <div class="orb-shell">
-      <div class="orb-container">
-        <div class="orb">
-          <div class="orb-inner"></div>
-          <div class="orb-inner"></div>
+<header>
+  <div class="wrap hin">
+    <a class="brand" href="/"><span class="dot" aria-hidden="true"></span>MindGains</a>
+    <div class="hnav">
+      <a class="lnk" href="/">All exams</a>
+      <a class="lnk" href="${attr(hub.quizStart)}">Quizzes</a>
+      <a class="btn sm" href="/get/">Get the app</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="wrap hero">
+    <span class="kick">${raw(hub.code)}</span>
+    <h1>${esc(hub.h1)}</h1>
+    <p>${raw(hub.heroP)}</p>
+    <div class="hero-actions">
+      <a class="btn" href="${attr(hub.quizStart)}">Start practising free</a>
+      <a class="btn ghost" href="/get/">MindGains for Android — coming soon</a>
+    </div>
+    <div class="verbs" aria-hidden="true">${verbs}</div>
+  </section>
+
+  <section class="wrap sec">
+    <div class="sec-head">
+      <span class="kick">Every day</span>
+      <h2>It starts with today's dose.</h2>
+      <p>One focused lesson from the ${stripTags(hub.exam)} syllabus, a recall card and a real question — chosen for where you are, waiting when you open the app.</p>
+    </div>
+    <div class="scene split" style="margin-top:26px">
+      <div class="dose" aria-label="Example ${stripTags(hub.exam)} daily dose">
+        <div class="dtop"><span>${stripTags(hub.exam)} · Daily Dose · Day ${hub.dose.day}</span><span class="streak">🔥 ${hub.dose.streak}-day streak</span></div>
+        <h3>${raw(hub.dose.topic)}</h3>
+        <p class="sub">${hub.dose.mins}-min lesson · 1 recall card · 1 question</p>
+        <div class="row">
+          <span class="ic" aria-hidden="true">${svg(IC.book)}</span>
+          <span class="tx">Learn <span>${raw(hub.dose.learn)}</span></span>
         </div>
+        <div class="row">
+          <span class="ic" aria-hidden="true">${svg(IC.check)}</span>
+          <span class="tx">Practise <span>${raw(hub.dose.pyq)}</span></span>
+        </div>
+        <div class="bar"><i></i></div>
       </div>
-      <div class="orb-labels">
-        <span>States</span>
-        <span>Union Territories</span>
-        <span>Capitals</span>
-        <span>Rivers</span>
+      <div>
+        <h3 style="font-family:Poppins,sans-serif;font-weight:600;font-size:19px;letter-spacing:-.02em;margin:0 0 8px">Not another feed to scroll.</h3>
+        <p style="margin:0;color:var(--ink-2);font-size:15px">The dose knows what you've done, what you got wrong, and what the exam actually asks. Miss a day and your streak reminds you — in your language.</p>
       </div>
     </div>
-  </div>`;
-}
+  </section>
 
-function atlasCards(items) {
-  return items.map((item) => `<span class="atlas-chip">${esc(item)}</span>`).join('');
-}
+  <section class="wrap sec">
+    <div class="sec-head">
+      <span class="kick">The part that matters</span>
+      <h2>Nothing you study is thrown away.</h2>
+      <p>Your textbook explanation shouldn't disappear after you read it. It should lead somewhere. In MindGains, every step feeds the next.</p>
+    </div>
+    <div class="loop">
+${loopNodes}
+    </div>
+  </section>
 
-function indiaAtlasPage(id, hub) {
-  const url = `${SITE_URL}/${id}/`;
-  const breadcrumb = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
-      { '@type': 'ListItem', position: 2, name: hub.exam, item: url },
-    ],
-  };
-  const webPage = {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    name: hub.title.replace(' | MindGains', ''),
-    description: hub.description,
-    url,
-    isPartOf: { '@type': 'WebSite', name: 'MindGains', url: `${SITE_URL}/` },
-  };
-  return `<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<title>${esc(hub.title)}</title>
-<meta name="description" content="${attr(hub.description)}" />
-<link rel="canonical" href="${attr(url)}" />
-<meta property="og:type" content="website" />
-<meta property="og:title" content="${attr(hub.title)}" />
-<meta property="og:description" content="${attr(hub.description)}" />
-<meta property="og:url" content="${attr(url)}" />
-<meta property="og:image" content="${SITE_URL}/assets/icons/mindgains-logo-512.png" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="${attr(hub.title)}" />
-<meta name="twitter:description" content="${attr(hub.description)}" />
-<meta name="twitter:image" content="${SITE_URL}/assets/icons/mindgains-logo-512.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/assets/exam-hubs.css" />
-${iconMeta()}
-<script type="application/ld+json">${JSON.stringify(webPage)}</script>
-<script type="application/ld+json">${JSON.stringify(breadcrumb)}</script>
-<script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
-<script src="https://cdn.jsdelivr.net/npm/globe.gl"></script>
+  <section class="wrap sec">
+    <div class="scene split">
+      <div>
+        <span class="kick">With friends</span>
+        <h2 class="scene-h">Studying is better with competition.</h2>
+        <p class="scene-p">Create a Quiz Room on any topic. Invite your friends. See who actually knows it — live, question by question.</p>
+        <a class="btn" href="/get/">Create a Quiz Room</a>
+      </div>
+      <div class="room" aria-label="Example live Quiz Room">
+        <div class="rt"><b>Constitution Challenge ⚡</b></div>
+        <div class="rmeta">6 players · 10 questions</div>
+        <div class="lb">
+          <div class="lr me"><span class="av" style="background:#6d63ff">R</span> Ragul <span class="xp">820 XP</span></div>
+          <div class="lr"><span class="av" style="background:#f43f5e">A</span> Arun <span class="xp">760 XP</span></div>
+          <div class="lr"><span class="av" style="background:#f59e0b">N</span> Naveen <span class="xp">690 XP</span></div>
+        </div>
+        <div class="q">Question 7 / 10</div>
+        <div class="reacts" aria-hidden="true"><span>🔥</span><span>😮</span><span>😅</span><span>👏</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap sec">
+    <div class="scene split">
+      <div class="miga-card" aria-label="Asking Miga">
+        <div class="mrow"><span class="mav" aria-hidden="true"></span><span class="bubble">${raw(hub.miga.q)}</span></div>
+        <div class="mrow"><span class="bubble you">${raw(hub.miga.a)}</span></div>
+        <div class="mic" aria-hidden="true">🎙️ Tap to ask out loud</div>
+        <div class="langs" aria-hidden="true"><span class="on">${raw(hub.miga.langOn)}</span><span>हिंदी</span><span>தமிழ்</span><span>తెలుగు</span><span>ಕನ್ನಡ</span><span>English</span></div>
+      </div>
+      <div>
+        <span class="kick">When you're stuck</span>
+        <h2 class="scene-h">${esc(hub.miga.title)}</h2>
+        <p class="scene-p">${raw(hub.miga.p)}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap sec">
+    <div class="sec-head">
+      <span class="kick">Already live</span>
+      <h2>You don't have to wait for the app.</h2>
+      <p>The Quiz Hub is open now — free, no sign-up. Try a real ${stripTags(hub.exam)} question:</p>
+    </div>
+    <div class="qz" style="margin-top:22px">
+      <span class="qtag">${raw(hub.liveQ.tag)}</span>
+      <p class="qq">${esc(hub.liveQ.q)}</p>
+      <div id="qz-opts">
+${opts}
+      </div>
+      <div class="expl" id="qz-expl">${esc(hub.liveQ.expl)}</div>
+      <a class="btn next" id="qz-next" href="${attr(hub.liveQ.next[0])}">${raw(hub.liveQ.next[1])}</a>
+    </div>
+  </section>
+
+  <section class="wrap sec" style="padding-bottom:44px">
+    <div class="band">
+      <div>
+        <h2>MindGains for Android</h2>
+        <p>${raw(hub.androidP)}</p>
+      </div>
+      <a class="btn" href="/get/">Get early access</a>
+    </div>
+  </section>
+
+  <section class="wrap sec practice-chips">
+    <div class="sec-head">
+      <span class="kick">Practise free</span>
+      <h2>Popular ${stripTags(hub.exam)} topics</h2>
+    </div>
+    <div class="chips" style="margin-top:18px">
+${chips}
+    </div>
+    <a class="btn" style="margin-top:16px" href="${attr(hub.quizHub[0])}">${raw(hub.quizHub[1])}</a>
+  </section>
+
+  <section class="wrap faq sec" style="padding-top:8px">
+    <h2>${stripTags(hub.exam)} FAQs</h2>
+${faqs}
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap fin">
+    <span class="fb">MindGains</span>
+    <nav>
+      <a href="/upsc/">UPSC</a>
+      <a href="/tnpsc/">TNPSC</a>
+      <a href="/ssc/">SSC</a>
+      <a href="/rrb/">RRB</a>
+      <a href="/ncert/">NCERT</a>
+      <a href="/samacheer/">Samacheer</a>
+      <a href="/quiz/">Quiz Hub</a>
+      <a href="/editorial/">Editorial</a>
+      <a href="/get/">Get the app</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+    </nav>
+    <span class="cc">© 2026 MindGains Labs Private Limited</span>
+  </div>
+</footer>
+
 <script>
-  window.addEventListener('DOMContentLoaded', function () {
-    var s = document.createElement('script');
-    s.src = '/assets/kyi-app.js';
-    document.head.appendChild(s);
-  }, { once: true });
+  (function(){
+    var ANSWER = ${hub.liveQ.answer}, done = false;
+    var opts = document.querySelectorAll('#qz-opts .opt');
+    var expl = document.getElementById('qz-expl');
+    var next = document.getElementById('qz-next');
+    opts.forEach(function(b){
+      b.addEventListener('click', function(){
+        if(done) return;
+        done = true;
+        var i = +b.dataset.i;
+        opts.forEach(function(o){ o.disabled = true; });
+        opts[ANSWER].classList.add('right');
+        if(i !== ANSWER) b.classList.add('wrong');
+        expl.classList.add('show');
+        next.classList.add('show');
+      });
+    });
+  })();
 </script>
-<style>
-html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#05070F}
-body{font-family:Inter,system-ui,sans-serif}
-.site-nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px clamp(16px,4vw,56px);backdrop-filter:blur(22px);background:rgba(5,6,10,.62);border-bottom:1px solid rgba(255,255,255,.08)}
-.site-nav .brand{font-weight:800;color:#fff;text-decoration:none}
-.site-nav nav{display:flex;gap:16px;flex-wrap:wrap;justify-content:flex-end;color:#cbd5e1;font-size:14px}
-.site-nav nav a{color:inherit;text-decoration:none}
-.site-nav nav a:hover{color:#fff}
-.kyi-stage{position:fixed;inset:0;background:
-  radial-gradient(circle at 50% 38%, rgba(55,224,255,.16), transparent 28%),
-  radial-gradient(circle at 50% 50%, rgba(18,24,40,.22), transparent 62%),
-  linear-gradient(180deg,#04050a 0%, #060914 42%, #04050a 100%)}
-#g{position:absolute;inset:0}
-#ld{position:absolute;inset:0;display:flex;flex-direction:column;gap:14px;align-items:center;justify-content:center;color:#aab3c9;font-size:14px;letter-spacing:.2px}
-.sp{width:36px;height:36px;border:3px solid rgba(255,255,255,.14);border-top-color:#37e0ff;border-radius:50%;animation:s .9s linear infinite}
-@keyframes s{to{transform:rotate(360deg)}}
-</style>
-</head>
-<body>
-<header class="site-nav">
-  <a class="brand" href="/">MindGains</a>
-  <nav><a href="/upsc/">UPSC</a><a href="/tnpsc/">TNPSC</a><a href="/ssc/">SSC</a><a href="/upsc/polity/">Practice</a><a href="/know-your-india/">Know India</a><a href="/#join">Waitlist</a></nav>
-</header>
-<div class="kyi-stage">
-  <div id="g"></div>
-  <div id="ld"><div class="sp"></div></div>
-</div>
-<script>
-  var post=function(m){try{if(window.__kyiBridge){var t=m&&m.type; if(t==='ready')window.__kyiBridge.indiaReady&&window.__kyiBridge.indiaReady(); else if(t==='level'&&m.level==='states')window.__kyiBridge.indiaView&&window.__kyiBridge.indiaView(); else if(t==='statePreview')window.__kyiBridge.statePreview&&window.__kyiBridge.statePreview(m.state); else if(t==='stateSelected')window.__kyiBridge.stateSelected&&window.__kyiBridge.stateSelected(m.state); else if(t==='districtClick')window.__kyiBridge.district&&window.__kyiBridge.district({district:m.district,state:m.state}); else if(t==='pcClick')window.__kyiBridge.pc&&window.__kyiBridge.pc({pc:m.pc,state:m.state}); else if(t==='acClick')window.__kyiBridge.ac&&window.__kyiBridge.ac({ac:m.ac,district:m.district,parentPc:m.parentPc,state:m.state}); else if(t==='acLoading')window.__kyiBridge.acLoading&&window.__kyiBridge.acLoading(); else if(t==='acReady')window.__kyiBridge.acReady&&window.__kyiBridge.acReady(); else if(t==='acError')window.__kyiBridge.acError&&window.__kyiBridge.acError({state:m.state}); else if(t==='pcLoading')window.__kyiBridge.pcLoading&&window.__kyiBridge.pcLoading(); else if(t==='error')window.__kyiBridge.hint&&window.__kyiBridge.hint('Could not load the map. Check connection.'); }}catch(e){}};
-  var world,states=[],districts=[],pcAll=[],pcByState={},acCache={},mode='dist',kind='states',selectedState=null;
-  var GRAPHITE='rgba(74,82,138,0.50)',GRAPHITE_DIM='rgba(48,52,82,0.36)',VIOLET='rgba(143,104,255,0.78)',TINT='rgba(122,94,248,0.26)';
-  function nrm(s){return (s||'').toUpperCase().replace(/&/g,'AND').replace(/[^A-Z0-9]+/g,'');}
-  var selFeat=null;
-  function featKey(f){ if(kind==='ac')return f.properties.AC_NAME; if(kind==='pc')return f.properties.pc_name; if(kind==='districts')return f.properties.district; return null; }
-  function isSelFeat(f){ return selFeat && kind!=='states' && featKey(f)===selFeat; }
-  function reapply(){ if(world) world.polygonCapColor(ck).polygonSideColor(sd).polygonStrokeColor(st).polygonAltitude(al); }
-  function ck(f){ if(kind==='states'){ if(selectedState) return f.properties.st_nm===selectedState?VIOLET:GRAPHITE_DIM; return GRAPHITE; } return isSelFeat(f)?'rgba(150,112,255,0.88)':TINT; }
-  function sd(f){ if(kind==='states'&&selectedState===f.properties.st_nm) return 'rgba(124,92,252,0.5)'; if(kind==='states') return 'rgba(96,106,166,0.35)'; return isSelFeat(f)?'rgba(124,92,252,0.55)':'rgba(70,80,140,0.22)'; }
-  function st(f){ if(kind==='states'&&selectedState===f.properties.st_nm) return 'rgba(214,200,255,1)'; if(kind==='states') return 'rgba(172,184,236,0.62)'; return isSelFeat(f)?'rgba(222,210,255,1)':'rgba(200,208,244,0.4)'; }
-  function al(f){ if(kind==='states') return selectedState===f.properties.st_nm?0.05:0.006; return isSelFeat(f)?0.045:0.006; }
-  function nameOf(f){ if(kind==='states')return f.properties.st_nm; if(kind==='districts')return f.properties.district; if(kind==='ac')return (f.properties.AC_NAME||'').replace(/\\s*\\((SC|ST)\\)/i,''); return f.properties.pc_name; }
-  function polys(f){var g=f.geometry;if(!g)return [];return g.type==='Polygon'?[g.coordinates]:g.coordinates;}
-  function ringArea(r){var a=0;for(var i=0,n=r.length-1;i<n;i++){a+=r[i][0]*r[i+1][1]-r[i+1][0]*r[i][1];}return a/2;}
-  function ringCentroid(r){var a=0,cx=0,cy=0;for(var i=0,n=r.length-1;i<n;i++){var ff=r[i][0]*r[i+1][1]-r[i+1][0]*r[i][1];a+=ff;cx+=(r[i][0]+r[i+1][0])*ff;cy+=(r[i][1]+r[i+1][1])*ff;}a=a/2;if(Math.abs(a)<1e-9)return [r[0][0],r[0][1]];return [cx/(6*a),cy/(6*a)];}
-  function centerOf(f){var best=null,bestA=-1;polys(f).forEach(function(p){var r=p[0];var a=Math.abs(ringArea(r));if(a>bestA){bestA=a;best=r;}});if(!best)return {lat:22,lng:80};var c=ringCentroid(best);return {lat:c[1],lng:c[0]};}
-  var curSorted=[];
-  function area(f){var best=0;polys(f).forEach(function(p){var a=Math.abs(ringArea(p[0]));if(a>best)best=a;});return best;}
-  function makeLabel(d){
-    var el=document.createElement('div');el.textContent=d.t;
-    el.style.cssText='white-space:nowrap;transform:translate(-50%,-50%);font-family:Inter,system-ui,sans-serif;';
-    el.style.cssText+='pointer-events:none;font-size:'+(d.sel?13:10.5)+'px;font-weight:'+(d.sel?'700':'600')+';color:'+(d.sel?'#fff':'rgba(232,236,248,0.92)')+';text-shadow:0 1px 5px rgba(0,0,0,0.98);padding:5px 7px;';
-    return el;
-  }
-  function refreshLabels(){
-    if(!world)return;
-    if(!curSorted.length){world.htmlElementsData([]);return;}
-    var pov=world.pointOfView();var alt=pov.altitude||1.25;
-    var coslat=Math.max(0.3,Math.cos(pov.lat*Math.PI/180));
-    var half=Math.max(2.5,alt*42);
-    var cap=Math.max(8,Math.min(40,Math.round(28/alt)));
-    var arr=[];
-    for(var i=0;i<curSorted.length && arr.length<cap;i++){
-      var d=curSorted[i];
-      if(Math.abs(d.lat-pov.lat)<half && Math.abs(d.lng-pov.lng)<half/coslat){
-        arr.push({lat:d.lat,lng:d.lng,t:d.t,st:d.st,k:d.k,sel:(d.k==='states'&&d.st===selectedState),small:d.small});
-      }
-    }
-    if(kind==='states'&&selectedState){var has=false,a2;for(a2=0;a2<arr.length;a2++){if(arr[a2].st===selectedState){arr[a2].sel=true;has=true;break;}}if(!has){for(a2=0;a2<curSorted.length;a2++){if(curSorted[a2].st===selectedState){var sf=curSorted[a2];arr.push({lat:sf.lat,lng:sf.lng,t:sf.t,st:sf.st,k:'states',sel:true,small:sf.small});break;}}}}
-    world.htmlElementsData(arr).htmlLat('lat').htmlLng('lng').htmlAltitude(function(d){return d.sel?0.055:0.008;}).htmlElement(makeLabel);
-  }
-  function setLabels(fs){
-    curSorted=fs.map(function(f){var c=centerOf(f);return {f:f,lat:c.lat,lng:c.lng,t:nameOf(f),st:f.properties.st_nm,k:kind,ar:area(f),small:false};}).sort(function(a,b){return b.ar-a.ar;});
-    if(kind==='states'){for(var i=0;i<curSorted.length;i++)curSorted[i].small=(i>=16);}
-    refreshLabels();
-  }
-  function draw(fs){world.polygonsData(fs).polygonAltitude(al).polygonCapColor(ck).polygonSideColor(sd).polygonStrokeColor(st).polygonLabel(function(){return '';});setLabels(fs);}
-  function fitFly(fs,ms,latShift,tighten){
-    var mnx=180,mny=90,mxx=-180,mxy=-90;
-    fs.forEach(function(f){polys(f).forEach(function(p){p[0].forEach(function(c){if(c[0]<60||c[0]>100||c[1]<5||c[1]>40)return;if(c[0]<mnx)mnx=c[0];if(c[0]>mxx)mxx=c[0];if(c[1]<mny)mny=c[1];if(c[1]>mxy)mxy=c[1];});});});
-    if(mxx<mnx){world.pointOfView({lat:27.5,lng:81,altitude:1.35},ms||1200);return;}
-    var midLat=(mny+mxy)/2,midLng=(mnx+mxx)/2;
-    var dx=(mxx-mnx)*Math.cos(midLat*Math.PI/180),dy=mxy-mny,span=Math.max(dx,dy);
-    var alt=Math.max(0.14,Math.min(1.35,span/26)); if(tighten)alt*=0.78;
-    var shift=latShift?dy*0.22:0;
-    world.pointOfView({lat:midLat+shift,lng:midLng,altitude:alt},ms||1300);
-    setTimeout(refreshLabels,(ms||1300)+80);
-  }
-  function showStates(){kind='states';selectedState=null;draw(states);world.pointOfView({lat:27.5,lng:81,altitude:1.35},1100);}
-  function stateFeat(s){return states.filter(function(f){return f.properties.st_nm===s;});}
-  function districtsFor(s){return districts.filter(function(f){return f.properties.st_nm===s;});}
-  function pcsFor(s){var k=nrm(s);if(pcByState[k])return pcByState[k];for(var kk in pcByState){if(kk.indexOf(k)>=0||k.indexOf(kk)>=0)return pcByState[kk];}return [];}
-  function previewState(s){selectedState=s;kind='states';draw(states);var c=centerOf(stateFeat(s)[0]||states[0]);world.pointOfView({lat:c.lat-2.5,lng:c.lng,altitude:1.0},1100);}
-  function openSecond(s){
-    selectedState=s;selFeat=null;
-    if(mode==='dist'){kind='districts';var d=districtsFor(s);draw(d);fitFly(d.length?d:stateFeat(s),1400,0.4);}
-    else if(mode==='pc'){kind='pc';ensurePC(function(){var p=pcsFor(s);draw(p);fitFly(p.length?p:districtsFor(s),1400,0.4);});}
-    else if(mode==='ac'){loadAC(s);}
-  }
-  function ensurePC(cb){if(pcAll.length){cb();return;}fetch('https://cdn.jsdelivr.net/gh/datameet/maps@master/parliamentary-constituencies/india_pc_2019_simplified.geojson').then(function(r){return r.json();}).then(function(g){pcAll=g.features||[];pcAll.forEach(function(f){var k=nrm(f.properties.st_name);(pcByState[k]=pcByState[k]||[]).push(f);});cb();}).catch(function(){});}
-  function stKey(name){var k=(name||'').toLowerCase().replace(/&/g,'').replace(/\\band\\b/g,'').replace(/[^a-z]/g,'');var ov={jammuandkashmir:'jammukashmir',nctofdelhi:'delhi',orissa:'odisha',pondicherry:'puducherry',uttaranchal:'uttarakhand',dadraandnagarhavelianddamananddiu:'dadranagarhaveli'};return ov[k]||k;}
-  function loadAC(s){kind='ac';selFeat=null;var key=stKey(s);if(acCache[key]){draw(acCache[key]);fitFly(acCache[key],1400,0.3,1);return;}fetch('https://cdn.jsdelivr.net/gh/HindustanTimesLabs/shapefiles@master/state_ut/'+key+'/assembly/'+key+'_AC.json').then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(g){acCache[key]=g.features||[];draw(acCache[key]);fitFly(acCache[key],1400,0.3,1);}).catch(function(){mode='dist';openSecond(s);});}
-  function onClick(f){
-    if(kind==='states'){previewState(f.properties.st_nm);return;}
-    selFeat=featKey(f);reapply();fitFly([f],800,0);
-  }
-  var bootTimer=setTimeout(function(){var ld=document.getElementById('ld');if(ld)ld.innerHTML='<div class="sp"></div><div>Loading the map is taking longer than usual.</div>';},12000);
-  fetch('https://cdn.jsdelivr.net/gh/udit-001/india-maps-data@main/topojson/india.json').then(function(r){return r.json();}).then(function(topo){
-    states=topojson.feature(topo,topo.objects.states).features;
-    districts=topojson.feature(topo,topo.objects.districts).features;
-    world=Globe()(document.getElementById('g'))
-      .globeImageUrl('https://cdn.jsdelivr.net/npm/three-globe/example/img/earth-night.jpg')
-      .backgroundColor('rgba(0,0,0,0)').showAtmosphere(true).atmosphereColor('#7aa2ff').atmosphereAltitude(0.18)
-      .polygonsTransitionDuration(0).onPolygonClick(onClick);
-    draw(states);
-    var c=world.controls();c.autoRotate=false;c.enableDamping=true;c.minDistance=101;c.maxDistance=700;c.zoomSpeed=1.3;
-    var lastLbl=0;world.onZoom(function(){var t=Date.now();if(t-lastLbl>120){lastLbl=t;refreshLabels();}});
-    world.pointOfView({lat:0,lng:0,altitude:2.9},0);
-    setTimeout(function(){world.pointOfView({lat:27.5,lng:81,altitude:1.15},2900);},450);
-    document.getElementById('ld').style.display='none';
-    clearTimeout(bootTimer);
-  }).catch(function(){clearTimeout(bootTimer);var ld=document.getElementById('ld');if(ld)ld.innerHTML='<div class="sp"></div><div>Map load failed. Please refresh.</div>';});
-  window.__kyi={explore:function(){if(selectedState)openSecond(selectedState);},back:function(){showStates();},setMode:function(m){mode=m;if(kind!=='states'&&selectedState)openSecond(selectedState);},zoom:function(fac){var p=world.pointOfView();world.pointOfView({lat:p.lat,lng:p.lng,altitude:Math.max(0.15,Math.min(2.4,p.altitude*fac))},420);},clearSel:function(){selFeat=null;reapply();}};
-</script>
+
 </body>
-</html>`;
+</html>
+`;
 }
 
-function hubPage(id, hub, count) {
-  if (id === 'know-your-india') return indiaAtlasPage(id, hub, count);
-  const heroEyebrow = hub.heroEyebrow || `${hub.exam} AI Learning Hub`;
-  const heroTitle = hub.heroTitle || `Best AI for ${hub.exam} Preparation`;
-  const heroDek = hub.heroDek || `MindGains helps ${hub.audience} build a daily learning habit through personalized lessons, quizzes, revision, current affairs and AI-powered study tools.`;
-  const beyondTitle = hub.beyondTitle || `Why ${hub.exam} preparation needs more than content`;
-  const dailyTitle = hub.dailyTitle || `Daily Dose for ${hub.exam}`;
-  const dailyCopy = hub.dailyCopy || 'Build a personalized path with one focused lesson every day, revision notes, flashcards, practice questions and exam-aware current affairs where relevant.';
-  const quizHeading = hub.quizHeading || `Practice ${hub.exam} questions topic by topic`;
-  const compareTitle = hub.compareTitle || 'Why MindGains vs generic AI tools';
-  const continueTitle = hub.continueTitle || 'Start with a quiz or a deeper read';
-  const faqTitle = hub.faqTitle || `${hub.exam} preparation FAQs`;
-  const ctaTitle = hub.ctaTitle || 'Start building your daily learning habit with MindGains.';
-  const ctaCopy = hub.ctaCopy || 'Join the early access waitlist and be among the first learners to try Daily Dose, Study Lab, MIGA and the full app experience.';
-  const subjectPills = hub.subjects.map((item) => `<span>${esc(item)}</span>`).join('');
-  const related = hub.related.map(([href, label]) => `<a href="${attr(href)}">${esc(label)}<span>Open</span></a>`).join('');
-  const faq = hub.faqs.map(([question, answer]) => `<details><summary>${esc(question)}</summary><p>${esc(answer)}</p></details>`).join('');
-  const topicText = count?.topics ? `${count.topics.toLocaleString('en-IN')} topic pages` : 'Topic-wise public quizzes';
-  const body = `<main>
-  <section class="hero">
-    <p class="eyebrow">${esc(heroEyebrow)}</p>
-    <h1>${esc(heroTitle)}</h1>
-    <p class="dek">${esc(heroDek)}</p>
-    <div class="hero-actions"><a class="button" href="/#join">Join Waitlist</a><a class="button secondary" href="${attr(hub.quiz)}">${esc(hub.quizLabel)}</a></div>
-  </section>
-  <section class="section two">
-    <div>
-      <p class="eyebrow">Beyond content</p>
-      <h2>${esc(beyondTitle)}</h2>
-    </div>
-    <p>Most learners already have videos, PDFs, notes and question banks. The gap is turning that content into a repeatable system: one focused lesson, one practice set, one revision loop and one visible reason to return tomorrow.</p>
-  </section>
-  <section class="section daily">
-    <div>
-      <p class="eyebrow">Daily Dose</p>
-      <h2>${esc(dailyTitle)}</h2>
-      <p>${esc(dailyCopy)}</p>
-      <div class="pill-row">${subjectPills}</div>
-    </div>
-    <div class="mini-phone">
-      <div class="phone-top"><span>MindGains</span><span>${esc(hub.exams)}</span></div>
-      <div class="mission"><b>Today's Lesson</b><p>${esc(hub.scope)}</p></div>
-      <div class="metric-grid"><div><b>1</b><span>Lesson</span></div><div><b>50</b><span>XP</span></div><div><b>Daily</b><span>Revision</span></div></div>
-    </div>
-  </section>
-  <section class="section quiz-preview">
-    <div>
-      <p class="eyebrow">Quiz Hub</p>
-      <h2>${esc(quizHeading)}</h2>
-      <p>The public Quiz Hub gives learners a searchable route into focused practice before they join the full app experience.</p>
-    </div>
-    <a class="stat-card" href="${attr(hub.quiz)}"><strong>${esc(topicText)}</strong><span>${esc(hub.quizLabel)}</span></a>
-  </section>
-  <section class="cards">
-    <article><h2>Study Lab preview</h2><p>Enter a topic, PDF, YouTube link or text and generate reading notes, flashcards, mindmaps and quizzes for exam revision or school learning.</p><a href="/study-lab/">Explore Study Lab</a></article>
-    <article><h2>MIGA preview</h2><p>MIGA is the multilingual AI learning companion inside MindGains. It is designed to guide, explain and keep learners moving through their daily study loop.</p><a href="/misa/">Explore MISA</a></article>
-  </section>
-  <section class="section">
-    <p class="eyebrow">Comparison</p>
-    <h2>${esc(compareTitle)}</h2>
-    <div class="compare">
-      <div><h3>Generic AI chatbot</h3><p>Flexible answers, but no exam path, habit loop, quiz history or structured revision system.</p></div>
-      <div><h3>Random notes/videos</h3><p>Useful content, but easy to consume passively and forget without practice or feedback.</p></div>
-      <div class="highlight"><h3>MindGains</h3><p>Exam-specific learning paths, Daily Dose, quizzes, revision, current affairs, school and exam support, and a mobile app experience.</p></div>
-    </div>
-  </section>
-  <section class="section links">
-    <p class="eyebrow">Continue practicing</p>
-    <h2>${esc(continueTitle)}</h2>
-    <div class="link-grid">${related}</div>
-  </section>
-  <section class="section faq">
-    <p class="eyebrow">FAQ</p>
-    <h2>${esc(faqTitle)}</h2>
-    ${faq}
-  </section>
-  <section class="cta">
-    <p class="eyebrow">Early access</p>
-    <h2>${esc(ctaTitle)}</h2>
-    <p>${esc(ctaCopy)}</p>
-    <a class="button" href="/#join">Join the Waitlist</a>
-  </section>
-</main>`;
-  return pageShell(id, hub, body);
-}
-
-function writeCss() {
-  const css = `*,*:before,*:after{box-sizing:border-box}body{margin:0;background:#05060a;color:#f8fbff;font-family:Inter,Barlow,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.bg{position:fixed;inset:0;z-index:-1;background:radial-gradient(circle at 50% 0%,rgba(55,224,255,.2),transparent 34%),radial-gradient(circle at 12% 16%,rgba(8,145,178,.14),transparent 32%),linear-gradient(180deg,#05060a,#08111c 56%,#030407)}.site-nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px clamp(16px,4vw,56px);backdrop-filter:blur(22px);background:rgba(5,6,10,.74);border-bottom:1px solid rgba(255,255,255,.08)}.brand{font-weight:800}.site-nav nav{display:flex;gap:16px;flex-wrap:wrap;justify-content:flex-end;color:#cbd5e1;font-size:14px}.site-nav nav a:hover{color:#fff}main{width:min(1120px,calc(100% - 32px));margin:0 auto;padding:0 0 72px}.hero{padding:18px 0 26px}.eyebrow{margin:0 0 10px;color:#67e8f9;text-transform:uppercase;letter-spacing:2.4px;font-size:12px;font-weight:800}.hero h1,.section h2,.cta h2{max-width:980px;font-family:"Instrument Serif",serif;font-style:italic;font-size:clamp(42px,7vw,84px);line-height:.95;margin:0;font-weight:400}.dek{max-width:780px;color:rgba(248,251,255,.78);font-size:clamp(16px,1.8vw,20px);line-height:1.58;margin:16px 0 0}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.button{display:inline-flex;align-items:center;justify-content:center;padding:14px 18px;border-radius:16px;background:#0891b2;color:#fff;font-weight:850}.button.secondary{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);color:#e8fbff}.section,.cta,.cards article{border:1px solid rgba(255,255,255,.12);border-radius:24px;background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));padding:24px;margin-top:22px}.section.two,.section.daily,.section.quiz-preview{display:grid;grid-template-columns:minmax(0,.82fr) minmax(300px,1fr);gap:26px;align-items:center}.section h2,.cta h2{font-size:clamp(32px,4.5vw,54px)}.section p,.cta p,.cards p,.faq p{color:#d7e2f2;font-size:17px;line-height:1.68}.pill-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}.pill-row span{padding:9px 12px;border-radius:999px;background:rgba(55,224,255,.09);border:1px solid rgba(55,224,255,.2);color:#dffbff;font-size:13px}.mini-phone,.stat-card{border:1px solid rgba(255,255,255,.13);border-radius:24px;background:radial-gradient(circle at 50% 0%,rgba(55,224,255,.18),transparent 42%),rgba(5,6,10,.45);padding:18px}.phone-top{display:flex;justify-content:space-between;color:#91a4bd;font-size:12px;margin-bottom:18px}.mission{border-radius:18px;background:rgba(255,255,255,.06);padding:18px}.mission b{display:block;font-size:18px;margin-bottom:8px}.mission p{margin:0;color:#aebbd0}.metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.metric-grid div{padding:12px;border-radius:16px;background:rgba(55,224,255,.08);border:1px solid rgba(55,224,255,.18);text-align:center}.metric-grid b{display:block;color:#67e8f9}.metric-grid span{display:block;color:#91a4bd;font-size:11px;margin-top:4px}.stat-card{display:grid;align-content:center;gap:8px;min-height:160px}.stat-card strong{font-size:30px;color:#fff}.stat-card span{color:#67e8f9;font-weight:800}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:22px}.cards article{margin-top:0}.cards h2{font-size:28px;margin:0 0 12px}.cards a{display:inline-flex;margin-top:10px;color:#67e8f9;font-weight:800}.compare{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}.compare div{padding:18px;border-radius:18px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1)}.compare .highlight{background:rgba(55,224,255,.09);border-color:rgba(55,224,255,.25)}.compare h3{margin:0 0 8px;font-size:18px}.compare p{font-size:15px;margin:0}.link-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}.link-grid a{display:flex;justify-content:space-between;gap:12px;padding:16px;border-radius:16px;background:rgba(55,224,255,.08);border:1px solid rgba(55,224,255,.18);color:#e8fbff;font-weight:800}.link-grid span{color:#67e8f9}.faq details{border-top:1px solid rgba(255,255,255,.1);padding:16px 0}.faq details:first-of-type{margin-top:12px}.faq summary{cursor:pointer;font-weight:850;color:#fff}.faq p{margin:10px 0 0}.cta{text-align:left;padding:28px}.cta h2{max-width:760px}.cta p{max-width:720px}.atlas-hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);gap:24px;align-items:center}.atlas-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:22px;max-width:520px}.atlas-stats div{padding:14px 12px;border-radius:18px;background:rgba(55,224,255,.08);border:1px solid rgba(55,224,255,.16);text-align:center}.atlas-stats strong{display:block;font-size:28px;color:#fff}.atlas-stats span{display:block;color:#91a4bd;font-size:12px;margin-top:2px}.atlas-section{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:22px;align-items:start}.atlas-side{display:grid;gap:14px}.atlas-panel{padding:18px;border-radius:20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}.atlas-panel h3,.atlas-region h3{margin:0 0 12px;font-size:16px;color:#f4fbff}.atlas-chip-row{display:flex;flex-wrap:wrap;gap:8px}.atlas-chip-row.dense{gap:7px}.atlas-chip{padding:9px 11px;border-radius:999px;background:rgba(55,224,255,.08);border:1px solid rgba(55,224,255,.18);color:#e7fbff;font-size:12px;line-height:1.1}.atlas-regions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:22px}.atlas-region{padding:18px;border-radius:20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}.india-orb{display:flex;justify-content:center;align-items:center}.orb-shell{display:flex;flex-direction:column;align-items:center;gap:14px}.orb-container{position:relative;width:240px;height:240px;display:flex;justify-content:center;align-items:center;overflow:hidden;border-radius:50%;cursor:pointer;filter:drop-shadow(0 0 10px #ff3e1c66) drop-shadow(0 0 10px #1c8cff66);transition:all .3s ease;animation:orbFloat 8s ease-in-out infinite}.orb{position:absolute;width:240px;aspect-ratio:1;border-radius:50%;background:#060606;filter:blur(24px);transition:all .3s ease}.orb-container:hover .orb,.orb-container:focus-within .orb{width:260px;animation:rotatePulse 6s infinite}.orb-inner{position:absolute;left:-120%;top:-25%;width:160%;aspect-ratio:1;border-radius:50%;background:#ff3e1c;clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);animation:rotateSpin 6s linear infinite;transition:all .3s ease}.orb-inner:nth-child(2){left:auto;right:-120%;top:auto;bottom:-25%;background:#1c8cff;animation-duration:8s;clip-path:polygon(20% 0%,0% 20%,30% 50%,0% 80%,20% 100%,50% 70%,80% 100%,100% 80%,70% 50%,100% 20%,80% 0%,50% 30%)}.orb-container:hover .orb .orb-inner,.orb-container:focus-within .orb .orb-inner{width:170%}.orb-labels{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:340px}.orb-labels span{padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#d8e7ff;font-size:11px;letter-spacing:.2px}@keyframes rotateSpin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}@keyframes rotatePulse{50%{transform:rotate(180deg)}}@keyframes orbFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}@media(max-width:860px){.site-nav{align-items:flex-start}.site-nav nav{gap:10px;font-size:13px}.section.two,.section.daily,.section.quiz-preview,.cards,.compare,.link-grid,.atlas-hero,.atlas-section,.atlas-regions{grid-template-columns:1fr}.hero{padding-top:14px}.site-nav nav a:nth-child(1),.site-nav nav a:nth-child(2),.site-nav nav a:nth-child(3){display:none}.metric-grid{grid-template-columns:1fr}.hero-actions{display:grid}.button{width:100%}.section,.cta,.cards article{padding:20px}.atlas-stats{grid-template-columns:1fr 1fr}.orb-container{width:210px;height:210px}.orb{width:210px}.orb-labels{max-width:none}}`;
-  fs.writeFileSync(path.join(ROOT, 'assets', 'exam-hubs.css'), css, 'utf8');
-}
+/* ------------------------------------------------------------------ build --- */
 
 function updateSitemap(ids) {
-  const sitemap = path.join(ROOT, 'sitemap.xml');
-  if (!fs.existsSync(sitemap)) return;
-  let xml = fs.readFileSync(sitemap, 'utf8');
-  const lines = ids.map((id) => `  <url><loc>${SITE_URL}/${id}/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>`).join('\n');
+  const f = path.join(ROOT, 'sitemap.xml');
+  if (!fs.existsSync(f)) return;
+  let xml = fs.readFileSync(f, 'utf8');
+  const lines = ids.map((id) => `  <url><loc>${SITE}/${id}/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>`).join('\n');
   for (const id of ids) {
-    xml = xml.replace(new RegExp(`\\n  <url><loc>${SITE_URL}/${id}/</loc>[^\\n]+</url>`, 'g'), '');
+    xml = xml.replace(new RegExp(`\\n  <url><loc>${SITE}/${id}/</loc>[^\\n]*</url>`, 'g'), '');
   }
   xml = xml.replace('\n</urlset>', `\n${lines}\n</urlset>`);
-  fs.writeFileSync(sitemap, xml, 'utf8');
-}
-
-function updateHome() {
-  const file = path.join(ROOT, 'index.html');
-  let html = fs.readFileSync(file, 'utf8');
-  if (!html.includes('/upsc/')) {
-    html = html.replace('<a href="/daily-dose/">Daily Dose</a>', '<a href="/upsc/">UPSC</a><a href="/tnpsc/">TNPSC</a><a href="/daily-dose/">Daily Dose</a>');
-  }
-  if (!html.includes('/know-your-india/')) {
-    html = html.replace('<a href="/upsc/polity/">Practice</a>', '<a href="/upsc/polity/">Practice</a><a href="/know-your-india/">Know India</a>');
-  }
-  if (!html.includes('class="exam-teaser"')) {
-    const css = `\n  .exam-teaser{position:fixed;left:30px;bottom:154px;z-index:24;width:min(330px,calc(100vw - 60px));border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:16px;background:rgba(5,6,10,.52);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);box-shadow:0 18px 60px rgba(0,0,0,.34)}\n  .exam-teaser .k{font-size:10px;letter-spacing:1.7px;text-transform:uppercase;color:#67e8f9;font-weight:700;margin-bottom:10px}\n  .exam-links{display:flex;flex-wrap:wrap;gap:8px}.exam-links a{color:#dffbff;text-decoration:none;font-size:12px;border:1px solid rgba(55,224,255,.22);border-radius:999px;padding:7px 9px;background:rgba(55,224,255,.08)}\n  @media (max-width:860px){.exam-teaser{display:none}}\n`;
-    html = html.replace('  @media (max-width:560px){', `${css}\n  @media (max-width:560px){`);
-    html = html.replace('<aside class="editorial-teaser">', '<aside class="exam-teaser"><div class="k">Explore by Exam</div><div class="exam-links"><a href="/upsc/">UPSC</a><a href="/tnpsc/">TNPSC</a><a href="/ssc/">SSC</a><a href="/ncert/">NCERT</a><a href="/samacheer/">Samacheer</a></div></aside>\n\n<aside class="editorial-teaser">');
-  }
-  fs.writeFileSync(file, html, 'utf8');
+  fs.writeFileSync(f, xml, 'utf8');
 }
 
 function main() {
   const counts = readQuizCounts();
-  writeCss();
-  for (const [id, hub] of Object.entries(HUBS)) {
+  const ids = Object.keys(HUBS);
+  for (const id of ids) {
     const dir = path.join(ROOT, id);
     fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(path.join(dir, 'index.html'), hubPage(id, hub, counts[id]), 'utf8');
+    fs.writeFileSync(path.join(dir, 'index.html'), page(id, HUBS[id], counts[id]), 'utf8');
   }
-  updateSitemap(Object.keys(HUBS));
-  updateHome();
-  console.log(`Generated ${Object.keys(HUBS).length} exam hub pages.`);
+  updateSitemap(ids);
+  console.log(`Generated ${ids.length} exam pages: ${ids.join(', ')}`);
 }
 
 main();
