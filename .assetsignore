@@ -1,0 +1,42 @@
+# Classifier research harness & large dataset records
+classifier_research_harness/
+classifier_research_harness/**
+
+# System, Git & Agent Metadata
+.git/
+.git/**
+.gitignore
+.assetsignore
+.agents/
+.gemini/
+
+# Dependencies & build scripts
+node_modules/
+package-lock.json
+scripts/
+
+# Development documentation, audits & specs
+*.md
+public_practice_migration_manifest_v1.json
+public_practice_migration_validation_v1.md
+public_practice_phase1_implementation_report.md
+quiz_entries_master_report.md
+tnpsc_polity_classifier_refinement_v4.md
+tnpsc_polity_gate3a_independent_qa_v4.md
+tnpsc_polity_gate3a_qa_report_v1.md
+mindgains_android_product_reconnaissance_v1.md
+mindgains_public_practice_growth_architecture_v1.md
+mindgains_public_practice_product_spec_v2.md
+mindgains_web_route_and_content_audit_v1.md
+canonical_taxonomy_v2_checkpoint.md
+
+# Scratch, temporary & build-analysis artifacts
+scratch_*.json
+tmp-pyq/
+waitlist-table.sql
+__phase2_probe.html
+
+# Environment & log files
+*.log
+.env
+.env.*
