@@ -81,6 +81,7 @@
     .n4{background:linear-gradient(150deg,#f59e0b,#fbbf24)}
     .n5{background:linear-gradient(150deg,#3b82f6,#60a5fa)}
     .n6{background:linear-gradient(150deg,#10b981,#34d399)}
+    .n7{background:linear-gradient(150deg,#0ea5e9,#38bdf8)}
 
     /* quiz room scene */
     .room{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:20px;box-shadow:var(--sh-card-h);max-width:340px;width:100%;margin:0 auto}

@@ -27,7 +27,7 @@ const HUBS = {
     title: 'UPSC Prelims Practice — PYQs & Topic Quizzes | MindGains',
     description: 'Free UPSC Prelims practice: previous-year questions and topic-wise quizzes across Polity, History, Economy, Geography, Environment and CSAT. No sign-up needed.',
     h1: 'Your UPSC preparation, connected.',
-    heroP: 'Textbooks, verified PYQs, Miga in your language, smart revision and competition with friends — one loop, built around the exam you’re actually preparing for.',
+    heroP: 'A plan for your syllabus, concepts cited to your books, verified PYQs, Mains answers marked on the rubric, mock tests with an All-India Rank, spaced revision and Quiz Rooms with friends — one loop, built around the exam you’re actually preparing for.',
     quizStart: '/upsc/polity/',
     quizHub: ['/upsc/polity/', 'Open UPSC Quiz Hub'],
     source: 'NCERT / standard sources',
@@ -76,7 +76,7 @@ const HUBS = {
     title: 'TNPSC Group 1, 2 & 4 Practice — PYQs & Quizzes | MindGains',
     description: 'Free TNPSC practice for Group 1, 2, 2A & 4: previous-year questions and topic-wise quizzes in Tamil and English — Tamil, History, Polity, GS and Aptitude.',
     h1: 'Your TNPSC preparation, connected.',
-    heroP: 'Textbooks, verified PYQs, Miga in Tamil, smart revision and competition with friends — one loop, built around the exam you’re actually preparing for.',
+    heroP: 'A plan for your syllabus, concepts in Tamil, verified PYQs, Mains answers marked on the rubric, mock tests with an All-India Rank, spaced revision and Quiz Rooms with friends — one loop, built around the exam you’re actually preparing for.',
     quizStart: '/tnpsc/tamil/',
     quizHub: ['/tnpsc/tamil/', 'Open TNPSC Quiz Hub'],
     source: 'Samacheer / NCERT',
@@ -125,7 +125,7 @@ const HUBS = {
     title: 'SSC CGL, CHSL & MTS Practice — PYQs & Mock Quizzes | MindGains',
     description: 'Free SSC practice for CGL, CHSL, MTS, CPO and GD: previous-year questions and topic-wise mock quizzes across Reasoning, Quant, English and General Awareness.',
     h1: 'Your SSC preparation, connected.',
-    heroP: 'Concepts, verified PYQs, Miga in your language, smart revision and speed rounds with friends — one loop, built around the exam you’re actually preparing for.',
+    heroP: 'A plan for your syllabus, concept shortcuts, verified PYQs, timed mocks with an All-India Rank, spaced revision and speed rounds with friends — one loop, built around the exam you’re actually preparing for.',
     quizStart: '/ssc/quant/',
     quizHub: ['/ssc/quant/', 'Open SSC Quiz Hub'],
     source: 'standard quant &amp; GK sources',
@@ -174,7 +174,7 @@ const HUBS = {
     title: 'RRB NTPC & Group D Practice — PYQs & Mock Quizzes | MindGains',
     description: 'Free RRB NTPC, Group D and ALP practice: previous-year questions and topic-wise mock quizzes across Maths, Reasoning, Science and General Awareness.',
     h1: 'Your RRB preparation, connected.',
-    heroP: 'Concepts, verified PYQs, Miga in your language, smart revision and speed rounds with friends — one loop, built around the exam you’re actually preparing for.',
+    heroP: 'A plan for your syllabus, concept shortcuts, verified PYQs, timed mocks with an All-India Rank, spaced revision and speed rounds with friends — one loop, built around the exam you’re actually preparing for.',
     quizStart: '/rrb/maths/',
     quizHub: ['/rrb/maths/', 'Open RRB Quiz Hub'],
     source: 'standard maths &amp; science sources',
@@ -223,7 +223,7 @@ const HUBS = {
     title: 'NCERT Class 6–12 MCQs — Chapter-wise Practice Quizzes | MindGains',
     description: 'Free chapter-wise NCERT MCQ practice for Class 6 to 12: objective questions with answers across Science, Maths, Social Science, History and Geography.',
     h1: 'Your NCERT foundation, connected.',
-    heroP: 'Chapter explanations, questions, Miga in your language, smart revision and quizzes with friends — one loop, built around the books your exam is actually based on.',
+    heroP: 'A chapter plan for your class, cited NCERT explanations, chapter questions and PYQs, exam-pattern tests, spaced revision and quizzes with friends — one loop, built around the books your exam is actually based on.',
     quizStart: '/ncert/science/',
     quizHub: ['/ncert/science/', 'Open NCERT Quiz Hub'],
     source: 'NCERT textbooks',
@@ -272,7 +272,7 @@ const HUBS = {
     title: 'Samacheer Kalvi Class 6–12 Questions & MCQ Quizzes | MindGains',
     description: 'Free Samacheer Kalvi practice for Class 6 to 12: topic-wise questions and MCQ quizzes in Tamil and English — Tamil, Science, Maths and Social Science. TNPSC-aligned.',
     h1: 'Your Samacheer prep, connected.',
-    heroP: 'Chapter explanations, questions, Miga in Tamil, smart revision and quizzes with friends — one loop, built around the Tamil Nadu board syllabus.',
+    heroP: 'A chapter plan for your class, cited Samacheer explanations in Tamil, chapter questions, exam-pattern tests, spaced revision and quizzes with friends — one loop, built around the Tamil Nadu board syllabus.',
     quizStart: '/samacheer/tamil/',
     quizHub: ['/samacheer/tamil/', 'Open Samacheer Quiz Hub'],
     source: 'Samacheer Kalvi textbooks',
@@ -352,6 +352,9 @@ const IC = {
   spark: '<circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/>',
   mic: '<path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/>',
   flag: '<path d="M4 21V4h9l1 2h6v9h-7l-1-2H4"/>',
+  calendar: '<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4M8 15h3"/>',
+  clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  pen: '<path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/>',
 };
 function svg(paths, cls) {
   return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"${cls ? ` class="${cls}"` : ''}>${paths}</svg>`;
@@ -371,19 +374,28 @@ function page(id, hub, count) {
     })) },
   ];
 
-  const verbs = ['Learn', 'Ask', 'Practise', 'Fix', 'Challenge', 'Climb']
-    .map((v) => `<span><b>${v}</b></span>`).join('');
+  // Per-exam shape of the preparation cycle.
+  const MAINS = id === 'upsc' || id === 'tnpsc';
+  const SCHOOL = id === 'ncert' || id === 'samacheer';
+  const TEST_LINE = SCHOOL
+    ? 'Chapter tests in the exam pattern, timed, with a clear score.'
+    : "Timed mocks in the real exam pattern, with an All-India Rank so you know where you stand.";
 
-  const loopNodes = [
-    ['n1', IC.book, 'Textbook', `A cited explanation from ${hub.source}.`],
-    ['n2', IC.check, 'PYQ', 'A real past question on that exact idea.'],
-    ['n3', IC.target, 'Mistake', "Get it wrong? It's saved, not forgotten."],
-    ['n4', IC.loop, 'Revision', 'It returns on a spaced schedule until it sticks.'],
-    ['n5', IC.star, 'XP', 'Every correct answer counts toward your score.'],
-    ['n6', IC.users, 'Quiz Rooms', 'Your XP feeds a live match against friends.'],
-  ].map(([c, ic, h, p], i, arr) => `      <div class="node">
-        <span class="nt ${c}" aria-hidden="true">${svg(ic)}</span>
-        <h4>${h}</h4><p>${p}</p>${i < arr.length - 1 ? '\n        <span class="lead" aria-hidden="true">→</span>' : ''}
+  const arc = ['Plan', 'Learn', 'Practise', 'Test', ...(MAINS ? ['Write'] : []), 'Fix', 'Compete'];
+  const verbs = arc.map((v) => `<span><b>${v}</b></span>`).join('');
+
+  const beats = [
+    [IC.calendar, 'Plan', 'A study plan built from your syllabus, your exam date and your weak areas.'],
+    [IC.book, 'Learn', 'Daily Dose lessons cited to your books — or blueprint any topic into its own lesson path.'],
+    [IC.check, 'Practise', 'Topic quizzes, verified PYQs and 10-question sprints, tagged to what the exam actually asks.'],
+    [IC.clock, 'Test', TEST_LINE],
+    ...(MAINS ? [[IC.pen, 'Write', 'Draft a Mains answer and Miga marks it on the official rubric — structure, content, the lot.']] : []),
+    [IC.loop, 'Fix', 'Every wrong answer — from a quiz, a PYQ or a mock — comes back as spaced revision until it sticks.'],
+    [IC.users, 'Compete', "Your XP feeds live Quiz Rooms with friends and your state's leaderboard."],
+  ];
+  const loopNodes = beats.map(([ic, h, p], i) => `      <div class="node">
+        <span class="nt n${(i % 7) + 1}" aria-hidden="true">${svg(ic)}</span>
+        <h4>${h}</h4><p>${p}</p>${i < beats.length - 1 ? '\n        <span class="lead" aria-hidden="true">→</span>' : ''}
       </div>`).join('\n');
 
   const opts = hub.liveQ.opts.map((o, i) => `        <button class="opt" data-i="${i}">${esc(o)}</button>`).join('\n');
@@ -477,8 +489,8 @@ function page(id, hub, count) {
   <section class="wrap sec">
     <div class="sec-head">
       <span class="kick">The part that matters</span>
-      <h2>Nothing you study is thrown away.</h2>
-      <p>Your textbook explanation shouldn't disappear after you read it. It should lead somewhere. In MindGains, every step feeds the next.</p>
+      <h2>Your whole preparation, in one loop.</h2>
+      <p>From your first study plan to your last revision before the exam, every part of MindGains feeds the next — so nothing you study is ever wasted.</p>
     </div>
     <div class="loop">
 ${loopNodes}
