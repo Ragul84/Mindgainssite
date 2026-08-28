@@ -7,3 +7,6 @@ node_modules/
 
 # Terminal Paste Image folder
 .cp-images/
+
+# Wrangler local state
+.wrangler/

@@ -15,7 +15,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
@@ -26,7 +26,7 @@
   <style>
     :root{
       --teal:#00d4c7;--teal-600:#0ba79e;--teal-700:#087c75;
-      --bg:#fbfcfd;--surface:#ffffff;
+      --bg:#fbfcfd;--surface:#ffffff;--panel:#f3f8f8;
       --ink:#0d1b2a;--ink-2:#475569;--ink-3:#8a97a8;
       --line:rgba(13,27,42,.08);--line-2:rgba(13,27,42,.05);
       --ring:rgba(0,212,199,.55);
@@ -36,177 +36,402 @@
       --ease:cubic-bezier(.22,1,.36,1);
     }
     *{box-sizing:border-box}
-    html{-webkit-text-size-adjust:100%}
+    html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
     body{margin:0;background:var(--bg);color:var(--ink);
       font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-      font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+      font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
     a{color:inherit;text-decoration:none}
+    button{font:inherit;cursor:pointer}
     .wrap{width:min(1040px,calc(100% - 44px));margin:0 auto}
-
-    /* header */
-    header{position:sticky;top:0;z-index:20;background:rgba(251,252,253,.8);backdrop-filter:blur(14px);
-      border-bottom:1px solid var(--line-2)}
-    .hin{height:64px;display:flex;align-items:center;justify-content:space-between}
-    .brand{font-family:Poppins,sans-serif;font-weight:700;font-size:19px;letter-spacing:-.02em;display:flex;align-items:center;gap:8px}
-    .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px rgba(0,212,199,.16)}
-    .hnav{display:flex;align-items:center;gap:20px}
-    .hnav .lnk{font-size:14px;font-weight:500;color:var(--ink-2)}
-    .hnav .lnk:hover{color:var(--ink)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;height:40px;padding:0 18px;border-radius:11px;
-      font-family:Inter,sans-serif;font-weight:600;font-size:14px;letter-spacing:-.01em;
+    .kick{font-size:12px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--teal-700)}
+    h1,h2{font-family:Poppins,sans-serif;letter-spacing:-.035em;margin:0;text-wrap:balance}
+    .btn{display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 26px;border-radius:13px;
+      font-family:Inter,sans-serif;font-weight:600;font-size:15px;letter-spacing:-.01em;
       background:var(--teal-600);color:#fff;box-shadow:var(--sh-btn);transition:transform .18s var(--ease),filter .18s var(--ease)}
     .btn:hover{transform:translateY(-1px);filter:saturate(1.08) brightness(1.03)}
-    .btn:active{transform:translateY(0)}
+    .btn.sm{height:40px;padding:0 18px;font-size:14px;border-radius:11px}
+
+    /* header */
+    header{position:sticky;top:0;z-index:30;background:linear-gradient(180deg,rgba(251,252,253,.92),rgba(251,252,253,.7));
+      backdrop-filter:saturate(1.4) blur(16px);border-bottom:1px solid var(--line-2)}
+    .hin{height:62px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-family:Poppins,sans-serif;font-weight:700;font-size:18.5px;letter-spacing:-.03em;display:flex;align-items:center;gap:9px;color:var(--ink)}
+    .brand .mk{width:26px;height:26px;border-radius:9px;display:grid;place-items:center;flex-shrink:0;
+      background:linear-gradient(150deg,#12d9c9,#0ba79e);box-shadow:0 3px 10px -2px rgba(11,167,158,.55),inset 0 -2px 5px rgba(0,0,0,.18)}
+    .brand .mk svg{width:14px;height:14px;color:#fff}
+    .brand b{font-weight:700}.brand b span{color:var(--teal-700)}
+    .hnav{display:flex;align-items:center;gap:6px}
+    .hnav .lnk{font-size:13.5px;font-weight:600;color:var(--ink-2);padding:8px 12px;border-radius:9px;position:relative;transition:color .16s var(--ease),background .16s var(--ease)}
+    .hnav .lnk:hover{color:var(--ink);background:rgba(13,27,42,.04)}
+    .hnav .btn.sm{margin-left:6px;background:linear-gradient(150deg,#12d9c9,#0ba79e);box-shadow:0 4px 14px -4px rgba(11,167,158,.6),inset 0 -2px 5px rgba(0,0,0,.12)}
     @media(max-width:520px){.hnav .lnk{display:none}}
 
-    /* intro */
-    .intro{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:36px 0 24px}
-    .intro h1{font-family:Poppins,sans-serif;font-weight:700;font-size:clamp(30px,4.6vw,44px);line-height:1.06;
-      letter-spacing:-.035em;margin:0}
-    .intro p{margin:12px 0 0;color:var(--ink-2);font-size:clamp(15px,1.8vw,17px);max-width:48ch}
-    .intro .meta{color:var(--ink-3);font-size:13px;font-weight:500;white-space:nowrap;padding-bottom:4px}
+    /* section rhythm */
+    section{padding:66px 0}
+    section .kick{display:block;margin-bottom:14px}
+    section h2{font-size:clamp(26px,4vw,40px);line-height:1.06}
+    section > .wrap > .lead{margin:14px 0 0;color:var(--ink-2);font-size:clamp(15px,1.9vw,17.5px);max-width:54ch}
 
-    /* grid */
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-top:8px}
-    @media(max-width:860px){.grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:560px){.grid{grid-template-columns:1fr}}
-    .card{position:relative;display:flex;flex-direction:column;gap:12px;background:var(--surface);
-      border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--sh-card);
-      transition:transform .22s var(--ease),box-shadow .22s var(--ease),border-color .22s var(--ease);
-      opacity:0;transform:translateY(12px);animation:in .55s var(--ease) forwards}
-    .card:nth-child(1){animation-delay:.03s}.card:nth-child(2){animation-delay:.07s}.card:nth-child(3){animation-delay:.11s}
-    .card:nth-child(4){animation-delay:.15s}.card:nth-child(5){animation-delay:.19s}.card:nth-child(6){animation-delay:.23s}
-    @keyframes in{to{opacity:1;transform:translateY(0)}}
-    .card:hover{transform:translateY(-4px);box-shadow:var(--sh-card-h);border-color:var(--ring)}
-    .tile{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;color:#fff;
-      box-shadow:inset 0 -3px 8px rgba(0,0,0,.16), 0 8px 18px -6px rgba(13,27,42,.28)}
-    .tile svg{width:26px;height:26px}
+    /* hero — one job: establish the brand. Left copy + right scene, lots of air. */
+    .hero{min-height:calc(100svh - 62px);display:flex;align-items:center;padding:16px 0}
+    @media(max-width:940px){.hero{min-height:0;padding:26px 0 10px}}
+    .herowrap{width:min(1080px,calc(100% - 44px));margin:0 auto;display:grid;
+      grid-template-columns:minmax(0,1fr) clamp(300px,38vw,440px);gap:clamp(24px,5vw,64px);align-items:center}
+    @media(max-width:940px){.herowrap{grid-template-columns:1fr;gap:14px;max-width:560px;text-align:center}}
+    .herocopy{min-width:0}
+    .hero h1{font-size:clamp(38px,5.6vw,62px);line-height:1.02;font-weight:800;letter-spacing:-.04em}
+    .hero .promise{margin:20px 0 0;color:var(--ink-2);font-size:clamp(15.5px,1.7vw,18px);max-width:40ch;line-height:1.55}
+    @media(max-width:940px){.hero .promise{margin-inline:auto}}
+    .hero-cta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+    @media(max-width:940px){.hero-cta{justify-content:center}}
+    .hero-cta .beta{font-size:12.5px;color:var(--ink-3);font-weight:500}
+
+    /* hero scene: Miga + floating plan art, chips overlapping for depth */
+    .heroscene{position:relative;display:flex;justify-content:center;align-items:center}
+    .heroscene .glow{position:absolute;inset:0;margin:auto;width:82%;aspect-ratio:1;border-radius:50%;
+      background:radial-gradient(circle,rgba(0,212,199,.2),transparent 66%);filter:blur(10px)}
+    .heroscene img{position:relative;width:100%;max-width:420px;max-height:min(70vh,540px);height:auto;object-fit:contain;
+      filter:drop-shadow(0 28px 40px rgba(13,27,42,.16));animation:mfloat 6.5s ease-in-out infinite}
+    @keyframes mfloat{0%,100%{transform:translateY(0) rotate(-.4deg)}50%{transform:translateY(-12px) rotate(.8deg)}}
+    .heroscene .chip{position:absolute;font-family:Poppins,sans-serif;font-weight:600;font-size:12.5px;
+      background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 13px;
+      box-shadow:0 10px 24px -8px rgba(13,27,42,.28);white-space:nowrap}
+    .heroscene .chip.streak{top:12%;left:-2%;color:#e0812b;animation:cfloat 5s ease-in-out infinite}
+    .heroscene .chip.xp{bottom:14%;right:-4%;color:var(--teal-700);animation:cfloat 5s ease-in-out .6s infinite}
+    @keyframes cfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    @media(max-width:940px){.heroscene{order:-1}.heroscene img{max-width:min(66vw,300px)}
+      .heroscene .chip.streak{left:2%}.heroscene .chip.xp{right:2%}}
+
+    /* exams */
+    .exgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+    @media(max-width:820px){.exgrid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:520px){.exgrid{grid-template-columns:1fr}}
+    .ex{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);
+      border-radius:16px;padding:16px 18px;box-shadow:var(--sh-card);
+      transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s var(--ease)}
+    .ex:hover{transform:translateY(-3px);box-shadow:var(--sh-card-h);border-color:var(--ring)}
+    .ex .tile{width:42px;height:42px;border-radius:12px;flex-shrink:0;display:grid;place-items:center;color:#fff;
+      box-shadow:inset 0 -3px 7px rgba(0,0,0,.15)}
+    .ex .tile svg{width:21px;height:21px}
+    .ex b{font-family:Poppins,sans-serif;font-weight:600;font-size:16px;letter-spacing:-.01em;display:block}
+    .ex span{font-size:12.5px;color:var(--ink-3)}
+    .ex .go{margin-left:auto;color:var(--ink-3);transition:transform .2s var(--ease),color .2s var(--ease)}
+    .ex:hover .go{transform:translateX(3px);color:var(--teal-600)}
     .t-upsc{background:linear-gradient(150deg,#6d63ff,#8a7bff)}
     .t-tnpsc{background:linear-gradient(150deg,#0bb7a8,#22d3c4)}
     .t-ssc{background:linear-gradient(150deg,#8b5cf6,#a78bfa)}
     .t-rrb{background:linear-gradient(150deg,#3b82f6,#60a5fa)}
     .t-ncert{background:linear-gradient(150deg,#10b981,#34d399)}
     .t-samacheer{background:linear-gradient(150deg,#f43f5e,#fb7185)}
-    .card h2{font-family:Poppins,sans-serif;font-weight:600;font-size:18px;letter-spacing:-.02em;margin:0}
-    .card .scope{color:var(--ink-2);font-size:13.5px;line-height:1.5;flex:1}
-    .card .foot{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid var(--line-2)}
-    .card .count{font-size:12.5px;font-weight:600;color:var(--teal-700)}
-    .card .arrow{color:var(--ink-3);transition:transform .22s var(--ease),color .22s var(--ease)}
-    .card:hover .arrow{transform:translateX(4px);color:var(--teal-600)}
 
-    /* free line */
-    .freeline{padding:22px 0 0;font-size:14.5px;color:var(--ink-2)}
-    .freeline a{font-weight:600;color:var(--teal-700)}
-    .freeline a:hover{text-decoration:underline}
+    /* the loop ecosystem */
+    .loopsec{background:var(--panel)}
+    .loopwrap{margin-top:30px;display:flex;justify-content:center}
+    .loopwrap svg{width:min(560px,100%);height:auto;overflow:visible}
+    .lnode-bg{fill:var(--surface);stroke:var(--line);stroke-width:1.5}
+    .lnode-t{font:600 13px Poppins,sans-serif;fill:var(--ink);letter-spacing:-.01em}
+    .lnode-s{font:400 10.5px Inter,sans-serif;fill:var(--ink-3)}
+    .lpath{fill:none;stroke:var(--ring);stroke-width:2;stroke-dasharray:5 6}
+    .ldot{stroke:none}
+    .d1{fill:#6d63ff}.d2{fill:#0bb7a8}.d3{fill:#3b82f6}.d4{fill:#f59e0b}.d5{fill:#f43f5e}.d6{fill:#10b981}
+    #spark circle{filter:drop-shadow(0 4px 10px rgba(13,27,42,.2))}
+    .loopline{margin:26px 0 0;text-align:center;font-family:Poppins,sans-serif;font-weight:600;
+      font-size:clamp(15px,2vw,18px);color:var(--teal-700);letter-spacing:-.02em}
 
-    .why{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:44px 0 0}
-    @media(max-width:720px){.why{grid-template-columns:1fr;gap:16px}}
-    .why h3{font-family:Poppins,sans-serif;font-weight:600;font-size:15px;letter-spacing:-.01em;margin:0 0 4px;color:var(--ink)}
-    .why h3::before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--teal);margin-right:9px;vertical-align:middle}
-    .why p{margin:0;font-size:13.5px;color:var(--ink-2);line-height:1.55}
+    /* ai differentiator */
+    .aiwrap{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center;margin-top:28px}
+    @media(max-width:820px){.aiwrap{grid-template-columns:1fr;gap:8px}}
+    .aiart{display:flex;justify-content:center}
+    .aiart img{width:100%;max-width:440px;height:auto;filter:drop-shadow(0 22px 34px rgba(13,27,42,.16))}
+    @media(max-width:820px){.aiart img{max-width:300px}}
+    .demo{margin-top:0;max-width:460px;background:var(--surface);border:1px solid var(--line);
+      border-radius:20px;padding:20px;box-shadow:var(--sh-card-h)}
+    .demo .q{background:#eafaf8;border-radius:14px;border-top-right-radius:4px;padding:11px 14px;font-size:13.5px;
+      font-weight:500;margin-left:auto;max-width:82%}
+    .demo .a{background:var(--panel);border-radius:14px;border-top-left-radius:4px;padding:12px 14px;font-size:13.5px;
+      color:var(--ink-2);margin-top:10px;max-width:88%}
+    .demo .src{margin-top:12px;border:1px solid var(--line-2);border-radius:12px;padding:11px 13px;background:#fbfdfd}
+    .demo .src .chk{font-size:11px;font-weight:700;color:#16a34a;letter-spacing:.03em}
+    .demo .src b{display:block;font-family:Poppins,sans-serif;font-weight:600;font-size:13px;margin-top:3px}
+    .demo .src span{font-size:12px;color:var(--ink-3)}
+    .demo .follow{margin-top:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .demo .follow em{font-style:normal;font-size:13px;color:var(--ink-2)}
+    .demo .follow a{font-size:12.5px;font-weight:600;color:#fff;background:var(--teal-600);border-radius:10px;padding:7px 12px}
+
+    /* daily dose */
+    .dailysec{background:var(--panel)}
+    .dailywrap{margin-top:28px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+    @media(max-width:680px){.dailywrap{grid-template-columns:1fr}}
+    .phone{width:250px;border:1px solid var(--line);border-radius:26px;background:var(--surface);
+      padding:16px;box-shadow:var(--sh-card-h);justify-self:center}
+    .phone .pt{font-size:10.5px;font-weight:700;color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase}
+    .phone h3{font-family:Poppins,sans-serif;font-weight:600;font-size:17px;letter-spacing:-.02em;margin:8px 0 2px}
+    .phone .mins{font-size:12px;color:var(--ink-3)}
+    .phone .flow{display:flex;gap:6px;margin-top:14px;flex-wrap:wrap}
+    .phone .flow span{font-size:11px;font-weight:600;color:var(--teal-700);background:#eafaf8;border-radius:8px;padding:5px 9px}
+    .phone .xp{margin-top:14px;padding-top:12px;border-top:1px solid var(--line-2);font-size:12px;font-weight:600;color:var(--ink-3)}
+    .phone .xp b{color:var(--teal-700)}
+
+    /* miga */
+    .migasec{text-align:center}
+    .migasec h2{max-width:none}
+    .migasec .sub{font-family:Poppins,sans-serif;font-weight:600;font-size:clamp(15px,2.2vw,19px);
+      color:var(--ink-2);margin:10px auto 0;letter-spacing:-.02em;max-width:30ch}
+    .langs{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:24px auto 4px;max-width:640px}
+    .langs span{font-family:Poppins,sans-serif;font-weight:600;font-size:14px;color:var(--teal-700);
+      background:#eafaf8;border:1px solid var(--ring);border-radius:999px;padding:9px 18px;box-shadow:var(--sh-card);
+      transition:transform .2s var(--ease)}
+    .langs span:nth-child(2n){transform:translateY(-7px)}
+    .langs span:nth-child(3n){transform:translateY(5px)}
+    .langs span:hover{transform:translateY(-3px) scale(1.04)}
+    .migastage{position:relative;margin:30px auto 0;max-width:520px;min-height:340px;display:flex;align-items:center;justify-content:center}
+    .migastage img{width:290px;max-width:80%;height:auto;filter:drop-shadow(0 26px 40px rgba(13,27,42,.2))}
+    .bub{position:absolute;background:var(--surface);border:1px solid var(--line);border-radius:14px;
+      padding:9px 13px;font-size:12.5px;font-weight:500;box-shadow:var(--sh-card);white-space:nowrap}
+    .bub.b1{top:6%;left:2%}.bub.b2{top:20%;right:0}.bub.b3{bottom:16%;left:0}.bub.b4{bottom:2%;right:6%}
+    @media(max-width:560px){.bub{position:static;display:inline-block;margin:5px;white-space:normal}
+      .migastage{flex-wrap:wrap;min-height:0}}
+    .migasec .talk{margin:26px auto 0;color:var(--ink-2);font-size:15px;max-width:44ch}
+
+    /* social */
+    .socialsec{background:var(--panel)}
+    .room{margin:28px auto 0;max-width:360px;background:var(--surface);border:1px solid var(--line);
+      border-radius:20px;padding:20px;box-shadow:var(--sh-card-h)}
+    .room .live{font-size:11px;font-weight:700;color:#e5484d;letter-spacing:.04em}
+    .room .live::before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:#e5484d;margin-right:6px;vertical-align:middle}
+    .room h3{font-family:Poppins,sans-serif;font-weight:600;font-size:16px;margin:6px 0 2px}
+    .room .meta{font-size:11.5px;color:var(--ink-3);margin-bottom:14px}
+    .room .lr{display:flex;align-items:center;gap:10px;padding:9px 11px;border-radius:11px;background:var(--panel);
+      font-size:13px;font-weight:500;margin-top:6px;transition:background .3s var(--ease),transform .3s var(--ease)}
+    .room .lr.you{background:#eafaf8;border:1px solid var(--ring)}
+    .room .lr .medal{width:20px;text-align:center}
+    .room .lr .sc{margin-left:auto;font-weight:600;color:var(--teal-700);font-variant-numeric:tabular-nums}
+    .room .lr .up{color:#16a34a;font-size:11px;margin-left:4px}
+    .room .ans{width:100%;margin-top:14px;height:42px;border:0;border-radius:12px;background:var(--teal-600);
+      color:#fff;font-weight:600;font-size:13.5px;box-shadow:var(--sh-btn)}
+    .room .ans:disabled{opacity:.55}
+    .room .cel{text-align:center;margin-top:12px;font-size:13px;font-weight:600;color:var(--teal-700);display:none}
+    .room .cel.show{display:block}
+    .roomacts{margin:18px auto 0;text-align:center;font-size:13px;color:var(--ink-3)}
+    .roomacts b{color:var(--ink-2)}
+
+    /* brand statement */
+    .brandsec{text-align:center;padding:96px 0}
+    .brandsec h2{font-size:clamp(30px,5.4vw,52px);line-height:1.04;font-weight:800}
+    .brandsec p{margin:18px 0 0;color:var(--ink-2);font-size:15.5px}
 
     /* app band */
-    .band{margin:40px 0 0;background:linear-gradient(120deg,#f0fbfa,#eef7ff);border:1px solid var(--line-2);
-      border-radius:24px;padding:32px;display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center}
-    @media(max-width:640px){.band{grid-template-columns:1fr}}
-    .band h2{font-family:Poppins,sans-serif;font-weight:600;font-size:clamp(19px,2.4vw,24px);letter-spacing:-.02em;margin:0}
-    .band p{margin:8px 0 0;color:var(--ink-2);font-size:14.5px;max-width:52ch}
-    .band .btn{height:44px;padding:0 22px;font-size:14.5px}
+    .band{background:linear-gradient(120deg,#f0fbfa,#eef7ff);border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2)}
+    .band .wrap{padding:52px 22px;text-align:center}
+    .band .kick{display:block;margin-bottom:12px}
+    .band h2{font-size:clamp(24px,3.4vw,36px);font-weight:800}
+    .band p{margin:14px auto 24px;color:var(--ink-2);font-size:15px;max-width:46ch}
+    .band small{display:block;margin-top:12px;color:var(--ink-3);font-size:12px}
 
     /* footer */
-    footer{margin-top:52px;border-top:1px solid var(--line-2)}
-    .fin{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;padding:26px 0 38px;font-size:13px;color:var(--ink-3)}
-    .fin .fb{font-family:Poppins,sans-serif;font-weight:700;color:var(--ink);letter-spacing:-.02em}
-    .fin nav{display:flex;flex-wrap:wrap;gap:6px 16px}
-    .fin nav a:hover{color:var(--ink-2)}
-    .fin .cc{margin-left:auto}
-    @media(max-width:560px){.fin .cc{margin-left:0;width:100%}}
+    footer .fin{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;padding:26px 0 40px;font-size:13px;color:var(--ink-3)}
+    footer .fb{font-family:Poppins,sans-serif;font-weight:700;color:var(--ink);letter-spacing:-.02em}
+    footer nav{display:flex;flex-wrap:wrap;gap:6px 16px}
+    footer nav a:hover{color:var(--ink-2)}
+    footer .cc{margin-left:auto}
+    @media(max-width:560px){footer .cc{margin-left:0;width:100%}}
 
     :focus-visible{outline:2px solid var(--teal-600);outline-offset:3px;border-radius:8px}
-    @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.card{opacity:1;transform:none}}
+    @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto}}
   </style>
 </head>
 <body>
 
 <header>
   <div class="wrap hin">
-    <a class="brand" href="/"><span class="dot" aria-hidden="true"></span>MindGains</a>
+    <a class="brand" href="/">
+      <span class="mk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 3 14h7l-1 8 11-13h-7z"/></svg></span>
+      <b>Mind<span>Gains</span></b>
+    </a>
     <div class="hnav">
       <a class="lnk" href="/quiz/">Quiz Hub</a>
       <a class="lnk" href="/editorial/">Editorial</a>
-      <a class="btn" href="/get/">Get the app</a>
+      <a class="btn sm" href="/get/">Get the app</a>
     </div>
   </div>
 </header>
 
-<main class="wrap">
-  <div class="intro">
-    <div>
-      <h1>Choose your exam</h1>
-      <p>Pick your exam and start free — a daily dose, verified previous-year questions and topic practice built for it.</p>
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="herowrap">
+     <div class="herocopy">
+      <span class="kick">Built for Indian learners</span>
+      <h1>Make learning<br>a daily habit.</h1>
+      <p class="promise">Your syllabus, textbooks, PYQs and mistakes — connected into one learning system that gets smarter with you.</p>
+      <div class="hero-cta">
+        <a class="btn" href="/get/">Get early access</a>
+        <span class="beta">Android · Private beta</span>
+      </div>
+     </div>
+     <div class="heroscene">
+       <span class="glow" aria-hidden="true"></span>
+       <picture>
+         <source srcset="/assets/miga/miga-plan.webp" type="image/webp">
+         <img src="/assets/miga/miga-plan.png" alt="Miga pointing at today's study plan" width="420" fetchpriority="high">
+       </picture>
+       <span class="chip streak" aria-hidden="true">🔥 8&#8209;day streak</span>
+       <span class="chip xp" aria-hidden="true">+20 XP</span>
+     </div>
     </div>
-    <span class="meta">6 exams · 300+ free topics</span>
-  </div>
+  </section>
 
-  <div class="grid">
-    <a class="card" href="/upsc/">
-      <span class="tile t-upsc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M4 21V10l8-5 8 5v11M9 21v-6h6v6"/></svg></span>
-      <h2>UPSC</h2>
-      <span class="scope">Civil Services — Prelims &amp; Mains foundation. Polity, History, Economy, Geography, Environment.</span>
-      <span class="foot"><span class="count">62 topics</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-    </a>
+  <!-- START WITH YOUR EXAM -->
+  <section>
+    <div class="wrap">
+      <span class="kick">Choose your track</span>
+      <h2>Start with your exam.</h2>
+      <p class="lead">MindGains adapts the experience around what you're preparing for.</p>
+      <div class="exgrid">
+        <a class="ex" href="/upsc/"><span class="tile t-upsc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M4 21V10l8-5 8 5v11M9 21v-6h6v6"/></svg></span><span><b>UPSC</b><span>Civil Services</span></span><span class="go" aria-hidden="true">→</span></a>
+        <a class="ex" href="/tnpsc/"><span class="tile t-tnpsc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 21h10M12 6l-7 2 3 5a3 3 0 0 1-6 0M12 6l7 2-3 5a3 3 0 0 0 6 0"/></svg></span><span><b>TNPSC</b><span>Groups 1 · 2 · 2A · 4 · VAO</span></span><span class="go" aria-hidden="true">→</span></a>
+        <a class="ex" href="/ssc/"><span class="tile t-ssc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></span><span><b>SSC</b><span>CGL · CHSL · MTS · GD</span></span><span class="go" aria-hidden="true">→</span></a>
+        <a class="ex" href="/rrb/"><span class="tile t-rrb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 10h14M9 21l-2-3M15 21l2-3M9.5 13.5h.01M14.5 13.5h.01"/></svg></span><span><b>RRB / Railway</b><span>NTPC · Group D · ALP</span></span><span class="go" aria-hidden="true">→</span></a>
+        <a class="ex" href="/ncert/"><span class="tile t-ncert" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19a2 2 0 0 0 2 2h13M9 7h6"/></svg></span><span><b>NCERT Foundation</b><span>Class 6–12</span></span><span class="go" aria-hidden="true">→</span></a>
+        <a class="ex" href="/samacheer/"><span class="tile t-samacheer" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9 12 5 2 9l10 4 10-4Z"/><path d="M6 11v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5M22 9v5"/></svg></span><span><b>Samacheer Kalvi</b><span>TN Board · Class 6–12</span></span><span class="go" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
 
-    <a class="card" href="/tnpsc/">
-      <span class="tile t-tnpsc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 21h10M12 6l-7 2 3 5a3 3 0 0 1-6 0M12 6l7 2-3 5a3 3 0 0 0 6 0"/></svg></span>
-      <h2>TNPSC</h2>
-      <span class="scope">Group 1, 2, 2A, 4 &amp; VAO. Tamil, History, Polity, General Studies, Aptitude.</span>
-      <span class="foot"><span class="count">84 topics</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-    </a>
+  <!-- THE CORE STORY -->
+  <section class="loopsec">
+    <div class="wrap">
+      <span class="kick">The MindGains system</span>
+      <h2>Nothing you study is wasted.</h2>
+      <p class="lead">MindGains remembers what you learn, what you practise, where you struggle and what should come back next.</p>
+      <div class="loopwrap">
+        <svg viewBox="0 0 520 400" role="img" aria-label="The MindGains learning loop: Plan, Learn, Practise, Test, Fix, Compete, and back to Plan — with Miga travelling through every stage.">
+          <path id="loopPath" class="lpath" d="M260 44 L440 148 L440 252 L260 356 L80 252 L80 148 Z"/>
+          <g class="loopnode" transform="translate(260 44)"><rect class="lnode-bg" x="-64" y="-27" width="128" height="54" rx="15"/><circle class="ldot d1" cx="-44" cy="0" r="4"/><text class="lnode-t" text-anchor="middle" x="8" y="-3">Plan</text><text class="lnode-s" text-anchor="middle" x="8" y="13">what matters now</text></g>
+          <g class="loopnode" transform="translate(440 148)"><rect class="lnode-bg" x="-64" y="-27" width="128" height="54" rx="15"/><circle class="ldot d2" cx="-44" cy="0" r="4"/><text class="lnode-t" text-anchor="middle" x="8" y="-3">Learn</text><text class="lnode-s" text-anchor="middle" x="8" y="13">Daily Dose</text></g>
+          <g class="loopnode" transform="translate(440 252)"><rect class="lnode-bg" x="-64" y="-27" width="128" height="54" rx="15"/><circle class="ldot d3" cx="-44" cy="0" r="4"/><text class="lnode-t" text-anchor="middle" x="8" y="-3">Practise</text><text class="lnode-s" text-anchor="middle" x="8" y="13">test the concept</text></g>
+          <g class="loopnode" transform="translate(260 356)"><rect class="lnode-bg" x="-64" y="-27" width="128" height="54" rx="15"/><circle class="ldot d4" cx="-44" cy="0" r="4"/><text class="lnode-t" text-anchor="middle" x="8" y="-3">Test</text><text class="lnode-s" text-anchor="middle" x="8" y="13">PYQs + mocks</text></g>
+          <g class="loopnode" transform="translate(80 252)"><rect class="lnode-bg" x="-64" y="-27" width="128" height="54" rx="15"/><circle class="ldot d5" cx="-44" cy="0" r="4"/><text class="lnode-t" text-anchor="middle" x="8" y="-3">Fix</text><text class="lnode-s" text-anchor="middle" x="8" y="13">mistakes return</text></g>
+          <g class="loopnode" transform="translate(80 148)"><rect class="lnode-bg" x="-64" y="-27" width="128" height="54" rx="15"/><circle class="ldot d6" cx="-44" cy="0" r="4"/><text class="lnode-t" text-anchor="middle" x="8" y="-3">Compete</text><text class="lnode-s" text-anchor="middle" x="8" y="13">friends + rank</text></g>
+          <g id="spark">
+            <animateMotion dur="17s" repeatCount="indefinite"><mpath href="#loopPath"/></animateMotion>
+            <circle r="21" fill="#fff" stroke="rgba(0,212,199,.55)" stroke-width="2"/>
+            <image href="/assets/miga/miga-face.webp" x="-19" y="-19" width="38" height="38"/>
+          </g>
+        </svg>
+      </div>
+      <p class="loopline">Every interaction makes the next one smarter — and Miga travels with you through all of it.</p>
+    </div>
+  </section>
 
-    <a class="card" href="/ssc/">
-      <span class="tile t-ssc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></span>
-      <h2>SSC</h2>
-      <span class="scope">CGL, CHSL, MTS, CPO &amp; GD. Reasoning, Quant, English, General Awareness.</span>
-      <span class="foot"><span class="count">45 topics</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-    </a>
+  <!-- AI DIFFERENTIATOR -->
+  <section>
+    <div class="wrap">
+      <span class="kick">Textbook-aware AI</span>
+      <h2>AI that knows what you're studying.</h2>
+      <p class="lead">Miga doesn't start from the open internet and hope for the best. MindGains is textbook-aware — grounding every answer in the books and syllabus your exam is built around.</p>
+      <div class="aiwrap">
+        <div class="aiart">
+          <picture>
+            <source srcset="/assets/miga/miga-textbook.webp" type="image/webp">
+            <img src="/assets/miga/miga-textbook.png" alt="Miga drawing an answer straight from a textbook page" width="480" loading="lazy">
+          </picture>
+        </div>
+        <div class="demo">
+          <div class="q">Why are DPSPs non-justiciable?</div>
+          <div class="a">They're directions to the State, not enforceable rights — Article 37 says courts can't compel the government to follow them, though they're "fundamental in governance".</div>
+          <div class="src">
+            <span class="chk">✓ Verified source</span>
+            <b>Samacheer · Class XI · Political Science</b>
+            <span>Indian Constitution</span>
+          </div>
+          <div class="follow"><em>Want to try a PYQ on this?</em><a href="/tnpsc/polity/dpsp/">Yes, quiz me →</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <a class="card" href="/rrb/">
-      <span class="tile t-rrb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 10h14M9 21l-2-3M15 21l2-3M9.5 13.5h.01M14.5 13.5h.01"/></svg></span>
-      <h2>RRB / Railway</h2>
-      <span class="scope">NTPC, Group D &amp; ALP. Reasoning, Maths, Science and General Awareness.</span>
-      <span class="foot"><span class="count">15 topics</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-    </a>
+  <!-- DAILY LEARNING -->
+  <section class="dailysec">
+    <div class="wrap">
+      <span class="kick">Daily Dose</span>
+      <h2>There's always something worth learning today.</h2>
+      <div class="dailywrap">
+        <div class="phone">
+          <div class="pt">Today's Daily Dose</div>
+          <h3>Directive Principles</h3>
+          <div class="mins">6 min</div>
+          <div class="flow"><span>Lesson</span><span>Recall</span><span>Question</span><span>+XP</span></div>
+          <div class="xp">Streak <b>12 days</b> · +80 XP on the way</div>
+        </div>
+        <p class="lead" style="margin:0">A fresh reason to open MindGains every day — built around what you're learning and what needs work. That's how "make learning a daily habit" stops being a slogan.</p>
+      </div>
+    </div>
+  </section>
 
-    <a class="card" href="/ncert/">
-      <span class="tile t-ncert" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19a2 2 0 0 0 2 2h13M9 7h6"/></svg></span>
-      <h2>NCERT Foundation</h2>
-      <span class="scope">Class 6–12, UPSC-aligned path. Science, Maths, Social Science, History, Geography.</span>
-      <span class="foot"><span class="count">51 topics</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-    </a>
+  <!-- MIGA -->
+  <section class="migasec">
+    <div class="wrap">
+      <span class="kick">Your companion</span>
+      <h2>Meet Miga.</h2>
+      <p class="sub">Your learning companion that actually knows your preparation.</p>
+      <div class="langs" aria-label="Miga speaks your language">
+        <span>தமிழ்</span><span>हिन्दी</span><span>తెలుగు</span><span>ಕನ್ನಡ</span><span>മലയാളം</span><span>English</span>
+      </div>
+      <div class="migastage">
+        <span class="bub b1">"Explain this in Tamil."</span>
+        <span class="bub b2">"Why was my answer wrong?"</span>
+        <span class="bub b3">"Quiz me on Fundamental Rights."</span>
+        <span class="bub b4">"What should I revise today?"</span>
+        <picture>
+          <source srcset="/assets/miga/miga-companion.webp" type="image/webp">
+          <img src="/assets/miga/miga-companion.png" alt="Miga, ready to help you study" width="300">
+        </picture>
+      </div>
+      <p class="talk">Talk naturally. Ask follow-ups. Learn in your language.</p>
+    </div>
+  </section>
 
-    <a class="card" href="/samacheer/">
-      <span class="tile t-samacheer" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9 12 5 2 9l10 4 10-4Z"/><path d="M6 11v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5M22 9v5"/></svg></span>
-      <h2>Samacheer Kalvi</h2>
-      <span class="scope">Tamil Nadu board, Class 6–12, TNPSC-aligned. Tamil, Science, Maths, Social Science.</span>
-      <span class="foot"><span class="count">67 topics</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-    </a>
-  </div>
+  <!-- SOCIAL -->
+  <section class="socialsec">
+    <div class="wrap">
+      <span class="kick">With friends</span>
+      <h2>Learning is better together.</h2>
+      <p class="lead">Turn any topic into a Quiz Room. Invite your friends, challenge each other and see who tops the leaderboard.</p>
+      <div class="room" id="room">
+        <div class="live">Live</div>
+        <h3>Indian Polity ⚡</h3>
+        <div class="meta">6 friends · Question 7 / 10</div>
+        <div class="lr" id="r-arjun"><span class="medal">🥇</span> Arjun <span class="sc">6,420</span></div>
+        <div class="lr you" id="r-you"><span class="medal">🥈</span> You <span class="sc" id="you-sc">6,180</span><span class="up" id="you-up" style="display:none">↑</span></div>
+        <div class="lr" id="r-kavin"><span class="medal">🥉</span> Kavin <span class="sc">5,940</span></div>
+        <button class="ans" id="ans-btn">Answer question 7</button>
+        <div class="cel" id="cel">🎉 +200 — you're #1. Miga's proud.</div>
+      </div>
+      <p class="roomacts"><b>Create a room</b> · <b>Share with friends</b> — that's how a topic becomes a challenge.</p>
+    </div>
+  </section>
 
-  <p class="freeline">Not sure yet? <a href="/quiz/">Browse every exam in the free Quiz Hub →</a></p>
+  <!-- BRAND STATEMENT -->
+  <section class="brandsec">
+    <div class="wrap">
+      <h2>Learn today.<br>Come back stronger tomorrow.</h2>
+      <p>That's how learning becomes a habit.</p>
+    </div>
+  </section>
 
-  <div class="why">
-    <div><h3>Grounded in your books</h3><p>Every answer is cited to NCERT or Samacheer — not guessed.</p></div>
-    <div><h3>Real previous-year questions</h3><p>Verified PYQs, tagged to the topic that actually matters.</p></div>
-    <div><h3>One connected loop</h3><p>Plan, learn, practise, test, revise, compete — nothing you study is wasted.</p></div>
-  </div>
-
+  <!-- APP BAND -->
   <div class="band">
-    <div>
-      <h2>Everything for your exam, connected</h2>
-      <p>Daily Dose, verified PYQs, Miga you can call in your language, spaced revision and Quiz Rooms with friends — one loop. Private beta on Android.</p>
+    <div class="wrap">
+      <span class="kick">MindGains for Android</span>
+      <h2>Your preparation finally has a home.</h2>
+      <p>Daily learning. Textbook-aware AI. PYQs. Revision. Mock tests. Miga. Friends. One learning system.</p>
+      <a class="btn" href="/get/">Get early access</a>
+      <small>Private beta · Android</small>
     </div>
-    <a class="btn" href="/get/">Get early access</a>
   </div>
+
 </main>
 
 <footer>
@@ -228,6 +453,32 @@
     <span class="cc">© 2026 MindGains Labs Private Limited</span>
   </div>
 </footer>
+
+<script>
+  // social room
+  (function(){
+    var btn = document.getElementById('ans-btn'), cel = document.getElementById('cel');
+    var you = document.getElementById('r-you'), arjun = document.getElementById('r-arjun');
+    if(!btn) return;
+    btn.addEventListener('click', function(){
+      btn.disabled = true;
+      document.getElementById('you-sc').textContent = '6,380';
+      document.getElementById('you-up').style.display = 'inline';
+      you.querySelector('.medal').textContent = '🥇';
+      arjun.querySelector('.medal').textContent = '🥈';
+      var parent = you.parentNode;
+      parent.insertBefore(you, arjun);
+      cel.classList.add('show');
+    });
+  })();
+
+  // respect reduced motion for the SVG loop spark
+  (function(){
+    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      var s = document.getElementById('spark'); if(s) s.remove();
+    }
+  })();
+</script>
 
 </body>
 </html>
