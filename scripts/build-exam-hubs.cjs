@@ -18,8 +18,14 @@ const HUBS = {
   upsc: {
     exam: 'UPSC',
     code: 'UPSC · Civil Services — Prelims &amp; Mains',
-    title: 'UPSC preparation, connected | MindGains',
-    description: 'Textbooks, verified PYQs, Miga in your language, smart revision and Quiz Rooms with friends — one connected loop built around the UPSC syllabus. Practise free now; the Android app is coming soon.',
+    // ┌─────────────────────────────────────────────────────────────────────┐
+    // │ SEO — keyword-optimised. This block is the ONLY place page <title>  │
+    // │ and <meta description> come from. Edit deliberately; check Search   │
+    // │ Console after any change. Keep <title> ≤ ~60 chars, description     │
+    // │ ~150–160. Do not add brand fluff — lead with the query intent.     │
+    // └─────────────────────────────────────────────────────────────────────┘
+    title: 'UPSC Prelims Practice — PYQs & Topic Quizzes | MindGains',
+    description: 'Free UPSC Prelims practice: previous-year questions and topic-wise quizzes across Polity, History, Economy, Geography, Environment and CSAT. No sign-up needed.',
     h1: 'Your UPSC preparation, connected.',
     heroP: 'Textbooks, verified PYQs, Miga in your language, smart revision and competition with friends — one loop, built around the exam you’re actually preparing for.',
     quizStart: '/upsc/polity/',
@@ -66,8 +72,9 @@ const HUBS = {
   tnpsc: {
     exam: 'TNPSC',
     code: 'TNPSC · Group 1, 2, 2A, 4 &amp; VAO',
-    title: 'TNPSC preparation, connected | MindGains',
-    description: 'Textbooks, verified PYQs, Miga in Tamil, smart revision and Quiz Rooms with friends — one connected loop built around the TNPSC syllabus. Practise free now; the Android app is coming soon.',
+    // SEO — see the banner in the UPSC block above.
+    title: 'TNPSC Group 1, 2 & 4 Practice — PYQs & Quizzes | MindGains',
+    description: 'Free TNPSC practice for Group 1, 2, 2A & 4: previous-year questions and topic-wise quizzes in Tamil and English — Tamil, History, Polity, GS and Aptitude.',
     h1: 'Your TNPSC preparation, connected.',
     heroP: 'Textbooks, verified PYQs, Miga in Tamil, smart revision and competition with friends — one loop, built around the exam you’re actually preparing for.',
     quizStart: '/tnpsc/tamil/',
@@ -114,8 +121,9 @@ const HUBS = {
   ssc: {
     exam: 'SSC',
     code: 'SSC · CGL, CHSL, MTS, CPO &amp; GD',
-    title: 'SSC preparation, connected | MindGains',
-    description: 'Reasoning, quant, English and GK practice, verified PYQs, Miga in your language, smart revision and Quiz Rooms with friends — one connected loop for SSC CGL, CHSL, MTS and GD.',
+    // SEO — see the banner in the UPSC block above.
+    title: 'SSC CGL, CHSL & MTS Practice — PYQs & Mock Quizzes | MindGains',
+    description: 'Free SSC practice for CGL, CHSL, MTS, CPO and GD: previous-year questions and topic-wise mock quizzes across Reasoning, Quant, English and General Awareness.',
     h1: 'Your SSC preparation, connected.',
     heroP: 'Concepts, verified PYQs, Miga in your language, smart revision and speed rounds with friends — one loop, built around the exam you’re actually preparing for.',
     quizStart: '/ssc/quant/',
@@ -162,8 +170,9 @@ const HUBS = {
   rrb: {
     exam: 'RRB / Railway',
     code: 'RRB · NTPC, Group D &amp; ALP',
-    title: 'RRB / Railway preparation, connected | MindGains',
-    description: 'Reasoning, maths, science and general awareness practice for RRB NTPC, Group D and ALP — verified PYQs, Miga in your language, smart revision and Quiz Rooms with friends.',
+    // SEO — see the banner in the UPSC block above.
+    title: 'RRB NTPC & Group D Practice — PYQs & Mock Quizzes | MindGains',
+    description: 'Free RRB NTPC, Group D and ALP practice: previous-year questions and topic-wise mock quizzes across Maths, Reasoning, Science and General Awareness.',
     h1: 'Your RRB preparation, connected.',
     heroP: 'Concepts, verified PYQs, Miga in your language, smart revision and speed rounds with friends — one loop, built around the exam you’re actually preparing for.',
     quizStart: '/rrb/maths/',
@@ -210,8 +219,9 @@ const HUBS = {
   ncert: {
     exam: 'NCERT Foundation',
     code: 'NCERT · Class 6–12 · UPSC-aligned',
-    title: 'NCERT foundation, connected | MindGains',
-    description: 'Build a strong NCERT foundation for Class 6–12 and UPSC — cited explanations, chapter questions, Miga in your language, smart revision and Quiz Rooms with friends.',
+    // SEO — see the banner in the UPSC block above.
+    title: 'NCERT Class 6–12 MCQs — Chapter-wise Practice Quizzes | MindGains',
+    description: 'Free chapter-wise NCERT MCQ practice for Class 6 to 12: objective questions with answers across Science, Maths, Social Science, History and Geography.',
     h1: 'Your NCERT foundation, connected.',
     heroP: 'Chapter explanations, questions, Miga in your language, smart revision and quizzes with friends — one loop, built around the books your exam is actually based on.',
     quizStart: '/ncert/science/',
@@ -258,8 +268,9 @@ const HUBS = {
   samacheer: {
     exam: 'Samacheer Kalvi',
     code: 'Samacheer Kalvi · TN Board · Class 6–12',
-    title: 'Samacheer Kalvi, connected | MindGains',
-    description: 'Tamil Nadu board practice for Class 6–12, TNPSC-aligned — cited explanations, chapter questions, Miga in Tamil, smart revision and Quiz Rooms with friends.',
+    // SEO — see the banner in the UPSC block above.
+    title: 'Samacheer Kalvi Class 6–12 Questions & MCQ Quizzes | MindGains',
+    description: 'Free Samacheer Kalvi practice for Class 6 to 12: topic-wise questions and MCQ quizzes in Tamil and English — Tamil, Science, Maths and Social Science. TNPSC-aligned.',
     h1: 'Your Samacheer prep, connected.',
     heroP: 'Chapter explanations, questions, Miga in Tamil, smart revision and quizzes with friends — one loop, built around the Tamil Nadu board syllabus.',
     quizStart: '/samacheer/tamil/',
@@ -529,16 +540,6 @@ ${opts}
     </div>
   </section>
 
-  <section class="wrap sec" style="padding-bottom:44px">
-    <div class="band">
-      <div>
-        <h2>MindGains for Android</h2>
-        <p>${raw(hub.androidP)}</p>
-      </div>
-      <a class="btn" href="/get/">Get early access</a>
-    </div>
-  </section>
-
   <section class="wrap sec practice-chips">
     <div class="sec-head">
       <span class="kick">Practise free</span>
@@ -548,6 +549,16 @@ ${opts}
 ${chips}
     </div>
     <a class="btn" style="margin-top:16px" href="${attr(hub.quizHub[0])}">${raw(hub.quizHub[1])}</a>
+  </section>
+
+  <section class="wrap sec" style="padding-bottom:44px">
+    <div class="band">
+      <div>
+        <h2>MindGains for Android</h2>
+        <p>${raw(hub.androidP)}</p>
+      </div>
+      <a class="btn" href="/get/">Get early access</a>
+    </div>
   </section>
 
   <section class="wrap faq sec" style="padding-top:8px">
