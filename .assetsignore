@@ -40,3 +40,10 @@ __phase2_probe.html
 *.log
 .env
 .env.*
+
+# Wrangler + agent scratch (must not ship)
+.wrangler/
+.wrangler/**
+.cp-images/
+.cp-images/**
+home-legacy.html
