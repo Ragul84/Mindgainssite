@@ -1,260 +1,265 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Railway Quiz Practice | MindGains</title>
-<meta name="description" content="Railway quiz practice by subject. 10,754 MCQs across 15 topics." />
-<link rel="canonical" href="https://mindgains.ai/rrb/" />
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Railway Quiz Practice | MindGains" />
-<meta property="og:description" content="Railway quiz practice by subject. 10,754 MCQs across 15 topics." />
-<meta property="og:url" content="https://mindgains.ai/rrb/" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Railway Quiz Practice | MindGains" />
-<meta name="twitter:description" content="Railway quiz practice by subject. 10,754 MCQs across 15 topics." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/assets/quiz-hub.css?v=20260827_v4" />
-<link rel="icon" href="/favicon.ico" sizes="any" />
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png" />
-<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-<link rel="manifest" href="/site.webmanifest" />
-<meta name="theme-color" content="#37e0ff" />
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"MindGains","url":"https://mindgains.ai","slogan":"India's 1st Textbook-Aware AI"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mindgains.ai/"},{"@type":"ListItem","position":2,"name":"Quiz","item":"https://mindgains.ai/"},{"@type":"ListItem","position":3,"name":"Railway","item":"https://mindgains.ai/rrb/"}]}</script>
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-<style>
-@keyframes borderGlowRotate {
-  0%   { background-position: 0% 50%; box-shadow: 0 0 18px rgba(123, 227, 176, 0.45), 0 0 35px rgba(56, 189, 248, 0.25); }
-  50%  { background-position: 100% 50%; box-shadow: 0 0 30px rgba(167, 139, 250, 0.7), 0 0 55px rgba(244, 114, 182, 0.4); }
-  100% { background-position: 0% 50%; box-shadow: 0 0 18px rgba(123, 227, 176, 0.45), 0 0 35px rgba(56, 189, 248, 0.25); }
-}
-
-@keyframes dotPulseAnim {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50%      { transform: scale(1.5); opacity: 0.5; }
-}
-
-.topic-hero {
-  margin: 28px 0 24px !important;
-  padding: 40px 32px !important;
-  border-radius: 24px !important;
-  background: rgba(255, 255, 255, 0.02) !important;
-  border: 1px solid rgba(255, 255, 255, 0.09) !important;
-  backdrop-filter: blur(28px) saturate(160%) !important;
-  -webkit-backdrop-filter: blur(28px) saturate(160%) !important;
-  position: relative !important;
-  overflow: hidden !important;
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 14px !important;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.12) !important;
-}
-
-.eyebrow-chip {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  padding: 5px 14px !important;
-  border-radius: 999px !important;
-  background: rgba(123, 227, 176, 0.08) !important;
-  border: 1px solid rgba(123, 227, 176, 0.22) !important;
-  color: #7BE3B0 !important;
-  font-size: 11px !important;
-  font-weight: 700 !important;
-  letter-spacing: 2.2px !important;
-  text-transform: uppercase !important;
-  width: fit-content !important;
-}
-
-.dot-pulse {
-  width: 7px !important;
-  height: 7px !important;
-  border-radius: 50% !important;
-  background: #7BE3B0 !important;
-  animation: dotPulseAnim 2s infinite ease-in-out !important;
-}
-
-.topic-features {
-  display: flex !important;
-  align-items: center !important;
-  gap: 10px !important;
-  flex-wrap: wrap !important;
-  margin-top: 4px !important;
-}
-
-.feat-chip {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 5px !important;
-  padding: 6px 14px !important;
-  border-radius: 10px !important;
-  background: rgba(255, 255, 255, 0.04) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  color: rgba(255, 255, 255, 0.88) !important;
-  font-size: 12.5px !important;
-  font-weight: 600 !important;
-}
-
-.start-wrapper {
-  display: inline-flex !important;
-  align-items: center !important;
-  margin-top: 10px !important;
-  width: auto !important;
-}
-
-button.start, a.start {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 8px !important;
-  padding: 12px 26px !important;
-  border-radius: 999px !important;
-  background: #7BE3B0 !important;
-  background-size: auto !important;
-  border: 1px solid #7BE3B0 !important;
-  color: #07130d !important;
-  font-family: 'Inter', system-ui, sans-serif !important;
-  font-size: 14px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.2px !important;
-  cursor: pointer !important;
-  text-decoration: none !important;
-  width: auto !important;
-  max-width: 200px !important;
-  white-space: nowrap !important;
-  animation: none !important;
-  transition: transform 0.16s ease, background 0.16s ease !important;
-}
-
-button.start:hover, a.start:hover {
-  transform: translateY(-1px) !important;
-  box-shadow: none !important;
-}
-
-.exam-stmt-row {
-  display: flex !important;
-  align-items: flex-start !important;
-  gap: 14px !important;
-  margin: 12px 0 !important;
-  padding: 14px 18px !important;
-  background: rgba(255,255,255,0.035) !important;
-  border: 1px solid rgba(255,255,255,0.1) !important;
-  border-radius: 14px !important;
-  border-left: 4px solid #7BE3B0 !important;
-}
-</style>
-<link rel="stylesheet" href="/assets/mindgains-redesign.css?v=20260828_practiceidentity">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RRB NTPC &amp; Group D Practice — PYQs &amp; Mock Quizzes | MindGains</title>
+<meta name="description" content="Free RRB NTPC, Group D and ALP practice: previous-year questions and topic-wise mock quizzes across Maths, Reasoning, Science and General Awareness.">
+<link rel="canonical" href="https://mindgains.ai/rrb/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="RRB NTPC &amp; Group D Practice — PYQs &amp; Mock Quizzes | MindGains">
+<meta property="og:description" content="Free RRB NTPC, Group D and ALP practice: previous-year questions and topic-wise mock quizzes across Maths, Reasoning, Science and General Awareness.">
+<meta property="og:url" content="https://mindgains.ai/rrb/">
+<meta property="og:image" content="https://mindgains.ai/assets/icons/mindgains-logo-512.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#00d4c7">
+<link rel="stylesheet" href="/assets/exam-hubs.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mindgains.ai/"},{"@type":"ListItem","position":2,"name":"RRB / Railway","item":"https://mindgains.ai/rrb/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is this different from a normal railway exam app?","acceptedAnswer":{"@type":"Answer","text":"MindGains connects the loop: a concept leads into a real previous-year question, a wrong answer becomes spaced revision, revision earns XP, and XP feeds live Quiz Rooms with friends. Nothing you practise is wasted."}},{"@type":"Question","name":"Which RRB subjects are covered?","acceptedAnswer":{"@type":"Answer","text":"The public quizzes cover RRB Maths, Reasoning, Science and General Awareness — topic by topic, for NTPC, Group D and ALP."}},{"@type":"Question","name":"Is it free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every RRB topic quiz on the website is free with no sign-up. The Android app adds the Daily Dose, connected revision, Miga and Quiz Rooms."}}]}</script>
 </head>
 <body>
-<div class="bg"></div>
-<header class="site-nav">
-  <a class="brand" href="/"><img src="/assets/icons/mindgains-logo-192.png" alt="MindGains Logo" style="width:30px;height:30px;border-radius:9px;object-fit:cover;" /></a>
-  <nav><a href="/upsc/">UPSC</a><a href="/tnpsc/">TNPSC</a><a href="/ssc/">SSC</a><a href="/quiz/" style="color:#fff;">Quiz Hub</a><a href="/editorial/">Editorial</a><a href="/know-your-india/">Know India</a><a href="/samacheer/">Samacheer</a></nav>
-  <a class="nav-cta" href="/waitlist.html">Join Whitelist</a>
-</header>
-<main><section class="hero compact"><p class="eyebrow">Railway</p><h1>Railway Quiz Practice</h1><p>RRB NTPC, Group D, ALP and JE practice. Browse subjects and start focused practice.</p></section><section class="search-panel">
-    <label for="quiz-search">Search exams, subjects, topics</label>
-    <input id="quiz-search" type="search" autocomplete="off" placeholder="Try DPSP, photosynthesis, percentage, class 10 science" />
-    <div id="quiz-search-results" class="search-results" hidden></div>
-  </section><section><div class="grid"><a class="card" href="/rrb/general-aware/">
-    <span class="pill">Railway</span>
-    <h2>General Aware</h2>
-    <p>General Aware practice for Railway.</p>
-    <div class="meta"></div>
-  </a><a class="card" href="/rrb/maths/">
-    <span class="pill">Railway</span>
-    <h2>Mathematics</h2>
-    <p>Mathematics practice for Railway.</p>
-    <div class="meta"></div>
-  </a><a class="card" href="/rrb/polity/">
-    <span class="pill">Railway</span>
-    <h2>Polity</h2>
-    <p>Polity practice for Railway.</p>
-    <div class="meta"></div>
-  </a><a class="card" href="/rrb/reasoning/">
-    <span class="pill">Railway</span>
-    <h2>Reasoning</h2>
-    <p>Reasoning practice for Railway.</p>
-    <div class="meta"></div>
-  </a><a class="card" href="/rrb/science/">
-    <span class="pill">Railway</span>
-    <h2>Science</h2>
-    <p>Science practice for Railway.</p>
-    <div class="meta"></div>
-  </a></div></section></main>
-<script src="/assets/quiz-search.js?v=20260828_practiceidentity" defer></script>
 
-<footer style="
-  margin: 60px 20px 24px;
-  border-radius: 28px;
-  background: rgba(255,255,255,.015);
-  backdrop-filter: blur(28px) saturate(160%);
-  -webkit-backdrop-filter: blur(28px) saturate(160%);
-  box-shadow: inset 0 1px 1px rgba(255,255,255,.1);
-  position: relative;
-  overflow: hidden;
-  padding: 44px clamp(24px,5vw,56px) 28px;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  text-align: left;
-">
-  <!-- liquid glass border -->
-  <div style="position:absolute;inset:0;border-radius:28px;padding:1.4px;background:linear-gradient(180deg,rgba(255,255,255,.45) 0%,rgba(255,255,255,.15) 20%,rgba(255,255,255,0) 40%,rgba(255,255,255,0) 60%,rgba(255,255,255,.15) 80%,rgba(255,255,255,.45) 100%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;"></div>
-
-  <div style="display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:36px;max-width:1100px;margin:0 auto;width:100%;position:relative;z-index:1;">
-    <!-- Brand -->
-    <div>
-      <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;">
-        <img src="/assets/icons/mindgains-logo-192.png" alt="MindGains Logo" style="width:28px;height:28px;border-radius:8px;object-fit:cover;" />
-        <strong style="font-size:15px;color:#fff;font-weight:800;letter-spacing:-.3px;">MindGains AI</strong>
-      </div>
-      <p style="font-size:12.5px;color:rgba(255,255,255,.42);line-height:1.65;max-width:240px;margin:0 0 18px;">The AI Built for Indian Exams. Grounded in your textbooks, aligned with your curriculum.</p>
-      <span style="display:inline-flex;align-items:center;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#7BE3B0;background:rgba(123,227,176,.1);border:1px solid rgba(123,227,176,.25);padding:5px 12px;border-radius:999px;">BETA · India's 1st Textbook-Aware AI</span>
-    </div>
-
-    <!-- Exams -->
-    <div>
-      <h4 style="font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7BE3B0;margin-bottom:16px;">Exams</h4>
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;padding:0;margin:0;">
-        <li><a href="/tnpsc/" style="font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;transition:color .18s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.52)'">TNPSC Group 1, 2 &amp; 4</a></li>
-        <li><a href="/upsc/" style="font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;transition:color .18s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.52)'">UPSC CSE Prelims</a></li>
-        <li><a href="/ssc/" style="font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;transition:color .18s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.52)'">SSC &amp; Railway</a></li>
-        <li><a href="/waitlist.html" style="font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;transition:color .18s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.52)'">Join Whitelist</a></li>
-      </ul>
-    </div>
-
-    <!-- Textbooks -->
-    <div>
-      <h4 style="font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7BE3B0;margin-bottom:16px;">Textbooks</h4>
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;padding:0;margin:0;">
-        <li><a href="/samacheer/" style="font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;transition:color .18s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.52)'">Samacheer Kalvi</a></li>
-        <li><a href="/ncert/" style="font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;transition:color .18s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.52)'">NCERT Notes</a></li>
-        <li><a href="/editorial/" style="font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;transition:color .18s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.52)'">Editorial Summaries</a></li>
-        <li><a href="/daily-dose/" style="font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;transition:color .18s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.52)'">Daily Dose</a></li>
-      </ul>
-    </div>
-
-    <!-- Tools -->
-    <div>
-      <h4 style="font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7BE3B0;margin-bottom:16px;">Tools</h4>
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;padding:0;margin:0;">
-        <li><a href="/quiz/" style="font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;transition:color .18s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.52)'">Adaptive Quiz Hub</a></li>
-        <li><a href="/know-your-india/" style="font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;transition:color .18s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.52)'">Know Your India</a></li>
-        <li><a href="/study-lab/" style="font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;transition:color .18s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.52)'">Study Lab</a></li>
-        <li><a href="/misa/" style="font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;transition:color .18s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.52)'">MISA AI Tutor</a></li>
-        <li><a href="/blog/" style="font-size:13px;color:rgba(255,255,255,.52);text-decoration:none;transition:color .18s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.52)'">Blog</a></li>
-      </ul>
+<header>
+  <div class="wrap hin">
+    <a class="brand" href="/"><span class="dot" aria-hidden="true"></span>MindGains</a>
+    <div class="hnav">
+      <a class="lnk" href="/">All exams</a>
+      <a class="lnk" href="/rrb/maths/">Quizzes</a>
+      <a class="btn sm" href="/get/">Get the app</a>
     </div>
   </div>
+</header>
 
-  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:22px;border-top:1px solid rgba(255,255,255,.07);max-width:1100px;margin:24px auto 0;position:relative;z-index:1;">
-    <span style="font-size:11px;color:rgba(255,255,255,.28);">© 2026 MindGains AI · All rights reserved.</span>
-    <span style="font-size:11px;color:rgba(255,255,255,.28);">All official PYQs are property of respective government exam boards.</span>
+<main>
+
+  <section class="wrap hero">
+    <span class="kick">RRB · NTPC, Group D &amp; ALP</span>
+    <h1>Your RRB preparation, connected.</h1>
+    <p>A plan for your syllabus, concept shortcuts, verified PYQs, timed mocks with an All-India Rank, spaced revision and speed rounds with friends — one loop, built around the exam you’re actually preparing for.</p>
+    <div class="hero-actions">
+      <a class="btn" href="/rrb/maths/">Start practising free</a>
+      <a class="btn ghost" href="/get/">MindGains for Android — coming soon</a>
+    </div>
+    <div class="verbs" aria-hidden="true"><span><b>Plan</b></span><span><b>Learn</b></span><span><b>Practise</b></span><span><b>Test</b></span><span><b>Fix</b></span><span><b>Compete</b></span></div>
+  </section>
+
+  <section class="wrap sec">
+    <div class="sec-head">
+      <span class="kick">Every day</span>
+      <h2>It starts with today's dose.</h2>
+      <p>One focused lesson from the RRB / Railway syllabus, a recall card and a real question — chosen for where you are, waiting when you open the app.</p>
+    </div>
+    <div class="scene split" style="margin-top:26px">
+      <div class="dose" aria-label="Example RRB / Railway daily dose">
+        <div class="dtop"><span>RRB / Railway · Daily Dose · Day 7</span><span class="streak">🔥 6-day streak</span></div>
+        <h3>Time, Speed &amp; Distance — the ratio trick</h3>
+        <p class="sub">4-min lesson · 1 recall card · 1 question</p>
+        <div class="row">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19a2 2 0 0 0 2 2h13"/></svg></span>
+          <span class="tx">Learn <span>When time is constant, distance ∝ speed — solve trains and boats without equations</span></span>
+        </div>
+        <div class="row">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+          <span class="tx">Practise <span>RRB NTPC 2021 PYQ · two trains, relative speed and crossing time</span></span>
+        </div>
+        <div class="bar"><i></i></div>
+      </div>
+      <div>
+        <h3 style="font-family:Poppins,sans-serif;font-weight:600;font-size:19px;letter-spacing:-.02em;margin:0 0 8px">Not another feed to scroll.</h3>
+        <p style="margin:0;color:var(--ink-2);font-size:15px">The dose knows what you've done, what you got wrong, and what the exam actually asks. Miss a day and your streak reminds you — in your language.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap sec">
+    <div class="sec-head">
+      <span class="kick">The part that matters</span>
+      <h2>Your whole preparation, in one loop.</h2>
+      <p>From your first study plan to your last revision before the exam, every part of MindGains feeds the next — so nothing you study is ever wasted.</p>
+    </div>
+    <div class="loop">
+      <div class="node">
+        <span class="nt n1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4M8 15h3"/></svg></span>
+        <h4>Plan</h4><p>A study plan built from your syllabus, your exam date and your weak areas.</p>
+        <span class="lead" aria-hidden="true">→</span>
+      </div>
+      <div class="node">
+        <span class="nt n2" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19a2 2 0 0 0 2 2h13"/></svg></span>
+        <h4>Learn</h4><p>Daily Dose lessons cited to your books — or blueprint any topic into its own lesson path.</p>
+        <span class="lead" aria-hidden="true">→</span>
+      </div>
+      <div class="node">
+        <span class="nt n3" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+        <h4>Practise</h4><p>Topic quizzes, verified PYQs and 10-question sprints, tagged to what the exam actually asks.</p>
+        <span class="lead" aria-hidden="true">→</span>
+      </div>
+      <div class="node">
+        <span class="nt n4" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+        <h4>Test</h4><p>Timed mocks in the real exam pattern, with an All-India Rank so you know where you stand.</p>
+        <span class="lead" aria-hidden="true">→</span>
+      </div>
+      <div class="node">
+        <span class="nt n5" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9M3 12V6M3 12h6"/></svg></span>
+        <h4>Fix</h4><p>Every wrong answer — from a quiz, a PYQ or a mock — comes back as spaced revision until it sticks.</p>
+        <span class="lead" aria-hidden="true">→</span>
+      </div>
+      <div class="node">
+        <span class="nt n6" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3a4 4 0 0 1 0 8M8 3a4 4 0 0 0 0 8M2 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2M18 15h.5a3.5 3.5 0 0 1 3.5 3.5V21"/></svg></span>
+        <h4>Compete</h4><p>Your XP feeds live Quiz Rooms with friends and your state's leaderboard.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap sec">
+    <div class="scene split">
+      <div>
+        <span class="kick">With friends</span>
+        <h2 class="scene-h">Studying is better with competition.</h2>
+        <p class="scene-p">Create a Quiz Room on any topic. Invite your friends. See who actually knows it — live, question by question.</p>
+        <a class="btn" href="/get/">Create a Quiz Room</a>
+      </div>
+      <div class="room" aria-label="Example live Quiz Room">
+        <div class="rt"><b>Constitution Challenge ⚡</b></div>
+        <div class="rmeta">6 players · 10 questions</div>
+        <div class="lb">
+          <div class="lr me"><span class="av" style="background:#6d63ff">R</span> Ragul <span class="xp">820 XP</span></div>
+          <div class="lr"><span class="av" style="background:#f43f5e">A</span> Arun <span class="xp">760 XP</span></div>
+          <div class="lr"><span class="av" style="background:#f59e0b">N</span> Naveen <span class="xp">690 XP</span></div>
+        </div>
+        <div class="q">Question 7 / 10</div>
+        <div class="reacts" aria-hidden="true"><span>🔥</span><span>😮</span><span>😅</span><span>👏</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap sec">
+    <div class="scene split">
+      <div class="miga-card" aria-label="Asking Miga">
+        <div class="mrow"><span class="mav" aria-hidden="true"></span><span class="bubble">Relative speed कब जोड़ते हैं और कब घटाते हैं?</span></div>
+        <div class="mrow"><span class="bubble you">उलटी दिशा में चल रहे हों तो speeds जोड़ो; एक ही दिशा में हों तो घटाओ। फिर समय = कुल लंबाई ÷ relative speed।</span></div>
+        <div class="mic" aria-hidden="true">🎙️ Tap to ask out loud</div>
+        <div class="langs" aria-hidden="true"><span class="on">हिंदी</span><span>हिंदी</span><span>தமிழ்</span><span>తెలుగు</span><span>ಕನ್ನಡ</span><span>English</span></div>
+      </div>
+      <div>
+        <span class="kick">When you're stuck</span>
+        <h2 class="scene-h">Ask Miga. In your language.</h2>
+        <p class="scene-p">Say the doubt out loud and get the method, the working and a shortcut — in Hindi, Tamil, Telugu, Kannada, Malayalam or English.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap sec">
+    <div class="sec-head">
+      <span class="kick">Already live</span>
+      <h2>You don't have to wait for the app.</h2>
+      <p>The Quiz Hub is open now — free, no sign-up. Try a real RRB / Railway question:</p>
+    </div>
+    <div class="qz" style="margin-top:22px">
+      <span class="qtag">RRB · Maths · Time, Speed &amp; Distance</span>
+      <p class="qq">Two trains 120 m and 130 m long run towards each other at 40 km/h and 50 km/h. How long do they take to cross?</p>
+      <div id="qz-opts">
+        <button class="opt" data-i="0">8 seconds</button>
+        <button class="opt" data-i="1">10 seconds</button>
+        <button class="opt" data-i="2">12 seconds</button>
+        <button class="opt" data-i="3">15 seconds</button>
+      </div>
+      <div class="expl" id="qz-expl">Relative speed = 40 + 50 = 90 km/h = 25 m/s. Total length = 120 + 130 = 250 m. Time = 250 ÷ 25 = 10 seconds.</div>
+      <a class="btn next" id="qz-next" href="/rrb/maths/">Keep going in the Quiz Hub →</a>
+    </div>
+  </section>
+
+  <section class="wrap sec practice-chips">
+    <div class="sec-head">
+      <span class="kick">Practise free</span>
+      <h2>Popular RRB / Railway topics</h2>
+    </div>
+    <div class="chips" style="margin-top:18px">
+      <a href="/rrb/maths/time-work/">Time &amp; Work</a>
+      <a href="/rrb/reasoning/series/">Series</a>
+      <a href="/rrb/science/physics/">Physics</a>
+      <a href="/rrb/maths/">Maths</a>
+      <a href="/rrb/reasoning/">Reasoning</a>
+      <a href="/rrb/science/">Science</a>
+    </div>
+    <a class="btn" style="margin-top:16px" href="/rrb/maths/">Open RRB Quiz Hub</a>
+  </section>
+
+  <section class="wrap sec" style="padding-bottom:44px">
+    <div class="band">
+      <div>
+        <h2>MindGains for Android</h2>
+        <p>Daily Dose for RRB, verified PYQs, Miga you can call in your language, and Quiz Rooms for speed rounds with friends. Private beta on Android.</p>
+      </div>
+      <a class="btn" href="/get/">Get early access</a>
+    </div>
+  </section>
+
+  <section class="wrap faq sec" style="padding-top:8px">
+    <h2>RRB / Railway FAQs</h2>
+    <details>
+      <summary>How is this different from a normal railway exam app?</summary>
+      <p>MindGains connects the loop: a concept leads into a real previous-year question, a wrong answer becomes spaced revision, revision earns XP, and XP feeds live Quiz Rooms with friends. Nothing you practise is wasted.</p>
+    </details>
+    <details>
+      <summary>Which RRB subjects are covered?</summary>
+      <p>The public quizzes cover RRB Maths, Reasoning, Science and General Awareness — topic by topic, for NTPC, Group D and ALP.</p>
+    </details>
+    <details>
+      <summary>Is it free?</summary>
+      <p>Yes. Every RRB topic quiz on the website is free with no sign-up. The Android app adds the Daily Dose, connected revision, Miga and Quiz Rooms.</p>
+    </details>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap fin">
+    <span class="fb">MindGains</span>
+    <nav>
+      <a href="/upsc/">UPSC</a>
+      <a href="/tnpsc/">TNPSC</a>
+      <a href="/ssc/">SSC</a>
+      <a href="/rrb/">RRB</a>
+      <a href="/ncert/">NCERT</a>
+      <a href="/samacheer/">Samacheer</a>
+      <a href="/quiz/">Quiz Hub</a>
+      <a href="/editorial/">Editorial</a>
+      <a href="/get/">Get the app</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+    </nav>
+    <span class="cc">© 2026 MindGains Labs Private Limited</span>
   </div>
 </footer>
+
+<script>
+  (function(){
+    var ANSWER = 1, done = false;
+    var opts = document.querySelectorAll('#qz-opts .opt');
+    var expl = document.getElementById('qz-expl');
+    var next = document.getElementById('qz-next');
+    opts.forEach(function(b){
+      b.addEventListener('click', function(){
+        if(done) return;
+        done = true;
+        var i = +b.dataset.i;
+        opts.forEach(function(o){ o.disabled = true; });
+        opts[ANSWER].classList.add('right');
+        if(i !== ANSWER) b.classList.add('wrong');
+        expl.classList.add('show');
+        next.classList.add('show');
+      });
+    });
+  })();
+</script>
+
 </body>
 </html>
