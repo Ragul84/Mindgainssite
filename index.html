@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- SEO metadata below is LOCKED to the live (33857ad) homepage values — do not change. -->
-  <title>MindGains — Learn smarter. Every single day.</title>
-  <meta name="description" content="Textbook-aware AI, real PYQs and personalised practice for Indian learners.">
+  <title>MindGains — India’s Daily Learning Ecosystem, Powered by AI</title>
+  <meta name="description" content="Start every day with a Daily Dose for your exam: textbook-grounded AI, 160,000+ Quiz Hub questions, real PYQs, Miga and personalised revision.">
   <link rel="canonical" href="https://mindgains.ai/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="MindGains — Learn smarter. Every single day.">
-  <meta property="og:description" content="Textbook-aware AI, real PYQs and personalised practice for Indian learners.">
+  <meta property="og:title" content="MindGains — India’s Daily Learning Ecosystem, Powered by AI">
+  <meta property="og:description" content="Daily Dose, textbook-grounded AI, 160,000+ questions, real PYQs, Miga and personalised revision for Indian learners.">
   <meta property="og:url" content="https://mindgains.ai/">
   <meta property="og:image" content="https://mindgains.ai/assets/icons/mindgains-logo-512.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -72,9 +72,9 @@
     section h2{font-size:clamp(26px,4vw,40px);line-height:1.06}
     section > .wrap > .lead{margin:14px 0 0;color:var(--ink-2);font-size:clamp(15px,1.9vw,17.5px);max-width:54ch}
 
-    /* hero — one job: establish the brand. Left copy + right scene, lots of air. */
-    .hero{min-height:calc(100svh - 62px);display:flex;align-items:center;padding:16px 0}
-    @media(max-width:940px){.hero{min-height:0;padding:26px 0 10px}}
+    /* hero — one job: brand + route to the exam grid, which should sit near the fold */
+    .hero{display:flex;align-items:center;padding:44px 0 36px}
+    @media(max-width:940px){.hero{padding:26px 0 12px}}
     .herowrap{width:min(1080px,calc(100% - 44px));margin:0 auto;display:grid;
       grid-template-columns:minmax(0,1fr) clamp(300px,38vw,440px);gap:clamp(24px,5vw,64px);align-items:center}
     @media(max-width:940px){.herowrap{grid-template-columns:1fr;gap:14px;max-width:560px;text-align:center}}
@@ -124,101 +124,13 @@
     .t-ncert{background:linear-gradient(150deg,#10b981,#34d399)}
     .t-samacheer{background:linear-gradient(150deg,#f43f5e,#fb7185)}
 
-    /* the loop ecosystem */
-    .loopsec{background:var(--panel)}
-    .loopwrap{margin-top:30px;display:flex;justify-content:center}
-    .loopwrap svg{width:min(560px,100%);height:auto;overflow:visible}
-    .lnode-bg{fill:var(--surface);stroke:var(--line);stroke-width:1.5}
-    .lnode-t{font:600 13px Poppins,sans-serif;fill:var(--ink);letter-spacing:-.01em}
-    .lnode-s{font:400 10.5px Inter,sans-serif;fill:var(--ink-3)}
-    .lpath{fill:none;stroke:var(--ring);stroke-width:2;stroke-dasharray:5 6}
-    .ldot{stroke:none}
-    .d1{fill:#6d63ff}.d2{fill:#0bb7a8}.d3{fill:#3b82f6}.d4{fill:#f59e0b}.d5{fill:#f43f5e}.d6{fill:#10b981}
-    #spark circle{filter:drop-shadow(0 4px 10px rgba(13,27,42,.2))}
-    .loopline{margin:26px 0 0;text-align:center;font-family:Poppins,sans-serif;font-weight:600;
-      font-size:clamp(15px,2vw,18px);color:var(--teal-700);letter-spacing:-.02em}
-
-    /* ai differentiator */
-    .aiwrap{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center;margin-top:28px}
-    @media(max-width:820px){.aiwrap{grid-template-columns:1fr;gap:8px}}
-    .aiart{display:flex;justify-content:center}
-    .aiart img{width:100%;max-width:440px;height:auto;filter:drop-shadow(0 22px 34px rgba(13,27,42,.16))}
-    @media(max-width:820px){.aiart img{max-width:300px}}
-    .demo{margin-top:0;max-width:460px;background:var(--surface);border:1px solid var(--line);
-      border-radius:20px;padding:20px;box-shadow:var(--sh-card-h)}
-    .demo .q{background:#eafaf8;border-radius:14px;border-top-right-radius:4px;padding:11px 14px;font-size:13.5px;
-      font-weight:500;margin-left:auto;max-width:82%}
-    .demo .a{background:var(--panel);border-radius:14px;border-top-left-radius:4px;padding:12px 14px;font-size:13.5px;
-      color:var(--ink-2);margin-top:10px;max-width:88%}
-    .demo .src{margin-top:12px;border:1px solid var(--line-2);border-radius:12px;padding:11px 13px;background:#fbfdfd}
-    .demo .src .chk{font-size:11px;font-weight:700;color:#16a34a;letter-spacing:.03em}
-    .demo .src b{display:block;font-family:Poppins,sans-serif;font-weight:600;font-size:13px;margin-top:3px}
-    .demo .src span{font-size:12px;color:var(--ink-3)}
-    .demo .follow{margin-top:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-    .demo .follow em{font-style:normal;font-size:13px;color:var(--ink-2)}
-    .demo .follow a{font-size:12.5px;font-weight:600;color:#fff;background:var(--teal-600);border-radius:10px;padding:7px 12px}
-
-    /* daily dose */
-    .dailysec{background:var(--panel)}
-    .dailywrap{margin-top:28px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
-    @media(max-width:680px){.dailywrap{grid-template-columns:1fr}}
-    .phone{width:250px;border:1px solid var(--line);border-radius:26px;background:var(--surface);
-      padding:16px;box-shadow:var(--sh-card-h);justify-self:center}
-    .phone .pt{font-size:10.5px;font-weight:700;color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase}
-    .phone h3{font-family:Poppins,sans-serif;font-weight:600;font-size:17px;letter-spacing:-.02em;margin:8px 0 2px}
-    .phone .mins{font-size:12px;color:var(--ink-3)}
-    .phone .flow{display:flex;gap:6px;margin-top:14px;flex-wrap:wrap}
-    .phone .flow span{font-size:11px;font-weight:600;color:var(--teal-700);background:#eafaf8;border-radius:8px;padding:5px 9px}
-    .phone .xp{margin-top:14px;padding-top:12px;border-top:1px solid var(--line-2);font-size:12px;font-weight:600;color:var(--ink-3)}
-    .phone .xp b{color:var(--teal-700)}
-
-    /* miga */
-    .migasec{text-align:center}
-    .migasec h2{max-width:none}
-    .migasec .sub{font-family:Poppins,sans-serif;font-weight:600;font-size:clamp(15px,2.2vw,19px);
-      color:var(--ink-2);margin:10px auto 0;letter-spacing:-.02em;max-width:30ch}
-    .langs{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:24px auto 4px;max-width:640px}
-    .langs span{font-family:Poppins,sans-serif;font-weight:600;font-size:14px;color:var(--teal-700);
-      background:#eafaf8;border:1px solid var(--ring);border-radius:999px;padding:9px 18px;box-shadow:var(--sh-card);
-      transition:transform .2s var(--ease)}
-    .langs span:nth-child(2n){transform:translateY(-7px)}
-    .langs span:nth-child(3n){transform:translateY(5px)}
-    .langs span:hover{transform:translateY(-3px) scale(1.04)}
-    .migastage{position:relative;margin:30px auto 0;max-width:520px;min-height:340px;display:flex;align-items:center;justify-content:center}
-    .migastage img{width:290px;max-width:80%;height:auto;filter:drop-shadow(0 26px 40px rgba(13,27,42,.2))}
-    .bub{position:absolute;background:var(--surface);border:1px solid var(--line);border-radius:14px;
-      padding:9px 13px;font-size:12.5px;font-weight:500;box-shadow:var(--sh-card);white-space:nowrap}
-    .bub.b1{top:6%;left:2%}.bub.b2{top:20%;right:0}.bub.b3{bottom:16%;left:0}.bub.b4{bottom:2%;right:6%}
-    @media(max-width:560px){.bub{position:static;display:inline-block;margin:5px;white-space:normal}
-      .migastage{flex-wrap:wrap;min-height:0}}
-    .migasec .talk{margin:26px auto 0;color:var(--ink-2);font-size:15px;max-width:44ch}
-
-    /* social */
-    .socialsec{background:var(--panel)}
-    .room{margin:28px auto 0;max-width:360px;background:var(--surface);border:1px solid var(--line);
-      border-radius:20px;padding:20px;box-shadow:var(--sh-card-h)}
-    .room .live{font-size:11px;font-weight:700;color:#e5484d;letter-spacing:.04em}
-    .room .live::before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:#e5484d;margin-right:6px;vertical-align:middle}
-    .room h3{font-family:Poppins,sans-serif;font-weight:600;font-size:16px;margin:6px 0 2px}
-    .room .meta{font-size:11.5px;color:var(--ink-3);margin-bottom:14px}
-    .room .lr{display:flex;align-items:center;gap:10px;padding:9px 11px;border-radius:11px;background:var(--panel);
-      font-size:13px;font-weight:500;margin-top:6px;transition:background .3s var(--ease),transform .3s var(--ease)}
-    .room .lr.you{background:#eafaf8;border:1px solid var(--ring)}
-    .room .lr .medal{width:20px;text-align:center}
-    .room .lr .sc{margin-left:auto;font-weight:600;color:var(--teal-700);font-variant-numeric:tabular-nums}
-    .room .lr .up{color:#16a34a;font-size:11px;margin-left:4px}
-    .room .ans{width:100%;margin-top:14px;height:42px;border:0;border-radius:12px;background:var(--teal-600);
-      color:#fff;font-weight:600;font-size:13.5px;box-shadow:var(--sh-btn)}
-    .room .ans:disabled{opacity:.55}
-    .room .cel{text-align:center;margin-top:12px;font-size:13px;font-weight:600;color:var(--teal-700);display:none}
-    .room .cel.show{display:block}
-    .roomacts{margin:18px auto 0;text-align:center;font-size:13px;color:var(--ink-3)}
-    .roomacts b{color:var(--ink-2)}
-
-    /* brand statement */
-    .brandsec{text-align:center;padding:96px 0}
-    .brandsec h2{font-size:clamp(30px,5.4vw,52px);line-height:1.04;font-weight:800}
-    .brandsec p{margin:18px 0 0;color:var(--ink-2);font-size:15.5px}
+    /* compact why */
+    .why{padding:8px 0 56px}
+    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    @media(max-width:720px){.why-grid{grid-template-columns:1fr;gap:16px}}
+    .why-grid h3{font-family:Poppins,sans-serif;font-weight:600;font-size:15px;letter-spacing:-.01em;margin:0 0 4px}
+    .why-grid h3::before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--teal);margin-right:9px;vertical-align:middle}
+    .why-grid p{margin:0;font-size:13.5px;color:var(--ink-2);line-height:1.55}
 
     /* app band */
     .band{background:linear-gradient(120deg,#f0fbfa,#eef7ff);border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2)}
@@ -229,12 +141,19 @@
     .band small{display:block;margin-top:12px;color:var(--ink-3);font-size:12px}
 
     /* footer */
-    footer .fin{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;padding:26px 0 40px;font-size:13px;color:var(--ink-3)}
-    footer .fb{font-family:Poppins,sans-serif;font-weight:700;color:var(--ink);letter-spacing:-.02em}
-    footer nav{display:flex;flex-wrap:wrap;gap:6px 16px}
-    footer nav a:hover{color:var(--ink-2)}
-    footer .cc{margin-left:auto}
-    @media(max-width:560px){footer .cc{margin-left:0;width:100%}}
+    footer{border-top:1px solid var(--line-2);margin-top:8px}
+    footer .ffoot{padding:44px 0 32px}
+    footer .fgrid{display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:32px 28px}
+    footer .fcol{display:flex;flex-direction:column;align-items:flex-start;gap:9px}
+    footer .fcol h4{margin:0 0 2px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+    footer .fcol a{font-size:13.5px;color:var(--ink-2);transition:color .16s var(--ease)}
+    footer .fcol a:hover{color:var(--ink)}
+    footer .fbrand{max-width:34ch}
+    footer .fbrand p{margin:12px 0 0;font-size:13.5px;line-height:1.6;color:var(--ink-3)}
+    footer .fbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;
+      margin-top:36px;padding-top:20px;border-top:1px solid var(--line-2);font-size:12.5px;color:var(--ink-3)}
+    @media(max-width:860px){footer .fgrid{grid-template-columns:1fr 1fr}footer .fbrand{grid-column:1/-1}}
+    @media(max-width:520px){footer .ffoot{padding:34px 0 28px}footer .fgrid{grid-template-columns:1fr;gap:26px}}
 
     :focus-visible{outline:2px solid var(--teal-600);outline-offset:3px;border-radius:8px}
     @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto}}
@@ -264,7 +183,7 @@
      <div class="herocopy">
       <span class="kick">Built for Indian learners</span>
       <h1>Make learning<br>a daily habit.</h1>
-      <p class="promise">Your syllabus, textbooks, PYQs and mistakes — connected into one learning system that gets smarter with you.</p>
+      <p class="promise">Your syllabus, textbooks, PYQs, practice and mistakes — connected into one AI-powered learning ecosystem that gets smarter with you.</p>
       <div class="hero-cta">
         <a class="btn" href="/get/">Get early access</a>
         <span class="beta">Android · Private beta</span>
@@ -299,125 +218,14 @@
     </div>
   </section>
 
-  <!-- THE CORE STORY -->
-  <section class="loopsec">
+  <!-- WHY (compact) -->
+  <section class="why">
     <div class="wrap">
-      <span class="kick">The MindGains system</span>
-      <h2>Nothing you study is wasted.</h2>
-      <p class="lead">MindGains remembers what you learn, what you practise, where you struggle and what should come back next.</p>
-      <div class="loopwrap">
-        <svg viewBox="0 0 520 400" role="img" aria-label="The MindGains learning loop: Plan, Learn, Practise, Test, Fix, Compete, and back to Plan — with Miga travelling through every stage.">
-          <path id="loopPath" class="lpath" d="M260 44 L440 148 L440 252 L260 356 L80 252 L80 148 Z"/>
-          <g class="loopnode" transform="translate(260 44)"><rect class="lnode-bg" x="-64" y="-27" width="128" height="54" rx="15"/><circle class="ldot d1" cx="-44" cy="0" r="4"/><text class="lnode-t" text-anchor="middle" x="8" y="-3">Plan</text><text class="lnode-s" text-anchor="middle" x="8" y="13">what matters now</text></g>
-          <g class="loopnode" transform="translate(440 148)"><rect class="lnode-bg" x="-64" y="-27" width="128" height="54" rx="15"/><circle class="ldot d2" cx="-44" cy="0" r="4"/><text class="lnode-t" text-anchor="middle" x="8" y="-3">Learn</text><text class="lnode-s" text-anchor="middle" x="8" y="13">Daily Dose</text></g>
-          <g class="loopnode" transform="translate(440 252)"><rect class="lnode-bg" x="-64" y="-27" width="128" height="54" rx="15"/><circle class="ldot d3" cx="-44" cy="0" r="4"/><text class="lnode-t" text-anchor="middle" x="8" y="-3">Practise</text><text class="lnode-s" text-anchor="middle" x="8" y="13">test the concept</text></g>
-          <g class="loopnode" transform="translate(260 356)"><rect class="lnode-bg" x="-64" y="-27" width="128" height="54" rx="15"/><circle class="ldot d4" cx="-44" cy="0" r="4"/><text class="lnode-t" text-anchor="middle" x="8" y="-3">Test</text><text class="lnode-s" text-anchor="middle" x="8" y="13">PYQs + mocks</text></g>
-          <g class="loopnode" transform="translate(80 252)"><rect class="lnode-bg" x="-64" y="-27" width="128" height="54" rx="15"/><circle class="ldot d5" cx="-44" cy="0" r="4"/><text class="lnode-t" text-anchor="middle" x="8" y="-3">Fix</text><text class="lnode-s" text-anchor="middle" x="8" y="13">mistakes return</text></g>
-          <g class="loopnode" transform="translate(80 148)"><rect class="lnode-bg" x="-64" y="-27" width="128" height="54" rx="15"/><circle class="ldot d6" cx="-44" cy="0" r="4"/><text class="lnode-t" text-anchor="middle" x="8" y="-3">Compete</text><text class="lnode-s" text-anchor="middle" x="8" y="13">friends + rank</text></g>
-          <g id="spark">
-            <animateMotion dur="17s" repeatCount="indefinite"><mpath href="#loopPath"/></animateMotion>
-            <circle r="21" fill="#fff" stroke="rgba(0,212,199,.55)" stroke-width="2"/>
-            <image href="/assets/miga/miga-face.webp" x="-19" y="-19" width="38" height="38"/>
-          </g>
-        </svg>
+      <div class="why-grid">
+        <div><h3>Grounded in your books</h3><p>Every answer cited to NCERT or Samacheer — not guessed.</p></div>
+        <div><h3>Real previous-year questions</h3><p>Verified PYQs, tagged to the topic that actually matters.</p></div>
+        <div><h3>One connected loop</h3><p>Plan, learn, practise, test, revise, compete — nothing you study is wasted.</p></div>
       </div>
-      <p class="loopline">Every interaction makes the next one smarter — and Miga travels with you through all of it.</p>
-    </div>
-  </section>
-
-  <!-- AI DIFFERENTIATOR -->
-  <section>
-    <div class="wrap">
-      <span class="kick">Textbook-aware AI</span>
-      <h2>AI that knows what you're studying.</h2>
-      <p class="lead">Miga doesn't start from the open internet and hope for the best. MindGains is textbook-aware — grounding every answer in the books and syllabus your exam is built around.</p>
-      <div class="aiwrap">
-        <div class="aiart">
-          <picture>
-            <source srcset="/assets/miga/miga-textbook.webp" type="image/webp">
-            <img src="/assets/miga/miga-textbook.png" alt="Miga drawing an answer straight from a textbook page" width="480" loading="lazy">
-          </picture>
-        </div>
-        <div class="demo">
-          <div class="q">Why are DPSPs non-justiciable?</div>
-          <div class="a">They're directions to the State, not enforceable rights — Article 37 says courts can't compel the government to follow them, though they're "fundamental in governance".</div>
-          <div class="src">
-            <span class="chk">✓ Verified source</span>
-            <b>Samacheer · Class XI · Political Science</b>
-            <span>Indian Constitution</span>
-          </div>
-          <div class="follow"><em>Want to try a PYQ on this?</em><a href="/tnpsc/polity/dpsp/">Yes, quiz me →</a></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DAILY LEARNING -->
-  <section class="dailysec">
-    <div class="wrap">
-      <span class="kick">Daily Dose</span>
-      <h2>There's always something worth learning today.</h2>
-      <div class="dailywrap">
-        <div class="phone">
-          <div class="pt">Today's Daily Dose</div>
-          <h3>Directive Principles</h3>
-          <div class="mins">6 min</div>
-          <div class="flow"><span>Lesson</span><span>Recall</span><span>Question</span><span>+XP</span></div>
-          <div class="xp">Streak <b>12 days</b> · +80 XP on the way</div>
-        </div>
-        <p class="lead" style="margin:0">A fresh reason to open MindGains every day — built around what you're learning and what needs work. That's how "make learning a daily habit" stops being a slogan.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- MIGA -->
-  <section class="migasec">
-    <div class="wrap">
-      <span class="kick">Your companion</span>
-      <h2>Meet Miga.</h2>
-      <p class="sub">Your learning companion that actually knows your preparation.</p>
-      <div class="langs" aria-label="Miga speaks your language">
-        <span>தமிழ்</span><span>हिन्दी</span><span>తెలుగు</span><span>ಕನ್ನಡ</span><span>മലയാളം</span><span>English</span>
-      </div>
-      <div class="migastage">
-        <span class="bub b1">"Explain this in Tamil."</span>
-        <span class="bub b2">"Why was my answer wrong?"</span>
-        <span class="bub b3">"Quiz me on Fundamental Rights."</span>
-        <span class="bub b4">"What should I revise today?"</span>
-        <picture>
-          <source srcset="/assets/miga/miga-companion.webp" type="image/webp">
-          <img src="/assets/miga/miga-companion.png" alt="Miga, ready to help you study" width="300">
-        </picture>
-      </div>
-      <p class="talk">Talk naturally. Ask follow-ups. Learn in your language.</p>
-    </div>
-  </section>
-
-  <!-- SOCIAL -->
-  <section class="socialsec">
-    <div class="wrap">
-      <span class="kick">With friends</span>
-      <h2>Learning is better together.</h2>
-      <p class="lead">Turn any topic into a Quiz Room. Invite your friends, challenge each other and see who tops the leaderboard.</p>
-      <div class="room" id="room">
-        <div class="live">Live</div>
-        <h3>Indian Polity ⚡</h3>
-        <div class="meta">6 friends · Question 7 / 10</div>
-        <div class="lr" id="r-arjun"><span class="medal">🥇</span> Arjun <span class="sc">6,420</span></div>
-        <div class="lr you" id="r-you"><span class="medal">🥈</span> You <span class="sc" id="you-sc">6,180</span><span class="up" id="you-up" style="display:none">↑</span></div>
-        <div class="lr" id="r-kavin"><span class="medal">🥉</span> Kavin <span class="sc">5,940</span></div>
-        <button class="ans" id="ans-btn">Answer question 7</button>
-        <div class="cel" id="cel">🎉 +200 — you're #1. Miga's proud.</div>
-      </div>
-      <p class="roomacts"><b>Create a room</b> · <b>Share with friends</b> — that's how a topic becomes a challenge.</p>
-    </div>
-  </section>
-
-  <!-- BRAND STATEMENT -->
-  <section class="brandsec">
-    <div class="wrap">
-      <h2>Learn today.<br>Come back stronger tomorrow.</h2>
-      <p>That's how learning becomes a habit.</p>
     </div>
   </section>
 
@@ -435,50 +243,41 @@
 </main>
 
 <footer>
-  <div class="wrap fin">
-    <span class="fb">MindGains</span>
-    <nav>
-      <a href="/upsc/">UPSC</a>
-      <a href="/tnpsc/">TNPSC</a>
-      <a href="/ssc/">SSC</a>
-      <a href="/rrb/">RRB</a>
-      <a href="/ncert/">NCERT</a>
-      <a href="/samacheer/">Samacheer</a>
-      <a href="/quiz/">Quiz Hub</a>
-      <a href="/editorial/">Editorial</a>
-      <a href="/get/">Get the app</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/terms.html">Terms</a>
-    </nav>
-    <span class="cc">© 2026 MindGains Labs Private Limited</span>
+  <div class="wrap ffoot">
+    <div class="fgrid">
+      <div class="fcol fbrand">
+        <a class="brand" href="/">
+          <span class="mk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 3 14h7l-1 8 11-13h-7z"/></svg></span>
+          <b>Mind<span>Gains</span></b>
+        </a>
+        <p>Textbook-aware AI practice for India's toughest exams — free, no sign-up.</p>
+      </div>
+      <div class="fcol">
+        <h4>Exams</h4>
+        <a href="/upsc/">UPSC</a>
+        <a href="/tnpsc/">TNPSC</a>
+        <a href="/ssc/">SSC</a>
+        <a href="/rrb/">RRB</a>
+        <a href="/ncert/">NCERT</a>
+        <a href="/samacheer/">Samacheer</a>
+      </div>
+      <div class="fcol">
+        <h4>Product</h4>
+        <a href="/quiz/">Quiz Hub</a>
+        <a href="/editorial/">Editorial</a>
+        <a href="/get/">Get the app</a>
+      </div>
+      <div class="fcol">
+        <h4>Legal</h4>
+        <a href="/privacy/">Privacy</a>
+        <a href="/data-deletion/">Delete my data</a>
+      </div>
+    </div>
+    <div class="fbar">
+      <span class="cc">© 2026 MindGains Labs Private Limited</span>
+    </div>
   </div>
 </footer>
-
-<script>
-  // social room
-  (function(){
-    var btn = document.getElementById('ans-btn'), cel = document.getElementById('cel');
-    var you = document.getElementById('r-you'), arjun = document.getElementById('r-arjun');
-    if(!btn) return;
-    btn.addEventListener('click', function(){
-      btn.disabled = true;
-      document.getElementById('you-sc').textContent = '6,380';
-      document.getElementById('you-up').style.display = 'inline';
-      you.querySelector('.medal').textContent = '🥇';
-      arjun.querySelector('.medal').textContent = '🥈';
-      var parent = you.parentNode;
-      parent.insertBefore(you, arjun);
-      cel.classList.add('show');
-    });
-  })();
-
-  // respect reduced motion for the SVG loop spark
-  (function(){
-    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-      var s = document.getElementById('spark'); if(s) s.remove();
-    }
-  })();
-</script>
 
 </body>
 </html>
