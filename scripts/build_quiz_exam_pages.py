@@ -5,7 +5,7 @@ sys.path.insert(0,os.path.dirname(__file__))
 from build_exam_pages import ROOT,V,SUB_MIN,pretty,icon,qcount
 from build_subject_pages import stats,mixbar,CHEV,esc
 from exam_data import EXAMS
-FOOT=re.search(r'<footer class="mg-foot">.*?</footer>',open(f'{ROOT}/rrb/reasoning/index.html',encoding='utf-8').read(),re.S).group(0)
+FOOT=re.search(r'<footer class="mg-foot7?">.*?</footer>',open(f'{ROOT}/rrb/reasoning/index.html',encoding='utf-8').read(),re.S).group(0)
 def build(ex):
     p=f'{ROOT}/quiz/{ex}/index.html'; h=open(p,encoding='utf-8',newline='').read(); E=EXAMS[ex]
     a=h.find('<main'); b=h.find('</main>')+7; m=h[a:b]
