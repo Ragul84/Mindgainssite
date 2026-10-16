@@ -5,7 +5,7 @@ import os,re,json,glob,html,sys
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from exam_data import EXAMS
-V='20261016d'
+V='20261016g'
 SUB_MIN=100  # subjects with fewer questions show Coming soon
 TOP_MIN=20   # topics with fewer questions show Coming soon
 DASH=re.compile(r'\s*[—–]\s*')
@@ -65,14 +65,21 @@ def hub_main(exam):
         opts=''.join(f'<li class="{"ok" if i==qq["answer_index"] else ""}">{esc(o)}</li>' for i,o in enumerate(qq['options']))
         vis=f'''<div class="x-q" aria-hidden="true"><div class="x-qh"><span>{esc(E["name"])} {esc(pretty(sub))}</span><span>Sample question</span></div><p>{esc(qq["question"])}</p><ol>{opts}</ol></div>'''
     facts=''.join(f'<li><b>{esc(a)}</b><span>{esc(b)}</span></li>' for a,b in E['facts'])
-    cards=''
-    for sub,tops in subs:
+    vis=f'<div class="x-stage" data-tilt>{vis}<div class="x-glass"><p class="x-gk">The {esc(E["name"])} pattern at a glance</p><ul>{facts}</ul></div></div>'
+    cards='';HUE={'polity':250,'history':28,'geography':160,'economics':45,'economy':45,'science':190,'maths':280,'quant':280,'reasoning':320,'environment':130,'english':210,'tamil':350}
+    order=sorted(subs,key=lambda st:(qcount(exam,st[0])<SUB_MIN,-qcount(exam,st[0])))
+    first=True
+    for sub,tops in order:
+        hue=HUE.get(sub.split('-')[0],200 + (len(sub)*37)%140)
         n=qcount(exam,sub); names=', '.join(pretty(t) for t in tops[:3])+(f' and {len(tops)-3} more' if len(tops)>3 else '')
         tw='topic' if len(tops)==1 else 'topics'; meta=(f'{len(tops)} {tw}, {n:,} questions' if n else f'{len(tops)} {tw}')
         if 0<n<SUB_MIN:
-            cards+=f'<a class="x-sub x-soon" href="/{exam}/{sub}/"><span class="x-ic">{icon(sub)}</span><span class="x-st"><b>{esc(pretty(sub))}</b><small class="x-badge">Coming soon</small><em>We are still writing questions for this subject.</em></span></a>'
+            cards+=f'<a class="x-sub x-soon" href="/{exam}/{sub}/" style="--h:{hue}"><span class="x-ic">{icon(sub)}</span><span class="x-st"><b>{esc(pretty(sub))}</b><small class="x-badge">Coming soon</small><em>We are still writing questions for this subject.</em></span></a>'
             continue
-        cards+=f'<a class="x-sub" href="/{exam}/{sub}/"><span class="x-ic">{icon(sub)}</span><span class="x-st"><b>{esc(pretty(sub))}</b><small>{esc(meta)}</small><em>{esc(names)}</em></span></a>'
+        chips=''
+        if first:
+            chips='<span class="x-chips">'+''.join(f'<i>{esc(pretty(t))}</i>' for t in tops[:8])+'</span><span class="x-go">Open {}</span>'.format(esc(pretty(sub))); first=False
+        cards+=f'<a class="x-sub" href="/{exam}/{sub}/" style="--h:{hue}" data-tilt><span class="x-ic">{icon(sub)}</span><span class="x-st"><b>{esc(pretty(sub))}</b><small>{esc(meta)}</small><em>{esc(names)}</em></span>{chips}</a>'
     paths=''.join(f'<article class="x-path{" x-path-a" if i==0 else ""}"><h3>{esc(t)}</h3><p>{esc(d)}</p><a class="x-btn{" x-btn-d" if i==0 else ""}" href="{u}">{esc(c)}</a></article>' for i,(t,d,u,c) in enumerate(E['paths']))
     faq=''.join(f'<details><summary>{esc(a)}</summary><p>{esc(b)}</p></details>' for a,b in E['faq'])
     stat=f'{total:,} free practice questions across {ntop} topics' if total else f'{ntop} free topic quizzes'
@@ -83,7 +90,6 @@ def hub_main(exam):
       <p class="x-stat">{esc(stat)}, with no sign up required.</p></div>
     {vis}
   </div></section>
-  <section class="x-facts"><div class="x-wrap"><h2 class="x-h2s">The {esc(E["full"])} pattern at a glance</h2><ul>{facts}</ul></div></section>
   <section class="x-sec" id="subjects"><div class="x-wrap"><div class="x-head"><h2>Choose a subject to practise</h2><p>Each subject opens a list of topics. Pick one and the quiz starts straight away.</p></div><div class="x-subs">{cards}</div></div></section>
   <section class="x-sec x-tint"><div class="x-wrap"><div class="x-head"><h2>Three ways to prepare with MindGains</h2></div><div class="x-paths">{paths}</div></div></section>
   <section class="x-sec x-nlsec"><div class="x-wrap"><a class="x-nl" href="/nationlap/"><span class="x-nl-img"><img src="/assets/nationlap-title.webp" alt="The NationLap title screen with karts on the starting grid" width="1120" height="564" loading="lazy"></span><span class="x-nl-t"><small>NationLap</small><b>Revise by racing in a kart game built on the syllabus.</b><span>Every item box on the track asks a real exam question from Polity, History, Geography, Economy, Science, Quant or Reasoning, and a correct answer earns a power up. Each morning's current affairs also become a race of their own.</span><em class="x-btn x-btn-d">Play NationLap</em></span></a><p class="x-nl-ca">Prefer reading? <a href="/nationlap/?affairs=1">Today's current affairs</a> are published at 5am with the source and the static fact behind each story.</p></div></section>

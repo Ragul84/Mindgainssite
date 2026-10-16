@@ -89,7 +89,7 @@ def build(p):
             tc+=f'<a class="s-card s-soon" href="{esc(c["href"])}"><span class="s-ic">{ic}</span><span class="s-body"><span class="s-row"><h2>{esc(c["title"])}</h2><small class="s-badge">Coming soon</small></span><p>We are still writing questions for this topic. A short practice set is available in the meantime.</p></span></a>'
             continue
         meta=f'<span class="s-n">{n:,} questions</span>' if n else '<span class="s-n">Open the topic</span>'
-        tc+=f'<a class="s-card" href="{esc(c["href"])}"><span class="s-ic">{ic}</span><span class="s-body"><span class="s-row"><h2>{esc(c["title"])}</h2>{CHEV}</span><p>{esc(c["desc"])}</p><span class="s-foot">{meta}{mixbar(d) if n else ""}</span></span></a>'
+        tc+=f'<a class="s-card" href="{esc(c["href"])}" data-tilt><span class="s-ic">{ic}</span><span class="s-body"><span class="s-row"><h2>{esc(c["title"])}</h2>{CHEV}</span><p>{esc(c["desc"])}</p><span class="s-foot">{meta}{mixbar(d) if n else ""}</span></span></a>'
     # related subjects
     rel_html=''
     for s2,tops in subjects(ex):

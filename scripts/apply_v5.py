@@ -2,7 +2,7 @@
 except the homepage body, /nationlap/ and /chat/. Idempotent: re-run after the page builders."""
 import os,re,glob
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-V='20261016f'
+V='20261016g'
 HEADER='''<header class="nav">
   <div class="wrap hin">
     <a class="brand" href="/" aria-label="MindGains home"><span class="mk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 3 14h7l-1 8 11-13h-7z"/></svg></span><b>Mind<span>Gains</span></b></a>
@@ -10,6 +10,9 @@ HEADER='''<header class="nav">
   </div>
 </header>'''
 CSS=f'<link rel="stylesheet" href="/assets/site-v5.css?v={V}">'
+FONTS='<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap">'
+CSS6=f'<link rel="stylesheet" href="/assets/site-v6.css?v={V}">'
+JS6=f'<script defer src="/assets/site-v6.js?v={V}"></script>'
 JS=f'<script defer src="/assets/site-v5.js?v={V}"></script>'
 SKIP=('nationlap/','chat/','home-legacy.html','node_modules/','legacy/')
 def assets(h):
@@ -29,6 +32,10 @@ def page(p):
     elif 'class="nav">' not in h[bpos:bpos+3000]:
         be=h.find('>',bpos)+1; h=h[:be]+'\n'+HEADER+h[be:]
     h=assets(h)
+    h=re.sub(r'\n?<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2\?family=Geist[^"]*">','',h)
+    h=re.sub(r'\n?<link rel="stylesheet" href="/assets/site-v6\.css\?v=\w+">','',h); h=re.sub(r'\n?<script defer src="/assets/site-v6\.js\?v=\w+"></script>','',h)
+    h=h.replace('</head>',FONTS+'\n'+CSS6+'\n</head>',1).replace('</body>',JS6+'\n</body>',1)
+    h=re.sub(r'<body class="v2s(?! v6)',r'<body class="v2s v6',h,count=1)
     if h!=o: open(p,'w',encoding='utf-8',newline='').write(h); return True
     return False
 def home():

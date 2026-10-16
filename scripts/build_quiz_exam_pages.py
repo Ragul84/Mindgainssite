@@ -28,7 +28,7 @@ def build(ex):
         if n<SUB_MIN:
             cards+=f'<a class="s-card s-soon" href="{href}"><span class="s-ic">{icon(sb)}</span><span class="s-body"><span class="s-row"><h2>{esc(title)}</h2><small class="s-badge">Coming soon</small></span><p>We are still writing questions for this subject.</p></span></a>'; continue
         tw='topic' if nt==1 else 'topics'
-        cards+=f'<a class="s-card" href="{href}"><span class="s-ic">{icon(sb)}</span><span class="s-body"><span class="s-row"><h2>{esc(title)}</h2>{CHEV}</span><p>{nt} {tw} with explanations for every answer.</p><span class="s-foot"><span class="s-n">{n:,} questions</span>{mixbar(d)}</span></span></a>'
+        cards+=f'<a class="s-card" href="{href}" data-tilt><span class="s-ic">{icon(sb)}</span><span class="s-body"><span class="s-row"><h2>{esc(title)}</h2>{CHEV}</span><p>{nt} {tw} with explanations for every answer.</p><span class="s-foot"><span class="s-n">{n:,} questions</span>{mixbar(d)}</span></span></a>'
     lede=f'Free {E["name"]} practice organised by subject. There are {tot:,} questions across {ntop} topics, and every quiz starts without a sign up.'
     best=max(ready,key=lambda r:r[3]) if ready else None
     main=f'''<main class="s">
