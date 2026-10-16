@@ -6,7 +6,7 @@
   tabs.forEach(function(t){t.addEventListener('click',function(){var i=t.dataset.i;
     tabs.forEach(function(x){x.classList.toggle('on',x===t);x.setAttribute('aria-selected',x===t)});
     panes.forEach(function(p){p.classList.toggle('on',p.dataset.i===i)});});});
-  var st=document.querySelector('.stage .win');
+  var st=document.querySelector('.hero-vis .qcard');
   if(st && matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches){
     document.querySelector('.hero').addEventListener('mousemove',function(e){var x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;
       st.style.transform='perspective(1400px) rotateX('+(-y*5)+'deg) rotateY('+(x*6)+'deg)';});

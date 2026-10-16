@@ -131,3 +131,17 @@ body.v2s .ca-cta a,body.v2s .nationlap-cta a{border-radius:999px!important;backg
 body.v2s .nationlap-cta a{background:#fff!important;color:var(--v-ink)!important;-webkit-text-fill-color:var(--v-ink)!important}
 body.v2s .nationlap-cta p:first-child{color:#9ff3ec!important}
 @media (max-width:768px){body.v2s .breadcrumbs a{display:inline-block;padding:12px 4px}body.v2s .topic a,body.v2s .story a,body.v2s .hero-card a,body.v2s .feature-copy a,body.v2s main .cta a{display:inline-flex;align-items:center;min-height:44px}}
+/* v3 refinements: no grey panels, white + brand tints, tighter rhythm */
+body.v2s{--v-pan:#fff;--v-ink:#111318;--v-ac-t:#e9faf8;--v-vi-t:#f2f0ff}
+body.v2s .card,body.v2s .exam,body.v2s .topic,body.v2s .blog-card,body.v2s .story,body.v2s .tile,body.v2s .hero-card,body.v2s .search-panel+section .card,body.v2s .mg-seo-question,body.v2s .miga-card,body.v2s .room,body.v2s .qz,body.v2s .scene{background:#fff!important;border:1px solid #e8eaee!important}
+body.v2s a.card:hover,body.v2s a.exam:hover,body.v2s a.topic:hover,body.v2s a.blog-card:hover,body.v2s a.story:hover,body.v2s a.tile:hover,body.v2s .search-panel+section .card:hover{background:#fff!important;color:var(--v-ink)!important;border-color:var(--v-ac)!important;box-shadow:0 20px 36px -26px rgba(17,19,24,.4)!important;transform:translateY(-3px)!important}
+body.v2s a.card:hover *,body.v2s a.exam:hover *,body.v2s a.topic:hover *,body.v2s a.blog-card:hover *,body.v2s a.story:hover *,body.v2s a.tile:hover *,body.v2s .search-panel+section .card:hover *{color:inherit!important}
+body.v2s .ca-cta{background:linear-gradient(120deg,var(--v-ac-t),var(--v-vi-t))!important}
+body.v2s .search-panel,body.v2s .search{background:var(--v-ac-t)!important}
+body.v2s .related a{background:#fff!important;border:1px solid #e8eaee!important}
+body.v2s .pill,body.v2s .search-panel+section .card .pill{background:var(--v-ac-t)!important}
+body.v2s h1,body.v2s h2,body.v2s h3{font-weight:600!important}
+body.v2s-hub .sec{padding:44px 0!important}body.v2s-hub .hero{padding:40px 0 24px!important}
+body.v2s .section,body.v2s main>section{padding-top:min(var(--v2pt,44px),44px)}
+body.v2s .app-bridge{margin-bottom:48px!important}
+@media (max-width:640px){body.v2s-hub .sec{padding:32px 0!important}}
