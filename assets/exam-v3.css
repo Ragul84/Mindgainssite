@@ -76,3 +76,8 @@ body.v2s-index .search-panel+section .card .meta{margin-top:10px!important}
 @media (max-width:600px){.x-wrap{padding:0 18px}.x-hero{padding:28px 0 28px}.x-sec{padding:36px 0}.x-subs{grid-template-columns:1fr}.x-facts b{font-size:22px}.x-dark{padding:36px 0}
  body.v2s-index main>.hero.compact{padding:26px 18px 12px!important}body.v2s-index .search-panel{margin:0 18px 14px!important}body.v2s-index .search-panel+section{padding:0 18px!important}
  body.v2s-index .search-panel+section .grid{grid-template-columns:1fr!important}}
+/* coming soon */
+.x-sub.x-soon{background:#fafbfc;border-style:dashed}.x-sub.x-soon .x-ic{background:#f1f2f4;color:#9aa0ab}.x-sub.x-soon b{color:#5d6370}
+.x-sub.x-soon:hover{border-color:#cfd3da;transform:none;box-shadow:none}
+.x-badge,body.v2s .card.soon .meta{display:inline-block;width:max-content;font-size:12px!important;font-weight:600!important;color:#6c5cff!important;background:#f2f0ff;padding:3px 9px;border-radius:999px}
+body.v2s .card.soon{background:#fafbfc!important;border-style:dashed!important}body.v2s .card.soon h2{color:#5d6370!important}

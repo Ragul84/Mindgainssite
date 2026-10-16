@@ -5,7 +5,9 @@ import os,re,json,glob,html,sys
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from exam_data import EXAMS
-V='20261016b'
+V='20261016c'
+SUB_MIN=100  # subjects with fewer questions show Coming soon
+TOP_MIN=20   # topics with fewer questions show Coming soon
 DASH=re.compile(r'\s*[—–]\s*')
 def clean(t):
     t=re.sub(r'(\d)\s*[–—]\s*(\d)',r'\1 to \2',t)
@@ -29,6 +31,7 @@ def qcount(exam,sub,topic=None):
 def pick_q(exam):
     prefs=['polity','history','geography','science','maths','reasoning']
     for sub in prefs+sorted(os.listdir(f'{ROOT}/assets/quiz-data/{exam}')):
+        if qcount(exam,sub)<SUB_MIN: continue
         for f in sorted(glob.glob(f'{ROOT}/assets/quiz-data/{exam}/{sub}/*.json')):
             try: d=json.load(open(f))
             except: continue
@@ -52,7 +55,9 @@ def icon(sub):
     return f'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="{d}"/></svg>'
 def hub_main(exam):
     E=EXAMS[exam]; subs=subjects(exam)
-    total=sum(qcount(exam,s) for s,_ in subs); ntop=sum(len(t) for _,t in subs)
+    def stocked(sub): return qcount(exam,sub)>=SUB_MIN
+    good=[(sb,[t for t in tp if qcount(exam,sb,t)>=TOP_MIN]) for sb,tp in subs if stocked(sb)]
+    total=sum(qcount(exam,sb,t) for sb,tp in good for t in tp); ntop=sum(len(tp) for _,tp in good)
     q=pick_q(exam)
     vis=''
     if q:
@@ -64,6 +69,9 @@ def hub_main(exam):
     for sub,tops in subs:
         n=qcount(exam,sub); names=', '.join(pretty(t) for t in tops[:3])+(f' and {len(tops)-3} more' if len(tops)>3 else '')
         tw='topic' if len(tops)==1 else 'topics'; meta=(f'{len(tops)} {tw}, {n:,} questions' if n else f'{len(tops)} {tw}')
+        if 0<n<SUB_MIN:
+            cards+=f'<a class="x-sub x-soon" href="/{exam}/{sub}/"><span class="x-ic">{icon(sub)}</span><span class="x-st"><b>{esc(pretty(sub))}</b><small class="x-badge">Coming soon</small><em>We are still writing questions for this subject.</em></span></a>'
+            continue
         cards+=f'<a class="x-sub" href="/{exam}/{sub}/"><span class="x-ic">{icon(sub)}</span><span class="x-st"><b>{esc(pretty(sub))}</b><small>{esc(meta)}</small><em>{esc(names)}</em></span></a>'
     paths=''.join(f'<article class="x-path{" x-path-a" if i==0 else ""}"><h3>{esc(t)}</h3><p>{esc(d)}</p><a class="x-btn{" x-btn-d" if i==0 else ""}" href="{u}">{esc(c)}</a></article>' for i,(t,d,u,c) in enumerate(E['paths']))
     faq=''.join(f'<details><summary>{esc(a)}</summary><p>{esc(b)}</p></details>' for a,b in E['faq'])
@@ -134,6 +142,17 @@ def clean_page(p,subject=False):
     if subject:
         m=re.sub(r'<p>([^<]+?) quiz questions for ([^<.]+)\.</p>',lambda x:f'<p>Practise {lw(x.group(1))} questions written for the {x.group(2)} syllabus.</p>',m)
         m=m.replace('<p>Choose a focused topic and practice all available questions.</p>','<p>Pick a topic below. Each quiz is free, starts immediately and explains every answer.</p>')
+    if subject:
+        parts=p[len(ROOT)+1:].split('/'); ex,sb=parts[0],parts[1]
+        if ex=='quiz' and len(parts)>3: ex,sb=parts[1],parts[2]
+        def card(x):
+            t=x.group(2).rstrip('/').split('/')[-1]; n=qcount(ex,sb,t)
+            c=x.group(0)
+            if n and n<TOP_MIN:
+                c=c.replace('class="card"','class="card soon"',1)
+                c=re.sub(r'<div class="meta">[^<]*</div>','<div class="meta">Coming soon</div>',c)
+            return c
+        m=re.sub(r'<a class="card( soon)?" href="([^"]+)">.*?</a>',card,m,flags=re.S)
     h=h[:a]+m+h[b:]; h=clean_meta(h); h=add_css(h)
     if h!=o: open(p,'w',encoding='utf-8',newline='').write(h); return True
     return False
