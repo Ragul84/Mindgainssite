@@ -1,0 +1,25 @@
+/* One footer for the whole site, in the site's own light look (homepage tokens: bg #fbfcfd,
+   ink #0d1b2a, teal #0b7a72). Compact on phones: two link columns, legal in one line. */
+footer.mg-foot { margin: 0 !important; padding: 0 !important; border-radius: 0 !important;
+  background: #f3f8f8 !important; color: #475569 !important; border-top: 1px solid #e2ebeb;
+  font: 400 14px/1.5 Inter, system-ui, -apple-system, Segoe UI, sans-serif; text-align: left; }
+.mg-foot * { box-sizing: border-box; }
+.mg-foot-in { max-width: 1100px; margin: 0 auto; padding: 40px 20px 22px;
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 28px 32px; }
+footer.mg-foot .mg-foot-brand a { display: inline-flex; align-items: center; gap: 9px; color: #0d1b2a !important; text-decoration: none; font-weight: 800; font-size: 16px; }
+.mg-foot-brand img { width: 28px; height: 28px; border-radius: 8px; }
+.mg-foot-brand p { margin: 10px 0 0; max-width: 280px; font-size: 13px; color: #55667a; }
+.mg-foot h4 { margin: 0 0 10px; font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #0b7a72; }
+.mg-foot ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
+footer.mg-foot ul a { color: #475569 !important; text-decoration: none; font-size: 13.5px; }
+footer.mg-foot ul a:hover, footer.mg-foot .mg-foot-legal a:hover { color: #0b7a72 !important; }
+.mg-foot-legal { max-width: 1100px; margin: 0 auto; padding: 14px 20px 22px; border-top: 1px solid #e2ebeb;
+  display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center; font-size: 12.5px; color: #55667a; }
+footer.mg-foot .mg-foot-legal a { color: #55667a !important; text-decoration: none; }
+.mg-foot-legal span:first-child { margin-right: auto; }
+@media (max-width: 760px) {
+  .mg-foot-in { grid-template-columns: 1fr 1fr; gap: 22px 18px; padding: 30px 18px 16px; }
+  .mg-foot-brand, .mg-foot-exams { grid-column: 1 / -1; }
+  .mg-foot-exams ul { grid-template-columns: 1fr 1fr; column-gap: 12px; }
+  .mg-foot-legal span:first-child { width: 100%; }
+}

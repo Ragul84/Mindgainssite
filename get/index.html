@@ -17,8 +17,8 @@
   <meta name="theme-color" content="#00d4c7">
   <style>
     :root{
-      --teal:#00d4c7;--teal-deep:#0ba79e;--teal-ink:#087c75;
-      --ink:#0f172a;--muted:#5b6b7f;--faint:#8a99ab;
+      --teal:#00d4c7;--teal-deep:#0b7a72;--teal-ink:#065f5b;
+      --ink:#0f172a;--muted:#5b6b7f;--faint:#55667a;
       --paper:#f6faf9;--white:#fff;--line:rgba(15,23,42,.09);--line-soft:rgba(15,23,42,.06);
       --shadow:0 1px 2px rgba(15,23,42,.05),0 14px 40px rgba(15,23,42,.07);
     }
@@ -67,7 +67,7 @@
 <main>
   <section class="card">
     <div class="badge"><img src="/assets/icons/mindgains-logo-192.png" alt="MindGains"></div>
-    <span class="eyebrow">Android · Private beta</span>
+    
     <h1>Get early access.</h1>
     <p class="sub">Tell us your exam and we'll let you in as spots open — with your Daily Dose already set up.</p>
     <div class="chips"><span>Daily Dose</span><span>Verified PYQs</span><span>Call Miga</span><span>State League</span></div>
@@ -93,6 +93,10 @@
         <label for="state">Your state <span style="text-transform:none;font-weight:600;color:var(--faint)">(optional — for the State League)</span></label>
         <input type="text" id="state" autocomplete="address-level1" placeholder="e.g. Tamil Nadu">
       </div>
+      <div class="fg">
+        <label for="insta">Instagram username <span style="text-transform:none;font-weight:600;color:var(--faint)">(optional: get 10 free @mindgains_ai answers a day instead of 5)</span></label>
+        <input type="text" id="insta" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="@yourusername">
+      </div>
       <button type="submit" class="submit" id="sub-btn">Join early access</button>
     </form>
 
@@ -112,8 +116,10 @@
     const email = document.getElementById('email').value.trim();
     const exam  = document.getElementById('exam').value;
     const state = document.getElementById('state').value.trim();
+    const insta = document.getElementById('insta').value.trim().replace(/^@+/, '').toLowerCase();
     const btn   = document.getElementById('sub-btn');
     if(!email) return;
+    if(insta && !/^[a-z0-9._]{1,30}$/.test(insta)){ alert("That doesn’t look like an Instagram username. Use letters, numbers, dots and underscores."); return; }
 
     btn.disabled = true;
     btn.textContent = 'Adding you…';
@@ -127,7 +133,7 @@
           'apikey': SUPABASE_KEY,
           'Prefer': 'return=minimal'
         },
-        body: JSON.stringify({ email, source: 'get-early-access', language: exam, state: state || null })
+        body: JSON.stringify({ email, source: 'get-early-access', language: exam, state: state || null, instagram_handle: insta || null })
       });
       status = res.status;
     }catch(err){
@@ -139,7 +145,8 @@
     box.style.display = 'block';
 
     if(status === 201){
-      box.innerHTML = '<div class="em">🎉</div><strong>You\'re on the list</strong><p>We saved <b>'+esc(email)+'</b> for <b>'+esc(exam.toUpperCase())+'</b>. We\'ll email you the moment your beta access opens.</p>';
+      box.innerHTML = '<div class="em">🎉</div><strong>You\'re on the list</strong><p>We saved <b>'+esc(email)+'</b> for <b>'+esc(exam.toUpperCase())+'</b>. We\'ll email you the moment your beta access opens.</p>'
+        + (insta ? '<p>✅ <b>@'+esc(insta)+'</b> now gets <b>10 free @mindgains_ai answers a day</b> on Instagram.</p>' : '');
     } else if(status === 409){
       box.innerHTML = '<div class="em">✨</div><strong>Already on the list</strong><p><b>'+esc(email)+'</b> is already registered. Your early access is secured — sit tight.</p>';
     } else if(status === -1){
@@ -149,9 +156,16 @@
       btn.textContent = 'Join early access';
       alert('Network hiccup — please try again in a moment.');
     } else {
-      box.innerHTML = '<div class="em">✅</div><strong>Request received</strong><p>We\'ve noted <b>'+esc(email)+'</b> for <b>'+esc(exam.toUpperCase())+'</b>. We\'ll be in touch about beta access.</p>';
+      // Don't claim success when nothing was saved.
+      document.getElementById('get-form').style.display = '';
+      box.style.display = 'none';
+      btn.disabled = false;
+      btn.textContent = 'Join early access';
+      alert("Sorry, we couldn’t save that. Please try again in a moment.");
     }
   }
 </script>
+<script defer src="/assets/pv.js"></script>
+<script defer src="/assets/nav-mobile.js"></script>
 </body>
 </html>

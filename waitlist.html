@@ -1,84 +1,171 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Join the MindGains waitlist</title><meta name="description" content="Join the MindGains Android beta waitlist."><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet"><style>:root{--t:#00d4c7;--d:#0ba79e;--ink:#0f172a;--muted:#64748b;--paper:#f8fafc;--line:#e7edf0}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,sans-serif}.nav{height:70px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center}.navin{width:min(1160px,calc(100% - 40px));margin:auto;display:flex;justify-content:space-between;align-items:center}.brand{font:800 21px Poppins;display:flex;gap:9px;align-items:center}.brand i{width:30px;height:30px;border-radius:11px;background:var(--t);display:grid;place-items:center;color:#fff;font-style:normal}.back{color:#52627b;text-decoration:none;font-weight:800;font-size:14px}.main{min-height:calc(100vh - 70px);display:grid;place-items:center;padding:50px 20px}.card{width:min(520px,100%);background:#fff;border:1px solid var(--line);border-radius:30px;padding:36px;box-shadow:0 18px 45px rgba(15,23,42,.08)}.badge{width:62px;height:62px;border-radius:20px;background:#e7fbf9;display:grid;place-items:center;margin:auto}.badge img{width:46px;height:46px;border-radius:15px}.eyebrow{display:block;text-align:center;margin:18px 0 8px;color:#087c75;font-size:11px;font-weight:800;letter-spacing:.09em}.card h1{text-align:center;font:800 38px/1.12 Poppins;margin:0}.card p{text-align:center;color:var(--muted);line-height:1.55}.benefits{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:22px 0}.benefits span{padding:8px 10px;border-radius:999px;background:#f1fbfa;color:#087c75;font-size:12px;font-weight:800}.form-group{margin-top:17px}.form-group label{display:block;margin-bottom:7px;color:#087c75;font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase}.form-group input,.form-group select{width:100%;height:52px;border:1px solid #dce5e9;border-radius:14px;background:#fff;padding:0 15px;font:600 15px Inter;color:var(--ink)}.submit-btn{width:100%;height:54px;margin-top:24px;border:0;border-radius:999px;background:var(--d);color:#fff;font:800 15px Inter;box-shadow:0 5px 0 #087c75;cursor:pointer}.success-msg{display:none;margin-top:18px;padding:24px;border-radius:18px;background:#e5faf7;color:#0f172a;text-align:center}.success-msg strong,.success-msg p{color:#0f172a!important}.fine{font-size:12px!important;margin:17px 0 0!important}@media(max-width:600px){.navin{width:calc(100% - 32px)}.main{padding:28px 16px}.card{padding:28px 20px}.card h1{font-size:32px}}</style></head><body><header class="nav"><div class="navin"><a class="brand" href="/" style="text-decoration:none;color:inherit"><i>✦</i>MindGains</a><a class="back" href="/">← Back to site</a></div></header><main class="main"><section class="card"><div class="badge"><img src="/assets/icons/mindgains-logo-192.png" alt="MindGains"></div><span class="eyebrow">ANDROID BETA</span><h1>Join the waitlist.</h1><p>Be first in line for MindGains: textbook-aware learning, practice and revision for Indian exams.</p><form id="waitlist-form" onsubmit="submitWaitlist(event)"><div class="form-group"><label for="email">Email address</label><input type="email" id="email" placeholder="you@example.com" required></div><div class="form-group"><label for="exam">What are you preparing for?</label><select id="exam"><option value="tnpsc">TNPSC Group 1, 2, 4</option><option value="upsc">UPSC CSE Prelims</option><option value="tet">TET / State Board Exams</option><option value="other">Other Competitive Exam</option></select></div><button type="submit" class="submit-btn" id="sub-btn">Join waitlist</button></form><div class="success-msg" id="success-box"></div><p class="fine">We will only contact you about MindGains beta access.</p></section></main><script>
-    const SUPABASE_URL = 'https://yuntwerxahgmaoduxvqc.supabase.co/rest/v1/waitlist';
-    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl1bnR3ZXJ4YWhnbWFvZHV4dnFjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU3OTk4OTMsImV4cCI6MjA3MTM3NTg5M30.1mFUH9yp55uxN8n9tyRHLFbve36_kpaJs41nPU85S74';
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get early access — MindGains</title>
+  <meta name="description" content="Join the MindGains Android early-access list. Tell us your exam and we'll let you in as spots open.">
+  <link rel="canonical" href="https://mindgains.ai/get/">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00d4c7">
+  <style>
+    :root{
+      --teal:#00d4c7;--teal-deep:#0b7a72;--teal-ink:#065f5b;
+      --ink:#0f172a;--muted:#5b6b7f;--faint:#55667a;
+      --paper:#f6faf9;--white:#fff;--line:rgba(15,23,42,.09);--line-soft:rgba(15,23,42,.06);
+      --shadow:0 1px 2px rgba(15,23,42,.05),0 14px 40px rgba(15,23,42,.07);
+    }
+    *{box-sizing:border-box}
+    html{-webkit-text-size-adjust:100%}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .nav{border-bottom:1px solid var(--line-soft);background:var(--white)}
+    .navin{width:min(1120px,calc(100% - 40px));margin:0 auto;height:66px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font:800 19px/1 Poppins,sans-serif;letter-spacing:-.5px;display:flex;align-items:center;gap:9px}
+    .brand i{width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,var(--teal),#4aded9);position:relative}
+    .brand i:after{content:'✦';position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-style:normal;font-size:14px}
+    .back{color:#42536a;font-weight:600;font-size:14px}
+    .back:hover{color:var(--teal-ink)}
+    main{min-height:calc(100vh - 66px);display:grid;place-items:center;padding:46px 20px}
+    .card{width:min(500px,100%);background:var(--white);border:1px solid var(--line);border-radius:28px;padding:34px;box-shadow:var(--shadow)}
+    .badge{width:58px;height:58px;border-radius:18px;background:#e6faf8;display:grid;place-items:center;margin:0 auto}
+    .badge img{width:42px;height:42px;border-radius:13px}
+    .eyebrow{display:block;text-align:center;margin:16px 0 6px;color:var(--teal-ink);font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+    h1{text-align:center;font:800 32px/1.12 Poppins,sans-serif;letter-spacing:-.02em;margin:0}
+    .sub{text-align:center;color:var(--muted);margin:10px auto 0;max-width:36ch;font-size:15px}
+    .chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:20px 0 4px}
+    .chips span{padding:7px 11px;border-radius:999px;background:#f1fbfa;color:var(--teal-ink);font-size:12px;font-weight:700}
+    .fg{margin-top:16px}
+    .fg label{display:block;margin-bottom:6px;color:var(--teal-ink);font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+    .fg input,.fg select{width:100%;height:52px;border:1px solid #d7e3e1;border-radius:14px;background:#fff;padding:0 15px;font:600 15px Inter;color:var(--ink)}
+    .fg input:focus,.fg select:focus{outline:none;border-color:var(--teal-deep);box-shadow:0 0 0 3px rgba(0,212,199,.15)}
+    .submit{width:100%;height:54px;margin-top:22px;border:0;border-radius:999px;background:var(--teal-deep);color:#fff;font:800 15px Inter;box-shadow:0 5px 0 var(--teal-ink);cursor:pointer}
+    .submit:active{transform:translateY(3px);box-shadow:0 2px 0 var(--teal-ink)}
+    .submit:disabled{opacity:.7;cursor:default}
+    .success{display:none;margin-top:18px;padding:22px;border-radius:18px;background:#e5faf7;text-align:center}
+    .success .em{font-size:34px;margin-bottom:8px}
+    .success strong{display:block;font:800 17px Poppins,sans-serif;margin-bottom:6px}
+    .success p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+    .fine{text-align:center;font-size:12px;color:var(--faint);margin:16px 0 0}
+    :focus-visible{outline:2px solid var(--teal-deep);outline-offset:2px;border-radius:4px}
+  </style>
+</head>
+<body>
+<header class="nav">
+  <div class="navin">
+    <a class="brand" href="/"><i aria-hidden="true"></i>MindGains</a>
+    <a class="back" href="/">← Back to site</a>
+  </div>
+</header>
+<main>
+  <section class="card">
+    <div class="badge"><img src="/assets/icons/mindgains-logo-192.png" alt="MindGains"></div>
+    
+    <h1>Get early access.</h1>
+    <p class="sub">Tell us your exam and we'll let you in as spots open — with your Daily Dose already set up.</p>
+    <div class="chips"><span>Daily Dose</span><span>Verified PYQs</span><span>Call Miga</span><span>State League</span></div>
 
-    function escapeHtml(str) {
-      return String(str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    <form id="get-form" onsubmit="submitEarlyAccess(event)">
+      <div class="fg">
+        <label for="email">Email address</label>
+        <input type="email" id="email" autocomplete="email" placeholder="you@example.com" required>
+      </div>
+      <div class="fg">
+        <label for="exam">Which exam are you preparing for?</label>
+        <select id="exam">
+          <option value="upsc">UPSC — Civil Services</option>
+          <option value="tnpsc" selected>TNPSC — Group 1, 2, 4</option>
+          <option value="ssc">SSC — CGL, CHSL, MTS, GD</option>
+          <option value="rrb">RRB / Railway — NTPC, Group D</option>
+          <option value="ncert">NCERT Foundation — Class 6–12</option>
+          <option value="samacheer">Samacheer Kalvi — TN Board</option>
+          <option value="other">Other competitive exam</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label for="state">Your state <span style="text-transform:none;font-weight:600;color:var(--faint)">(optional — for the State League)</span></label>
+        <input type="text" id="state" autocomplete="address-level1" placeholder="e.g. Tamil Nadu">
+      </div>
+      <div class="fg">
+        <label for="insta">Instagram username <span style="text-transform:none;font-weight:600;color:var(--faint)">(optional: get 10 free @mindgains_ai answers a day instead of 5)</span></label>
+        <input type="text" id="insta" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="@yourusername">
+      </div>
+      <button type="submit" class="submit" id="sub-btn">Join early access</button>
+    </form>
+
+    <div class="success" id="success-box"></div>
+    <p class="fine">Free while in beta. We'll only email you about access.</p>
+  </section>
+</main>
+
+<script>
+  const SUPABASE_URL = 'https://yuntwerxahgmaoduxvqc.supabase.co/rest/v1/waitlist';
+  const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl1bnR3ZXJ4YWhnbWFvZHV4dnFjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU3OTk4OTMsImV4cCI6MjA3MTM3NTg5M30.1mFUH9yp55uxN8n9tyRHLFbve36_kpaJs41nPU85S74';
+
+  function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+  async function submitEarlyAccess(e){
+    e.preventDefault();
+    const email = document.getElementById('email').value.trim();
+    const exam  = document.getElementById('exam').value;
+    const state = document.getElementById('state').value.trim();
+    const insta = document.getElementById('insta').value.trim().replace(/^@+/, '').toLowerCase();
+    const btn   = document.getElementById('sub-btn');
+    if(!email) return;
+    if(insta && !/^[a-z0-9._]{1,30}$/.test(insta)){ alert("That doesn’t look like an Instagram username. Use letters, numbers, dots and underscores."); return; }
+
+    btn.disabled = true;
+    btn.textContent = 'Adding you…';
+
+    let status = 0;
+    try{
+      const res = await fetch(SUPABASE_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_KEY,
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({ email, source: 'get-early-access', language: exam, state: state || null, instagram_handle: insta || null })
+      });
+      status = res.status;
+    }catch(err){
+      status = -1;
     }
 
-    async function submitWaitlist(e) {
-      e.preventDefault();
-      const emailInput = document.getElementById('email');
-      const examInput  = document.getElementById('exam');
-      const email = emailInput.value.trim();
-      const exam  = examInput.value;
-      const btn   = document.getElementById('sub-btn');
+    document.getElementById('get-form').style.display = 'none';
+    const box = document.getElementById('success-box');
+    box.style.display = 'block';
 
-      if (!email) return;
-
-      btn.disabled = true;
-      btn.innerHTML = '<span>Checking Database...</span>';
-
-      try {
-        // Direct Live Database Evaluation via Supabase REST API
-        const res = await fetch(SUPABASE_URL, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'apikey': SUPABASE_KEY,
-            'Prefer': 'return=minimal'
-          },
-          body: JSON.stringify({ email, source: 'whitelist-landing', language: exam })
-        });
-
-        document.getElementById('waitlist-form').style.display = 'none';
-        const box = document.getElementById('success-box');
-        box.style.display = 'block';
-
-        if (res.status === 201) {
-          // HTTP 201 Created -> Database saved new row
-          box.className = 'success-msg is-success';
-          box.innerHTML = `
-            <div style="font-size:36px;margin-bottom:10px;">🎉</div>
-            <strong style="font-size:18px;color:#fff;display:block;margin-bottom:8px;">You're on the Whitelist!</strong>
-            <p style="font-size:14px;color:rgba(255,255,255,0.85);line-height:1.6;">
-              Database saved <strong style="color:#7BE3B0;">${escapeHtml(email)}</strong> for <strong style="color:#38BDF8;">${escapeHtml(exam.toUpperCase())}</strong>.<br>
-              We will notify you as soon as your Android beta access opens!
-            </p>`;
-        } else if (res.status === 409) {
-          // HTTP 409 Conflict -> Database confirmed email already registered
-          box.className = 'success-msg is-existing';
-          box.innerHTML = `
-            <div style="font-size:36px;margin-bottom:10px;">✨</div>
-            <strong style="font-size:18px;color:#fff;display:block;margin-bottom:8px;">Already Registered in Database!</strong>
-            <p style="font-size:14px;color:rgba(255,255,255,0.85);line-height:1.6;">
-              <strong style="color:#7BE3B0;">${escapeHtml(email)}</strong> is already registered in our Database for <strong style="color:#38BDF8;">${escapeHtml(exam.toUpperCase())}</strong>.<br>
-              Your priority early access is already secured!
-            </p>`;
-        } else {
-          box.className = 'success-msg is-success';
-          box.innerHTML = `
-            <div style="font-size:36px;margin-bottom:10px;">🎉</div>
-            <strong style="font-size:18px;color:#fff;display:block;margin-bottom:8px;">Registration Confirmed!</strong>
-            <p style="font-size:14px;color:rgba(255,255,255,0.85);line-height:1.6;">
-              Thank you for registering <strong style="color:#7BE3B0;">${escapeHtml(email)}</strong>.<br>
-              You'll be among the first to receive Android early access.
-            </p>`;
-        }
-      } catch (err) {
-        document.getElementById('waitlist-form').style.display = 'none';
-        const box = document.getElementById('success-box');
-        box.style.display = 'block';
-        box.className = 'success-msg is-success';
-        box.innerHTML = `
-          <div style="font-size:36px;margin-bottom:10px;">🎉</div>
-          <strong style="font-size:18px;color:#fff;display:block;margin-bottom:8px;">Whitelist Reserved!</strong>
-          <p style="font-size:14px;color:rgba(255,255,255,0.85);line-height:1.6;">
-            We have locked in <strong style="color:#7BE3B0;">${escapeHtml(email)}</strong>.<br>
-            You'll receive priority early access as soon as beta opens.
-          </p>`;
-      }
+    if(status === 201){
+      box.innerHTML = '<div class="em">🎉</div><strong>You\'re on the list</strong><p>We saved <b>'+esc(email)+'</b> for <b>'+esc(exam.toUpperCase())+'</b>. We\'ll email you the moment your beta access opens.</p>'
+        + (insta ? '<p>✅ <b>@'+esc(insta)+'</b> now gets <b>10 free @mindgains_ai answers a day</b> on Instagram.</p>' : '');
+    } else if(status === 409){
+      box.innerHTML = '<div class="em">✨</div><strong>Already on the list</strong><p><b>'+esc(email)+'</b> is already registered. Your early access is secured — sit tight.</p>';
+    } else if(status === -1){
+      document.getElementById('get-form').style.display = '';
+      box.style.display = 'none';
+      btn.disabled = false;
+      btn.textContent = 'Join early access';
+      alert('Network hiccup — please try again in a moment.');
+    } else {
+      // Don't claim success when nothing was saved.
+      document.getElementById('get-form').style.display = '';
+      box.style.display = 'none';
+      btn.disabled = false;
+      btn.textContent = 'Join early access';
+      alert("Sorry, we couldn’t save that. Please try again in a moment.");
     }
-  </script>
+  }
+</script>
+<script defer src="/assets/pv.js"></script>
+<script defer src="/assets/nav-mobile.js"></script>
 </body>
 </html>
