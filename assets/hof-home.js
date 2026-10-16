@@ -1,5 +1,5 @@
-// "Today's toppers" strip on the homepage: India top 5 from the server-graded current-affairs
-// board. Names only (first name + initial as stored), XP and accuracy.
+// Hall of Fame on the homepage NationLap band: today's India top 5 from the server graded
+// current affairs board. Names and XP only. If the board is empty the placeholder stays.
 (() => {
   const box = document.querySelector('[data-hof]');
   if (!box) return;
@@ -10,9 +10,7 @@
     headers: { apikey: ANON, authorization: 'Bearer ' + ANON, 'content-type': 'application/json' },
     body: JSON.stringify({ period: 'today', lim: 5 }),
   }).then((r) => (r.ok ? r.json() : [])).catch(() => []).then((rows) => {
-    // Nothing to brag about yet: show nothing rather than an empty trophy case.
-    if (!rows.length) { box.remove(); return; }
-    box.innerHTML = `<span class="hh-k">🏛 Today's toppers · India</span>${rows.map((r) => `<span class="hh-r"><b>#${r.rank}</b> ${esc(r.name)} <em>${r.xp} XP</em></span>`).join('')}<a href="/nationlap/?affairs=1">Race today →</a>`;
-    box.hidden = false;
+    if (!Array.isArray(rows) || !rows.length) return;
+    box.innerHTML = '<p class="nl-hk">Hall of Fame today</p><ol>' + rows.map((r) => `<li><i>${Number(r.rank)}</i><span>${esc(r.name)}</span><em>${Number(r.xp)} XP</em></li>`).join('') + '</ol>';
   });
 })();

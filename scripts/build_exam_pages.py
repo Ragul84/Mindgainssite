@@ -5,7 +5,7 @@ import os,re,json,glob,html,sys
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from exam_data import EXAMS
-V='20261016c'
+V='20261016d'
 SUB_MIN=100  # subjects with fewer questions show Coming soon
 TOP_MIN=20   # topics with fewer questions show Coming soon
 DASH=re.compile(r'\s*[—–]\s*')
@@ -86,7 +86,7 @@ def hub_main(exam):
   <section class="x-facts"><div class="x-wrap"><h2 class="x-h2s">The {esc(E["full"])} pattern at a glance</h2><ul>{facts}</ul></div></section>
   <section class="x-sec" id="subjects"><div class="x-wrap"><div class="x-head"><h2>Choose a subject to practise</h2><p>Each subject opens a list of topics. Pick one and the quiz starts straight away.</p></div><div class="x-subs">{cards}</div></div></section>
   <section class="x-sec x-tint"><div class="x-wrap"><div class="x-head"><h2>Three ways to prepare with MindGains</h2></div><div class="x-paths">{paths}</div></div></section>
-  <section class="x-dark"><div class="x-wrap x-dark-g"><div><h2>Daily current affairs and a faster way to revise.</h2><p>Every morning at 5am we publish the day's news that an exam could ask, each with its source and the static fact behind it. You can also race through topics in NationLap. Both are free.</p></div><div class="x-cta"><a class="x-btn x-btn-l" href="/nationlap/?affairs=1">Read today's current affairs</a><a class="x-btn x-btn-o" href="/nationlap/">Play NationLap</a></div></div></section>
+  <section class="x-sec x-nlsec"><div class="x-wrap"><a class="x-nl" href="/nationlap/"><span class="x-nl-img"><img src="/assets/nationlap-title.webp" alt="The NationLap title screen with karts on the starting grid" width="1120" height="564" loading="lazy"></span><span class="x-nl-t"><small>NationLap</small><b>Revise by racing in a kart game built on the syllabus.</b><span>Every item box on the track asks a real exam question from Polity, History, Geography, Economy, Science, Quant or Reasoning, and a correct answer earns a power up. Each morning's current affairs also become a race of their own.</span><em class="x-btn x-btn-d">Play NationLap</em></span></a><p class="x-nl-ca">Prefer reading? <a href="/nationlap/?affairs=1">Today's current affairs</a> are published at 5am with the source and the static fact behind each story.</p></div></section>
   <section class="x-sec"><div class="x-wrap x-faq"><h2>Common questions about {esc(E["name"])} preparation</h2>{faq}</div></section>
 </main>''', E['faq']
 def faq_ld(faq):

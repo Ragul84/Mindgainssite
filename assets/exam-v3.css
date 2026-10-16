@@ -81,3 +81,16 @@ body.v2s-index .search-panel+section .card .meta{margin-top:10px!important}
 .x-sub.x-soon:hover{border-color:#cfd3da;transform:none;box-shadow:none}
 .x-badge,body.v2s .card.soon .meta{display:inline-block;width:max-content;font-size:12px!important;font-weight:600!important;color:#6c5cff!important;background:#f2f0ff;padding:3px 9px;border-radius:999px}
 body.v2s .card.soon{background:#fafbfc!important;border-style:dashed!important}body.v2s .card.soon h2{color:#5d6370!important}
+/* NationLap card on exam hubs */
+.x-nlsec{padding-top:8px}
+.x-nl{display:grid;grid-template-columns:minmax(0,1.05fr) 1fr;align-items:center;gap:0;border-radius:22px;overflow:hidden;background:linear-gradient(135deg,#fff8f0,#fff);border:1px solid rgba(217,115,13,.18);box-shadow:0 1px 2px rgba(17,19,24,.05),0 24px 50px -30px rgba(17,19,24,.45);color:#111318;text-decoration:none;transition:transform .3s,box-shadow .3s}
+.x-nl:hover{transform:translateY(-3px);box-shadow:0 2px 4px rgba(17,19,24,.06),0 30px 60px -30px rgba(17,19,24,.55)}
+.x-nl-img img{display:block;width:100%;height:100%;object-fit:cover}
+.x-nl-t{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:28px 32px}
+.x-nl-t small{font-size:12.5px;font-weight:600;color:#d9730d;letter-spacing:.06em;text-transform:uppercase}
+.x-nl-t b{font-size:22px;font-weight:600;letter-spacing:-.02em;line-height:1.25}
+.x-nl-t>span{color:#5d6370;font-size:15px;line-height:1.6}
+.x-nl-t em{font-style:normal;margin-top:4px}
+.x-nl-ca{margin:14px 2px 0;color:#5d6370;font-size:14.5px}
+.x-nl-ca a{color:#08877f;font-weight:500;text-decoration:underline;text-underline-offset:3px}
+@media (max-width:760px){.x-nl{grid-template-columns:1fr}.x-nl-t{padding:20px}.x-nl-t b{font-size:19px}.x-nl-t em{width:100%;justify-content:center}}
