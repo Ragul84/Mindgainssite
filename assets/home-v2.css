@@ -122,3 +122,10 @@ h1 em,h2 em{font-style:normal;background:linear-gradient(90deg,var(--ac),var(--a
  .hnav .lnk{display:none}.hero{padding-top:40px}.stage{margin-top:44px}
  .b1{left:0}.b2{right:0}.b3{left:4%}
 }
+/* hero aurora (WebGL) + dot grid */
+.hero-gl{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;filter:blur(14px) saturate(1.4);opacity:0;animation:glin 1.6s .2s forwards}
+@keyframes glin{to{opacity:.75}}
+.hero.has-gl .orb{display:none}
+.hero::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background-image:radial-gradient(rgba(19,19,22,.13) 1px,transparent 1.2px);background-size:22px 22px;-webkit-mask-image:radial-gradient(ellipse 70% 55% at 50% 30%,#000 10%,transparent 75%);mask-image:radial-gradient(ellipse 70% 55% at 50% 30%,#000 10%,transparent 75%)}
+.hero-in{z-index:1}
+.hero h1,.hero .promise{text-shadow:0 0 24px rgba(255,255,255,.9),0 1px 2px rgba(255,255,255,.6)}
