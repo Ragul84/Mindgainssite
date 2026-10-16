@@ -156,3 +156,15 @@ h1 em,h2 em{font-style:normal;background:linear-gradient(90deg,var(--ac),var(--a
 .nl h2{font-size:clamp(30px,3.8vw,46px);line-height:1.08;max-width:18ch}
 .nl .kick{display:inline-block;margin-bottom:14px}
 .nl-shot{border-radius:var(--r)}
+
+/* v5 mobile: hero and exam picker only, aurora always visible */
+@media (prefers-reduced-motion:reduce){.hero-gl{opacity:.62!important}}
+@media (max-width:768px){
+ body.v2 main>section:not(.hero):not(.v5-keep){display:none!important}
+ .hero.has-gl .orb{display:block;opacity:.5}
+ .hero-gl{filter:blur(10px) saturate(1.5)}
+ @keyframes glin{to{opacity:.8}}
+ .o1{width:320px;height:320px;left:-110px;top:-60px}.o2{width:300px;height:300px;right:-120px;top:160px}
+ .v5-keep{padding:56px 0 64px}
+ .hero h1{font-size:clamp(40px,11vw,56px)}
+}

@@ -31,13 +31,16 @@
 <link rel="stylesheet" href="/assets/mindgains-redesign.css?v=20261002_mobilenav">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="/assets/v2-skin.css?v=20261016b">
+<link rel="stylesheet" href="/assets/site-v5.css?v=20261016f">
 </head>
 <body class="v2s v2s-blog">
 <div class="bg"></div>
 <div class="reading-progress" aria-hidden="true"><span></span></div>
-<header class="site-nav">
-  <a class="brand" href="/"><img src="/assets/icons/mindgains-logo-192.png" alt="MindGains Logo" style="width:30px;height:30px;border-radius:9px;object-fit:cover;" /></a>
-  <nav><a href="/editorial/">Editorial</a><a href="/quiz/">Quiz Hub</a><a href="/waitlist.html">Waitlist</a></nav>
+<header class="nav">
+  <div class="wrap hin">
+    <a class="brand" href="/" aria-label="MindGains home"><span class="mk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 3 14h7l-1 8 11-13h-7z"/></svg></span><b>Mind<span>Gains</span></b></a>
+    <nav class="hnav" aria-label="Main"><a class="lnk" href="/quiz/">Quiz Hub</a><a class="lnk" href="/nationlap/">NationLap</a><a class="lnk" href="/editorial/">Editorial</a><a class="lnk" href="/nationlap/?affairs=1">Current affairs</a><a class="btn sm" href="/get/">Get the app</a></nav>
+  </div>
 </header>
 <main><section class="blog-hero"><div class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/editorial/">Editorial</a></div><p class="eyebrow">Reading Collection</p><h1>Current Affairs</h1><p class="dek">A MindGains Editorial collection for readers who want a deeper path through current affairs. 0 articles.</p></section>
   <section class="editorial-grid"><h2>Current Affairs Articles</h2><p class="dek">This collection is being built. New MindGains Editorial articles in current affairs will appear here automatically.</p></section></main>
@@ -49,7 +52,8 @@ window.addEventListener('scroll',updateReadingProgress,{passive:true});
 window.addEventListener('resize',updateReadingProgress);
 </script>
 <script defer src="/assets/pv.js"></script>
-<script defer src="/assets/nav-mobile.js"></script>
+
 <script defer src="/assets/v2-skin.js?v=20261016b"></script>
+<script defer src="/assets/site-v5.js?v=20261016f"></script>
 </body>
 </html>
