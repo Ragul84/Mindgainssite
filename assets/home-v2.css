@@ -130,3 +130,29 @@ h1 em,h2 em{font-style:normal;background:linear-gradient(90deg,var(--ac),var(--a
 .hero-in{z-index:1}
 .hero h1,.hero .promise{text-shadow:0 0 24px rgba(255,255,255,.9),0 1px 2px rgba(255,255,255,.6)}
 .hero h1 em{text-shadow:none;filter:drop-shadow(0 0 14px rgba(255,255,255,.85))}
+
+/* NationLap band */
+.nl{padding:72px 0;background:radial-gradient(900px 420px at 85% 10%,rgba(255,153,51,.10),transparent 60%),radial-gradient(700px 380px at 0% 100%,rgba(108,92,255,.08),transparent 60%),#fff}
+.nl-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center}
+.nl .kick{color:#d9730d}
+.nl-lede{color:var(--mut);margin:14px 0 18px;max-width:56ch}
+.nl-modes{list-style:none;margin:0 0 22px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px 20px}
+.nl-modes li{display:flex;flex-direction:column;gap:4px;padding-left:14px;border-left:2px solid #ffd2a6}
+.nl-modes b{font-weight:600;font-size:15px}.nl-modes span{color:var(--mut);font-size:14px;line-height:1.5}
+.nl .cta{display:flex;flex-wrap:wrap;gap:10px}
+.nl-note{color:var(--mut);font-size:13.5px;margin:12px 0 0}
+.nl-vis{position:relative}
+.nl-shot{display:block;border-radius:22px;overflow:hidden;box-shadow:0 1px 2px rgba(17,19,24,.06),0 24px 60px -24px rgba(17,19,24,.45),0 0 0 1px rgba(17,19,24,.06);transform:perspective(1400px) rotateY(-4deg);transition:transform .4s}
+.nl-shot:hover{transform:perspective(1400px) rotateY(0) translateY(-3px)}
+.nl-shot img{display:block;width:100%;height:auto}
+.nl-hof{position:relative;margin:-38px 18px 0 auto;max-width:330px;background:linear-gradient(180deg,#221d10,#14120c);color:#f3ead2;border:1px solid #c79a2e;border-radius:16px;padding:14px 16px;box-shadow:0 18px 40px -18px rgba(0,0,0,.55);font-size:14px}
+.nl-hk{margin:0 0 6px;color:#ffd34d;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.nl-empty{margin:0;color:#d9cfb4;line-height:1.5}
+.nl-hof ol{margin:0;padding:0;list-style:none;display:grid;gap:4px}
+.nl-hof li{display:flex;gap:8px}.nl-hof li i{font-style:normal;color:#ffd34d;width:24px}.nl-hof li em{margin-left:auto;color:#ffd34d;font-weight:700;background:none;-webkit-text-fill-color:#ffd34d}
+@media (max-width:900px){.nl{padding:52px 0}.nl-grid{grid-template-columns:1fr;gap:28px}.nl-vis{order:-1}.nl-shot{transform:none}.nl-hof{margin:-28px 12px 0 auto}}
+@media (max-width:560px){.nl-modes{grid-template-columns:1fr}.nl .cta .btn{flex:1 1 100%}.nl-hof{margin:12px 0 0;max-width:none}}
+
+.nl h2{font-size:clamp(30px,3.8vw,46px);line-height:1.08;max-width:18ch}
+.nl .kick{display:inline-block;margin-bottom:14px}
+.nl-shot{border-radius:var(--r)}
