@@ -216,8 +216,24 @@
   // reveals each answer only after a pick, against a token tied to this round.
   const set = (src || '').replace(/^.*\/assets\/quiz-data\//, '').replace(/\.json$/, '');
   let round = null;
+  // Network helpers: every quiz API call gets a timeout, so a dropped connection can never leave the player stuck.
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+  async function fetchWithTimeout(url, opts, ms) {
+    const ctrl = typeof AbortController === 'function' ? new AbortController() : null;
+    const timer = ctrl ? setTimeout(() => ctrl.abort(), ms) : null;
+    try { return await fetch(url, ctrl ? { ...opts, signal: ctrl.signal } : opts); }
+    finally { if (timer) clearTimeout(timer); }
+  }
   async function load() {
-    const res = await fetch(`/api/quiz/round?set=${encodeURIComponent(set)}`, { credentials: 'same-origin' });
+    let res = null;
+    for (let attempt = 0; attempt < 3; attempt++) {
+      try {
+        res = await fetchWithTimeout(`/api/quiz/round?set=${encodeURIComponent(set)}`, { credentials: 'same-origin' }, 10000);
+        if (res.ok || (res.status !== 429 && res.status < 500)) break;
+      } catch (e) { res = null; }
+      if (attempt < 2) await sleep(1000 * (attempt + 1));
+    }
+    if (!res) throw new Error('load');
     if (!res.ok) throw new Error(res.status === 429 ? 'busy' : 'load');
     round = await res.json();
     quiz = { questions: round.questions };
@@ -409,24 +425,56 @@
     const buttons = [...optsEl.querySelectorAll('button')];
     buttons.forEach((b) => { b.disabled = true; });
     if (!Number.isInteger(q.answer_index)) {
-      try {
-        const res = await fetch('/api/quiz/check', {
-          method: 'POST',
-          headers: { 'content-type': 'application/json' },
-          body: JSON.stringify({ set: round.set, ids: round.ids, token: round.token, id: q.id }),
-        });
-        if (!res.ok) throw new Error(String(res.status));
-        const r = await res.json();
-        q.answer_index = r.answer_index;
-        q.explanation = r.explanation;
-      } catch (e) {
+      const myRound = round;
+      const showStatus = (text) => {
+        feedback.hidden = false;
+        feedback.className = 'quiz-feedback is-checking';
+        feedback.textContent = text;
+      };
+      const slowTimer = setTimeout(() => showStatus('Checking your answer…'), 1200);
+      let result = null, lastErr = 'network';
+      // Transient problems (timeout, dropped connection, server error, rate limit) are retried
+      // automatically with backoff; the student only sees a short status line meanwhile.
+      for (let attempt = 0; attempt < 4 && !result; attempt++) {
+        if (attempt > 0) {
+          const wait = lastErr === '429' ? 3000 * attempt : 800 * 2 ** (attempt - 1);
+          showStatus(lastErr === '429' ? 'Lots of students are practising right now. Checking again in a moment…' : 'Connection is slow. Trying again…');
+          await sleep(wait);
+        }
+        if (round !== myRound) { clearTimeout(slowTimer); return; } // quiz was restarted meanwhile
+        try {
+          const res = await fetchWithTimeout('/api/quiz/check', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ set: round.set, ids: round.ids, token: round.token, id: q.id }),
+          }, 8000);
+          if (res.ok) {
+            const r = await res.json();
+            if (Number.isInteger(r.answer_index)) result = r; else lastErr = 'bad';
+          } else {
+            lastErr = String(res.status);
+            if (res.status === 403) break; // round token expired or invalid: retrying cannot help
+          }
+        } catch (e) {
+          lastErr = 'network';
+        }
+      }
+      clearTimeout(slowTimer);
+      if (round !== myRound) return;
+      if (!result) {
         answered = false;
         buttons.forEach((b) => { b.disabled = false; });
         feedback.hidden = false;
         feedback.className = 'quiz-feedback is-wrong';
-        feedback.textContent = e.message === '429' ? 'Too fast. Wait a few seconds and tap again.' : 'Could not check that answer. Tap again.';
+        feedback.textContent = lastErr === '403'
+          ? 'This round has expired. Tap Restart to get a fresh set of questions.'
+          : lastErr === '429'
+            ? 'Too many answers are being checked from your network right now. Wait a few seconds, then tap your answer again.'
+            : 'We could not reach the server to check that answer. Check your connection, then tap your answer again.';
         return;
       }
+      q.answer_index = result.answer_index;
+      q.explanation = result.explanation;
     }
     buttons.forEach((b, i) => {
       if (i === q.answer_index) b.classList.add('correct');

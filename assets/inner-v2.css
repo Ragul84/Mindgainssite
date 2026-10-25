@@ -141,3 +141,5 @@ body.inner-v2{background:#fbfcfd!important;color:#0d1b2a!important;font-family:I
 @media(max-width:400px){.quiz-player .result-grid strong{font-size:18px}.quiz-player .result-actions{grid-template-columns:1fr}}
 /* Worked examples above the quiz: keep step lines readable */
 .mg-seo-question p{line-height:1.6}
+/* Answer check in progress or retrying (quiz-search.js) */
+.quiz-player .quiz-feedback.is-checking{display:block;padding:12px 14px;border-radius:12px;background:#f3f8f8;border:1px solid rgba(11,122,114,.18);color:#0b5f59;font-size:15px;font-weight:600}
