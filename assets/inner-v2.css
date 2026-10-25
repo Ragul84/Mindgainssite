@@ -108,3 +108,36 @@ body.inner-v2{background:#fbfcfd!important;color:#0d1b2a!important;font-family:I
 .inner-v2 .search-panel input::placeholder{color:#8a97a6!important;opacity:1!important}
 .inner-v2 main>section,.inner-v2 main>.ibento{margin-left:0!important;margin-right:0!important;width:auto!important}
 .inner-v2 .quiz-player{margin-left:0!important;margin-right:0!important;width:auto!important}
+
+/* Quiz results and mistake review (markup from quiz-search.js finish()). Scoped to the results state. */
+.quiz-shell:has(.result-card){row-gap:16px!important;gap:16px!important}
+.quiz-shell:has(.result-card) .quiz-meter{margin:0!important}
+.quiz-shell:has(.result-card) .quiz-actions{display:none!important}
+.quiz-shell:has(.result-card) [data-question]{margin:0!important;padding:18px 16px!important;border-radius:16px;background:linear-gradient(135deg,#ecf8f6,#f3f8f8);border:1px solid rgba(11,122,114,.18);text-align:center;min-height:0!important}
+.quiz-shell:has(.result-card) [data-question]>span{display:block!important;color:#0b7a72!important;font-family:inherit!important;font-size:12.5px!important;letter-spacing:.12em!important;font-weight:800!important}
+.quiz-shell:has(.result-card) [data-question]::after{content:"Here is how you did";display:block;margin-top:6px;font-size:22px;line-height:1.25;font-weight:800;letter-spacing:-.01em;color:#0d1b2a}
+.quiz-player .quiz-options:has(.result-card){display:block!important;gap:0!important}
+.quiz-player .result-card{display:flex;flex-direction:column;gap:16px;width:100%;margin:0}
+.quiz-player .result-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.quiz-player .result-grid>div{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-width:0;padding:14px 6px;border-radius:14px;background:#fff;border:1px solid rgba(13,27,42,.10);box-shadow:0 1px 2px rgba(13,27,42,.04)}
+.quiz-player .result-grid span{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#55667a}
+.quiz-player .result-grid strong{font-size:20px;line-height:1.2;font-weight:800;color:#0d1b2a;white-space:nowrap}
+.quiz-player .result-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.quiz-player .quiz-options .result-actions button{display:flex!important;align-items:center!important;justify-content:center!important;text-align:center!important;width:100%!important;min-height:48px!important;height:auto!important;margin:0!important;padding:10px 14px!important;border-radius:12px!important;font-size:15px!important;line-height:1.25!important;font-weight:700!important;letter-spacing:0!important;cursor:pointer;transform:none!important;box-shadow:none!important}
+.quiz-player .quiz-options .result-actions button::before,.quiz-player .quiz-options .result-actions button::after{content:none!important;display:none!important}
+.quiz-player .quiz-options .result-actions #btn-review{background:#0b7a72!important;color:#fff!important;border:1px solid #0b7a72!important}
+.quiz-player .quiz-options .result-actions #btn-retake{background:#fff!important;color:#0d1b2a!important;border:1px solid rgba(13,27,42,.16)!important}
+.quiz-player .mistake-list{display:flex;flex-direction:column;gap:16px;counter-reset:mg-mistake}
+.quiz-player .mistake-list[hidden]{display:none}
+.quiz-player .mistake-list article{counter-increment:mg-mistake;display:flex;flex-direction:column;gap:10px;margin:0;padding:16px;border-radius:16px;background:#fff;border:1px solid rgba(13,27,42,.10);box-shadow:0 1px 2px rgba(13,27,42,.04),0 10px 24px -18px rgba(13,27,42,.35);text-align:left;font-size:15px;line-height:1.55;color:#0d1b2a}
+.quiz-player .mistake-list article:has(p)::before{content:"Mistake " counter(mg-mistake);align-self:flex-start;padding:4px 10px;border-radius:999px;background:#fdf0f0;color:#a12c2c;font-size:12px;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
+.quiz-player .mistake-list article>strong:first-child{display:block;font-size:16px;line-height:1.45;font-weight:700;color:#0d1b2a}
+.quiz-player .mistake-list article p{margin:0;font-size:15px;line-height:1.55}
+.quiz-player .mistake-list article p:nth-of-type(1){padding:10px 12px;border-radius:10px;background:#fdf0f0;border-left:3px solid #d64545;color:#7a1f1f}
+.quiz-player .mistake-list article p:nth-of-type(2){padding:10px 12px;border-radius:10px;background:#ecf8f3;border-left:3px solid #0b7a72;color:#065f46}
+.quiz-player .mistake-list article p:nth-of-type(2) strong{color:#065f46;font-weight:700}
+.quiz-player .mistake-list article p:nth-of-type(3){white-space:pre-line;padding-top:12px;border-top:1px solid rgba(13,27,42,.10);color:#334155;font-size:15px}
+.quiz-player .mistake-list article:not(:has(p)){text-align:center;font-weight:700;padding:20px 16px}
+@media(max-width:400px){.quiz-player .result-grid strong{font-size:18px}.quiz-player .result-actions{grid-template-columns:1fr}}
+/* Worked examples above the quiz: keep step lines readable */
+.mg-seo-question p{line-height:1.6}
