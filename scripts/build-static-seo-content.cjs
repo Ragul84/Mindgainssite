@@ -20,6 +20,9 @@ const SUBJECT_NAMES = { csat_quant: 'CSAT Quantitative Aptitude', csat_english: 
 function esc(value) {
   return String(value ?? '').replace(/\s+/g, ' ').trim().replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
 }
+function escLines(value) {
+  return String(value ?? '').split(/\r?\n/).map(esc).filter(Boolean).join('<br>');
+}
 function humanize(value) {
   const special = { dpsp: 'DPSP', ncert: 'NCERT', upsc: 'UPSC', tnpsc: 'TNPSC', ssc: 'SSC', rrb: 'RRB', si: 'SI', ci: 'CI', pyq: 'PYQ' };
   return String(value).replace(/_/g, '-').split('-').filter(Boolean).map((word) => special[word.toLowerCase()] || word[0].toUpperCase() + word.slice(1)).join(' ');
@@ -45,7 +48,7 @@ function previewMarkup(item) {
   <p class="mg-seo-kicker">${esc(item.examName)} ${esc(item.subjectName)} practice</p>
   <h2 id="mg-study-title">${esc(item.topic)} MCQs with answers</h2>
   <p>Use these ${preview.length} worked ${esc(item.topic)} questions to revise the ${esc(item.examName)} ${esc(item.subjectName)} syllabus. Each answer includes an explanation; the full practice set contains ${item.questions.length.toLocaleString('en-IN')} questions.</p>
-  <div class="mg-seo-questions">${preview.map((q, index) => `<article class="mg-seo-question"><h3>${index + 1}. ${esc(q.question)}</h3><ol type="A">${(q.options || []).map((option) => `<li>${esc(option)}</li>`).join('')}</ol><p><strong>Answer:</strong> ${esc((q.options || [])[q.answer_index] || 'See explanation')}</p>${q.explanation ? `<p><strong>Explanation:</strong> ${esc(q.explanation)}</p>` : ''}</article>`).join('')}</div>
+  <div class="mg-seo-questions">${preview.map((q, index) => `<article class="mg-seo-question"><h3>${index + 1}. ${esc(q.question)}</h3><ol type="A">${(q.options || []).map((option) => `<li>${esc(option)}</li>`).join('')}</ol><p><strong>Answer:</strong> ${esc((q.options || [])[q.answer_index] || 'See explanation')}</p>${q.explanation ? `<p><strong>Explanation:</strong> ${escLines(q.explanation)}</p>` : ''}</article>`).join('')}</div>
   <p class="mg-seo-note">Start the interactive quiz below to practise every question in a shuffled order.</p>
 </section>
 <!-- MG_STATIC_PREVIEW_END -->
