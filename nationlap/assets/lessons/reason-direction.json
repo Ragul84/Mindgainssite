@@ -1,0 +1,125 @@
+{
+  "zoneId": "reason-direction",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "SSC Reasoning: Direction Sense — The 8-Point Compass",
+      "intro": "Today we master 'Orientation'. Direction Sense questions test your ability to visualize movement in space. In SSC, you'll be asked to find the final direction or the shortest distance between two points. Toppers don't just guess 'North' or 'East'; they use the 'Pythagoras Theorem' for distance and a 'Standard Compass' for direction. Let's master the 8-point compass and the 'Turning Logic' today.",
+      "pages": [
+        {
+          "type": "concept",
+          "title": "The 8-Point Compass",
+          "intro": "The 8-Point Compass is a tool that divides the circle of directions into eight equal parts. The four main or cardinal directions are North, South, East, and West; on a typical map, North is at the top, South at the bottom, East on the right side, and West on the left side. The four sub-directions, also called intercardinal directions, are placed exactly halfway between each pair of main directions: North-East lies between North and East, North-West between North and West, South-East between South and East, and South-West between South and West. Using all eight points helps you describe a location more precisely than using only the four main directions. Remember that North is the usual reference point for finding the other directions.",
+          "blocks": []
+        },
+        {
+          "type": "formula",
+          "title": "Turning Logic (Degree & Direction)",
+          "intro": "When you turn, the amount you turn is measured in degrees, and a full circle is 360 degrees. A 90-degree turn is a quarter of a full circle, and if you turn 90 degrees to your right, that is called a clockwise turn, which moves you to the next main direction, like from North to East. A 90-degree turn to your left is called an anti-clockwise turn, which moves you to the next main direction in the opposite way, like from North to West. A 180-degree turn is half of a full circle, and no matter which way you turn, it makes you face the exact opposite direction, so if you were facing North, you would end up facing South.",
+          "blocks": []
+        },
+        {
+          "type": "formula",
+          "title": "Shortest Distance (Pythagoras)",
+          "intro": "A right-angled triangle is a triangle that has one angle equal to 90 degrees. The side opposite the 90-degree angle is called the hypotenuse, and it is the longest side of the triangle. The other two sides are called the base and the perpendicular. The Pythagorean theorem says that if you take the length of the hypotenuse and multiply it by itself (square it), that number equals the square of the base plus the square of the perpendicular. A common triple is a set of three whole numbers that follow this rule, for example 3, 4, and 5 because 3 squared plus 4 squared equals 9 plus 16 which is 25, and 5 squared is 25. Other common triples are 6, 8, 10; 5, 12, 13; and 8, 15, 17.",
+          "blocks": []
+        },
+        {
+          "type": "facts",
+          "title": "Shadow Logic",
+          "intro": "Shadow Logic. A shadow is a dark shape formed when an object blocks sunlight. Sunrise happens in the east each morning, meaning the sun is in the east, so your shadow always points to the west. Sunset happens in the west each evening, meaning the sun is in the west, so your shadow always points to the east. At exactly 12 noon, the sun is directly overhead, so no shadow is cast because sunlight comes from straight above.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "In the Morning (Sunrise in East)",
+                  "value": "Shadow is always in the WEST"
+                },
+                {
+                  "label": "In the Evening (Sunset in West)",
+                  "value": "Shadow is always in the EAST"
+                },
+                {
+                  "label": "At 12 Noon",
+                  "value": "No shadow (Sun is overhead)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Left/Right Shortcut",
+          "intro": "When you stand and face north, the direction on your left side is west and on your right side is east. When you turn around and face south, your left side now points east and your right side points west. This happens because your body has rotated 180 degrees, which swaps the sides relative to the fixed compass directions. So if you know the pattern for north, you can just reverse it when facing south.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "What are the four main cardinal directions on a standard map?",
+          "back": "North (top), South (bottom), East (right), and West (left)."
+        },
+        {
+          "front": "What is a 90-degree clockwise turn equivalent to?",
+          "back": "A right turn that moves you to the next main direction."
+        },
+        {
+          "front": "What happens when you make a 180-degree turn?",
+          "back": "You face the exact opposite direction."
+        },
+        {
+          "front": "What is the formula for the shortest distance in a right-angled triangle?",
+          "back": "Hypotenuse squared equals base squared plus perpendicular squared."
+        },
+        {
+          "front": "Which common Pythagorean triplets are used for distance calculations?",
+          "back": "(3, 4, 5), (6, 8, 10), (5, 12, 13), and (8, 15, 17)."
+        },
+        {
+          "front": "In which direction does your shadow point during the morning?",
+          "back": "The West."
+        },
+        {
+          "front": "In which direction does your shadow point during the evening?",
+          "back": "The East."
+        },
+        {
+          "front": "Why is there no shadow cast at 12 noon?",
+          "back": "The sun is directly overhead."
+        },
+        {
+          "front": "If you are facing North, which direction is on your left?",
+          "back": "West."
+        },
+        {
+          "front": "How do left and right directions change when you face South instead of North?",
+          "back": "They are reversed."
+        },
+        {
+          "front": "Pythagoras triplets for distance?",
+          "back": "(3,4,5), (5,12,13), (8,15,17)."
+        },
+        {
+          "front": "Where is the shadow at Sunset?",
+          "back": "East."
+        },
+        {
+          "front": "Where is the shadow at Sunrise?",
+          "back": "West."
+        },
+        {
+          "front": "Facing North, what is a 180° turn?",
+          "back": "Facing South."
+        },
+        {
+          "front": "Facing East, what is a 90° Clockwise turn?",
+          "back": "Facing South."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

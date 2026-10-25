@@ -1,0 +1,295 @@
+{
+  "zoneId": "polity-bodies",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "Constitutional Bodies: ECI, CAG, UPSC & Finance Commission",
+      "intro": "Constitutional Bodies are the 'Pillars of Indian Democracy'. These institutions derive their authority directly from the Constitution, giving them a high degree of independence from the government of the day. Today we study the 'Big Four': the Election Commission of India (ECI), the Comptroller and Auditor General (CAG), the Union Public Service Commission (UPSC), and the Finance Commission. For a UPSC aspirant, understanding their 'Security of Tenure' and 'Functions' is vital, as these bodies are the gatekeepers of fair elections, financial accountability, and meritocracy in the civil services.",
+      "pages": [
+        {
+          "type": "concept",
+          "title": "Election Commission (Art 324)",
+          "intro": "Independent constitutional authority that conducts elections in India under Article 324.",
+          "blocks": [
+            {
+              "text": "Article 324 of the Constitution of India establishes the Election Commission, which is the independent authority that runs elections for",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Comptroller and Auditor General (Art 148)",
+          "intro": "Constitutional authority under Article 148, known as the Guardian of the Public Purse.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Appointment",
+                  "value": "By the President of India"
+                },
+                {
+                  "label": "Term",
+                  "value": "6 years or age 65, whichever earlier"
+                },
+                {
+                  "label": "Removal protection",
+                  "value": "Similar to SC judge"
+                },
+                {
+                  "label": "Post-retirement",
+                  "value": "No further govt office"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "UPSC & SPSC (Art 315–323)",
+          "intro": "Central and state recruiting agencies governed by Articles 315–323 of the Constitution.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Appointing authority",
+                  "President",
+                  "Governor"
+                ],
+                [
+                  "Removal authority",
+                  "President (after SC inquiry)",
+                  "President (not Governor)"
+                ],
+                [
+                  "Role",
+                  "Advisory (not binding)",
+                  "Advisory (not binding)"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "",
+                "UPSC",
+                "SPSC"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Finance Commission (Art 280)",
+          "intro": "Quasi-judicial body set up every 5 years to recommend centre-state tax sharing under Article 280.",
+          "blocks": [
+            {
+              "type": "mindmap",
+              "center": "Finance Commission",
+              "branches": [
+                {
+                  "label": "Vertical devolution",
+                  "value": "% of central taxes to all states"
+                },
+                {
+                  "label": "Horizontal devolution",
+                  "value": "Share among states (population, poverty, etc.)"
+                },
+                {
+                  "label": "Grants-in-aid",
+                  "value": "Extra payments to poorer states"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "Which article establishes the Election Commission of India?",
+          "back": "Article 324."
+        },
+        {
+          "front": "Who conducts elections for local bodies in India?",
+          "back": "The State Election Commission."
+        },
+        {
+          "front": "What is the tenure of the Comptroller and Auditor General (CAG)?",
+          "back": "6 years or until the age of 65, whichever is earlier."
+        },
+        {
+          "front": "Why is the CAG referred to as the 'Guardian of the Public Purse'?",
+          "back": "Because its main job is to audit all money records and accounts of the Union and State governments."
+        },
+        {
+          "front": "Is the CAG eligible for further government office after retirement?",
+          "back": "No, the CAG is not eligible for any further office under the Union or any State government."
+        },
+        {
+          "front": "Who has the authority to remove a member of the State Public Service Commission (SPSC)?",
+          "back": "The President of India."
+        },
+        {
+          "front": "Is the advice given by the UPSC binding on the government?",
+          "back": "No, the UPSC has an advisory role and its advice is not binding."
+        },
+        {
+          "front": "How often is the Finance Commission constituted?",
+          "back": "Every five years."
+        },
+        {
+          "front": "What is the composition of the Finance Commission?",
+          "back": "One Chairman and four other members."
+        },
+        {
+          "front": "What was the share of central tax revenue recommended for states by the 15th Finance Commission?",
+          "back": "41%."
+        },
+        {
+          "front": "Who conducts elections for Panchayats and Municipalities?",
+          "back": "The STATE ELECTION COMMISSION (established under Art 243K and 243ZA). The Election Commission of India (ECI) does NOT conduct local body elections."
+        },
+        {
+          "front": "Can the CAG hold further office after retirement?",
+          "back": "NO. Under Article 148, the CAG is not eligible for any further office under the Government of India or any State Government after they cease to hold office. This ensures independence."
+        },
+        {
+          "front": "Who can remove a member of a State Public Service Commission (SPSC)?",
+          "back": "ONLY the PRESIDENT (not the Governor). Although the Governor appoints them, the power of removal is vested in the President to ensure independence from state political pressure."
+        },
+        {
+          "front": "Are Finance Commission recommendations binding?",
+          "back": "NO. They are advisory in nature. However, governments usually accept them as a matter of constitutional convention."
+        },
+        {
+          "front": "Article 312—what is it?",
+          "back": "The power of Rajya Sabha to create one or more All-India Services (like IAS, IPS, IFoS) by passing a resolution by 2/3rd majority."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    },
+    {
+      "title": "Governance Bodies: RTI, Lokpal, CVC & NHRC",
+      "intro": "Today we move from the Constitution to 'Governance'. These bodies—some statutory, some executive—are designed to fight corruption and protect human rights. From the Right to Information (RTI) which empowered the common citizen, to the Lokpal which acts as an anti-corruption ombudsman for high officials, these institutions are the watchdogs of our democracy. For a UPSC aspirant, understanding their composition, appointment process (the 'Selection Committees'), and their powers is essential for GS Paper 2.",
+      "pages": [
+        {
+          "type": "formula",
+          "title": "Right to Information (RTI) 2005",
+          "intro": "The Right to Information Act, 2005, is a law that gives every citizen of India the legal power to ask for and receive information from any \"Public Authority,\" which means any government department, office, or organization that is funded or controlled by the government. When you file a request, the public authority must give you the information within 30 days, but if the information is about your life or personal freedom, they must respond within 48 hours. However, the law does not give you everything you ask for; Section 8 of the Act lists exemptions, meaning information that can be kept secret, such as matters that could harm India's sovereignty (its independent authority), national security, strategic interests, or information from intelligence agencies like the Research and Analysis Wing (RAW). If you are unhappy with the response you get, you can appeal to the Central Information Commission (CIC), which is the independent body that hears complaints and makes final decisions on RTI disputes.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Lokpal & Lokayuktas (2013)",
+          "intro": "Lokpal and Lokayuktas Act, 2013 is a law that created two separate anti-corruption watchdogs. The Lokpal is the anti-corruption ombudsman, which is a fancy word for a high-level official or body that investigates complaints of corruption, for the central or Union government at the national level. The Lokayukta is a similar anti-corruption body created for each individual state government. The Lokpal has the power to investigate cases of corruption against the Prime Minister of India, all Union Ministers, all Members of Parliament (MPs), and all central government officers from the highest Group A level down to the lowest Group D level. The Selection Committee that chooses the members of the Lokpal is made up of five people: the Prime Minister of India as the Chairperson, the Speaker of the Lok Sabha (the lower house of Parliament), the Leader of the Opposition in the Lok Sabha, the Chief Justice of India (CJI) or a Supreme Court judge nominated by them, and one other person who is a well-known expert in law, called an eminent jurist.",
+          "blocks": []
+        },
+        {
+          "type": "timeline",
+          "title": "Central Vigilance Commission (CVC)",
+          "intro": "The Central Vigilance Commission, or CVC, was first set up in 1964 on the recommendation of the Santhanam Committee, which was a committee formed to suggest ways to prevent corruption. In 2003, the CVC was given statutory status, meaning it became a legally recognized body created by an act of Parliament. The CVC acts as a watchdog of integrity in the government, which means it works to monitor and promote honesty among public officials, but it is only an advisory body, so it cannot order punishments—it can only recommend actions. The CVC is appointed by the President of India based on the recommendation of a committee that includes the Prime Minister (PM), the Home Minister, and the Leader of the Opposition (LoP) in the Lok Sabha (LS), which is the lower house of Parliament.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "National Human Rights Commission (NHRC)",
+          "intro": "The National Human Rights Commission, or NHRC, is a statutory body, meaning it was created by a specific law passed by Parliament, which is the Protection of Human Rights Act, 1993 (PHRA 1993). Its main job is to investigate complaints about violations of human rights, which are the basic rights and freedoms that every person is entitled to simply because they are human. However, the NHRC is often called a \"toothless tiger\" because it has only advisory powers; it cannot punish anyone or enforce its recommendations, it can only suggest actions to the government or court. The Chairman of the NHRC must be a former Chief Justice of India (CJI) or a former Judge of the Supreme Court of India. The selection committee for members includes the Prime Minister, the Speaker of the Lok Sabha (the lower house of Parliament), the Deputy Chairman of the Rajya Sabha (the upper house), the Home Minister, and the Leaders of the Opposition (LoP) in both the Lok Sabha and the Rajya Sabha.",
+          "blocks": []
+        },
+        {
+          "type": "facts",
+          "title": "Statutory vs Constitutional vs Executive",
+          "intro": "A Constitutional body is an organization that is directly created and mentioned in the Constitution of India, such as the Election Commission of India (ECI), the Comptroller and Auditor General (CAG), and the Union Public Service Commission (UPSC). A Statutory body is created by a law passed by Parliament, known as an Act, for example the Right to Information (RTI) Commission, the Lokpal, the Central Vigilance Commission (CVC), and the National Human Rights Commission (NHRC). An Executive body is formed by a simple decision of the Cabinet, called a Cabinet resolution, without needing a law or constitutional mention, like NITI Aayog and the Central Bureau of Investigation (CBI). The key difference is their source of power: Constitutional bodies get their authority from the Constitution, Statutory bodies from a specific Act of Parliament, and Executive bodies from a government order.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Constitutional",
+                  "Mentioned in Constitution (ECI, CAG, UPSC)"
+                ],
+                [
+                  "Statutory",
+                  "Created by Act of Parliament (RTI, Lokpal, CVC, NHRC)"
+                ],
+                [
+                  "Executive",
+                  "Created by Cabinet resolution (NITI Aayog, CBI)"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Item",
+                "Exam fact"
+              ]
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "What is the standard time limit for a public authority to provide information under the RTI Act?",
+          "back": "30 days."
+        },
+        {
+          "front": "Which section of the RTI Act lists exemptions for information disclosure?",
+          "back": "Section 8."
+        },
+        {
+          "front": "Who serves as the appellate body for RTI disputes?",
+          "back": "The Central Information Commission (CIC)."
+        },
+        {
+          "front": "Which committee recommended the establishment of the CVC in 1964?",
+          "back": "The Santhanam Committee."
+        },
+        {
+          "front": "In which year was the CVC granted statutory status?",
+          "back": "2003."
+        },
+        {
+          "front": "What is the primary limitation of the NHRC's enforcement power?",
+          "back": "It has only advisory powers and cannot punish or enforce recommendations, leading to it being called a 'toothless tiger'."
+        },
+        {
+          "front": "Who is eligible to be the Chairman of the NHRC?",
+          "back": "A former Chief Justice of India (CJI) or a former Judge of the Supreme Court of India."
+        },
+        {
+          "front": "What is the source of authority for a Statutory body?",
+          "back": "A specific Act of Parliament."
+        },
+        {
+          "front": "How are Executive bodies like NITI Aayog created?",
+          "back": "By a Cabinet resolution."
+        },
+        {
+          "front": "Which officials are included in the selection committee for the Lokpal?",
+          "back": "The Prime Minister (Chair), Speaker of the Lok Sabha, Leader of the Opposition in the Lok Sabha, the CJI (or nominee), and an eminent jurist."
+        },
+        {
+          "front": "Is the CBI a Statutory Body?",
+          "back": "NO. The CBI is NOT a statutory body. It derives its powers from the Delhi Special Police Establishment Act, 1946, but was created by an executive resolution of the Ministry of Home Affairs in 1963."
+        },
+        {
+          "front": "What is the time limit for life and liberty RTI requests?",
+          "back": "48 hours. For normal requests, it is 30 days."
+        },
+        {
+          "front": "Who is the Chairman of the Lokpal Selection Committee?",
+          "back": "The Prime Minister."
+        },
+        {
+          "front": "Does the Lokpal have jurisdiction over the Prime Minister?",
+          "back": "YES, but with certain safeguards (e.g., in-camera proceedings, 2/3rd bench approval for inquiry related to international relations, security, etc.)."
+        },
+        {
+          "front": "Is NITI Aayog a Constitutional Body?",
+          "back": "NO. It is an executive body (think-tank) created by a Cabinet resolution in 2015, replacing the Planning Commission."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

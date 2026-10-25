@@ -1,0 +1,364 @@
+{
+  "zoneId": "econ-tax",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "UPSC Economy: Taxation in India",
+      "intro": "Today we study the 'Revenue Stream'. Taxes are the primary source of government income. We explore the shift from a complex tax regime to the 'Goods and Services Tax' (GST) and the importance of 'Direct' vs 'Indirect' taxes. For UPSC, focus on 'Laffer Curve', 'Tax-to-GDP ratio', and the concept of 'Tax Buoyancy'. Let's master the logic of taxation today.",
+      "pages": [
+        {
+          "type": "concept",
+          "title": "Direct Taxes",
+          "intro": "Taxes where the payer and the bearer of the burden are the same person, progressive in nature.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Incidence vs Impact",
+                  "value": "Same entity; burden cannot be shifted"
+                },
+                {
+                  "label": "Examples",
+                  "value": "Income Tax, Corporate Tax"
+                },
+                {
+                  "label": "Nature",
+                  "value": "Progressive – higher income, higher tax rate"
+                },
+                {
+                  "label": "Contrast",
+                  "value": "Unlike indirect taxes (e.g., GST) where payer ≠ bearer"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Indirect Taxes",
+          "intro": "Taxes added to the price of goods/services, where the payer collects from the consumer and remits to the government.",
+          "blocks": [
+            {
+              "text": "Indirect taxes are charges added to the price of goods and services. The person paying the tax to the government (e.g., a shopkeeper) is different from the person who bears the economic burden (the consumer). Examples include GST, excise duty, and customs duty. These taxes are regressive in nature, as they take a larger percentage of income from lower-income groups.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "GST (Goods and Services Tax)",
+          "intro": "A single, destination-based indirect tax under 'One Nation, One Tax', with dual structure and five rate tiers.",
+          "blocks": [
+            {
+              "type": "mindmap",
+              "center": "GST System",
+              "branches": [
+                {
+                  "label": "CGST",
+                  "value": "Central GST on intra-state supply"
+                },
+                {
+                  "label": "SGST",
+                  "value": "State GST on intra-state supply"
+                },
+                {
+                  "label": "IGST",
+                  "value": "Integrated GST on inter-state supply"
+                },
+                {
+                  "label": "Rate Tiers",
+                  "value": "0%, 5%, 12%, 18%, 28%"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Laffer Curve",
+          "intro": "Illustrates that beyond a revenue-maximizing rate, higher tax rates reduce total tax revenue due to disincentives and evasion.",
+          "blocks": [
+            {
+              "text": "Common mistake: Assuming higher tax rates always increase revenue. Beyond the optimal point, revenue falls due to lower economic activity and higher evasion.",
+              "type": "trap"
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Key Concepts",
+          "intro": "Tax Buoyancy and Tax Elasticity measure revenue responsiveness to GDP growth and policy changes respectively.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Definition",
+                  "Revenue growth from GDP growth + policy changes",
+                  "Revenue growth from policy changes alone (GDP constant)"
+                ],
+                [
+                  "Example",
+                  "GDP grows 5%, revenue grows 7% → buoyancy 1.4",
+                  "New tax law raises revenue 10% with no GDP growth"
+                ],
+                [
+                  "Focus",
+                  "Combined effect",
+                  "Isolated policy effect"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "",
+                "Tax Buoyancy",
+                "Tax Elasticity"
+              ]
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "What is the primary characteristic of Direct Taxes regarding incidence and impact?",
+          "back": "The incidence and impact fall on the same person."
+        },
+        {
+          "front": "How are Direct Taxes classified in terms of their rate structure?",
+          "back": "They are progressive in nature, meaning higher income leads to higher tax."
+        },
+        {
+          "front": "What is the primary characteristic of Indirect Taxes regarding incidence and impact?",
+          "back": "The impact and incidence fall on different persons."
+        },
+        {
+          "front": "Why are Indirect Taxes considered regressive?",
+          "back": "They affect the poor more as a percentage of their income."
+        },
+        {
+          "front": "Which constitutional amendment introduced the GST?",
+          "back": "The 101st Amendment."
+        },
+        {
+          "front": "What is the core philosophy behind the GST regime in India?",
+          "back": "One Nation, One Tax."
+        },
+        {
+          "front": "What type of consumption tax is GST?",
+          "back": "It is a destination-based consumption tax."
+        },
+        {
+          "front": "What are the three components of the Dual GST system?",
+          "back": "CGST, SGST, and IGST."
+        },
+        {
+          "front": "What does the Laffer Curve illustrate?",
+          "back": "The relationship between tax rates and tax revenue."
+        },
+        {
+          "front": "What is the definition of Tax Buoyancy?",
+          "back": "The responsiveness of tax growth to GDP growth."
+        },
+        {
+          "front": "Which amendment introduced GST?",
+          "back": "101st Amendment (2016)."
+        },
+        {
+          "front": "Is Income Tax Progressive or Regressive?",
+          "back": "Progressive."
+        },
+        {
+          "front": "What is \"Tax Buoyancy\"?",
+          "back": "Ratio of tax growth to GDP growth."
+        },
+        {
+          "front": "Who heads the GST Council?",
+          "back": "Union Finance Minister."
+        },
+        {
+          "front": "What is the \"Laffer Curve\"?",
+          "back": "Graph showing the relationship between tax rate and tax revenue."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    },
+    {
+      "title": "TNPSC Economy: GST & Fiscal Policy",
+      "intro": "Today we study the 'Taxes and Budgets'. Goods and Services Tax (GST) changed the indirect tax landscape of India. In TNPSC, 'GST Council' and 'Fiscal Deficit' are high-yield. Do you know which amendment introduced GST? Or what is the 'FRBM Act'? Let's master the revenue facts today.",
+      "pages": [
+        {
+          "type": "concept",
+          "title": "GST (One Nation One Tax)",
+          "intro": "Indirect tax implemented on 1 July 2017 via the 101st Constitutional Amendment, unifying multiple indirect taxes into a single nationwide tax.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Type",
+                  "value": "Indirect tax (collected by seller, paid to govt)"
+                },
+                {
+                  "label": "Implementation",
+                  "value": "1 July 2017"
+                },
+                {
+                  "label": "Constitutional basis",
+                  "value": "101st Constitutional Amendment"
+                },
+                {
+                  "label": "Replaced",
+                  "value": "Excise duty, sales tax, and other indirect taxes"
+                },
+                {
+                  "label": "Slabs",
+                  "value": "0%, 5%, 12%, 18%, 28%"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "GST Council (Art 279A)",
+          "intro": "Constitutional body under Article 279A, chaired by the Union Finance Minister, that decides GST rates on goods and services.",
+          "blocks": [
+            {
+              "text": "The GST Council determines tax rates for the Goods and Services Tax. It was created by Article 279A of the Indian Constitution. The Chairman is the Union Finance Minister. Its primary role is to decide GST rates on different items.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Fiscal Policy",
+          "intro": "Government decisions on revenue (taxes) and expenditure to control inflation and economic growth, managed by the Ministry of Finance.",
+          "blocks": [
+            {
+              "type": "mindmap",
+              "center": "Fiscal Policy",
+              "branches": [
+                {
+                  "label": "Revenue",
+                  "value": "Money collected (mainly taxes)"
+                },
+                {
+                  "label": "Expenditure",
+                  "value": "Spending on roads, schools, salaries"
+                },
+                {
+                  "label": "Inflation control",
+                  "value": "Reduce spending or increase taxes"
+                },
+                {
+                  "label": "Growth boost",
+                  "value": "Increase spending or cut taxes"
+                },
+                {
+                  "label": "Managed by",
+                  "value": "Ministry of Finance"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Fiscal Deficit",
+          "intro": "Total government borrowing in a year, calculated as total expenditure minus revenue receipts and non-debt capital receipts.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "FRBM Act (2003)",
+          "intro": "Law to reduce fiscal deficit, enforce financial discipline, and target fiscal deficit at 3% of GDP, with annual medium-term fiscal statements.",
+          "blocks": [
+            {
+              "type": "timeline",
+              "items": [
+                {
+                  "label": "2003",
+                  "value": "FRBM Act enacted to impose fiscal discipline"
+                },
+                {
+                  "label": "Original targets",
+                  "value": "Eliminate revenue deficit; fiscal deficit to 3% of GDP"
+                },
+                {
+                  "label": "Mandate",
+                  "value": "Present Medium-Term Fiscal Policy Statement annually"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "When was the Goods and Services Tax (GST) implemented in India?",
+          "back": "1 July 2017."
+        },
+        {
+          "front": "Which Constitutional Amendment introduced the GST?",
+          "back": "The 101st Constitutional Amendment."
+        },
+        {
+          "front": "What are the five GST tax slabs?",
+          "back": "0%, 5%, 12%, 18%, and 28%."
+        },
+        {
+          "front": "Which article of the Indian Constitution established the GST Council?",
+          "back": "Article 279A."
+        },
+        {
+          "front": "Who serves as the Chairman of the GST Council?",
+          "back": "The Union Finance Minister."
+        },
+        {
+          "front": "Which ministry is responsible for managing Fiscal Policy?",
+          "back": "The Ministry of Finance."
+        },
+        {
+          "front": "How is fiscal deficit calculated?",
+          "back": "Total Expenditure minus (Revenue Receipts + Non-debt Capital Receipts)."
+        },
+        {
+          "front": "What does the fiscal deficit measure?",
+          "back": "It measures the borrowing needs of the government."
+        },
+        {
+          "front": "What was the original fiscal deficit target set by the FRBM Act (2003)?",
+          "back": "3% of the country's Gross Domestic Product (GDP)."
+        },
+        {
+          "front": "What does the FRBM Act mandate the government to present to Parliament each year?",
+          "back": "A Medium-Term Fiscal Policy Statement."
+        },
+        {
+          "front": "GST implemented on?",
+          "back": "1 July 2017."
+        },
+        {
+          "front": "GST Amendment number?",
+          "back": "101st Amendment."
+        },
+        {
+          "front": "Chairman of GST Council?",
+          "back": "Union Finance Minister."
+        },
+        {
+          "front": "Article for GST Council?",
+          "back": "Article 279A."
+        },
+        {
+          "front": "\"One Nation One Tax\" refers to?",
+          "back": "GST."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

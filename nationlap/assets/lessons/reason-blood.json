@@ -1,0 +1,151 @@
+{
+  "zoneId": "reason-blood",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "SSC Reasoning: Blood Relations — The Family Tree",
+      "intro": "Today we master 'Relationships'. Blood Relations is one of the most scoring chapters in SSC, but it's easy to get confused if you don't use a 'Family Tree'. In SSC, questions come in three formats: Pointing to a photograph, Statement-based, and Coded relationships (A + B means A is father of B). Toppers don't visualize the family; they draw it using standard symbols for gender and generations. Let's master the 'Tree Method' to solve any relationship puzzle in 15 seconds.",
+      "pages": [
+        {
+          "type": "formula",
+          "title": "Standard Symbols for Family Tree",
+          "intro": "In a family tree diagram, a square or a plus sign (+) is used to represent a male, and a circle or a minus sign (-) is used to represent a female. A single horizontal line drawn between two shapes means those two people are siblings, meaning they share at least one parent. Two parallel horizontal lines (like a double line) drawn between two shapes shows that those two people are married to each other. A vertical line is drawn to connect someone to a child or parent, showing that they belong to different generations, for example a father above and his son below.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Square/Plus (+)",
+                  "value": "Male. Circle/Minus (-): Female"
+                },
+                {
+                  "label": "Horizontal Line (—)",
+                  "value": "Siblings"
+                },
+                {
+                  "label": "Double Horizontal (",
+                  "value": ": ): Married couple"
+                },
+                {
+                  "label": "Vertical Line (|)",
+                  "value": "Different generations (Father/Son)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Generation Gaps",
+          "intro": "A generation is a group of people who are born around the same time, and a generation gap is the difference in age and experience between generations. In this system, you start with yourself as Generation 0, which includes you, your siblings, your cousins, and your spouse. Your parents, uncles, and aunts are one generation older, so they are Generation +1, and your grandparents are two generations older, so they are Generation +2. People who are one generation younger than you, like your children, nephews, and nieces, are Generation -1.",
+          "blocks": []
+        },
+        {
+          "type": "facts",
+          "title": "Key Terms to Remember",
+          "intro": "Paternal means related to your father's side of the family, such as your paternal grandfather. Maternal means related to your mother's side, like your maternal aunt. Only son or only daughter means a person who has no brothers if they are a son, or no sisters if they are a daughter. Spouse refers to your husband or wife. In-laws are relatives you gain through marriage, such as your mother-in-law or brother-in-law.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Paternal",
+                  "value": "From father's side"
+                },
+                {
+                  "label": "Maternal",
+                  "value": "From mother's side"
+                },
+                {
+                  "label": "Only son/daughter",
+                  "value": "No other siblings of that gender"
+                },
+                {
+                  "label": "Spouse",
+                  "value": "Husband or Wife. In-laws: Relationships through marriage"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Pointing to a Photo Shortcut",
+          "intro": "When solving a photo pointing puzzle, to find the relationship, start from the last word of the spoken sentence and work backwards. For example, the phrase \"my mother's son\" means the son of your mother. If the phrase is \"my mother's only son\", then if you are male, \"only son\" refers to yourself, but if you are female, it refers to your brother. This backward reading helps you avoid mistakes in blood relation questions. Always check the speaker's gender to apply the correct interpretation.",
+          "blocks": []
+        },
+        {
+          "type": "formula",
+          "title": "Coded Blood Relations",
+          "intro": "Coded Blood Relations is a way to solve family tree puzzles using symbols instead of words. In this system, the plus sign (+) means the first person is the father of the second person, so \"A + B\" tells you that A is the father of B. The minus sign (-) means the first person is the mother of the second person, so \"A - B\" tells you that A is the mother of B. To solve a problem, you treat each statement like a simple math equation where you replace the symbol with the actual relationship, such as \"father\" or \"mother\", to figure out how people are connected. For example, if you see \"P + Q\" and \"Q - R\", you can say P is the father of Q, and Q is the mother of R, which makes P the grandfather of R. Your goal is to use these substitutions to build a clear family tree showing who is related to whom.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "Which symbol represents a male in a family tree?",
+          "back": "A square or a plus sign (+)."
+        },
+        {
+          "front": "What does a double horizontal line (::) represent in a family tree?",
+          "back": "A married couple."
+        },
+        {
+          "front": "In the generation gap system, which relatives belong to Generation +1?",
+          "back": "Father, Mother, Uncle, and Aunt."
+        },
+        {
+          "front": "What does the term 'Paternal' refer to?",
+          "back": "Relationships from the father's side of the family."
+        },
+        {
+          "front": "What does 'Only son' mean in blood relation problems?",
+          "back": "A person who has no brothers."
+        },
+        {
+          "front": "What is the recommended strategy for solving 'pointing to a photo' puzzles?",
+          "back": "Start from the last word of the sentence and work backwards."
+        },
+        {
+          "front": "In Coded Blood Relations, what does 'A + B' signify?",
+          "back": "A is the father of B."
+        },
+        {
+          "front": "Which generation includes your spouse, siblings, and cousins?",
+          "back": "Generation 0."
+        },
+        {
+          "front": "What does a vertical line (|) represent in a family tree?",
+          "back": "Different generations, such as a parent and a child."
+        },
+        {
+          "front": "In Coded Blood Relations, what does 'A - B' signify?",
+          "back": "A is the mother of B."
+        },
+        {
+          "front": "In-laws meaning?",
+          "back": "Relations created through marriage (e.g., Father-in-law)."
+        },
+        {
+          "front": "Paternal vs Maternal?",
+          "back": "Paternal : Father's side. Maternal : Mother's side."
+        },
+        {
+          "front": "Who is a \"Nephew\"?",
+          "back": "Son of your brother or sister."
+        },
+        {
+          "front": "Who is a \"Niece\"?",
+          "back": "Daughter of your brother or sister."
+        },
+        {
+          "front": "Relationship: \"Mother's brother's only daughter\"?",
+          "back": "Maternal Cousin."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

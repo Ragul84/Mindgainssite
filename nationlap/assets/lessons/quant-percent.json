@@ -1,0 +1,165 @@
+{
+  "zoneId": "quant-percent",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "SSC QA: Percentage — The Fraction Shortcut",
+      "intro": "Percentage is the heart of Arithmetic. If you master Percentage, you automatically master Profit & Loss, SI/CI, and Data Interpretation. In SSC, calculating 37.5% of 800 the long way is a crime. You must know that 37.5% is simply 3/8. Today we focus on the 'Fraction-to-Percentage' table and the 'Successive Change' formula. If you can shift from decimals to fractions, you will solve problems 3x faster than the average student. Let's build the shortcut engine today.",
+      "pages": [
+        {
+          "type": "formula",
+          "title": "Master Fraction Table (Memorize!)",
+          "intro": "A fraction is a part of a whole, like 1/2 which means one out of two equal pieces. A percentage (%) is a way to show a fraction out of 100, so 1/2 equals 50% because 50 out of 100 is the same as half. You need to memorize these common fractions and their percentage equivalents: 1/2 is 50%, 1/3 is approximately 33.33%, 1/4 is 25%, 1/5 is 20%, 1/6 is about 16.66%, 1/7 is about 14.28%, 1/8 is 12.5%, 1/9 is about 11.11%, 1/11 is about 9.09%, 1/12 is about 8.33%, 3/8 is 37.5%, and 5/8 is 62.5%. Knowing these conversions helps you quickly change a percentage into a fraction to make multiplication easier, for example, finding 25% of a number can be done by multiplying by 1/4. Practice until you can recall each pair instantly.",
+          "blocks": []
+        },
+        {
+          "type": "formula",
+          "title": "Successive Percentage Change",
+          "intro": "When a number goes up or down by a certain percentage, and then goes up or down by another percentage, the overall change is not just adding the two percentages together. Instead, you use a special formula to find the total combined effect. The formula is: net percentage change equals x plus y plus (x times y divided by 100), all in percent. Here, x is the first percentage change and y is the second percentage change. If a change is a decrease, you put a minus sign in front of that number, like using negative ten for a ten percent decrease. For example, if you first have a ten percent increase and then a ten percent decrease, you calculate ten plus negative ten plus (ten times negative ten divided by 100), which gives ten minus ten minus one, or negative one percent, meaning there is a net decrease of one percent.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "If a value changes by x% and then by y%, the net change is",
+                  "value": "[x + y + (xy/100)]%"
+                },
+                {
+                  "label": "Note",
+                  "value": "Use negative sign for decrease"
+                },
+                {
+                  "label": "Example",
+                  "value": "10% increase then 10% decrease: [10 - 10 + (10*-10)/100]%: -1% (net decrease)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "The \"AB\" Rule (Product Constancy)",
+          "intro": "The \"AB\" Rule, also called the Product Constancy rule, helps you find how much one thing must go down when another thing goes up, if their product (the result of multiplying them together) stays the same. For example, if you multiply A and B, and the total never changes, then when A becomes bigger by a certain percentage, B must become smaller by a calculated percentage to keep the product unchanged. To find that decrease percentage for B, use this formula: take the percentage increase in A (call it x%), then divide x by (100 plus x), and finally multiply that result by 100. For instance, if the price of sugar increases by 25%, meaning the price goes up by 25%, then to keep your total spending (expenditure) the same, you must reduce your consumption (how much sugar you buy) by 25 divided by 125, times 100, which equals a 20% decrease. This rule only works when the product of the two quantities stays constant, like when the price per unit times the quantity bought equals a fixed budget.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "If A × B",
+                  "value": "Constant, and A increases by x%, then B must decrease by [x/(100+x)] * 100 to keep the product same"
+                },
+                {
+                  "label": "Example",
+                  "value": "Price of sugar increases by 25%"
+                },
+                {
+                  "label": "Consumption must decrease by 25/125 * 100",
+                  "value": "20% to keep expenditure same"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Population & Depreciating Value",
+          "intro": "This lesson is about two formulas that help you calculate how a number changes over time, either by growing or shrinking. The first formula is for a population that increases, and it is written as P times (1 plus r over 100) to the power of n, where P is the starting population, r is the percentage rate of growth per year, and n is the number of years. The second formula is for a value that goes down or depreciates, and it is written as P times (1 minus r over 100) to the power of n, where P is the starting value, r is the percentage rate of loss per year, and n is the number of years. In many SSC problems, n is usually 2 or 3, so you can use a faster method called the successive change formula when n equals 2, which means you calculate the change in two steps instead of using the power formula.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Population after n years",
+                  "value": "P(1 + r/100)ⁿ"
+                },
+                {
+                  "label": "Value after n years",
+                  "value": "P(1 - r/100)ⁿ"
+                },
+                {
+                  "label": "Note",
+                  "value": "For SSC, usually n: 2 or 3"
+                },
+                {
+                  "label": "Use the successive change formula for n",
+                  "value": "2 instead of the power formula for speed!"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Venn Diagram Problems",
+          "intro": "Venn Diagram Problems help you find how many people are in different groups when some people belong to more than one group. The formula Total equals n(A) plus n(B) minus n(A intersection B) plus n(Neither) is used to calculate the total number of people or items. In this formula, n(A) means the number of people in group A, n(B) means the number in group B, and n(A intersection B) means the number who are in both groups at the same time. n(Neither) means the number of people who are not in group A and not in group B. For example, if 60 percent of students passed in English, 50 percent passed in Math, and 20 percent passed in both subjects, you would add 60 and 50 to get 110, then subtract the 20 who are counted twice, giving 90 percent who passed at least one subject. Finally, you add the percentage who passed neither subject to find the total of 100 percent.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "What is the fraction equivalent of 37.5%?",
+          "back": "3/8"
+        },
+        {
+          "front": "What is the fraction equivalent of 12.5%?",
+          "back": "1/8"
+        },
+        {
+          "front": "What is the formula for net percentage change after two successive changes of x% and y%?",
+          "back": "[x + y + (xy/100)]%"
+        },
+        {
+          "front": "How should a percentage decrease be represented in the successive change formula?",
+          "back": "Use a negative sign."
+        },
+        {
+          "front": "If A × B is constant and A increases by x%, what is the formula for the percentage decrease in B?",
+          "back": "[x/(100+x)] * 100"
+        },
+        {
+          "front": "What is the formula for population after n years with a growth rate of r%?",
+          "back": "P(1 + r/100)ⁿ"
+        },
+        {
+          "front": "What is the formula for depreciating value after n years with a rate of r%?",
+          "back": "P(1 - r/100)ⁿ"
+        },
+        {
+          "front": "Which method is faster for calculating population change when n equals 2?",
+          "back": "The successive change formula."
+        },
+        {
+          "front": "What is the formula for total items in a Venn diagram problem involving two groups A and B?",
+          "back": "Total = n(A) + n(B) - n(A∩B) + n(Neither)"
+        },
+        {
+          "front": "What is the fraction equivalent of 9.09%?",
+          "back": "1/11"
+        },
+        {
+          "front": "Fraction of 37.5%?",
+          "back": "3/8. (12.5% is 1/8, so 12.5 * 3 : 37.5)."
+        },
+        {
+          "front": "Fraction of 16.66%?",
+          "back": "1/6."
+        },
+        {
+          "front": "Net change for 20% increase and 20% increase?",
+          "back": "20 + 20 + (20*20)/100 : 40 + 4 : 44% increase."
+        },
+        {
+          "front": "Price increases by 50%. Consumption decrease for same expenditure?",
+          "back": "50 / (100+50) * 100 : 50/150 * 100 : 33.33% decrease."
+        },
+        {
+          "front": "Fraction of 62.5%?",
+          "back": "5/8."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

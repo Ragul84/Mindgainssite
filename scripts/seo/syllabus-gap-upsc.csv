@@ -1,0 +1,63 @@
+exam,area,syllabus_topic,weight,coverage_status,question_count,routes
+upsc,GS-History,"Ancient India (IVC, Vedic, Mauryan, Gupta, kingdoms)",M,COVERED,1200,/upsc/history/ancient-kingdoms/ ; /upsc/history/indus-valley/ ; /upsc/history/prehistoric/
+upsc,GS-History,"Medieval India (Delhi Sultanate, Mughals, Bhakti-Sufi, regional)",M,COVERED,400,/upsc/history/medieval-india/
+upsc,GS-History,Modern India — British conquest & consolidation,M,COVERED,400,/upsc/history/british-conquest/
+upsc,GS-History,Revolt of 1857,M,COVERED,400,/upsc/history/1857-revolt/
+upsc,GS-History,Socio-religious reform movements,M,COVERED,699,/upsc/economics/economic-reforms/
+upsc,GS-History,Indian National Movement (moderate/extremist/Gandhian),H,COVERED,800,/upsc/history/gandhi-era/ ; /upsc/history/national-movement/
+upsc,GS-History,Post-independence consolidation,L,COVERED,400,/upsc/history/post-1947/
+upsc,GS-History,"Art & Culture (architecture, painting, dance, music, literature)",H,COVERED,400,/upsc/history/art-culture/
+upsc,GS-History,"World History (revolutions, world wars, decolonisation) — Mains only, light in Prelims",L,COVERED,400,/upsc/history/world-history/
+upsc,GS-Geography,"Physical Geography — geomorphology, climatology, oceanography",H,COVERED,1260,/upsc/environment/climate-change/ ; /upsc/geography/climate/ ; /upsc/geography/physical-world/
+upsc,GS-Geography,"Indian Geography — physiography, drainage, monsoon",H,COVERED,800,/upsc/geography/physical-india/ ; /upsc/geography/rivers-drainage/
+upsc,GS-Geography,"Natural resources — minerals, energy, forests",M,COVERED,400,/upsc/geography/natural-resources/
+upsc,GS-Geography,"Agriculture geography — cropping, irrigation, soils",M,COVERED,460,/upsc/geography/agriculture-geo/
+upsc,GS-Geography,Population & settlement geography,M,COVERED,400,/upsc/geography/population/
+upsc,GS-Geography,"Economic geography — industry, transport, trade",M,COVERED,400,/upsc/geography/transport-infra/
+upsc,GS-Geography,Map-based / location questions,H,COVERED,400,/upsc/geography/map-based/
+upsc,GS-Geography,"World geography (regions, physical features)",M,COVERED,400,/upsc/geography/physical-world/
+upsc,GS-Polity,"Constitutional framework — features, Preamble, amendments",H,COVERED,400,/upsc/polity/constitution-features/
+upsc,GS-Polity,"Fundamental Rights, DPSP, Fundamental Duties",H,COVERED,820,/upsc/polity/dpsp/ ; /upsc/polity/fundamental-rights/
+upsc,GS-Polity,"Union executive (President, PM, Council of Ministers)",H,COVERED,400,/upsc/polity/executive/
+upsc,GS-Polity,Parliament & state legislatures,H,COVERED,400,/upsc/polity/parliament/
+upsc,GS-Polity,"Judiciary — SC, HC, judicial review, PIL",H,COVERED,407,/upsc/polity/judiciary/
+upsc,GS-Polity,Federalism & centre-state relations,H,COVERED,401,/upsc/polity/federalism/
+upsc,GS-Polity,Local government — 73rd/74th amendments,M,COVERED,400,/upsc/polity/local-govt/
+upsc,GS-Polity,"Constitutional & statutory bodies (EC, CAG, UPSC, NHRC, FC, etc.)",H,COVERED,400,/upsc/polity/constitutional-bodies/
+upsc,GS-Polity,"Governance, transparency, RTI, e-governance",M,GAP — no route,0,
+upsc,GS-Polity,"International relations / bodies (UN, groupings)",M,COVERED,407,/upsc/polity/int-relations/
+upsc,GS-Polity,Representation of People Act / elections,M,GAP — no route,0,
+upsc,GS-Economy,National income & economic growth basics,H,COVERED,654,/upsc/economics/national-income/
+upsc,GS-Economy,"Money, banking & monetary policy (RBI)",H,COVERED,700,/upsc/economics/money-banking/
+upsc,GS-Economy,Inflation & price indices,H,COVERED,700,/upsc/economics/inflation/
+upsc,GS-Economy,"Fiscal policy, Budget, taxation (GST), FRBM",H,COVERED,700,/upsc/economics/budget-fiscal/
+upsc,GS-Economy,"Agriculture economics — MSP, subsidies, food security",M,COVERED,689,/upsc/economics/agriculture-eco/
+upsc,GS-Economy,"Industry, MSME, industrial policy",M,COVERED,688,/upsc/economics/industry-msme/
+upsc,GS-Economy,"External sector — BoP, trade, forex, FDI",M,COVERED,553,/upsc/economics/trade-balance/
+upsc,GS-Economy,Economic reforms / LPG / planning / NITI Aayog,M,COVERED,699,/upsc/economics/economic-reforms/
+upsc,GS-Economy,"Poverty, unemployment, inclusion, HDI",M,COVERED,692,/upsc/economics/poverty-inclusion/
+upsc,GS-Environment,"Ecology basics — ecosystems, food chains, biogeochemical cycles",H,COVERED,400,/upsc/environment/ecology-basics/
+upsc,GS-Environment,"Biodiversity — species, hotspots, IUCN, conservation",H,COVERED,400,/upsc/environment/biodiversity/
+upsc,GS-Environment,"Protected areas — NP, WLS, biosphere reserves, Ramsar",H,COVERED,400,/upsc/environment/protected-areas/
+upsc,GS-Environment,"Climate change — UNFCCC, IPCC, COP, carbon markets",H,COVERED,400,/upsc/environment/climate-change/
+upsc,GS-Environment,"Pollution — air, water, soil, e-waste, plastic",M,COVERED,400,/upsc/environment/pollution/
+upsc,GS-Environment,"Environmental laws & institutions (EPA, NGT, CPCB, MoEFCC)",M,COVERED,400,/upsc/environment/env-laws/
+upsc,GS-Science,"Physics (applied concepts, everyday science)",M,COVERED,400,/upsc/science/physics/
+upsc,GS-Science,Chemistry (applied),M,COVERED,400,/upsc/science/chemistry/
+upsc,GS-Science,"Biology — human body, genetics, health & disease",H,COVERED,800,/upsc/science/biology/ ; /upsc/science/disease-health/
+upsc,GS-Science,"Biotechnology — GM, gene editing, vaccines",H,COVERED,400,/upsc/science/biotech/
+upsc,GS-Science,"Space technology — ISRO, missions, satellites",H,COVERED,400,/upsc/science/space-tech/
+upsc,GS-Science,"Defence technology — missiles, DRDO",M,COVERED,400,/upsc/science/defence-tech/
+upsc,GS-Science,"Energy — nuclear, renewables, hydrogen",M,COVERED,400,/upsc/science/energy/
+upsc,GS-Science,IT / computers / AI / emerging tech,M,COVERED,4835,/upsc/environment/biodiversity/ ; /upsc/history/british-conquest/ ; /upsc/polity/constitution-features/ ; /upsc/polity/constitutional-bodies/ ; /upsc/polity/dpsp/ ; /upsc/polity/executive/ ; /upsc/polity/federalism/ ; /upsc/polity/fundamental-rights/ ; /upsc/polity/int-relations/ ; /upsc/polity/judiciary/ ; /upsc/polity/local-govt/ ; /upsc/polity/parliament/
+upsc,GS-Current,Current events of national & international importance,H,GAP — no route,0,
+upsc,GS-Schemes,"Government schemes, reports, indices, institutions",H,GAP — no route,0,
+upsc,CSAT,Reading Comprehension (English passages),H,COVERED,764,/upsc/csat-english/comprehension/
+upsc,CSAT,Logical reasoning & analytical ability,H,COVERED,1092,/upsc/csat-english/logical-deduction/ ; /upsc/csat-quant/logical-reasoning/
+upsc,CSAT,"Basic numeracy (numbers, magnitudes, orders)",H,COVERED,400,/upsc/csat-quant/number-system/
+upsc,CSAT,"Data interpretation & sufficiency (charts, tables, graphs)",H,COVERED,400,/upsc/csat-quant/data-sufficiency/
+upsc,CSAT,Percentage / ratio / averages / profit-loss,M,COVERED,400,/upsc/csat-quant/percentage/
+upsc,CSAT,Time-speed-distance / time-work,M,COVERED,800,/upsc/csat-quant/speed-distance/ ; /upsc/csat-quant/time-work/
+upsc,CSAT,Permutation-combination / probability,M,GAP — no route,0,
+upsc,CSAT,Decision making & problem solving,M,GAP — no route,0,
+upsc,(off-syllabus),/upsc/geography/environment-eco/,,OFF-SYLLABUS ROUTE,400,/upsc/geography/environment-eco/

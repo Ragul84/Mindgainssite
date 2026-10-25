@@ -1,0 +1,166 @@
+{
+  "zoneId": "reason-syllogism",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "SSC Reasoning: Syllogism & Venn Diagrams",
+      "intro": "Today we study 'Sets and Logic'. Syllogism (All/Some/No) tests your deductive reasoning. Venn diagrams help you visualize relationships between groups. In SSC, 'Basic Syllogism' and 'Logical Venn' are high-yield. Do you know why 'Some A are B' doesn't mean 'Some B are not A'? Let's master the circles today.",
+      "pages": [
+        {
+          "type": "concept",
+          "title": "Syllogism Basics",
+          "intro": "Syllogism uses two premises to reach a conclusion, drawn with circles representing groups.",
+          "blocks": [
+            {
+              "type": "mindmap",
+              "center": "Statements",
+              "branches": [
+                {
+                  "label": "All",
+                  "value": "One circle fully inside another"
+                },
+                {
+                  "label": "Some",
+                  "value": "Two circles overlapping"
+                },
+                {
+                  "label": "No",
+                  "value": "Two separate circles"
+                },
+                {
+                  "label": "Some Not",
+                  "value": "Part of first circle outside second"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Conclusion Rule",
+          "intro": "A conclusion is definitely true only if it holds in every possible diagram matching the statements.",
+          "blocks": [
+            {
+              "text": "A conclusion true in some diagrams but not all is NOT definitely true; SSC exams require truth across all possibilities.",
+              "type": "trap"
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Logical Venn Diagrams",
+          "intro": "Circles show how sets relate; e.g., 'Fruits' contains 'Apples' and 'Mangoes' as separate inner circles.",
+          "blocks": [
+            {
+              "text": "A big circle 'Fruits' encloses smaller circles 'Apples' and 'Mangoes' without overlap, showing both are subsets but disjoint from each other.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Common Relationships",
+          "intro": "Three key set relations: subset (all in), overlap (some common), disjoint (no common members).",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Subset",
+                  "All members of one set are in the other",
+                  "Dogs ⊆ Mammals"
+                ],
+                [
+                  "Overlap",
+                  "Some members common to both sets",
+                  "Cricket players ∩ Football players"
+                ],
+                [
+                  "Disjoint",
+                  "No members in common",
+                  "Even numbers ∩ Odd numbers"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Relation",
+                "Definition",
+                "Example"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Data Venn",
+          "intro": "Overlapping circles show survey data; start from the center overlap to calculate exclusive counts.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "How do you represent 'All' in a syllogism diagram?",
+          "back": "Draw one circle completely inside another circle."
+        },
+        {
+          "front": "How do you represent 'Some' in a syllogism diagram?",
+          "back": "Draw two circles that overlap each other."
+        },
+        {
+          "front": "How do you represent 'No' in a syllogism diagram?",
+          "back": "Draw two separate circles that do not touch."
+        },
+        {
+          "front": "How do you represent 'Some Not' in a syllogism diagram?",
+          "back": "Draw two circles where part of the first circle stays outside the second circle."
+        },
+        {
+          "front": "When is a conclusion considered definitely true in a syllogism?",
+          "back": "A conclusion is true only if it is true in all possible diagrams."
+        },
+        {
+          "front": "What term describes a relationship where every member of one group is also a member of another?",
+          "back": "Subset."
+        },
+        {
+          "front": "What term describes a relationship where two groups share some members?",
+          "back": "Overlap."
+        },
+        {
+          "front": "What term describes a relationship where two groups have no members in common?",
+          "back": "Disjoint."
+        },
+        {
+          "front": "In Data Venn problems, where should you start your calculations?",
+          "back": "Always start with the overlapping region in the center."
+        },
+        {
+          "front": "How do you find the number of people who only like one specific thing in a Data Venn diagram?",
+          "back": "Subtract the number in the overlap from the total given for that circle."
+        },
+        {
+          "front": "\"All A are B\" diagram?",
+          "back": "Circle A inside Circle B."
+        },
+        {
+          "front": "\"No A is B\" diagram?",
+          "back": "Separated circles."
+        },
+        {
+          "front": "\"Some A are B\" diagram?",
+          "back": "Overlapping circles."
+        },
+        {
+          "front": "If \"All A are B\" and \"All B are C\", then \"All A are C\"?",
+          "back": "YES."
+        },
+        {
+          "front": "Relationship: Doctor, Male, Father?",
+          "back": "Father inside Male, Overlap with Doctor."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

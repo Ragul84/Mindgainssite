@@ -1,0 +1,169 @@
+{
+  "zoneId": "geo-population",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "SSC Static GK: Census 2011 & Schemes",
+      "intro": "Today we study the 'Numbers and Initiatives'. Census 2011 is still the primary source for population questions in SSC. We also look at 'Major Government Schemes'. Do you know which state has the highest literacy? Or which scheme is for 'Financial Inclusion'? Let's master the data today.",
+      "pages": [
+        {
+          "type": "facts",
+          "title": "Census 2011: Population",
+          "intro": "The Census is an official count of all people in a country, done every ten years. In the 2011 Census, Uttar Pradesh (UP) was the most populous state, meaning it had the largest number of people, while Sikkim had the smallest population. Population density is the average number of people living per square kilometer of land. Bihar had the highest population density, meaning it was the most crowded state, and Arunachal Pradesh had the lowest density, meaning it was the most spread out.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Most Populous",
+                  "value": "UP"
+                },
+                {
+                  "label": "Least",
+                  "value": "Sikkim"
+                },
+                {
+                  "label": "Highest Density",
+                  "value": "Bihar"
+                },
+                {
+                  "label": "Lowest",
+                  "value": "Arunachal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Census 2011: Literacy & Sex Ratio",
+          "intro": "The Census is a government count of every person in the country, done every ten years. Literacy means the ability to read and write with understanding in any language. The sex ratio is the number of females for every 1,000 males in the population. According to the 2011 Census, the state with the highest literacy rate in India is Kerala, meaning the largest percentage of its people can read and write. The state with the lowest literacy rate is Bihar. For the sex ratio, Kerala again has the highest number of females per 1,000 males, while Haryana has the lowest.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Highest Literacy",
+                  "value": "Kerala"
+                },
+                {
+                  "label": "Lowest",
+                  "value": "Bihar"
+                },
+                {
+                  "label": "Highest Sex Ratio",
+                  "value": "Kerala"
+                },
+                {
+                  "label": "Lowest",
+                  "value": "Haryana"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Financial Schemes",
+          "intro": "Financial Schemes are special programs started by the Indian government to help people with their money and daily needs. The Pradhan Mantri Jan Dhan Yojana, or PM Jan Dhan Yojana, is a scheme for financial inclusion, which means it helps poor people open a bank account easily so they can save money and get government benefits directly. The Pradhan Mantri Ujjwala Yojana, or PM Ujjwala, provides free cooking gas connections, called LPG, to poor households so they do not have to use harmful wood or coal for cooking. The Pradhan Mantri Awas Yojana, or PM Awas, gives money to build or buy a house for families who do not have a home. The Pradhan Mantri Kisan Samman Nidhi, or PM Kisan, gives 6,000 rupees every year directly to the bank accounts of small and poor farmers to help them buy seeds and fertilizers for their crops.",
+          "blocks": []
+        },
+        {
+          "type": "formula",
+          "title": "Social Schemes",
+          "intro": "Social Schemes are government programs designed to help specific groups of people in India. The Beti Bachao Beti Padhao scheme, which means \"Save the Daughter, Educate the Daughter,\" aims to improve the number of girls born compared to boys, known as the child sex ratio, and to ensure girls get an education. Ayushman Bharat is a health scheme that provides free hospital treatment to poor and vulnerable families, covering up to five lakh rupees per year for serious illnesses. MGNREGA, which stands for the Mahatma Gandhi National Rural Employment Guarantee Act, guarantees every rural household up to 100 days of paid work per year if they ask for it, helping them earn a basic income.",
+          "blocks": []
+        },
+        {
+          "type": "formula",
+          "title": "Misc Facts",
+          "intro": "Ladakh is the largest Union Territory (UT) in India by area, meaning it covers the most land compared to other UTs. A Union Territory is a region directly governed by the central government of India, unlike a state which has its own elected government. Delhi is the most populous UT, meaning it has the highest number of people living there. Lakshadweep has the highest literacy rate among all UTs, meaning the largest percentage of its people aged seven and above can read and write.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Largest Union Territory (Area)",
+                  "value": "Ladakh"
+                },
+                {
+                  "label": "Most Populous UT",
+                  "value": "Delhi"
+                },
+                {
+                  "label": "Highest Literacy UT",
+                  "value": "Lakshadweep"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "Which state was the most populous according to the 2011 Census?",
+          "back": "Uttar Pradesh (UP)."
+        },
+        {
+          "front": "Which state had the lowest population according to the 2011 Census?",
+          "back": "Sikkim."
+        },
+        {
+          "front": "Which state had the highest population density in the 2011 Census?",
+          "back": "Bihar."
+        },
+        {
+          "front": "Which state had the lowest population density in the 2011 Census?",
+          "back": "Arunachal Pradesh."
+        },
+        {
+          "front": "Which state had the highest literacy rate according to the 2011 Census?",
+          "back": "Kerala."
+        },
+        {
+          "front": "Which state had the lowest sex ratio according to the 2011 Census?",
+          "back": "Haryana."
+        },
+        {
+          "front": "What is the primary objective of the PM Jan Dhan Yojana?",
+          "back": "Financial inclusion."
+        },
+        {
+          "front": "How many days of paid work does MGNREGA guarantee per year?",
+          "back": "100 days."
+        },
+        {
+          "front": "Which Union Territory is the largest by area?",
+          "back": "Ladakh."
+        },
+        {
+          "front": "Which Union Territory has the highest literacy rate?",
+          "back": "Lakshadweep."
+        },
+        {
+          "front": "Highest literacy state?",
+          "back": "Kerala."
+        },
+        {
+          "front": "Highest density state?",
+          "back": "Bihar."
+        },
+        {
+          "front": "Lowest sex ratio state?",
+          "back": "Haryana."
+        },
+        {
+          "front": "Jan Dhan Yojana is for?",
+          "back": "Financial Inclusion."
+        },
+        {
+          "front": "Ujjwala Yojana is for?",
+          "back": "LPG Connections."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

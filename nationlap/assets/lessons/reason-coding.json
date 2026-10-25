@@ -1,0 +1,216 @@
+{
+  "zoneId": "reason-coding",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "SSC Reasoning: Coding-Decoding — Pattern Cracking",
+      "intro": "Today we become 'Code Breakers'. Coding-Decoding is the logic of transforming a word into a code using a specific rule. It could be shifting positions (+1, -2), using opposites (A-Z), or using numbers. In SSC, 'Fictitious Language' coding (where \"sky is blue\" means \"la pa ta\") is a common pattern. Toppers don't write the whole alphabet; they use the numeric positions to solve the logic. Let's master the 'Shift' and 'Substitution' rules today.",
+      "pages": [
+        {
+          "type": "concept",
+          "title": "Letter Shifting",
+          "intro": "Each letter moves forward by a fixed number of places in the alphabet.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Shift",
+                  "value": "Fixed number added to each letter's position"
+                },
+                {
+                  "label": "Example (Shift 4)",
+                  "value": "C→G, L→P, O→S, U→Y, D→H"
+                },
+                {
+                  "label": "Result",
+                  "value": "CLOUD → GPSYH"
+                },
+                {
+                  "label": "Shift 3",
+                  "value": "A→D, B→E, etc."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Opposite Letter Coding",
+          "intro": "Replace each letter with its opposite from the alphabet (positions sum to 27).",
+          "blocks": [
+            {
+              "type": "mindmap",
+              "center": "Opposite Letter Rule",
+              "branches": [
+                {
+                  "label": "A (1st)",
+                  "value": "Z (26th)"
+                },
+                {
+                  "label": "B (2nd)",
+                  "value": "Y (25th)"
+                },
+                {
+                  "label": "C (3rd)",
+                  "value": "X (24th)"
+                },
+                {
+                  "label": "Formula",
+                  "value": "Opposite position = 27 − original position"
+                },
+                {
+                  "label": "Example: LOVE",
+                  "value": "L(12)→O(15), O(15)→L(12), V(22)→E(5), E(5)→V(22) → OLEV"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Number Coding",
+          "intro": "Sum the position numbers of all letters in a word to get its code.",
+          "blocks": [
+            {
+              "text": "A=1, B=2, C=3, …, Z=26. Add letter values: 4+15+7=26.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Fictitious Language Coding",
+          "intro": "Match repeated words across coded and translated sentences to decode.",
+          "blocks": [
+            {
+              "text": "Only repeated words in both languages reveal the translation; unique words cannot be matched directly.",
+              "type": "trap"
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Substitution Coding",
+          "intro": "Follow a name chain exactly once to find the final substitution.",
+          "blocks": [
+            {
+              "type": "timeline",
+              "items": [
+                {
+                  "label": "Step 1",
+                  "value": "Find the real answer by tracing all substitutions"
+                },
+                {
+                  "label": "Step 2",
+                  "value": "Move through the chain in order, once, without skipping"
+                },
+                {
+                  "label": "Step 3",
+                  "value": "Answer only with the final name if the chain explicitly states it"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Reverse Word Coding",
+          "intro": "Write the letters of a word in the exact opposite order.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Method",
+                  "Reverse letter order",
+                  "Replace each letter by alphabet opposite"
+                ],
+                [
+                  "Example: LOVE",
+                  "EVOL",
+                  "OLEV"
+                ],
+                [
+                  "Rule",
+                  "Last→First, Second-last→Second, …",
+                  "Position sums to 27"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "",
+                "Reverse Coding",
+                "Opposite Letter Coding"
+              ]
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "What is the result of applying a +4 forward shift to the word CLOUD?",
+          "back": "GPSYH"
+        },
+        {
+          "front": "What is the sum of the position numbers of a letter and its opposite in the alphabet?",
+          "back": "27"
+        },
+        {
+          "front": "What is the opposite letter of L in opposite letter coding?",
+          "back": "O"
+        },
+        {
+          "front": "What is the numeric sum of the word DOG in number coding?",
+          "back": "26"
+        },
+        {
+          "front": "How do you identify the translation of a word in Fictitious Language Coding?",
+          "back": "By finding the word that repeats in both the English sentences and the coded sentences."
+        },
+        {
+          "front": "In substitution coding, when should you provide the real object's name as the answer?",
+          "back": "Only if the chain itself tells you to do so at the end."
+        },
+        {
+          "front": "What is the result of applying reverse word coding to the word LOVE?",
+          "back": "EVOL"
+        },
+        {
+          "front": "What is the primary difference between reverse word coding and opposite letter coding?",
+          "back": "Reverse word coding changes the order of letters, while opposite letter coding replaces each letter with its alphabet opposite."
+        },
+        {
+          "front": "In number coding, what value is assigned to the letter A?",
+          "back": "1"
+        },
+        {
+          "front": "In substitution coding, how should you move through the given name chain?",
+          "back": "Move through the chain exactly once, following each step in order."
+        },
+        {
+          "front": "If CLOUD is coded by shifting every letter +4, what is the code?",
+          "back": "GPSYH. C->G, L->P, O->S, U->Y, D->H."
+        },
+        {
+          "front": "Using opposite-letter coding, what is the code of LOVE?",
+          "back": "OLEV. L->O, O->L, V->E, E->V. Opposite-letter pairs always sum to 27."
+        },
+        {
+          "front": "How do you solve substitution coding like red is called blue, blue is called green?",
+          "back": "Find the real object first, then replace it with the name assigned in the chain."
+        },
+        {
+          "front": "What is the sum of letter positions in DOG?",
+          "back": "26. D: 4, O: 15, G: 7, so 4+15+7: 26."
+        },
+        {
+          "front": "What is the opposite letter of G?",
+          "back": "T. G is 7 and T is 20; opposite-letter positions sum to 27."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

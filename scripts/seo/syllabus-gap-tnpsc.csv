@@ -1,0 +1,81 @@
+exam,area,syllabus_topic,weight,coverage_status,question_count,routes
+tnpsc,Unit I — General Science: Physics,"Physics — motion, mechanics, electricity, magnetism, light, sound, heat, nuclear, electronics",H,PARTIAL (100–299 Q),240,/tnpsc/science/physics-electricity/ ; /tnpsc/science/physics-motion/ ; /tnpsc/science/physics-optics/
+tnpsc,Unit I — General Science: Chemistry,"Chemistry — elements & compounds, acids/bases/salts, chemical reactions, matter",H,PARTIAL (100–299 Q),247,/tnpsc/science/chemistry-acids/ ; /tnpsc/science/chemistry-matter/ ; /tnpsc/science/chemistry-reactions/
+tnpsc,Unit I — General Science: Botany,"Botany — plant physiology, classification, economic botany",M,THIN (<100 Q),60,/tnpsc/science/biology-plants/
+tnpsc,Unit I — General Science: Zoology,"Zoology — human physiology, nutrition, diseases, blood circulation",H,PARTIAL (100–299 Q),142,/tnpsc/science/biology-cells/ ; /tnpsc/science/biology-human/
+tnpsc,Unit II — Current Events,"Current events — political, economic, scientific, sports, national & TN",H,COVERED,580,/tnpsc/economics/current-schemes/
+tnpsc,Unit III — Geography,"Earth & universe, solar system",M,COVERED,300,/tnpsc/geography/earth-universe/
+tnpsc,Unit III — Geography,"Monsoon, rainfall, weather & climate",M,COVERED,300,/tnpsc/geography/india-climate/
+tnpsc,Unit III — Geography,Physical features of India,M,COVERED,300,/tnpsc/geography/india-physical/
+tnpsc,Unit III — Geography,"Rivers, water resources & dams",H,COVERED,300,/tnpsc/geography/india-rivers/
+tnpsc,Unit III — Geography,"Soils, minerals & natural resources",M,COVERED,599,/tnpsc/geography/india-resources/ ; /tnpsc/geography/india-soils/
+tnpsc,Unit III — Geography,Forest & wildlife,L,GAP — no route,0,
+tnpsc,Unit III — Geography,Agricultural pattern,M,COVERED,581,/tnpsc/economics/agriculture/
+tnpsc,Unit III — Geography,Transport & communication,M,COVERED,300,/tnpsc/geography/transport-trade/
+tnpsc,Unit III — Geography,Population density & distribution,M,GAP — no route,0,
+tnpsc,Unit III — Geography,Natural disasters & disaster management,M,GAP — no route,0,
+tnpsc,Unit III — Geography,Tamil Nadu geography & districts,H,COVERED,600,/tnpsc/geography/tn-districts/ ; /tnpsc/geography/tn-geography/
+tnpsc,Unit III — Geography,World geography & oceans,M,COVERED,600,/tnpsc/geography/world-geography/ ; /tnpsc/geography/world-oceans/
+tnpsc,Unit IV — History & Culture of India,Indus Valley Civilization,M,COVERED,300,/tnpsc/history/indus-valley/
+tnpsc,Unit IV — History & Culture of India,Vedic age,M,COVERED,300,/tnpsc/history/vedic-age/
+tnpsc,Unit IV — History & Culture of India,Jainism & Buddhism,M,COVERED,300,/tnpsc/history/jainism-buddhism/
+tnpsc,Unit IV — History & Culture of India,Mauryan empire,M,COVERED,307,/tnpsc/history/mauryan/
+tnpsc,Unit IV — History & Culture of India,Guptas & post-Gupta,M,COVERED,300,/tnpsc/history/gupta-post-gupta/
+tnpsc,Unit IV — History & Culture of India,Delhi Sultanate & medieval India,M,COVERED,314,/tnpsc/history/medieval-india/
+tnpsc,Unit IV — History & Culture of India,Mughal empire,M,COVERED,311,/tnpsc/history/mughal/
+tnpsc,Unit IV — History & Culture of India,Marathas,M,COVERED,300,/tnpsc/history/maratha/
+tnpsc,Unit IV — History & Culture of India,Vijayanagara & Bahmani,M,COVERED,300,/tnpsc/history/vijayanagara/
+tnpsc,Unit IV — History & Culture of India,Chola / Pandya / Chera (South Indian),H,COVERED,300,/tnpsc/history/chola-pandya/
+tnpsc,Unit IV — History & Culture of India,"Art, architecture & culture",M,COVERED,300,/tnpsc/history/art-culture/
+tnpsc,Unit V — Indian Polity,"Constitution — Preamble, salient features",H,COVERED,580,/tnpsc/polity/constitution-making/ ; /tnpsc/polity/preamble/
+tnpsc,Unit V — Indian Polity,"Citizenship, Fundamental Rights & Duties",H,COVERED,300,/tnpsc/polity/fundamental-rights/
+tnpsc,Unit V — Indian Polity,Directive Principles (DPSP),M,COVERED,300,/tnpsc/polity/dpsp/
+tnpsc,Unit V — Indian Polity,"Union & State executive (President, PM, Governor, CM)",H,COVERED,480,/tnpsc/polity/president-pm/ ; /tnpsc/polity/state-govt/
+tnpsc,Unit V — Indian Polity,Parliament & State legislature,H,COVERED,300,/tnpsc/polity/parliament/
+tnpsc,Unit V — Indian Polity,"Judiciary — SC, HC, judicial review",H,COVERED,300,/tnpsc/polity/judiciary/
+tnpsc,Unit V — Indian Polity,Local government & Panchayati Raj,M,COVERED,300,/tnpsc/polity/local-bodies/
+tnpsc,Unit V — Indian Polity,Elections & Election Commission,M,COVERED,300,/tnpsc/polity/elections/
+tnpsc,Unit V — Indian Polity,"Corruption control — CVC, Lokayukta, RTI, CAG",M,COVERED,300,/tnpsc/polity/governance/
+tnpsc,Unit V — Indian Polity,Tamil Nadu polity / state administration,H,PARTIAL (100–299 Q),137,/tnpsc/polity/tn-polity/
+tnpsc,Unit VI — Indian Economy,Nature of Indian economy,M,COVERED,300,/tnpsc/economics/tn-economy/
+tnpsc,Unit VI — Indian Economy,Five-Year Plans & planning,M,COVERED,300,/tnpsc/economics/planning/
+tnpsc,Unit VI — Indian Economy,Agriculture & land reforms,M,COVERED,581,/tnpsc/economics/agriculture/
+tnpsc,Unit VI — Indian Economy,Industrial growth,M,COVERED,700,/tnpsc/economics/industry/
+tnpsc,Unit VI — Indian Economy,Banking & finance,M,COVERED,644,/tnpsc/economics/banking-finance/
+tnpsc,Unit VI — Indian Economy,"Budget, taxation & GST",M,COVERED,580,/tnpsc/economics/budget-taxation/
+tnpsc,Unit VI — Indian Economy,National income,M,COVERED,300,/tnpsc/economics/national-income/
+tnpsc,Unit VI — Indian Economy,International trade,L,COVERED,300,/tnpsc/economics/international-trade/
+tnpsc,Unit VI — Indian Economy,"Poverty, unemployment & welfare schemes",M,COVERED,880,/tnpsc/economics/current-schemes/ ; /tnpsc/economics/poverty-welfare/
+tnpsc,Unit VI — Indian Economy,Tamil Nadu economy & trends,H,COVERED,300,/tnpsc/economics/tn-economy/
+tnpsc,Unit VII — Indian National Movement,1857 revolt & early nationalism,H,COVERED,300,/tnpsc/history/freedom-struggle/
+tnpsc,Unit VII — Indian National Movement,Indian National Congress & moderates/extremists,H,COVERED,300,/tnpsc/history/freedom-struggle/
+tnpsc,Unit VII — Indian National Movement,"Gandhian era — NCM, CDM, Quit India",H,COVERED,300,/tnpsc/history/freedom-struggle/
+tnpsc,Unit VII — Indian National Movement,"Role of Tamil Nadu — VOC, Bharathiar, Periyar, Rajaji",H,COVERED,622,/tnpsc/history/freedom-struggle/ ; /tnpsc/history/tamil-history/
+tnpsc,Unit VIII — TN History/Culture/Socio-political movements,Dravidian / Self-Respect / Justice Party movements,H,COVERED,628,/tnpsc/history/social-reform/ ; /tnpsc/history/tamil-history/
+tnpsc,Unit VIII — TN History/Culture/Socio-political movements,"Tamil society, Sangam age, Tamil literature & heritage",H,COVERED,452,/tnpsc/history/tamil-history/ ; /tnpsc/tamil/post-sangam/ ; /tnpsc/tamil/sangam/
+tnpsc,Unit IX — Development Administration in TN,"TN human & social development, welfare schemes, e-governance",M,COVERED,1017,/tnpsc/economics/current-schemes/ ; /tnpsc/economics/tn-economy/ ; /tnpsc/polity/tn-polity/
+tnpsc,Unit X — Aptitude & Mental Ability,Simplification / HCF-LCM,H,COVERED,2938,/tnpsc/maths/hcf-lcm/ ; /tnpsc/maths/simplification/
+tnpsc,Unit X — Aptitude & Mental Ability,Percentage,H,COVERED,1919,/tnpsc/maths/percentage/
+tnpsc,Unit X — Aptitude & Mental Ability,Ratio & Proportion,M,COVERED,1393,/tnpsc/maths/ratio-proportion/
+tnpsc,Unit X — Aptitude & Mental Ability,Simple & Compound Interest,M,COVERED,1677,/tnpsc/maths/simple-interest/
+tnpsc,Unit X — Aptitude & Mental Ability,Area & Volume (mensuration),M,COVERED,1773,/tnpsc/maths/geometry/
+tnpsc,Unit X — Aptitude & Mental Ability,Time & Work,M,COVERED,428,/tnpsc/maths/time-work/
+tnpsc,Unit X — Aptitude & Mental Ability,Time & Distance,M,COVERED,807,/tnpsc/maths/time-distance/
+tnpsc,Unit X — Aptitude & Mental Ability,Number series,M,COVERED,1642,/tnpsc/maths/series/
+tnpsc,Unit X — Aptitude & Mental Ability,Algebra (basic equations),M,COVERED,1963,/tnpsc/maths/algebra/
+tnpsc,Unit X — Aptitude & Mental Ability,Data interpretation (tables/graphs/diagrams),M,COVERED,1962,/tnpsc/maths/data-interpretation/
+tnpsc,Unit X — Aptitude & Mental Ability,"Logical / visual / alphanumeric reasoning, puzzles, dice",M,GAP — no route,0,
+tnpsc,Language — General Tamil,Tamil grammar — Ezhuthu / Sol / Porul Ilakkanam,H,PARTIAL (100–299 Q),260,/tnpsc/tamil/ezhuthu-ilakkanam/ ; /tnpsc/tamil/porul-ilakkanam/ ; /tnpsc/tamil/sol-ilakkanam/
+tnpsc,Language — General Tamil,Sangam literature,H,PARTIAL (100–299 Q),130,/tnpsc/tamil/post-sangam/ ; /tnpsc/tamil/sangam/
+tnpsc,Language — General Tamil,"Post-Sangam / epic literature (Silappadikaram, etc.)",M,PARTIAL (100–299 Q),130,/tnpsc/tamil/epic-literature/ ; /tnpsc/tamil/post-sangam/
+tnpsc,Language — General Tamil,Bhakti literature,M,THIN (<100 Q),70,/tnpsc/tamil/bhakti-literature/
+tnpsc,Language — General Tamil,Thirukkural & ethical literature,H,THIN (<100 Q),80,/tnpsc/tamil/thirukkural/
+tnpsc,Language — General Tamil,Tolkappiyam,M,THIN (<100 Q),80,/tnpsc/tamil/tolkappiyam/
+tnpsc,Language — General Tamil,Modern Tamil literature & authors,M,THIN (<100 Q),67,/tnpsc/tamil/modern-tamil/
+tnpsc,(off-syllabus),/tnpsc/maths/profit-loss/,,OFF-SYLLABUS ROUTE,1940,/tnpsc/maths/profit-loss/
+tnpsc,(off-syllabus),/tnpsc/maths/number-system/,,OFF-SYLLABUS ROUTE,1939,/tnpsc/maths/number-system/
+tnpsc,(off-syllabus),/tnpsc/history/british-rule/,,OFF-SYLLABUS ROUTE,300,/tnpsc/history/british-rule/
+tnpsc,(off-syllabus),/tnpsc/history/post-independence/,,OFF-SYLLABUS ROUTE,300,/tnpsc/history/post-independence/
+tnpsc,(off-syllabus),/tnpsc/science/science-tech/,,OFF-SYLLABUS ROUTE,87,/tnpsc/science/science-tech/
+tnpsc,(off-syllabus),/tnpsc/science/environment/,,OFF-SYLLABUS ROUTE,80,/tnpsc/science/environment/
+tnpsc,(off-syllabus),/tnpsc/science/computer-basics/,,OFF-SYLLABUS ROUTE,60,/tnpsc/science/computer-basics/

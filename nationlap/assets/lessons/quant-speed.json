@@ -1,0 +1,191 @@
+{
+  "zoneId": "quant-speed",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "SSC QA: Speed, Time & Distance — Trains & Boats",
+      "intro": "Today we master the 'Relative Motion' concept. In SSC, Time, Speed, and Distance (TSD) isn't just about D: ST; it's about how two moving objects interact. Whether it's a train crossing a platform, a thief being chased by a policeman, or a boat fighting against the current—it's all about 'Relative Speed'. Toppers don't solve these with 3 variables; they use the 'Ratio of Speed' to find the 'Ratio of Time'. Let's master the 'Upstream/Downstream' and 'Relative Speed' logic today.",
+      "pages": [
+        {
+          "type": "formula",
+          "title": "TSD Fundamentals",
+          "intro": "This lesson is about the relationship between Time, Speed, and Distance (TSD). The basic formula is that Distance equals Speed multiplied by Time (Distance = Speed x Time). To convert a speed given in kilometres per hour (kmph) into metres per second (m/s), you multiply the kmph value by 5/18; to convert from m/s back to kmph, you multiply by 18/5. If the distance traveled is constant, then Speed and Time are inversely proportional, meaning that if you write the ratio of the two speeds as S1:S2, the ratio of the corresponding times will be T2:T1 (the reverse order). Finally, Average Speed is found by dividing the total distance traveled by the total time taken.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Distance",
+                  "value": "Speed × Time. 2"
+                },
+                {
+                  "label": "Conversion",
+                  "value": "kmph to m/s (multiply by 5/18), m/s to kmph (multiply by 18/5)"
+                },
+                {
+                  "label": "If Distance is constant, Speed ∝ 1/Time (Ratio S₁",
+                  "value": "S₂: T₂:T₁)"
+                },
+                {
+                  "label": "Average Speed",
+                  "value": "Total Distance / Total Time"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Relative Speed Concept",
+          "intro": "When two objects are moving, their relative speed is the speed of one object as seen from the other. For example, if two cars are moving on a straight road, the relative speed tells you how fast the distance between them is changing. If they move in the same direction, you subtract their speeds, S1 minus S2, because the faster object is catching up to the slower one, so the gap shrinks at the difference of their speeds. If they move in opposite directions, you add their speeds, S1 plus S2, because the objects are approaching each other, so the gap shrinks at the sum of their speeds. This concept is applied in chasing problems, where one moving object tries to catch another, and in crossing problems, where two moving objects pass each other, such as trains crossing a platform or each other.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Same Direction",
+                  "value": "Relative Speed: S₁ - S₂"
+                },
+                {
+                  "label": "Opposite Direction",
+                  "value": "Relative Speed: S₁ + S₂"
+                },
+                {
+                  "label": "Application",
+                  "value": "Chasing problems, crossing problems"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Trains Special Cases",
+          "intro": "When a train passes a stationary object like a pole or a person, the distance the train travels to completely clear that object is exactly equal to the train's own length. If the train passes through a longer stationary structure, such as a platform or a tunnel, the distance it must travel to fully exit is the sum of the train's length and the structure's length. When two trains move toward each other and cross completely, the total distance they must cover together is",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Train crossing Pole/Man",
+                  "value": "Distance: Length of Train"
+                },
+                {
+                  "label": "Train crossing Platform/Tunnel",
+                  "value": "Distance: Length of Train + Length of Platform"
+                },
+                {
+                  "label": "Two trains crossing each other",
+                  "value": "Distance: sum of both lengths"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Boats & Streams",
+          "intro": "Boats and Streams is a topic about how a boat moves in a river. The boat has its own speed when the water is still, called the speed of the boat in still water, and the river has its own speed, called the speed of the stream. When the boat goes in the same direction as the river current, that is called downstream, and its total speed is the boat speed plus the stream speed. When the boat goes against the current, that is called upstream, and its total speed is the boat speed minus the stream speed. To find the boat speed in still water, you add the downstream speed and the upstream speed, then divide by two. To find the stream speed, you subtract the upstream speed from the downstream speed, then divide by two.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Let Speed of Boat",
+                  "value": "x, Speed of Stream: y"
+                },
+                {
+                  "label": "Downstream Speed (D)",
+                  "value": "x + y"
+                },
+                {
+                  "label": "Upstream Speed (U)",
+                  "value": "x - y"
+                },
+                {
+                  "label": "Boat Speed in still water (x)",
+                  "value": "(D + U) / 2"
+                },
+                {
+                  "label": "Stream Speed (y)",
+                  "value": "(D - U) / 2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Escalators & Circular Tracks",
+          "intro": "Imagine two people walking on a circular track. The time it takes for them to meet for the first time is found by dividing the total length of the track by their relative speed, which is the combined speed when they move toward each other or the difference in speed when one chases the other. An escalator works like a river current: your actual speed on the escalator is your walking speed plus the escalator's speed if you walk in the same direction, or minus the escalator's speed if you walk opposite to it. This is the same logic used in boat and stream problems, where the boat's speed in still water is combined with the stream's speed. So to solve escalator problems, treat the escalator as the stream and yourself as the boat.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "What is the conversion factor to change speed from kmph to m/s?",
+          "back": "Multiply the kmph value by 5/18."
+        },
+        {
+          "front": "If distance is constant, what is the relationship between speed and time?",
+          "back": "Speed and Time are inversely proportional (Ratio S₁:S₂ = T₂:T₁)."
+        },
+        {
+          "front": "How is relative speed calculated when two objects move in the same direction?",
+          "back": "Subtract the speeds (S₁ - S₂)."
+        },
+        {
+          "front": "How is relative speed calculated when two objects move in opposite directions?",
+          "back": "Add the speeds (S₁ + S₂)."
+        },
+        {
+          "front": "What distance does a train cover when crossing a pole or a person?",
+          "back": "The distance is equal to the length of the train."
+        },
+        {
+          "front": "What distance does a train cover when crossing a platform or tunnel?",
+          "back": "The distance is the sum of the train's length and the platform's length."
+        },
+        {
+          "front": "What is the formula for downstream speed (D) in boat and stream problems?",
+          "back": "Downstream speed is the sum of the boat speed (x) and the stream speed (y), or x + y."
+        },
+        {
+          "front": "How do you calculate the speed of a boat in still water (x) using downstream (D) and upstream (U) speeds?",
+          "back": "The speed is (D + U) / 2."
+        },
+        {
+          "front": "How do you calculate the speed of a stream (y) using downstream (D) and upstream (U) speeds?",
+          "back": "The speed is (D - U) / 2."
+        },
+        {
+          "front": "How is the time to meet for the first time on a circular track calculated?",
+          "back": "Divide the length of the track by the relative speed."
+        },
+        {
+          "front": "Conversion factor: kmph to m/s?",
+          "back": "5 / 18."
+        },
+        {
+          "front": "Relative speed in same direction?",
+          "back": "S₁ - S₂."
+        },
+        {
+          "front": "Boat speed formula from D and U?",
+          "back": "(Downstream + Upstream) / 2."
+        },
+        {
+          "front": "Distance when a train (L₁) crosses a bridge (L₂)?",
+          "back": "L₁ + L₂."
+        },
+        {
+          "front": "Ratio of Time if speeds are in ratio 2:3 (dist constant)?",
+          "back": "3:2."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "zoneId": "econ-fiscal",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "UPSC Economy: Fiscal Policy & Budgeting",
+      "intro": "Today we study the 'Pocket of the Government'. Fiscal policy is the use of government spending and taxation to influence the economy. We explore the components of the 'Union Budget', the different types of deficits (Fiscal, Revenue, Primary), and the role of the 'Finance Commission'. For UPSC, focus on the 'FRBM Act' and the difference between 'Capital' and 'Revenue' expenditure. This is the heart of the annual Economic Survey.",
+      "pages": [
+        {
+          "type": "concept",
+          "title": "Union Budget (Art 112)",
+          "intro": "The Union Budget is the government's plan for its income and spending for the coming year. It is also called the Annual Financial Statement, and it is required by Article 112 of the Indian Constitution, which says the President must present this statement to Parliament each year. The Budget is split into two main parts. The Revenue Budget covers money the government earns from taxes and fees, and the money it spends on running the country, like salaries and subsidies. The Capital Budget covers money spent on building long-term assets like roads and bridges, and money the government borrows or lends.",
+          "blocks": []
+        },
+        {
+          "type": "formula",
+          "title": "Revenue vs Capital",
+          "intro": "Revenue expenditure is money the government spends on regular, day-to-day operations that repeat every year, and it does not create any new physical assets like buildings or roads. Examples of revenue expenditure include paying salaries to government employees, making interest payments on loans, and giving subsidies to reduce the cost of goods. Capital expenditure is money spent on long-term projects that create new assets, such as building roads or bridges, or that reduce the government's debt, like repaying loans. Unlike revenue expenditure, capital expenditure is usually non-recurring, meaning it happens only once or occasionally and does not repeat every year.",
+          "blocks": []
+        },
+        {
+          "type": "formula",
+          "title": "Types of Deficits",
+          "intro": "A deficit happens when the government spends more money than it earns. The first type is Revenue Deficit, which occurs when the government's day-to-day expenses, like salaries and subsidies, are greater than its everyday income from taxes and fees. The second type is Fiscal Deficit, which is the total amount the government spends minus everything it earns, except for money it borrows; this shows how much the government needs to borrow in total. The third type is Primary Deficit, which is the Fiscal Deficit minus the interest payments the government has to make on its past loans; this tells us how much the government is borrowing just for new spending, not for paying old interest.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Revenue Deficit",
+                  "Revenue Exp > Revenue Receipts"
+                ],
+                [
+                  "Fiscal Deficit",
+                  "Total Exp - Total Receipts (excluding borrowings)"
+                ],
+                [
+                  "Primary Deficit",
+                  "Fiscal Deficit - Interest Payments"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Item",
+                "Exam fact"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "FRBM Act (2003)",
+          "intro": "The FRBM Act stands for the Fiscal Responsibility and Budget Management Act, passed in 2003. This law aims to keep the government's fiscal deficit, which is the shortfall between its total spending and its total revenue (excluding borrowings), at or below 3% of the country's Gross Domestic Product (GDP), or the total value of all goods and services produced. The Act includes an \"Escape Clause\" that allows the government to temporarily exceed this 3% limit during emergencies such as war, a natural disaster, or a severe economic downturn. This clause ensures the government can spend more to handle the crisis while still committing to long-term fiscal discipline.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Finance Commission (Art 280)",
+          "intro": "The Finance Commission is a constitutional body, which means it is created by the Constitution of India. Article 280 says that the President of India must set up a Finance Commission every five years. This commission decides two things: the vertical distribution, which is how much of the total tax money collected by the central government goes to all the states put together, and the horizontal distribution, which is how that shared money is divided among individual states. Currently, the 16th Finance Commission, meaning the sixteenth commission formed since the Constitution started, is in place.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "Which article of the Indian Constitution mandates the Annual Financial Statement?",
+          "back": "Article 112."
+        },
+        {
+          "front": "What is the primary characteristic of revenue expenditure?",
+          "back": "It is recurring and does not create any assets."
+        },
+        {
+          "front": "What is the primary characteristic of capital expenditure?",
+          "back": "It is non-recurring and creates assets or reduces liabilities."
+        },
+        {
+          "front": "How is a Revenue Deficit calculated?",
+          "back": "It occurs when Revenue Expenditure exceeds Revenue Receipts."
+        },
+        {
+          "front": "How is a Fiscal Deficit defined?",
+          "back": "Total expenditure minus total receipts, excluding borrowings."
+        },
+        {
+          "front": "How is a Primary Deficit calculated?",
+          "back": "Fiscal Deficit minus interest payments."
+        },
+        {
+          "front": "What is the fiscal deficit limit set by the FRBM Act (2003)?",
+          "back": "3% of GDP."
+        },
+        {
+          "front": "What provision in the FRBM Act allows exceeding the fiscal deficit limit during emergencies?",
+          "back": "The Escape Clause."
+        },
+        {
+          "front": "Which article establishes the Finance Commission?",
+          "back": "Article 280."
+        },
+        {
+          "front": "What is the primary function of the Finance Commission?",
+          "back": "Deciding the vertical and horizontal distribution of taxes between the Center and States."
+        },
+        {
+          "front": "What is the \"Annual Financial Statement\" article?",
+          "back": "Article 112."
+        },
+        {
+          "front": "GNP - Depreciation : ?",
+          "back": "NNP (Net National Product)."
+        },
+        {
+          "front": "Fiscal Deficit - Interest Payments : ?",
+          "back": "Primary Deficit."
+        },
+        {
+          "front": "Who appoints the Finance Commission?",
+          "back": "The President of India."
+        },
+        {
+          "front": "Main goal of FRBM Act?",
+          "back": "Fiscal discipline (Targeting 3% deficit)."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

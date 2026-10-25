@@ -1,0 +1,151 @@
+{
+  "zoneId": "history-sultanate-rulers",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "UPSC History: Delhi Sultanate — The Five Dynasties",
+      "intro": "Today we enter the 'Medieval' era. After the fall of the Rajputs, North India came under the rule of the Delhi Sultanate (1206–1526). We study the five dynasties: Slave, Khalji, Tughlaq, Sayyid, and Lodi. For UPSC, the focus is not just on wars, but on 'Administrative Innovations' (like Alauddin's market reforms and Muhammad bin Tughlaq's experiments) and 'Indo-Islamic Architecture'. This period saw the synthesis of Persian and Indian styles, giving us monuments like the Qutub Minar.",
+      "pages": [
+        {
+          "type": "facts",
+          "title": "The Five Dynasties",
+          "intro": "The Five Dynasties refers to the five ruling families of the Delhi Sultanate, which was a Muslim kingdom that ruled large parts of India from 1206 to 1526. The first dynasty was the Slave Dynasty, also called the Mamluk Dynasty, founded by Qutb-ud-din Aibak, but its real founder was Iltutmish, who made the kingdom stable; Razia Sultana, the first woman ruler of the Delhi Sultanate, also belonged to this dynasty. The second was the Khalji Dynasty, whose most famous ruler was Alauddin Khalji, known for his Market Reforms (fixing prices of goods) and the Dagh (branding of horses) and Chehra (describing soldiers) systems to control his army. The third was the Tughlaq Dynasty, which included Ghiyasuddin Tughlaq, his son Muhammad bin Tughlaq who tried a Token Currency (using copper coins instead of silver, which failed) and shifted the capital from Delhi to Daulatabad, and Firoz Shah Tughlaq who built canals for irrigation and reimposed the Jizya tax (a tax on non-Muslims) on Brahmins. The fourth was the Sayyid Dynasty, which ruled weakly and did not have major achievements. The fifth was the Lodi Dynasty, whose rulers were Bahlul Lodi, Sikandar Lodi who introduced a new measurement called the Gaj-i-Sikandari (a standard yard for land measurement), and Ibrahim Lodi who was defeated and killed by Babur at the First Battle of Panipat in 1526, ending the Delhi Sultanate.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Slave (Mamluk)",
+                  "value": "Qutb-ud-din Aibak, Iltutmish (real founder), Razia (1st woman ruler)"
+                },
+                {
+                  "label": "Khalji",
+                  "value": "Alauddin Khalji (Market reforms, Dagh & Chehra)"
+                },
+                {
+                  "label": "Tughlaq",
+                  "value": "Ghiyasuddin, Muhammad bin Tughlaq (Token currency, Capital shift), Firoz Shah (Canals, Jizya on Brahmins)"
+                },
+                {
+                  "label": "Lodi",
+                  "value": "Bahlul, Sikandar (Gaj-i-Sikandari), Ibrahim (defeated in Panipat)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "facts",
+          "title": "Administrative Terms",
+          "intro": "The Iqta System was a method of paying officials during the Delhi Sultanate, where instead of giving them cash salaries, the ruler granted them the right to collect revenue from a piece of land, and this system was formally introduced by Sultan Iltutmish. The Diwan-i-Arz was the military department responsible for organizing and inspecting the army, and it was created by Sultan Balban. The Diwan-i-Kohi was the agriculture department established by Sultan Muhammad bin Tughlaq to improve farming and increase crop production. The Diwan-i-Khairat was a charity department set up by Sultan Firoz Tughlaq to provide financial help to the poor, orphans, and widows.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Iqta System",
+                  "value": "Land grants in lieu of salary (Iltutmish)"
+                },
+                {
+                  "label": "Diwan-i-Arz",
+                  "value": "Military dept (Balban)"
+                },
+                {
+                  "label": "Diwan-i-Kohi",
+                  "value": "Agriculture dept (M.B. Tughlaq)"
+                },
+                {
+                  "label": "Diwan-i-Khairat",
+                  "value": "Charity (Firoz Tughlaq)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Market Reforms (Alauddin Khalji)",
+          "intro": "Market Reforms under Alauddin Khalji Alauddin Khalji, a ruler of the Delhi Sultanate from 1296 to 1316, introduced a system of price controls to keep the cost of essential goods like food grains, cloth, and other daily items low and stable. To enforce these fixed prices, he appointed a special officer called the Shahna-i-Mandi, which means \"superintendent of the market,\" who was responsible for checking that no seller cheated by charging more than the set price or by hoarding goods. This system is considered the most sophisticated and tightly controlled economic plan in medieval India because it included not just price fixing but also rules for how much grain merchants could store, a government-run supply store called the royal granary, and a network of spies to report any violations.",
+          "blocks": []
+        },
+        {
+          "type": "formula",
+          "title": "Architecture",
+          "intro": "Architecture of the Delhi Sultanate introduced new building methods and decorations to India. The Qutub Minar, a tall tower called a minaret used for the call to prayer, was started by Qutb-ud-din Aibak and completed by Iltutmish. Alai Darwaza, built by Alauddin Khalji, is a gateway that shows the first true arch (a curved structure over an opening) and dome (a rounded roof) used in Indian buildings. The Tomb of Ghiyasuddin Tughlaq has simple, sloping walls and a heavy look. Common features included the arch, the dome, and the minaret. Decoration used arabesque, which is a style of interlacing floral patterns and calligraphy (beautiful, decorative writing).",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Literature",
+          "intro": "Amir Khusrau, also known as Tut-i-Hind meaning \"Parrot of India,\" was a famous poet and musician who is traditionally credited with inventing the sitar (a stringed instrument), the tabla (a pair of hand drums), and the musical form called qawwali (a type of devotional singing). Ziauddin Barani was a historian who wrote the book Tarikh-i-Firoz Shahi, which is a history of the Delhi Sultanate, especially the reign of Sultan Firoz Shah Tughlaq. Ibn Battuta was a Moroccan traveler who wrote a travelogue called Rihla, meaning \"The Journey,\" and he visited India during the rule of Muhammad bin Tughlaq, who was the Sultan of Delhi.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "Who is considered the real founder of the Slave (Mamluk) Dynasty?",
+          "back": "Iltutmish."
+        },
+        {
+          "front": "What were the Dagh and Chehra systems introduced by Alauddin Khalji?",
+          "back": "Dagh was the branding of horses and Chehra was the system of describing soldiers to control the army."
+        },
+        {
+          "front": "Which Sultan shifted the capital from Delhi to Daulatabad?",
+          "back": "Muhammad bin Tughlaq."
+        },
+        {
+          "front": "What was the Gaj-i-Sikandari introduced by Sikandar Lodi?",
+          "back": "A standard yard for land measurement."
+        },
+        {
+          "front": "What was the purpose of the Iqta System introduced by Iltutmish?",
+          "back": "It was a method of granting land to officials in lieu of cash salaries."
+        },
+        {
+          "front": "Which department was created by Sultan Balban to manage the military?",
+          "back": "Diwan-i-Arz."
+        },
+        {
+          "front": "Who was the market supervisor appointed by Alauddin Khalji to enforce price controls?",
+          "back": "Shahna-i-Mandi."
+        },
+        {
+          "front": "Which monument is credited with showing the first true arch and dome in Indian buildings?",
+          "back": "Alai Darwaza."
+        },
+        {
+          "front": "What is the term for the decorative style of interlacing floral patterns and calligraphy used in Sultanate architecture?",
+          "back": "Arabesque."
+        },
+        {
+          "front": "Which Moroccan traveler visited India during the reign of Muhammad bin Tughlaq?",
+          "back": "Ibn Battuta."
+        },
+        {
+          "front": "Who was the \"Real Founder\" of the Delhi Sultanate?",
+          "back": "Iltutmish. (He moved the capital to Delhi and introduced the Iqta system)."
+        },
+        {
+          "front": "What is the \"Iqta\" system?",
+          "back": "Assignment of land revenue to military officers in lieu of cash salary."
+        },
+        {
+          "front": "Who was \"Tut-i-Hind\" (Parrot of India)?",
+          "back": "Amir Khusrau."
+        },
+        {
+          "front": "Which Sultan introduced \"Token Currency\"?",
+          "back": "Muhammad bin Tughlaq."
+        },
+        {
+          "front": "Who built the \"Alai Darwaza\"?",
+          "back": "Alauddin Khalji."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

@@ -6,6 +6,14 @@ const ROOT = path.resolve(__dirname, '..');
 const ENV_PATH = process.env.MINDGAINS_ENV || path.join(ROOT, '.env');
 const SITE_URL = (process.env.BASE_URL || process.env.SITE_URL || 'https://mindgains.ai').replace(/\/$/, '');
 
+// Round-2 SEO title/H1/description overrides (scripts/seo/apply-round2-overrides.cjs).
+// Keyed by canonical pathname. Applied on top of the generated defaults so a rebuild
+// does not revert the keyword-mapped metadata. Metadata only — no route/canonical change.
+let SEO_OVERRIDES = {};
+try {
+  SEO_OVERRIDES = JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts/seo/round2-title-overrides.json'), 'utf8'));
+} catch { SEO_OVERRIDES = {}; }
+
 function readEnv(file) {
   const out = {};
   if (!fs.existsSync(file)) return out;
@@ -399,12 +407,13 @@ async function main() {
       const st = statLine(list);
       const canonicalSubjectPath = canonicalPracticePath(examId, subjectId);
       const legacySubjectPath = legacyQuizPath(examId, subjectId);
+      const sOv = SEO_OVERRIDES[canonicalSubjectPath] || {};
       writeCanonicalAndLegacy(urls, canonicalSubjectPath, legacySubjectPath, pageShell({
-        title: `${exam.name} ${subjectName} Quizzes | MindGains`,
-        description: `${st.questions.toLocaleString('en-IN')} ${exam.name} ${subjectName} MCQs across ${st.topics} topics.`,
+        title: sOv.title || `${exam.name} ${subjectName} Quizzes | MindGains`,
+        description: sOv.description || `${st.questions.toLocaleString('en-IN')} ${exam.name} ${subjectName} MCQs across ${st.topics} topics.`,
         pathname: canonicalSubjectPath,
         crumbs: [{ name: exam.name, url: canonical(EXAM_HUBS[examId] || `/${examId}/`) }, { name: subjectName, url: canonical(canonicalSubjectPath) }],
-        body: `<section class="hero compact"><p class="eyebrow">${htmlEscape(exam.name)} · ${htmlEscape(subjectName)}</p><h1>${htmlEscape(subjectName)} Quizzes</h1><p>Choose a focused topic and practice all available questions.</p></section>${searchBox()}<section>${cards(topicCards)}</section>`,
+        body: `<section class="hero compact"><p class="eyebrow">${htmlEscape(exam.name)} · ${htmlEscape(subjectName)}</p><h1>${htmlEscape(sOv.h1 || `${subjectName} Quizzes`)}</h1><p>Choose a focused topic and practice all available questions.</p></section>${searchBox()}<section>${cards(topicCards)}</section>`,
       }), canonicalSubjectPath);
       searchIndex.push({ title: `${exam.name} ${subjectName}`, type: 'Subject', url: canonicalSubjectPath, copy: `${st.topics} topics.` });
 
@@ -413,16 +422,17 @@ async function main() {
         const dataPath = writeQuizData(examId, subjectId, t.topicSlug, t, t.questions);
         const canonicalTopicPath = canonicalPracticePath(examId, subjectId, t.topicSlug);
         const legacyTopicPath = legacyQuizPath(examId, subjectId, t.topicSlug);
+        const tOv = SEO_OVERRIDES[canonicalTopicPath] || {};
         writeCanonicalAndLegacy(urls, canonicalTopicPath, legacyTopicPath, pageShell({
-          title: `${t.topicName} Quiz | ${exam.name} ${subjectName} | MindGains`,
-          description: `Practice ${t.questions.length.toLocaleString('en-IN')} ${t.topicName} MCQs for ${exam.name}. Shuffle questions, answer one at a time, and review explanations.`,
+          title: tOv.title || `${t.topicName} Quiz | ${exam.name} ${subjectName} | MindGains`,
+          description: tOv.description || `Practice ${t.questions.length.toLocaleString('en-IN')} ${t.topicName} MCQs for ${exam.name}. Shuffle questions, answer one at a time, and review explanations.`,
           pathname: canonicalTopicPath,
           crumbs: [
             { name: exam.name, url: canonical(EXAM_HUBS[examId] || `/${examId}/`) },
             { name: subjectName, url: canonical(canonicalSubjectPath) },
             { name: t.topicName, url: canonical(canonicalTopicPath) },
           ],
-          body: `<section class="topic-hero"><p class="eyebrow">${htmlEscape(exam.name)} · ${htmlEscape(subjectName)}</p><h1>${htmlEscape(t.topicName)} Quiz</h1><p>Practice ${htmlEscape(t.topicName)} one question at a time. Every attempt is shuffled, explanations appear after you answer, and mistakes are saved for review in this session.</p><button class="start" type="button" data-start-quiz>Start Quiz</button></section><section class="quiz-player" id="quiz-player" data-quiz-src="${attr(dataPath)}" hidden><div class="quiz-shell"><div class="quiz-status"><span data-progress>Question 1 / ${t.questions.length}</span><span data-score>Score 0</span></div><div class="quiz-meter"><span data-meter></span></div><h2 data-question></h2><div class="quiz-options" data-options></div><div class="quiz-feedback" data-feedback hidden></div><div class="quiz-actions"><button type="button" data-next disabled>Next</button></div></div></section>${related.length ? `<section><div class="section-head"><h2>Related Topics</h2></div><div class="related">${related.map((r) => `<a href="${attr(r.href)}">${htmlEscape(r.title)}</a>`).join('')}</div></section>` : ''}<section class="app-bridge"><h2>Finished this quiz?</h2><p>Imagine doing this every day with personalized lessons, revision, streaks, AI guidance and a growing community of learners across India.</p><p>Join the MindGains Early Access Waitlist and be among the first to experience India's daily learning habit platform.</p><ul><li>Daily Dose - one focused lesson every day</li><li>Personalized AI-generated learning from any PDF, YouTube video or topic</li><li>AI companion MIGA in 5 Indian languages</li><li>200,000+ quizzes with mistake revision</li><li>XP, streaks and state leaderboards</li><li>Current affairs, flashcards and smart practice</li></ul><a class="start" href="/#join">Join the Waitlist</a></section>`,
+          body: `<section class="topic-hero"><p class="eyebrow">${htmlEscape(exam.name)} · ${htmlEscape(subjectName)}</p><h1>${htmlEscape(tOv.h1 || `${t.topicName} Quiz`)}</h1><p>Practice ${htmlEscape(t.topicName)} one question at a time. Every attempt is shuffled, explanations appear after you answer, and mistakes are saved for review in this session.</p><button class="start" type="button" data-start-quiz>Start Quiz</button></section><section class="quiz-player" id="quiz-player" data-quiz-src="${attr(dataPath)}" hidden><div class="quiz-shell"><div class="quiz-status"><span data-progress>Question 1 / ${t.questions.length}</span><span data-score>Score 0</span></div><div class="quiz-meter"><span data-meter></span></div><h2 data-question></h2><div class="quiz-options" data-options></div><div class="quiz-feedback" data-feedback hidden></div><div class="quiz-actions"><button type="button" data-next disabled>Next</button></div></div></section>${related.length ? `<section><div class="section-head"><h2>Related Topics</h2></div><div class="related">${related.map((r) => `<a href="${attr(r.href)}">${htmlEscape(r.title)}</a>`).join('')}</div></section>` : ''}<section class="app-bridge"><h2>Finished this quiz?</h2><p>Imagine doing this every day with personalized lessons, revision, streaks, AI guidance and a growing community of learners across India.</p><p>Join the MindGains Early Access Waitlist and be among the first to experience India's daily learning habit platform.</p><ul><li>Daily Dose - one focused lesson every day</li><li>Personalized AI-generated learning from any PDF, YouTube video or topic</li><li>AI companion MIGA in 5 Indian languages</li><li>200,000+ quizzes with mistake revision</li><li>XP, streaks and state leaderboards</li><li>Current affairs, flashcards and smart practice</li></ul><a class="start" href="/#join">Join the Waitlist</a></section>`,
         }), canonicalTopicPath);
         searchIndex.push({ title: `${t.topicName} Quiz`, type: 'Topic', url: canonicalTopicPath, copy: `${exam.name} ${subjectName} · ${t.questions.length} questions` });
       }
@@ -509,6 +519,10 @@ async function main() {
   const sitemapUrls = [...new Set([...urls, ...existingNonQuizSitemapPaths()])].filter((u) => !u.startsWith('/quiz/'));
   fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapUrls.map((u) => `  <url><loc>${htmlEscape(canonical(u))}</loc><changefreq>weekly</changefreq><priority>${u === '/' ? '1.0' : u.split('/').length > 5 ? '0.7' : '0.8'}</priority></url>`).join('\n')}\n</urlset>\n`, 'utf8');
   updateHomeLink();
+  // Add server-visible question previews and distinct MCQ landing pages after
+  // canonical pages/data are written. This helper preserves manually curated
+  // title/H1/description overrides; it only owns marked SEO content blocks.
+  require('./build-static-seo-content.cjs');
   console.log(`Generated ${urls.length} practice pages from ${topicEntries.length} Redis topics with ${totalQuestions} questions.`);
 }
 

@@ -1,0 +1,698 @@
+{
+  "zoneId": "history-freedom",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "UPSC History: Gandhi's Arrival & Early Satyagrahas",
+      "intro": "Today we study the 'Entry of the Mahatma'. After two decades in South Africa, M.K. Gandhi returned to India in 1915. He didn't join politics immediately; instead, he traveled and tested his weapon of 'Satyagraha' (Truth-Force) in three localized struggles: Champaran, Kheda, and Ahmedabad. These 'Triple Victories' established him as a leader of the masses. For UPSC, mastering the 'Sequence' and 'Issues' of these three struggles is a Prelims favorite. Let's trace the birth of Gandhian politics today.",
+      "pages": [
+        {
+          "type": "timeline",
+          "title": "Gandhi in South Africa (Brief)",
+          "intro": "Gandhi honed Satyagraha and Ahimsa in South Africa before returning to India on Jan 9, 1915.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Satyagraha",
+                  "value": "Nonviolent resistance rooted in truth"
+                },
+                {
+                  "label": "Ahimsa",
+                  "value": "Nonviolence; avoiding harm to any living being"
+                },
+                {
+                  "label": "Natal Indian Congress",
+                  "value": "Organization uniting Indians in South Africa for rights"
+                },
+                {
+                  "label": "Tolstoy Farm",
+                  "value": "Self-sufficient community for simple, cooperative living"
+                },
+                {
+                  "label": "Return to India",
+                  "value": "January 9, 1915 (Pravasi Bharatiya Divas)"
+                },
+                {
+                  "label": "Political Mentor",
+                  "value": "Gopal Krishna Gokhale"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "timeline",
+          "title": "Champaran Satyagraha (1917 - First Civil Disobedience)",
+          "intro": "Gandhi's first Civil Disobedience in India, launched in Champaran, Bihar, against the Tinkathia system.",
+          "blocks": [
+            {
+              "type": "timeline",
+              "items": [
+                {
+                  "label": "Invitation · 1917",
+                  "value": "Rajkumar Shukla invited Gandhi to Champaran"
+                },
+                {
+                  "label": "Issue · Tinkathia System",
+                  "value": "Forced indigo cultivation on 3/20th of land"
+                },
+                {
+                  "label": "Action · Civil Disobedience",
+                  "value": "Gandhi refused to leave Champaran when ordered"
+                },
+                {
+                  "label": "Outcome · Indigo Commission",
+                  "value": "Tinkathia system legally abolished"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Ahmedabad Mill Strike (1918 - First Hunger Strike)",
+          "intro": "Gandhi introduced the hunger strike as a tool for labor dispute, securing a 35% wage hike for textile workers.",
+          "blocks": [
+            {
+              "text": "Workers demanded restoration of a 'Plague Bonus' withdrawn by mill owners. Gandhi's hunger strike forced an agreement, marking the first use of fasting for a labor cause in India.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Kheda Satyagraha (1918 - First Non-Cooperation)",
+          "intro": "Farmers in Kheda, Gujarat, refused to pay land revenue after crop failure, led by Gandhi and Sardar Patel.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Farmers",
+                  "Full tax waiver due to crop failure",
+                  "Only those who could afford paid; poor exempted"
+                ],
+                [
+                  "Government",
+                  "Full land revenue collection",
+                  "Partial collection, policy softened"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "",
+                "Demand",
+                "Outcome"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Core Philosophy",
+          "intro": "Gandhi's movement rested on Satyagraha, Ahimsa, Sarvodaya, and Constructive Work for social reform.",
+          "blocks": [
+            {
+              "type": "mindmap",
+              "center": "Gandhian Philosophy",
+              "branches": [
+                {
+                  "label": "Satyagraha",
+                  "value": "Passive resistance rooted in truth"
+                },
+                {
+                  "label": "Ahimsa",
+                  "value": "Non-violence in thought and action"
+                },
+                {
+                  "label": "Sarvodaya",
+                  "value": "Upliftment and welfare of all"
+                },
+                {
+                  "label": "Constructive Work",
+                  "value": "Khadi, Hindu-Muslim unity, removal of untouchability"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "Who was Mahatma Gandhi's political mentor in India?",
+          "back": "Gopal Krishna Gokhale."
+        },
+        {
+          "front": "On what date did Gandhi return to India from South Africa?",
+          "back": "January 9, 1915."
+        },
+        {
+          "front": "What was the Tinkathia system in Champaran?",
+          "back": "A British law forcing peasants to grow Indigo on 3/20th of their land."
+        },
+        {
+          "front": "Which event is considered Gandhi's first Civil Disobedience in India?",
+          "back": "The Champaran Satyagraha."
+        },
+        {
+          "front": "Which movement marked Gandhi's first use of a hunger strike as a weapon?",
+          "back": "The Ahmedabad Mill Strike."
+        },
+        {
+          "front": "What was the outcome of the Ahmedabad Mill Strike?",
+          "back": "Workers received a 35% wage hike."
+        },
+        {
+          "front": "Which movement is recognized as Gandhi's first Non-Cooperation movement?",
+          "back": "The Kheda Satyagraha."
+        },
+        {
+          "front": "What was the core issue of the Kheda Satyagraha?",
+          "back": "The British government demanded full land revenue despite crop failure."
+        },
+        {
+          "front": "What does the term 'Sarvodaya' mean in Gandhi's philosophy?",
+          "back": "The upliftment of all, or the welfare of every person in society."
+        },
+        {
+          "front": "What was the primary issue during the Ahmedabad Mill Strike of 1918?",
+          "back": "The discontinuation of the 'Plague Bonus'."
+        },
+        {
+          "front": "Date of Gandhi's return to India?",
+          "back": "January 9, 1915 (Pravasi Bharatiya Divas)."
+        },
+        {
+          "front": "Who was Gandhi's political guru?",
+          "back": "Gopal Krishna Gokhale."
+        },
+        {
+          "front": "First Civil Disobedience movement by Gandhi?",
+          "back": "Champaran Satyagraha (1917)."
+        },
+        {
+          "front": "First Hunger Strike by Gandhi?",
+          "back": "Ahmedabad Mill Strike (1918)."
+        },
+        {
+          "front": "What is the \"Tinkathia System\"?",
+          "back": "Obligation to grow indigo on 3/20th of land in Champaran."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    },
+    {
+      "title": "UPSC History: Non-Cooperation & Chauri Chaura",
+      "intro": "Today we study the 'First Mass Strike'. The Non-Cooperation Movement (NCM) was Gandhi's first pan-India struggle, launched in 1920 to undo the 'Punjab Wrongs' and support the Khilafat cause. It saw the surrender of titles, boycott of schools, and the rise of the 'Charkha'. For UPSC, focus on the 'Program of NCM' and the controversial withdrawal after the 'Chauri Chaura' incident. This movement changed the nature of the Indian freedom struggle forever.",
+      "pages": [
+        {
+          "type": "concept",
+          "title": "Launch of NCM (1920)",
+          "intro": "Nationwide protest approved at Nagpur Congress (Dec 1920) to achieve Swaraj through non-cooperation.",
+          "blocks": [
+            {
+              "type": "mindmap",
+              "center": "NCM Goals",
+              "branches": [
+                {
+                  "label": "Swaraj",
+                  "value": "Self-rule / complete independence"
+                },
+                {
+                  "label": "Punjab wrongs",
+                  "value": "Justice for Jallianwala Bagh (1919)"
+                },
+                {
+                  "label": "Khilafat",
+                  "value": "Protect Ottoman Caliphate"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "timeline",
+          "title": "Program of Action",
+          "intro": "Gandhi-led activities (1920-22) urging Indians to boycott British institutions and adopt swadeshi alternatives.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Surrender titles",
+                  "value": "e.g., Kaiser-i-Hind medal returned by Gandhi"
+                },
+                {
+                  "label": "Boycott",
+                  "value": "Govt schools, courts, foreign cloth"
+                },
+                {
+                  "label": "Promote",
+                  "value": "Khadi, Charkha (hand-spun cloth)"
+                },
+                {
+                  "label": "National schools",
+                  "value": "Jamia Millia Islamia (Delhi), Kashi Vidyapeeth (Varanasi)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "timeline",
+          "title": "Chauri Chaura (Feb 5, 1922)",
+          "intro": "Violent clash in Gorakhpur (UP) where protesters burned a police station, killing 22 policemen.",
+          "blocks": [
+            {
+              "text": "Gandhi called off the Non-Cooperation Movement immediately after this incident, proving his absolute commitment to non-violence.",
+              "type": "trap"
+            }
+          ]
+        },
+        {
+          "type": "timeline",
+          "title": "Impact of Withdrawal",
+          "intro": "NCM withdrawal in 1922 shocked leaders, caused a lull, and led to internal divisions among nationalists.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Nehru & Bose",
+                  "Shock; Bose called it a 'national calamity'",
+                  "Movement lull"
+                ],
+                [
+                  "Congress leaders",
+                  "Disagreements on future strategy",
+                  "Rise of internal divisions"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "",
+                "Reaction",
+                "Outcome"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Economic Impact",
+          "intro": "Swadeshi Movement halved British cloth imports, boosting Indian textile mills and handlooms.",
+          "blocks": [
+            {
+              "text": "Foreign cloth = textiles made outside India, mainly Britain. Demand surged for Indian mill-made and handloom cloth.",
+              "type": "text"
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "At which session was the Non-Cooperation Movement officially approved?",
+          "back": "Nagpur session (1920)."
+        },
+        {
+          "front": "What were the three main objectives of the Non-Cooperation Movement?",
+          "back": "Self-government (Swaraj), redressal of Punjab wrongs, and support to Khilafat."
+        },
+        {
+          "front": "Which title did Gandhi surrender as part of the NCM program?",
+          "back": "Kaiser-i-Hind."
+        },
+        {
+          "front": "Which national schools were founded during the Non-Cooperation Movement?",
+          "back": "Jamia Millia and Kashi Vidyapeeth."
+        },
+        {
+          "front": "When and where did the Chauri Chaura incident occur?",
+          "back": "February 5, 1922, in the Gorakhpur district."
+        },
+        {
+          "front": "How many policemen were killed in the Chauri Chaura incident?",
+          "back": "22 policemen."
+        },
+        {
+          "front": "Who described the withdrawal of the NCM as a 'national calamity'?",
+          "back": "Subhas Bose."
+        },
+        {
+          "front": "What was the immediate consequence of the Chauri Chaura incident on the movement?",
+          "back": "Gandhi immediately suspended the movement."
+        },
+        {
+          "front": "What was the impact of the NCM on the import of foreign cloth?",
+          "back": "It fell by half."
+        },
+        {
+          "front": "Which sectors received a massive boost due to the boycott of foreign cloth?",
+          "back": "Indian textile mills and handlooms."
+        },
+        {
+          "front": "When was the NCM launched?",
+          "back": "1920 (Nagpur Session)."
+        },
+        {
+          "front": "Why was NCM withdrawn?",
+          "back": "Due to the violent Chauri Chaura incident (Feb 1922)."
+        },
+        {
+          "front": "Who called the withdrawal a \"national calamity\"?",
+          "back": "Subhas Chandra Bose."
+        },
+        {
+          "front": "Name two national schools founded during NCM?",
+          "back": "Jamia Millia Islamia and Kashi Vidyapeeth."
+        },
+        {
+          "front": "What was the \" Nagpur Session 1920\" significance?",
+          "back": "Shifted INC goal to \"Swaraj\" through peaceful means."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    },
+    {
+      "title": "UPSC History: Civil Disobedience & Salt Satyagraha",
+      "intro": "Today we study the 'Great Defiance'. The Civil Disobedience Movement (CDM) began with the iconic Dandi March in 1930. By picking up a handful of salt, Gandhi challenged the moral authority of the British Empire. This movement saw unprecedented mass participation, especially from women and business classes. For UPSC, focus on the 'Dandi Route', the 'Gandhi-Irwin Pact', and the various regional centers like Dharasana and Vedaranyam. This was the moment the world watched India.",
+      "pages": [
+        {
+          "type": "formula",
+          "title": "Purna Swaraj Declaration (1929)",
+          "intro": "The Purna Swaraj Declaration, meaning \"Complete Self-Rule,\" was a formal announcement made by the Indian National Congress (INC), the main political party fighting for India's freedom from British rule, during its annual meeting in Lahore in December 1929. The president of this session was Jawaharlal Nehru, who later became India's first Prime Minister. At this meeting, the Congress changed its official goal from demanding \"Dominion Status,\" which meant self-rule while still recognizing the British King, to demanding \"Purna Swaraj,\" or complete and total independence from Britain. To show their commitment, the Congress declared that January 26, 1930, would be celebrated as the first Independence Day across India, where people would take a public pledge to fight for full freedom. This declaration was a major turning point because it rejected any compromise with British rule and set the clear, non-negotiable goal of complete independence for the country.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Dandi March (March 12 - April 6, 1930)",
+          "intro": "The Dandi March was a 241-mile walk led by Mahatma Gandhi, accompanied by 78 of his followers, from his ashram in Sabarmati to the coastal village of Dandi in Gujarat. This march was a deliberate act of civil disobedience, which means the peaceful refusal to obey an unjust law, specifically targeting the British salt law. The British salt law was a government rule that made it illegal for Indians to make or sell their own salt, forcing them to buy heavily taxed, British-controlled salt instead. When Gandhi and his followers reached Dandi on April 6, 1930, they openly violated the law by picking up natural salt from the seashore. This single act signaled the beginning of the Civil Disobedience Movement (CDM), which was a nationwide campaign of nonviolent resistance against British rule.",
+          "blocks": []
+        },
+        {
+          "type": "timeline",
+          "title": "Regional Movements",
+          "intro": "Regional movements were part of the Civil Disobedience Movement started by Mahatma Gandhi in 1930 to break the British salt law. In Tamil Nadu, C. Rajagopalachari led a march from Trichy to Vedaranyam to make salt illegally. In the Malabar region of Kerala, K. Kelappan led a similar salt march. In Peshawar, now in Pakistan, Khan Abdul Ghaffar Khan, called the Frontier Gandhi, led a nonviolent group known as the Khudai Khidmatgar, meaning servants of God. At Dharasana in Gujarat, Sarojini Naidu led a protest raid on the salt works. These actions spread the independence movement across different parts of India.",
+          "blocks": [
+            {
+              "type": "timeline",
+              "items": [
+                {
+                  "label": "TN",
+                  "value": "C. Rajagopalachari (Trichy to Vedaranyam)"
+                },
+                {
+                  "label": "Malabar",
+                  "value": "K. Kelappan"
+                },
+                {
+                  "label": "Peshawar",
+                  "value": "Khan Abdul Ghaffar Khan (Frontier Gandhi - Khudai Khidmatgar)"
+                },
+                {
+                  "label": "Dharasana",
+                  "value": "Sarojini Naidu"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Gandhi-Irwin Pact (1931)",
+          "intro": "The Gandhi-Irwin Pact was an agreement signed in 1931 between Mahatma Gandhi, leader of the Indian National Congress (INC),",
+          "blocks": [
+            {
+              "text": "Note: Bhagat Singh's execution was NOT stayed.",
+              "type": "trap"
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Features of CDM",
+          "intro": "The Civil Disobedience Movement, or CDM, was a major campaign of nonviolent protest against British rule in India, launched in 1930. Unlike earlier movements, it involved the deliberate violation of specific British laws, such as the salt law which made it illegal for Indians to make or sell salt, not just refusing to cooperate with the government. A key feature was the massive participation of women, who came out in large numbers to picket shops selling foreign cloth and liquor, breaking traditional social barriers. The movement also included a boycott of foreign cloth and liquor, meaning people refused to buy or use these items to hurt British economic interests. Additionally, there were no-tax and no-rent campaigns, where peasants and farmers refused to pay taxes or rent to the British authorities and landlords, challenging the economic foundation of colonial rule.",
+          "blocks": [
+            {
+              "text": "Violation of laws (not just non-cooperation).",
+              "type": "trap"
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "Who presided over the Lahore Session of the INC in 1929?",
+          "back": "Jawaharlal Nehru."
+        },
+        {
+          "front": "What was the official goal declared at the 1929 Lahore Session?",
+          "back": "Complete Independence (Purna Swaraj)."
+        },
+        {
+          "front": "How many followers accompanied Gandhi during the Dandi March?",
+          "back": "78 followers."
+        },
+        {
+          "front": "What was the distance covered during the Dandi March?",
+          "back": "241 miles."
+        },
+        {
+          "front": "Who led the salt march from Trichy to Vedaranyam in Tamil Nadu?",
+          "back": "C. Rajagopalachari."
+        },
+        {
+          "front": "Who led the salt march in the Malabar region?",
+          "back": "K. Kelappan."
+        },
+        {
+          "front": "Who was known as the 'Frontier Gandhi' and led the Khudai Khidmatgar?",
+          "back": "Khan Abdul Ghaffar Khan."
+        },
+        {
+          "front": "Who led the protest raid at the Dharasana salt works?",
+          "back": "Sarojini Naidu."
+        },
+        {
+          "front": "Was Bhagat Singh's execution stayed by the Gandhi-Irwin Pact?",
+          "back": "No, it was not stayed."
+        },
+        {
+          "front": "What was a distinguishing feature of the Civil Disobedience Movement compared to earlier movements?",
+          "back": "The deliberate violation of specific British laws."
+        },
+        {
+          "front": "When was the Dandi March started?",
+          "back": "March 12, 1930."
+        },
+        {
+          "front": "Who led the Salt Satyagraha in Tamil Nadu?",
+          "back": "C. Rajagopalachari (Vedaranyam March)."
+        },
+        {
+          "front": "Who is known as \"Frontier Gandhi\"?",
+          "back": "Khan Abdul Ghaffar Khan."
+        },
+        {
+          "front": "In which session was \"Purna Swaraj\" declared?",
+          "back": "Lahore Session (1929)."
+        },
+        {
+          "front": "Who led the raid on Dharasana Salt Works?",
+          "back": "Sarojini Naidu."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    },
+    {
+      "title": "UPSC History: Quit India Movement & INA",
+      "intro": "Today we study the 'Final Blow'. The Quit India Movement (1942) was the most violent and spontaneous mass uprising since 1857. With the slogan 'Do or Die', Gandhi gave a clarion call for the British to leave immediately. Simultaneously, Subhas Chandra Bose led the Indian National Army (INA) from outside. For UPSC, focus on the 'Underground activities' of leaders like Usha Mehta and the significance of the 'Parallel Governments'. This is the endgame of the Raj.",
+      "pages": [
+        {
+          "type": "timeline",
+          "title": "Quit India (August 1942)",
+          "intro": "Mass movement launched by INC in Aug 1942 demanding an immediate British withdrawal from India.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Basis",
+                  "value": "Wardha Resolution (July 1942)"
+                },
+                {
+                  "label": "Launch venue",
+                  "value": "Gowalia Tank, Bombay"
+                },
+                {
+                  "label": "Gandhi's slogan",
+                  "value": "Do or Die (Karo ya Maro)"
+                },
+                {
+                  "label": "British crackdown",
+                  "value": "Operation Zero Hour – mass arrests of leaders"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "timeline",
+          "title": "Spontaneous Uprising",
+          "intro": "Leaderless mass revolt after Congress leaders were arrested, marked by strikes and sabotage.",
+          "blocks": [
+            {
+              "type": "mindmap",
+              "center": "Spontaneous Uprising",
+              "branches": [
+                {
+                  "label": "Actions",
+                  "value": "Strikes, damaging railway lines, cutting telegraph wires"
+                },
+                {
+                  "label": "Underground Radio",
+                  "value": "Secret station by Usha Mehta in Bombay to bypass news bans"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "timeline",
+          "title": "Parallel Governments",
+          "intro": "Temporary local governments set up by Indians when British authority collapsed in certain regions.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Period",
+                  "Aug 1942 (few days)",
+                  "1942–1944",
+                  "1943–1945"
+                ],
+                [
+                  "Leader",
+                  "Chittu Pandey",
+                  "Jatiya Sarkar",
+                  "Nana Patil (Prati Sarkar)"
+                ],
+                [
+                  "Features",
+                  "First parallel govt.",
+                  "Own courts & police",
+                  "Tax collection, dispute resolution, guerrilla resistance"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "",
+                "Ballia (UP)",
+                "Tamluk (Bengal)",
+                "Satara (Maharashtra)"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "timeline",
+          "title": "Subhas Chandra Bose & INA",
+          "intro": "Bose's break from INC, escape to Axis powers, and leadership of the Indian National Army.",
+          "blocks": [
+            {
+              "type": "timeline",
+              "items": [
+                {
+                  "label": "1939 · Tripuri Crisis",
+                  "value": "Bose resigns as INC president, forms Forward Bloc"
+                },
+                {
+                  "label": "Escape from India",
+                  "value": "First to Germany, then to Japan seeking anti-British support"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "timeline",
+          "title": "Impact of INA",
+          "intro": "INA trials sparked nationwide sympathy, naval mutiny, and united political defense of soldiers.",
+          "blocks": [
+            {
+              "text": "INC leaders Nehru & Bhulabhai Desai defended INA accused. Public outrage turned soldiers into patriots.",
+              "type": "text"
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "What was the basis for the Quit India movement?",
+          "back": "The Wardha Resolution."
+        },
+        {
+          "front": "Where was the Quit India movement officially launched?",
+          "back": "Gowalia Tank, Bombay."
+        },
+        {
+          "front": "What was the code name for the mass arrest of Congress leaders on the first day of the Quit India movement?",
+          "back": "Operation Zero Hour."
+        },
+        {
+          "front": "Who started the Underground Radio during the Quit India movement?",
+          "back": "Usha Mehta."
+        },
+        {
+          "front": "Which parallel government was the longest-running during the Quit India movement?",
+          "back": "The Prati Sarkar in Satara."
+        },
+        {
+          "front": "Which political group did Subhas Chandra Bose form after the 1939 Tripuri Crisis?",
+          "back": "The Forward Bloc."
+        },
+        {
+          "front": "Who were the original founders of the Azad Hind Fauj?",
+          "back": "Mohan Singh and Rash Behari Bose."
+        },
+        {
+          "front": "What were the slogans associated with Subhas Chandra Bose and the INA?",
+          "back": "Jai Hind and Delhi Chalo."
+        },
+        {
+          "front": "Which INC leaders defended the INA officers during the Red Fort trials?",
+          "back": "Jawaharlal Nehru and Bhulabhai Desai."
+        },
+        {
+          "front": "The INA trials at the Red Fort led to which major 1946 event?",
+          "back": "The Royal Indian Navy (RIN) Revolt."
+        },
+        {
+          "front": "Slogan of Quit India?",
+          "back": "\"Do or Die\" (Karo ya Maro)."
+        },
+        {
+          "front": "Who started the underground radio during Quit India?",
+          "back": "Usha Mehta."
+        },
+        {
+          "front": "Where was the longest running parallel government?",
+          "back": "Satara (Maharashtra)."
+        },
+        {
+          "front": "Who founded the Forward Bloc?",
+          "back": "Subhas Chandra Bose (1939)."
+        },
+        {
+          "front": "What was \"Operation Zero Hour\"?",
+          "back": "The pre-dawn arrest of all top INC leaders on Aug 9, 1942."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

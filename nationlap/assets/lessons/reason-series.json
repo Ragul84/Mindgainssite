@@ -1,0 +1,330 @@
+{
+  "zoneId": "reason-series",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "SSC Reasoning: Analogy & Classification",
+      "intro": "Welcome to the 'Logic' section of SSC. Reasoning is where you score 50/50 in 12 minutes. Today we start with Analogy (Comparison) and Classification (Odd One Out). These chapters test your General Knowledge, Vocabulary, and Mathematical logic simultaneously. In SSC, a question could link a capital to a country, a scientist to an invention, or a number to its cube. Toppers solve these in 5 seconds because they recognize the 'Relationship Pattern'. Let's sharpen your mental associations today.",
+      "pages": [
+        {
+          "type": "facts",
+          "title": "Types of Analogy",
+          "intro": "An analogy is a comparison between two things that are similar in some way, and in reasoning questions you are asked to find that same relationship in a new pair. The first type is a Word Analogy, where you match words based on a real-world connection, such as a country to its capital city, a state to its Chief Minister (CM), an animal to its young one, or a tool to the worker who uses it. The second type is a Number Analogy, where you look for a mathematical relationship like squares (for example, 4 is the square of 2), cubes (8 is the cube of 2), multiples (6 is a multiple of 3), or prime numbers (numbers like 2, 3, 5, 7 that are only divisible by 1 and themselves). The third type is an Alphabet Analogy, which uses the position of letters in the English alphabet, where A is 1, B is 2, and so on up to Z which is 26, or it uses opposite pairs where A is opposite Z, B is opposite Y, and C is opposite X. In every case, you must first identify the exact relationship in the first pair, then apply that same relationship to find the missing term in the second pair.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Word Analogy",
+                  "Country-Capital, State-CM, Animal-Young one, Tool-Worker"
+                ],
+                [
+                  "Number Analogy",
+                  "Squares, Cubes, Multiples, Prime numbers"
+                ],
+                [
+                  "Alphabet Analogy",
+                  "Positions (A: 1, Z: 26) and Opposites (A-Z, B-Y, C-X)"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Item",
+                "Exam fact"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "facts",
+          "title": "Types of Classification",
+          "intro": "Classification means grouping items that share a common property and then identifying the one that does not belong, often called the \"odd one out.\" In word‑based classification, three items belong to one category (for example, three fruits) and the fourth belongs to a different category (a vegetable). In number‑based classification, three numbers are perfect squares (like 4, 9, 16) and the fourth is not a perfect square (like 10). In letter‑based classification, you compare the alphabetical positions of the letters in each item; three items follow the same pattern of gaps between those positions, while the fourth item breaks that pattern.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Word based",
+                  "3 fruits, 1 vegetable"
+                ],
+                [
+                  "Number based",
+                  "3 squares, 1 non-square"
+                ],
+                [
+                  "Letter based",
+                  "Based on position gaps"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Item",
+                "Exam fact"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "facts",
+          "title": "Alphabet Position Shortcut (EJOTY)",
+          "intro": "To quickly find the position of any letter in the English alphabet, you can memorize five key letters and their positions: E is the 5th letter, J is the 10th letter, O is the 15th letter, T is the 20th letter, and Y is the 25th letter. For example, if you need the position of the letter N, you know it comes after M, and since M is just before O (the 15th letter), N is the 14th letter. Another helpful trick is that the sum of the positions of any two letters that are opposite each other in the alphabet always equals 27. For instance, A is the 1st letter and Z is the 26th letter, and 1 plus 26 equals 27. Similarly, H is the 8th letter and S is the 19th letter, and 8 plus 19 also equals 27. This means if you know the position of one letter, you can instantly find the position of its opposite by subtracting its position from 27.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Memorize positions using E",
+                  "value": "5, J: 10, O: 15, T: 20, Y: 25"
+                },
+                {
+                  "label": "Also remember opposites (Sum of positions",
+                  "value": "27)"
+                },
+                {
+                  "label": "A(1)+Z(26)",
+                  "value": "27"
+                },
+                {
+                  "label": "H(8)+S(19)",
+                  "value": "27"
+                }
+              ]
+            },
+            {
+              "text": "Also remember opposites (Sum of positions: 27).",
+              "type": "trap"
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Common Patterns in Number Analogy",
+          "intro": "Number analogy is a type of reasoning where you find the relationship between two numbers, like 4 and 64, and then apply the same relationship to a new number, like 5, to find its pair. Common patterns include squaring, where the second number is the first number multiplied by itself, written as n: n squared, so 4: 16 would be an example, but the note shows 4: 64 which is cubing, where the second number is the first number multiplied by itself twice, written as n: n cubed. Other patterns involve adding or subtracting one from the square, like n: n squared plus 1, so 4: 17 because 4 squared is 16 plus 1 equals 17, and then 5: 26 because 5 squared is 25 plus 1 equals 26. There is also n: n squared minus 1, and n: n cubed plus n, where you add the original number to its cube.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "(n",
+                  "value": "n²), (n: n³), (n: n²+1), (n: n²-1), (n: n³+n)"
+                },
+                {
+                  "label": "If 4",
+                  "value": "64, then 5:?"
+                },
+                {
+                  "label": "If 4",
+                  "value": "17, then 5:?"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Relationship Logic",
+          "intro": "In this topic, you learn how two things are connected to each other. For example, a spider and a web have a relationship where the spider makes the web, and the web is the spider's home. A cobbler is a person who makes or repairs shoes, and leather is the material the cobbler uses to do that work. A seismograph is a machine that measures and records earthquakes, so the relationship is that the instrument measures a natural event. To solve these questions, you look at the pair of words given and figure out the exact connection between them, then find another pair with the same connection.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "What are the four common categories of Word Analogy?",
+          "back": "Country-Capital, State-CM, Animal-Young one, and Tool-Worker."
+        },
+        {
+          "front": "What is the sum of the positions of two opposite letters in the alphabet?",
+          "back": "The sum of their positions is always 27."
+        },
+        {
+          "front": "Which five letters are used in the EJOTY shortcut for alphabet positions?",
+          "back": "E (5), J (10), O (15), T (20), and Y (25)."
+        },
+        {
+          "front": "What is the relationship pattern for the number analogy 4:64?",
+          "back": "The pattern is n:n³, where 4 cubed equals 64."
+        },
+        {
+          "front": "How is letter-based classification determined?",
+          "back": "It is determined by comparing the gaps between the alphabetical positions of the letters."
+        },
+        {
+          "front": "What is the mathematical pattern for the analogy 4:17?",
+          "back": "The pattern is n:n²+1, where 4 squared plus 1 equals 17."
+        },
+        {
+          "front": "What is the relationship between a seismograph and an earthquake?",
+          "back": "A seismograph is an instrument used to measure earthquakes."
+        },
+        {
+          "front": "What is the standard classification rule for number-based items?",
+          "back": "Three numbers share a property like being perfect squares, while the fourth does not."
+        },
+        {
+          "front": "What is the opposite letter of A in the alphabet?",
+          "back": "The opposite letter is Z."
+        },
+        {
+          "front": "What is the opposite letter of H in the alphabet?",
+          "back": "The opposite letter is S."
+        },
+        {
+          "front": "Alphabet opposite of H?",
+          "back": "S. (H: 8, 27-8: 19. S: 19)."
+        },
+        {
+          "front": "What is \"EJOTY\"?",
+          "back": "Memory tool for alphabet positions: 5, 10, 15, 20, 25."
+        },
+        {
+          "front": "Opposite of K?",
+          "back": "P. (K: 11, 27-11: 16. P: 16)."
+        },
+        {
+          "front": "Analogy: Clock:Time :: Thermometer:?",
+          "back": "Temperature."
+        },
+        {
+          "front": "Odd one out: 64, 125, 216, 256?",
+          "back": "256. (The others are cubes: 4³, 5³, 6³. 256 is 16²)."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    },
+    {
+      "title": "SSC Reasoning: Series — Number & Alphabet",
+      "intro": "Today we master 'Sequences'. Series questions are a staple of SSC. The goal is to find the hidden rule that connects the numbers or letters. It could be an addition series, a multiplication series, or a combination (×2 +1). For toppers, if the numbers increase slowly, they check the 'Difference'. If they increase rapidly, they check 'Multiplication'. Today we learn how to spot the logic in less than 10 seconds.",
+      "pages": [
+        {
+          "type": "facts",
+          "title": "Number Series Types",
+          "intro": "A number series is a list of numbers that follow a hidden rule or pattern. In a difference series, the numbers change by adding or subtracting a constant amount, or the amount added or subtracted increases or decreases in a regular way, like 2, 4, 6, 8. In a double difference series, the differences between the numbers themselves form a new pattern that you can analyze separately, so you find the differences, then find the pattern in those differences. A multiplication or division series shows rapid growth because each number is multiplied or divided by a fixed number, such as 2, 4, 8, 16. A square or cube series involves numbers that are close to perfect squares (like 1, 4, 9, 16) or perfect cubes (like 1, 8, 27, 64), often with a small addition or subtraction, for example n squared plus 1 gives 2, 5, 10, 17. An alternate series mixes two separate number patterns together in the same list, where one pattern appears in the first, third, fifth positions and the other pattern appears in the second, fourth, sixth positions.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Difference Series",
+                  "Constant diff or increasing diff"
+                ],
+                [
+                  "Double Difference",
+                  "The differences themselves form a series"
+                ],
+                [
+                  "Multiplication/Division",
+                  "Usually rapid growth"
+                ],
+                [
+                  "Square/Cube Series",
+                  "(n²+1), (n³-1)"
+                ],
+                [
+                  "Alternate Series",
+                  "Two series mixed in one"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Item",
+                "Exam fact"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Difference Method (Universal)",
+          "intro": "The Difference Method is a simple way to find the next number in a sequence when the pattern is not obvious. First, subtract the first term from the second term, then the second from the third, and so on, to create a new list of differences. If those differences are all the same number, you can add that number to the last term to get the next term. If the first differences are not equal, subtract them from each other to get a second list of differences, called the second difference. If the second differences are all equal, you can use them to find the next first difference and then the next term. This method works for about 90 percent of the number series problems in SSC exams.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Alphabet Series",
+          "intro": "Alphabet Series is a type of reasoning question where you are given a sequence of letters and must find the next one. Each letter has a fixed position number in the alphabet, with A as 1, B as 2, C as 3, and so on up to Z as 26. The pattern is usually a constant gap between the position numbers of consecutive letters, for example, A (1), C (3), E (5), G (7) has a gap of +2 each time, so the next letter would be I (9). To find the gap quickly, you can use the EJOTY trick, which assigns each letter a value: E is 5, J is 10, O is 15, T is 20, and Y is 25, allowing you to count forward or backward in steps of five. For the sequence A (1), D (4), G (7), J (10), the gap is +3 each time, so the next letter would be M (13). Always write down the position number of each letter, find the difference between them, and then add that same difference to the last letter's position to get the answer.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Repeating Letter Series",
+          "intro": "In a Repeating Letter Series question, you are given a sequence of letters with some blanks, like a b b a a b a b a, and you need to find the missing letters. First, count the total number of positions in the sequence, including the blanks. If the total is 12, try grouping the letters into sets of 3 or 4, because 12 can be divided evenly by 3 or 4. If the total is 15, try grouping into sets of 3 or 5, because 15 can be divided evenly by 3 or 5. Once you have groups, look for a repeating pattern, such as the same three-letter or four-letter block appearing over and over. For example, in a b b a a b a b a, there are 12 positions, so group them into four sets of three: a b , b a , a b a, b a. The pattern is \"a b a\" repeating, so the blanks are filled with \"a\", \"b\", and \"a\" to make each group \"a b a\".",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Fibonacci & Prime Series",
+          "intro": "The Fibonacci series is a list of numbers where each new number is made by adding the two numbers that came right before it. It starts with 1 and 1, so the next number is 1+1=2, then 1+2=3, then 2+3=5, then 3+5=8, and so on. A prime number is a whole number greater than 1 that can only be divided evenly by 1 and itself, with no other numbers working. The prime series begins with 2, 3, 5, 7, 11, 13, 17, and continues forever. Be careful: the number 1 is not a prime because it can only be divided by 1, which does not meet the rule of having exactly two different divisors.",
+          "blocks": [
+            {
+              "text": "(Be careful, 1 is NOT prime).",
+              "type": "trap"
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "What percentage of SSC number series problems can be solved using the Difference Method?",
+          "back": "Approximately 90 percent."
+        },
+        {
+          "front": "What is the EJOTY trick used for in alphabet series?",
+          "back": "It assigns values to letters (E=5, J=10, O=15, T=20, Y=25) to help count gaps forward or backward in steps of five."
+        },
+        {
+          "front": "How should you approach a repeating letter series with 12 total positions?",
+          "back": "Try grouping the letters into sets of 3 or 4."
+        },
+        {
+          "front": "How should you approach a repeating letter series with 15 total positions?",
+          "back": "Try grouping the letters into sets of 3 or 5."
+        },
+        {
+          "front": "What defines a Fibonacci series?",
+          "back": "Each new number is the sum of the two numbers that came immediately before it."
+        },
+        {
+          "front": "Is the number 1 considered a prime number?",
+          "back": "No, 1 is not prime because it does not have exactly two different divisors."
+        },
+        {
+          "front": "What is a double difference series?",
+          "back": "A series where the differences between the numbers themselves form a new pattern that can be analyzed separately."
+        },
+        {
+          "front": "What type of series growth is typically associated with multiplication or division?",
+          "back": "Rapid growth."
+        },
+        {
+          "front": "What is an alternate series?",
+          "back": "A list that mixes two separate number patterns together in the same sequence."
+        },
+        {
+          "front": "What is the first step when the logic of a number series is not obvious?",
+          "back": "Find the difference between consecutive terms."
+        },
+        {
+          "front": "What to check first in a slowly increasing series?",
+          "back": "Difference between consecutive terms."
+        },
+        {
+          "front": "What to check in a rapidly increasing series?",
+          "back": "Multiplication or Squares/Cubes."
+        },
+        {
+          "front": "Pattern for: 2, 3, 5, 7, 11, ?",
+          "back": "13. (Prime number series)."
+        },
+        {
+          "front": "How to solve \"ab_ba_aba\"?",
+          "back": "Count total spots and divide into equal groups (3, 4, or 5)."
+        },
+        {
+          "front": "Alphabet pattern: Z, X, V, T, ?",
+          "back": "R. (-2 gap)."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

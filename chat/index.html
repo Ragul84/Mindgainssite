@@ -37,6 +37,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+  <!-- Shared auth: defines window.__mgSignIn, which this page's Google button calls but which
+       was never implemented here — the button threw and sign-in was impossible. -->
+  <script src="/assets/auth.js"></script>
   <script>
     const SUPABASE_AUTH_URL = 'https://yuntwerxahgmaoduxvqc.supabase.co';
     const SUPABASE_AUTH_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl1bnR3ZXJ4YWhnbWFvZHV4dnFjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU3OTk4OTMsImV4cCI6MjA3MTM3NTg5M30.1mFUH9yp55uxN8n9tyRHLFbve36_kpaJs41nPU85S74';
@@ -49,7 +52,7 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --duo-blue: #1CB0F6;
+      --duo-blue: #0d8fd0;
       --duo-blue-dark: #0080D6;
       --duo-blue-shadow: #0070BC;
       --duo-green: #58CC02;
@@ -710,5 +713,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 </script>
+<script defer src="/assets/pv.js"></script>
+<script defer src="/assets/nav-mobile.js"></script>
 </body>
 </html>

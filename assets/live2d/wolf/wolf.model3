@@ -1,11 +1,11 @@
 {
 	"Version": 3,
 	"FileReferences": {
-		"Moc": "wolf.moc3",
+		"Moc": "wolf_moc.moc3",
 		"Textures": [
 			"wolf.4096/texture_00.png"
 		],
-		"Physics": "wolf.physics3",
+		"Physics": "wolf_physics.physics3",
 		"DisplayInfo": "wolf.cdi3",
 		"Expressions": [
 			{

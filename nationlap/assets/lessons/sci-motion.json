@@ -1,0 +1,145 @@
+{
+  "zoneId": "sci-motion",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "SSC Science: Physics — Motion & Newton's Laws",
+      "intro": "Today we master the 'Laws of the Universe'. Physics in SSC is highly practical. You don't need to derive equations; you need to know why you fall forward when a bus stops or why a cricketer pulls his hands back while catching. We study Units, Speed, Velocity, and the 3 Laws of Motion. Toppers focus on 'Daily Life Examples' because that's where the questions come from. Let's master the physics of motion today.",
+      "pages": [
+        {
+          "type": "timeline",
+          "title": "SI Units (Memorize These)",
+          "intro": "The International System of Units, or SI for short, is the standard system of measurement used by scientists all over the world. The base unit for length is the meter, which measures how long something is. The base unit for mass, or how much matter is in an object, is the kilogram. The base unit for time is the second. The base unit for electric current, which is the flow of electricity, is the ampere, often shortened to amp. The base unit for temperature is the kelvin, where zero kelvin is the coldest possible temperature. The base unit for luminous intensity, or how bright a light source appears, is the candela. The base unit for amount of substance, which counts tiny particles like atoms, is the mole. Two common derived units, which are made by combining base units, are the pascal for pressure and the watt for power.",
+          "blocks": [
+            {
+              "type": "timeline",
+              "items": [
+                {
+                  "label": "Length",
+                  "value": "Meter"
+                },
+                {
+                  "label": "Mass",
+                  "value": "Kilogram"
+                },
+                {
+                  "label": "Time taken",
+                  "value": "Second"
+                },
+                {
+                  "label": "Electric Current",
+                  "value": "Ampere"
+                },
+                {
+                  "label": "Temperature",
+                  "value": "Kelvin"
+                },
+                {
+                  "label": "Luminous Intensity",
+                  "value": "Candela"
+                },
+                {
+                  "label": "Amount of Substance",
+                  "value": "Mole. Pressure: Pascal"
+                },
+                {
+                  "label": "Power",
+                  "value": "Watt"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Newton's First Law (Law of Inertia)",
+          "intro": "Newton's First Law, also called the Law of Inertia, says that an object that is not moving will stay still, and an object that is moving in a straight line at a steady speed will keep moving that way, unless an outside push or pull, called a force, acts on it. Inertia is the natural tendency of any object to resist a change in its motion, meaning it wants to keep doing whatever it is already doing. For example, when a moving bus suddenly stops, your body keeps moving forward because of its inertia of motion, which is why passengers lean forward. When a stationary bus suddenly starts moving forward, your body tries to stay at rest due to its inertia of rest, which is why you lean backward. This law helps explain why you need a seatbelt in a car: if the car stops quickly, your body's inertia would keep you moving forward without the belt to stop you.",
+          "blocks": []
+        },
+        {
+          "type": "formula",
+          "title": "Newton's Second Law",
+          "intro": "Newton's Second Law of Motion states that the force acting on an object is equal to the mass of that object multiplied by its acceleration, which is written as F equals m times a. Force is a push or pull that can change an object's motion, mass is the amount of matter in an object, and acceleration is how quickly the object's speed or direction changes. This law means that if you push a heavy object with the same force as a light object, the heavy object will accelerate much less. A practical example is a cricketer catching a fast ball: by pulling his hands backward as he catches it, he increases the time over which the ball's speed drops to zero. Because the change in speed (acceleration) happens over a longer time, the force felt by his hands is much smaller, preventing injury. So, the law explains that for the same change in motion, a longer time of impact results in a smaller force.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Newton's Third Law",
+          "intro": "Newton's Third Law says that whenever one object pushes or pulls on another object, the second object pushes or pulls back on the first with the same strength but in the opposite direction. In science, the word \"action\" means the force you apply, and \"reaction\" means the force that comes back from the other object. For example, when a gun fires a bullet forward, the bullet pushes forward on the gun, so the gun pushes backward on the bullet with an equal force, causing the gun to recoil or kick back. In a jet engine, hot gases are pushed out backward, and those gases push the engine forward with the same force, which moves the plane ahead. When you swim, you push water backward with your hands and feet, and the water pushes you forward with the same strength, making you move through the pool.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Friction",
+          "intro": "Friction is a force that pushes back against an object when it tries to move across a surface, making it harder to slide or roll. There are three main types: static friction acts on objects that are not moving, sliding friction acts on objects that are sliding, and rolling friction acts on objects that are rolling. Static friction is the strongest, sliding friction is weaker, and rolling friction is the weakest, which is why it is easier to roll a heavy box than to slide it. To reduce friction, people use lubricants, which are slippery substances like oil or grease that create a thin layer between surfaces, and ball bearings, which are small metal balls that roll between parts to replace sliding with rolling.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "What is the SI unit for luminous intensity?",
+          "back": "Candela."
+        },
+        {
+          "front": "What is the SI unit for pressure?",
+          "back": "Pascal."
+        },
+        {
+          "front": "Why do passengers lean forward when a bus suddenly stops?",
+          "back": "Due to inertia of motion."
+        },
+        {
+          "front": "Why do passengers lean backward when a bus suddenly starts?",
+          "back": "Due to inertia of rest."
+        },
+        {
+          "front": "What is the mathematical formula for Newton's Second Law?",
+          "back": "Force equals mass times acceleration (F = ma)."
+        },
+        {
+          "front": "Why does a cricketer pull his hands back while catching a ball?",
+          "back": "To increase the time of impact and reduce the force."
+        },
+        {
+          "front": "What is the recoil of a gun an example of?",
+          "back": "Newton's Third Law of Motion."
+        },
+        {
+          "front": "Which type of friction is the strongest?",
+          "back": "Static friction."
+        },
+        {
+          "front": "Which type of friction is the weakest?",
+          "back": "Rolling friction."
+        },
+        {
+          "front": "What can be used to reduce friction between surfaces?",
+          "back": "Lubricants and ball bearings."
+        },
+        {
+          "front": "SI unit of Pressure?",
+          "back": "Pascal."
+        },
+        {
+          "front": "SI unit of Current?",
+          "back": "Ampere."
+        },
+        {
+          "front": "Which law is called the \"Law of Inertia\"?",
+          "back": "Newton's First Law."
+        },
+        {
+          "front": "Formula for Force?",
+          "back": "Force : Mass × Acceleration."
+        },
+        {
+          "front": "Why does a swimmer push water back?",
+          "back": "Newton's Third Law (Reaction pushes him forward)."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

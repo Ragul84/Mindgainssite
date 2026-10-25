@@ -1,0 +1,287 @@
+{
+  "zoneId": "quant-geometry",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "SSC Quant: Geometry — Lines, Angles & Triangles",
+      "intro": "Today we study the 'Shape of Logic'. Geometry is about 'Properties' and 'Theorems'. From 'Alternate angles' to the 'Centroid' and 'Incenter' of a triangle—the facts are visual. In SSC, 'Similarity' and 'Congruency' are high-yield. Do you know why the angle in a semi-circle is 90°? Or the property of the 'External Angle' of a triangle? Let's master the triangles today.",
+      "pages": [
+        {
+          "type": "formula",
+          "title": "Lines & Angles",
+          "intro": "Angles are measured in degrees, and two angles are called complementary when you add their degree measures together and the total is exactly 90 degrees. Two angles are called supplementary when their measures add up to exactly 180 degrees. When two straight lines are parallel, meaning they run side by side and never meet, and a third line called a transversal cuts across them, it creates several pairs of angles. The pairs called alternate interior angles and corresponding angles are always equal to each other in this situation.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Complementary (Sum",
+                  "value": "90°)"
+                },
+                {
+                  "label": "Supplementary (Sum",
+                  "value": "180°)"
+                },
+                {
+                  "label": "Parallel lines cut by transversal",
+                  "value": "Alternate and Corresponding angles are equal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Triangle Basics",
+          "intro": "A triangle is a shape with three straight sides and three corners, called angles. The three inside angles of any triangle always add up to exactly 180 degrees, so if you know two angles, you can find the third by subtracting their sum from 180. An external angle is the angle formed outside the triangle when you extend one side; this external angle is always equal to the sum of the two opposite inside angles that are not next to it. For any triangle, the length of any two sides added together must be greater than the length of the third side, which is why you cannot form a triangle with sides like 1, 2, and 4 because 1 plus 2 is not greater than 4.",
+          "blocks": []
+        },
+        {
+          "type": "formula",
+          "title": "Centers of Triangle",
+          "intro": "Every triangle has four special points called centers. The centroid is the point where the three medians of a triangle meet; a median is a line drawn from a corner to the midpoint of the opposite side, and the centroid divides each median into two parts with lengths in a ratio of 2 to 1, with the longer part closer to the corner. The incenter is the point where the three angle bisectors of a triangle meet; an angle bisector is a line that cuts a corner angle exactly in half, and the incenter is the center of the circle that sits perfectly inside the triangle. The circumcenter is the point where the three perpendicular bisectors of the sides meet; a perpendicular bisector is a line that crosses a side at its midpoint and is perpendicular to it, and this point is the center of the circle that passes through all three corners of the triangle. The orthocenter is the point where the three altitudes of a triangle meet; an altitude is a line drawn from a corner straight down to the opposite side, forming a right angle with that side. These four points are the centroid, incenter, circumcenter, and orthocenter.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Centroid",
+                  "value": "Intersection of Medians (divides 2:1)"
+                },
+                {
+                  "label": "Incenter",
+                  "value": "Intersection of Angle Bisectors"
+                },
+                {
+                  "label": "Circumcenter",
+                  "value": "Intersection of Perpendicular Bisectors"
+                },
+                {
+                  "label": "Orthocenter",
+                  "value": "Intersection of Altitudes"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Similarity & Congruency",
+          "intro": "Similarity and Congruency are two ways to compare shapes. Congruent shapes are exactly the same size and shape, meaning one can be placed exactly on top of the other. To check if two triangles are congruent, we use four tests: SSS (all three sides match), SAS (two sides and the angle between them match), ASA (two angles and the side between them match), and RHS (for right-angled triangles, the hypotenuse and one other side match). Similar shapes have the same shape but are different sizes, so their angles are equal and their sides are in the same proportion, called the constant ratio. For similar shapes, the ratio of their areas is equal to the square of the ratio of their sides, for example, if the side ratio is 2:1, the area ratio is 4:1.",
+          "blocks": []
+        },
+        {
+          "type": "formula",
+          "title": "Pythagoras Triplets",
+          "intro": "A Pythagorean triple is a set of three positive whole numbers, like (3,4,5), that satisfy the rule of the Pythagorean theorem: the square of the largest number equals the sum of the squares of the other two numbers. For example, in (3,4,5), 3 squared is 9, 4 squared is 16, and 9 plus 16 equals 25, which is 5 squared. Some common Pythagorean triples that appear often in geometry problems are (3,4,5), (5,12,13), (7,24,25), (8,15,17), and (9,40,41). Knowing these pairs by heart can help you quickly check if a triangle is a right triangle without doing the full calculation.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "What is the sum of two complementary angles?",
+          "back": "90 degrees."
+        },
+        {
+          "front": "What is the sum of two supplementary angles?",
+          "back": "180 degrees."
+        },
+        {
+          "front": "What is the sum of the interior angles of a triangle?",
+          "back": "180 degrees."
+        },
+        {
+          "front": "What is the relationship between an external angle of a triangle and its opposite interior angles?",
+          "back": "The external angle is equal to the sum of the two opposite interior angles."
+        },
+        {
+          "front": "What is the intersection point of the medians of a triangle called?",
+          "back": "The centroid, which divides the medians in a 2:1 ratio."
+        },
+        {
+          "front": "What is the intersection point of the angle bisectors of a triangle called?",
+          "back": "The incenter."
+        },
+        {
+          "front": "What is the intersection point of the perpendicular bisectors of a triangle called?",
+          "back": "The circumcenter."
+        },
+        {
+          "front": "What is the intersection point of the altitudes of a triangle called?",
+          "back": "The orthocenter."
+        },
+        {
+          "front": "How is the area ratio of two similar triangles calculated?",
+          "back": "It is the square of the ratio of their corresponding sides."
+        },
+        {
+          "front": "Which of the following is a valid Pythagorean triplet?",
+          "back": "(3, 4, 5), (5, 12, 13), (7, 24, 25), (8, 15, 17), or (9, 40, 41)."
+        },
+        {
+          "front": "Centroid divides median in what ratio?",
+          "back": "2 : 1 (from vertex)."
+        },
+        {
+          "front": "Sum of two sides of triangle is always?",
+          "back": "Greater than the third side."
+        },
+        {
+          "front": "What is the External Angle equal to?",
+          "back": "Sum of opposite interior angles."
+        },
+        {
+          "front": "Pythagoras triplet with 7?",
+          "back": "7, 24, 25."
+        },
+        {
+          "front": "Area ratio of similar triangles?",
+          "back": "(Corresponding side ratio)^2."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    },
+    {
+      "title": "SSC Quant: Geometry — Circles & Polygons",
+      "intro": "Today we study the 'Curve and the Border'. Circles and Quadrilaterals (Square, Rectangle, Rhombus, Parallelogram) form the bulk of SSC Geometry. Questions focus on 'Tangents', 'Chords', and 'Angle properties'. Do you know the 'Alternate Segment Theorem'? Or why the diagonals of a rhombus bisect at 90°? Let's master the circles today.",
+      "pages": [
+        {
+          "type": "formula",
+          "title": "Circle Properties",
+          "intro": "A circle is a round shape where every point on its edge is the same distance from the center point. The first property is that if you draw a triangle inside a circle using the diameter as one side, the angle opposite the diameter, which is the corner of the triangle on the circle's edge, is always exactly 90 degrees, like the corner of a square. The second property is that if you draw two lines from the center of the circle to two points on the edge, the angle formed at the center is exactly twice the size of the angle formed when you draw lines from those same two edge points to any third point on the circle's edge. The third property is that if you draw two triangles that share the same two points on the circle's edge, the angles at the third point of each triangle, which are in the same section or segment of the circle, will always be equal to each other.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Chords & Tangents",
+          "intro": "Chords and Tangents A chord is a straight line that connects two points on the edge of a circle. If you draw a line from the center of the circle straight down to the middle of a chord, that line will always meet the chord at a right angle, and it will cut the chord into two equal halves. Also, if two chords in the same circle have the same length, they will be the same distance away from the center of the circle. A tangent is a straight line that touches the circle at exactly one point, and at that point, the tangent line is always perpendicular, meaning it forms a 90-degree angle, with the radius line drawn from the center to that touch point. Finally, if you draw two tangents from the same point outside the circle, the two segments from that outside point to the circle will always be equal in length.",
+          "blocks": []
+        },
+        {
+          "type": "facts",
+          "title": "Quadrilaterals",
+          "intro": "Quadrilaterals are shapes with four straight sides. A parallelogram is a quadrilateral where both pairs of opposite sides are equal in length and run parallel to each other, meaning they never meet. A rhombus is a special type of parallelogram where all four sides are the same length, and its two diagonals (the lines connecting opposite corners) cross each other exactly in the middle at a 90-degree angle, like a plus sign. A trapezium is a quadrilateral that has only one pair of opposite sides that are parallel, while the other pair is not.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Parallelogram",
+                  "value": "Opp sides equal/parallel"
+                },
+                {
+                  "label": "Rhombus",
+                  "value": "All sides equal, diagonals bisect at 90°"
+                },
+                {
+                  "label": "Trapezium",
+                  "value": "One pair of parallel sides"
+                }
+              ]
+            },
+            {
+              "text": "Trapezium: One pair of parallel sides.",
+              "type": "trap"
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Cyclic Quadrilateral",
+          "intro": "A cyclic quadrilateral is a four-sided shape where all four corners, called vertices, lie on the edge of a circle. In this shape, the two angles that are directly across from each other, known as opposite angles, always add up to 180 degrees. For instance, if one opposite angle is 70 degrees, the other opposite angle must be 110 degrees because 70 plus 110 equals 180.",
+          "blocks": []
+        },
+        {
+          "type": "formula",
+          "title": "Polygons",
+          "intro": "A polygon is a flat shape with straight sides. The interior angles are the angles inside the shape at each corner. For any polygon with n sides, the sum of all its interior angles is (n minus 2) times 180 degrees. The exterior angles are the angles outside the shape when you extend one side at each corner; the sum of all exterior angles is always 360 degrees, no matter how many sides. A regular polygon has all sides equal and all angles equal. In a regular polygon, each exterior angle is 360 divided by the number of sides (n).",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Sum of interior angles",
+                  "value": "(n-2)*180"
+                },
+                {
+                  "label": "Sum of exterior angles",
+                  "value": "360°"
+                },
+                {
+                  "label": "Each exterior angle (Regular)",
+                  "value": "360/n"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "What is the measure of an angle inscribed in a semi-circle?",
+          "back": "90°"
+        },
+        {
+          "front": "What is the relationship between the angle at the center and the angle at the circumference?",
+          "back": "The angle at the center is double the angle at the circumference."
+        },
+        {
+          "front": "What happens to a chord when a perpendicular line is drawn from the center of the circle?",
+          "back": "The perpendicular line bisects the chord."
+        },
+        {
+          "front": "What is the relationship between a tangent and the radius at the point of contact?",
+          "back": "The tangent is perpendicular to the radius."
+        },
+        {
+          "front": "What is true about two tangents drawn from the same external point to a circle?",
+          "back": "The two tangent segments are equal in length."
+        },
+        {
+          "front": "What are the properties of a rhombus regarding its sides and diagonals?",
+          "back": "All sides are equal, and diagonals bisect each other at 90°."
+        },
+        {
+          "front": "What defines a trapezium?",
+          "back": "A quadrilateral with exactly one pair of parallel sides."
+        },
+        {
+          "front": "What is the sum of opposite angles in a cyclic quadrilateral?",
+          "back": "180°"
+        },
+        {
+          "front": "What is the formula for the sum of interior angles of a polygon with n sides?",
+          "back": "(n-2) * 180"
+        },
+        {
+          "front": "How do you calculate each exterior angle of a regular polygon with n sides?",
+          "back": "360/n"
+        },
+        {
+          "front": "Sum of opposite angles in cyclic quad?",
+          "back": "180°."
+        },
+        {
+          "front": "Angle in a semi-circle?",
+          "back": "90°."
+        },
+        {
+          "front": "Diagonals of Rhombus bisect at?",
+          "back": "90°."
+        },
+        {
+          "front": "Sum of exterior angles of any polygon?",
+          "back": "360°."
+        },
+        {
+          "front": "Formula for sum of interior angles?",
+          "back": "(n-2) * 180."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "zoneId": "polity-judiciary",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "SSC Polity: Parliament & Judiciary",
+      "intro": "Today we study the 'Legislature and Guardian'. The Parliament makes laws, and the Judiciary interprets them. In SSC, 'House composition' (Lok Sabha/Rajya Sabha), 'Speaker', and 'SC/HC Jurisdictions' are high-yield. Do you know what is 'Zero Hour'? Or what is the 'Maximum strength' of Lok Sabha? Let's master the houses today.",
+      "pages": [
+        {
+          "type": "concept",
+          "title": "Parliament (Art 79)",
+          "intro": "Parliament (Article 79 of the Constitution) is the supreme law-making body of India, and it consists of three parts: the President of India, the Lok Sabha (which is the House of the People, also called the Lower House), and the Rajya Sabha (which is the Council of States, also called the Upper House). The Lok Sabha is directly elected by the people of India for a term of five years, and it represents the general population. The Rajya Sabha is indirectly elected by the state legislative assemblies, and it represents the states and union territories, with one-third of its members retiring every two years. The President is a part of Parliament but does not sit in either House; instead, the President summons and prorogues (ends) sessions of Parliament and gives assent to bills passed by both Houses to turn them into laws. All three parts must work together to make a law, meaning a bill must be passed by both the Lok Sabha and the Rajya Sabha and then receive the President's approval.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Lok Sabha (People's House)",
+          "intro": "Lok Sabha is the lower house of India's Parliament and is also called the People's House because its members represent the citizens of India. These members are directly elected by eligible voters across the country. The maximum number of members allowed in Lok Sabha is 550. The term of Lok Sabha is five years, after which a new election is held. The presiding officer of Lok Sabha is called the Speaker, who controls the proceedings of the house.",
+          "blocks": []
+        },
+        {
+          "type": "formula",
+          "title": "Rajya Sabha (States' Council)",
+          "intro": "Rajya Sabha, which is also called the States' Council, is the upper house of India's Parliament, and it can have a maximum of 250 members. It is called a permanent house because it is never dissolved like the Lok Sabha; instead, one-third of its members retire or leave every two years after completing their six-year term, which keeps the house always in existence. The members of the Rajya Sabha are not directly elected by the people; instead, they are chosen by the elected members of each state's legislative assembly, and the President of India also nominates 12 members for their special knowledge in areas like art, literature, science, and social service.",
+          "blocks": []
+        },
+        {
+          "type": "formula",
+          "title": "Parliamentary Terms",
+          "intro": "A quorum is the minimum number of members required to be present for the Parliament to conduct business, and in each house of Parliament this quorum is one-tenth of that house's total members. Question Hour is the first hour of a sitting day when members ask questions to ministers about government work. Zero Hour is a period that starts right after Question Hour, and it is unique to India because members can raise urgent matters without giving prior notice. A Joint Sitting is a combined meeting of both houses of Parliament, called by the President under Article 108 of the Constitution to resolve a deadlock on a bill, and it is presided over by the Speaker of the Lok Sabha.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Quorum",
+                  "value": "1/10th members"
+                },
+                {
+                  "label": "Question Hour",
+                  "value": "1st hour of sitting"
+                },
+                {
+                  "label": "Zero Hour",
+                  "value": "Starts after Question hour (unique to India)"
+                },
+                {
+                  "label": "Joint Sitting (Art 108)",
+                  "value": "Called by President, Presided by Speaker"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Judiciary",
+          "intro": "Article 124 of the Indian Constitution establishes the Supreme Court, which is the highest court in the country. The Chief Justice of India (CJI) and the other judges of the Supreme Court are appointed by the President of India. Judges of the Supreme Court retire at age 65, while judges of High Courts (the highest courts in each state) retire at age 62. There are currently 25 High Courts in India, each serving one or more states or union territories.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "Which article of the Constitution defines the composition of the Parliament?",
+          "back": "Article 79."
+        },
+        {
+          "front": "What is the maximum number of members allowed in the Lok Sabha?",
+          "back": "550 members."
+        },
+        {
+          "front": "What is the maximum number of members allowed in the Rajya Sabha?",
+          "back": "250 members."
+        },
+        {
+          "front": "How often do one-third of the members of the Rajya Sabha retire?",
+          "back": "Every 2 years."
+        },
+        {
+          "front": "What is the term length for a member of the Rajya Sabha?",
+          "back": "6 years."
+        },
+        {
+          "front": "What is the quorum required to conduct business in Parliament?",
+          "back": "1/10th of the total members."
+        },
+        {
+          "front": "Which parliamentary procedure is unique to India and starts after Question Hour?",
+          "back": "Zero Hour."
+        },
+        {
+          "front": "Under which article can the President call a Joint Sitting of Parliament?",
+          "back": "Article 108."
+        },
+        {
+          "front": "What is the retirement age for judges of the Supreme Court?",
+          "back": "65 years."
+        },
+        {
+          "front": "How many High Courts are currently in India?",
+          "back": "25 High Courts."
+        },
+        {
+          "front": "\"Permanent House\" of Parliament?",
+          "back": "Rajya Sabha."
+        },
+        {
+          "front": "Who presides over a Joint Sitting?",
+          "back": "Speaker of Lok Sabha."
+        },
+        {
+          "front": "Retirement age of SC Judge?",
+          "back": "65 years."
+        },
+        {
+          "front": "Article for \"Joint Sitting\"?",
+          "back": "Article 108."
+        },
+        {
+          "front": "What is \"Quorum\"?",
+          "back": "Minimum members needed (1/10th)."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

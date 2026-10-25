@@ -1,0 +1,532 @@
+{
+  "/ncert/biology/": {
+    "title": "NCERT Biology MCQs Class 6–12 — Questions with Answers | MindGains",
+    "h1": "NCERT Biology MCQs — Class 6 to 12",
+    "description": "NCERT Biology MCQs for Class 6 to 12 — 800 questions with answers, free practice with explanations."
+  },
+  "/ncert/biology/class11/": {
+    "title": "Class 11 Biology MCQ Questions with Answers | MindGains",
+    "h1": "Class 11 Biology MCQs",
+    "description": "Class 11 Biology MCQ questions with answers — 420 free practice questions from the CBSE / NCERT Class 11 biology syllabus, with explanations."
+  },
+  "/ncert/biology/class12/": {
+    "title": "Class 12 Biology MCQ Questions with Answers | MindGains",
+    "h1": "Class 12 Biology MCQs",
+    "description": "Class 12 Biology MCQ questions with answers — 380 free practice questions from the CBSE / NCERT Class 12 biology syllabus, with explanations."
+  },
+  "/ncert/chemistry/": {
+    "title": "NCERT Chemistry MCQs Class 6–12 — Questions with Answers | MindGains",
+    "h1": "NCERT Chemistry MCQs — Class 6 to 12",
+    "description": "NCERT Chemistry MCQs for Class 6 to 12 — 1,971 questions with answers, free practice with explanations."
+  },
+  "/ncert/chemistry/class11/": {
+    "title": "Class 11 Chemistry MCQ Questions with Answers | MindGains",
+    "h1": "Class 11 Chemistry MCQs",
+    "description": "Class 11 Chemistry MCQ questions with answers — 887 free practice questions from the CBSE / NCERT Class 11 chemistry syllabus, with explanations."
+  },
+  "/ncert/chemistry/class12/": {
+    "title": "Class 12 Chemistry MCQ Questions with Answers | MindGains",
+    "h1": "Class 12 Chemistry MCQs",
+    "description": "Class 12 Chemistry MCQ questions with answers — 1,084 free practice questions from the CBSE / NCERT Class 12 chemistry syllabus, with explanations."
+  },
+  "/ncert/english/": {
+    "title": "NCERT English MCQs Class 6–12 — Questions with Answers | MindGains",
+    "h1": "NCERT English MCQs — Class 6 to 12",
+    "description": "NCERT English MCQs for Class 6 to 12 — 1,500 questions with answers, free practice with explanations."
+  },
+  "/ncert/geography/": {
+    "title": "NCERT Geography MCQs Class 6–12 — Questions with Answers | MindGains",
+    "h1": "NCERT Geography MCQs — Class 6 to 12",
+    "description": "NCERT Geography MCQs for Class 6 to 12 — 2,308 questions with answers, free practice with explanations."
+  },
+  "/ncert/geography/class10/": {
+    "title": "Class 10 Geography MCQ Questions with Answers | MindGains",
+    "h1": "Class 10 Geography MCQs",
+    "description": "Class 10 Geography MCQ questions with answers — 305 free practice questions from the CBSE / NCERT Class 10 geography syllabus, with explanations."
+  },
+  "/ncert/geography/class11/": {
+    "title": "Class 11 Geography MCQ Questions with Answers | MindGains",
+    "h1": "Class 11 Geography MCQs",
+    "description": "Class 11 Geography MCQ questions with answers — 392 free practice questions from the CBSE / NCERT Class 11 geography syllabus, with explanations."
+  },
+  "/ncert/geography/class12/": {
+    "title": "Class 12 Geography MCQ Questions with Answers | MindGains",
+    "h1": "Class 12 Geography MCQs",
+    "description": "Class 12 Geography MCQ questions with answers — 400 free practice questions from the CBSE / NCERT Class 12 geography syllabus, with explanations."
+  },
+  "/ncert/geography/class6/": {
+    "title": "Class 6 Geography MCQ Questions with Answers | MindGains",
+    "h1": "Class 6 Geography MCQs",
+    "description": "Class 6 Geography MCQ questions with answers — 300 free practice questions from the CBSE / NCERT Class 6 geography syllabus, with explanations."
+  },
+  "/ncert/geography/class7/": {
+    "title": "Class 7 Geography MCQ Questions with Answers | MindGains",
+    "h1": "Class 7 Geography MCQs",
+    "description": "Class 7 Geography MCQ questions with answers — 300 free practice questions from the CBSE / NCERT Class 7 geography syllabus, with explanations."
+  },
+  "/ncert/geography/class8/": {
+    "title": "Class 8 Geography MCQ Questions with Answers | MindGains",
+    "h1": "Class 8 Geography MCQs",
+    "description": "Class 8 Geography MCQ questions with answers — 300 free practice questions from the CBSE / NCERT Class 8 geography syllabus, with explanations."
+  },
+  "/ncert/geography/class9/": {
+    "title": "Class 9 Geography MCQ Questions with Answers | MindGains",
+    "h1": "Class 9 Geography MCQs",
+    "description": "Class 9 Geography MCQ questions with answers — 311 free practice questions from the CBSE / NCERT Class 9 geography syllabus, with explanations."
+  },
+  "/ncert/history/": {
+    "title": "NCERT History MCQs Class 6–12 — Questions with Answers | MindGains",
+    "h1": "NCERT History MCQs — Class 6 to 12",
+    "description": "NCERT History MCQs for Class 6 to 12 — 2,421 questions with answers, free practice with explanations."
+  },
+  "/ncert/history/class10/": {
+    "title": "Class 10 History MCQ Questions with Answers | MindGains",
+    "h1": "Class 10 History MCQs",
+    "description": "Class 10 History MCQ questions with answers — 300 free practice questions from the CBSE / NCERT Class 10 history syllabus, with explanations."
+  },
+  "/ncert/history/class12/": {
+    "title": "Class 12 History MCQ Questions with Answers | MindGains",
+    "h1": "Class 12 History MCQs",
+    "description": "Class 12 History MCQ questions with answers — 466 free practice questions from the CBSE / NCERT Class 12 history syllabus, with explanations."
+  },
+  "/ncert/history/class6/": {
+    "title": "Class 6 History MCQ Questions with Answers | MindGains",
+    "h1": "Class 6 History MCQs",
+    "description": "Class 6 History MCQ questions with answers — 300 free practice questions from the CBSE / NCERT Class 6 history syllabus, with explanations."
+  },
+  "/ncert/history/class7/": {
+    "title": "Class 7 History MCQ Questions with Answers | MindGains",
+    "h1": "Class 7 History MCQs",
+    "description": "Class 7 History MCQ questions with answers — 300 free practice questions from the CBSE / NCERT Class 7 history syllabus, with explanations."
+  },
+  "/ncert/history/class8/": {
+    "title": "Class 8 History MCQ Questions with Answers | MindGains",
+    "h1": "Class 8 History MCQs",
+    "description": "Class 8 History MCQ questions with answers — 300 free practice questions from the CBSE / NCERT Class 8 history syllabus, with explanations."
+  },
+  "/ncert/maths/": {
+    "title": "NCERT Maths MCQs Class 6–12 — Questions with Answers | MindGains",
+    "h1": "NCERT Maths MCQs — Class 6 to 12",
+    "description": "NCERT Maths MCQs for Class 6 to 12 — 5,449 questions with answers, free practice with explanations."
+  },
+  "/ncert/maths/class10/": {
+    "title": "Class 10 Maths MCQ Questions with Answers | MindGains",
+    "h1": "Class 10 Maths MCQs",
+    "description": "Class 10 Maths MCQ questions with answers — 1,197 free practice questions from the CBSE / NCERT Class 10 maths syllabus, with explanations."
+  },
+  "/ncert/maths/class9/": {
+    "title": "Class 9 Maths MCQ Questions with Answers | MindGains",
+    "h1": "Class 9 Maths MCQs",
+    "description": "Class 9 Maths MCQ questions with answers — 1,064 free practice questions from the CBSE / NCERT Class 9 maths syllabus, with explanations."
+  },
+  "/ncert/physics/": {
+    "title": "NCERT Physics MCQs Class 6–12 — Questions with Answers | MindGains",
+    "h1": "NCERT Physics MCQs — Class 6 to 12",
+    "description": "NCERT Physics MCQs for Class 6 to 12 — 1,990 questions with answers, free practice with explanations."
+  },
+  "/ncert/physics/class11/": {
+    "title": "Class 11 Physics MCQ Questions with Answers | MindGains",
+    "h1": "Class 11 Physics MCQs",
+    "description": "Class 11 Physics MCQ questions with answers — 1,057 free practice questions from the CBSE / NCERT Class 11 physics syllabus, with explanations."
+  },
+  "/ncert/physics/class12/": {
+    "title": "Class 12 Physics MCQ Questions with Answers | MindGains",
+    "h1": "Class 12 Physics MCQs",
+    "description": "Class 12 Physics MCQ questions with answers — 933 free practice questions from the CBSE / NCERT Class 12 physics syllabus, with explanations."
+  },
+  "/ncert/polity/": {
+    "title": "NCERT Polity MCQs Class 6–12 — Questions with Answers | MindGains",
+    "h1": "NCERT Polity MCQs — Class 6 to 12",
+    "description": "NCERT Polity MCQs for Class 6 to 12 — 2,334 questions with answers, free practice with explanations."
+  },
+  "/ncert/polity/class11/": {
+    "title": "Class 11 Polity MCQ Questions with Answers | MindGains",
+    "h1": "Class 11 Polity MCQs",
+    "description": "Class 11 Polity MCQ questions with answers — 410 free practice questions from the CBSE / NCERT Class 11 polity syllabus, with explanations."
+  },
+  "/ncert/polity/class6/": {
+    "title": "Class 6 Polity MCQ Questions with Answers | MindGains",
+    "h1": "Class 6 Polity MCQs",
+    "description": "Class 6 Polity MCQ questions with answers — 335 free practice questions from the CBSE / NCERT Class 6 polity syllabus, with explanations."
+  },
+  "/ncert/science/": {
+    "title": "NCERT Science MCQs Class 6–12 — Questions with Answers | MindGains",
+    "h1": "NCERT Science MCQs — Class 6 to 12",
+    "description": "NCERT Science MCQs for Class 6 to 12 — 1,601 questions with answers, free practice with explanations."
+  },
+  "/ncert/science/class10/": {
+    "title": "Class 10 Science MCQ Questions with Answers | MindGains",
+    "h1": "Class 10 Science MCQs",
+    "description": "Class 10 Science MCQ questions with answers — 300 free practice questions from the CBSE / NCERT Class 10 science syllabus, with explanations."
+  },
+  "/ncert/science/class6/": {
+    "title": "Class 6 Science MCQ Questions with Answers | MindGains",
+    "h1": "Class 6 Science MCQs",
+    "description": "Class 6 Science MCQ questions with answers — 359 free practice questions from the CBSE / NCERT Class 6 science syllabus, with explanations."
+  },
+  "/ncert/science/class7/": {
+    "title": "Class 7 Science MCQ Questions with Answers | MindGains",
+    "h1": "Class 7 Science MCQs",
+    "description": "Class 7 Science MCQ questions with answers — 358 free practice questions from the CBSE / NCERT Class 7 science syllabus, with explanations."
+  },
+  "/ncert/science/class8/": {
+    "title": "Class 8 Science MCQ Questions with Answers | MindGains",
+    "h1": "Class 8 Science MCQs",
+    "description": "Class 8 Science MCQ questions with answers — 284 free practice questions from the CBSE / NCERT Class 8 science syllabus, with explanations."
+  },
+  "/ncert/science/class9/": {
+    "title": "Class 9 Science MCQ Questions with Answers | MindGains",
+    "h1": "Class 9 Science MCQs",
+    "description": "Class 9 Science MCQ questions with answers — 300 free practice questions from the CBSE / NCERT Class 9 science syllabus, with explanations."
+  },
+  "/ncert/social-science/": {
+    "title": "NCERT Social Science MCQs Class 6–12 — Questions with Answers | MindGains",
+    "h1": "NCERT Social Science MCQs — Class 6 to 12",
+    "description": "NCERT Social Science MCQs for Class 6 to 12 — 1,390 questions with answers, free practice with explanations."
+  },
+  "/ncert/social-science/class10/": {
+    "title": "Class 10 Social Science MCQ Questions with Answers | MindGains",
+    "h1": "Class 10 Social Science MCQs",
+    "description": "Class 10 Social Science MCQ questions with answers — 321 free practice questions from the CBSE / NCERT Class 10 social science syllabus, with explanations."
+  },
+  "/ncert/social-science/class6/": {
+    "title": "Class 6 Social Science MCQ Questions with Answers | MindGains",
+    "h1": "Class 6 Social Science MCQs",
+    "description": "Class 6 Social Science MCQ questions with answers — 242 free practice questions from the CBSE / NCERT Class 6 social science syllabus, with explanations."
+  },
+  "/ncert/social-science/class8/": {
+    "title": "Class 8 Social Science MCQ Questions with Answers | MindGains",
+    "h1": "Class 8 Social Science MCQs",
+    "description": "Class 8 Social Science MCQ questions with answers — 291 free practice questions from the CBSE / NCERT Class 8 social science syllabus, with explanations."
+  },
+  "/ncert/social-science/class9/": {
+    "title": "Class 9 Social Science MCQ Questions with Answers | MindGains",
+    "h1": "Class 9 Social Science MCQs",
+    "description": "Class 9 Social Science MCQ questions with answers — 287 free practice questions from the CBSE / NCERT Class 9 social science syllabus, with explanations."
+  },
+  "/upsc/csat-quant/": {
+    "title": "CSAT (Quantitative Aptitude) MCQs for UPSC Prelims — Topic-wise Practice | MindGains",
+    "h1": "CSAT (Quantitative Aptitude) MCQs for UPSC Prelims",
+    "description": "CSAT (Quantitative Aptitude) MCQs for UPSC Prelims — 2,400 practice questions with answers and explanations, free. Topic-wise, no sign-up."
+  },
+  "/upsc/csat-quant/logical-reasoning/": {
+    "title": "Logical Reasoning MCQs for UPSC — Practice Questions with Answers | MindGains",
+    "h1": "Logical Reasoning MCQs for UPSC",
+    "description": "Logical Reasoning MCQs for UPSC Prelims — 400 practice questions with detailed answers, free. No sign-up."
+  },
+  "/upsc/csat-quant/number-system/": {
+    "title": "Number System MCQs for UPSC — Practice Questions with Answers | MindGains",
+    "h1": "Number System MCQs for UPSC",
+    "description": "Number System MCQs for UPSC Prelims — 400 practice questions with detailed answers, free. No sign-up."
+  },
+  "/upsc/economics/": {
+    "title": "Economics MCQs for UPSC Prelims — Topic-wise Practice | MindGains",
+    "h1": "Economics MCQs for UPSC Prelims",
+    "description": "Economics MCQs for UPSC Prelims — 6,075 practice questions with answers and explanations, free. Topic-wise, no sign-up."
+  },
+  "/upsc/economics/national-income/": {
+    "title": "National Income MCQs for UPSC — Practice Questions with Answers | MindGains",
+    "h1": "National Income MCQs for UPSC",
+    "description": "National Income MCQs for UPSC Prelims — 654 practice questions with detailed answers, free. No sign-up."
+  },
+  "/upsc/environment/": {
+    "title": "Environment MCQs for UPSC Prelims — Topic-wise Practice | MindGains",
+    "h1": "Environment MCQs for UPSC Prelims",
+    "description": "Environment MCQs for UPSC Prelims — 2,400 practice questions with answers and explanations, free. Topic-wise, no sign-up."
+  },
+  "/upsc/geography/": {
+    "title": "Geography MCQs for UPSC Prelims — Topic-wise Practice | MindGains",
+    "h1": "Geography MCQs for UPSC Prelims",
+    "description": "Geography MCQs for UPSC Prelims — 4,120 practice questions with answers and explanations, free. Topic-wise, no sign-up."
+  },
+  "/upsc/geography/map-based/": {
+    "title": "Map-based Geography MCQs for UPSC — Practice Questions with Answers | MindGains",
+    "h1": "Map-based Geography MCQs for UPSC",
+    "description": "Map-based Geography MCQs for UPSC Prelims — 400 practice questions with detailed answers, free. No sign-up."
+  },
+  "/upsc/history/": {
+    "title": "History MCQs for UPSC Prelims — Topic-wise Practice | MindGains",
+    "h1": "History MCQs for UPSC Prelims",
+    "description": "History MCQs for UPSC Prelims — 4,400 practice questions with answers and explanations, free. Topic-wise, no sign-up."
+  },
+  "/upsc/history/art-culture/": {
+    "title": "Art & Culture MCQs for UPSC — Practice Questions with Answers | MindGains",
+    "h1": "Art & Culture MCQs for UPSC",
+    "description": "Art & Culture MCQs for UPSC Prelims — 400 practice questions with detailed answers, free. No sign-up."
+  },
+  "/upsc/history/medieval-india/": {
+    "title": "Medieval India MCQs for UPSC — Practice Questions with Answers | MindGains",
+    "h1": "Medieval India MCQs for UPSC",
+    "description": "Medieval India MCQs for UPSC Prelims — 400 practice questions with detailed answers, free. No sign-up."
+  },
+  "/upsc/history/world-history/": {
+    "title": "World History MCQs for UPSC — Practice Questions with Answers | MindGains",
+    "h1": "World History MCQs for UPSC",
+    "description": "World History MCQs for UPSC Prelims — 400 practice questions with detailed answers, free. No sign-up."
+  },
+  "/upsc/polity/": {
+    "title": "Polity MCQs for UPSC Prelims — Topic-wise Practice | MindGains",
+    "h1": "Polity MCQs for UPSC Prelims",
+    "description": "Polity MCQs for UPSC Prelims — 4,035 practice questions with answers and explanations, free. Topic-wise, no sign-up."
+  },
+  "/upsc/polity/dpsp/": {
+    "title": "DPSP MCQs for UPSC — Practice Questions with Answers | MindGains",
+    "h1": "DPSP MCQs for UPSC",
+    "description": "DPSP MCQs for UPSC Prelims — 400 practice questions with detailed answers, free. No sign-up."
+  },
+  "/upsc/polity/fundamental-rights/": {
+    "title": "Fundamental Rights MCQs for UPSC — Practice Questions with Answers | MindGains",
+    "h1": "Fundamental Rights MCQs for UPSC",
+    "description": "Fundamental Rights MCQs for UPSC Prelims — 420 practice questions with detailed answers, free. No sign-up."
+  },
+  "/upsc/polity/int-relations/": {
+    "title": "Centre-State Relations MCQs for UPSC — Practice Questions with Answers | MindGains",
+    "h1": "Centre-State Relations MCQs for UPSC",
+    "description": "Centre-State Relations MCQs for UPSC Prelims — 407 practice questions with detailed answers, free. No sign-up."
+  },
+  "/upsc/science/": {
+    "title": "Science MCQs for UPSC Prelims — Topic-wise Practice | MindGains",
+    "h1": "Science MCQs for UPSC Prelims",
+    "description": "Science MCQs for UPSC Prelims — 3,200 practice questions with answers and explanations, free. Topic-wise, no sign-up."
+  },
+  "/tnpsc/economics/": {
+    "title": "TNPSC Economics Questions & Answers — Practice in Tamil & English | MindGains",
+    "h1": "TNPSC Economics Questions & Answers",
+    "description": "TNPSC Economics questions and answers — 4,585 practice MCQs with explanations, free. For Group 1, 2 & 4."
+  },
+  "/tnpsc/geography/": {
+    "title": "TNPSC Geography Questions & Answers — Practice in Tamil & English | MindGains",
+    "h1": "TNPSC Geography Questions & Answers",
+    "description": "TNPSC Geography questions and answers — 3,299 practice MCQs with explanations, free. For Group 1, 2 & 4."
+  },
+  "/tnpsc/geography/tn-geography/": {
+    "title": "Tamil Nadu Geography Questions for TNPSC — Practice in Tamil & English | MindGains",
+    "h1": "Tamil Nadu Geography Questions for TNPSC",
+    "description": "Tamil Nadu Geography questions for TNPSC — 300 practice MCQs with answers and explanations, free."
+  },
+  "/tnpsc/history/": {
+    "title": "TNPSC History Questions & Answers — Practice in Tamil & English | MindGains",
+    "h1": "TNPSC History Questions & Answers",
+    "description": "TNPSC History questions and answers — 4,860 practice MCQs with explanations, free. For Group 1, 2 & 4."
+  },
+  "/tnpsc/history/tamil-history/": {
+    "title": "Tamil Nadu History Questions for TNPSC — Practice in Tamil & English | MindGains",
+    "h1": "Tamil Nadu History Questions for TNPSC",
+    "description": "Tamil Nadu History questions for TNPSC — 322 practice MCQs with answers and explanations, free."
+  },
+  "/tnpsc/maths/": {
+    "title": "TNPSC Maths Questions & Answers — Practice in Tamil & English | MindGains",
+    "h1": "TNPSC Maths Questions & Answers",
+    "description": "TNPSC Maths questions and answers — 20,381 practice MCQs with explanations, free. For Group 1, 2 & 4."
+  },
+  "/tnpsc/maths/percentage/": {
+    "title": "Percentage Questions for TNPSC — Practice in Tamil & English | MindGains",
+    "h1": "Percentage Questions for TNPSC",
+    "description": "Percentage questions for TNPSC — 1,919 practice MCQs with answers and explanations, free."
+  },
+  "/tnpsc/maths/series/": {
+    "title": "Series Questions for TNPSC — Practice in Tamil & English | MindGains",
+    "h1": "Series Questions for TNPSC",
+    "description": "Series questions for TNPSC — 1,642 practice MCQs with answers and explanations, free."
+  },
+  "/tnpsc/maths/simple-interest/": {
+    "title": "Simple Interest Questions for TNPSC — Practice in Tamil & English | MindGains",
+    "h1": "Simple Interest Questions for TNPSC",
+    "description": "Simple Interest questions for TNPSC — 1,677 practice MCQs with answers and explanations, free."
+  },
+  "/tnpsc/maths/simplification/": {
+    "title": "Simplification Questions for TNPSC — Practice in Tamil & English | MindGains",
+    "h1": "Simplification Questions for TNPSC",
+    "description": "Simplification questions for TNPSC — 1,110 practice MCQs with answers and explanations, free."
+  },
+  "/tnpsc/maths/time-work/": {
+    "title": "Time & Work Questions for TNPSC — Practice in Tamil & English | MindGains",
+    "h1": "Time & Work Questions for TNPSC",
+    "description": "Time & Work questions for TNPSC — 428 practice MCQs with answers and explanations, free."
+  },
+  "/tnpsc/polity/": {
+    "title": "TNPSC Polity Questions & Answers — Practice in Tamil & English | MindGains",
+    "h1": "TNPSC Polity Questions & Answers",
+    "description": "TNPSC Polity questions and answers — 3,297 practice MCQs with explanations, free. For Group 1, 2 & 4."
+  },
+  "/tnpsc/polity/fundamental-rights/": {
+    "title": "Fundamental Rights Questions for TNPSC — Practice in Tamil & English | MindGains",
+    "h1": "Fundamental Rights Questions for TNPSC",
+    "description": "Fundamental Rights questions for TNPSC — 300 practice MCQs with answers and explanations, free."
+  },
+  "/tnpsc/polity/tn-polity/": {
+    "title": "Tamil Nadu Polity Questions for TNPSC — Practice in Tamil & English | MindGains",
+    "h1": "Tamil Nadu Polity Questions for TNPSC",
+    "description": "Tamil Nadu Polity questions for TNPSC — 137 practice MCQs with answers and explanations, free."
+  },
+  "/tnpsc/science/": {
+    "title": "TNPSC Science Questions & Answers — Practice in Tamil & English | MindGains",
+    "h1": "TNPSC Science Questions & Answers",
+    "description": "TNPSC Science questions and answers — 916 practice MCQs with explanations, free. For Group 1, 2 & 4."
+  },
+  "/tnpsc/tamil/": {
+    "title": "TNPSC Tamil Questions & Answers — Practice in Tamil & English | MindGains",
+    "h1": "TNPSC Tamil Questions & Answers",
+    "description": "TNPSC Tamil questions and answers — 757 practice MCQs with explanations, free. For Group 1, 2 & 4."
+  },
+  "/ssc/english/": {
+    "title": "SSC CGL English Questions & Practice — with Answers | MindGains",
+    "h1": "SSC CGL English Questions",
+    "description": "SSC CGL English questions with answers — 2,909 free practice MCQs and explanations for SSC CGL, CHSL & MTS."
+  },
+  "/ssc/english/grammar/": {
+    "title": "SSC CGL English Grammar Questions with Answers — Free Practice | MindGains",
+    "h1": "SSC CGL English Grammar Questions",
+    "description": "Practice SSC CGL English grammar in one shuffled set — spot the error, sentence improvement, active/passive voice, narration, fill in the blanks, para-jumbles and cloze — with answers and explanations."
+  },
+  "/ssc/english/vocabulary/": {
+    "title": "SSC CGL English Vocabulary Questions with Answers — Free Practice | MindGains",
+    "h1": "SSC CGL English Vocabulary Questions",
+    "description": "Practice SSC CGL English vocabulary in one shuffled set — synonyms, antonyms, one-word substitution, idioms & phrases and spelling — with answers and explanations."
+  },
+  "/ssc/quant/": {
+    "title": "SSC CGL Quant Questions & Practice — with Answers | MindGains",
+    "h1": "SSC CGL Quant Questions",
+    "description": "SSC CGL Quant questions with answers — 25,239 free practice MCQs and explanations for SSC CGL, CHSL & MTS."
+  },
+  "/ssc/quant/algebra/": {
+    "title": "SSC CGL Algebra Questions with Answers — Free Practice | MindGains",
+    "h1": "SSC CGL Algebra Questions",
+    "description": "SSC CGL Algebra questions with answers — 1,502 free practice MCQs and explanations for SSC CGL, CHSL & MTS."
+  },
+  "/ssc/quant/geometry/": {
+    "title": "SSC CGL Geometry Questions with Answers — Free Practice | MindGains",
+    "h1": "SSC CGL Geometry Questions",
+    "description": "SSC CGL Geometry questions with answers — 1,243 free practice MCQs and explanations for SSC CGL, CHSL & MTS."
+  },
+  "/ssc/quant/number-system/": {
+    "title": "SSC CGL Number System Questions with Answers — Free Practice | MindGains",
+    "h1": "SSC CGL Number System Questions",
+    "description": "SSC CGL Number System questions with answers — 2,787 free practice MCQs and explanations for SSC CGL, CHSL & MTS."
+  },
+  "/ssc/quant/percentage/": {
+    "title": "SSC CGL Percentage Questions with Answers — Free Practice | MindGains",
+    "h1": "SSC CGL Percentage Questions",
+    "description": "SSC CGL Percentage questions with answers — 3,415 free practice MCQs and explanations for SSC CGL, CHSL & MTS."
+  },
+  "/ssc/quant/profit-loss/": {
+    "title": "SSC CGL Profit & Loss Questions with Answers — Free Practice | MindGains",
+    "h1": "SSC CGL Profit & Loss Questions",
+    "description": "SSC CGL Profit & Loss questions with answers — 3,493 free practice MCQs and explanations for SSC CGL, CHSL & MTS."
+  },
+  "/ssc/quant/ratio-proportion/": {
+    "title": "SSC CGL Ratio & Proportion Questions with Answers — Free Practice | MindGains",
+    "h1": "SSC CGL Ratio & Proportion Questions",
+    "description": "SSC CGL Ratio & Proportion questions with answers — 3,402 free practice MCQs and explanations for SSC CGL, CHSL & MTS."
+  },
+  "/ssc/quant/si-ci/": {
+    "title": "SSC CGL Simple & Compound Interest Questions with Answers — Free Practice | MindGains",
+    "h1": "SSC CGL Simple & Compound Interest Questions",
+    "description": "SSC CGL Simple & Compound Interest questions with answers — 3,210 free practice MCQs and explanations for SSC CGL, CHSL & MTS."
+  },
+  "/ssc/quant/time-work/": {
+    "title": "SSC CGL Time & Work Questions with Answers — Free Practice | MindGains",
+    "h1": "SSC CGL Time & Work Questions",
+    "description": "SSC CGL Time & Work questions with answers — 1,776 free practice MCQs and explanations for SSC CGL, CHSL & MTS."
+  },
+  "/ssc/quant/trigonometry/": {
+    "title": "SSC CGL Trigonometry Questions with Answers — Free Practice | MindGains",
+    "h1": "SSC CGL Trigonometry Questions",
+    "description": "SSC CGL Trigonometry questions with answers — 1,319 free practice MCQs and explanations for SSC CGL, CHSL & MTS."
+  },
+  "/ssc/reasoning/": {
+    "title": "SSC CGL Reasoning Questions & Practice — with Answers | MindGains",
+    "h1": "SSC CGL Reasoning Questions",
+    "description": "SSC CGL Reasoning questions with answers — 4,719 free practice MCQs and explanations for SSC CGL, CHSL & MTS."
+  },
+  "/ssc/reasoning/analogy/": {
+    "title": "SSC CGL Analogy Questions with Answers — Free Practice | MindGains",
+    "h1": "SSC CGL Analogy Questions",
+    "description": "SSC CGL Analogy questions with answers — 539 free practice MCQs and explanations for SSC CGL, CHSL & MTS."
+  },
+  "/ssc/reasoning/coding-decoding/": {
+    "title": "SSC CGL Coding-Decoding Questions with Answers — Free Practice | MindGains",
+    "h1": "SSC CGL Coding-Decoding Questions",
+    "description": "SSC CGL Coding-Decoding questions with answers — 640 free practice MCQs and explanations for SSC CGL, CHSL & MTS."
+  },
+  "/ssc/reasoning/syllogism/": {
+    "title": "SSC CGL Syllogism Questions with Answers — Free Practice | MindGains",
+    "h1": "SSC CGL Syllogism Questions",
+    "description": "SSC CGL Syllogism questions with answers — 500 free practice MCQs and explanations for SSC CGL, CHSL & MTS."
+  },
+  "/ssc/reasoning/venn-diagram/": {
+    "title": "SSC CGL Venn Diagram Questions with Answers — Free Practice | MindGains",
+    "h1": "SSC CGL Venn Diagram Questions",
+    "description": "SSC CGL Venn Diagram questions with answers — 500 free practice MCQs and explanations for SSC CGL, CHSL & MTS."
+  },
+  "/ssc/science/": {
+    "title": "SSC CGL Science Questions & Practice — with Answers | MindGains",
+    "h1": "SSC CGL Science Questions",
+    "description": "SSC CGL Science questions with answers — 3,158 free practice MCQs and explanations for SSC CGL, CHSL & MTS."
+  },
+  "/ssc/science/biology/": {
+    "title": "SSC CGL Biology Questions with Answers — Free Practice | MindGains",
+    "h1": "SSC CGL Biology Questions",
+    "description": "SSC CGL Biology questions with answers — 284 free practice MCQs and explanations for SSC CGL, CHSL & MTS."
+  },
+  "/ssc/science/chemistry/": {
+    "title": "SSC CGL Chemistry Questions with Answers — Free Practice | MindGains",
+    "h1": "SSC CGL Chemistry Questions",
+    "description": "SSC CGL Chemistry questions with answers — 1,339 free practice MCQs and explanations for SSC CGL, CHSL & MTS."
+  },
+  "/ssc/science/physics/": {
+    "title": "SSC CGL Physics Questions with Answers — Free Practice | MindGains",
+    "h1": "SSC CGL Physics Questions",
+    "description": "SSC CGL Physics questions with answers — 1,118 free practice MCQs and explanations for SSC CGL, CHSL & MTS."
+  },
+  "/rrb/maths/": {
+    "title": "RRB NTPC & Group D Maths Questions — Practice with Answers | MindGains",
+    "h1": "RRB NTPC Maths Questions",
+    "description": "RRB NTPC & Group D Maths questions with answers — 10,537 free practice MCQs and explanations, topic-wise."
+  },
+  "/rrb/maths/algebra/": {
+    "title": "RRB NTPC Algebra Questions with Answers — Free Practice | MindGains",
+    "h1": "RRB NTPC Algebra Questions",
+    "description": "RRB NTPC & Group D Algebra questions with answers — 2,039 free practice MCQs and explanations for Railway exams."
+  },
+  "/rrb/maths/arithmetic/": {
+    "title": "RRB NTPC Arithmetic Questions with Answers — Free Practice | MindGains",
+    "h1": "RRB NTPC Arithmetic Questions",
+    "description": "RRB NTPC & Group D Arithmetic questions with answers — 1,645 free practice MCQs and explanations for Railway exams."
+  },
+  "/rrb/maths/time-work/": {
+    "title": "RRB NTPC Time & Work Questions with Answers — Free Practice | MindGains",
+    "h1": "RRB NTPC Time & Work Questions",
+    "description": "RRB NTPC & Group D Time & Work questions with answers — 1,893 free practice MCQs and explanations for Railway exams."
+  },
+  "/rrb/reasoning/": {
+    "title": "RRB NTPC & Group D Reasoning Questions — Practice with Answers | MindGains",
+    "h1": "RRB NTPC Reasoning Questions",
+    "description": "RRB NTPC & Group D Reasoning questions with answers — 151 free practice MCQs and explanations, topic-wise."
+  },
+  "/rrb/reasoning/coding/": {
+    "title": "RRB NTPC Coding Questions with Answers — Free Practice | MindGains",
+    "h1": "RRB NTPC Coding Questions",
+    "description": "RRB NTPC & Group D Coding questions with answers — 109 free practice MCQs and explanations for Railway exams."
+  },
+  "/ssc/reasoning/classification/": {
+    "title": "SSC CGL Classification Questions (Odd One Out) with Answers | MindGains",
+    "h1": "SSC CGL Classification Questions",
+    "description": "Practice SSC CGL classification and odd-one-out questions with answers and explanations — words, numbers, number pairs and letter clusters."
+  },
+  "/ssc/quant/average/": {
+    "title": "SSC CGL Average Questions with Answers — Free Practice | MindGains",
+    "h1": "SSC CGL Average Questions",
+    "description": "Practice SSC CGL average questions with fully worked solutions — averages of numbers, ages, weights, speed and overlapping groups."
+  },
+  "/ssc/polity/fundamental-rights/": {
+    "title": "SSC CGL Fundamental Rights & DPSP Questions with Answers | MindGains",
+    "h1": "SSC CGL Fundamental Rights & DPSP Questions",
+    "description": "Practice SSC CGL questions on Fundamental Rights, DPSP and Fundamental Duties with answers and Article-referenced explanations."
+  },
+  "/upsc/csat-english/": {
+    "title": "UPSC CSAT English Comprehension Questions with Answers — Free Practice | MindGains",
+    "h1": "UPSC CSAT English Comprehension Questions",
+    "description": "Practice UPSC CSAT Paper II English — reading comprehension passages and passage-based logical deduction — in one shuffled set with answers and explanations."
+  }
+}

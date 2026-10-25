@@ -1,0 +1,130 @@
+{
+  "zoneId": "quant-interest",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "SSC QA: Simple & Compound Interest — The CI Tree",
+      "intro": "Simple Interest (SI) is easy, but Compound Interest (CI) is where SSC filters out the candidates. Today we move away from the long P(1+r/100)ⁿ formula. We will use the 'CI Tree' (or Ratio method) for 2 and 3 years. We also cover the 'Difference between SI and CI'—the most repeated question in SSC history. If you know the direct formulas for 2-year and 3-year differences, you can solve these problems while others are still doing square roots.",
+      "pages": [
+        {
+          "type": "formula",
+          "title": "Simple Interest (SI)",
+          "intro": "Simple Interest, often called SI, is a way to calculate how much extra money you pay for borrowing or earn for saving, based only on the original amount of money, which is called the Principal (P). The formula for finding Simple Interest is SI equals Principal (P) multiplied by the Rate (R) of interest per year multiplied by the Time (T) in years, all divided by 100, written as (P times R times T) divided by 100. The key rule is that the interest amount stays the same for every single year because it only uses the original Principal, not the growing total. For example, if the Simple Interest for the first year is 100 rupees, it will be exactly 100 rupees for the second year, 100 rupees for the third year, and so on for as many years as you calculate.",
+          "blocks": []
+        },
+        {
+          "type": "formula",
+          "title": "Compound Interest (CI) - Tree Method",
+          "intro": "Compound Interest (CI) is the interest earned on both the original amount, called the principal (P), and on the interest that accumulates over time. In the Tree Method, we define A as the simple interest on the principal for one year, B as the interest on A for one year, and C as the interest on B for one year. For a period of 2 years, the total CI is 2A plus B. For a period of 3 years, the total CI is 3A plus 3B plus C. This method avoids using powers or exponents, making calculations faster.",
+          "blocks": [
+            {
+              "text": "Total CI: 2A + B. For 3 years: 3A + 3B + C. This method avoids high powers and is much faster for SSC.",
+              "type": "trap"
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "SI vs CI Difference (Direct Formulas)",
+          "intro": "Simple Interest (SI) is interest calculated only on the original amount you invest or borrow, called the Principal (P), while Compound Interest (CI) is interest calculated on the Principal plus any interest already earned, so the difference between CI and SI comes from earning interest on interest. For a time period of 2 years, the difference (D2) between CI and SI equals the Principal P times the square of (Rate divided by 100), where Rate (R) is the annual interest rate given as a percent, so the formula is D2 = P multiplied by (R divided by 100) squared. For a time period of 3 years, the difference (D3) equals D2 multiplied by (3 plus R divided by 100), which is the same as P multiplied by (R divided by 100) squared multiplied by (3 plus R divided by 100). These direct formulas give you the exact difference without having to calculate SI and CI separately, saving you time on problems.",
+          "blocks": []
+        },
+        {
+          "type": "formula",
+          "title": "Compound Interest Half-Yearly/Quarterly",
+          "intro": "Compound interest is interest calculated on both the original amount and the accumulated interest from previous periods. When interest is compounded half-yearly, meaning it is calculated twice a year, you divide the annual rate (R) by 2 to get the rate per half-year, and you multiply the number of years (T) by 2 to get the total number of half-year periods. For quarterly compounding, which happens four times a year, you divide the annual rate by 4 and multiply the number of years by 4. Because each compounding period adds interest to the principal, more frequent compounding means interest starts earning interest sooner, so the total amount grows faster.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Half-yearly",
+                  "value": "Rate becomes R/2, Time becomes 2T"
+                },
+                {
+                  "label": "Quarterly",
+                  "value": "Rate becomes R/4, Time becomes 4T"
+                },
+                {
+                  "label": "Concept",
+                  "value": "More frequency: More interest"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Installment Basics",
+          "intro": "An installment is a fixed amount of money you pay regularly, like every month or every year, to repay a loan or buy something on credit. For simple interest, or SI, which is interest calculated only on the original loan amount, the formula to find the yearly installment is: (100 times the loan amount A) divided by [100 times the number of years T, plus the rate of interest R times T times (T minus 1) divided by 2]. For compound interest, or CI, which is interest calculated on both the original loan and any unpaid interest, the total amount you owe is found by adding together the present values of each installment, like this: the loan amount P divided by [1 over (1 plus the interest rate r) plus 1 over (1 plus r) squared, and so on]. Start by practicing with a simple case where the loan is repaid in two equal yearly installments, as this is the most common basic problem.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "What is the formula for Simple Interest (SI)?",
+          "back": "SI = (P × R × T) / 100"
+        },
+        {
+          "front": "In the CI Tree method, what is the total CI for 2 years?",
+          "back": "The total CI is 2A + B, where A is the interest on principal and B is the interest on A."
+        },
+        {
+          "front": "In the CI Tree method, what is the total CI for 3 years?",
+          "back": "The total CI is 3A + 3B + C."
+        },
+        {
+          "front": "What is the direct formula for the difference between CI and SI for 2 years (D₂)?",
+          "back": "D₂ = P(R/100)²"
+        },
+        {
+          "front": "What is the direct formula for the difference between CI and SI for 3 years (D₃)?",
+          "back": "D₃ = P(R/100)² * (3 + R/100) or D₂ * (3 + R/100)"
+        },
+        {
+          "front": "How do the Rate and Time change when interest is compounded half-yearly?",
+          "back": "The rate becomes R/2 and the time becomes 2T."
+        },
+        {
+          "front": "How do the Rate and Time change when interest is compounded quarterly?",
+          "back": "The rate becomes R/4 and the time becomes 4T."
+        },
+        {
+          "front": "What is the relationship between compounding frequency and total interest earned?",
+          "back": "More frequent compounding results in more interest."
+        },
+        {
+          "front": "What is the key rule regarding the amount of Simple Interest paid each year?",
+          "back": "The interest amount remains the same for every year because it is based only on the original principal."
+        },
+        {
+          "front": "What is the formula for calculating a yearly installment under Simple Interest?",
+          "back": "(100A) / [100T + RT(T-1)/2]"
+        },
+        {
+          "front": "Formula for SI/CI difference for 2 years?",
+          "back": "D₂ : P(R/100)²."
+        },
+        {
+          "front": "If rate is 10%, what is CI for 2 years (Successive)?",
+          "back": "10 + 10 + (10*10)/100 : 21%. (SI would be 20%)."
+        },
+        {
+          "front": "What is the Effective Rate for 10% compounded half-yearly?",
+          "back": "Rate : 5%, Time : 2. Effective Rate : 5 + 5 + 0.25 : 10.25%."
+        },
+        {
+          "front": "A sum triples in 4 years (SI). How many years to become 9 times?",
+          "back": "Triples means SI : 2P. 2P in 4 yrs → P in 2 yrs. 9 times means SI : 8P. 8P will take 8 * 2 : 16 years."
+        },
+        {
+          "front": "Ratio for 3-year CI calculation?",
+          "back": "3:3:1. (A:B:C from the tree)."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

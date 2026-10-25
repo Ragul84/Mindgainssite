@@ -1,0 +1,167 @@
+{
+  "zoneId": "polity-emergency",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "Emergency Provisions: Art 352, 356 & 360",
+      "intro": "Part XVIII of the Constitution contains the 'Emergency Provisions'—the mechanism that allows the Indian federal system to transform into a unitary one during times of crisis. There are three types: National Emergency, President's Rule (State Emergency), and Financial Emergency. While these are necessary for national security, they have often been the subject of intense political debate and judicial scrutiny. Today, we explore how an Emergency is declared, how it is approved by Parliament, and how the 44th Amendment added safeguards to prevent the kind of misuse seen in 1975.",
+      "pages": [
+        {
+          "type": "facts",
+          "title": "National Emergency (Art 352)",
+          "intro": "National Emergency (Article 352) is a situation where the President of India, acting only on the written advice of the entire Cabinet (the group of senior ministers), can declare a nationwide emergency if the country faces a threat from war, external aggression (attack from another country), or armed rebellion (a violent revolt against the government). The term \"armed rebellion\" replaced the older phrase \"internal disturbance\" after the 44th Amendment to the Constitution in 1978. After the President makes the proclamation, it must be approved by both houses of Parliament (Lok Sabha and Rajya Sabha) within one month, and that approval requires a special majority (more than half of the total members of each house, plus at least two-thirds of those present and voting). Once a National Emergency is in force, two major effects occur: first, Article 19 (which gives six fundamental rights like freedom of speech and assembly) is automatically suspended for the whole emergency period, as stated in Article 358. Second, the President can issue an order under Article 359 to suspend the enforcement of any other Fundamental Rights (FR), except for the rights guaranteed by Article 20 (protection against conviction for past offenses) and Article 21 (right to life and personal liberty), which can never be suspended even during an emergency.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Grounds",
+                  "value": "War, External Aggression, or Armed Rebellion (word \"Armed Rebellion\" replaced \"Internal Disturbance\" by 44th Amendment)"
+                },
+                {
+                  "label": "Approval",
+                  "value": "Both Houses by special majority within 1 month"
+                },
+                {
+                  "label": "Effects",
+                  "value": "Art 19 automatically suspended (Art 358)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "President's Rule (Art 356)",
+          "intro": "President's Rule, which is covered by Article 356 of the Constitution, is a situation where the central government takes over the administration of a state government. It can be imposed on two grounds: first, if the state's constitutional machinery fails, which usually happens when no party can form a government or there is a breakdown of law and order, often based on a report from the Governor (the central government's representative in the state); second, under Article 365, if the state government fails to follow any directions given by the central government. For President's Rule to continue beyond two months, both houses of Parliament must approve it by a simple majority, meaning more than half of the members present and voting. The maximum duration of President's Rule is three years, but it can only be extended beyond one year if the Election Commission certifies that elections cannot be held and a national emergency is in force. The Supreme Court has ruled, in the landmark S.R. Bommai case, that President's Rule can be challenged in a court of law, meaning it is subject to judicial review.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Grounds",
+                  "value": "Failure of constitutional machinery in a state (Governor's report or otherwise)"
+                },
+                {
+                  "label": "Art 365",
+                  "value": "Failure of state to comply with Union directions"
+                },
+                {
+                  "label": "Approval",
+                  "value": "Both Houses by SIMPLE MAJORITY within 2 months"
+                },
+                {
+                  "label": "Duration",
+                  "value": "Max 3 years (extension beyond 1 year requires election commission certification and emergency in force)"
+                },
+                {
+                  "label": "Judicial Review",
+                  "value": "Allowed (S.R. Bommai case)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Financial Emergency (Art 360)",
+          "intro": "Financial Emergency (Article 360) is a special power that the President of India can use when the financial stability or credit of the entire country is threatened. The word \"credit\" here means the ability of the Indian government to borrow money and pay its debts on time. To declare this emergency, the President needs approval from both houses of Parliament by a simple majority (more than half of the members present and voting) within two months of the declaration. Once approved, the Financial Emergency continues indefinitely until the President revokes it, meaning it does not need to be re-approved every few months like a National Emergency. During this emergency, the central government can order the reduction of salaries and allowances of all government servants, including judges of the Supreme Court and High Courts. India has never declared a Financial Emergency since its Constitution came into effect in 1950.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Grounds",
+                  "value": "Financial stability or credit of India is threatened"
+                },
+                {
+                  "label": "Approval",
+                  "value": "Simple majority within 2 months"
+                },
+                {
+                  "label": "Duration",
+                  "value": "Once approved, it continues indefinitely until revoked (no periodic approval needed)"
+                },
+                {
+                  "label": "Effects",
+                  "value": "Reduction of salaries of govt servants and judges"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "44th Amendment Safeguards (1978)",
+          "intro": "The 44th Amendment to the Indian Constitution, passed in 1978, introduced several safeguards to prevent the misuse of a National Emergency. First, it changed the ground for declaring an emergency under Article 352 from \"internal disturbance\" (a vague term) to \"armed rebellion\" (a more specific threat). Second, it required the President to receive written advice from the entire Cabinet, not just the Prime Minister, before proclaiming an emergency. Third, it shortened the time for Parliament to approve the emergency from two months to one month, and it required a special majority—meaning a majority of the total members of each House and at least two-thirds of those present and voting—instead of a simple majority. Fourth, it protected two fundamental rights: Article 20, which protects against punishment for crimes before a law was passed, and Article 21, which guarantees the right to life and personal liberty, so these rights cannot be suspended even during an emergency. These changes made it harder for the government to declare an emergency and ensured that basic rights remained in force.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "What are the three grounds for declaring a National Emergency under Article 352?",
+          "back": "War, External Aggression, or Armed Rebellion."
+        },
+        {
+          "front": "Which amendment replaced 'Internal Disturbance' with 'Armed Rebellion' as a ground for National Emergency?",
+          "back": "The 44th Amendment (1978)."
+        },
+        {
+          "front": "What is the parliamentary approval requirement for a National Emergency?",
+          "back": "Both Houses of Parliament must approve it by a special majority within one month."
+        },
+        {
+          "front": "Which Article provides for the automatic suspension of Article 19 during a National Emergency?",
+          "back": "Article 358."
+        },
+        {
+          "front": "Under which article can the President impose President's Rule if a state fails to comply with Union directions?",
+          "back": "Article 365."
+        },
+        {
+          "front": "What is the maximum duration of President's Rule?",
+          "back": "Three years, with extensions beyond one year requiring Election Commission certification and an active national emergency."
+        },
+        {
+          "front": "In which case did the Supreme Court rule that President's Rule is subject to judicial review?",
+          "back": "The S.R. Bommai case."
+        },
+        {
+          "front": "What is the duration of a Financial Emergency once it is approved by Parliament?",
+          "back": "It continues indefinitely until revoked by the President."
+        },
+        {
+          "front": "Has India ever declared a Financial Emergency?",
+          "back": "No, India has never declared a Financial Emergency."
+        },
+        {
+          "front": "Which two articles are protected from suspension even during a National Emergency?",
+          "back": "Article 20 and Article 21."
+        },
+        {
+          "front": "\"Armed Rebellion\" vs \"Internal Disturbance\"?",
+          "back": "\"Internal Disturbance\" was a vague term used to justify the 1975 Emergency. The 44th Amendment (1978) replaced it with \"Armed Rebellion\" to ensure National Emergency can only be declared for violent uprisings, not peaceful protests."
+        },
+        {
+          "front": "Which FRs can NEVER be suspended during Emergency?",
+          "back": "Articles 20 (Protection in conviction) and 21 (Right to Life and Liberty). This safeguard was added by the 44th Amendment."
+        },
+        {
+          "front": "Art 356 vs Art 365—what is the link?",
+          "back": "Art 356 is the power to impose President's Rule. Art 365 is a GROUND for it—stating that if a state fails to follow the Union's lawful directions, it is a failure of constitutional machinery."
+        },
+        {
+          "front": "What did the S.R. Bommai Case (1994) rule?",
+          "back": "The SC ruled that the proclamation of President's Rule is subject to Judicial Review. Secularism is a basic structure, and its violation can be a ground for Art 356. The assembly should not be dissolved until Parliament approves the proclamation."
+        },
+        {
+          "front": "Has India ever declared a Financial Emergency?",
+          "back": "NO. Even during the 1991 economic crisis, Article 360 was not invoked."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

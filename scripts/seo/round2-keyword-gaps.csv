@@ -1,0 +1,401 @@
+keyword,volume,intent,ads_competition,ads_comp_indexed,closest_existing_route,why_not_satisfied,recommended_future_page_type,priority,batch
+ntpc answer key,50000,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+rrb gr d previous year question paper,50000,pyq,Low,1,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+rrb ntpc previous year question paper,50000,pyq,Low,1,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+indian constitution quiz,5000,quiz,Low,0,,no existing route matched this keyword on intent + tokens,review,LOW,batch01-upsc-polity
+geography pyq upsc prelims,5000,pyq,Low,2,/upsc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch03-upsc-geography-environment
+csat last year question paper,5000,question-paper-pdf,Low,4,,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+csat paper,5000,other,Low,1,,no existing route matched this keyword on intent + tokens,review,LOW,batch05-upsc-csat
+csat paper upsc,5000,other,Low,1,/upsc/,no existing route matched this keyword on intent + tokens,review,LOW,batch05-upsc-csat
+csat previous year question paper,5000,pyq,Low,4,,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch05-upsc-csat
+csat pyq,5000,pyq,Low,7,,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch05-upsc-csat
+csat pyq upsc,5000,pyq,Low,27,/upsc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch05-upsc-csat
+csat question paper,5000,question-paper-pdf,Low,1,,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+csat question paper mpsc,5000,question-paper-pdf,Low,0,,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+upsc csat pyq,5000,pyq,Low,9,/upsc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch05-upsc-csat
+upsc csat question,5000,other,Low,1,/upsc/,no existing route matched this keyword on intent + tokens,review,LOW,batch05-upsc-csat
+upsc csat question papers,5000,other,Low,3,/upsc/,no existing route matched this keyword on intent + tokens,review,LOW,batch05-upsc-csat
+upsc prelims csat question paper,5000,question-paper-pdf,Low,0,/upsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+maths tnpsc,5000,other,Low,0,/tnpsc/,no existing route matched this keyword on intent + tokens,review,LOW,batch08-tnpsc-tamil-aptitude
+tnpsc past question papers,5000,other,Low,0,/tnpsc/,no existing route matched this keyword on intent + tokens,review,LOW,batch08-tnpsc-tamil-aptitude
+cgl math question,5000,other,Low,1,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch09-ssc-quant-reasoning
+dice questions for ssc cgl,5000,questions,Low,0,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch09-ssc-quant-reasoning
+reasoning for ssc,5000,other,Low,27,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch09-ssc-quant-reasoning
+reasoning for ssc cgl,5000,other,Low,13,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch09-ssc-quant-reasoning
+reasoning ques for ssc,5000,other,Low,2,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch09-ssc-quant-reasoning
+ssc cgl math paper,5000,other,Low,0,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch09-ssc-quant-reasoning
+ssc cgl maths,5000,other,Low,30,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch09-ssc-quant-reasoning
+staff selection commission maths question paper,5000,question-paper-pdf,Low,1,,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch09-ssc-quant-reasoning
+ssc cgl general awareness questions,5000,questions,Low,3,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+ssc cgl general knowledge questions,5000,questions,Low,3,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+cgl gk,5000,other,Low,11,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+general awareness ssc exam,5000,other,Low,14,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+general knowledge for cgl,5000,other,Low,11,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+general knowledge for ssc cgl,5000,other,Low,11,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+general knowledge for ssc exam,5000,other,Low,11,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+general knowledge questions for ssc exam,5000,questions,Low,11,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+general knowledge questions ssc cgl,5000,questions,Low,11,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+general knowledge questions ssc combined graduate level exam,5000,questions,Low,3,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+general knowledge ssc,5000,other,Low,11,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+gk for cgl exam,5000,other,Low,11,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+gk for ssc cgl exam,5000,other,Low,11,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+gk for ssc exam,5000,other,Low,11,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+gk questions for ssc cgl,5000,questions,Low,3,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+gk questions for ssc exam,5000,questions,Low,3,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+gk questions in ssc cgl,5000,questions,Low,3,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+ssc cgl english paper,5000,other,Low,0,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+ssc cgl ga questions,5000,questions,Low,3,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+ssc cgl general awareness,5000,other,Low,14,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+ssc cgl paper in hindi,5000,other,Low,2,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+rrb group d question paper,5000,question-paper-pdf,Low,0,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+free mock test for rrb ntpc,5000,mock-test,Low,8,/rrb/,topic/subject quizzes are not a full timed mock-test experience,dedicated mock-test surface (app assembleMock exists),HIGH,batch11-rrb
+group d exam paper,5000,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+group d math practice set,5000,exam-practice,Low,1,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+group d model paper,5000,question-paper-pdf,Low,0,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+group d paper,5000,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+group d previous paper,5000,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+group d previous year paper,5000,pyq,Low,0,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+group d previous year paper in hindi,5000,pyq,Low,0,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+group d previous year question,5000,pyq,Low,0,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+group d previous year question paper,5000,pyq,Low,0,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+group d pyq,5000,pyq,Low,0,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+group d question,5000,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+group d question and answer,5000,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+group d question answer,5000,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+group d question paper,5000,question-paper-pdf,Low,0,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+group d question paper 2018,5000,question-paper-pdf,Low,0,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+group d railway exam paper,5000,other,Low,3,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+group d railway exam question paper,5000,question-paper-pdf,Low,3,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+group d railway paper,5000,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+group d railway question paper,5000,question-paper-pdf,Low,3,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+mock test for rrb ntpc,5000,mock-test,Low,4,/rrb/,topic/subject quizzes are not a full timed mock-test experience,dedicated mock-test surface (app assembleMock exists),HIGH,batch11-rrb
+ntpc exam paper,5000,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+ntpc important question,5000,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+ntpc last year question paper,5000,question-paper-pdf,Low,2,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+ntpc math question,5000,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+ntpc maths,5000,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+ntpc mock test,5000,mock-test,Low,5,/rrb/,topic/subject quizzes are not a full timed mock-test experience,dedicated mock-test surface (app assembleMock exists),HIGH,batch11-rrb
+ntpc mock test free,5000,mock-test,Low,9,/rrb/,topic/subject quizzes are not a full timed mock-test experience,dedicated mock-test surface (app assembleMock exists),HIGH,batch11-rrb
+ntpc paper,5000,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+ntpc previous year paper,5000,pyq,Low,1,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+ntpc previous year question,5000,pyq,Low,3,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+ntpc previous year question paper,5000,pyq,Low,2,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+ntpc pyq,5000,pyq,Low,0,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+ntpc question paper,5000,question-paper-pdf,Low,0,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+ntpc rrb question paper,5000,question-paper-pdf,Low,1,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+ntpc science question,5000,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+ntpc typing test online,5000,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+paper of railway exam,5000,other,Low,1,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+previous paper group d,5000,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+previous year question paper of railway group d,5000,pyq,Low,1,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+previous year railway question paper,5000,pyq,Low,4,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+previous year rrb question paper,5000,pyq,Low,2,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+question paper for railway exam,5000,question-paper-pdf,Low,1,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+rail group d previous year question,5000,pyq,Low,1,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+railway d group exam question paper,5000,question-paper-pdf,Low,3,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+railway examination question paper,5000,question-paper-pdf,Low,1,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+railway group d model paper 2018 in hindi,5000,question-paper-pdf,Low,0,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+railway group d previous year paper,5000,pyq,Low,1,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+railway group d previous year question,5000,pyq,Low,1,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+railway group d question paper 2018 pdf in hindi,5000,question-paper-pdf,Low,0,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+railway group d question paper pdf download,5000,question-paper-pdf,Low,0,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+railway group d test paper,5000,other,Low,3,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+railway ntpc previous year question paper,5000,pyq,Low,5,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+railway recruitment group d question paper,5000,question-paper-pdf,Low,0,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+rrb 2018 question paper,5000,question-paper-pdf,Low,0,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+rrb alp exam paper,5000,other,Low,1,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+rrb exam model paper,5000,question-paper-pdf,Low,2,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+rrb exam sample paper,5000,question-paper-pdf,Low,2,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+rrb group d paper,5000,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+rrb group d paper 2018,5000,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+rrb group d previous year paper,5000,pyq,Low,1,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+rrb group d previous year question paper pdf,5000,pyq,Low,0,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+rrb group d previous year question paper pdf in english,5000,pyq,Low,0,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+rrb group d previous year question paper pdf in hindi,5000,pyq,Low,0,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+rrb group d pyq,5000,pyq,Low,0,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+rrb group d question paper 2018 pdf,5000,question-paper-pdf,Low,0,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+rrb je exam paper,5000,other,Low,1,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+rrb ntpc cbt 1 question paper pdf download,5000,question-paper-pdf,Low,0,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+rrb ntpc exam paper,5000,other,Low,1,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+rrb ntpc gk question,5000,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+rrb ntpc mock test official website,5000,mock-test,Low,1,/rrb/,topic/subject quizzes are not a full timed mock-test experience,dedicated mock-test surface (app assembleMock exists),HIGH,batch11-rrb
+rrb ntpc paper,5000,other,Low,1,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+rrb ntpc previous year paper,5000,pyq,Low,2,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+rrb ntpc previous year question paper cbt 1,5000,pyq,Low,2,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+rrb ntpc previous year question paper pdf,5000,pyq,Low,0,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+rrb ntpc previous year question paper pdf download,5000,pyq,Low,0,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+rrb ntpc previous year question paper pdf in hindi,5000,pyq,Low,0,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+rrb ntpc previous year question papers,5000,pyq,Low,1,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+rrb ntpc pyq,5000,pyq,Low,1,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+rrb ntpc pyq pdf,5000,pyq,Low,0,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+rrb ntpc typing test,5000,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+rrb question paper in kannada,5000,question-paper-pdf,Low,0,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+rrb typing test,5000,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+rrc group d exam paper,5000,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+ncert mcq class 8 history chapter 1,5000,chapter-specific,Low,0,/ncert/,NCERT/Samacheer routes stop at class level; no chapter routes; questions lack chapter tags,chapter-level MCQ pages (needs question re-tagging first),MEDIUM,batch14-ncert-hist-geo-pol-eng
+cgl practice paper,5000,other,Low,2,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,round1-2026-08-29
+group 4 model question paper online test,5000,question-paper-pdf,Low,0,/tnpsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,round1-2026-08-29
+practice paper for ssc cgl,5000,other,Low,2,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,round1-2026-08-29
+ssc exam practice paper,5000,other,Low,2,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,round1-2026-08-29
+ssc exam sample paper,5000,question-paper-pdf,Low,0,/ssc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,round1-2026-08-29
+dpsp mcq,500,mcq,Low,0,,no existing route matched this keyword on intent + tokens,review,LOW,batch01-upsc-polity
+fundamental rights pyq upsc,500,pyq,Low,1,/upsc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch01-upsc-polity
+indian constitution quiz questions,500,quiz,Low,1,,no existing route matched this keyword on intent + tokens,review,LOW,batch01-upsc-polity
+indian polity mock test,500,mock-test,Low,2,,topic/subject quizzes are not a full timed mock-test experience,dedicated mock-test surface (app assembleMock exists),HIGH,batch01-upsc-polity
+mcq on directive principles of state policy,500,mcq,Low,0,,no existing route matched this keyword on intent + tokens,review,LOW,batch01-upsc-polity
+upsc pyq on fundamental rights,500,pyq,Low,0,/upsc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch01-upsc-polity
+ancient history pyq upsc,500,pyq,Low,6,/upsc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch02-upsc-history-culture
+ancient history pyq upsc prelims,500,pyq,Low,1,/upsc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch02-upsc-history-culture
+ancient history upsc pyq,500,pyq,Low,1,/upsc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch02-upsc-history-culture
+history pyq upsc prelims,500,pyq,Low,4,/upsc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch02-upsc-history-culture
+upsc prelims ancient history previous year questions,500,pyq,Low,0,/upsc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch02-upsc-history-culture
+geography pyq upsc mains,500,pyq,Low,0,/upsc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch03-upsc-geography-environment
+upsc geography optional previous year question paper,500,pyq,Low,6,/upsc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch03-upsc-geography-environment
+upsc geography previous year question,500,pyq,Low,5,/upsc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch03-upsc-geography-environment
+national income mcq,500,mcq,Low,0,,no existing route matched this keyword on intent + tokens,review,LOW,batch04-upsc-economy-scitech
+mcq on national income,500,mcq,Low,0,,no existing route matched this keyword on intent + tokens,review,LOW,batch04-upsc-economy-scitech
+csat reasoning questions,500,questions,Low,2,,no existing route matched this keyword on intent + tokens,review,LOW,batch05-upsc-csat
+csat previous year questions,500,pyq,Low,11,,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch05-upsc-csat
+2011 csat question paper,500,question-paper-pdf,Low,0,,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+2019 csat question paper,500,question-paper-pdf,Low,0,,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+2020 csat paper,500,other,Low,0,,no existing route matched this keyword on intent + tokens,review,LOW,batch05-upsc-csat
+2020 csat question paper,500,question-paper-pdf,Low,0,,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+2020 upsc csat question paper,500,question-paper-pdf,Low,0,/upsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+2021 csat paper,500,other,Low,0,,no existing route matched this keyword on intent + tokens,review,LOW,batch05-upsc-csat
+2021 csat question paper,500,question-paper-pdf,Low,0,,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+2021 upsc csat question paper,500,question-paper-pdf,Low,0,/upsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+2022 csat paper,500,other,Low,0,,no existing route matched this keyword on intent + tokens,review,LOW,batch05-upsc-csat
+2022 csat question paper,500,question-paper-pdf,Low,0,,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+cgpsc csat question paper,500,question-paper-pdf,Low,0,,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+csat 2013 question paper,500,question-paper-pdf,Low,0,,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+csat 2018 question paper,500,question-paper-pdf,Low,0,,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+csat 2019 question paper,500,question-paper-pdf,Low,0,,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+csat 2020 question paper,500,question-paper-pdf,Low,0,,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+csat 2021 question paper,500,question-paper-pdf,Low,1,,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+csat 2022 question paper,500,question-paper-pdf,Low,0,,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+csat exam question paper,500,question-paper-pdf,Low,1,,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+csat model paper,500,question-paper-pdf,Low,0,,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+csat paper 2,500,other,Low,2,,no existing route matched this keyword on intent + tokens,review,LOW,batch05-upsc-csat
+csat paper in hindi,500,other,Low,0,,no existing route matched this keyword on intent + tokens,review,LOW,batch05-upsc-csat
+csat previous year paper,500,pyq,Low,6,,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch05-upsc-csat
+csat pyq pdf,500,pyq,Low,2,,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch05-upsc-csat
+csat pyq topic wise,500,pyq,Low,23,,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch05-upsc-csat
+csat pyq topic wise pdf,500,pyq,Low,4,,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch05-upsc-csat
+csat pyqs,500,pyq,Low,1,,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch05-upsc-csat
+csat sample paper,500,question-paper-pdf,Low,0,,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+csat test paper,500,other,Low,1,,no existing route matched this keyword on intent + tokens,review,LOW,batch05-upsc-csat
+csat upsc paper,500,other,Low,2,/upsc/,no existing route matched this keyword on intent + tokens,review,LOW,batch05-upsc-csat
+csat upsc pyq,500,pyq,Low,22,/upsc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch05-upsc-csat
+csat upsc question paper,500,question-paper-pdf,Low,1,/upsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+hcs csat previous year paper,500,pyq,Low,0,,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch05-upsc-csat
+ias csat paper,500,other,Low,1,/upsc/,no existing route matched this keyword on intent + tokens,review,LOW,batch05-upsc-csat
+ias prelims paper 2,500,other,Low,0,/upsc/,no existing route matched this keyword on intent + tokens,review,LOW,batch05-upsc-csat
+pdf csat question paper,500,question-paper-pdf,Low,0,,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+prelims csat paper,500,other,Low,0,/upsc/,no existing route matched this keyword on intent + tokens,review,LOW,batch05-upsc-csat
+previous year paper of csat,500,pyq,Low,6,,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch05-upsc-csat
+previous year question paper of upsc csat,500,pyq,Low,14,/upsc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch05-upsc-csat
+previous year upsc csat question paper,500,pyq,Low,14,/upsc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch05-upsc-csat
+uppcs csat previous year paper,500,pyq,Low,18,,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch05-upsc-csat
+uppcs csat pyq,500,pyq,Low,23,,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch05-upsc-csat
+uppsc csat previous year paper,500,pyq,Low,30,,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch05-upsc-csat
+upsc 2020 csat question paper,500,question-paper-pdf,Low,0,/upsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+upsc 2021 csat question paper,500,question-paper-pdf,Low,0,/upsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+upsc csat 2014 question paper,500,question-paper-pdf,Low,0,/upsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+upsc csat 2015 question paper,500,question-paper-pdf,Low,0,/upsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+upsc csat 2016 question paper,500,question-paper-pdf,Low,0,/upsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+upsc csat 2018 question paper,500,question-paper-pdf,Low,0,/upsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+upsc csat 2019 question paper,500,question-paper-pdf,Low,4,/upsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+upsc csat 2020 question paper,500,question-paper-pdf,Low,0,/upsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+upsc csat 2021 question paper,500,question-paper-pdf,Low,0,/upsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch05-upsc-csat
+upsc csat paper 2019,500,other,Low,0,/upsc/,no existing route matched this keyword on intent + tokens,review,LOW,batch05-upsc-csat
+upsc csat paper 2019 in hindi,500,other,Unknown,,/upsc/,no existing route matched this keyword on intent + tokens,review,LOW,batch05-upsc-csat
+upsc csat previous year paper,500,pyq,Low,13,/upsc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch05-upsc-csat
+upsc csat pyq pdf,500,pyq,Low,0,/upsc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch05-upsc-csat
+upsc csat pyq topic wise pdf,500,pyq,Low,13,/upsc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch05-upsc-csat
+upsc csat pyq with solutions,500,pyq,Low,5,/upsc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch05-upsc-csat
+upsc csat pyqs,500,pyq,Low,8,/upsc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch05-upsc-csat
+upsc prelims paper 2,500,other,Low,1,/upsc/,no existing route matched this keyword on intent + tokens,review,LOW,batch05-upsc-csat
+upsc previous year csat paper,500,pyq,Low,13,/upsc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch05-upsc-csat
+polity previous year questions tnpsc,500,pyq,Low,2,/tnpsc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch06-tnpsc-polity-history
+tnpsc polity previous year questions,500,pyq,Low,3,/tnpsc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch06-tnpsc-polity-history
+tnpsc economics previous year questions,500,pyq,Low,2,/tnpsc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch07-tnpsc-geo-science-economy
+tnpsc reasoning questions,500,questions,Low,0,/tnpsc/,no existing route matched this keyword on intent + tokens,review,LOW,batch08-tnpsc-tamil-aptitude
+6th tamil online test,500,online-test,Low,0,,no existing route matched this keyword on intent + tokens,review,LOW,batch08-tnpsc-tamil-aptitude
+aptitude & mental ability tests in tamil,500,other,Low,0,,no existing route matched this keyword on intent + tokens,review,LOW,batch08-tnpsc-tamil-aptitude
+group 2 previous year question paper in tamil,500,pyq,Low,0,/tnpsc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch08-tnpsc-tamil-aptitude
+group 4 exam question paper in tamil,500,question-paper-pdf,Low,0,/tnpsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch08-tnpsc-tamil-aptitude
+group 4 previous year question paper in tamil,500,pyq,Low,0,/tnpsc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch08-tnpsc-tamil-aptitude
+group 4 tnpsc model question paper,500,question-paper-pdf,Low,2,/tnpsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch08-tnpsc-tamil-aptitude
+maths previous year question paper tnpsc,500,pyq,Low,0,/tnpsc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch08-tnpsc-tamil-aptitude
+pothu arivu tamil question and answer,500,other,Low,0,,no existing route matched this keyword on intent + tokens,review,LOW,batch08-tnpsc-tamil-aptitude
+simplification previous year questions tnpsc,500,pyq,Low,4,/tnpsc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch08-tnpsc-tamil-aptitude
+tamil aptitude questions,500,questions,Low,0,,no existing route matched this keyword on intent + tokens,review,LOW,batch08-tnpsc-tamil-aptitude
+tamil question and answer for tnpsc group 4,500,other,Low,1,/tnpsc/,no existing route matched this keyword on intent + tokens,review,LOW,batch08-tnpsc-tamil-aptitude
+tamil question paper for tnpsc,500,question-paper-pdf,Low,0,/tnpsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch08-tnpsc-tamil-aptitude
+tamil tnpsc model question paper,500,question-paper-pdf,Low,0,/tnpsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch08-tnpsc-tamil-aptitude
+tamil tnpsc question answer,500,other,Low,2,/tnpsc/,no existing route matched this keyword on intent + tokens,review,LOW,batch08-tnpsc-tamil-aptitude
+tnpsc 4 model question paper,500,question-paper-pdf,Low,2,/tnpsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch08-tnpsc-tamil-aptitude
+tnpsc 6th tamil question paper with answer,500,question-paper-pdf,Low,0,/tnpsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch08-tnpsc-tamil-aptitude
+tnpsc aptitude previous year questions,500,pyq,Low,0,/tnpsc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch08-tnpsc-tamil-aptitude
+tnpsc group 4 aptitude test,500,other,Low,0,/tnpsc/,no existing route matched this keyword on intent + tokens,review,LOW,batch08-tnpsc-tamil-aptitude
+tnpsc group 4 exam model question paper,500,question-paper-pdf,Low,2,/tnpsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch08-tnpsc-tamil-aptitude
+tnpsc group 4 maths,500,other,Low,0,/tnpsc/,no existing route matched this keyword on intent + tokens,review,LOW,batch08-tnpsc-tamil-aptitude
+tnpsc group 4 maths question and answer in tamil pdf,500,question-paper-pdf,Low,0,/tnpsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch08-tnpsc-tamil-aptitude
+tnpsc group 4 old question paper,500,question-paper-pdf,Low,2,/tnpsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch08-tnpsc-tamil-aptitude
+tnpsc group 4 question answer tamil,500,other,Low,1,/tnpsc/,no existing route matched this keyword on intent + tokens,review,LOW,batch08-tnpsc-tamil-aptitude
+tnpsc group 4 question paper in tamil,500,question-paper-pdf,Low,0,/tnpsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch08-tnpsc-tamil-aptitude
+tnpsc group 4 question paper pdf download in tamil,500,question-paper-pdf,Low,0,/tnpsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch08-tnpsc-tamil-aptitude
+tnpsc group 4 tamil question,500,other,Low,0,/tnpsc/,no existing route matched this keyword on intent + tokens,review,LOW,batch08-tnpsc-tamil-aptitude
+tnpsc group 4 tamil question paper with answers pdf,500,question-paper-pdf,Low,0,/tnpsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch08-tnpsc-tamil-aptitude
+tnpsc group four model question paper,500,question-paper-pdf,Low,2,/tnpsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch08-tnpsc-tamil-aptitude
+tnpsc group iv model question paper,500,question-paper-pdf,Low,2,/tnpsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch08-tnpsc-tamil-aptitude
+tnpsc maths previous year question paper,500,pyq,Low,0,/tnpsc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch08-tnpsc-tamil-aptitude
+tnpsc maths questions in tamil pdf,500,question-paper-pdf,Low,0,/tnpsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch08-tnpsc-tamil-aptitude
+tnpsc model question paper group 4,500,question-paper-pdf,Low,2,/tnpsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch08-tnpsc-tamil-aptitude
+tnpsc question and answer in tamil,500,other,Low,2,/tnpsc/,no existing route matched this keyword on intent + tokens,review,LOW,batch08-tnpsc-tamil-aptitude
+tnpsc question and answer in tamil pdf,500,question-paper-pdf,Low,1,/tnpsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch08-tnpsc-tamil-aptitude
+tnpsc question answer tamil pdf,500,question-paper-pdf,Low,1,/tnpsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch08-tnpsc-tamil-aptitude
+tnpsc tamil eligibility test question papers with answers pdf,500,question-paper-pdf,Low,4,/tnpsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch08-tnpsc-tamil-aptitude
+tnpsc tamil questions and answers pdf,500,question-paper-pdf,Low,1,/tnpsc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch08-tnpsc-tamil-aptitude
+tnpsc test question papers,500,other,Low,0,/tnpsc/,no existing route matched this keyword on intent + tokens,review,LOW,batch08-tnpsc-tamil-aptitude
+ssc cgl reasoning mock test,500,mock-test,Low,3,/ssc/,topic/subject quizzes are not a full timed mock-test experience,dedicated mock-test surface (app assembleMock exists),HIGH,batch09-ssc-quant-reasoning
+algebra for ssc cgl,500,other,Low,1,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch09-ssc-quant-reasoning
+aptitude for ssc cgl,500,other,Low,4,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch09-ssc-quant-reasoning
+arithmetic for ssc cgl,500,other,Low,11,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch09-ssc-quant-reasoning
+blood relation questions for ssc cgl,500,questions,Low,3,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch09-ssc-quant-reasoning
+cgl reasoning,500,other,Low,2,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch09-ssc-quant-reasoning
+cgl reasoning mock test,500,mock-test,Low,3,/ssc/,topic/subject quizzes are not a full timed mock-test experience,dedicated mock-test surface (app assembleMock exists),HIGH,batch09-ssc-quant-reasoning
+geometry for ssc cgl,500,other,Low,1,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch09-ssc-quant-reasoning
+kiran publication ssc cgl maths,500,other,High,94,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch09-ssc-quant-reasoning
+math practice set for ssc cgl,500,exam-practice,Medium,48,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch09-ssc-quant-reasoning
+maths pyq ssc cgl,500,pyq,High,74,/ssc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch09-ssc-quant-reasoning
+number system ssc cgl,500,other,Low,1,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch09-ssc-quant-reasoning
+percentage pyq ssc cgl,500,pyq,Low,4,/ssc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch09-ssc-quant-reasoning
+quantitative aptitude for ssc,500,other,Low,15,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch09-ssc-quant-reasoning
+quantitative aptitude for ssc cgl,500,other,Low,15,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch09-ssc-quant-reasoning
+quantitative aptitude for ssc exam,500,other,Low,15,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch09-ssc-quant-reasoning
+reasoning pyq ssc cgl,500,pyq,Medium,48,/ssc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch09-ssc-quant-reasoning
+reasoning ssc cgl mock test,500,mock-test,Low,2,/ssc/,topic/subject quizzes are not a full timed mock-test experience,dedicated mock-test surface (app assembleMock exists),HIGH,batch09-ssc-quant-reasoning
+reasoning topic for ssc cgl,500,other,Low,2,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch09-ssc-quant-reasoning
+ssc aptitude,500,other,Low,4,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch09-ssc-quant-reasoning
+ssc cgl blood relation questions,500,questions,Low,3,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch09-ssc-quant-reasoning
+ssc cgl general intelligence and reasoning,500,other,Low,15,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch09-ssc-quant-reasoning
+ssc cgl math previous year paper,500,pyq,Low,17,/ssc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch09-ssc-quant-reasoning
+ssc cgl math previous year question,500,pyq,Low,13,/ssc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch09-ssc-quant-reasoning
+ssc cgl math pyq,500,pyq,Low,16,/ssc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch09-ssc-quant-reasoning
+ssc cgl math question paper,500,question-paper-pdf,Low,2,/ssc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch09-ssc-quant-reasoning
+ssc cgl number system,500,other,Low,1,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch09-ssc-quant-reasoning
+ssc cgl percentage previous year questions,500,pyq,Low,6,/ssc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch09-ssc-quant-reasoning
+ssc cgl reasoning mock test free,500,mock-test,Low,3,/ssc/,topic/subject quizzes are not a full timed mock-test experience,dedicated mock-test surface (app assembleMock exists),HIGH,batch09-ssc-quant-reasoning
+ssc cgl reasoning previous year question,500,pyq,Low,21,/ssc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch09-ssc-quant-reasoning
+ssc cgl reasoning pyq,500,pyq,Low,6,/ssc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch09-ssc-quant-reasoning
+ssc cgl reasoning topic,500,other,Low,1,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch09-ssc-quant-reasoning
+ssc cgl trigonometry,500,other,Low,1,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch09-ssc-quant-reasoning
+biology for ssc cgl,500,other,Low,1,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+cgl english question,500,other,Low,2,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+cgl gk questions,500,questions,Low,1,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+chemistry for ssc cgl,500,other,Low,0,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+english practice for ssc,500,other,Low,11,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+english practice for ssc cgl,500,other,Low,11,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+english pyq ssc cgl,500,pyq,Medium,61,/ssc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch10-ssc-english-ga
+general awareness questions for ssc,500,questions,Low,6,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+general knowledge questions and answers for ssc exam,500,exam-practice,Low,1,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+general knowledge questions ssc,500,questions,Low,14,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+general science for ssc cgl,500,other,Low,10,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+gk gs for ssc cgl,500,other,Low,11,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+ssc cgl cloze test,500,other,Low,1,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+ssc cgl english previous year paper,500,pyq,Low,8,/ssc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch10-ssc-english-ga
+ssc cgl english previous year question,500,pyq,Low,14,/ssc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch10-ssc-english-ga
+ssc cgl english pyq,500,pyq,Low,23,/ssc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch10-ssc-english-ga
+ssc cgl english question paper,500,question-paper-pdf,Low,3,/ssc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch10-ssc-english-ga
+ssc cgl gk pyq,500,pyq,Medium,34,/ssc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch10-ssc-english-ga
+ssc cgl gk questions and answers,500,exam-practice,Low,1,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+ssc cgl previous year english paper,500,pyq,Low,8,/ssc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch10-ssc-english-ga
+ssc cgl pyq english,500,pyq,Low,26,/ssc/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch10-ssc-english-ga
+ssc english practice,500,other,Low,11,/ssc/,no existing route matched this keyword on intent + tokens,review,LOW,batch10-ssc-english-ga
+ssc exam english question paper,500,question-paper-pdf,Low,1,/ssc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch10-ssc-english-ga
+ssc exam question paper english,500,question-paper-pdf,Low,1,/ssc/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch10-ssc-english-ga
+staff selection commission english question paper,500,question-paper-pdf,Low,1,,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch10-ssc-english-ga
+adda247 rrb ntpc mock test,500,mock-test,Low,0,/rrb/,topic/subject quizzes are not a full timed mock-test experience,dedicated mock-test surface (app assembleMock exists),HIGH,batch11-rrb
+alp previous year paper,500,pyq,Low,1,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+assistant loco pilot paper,500,other,Low,0,,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+d group paper,500,other,Low,0,,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+d group previous year question paper,500,pyq,Low,1,,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+d group question paper,500,question-paper-pdf,Low,0,,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+ehd3 question paper,500,question-paper-pdf,Low,0,,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+free typing test for rrb ntpc,500,other,Low,2,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+general awareness for rrb,500,other,Low,18,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+general awareness for rrb ntpc,500,other,Low,14,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+general knowledge for railway group d,500,other,Low,2,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+general science for railway,500,other,High,90,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+general science for rrb,500,other,High,74,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+general science for rrb group d,500,other,Low,18,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+general science for rrb je,500,other,Medium,59,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+gk for railway group d,500,other,Low,2,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+gk for rrb,500,other,Low,11,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+gk for rrb ntpc,500,other,Low,4,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+gk ntpc,500,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+group d 2022 question paper pdf,500,question-paper-pdf,Low,0,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+group d exam previous year question paper,500,pyq,Low,1,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+group d exam question,500,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+group d exam question and answer,500,other,Low,2,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+group d exam question paper,500,question-paper-pdf,Low,1,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+group d gk question,500,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+group d imp questions,500,questions,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+group d ka paper,500,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+group d ka previous year question paper,500,pyq,Low,0,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+group d ka question,500,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+group d ka question answer,500,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+group d ka question paper,500,question-paper-pdf,Low,0,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+group d last year question paper,500,question-paper-pdf,Low,0,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+group d old paper,500,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+group d old paper hindi pdf,500,question-paper-pdf,Low,0,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+group d old question paper,500,question-paper-pdf,Low,0,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+group d paper 2018,500,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+group d paper pdf,500,question-paper-pdf,Low,0,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+group d paper previous year,500,pyq,Low,0,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+group d practice set pdf,500,question-paper-pdf,Low,1,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+group d previous paper in telugu,500,other,Low,1,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+group d previous papers in english,500,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+group d previous question paper,500,question-paper-pdf,Low,1,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+group d previous year,500,pyq,Low,0,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+group d previous year paper hindi,500,pyq,Low,0,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+group d previous year paper in hindi pdf,500,pyq,Low,0,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+group d previous year paper in hindi pdf download,500,pyq,Low,0,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+group d previous year paper pdf,500,pyq,Low,0,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+group d previous year question paper in hindi,500,pyq,Low,0,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+group d previous year question paper in tamil,500,pyq,Low,0,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+group d previous year question paper pdf,500,pyq,Low,0,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+group d previous year question paper pdf in hindi,500,pyq,Low,0,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+group d pyq pdf,500,pyq,Low,0,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+group d question paper 2022,500,question-paper-pdf,Low,0,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+group d question paper in hindi,500,question-paper-pdf,Low,0,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+group d question paper pdf,500,question-paper-pdf,Low,0,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+group d railway previous year question paper,500,pyq,Low,4,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+group d railway question,500,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+group d reasoning mock test,500,mock-test,Low,1,/rrb/,topic/subject quizzes are not a full timed mock-test experience,dedicated mock-test surface (app assembleMock exists),HIGH,batch11-rrb
+group d reasoning question,500,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+group d rrb model papers in telugu,500,other,Low,1,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+group d rrb previous year question paper,500,pyq,Low,2,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+group d rrb question paper,500,question-paper-pdf,Low,0,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+group d sample paper,500,question-paper-pdf,Low,2,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+group d science previous year question,500,pyq,Low,5,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+group d set practice,500,other,Low,24,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+group d test paper,500,other,Low,5,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+indian railway exam paper,500,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+last year group d question paper,500,question-paper-pdf,Low,0,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+last year ntpc question paper,500,question-paper-pdf,Low,1,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+last year rrb group d question paper,500,question-paper-pdf,Low,0,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+last year rrb ntpc question paper,500,question-paper-pdf,Low,1,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+last year rrb question paper,500,question-paper-pdf,Low,1,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+math practice set for railway group d,500,exam-practice,Low,3,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+math question railway group d,500,other,Low,0,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+mathematics for rrb ntpc,500,other,Low,11,/rrb/,no existing route matched this keyword on intent + tokens,review,LOW,batch11-rrb
+mock test for ntpc,500,mock-test,Low,16,/rrb/,topic/subject quizzes are not a full timed mock-test experience,dedicated mock-test surface (app assembleMock exists),HIGH,batch11-rrb
+mock test ntpc,500,mock-test,Low,5,/rrb/,topic/subject quizzes are not a full timed mock-test experience,dedicated mock-test surface (app assembleMock exists),HIGH,batch11-rrb
+model question paper for railway exam,500,question-paper-pdf,Low,13,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+ntpc cbt 1 previous year question paper,500,pyq,Low,0,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+ntpc cbt 1 question paper,500,question-paper-pdf,Low,0,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb
+ntpc cbt 2 mock test,500,mock-test,Low,2,/rrb/,topic/subject quizzes are not a full timed mock-test experience,dedicated mock-test surface (app assembleMock exists),HIGH,batch11-rrb
+ntpc cbt 2 previous year paper,500,pyq,Low,0,/rrb/,"generic Quiz Hub pages contain practice MCQs, not verified previous-year questions",PARKED — verified-PYQ surface (Supabase pyq_verified_clean),HIGH,batch11-rrb
+ntpc cbt 2 question paper,500,question-paper-pdf,Low,0,/rrb/,web quiz does not provide a downloadable paper/PDF,question-paper index / PDF landing (only if papers are actually hosted),MEDIUM,batch11-rrb

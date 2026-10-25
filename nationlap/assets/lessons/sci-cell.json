@@ -1,0 +1,133 @@
+{
+  "zoneId": "sci-cell",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "SSC Science: Biology — Cell & Tissues",
+      "intro": "Today we study the 'Micro-World'. The Cell is the fundamental unit of life. In SSC, questions often focus on 'Cell Organelles' and their nicknames (e.g., Powerhouse, Suicide bag). We also explore Tissues—the groups of cells that perform specific functions. Toppers focus on 'Plant vs Animal cells'. Let's master the biology of the cell today.",
+      "pages": [
+        {
+          "type": "concept",
+          "title": "Cell Theory",
+          "intro": "Cell Theory is the scientific idea that all living things are made of tiny building blocks called cells, which are the basic units of life. The theory was proposed in the 1830s by two scientists: Matthias Schleiden, who studied plants, and Theodor Schwann, who studied animals. Before them, the first person to see cells was Robert Hooke in 1665, but he only observed the empty walls of dead cork cells. Around the same time, Antonie van Leeuwenhoek looked at living cells for the first time using a handmade microscope, discovering tiny single-celled organisms. So, Cell Theory combines these discoveries into one simple principle: every living organism is composed of one or more cells.",
+          "blocks": []
+        },
+        {
+          "type": "facts",
+          "title": "Cell Organelles (The Nicknames)",
+          "intro": "Cell organelles are tiny structures inside a cell that each have a specific job. The mitochondria (plural of mitochondrion) produce ATP (adenosine triphosphate), which is the main energy molecule for the cell, so they are called the powerhouse of the cell. Lysosomes contain digestive enzymes that break down waste and old cell parts, earning them the nickname suicide bags. Ribosomes are small structures that build proteins, so they are known as protein factories. Golgi bodies (also called Golgi apparatus) receive proteins and package them for transport, making them the packaging house of the cell. Chloroplasts, found only in plant cells, use sunlight to make food (sugar) through photosynthesis, so they are called the kitchen of the cell.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Mitochondria",
+                  "value": "Powerhouse of the cell (produces ATP)"
+                },
+                {
+                  "label": "Lysosomes",
+                  "value": "Suicide bags (digestive enzymes)"
+                },
+                {
+                  "label": "Ribosomes",
+                  "value": "Protein factories"
+                },
+                {
+                  "label": "Golgi Bodies",
+                  "value": "Packaging house"
+                },
+                {
+                  "label": "Chloroplast",
+                  "value": "Kitchen of the cell (only in plants)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Nucleus",
+          "intro": "The nucleus is the control center of a cell, often called the brain of the cell. It contains DNA (deoxyribonucleic acid), which holds the genetic instructions for the cell, and chromosomes, which are thread-like structures made of DNA and proteins. There are two main types of cells based on whether they have a nucleus: prokaryotic cells, such as bacteria, do not have a nucleus, while eukaryotic cells, such as animal and plant cells, have a nucleus.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Plant vs Animal Cell",
+          "intro": "Both plant and animal cells are the basic units of life, but they have key differences. Plant cells have a rigid outer layer called a cell wall made of cellulose, a tough carbohydrate that gives the cell shape and support. They also contain a large central vacuole, which is a storage sac that holds water and nutrients, and chloroplasts, small parts inside the cell that use sunlight to make food through a process called photosynthesis. Animal cells lack a cell wall, so their shape is more flexible, and they have many small vacuoles instead of one large one. Additionally, animal cells contain centrioles, which are tiny structures that help the cell divide into two new cells, while plant cells generally do not have them.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Tissues",
+          "intro": "Tissues are groups of similar cells that work together to perform a specific function. In animals, the four main types are epithelial tissue (which covers and lines body surfaces), connective tissue (which includes blood and bone for support and transport), muscular tissue (which enables movement), and nervous tissue (which carries electrical signals). In plants, tissues are divided into meristematic tissue (found in growing regions and responsible for new cell formation) and permanent tissue, which includes xylem (which transports water and minerals upward) and phloem (which transports food made by leaves to other parts of the plant).",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "Who proposed the Cell Theory?",
+          "back": "Matthias Schleiden and Theodor Schwann."
+        },
+        {
+          "front": "Who first observed dead cork cells in 1665?",
+          "back": "Robert Hooke."
+        },
+        {
+          "front": "Which organelle is known as the 'Powerhouse of the cell'?",
+          "back": "Mitochondria."
+        },
+        {
+          "front": "What is the nickname for Lysosomes?",
+          "back": "Suicide bags."
+        },
+        {
+          "front": "Which organelle acts as the 'Protein factory'?",
+          "back": "Ribosomes."
+        },
+        {
+          "front": "What is the function of the Golgi bodies?",
+          "back": "Packaging house."
+        },
+        {
+          "front": "Which organelle is called the 'Kitchen of the cell'?",
+          "back": "Chloroplast."
+        },
+        {
+          "front": "What is the brain of the cell?",
+          "back": "The nucleus."
+        },
+        {
+          "front": "What is the cell wall of a plant cell made of?",
+          "back": "Cellulose."
+        },
+        {
+          "front": "Which plant tissue is responsible for transporting water?",
+          "back": "Xylem."
+        },
+        {
+          "front": "Powerhouse of the cell?",
+          "back": "Mitochondria."
+        },
+        {
+          "front": "Suicide bags of the cell?",
+          "back": "Lysosomes."
+        },
+        {
+          "front": "Protein factory of the cell?",
+          "back": "Ribosomes."
+        },
+        {
+          "front": "Tissue that carries water in plants?",
+          "back": "Xylem."
+        },
+        {
+          "front": "Main component of plant cell wall?",
+          "back": "Cellulose."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

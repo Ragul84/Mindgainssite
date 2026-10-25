@@ -1,0 +1,199 @@
+{
+  "zoneId": "sci-optics",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "SSC Science: Physics — Work, Energy & Optics",
+      "intro": "Today we study 'Power and Light'. In SSC, 'Energy Transformation' (e.g., Microphone converts Sound to Electric) and 'Optics' (Mirrors/Lenses) are high-yield areas. Do you know why the sky is blue? Or why a diamond sparkles? Toppers focus on 'Refraction' and 'Total Internal Reflection'. Let's master the energy and light that surrounds us.",
+      "pages": [
+        {
+          "type": "formula",
+          "title": "Work & Power",
+          "intro": "Work is a measure of energy transfer that happens when a force, which is a push or pull, moves an object over a distance, called displacement. The amount of work is calculated by multiplying the force by the displacement, and its SI unit, meaning the standard unit used by scientists worldwide, is the joule (J). Power is the rate at which work is done, so you find it by dividing the work done by the time it takes to do that work. The SI unit for power is the watt (W), and a common non-SI unit called horsepower (hp) is equal to 746 watts.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Work",
+                  "value": "Force × Displacement"
+                },
+                {
+                  "label": "SI Unit",
+                  "value": "Joule"
+                },
+                {
+                  "label": "Power",
+                  "value": "Work / Time. SI Unit: Watt. (1 Horsepower: 746 Watts)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "facts",
+          "title": "Energy Transformations",
+          "intro": "The Law of Conservation of Energy states that energy cannot be created or destroyed; it can only change from one form to another. A dynamo is a device that changes mechanical energy, which is the energy of movement, into electrical energy, which is the energy of moving electric charges. An electric motor does the opposite: it changes electrical energy into mechanical energy to make things spin or move. A microphone changes sound energy, which is energy from vibrations in the air, into electrical energy. A loudspeaker changes electrical energy back into sound energy so you can hear music or speech.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Law of Conservation",
+                  "value": "Energy cannot be created or destroyed"
+                },
+                {
+                  "label": "Dynamo",
+                  "value": "Mechanical -> Electric"
+                },
+                {
+                  "label": "Electric Motor",
+                  "value": "Electric -> Mechanical"
+                },
+                {
+                  "label": "Microphone",
+                  "value": "Sound -> Electric"
+                },
+                {
+                  "label": "Loudspeaker",
+                  "value": "Electric -> Sound"
+                }
+              ]
+            },
+            {
+              "text": "Law of Conservation: Energy cannot be created or destroyed.",
+              "type": "trap"
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Optics: Reflection & Mirrors",
+          "intro": "A mirror is a smooth surface that reflects light to form an image. A concave mirror curves inward like the inside of a spoon, and it can produce a real image that is actually projected in front of the mirror, or a larger image, which is why it is used in shaving mirrors to see your face bigger and in headlights to focus light into a beam, and in solar furnaces to concentrate sunlight for heat. A convex mirror curves outward like the outside of a spoon, and it always makes a smaller image that appears to be behind the mirror, giving you a wide field of view, which is why it is used as the rear-view mirror in vehicles to see more of the road behind you.",
+          "blocks": []
+        },
+        {
+          "type": "facts",
+          "title": "Refraction & Scattering",
+          "intro": "Refraction and Scattering Refraction is the bending of light when it passes from one clear material into another, like from air into water. Scattering is when light bounces off tiny particles in all directions, like dust in the air. The twinkling of stars happens because of atmospheric refraction, which is the bending of starlight as it goes through different layers of Earth's air. A mirage, which looks like water on a hot road, is caused by total internal reflection, or TIR, where light bounces completely inside a material instead of passing through it. The blue color of the sky comes from the scattering of light, where sunlight hits air molecules and spreads out, making the sky look blue. The sparkle of a diamond is also due to TIR, where light bounces inside the diamond and comes out in bright flashes. A rainbow is made by three things working together: dispersion, which is when light splits into different colors; refraction, which is the bending of that light as it enters raindrops; and TIR, which bounces the light inside the raindrops to send the colors back to your eyes.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Twinkling of stars",
+                  "value": "Atmospheric Refraction"
+                },
+                {
+                  "label": "Mirage",
+                  "value": "Total Internal Reflection (TIR)"
+                },
+                {
+                  "label": "Blue color of sky",
+                  "value": "Scattering of light"
+                },
+                {
+                  "label": "Sparkle of Diamond",
+                  "value": "TIR"
+                },
+                {
+                  "label": "Rainbow",
+                  "value": "Dispersion, Refraction, and TIR"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "facts",
+          "title": "Human Eye & Defects",
+          "intro": "Myopia, also called short-sightedness, is a condition where a person can see nearby objects clearly but distant objects appear blurry because the eye focuses light in front of the retina, the light-sensitive layer at the back of the eye. This is corrected by using a concave lens, which is a lens that is thinner in the middle and thicker at the edges and spreads out light rays so they focus correctly on the retina. Hypermetropia, also called long-sightedness, is the opposite, where distant objects are clear but nearby objects are blurry because the eye focuses light behind the retina, and it is corrected by a convex lens, which is thicker in the middle and thinner at the edges and brings light rays together to focus on the retina. Astigmatism is a defect where the cornea, the clear front part of the eye, is shaped unevenly like a football instead of a sphere, causing blurry or distorted vision at all distances, and it is corrected by a cylindrical lens, which has a curved surface in one direction only to compensate for the uneven shape.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Myopia (Short-sightedness)",
+                  "value": "Corrected by Concave lens"
+                },
+                {
+                  "label": "Hypermetropia (Long-sightedness)",
+                  "value": "Corrected by Convex lens"
+                },
+                {
+                  "label": "Astigmatism",
+                  "value": "Cylindrical lens"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "What is the SI unit of work?",
+          "back": "Joule"
+        },
+        {
+          "front": "How many watts are in one horsepower?",
+          "back": "746 watts"
+        },
+        {
+          "front": "What energy transformation occurs in a microphone?",
+          "back": "Sound energy to electrical energy"
+        },
+        {
+          "front": "Which type of mirror is used as a rear-view mirror in vehicles?",
+          "back": "Convex mirror"
+        },
+        {
+          "front": "What phenomenon causes the twinkling of stars?",
+          "back": "Atmospheric refraction"
+        },
+        {
+          "front": "What causes the sparkle of a diamond?",
+          "back": "Total Internal Reflection (TIR)"
+        },
+        {
+          "front": "What is the cause of the blue color of the sky?",
+          "back": "Scattering of light"
+        },
+        {
+          "front": "Which lens is used to correct Myopia (short-sightedness)?",
+          "back": "Concave lens"
+        },
+        {
+          "front": "Which lens is used to correct Hypermetropia (long-sightedness)?",
+          "back": "Convex lens"
+        },
+        {
+          "front": "Which lens is used to correct Astigmatism?",
+          "back": "Cylindrical lens"
+        },
+        {
+          "front": "1 Horsepower : ? Watts",
+          "back": "746 Watts."
+        },
+        {
+          "front": "Mirror used as rear-view in cars?",
+          "back": "Convex Mirror."
+        },
+        {
+          "front": "Lens used to correct Myopia?",
+          "back": "Concave Lens."
+        },
+        {
+          "front": "Why does a diamond sparkle?",
+          "back": "Total Internal Reflection (TIR)."
+        },
+        {
+          "front": "Scattering of light causes?",
+          "back": "Blue color of sky."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

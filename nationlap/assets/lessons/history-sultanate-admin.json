@@ -1,0 +1,230 @@
+{
+  "zoneId": "history-sultanate-admin",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "SSC History: Medieval India — Sultanate & Mughals",
+      "intro": "Today we study the 'Age of Empires'. Medieval history in SSC is dominated by the 'Delhi Sultanate' and the 'Mughals'. Questions focus on 'Rulers', 'Monuments', and 'Administration'. From the Qutub Minar to the Taj Mahal and the reforms of Akbar—these are the markers of our history. Do you know who started the 'Sijda' system? Or which Mughal king was called 'Zinda Pir'? Let's master the medieval timeline today.",
+      "pages": [
+        {
+          "type": "concept",
+          "title": "Delhi Sultanate (5 Dynasties)",
+          "intro": "Five Muslim dynasties ruled Delhi from 1206 to 1526, ending with Ibrahim Lodi's defeat at Panipat.",
+          "blocks": [
+            {
+              "type": "timeline",
+              "items": [
+                {
+                  "label": "Slave Dynasty · 1206",
+                  "value": "Founded by Qutubuddin Aibak, a former slave soldier"
+                },
+                {
+                  "label": "Khilji Dynasty · 1290",
+                  "value": "Alauddin Khilji introduced market reforms and price controls"
+                },
+                {
+                  "label": "Tughlaq Dynasty · 1320",
+                  "value": "Muhammad bin Tughlaq's failed token currency of copper/brass coins"
+                },
+                {
+                  "label": "Sayyid Dynasty · 1414",
+                  "value": "Brief rule before the Lodi dynasty took over"
+                },
+                {
+                  "label": "Lodi Dynasty · 1451",
+                  "value": "Ibrahim Lodi lost the First Battle of Panipat in 1526"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Alauddin Khilji",
+          "intro": "Sultan of Delhi (1296–1316) known for military reforms and strict market control to stabilize his empire.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Dagh",
+                  "value": "Branding horses with hot iron to prevent swapping in the army"
+                },
+                {
+                  "label": "Chehra",
+                  "value": "Written descriptive roll of each soldier's face and appearance"
+                },
+                {
+                  "label": "Market Control",
+                  "value": "Government fixed prices of all goods; severe punishment for cheating"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "The Mughal Empire (1526–1857)",
+          "intro": "Founded by Babur after the First Battle of Panipat, the empire saw its golden age under Akbar, Jahangir, and Shah Jahan.",
+          "blocks": [
+            {
+              "type": "mindmap",
+              "center": "Mughal Rulers",
+              "branches": [
+                {
+                  "label": "Babur",
+                  "value": "Founded empire; won First Battle of Panipat, 1526"
+                },
+                {
+                  "label": "Humayun",
+                  "value": "Lost and regained the empire"
+                },
+                {
+                  "label": "Akbar",
+                  "value": "Created Din-i-Ilahi (Divine Faith)"
+                },
+                {
+                  "label": "Jahangir",
+                  "value": "Chain of Justice for direct petitions"
+                },
+                {
+                  "label": "Shah Jahan",
+                  "value": "Golden Age of Architecture; built Taj Mahal"
+                },
+                {
+                  "label": "Aurangzeb",
+                  "value": "Took title Alamgir; expanded empire to largest size"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Akbar's Reforms",
+          "intro": "Mughal emperor Akbar abolished Jizya, introduced the Mansabdari system, and built Fatehpur Sikri with the Ibadat Khana.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Tax",
+                  "Abolished Jizya",
+                  "Removed special tax on non-Muslims"
+                ],
+                [
+                  "Military",
+                  "Mansabdari System",
+                  "Rank-based salary and troop requirements for officials"
+                ],
+                [
+                  "Architecture",
+                  "Fatehpur Sikri",
+                  "Capital city with Ibadat Khana for religious debates"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "",
+                "Reform",
+                "Details"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Monuments",
+          "intro": "UNESCO World Heritage Sites built by Delhi Sultanate and Mughal rulers, showcasing outstanding historical value.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Qutub Minar",
+                  "value": "Started by Qutb-ud-din Aibak, finished by Iltutmish (Slave Dynasty)"
+                },
+                {
+                  "label": "Red Fort",
+                  "value": "Built by Shah Jahan in Agra"
+                },
+                {
+                  "label": "Taj Mahal",
+                  "value": "Tomb for Mumtaz Mahal, built by Shah Jahan"
+                },
+                {
+                  "label": "Buland Darwaza",
+                  "value": "Gateway at Fatehpur Sikri, built by Akbar to celebrate victory over Gujarat"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "Which ruler started the Slave dynasty?",
+          "back": "Qutubuddin Aibak."
+        },
+        {
+          "front": "Which Sultan introduced the 'Dagh' and 'Chehra' systems?",
+          "back": "Alauddin Khilji."
+        },
+        {
+          "front": "Who attempted to introduce a token currency in the Tughlaq dynasty?",
+          "back": "Muhammad bin Tughlaq."
+        },
+        {
+          "front": "What was the name of the religion created by Akbar?",
+          "back": "Din-i-Ilahi."
+        },
+        {
+          "front": "Which Mughal emperor was famous for his 'Chain of Justice'?",
+          "back": "Jahangir."
+        },
+        {
+          "front": "What was the Mansabdari system introduced by Akbar?",
+          "back": "A ranking system for military officers and administrators."
+        },
+        {
+          "front": "Who finished the construction of the Qutub Minar?",
+          "back": "Iltutmish."
+        },
+        {
+          "front": "Why was the Buland Darwaza built by Akbar?",
+          "back": "To celebrate his victory over Gujarat."
+        },
+        {
+          "front": "Who founded the Mughal Empire in 1526?",
+          "back": "Babur."
+        },
+        {
+          "front": "Which Mughal emperor is known for the Golden Age of Architecture?",
+          "back": "Shah Jahan."
+        },
+        {
+          "front": "Founder of the Slave Dynasty?",
+          "back": "Qutubuddin Aibak."
+        },
+        {
+          "front": "Which ruler was called \"Lakh Baksh\"?",
+          "back": "Qutubuddin Aibak."
+        },
+        {
+          "front": "Who introduced the \"Market Control\" system?",
+          "back": "Alauddin Khilji."
+        },
+        {
+          "front": "Mughal king called \"Zinda Pir\"?",
+          "back": "Aurangzeb."
+        },
+        {
+          "front": "Battle of Panipat 1st year?",
+          "back": "1526 (Babur vs Ibrahim Lodi)."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

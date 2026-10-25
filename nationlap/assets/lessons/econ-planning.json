@@ -1,0 +1,151 @@
+{
+  "zoneId": "econ-planning",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "UPSC Economy: Planning & NITI Aayog",
+      "intro": "Today we study the 'Vision of the State'. From the Soviet-inspired 5-Year Plans to the cooperative federalism of NITI Aayog, India's planning approach has evolved. We study the transition from a 'Command Economy' to a 'Market Economy'. For UPSC, focus on the 'Differences between Planning Commission and NITI Aayog' and the 'Strategy of the 12th 5-Year Plan'. Let's master the administrative side of economy today.",
+      "pages": [
+        {
+          "type": "facts",
+          "title": "Era of Five-Year Plans (1951–2017)",
+          "intro": "The Era of Five-Year Plans (1951–2017) refers to a series of national economic plans implemented by the government of India, each lasting five years, to guide the country's development. The very First Five-Year Plan (1951–1956) was based on the Harrod-Domar model, which is an economic theory that says growth depends on how much a country saves and invests, and this plan focused mainly on improving agriculture to address food shortages. The Second Five-Year Plan (1956–1961) used the Mahalanobis model, named after the statistician Prasanta Chandra Mahalanobis, which emphasized building heavy industries like steel and machinery to make India self-reliant. The Twelfth and final Five-Year Plan (2012–2017) had the goal of achieving faster, sustainable, and more inclusive growth, meaning it aimed to increase the economy's speed, protect the environment for the long term, and ensure that the benefits of growth reach all sections of society, especially the poor. In total, there were twelve such plans covering from 1951 to 2017, after which India replaced the Five-Year Plans with a new approach called the National Institution for Transforming India (N",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "1st",
+                  "value": "Harrod-Domar (Agri)"
+                },
+                {
+                  "label": "2nd",
+                  "value": "Mahalanobis (Heavy Industry)"
+                },
+                {
+                  "label": "12th (Final)",
+                  "value": "Faster, Sustainable, and more Inclusive growth"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Planning Commission (1950–2014)",
+          "intro": "The Planning Commission was an advisory body, meaning it could only suggest ideas and did not have the power to make laws. It was created in 1950 and ended in 2014. Its main job was centralized planning, which means the central government in Delhi decided what the whole country should focus on, like building roads or increasing food production. The Commission also allocated funds to states, which means it decided how much money each state government would receive from the central budget for these national plans. This system used a \"top-down\" approach, where decisions were made at the top (the central government) and then passed down to the states, rather than asking states what they needed first.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "NITI Aayog (Jan 1, 2015)",
+          "intro": "NITI Aayog, which stands for the National Institution for Transforming India, was established on January 1, 2015, to replace the old Planning Commission. It is a think-tank, meaning it is a group of experts that advises the government on policies and long-term plans, but it does not have the power to give money to states. Its main focus is on \"Cooperative Federalism,\" which means the central government and state governments work together as equal partners, and a \"Bottom-up\" approach, where plans are made based on ideas and needs from local villages and districts rather than being forced from the top. Unlike the Planning Commission, NITI Aayog cannot allocate funds to states; its role is purely to provide advice, set goals, and help coordinate between different government departments.",
+          "blocks": []
+        },
+        {
+          "type": "facts",
+          "title": "Structure of NITI",
+          "intro": "NITI stands for National Institution for Transforming India, which is a policy think tank created by the Indian government to help plan and coordinate development work. The Chairman of NITI is the Prime Minister (PM) of India, who is the head of the government. The Vice-Chairman is a person chosen by the PM to assist in running NITI's daily activities. The Chief",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Chairman",
+                  "PM"
+                ],
+                [
+                  "Vice-Chairman",
+                  "Appointed by PM"
+                ],
+                [
+                  "CEO",
+                  "Appointed by PM"
+                ],
+                [
+                  "Governing Council",
+                  "PM + CMs of all states + LGs of UTs"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Item",
+                "Exam fact"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Key Reports/Indexes",
+          "intro": "The SDG India Index measures how well Indian states are progressing toward the Sustainable Development Goals (SDGs), which are global targets for areas like health and education. The Composite Water Management Index ranks states on how effectively they manage their water resources. The School Education Quality Index evaluates the quality of school education across states based on factors like learning outcomes and infrastructure. The Innovation Index assesses the level of innovation in each state, looking at factors such as research and technology. These indexes provide scores and rankings to compare state performance and highlight areas that need improvement.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "Which economic model was the basis for India's First Five-Year Plan?",
+          "back": "The Harrod-Domar model, which focused on agriculture."
+        },
+        {
+          "front": "What was the primary focus of the Second Five-Year Plan?",
+          "back": "The Mahalanobis model, which emphasized heavy industry."
+        },
+        {
+          "front": "What was the goal of the 12th and final Five-Year Plan?",
+          "back": "Achieving faster, sustainable, and more inclusive growth."
+        },
+        {
+          "front": "What was the planning approach used by the Planning Commission?",
+          "back": "A \"top-down\" approach where decisions were made by the central government."
+        },
+        {
+          "front": "Did the Planning Commission have the power to allocate funds to states?",
+          "back": "Yes, it allocated funds to states."
+        },
+        {
+          "front": "What is the primary role of NITI Aayog?",
+          "back": "It acts as a think-tank for the government."
+        },
+        {
+          "front": "What is the core focus of NITI Aayog regarding federal structure?",
+          "back": "It focuses on \"Cooperative Federalism\" and a \"Bottom-up\" approach."
+        },
+        {
+          "front": "Does NITI Aayog have the power to allocate funds to states?",
+          "back": "No, it has no fund allocation power."
+        },
+        {
+          "front": "Who serves as the Chairman of NITI Aayog?",
+          "back": "The Prime Minister (PM) of India."
+        },
+        {
+          "front": "Who are the members of the NITI Aayog Governing Council?",
+          "back": "The Prime Minister, Chief Ministers of all states, and Lieutenant Governors of Union Territories."
+        },
+        {
+          "front": "When was NITI Aayog established?",
+          "back": "January 1, 2015."
+        },
+        {
+          "front": "Who is the Chairman of NITI Aayog?",
+          "back": "The Prime Minister."
+        },
+        {
+          "front": "Mahalanobis model was for which plan?",
+          "back": "2nd Five-Year Plan."
+        },
+        {
+          "front": "Planning Commission vs NITI Aayog?",
+          "back": "PC : Top-down, fund allocation. NITI : Bottom-up, think-tank."
+        },
+        {
+          "front": "Slogan of 12th FYP?",
+          "back": "Faster, Sustainable, and more Inclusive growth."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

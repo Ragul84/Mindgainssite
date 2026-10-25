@@ -1,0 +1,145 @@
+{
+  "zoneId": "polity-centre-state",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "Centre-State Relations: Legislative, Administrative & Financial",
+      "intro": "India is a 'Union of States' with a federal structure that leans heavily toward a strong Centre—often called 'Quasi-federal'. Today we explore Part XI and XII of the Constitution, which define the complex power-sharing between the Union and the States. From who can make laws on 'Residual' subjects to how tax revenue is distributed by the Finance Commission, these relations are the friction points of Indian politics. For a UPSC aspirant, mastering the Sarkaria and Punchhi Commission recommendations is the key to answering Mains questions on federalism.",
+      "pages": [
+        {
+          "type": "formula",
+          "title": "Legislative Relations (Art 245–255)",
+          "intro": "Legislative Relations (Articles 245 to 255) The Constitution divides law-making power between the Parliament (the national legislature) and State Legislatures (the law-making bodies of each state). Parliament can make laws for the entire country, while a State Legislature can only make laws for its own state. Article 248 gives Parliament the \"residuary powers,\" meaning any power to make a law on a subject not listed in any of the three lists (Union List, State List, or Concurrent List) belongs only to Parliament. Under Article 249, Parliament can make a law on a subject normally reserved for the State List if the Rajya Sabha (the upper house of Parliament) passes a resolution saying it is necessary in the national interest. Article 250 allows Parliament to legislate on State List subjects during a National Emergency (a period of grave threat to the country's security). Finally, Article 254 states that if both Parliament and a State Legislature make a law on the same subject in the Concurrent List (where both can legislate), the law made by Parliament will win if there is a conflict.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Art 248",
+                  "Residuary powers belong to Parliament"
+                ],
+                [
+                  "Art 249",
+                  "Parliament can legislate on State List in national interest (requires RS resolution)"
+                ],
+                [
+                  "Art 250",
+                  "Parliament legislates on State List during National Emergency"
+                ],
+                [
+                  "Art 254",
+                  "In Concurrent List conflict, Central law prevails"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Item",
+                "Exam fact"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "timeline",
+          "title": "Administrative Relations (Art 256–263)",
+          "intro": "Administrative Relations (Art 256–263) are the rules in the Indian Constitution that explain how the central government (called the Union) and the state governments work together. Article 256 says that the executive power of a state, which means the power to run the state government and enforce its laws, must be used in a way that follows all laws made by the Union Parliament. Article 257 allows the Union to give specific orders, called directions, to a state government, for example to make sure that railways built in that state are protected from damage. Article 262 gives the Union Parliament the power to set up a special court or tribunal to solve disputes about water that flows between two or more states, like a river that crosses state borders. Article 263 lets the President of India create a group called the Inter-State Council, which was first set up based on the advice of the Sarkaria Commission, to help different states and the Union discuss and solve common problems.",
+          "blocks": [
+            {
+              "type": "timeline",
+              "items": [
+                {
+                  "label": "Art 257",
+                  "value": "Union can give directions to states (e.g., protection of railways)"
+                },
+                {
+                  "label": "Art 262",
+                  "value": "Adjudication of Inter-state water disputes"
+                },
+                {
+                  "label": "Art 263",
+                  "value": "Inter-State Council (established by President on Sarkaria Commission recommendation)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Financial Relations (Art 268–293)",
+          "intro": "Financial Relations (Articles 268 to 293) explain how money is shared between the central government (called the Union) and the state governments. The Goods and Services Tax, or GST, was introduced under Article 246A, which gives both the Union and the states the power to collect taxes on goods and services at the same time. Article 280 sets up a Finance Commission every five years to recommend how the total money collected from certain taxes (called \"net proceeds\") should be divided between the Union and the states. Articles 292 and 293 deal with borrowing: the Union government can borrow money from both inside India and from foreign countries, but a state government can only borrow money from inside India, and if the state already has any unpaid loans from the Union, it must first get the Union's permission before borrowing more.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Commissions on Federalism",
+          "intro": "The Sarkaria Commission, established in 1983, was a committee set up by the central government to examine the relationship between the central government and the state governments in India. It suggested creating an Inter-State Council, which is a body where the central and state leaders discuss issues, and also said that a Governor, who is the central government's representative in a state, should be a non-political figure, meaning they should not be connected to any political party. The Punchhi Commission, established in 2007, was another committee that looked at the same central-state relationship. It suggested a \"Localised Emergency,\" which means allowing a state government to declare an emergency in a small part of the state without needing the central government's approval, and also recommended that Governors should have a fixed tenure, or a set period of time in office, so they cannot be removed at any time for political reasons. The Administrative Reforms Commission, or ARC, is a separate committee set up by the government to recommend changes in how the entire government administration works, not just federalism.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "Which article grants residuary powers to the Parliament?",
+          "back": "Article 248."
+        },
+        {
+          "front": "Under which article can Parliament legislate on the State List in the national interest?",
+          "back": "Article 249, provided the Rajya Sabha passes a resolution."
+        },
+        {
+          "front": "What happens if there is a conflict between Central and State laws in the Concurrent List?",
+          "back": "The law made by Parliament prevails."
+        },
+        {
+          "front": "Which article allows the Union to give directions to states for protecting railways?",
+          "back": "Article 257."
+        },
+        {
+          "front": "Which article provides for the adjudication of inter-state water disputes?",
+          "back": "Article 262."
+        },
+        {
+          "front": "Which article authorizes the President to establish an Inter-State Council?",
+          "back": "Article 263."
+        },
+        {
+          "front": "Which article introduced the GST, granting concurrent taxation powers to the Union and States?",
+          "back": "Article 246A."
+        },
+        {
+          "front": "How often is the Finance Commission set up to recommend tax distribution?",
+          "back": "Every five years."
+        },
+        {
+          "front": "What is the limitation on a state government's borrowing power compared to the Union?",
+          "back": "States can only borrow internally and require Union permission if they have outstanding debt."
+        },
+        {
+          "front": "What key recommendation did the Punchhi Commission make regarding Governors?",
+          "back": "It recommended that Governors should have a fixed tenure."
+        },
+        {
+          "front": "What is \"Residuary Power\"? (Art 248)",
+          "back": "The power to make laws on any subject not mentioned in the Union, State, or Concurrent lists. In India, this power belongs EXCLUSIVELY to the Parliament (Centre). In USA, it belongs to States."
+        },
+        {
+          "front": "Art 249—how can Parliament legislate on a State subject?",
+          "back": "If the Rajya Sabha passes a resolution supported by 2/3rd of members present and voting, declaring that it is in the \"national interest\" for Parliament to do so. Such a law lasts for 1 year."
+        },
+        {
+          "front": "Inter-State Council—which Article and who chairs?",
+          "back": "Article 263. It is a constitutional body. It is chaired by the Prime Minister. Members include CMs of all states and administrators of UTs."
+        },
+        {
+          "front": "Finance Commission—Article and Tenure?",
+          "back": "Article 280. It is a quasi-judicial body constituted by the President every 5 years (or earlier). It recommends tax devolution between Centre and States."
+        },
+        {
+          "front": "Can a State borrow from foreign markets?",
+          "back": "NO. Under Article 293, a State can only borrow within the territory of India. Only the Union Govt (Art 292) can borrow from international sources."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

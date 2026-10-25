@@ -1,0 +1,142 @@
+{
+  "zoneId": "history-mughal",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "UPSC History: The Mughal Empire — Consolidation & Zenith",
+      "intro": "Today we study the 'Great Mughals'. From Babur's arrival in 1526 to the vast expansion under Aurangzeb, the Mughals defined the aesthetics, administration, and political map of India for 200 years. We focus on Akbar's 'Mansabdari' system and his policy of 'Sulh-i-kul' (Universal Peace). For UPSC, the transition from 'Mughal Rajput' cooperation to conflict, and the evolution of architecture (from Humayun's Tomb to the Taj Mahal) is essential. This is the heart of Medieval History.",
+      "pages": [
+        {
+          "type": "timeline",
+          "title": "The Great Mughals",
+          "intro": "The Great Mughals were the rulers of the Mughal Empire in India, starting with Babur, who founded the empire by winning the First Battle of Panipat in 1526. His son Humayun lost the empire to Sher Shah Suri, who is famous for building the Grand Trunk Road, but Humayun later regained it. Akbar, the third emperor, is considered the real consolidator of the empire because he introduced the Mansabdari system, which was a way to organize military and administrative ranks, and created a new religion called Din-i-Ilahi to promote unity. Jahangir, Akbar's son, is known for hanging a Chain of Justice outside his palace so people could directly seek his help, and Mughal painting reached its peak under his rule. Shah Jahan, Jahangir's son, led the Golden Age of Architecture by building the Taj Mahal and other grand structures. Aurangzeb, the last great Mughal, expanded the empire to its largest size but enforced strict religious orthodoxy, which caused many rebellions.",
+          "blocks": [
+            {
+              "type": "timeline",
+              "items": [
+                {
+                  "label": "Babur",
+                  "value": "Founded (1526, Panipat I)"
+                },
+                {
+                  "label": "Humayun",
+                  "value": "Exiled by Sher Shah Suri (GT Road founder)"
+                },
+                {
+                  "label": "Akbar",
+                  "value": "Real consolidator, Mansabdari, Din-i-Ilahi"
+                },
+                {
+                  "label": "Jahangir",
+                  "value": "Chain of Justice, Painting peak"
+                },
+                {
+                  "label": "Shah Jahan",
+                  "value": "Golden Age of Architecture"
+                },
+                {
+                  "label": "Aurangzeb",
+                  "value": "Maximum expansion, religious orthodoxy"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Mansabdari System",
+          "intro": "The Mansabdari System was the administrative and military framework of the Mughal Empire, functioning as a rank-based hierarchy for officials and commanders. Every officer, called a Mansabdar, was given two numerical ranks: Zat and Sawar. Zat was the personal rank of the Mansabdar, which determined his salary and status in the imperial court. Sawar was the rank that specified the number of cavalrymen (horsemen with horses and equipment) the Mansabdar was required to recruit, train, and maintain for the Mughal army. A key feature was that these ranks were not hereditary, meaning the position and salary did not automatically pass to a son or heir after the Mansabdar's death. This system served as the backbone of Mughal military and civil administration, allowing the emperor to control his officers and maintain a large, loyal army.",
+          "blocks": [
+            {
+              "text": "Ranks were not hereditary.",
+              "type": "trap"
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Land Revenue: Zabti & Dahshala",
+          "intro": "Raja Todar Mal, who was the finance minister under Emperor Akbar, introduced a land revenue system called the Zabti system, also known as the Dahshala system. In this system, the land was carefully measured and the tax was fixed based on the average crop yield of the previous ten years. The land was divided into four categories: Polaj meant land that was cultivated every year without a break; Parauti meant land that was left fallow for one to two years to regain fertility; Chachar meant land that was left fallow for three to four years; and Banjar meant land that was left uncultivated for five years or more. Each category had a different tax rate, with Polaj being the most productive and Banjar the least. This system helped create a fair and predictable tax for farmers based on the land's actual productivity.",
+          "blocks": []
+        },
+        {
+          "type": "timeline",
+          "title": "Religious Policy",
+          "intro": "During Akbar's rule, he built the Ibadat Khana, which was a meeting hall for discussing different religions, and issued the Mazhar, a decree that made him the final authority on religious questions. He also followed the policy of Sulh-i-Kul, meaning universal peace and tolerance towards all religions. As part of this policy, Akbar abolished the Jizya, which was a tax on non-Muslims, and the Pilgrimage tax, which was a tax on Hindus visiting holy sites. In contrast, Aurangzeb re-imposed the Jizya tax on non-Muslims and ordered the destruction of some Hindu temples, which led to rebellions from groups like the Marathas, Sikhs, and Rajputs.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Mughal Architecture",
+          "intro": "Mughal Architecture refers to the building style developed by the Mughal Empire in India from the 1500s to the 1700s. A key feature is Pietra Dura, which is a technique of inlaying cut and polished precious stones, like marble and jade, into a stone surface to create decorative patterns. Another feature is the Charbagh, a formal garden layout divided into four equal parts by walkways or water channels, symbolizing the four rivers of Paradise in Islamic tradition. The Double Dome is a structural technique where an outer dome sits over an inner dome, creating a tall, elegant profile while keeping the interior ceiling low and cool. Famous examples include the Taj Mahal in Agra, a white marble mausoleum built by Emperor Shah Jahan; the Red Fort in Delhi, a massive red sandstone fortress that served as the Mughal capital; the Jama Masjid in Delhi, one of the largest mosques in India; and Fatehpur Sikri, a former capital city that contains the Buland Darwaza, a grand 54-meter-high gateway built to celebrate a military victory.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "Who founded the Mughal Empire in 1526?",
+          "back": "Babur founded the Mughal Empire by winning the First Battle of Panipat in 1526."
+        },
+        {
+          "front": "What were the two numerical ranks assigned to a Mansabdar?",
+          "back": "Every Mansabdar was assigned a Zat rank (personal rank/salary) and a Sawar rank (number of cavalrymen to maintain)."
+        },
+        {
+          "front": "Were Mansabdari ranks hereditary?",
+          "back": "No, the ranks were not hereditary, meaning they did not automatically pass to an heir upon the death of the Mansabdar."
+        },
+        {
+          "front": "Who introduced the Dahshala land revenue system?",
+          "back": "Raja Todar Mal, the finance minister under Emperor Akbar, introduced the Dahshala system."
+        },
+        {
+          "front": "In the Dahshala system, what was the classification for land left uncultivated for five years or more?",
+          "back": "Land left uncultivated for five years or more was classified as Banjar."
+        },
+        {
+          "front": "What was the purpose of Akbar's Ibadat Khana?",
+          "back": "The Ibadat Khana was a meeting hall built by Akbar for discussing different religions."
+        },
+        {
+          "front": "What policy did Akbar follow to promote universal peace and tolerance?",
+          "back": "Akbar followed the policy of Sulh-i-Kul, which means universal peace."
+        },
+        {
+          "front": "Which Mughal emperor re-imposed the Jizya tax on non-Muslims?",
+          "back": "Aurangzeb re-imposed the Jizya tax on non-Muslims."
+        },
+        {
+          "front": "What is the architectural technique of inlaying precious stones into stone surfaces called?",
+          "back": "This technique is known as Pietra Dura."
+        },
+        {
+          "front": "What is the formal garden layout divided into four equal parts called?",
+          "back": "This garden layout is known as Charbagh."
+        },
+        {
+          "front": "Who introduced the \"Mansabdari\" system?",
+          "back": "Akbar."
+        },
+        {
+          "front": "What is \"Zat\" and \"Sawar\"?",
+          "back": "Zat: Personal status/salary. Sawar: Military responsibility (number of horses)."
+        },
+        {
+          "front": "Who was the architect of the Taj Mahal?",
+          "back": "Ustad Ahmad Lahauri."
+        },
+        {
+          "front": "What is \"Sulh-i-Kul\"?",
+          "back": "Akbar's policy of \"Universal Peace\" and religious tolerance."
+        },
+        {
+          "front": "Who wrote \"Ain-i-Akbari\"?",
+          "back": "Abul Fazl."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

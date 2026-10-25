@@ -1,0 +1,347 @@
+{
+  "zoneId": "polity-amendment",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "Constitutional Amendments: Art 368 & Basic Structure",
+      "intro": "Today we study the 'Living nature' of the Constitution—Article 368 and the 'Basic Structure Doctrine'. A constitution that cannot change will break, but a constitution that changes too easily can be destroyed. Article 368 provides the procedure for amendment, balancing flexibility and rigidity. However, the most profound development in Indian Law was the 1973 Kesavananda Bharati judgment, where the Supreme Court ruled that while Parliament can amend the Constitution, it cannot touch its 'Basic Structure'. This doctrine is the ultimate check on absolute power.",
+      "pages": [
+        {
+          "type": "formula",
+          "title": "Procedure for Amendment (Art 368)",
+          "intro": "The process to change the Constitution is written in Article 368, which says that an amendment bill can only be started in the two houses of Parliament (Lok Sabha and Rajya Sabha), not in state assemblies. Any Member of Parliament, either a minister or a private member, can introduce the bill, and no permission from the President is needed before introducing it. Both houses must pass the bill separately by a special majority, which means at least two-thirds of the members present and voting, and also more than half of the total membership of each house; unlike ordinary bills, a joint sitting of both houses is not allowed if they disagree. If the amendment affects the federal structure of the Constitution, such as the powers of states or the Supreme Court, then after Parliament passes it, at least half of the state legislatures must also approve it by a simple majority (more than half of the members present and voting). Finally, the President has no choice to refuse; after the 24th Amendment, the President must give assent to the bill, turning it into a constitutional amendment.",
+          "blocks": [
+            {
+              "text": "Initiated ONLY in Parliament (not States).",
+              "type": "trap"
+            }
+          ]
+        },
+        {
+          "type": "facts",
+          "title": "Types of Amendments",
+          "intro": "The Indian Constitution can be changed in three ways. The first way is by a simple majority, which means more than half of the members present and voting in each house of Parliament, and this method is used for things like creating new states, deciding salaries for officials, and making rules for how Parliament runs; importantly, this type of amendment does not use Article 368 (the special article that explains the formal amendment process). The second way is by a special majority, which requires a majority of the total members of each house and at least two-thirds of the members present and voting, and this method is used to change Fundamental Rights (FRs - basic rights like freedom of speech) and Directive Principles of State Policy (DPSPs - guidelines for the government) under Article 368 itself. The third way is by a special majority plus ratification by at least half of the state legislatures, which is needed for changes that affect the federal structure, such as the election of the President, the powers of the Supreme Court and High Courts, the distribution of powers between the Union and states listed in the Seventh Schedule (7th Sch), and even Article 368 itself.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "By Simple Majority (not under Art 368)",
+                  "Admission of states, salaries, rules of procedure"
+                ],
+                [
+                  "By Special Majority (Art 368)",
+                  "FRs, DPSPs, and others"
+                ],
+                [
+                  "By Special Majority + State Ratification (Art 368)",
+                  "Federal features like election of President, Supreme Court/High Court, Distribution of powers (7th Sch), Art 368 itself"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Item",
+                "Exam fact"
+              ]
+            },
+            {
+              "text": "By Simple Majority (not under Art 368): Admission of states, salaries, rules of procedure.",
+              "type": "trap"
+            }
+          ]
+        },
+        {
+          "type": "facts",
+          "title": "Evolution of Basic Structure",
+          "intro": "The Basic Structure Doctrine is a legal rule created by the Supreme Court of India to protect the core principles of the Constitution. In the Shankari Prasad case of 1951, the Supreme Court said that Parliament has the power to change any part of the Constitution, including Fundamental Rights (FR), which are the basic rights guaranteed to citizens, like the right to equality. Then, in the Golak Nath case of 1967, the Court reversed this and ruled that Parliament cannot change Fundamental Rights at all. Finally, in the Kesavananda Bharati case of 1973, a special 13-judge bench, the largest in Indian history, decided that Parliament can amend Fundamental Rights, but it cannot destroy or alter the \"Basic Structure\" of the Constitution. The Basic Structure includes essential features like democracy, secularism, and the rule of law, which the Court said cannot be removed even by a constitutional amendment. This case created the Basic Structure Doctrine, which remains the most important check on Parliament's power to change the Constitution.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Shankari Prasad (1951)",
+                  "Parliament can amend everything"
+                ],
+                [
+                  "Golak Nath (1967)",
+                  "Parliament CANNOT amend FRs"
+                ],
+                [
+                  "Kesavananda Bharati (1973)",
+                  "Parliament can amend FRs BUT cannot alter \"Basic Structure\""
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Item",
+                "Exam fact"
+              ]
+            },
+            {
+              "text": "Golak Nath (1967): Parliament CANNOT amend FRs.",
+              "type": "trap"
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Elements of Basic Structure",
+          "intro": "The Basic Structure is a legal doctrine from the Kesavananda Bharati case that protects certain core features of India's Constitution from being destroyed by any constitutional amendment. These features include the Supremacy of the Constitution meaning the Constitution is the highest law, a Republican form where the head of state (the President) is elected instead of a hereditary king, and a Democratic form where citizens elect their government through voting. Secularism means the state treats all religions equally and does not favor any one religion. Separation of Powers means the legislature (Parliament), executive (government), and judiciary (courts) each have separate roles and check each other. Federalism divides power between the central government and state governments. Other elements are Unity and Integrity of India, Judicial Review (courts can cancel any law that violates the Constitution), Parliamentary System (the Prime Minister and Cabinet are members of and answerable to Parliament), Rule of Law (every person and authority is bound by the law), Harmony between Fundamental Rights (FR) which are basic rights of individuals and Directive Principles of State Policy (DPSP) which are goals for the government to follow, and Free and Fair Elections meaning every citizen can vote without pressure or fraud.",
+          "blocks": []
+        },
+        {
+          "type": "facts",
+          "title": "Key Amendments Drill",
+          "intro": "The 24th Amendment, passed in 1971, made it compulsory for the President of India to give his or her approval to any bill that seeks to change the Constitution, meaning the President can no longer refuse to sign an amendment bill. The 42nd Amendment, from 1976, added the words Socialist, Secular, and Integrity to the Preamble of the Constitution, and it also introduced a list of Fundamental Duties (FDs), which are ten basic obligations that every citizen of India must follow. The 44th Amendment, passed in 1978, removed the Right to Property from the list of Fundamental Rights (FR), which are the basic human freedoms guaranteed to all citizens, and made it a simple legal right instead. The 52nd Amendment, from 1985, introduced the Anti-Defection Law, which stops elected members of Parliament or State Legislatures from switching their political party without losing their seat. The 61st Amendment, passed in 1988, lowered the legal voting age from 21 years to 18 years for elections to the Lok Sabha and State Legislative Assemblies. The 73rd and 74th Amendments, both from 1992, gave constitutional status to local self-governments, with the 73rd Amendment covering rural local bodies called Panchayats and the 74th Amendment covering urban local bodies called Municipalities.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "24th (1971)",
+                  "President must sign Amendment bills"
+                ],
+                [
+                  "42nd (1976)",
+                  "Socialist/Secular/Integrity, FDs"
+                ],
+                [
+                  "44th (1978)",
+                  "Property right removed"
+                ],
+                [
+                  "52nd (1985)",
+                  "Anti-defection"
+                ],
+                [
+                  "61st (1988)",
+                  "18 yrs voting"
+                ],
+                [
+                  "73rd/74th (1992)",
+                  "Local bodies"
+                ],
+                [
+                  "86th (2002)",
+                  "RTE"
+                ],
+                [
+                  "101st (2016)",
+                  "GST"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Item",
+                "Exam fact"
+              ]
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "Can a constitutional amendment bill be initiated in state assemblies?",
+          "back": "No, it can only be initiated in Parliament."
+        },
+        {
+          "front": "Is a joint sitting of Parliament allowed for constitutional amendment bills?",
+          "back": "No, a joint sitting is not allowed if the houses disagree."
+        },
+        {
+          "front": "Which amendment made it mandatory for the President to give assent to constitutional amendment bills?",
+          "back": "The 24th Amendment (1971)."
+        },
+        {
+          "front": "Which type of amendment does not fall under the procedure of Article 368?",
+          "back": "Amendments by simple majority, such as admission of states, salaries, and rules of procedure."
+        },
+        {
+          "front": "What majority is required to amend Fundamental Rights and DPSPs under Article 368?",
+          "back": "A special majority."
+        },
+        {
+          "front": "In which case did the Supreme Court rule that Parliament cannot change Fundamental Rights at all?",
+          "back": "The Golak Nath case (1967)."
+        },
+        {
+          "front": "What was the landmark ruling in the Kesavananda Bharati case (1973)?",
+          "back": "Parliament can amend Fundamental Rights but cannot alter the 'Basic Structure' of the Constitution."
+        },
+        {
+          "front": "Which amendment added the words 'Socialist', 'Secular', and 'Integrity' to the Preamble?",
+          "back": "The 42nd Amendment (1976)."
+        },
+        {
+          "front": "Which amendment removed the Right to Property from the list of Fundamental Rights?",
+          "back": "The 44th Amendment (1978)."
+        },
+        {
+          "front": "Which amendment lowered the voting age from 21 to 18 years?",
+          "back": "The 61st Amendment (1988)."
+        },
+        {
+          "front": "Can a \"Joint Sitting\" be held for an Amendment Bill?",
+          "back": "NO. Article 368 requires that each House must pass the amendment bill separately by a special majority. If one House rejects it, the bill fails."
+        },
+        {
+          "front": "What is the \"Basic Structure Doctrine\"?",
+          "back": "A judicial innovation from the Kesavananda Bharati case (1973). It says that certain features of the Constitution (like democracy, secularism, judicial review) are so fundamental that they cannot be removed even by a constitutional amendment."
+        },
+        {
+          "front": "Which Amendment made it compulsory for the President to give assent to an Amendment Bill?",
+          "back": "24th Constitutional Amendment Act (1971)."
+        },
+        {
+          "front": "Is \"Judicial Review\" part of the Basic Structure?",
+          "back": "YES. In Minerva Mills (1980) and L. Chandra Kumar (1997), the SC reaffirmed that Judicial Review is a basic feature."
+        },
+        {
+          "front": "Majority required for a state to ratify an amendment?",
+          "back": "SIMPLE MAJORITY. Even if the Union passes it by Special Majority, the states only need a simple majority of members present and voting to ratify."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    },
+    {
+      "title": "Fundamental Duties & The Amendment Map",
+      "intro": "Today we cover the 'Citizen's Responsibilities'—the Fundamental Duties (Part IV-A, Art 51A). Interestingly, the original Constitution of 1949 did not have Fundamental Duties; they were added during the Emergency on the recommendations of the Swaran Singh Committee. We also dive into the 'Amendment Map' of the Constitution. For a UPSC aspirant, knowing which Amendment did what is not optional—it is the difference between a Ranker and an Aspirant. We will map out the most critical amendments from the 1st to the 106th that changed the course of Indian history.",
+      "pages": [
+        {
+          "type": "concept",
+          "title": "Fundamental Duties (Art 51A)",
+          "intro": "Fundamental Duties are a set of responsibilities that every citizen of India is expected to follow, and they are listed in Article 51A of the Constitution. This list was added by the 42nd Amendment in the year 1976, based on the recommendation of the Swaran Singh Committee, and it originally contained ten duties. An eleventh duty, which states that a parent or guardian must provide opportunities for education to their child between the ages of six and fourteen, was added later by the 86th Amendment in 2002. The idea of these duties was borrowed from the constitution of the USSR, which was the Soviet Union. These duties are non-justiciable, meaning that a citizen cannot be taken to court for failing to follow them, but courts can use them as a guide when deciding whether a new law is constitutional or not.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "List of Key Duties",
+          "intro": "The List of Key Duties is a set of eleven responsibilities called Fundamental Duties (FDs) that every citizen of India must follow, and they are listed in Part IV-A, Article 51A of the Indian Constitution. These duties include: to abide by the Constitution, which means following the country's highest set of laws; to respect the National Flag and the National Anthem; to cherish and follow the noble ideals that inspired India's freedom struggle; to protect the sovereignty, unity, and integrity of India, meaning the country's independence and wholeness; to defend the country and perform national service when called upon; to promote harmony and a spirit of common brotherhood among all people of India; to value and preserve the rich heritage of India's culture; to protect the natural environment, including forests, lakes, rivers, and wildlife; to develop a scientific temper, which is a habit of thinking logically, and a spirit of humanism, which is concern for others; to safeguard public property, like government buildings and parks, and to avoid violence; and to strive for excellence in all areas of individual and collective activity so that the nation reaches a high level of achievement. In 2002, a new duty was added, which says that every parent or guardian must provide opportunities for education to their child or ward between the ages of six and fourteen.",
+          "blocks": []
+        },
+        {
+          "type": "facts",
+          "title": "The Amendment Map: The Big 10",
+          "intro": "The first amendment in 1951 added the Ninth Schedule, which is a special list of laws that cannot be challenged in court. The seventh amendment in 1956 reorganized the boundaries of states to match language and regional differences. The twenty-fourth amendment in 1971 gave Parliament the power to change any part of the Constitution, including Fundamental Rights (FR), which are basic freedoms like equality and speech. The forty-second amendment in 1976 is called the \"Mini Constitution\"; it added the words Socialist, Secular, and Integrity to the Preamble, and also added Fundamental Duties (FD), which are responsibilities every citizen must follow. The forty-fourth amendment in 1978 removed the right to property from the list of Fundamental Rights (FR) and restored other rights that had been suspended during the Emergency period. The fifty-second amendment in 1985 added the Tenth Schedule to stop legislators from switching parties, which is called the anti-defection law. The sixty-first amendment in 1988 lowered the minimum voting age from 21 years to 18 years. The seventy-third and seventy-fourth amendments in 1992 gave constitutional status to local village councils (Panchayats) and urban local bodies (ULB), which are city governments. The eighty-sixth amendment in 2002 made the right to free and compulsory education (RTE) for children aged 6 to 14 a Fundamental Right (FR).",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "1st (1951)",
+                  "9th Schedule added"
+                ],
+                [
+                  "7th (1956)",
+                  "Reorganization of states"
+                ],
+                [
+                  "24th (1971)",
+                  "Parliament can amend FRs"
+                ],
+                [
+                  "42nd (1976)",
+                  "\"Mini Constitution\", Socialist/Secular/Integrity, FDs added"
+                ],
+                [
+                  "44th (1978)",
+                  "Restored rights after Emergency, Property right removed from FR"
+                ],
+                [
+                  "52nd (1985)",
+                  "Anti-defection (10th Sch)"
+                ],
+                [
+                  "61st (1988)",
+                  "Voting age 21→18"
+                ],
+                [
+                  "73rd/74th (1992)",
+                  "Panchayats/ULB"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Item",
+                "Exam fact"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Procedure for Amendment (Art 368)",
+          "intro": "The procedure to change the Constitution is written in Article 368. An amendment can only be started in Parliament, not in any State Legislature, and the President's prior permission is not needed to introduce the bill. There are three different ways to pass an amendment depending on what part of the Constitution is being changed. For most ordinary matters, the bill needs a simple majority, which means more than half of the members present and voting in each house must agree. For more important changes, a special majority is required, meaning at least two-thirds of the members present and voting, and also a majority of the total membership of each house must approve. For changes that affect federal features, like the powers of states or the Supreme Court, the bill needs that same special majority in Parliament plus ratification by at least half of the state legislatures. Once the bill is passed correctly, the President must give their assent to it, meaning they cannot send it back or refuse it, and this rule was made clear by the 24th Amendment to the Constitution.",
+          "blocks": [
+            {
+              "text": "Initiated ONLY in Parliament (not State Legislatures).",
+              "type": "trap"
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "Which committee recommended the inclusion of Fundamental Duties in the Constitution?",
+          "back": "The Swaran Singh Committee."
+        },
+        {
+          "front": "From which country's constitution was the concept of Fundamental Duties borrowed?",
+          "back": "The USSR (Soviet Union)."
+        },
+        {
+          "front": "Which amendment added the 11th Fundamental Duty regarding education for children aged 6-14?",
+          "back": "The 86th Amendment (2002)."
+        },
+        {
+          "front": "Are Fundamental Duties justiciable in a court of law?",
+          "back": "No, they are non-justiciable, though courts can use them to determine the constitutionality of a law."
+        },
+        {
+          "front": "Which amendment is famously known as the 'Mini Constitution'?",
+          "back": "The 42nd Amendment (1976)."
+        },
+        {
+          "front": "Which amendment lowered the voting age from 21 to 18 years?",
+          "back": "The 61st Amendment (1988)."
+        },
+        {
+          "front": "Which amendment introduced the anti-defection law and the 10th Schedule?",
+          "back": "The 52nd Amendment (1985)."
+        },
+        {
+          "front": "Where can the procedure for amending the Constitution be found?",
+          "back": "Article 368."
+        },
+        {
+          "front": "Can a Constitutional Amendment Bill be initiated in a State Legislature?",
+          "back": "No, it can only be initiated in Parliament."
+        },
+        {
+          "front": "Which amendment gave Parliament the power to change any part of the Constitution, including Fundamental Rights?",
+          "back": "The 24th Amendment (1971)."
+        },
+        {
+          "front": "Were FDs in the original Constitution?",
+          "back": "NO. They were added by the 42nd Amendment in 1976 based on the Swaran Singh Committee recommendation. Only the 11th duty was added later by the 86th Amendment in 2002."
+        },
+        {
+          "front": "Are FDs \"Justiciable\"?",
+          "back": "NO. Similar to DPSPs, Fundamental Duties are non-justiciable. You cannot be punished by a court for not following them, unless there is a specific law made by Parliament (like the Prevention of Insults to National Honour Act)."
+        },
+        {
+          "front": "Which Amendment removed the \"Right to Property\" from FRs?",
+          "back": "44th Amendment (1978). It made it a legal right under Article 300A in Part XII."
+        },
+        {
+          "front": "Which Amendment lowered the voting age to 18?",
+          "back": "61st Amendment (1988, effective 1989)."
+        },
+        {
+          "front": "Can a Constitution Amendment Bill be introduced by a Private Member?",
+          "back": "YES. It can be introduced either by a Minister or a private member and does not require prior permission of the President."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

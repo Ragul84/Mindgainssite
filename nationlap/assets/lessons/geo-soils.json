@@ -1,0 +1,321 @@
+{
+  "zoneId": "geo-soils",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "UPSC Geography: Soils, Vegetation & Wildlife",
+      "intro": "Today we study the 'Green and Brown Layers' of India. India's diverse geography supports a wide range of soil types and forest ecosystems. We explore the ICAR classification of soils and the various forest types from Tropical Evergreen to Himalayan Alpine. For UPSC, focus on 'Soil Salinity', 'Endemic Species', and 'Project Tiger/Elephant' locations. This is the ecological heart of the geography syllabus.",
+      "pages": [
+        {
+          "type": "facts",
+          "title": "Indian Soils (ICAR)",
+          "intro": "Indian Soils (ICAR) means the classification of soil types in India created by the Indian Council of Agricultural Research, which is the government body that studies farming and soil. Alluvial soil covers about 40 percent of India and is the most widespread soil, found mostly in river plains like the Ganga and Brahmaputra, and it is very fertile for growing crops like rice and wheat. Black soil, also called Regur, comes from old lava rock and is best for growing cotton because it holds water well and is found in central India like Maharashtra. Red soil gets its color from a lot of iron, which makes it good for crops like groundnuts, and it is common in southern and eastern parts of India. Laterite soil forms when heavy rain washes away nutrients, a process called leaching, so it is poor for most farming but works well for cashew nuts, and it is found in areas like Kerala and Karnataka. Arid soil is very salty and dry, found in northwest India like Rajasthan, and it needs special care like irrigation to grow any crops.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Alluvial (40%)",
+                  "value": "Most widespread"
+                },
+                {
+                  "label": "Black (Regur)",
+                  "value": "Lava soil, Cotton"
+                },
+                {
+                  "label": "Red",
+                  "value": "Iron rich"
+                },
+                {
+                  "label": "Laterite",
+                  "value": "Leaching, Cashew"
+                },
+                {
+                  "label": "Arid",
+                  "value": "Saline, NW India"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Soil Health Card Scheme",
+          "intro": "The Soil Health Card Scheme is a government program in India that gives each farmer a printed report, called a Soil Health Card, for their own farmland. This card shows the health of the soil by listing the levels of key nutrients, including Nitrogen (N), Phosphorus (P), and Potassium (K), which are the three main nutrients plants need to grow. The scheme recommends that for many crops, the balance of these three nutrients in the soil should be in a ratio of 4:2:1, meaning for every four parts of Nitrogen, there should be two parts of Phosphorus and one part of Potassium. It also tests for micro-nutrients, which are tiny amounts of other elements like Zinc or Iron that plants need in very small quantities to stay healthy. Based on the card's results, the farmer gets advice on how much fertilizer to use and which specific nutrients to add, so they do not waste money or damage the soil by using too much of one type. The goal is to help farmers use the right amount of fertilizer, keep the soil fertile for a long time, and grow better crops.",
+          "blocks": []
+        },
+        {
+          "type": "facts",
+          "title": "Natural Vegetation",
+          "intro": "Natural vegetation refers to plants that grow naturally without human help, and it varies mainly based on rainfall and temperature. Tropical evergreen forests need over 250 centimeters of rain every year and are found in the Western Ghats (WG) and Northeast India (NE India) – they stay green all year because there is no dry season. Tropical deciduous forests, also called monsoon forests, need between 70 and 200 centimeters of rain; they are the most common type in India and include trees like Teak and Sal that lose their leaves in the dry season. Tropical thorn forests grow where rainfall is less than 50 centimeters, mainly in Rajasthan, with small thorny trees and shrubs. Montane forests are found on mountains like the Himalayas, where trees such as Pine and Oak grow at different heights depending on temperature. Mangroves are salt-tolerant trees that grow along coastal mud",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Tropical Evergreen",
+                  "value": ">250cm rain (WG, NE India)"
+                },
+                {
+                  "label": "Tropical Deciduous (Monsoon)",
+                  "value": "Most common, 70-200cm rain (Teak, Sal)"
+                },
+                {
+                  "label": "Tropical Thorn",
+                  "value": "<50cm (Rajasthan)"
+                },
+                {
+                  "label": "Montane",
+                  "value": "Himalayan (Pine, Oak)"
+                },
+                {
+                  "label": "Mangroves",
+                  "value": "Sundarbans, Pichavaram"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Biosphere Reserves (18 in India)",
+          "intro": "There are 18 Biosphere Reserves in India. A Biosphere Reserve is a special area designated to protect important natural habitats while also allowing people to live and use resources sustainably. These reserves are part of the MAB program, which stands for the Man and the Biosphere Programme, a project run by UNESCO (United Nations Educational, Scientific and Cultural Organization) to promote a balanced relationship between people and nature. The very first Biosphere Reserve established in India was the Nilgiris Biosphere Reserve in 1986. Other examples include Panna Biosphere Reserve, Cold Desert Biosphere Reserve, and Agasthyamalai Biosphere Reserve. Out of India's 18 Biosphere Reserves, 12 are part of the UNESCO World Network of Biosphere Reserves, which means they are recognized internationally for their value in conservation and sustainable development.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Wildlife Protection",
+          "intro": "Project Tiger started in 1973 to protect tigers by creating special reserves where they can live safely. Project Elephant began in 1992 with the same goal for elephants. Project Snow Leopard protects the snow leopard, a rare cat found in high mountains. Critical Tiger Habitats are core zones inside tiger reserves where no human activities like farming or roads are allowed, so tigers can breed without disturbance. The Wildlife Protection Act of 1972 is a national law that bans hunting most wild animals and plants, and it creates national parks, wildlife sanctuaries, and rules for owning animals.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "Which soil type is the most widespread in India, covering 40% of the land?",
+          "back": "Alluvial soil."
+        },
+        {
+          "front": "Which soil is known as 'Regur' and is ideal for cotton cultivation?",
+          "back": "Black soil."
+        },
+        {
+          "front": "What is the recommended N-P-K nutrient balance ratio for soil health?",
+          "back": "4:2:1."
+        },
+        {
+          "front": "Which forest type requires over 250cm of annual rainfall?",
+          "back": "Tropical Evergreen forests."
+        },
+        {
+          "front": "Which trees are characteristic of Tropical Deciduous (monsoon) forests?",
+          "back": "Teak and Sal."
+        },
+        {
+          "front": "In which Indian state are Tropical Thorn forests primarily found?",
+          "back": "Rajasthan."
+        },
+        {
+          "front": "What was the first Biosphere Reserve established in India?",
+          "back": "Nilgiris."
+        },
+        {
+          "front": "How many Indian Biosphere Reserves are part of the UNESCO World Network?",
+          "back": "12."
+        },
+        {
+          "front": "In what year was Project Tiger launched?",
+          "back": "1973."
+        },
+        {
+          "front": "Which legislation bans the hunting of most wild animals and plants in India?",
+          "back": "Wildlife Protection Act 1972."
+        },
+        {
+          "front": "Most common forest type in India?",
+          "back": "Tropical Deciduous (Monsoon) Forest."
+        },
+        {
+          "front": "Regur soil is also called?",
+          "back": "Black Soil."
+        },
+        {
+          "front": "Where are Sundari trees found?",
+          "back": "Mangrove/Tidal forests (Sundarbans)."
+        },
+        {
+          "front": "India's 1st Biosphere Reserve?",
+          "back": "Nilgiris (1986)."
+        },
+        {
+          "front": "Soil best for Tea/Coffee?",
+          "back": "Laterite Soil."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    },
+    {
+      "title": "TNPSC Geography: Agriculture & Major Crops in India",
+      "intro": "Today we study the 'Backbone of India'. India is a global leader in agriculture. From the wheat fields of Punjab to the rice bowls of Bengal and the coffee plantations of Karnataka—the scale is immense. We explore the 3 main seasons (Kharif, Rabi, Zaid) and the Green Revolution which made India self-sufficient. For TNPSC, knowing which state leads in which crop (e.g., UP for Sugarcane) and the various agricultural revolutions (White, Blue, Golden) is a high-yield area.",
+      "pages": [
+        {
+          "type": "facts",
+          "title": "Indian Cropping Seasons",
+          "intro": "India has three main cropping seasons, which are specific times of the year when farmers plant and harvest crops based on the weather. The first season is Kharif, which runs from June to September and uses the heavy monsoon rains to grow crops like rice, maize, and cotton. The second season is Rabi, which lasts from October to March and relies on cooler, drier weather for crops such as wheat, mustard, and gram (a type of chickpea). The third season is Zaid, a short period from April to June between the Rabi and Kharif seasons, when farmers grow crops like watermelon and other vegetables in the summer heat.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Kharif",
+                  "value": "June-Sep (Rice, Maize, Cotton)"
+                },
+                {
+                  "label": "Rabi",
+                  "value": "Oct-March (Wheat, Mustard, Gram)"
+                },
+                {
+                  "label": "Zaid",
+                  "value": "April-June (Watermelon, Vegetables)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "facts",
+          "title": "Food Crops",
+          "intro": "Rice is a food crop that needs high temperature and high humidity to grow, and the state that produces the most rice in India is West Bengal. Wheat is a different food crop that is planted in the winter season, which is called a Rabi crop, and the state that produces the most wheat is Uttar Pradesh. Pulses are another type of food crop, which are edible seeds like lentils and beans, and India is the largest producer and consumer of pulses in the world, with the state of Madhya Pradesh being the leading producer.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Rice",
+                  "value": "Leading producer is West Bengal"
+                },
+                {
+                  "label": "Wheat",
+                  "value": "Leading producer is Uttar Pradesh"
+                },
+                {
+                  "label": "Pulses",
+                  "value": "India is the largest producer and consumer (MP is the lead state)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "facts",
+          "title": "Commercial & Plantation Crops",
+          "intro": "Commercial crops are plants grown to be sold for profit rather than for personal use, and plantation crops are a type of commercial crop grown on large estates. For example, sugarcane is a commercial crop, and the state of Uttar Pradesh (UP) produces the most sugarcane in India. Cotton is another commercial crop, and the leading producers are Gujarat and Maharashtra. Jute, often called the Golden Fiber because of its color and value, is mainly grown in West Bengal. Tea is a plantation crop, and the state of Assam is the top producer in India, which is also a major exporter of tea to other countries. Coffee, another plantation crop, is primarily grown in Karnataka.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Sugarcane",
+                  "value": "UP is the leader"
+                },
+                {
+                  "label": "Cotton",
+                  "value": "Gujarat/Maharashtra"
+                },
+                {
+                  "label": "Jute",
+                  "value": "West Bengal (\"Golden Fiber\")"
+                },
+                {
+                  "label": "Tea",
+                  "value": "Assam (India is a major exporter)"
+                },
+                {
+                  "label": "Coffee",
+                  "value": "Karnataka"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Agricultural Revolutions",
+          "intro": "An agricultural revolution is a period of rapid increase in the production of a specific type of food, often achieved through new methods or technologies. The Green Revolution focused on boosting the yield of food grains like wheat and rice. The White Revolution, led by Verghese Kurien, greatly increased milk production in India. The Blue Revolution refers to the growth of the fishing and aquaculture sector. The Golden Revolution involves horticulture, which is the growing of fruits and vegetables, as well as honey production. Other revolutions include the Silver Revolution for eggs and poultry, the Yellow Revolution for oilseeds like mustard and sunflower, and the Round Revolution for potatoes.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Green Revolution (1960s)",
+          "intro": "The Green Revolution was a government-led program in the 1960s that aimed to increase India's food production, especially wheat and rice, to prevent famines. It introduced High-Yielding Variety (HYV) seeds, which are specially developed seeds that produce much more grain per plant than traditional seeds, along with chemical fertilizers and better irrigation systems like canals and tube wells. Dr. M.S. Swaminathan, an Indian agricultural scientist, is called the \"Father of the Green Revolution in India\" because he led the research and planning for this program. The Green Revolution was first implemented in the states of Punjab and Haryana, which had good soil and water resources. As a result, India became self-sufficient in food grain production and no longer had to rely on food imports from other countries.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "Which months constitute the Kharif cropping season?",
+          "back": "June to September."
+        },
+        {
+          "front": "Which state is the leading producer of rice in India?",
+          "back": "West Bengal."
+        },
+        {
+          "front": "Which state is the leading producer of wheat?",
+          "back": "Uttar Pradesh."
+        },
+        {
+          "front": "Which state leads in the production of pulses?",
+          "back": "Madhya Pradesh."
+        },
+        {
+          "front": "Which crop is known as the 'Golden Fiber'?",
+          "back": "Jute."
+        },
+        {
+          "front": "Which state is the top producer of tea in India?",
+          "back": "Assam."
+        },
+        {
+          "front": "In which state is coffee primarily grown?",
+          "back": "Karnataka."
+        },
+        {
+          "front": "Who is known as the 'Father of the Green Revolution in India'?",
+          "back": "Dr. M.S. Swaminathan."
+        },
+        {
+          "front": "Which states were the first to implement the Green Revolution?",
+          "back": "Punjab and Haryana."
+        },
+        {
+          "front": "What does the White Revolution focus on?",
+          "back": "Milk production."
+        },
+        {
+          "front": "Father of Green Revolution in India?",
+          "back": "M.S. Swaminathan."
+        },
+        {
+          "front": "Leading producer of Wheat in India?",
+          "back": "Uttar Pradesh."
+        },
+        {
+          "front": "Leading producer of Rice in India?",
+          "back": "West Bengal."
+        },
+        {
+          "front": "What is the \"Golden Fiber\"?",
+          "back": "Jute."
+        },
+        {
+          "front": "White Revolution is related to?",
+          "back": "Milk (Verghese Kurien)."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "zoneId": "econ-rbi",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "UPSC Economy: Banking & Monetary Policy",
+      "intro": "Today we study the 'Nerves of the Economy'. The banking system and the Reserve Bank of India (RBI) control the flow of money in the nation. We explore the 'Monetary Policy Committee' (MPC) and its tools like Repo, Reverse Repo, and CRR. For UPSC, focus on 'How RBI controls inflation' and the significance of 'NPAs' and 'Insolvency and Bankruptcy Code' (IBC). This is the most practical and frequently tested part of Economy.",
+      "pages": [
+        {
+          "type": "timeline",
+          "title": "Reserve Bank of India (RBI)",
+          "intro": "The Reserve Bank of India, or RBI, is the central bank of India, meaning it is the highest financial authority that controls the country's banking system and money supply. It was established in 1935 based on the recommendations of the Hilton Young Commission, which was a committee set up by the British government to study Indian monetary and banking problems. The RBI has four main functions: it is the sole authority to issue currency notes (except the one rupee note, which is issued by the Ministry of Finance); it acts as the government's bank, meaning it manages the government's accounts and loans; it serves as the bankers' bank, meaning it lends money to and supervises all other banks in the country; and it is the controller of credit, meaning it regulates how much money banks can lend to control inflation and economic growth.",
+          "blocks": []
+        },
+        {
+          "type": "formula",
+          "title": "Monetary Policy Committee (MPC)",
+          "intro": "The Monetary Policy Committee, or MPC, is a group of six members who decide the key interest rate for India's economy. Three members come from the Reserve Bank of India, or RBI, and three come from the Indian government. The committee is led by the Governor of the RBI. The MPC meets four times every year to set the Repo Rate, which is the interest rate at which the RBI lends money to commercial banks. Their main goal is to keep inflation, meaning the general rise in prices, close to a target of 4 percent, with a allowed range of 2 percent above or below that number (so between 2 and 6 percent).",
+          "blocks": []
+        },
+        {
+          "type": "formula",
+          "title": "Quantitative Tools",
+          "intro": "The Reserve Bank of India, or RBI, which is the country's central bank, uses monetary policy tools to control the money supply in the economy. The first tool is the Repo Rate, which is the interest rate at which the RBI lends short-term money to commercial banks. When the Repo Rate is high, borrowing becomes expensive for banks, so they lend less to people and businesses, which reduces spending and controls inflation. The second tool is the Reverse Repo Rate, which is the interest rate the RBI pays to commercial banks when they deposit their extra money with the RBI for a short period. This rate encourages banks to park funds with the RBI, taking money out of circulation and slowing down the economy. The third tool is the Cash Reserve Ratio, often called CRR, which is the percentage of a bank's total deposits that it must keep with the RBI as cash, and this money earns no interest, so a higher CRR reduces the amount banks can lend. Finally, the Statutory Liquidity Ratio, or SLR, is the percentage of deposits that banks must keep with themselves in safe, liquid assets like government bonds or gold, which also limits their ability to give out loans and controls the money supply.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Repo Rate",
+                  "value": "Rate at which RBI lends to banks"
+                },
+                {
+                  "label": "Reverse Repo",
+                  "value": "Rate at which banks park money with RBI"
+                },
+                {
+                  "label": "CRR (Cash Reserve Ratio)",
+                  "value": "% of deposits banks must keep with RBI"
+                },
+                {
+                  "label": "SLR",
+                  "value": "% banks must keep with themselves in liquid assets"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Qualitative Tools",
+          "intro": "Qualitative tools are methods used by a central bank, like the Reserve Bank of India (RBI), to control where and how banks lend money, rather than just how much total money is available. One tool is Moral Suasion, where the central bank persuades or advises banks to lend more to certain sectors, such as agriculture, and less to others, like luxury goods. Another is Margin Requirements, which means the central bank sets the minimum amount of money a borrower must put down from their own pocket for a loan, like requiring a 50% down payment to buy stocks, so that banks lend less for speculative purchases. The third tool is Credit Rationing, where the central bank directly limits the amount of credit or loans that banks can give to specific sectors or purposes, for example capping loans for real estate. These tools are used together to direct credit to priority sectors like small businesses or farming, and away from activities the central bank considers risky or non-essential.",
+          "blocks": []
+        },
+        {
+          "type": "formula",
+          "title": "Non-Performing Assets (NPAs)",
+          "intro": "Non-Performing Assets (NPAs) are loans given by banks where the borrower has stopped paying either the interest or the original loan amount for more than 90 days. For example, if a company takes a loan from a bank and does not make any payment for three months, that loan becomes an NPA. The \"Twin Balance Sheet problem\" refers to a situation where both the bank's balance sheet (its financial statement showing assets and liabilities) and the corporate borrower's balance sheet are under stress at the same time. This happens because the bank has a bad loan (NPA) that reduces its profits, while the company cannot repay its debt, hurting its own financial health. When many companies default, banks have less money to lend to new businesses, which slows down the economy. To fix this, the government and the Reserve Bank of India (RBI) created laws like the Insolvency and Bankruptcy Code (IBC) to help recover bad loans or close failing companies in a structured way.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "Which commission recommended the establishment of the RBI in 1935?",
+          "back": "The Hilton Young Commission."
+        },
+        {
+          "front": "How many members are in the Monetary Policy Committee (MPC)?",
+          "back": "6 members (3 from RBI, 3 from Government)."
+        },
+        {
+          "front": "What is the inflation target set for the MPC?",
+          "back": "4% with a range of +/- 2%."
+        },
+        {
+          "front": "What is the Repo Rate?",
+          "back": "The rate at which the RBI lends to banks."
+        },
+        {
+          "front": "What is the Reverse Repo Rate?",
+          "back": "The rate at which banks park money with the RBI."
+        },
+        {
+          "front": "What is the Cash Reserve Ratio (CRR)?",
+          "back": "The percentage of deposits banks must keep with the RBI."
+        },
+        {
+          "front": "What is the Statutory Liquidity Ratio (SLR)?",
+          "back": "The percentage of deposits banks must keep with themselves in liquid assets."
+        },
+        {
+          "front": "What is the primary purpose of qualitative tools like Moral Suasion and Credit Rationing?",
+          "back": "They are used to direct credit to specific sectors."
+        },
+        {
+          "front": "What defines a Non-Performing Asset (NPA)?",
+          "back": "Loans where interest or principal is overdue for more than 90 days."
+        },
+        {
+          "front": "What is the 'Twin Balance Sheet problem'?",
+          "back": "A situation where there is stress on both banks and corporates."
+        },
+        {
+          "front": "When was RBI established?",
+          "back": "1935."
+        },
+        {
+          "front": "Who heads the MPC?",
+          "back": "RBI Governor."
+        },
+        {
+          "front": "What is \"Repo Rate\"?",
+          "back": "Rate at which RBI lends short-term money to banks."
+        },
+        {
+          "front": "What is \"CRR\"?",
+          "back": "Cash Reserve Ratio (money banks keep with RBI)."
+        },
+        {
+          "front": "What is the inflation target for RBI?",
+          "back": "4% (+/- 2%)."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

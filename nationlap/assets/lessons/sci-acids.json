@@ -1,0 +1,267 @@
+{
+  "zoneId": "sci-acids",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "SSC Science: Chemistry — Acids, Bases & Salts",
+      "intro": "Today we study the 'Chemistry of Reactions'. Acids and Bases are part of our daily life—from the lemon in your tea to the soap you use. In SSC, 'Natural Sources' (e.g., Formic acid in Ants) and 'Common Names' (e.g., Washing Soda) are high-yield. Do you know the pH of milk? Or why antacids are used for acidity? Let's master the reactive world today.",
+      "pages": [
+        {
+          "type": "concept",
+          "title": "Acids",
+          "intro": "Sour-tasting substances with pH < 7 that turn blue litmus red and release H⁺ ions in water.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Taste",
+                  "value": "Sour"
+                },
+                {
+                  "label": "pH range",
+                  "value": "Less than 7"
+                },
+                {
+                  "label": "Litmus test",
+                  "value": "Blue litmus → Red"
+                },
+                {
+                  "label": "Ion released",
+                  "value": "H⁺ (hydrogen ions)"
+                },
+                {
+                  "label": "Strong acid example",
+                  "value": "HCl, H₂SO₄ (King of Chemicals)"
+                },
+                {
+                  "label": "Weak acid example",
+                  "value": "Acetic acid (vinegar)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Bases",
+          "intro": "Bitter, slippery substances with pH > 7 that turn red litmus blue and release OH⁻ ions in water.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Taste",
+                  "value": "Bitter"
+                },
+                {
+                  "label": "Touch",
+                  "value": "Soapy / slippery"
+                },
+                {
+                  "label": "pH range",
+                  "value": "Greater than 7"
+                },
+                {
+                  "label": "Litmus test",
+                  "value": "Red litmus → Blue"
+                },
+                {
+                  "label": "Ion released",
+                  "value": "OH⁻ (hydroxide ions)"
+                },
+                {
+                  "label": "Example 1",
+                  "value": "NaOH (caustic soda)"
+                },
+                {
+                  "label": "Example 2",
+                  "value": "Mg(OH)₂ (milk of magnesia)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Natural Acids (Memorize!)",
+          "intro": "Sour-tasting acids found naturally in plants, animals, and insects.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Vinegar",
+                  "Acetic acid"
+                ],
+                [
+                  "Lemon",
+                  "Citric acid"
+                ],
+                [
+                  "Tomato",
+                  "Oxalic acid"
+                ],
+                [
+                  "Tamarind",
+                  "Tartaric acid"
+                ],
+                [
+                  "Curd / Yogurt",
+                  "Lactic acid"
+                ],
+                [
+                  "Ant sting",
+                  "Formic acid (methanoic acid)"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Source",
+                "Acid"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Indicators",
+          "intro": "Substances that change colour to indicate whether a solution is acidic or basic.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Litmus (from lichen)",
+                  "Red",
+                  "Blue"
+                ],
+                [
+                  "Turmeric",
+                  "Yellow (no change)",
+                  "Reddish-brown"
+                ],
+                [
+                  "Phenolphthalein",
+                  "Colourless",
+                  "Pink"
+                ],
+                [
+                  "Methyl orange",
+                  "Red",
+                  "Yellow"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Indicator",
+                "In Acid",
+                "In Base"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Important Salts",
+          "intro": "Key salts, their formulas, appearance, and everyday uses.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Washing soda",
+                  "Na₂CO₃·10H₂O",
+                  "Cleaning clothes, softening hard water"
+                ],
+                [
+                  "Baking soda",
+                  "NaHCO₃",
+                  "Baking (releases CO₂), antacid"
+                ],
+                [
+                  "Bleaching powder",
+                  "CaOCl₂",
+                  "Bleaching cotton/linen, disinfecting water"
+                ],
+                [
+                  "Plaster of Paris",
+                  "CaSO₄·½H₂O",
+                  "Bone casts, sculptures"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Salt",
+                "Formula",
+                "Uses"
+              ]
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "What is the pH range of acids?",
+          "back": "Lower than 7."
+        },
+        {
+          "front": "Which acid is known as the King of Chemicals?",
+          "back": "Sulfuric acid (H2SO4)."
+        },
+        {
+          "front": "What ions do bases release in water?",
+          "back": "Hydroxide ions (OH-)."
+        },
+        {
+          "front": "What is the common name for Mg(OH)2?",
+          "back": "Milk of Magnesia."
+        },
+        {
+          "front": "Which acid is found in ants?",
+          "back": "Formic acid (or methanoic acid)."
+        },
+        {
+          "front": "What color does phenolphthalein turn in a base?",
+          "back": "Pink."
+        },
+        {
+          "front": "What is the chemical formula for Washing Soda?",
+          "back": "Na2CO3.10H2O."
+        },
+        {
+          "front": "What is the chemical formula for Baking Soda?",
+          "back": "NaHCO3."
+        },
+        {
+          "front": "What is the chemical formula for Bleaching Powder?",
+          "back": "CaOCl2."
+        },
+        {
+          "front": "What is the chemical formula for Plaster of Paris?",
+          "back": "CaSO4.1/2H2O."
+        },
+        {
+          "front": "Acid in Vinegar?",
+          "back": "Acetic Acid."
+        },
+        {
+          "front": "Common name for NaHCO3?",
+          "back": "Baking Soda."
+        },
+        {
+          "front": "pH of pure water?",
+          "back": "7 (Neutral)."
+        },
+        {
+          "front": "\"King of Chemicals\"?",
+          "back": "Sulfuric Acid (H2SO4)."
+        },
+        {
+          "front": "Acid in Ant sting?",
+          "back": "Formic (Methanoic) Acid."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

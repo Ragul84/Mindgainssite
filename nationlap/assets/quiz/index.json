@@ -1,0 +1,62 @@
+[
+  {
+    "id": "polity",
+    "label": "Polity",
+    "n": 634
+  },
+  {
+    "id": "history",
+    "label": "History",
+    "n": 691
+  },
+  {
+    "id": "geography",
+    "label": "Geography",
+    "n": 631
+  },
+  {
+    "id": "economics",
+    "label": "Economy",
+    "n": 596
+  },
+  {
+    "id": "science",
+    "label": "Science",
+    "n": 748
+  },
+  {
+    "id": "maths",
+    "label": "Quant / Maths",
+    "n": 618
+  },
+  {
+    "id": "reasoning",
+    "label": "Reasoning",
+    "n": 658
+  },
+  {
+    "id": "polity-ncert-c11",
+    "label": "Polity · NCERT 11",
+    "n": 409
+  },
+  {
+    "id": "polity-fr",
+    "label": "Polity · Fundamental Rights",
+    "n": 509
+  },
+  {
+    "id": "polity-parliament",
+    "label": "Polity · Parliament",
+    "n": 411
+  },
+  {
+    "id": "polity-dpsp",
+    "label": "Polity · DPSP",
+    "n": 283
+  },
+  {
+    "id": "polity-judiciary",
+    "label": "Polity · Judiciary",
+    "n": 349
+  }
+]

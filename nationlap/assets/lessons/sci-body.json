@@ -1,0 +1,453 @@
+{
+  "zoneId": "sci-body",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "SSC Science: Biology — Digestive & Respiratory Systems",
+      "intro": "Today we study 'Fuel and Oxygen'. The digestive system breaks down food into nutrients, while the respiratory system provides the oxygen needed to burn that fuel for energy. In SSC, the 'Enzymes' (Pepsin, Amylase) and the 'Organs' (Lungs, Small Intestine) are favorite topics. Do you know where most digestion happens? Or why we pant after running? Let's master the human machine today.",
+      "pages": [
+        {
+          "type": "facts",
+          "title": "Digestive System (Alimentary Canal)",
+          "intro": "The digestive system, also called the alimentary canal, is a long tube that starts at the mouth and ends at the anus. In the mouth, an enzyme called amylase, which is a protein that speeds up chemical reactions, begins to break down starch, a type of carbohydrate, into simpler sugars. Next, the stomach produces hydrochloric acid (HCl) and an enzyme called pepsin, which together start to digest proteins, which are large molecules found in meat and beans. The small intestine is the main site where all food is completely broken down into its smallest parts, and these nutrients are then absorbed into the bloodstream. Finally, the large intestine absorbs most of the remaining water from the undigested food, turning it into solid waste before it leaves the body.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Mouth",
+                  "value": "Amylase digests starch"
+                },
+                {
+                  "label": "Stomach",
+                  "value": "HCl + Pepsin digests protein"
+                },
+                {
+                  "label": "Small Intestine",
+                  "value": "Site of COMPLETE digestion and absorption"
+                },
+                {
+                  "label": "Large Intestine",
+                  "value": "Water absorption"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Digestive Glands",
+          "intro": "Digestive Glands are organs that make special fluids called digestive juices, which help break down food in your body. The Liver is the largest gland in the body and it produces a greenish-yellow liquid called Bile, which is stored in a small pouch called the Gall Bladder and helps digest fats by breaking them into tiny droplets. The Pancreas is another important gland that makes two key substances: a chemical called Insulin, which controls your blood sugar levels, and several digestive enzymes that help further break down proteins, carbohydrates, and fats after they leave the stomach.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Respiratory System",
+          "intro": "Airenters through the nasal cavity, which is the space inside your nose that warms and moistens the air. It then moves into the pharynx, a tube at the back of your mouth and nose, and then into the larynx, also called the voice box, which contains your vocal cords. Next, air travels down the trachea, or windpipe, a tube that carries air to your lungs. Inside the lungs, the air reaches tiny air sacs called alveoli, which are the actual sites where oxygen from the air passes into your blood and carbon dioxide from your blood passes into the air to be breathed out.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Breathing Mechanism",
+          "intro": "Breathing Mechanism is the process of moving air in and out of your lungs. Inhalation, which means breathing in, happens when your diaphragm, a large dome-shaped muscle under your lungs, contracts and moves downward to create more space in your chest. Exhalation, which means breathing out, happens when your diaphragm relaxes and moves upward, pushing air out. Aerobic means \"with oxygen\" and is the normal way your body uses energy during rest or light activity. Anaerobic means \"without oxygen\" and is a backup process your body uses during very hard exercise, which produces a waste product called lactic acid that can cause muscle cramps.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Enzyme Quick Table",
+          "intro": "Enzymes are proteins that speed up chemical reactions in the body, such as breaking down food into smaller parts. The saliva in your mouth contains an enzyme called amylase, which breaks down starch into simpler sugars. In your stomach, gastric juice contains an enzyme called pepsin, which starts breaking down proteins into smaller pieces. The pancreas releases pancreatic juice that contains two enzymes: trypsin, which further breaks down proteins, and lipase, which breaks down fats into fatty acids. All these enzymes work in different parts of your digestive system to help your body absorb nutrients from food.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "Which organ is the site of complete digestion and absorption of food?",
+          "back": "The small intestine."
+        },
+        {
+          "front": "What is the primary function of the large intestine?",
+          "back": "It absorbs most of the remaining water from undigested food."
+        },
+        {
+          "front": "Which is the largest gland in the human body?",
+          "back": "The liver."
+        },
+        {
+          "front": "Where is bile stored in the body?",
+          "back": "In the gall bladder."
+        },
+        {
+          "front": "What is the function of the larynx?",
+          "back": "It acts as the voice box and contains vocal cords."
+        },
+        {
+          "front": "Where does gas exchange occur in the lungs?",
+          "back": "In the alveoli."
+        },
+        {
+          "front": "What happens to the diaphragm during inhalation?",
+          "back": "It contracts and moves downward."
+        },
+        {
+          "front": "What waste product produced during anaerobic respiration causes muscle cramps?",
+          "back": "Lactic acid."
+        },
+        {
+          "front": "Which enzyme in saliva breaks down starch?",
+          "back": "Amylase."
+        },
+        {
+          "front": "Which pancreatic enzyme is responsible for breaking down fats?",
+          "back": "Lipase."
+        },
+        {
+          "front": "Where does complete digestion happen?",
+          "back": "Small Intestine."
+        },
+        {
+          "front": "Largest gland in the human body?",
+          "back": "Liver."
+        },
+        {
+          "front": "Voice box of humans?",
+          "back": "Larynx."
+        },
+        {
+          "front": "Enzyme that digests milk protein?",
+          "back": "Renin."
+        },
+        {
+          "front": "Site of gas exchange in lungs?",
+          "back": "Alveoli."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    },
+    {
+      "title": "SSC Science: Biology — Circulatory & Excretory Systems",
+      "intro": "Today we study the 'Transport and Filtration'. The heart pumps blood to every cell, and the kidneys filter out the waste. In SSC, 'Blood Groups', 'Parts of the Heart', and the 'Nephron' are high-yield. Do you know why veins are blue? Or who is the 'Universal Donor'? Let's master the hydraulics of the body today.",
+      "pages": [
+        {
+          "type": "concept",
+          "title": "Circulatory System",
+          "intro": "The body's transportation network: heart, blood, and vessels moving oxygen and waste.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Direction",
+                  "Carry blood away from heart",
+                  "Carry blood toward heart"
+                ],
+                [
+                  "Oxygen (normally)",
+                  "Oxygen-rich",
+                  "Oxygen-poor"
+                ],
+                [
+                  "Exception",
+                  "Pulmonary artery (deoxygenated)",
+                  "Pulmonary vein (oxygenated)"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "",
+                "Arteries",
+                "Veins"
+              ]
+            },
+            {
+              "text": "Heart has 4 chambers: upper atria receive blood; lower ventricles pump blood out.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Blood Components",
+          "intro": "Blood consists of plasma and three cell types, each with a vital role.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Plasma",
+                  "value": "Liquid part of blood"
+                },
+                {
+                  "label": "RBCs (Erythrocytes)",
+                  "value": "Carry oxygen via hemoglobin"
+                },
+                {
+                  "label": "WBCs",
+                  "value": "Fight infection"
+                },
+                {
+                  "label": "Platelets",
+                  "value": "Help blood clot"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Blood Groups (Landsteiner)",
+          "intro": "Blood types are based on A, B, and Rh antigens on red blood cells.",
+          "blocks": [
+            {
+              "type": "mindmap",
+              "center": "Blood Groups",
+              "branches": [
+                {
+                  "label": "A",
+                  "value": "A antigen"
+                },
+                {
+                  "label": "B",
+                  "value": "B antigen"
+                },
+                {
+                  "label": "AB",
+                  "value": "Both A & B antigens"
+                },
+                {
+                  "label": "O",
+                  "value": "Neither antigen"
+                },
+                {
+                  "label": "Rh+",
+                  "value": "Rh antigen present"
+                },
+                {
+                  "label": "Rh-",
+                  "value": "Rh antigen absent"
+                }
+              ]
+            },
+            {
+              "text": "Universal recipient: AB+ (has A, B, Rh). Universal donor: O- (lacks A, B, Rh).",
+              "type": "trap"
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Excretory System",
+          "intro": "Removes waste via kidneys, ureters, bladder, and urethra.",
+          "blocks": [
+            {
+              "text": "Kidneys filter blood to make urine. Ureters carry urine to bladder; urethra expels it.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Waste Products",
+          "intro": "Urea from protein breakdown is filtered by kidneys; dialysis steps in if they fail.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Urea",
+                  "value": "Waste from protein breakdown in liver"
+                },
+                {
+                  "label": "Dialysis",
+                  "value": "Artificial blood cleaning when kidneys fail"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "How many chambers does the human heart have?",
+          "back": "The human heart has four chambers: two atria and two ventricles."
+        },
+        {
+          "front": "Which blood vessels carry blood away from the heart?",
+          "back": "Arteries carry blood away from the heart."
+        },
+        {
+          "front": "What is the primary function of Red Blood Cells (RBCs)?",
+          "back": "They carry oxygen from the lungs to the rest of the body using hemoglobin."
+        },
+        {
+          "front": "What is the average life span of a Red Blood Cell?",
+          "back": "Approximately 120 days."
+        },
+        {
+          "front": "Who discovered the main blood group system?",
+          "back": "Karl Landsteiner."
+        },
+        {
+          "front": "Which blood type is known as the universal recipient?",
+          "back": "AB positive (AB+)."
+        },
+        {
+          "front": "Which blood type is known as the universal donor?",
+          "back": "O negative (O-)."
+        },
+        {
+          "front": "What is the basic filtering unit of the kidney?",
+          "back": "The nephron."
+        },
+        {
+          "front": "Where is urea produced in the human body?",
+          "back": "Urea is produced in the liver."
+        },
+        {
+          "front": "What medical treatment is used to artificially clean blood when kidneys fail?",
+          "back": "Dialysis."
+        },
+        {
+          "front": "Universal Donor blood group?",
+          "back": "O negative."
+        },
+        {
+          "front": "Basic unit of Kidney?",
+          "back": "Nephron."
+        },
+        {
+          "front": "Life span of RBC?",
+          "back": "120 days."
+        },
+        {
+          "front": "Instrument used to measure Blood Pressure?",
+          "back": "Sphygmomanometer."
+        },
+        {
+          "front": "Blood vessel that carries deoxygenated blood to lungs?",
+          "back": "Pulmonary Artery."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    },
+    {
+      "title": "SSC Science: Biology — Nervous System & Senses",
+      "intro": "Today we study the 'Control Center'. The Nervous system coordinates everything we do. We explore the Brain (Cerebrum, Cerebellum), the Spinal Cord, and the Reflex actions. We also look at Sense organs like the Eye and Ear. In SSC, the 'Parts of the Brain' and their functions (e.g., Balancing, Thinking) are high-yield. Let's master the mind today.",
+      "pages": [
+        {
+          "type": "concept",
+          "title": "Nervous System Unit",
+          "intro": "A neuron, also called a nerve cell, is the basic building block of your nervous system, which controls everything your body does. The neuron is the longest cell in the human body, meaning it can stretch over a very large distance, like from your spine down to your toe. A neuron has three main parts: the cyton, which is the cell body that contains the nucleus and keeps the cell alive; the dendrites, which are tiny branch-like arms that receive signals from other cells; and the axon, which is a long, thin tail that sends signals away from the cell body to other parts of the body. The dendrites act like antennas to catch incoming messages, and the axon works like a wire to carry those messages out to muscles, glands, or other neurons. So, a neuron takes in information through its dendrites, processes it in the cyton, and passes it on through the axon to help you move, feel, or think.",
+          "blocks": []
+        },
+        {
+          "type": "facts",
+          "title": "The Human Brain",
+          "intro": "The human brain has three main parts that work together. The cerebrum is the largest part and controls thinking, memory, and actions you choose to do, like moving your hand. The cerebellum sits below the cerebrum and controls your posture and balance, which is why alcohol can make you stumble. The medulla oblongata is at the base of the brain and controls actions that happen without your thinking, such as your heartbeat and breathing. These three parts handle different jobs to keep your body working properly.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Cerebrum",
+                  "value": "Largest part, controls intelligence, memory, voluntary actions"
+                },
+                {
+                  "label": "Cerebellum",
+                  "value": "Controls posture and balance (affected by alcohol)"
+                },
+                {
+                  "label": "Medulla Oblongata",
+                  "value": "Controls involuntary actions (Heartbeat, Breathing)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Reflex Action",
+          "intro": "Reflex Action is a sudden, automatic, and involuntary response of the body to a stimulus, meaning you do not think about it or control it. For example, when you accidentally touch a hot object, your hand pulls away instantly without you deciding to move it. This action is controlled by the Spinal Cord, which is the thick bundle of nerves running down your back inside your backbone, not by your brain. The Spinal Cord receives the danger signal from your hand and immediately sends a command to your muscles to pull away, bypassing the brain to save time. This quick pathway is called a reflex arc, and it protects your body from harm by reacting faster than your conscious thought can.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "The Human Eye",
+          "intro": "The human eye has several parts that work together to let you see. The cornea is the clear front covering that allows light to enter the eye. The iris is the colored part that changes the size of the pupil to control how much light",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "The Human Ear",
+          "intro": "The human ear is divided into three main parts: the outer ear, the middle ear, and the inner ear. The outer ear collects sound waves and funnels them to the eardrum, a thin membrane that vibrates when sound hits it. These vibrations pass through three tiny bones in the middle ear, the smallest of which is the stapes, also known as the stirrup bone. The middle ear then sends the vibrations into the inner ear, which is a fluid-filled, snail-shaped structure called the cochlea. The cochlea converts the vibrations into electrical signals, and the auditory nerve carries these signals from the inner ear directly to the brain, where they are interpreted as sound.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "What is the longest cell in the human body?",
+          "back": "The neuron (nerve cell)."
+        },
+        {
+          "front": "Which part of the neuron receives signals from other cells?",
+          "back": "The dendrites."
+        },
+        {
+          "front": "Which part of the brain is responsible for intelligence and memory?",
+          "back": "The cerebrum."
+        },
+        {
+          "front": "Which part of the brain controls posture and balance?",
+          "back": "The cerebellum."
+        },
+        {
+          "front": "Which brain structure controls involuntary actions like heartbeat and breathing?",
+          "back": "The medulla oblongata."
+        },
+        {
+          "front": "What controls reflex actions in the human body?",
+          "back": "The spinal cord."
+        },
+        {
+          "front": "Which part of the eye allows light to enter?",
+          "back": "The cornea."
+        },
+        {
+          "front": "What is the smallest bone in the human body and where is it located?",
+          "back": "The stapes, located in the middle ear."
+        },
+        {
+          "front": "Which nerve carries sound signals from the inner ear to the brain?",
+          "back": "The auditory nerve."
+        },
+        {
+          "front": "What is the function of the iris in the human eye?",
+          "back": "It is the colored part that changes the size of the pupil to control light intake."
+        },
+        {
+          "front": "Smallest bone in the human body?",
+          "back": "Stapes (Ear)."
+        },
+        {
+          "front": "Which part of the brain controls balance?",
+          "back": "Cerebellum."
+        },
+        {
+          "front": "Largest part of the human brain?",
+          "back": "Cerebrum."
+        },
+        {
+          "front": "Unit of the nervous system?",
+          "back": "Neuron."
+        },
+        {
+          "front": "Where is the image formed in the eye?",
+          "back": "Retina."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

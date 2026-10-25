@@ -1,0 +1,234 @@
+{
+  "zoneId": "geo-climate",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "UPSC Geography: Climate of India — The Monsoon",
+      "intro": "Today we study the 'Rhythm of India'. The Indian Monsoon is a complex meteorological phenomenon that dictates the life of millions. We explore the mechanism of the South-West and North-East monsoons, the role of the 'Jet Streams', and the impact of 'El-Nino' and 'La-Nina'. For UPSC, focus on the 'Onset and Retreat', the 'Rainfall distribution', and the 'Koppen classification' of Indian climate. This is the most conceptual part of Geography.",
+      "pages": [
+        {
+          "type": "concept",
+          "title": "Mechanism of Monsoon",
+          "intro": "The monsoon is driven by differential heating of land and sea, creating a low-pressure system that pulls moist ocean winds inland.",
+          "blocks": [
+            {
+              "type": "mindmap",
+              "center": "Monsoon Drivers",
+              "branches": [
+                {
+                  "label": "Differential Heating",
+                  "value": "Land heats faster than ocean, creating low pressure over N. India"
+                },
+                {
+                  "label": "ITCZ Shift",
+                  "value": "Low-pressure belt moves north to Ganga plains in summer"
+                },
+                {
+                  "label": "Tibetan Plateau",
+                  "value": "Acts as thermal engine, intensifying low pressure"
+                },
+                {
+                  "label": "Jet Streams",
+                  "value": "Upper-atmosphere winds shift to steer monsoon winds"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "South-West Monsoon (June-Sep)",
+          "intro": "The South-West Monsoon delivers ~75% of India's annual rainfall from June to September via two branches, with intermittent dry spells.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Entry",
+                  "Western coast",
+                  "Northeastern states"
+                ],
+                [
+                  "Direction",
+                  "From the west",
+                  "From the east"
+                ],
+                [
+                  "Rainfall share",
+                  "Part of 75% total",
+                  "Part of 75% total"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "",
+                "Arabian Sea Branch",
+                "Bay of Bengal Branch"
+              ]
+            },
+            {
+              "text": "Monsoon 'breaks' are dry spells lasting days or weeks, causing temporary drought despite the season's overall heavy rain.",
+              "type": "trap"
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "North-East Monsoon (Oct-Dec)",
+          "intro": "The retreating North-East Monsoon brings crucial rain to Tamil Nadu and Andhra Pradesh coasts from October to December.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Also called",
+                  "value": "Retreating Monsoon"
+                },
+                {
+                  "label": "Wind direction",
+                  "value": "Northeast over Bay of Bengal"
+                },
+                {
+                  "label": "Moisture source",
+                  "value": "Bay of Bengal"
+                },
+                {
+                  "label": "Beneficiary regions",
+                  "value": "Tamil Nadu & Andhra Pradesh coasts"
+                },
+                {
+                  "label": "Significance",
+                  "value": "Rain for areas receiving little from SW monsoon"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "El-Nino & La-Nina",
+          "intro": "El Niño and La Niña are Pacific Ocean climate patterns that respectively weaken and strengthen the Indian monsoon.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Pacific SST",
+                  "Warmer than normal",
+                  "Cooler than normal"
+                ],
+                [
+                  "Monsoon impact",
+                  "Weakens winds, less rainfall (drought)",
+                  "Strengthens winds, good/excess rainfall"
+                ],
+                [
+                  "Association",
+                  "Poor monsoon",
+                  "Good monsoon"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "",
+                "El Niño",
+                "La Niña"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Koppen's Classification",
+          "intro": "Koppen's system classifies Indian climates using letter codes based on temperature and rainfall patterns.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Amw",
+                  "value": "West Coast: Tropical, monsoon, dry winter"
+                },
+                {
+                  "label": "BShw",
+                  "value": "NW India: Semi-arid, hot, dry winter"
+                },
+                {
+                  "label": "Cwg",
+                  "value": "Ganga Plains: Warm temperate, dry winter, hot summer"
+                }
+              ]
+            },
+            {
+              "text": "First letter: A=Tropical (hot), B=Dry, C=Warm temperate (mild winter). Second: m=monsoon, S=steppe/semi-arid, w=winter dry season.",
+              "type": "text"
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "What is the primary cause of the monsoon rain system?",
+          "back": "The monsoon rain system is caused by the differential heating of land and sea."
+        },
+        {
+          "front": "Where does the ITCZ shift during the summer to help draw in monsoon winds?",
+          "back": "The ITCZ shifts northward to lie over the Ganga plains."
+        },
+        {
+          "front": "Which geographical feature acts as a thermal engine to strengthen the low-pressure system over India?",
+          "back": "The Tibetan Plateau acts as a giant thermal engine."
+        },
+        {
+          "front": "What percentage of India's total yearly rainfall is provided by the South-West Monsoon?",
+          "back": "The South-West Monsoon provides 75% of India's rain."
+        },
+        {
+          "front": "What are the periods of little or no rain during the South-West Monsoon called?",
+          "back": "These periods are known as breaks in monsoon or dry spells."
+        },
+        {
+          "front": "Which regions receive rainfall from the North-East Monsoon?",
+          "back": "The North-East Monsoon provides rain to the coast of Tamil Nadu and the coast of Andhra Pradesh."
+        },
+        {
+          "front": "What is the impact of El-Nino on the Indian monsoon?",
+          "back": "El-Nino usually leads to drought or a deficient monsoon in India."
+        },
+        {
+          "front": "What is the impact of La-Nina on the Indian monsoon?",
+          "back": "La-Nina usually leads to good or excess rainfall in India."
+        },
+        {
+          "front": "Which Koppen classification code represents the climate of India's West Coast?",
+          "back": "The code Amw represents the climate on India's West Coast."
+        },
+        {
+          "front": "Which Koppen classification code represents the climate of the Ganga Plains?",
+          "back": "The code Cwg represents the climate of the Ganga Plains."
+        },
+        {
+          "front": "What is \"ITCZ\"?",
+          "back": "Inter-Tropical Convergence Zone (where trade winds meet)."
+        },
+        {
+          "front": "Which monsoon gives rain to Tamil Nadu in winter?",
+          "back": "North-East Monsoon."
+        },
+        {
+          "front": "What is \"El-Nino\"?",
+          "back": "Periodic warming of surface waters in the Eastern Pacific, affecting monsoon."
+        },
+        {
+          "front": "What is a \"Monsoon Break\"?",
+          "back": "A period of a few weeks when rain fails during the monsoon season."
+        },
+        {
+          "front": "Most common climatic type in India (Koppen)?",
+          "back": "Cwg (Monsoon type with dry winter)."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

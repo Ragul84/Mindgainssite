@@ -1,0 +1,212 @@
+{
+  "zoneId": "quant-profit",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "SSC QA: Profit, Loss & Discount — The Ratio Method",
+      "intro": "Profit and Loss in SSC is all about 'Cost Price' (CP) and 'Selling Price' (SP). Most students get lost in formulas, but toppers use the 'Ratio Method'. If profit is 20%, the CP:SP ratio is 5:6. If discount is 10%, the MP:SP ratio is 10:9. Today we learn how to link CP, SP, and MP (Marked Price) using simple ratios. We also cover the 'Dishonest Shopkeeper' and 'Successive Discount' problems—the two most frequent patterns in SSC CGL Tier 1.",
+      "pages": [
+        {
+          "type": "formula",
+          "title": "Basic Ratios",
+          "intro": "Profit percentage, or profit percent, is the profit you make divided by the cost price, multiplied by 100. The cost price, or CP, is the amount you paid to buy an item, and profit is the money you earn above that cost. Loss percentage is the loss you suffer divided by the cost price, multiplied by 100, where loss is the money you lose when you sell an item for less than its cost price. Discount percentage is the discount you give divided by the marked price, multiplied by 100, where the marked price, or MP, is the original price listed on the item before any reduction. The net profit formula shows the relationship between the marked price and the cost price when you first give a discount and then make a profit: if the profit percentage is p percent and the discount percentage is d percent, then the marked price divided by the cost price equals (100 plus p) divided by (100 minus d).",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Profit%",
+                  "value": "(P/CP) × 100"
+                },
+                {
+                  "label": "Loss%",
+                  "value": "(L/CP) × 100"
+                },
+                {
+                  "label": "(Note",
+                  "value": "Profit/Loss always on CP)"
+                },
+                {
+                  "label": "Discount%",
+                  "value": "(D/MP) × 100"
+                },
+                {
+                  "label": "(Note",
+                  "value": "Discount always on MP)"
+                },
+                {
+                  "label": "Net Profit Formula",
+                  "value": "If profit is p% and discount is d%, the relation is: MP/CP: (100+p) / (100-d)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "The Ratio Method",
+          "intro": "The Ratio Method is a way to solve problems about profit and discount using simple numbers instead of percentages. First, if you have a 25% profit, that means the profit is 25 out of every 100, which is the same as 1 part profit for every 4 parts of cost price, or CP. So in this case, the cost price is 4, the profit is 1, and the selling price, or SP, is 4 plus 1 equals 5, giving a ratio of CP to SP of 4 to 5. Next, if you have a 10% discount, that means the discount is 10 out of every 100, which is the same as 1 part discount for every 10 parts of the marked price, or MP. So here, the marked price is 10, the discount is 1, and the selling price is 10 minus 1 equals 9, giving a ratio of MP to SP of 10 to 9. To link these two ratios together, you notice that the selling price is the same number in both, so you make the SP value equal in each ratio by multiplying the first ratio 4 to 5 by 9 and the second ratio 10 to 9 by 5, which gives a combined ratio of MP to CP to SP as 36 to 36 to 45, or simplified as 36 to 36 to 45.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "If Profit",
+                  "value": "25% (1/4), then CP: 4, Profit: 1, SP: 5"
+                },
+                {
+                  "label": "Ratio CP",
+                  "value": "SP: 4:5"
+                },
+                {
+                  "label": "If Discount",
+                  "value": "10% (1/10), then MP: 10, Discount: 1, SP: 9"
+                },
+                {
+                  "label": "Ratio MP",
+                  "value": "SP: 10:9"
+                },
+                {
+                  "label": "Link them",
+                  "value": "If SP is common, equalize the SP value in both ratios to find MP:CP:SP"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Successive Discounts",
+          "intro": "When a shopkeeper offers more than one discount one after the other on the same item, these are called successive discounts. For example, if a shirt is first reduced by 20 percent and then by another 10 percent on the new price, the total discount is not simply 20 plus 10 equals 30 percent. Instead, you calculate the single equivalent discount using this formula: add the two discount percentages together, then subtract their product divided by 100. So for 20 percent and 10 percent, you do 20 plus 10 equals 30, then 20 times 10 divided by 100 equals 2, and finally 30 minus 2 equals 28 percent. This 28 percent is the single discount that gives the same final price as applying both discounts one after the other. If there are three discounts, first apply the formula to the first two discounts to get one combined percentage, then apply the formula again using that result and the third discount.",
+          "blocks": [
+            {
+              "text": "Example: 20% and 10%: 20 + 10 - 2: 28% (NOT 30%).",
+              "type": "trap"
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Dishonest Shopkeeper Pattern",
+          "intro": "A dishonest shopkeeper cheats by using a weight that is less than the standard weight, for example, using an 800 gram weight instead of the correct 1 kilogram (1000 grams). His profit comes from selling a smaller amount of goods for the price of a larger amount, so we calculate his profit percentage as the error (the difference between the true weight and the false weight) divided by the actual weight he gives (the true weight minus the error), then multiplied by 100. In this example, the error is 200 grams (1000 minus 800), and the actual weight he gives is 800 grams, so his profit percentage is 200 divided by 800 times 100, which equals 25 percent. Another way is to use the ratio of the false weight to the true weight, which is 800 to 1000, or 4 to 5; then his cost is 4 parts and his selling price is 5 parts, so his profit is 1 part, and his profit percentage on cost is 1 divided by 4 times 100, also 25 percent.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Profit%",
+                  "value": "(Error / True Value - Error) × 100"
+                },
+                {
+                  "label": "Or use ratio",
+                  "value": "Uses 800g instead of 1kg"
+                },
+                {
+                  "label": "Ratio of weights 800",
+                  "value": "1000: 4:5"
+                },
+                {
+                  "label": "So profit ratio is 4",
+                  "value": "5"
+                },
+                {
+                  "label": "Profit%",
+                  "value": "1/4 * 100: 25%"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Selling two items at same SP",
+          "intro": "When you sell two different items at the same selling price (SP), and one item gives you a profit of x percent while the other gives you a loss of x percent, your overall result is always a loss. The cost price (CP) is the price you paid to buy an item, and the selling price (SP) is the price you sold it for. Profit percent means you gained that much extra above the cost, and loss percent means you lost that much from the cost. The overall loss you suffer on the total cost of both items together is exactly x squared divided by 100 percent. For example, if you make a 10 percent profit on the first item and a 10 percent loss on the second, your overall loss is 10 times 10 divided by 100, which is 1 percent of the total cost. This formula works for any value of x, and the loss is always positive as long as x is not zero.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Item 1",
+                  "value": "x% profit"
+                },
+                {
+                  "label": "Item 2",
+                  "value": "x% loss"
+                },
+                {
+                  "label": "Example",
+                  "value": "10% gain and 10% loss: 1% loss"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "What is the formula for Profit percentage?",
+          "back": "Profit% : (P/CP) × 100."
+        },
+        {
+          "front": "On which price is the discount percentage always calculated?",
+          "back": "Discount percentage is always calculated on the Marked Price (MP)."
+        },
+        {
+          "front": "What is the relationship formula between MP and CP given profit p% and discount d%?",
+          "back": "MP/CP : (100+p) / (100-d)."
+        },
+        {
+          "front": "If profit is 25%, what is the ratio of CP to SP?",
+          "back": "The ratio of CP to SP is 4:5."
+        },
+        {
+          "front": "How do you link CP, SP, and MP ratios when SP is common?",
+          "back": "Equalize the SP value in both ratios to find MP:CP:SP."
+        },
+        {
+          "front": "What is the formula for a single equivalent discount of two successive discounts x% and y%?",
+          "back": "The single discount is [x + y - (xy/100)]%."
+        },
+        {
+          "front": "How is the profit percentage calculated for a dishonest shopkeeper using false weights?",
+          "back": "Profit% : (Error / True Value - Error) × 100."
+        },
+        {
+          "front": "What is the overall result when selling two items at the same SP with x% profit and x% loss?",
+          "back": "The result is always a loss of (x²/100)%."
+        },
+        {
+          "front": "What is the ratio of weights used by a dishonest shopkeeper using 800g instead of 1kg?",
+          "back": "The ratio of weights is 800:1000, which simplifies to 4:5."
+        },
+        {
+          "front": "What is the result of selling two items at the same SP with 10% gain and 10% loss?",
+          "back": "The overall result is a 1% loss."
+        },
+        {
+          "front": "Profit% is calculated on which price?",
+          "back": "Cost Price (CP)."
+        },
+        {
+          "front": "Discount% is calculated on which price?",
+          "back": "Marked Price (MP)."
+        },
+        {
+          "front": "Relation between MP, CP, Profit(p), Discount(d)?",
+          "back": "MP / CP : (100 + p) / (100 - d). (Extremely useful for SSC!)."
+        },
+        {
+          "front": "Net discount for 20% and 30%?",
+          "back": "20 + 30 - (20*30)/100 : 50 - 6 : 44%."
+        },
+        {
+          "front": "Shopkeeper uses 900g instead of 1kg. Profit%?",
+          "back": "Error : 100g. Profit : 100 / (1000-100) * 100 : 100/900 * 100 : 11.11%."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

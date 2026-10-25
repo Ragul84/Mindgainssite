@@ -1,0 +1,171 @@
+{
+  "zoneId": "polity-dpsp",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "UPSC Polity: Directive Principles of State Policy (DPSP)",
+      "intro": "If Fundamental Rights are the 'Individual's Rights', then Directive Principles of State Policy (Part IV, Art 36-51) are the 'State's Duties'. Borrowed from the Irish Constitution, DPSPs are non-justiciable (you cannot go to court to enforce them), but they are 'fundamental in the governance of the country'. UPSC frequently tests the classification of these principles—Socialistic, Gandhian, and Liberal-Intellectual—and the famous legal conflict between FRs and DPSPs that was eventually resolved by the 'Doctrine of Harmony'.",
+      "pages": [
+        {
+          "type": "formula",
+          "title": "Classification of DPSP",
+          "intro": "The Directive Principles of State Policy (DPSP) are guidelines in Part IV of the Indian Constitution (Articles 36 to 51) that the government must follow when making laws. They are classified into three groups: Socialistic, Gandhian, and Liberal. Socialistic DPSP aim for social and economic equality, including Article 38 (promote social justice), Article 39 (fair distribution of resources), Article 39A (free legal aid for the poor), Article 41 (right to work and education), Article 42 (maternity leave and relief), Article 43 (living wage for workers), and Article 43A (worker participation in management). Gandhian DPSP reflect Mahatma Gandhi's ideas, such as Article 40 (village self-government or Panchayats), Article 43 (promote cottage industries), Article 43B (promote cooperative societies), Article 46 (protect the interests of Scheduled Castes (SC) and Scheduled Tribes (ST)), Article 47 (prohibit intoxicating drinks and drugs), and Article 48 (prohibit cow slaughter).",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Socialistic",
+                  "Art 38 (Justice), 39 (Resources), 39A (Free Legal Aid), 41 (Right to Work), 42 (Maternity relief), 43 (Living wage), 43A (Workers mgmt)"
+                ],
+                [
+                  "Gandhian",
+                  "Art 40 (Panchayats), 43 (Cottage industries), 43B (Co-ops), 46 (SC/ST interests), 47 (Prohibit liquor), 48 (Prohibit cow slaughter)"
+                ],
+                [
+                  "Liberal",
+                  "Art 44 (UCC), 45 (Early childhood care), 48 (Agriculture/Animal husbandry), 48A (Environment), 49 (Monuments), 50 (Judiciary sep), 51 (International peace)"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Item",
+                "Exam fact"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "facts",
+          "title": "FR vs DPSP Conflict",
+          "intro": "Fundamental Rights (FR) are a set of basic human rights guaranteed by the Indian Constitution that cannot be easily taken away, while Directive Principles of State Policy (DPSP) are guidelines for the government to create a just society, but they are not enforceable in court. In the 1951 case Champakam Dorairajan, the Supreme Court ruled that if a law violates a Fundamental Right, the Fundamental Right wins, even if the law tries to follow a Directive Principle. Then in the 1967 Golak Nath case, the Court said that Parliament cannot amend Fundamental Rights at all, making them completely unchangeable. However, in the 1973 Kesavananda Bharati case, the Court introduced the Basic Structure doctrine, meaning Parliament can amend any part of the Constitution, including Fundamental Rights, as long as the amendment does not destroy the Constitution's basic features. Finally, in the 1980 Minerva Mills case, the Court declared that Fundamental Rights and Directive Principles must be balanced and work together, comparing them to the two wheels of a chariot, because neither is more important than the other for the nation's progress.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Champakam Dorairajan (1951)",
+                  "FRs prevail"
+                ],
+                [
+                  "Golak Nath (1967)",
+                  "FRs sacrosanct"
+                ],
+                [
+                  "Kesavananda (1973)",
+                  "Basic Structure"
+                ],
+                [
+                  "Minerva Mills (1980)",
+                  "The SC ruled that there must be harmony between FRs and DPSPs; they are like \"two wheels of a chariot\""
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Item",
+                "Exam fact"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "facts",
+          "title": "New DPSPs added by Amendments",
+          "intro": "The Directive Principles of State Policy, or DPSPs, are guidelines in the Indian Constitution that tell the government what kind of laws it should make to create a fair and just society. These principles were not all added at once; some were added later through changes called amendments. The 42nd Amendment in 1976 added four new DPSPs: Article 39, which says the state should protect the health of children; Article 39A, which says the state must provide free legal aid to poor people so they can get justice; Article 43A, which says workers should be allowed to take part in the management of factories or companies; and Article 48A, which says the state should protect and improve the environment. The 44th Amendment in 1978 added a new clause to Article 38, called Article 38(2), which says the state must try to reduce inequalities in income, status, and opportunities among people. The 86th Amendment in 2002 changed the subject of Article 45, which originally talked about early childhood care, to now say that the state must provide free and compulsory education to all children from age six to fourteen. Finally, the 97th Amendment in 2011 added Article 43B, which says the state should help voluntary formation, functioning, and democratic control of co-operative societies, which are groups of people who work together for mutual benefit.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "42nd Amendment (1976)",
+                  "value": "Added 39 (Children health), 39A (Free legal aid), 43A (Workers participation), 48A (Environment)"
+                },
+                {
+                  "label": "44th Amendment (1978)",
+                  "value": "Added Art 38(2) (Minimize inequalities)"
+                },
+                {
+                  "label": "86th Amendment (2002)",
+                  "value": "Subject matter of Art 45 changed (Education)"
+                },
+                {
+                  "label": "97th Amendment (2011)",
+                  "value": "Added Art 43B (Co-operative societies)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Significance of DPSP",
+          "intro": "The Directive Principles of State Policy (DPSP) are a set of guidelines in the Indian Constitution, found in Part IV (Articles 36 to 51). They act as an instrument of instructions to the government, meaning they tell the government what goals to pursue, like providing work, education, and a decent standard of living for all citizens. DPSPs help facilitate stability and continuity in policies because they remain the same regardless of which political party is in power, ensuring long-term social and economic reforms are not abandoned. They supplement Fundamental Rights (FRs), which are the basic rights guaranteed to every citizen such as the right to equality and freedom, by providing the social and economic framework needed to make those rights meaningful. Finally, DPSPs serve as a test for the performance of the government, as citizens can judge whether the government is working to achieve the welfare goals like reducing poverty and protecting the environment as outlined in these principles.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "Which article directs the State to organize village panchayats?",
+          "back": "Article 40."
+        },
+        {
+          "front": "Which article provides for the Uniform Civil Code (UCC)?",
+          "back": "Article 44."
+        },
+        {
+          "front": "Which case established that Fundamental Rights and Directive Principles are like 'two wheels of a chariot'?",
+          "back": "The Minerva Mills case (1980)."
+        },
+        {
+          "front": "Which amendment added Article 43B regarding co-operative societies?",
+          "back": "The 97th Amendment (2011)."
+        },
+        {
+          "front": "Which amendment added Article 38(2) to minimize inequalities?",
+          "back": "The 44th Amendment (1978)."
+        },
+        {
+          "front": "What was the ruling in the Champakam Dorairajan (1951) case regarding FRs and DPSPs?",
+          "back": "The Supreme Court ruled that Fundamental Rights prevail over Directive Principles."
+        },
+        {
+          "front": "Which amendment changed the subject matter of Article 45 to education?",
+          "back": "The 86th Amendment (2002)."
+        },
+        {
+          "front": "Which article directs the separation of the judiciary from the executive?",
+          "back": "Article 50."
+        },
+        {
+          "front": "Which article provides for free legal aid to the poor?",
+          "back": "Article 39A."
+        },
+        {
+          "front": "Which article directs the State to protect and improve the environment?",
+          "back": "Article 48A."
+        },
+        {
+          "front": "Are DPSPs \"Justiciable\"?",
+          "back": "NO. Art 37 clearly states that DPSPs are non-justiciable (not enforceable by courts). However, they are fundamental in the governance of the country and it is the duty of the State to apply these in making laws."
+        },
+        {
+          "front": "Which Article deals with the Uniform Civil Code (UCC)?",
+          "back": "Article 44. It falls under the Liberal-Intellectual category of DPSPs."
+        },
+        {
+          "front": "Which Article deals with the separation of Judiciary from Executive?",
+          "back": "Article 50. This is a Liberal-Intellectual principle and is essential for the rule of law."
+        },
+        {
+          "front": "What was the outcome of the Minerva Mills Case (1980)?",
+          "back": "The SC ruled that the Indian Constitution is founded on the bedrock of the balance between Fundamental Rights and Directive Principles. They are complementary to each other."
+        },
+        {
+          "front": "Article 40—what does it prescribe?",
+          "back": "Organization of Village Panchayats. This is a Gandhian principle."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "zoneId": "history-sangam",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "UPSC History: South Indian Kingdoms & Sangam Age",
+      "intro": "Today we look South. While the North saw empires rise and fall, the Deccan and South India developed unique cultural and administrative systems. We study the Sangam Age (Tamil academies) and the great dynasties like the Pallavas, Chalukyas, and Rashtrakutas. For UPSC, the focus is heavily on 'Art & Architecture'—the shore temples of Mahabalipuram, the rock-cut caves of Ellora, and the temple-building rivalry between the Pallavas and Chalukyas. This is the foundation of Dravidian culture.",
+      "pages": [
+        {
+          "type": "concept",
+          "title": "Sangam Age (Tamil Nadu)",
+          "intro": "The Sangam Age refers to a period in ancient South Indian history, roughly between 300 BCE and 300 CE, when a large body of Tamil literature was composed in gatherings called \"Sangams\" (assemblies of poets and scholars). Three powerful ruling families dominated this era: the Cheras (who ruled over present-day Kerala), the Cholas (with their capital at Uraiyur, near modern Tiruchirappalli), and the Pandyas (with their capital at Madurai). The main literary sources for this period are the Ettuthokai (Eight Anthologies), the Pattuppattu (Ten Idylls), and the epic Silappatikaram (The Story of the Anklet), which describe the society, trade, and wars of the time. Society was organized around five landscapes or \"Thinais\" (kurinji for mountains, mullai for forests, marudam for farmlands, neithal for coasts, and palai for deserts), each with its own customs, gods, and occupations. Recent archaeological excavations at Keezhadi (in Tamil Nadu) have uncovered brick structures, beads, and pottery, providing clear proof of a well-developed urban culture with trade and town planning during the Sangam Age.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Pallavas of Kanchi",
+          "intro": "The Pallavas were a dynasty that ruled from their capital Kanchi, which is now Kanchipuram in Tamil Nadu. Their greatest kings were Mahendravarman I and his son Narasimhavarman I, who were great patrons of art and architecture. They pioneered the Dravidian style of architecture, which is a South Indian temple style with pyramid-shaped towers and intricate carvings. Famous examples of this style include the Ratha temples at Mahabalipuram, which are structures carved from single rocks to resemble chariots, the Shore temple built by the sea in the same town, and the Kailasanathar temple located in Kanchi itself.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Chalukyas of Badami",
+          "intro": "The Chalukyas of Badami were a dynasty that ruled parts of western and southern India from the 6th to 8th centuries. Their most famous king, Pulakeshin II, defeated the powerful northern ruler Harshavardhana around 630 CE; this victory is recorded in the Aihole inscription, which is a stone carving that preserves the king",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Rashtrakutas",
+          "intro": "The Rashtrakutas were a powerful dynasty that ruled large parts of western and central India from the 8th to the 10th century CE. Their two greatest rulers were Dantidurga, who founded the empire, and Amoghavarsha, a long-reigning king known for patronizing arts and literature. A famous architectural achievement from their period is the Kailasa Temple at Ellora, built by King Krishna I. This temple is monolithic, meaning it was carved out of a single massive rock from top to bottom, rather than built by stacking separate stones. The Kailasa Temple is considered a masterpiece of world heritage because of its enormous size, intricate carvings, and the incredible skill required to carve an entire temple from one rock.",
+          "blocks": []
+        },
+        {
+          "type": "timeline",
+          "title": "Key Terms (South)",
+          "intro": "Eripatti was land set aside specifically to fund the maintenance of a village tank, which is a man-made reservoir for storing water. A Ghatika was a center of higher learning, mostly attended by Brahmin scholars, where subjects like the Vedas and scriptures were taught. The Ur was the general assembly of the entire village, where all adult residents could discuss local matters. In contrast, the Sabhai was a separate assembly only for Brahmin villagers, focused on managing temple affairs and land grants. These terms come from the administration and society of medieval South India, especially under the Chola empire.",
+          "blocks": [
+            {
+              "type": "timeline",
+              "items": [
+                {
+                  "label": "Eripatti",
+                  "value": "Land for maintenance of village tank"
+                },
+                {
+                  "label": "Ghatika",
+                  "value": "Educational centers (mostly Brahmins)"
+                },
+                {
+                  "label": "Ur",
+                  "value": "General village assembly"
+                },
+                {
+                  "label": "Sabhai",
+                  "value": "Brahmin village assembly"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "What are the three main ruling families of the Sangam Age?",
+          "back": "The Cheras (Kerala), the Cholas (Uraiyur), and the Pandyas (Madurai)."
+        },
+        {
+          "front": "What are the five landscapes of Sangam society called?",
+          "back": "They are known as Thinais: kurinji, mullai, marudam, neithal, and palai."
+        },
+        {
+          "front": "Which archaeological site provides proof of urban culture in the Sangam Age?",
+          "back": "Keezhadi excavations in Tamil Nadu."
+        },
+        {
+          "front": "Who were the two greatest kings of the Pallava dynasty?",
+          "back": "Mahendravarman I and his son Narasimhavarman I."
+        },
+        {
+          "front": "Which architectural style did the Pallavas pioneer?",
+          "back": "The Dravidian style, characterized by pyramid-shaped towers and intricate carvings."
+        },
+        {
+          "front": "Which inscription records Pulakeshin II's victory over Harshavardhana?",
+          "back": "The Aihole inscription."
+        },
+        {
+          "front": "What is the defining feature of the Kailasa Temple at Ellora?",
+          "back": "It is monolithic, meaning it was carved out of a single massive rock."
+        },
+        {
+          "front": "What was the purpose of 'Eripatti' in South Indian administration?",
+          "back": "It was land set aside to fund the maintenance of a village tank."
+        },
+        {
+          "front": "What was a 'Ghatika' in the context of medieval South Indian society?",
+          "back": "It was a center of higher learning, mostly attended by Brahmin scholars."
+        },
+        {
+          "front": "What was the 'Ur' in South Indian village administration?",
+          "back": "The Ur was the general assembly of the entire village."
+        },
+        {
+          "front": "Who wrote the \"Aihole Inscription\"?",
+          "back": "Ravikirti (court poet of Pulakeshin II)."
+        },
+        {
+          "front": "Who built the monolithic Kailasa Temple at Ellora?",
+          "back": "Krishna I (Rashtrakuta dynasty)."
+        },
+        {
+          "front": "Capital of the Pallavas?",
+          "back": "Kanchipuram."
+        },
+        {
+          "front": "Greatest Chola king of the Sangam Age?",
+          "back": "Karikala Chola."
+        },
+        {
+          "front": "What is \"Vesara\" style?",
+          "back": "A hybrid style of temple architecture blending Nagara (North) and Dravida (South) styles."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

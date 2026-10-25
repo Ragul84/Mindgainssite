@@ -1,0 +1,133 @@
+{
+  "zoneId": "quant-work",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "SSC QA: Time & Work — Efficiency & Pipes",
+      "intro": "Today we study the 'Inverse Relation'—Time and Work. If you double your efficiency, you halve the time. In SSC, we solve these using the 'LCM Method'—treat the work as a total number of 'units' (the LCM of individual times). This turns a complex fraction problem into a simple addition/subtraction of efficiencies. We also apply this to 'Pipes & Cisterns'—where an outlet pipe simply has negative efficiency. Let's master the 'Unit Work' mindset today.",
+      "pages": [
+        {
+          "type": "formula",
+          "title": "The LCM Method (The Topper's Way)",
+          "intro": "When two people complete a job in different numbers of days, we can find the total work by taking the Least Common Multiple (LCM) of those days. The LCM is the smallest number that both day-counts can divide into evenly. For example, if A does a job in 10 days and B in 15 days, the LCM of 10 and 15 is 30, so we imagine the total work is 30 units. Efficiency, meaning the amount of work done per day, is found by dividing the total work by the number of days: A’s efficiency is 30 divided by 10, which is 3 units per day, and B’s efficiency is 30 divided by 15, which is 2 units per day. Working together, their combined efficiency is 3 plus 2, or 5 units per day. To find the time taken together, divide the total work (30 units) by their combined efficiency (5 units per day), giving 6 days.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Total Work",
+                  "value": "LCM(10, 15): 30 units"
+                },
+                {
+                  "label": "Efficiency of A",
+                  "value": "30/10: 3 units/day"
+                },
+                {
+                  "label": "Efficiency of B",
+                  "value": "30/15: 2 units/day"
+                },
+                {
+                  "label": "Together Efficiency",
+                  "value": "5 units/day"
+                },
+                {
+                  "label": "Time",
+                  "value": "30/5: 6 days"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "The MDH Formula (Group Work)",
+          "intro": "This formula helps you solve problems where a group of people work for a certain number of days and hours to complete a task. The formula is written as (M1 times D1 times H1) divided by W1 equals (M2 times D2 times H2) divided by W2. In this formula, M stands for the number of Men or workers, D stands for the number of Days they work, H stands for the number of Hours they work each day, and W stands for the amount of Work done or Wages earned. For example, if 10 men work for 5 days at 8 hours a day to complete 20 tasks, you would set M1 as 10, D1 as 5, H1 as 8, and W1 as 20. Then, if you want to find out how many days 15 men working 6 hours a day would need to complete the same 20 tasks, you put the unknown as D2 and solve the equation. This formula works because it assumes each worker works at the same speed, so the total work is always the product of men, days, and hours.",
+          "blocks": []
+        },
+        {
+          "type": "formula",
+          "title": "Efficiency Ratio",
+          "intro": "Efficiency means how quickly a person can complete a task. If A is 50% more efficient than B, then for every 2 units of work B does in a given time, A does 3 units in the same time, so the efficiency ratio of A to B is 3 to 2. Work equals time multiplied by efficiency, so for the same amount of work, time and efficiency are inversely related. Because A’s efficiency is higher, A takes less time than B. Therefore, the time ratio for A to B to finish the same work is 2 to 3, meaning A uses 2 units of time while B uses 3 units.",
+          "blocks": []
+        },
+        {
+          "type": "formula",
+          "title": "Pipes & Cisterns",
+          "intro": "Pipes and Cisterns In this topic, we study problems about filling a tank with water using pipes. An inlet pipe is a pipe that brings water into the tank, so it adds to the water and has a positive efficiency. An outlet pipe, also called a leak, is a pipe that lets water out of the tank, so it removes water and has a negative efficiency. For example, if an inlet pipe can fill a full tank in 10 hours, that means it adds 1/10 of the tank each hour, and if an outlet pipe can empty the same full tank in 15 hours, it removes 1/15 of the tank each hour. To find the net effect when both pipes are open, we use the Least Common Multiple, or LCM, of the two times, which is 30 here, and convert each pipe's work into units per hour: the inlet adds 3 units per hour (because 30 divided by 10 is 3) and the outlet removes 2 units per hour (because 30 divided by 15 is 2), so the net gain is 3 minus 2, which is 1 unit per hour. Since the whole tank holds 30 units, the time to fill the tank when both pipes are open is the total units divided by the net gain per hour, which is 30 divided by 1, giving 30 hours.",
+          "blocks": []
+        },
+        {
+          "type": "formula",
+          "title": "Wages Distribution",
+          "intro": "Wages are the money paid to workers for completing a job. When multiple workers share a total wage, it is divided in the same proportion as the amount of work each person has done. Work done means the total task completed by a person. If all workers worked for the same number of hours, then the work done depends on their efficiency, which is the amount of work a person can finish in one unit of time, such as one hour. In that situation, the wages are distributed in the ratio of their efficiencies.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "What is the master formula for group work problems involving men, days, and hours?",
+          "back": "(M₁ × D₁ × H₁) / W₁ : (M₂ × D₂ × H₂) / W₂"
+        },
+        {
+          "front": "How is efficiency defined in the context of the LCM method?",
+          "back": "Efficiency is the amount of work done per day, found by dividing the total work by the number of days."
+        },
+        {
+          "front": "What is the relationship between efficiency and time for the same amount of work?",
+          "back": "Time and efficiency are inversely related."
+        },
+        {
+          "front": "How do you represent the efficiency of an outlet or leak pipe?",
+          "back": "An outlet or leak pipe has negative efficiency."
+        },
+        {
+          "front": "In the MDH formula, what does the variable 'W' represent?",
+          "back": "W stands for the amount of Work done or Wages earned."
+        },
+        {
+          "front": "If A is 50% more efficient than B, what is the ratio of their efficiencies?",
+          "back": "The efficiency ratio of A to B is 3:2."
+        },
+        {
+          "front": "How are wages distributed among workers?",
+          "back": "Wages are distributed in the ratio of the work done by each person."
+        },
+        {
+          "front": "If workers work for the same amount of time, how are wages distributed?",
+          "back": "Wages are distributed in the ratio of their efficiencies."
+        },
+        {
+          "front": "What is the efficiency of an inlet pipe?",
+          "back": "An inlet pipe has positive efficiency."
+        },
+        {
+          "front": "If efficiency is 3:2, what is the time ratio for the same work?",
+          "back": "The time ratio is 2:3."
+        },
+        {
+          "front": "Relationship between Time and Efficiency?",
+          "back": "Inverse. Time ∝ 1/Efficiency. If efficiency ratio is 4:5, time ratio is 5:4."
+        },
+        {
+          "front": "Master formula for group work?",
+          "back": "M₁D₁H₁/W₁ : M₂D₂H₂/W₂."
+        },
+        {
+          "front": "A is thrice as efficient as B. A:B Time ratio?",
+          "back": "Efficiency 3:1 → Time 1:3."
+        },
+        {
+          "front": "If A and B can do work in x and y days, together they take?",
+          "back": "xy / (x + y)."
+        },
+        {
+          "front": "In Pipes & Cisterns, what is the role of a leak?",
+          "back": "Negative efficiency. It subtracts units from the total filling rate."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

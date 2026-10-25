@@ -1,0 +1,169 @@
+{
+  "zoneId": "history-1857",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "UPSC History: The Revolt of 1857 — The First War",
+      "intro": "Today we study the 'Great Rebellion'. The Revolt of 1857 was the first massive challenge to British authority in India. What started as a sepoy mutiny in Meerut quickly spread into a popular uprising across North and Central India. We explore the multifaceted causes—from the greased cartridges to the Doctrine of Lapse—and the heroic resistance of leaders like Rani Lakshmibai and Kunwar Singh. For UPSC, focus on 'Why the revolt failed' and its 'Long-term Impact' on British policy.",
+      "pages": [
+        {
+          "type": "timeline",
+          "title": "Causes of the Revolt",
+          "intro": "The Revolt of 1857, also known as the Indian Rebellion, had several main causes. The political causes included the Doctrine of Lapse, which was a British rule that let them take over any Indian state whose ruler died without a natural son, and the annexation of Awadh, meaning the British forcibly took control of that large kingdom. The economic causes were heavy taxation that made life very difficult for farmers and the destruction of traditional Indian handicraft industries because cheap British factory goods replaced them. The social and religious causes included the British interfering with local customs, like when they banned the practice of Sati, where a widow was forced to burn on her husband's funeral pyre, and creating fears that the British were trying to force Indians to convert to Christianity. The military causes were the immediate spark of the rebellion: the British introduced greased cartridges for new rifles, which soldiers had to bite open, and the grease was rumored to be made from cow and pig fat, deeply offending both Hindu and Muslim sepoys, who were Indian soldiers in the British army, and there was also a long history of unfair treatment and lower pay for these Indian sepoys compared to their British officers.",
+          "blocks": [
+            {
+              "type": "timeline",
+              "items": [
+                {
+                  "label": "Political",
+                  "value": "Doctrine of Lapse, annexation of Awadh"
+                },
+                {
+                  "label": "Economic",
+                  "value": "Heavy taxation, destruction of handicrafts"
+                },
+                {
+                  "label": "Social/Religious",
+                  "value": "Interference in customs, Sati abolition, conversion fears"
+                },
+                {
+                  "label": "Military",
+                  "value": "Greased cartridges (immediate cause), discrimination against Indian sepoys"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "facts",
+          "title": "Centers & Leaders",
+          "intro": "During the Indian Rebellion of 1857, different cities became centers of the uprising, each led by a key figure. In Delhi, the Mughal emperor Bahadur Shah Zafar was the nominal leader, meaning he was the symbolic head, but the real military command was held by Bakht Khan, a general from the British East India Company's own army. In Kanpur, the rebellion was led by Nana Saheb, the adopted son of a former Maratha ruler, along with his close commander Tantia Tope. In Lucknow, the revolt was organized by Begum Hazrat Mahal, the wife of the deposed Nawab of Awadh. The famous queen Rani Lakshmibai led the uprising in Jhansi, while Khan Bahadur Khan led it in Bareilly. Finally, in Arrah (in present-day Bihar), the rebellion was commanded by the elderly zamindar (landlord) Kunwar Singh.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Delhi",
+                  "value": "Bahadur Shah Zafar (Nominal), Bakht Khan (Real)"
+                },
+                {
+                  "label": "Kanpur",
+                  "value": "Nana Saheb, Tantia Tope. Lucknow: Begum Hazrat Mahal"
+                },
+                {
+                  "label": "Jhansi",
+                  "value": "Rani Lakshmibai"
+                },
+                {
+                  "label": "Bareilly",
+                  "value": "Khan Bahadur Khan. Arrah (Bihar): Kunwar Singh"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "timeline",
+          "title": "Suppression of the Revolt",
+          "intro": "The British military suppression of the 1857 Revolt was led by different commanders in key cities. In Delhi, General John Nicholson led the assault that recaptured the city from the rebels. In Lucknow, General Colin Campbell commanded the British forces that relieved the besieged British garrison and later retook the city. In Jhansi, General Hugh Rose led the campaign against Rani Lakshmibai, and he famously called her the \"only man among the rebels,\" meaning he respected her bravery and leadership more than the male rebel leaders. The British used superior weapons, better organization, and brutal tactics, including mass executions, to crush the uprising. By mid-1858, the British had regained control over most of northern and central India, ending the revolt.",
+          "blocks": [
+            {
+              "type": "timeline",
+              "items": [
+                {
+                  "label": "Delhi",
+                  "value": "John Nicholson"
+                },
+                {
+                  "label": "Lucknow",
+                  "value": "Colin Campbell"
+                },
+                {
+                  "label": "Jhansi",
+                  "value": "Hugh Rose (who called Rani the \"only man among the rebels\")"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Causes of Failure",
+          "intro": "The rebellion failed because it was localized, meaning it only spread across parts of North and Central India, while",
+          "blocks": []
+        },
+        {
+          "type": "timeline",
+          "title": "Impact of the Revolt",
+          "intro": "The Government of India Act of 1858 ended the rule of the East India Company, a private British trading company, and placed India directly under the British Crown, meaning the British monarch. A new official called the Secretary of State, a member of the British government in London, was created to control Indian affairs, and a Viceroy, the Queen's personal representative in India, was appointed to govern the country. The British also abolished the \"Doctrine of Lapse,\" which was a policy that allowed the Company to take over a princely state if its ruler died without a natural heir. Finally, the British intensified their \"Divide and Rule\" policy, which means they deliberately created or worsened conflicts between different religious and social groups, such as Hindus and Muslims, to prevent them from uniting against British power.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "What was the immediate military cause of the 1857 Revolt?",
+          "back": "The introduction of greased cartridges for new rifles, rumored to be made from cow and pig fat."
+        },
+        {
+          "front": "Who was the nominal leader of the 1857 rebellion in Delhi?",
+          "back": "Bahadur Shah Zafar."
+        },
+        {
+          "front": "Who held the real military command in Delhi during the 1857 rebellion?",
+          "back": "Bakht Khan."
+        },
+        {
+          "front": "Which British commander led the suppression of the revolt in Jhansi?",
+          "back": "General Hugh Rose."
+        },
+        {
+          "front": "Which British commander led the assault to recapture Delhi?",
+          "back": "General John Nicholson."
+        },
+        {
+          "front": "Who led the rebellion in Lucknow?",
+          "back": "Begum Hazrat Mahal."
+        },
+        {
+          "front": "What act ended the rule of the East India Company in India?",
+          "back": "The Government of India Act of 1858."
+        },
+        {
+          "front": "Which policy was abolished following the 1857 Revolt?",
+          "back": "The Doctrine of Lapse."
+        },
+        {
+          "front": "Who led the rebellion in Arrah, Bihar?",
+          "back": "Kunwar Singh."
+        },
+        {
+          "front": "What was a major reason for the failure of the 1857 Revolt regarding its geographical spread?",
+          "back": "It was localized, as the South and West remained quiet."
+        },
+        {
+          "front": "Immediate cause of 1857 Revolt?",
+          "back": "The use of greased cartridges in the new Enfield rifles."
+        },
+        {
+          "front": "Who led the revolt in Lucknow?",
+          "back": "Begum Hazrat Mahal."
+        },
+        {
+          "front": "Who led the revolt in Bihar (Arrah)?",
+          "back": "Kunwar Singh."
+        },
+        {
+          "front": "Who called Rani Lakshmibai \"the only man among the rebels\"?",
+          "back": "Sir Hugh Rose."
+        },
+        {
+          "front": "What was the \"Act for the Better Government of India\"?",
+          "back": "Government of India Act 1858."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

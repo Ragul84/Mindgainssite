@@ -1,0 +1,247 @@
+{
+  "zoneId": "geo-physical",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "UPSC Geography: Physical Geography — Himalayas & Plains",
+      "intro": "Today we study the 'Northern Frontiers'. The Himalayas are the youngest fold mountains in the world, playing a crucial role in India's climate and security. We also explore the Indo-Gangetic Plains—the most fertile region on Earth. For UPSC, focus on the 'Geological structure', the 'Trans-Himalayan ranges', and the difference between 'Bhabar, Terai, Bhangar, and Khadar'. This is the physical foundation of our subcontinent.",
+      "pages": [
+        {
+          "type": "concept",
+          "title": "Formation of Himalayas",
+          "intro": "The Himalayas were formed when the Indian Plate (a large slab of Earth's crust carrying India) crashed into the Eurasian Plate (the crust carrying Europe and Asia). This collision pushed the land upward, creating a type of mountain called fold mountains, which are made when layers of rock bend and wrinkle like a rug. These mountains are still rising because the Indian Plate continues to push northward very slowly. The Himalayas are divided into three parallel ranges: the Himadri, also called the Greater Himalayas, which is the highest and northernmost range; the Himachal, or Lesser Himalayas, which is in the middle; and the Siwaliks, or Outer Himalayas, which is the lowest and southernmost range.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Trans-Himalayas",
+          "intro": "The Trans-Himalayas are a mountain region located to the north of the Great Himalayas, which is the main central chain of the Himalayan mountain system. This region includes three major ranges: the Karakoram Range (which contains K2, the world's second-highest peak), the Ladakh Range, and the Zanskar Range. Two important glaciers found in the Trans-Himalayas are the Siachen Glacier and the Baltoro Glacier.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Regional Divisions",
+          "intro": "The Himalayan mountain range is divided into four parts from west to east, each named after the region it lies in. The first part is the Punjab Himalayas, which lies between the Indus River and the Sutlej River. The second part is the Kumaon Himalayas, located between the Sutlej River and the Kali River. The third part is the Nepal Himalayas, stretching from the Kali River to the Tista River. The fourth part is the Assam Himalayas, which runs from the Tista River to the Dihang River.",
+          "blocks": []
+        },
+        {
+          "type": "timeline",
+          "title": "Northern Great Plains",
+          "intro": "The Northern Great Plains are a large, flat area of land in northern India, created over millions of years by the soil and rock (called alluvium) that was washed down from the mountains by three major rivers: the Indus, the Ganga, and the Brahmaputra. This region is divided into four distinct zones based on the age and nature of the soil. First is the Bhabar zone, which is a narrow strip at the foot of the Himalayas made of pebbles and rocks, where rivers often disappear underground. Next is the Terai zone, a marshy and damp area just south of the Bhabar, where those same rivers reappear on the surface. The third zone is the Bhangar, which is made of older alluvium (old river deposits) that contains calcium carbonate deposits called Kankar, making the soil less fertile. The fourth and final zone is the Khadar, which is made of new alluvium deposited every year by floods, making it the most fertile soil in the plains.",
+          "blocks": [
+            {
+              "type": "timeline",
+              "items": [
+                {
+                  "label": "Bhabar",
+                  "value": "Pebble-studded, rivers disappear"
+                },
+                {
+                  "label": "Terai",
+                  "value": "Marshy, rivers reappear"
+                },
+                {
+                  "label": "Bhangar",
+                  "value": "Older alluvium, calcareous deposits (Kankar)"
+                },
+                {
+                  "label": "Khadar",
+                  "value": "New alluvium, very fertile"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Importance",
+          "intro": "The Himalayas are a mountain range that acts like a giant wall, stopping freezing winds from Siberia in Central Asia from entering India, which keeps our winters warmer than they would otherwise be. These same mountains also force the moisture-filled monsoon winds from the sea to rise and cool, which causes them to release heavy rain over the Indian subcontinent, giving us the water needed for farming. The flat, fertile plains that lie south of the Himalayas, called the Indo-Gangetic Plains, are where most of India's rice and wheat are grown, providing the food that feeds our large population. Because these plains produce so much food, they ensure that India can feed itself without depending on other countries, which is called food security. In short, the Himalayas protect us from extreme cold and bring rain, while the plains use that rain to grow the food that keeps the nation fed.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "What is the geological origin of the Himalayas?",
+          "back": "They are fold mountains formed by the collision between the Indian Plate and the Eurasian Plate."
+        },
+        {
+          "front": "What are the three parallel ranges of the Himalayas?",
+          "back": "Himadri (Greater Himalayas), Himachal (Lesser Himalayas), and Siwaliks (Outer Himalayas)."
+        },
+        {
+          "front": "Which mountain ranges are included in the Trans-Himalayas?",
+          "back": "The Karakoram, Ladakh, and Zanskar ranges."
+        },
+        {
+          "front": "Which two major glaciers are located in the Trans-Himalayas?",
+          "back": "The Siachen and Baltoro glaciers."
+        },
+        {
+          "front": "Between which rivers are the Punjab Himalayas located?",
+          "back": "They are located between the Indus and Sutlej rivers."
+        },
+        {
+          "front": "Which rivers define the boundaries of the Nepal Himalayas?",
+          "back": "The Kali River and the Tista River."
+        },
+        {
+          "front": "In which zone of the Northern Great Plains do rivers disappear underground?",
+          "back": "The Bhabar zone, which is a pebble-studded strip at the foot of the Himalayas."
+        },
+        {
+          "front": "What characterizes the Bhangar zone of the Northern Great Plains?",
+          "back": "It consists of older alluvium and contains calcareous deposits known as Kankar."
+        },
+        {
+          "front": "Which zone of the Northern Great Plains is considered the most fertile?",
+          "back": "The Khadar zone, which is composed of new alluvium deposited by annual floods."
+        },
+        {
+          "front": "How do the Himalayas influence India's climate?",
+          "back": "They block cold Siberian winds and force monsoon winds to rise, causing rain."
+        },
+        {
+          "front": "Highest peak in the world?",
+          "back": "Mount Everest (Nepal/Tibet)."
+        },
+        {
+          "front": "Highest peak in India?",
+          "back": "K2 (Godwin Austen) in Karakoram."
+        },
+        {
+          "front": "What is the \"Terai\"?",
+          "back": "A marshy, forested region at the foot of the Himalayas where rivers reappear."
+        },
+        {
+          "front": "Difference between Bhangar and Khadar?",
+          "back": "Bhangar : Old Alluvium. Khadar : New/Fertile Alluvium."
+        },
+        {
+          "front": "Youngest range of Himalayas?",
+          "back": "Siwaliks."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    },
+    {
+      "title": "UPSC Geography: Plateaus, Islands & Coastal Plains",
+      "intro": "Today we study the 'Ancient Core'. The Peninsular Plateau is the oldest and most stable landmass of India, rich in minerals and history. We also explore the long coastline and the exotic islands of Andaman and Lakshadweep. For UPSC, focus on the 'Western vs Eastern Ghats', the 'Deccan Trap', and the 'Strategic importance of the Islands'. This is the heartland of Indian resources.",
+      "pages": [
+        {
+          "type": "concept",
+          "title": "Peninsular Plateau",
+          "intro": "The Peninsular Plateau is a large, triangular-shaped tableland, which means it is a flat-topped area of high land, located in southern India. It is one of the oldest landmasses on Earth, originally part of an ancient supercontinent called Gondwanaland, which broke apart millions of years ago. This plateau is divided into two main parts: the Central Highlands in the north and the Deccan Plateau in the south. The Central Highlands include the Malwa Plateau, which is a region in central India, and the Chotanagpur Plateau, which is a mineral-rich area in eastern India. The Deccan Plateau is the large, southern portion of the Peninsular Plateau, bordered by the Eastern Ghats and Western Ghats mountain ranges.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "The Deccan Trap",
+          "intro": "The Deccan Trap is a huge area of land in India formed millions of years ago by volcanic eruptions that spread layers of lava, which cooled into a hard, dark rock called basalt. This basalt rock, over time, weathered to create a rich, black type of soil known as Regur, which is excellent for growing cotton because it holds moisture well. You can find the Deccan Trap across the states of Maharashtra, Gujarat, and Madhya Pradesh (MP).",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Ghats Comparison",
+          "intro": "The Ghats are two mountain ranges along the western and eastern coasts of India. The Western Ghats form a continuous, unbroken chain of mountains that are taller, with Anaimudi as their highest peak, and they are the source of many major rivers such as the Godavari and Krishna. The Eastern Ghats, in contrast, are discontinuous, meaning they are made up of separate, broken hill ranges that are lower in height. They have been heavily eroded over time by rivers that flow eastward into the Bay of Bengal.",
+          "blocks": []
+        },
+        {
+          "type": "facts",
+          "title": "Coastal Plains",
+          "intro": "Coastal Plains are the flat, low-lying lands along the edge of a country where the land meets the sea. In India, the Western Coastal Plain runs along the Arabian Sea and is very narrow, while the Eastern Coastal Plain along the Bay of Bengal is much wider. The Western Coastal Plain is divided from north to south into the Konkan coast (Maharashtra), the Kanara coast (Karnataka), and the Malabar coast (Kerala). A special feature of the Malabar coast in Kerala is its lagoons, which are shallow saltwater lakes called Kayals that are separated from the sea by sandbars. The Eastern Coastal Plain is divided into the Northern Circars (in Andhra Pradesh and Odisha) and the Coromandel coast (in Tamil Nadu). These eastern plains are famous for their rich, fertile deltas, which are triangle-shaped deposits of soil formed at river mouths, especially by the Ganga, Godavari, and Krishna rivers.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Western",
+                  "value": "Narrower (Konkan, Kanara, Malabar)"
+                },
+                {
+                  "label": "Features",
+                  "value": "Lagoons (Kayals) in Kerala"
+                },
+                {
+                  "label": "Eastern",
+                  "value": "Broader (Northern Circars, Coromandel)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "The Islands",
+          "intro": "India has two main groups of islands. The Andaman and Nicobar Islands are located in the Bay of Bengal, and they are separated from each other by a water body called the 10 Degree Channel. These islands are volcanic in origin, meaning they were formed by volcanic activity, and Indira Point, located on the Nicobar Islands, is the southernmost point of India. The other group is the Lakshadweep Islands, which are located in the Arabian Sea and are made of coral, specifically a type called atolls, which are ring-shaped coral reefs. The Lakshadweep Islands are separated from each other by the 9 Degree Channel and the 11 Degree Channel.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "What is the geological origin of the Peninsular Plateau?",
+          "back": "It is the oldest landmass of India and was part of Gondwanaland."
+        },
+        {
+          "front": "What type of soil is characteristic of the Deccan Trap?",
+          "back": "The Deccan Trap is rich in Black Soil, also known as Regur."
+        },
+        {
+          "front": "Which states contain the Deccan Trap region?",
+          "back": "The Deccan Trap is found in Maharashtra, Gujarat, and Madhya Pradesh."
+        },
+        {
+          "front": "What is the highest peak of the Western Ghats?",
+          "back": "The highest peak of the Western Ghats is Anaimudi."
+        },
+        {
+          "front": "How do the Eastern Ghats differ from the Western Ghats in structure?",
+          "back": "The Eastern Ghats are discontinuous and lower, having been eroded by rivers flowing into the Bay of Bengal."
+        },
+        {
+          "front": "What are the three divisions of the Western Coastal Plain?",
+          "back": "The Western Coastal Plain is divided into the Konkan, Kanara, and Malabar coasts."
+        },
+        {
+          "front": "What are the lagoons found on the Malabar coast called?",
+          "back": "The lagoons found on the Malabar coast in Kerala are called Kayals."
+        },
+        {
+          "front": "What are the two divisions of the Eastern Coastal Plain?",
+          "back": "The Eastern Coastal Plain is divided into the Northern Circars and the Coromandel coast."
+        },
+        {
+          "front": "Which channel separates the Andaman and Nicobar Islands?",
+          "back": "The Andaman and Nicobar Islands are separated by the 10° Channel."
+        },
+        {
+          "front": "What is the southernmost point of India?",
+          "back": "Indira Point, located on the Nicobar Islands, is the southernmost point of India."
+        },
+        {
+          "front": "Highest peak in the Peninsular Plateau?",
+          "back": "Anaimudi (2,695m)."
+        },
+        {
+          "front": "What is the \"Deccan Trap\"?",
+          "back": "A large volcanic province in Western India with black soil."
+        },
+        {
+          "front": "Difference between Western and Eastern Ghats?",
+          "back": "Western is continuous/higher; Eastern is discontinuous/lower."
+        },
+        {
+          "front": "Southernmost point of India?",
+          "back": "Indira Point (Great Nicobar)."
+        },
+        {
+          "front": "What separates Andaman from Nicobar?",
+          "back": "10 Degree Channel."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

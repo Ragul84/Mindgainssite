@@ -1,0 +1,309 @@
+{
+  "zoneId": "polity-parliament",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "The Parliament: Structure, Sessions & Speaker",
+      "intro": "We now enter the heart of Indian Democracy—the Parliament (Art 79-122). The Parliament is not just a building; it is a tripartite institution consisting of the President, the Lok Sabha (House of the People), and the Rajya Sabha (Council of States). Today, we focus on the machinery: how members are elected, how the Houses are structured, the crucial role of the Speaker, and the 'Sessions' that keep the government accountable. For a UPSC aspirant, understanding the 'Quorum', 'Adjournment', and 'Dissolution' is the first step toward mastering legislative procedures.",
+      "pages": [
+        {
+          "type": "facts",
+          "title": "Structure of Parliament (Art 79)",
+          "intro": "Structure of Parliament (Article 79) Article 79 of the Indian Constitution says that the Parliament of India is made up of three parts: the President of India, the Lok Sabha, and the Rajya Sabha. The President is not a member of either the Lok Sabha or the Rajya Sabha, but he or she is an essential and inseparable part of Parliament because no bill becomes a law without the President's final approval. The Lok Sabha, which is called the Lower House, can have a maximum of 550 members: up to 530 members are elected from the States and up to 20 members are elected from the Union Territories (UTs), and currently there are 543 elected members. The Rajya Sabha, which is called the Upper House, can have a maximum of 250 members: up to 238 members represent the States and Union Territories, and 12 members are nominated by the President for their special knowledge or achievements in fields like art, literature, science, or social service.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Parliament",
+                  "President + Lok Sabha + Rajya Sabha"
+                ],
+                [
+                  "LS (Lower House)",
+                  "Max 550 (530 States + 20 UTs) - currently 543 elected"
+                ],
+                [
+                  "RS (Upper House)",
+                  "Max 250 (238 States/UTs + 12 Nominated by President)"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Item",
+                "Exam fact"
+              ]
+            },
+            {
+              "text": "President is NOT a member of either House but is an integral part.",
+              "type": "trap"
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Lok Sabha vs Rajya Sabha",
+          "intro": "The Lok Sabha, or House of the People, is the lower house of India's Parliament, and its members are directly elected by all adult citizens of India through a process called Universal Adult Franchise, meaning every citizen over 18 can vote. The Lok Sabha has a fixed term of five years, after which it must be dissolved and fresh elections held, though the President can dissolve it earlier. In contrast, the Rajya Sabha, or Council of States, is the upper house and is a permanent house that can never be dissolved. Instead, one-third of its members retire every two years, and new members are elected to replace them, ensuring continuity. Members of the Rajya Sabha are not directly elected by the public; they are indirectly elected by the elected members of each state's Legislative Assembly (MLAs). Additionally, the President of India nominates 12 members to the Rajya Sabha who have special knowledge or experience in fields like art, science, literature, or social service, as provided by Article 80 of the Constitution.",
+          "blocks": [
+            {
+              "text": "RS: Permanent house, cannot be dissolved.",
+              "type": "trap"
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Sessions of Parliament",
+          "intro": "A session of Parliament is the period during which the two Houses, the Lok Sabha (House of the People) and the Rajya Sabha (Council of States), meet to conduct business. The process of summoning is the formal order by the President of India to call the members of both Houses to meet for a new session. Prorogation is the action by the President that ends a session of Parliament, meaning the House stops meeting until the next session is summoned. Dissolution is also done by the President, but it only ends the life of the Lok Sabha, forcing a new general election; the Rajya Sabha is a permanent House and is never dissolved. Adjournment is a temporary break in a day's sitting, ordered by the Speaker (in Lok Sabha) or the Chairman (in Rajya Sabha), which can last for hours or days. Adjournment Sine Die is a specific type of adjournment where the Speaker or Chairman ends a sitting without setting a fixed date for the next meeting, effectively terminating the sitting indefinitely. Finally, Quorum is the minimum number of members required to be present for the House to function, which is one-tenth of the total membership of that House, including the Speaker or Chairman.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "The Speaker of Lok Sabha",
+          "intro": "The Speaker of Lok Sabha (LS), which is the lower house of India's Parliament, is elected by the members of the Lok Sabha from among themselves. Even though the Speaker is usually a member of a political party, once elected they are expected to act neutrally and impartially, without favoring their own party. The Speaker's powers include maintaining order in the House, deciding whether a proposed law is a Money Bill (a bill that deals only with taxes, government spending, or borrowing, as defined in Article 110 of the Constitution), and presiding over a Joint Sitting of both houses of Parliament when there is a disagreement on an ordinary bill (Article 108). Additionally, under the 10th Schedule of the Constitution (also called the anti-defection law), the Speaker has the authority to decide if a member of the Lok Sabha should be disqualified for leaving their party or voting against its instructions. The Speaker can only be removed from office by a resolution passed by a majority of all members of the Lok Sabha.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Language in Parliament",
+          "intro": "Parliament is the central law-making body of India. Article 120 of the Constitution of India says that the official languages for conducting business in Parliament are Hindi and English. The Speaker, who is the presiding officer of the Parliament, has the power to allow a member to speak in their mother tongue, meaning the language they learned from birth, instead of Hindi or English.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "Which article defines the structure of the Indian Parliament?",
+          "back": "Article 79."
+        },
+        {
+          "front": "What is the maximum membership capacity of the Lok Sabha?",
+          "back": "550 members."
+        },
+        {
+          "front": "How many members are nominated by the President to the Rajya Sabha?",
+          "back": "12 members."
+        },
+        {
+          "front": "Which house of Parliament is permanent and cannot be dissolved?",
+          "back": "The Rajya Sabha."
+        },
+        {
+          "front": "What is the minimum number of members required for a House to function?",
+          "back": "One-tenth of the total membership (Quorum)."
+        },
+        {
+          "front": "Who has the authority to dissolve the Lok Sabha?",
+          "back": "The President of India."
+        },
+        {
+          "front": "Which article defines a Money Bill?",
+          "back": "Article 110."
+        },
+        {
+          "front": "Who presides over a Joint Sitting of both Houses of Parliament?",
+          "back": "The Speaker of the Lok Sabha."
+        },
+        {
+          "front": "Under which schedule does the Speaker decide on the disqualification of a member?",
+          "back": "The 10th Schedule."
+        },
+        {
+          "front": "Which article specifies Hindi and English as the official languages of Parliament?",
+          "back": "Article 120."
+        },
+        {
+          "front": "Is the President a member of the Parliament?",
+          "back": "NO. The President is NOT a member of either House and does not sit in Parliament. However, the President is an INTEGRAL PART of Parliament because no bill becomes law without presidential assent."
+        },
+        {
+          "front": "What is a \"Quorum\"?",
+          "back": "The minimum number of members required to be present to conduct the business of the House. It is 1/10th of the total membership (including the presiding officer). For LS, it is ~55; for RS, it is ~25."
+        },
+        {
+          "front": "Who decides if a Bill is a \"Money Bill\"?",
+          "back": "The Speaker of the Lok Sabha. Their decision is final and cannot be challenged in any court or by the President or the Rajya Sabha."
+        },
+        {
+          "front": "Difference between Prorogation and Dissolution?",
+          "back": "Prorogation ends a SESSION of the House (LS or RS). Dissolution ends the LIFE of the House (ONLY Lok Sabha). Rajya Sabha is a permanent house and is never dissolved."
+        },
+        {
+          "front": "Who presides over a \"Joint Sitting\" of Parliament?",
+          "back": "The Speaker of the Lok Sabha. If the Speaker is absent, the Deputy Speaker. If they are absent, the Deputy Chairman of Rajya Sabha (NOT the Chairman/VP)."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    },
+    {
+      "title": "Parliamentary Procedures: Bills, Majorities & Ordinances",
+      "intro": "Today we go deeper into the 'Functions' of Parliament. A Parliamentarian's primary job is making laws. But not all bills are the same. A 'Money Bill' (Art 110) has a completely different power dynamic than an 'Ordinary Bill'. We also tackle the 'Types of Majorities'—Simple, Absolute, and Special—which is one of the most confusing yet crucial topics for Prelims. Finally, we look at 'Ordinances' (Art 123), the President's legislative power when Parliament is not in session. Understanding these procedures is the key to understanding how the executive is held accountable by the legislature.",
+      "pages": [
+        {
+          "type": "timeline",
+          "title": "Types of Bills",
+          "intro": "An Ordinary Bill is a proposed law that does not deal with money or financial matters, and it can be introduced for discussion in either the Lok Sabha (the lower house of Parliament) or the Rajya Sabha (the upper house). To pass this bill, it needs a simple majority, which means more than half of the members who are present and voting must say yes to it, as explained in Articles 107 and 108 of the Constitution. A Money Bill is a special type of bill that only deals with things like taxes, government borrowing, or spending money from the government's bank account. It can only be introduced in the Lok Sabha, and it must have the President's permission first, as stated in Article 110. The Rajya Sabha cannot reject this bill; it can only suggest changes within 14 days, and the Lok Sabha may choose to ignore those suggestions. A Financial Bill (I), defined in Article 117(1), is similar to a Money Bill because it also involves spending or taxes, but the Rajya Sabha has the power to reject it outright, unlike a Money Bill. A Financial Bill (II), defined in Article 117(3), is treated like an Ordinary Bill, but it includes a proposal to take money from the Consolidated Fund of India, which is the government's main bank account, meaning it requires special attention even though it follows the same process as an Ordinary Bill.",
+          "blocks": [
+            {
+              "type": "timeline",
+              "items": [
+                {
+                  "label": "Ordinary Bill (Art 107/108)",
+                  "value": "Can be introduced in either House"
+                },
+                {
+                  "label": "Money Bill (Art 110)",
+                  "value": "Introduced ONLY in Lok Sabha with President's prior recommendation"
+                },
+                {
+                  "label": "Financial Bill (I) (Art 117(1))",
+                  "value": "Like Money Bill but can be rejected by RS"
+                },
+                {
+                  "label": "Financial Bill (II) (Art 117(3))",
+                  "value": "Like Ordinary Bill but involves expenditure from Consolidated Fund"
+                }
+              ]
+            },
+            {
+              "text": "RS has only 14 days to suggest changes (cannot reject).",
+              "type": "trap"
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Joint Sitting (Art 108)",
+          "intro": "A Joint Sitting under Article 108 of the Constitution is a special meeting where both houses of Parliament, the Lok Sabha (the lower house) and the Rajya Sabha (the upper house), meet together to resolve a deadlock, which means a disagreement between the two houses over a bill. The President calls this Joint Sitting only for an Ordinary Bill, which is any bill that is not about money or the Constitution, or for a Financial Bill, which is a bill that deals with money matters but is not a Money Bill. A Joint Sitting is never used for a Money Bill, which is a special bill about taxes and government spending that only the Lok Sabha can control, or for a Constitution Amendment Bill, which changes the Constitution. The Speaker of the Lok Sabha presides over the Joint Sitting, and the bill is passed if a majority of the total members present and voting agree.",
+          "blocks": [
+            {
+              "text": "NOT available for Money Bills or Constitution Amendment Bills.",
+              "type": "trap"
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Types of Majorities",
+          "intro": "In the Indian Parliament, a \"majority\" means the minimum number of votes needed to pass a decision. There are four main types. First is a Simple Majority, which means more than half of the members who are present and actually voting in the House at that time. This is used for passing ordinary bills, like a normal law, and for a motion of confidence, which is a vote to see if the government still has the support of the House. Second is an Absolute Majority, which means more than half of the total number of members in the entire House, even if some are absent. For example, in the Lok Sabha which has 543 total members, an absolute majority is more than 272 members. Third is an Effective Majority, which means more than half of the total membership after subtracting any vacant seats, so it is a smaller number than an absolute majority. This is used to remove the Speaker of the Lok Sabha or the Vice President of India from their position. Fourth is a Special Majority, which has two different rules. Under Article 368 of the Constitution, which is about amending the Constitution, a special majority requires at least two-thirds of the members present and voting, and that number must also be more than half of the total membership, so it combines a simple majority with an absolute majority.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Simple",
+                  ">50% of members present and voting"
+                ],
+                [
+                  "Absolute",
+                  ">50% of total membership"
+                ],
+                [
+                  "Effective",
+                  ">50% of (Total membership - Vacancies)"
+                ],
+                [
+                  "Special",
+                  "2/3rd members present and voting + absolute majority"
+                ],
+                [
+                  "Special (Art 61)",
+                  "2/3rd of total membership"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Item",
+                "Exam fact"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "timeline",
+          "title": "Ordinance Power (Art 123)",
+          "intro": "Article 123 of the Indian Constitution gives the President the power to issue an ordinance, which is a temporary law that has the same force as an Act passed by Parliament. This power can only be used when both Houses of Parliament, meaning the Lok Sabha and the Rajya Sabha, are not in session, or when only one House is in session. The ordinance must be laid before Parliament as soon as it reassembles. If Parliament does not approve it, the ordinance automatically stops being in effect six weeks after Parliament meets again. Since the Constitution requires that the gap between two sessions of Parliament cannot be more than six months, the maximum possible lifespan of an ordinance is about six months plus six weeks.",
+          "blocks": [
+            {
+              "text": "Legislative power of President when both Houses (or one) are not in session.",
+              "type": "trap"
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Lapsing of Bills",
+          "intro": "Lapsing of Bills means that when a bill, which is a proposed law, is still being discussed in the Indian Parliament, it can become dead and cannot be continued if the Lok Sabha (LS), which is the lower house of Parliament, is dissolved or ends its term. A bill that is only pending in the Lok Sabha lapses, or dies, as soon as the Lok Sabha is dissolved. A bill that has already been passed by the Lok Sabha but is still waiting for approval in the Rajya Sabha (RS), the upper house, also lapses when the Lok Sabha dissolves. However, a bill that is only pending in the Rajya Sabha and has not yet been passed by the Lok Sabha does not lapse, meaning it stays alive and can be taken up again by the new Lok Sabha. A bill that has been passed by both the Lok Sabha and the Rajya Sabha but is still waiting for the President's final approval, called the President's assent, does not lapse and remains valid even after the Lok Sabha dissolves.",
+          "blocks": [
+            {
+              "text": "A bill pending in RS but NOT passed by LS does NOT lapse.",
+              "type": "trap"
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "Which article defines the Money Bill?",
+          "back": "Article 110."
+        },
+        {
+          "front": "Can a Joint Sitting be called for a Money Bill?",
+          "back": "No, a Joint Sitting is not available for Money Bills or Constitution Amendment Bills."
+        },
+        {
+          "front": "What is the maximum lifespan of an ordinance?",
+          "back": "Six months plus six weeks."
+        },
+        {
+          "front": "Which majority is used to remove the Speaker of the Lok Sabha?",
+          "back": "Effective Majority."
+        },
+        {
+          "front": "Does a bill pending in the Rajya Sabha that has not been passed by the Lok Sabha lapse upon dissolution of the Lok Sabha?",
+          "back": "No, it does not lapse."
+        },
+        {
+          "front": "Under which article can the President issue an ordinance?",
+          "back": "Article 123."
+        },
+        {
+          "front": "What is the requirement for a Special Majority under Article 368?",
+          "back": "Two-thirds of members present and voting plus an absolute majority."
+        },
+        {
+          "front": "How many days does the Rajya Sabha have to suggest changes to a Money Bill?",
+          "back": "14 days."
+        },
+        {
+          "front": "Who presides over a Joint Sitting of Parliament?",
+          "back": "The Speaker of the Lok Sabha."
+        },
+        {
+          "front": "What is an Absolute Majority?",
+          "back": "More than 50% of the total membership of the House."
+        },
+        {
+          "front": "What is a \"Money Bill\"? (Art 110)",
+          "back": "A bill dealing exclusively with taxation, borrowing, or expenditure from the Consolidated Fund. The Speaker's decision on whether a bill is a Money Bill is FINAL. RS can only delay it for 14 days."
+        },
+        {
+          "front": "Can a \"Joint Sitting\" be held for a Constitution Amendment Bill?",
+          "back": "NO. Article 368 requires each House to pass the amendment bill separately by a special majority. If there is a deadlock, the bill fails."
+        },
+        {
+          "front": "Difference between \"Absolute Majority\" and \"Effective Majority\"?",
+          "back": "Absolute : >50% of TOTAL seats (e.g., 272+ in LS). Effective : >50% of (Total seats - Vacancies). Effective majority is used to remove the Speaker/Deputy Speaker and Vice President."
+        },
+        {
+          "front": "Maximum life of an Ordinance?",
+          "back": "6 months and 6 weeks. 6 months is the maximum gap between two sessions of Parliament, and the ordinance expires 6 weeks after Parliament reassembles unless approved."
+        },
+        {
+          "front": "Does a bill pending in Rajya Sabha lapse when Lok Sabha dissolves?",
+          "back": "ONLY if it was already passed by the Lok Sabha. If it was introduced in Rajya Sabha and is still pending there without having gone to LS, it does NOT lapse."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+exam,area,syllabus_topic,weight,coverage_status,question_count,routes
+ssc,Reasoning,Analogies (semantic/number/figural),H,COVERED,539,/ssc/reasoning/analogy/
+ssc,Reasoning,Classification / odd-one-out,H,GAP — no route,0,
+ssc,Reasoning,Series (number / alphabet / figural),H,COVERED,540,/ssc/reasoning/series/
+ssc,Reasoning,Coding-Decoding,H,COVERED,640,/ssc/reasoning/coding-decoding/
+ssc,Reasoning,Blood Relations,M,COVERED,500,/ssc/reasoning/blood-relations/
+ssc,Reasoning,Direction & Distance,M,COVERED,500,/ssc/reasoning/direction-sense/
+ssc,Reasoning,Syllogism / statement-conclusion,H,COVERED,500,/ssc/reasoning/syllogism/
+ssc,Reasoning,Venn Diagram,M,COVERED,500,/ssc/reasoning/venn-diagram/
+ssc,Reasoning,Matrix / puzzle,M,COVERED,500,/ssc/reasoning/matrix-puzzle/
+ssc,Reasoning,"Non-verbal (mirror, paper-fold, embedded, dice)",H,COVERED,500,/ssc/reasoning/non-verbal/
+ssc,Reasoning,Ranking / seating arrangement,M,GAP — no route,0,
+ssc,Reasoning,Alphanumeric / word formation,M,COVERED,400,/ssc/english/one-word/
+ssc,Reasoning,Missing number / arithmetic reasoning,M,GAP — no route,0,
+ssc,Reasoning,Cube & dice,M,GAP — no route,0,
+ssc,Reasoning,Mathematical operations,L,GAP — no route,0,
+ssc,Quant,Number System / simplification,H,COVERED,3054,/ssc/quant/number-system/ ; /ssc/quant/simplification/
+ssc,Quant,Percentage,H,COVERED,3415,/ssc/quant/percentage/
+ssc,Quant,Ratio & Proportion,H,COVERED,3402,/ssc/quant/ratio-proportion/
+ssc,Quant,Average,M,GAP — no route,0,
+ssc,Quant,Profit & Loss / discount,H,COVERED,3493,/ssc/quant/profit-loss/
+ssc,Quant,Simple & Compound Interest,H,COVERED,3210,/ssc/quant/si-ci/
+ssc,Quant,Time & Work / pipes,H,COVERED,1776,/ssc/quant/time-work/
+ssc,Quant,"Time, Speed & Distance / trains / boats",H,COVERED,1523,/ssc/quant/speed-distance/
+ssc,Quant,Mixture & Alligation,M,GAP — no route,0,
+ssc,Quant,Partnership,L,GAP — no route,0,
+ssc,Quant,"Algebra (identities, surds, linear eq., graphs)",H,COVERED,1502,/ssc/quant/algebra/
+ssc,Quant,"Geometry (triangles, circles, lines, tangents)",H,COVERED,1243,/ssc/quant/geometry/
+ssc,Quant,Mensuration (2D & 3D),H,GAP — no route,0,
+ssc,Quant,"Trigonometry (ratios, identities, heights & distances)",H,COVERED,1319,/ssc/quant/trigonometry/
+ssc,Quant,Data Interpretation (bar/pie/line/table),H,COVERED,1302,/ssc/quant/statistics/
+ssc,Quant,"Statistics & Probability (mean/median/mode/SD, prob.)",M,COVERED,1302,/ssc/quant/statistics/
+ssc,English,Reading Comprehension,H,COVERED,400,/ssc/english/comprehension/
+ssc,English,Cloze Test,H,COVERED,400,/ssc/english/cloze-test/
+ssc,English,Error Spotting / Spot the Error,H,GAP — no route,0,
+ssc,English,Sentence Improvement,H,COVERED,400,/ssc/english/sentence-correction/
+ssc,English,Fill in the Blanks,M,COVERED,400,/ssc/english/fill-blanks/
+ssc,English,Sentence / Para Rearrangement,M,COVERED,400,/ssc/english/sentence-correction/
+ssc,English,Synonyms & Antonyms,H,PARTIAL (100–299 Q),109,/ssc/english/synonyms-antonyms/
+ssc,English,One Word Substitution,H,COVERED,400,/ssc/english/one-word/
+ssc,English,Idioms & Phrases,H,GAP — no route,0,
+ssc,English,Spelling Correction,M,GAP — no route,0,
+ssc,English,Active-Passive Voice,M,GAP — no route,0,
+ssc,English,Direct-Indirect Speech,M,GAP — no route,0,
+ssc,English,Vocabulary / Grammar (misc),M,COVERED,800,/ssc/english/grammar/ ; /ssc/english/vocabulary/
+ssc,GA-History,Ancient India,M,COVERED,400,/ssc/history/ancient/
+ssc,GA-History,Medieval India,M,COVERED,400,/ssc/history/medieval/
+ssc,GA-History,Modern India / freedom struggle,H,COVERED,400,/ssc/history/modern/
+ssc,GA-History,World History (basic),L,COVERED,400,/ssc/history/world/
+ssc,GA-History,Art & Culture,M,GAP — no route,0,
+ssc,GA-Polity,Constitution / Preamble / features,H,COVERED,701,/ssc/polity/constitution/
+ssc,GA-Polity,Fundamental Rights / DPSP / Duties,H,GAP — no route,0,
+ssc,GA-Polity,Union & State govt / Parliament / Judiciary,M,COVERED,424,/ssc/polity/governance/
+ssc,GA-Polity,Constitutional & Statutory bodies,M,GAP — no route,0,
+ssc,GA-Geography,Indian Geography (physical / rivers / climate / resources),H,COVERED,433,/ssc/geography/india-geo/
+ssc,GA-Geography,World Geography,M,PARTIAL (100–299 Q),149,/ssc/geography/world-geo/
+ssc,GA-Geography,Environment & Ecology,M,COVERED,412,/ssc/geography/environment/
+ssc,GA-Economy,"Indian Economy (basics, sectors, planning)",H,COVERED,810,/ssc/economy/banking/ ; /ssc/economy/economy/
+ssc,GA-Economy,Banking & Financial awareness,M,COVERED,400,/ssc/economy/banking/
+ssc,GA-Economy,Budget / Fiscal / Taxation (GST),M,GAP — no route,0,
+ssc,GA-Science,Physics,H,COVERED,1118,/ssc/science/physics/
+ssc,GA-Science,Chemistry,H,COVERED,1339,/ssc/science/chemistry/
+ssc,GA-Science,Biology,H,PARTIAL (100–299 Q),284,/ssc/science/biology/
+ssc,GA-Science,Science & Technology / space / defence,M,COVERED,417,/ssc/science/science-tech/
+ssc,GA-Static,"Static GK (books & authors, days, awards, HQs, dances, etc.)",H,GAP — no route,0,
+ssc,GA-Current,Current Affairs / schemes / people in news / sports,H,COVERED,421,/ssc/polity/current-gk/
+ssc,T2-Computer,"Computer Proficiency (basics, MS Office, internet, email, networking, cyber-security)",M,GAP — no route,0,

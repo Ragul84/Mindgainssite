@@ -4,3 +4,50 @@
 # Early-access form moved from /waitlist.html to /get/
 /waitlist.html  /get/  301
 /waitlist       /get/  301
+
+# SSC English grammar/vocab consolidation (2026-08-31)
+/ssc/english/error-spotting  /ssc/english/grammar/  301
+/ssc/english/error-spotting/  /ssc/english/grammar/  301
+/ssc/english/sentence-correction  /ssc/english/grammar/  301
+/ssc/english/sentence-correction/  /ssc/english/grammar/  301
+/ssc/english/fill-blanks  /ssc/english/grammar/  301
+/ssc/english/fill-blanks/  /ssc/english/grammar/  301
+/ssc/english/cloze-test  /ssc/english/grammar/  301
+/ssc/english/cloze-test/  /ssc/english/grammar/  301
+/ssc/english/idioms-phrases  /ssc/english/vocabulary/  301
+/ssc/english/idioms-phrases/  /ssc/english/vocabulary/  301
+
+# format-cluster consolidation round 2 (2026-08-31)
+/ssc/english/one-word  /ssc/english/vocabulary/  301
+/ssc/english/one-word/  /ssc/english/vocabulary/  301
+/ssc/english/synonyms-antonyms  /ssc/english/vocabulary/  301
+/ssc/english/synonyms-antonyms/  /ssc/english/vocabulary/  301
+/upsc/csat-english/comprehension  /upsc/csat-english/  301
+/upsc/csat-english/comprehension/  /upsc/csat-english/  301
+/upsc/csat-english/logical-deduction  /upsc/csat-english/  301
+/upsc/csat-english/logical-deduction/  /upsc/csat-english/  301
+
+# Legacy Quiz Hub deep links → canonical practice URLs.
+# Keep /quiz/ itself as the Quiz Hub; each destination removes /quiz/, so no loop.
+/quiz/upsc         /upsc/             301
+/quiz/tnpsc        /tnpsc/            301
+/quiz/ssc          /ssc/              301
+/quiz/rrb          /rrb/              301
+/quiz/ncert        /ncert/            301
+/quiz/samacheer    /samacheer/        301
+/quiz/upsc/*       /upsc/:splat       301
+/quiz/tnpsc/*      /tnpsc/:splat      301
+/quiz/ssc/*        /ssc/:splat        301
+/quiz/rrb/*        /rrb/:splat        301
+/quiz/ncert/*      /ncert/:splat      301
+/quiz/samacheer/*  /samacheer/:splat  301
+
+# mcq-questions folded into hubs (2026-10-06): thin template pages Google would not index
+/:a/mcq-questions/  /:a/  301
+/:a/mcq-questions  /:a/  301
+/:a/:b/mcq-questions/  /:a/:b/  301
+/:a/:b/mcq-questions  /:a/:b/  301
+/:a/:b/:c/mcq-questions/  /:a/:b/:c/  301
+/:a/:b/:c/mcq-questions  /:a/:b/:c/  301
+/:a/:b/:c/:d/mcq-questions/  /:a/:b/:c/:d/  301
+/:a/:b/:c/:d/mcq-questions  /:a/:b/:c/:d/  301

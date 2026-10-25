@@ -1,0 +1,143 @@
+{
+  "zoneId": "history-maurya",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "UPSC History: Mauryan Empire & Ashokan Dhamma",
+      "intro": "Today we study the 'First Pan-Indian Empire'—the Mauryas. From the military genius of Chandragupta Maurya and the statecraft of Chanakya (Arthashastra) to the spiritual transformation of Ashoka, the Mauryas unified India like never before. We focus specifically on 'Ashokan Dhamma'—not a religion, but a code of conduct—and his Edicts, which provide a window into Mauryan administration and society. For UPSC, the Mauryan Art (Pillars, Stupas) and the administrative machinery are high-priority areas.",
+      "pages": [
+        {
+          "type": "concept",
+          "title": "Mauryan Expansion",
+          "intro": "The Mauryan Empire began when Chandragupta Maurya, with the help of his advisor Chanakya, defeated the Nanda dynasty around 321 BCE (Before Common Era). He then fought and defeated Seleucus Nicator, a Greek general, securing the empire's northwestern borders. Chandragupta's son, Bindusara, expanded the empire southward into the Deccan plateau. Bindusara's son, Ashoka, who ruled from 273 to 232 BCE, completed the empire's expansion by conquering the region of Kalinga in 261 BCE. Altogether, the three rulers built the largest empire in ancient India, stretching from present-day Afghanistan to parts of southern India.",
+          "blocks": []
+        },
+        {
+          "type": "formula",
+          "title": "Mauryan Administration",
+          "intro": "Mauryan Administration means how the Mauryan Empire, which ruled most of India from around 322 BCE to 185 BCE, was run. It was a highly centralized system, which means all major decisions and power were concentrated with the king in the capital city. The structure of the state is described by the Saptanga Theory, which lists seven essential parts: the King (ruler), Amatya (ministers and officials), Janapada (the territory and its people), Durga (the fortified capital), Kosha (the treasury or state money), Danda (the army and law enforcement), and Mitra (allies and friends). Important officers included the Samaharta, who was the chief tax collector, and the Sannidhata, who was the head of the treasury and storehouses. The empire also used a system of spies called Gudha Purushas, which means secret agents, to keep an eye on officials and the public to prevent rebellion.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Ashokan Dhamma",
+          "intro": "After the Kalinga war, a bloody conflict fought around 261 BCE, Emperor Ashoka felt great regret and changed his policy from Bherighosha, which means the war drum or the sound of military conquest, to Dhammaghosha, meaning the sound of Dhamma or the proclamation of righteous living. Dhamma, here, is not a religion but a set of moral and ethical principles that Ashoka promoted for all people. The key principles of Dhamma included showing respect to elders and parents, practicing tolerance towards all religious sects or groups, avoiding violence or non-violence (ahimsa), and fulfilling one's social responsibility by being kind to servants and the poor. To spread these ideas across his vast empire, Ashoka appointed special officers called Dhamma Mahamatras, who were officials tasked with teaching and enforcing the principles of Dhamma.",
+          "blocks": []
+        },
+        {
+          "type": "facts",
+          "title": "Edicts & Inscriptions",
+          "intro": "Edicts and Inscriptions are royal orders or announcements carved on stone, pillars, or rocks, mainly by the ancient Indian emperor Ashoka. The Major Rock Edicts are a set of fourteen messages carved on large rocks, and the thirteenth one describes",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Major Rock Edicts (14)",
+                  "value": "XIII mentions Kalinga war"
+                },
+                {
+                  "label": "Languages",
+                  "value": "Prakrit (mostly), Greek, Aramaic"
+                },
+                {
+                  "label": "Scripts",
+                  "value": "Brahmi (mostly), Kharosthi (NW India)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "facts",
+          "title": "Mauryan Art & Architecture",
+          "intro": "During the Mauryan Empire, around 300 BCE, the rulers built the first large-scale stone structures in India. Pillars were tall, single-piece stone columns, called monolithic pillars, with a highly polished surface and animal sculptures on top, like the famous Sarnath Lion Capital which has four lions standing back-to-back. Stupas were dome-shaped mounds that held Buddhist relics, and the best-known example is the Great Stupa at Sanchi. Caves were also carved out of solid rock for religious use, such as the Barabar Caves, which were donated by the Mauryan emperor to a religious group called the Ajivikas. The term \"polished\" means the stone was rubbed to a mirror-like shine, and \"relics\" are sacred objects or remains of important people. This period marks the beginning of large-scale stone architecture in India, meaning buildings and monuments made from stone instead of wood or brick.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Pillars",
+                  "value": "Monolithic, polished, animals on top (Sarnath Lion Capital)"
+                },
+                {
+                  "label": "Stupas",
+                  "value": "Sanchi Stupa"
+                },
+                {
+                  "label": "Caves",
+                  "value": "Barabar Caves (donated to Ajivikas)"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "Which Mauryan ruler defeated the Nanda dynasty in 321 BCE?",
+          "back": "Chandragupta Maurya."
+        },
+        {
+          "front": "What are the seven components of the state according to the Mauryan Saptanga Theory?",
+          "back": "King, Amatya, Janapada, Durga, Kosha, Danda, and Mitra."
+        },
+        {
+          "front": "Who was the Mauryan officer responsible for tax collection?",
+          "back": "The Samaharta."
+        },
+        {
+          "front": "What was the purpose of the Gudha Purushas in the Mauryan administration?",
+          "back": "They were secret agents used to monitor officials and the public to prevent rebellion."
+        },
+        {
+          "front": "Who were the Dhamma Mahamatras?",
+          "back": "Special officers appointed by Ashoka to teach and enforce the principles of Dhamma."
+        },
+        {
+          "front": "Which Major Rock Edict of Ashoka mentions the Kalinga war?",
+          "back": "The thirteenth (XIII) Major Rock Edict."
+        },
+        {
+          "front": "Which script was used for Ashokan edicts in Northwest India?",
+          "back": "Kharosthi script."
+        },
+        {
+          "front": "What are the characteristics of Mauryan monolithic pillars?",
+          "back": "They are tall, single-piece stone columns with a highly polished surface and animal sculptures on top."
+        },
+        {
+          "front": "To which religious group did the Mauryan emperors donate the Barabar Caves?",
+          "back": "The Ajivikas."
+        },
+        {
+          "front": "What did Ashoka replace the war drum (Bherighosha) with after the Kalinga war?",
+          "back": "Dhammaghosha, the sound of Dhamma or the proclamation of righteous living."
+        },
+        {
+          "front": "Who wrote the \"Arthashastra\"?",
+          "back": "Chanakya (Kautilya). It is a treatise on statecraft and economics."
+        },
+        {
+          "front": "Which script is written from right to left?",
+          "back": "Kharosthi (used in Ashokan edicts in NW India)."
+        },
+        {
+          "front": "Major Rock Edict XIII—why is it famous?",
+          "back": "It describes the Kalinga War and Ashoka's change of heart."
+        },
+        {
+          "front": "Who deciphered the Ashokan inscriptions?",
+          "back": "James Prinsep (in 1837)."
+        },
+        {
+          "front": "Megasthenes—who was he and what did he write?",
+          "back": "Greek ambassador to Chandragupta Maurya's court. He wrote \"Indika\"."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

@@ -1,0 +1,501 @@
+{
+  "meta": {
+    "exam": "SSC CGL",
+    "subject": "English Comprehension",
+    "umbrella": "Grammar",
+    "topic": "Spot the Error (Error Detection)",
+    "route": "/ssc/english/error-spotting/",
+    "redis_key": "quiz:subject:english:ssc:error-spotting",
+    "batch": "sample-003 (post-review fixes: replaced 5 items resting on disputed / prescriptive-only rules — 'most unique', 'majority of ... was', 'every ... their', repeated emphatic 'himself', 'kind of' + article — with indisputable errors; softened 1 explanation ('a lot of useful information'); relabelled Q1 & Q8 to easy)",
+    "count": 30,
+    "canonical_format": "4-segment: sentence split into 4 parts by ' / '; exactly one part carries the error; options = the 4 parts. Target ~85% of every pool.",
+    "variant_format": "3-part + 'No error' as option D. Deliberately ~15% of the pool; of those ~40% genuinely have no error so 'No error' is a real answer, not a never-right decoy. This batch: 5/30 (16.7%), 3 with answer = 'No error'.",
+    "pyq_grounding": "SSC CGL Tier-1 'Spot the Error' — 3-5 per paper. Real category weighting from released papers: subject-verb agreement, tense / verb-form / sequence of tenses, prepositions, articles & determiners, pronouns (case & reflexive), adjective-vs-adverb, degree of comparison, redundancy / superfluous words, parallelism, correlative conjunctions.",
+    "standards_ref": "scripts/seo/content-generation-brief.md",
+    "difficulty_split": "easy 11 / medium 14 / hard 5  (post-fix; hard still under target 25% — the next batch must add structurally-buried-error hard items, see brief §7)",
+    "category_split": "SVA 7 / tense-verbform 6 / preposition 5 / article-determiner 5 / pronoun 3 / adj-adv 2 / degree 2 / redundancy 1 / parallelism 1 / correlatives 1 / other 2 (incl. 5 'No error' items)",
+    "reuse": "Grammar + Vocabulary items are ~80% reusable for TNPSC General English and ~95% for SSC CHSL/MTS/CPO/GD and RRB English. NOT reusable for UPSC (CSAT English is reading comprehension only)."
+  },
+  "questions": [
+    {
+      "question": "Select the segment of the sentence that contains a grammatical error.\nThe committee members / has decided / to postpone the annual meeting / until the first week of March.",
+      "options": [
+        "The committee members",
+        "has decided",
+        "to postpone the annual meeting",
+        "until the first week of March."
+      ],
+      "answer_index": 1,
+      "explanation": "The subject 'members' is plural, so the verb must be plural: 'have decided', not 'has decided'. Trap: 'committee' looks singular, but the head noun controlling the verb here is 'members'.",
+      "difficulty": "easy",
+      "question_type": "verbal",
+      "syllabus_node": "ssc:english:error-spotting",
+      "source": "SSC CGL Tier-1 English — Spot the Error (rule: subject-verb agreement)",
+      "lang": "en"
+    },
+    {
+      "question": "Select the segment of the sentence that contains a grammatical error.\nEach of the students / were given / a separate hall ticket / for the online examination.",
+      "options": [
+        "Each of the students",
+        "were given",
+        "a separate hall ticket",
+        "for the online examination."
+      ],
+      "answer_index": 1,
+      "explanation": "'Each of + plural noun' takes a singular verb, so 'were' should be 'was'. Trap: the plural 'students' just before the verb tempts you toward 'were'.",
+      "difficulty": "medium",
+      "question_type": "verbal",
+      "syllabus_node": "ssc:english:error-spotting",
+      "source": "SSC CGL Tier-1 English — Spot the Error (rule: 'each of' + singular verb)",
+      "lang": "en"
+    },
+    {
+      "question": "Select the part of the sentence that has an error. If there is no error, select 'No error'.\nThe train had already left / when we reached the platform / with our heavy luggage.",
+      "options": [
+        "The train had already left",
+        "when we reached the platform",
+        "with our heavy luggage.",
+        "No error"
+      ],
+      "answer_index": 3,
+      "explanation": "The sentence is correct: past perfect ('had already left') for the earlier action, simple past ('reached') for the later one. 'No error'.",
+      "difficulty": "hard",
+      "question_type": "verbal",
+      "syllabus_node": "ssc:english:error-spotting",
+      "source": "SSC CGL Tier-1 English — Spot the Error, 'No error' variant (rule: past perfect vs simple past)",
+      "lang": "en"
+    },
+    {
+      "question": "Select the segment of the sentence that contains a grammatical error.\nThe management / will implemented / the revised leave policy / from the beginning of next month.",
+      "options": [
+        "The management",
+        "will implemented",
+        "the revised leave policy",
+        "from the beginning of next month."
+      ],
+      "answer_index": 1,
+      "explanation": "After the modal 'will', the verb must be in its base form: 'will implement', not 'will implemented'.",
+      "difficulty": "easy",
+      "question_type": "verbal",
+      "syllabus_node": "ssc:english:error-spotting",
+      "source": "SSC CGL Tier-1 English — Spot the Error (rule: modal + base verb)",
+      "lang": "en"
+    },
+    {
+      "question": "Select the segment of the sentence that contains a grammatical error.\nHe has been working / in this organisation / since eight years / without taking a single long leave.",
+      "options": [
+        "He has been working",
+        "in this organisation",
+        "since eight years",
+        "without taking a single long leave."
+      ],
+      "answer_index": 2,
+      "explanation": "'Since' marks a point in time; a stretch of time takes 'for'. It should be 'for eight years'.",
+      "difficulty": "easy",
+      "question_type": "verbal",
+      "syllabus_node": "ssc:english:error-spotting",
+      "source": "SSC CGL Tier-1 English — Spot the Error (rule: since vs for)",
+      "lang": "en"
+    },
+    {
+      "question": "Select the segment of the sentence that contains a grammatical error.\nRavi is / the most honest colleague / I have ever worked with / in a office of this size.",
+      "options": [
+        "Ravi is",
+        "the most honest colleague",
+        "I have ever worked with",
+        "in a office of this size."
+      ],
+      "answer_index": 3,
+      "explanation": "'Office' begins with a vowel sound, so the article must be 'an', not 'a': 'in an office'.",
+      "difficulty": "easy",
+      "question_type": "verbal",
+      "syllabus_node": "ssc:english:error-spotting",
+      "source": "SSC CGL Tier-1 English — Spot the Error (rule: a vs an)",
+      "lang": "en"
+    },
+    {
+      "question": "Select the segment of the sentence that contains a grammatical error.\nBetween you and I, / the newly appointed head / seems far more capable / than the previous one.",
+      "options": [
+        "Between you and I,",
+        "the newly appointed head",
+        "seems far more capable",
+        "than the previous one."
+      ],
+      "answer_index": 0,
+      "explanation": "After the preposition 'between', pronouns take the objective case: 'Between you and me'.",
+      "difficulty": "easy",
+      "question_type": "verbal",
+      "syllabus_node": "ssc:english:error-spotting",
+      "source": "SSC CGL Tier-1 English — Spot the Error (rule: pronoun after preposition)",
+      "lang": "en"
+    },
+    {
+      "question": "Select the segment of the sentence that contains a grammatical error.\nThe visiting team played / very careless / in the second half / and threw away a comfortable lead.",
+      "options": [
+        "The visiting team played",
+        "very careless",
+        "in the second half",
+        "and threw away a comfortable lead."
+      ],
+      "answer_index": 1,
+      "explanation": "An adverb, not an adjective, modifies the verb 'played': 'very carelessly'.",
+      "difficulty": "easy",
+      "question_type": "verbal",
+      "syllabus_node": "ssc:english:error-spotting",
+      "source": "SSC CGL Tier-1 English — Spot the Error (rule: adjective vs adverb)",
+      "lang": "en"
+    },
+    {
+      "question": "Select the segment of the sentence that contains a grammatical error.\nMost first-year students find algebra / more difficult / to geometry, / especially in the opening months.",
+      "options": [
+        "Most first-year students find algebra",
+        "more difficult",
+        "to geometry,",
+        "especially in the opening months."
+      ],
+      "answer_index": 2,
+      "explanation": "A comparative adjective ('more difficult') is followed by 'than', not 'to': 'more difficult than geometry'.",
+      "difficulty": "medium",
+      "question_type": "verbal",
+      "syllabus_node": "ssc:english:error-spotting",
+      "source": "SSC CGL Tier-1 English — Spot the Error (rule: comparative + 'than')",
+      "lang": "en"
+    },
+    {
+      "question": "Select the segment of the sentence that contains a grammatical error.\nKindly revert back / to us / at the earliest / so that we can confirm your booking.",
+      "options": [
+        "Kindly revert back",
+        "to us",
+        "at the earliest",
+        "so that we can confirm your booking."
+      ],
+      "answer_index": 0,
+      "explanation": "'Revert' already means 'to come/reply back', so 'back' is redundant: 'Kindly revert'.",
+      "difficulty": "medium",
+      "question_type": "verbal",
+      "syllabus_node": "ssc:english:error-spotting",
+      "source": "SSC CGL Tier-1 English — Spot the Error (rule: redundancy)",
+      "lang": "en"
+    },
+    {
+      "question": "Select the segment of the sentence that contains a grammatical error.\nNeither the players / nor the coach / were satisfied / with the umpire's decision.",
+      "options": [
+        "Neither the players",
+        "nor the coach",
+        "were satisfied",
+        "with the umpire's decision."
+      ],
+      "answer_index": 2,
+      "explanation": "With 'neither ... nor ...', the verb agrees with the nearer subject, here the singular 'coach': 'was satisfied'.",
+      "difficulty": "hard",
+      "question_type": "verbal",
+      "syllabus_node": "ssc:english:error-spotting",
+      "source": "SSC CGL Tier-1 English — Spot the Error (rule: neither...nor, proximity agreement)",
+      "lang": "en"
+    },
+    {
+      "question": "Select the segment of the sentence that contains a grammatical error.\nA number of applications / was rejected / this year / because they arrived after the closing date.",
+      "options": [
+        "A number of applications",
+        "was rejected",
+        "this year",
+        "because they arrived after the closing date."
+      ],
+      "answer_index": 1,
+      "explanation": "'A number of + plural noun' is plural, so it takes 'were rejected'. Contrast: 'The number of ...' is singular.",
+      "difficulty": "medium",
+      "question_type": "verbal",
+      "syllabus_node": "ssc:english:error-spotting",
+      "source": "SSC CGL Tier-1 English — Spot the Error (rule: a number of vs the number of)",
+      "lang": "en"
+    },
+    {
+      "question": "Select the segment of the sentence that contains a grammatical error.\nOne of the machines / in the packaging unit / have been malfunctioning / since early on Monday.",
+      "options": [
+        "One of the machines",
+        "in the packaging unit",
+        "have been malfunctioning",
+        "since early on Monday."
+      ],
+      "answer_index": 2,
+      "explanation": "The subject is 'One' (singular); 'of the machines' is only a modifier. The verb must be singular: 'has been malfunctioning'.",
+      "difficulty": "medium",
+      "question_type": "verbal",
+      "syllabus_node": "ssc:english:error-spotting",
+      "source": "SSC CGL Tier-1 English — Spot the Error (rule: 'one of the + plural noun' takes a singular verb)",
+      "lang": "en"
+    },
+    {
+      "question": "Select the segment of the sentence that contains a grammatical error.\nMy cousin was married / with a software engineer / who now works / at a firm in Pune.",
+      "options": [
+        "My cousin was married",
+        "with a software engineer",
+        "who now works",
+        "at a firm in Pune."
+      ],
+      "answer_index": 1,
+      "explanation": "One is 'married to' someone, not 'married with': 'married to a software engineer'.",
+      "difficulty": "easy",
+      "question_type": "verbal",
+      "syllabus_node": "ssc:english:error-spotting",
+      "source": "SSC CGL Tier-1 English — Spot the Error (rule: preposition with 'married')",
+      "lang": "en"
+    },
+    {
+      "question": "Select the segment of the sentence that contains a grammatical error.\nHe told the reporters / that he will meet / the striking workers / the following morning.",
+      "options": [
+        "He told the reporters",
+        "that he will meet",
+        "the striking workers",
+        "the following morning."
+      ],
+      "answer_index": 1,
+      "explanation": "In reported speech after a past reporting verb ('told'), 'will' backshifts to 'would': 'that he would meet'.",
+      "difficulty": "hard",
+      "question_type": "verbal",
+      "syllabus_node": "ssc:english:error-spotting",
+      "source": "SSC CGL Tier-1 English — Spot the Error (rule: sequence of tenses in reported speech)",
+      "lang": "en"
+    },
+    {
+      "question": "Select the segment of the sentence that contains a grammatical error.\nHonesty is / best policy / when you are dealing / with long-standing clients.",
+      "options": [
+        "Honesty is",
+        "best policy",
+        "when you are dealing",
+        "with long-standing clients."
+      ],
+      "answer_index": 1,
+      "explanation": "The superlative needs the definite article: 'the best policy'.",
+      "difficulty": "easy",
+      "question_type": "verbal",
+      "syllabus_node": "ssc:english:error-spotting",
+      "source": "SSC CGL Tier-1 English — Spot the Error (rule: 'the' with superlatives)",
+      "lang": "en"
+    },
+    {
+      "question": "Select the segment of the sentence that contains a grammatical error.\nMy colleague and myself / were asked to represent / the department / at the regional conference.",
+      "options": [
+        "My colleague and myself",
+        "were asked to represent",
+        "the department",
+        "at the regional conference."
+      ],
+      "answer_index": 0,
+      "explanation": "A reflexive pronoun ('myself') cannot be the subject of a verb. The subject form is 'I': 'My colleague and I were asked ...'.",
+      "difficulty": "medium",
+      "question_type": "verbal",
+      "syllabus_node": "ssc:english:error-spotting",
+      "source": "SSC CGL Tier-1 English — Spot the Error (rule: reflexive pronoun cannot be a subject)",
+      "lang": "en"
+    },
+    {
+      "question": "Select the segment of the sentence that contains a grammatical error.\nShe is one of those managers / who always insists / on double-checking every figure / before the report is released.",
+      "options": [
+        "She is one of those managers",
+        "who always insists",
+        "on double-checking every figure",
+        "before the report is released."
+      ],
+      "answer_index": 1,
+      "explanation": "In 'one of those + plural noun + who ...', the relative clause verb is plural because 'who' refers to 'managers': 'who always insist'.",
+      "difficulty": "hard",
+      "question_type": "verbal",
+      "syllabus_node": "ssc:english:error-spotting",
+      "source": "SSC CGL Tier-1 English — Spot the Error (rule: 'one of those who' + plural verb)",
+      "lang": "en"
+    },
+    {
+      "question": "Select the segment of the sentence that contains a grammatical error.\nThe branch manager was angry / on his assistant / for failing to inform him / about the audit in advance.",
+      "options": [
+        "The branch manager was angry",
+        "on his assistant",
+        "for failing to inform him",
+        "about the audit in advance."
+      ],
+      "answer_index": 1,
+      "explanation": "One is 'angry with' a person (and 'angry at/about' a thing): 'angry with his assistant'.",
+      "difficulty": "easy",
+      "question_type": "verbal",
+      "syllabus_node": "ssc:english:error-spotting",
+      "source": "SSC CGL Tier-1 English — Spot the Error (rule: 'angry with' a person)",
+      "lang": "en"
+    },
+    {
+      "question": "Select the segment of the sentence that contains a grammatical error.\nThe consultant gave us / many useful informations / about the new tax regime / during the workshop.",
+      "options": [
+        "The consultant gave us",
+        "many useful informations",
+        "about the new tax regime",
+        "during the workshop."
+      ],
+      "answer_index": 1,
+      "explanation": "'Information' is uncountable: no plural and no 'many'. It should be 'a lot of useful information' (or simply 'useful information').",
+      "difficulty": "easy",
+      "question_type": "verbal",
+      "syllabus_node": "ssc:english:error-spotting",
+      "source": "SSC CGL Tier-1 English — Spot the Error (rule: uncountable nouns)",
+      "lang": "en"
+    },
+    {
+      "question": "Select the segment of the sentence that contains a grammatical error.\nIt is nearly three years / since I have met / my former classmates / from the training academy.",
+      "options": [
+        "It is nearly three years",
+        "since I have met",
+        "my former classmates",
+        "from the training academy."
+      ],
+      "answer_index": 1,
+      "explanation": "In the pattern 'It is + period + since ...', the 'since' clause takes the simple past: 'since I met'.",
+      "difficulty": "medium",
+      "question_type": "verbal",
+      "syllabus_node": "ssc:english:error-spotting",
+      "source": "SSC CGL Tier-1 English — Spot the Error (rule: 'It is ... since' + simple past)",
+      "lang": "en"
+    },
+    {
+      "question": "Select the segment of the sentence that contains a grammatical error.\nOn weekends she enjoys reading, sketching / and to cycle / along the river / with her neighbours.",
+      "options": [
+        "On weekends she enjoys reading, sketching",
+        "and to cycle",
+        "along the river",
+        "with her neighbours."
+      ],
+      "answer_index": 1,
+      "explanation": "Parallelism: the list uses gerunds ('reading', 'sketching'), so the third item must match: 'and cycling'.",
+      "difficulty": "medium",
+      "question_type": "verbal",
+      "syllabus_node": "ssc:english:error-spotting",
+      "source": "SSC CGL Tier-1 English — Spot the Error (rule: parallel structure)",
+      "lang": "en"
+    },
+    {
+      "question": "Select the segment of the sentence that contains a grammatical error.\nThe traffic situation near the market / became more worse / after the flyover / was closed for repairs.",
+      "options": [
+        "The traffic situation near the market",
+        "became more worse",
+        "after the flyover",
+        "was closed for repairs."
+      ],
+      "answer_index": 1,
+      "explanation": "'Worse' is already comparative; 'more worse' is a double comparative. It should be just 'worse'.",
+      "difficulty": "easy",
+      "question_type": "verbal",
+      "syllabus_node": "ssc:english:error-spotting",
+      "source": "SSC CGL Tier-1 English — Spot the Error (rule: double comparatives)",
+      "lang": "en"
+    },
+    {
+      "question": "Select the segment of the sentence that contains a grammatical error.\nHe is one of the finest player / the academy / has produced / in the last two decades.",
+      "options": [
+        "He is one of the finest player",
+        "the academy",
+        "has produced",
+        "in the last two decades."
+      ],
+      "answer_index": 0,
+      "explanation": "'One of the + superlative' is followed by a plural noun: 'one of the finest players'.",
+      "difficulty": "medium",
+      "question_type": "verbal",
+      "syllabus_node": "ssc:english:error-spotting",
+      "source": "SSC CGL Tier-1 English — Spot the Error (rule: 'one of the' + plural noun)",
+      "lang": "en"
+    },
+    {
+      "question": "Select the segment of the sentence that contains a grammatical error.\nHer assessment of the proposal / was quite different than / the view / put forward by the finance team.",
+      "options": [
+        "Her assessment of the proposal",
+        "was quite different than",
+        "the view",
+        "put forward by the finance team."
+      ],
+      "answer_index": 1,
+      "explanation": "The standard idiom is 'different from': 'quite different from the view'.",
+      "difficulty": "medium",
+      "question_type": "verbal",
+      "syllabus_node": "ssc:english:error-spotting",
+      "source": "SSC CGL Tier-1 English — Spot the Error (rule: 'different from')",
+      "lang": "en"
+    },
+    {
+      "question": "Select the part of the sentence that has an error. If there is no error, select 'No error'.\nHardly had the minister finished his speech / when the crowd / rose to its feet and cheered.",
+      "options": [
+        "Hardly had the minister finished his speech",
+        "when the crowd",
+        "rose to its feet and cheered.",
+        "No error"
+      ],
+      "answer_index": 3,
+      "explanation": "The sentence is correct: 'Hardly ... when ...' with inversion ('Hardly had ...') is the right structure. ('No sooner' pairs with 'than'; 'hardly/scarcely' pairs with 'when'.) 'No error'.",
+      "difficulty": "hard",
+      "question_type": "verbal",
+      "syllabus_node": "ssc:english:error-spotting",
+      "source": "SSC CGL Tier-1 English — Spot the Error, 'No error' variant (rule: 'hardly ... when' correlative)",
+      "lang": "en"
+    },
+    {
+      "question": "Select the segment of the sentence that contains a grammatical error.\nWhen we reached the auditorium, / the programme already started / and we had to / find seats in the dark.",
+      "options": [
+        "When we reached the auditorium,",
+        "the programme already started",
+        "and we had to",
+        "find seats in the dark."
+      ],
+      "answer_index": 1,
+      "explanation": "The earlier of two past actions takes the past perfect: 'the programme had already started'.",
+      "difficulty": "medium",
+      "question_type": "verbal",
+      "syllabus_node": "ssc:english:error-spotting",
+      "source": "SSC CGL Tier-1 English — Spot the Error (rule: past perfect for the earlier action)",
+      "lang": "en"
+    },
+    {
+      "question": "Select the part of the sentence that has an error. If there is no error, select 'No error'.\nThe principal congratulated the students / for their / brilliant results in the board examination.",
+      "options": [
+        "The principal congratulated the students",
+        "for their",
+        "brilliant results in the board examination.",
+        "No error"
+      ],
+      "answer_index": 1,
+      "explanation": "The idiom is 'congratulate someone ON something': 'congratulated the students on their brilliant results'.",
+      "difficulty": "medium",
+      "question_type": "verbal",
+      "syllabus_node": "ssc:english:error-spotting",
+      "source": "SSC CGL Tier-1 English — Spot the Error, 'No error' variant (rule: 'congratulate on')",
+      "lang": "en"
+    },
+    {
+      "question": "Select the segment of the sentence that contains a grammatical error.\nThe university awarded her / a honorary doctorate / for her decades of research / on tropical diseases.",
+      "options": [
+        "The university awarded her",
+        "a honorary doctorate",
+        "for her decades of research",
+        "on tropical diseases."
+      ],
+      "answer_index": 1,
+      "explanation": "'Honorary' begins with a silent 'h', so it takes a vowel sound: 'an honorary doctorate', not 'a honorary doctorate'.",
+      "difficulty": "medium",
+      "question_type": "verbal",
+      "syllabus_node": "ssc:english:error-spotting",
+      "source": "SSC CGL Tier-1 English — Spot the Error (rule: a/an by sound, silent 'h')",
+      "lang": "en"
+    },
+    {
+      "question": "Select the part of the sentence that has an error. If there is no error, select 'No error'.\nThe conclusions of the new survey / are consistent with / those of the study conducted in 2019.",
+      "options": [
+        "The conclusions of the new survey",
+        "are consistent with",
+        "those of the study conducted in 2019.",
+        "No error"
+      ],
+      "answer_index": 3,
+      "explanation": "The sentence is correct: 'consistent with' is the right preposition, and 'those of' correctly stands in for 'the conclusions of' in the comparison. 'No error'.",
+      "difficulty": "medium",
+      "question_type": "verbal",
+      "syllabus_node": "ssc:english:error-spotting",
+      "source": "SSC CGL Tier-1 English — Spot the Error, 'No error' variant (rule: 'consistent with' + parallel comparison with 'those of')",
+      "lang": "en"
+    }
+  ]
+}

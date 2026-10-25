@@ -47,3 +47,8 @@ __phase2_probe.html
 .cp-images/
 .cp-images/**
 home-legacy.html
+
+# Worker source (bundled separately, never served)
+worker/
+wrangler.jsonc
+.dev.vars

@@ -1,0 +1,161 @@
+{
+  "zoneId": "sci-atomic",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "SSC Science: Chemistry — Matter & Atomic Structure",
+      "intro": "Today we study the 'Building Blocks of Everything'. Chemistry in SSC is about 'Substances' and 'Symbols'. From the states of matter to the structure of the atom (Protons, Neutrons, Electrons) and the 'Isotopes' used in medicine—everything is factual. We also look at 'Chemical Changes' vs 'Physical Changes'. Toppers know that 'Rusting of Iron' is a chemical change while 'Melting of Wax' is physical. Let's master the atoms today.",
+      "pages": [
+        {
+          "type": "facts",
+          "title": "States of Matter",
+          "intro": "The three common states of matter are solid, which has a fixed shape, liquid, which flows and takes the shape of its container, and gas, which expands to fill any space. A fourth state called plasma is a super-hot gas found inside stars like the Sun, where atoms break apart into charged particles. A fifth state is the Bose-Einstein Condensate, often shortened to BEC, which forms when certain gases are cooled to nearly absolute zero, causing atoms to clump together and act like one giant atom. Sublimation is a process where a solid changes directly into a gas without becoming a liquid first; for example, camphor and naphthalene disappear into the air over time without melting.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Solid, Liquid, Gas. 4th State",
+                  "value": "Plasma (found in stars)"
+                },
+                {
+                  "label": "5th State",
+                  "value": "Bose-Einstein Condensate (BEC)"
+                },
+                {
+                  "label": "Sublimation",
+                  "value": "Solid directly to Gas (e.g., Camphor, Naphthalene)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "timeline",
+          "title": "Physical vs Chemical Change",
+          "intro": "A physical change is a change where the substance looks different but stays the same material, so it can be reversed, like melting ice back into water, freezing water into ice, or dissolving sugar in water. A chemical change is a change where the original material turns into a completely new substance, and it cannot be easily reversed, like burning wood into ash, rusting iron, digesting food, or milk turning into curd. So, in physical change no new substance forms, while in chemical change a new substance forms.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Atomic Structure",
+          "intro": "An atom is the smallest unit of a chemical element, and it is made of three main parts. In the center, called the nucleus, there are protons which have a positive charge, and neutrons which have no charge. Spinning around the nucleus in paths called orbits are electrons, which have a negative charge. The electron was discovered by a scientist named J.J. Thomson, the proton was discovered by Ernest Rutherford and Eugen Goldstein, and the neutron was discovered by James Chadwick.",
+          "blocks": []
+        },
+        {
+          "type": "facts",
+          "title": "Isotopes & Isobars",
+          "intro": "Isotopes and Isobars are two ways to classify atoms. An atom is the smallest piece of a chemical element. Every atom has a specific number of protons, which is called its Atomic Number (Z), and a total number of protons plus neutrons, which is called its Mass Number (A). Isotopes are atoms of the same element, so they have the same Atomic Number (same number of protons), but they have different Mass Numbers because they have different numbers of neutrons. For example, Carbon-14, which has 6 protons and 8 neutrons, is an isotope used for dating old objects like fossils; Iodine-131, which has 53 protons and 78 neutrons, is an isotope used to treat a disease called goitre, which is an enlarged thyroid gland; and Uranium-235, which has 92 protons and 143 neutrons, is an isotope used as fuel in nuclear power plants. On the other hand, Isobars are atoms of different elements, so they have different Atomic Numbers (different numbers of protons), but they happen to have the same Mass Number (same total number of protons and neutrons).",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Isotopes",
+                  "value": "Same Atomic Number, Different Mass Number"
+                },
+                {
+                  "label": "Uses",
+                  "value": "Carbon-14 (Dating), Iodine-131 (Goitre), Uranium-235 (Nuclear fuel)"
+                },
+                {
+                  "label": "Isobars",
+                  "value": "Different Atomic Number, Same Mass Number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "facts",
+          "title": "Acid, Base & pH",
+          "intro": "An acid is a substance that tastes sour and turns blue litmus paper red litmus paper is a natural dye that changes color to show if something is an acid or a base. A base tastes bitter and turns red litmus paper blue. The pH (potential of hydrogen) scale ranges from 0 to 14 and measures how acidic or basic a substance is a pH of 7 is neutral meaning it is neither acidic nor basic, a pH below 7 is acidic, and a pH above 7 is basic. For example, human blood has a pH of about 7.4, which means it is slightly basic.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Acid",
+                  "value": "Sour, turns Blue litmus RED"
+                },
+                {
+                  "label": "Base",
+                  "value": "Bitter, turns Red litmus BLUE"
+                },
+                {
+                  "label": "pH Scale (0-14)",
+                  "value": "7 is Neutral"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "What is the 4th state of matter found in stars?",
+          "back": "Plasma."
+        },
+        {
+          "front": "What is the process where a solid changes directly into a gas?",
+          "back": "Sublimation."
+        },
+        {
+          "front": "Is rusting of iron a physical or chemical change?",
+          "back": "Chemical change."
+        },
+        {
+          "front": "Who discovered the electron?",
+          "back": "J.J. Thomson."
+        },
+        {
+          "front": "What are atoms with the same atomic number but different mass numbers called?",
+          "back": "Isotopes."
+        },
+        {
+          "front": "Which isotope is used to treat goitre?",
+          "back": "Iodine-131."
+        },
+        {
+          "front": "What are atoms with different atomic numbers but the same mass number called?",
+          "back": "Isobars."
+        },
+        {
+          "front": "What color does blue litmus paper turn in an acid?",
+          "back": "Red."
+        },
+        {
+          "front": "What color does red litmus paper turn in a base?",
+          "back": "Blue."
+        },
+        {
+          "front": "What is the pH value of a neutral substance?",
+          "back": "7."
+        },
+        {
+          "front": "Discoverer of Neutron?",
+          "back": "James Chadwick."
+        },
+        {
+          "front": "pH of human blood?",
+          "back": "7.4 (Slightly basic)."
+        },
+        {
+          "front": "Example of Sublimation?",
+          "back": "Camphor / Naphthalene."
+        },
+        {
+          "front": "Is \"Rusting\" a physical or chemical change?",
+          "back": "Chemical Change."
+        },
+        {
+          "front": "Used in cancer treatment (Isotope)?",
+          "back": "Cobalt-60."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

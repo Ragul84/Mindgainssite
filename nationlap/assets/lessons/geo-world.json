@@ -1,0 +1,155 @@
+{
+  "zoneId": "geo-world",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "SSC Geography: World & Static Facts",
+      "intro": "Today we study the 'Global Landscape'. From the planets in our solar system to the continents and oceans—world geography in SSC is purely factual. We explore 'Highest peaks of continents', 'International boundaries', and 'Solar system records'. Do you know which planet is called 'Morning Star'? Or what is the 'McMahon Line'? Let's master the world facts today.",
+      "pages": [
+        {
+          "type": "facts",
+          "title": "Solar System Records",
+          "intro": "The solar system is the group of planets and other objects that orbit, or travel around, our Sun. Jupiter is the largest planet, meaning it has the biggest size and mass, which is the amount of matter it contains. Mercury is the smallest planet, with the least size and mass. Venus is the brightest planet in our sky, the hottest planet because of its thick atmosphere that traps heat, and it is also called the Morning Star or Evening Star because it is often visible just before sunrise or after sunset. Mars is called the Red Planet because its surface has a reddish color from iron oxide, which is rust. Earth is called the Blue Planet because its surface is mostly covered with water, making it look blue from space. Neptune is the farthest planet from the Sun, meaning it has the longest orbit around the Sun.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Largest",
+                  "value": "Jupiter"
+                },
+                {
+                  "label": "Smallest",
+                  "value": "Mercury"
+                },
+                {
+                  "label": "Brightest/Hottest/Morning Star",
+                  "value": "Venus"
+                },
+                {
+                  "label": "Red Planet",
+                  "value": "Mars. Blue Planet: Earth"
+                },
+                {
+                  "label": "Farthest",
+                  "value": "Neptune"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Continental Peaks",
+          "intro": "The highest mountain on each continent is called a continental peak. In Asia, the tallest mountain is Mount Everest. Africa's highest peak is Mount Kilimanjaro. In North America, the highest mountain is Denali, while in South America it is Aconcagua. Europe's tallest peak is Mount Elbrus, and Antarctica's highest point is Vinson Massif.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "International Boundaries",
+          "intro": "International boundaries are lines that separate one country from another. The Radcliffe Line is the boundary between India and Pakistan, drawn in 1947 when British India was divided. The McMahon Line is the boundary between India and China, set by a 1914 agreement but still disputed by China. The Durand Line is the boundary between Pakistan and Afghanistan, originally drawn in 1893 between British India and Afghanistan; it also once separated British India from Afghanistan. The 49th Parallel is the boundary between the United States and Canada, following the line of latitude at 49 degrees north. The 38th Parallel is the boundary between North Korea and South Korea, set after World War II along the 38th degree of north latitude.",
+          "blocks": []
+        },
+        {
+          "type": "facts",
+          "title": "Oceans & Seas",
+          "intro": "Oceans are vast bodies of saltwater that cover most of the Earth, and seas are smaller parts of these oceans, often partly surrounded by land. The Pacific Ocean is the largest and deepest ocean, and its deepest point is the Mariana Trench, which is a long, narrow canyon on the ocean floor. The Atlantic Ocean is shaped like the letter S, and it is the second largest ocean. The Arctic Ocean is the smallest and shallowest of the five oceans, located around the North Pole. The Dead Sea is a landlocked salt lake, not a sea, but it has the highest salinity, meaning it contains more salt than any other body of water on Earth.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Largest/Deepest",
+                  "value": "Pacific (Mariana Trench)"
+                },
+                {
+                  "label": "S-shaped",
+                  "value": "Atlantic"
+                },
+                {
+                  "label": "Smallest",
+                  "value": "Arctic"
+                },
+                {
+                  "label": "Dead Sea",
+                  "value": "Highest salinity"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Grasslands",
+          "intro": "Grasslands are large areas covered mostly with grasses and few trees, where the climate is too dry for forests but not dry enough to be a desert. The major grasslands of the world have specific names: the Steppes are found in Eurasia, the Prairies are in the USA, the Pampas are in Argentina, the Veld is in South Africa, the Downs are in Australia, and the Savanna is in Africa. A first-time learner should remember that each name refers to a specific grassland region and its unique location.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "Which planet is known as the Morning Star?",
+          "back": "Venus."
+        },
+        {
+          "front": "What is the highest peak in South America?",
+          "back": "Aconcagua."
+        },
+        {
+          "front": "Which boundary separates India and Pakistan?",
+          "back": "The Radcliffe Line."
+        },
+        {
+          "front": "Which ocean is shaped like the letter S?",
+          "back": "The Atlantic Ocean."
+        },
+        {
+          "front": "Where are the Prairies grasslands located?",
+          "back": "In the USA."
+        },
+        {
+          "front": "Which planet is the farthest from the Sun?",
+          "back": "Neptune."
+        },
+        {
+          "front": "What is the deepest point in the Pacific Ocean?",
+          "back": "The Mariana Trench."
+        },
+        {
+          "front": "Which grassland is found in South Africa?",
+          "back": "The Veld."
+        },
+        {
+          "front": "What is the boundary between North Korea and South Korea?",
+          "back": "The 38th Parallel."
+        },
+        {
+          "front": "Which body of water has the highest salinity?",
+          "back": "The Dead Sea."
+        },
+        {
+          "front": "Morning/Evening Star?",
+          "back": "Venus."
+        },
+        {
+          "front": "Deepest point in the world?",
+          "back": "Mariana Trench (Pacific)."
+        },
+        {
+          "front": "McMahon Line is between?",
+          "back": "India and China."
+        },
+        {
+          "front": "Highest peak in Africa?",
+          "back": "Mt. Kilimanjaro."
+        },
+        {
+          "front": "Grasslands in North America?",
+          "back": "Prairies."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

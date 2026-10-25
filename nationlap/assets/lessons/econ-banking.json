@@ -1,0 +1,222 @@
+{
+  "zoneId": "econ-banking",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "UPSC Economy: Money & Capital Markets",
+      "intro": "Today we study the 'Engine of Investment'. The financial market is where those with surplus funds (investors) meet those who need funds (corporates/govt). We explore the 'Money Market' (short-term) and the 'Capital Market' (long-term/Stock market). For UPSC, focus on 'Financial Instruments' like T-Bills, Commercial Papers, and the role of 'SEBI'. Let's master the language of the stock exchange today.",
+      "pages": [
+        {
+          "type": "concept",
+          "title": "Money Market",
+          "intro": "Market for short-term funds (≤1 year), regulated by RBI, dealing in T-Bills, Commercial Paper, and Certificates of Deposit.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Treasury Bills (T-Bills)",
+                  "value": "Issued by Govt. of India; safest short-term borrowing instrument."
+                },
+                {
+                  "label": "Commercial Paper",
+                  "value": "Short-term loan issued by large companies to raise quick funds."
+                },
+                {
+                  "label": "Certificates of Deposit (CDs)",
+                  "value": "Issued by banks for fixed short-period deposits."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Capital Market",
+          "intro": "Market for long-term funds (>1 year), regulated by SEBI, comprising Primary and Secondary Markets.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Function",
+                  "New securities issued (e.g., IPO)",
+                  "Existing securities traded"
+                ],
+                [
+                  "Participants",
+                  "Company & initial investors",
+                  "Investors among themselves"
+                ],
+                [
+                  "Examples",
+                  "Initial Public Offering",
+                  "BSE, NSE"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "",
+                "Primary Market",
+                "Secondary Market"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Equity vs Debt",
+          "intro": "Equity means ownership with variable returns; Debt means lending with fixed interest and no ownership.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Status",
+                  "Part-owner",
+                  "Lender"
+                ],
+                [
+                  "Returns",
+                  "Dividends + Capital gains (variable)",
+                  "Fixed interest (guaranteed)"
+                ],
+                [
+                  "Instruments",
+                  "Shares",
+                  "Bonds / Debentures"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "",
+                "Equity",
+                "Debt"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "SEBI (Securities & Exchange Board of India)",
+          "intro": "Statutory body established in 1992 to protect investors and regulate stock exchanges and mutual funds.",
+          "blocks": [
+            {
+              "type": "mindmap",
+              "center": "SEBI",
+              "branches": [
+                {
+                  "label": "Regulates",
+                  "value": "Stock exchanges, Mutual funds"
+                },
+                {
+                  "label": "Powers",
+                  "value": "Make rules, punish fraud & insider trading"
+                },
+                {
+                  "label": "Role",
+                  "value": "Market police & referee for fairness"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "FDI vs FPI",
+          "intro": "FDI is long-term with management control; FPI is short-term passive investment in financial assets.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Nature",
+                  "Long-term, management control",
+                  "Short-term, passive"
+                ],
+                [
+                  "Form",
+                  "Factory, owning a company",
+                  "Stocks, bonds (\"hot money\")"
+                ],
+                [
+                  "Control",
+                  "Yes, say in business",
+                  "No control"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "",
+                "FDI",
+                "FPI"
+              ]
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "Which institution regulates the Money Market?",
+          "back": "The Reserve Bank of India (RBI)."
+        },
+        {
+          "front": "What is the primary duration of funds in the Money Market?",
+          "back": "Short-term funds, typically less than one year."
+        },
+        {
+          "front": "Who issues Treasury Bills (T-Bills)?",
+          "back": "The Government of India."
+        },
+        {
+          "front": "Which institution regulates the Capital Market?",
+          "back": "The Securities and Exchange Board of India (SEBI)."
+        },
+        {
+          "front": "What is the purpose of the Primary Market?",
+          "back": "To sell new securities for the first time, such as through an IPO."
+        },
+        {
+          "front": "What is the main difference between Equity and Debt investments?",
+          "back": "Equity represents ownership in a company with variable returns, while Debt represents a loan with fixed interest."
+        },
+        {
+          "front": "When was SEBI established as a statutory body?",
+          "back": "In 1992."
+        },
+        {
+          "front": "What are the two main entities regulated by SEBI?",
+          "back": "Stock exchanges and mutual funds."
+        },
+        {
+          "front": "What distinguishes FDI from FPI regarding management control?",
+          "back": "FDI involves management control, whereas FPI is a passive investment without control."
+        },
+        {
+          "front": "Why is FPI often referred to as 'hot money'?",
+          "back": "Because it is a short-term investment that can be quickly moved out of a country."
+        },
+        {
+          "front": "Who regulates the Money Market?",
+          "back": "RBI."
+        },
+        {
+          "front": "Who regulates the Capital Market?",
+          "back": "SEBI."
+        },
+        {
+          "front": "What is an \"IPO\"?",
+          "back": "Initial Public Offering (first time a company sells shares)."
+        },
+        {
+          "front": "What are \"T-Bills\"?",
+          "back": "Treasury Bills (short-term debt issued by Central Govt)."
+        },
+        {
+          "front": "Is FPI \"Hot Money\"?",
+          "back": "Yes, because it can leave the country quickly."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

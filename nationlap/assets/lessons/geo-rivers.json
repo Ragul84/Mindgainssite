@@ -1,0 +1,125 @@
+{
+  "zoneId": "geo-rivers",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "UPSC Geography: Indian Drainage System",
+      "intro": "Today we master the 'Vessels of Life'. The drainage system of India is divided into the perennial Himalayan rivers and the seasonal Peninsular rivers. We trace the course of the Ganga, the Indus, and the Brahmaputra, along with the East and West-flowing rivers of the South. For UPSC, focus on the 'Tributaries', 'Drainage patterns' (Dendritic, Trellis), and 'Antecedent rivers'. This is a high-yield area for map-based questions.",
+      "pages": [
+        {
+          "type": "concept",
+          "title": "Himalayan Rivers",
+          "intro": "Himalayan rivers are perennial, which means they flow throughout the year because they are fed by melting snow and glaciers from the Himalayas. They are also antecedent rivers, meaning they existed before the Himalayas were formed and they cut deep gorges as the mountains rose, so their paths are older than the mountains themselves. The three main Himalayan river systems are the Indus, the Ganga, and the Brahmaputra. The Indus system has five major tributaries: Jhelum, Chenab, Ravi, Beas, and Sutlej. The Ganga system includes tributaries such as Yamuna, Son, Gomti, Gandak, and Kosi. The Brahmaputra system begins as the Tsangpo in Tibet, enters India as the Dihang, and is joined by the Lohit and Subansiri rivers.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Peninsular Rivers",
+          "intro": "Peninsular Rivers are rivers that flow through the southern part of India, and they are seasonal, meaning they only have water during the rainy season because they are fed by rain (rain-fed) rather than by melting snow. Most of these rivers, like the Godavari, Krishna, and Cauvery, flow from the Western Ghats mountains eastward into the Bay of Bengal. However, two major rivers, the Narmada and the Tapti (also spelled Tapi), flow westward into the Arabian Sea. These two west-flowing rivers are special because they travel through long, narrow, steep-sided valleys called rift valleys, which were formed by the Earth's crust cracking and sinking. A rift valley is a lowland region between two parallel fault lines, so the Narmada and Tapti do not form broad deltas like the east-flowing rivers; instead, they create small, triangular-shaped deposits called estuaries where they meet the sea.",
+          "blocks": []
+        },
+        {
+          "type": "timeline",
+          "title": "The Ganga System",
+          "intro": "The Ganga System is the largest river system in India. It is formed when the Alaknanda River and the Bhagirathi River meet at a town called Devprayag. A tributary is a smaller river that flows into a larger river. The Yamuna is the longest tributary of the Ganga. The Son River is a major tributary",
+          "blocks": []
+        },
+        {
+          "type": "formula",
+          "title": "Drainage Patterns",
+          "intro": "Drainage patterns describe how rivers and their tributaries arrange themselves across the land based on the shape of the ground and the rocks underneath. The dendritic pattern looks like the branches of a tree, where smaller streams join the main river at irregular angles, and the Ganga river system is a classic example of this. The trellis pattern forms when tributaries join the main river at nearly right angles, resembling a garden trellis, and the Narmada river in central India shows this shape because the land is folded into parallel ridges and valleys. The radial pattern occurs when rivers flow outward in all directions from a central high point, like water spreading from the top of a dome, and the Narmada and Son rivers both begin at the Amarkantak plateau and flow away from it in different directions.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Dendritic",
+                  "value": "Tree-like (Ganga)"
+                },
+                {
+                  "label": "Trellis",
+                  "value": "Right-angled tributaries (Narmada)"
+                },
+                {
+                  "label": "Radial",
+                  "value": "Flows from center (Amarkantak - Narmada, Son)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Inter-state River Disputes",
+          "intro": "Inter-state River Disputes are disagreements between two or more Indian states over the sharing of water from a river that flows through their territories. The Constitution of India gives Parliament the power to settle these disputes, and Article 262 allows it to create a special tribunal to decide the matter, with its decision being final and not challengeable in any court. For example, the Cauvery Water Disputes Tribunal was set up to resolve the conflict between Tamil Nadu (TN) and Karnataka (KA) over the Cauvery River. Similarly, the Krishna Water Disputes Tribunal handled the dispute between Karnataka (KA), Telangana (TS), Andhra Pradesh (AP), and Maharashtra (MH) over the Krishna River. Another example is the Mahanadi Water Disputes Tribunal, which dealt with the conflict between Chhattisgarh (CG) and Odisha (OD) over the Mahanadi River. These disputes are often in the news because water scarcity and agricultural needs make them politically sensitive and economically important.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "What term describes Himalayan rivers that existed before the mountains were formed?",
+          "back": "Antecedent rivers."
+        },
+        {
+          "front": "Which five rivers are the major tributaries of the Indus system?",
+          "back": "Jhelum, Chenab, Ravi, Beas, and Sutlej."
+        },
+        {
+          "front": "Which two rivers form the Ganga at Devprayag?",
+          "back": "Alaknanda and Bhagirathi."
+        },
+        {
+          "front": "Which river is the longest tributary of the Ganga?",
+          "back": "Yamuna."
+        },
+        {
+          "front": "What is the primary characteristic of Peninsular rivers regarding their water source?",
+          "back": "They are seasonal and rain-fed."
+        },
+        {
+          "front": "Which two major Peninsular rivers flow through rift valleys into the Arabian Sea?",
+          "back": "Narmada and Tapti."
+        },
+        {
+          "front": "What drainage pattern is characterized by a tree-like structure, as seen in the Ganga?",
+          "back": "Dendritic pattern."
+        },
+        {
+          "front": "Which drainage pattern features tributaries joining the main river at right angles?",
+          "back": "Trellis pattern."
+        },
+        {
+          "front": "Which drainage pattern involves rivers flowing outward from a central point like Amarkantak?",
+          "back": "Radial pattern."
+        },
+        {
+          "front": "Which states are involved in the Mahanadi river dispute?",
+          "back": "Chhattisgarh (CG) and Odisha (OD)."
+        },
+        {
+          "front": "Where do Alaknanda and Bhagirathi meet?",
+          "back": "Devprayag."
+        },
+        {
+          "front": "Longest river in India?",
+          "back": "The Ganga."
+        },
+        {
+          "front": "Longest peninsular river?",
+          "back": "The Godavari (Dakshin Ganga)."
+        },
+        {
+          "front": "Which rivers flow through rift valleys?",
+          "back": "Narmada and Tapti."
+        },
+        {
+          "front": "What is an \"Antecedent\" river?",
+          "back": "A river that existed before the mountain range was uplifted (e.g., Indus, Brahmaputra)."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

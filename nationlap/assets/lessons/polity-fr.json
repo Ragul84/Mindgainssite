@@ -1,0 +1,598 @@
+{
+  "zoneId": "polity-fr",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "Fundamental Rights Block 1: Art 12–18 (Right to Equality)",
+      "intro": "Welcome to Part III of the Constitution—the 'Magna Carta' of India. Fundamental Rights (FRs) are the most critical part of your UPSC Polity preparation because they define the relationship between the citizen and the State. We begin with the 'Right to Equality'. Before you learn about the rights themselves, you must understand Article 12 (which defines who the 'State' is) and Article 13 (which gives the courts the power of Judicial Review). Article 14 to 18 then lay the groundwork for a society free from discrimination, untouchability, and titles of nobility. For a UPSC aspirant, these aren't just articles; they are the tools used to challenge arbitrary state action.",
+      "pages": [
+        {
+          "type": "concept",
+          "title": "Article 12 & 13: The Guardians",
+          "intro": "Articles 12 and 13 are the guardians of Fundamental Rights: Article 12 defines who is bound by them, and Article 13 lets courts strike down laws that violate them.",
+          "blocks": [
+            {
+              "type": "mindmap",
+              "center": "The \"State\" (Art 12)",
+              "branches": [
+                {
+                  "label": "Central",
+                  "value": "Government & Parliament"
+                },
+                {
+                  "label": "State",
+                  "value": "Governments & legislatures"
+                },
+                {
+                  "label": "Local",
+                  "value": "Panchayats & Municipalities"
+                },
+                {
+                  "label": "Statutory bodies",
+                  "value": "LIC, ONGC, SAIL"
+                }
+              ]
+            },
+            {
+              "text": "Article 13 declares that any law inconsistent with Fundamental Rights is void. This is the explicit basis for Judicial Review, exercised by the Supreme Court under Article 32 and by the High Courts under Article 226.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Article 14: Equality Before Law",
+          "intro": "Article 14 guarantees two linked ideas, each borrowed from a different country.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "UK origin",
+                  "USA origin"
+                ],
+                [
+                  "Negative concept",
+                  "Positive concept"
+                ],
+                [
+                  "No one is above the law",
+                  "Law treats equals equally"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Equality before Law",
+                "Equal Protection of Laws"
+              ]
+            },
+            {
+              "text": "It permits Reasonable Classification, meaning different rules for different groups on a fair and logical basis, but it bans Class Legislation, meaning arbitrarily singling out a person or group.",
+              "type": "text"
+            },
+            {
+              "text": "Exception: the President and Governors have immunity under Article 361 while in office.",
+              "type": "trap"
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Article 15: Prohibition of Discrimination",
+          "intro": "The State cannot discriminate against a citizen on grounds only of religion, race, caste, sex, place of birth.",
+          "blocks": [
+            {
+              "text": "The word \"only\" matters: on other grounds, such as residence or income, the State can still treat people differently, for example giving benefits only to residents of a state.",
+              "type": "trap"
+            },
+            {
+              "text": "Exceptions: the State may make special provisions for women and children, and for socially and educationally backward classes such as SC and ST, under Articles 15(4) and 15(5).",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Article 16: Equality of Opportunity in Public Employment",
+          "intro": "Equal access to government jobs, with no discrimination on religion, race, caste, sex, descent, place of birth or residence. Three amendments expanded it:",
+          "blocks": [
+            {
+              "type": "timeline",
+              "items": [
+                {
+                  "label": "77th Amendment · 1995",
+                  "value": "Art 16(4A): reservation in promotions for SC and ST if under-represented"
+                },
+                {
+                  "label": "81st Amendment · 2000",
+                  "value": "Art 16(4B): the carry-forward rule for unfilled reserved posts, even beyond 50%"
+                },
+                {
+                  "label": "103rd Amendment · 2019",
+                  "value": "Art 16(6): 10% reservation for Economically Weaker Sections (EWS)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Article 17 & 18: Social Equality",
+          "intro": "Two articles that remove artificial social hierarchy.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Article 17",
+                  "value": "Abolition of Untouchability — an absolute right with no exceptions; practising it is a punishable offence"
+                },
+                {
+                  "label": "Article 18",
+                  "value": "Abolition of Titles, the honorary rankings like \"Sir\" or \"Raja\""
+                }
+              ]
+            },
+            {
+              "text": "NOT titles: military and academic distinctions such as a Param Vir Chakra or a PhD. National awards like the Bharat Ratna cannot be used as a prefix or suffix to a name.",
+              "type": "trap"
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "Which article defines the 'State' for the purpose of Fundamental Rights?",
+          "back": "Article 12."
+        },
+        {
+          "front": "What is the primary function of Article 13?",
+          "back": "It declares that any law inconsistent with Fundamental Rights shall be void, establishing the basis for Judicial Review."
+        },
+        {
+          "front": "Who has special immunity under Article 361 as an exception to Article 14?",
+          "back": "The President of India and the Governors of states."
+        },
+        {
+          "front": "What are the five specific grounds on which the State cannot discriminate under Article 15?",
+          "back": "Religion, race, caste, sex, and place of birth."
+        },
+        {
+          "front": "Which amendment added the 10% reservation for Economically Weaker Sections (EWS) in public employment?",
+          "back": "The 103rd Amendment (2019)."
+        },
+        {
+          "front": "What is the 'carry forward' rule in public employment?",
+          "back": "It allows unfilled reserved positions from previous years to be filled in later years, even if the total exceeds 50%."
+        },
+        {
+          "front": "Is the right to abolition of untouchability (Article 17) an absolute right?",
+          "back": "Yes, it is an absolute right with no exceptions."
+        },
+        {
+          "front": "Are military and academic distinctions considered 'titles' under Article 18?",
+          "back": "No, they are not considered titles."
+        },
+        {
+          "front": "Can national awards like the Bharat Ratna be used as prefixes or suffixes to a name?",
+          "back": "No, they are not official titles and cannot be used as prefixes or suffixes."
+        },
+        {
+          "front": "What does 'reasonable classification' under Article 14 permit?",
+          "back": "It allows the government to create different rules for different groups of people if the classification has a fair and logical basis."
+        },
+        {
+          "front": "Article 13 and Judicial Review—what is the link?",
+          "back": "Art 13 provides the basis for Judicial Review. It says any law (statute, ordinance, custom) that violates Fundamental Rights is VOID. The SC (Art 32) and HC (Art 226) use this power to strike down unconstitutional laws."
+        },
+        {
+          "front": "Does Art 14 apply to non-citizens?",
+          "back": "YES. Article 14 (Equality before law) applies to all persons, whether citizens or foreigners/legal corporations. However, Articles 15, 16, 19, 29, and 30 are available ONLY to citizens."
+        },
+        {
+          "front": "Article 15: The \"ONLY\" Trap?",
+          "back": "The State cannot discriminate ONLY on grounds of religion, race, caste, sex, place of birth. It CAN discriminate on other grounds like residence (e.g., domicile requirements for state schemes), unless prohibited elsewhere."
+        },
+        {
+          "front": "Which Fundamental Right is considered \"Absolute\"?",
+          "back": "Article 17 (Abolition of Untouchability). Unlike most other FRs (like Art 19) which have \"reasonable restrictions\", Art 17 has no exceptions. Practicing untouchability is a crime."
+        },
+        {
+          "front": "Are Bharat Ratna and Padma Awards \"Titles\" under Art 18?",
+          "back": "NO. The SC in Balaji Raghavan case (1996) ruled they are \"National Honours\", not titles. However, they cannot be used as prefixes (e.g., \"Bharat Ratna X\") or suffixes to the name."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    },
+    {
+      "title": "Fundamental Rights Block 2: Art 19–22 (Right to Freedom)",
+      "intro": "The 'Right to Freedom' is the backbone of individual liberty in the Indian Constitution. Article 19 alone provides six fundamental freedoms that allow us to live as free citizens in a democracy. However, these freedoms are not absolute; they come with 'reasonable restrictions'. This block also contains the most expanded article in constitutional history—Article 21 (Protection of Life and Personal Liberty). Through judicial activism, Art 21 has grown to include the right to privacy, clean environment, and even the right to sleep. Understanding this block is crucial for both Prelims (direct articles) and Mains (liberty vs. security debates).",
+      "pages": [
+        {
+          "type": "timeline",
+          "title": "Article 19: The Six Freedoms",
+          "intro": "Six freedoms for citizens, subject to reasonable restrictions by the State.",
+          "blocks": [
+            {
+              "type": "mindmap",
+              "center": "Six Freedoms",
+              "branches": [
+                {
+                  "label": "Speech & Expression",
+                  "value": "Right to speak and express opinions"
+                },
+                {
+                  "label": "Assembly",
+                  "value": "Peaceful gathering without weapons"
+                },
+                {
+                  "label": "Association",
+                  "value": "Form groups; incl. cooperative societies (97th Amend., 2011)"
+                },
+                {
+                  "label": "Movement",
+                  "value": "Move freely anywhere in India"
+                },
+                {
+                  "label": "Residence",
+                  "value": "Live in any part of the country"
+                },
+                {
+                  "label": "Profession",
+                  "value": "Practice any occupation, trade or business"
+                }
+              ]
+            },
+            {
+              "text": "Reasonable restrictions allowed for: sovereignty, integrity, security, public order, decency, morality.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Article 20: Protection in Conviction",
+          "intro": "Three protections for persons accused of crimes: no ex-post-facto law, no double jeopardy, no self-incrimination.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Ex-post-facto law",
+                  "value": "Cannot punish an act not a crime when done"
+                },
+                {
+                  "label": "Double jeopardy",
+                  "value": "Cannot be tried/punished twice for the same offence"
+                },
+                {
+                  "label": "Self-incrimination",
+                  "value": "Cannot be forced to be a witness against oneself"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "timeline",
+          "title": "Article 21: Life and Personal Liberty",
+          "intro": "No person deprived of life or liberty except by procedure established by law; expanded by Maneka Gandhi case (1978).",
+          "blocks": [
+            {
+              "type": "timeline",
+              "items": [
+                {
+                  "label": "Original text",
+                  "value": "Procedure established by law"
+                },
+                {
+                  "label": "Maneka Gandhi case · 1978",
+                  "value": "Introduced 'due process of law' — law must be just, fair and reasonable"
+                }
+              ]
+            },
+            {
+              "text": "Even if a law exists, an unfair or unreasonable law cannot take away life or personal liberty.",
+              "type": "trap"
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Article 21A: Right to Education",
+          "intro": "Free and compulsory education for children aged 6–14, added by 86th Amendment (2002); now a Fundamental Right.",
+          "blocks": [
+            {
+              "text": "Before this, education was a Directive Principle (non-enforceable). Now a Fundamental Right enforceable in court.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "timeline",
+          "title": "Article 22: Arrest and Detention",
+          "intro": "Safeguards against arbitrary arrest and detention; covers both punitive and preventive detention.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Basis",
+                  "After trial and conviction",
+                  "Before trial, to prevent possible crime"
+                ],
+                [
+                  "Rights / Limits",
+                  "1. Told reasons for arrest\n2. Consult/defended by lawyer\n3. Produced before magistrate within 24 hrs",
+                  "Max 3 months without trial; extension needs Advisory Board (High Court judges)"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "",
+                "Punitive Detention",
+                "Preventive Detention"
+              ]
+            },
+            {
+              "text": "Protections under Article 22 apply to all individuals, not just citizens.",
+              "type": "trap"
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "Which amendment added the right to form cooperative societies to Article 19?",
+          "back": "The 97th Amendment in 2011."
+        },
+        {
+          "front": "What are the three specific protections provided under Article 20?",
+          "back": "No ex-post-facto law, no double jeopardy, and no self-incrimination."
+        },
+        {
+          "front": "What does the protection against 'double jeopardy' mean under Article 20?",
+          "back": "It means you cannot be tried and punished more than once for the same offence."
+        },
+        {
+          "front": "Which Supreme Court case introduced the concept of 'due process of law' for Article 21?",
+          "back": "The Maneka Gandhi case (1978)."
+        },
+        {
+          "front": "What does 'due process of law' imply regarding the validity of a law?",
+          "back": "It means the law must be just, fair, and reasonable, not just any law."
+        },
+        {
+          "front": "Which constitutional amendment introduced Article 21A?",
+          "back": "The 86th Constitutional Amendment Act, 2002."
+        },
+        {
+          "front": "What is the age group covered under the Right to Education (Article 21A)?",
+          "back": "Children between the ages of 6 and 14 years."
+        },
+        {
+          "front": "What are the two types of detention mentioned in Article 22?",
+          "back": "Punitive detention (after trial) and preventive detention (before trial)."
+        },
+        {
+          "front": "What are the three rights of a person under punitive detention?",
+          "back": "To be informed of the grounds of arrest, to consult a lawyer, and to be produced before a magistrate within 24 hours."
+        },
+        {
+          "front": "Who must approve the extension of preventive detention beyond three months?",
+          "back": "An Advisory Board made up of High Court judges."
+        },
+        {
+          "front": "Which freedoms under Art 19 are suspended during National Emergency?",
+          "back": "Art 19 is automatically suspended ONLY if National Emergency is declared on grounds of \"WAR or EXTERNAL AGGRESSION\". It is NOT suspended if emergency is due to \"Armed Rebellion\" (44th Amendment)."
+        },
+        {
+          "front": "Can Art 20 and 21 be suspended during Emergency?",
+          "back": "NO. Under the 44th Amendment (1978), the enforcement of rights guaranteed by Articles 20 and 21 cannot be suspended even during a National Emergency under Article 359."
+        },
+        {
+          "front": "\"Procedure Established by Law\" vs \"Due Process of Law\"?",
+          "back": "Procedure Established: Law must be followed (Art 21 literal). Due Process: The law itself must be \"fair, just and reasonable\" (SC added this in Maneka Gandhi case). India now effectively follows Due Process."
+        },
+        {
+          "front": "Is the \"Right to Privacy\" a Fundamental Right?",
+          "back": "YES. In the Justice K.S. Puttaswamy case (2017), a 9-judge bench of the SC ruled that the Right to Privacy is an intrinsic part of the Right to Life and Personal Liberty under Article 21."
+        },
+        {
+          "front": "Maximum duration of Preventive Detention without Advisory Board?",
+          "back": "3 months. To extend beyond 3 months, an Advisory Board (consisting of persons qualified to be HC judges) must report sufficient cause."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    },
+    {
+      "title": "Fundamental Rights Block 3: Art 23–35 (Exploitation, Religion, Culture, Remedies)",
+      "intro": "The final block of Fundamental Rights focuses on protecting the vulnerable and ensuring the secular fabric of India. Articles 23 and 24 protect against human trafficking and child labour. Articles 25 to 28 guarantee freedom of religion, which is the heart of Indian secularism. Articles 29 and 30 protect the interests of minorities. Finally, Article 32 is what Dr. Ambedkar called the 'Heart and Soul' of the Constitution—the Right to Constitutional Remedies. Without Article 32, all other rights are just words on paper, because it gives you the right to move the Supreme Court directly for the enforcement of your rights.",
+      "pages": [
+        {
+          "type": "facts",
+          "title": "Right against Exploitation (Art 23–24)",
+          "intro": "The Right against Exploitation is covered by two parts of the Indian Constitution: Article 23 and Article 24. Article 23 says that no one can be forced to work against their will, which includes human trafficking (buying and selling people like goods) and \"begar,\" a type",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Art 23",
+                  "value": "Prohibits human trafficking, \"begar\" (forced labour), and other forms of forced labour"
+                },
+                {
+                  "label": "Exception",
+                  "value": "State can impose compulsory service for public purposes (like military/social service)"
+                },
+                {
+                  "label": "Art 24",
+                  "value": "Prohibits employment of children below 14 in factories, mines, or hazardous activities"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "facts",
+          "title": "Freedom of Religion (Art 25–28)",
+          "intro": "Article 25 gives every person the freedom of conscience, which means the freedom to choose their own beliefs, and the right to profess (declare), practice (worship and follow), and propagate (spread or share) their religion. Article 26 allows every religious group to manage its own religious affairs, such as setting up institutions and owning property. Article 27 says that no person can be forced to pay any tax that is used specifically to promote or support a particular religion. Article 28 states that in educational institutions that are fully funded by the government, no religious instruction can be given, and in institutions that are partly funded by the government, students cannot be forced to attend religious instruction or worship without their own or their guardian's consent.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Art 25",
+                  "value": "Freedom of conscience + right to profess, practice, and propagate religion"
+                },
+                {
+                  "label": "Art 26",
+                  "value": "Right to manage religious affairs"
+                },
+                {
+                  "label": "Art 27",
+                  "value": "Freedom from taxes for promotion of religion"
+                },
+                {
+                  "label": "Art 28",
+                  "value": "Freedom from attending religious instruction in certain educational institutions"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Cultural & Educational Rights (Art 29–30)",
+          "intro": "Cultural and Educational Rights are a part of the Fundamental Rights (FR) in the Indian Constitution, contained in Articles 29 and 30. Article 29 protects the interests of any minority group, meaning a community with a distinct language, script, or culture, by giving them the right to preserve their language, script, and culture. Article 30 gives religious minorities and linguistic minorities a separate right to establish and run their own educational institutions. The word \"minority\" is not defined anywhere in the Constitution, so courts decide which communities qualify as minorities based on the context.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Art 29",
+                  "value": "Protection of interests of minorities (language, script, culture)"
+                },
+                {
+                  "label": "Art 30",
+                  "value": "Right of minorities (religious or linguistic) to establish and administer educational institutions"
+                },
+                {
+                  "label": "Note",
+                  "value": "\"Minority\" is NOT defined in the Constitution"
+                }
+              ]
+            },
+            {
+              "text": "Note: \"Minority\" is NOT defined in the Constitution.",
+              "type": "trap"
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Right to Constitutional Remedies (Art 32)",
+          "intro": "Right to Constitutional Remedies (Article 32) gives every citizen the power to go directly to the Supreme Court (SC) if their Fundamental Rights (FR) – the basic rights guaranteed by the Constitution – are violated. Fundamental Rights (FR) are the six core rights, like the right to equality and freedom of speech, that protect individual liberty. Under Article 32, the Supreme Court can issue five special court orders called writs: Habeas Corpus (meaning “produce the body”) orders a jailer to bring a person to court to check if their detention is legal; Mandamus (meaning “we command”) orders a public official to do their legal duty; Prohibition orders a lower court to stop a case it has no authority to hear; Certiorari (meaning “to be informed”) quashes or cancels a decision made by a lower court or tribunal that was illegal; and Quo-Warranto (meaning “by what authority”) asks a person holding a public office to prove they have the legal right to hold it. The Supreme Court has declared that the right under Article 32 is a part of the “Basic Structure” of the Constitution, meaning that Parliament cannot remove or weaken this right even by amending the Constitution.",
+          "blocks": []
+        },
+        {
+          "type": "facts",
+          "title": "Articles 33, 34 & 35",
+          "intro": "Articles 33, 34 and 35 of the Indian Constitution are special rules about Fundamental Rights (FRs), which are basic freedoms guaranteed to every citizen. Article 33 allows the Indian Parliament (the national law-making body) to limit or even completely remove certain Fundamental Rights for specific groups like the Armed Forces (the Army, Navy, and Air Force), Paramilitary forces (like the Border Security Force), and the Police, so that they can do their duty properly and maintain discipline. Article 34 says that when Martial Law (a situation where the military takes over the civilian government, usually during a war or rebellion) is in force, the government can restrict Fundamental Rights, and Parliament can later protect those officials who did this by passing a law that cannot be challenged in court. Article 35 states that only Parliament, and not any State Legislature (a state's own law-making body), has the power to make laws that give full effect to Fundamental Rights, including deciding the punishment for violating them. For example, under Article 35, only Parliament can make the laws that enforce the right against untouchability. These three articles together help the national government control how rights apply in special situations.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Art 33",
+                  "Parliament can restrict/abrogate FRs of Armed Forces, Para-military, Police, etc"
+                ],
+                [
+                  "Art 34",
+                  "Restriction on FRs while Martial Law is in force"
+                ],
+                [
+                  "Art 35",
+                  "Only Parliament (not State Legislatures) has power to make laws to give effect to FRs"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Item",
+                "Exam fact"
+              ]
+            },
+            {
+              "text": "Art 35: Only Parliament (not State Legislatures) has power to make laws to give effect to FRs.",
+              "type": "trap"
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "Which article prohibits the employment of children below 14 in factories, mines, or hazardous activities?",
+          "back": "Article 24."
+        },
+        {
+          "front": "What is the exception to the prohibition of forced labour under Article 23?",
+          "back": "The State can impose compulsory service for public purposes, such as military or social service."
+        },
+        {
+          "front": "Which article grants the right to manage religious affairs?",
+          "back": "Article 26."
+        },
+        {
+          "front": "What does Article 27 guarantee regarding taxes and religion?",
+          "back": "It provides freedom from taxes for the promotion of religion."
+        },
+        {
+          "front": "Is the term 'minority' defined in the Indian Constitution?",
+          "back": "No, the term 'minority' is not defined in the Constitution."
+        },
+        {
+          "front": "Which article protects the interests of minorities regarding language, script, and culture?",
+          "back": "Article 29."
+        },
+        {
+          "front": "Which writ is issued by the Supreme Court to command a public official to perform their legal duty?",
+          "back": "Mandamus."
+        },
+        {
+          "front": "Which article allows Parliament to restrict or abrogate Fundamental Rights for the Armed Forces and Police?",
+          "back": "Article 33."
+        },
+        {
+          "front": "What is the effect of Article 34 on Fundamental Rights?",
+          "back": "It allows for the restriction of Fundamental Rights while Martial Law is in force."
+        },
+        {
+          "front": "Which body has the exclusive power to make laws to give effect to Fundamental Rights?",
+          "back": "Only the Parliament; State Legislatures do not have this power."
+        },
+        {
+          "front": "Art 32 vs Art 226—which is wider?",
+          "back": "Art 226 (High Court) is WIDER. SC (Art 32) can issue writs ONLY for Fundamental Rights. HC (Art 226) can issue writs for FRs AND \"any other purpose\" (legal rights). Also, Art 32 is itself a FR, while Art 226 is a constitutional right."
+        },
+        {
+          "front": "Can the State compel someone to provide \"compulsory service\"?",
+          "back": "YES. Under Article 23, the State can impose compulsory service for public purposes (like military conscription or social service) without paying, provided it does not discriminate on religion, race, caste, or class."
+        },
+        {
+          "front": "Does Art 25 allow forced conversions?",
+          "back": "NO. Art 25 allows propagation (spreading the message), but the SC in Rev. Stainislaus case (1977) ruled it does NOT include the right to convert another person by force, fraud, or inducement."
+        },
+        {
+          "front": "Which type of minorities are recognized under Art 30?",
+          "back": "RELIGIOUS and LINGUISTIC minorities. The Constitution does not define the term \"minority\" but recognizes these two types for the purpose of establishing educational institutions."
+        },
+        {
+          "front": "Habeas Corpus—can it be issued against private individuals?",
+          "back": "YES. Unlike most other writs (like Mandamus or Quo-Warranto) which are issued against public authorities, Habeas Corpus can be issued against both public authorities AND private individuals."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

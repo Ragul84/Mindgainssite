@@ -1,0 +1,761 @@
+{
+  "zoneId": "polity-basics",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "Constitution — Parts, Articles, Schedules & Constituent Assembly",
+      "intro": "Before studying any individual topic in Indian Polity — Fundamental Rights, Parliament, the President — you need a mental map of the entire Constitution. Think of it like the table of contents of a massive book. The Constituent Assembly first met on December 9, 1946. By November 26, 1949, the Constitution was adopted. It came into force on January 26, 1950 — chosen to honour the 1930 Purna Swaraj declaration. The Constitution you study today is not what was adopted in 1949. The original had 395 Articles, 8 Schedules, and 22 Parts. Over 100+ amendments later: 448+ Articles, 12 Schedules, 25 Parts. UPSC tests both original and current numbers.",
+      "pages": [
+        {
+          "type": "formula",
+          "title": "Constitution Structure",
+          "intro": "The Constitution of India is a written document that was created in 1949. Originally, it had 22 Parts (which are like major sections), 395 Articles (which are the individual rules or laws), and 8 Schedules (which are lists or tables attached to the Constitution, like the list of official languages). Over time, through amendments (changes), the Constitution has grown. Today, it has 25 Parts, more than 448 Articles, 12 Schedules, and 5 Appendices (additional documents at the end). A common mistake to avoid is thinking the original number of Articles was 448; it was actually 395. The number 448 refers to the current number of Articles after many amendments were added.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Original Constitution",
+                  "22 Parts",
+                  "395 Articles",
+                  "8 Schedules"
+                ],
+                [
+                  "Current structure",
+                  "25 Parts",
+                  "448+ Articles",
+                  "12 Schedules"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Section",
+                "Parts",
+                "Articles",
+                "Schedules"
+              ]
+            },
+            {
+              "text": "Common UPSC trap: \"Originally how many articles?\" = 395 NOT 448.",
+              "type": "trap"
+            }
+          ]
+        },
+        {
+          "type": "timeline",
+          "title": "Constituent Assembly",
+          "intro": "The Constituent Assembly",
+          "blocks": [
+            {
+              "type": "timeline",
+              "items": [
+                {
+                  "label": "Formed",
+                  "value": "Cabinet Mission Plan 1946"
+                },
+                {
+                  "label": "First meeting",
+                  "value": "Dec 9, 1946"
+                },
+                {
+                  "label": "Adopted",
+                  "value": "Nov 26, 1949 (Constitution Day/Samvidhan Divas)"
+                },
+                {
+                  "label": "Enforced",
+                  "value": "Jan 26, 1950 (Republic Day)"
+                },
+                {
+                  "label": "Members who signed",
+                  "value": "299"
+                },
+                {
+                  "label": "Time taken",
+                  "value": "2 years, 11 months, 18 days"
+                },
+                {
+                  "label": "Constituent Assembly President",
+                  "value": "Dr. Rajendra Prasad"
+                },
+                {
+                  "label": "Constitutional Advisor",
+                  "value": "B.N. Rau (NOT Drafting Committee member)"
+                }
+              ]
+            },
+            {
+              "text": "Constitutional Advisor: B.N. Rau (NOT Drafting Committee member).",
+              "type": "trap"
+            }
+          ]
+        },
+        {
+          "type": "facts",
+          "title": "Key Committees",
+          "intro": "The Constituent Assembly of India, which wrote the Constitution, set up several small groups called committees to handle different parts of the work. The Drafting Committee, led by Dr. B. R. Ambedkar, was responsible for taking all the decisions from other committees and turning them into the final written document, the Constitution. The Union Powers Committee and the Union Constitution Committee, both chaired by Jawaharlal Nehru, decided how the central government (the Union) would work and what powers it would have. The Provincial Constitution Committee, chaired by Sardar Vallabhbhai Patel, dealt with the structure and powers of the state governments (provinces). The Advisory Committee on Fundamental Rights (FR), also chaired by Patel, was in charge of listing the basic rights guaranteed to every citizen, known as Fundamental Rights. Finally, the Rules and Procedure Committee, chaired by Dr. Rajendra Prasad, set the rules for how the Constituent Assembly itself would run its meetings. A common mistake to avoid is thinking Ambedkar worked on many committees; he only chaired the Drafting Committee, while Patel handled both the Advisory Committee on FRs and the Provincial Constitution Committee.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Drafting Committee",
+                  "Ambedkar"
+                ],
+                [
+                  "Union Powers Committee",
+                  "Nehru"
+                ],
+                [
+                  "Union Constitution Committee",
+                  "Nehru"
+                ],
+                [
+                  "Provincial Constitution Committee",
+                  "Patel"
+                ],
+                [
+                  "Advisory Committee on FRs",
+                  "Patel"
+                ],
+                [
+                  "Rules & Procedure Committee",
+                  "Rajendra Prasad"
+                ],
+                [
+                  "Exam trap",
+                  "Ambedkar: Drafting ONLY"
+                ],
+                [
+                  "Patel",
+                  "FRs+Provincial"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Item",
+                "Exam fact"
+              ]
+            },
+            {
+              "text": "Exam trap: Ambedkar: Drafting ONLY.",
+              "type": "trap"
+            }
+          ]
+        },
+        {
+          "type": "facts",
+          "title": "Sources of Constitution",
+          "intro": "The Indian Constitution borrowed ideas from several countries. From the United Kingdom (UK) it took the parliamentary system, where the executive branch is part of the legislature, and the rule of law, meaning all citizens and institutions are equally subject to the law. From the United States of America (USA) it adopted Fundamental Rights (FR), which are basic individual protections enforceable in court, and Judicial Review, the power of courts to strike down laws that violate the Constitution. Ireland provided the Directive Principles of State Policy (DPSP), which are non-binding guidelines for the government to create a just society. Germany's Weimar Constitution inspired emergency provisions, which allow the central government to assume special powers during crises. Australia contributed the Concurrent List, a set of subjects on which both the central and state governments can legislate, and the Joint Sitting of both houses of Parliament to resolve legislative deadlocks. The Soviet Union (USSR) gave the concepts of Fundamental Duties, which are citizens' obligations such as respecting the national flag, and Five Year Plans for economic planning and development. The amendment procedure under Article 368 of the Indian Constitution, which details how the Constitution can be changed, was inspired by South Africa's constitution.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Parliamentary system+Rule of Law",
+                  "UK"
+                ],
+                [
+                  "Fundamental Rights+Judicial Review",
+                  "USA"
+                ],
+                [
+                  "DPSP",
+                  "Ireland"
+                ],
+                [
+                  "Emergency provisions",
+                  "Weimar Germany"
+                ],
+                [
+                  "Concurrent List+Joint Sitting",
+                  "Australia"
+                ],
+                [
+                  "Fundamental Duties",
+                  "USSR"
+                ],
+                [
+                  "Amendment procedure Art 368",
+                  "South Africa"
+                ],
+                [
+                  "Five Year Plans",
+                  "USSR"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Item",
+                "Exam fact"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Twelve Schedules",
+          "intro": "The twelve schedules of the Indian Constitution are appendices that provide detailed lists and rules. Schedule 1 names states and union territories (UTs); Schedule 2 fixes salaries for the President, Governors, judges, and the Comptroller and Auditor General (CAG); Schedule 3 prescribes oaths; Schedule 4 allocates Rajya Sabha seats; Schedule 5 governs scheduled areas; and Schedule 6 governs tribal areas in the north-eastern states of Assam, Meghalaya, Tripura, and Mizoram. Schedule 7 divides lawmaking power into three lists: the Union List (98 subjects), the State List (61 subjects), and the Concurrent List (52 subjects); Schedule 8 recognizes 22 official languages; Schedule 9 shields certain laws from judicial review (the power of courts to strike down laws), added by the First Amendment of 1951; and Schedule 10 deals with anti-defection (preventing party switching) added by the 52nd Amendment of 1985. Schedule 11 lists 29 subjects for Panchayati Raj (rural local government) added by the 73rd Amendment, and Schedule 12 lists 18 subjects for urban local bodies (municipalities) added by the 74th Amendment.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "1st",
+                  "States+UTs"
+                ],
+                [
+                  "2nd",
+                  "Salaries(President, Governors, Judges, CAG)"
+                ],
+                [
+                  "3rd",
+                  "Oaths"
+                ],
+                [
+                  "4th",
+                  "Rajya Sabha seats allocation"
+                ],
+                [
+                  "5th",
+                  "Scheduled Areas"
+                ],
+                [
+                  "6th",
+                  "Tribal Areas(NE:Assam, Meghalaya, Tripura, Mizoram)"
+                ],
+                [
+                  "7th",
+                  "Union(98)+State(61)+Concurrent(52) Lists [MOST TESTED]"
+                ],
+                [
+                  "8th",
+                  "22 Official Languages"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Item",
+                "Exam fact"
+              ]
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "How many articles were in the original Constitution of 1949?",
+          "back": "395 Articles."
+        },
+        {
+          "front": "Who served as the Constitutional Advisor to the Constituent Assembly?",
+          "back": "B.N. Rau."
+        },
+        {
+          "front": "Which committee was chaired by Sardar Vallabhbhai Patel regarding Fundamental Rights?",
+          "back": "The Advisory Committee on Fundamental Rights."
+        },
+        {
+          "front": "Which country's constitution inspired the amendment procedure under Article 368?",
+          "back": "South Africa."
+        },
+        {
+          "front": "Which schedule of the Constitution deals with the allocation of seats in the Rajya Sabha?",
+          "back": "Schedule 4."
+        },
+        {
+          "front": "Which amendment added the 9th Schedule to the Constitution?",
+          "back": "The 1st Amendment of 1951."
+        },
+        {
+          "front": "What is the subject matter of the 10th Schedule?",
+          "back": "Anti-defection law."
+        },
+        {
+          "front": "Which committee was chaired by Jawaharlal Nehru?",
+          "back": "The Union Powers Committee and the Union Constitution Committee."
+        },
+        {
+          "front": "Which schedule lists the subjects for Panchayati Raj?",
+          "back": "Schedule 11."
+        },
+        {
+          "front": "From which country did India borrow the concept of Fundamental Duties?",
+          "back": "The USSR."
+        },
+        {
+          "front": "Constitution adopted vs enforced — exact dates?",
+          "back": "Adopted: Nov 26, 1949 : Constitution Day (Samvidhan Divas). Enforced: Jan 26, 1950 : Republic Day. Dec 9, 1946 : CA first meeting. Aug 15, 1947 : Independence Day."
+        },
+        {
+          "front": "B.N. Rau vs B.R. Ambedkar — roles in CA?",
+          "back": "B.N. Rau : Constitutional ADVISOR. He did legal groundwork but was NOT a member of the Drafting Committee. B.R. Ambedkar : Chairman of the DRAFTING COMMITTEE. Two completely different roles — UPSC trap."
+        },
+        {
+          "front": "Original numbers vs current numbers of Constitution?",
+          "back": "Original (1949): 395 Articles, 8 Schedules, 22 Parts. Current: 448+ Articles, 12 Schedules, 25 Parts. UPSC asks original numbers in tricky questions."
+        },
+        {
+          "front": "DPSP borrowed from which country?",
+          "back": "Ireland. NOT UK (that gave Parliamentary system). NOT USA (that gave FRs+Judicial Review). Ireland had non-justiciable policy directives — India adapted that as DPSP."
+        },
+        {
+          "front": "9th Schedule — which Amendment added it?",
+          "back": "1st Amendment (1951) — to protect land reform laws from being struck down by courts. NOT 42nd (that amended the Preamble). NOT 52nd (that added 10th Schedule/Anti-defection)."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    },
+    {
+      "title": "Preamble & Citizenship",
+      "intro": "With the Constitution's skeleton (Day 1) and its Schedules (Day 2) locked in your memory, today you study the two most philosophically important opening sections: the Preamble and Citizenship. The Preamble is often called the soul of the Constitution — it declares the fundamental purposes and values that the entire document is built on. It is also the subject of one of the most dramatic legal reversals in Indian constitutional history: the Supreme Court first said the Preamble was NOT part of the Constitution (Berubari Union case, 1960), then completely reversed itself and said it IS (Kesavananda Bharati case, 1973). Citizenship, covered in Part II (Articles 5–11), defines who belongs to India and on what terms — a question that became politically explosive again with the Citizenship Amendment Act 2019.",
+      "pages": [
+        {
+          "type": "concept",
+          "title": "Preamble — The Text",
+          "intro": "The Preamble is the introduction to the Constitution of India, and it begins with the words \"WE, THE PEOPLE OF INDIA\", which means that the ultimate authority of the Constitution comes from the citizens of India, not from any ruler or outside power. It then says that the people have \"solemnly resolved\" (made a serious promise) to make India into a \"SOVEREIGN SOCIALIST SECULAR DEMOCRATIC REPUBLIC\". \"Sovereign\" means India is independent and not controlled by any foreign country; \"Socialist\" means the government aims to reduce economic inequality and provide for the welfare of all people; \"Secular\" means the state treats all religions equally and does not favor any one religion; \"Democratic\" means the government is elected by the people; and \"Republic\" means the head of the state (the President) is elected, not a hereditary monarch.",
+          "blocks": []
+        },
+        {
+          "type": "timeline",
+          "title": "Preamble — Key Legal Cases",
+          "intro": "The Preamble is the short introductory statement at the beginning of the Constitution that explains its goals and ideals. In the Berubari Union Case of 1960, the Supreme Court (SC) of India ruled that the Preamble is not a part of the Constitution itself, meaning it cannot be used to interpret or understand any of the Articles (the main rules of the Constitution). Then, in the Kesavananda Bharati Case of 1973, the Supreme Court completely changed its earlier decision and declared that the Preamble is indeed a part of the Constitution and can be used as a tool to interpret the meaning of other provisions. However, even after this case, the Preamble remains non-justiciable, which means you cannot go to a court and demand that the Preamble be enforced as a legal right or a law. Finally, in the LIC of India Case of 1995, the Supreme Court confirmed again that the Preamble is a part of the Constitution, but it still cannot be used as a basis for a court case or a legal claim.",
+          "blocks": [
+            {
+              "type": "timeline",
+              "items": [
+                {
+                  "label": "Berubari Union Case(1960)",
+                  "value": "SC held Preamble is NOT part of the Constitution — cannot be used to interpret Articles"
+                },
+                {
+                  "label": "Kesavananda Bharati Case(1973)",
+                  "value": "SC REVERSED Berubari — held Preamble IS part of the Constitution and can be used to interpret provisions"
+                },
+                {
+                  "label": "LIC of India Case(1995)",
+                  "value": "Reaffirmed Preamble IS part of the Constitution"
+                }
+              ]
+            },
+            {
+              "text": "Berubari Union Case(1960): SC held Preamble is NOT part of the Constitution — cannot be used to interpret Articles.",
+              "type": "trap"
+            }
+          ]
+        },
+        {
+          "type": "timeline",
+          "title": "What the Preamble Declares",
+          "intro": "The Preamble is the introduction to the Constitution of India, and it declares that the source of all authority in India is \"We, the People,\" which is called Popular Sovereignty, meaning the people themselves are the ultimate rulers. It then describes the nature of the Indian State as Sovereign, meaning no outside power can control India; Socialist, which was added in 1976 and means the state works to reduce social and economic inequality; Secular, also added in 1976, meaning the state has no official religion and treats all religions equally; Democratic, meaning the government is elected by the people; and Republic, meaning the head of the state (the President) is elected, not a hereditary king or queen. The Preamble also lists the main objectives of the Constitution: Justice (fair treatment in social, economic, and political matters), Liberty (freedom of thought, expression, belief, faith, and worship), Equality (equal status and opportunity for all), and Fraternity (a feeling of brotherhood and unity among all citizens). Finally, it records that the Constitution was adopted on 26th November 1949, which is the date the Constituent Assembly formally approved it.",
+          "blocks": [
+            {
+              "type": "timeline",
+              "items": [
+                {
+                  "label": "Source of authority",
+                  "value": "WE THE PEOPLE: Popular Sovereignty"
+                },
+                {
+                  "label": "Nature of State",
+                  "value": "Sovereign(no external authority above India)+Socialist(social+economic equality, added 1976)+Secular(state has no official religion, all religions equal, added 1976)+Democratic(elected government)+Republic(elected head of state, no hereditary monarchy)"
+                },
+                {
+                  "label": "Objectives",
+                  "value": "Justice+Liberty+Equality+Fraternity"
+                },
+                {
+                  "label": "Date",
+                  "value": "26th November 1949"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Citizenship — Art 5–11 + Citizenship Act 1955",
+          "intro": "Articles 5 to 11 of the Indian Constitution, which are found in Part II, lay down the rules for who is a citizen of India when the Constitution came into effect on January 26, 1950. Article 5 says that a person living in India at that time is a citizen if they were born in India and either their parents were also born in India, or they had lived in India for at least five years. Article 6 gives citizenship to people who moved to India from Pakistan before the Constitution started, while Article 7 says that people who moved to Pakistan after March 1, 1947, but later returned to India under a permit for permanent return, can also become citizens. Article 8 allows a person who lives outside India but whose parents or grandparents were born in India to register as a citizen. Article 9 is clear: if a person voluntarily gets the citizenship of another country, they automatically lose their Indian citizenship. Article 10 says that any citizen will continue to be a citizen unless Parliament passes a law to take it away, and Article 11 gives Parliament the power to make any law about citizenship. Using this power, Parliament passed the Citizenship Act of 1955, which explains how to get citizenship after the Constitution started.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Art 5",
+                  "value": "Citizenship at commencement(born in India+parents born in India OR 5yrs ordinary residence)"
+                },
+                {
+                  "label": "Art 6",
+                  "value": "Citizenship of migrants from Pakistan"
+                },
+                {
+                  "label": "Art 7",
+                  "value": "Citizenship of migrants to Pakistan"
+                },
+                {
+                  "label": "Art 8",
+                  "value": "Citizens of Indian origin outside India"
+                },
+                {
+                  "label": "Art 9",
+                  "value": "Voluntary acquisition of foreign citizenship: loss of Indian citizenship"
+                },
+                {
+                  "label": "Art 10",
+                  "value": "Continuance of citizenship"
+                },
+                {
+                  "label": "Art 11",
+                  "value": "Parliament can make laws on citizenship"
+                },
+                {
+                  "label": "Citizenship Act 1955",
+                  "value": "By birth(before 1987: jus soli, 1987-2003: one parent Indian, after 2003: neither parent foreign national), By descent, By registration, By naturalization(11 years residence)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Citizenship Amendment Act 2019",
+          "intro": "The Citizenship Amendment Act 2019, or CAA 2019, is a law passed by the Indian Parliament that creates a fast-track path to Indian citizenship for specific groups of people. It applies only to non-Muslim religious minorities—specifically Hindus, Sikhs, Buddhists, Jains, Parsis (Zoroastrians), and Christians—who are facing religious persecution in three neighboring countries: Pakistan, Afghanistan, and Bangladesh. To be eligible under this Act, a person must have entered India on or before December 31, 2014. Normally, a foreigner must live in India for 11 years before applying for citizenship, but the CAA 2019 reduces this requirement to just 5 years for these particular communities. The Act has been controversial because it does not include persecuted Muslims from these same countries, which critics say goes against the secular principle of the Indian Constitution. It is also important to know that the CAA 2019 does not apply to the tribal areas of the Northeast, which are listed in the Sixth Schedule of the Constitution, or to states that have an Inner Line Permit (ILP) system, such as Arunachal Pradesh, Nagaland, Mizoram, and Manipur. Finally, the CAA 2019 is a separate law from the National Register of Citizens (or NRC), which is a government process to identify and list all legal citizens of India.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "CAA 2019",
+                  "Fast-tracks citizenship for persecuted Hindu+Sikh+Buddhist+Jain+Parsi+Christian minorities from Pakistan+Bangladesh+Afghanistan who entered India before Dec 31, 2014"
+                ],
+                [
+                  "Reduction of residence requirement",
+                  "11 years→5 years for these communities"
+                ],
+                [
+                  "Muslims NOT included",
+                  "controversy"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Item",
+                "Exam fact"
+              ]
+            },
+            {
+              "text": "Muslims NOT included: controversy.",
+              "type": "trap"
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "Which words were added to the Preamble by the 42nd Amendment in 1976?",
+          "back": "Socialist, Secular, and Integrity."
+        },
+        {
+          "front": "What was the Supreme Court's ruling in the Berubari Union Case (1960) regarding the Preamble?",
+          "back": "The Supreme Court held that the Preamble is not a part of the Constitution and cannot be used to interpret Articles."
+        },
+        {
+          "front": "Which case reversed the Berubari Union Case ruling, declaring the Preamble is part of the Constitution?",
+          "back": "The Kesavananda Bharati Case (1973)."
+        },
+        {
+          "front": "Is the Preamble justiciable in a court of law?",
+          "back": "No, it is not justiciable, meaning it cannot be enforced as a legal right in court."
+        },
+        {
+          "front": "What does Article 9 of the Constitution state regarding Indian citizenship?",
+          "back": "If a person voluntarily acquires the citizenship of a foreign country, they lose their Indian citizenship."
+        },
+        {
+          "front": "Which article grants the Parliament the power to make laws regarding citizenship?",
+          "back": "Article 11."
+        },
+        {
+          "front": "Under the Citizenship Act 1955, what is the residence requirement for naturalization?",
+          "back": "11 years of residence."
+        },
+        {
+          "front": "Which religious minorities are eligible for fast-tracked citizenship under the CAA 2019?",
+          "back": "Hindus, Sikhs, Buddhists, Jains, Parsis, and Christians from Pakistan, Bangladesh, and Afghanistan."
+        },
+        {
+          "front": "How did the CAA 2019 change the residence requirement for eligible minorities?",
+          "back": "It reduced the requirement from 11 years to 5 years."
+        },
+        {
+          "front": "Does the CAA 2019 apply to tribal areas under the Sixth Schedule?",
+          "back": "No, it does not apply to tribal areas of the Northeast (6th Schedule states) and states with Inner Line Permit."
+        },
+        {
+          "front": "Berubari Union (1960) vs Kesavananda Bharati (1973) — what did each say about Preamble?",
+          "back": "Berubari Union (1960): Preamble is NOT part of Constitution. Cannot be used for interpretation. Kesavananda Bharati (1973): REVERSED — Preamble IS part of Constitution. CAN be used for interpretation. But STILL not justiciable (cannot be enforced in court as a right)."
+        },
+        {
+          "front": "Which 3 words were added to the Preamble by the 42nd Amendment?",
+          "back": "Socialist + Secular + Integrity. Added in 1976 during Emergency (Indira Gandhi government). Original Preamble(1949) had: Sovereign, Democratic, Republic only. Note: FRATERNITY was original — not added later."
+        },
+        {
+          "front": "What does \"We the People\" in the Preamble signify?",
+          "back": "Popular Sovereignty — the people of India are the ultimate source of authority. The Constitution derives its authority from the people, not from Parliament or any government. Parliament derives its power FROM the Constitution, not the other way around."
+        },
+        {
+          "front": "Citizenship at birth — how did the rules change?",
+          "back": "Before 1987: Born in India : Indian citizen (Jus Soli — place of birth). 1987-2003: Born in India + at least one parent Indian citizen. After 2003: Born in India + neither parent a foreign national + neither parent illegal migrant. Rules became progressively stricter."
+        },
+        {
+          "front": "CAA 2019 — which communities included? Why excluded Muslims?",
+          "back": "Included: Hindu+Sikh+Buddhist+Jain+Parsi+Christian minorities from Pakistan+Bangladesh+Afghanistan. Muslims excluded because these are Muslim-majority countries — persecuted minorities by definition are non-Muslim (govt argument). Critics: discriminatory on religious grounds."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    },
+    {
+      "title": "12 Schedules — Complete Mastery Day",
+      "intro": "Yesterday you saw all 12 Schedules for the first time. Today you drill them until they are instinctive. Here is why this matters: UPSC, in nearly every Prelims paper, has at least one question that asks \"which Schedule deals with X?\" or \"which of the following is in the Concurrent List?\" If you spend one full day on Schedules now, you will never lose a Schedule-based question for the rest of your preparation. The most important is the 7th Schedule — the division of legislative powers between Centre and States. It is the foundation for understanding Centre-State relations, which is covered in Day 15. Today, think of yourself as memorizing the index of India's most important document.",
+      "pages": [
+        {
+          "type": "facts",
+          "title": "Schedules 1–4",
+          "intro": "Schedules 1 through 4 are four lists attached to the end of the Constitution of India that contain specific details needed to run the country. The First Schedule is a complete list of the names of all 28 States and all 8 Union Territories (UTs) in India, and Articles 1 and 4 of the Constitution say that this Schedule is where you find the official names and territories of the country. The Second Schedule lists the exact salaries and allowances, called emoluments, that are paid to top officials like the President, the Vice-President, the Governors of states, the judges of the Supreme Court and High Courts, the Comptroller and Auditor General of India (CAG), the Speaker and Deputy Speaker of the Lok Sabha (LS), and the Chairman and Deputy Chairman of the Rajya Sabha (RS). The Third Schedule contains the exact words, called forms of oaths and affirmations, that must be spoken by Members of Parliament (MPs), Ministers, the President, and judges when they promise to do their duty honestly. The Fourth Schedule explains how many seats in the Rajya Sabha, the upper house of Parliament, are given to each State and each Union Territory (UT), based on their population.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "1st Schedule",
+                  "Names of all 28 States + 8 UTs"
+                ],
+                [
+                  "2nd Schedule",
+                  "Emoluments(salaries+allowances) of President, Vice-President, Governors, Supreme Court judges, HC judges, CAG, Speaker+Deputy Speaker of LS, Chairman+Deputy Chairman of RS"
+                ],
+                [
+                  "3rd Schedule",
+                  "Forms of Oaths and Affirmations for MPs, Ministers, Presidents, Judges"
+                ],
+                [
+                  "4th Schedule",
+                  "Allocation of Rajya Sabha seats to States and UTs"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Item",
+                "Exam fact"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "Schedules 5–6",
+          "intro": "Schedules 5 and 6 are two parts of the Indian Constitution that deal with how special regions are governed. The 5th Schedule (Schedule Five) is about the administration and control of Scheduled Areas, which are special regions in states other than the four northeastern states, where many Scheduled Castes (SCs) and Scheduled Tribes (STs) live. In these areas, the Governor of the state has a special role and can make Regulations, which are special laws, to protect the people and their land. The 6th Schedule (Schedule Six) is about the administration of Tribal Areas in only four specific northeastern states: Assam, Meghalaya, Tripura, and Mizoram. In these areas, there are special bodies called Autonomous District Councils (ADCs) that have the power to make laws and run their own courts. The key difference is that the 5th Schedule applies to Scheduled Areas for SCs and STs in the rest of India, while the 6th Schedule applies only to the tribal areas in those four northeastern states.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "5th Schedule",
+                  "Administration and control of Scheduled Areas (for SCs/STs in states OTHER than NE states)"
+                ],
+                [
+                  "6th Schedule",
+                  "Administration of Tribal Areas in Assam, Meghalaya, Tripura, and Mizoram ONLY"
+                ],
+                [
+                  "KEY DIFFERENCE",
+                  "5th: rest of India SCs/STs"
+                ],
+                [
+                  "6th",
+                  "ONLY 4 NE states tribal areas"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Item",
+                "Exam fact"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "7th Schedule — MOST IMPORTANT",
+          "intro": "The 7th Schedule of the Indian Constitution is a list that divides the power to make laws between the central government (called the Union) and the state governments. It has three parts: the Union List, the State List, and the Concurrent List. The Union List originally had 97 subjects, but now has 98, and on these subjects only the central government can make laws. These include important matters like defence (the country's military), foreign affairs (dealing with other countries), railways, atomic energy, banking, insurance, and currency (money). The State List originally had 66 subjects, but now has 61, and on these subjects only the state governments can normally make laws. These include police, public order (keeping peace), land, agriculture (farming), and public health. However, under Article 249, the central government can make laws on a state subject if it is in the national interest; under Article 250, it can do so during a national emergency; and under Article 252, it can do so if two or more state governments ask it to. The Concurrent List originally had 47 subjects, but now has 52, and on these subjects both the central and state governments can make laws. If there is a conflict between a central law and a state law on the same subject, the central law wins, as stated in Article 254.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Union List",
+                  "98 subjects (originally 97)"
+                ],
+                [
+                  "State List",
+                  "61 subjects (originally 66)"
+                ],
+                [
+                  "Concurrent List",
+                  "52 subjects(originally 47)"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Item",
+                "Exam fact"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "timeline",
+          "title": "Schedules 8–10",
+          "intro": "Schedules 8 to 10 are three lists attached to the end of the Indian Constitution that contain specific rules and details. The 8th Schedule lists the 22 official languages of India. When the Constitution started in 1950, it originally had 14 languages. Later, Sindhi was added by the 21st Amendment in 1967; Konkani, Manipuri, and Nepali were added by the 71st Amendment in 1992; and Bodo, Dogri, Maithili, and Santhali were added by the 92nd Amendment in 2003. English is not listed in the 8th Schedule; it was originally allowed as an associate official language for 15 years, but this arrangement has been extended indefinitely by law. The 9th Schedule was created by the 1st Amendment in 1951 to protect certain laws from being challenged in court. It initially contained 284 Acts that could not be reviewed by judges for violating Fundamental Rights. However, in the I.R. Coelho case of 2007, the Supreme Court ruled that any law added to the 9th Schedule after April 24, 1973—the date of the Kesavananda Bharati case which established the Basic Structure doctrine—can be reviewed by courts if it violates the basic structure of the Constitution. The 10th Schedule is the Anti-Defection Law, added by the 52nd Amendment in 1985. It lays down when a Member of Parliament or a Member of a Legislative Assembly can be disqualified for leaving their political party or voting against the party whip.",
+          "blocks": [
+            {
+              "type": "timeline",
+              "items": [
+                {
+                  "label": "8th Schedule",
+                  "value": "22 Official Languages"
+                },
+                {
+                  "label": "Original",
+                  "value": "14 languages(1950)"
+                },
+                {
+                  "label": "Added",
+                  "value": "Sindhi(21st Amendment 1967), Konkani+Manipuri+Nepali(71st Amendment 1992), Bodo+Dogri+Maithili+Santhali(92nd Amendment 2003)"
+                },
+                {
+                  "label": "9th Schedule",
+                  "value": "284 Acts protected from judicial review"
+                },
+                {
+                  "label": "BUT",
+                  "value": "SC in I.R. Coelho(2007) held laws added after Apr 24, 1973(Kesavananda date) can be reviewed if they violate Basic Structure"
+                },
+                {
+                  "label": "10th Schedule",
+                  "value": "Anti-defection law"
+                },
+                {
+                  "label": "Exception",
+                  "value": "merger of 2/3 of legislative party"
+                }
+              ]
+            },
+            {
+              "text": "English is NOT in 8th Schedule(it is associate official language for 15 yrs, extended indefinitely).",
+              "type": "trap"
+            }
+          ]
+        },
+        {
+          "type": "facts",
+          "title": "Schedules 11–12",
+          "intro": "Schedules 11 and 12 are two lists in the Indian Constitution that tell local governments what work they can do. The 11th Schedule lists 29 subjects that are given to Panchayati Raj Institutions (PRIs), which are the local self-governments in villages and rural areas. This schedule was added to the Constitution by the 73rd Amendment in 1992, and its subjects include things like agriculture, primary education, rural housing, drinking water, and social forestry. The 12th Schedule lists 18 subjects that are given to Urban Local Bodies (ULBs), which are the local governments in cities and towns, like municipalities. This schedule was added by the 74th Amendment in 1992, and its subjects include urban planning, roads and bridges, public health, slum improvement, and fire services. A simple way to remember the difference is that the 11th Schedule has 29 subjects for rural areas (Panchayats), and the 12th Schedule has 18 subjects for urban areas (Municipalities), so the schedule with the higher number (12) actually has fewer subjects.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "11th Schedule",
+                  "29 subjects of Panchayati Raj Institutions"
+                ],
+                [
+                  "Examples",
+                  "Agriculture, Primary education, Rural housing, Drinking water, Social forestry"
+                ],
+                [
+                  "12th Schedule",
+                  "18 subjects of Urban Local Bodies(Municipalities)"
+                ],
+                [
+                  "Examples",
+                  "Urban planning, Roads+bridges, Public health, Slum improvement, Fire services"
+                ],
+                [
+                  "TRICK",
+                  "11th: 29 subjects(PR), 12th: 18 subjects(ULB)"
+                ],
+                [
+                  "Higher number schedule",
+                  "fewer subjects"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Item",
+                "Exam fact"
+              ]
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "Which schedule contains the names of all 28 States and 8 Union Territories?",
+          "back": "The 1st Schedule."
+        },
+        {
+          "front": "Which schedule details the emoluments of the President, Vice-President, and judges?",
+          "back": "The 2nd Schedule."
+        },
+        {
+          "front": "Which schedule contains the forms of oaths and affirmations for MPs and Ministers?",
+          "back": "The 3rd Schedule."
+        },
+        {
+          "front": "Which schedule governs the administration of tribal areas in Assam, Meghalaya, Tripura, and Mizoram?",
+          "back": "The 6th Schedule."
+        },
+        {
+          "front": "How many subjects are currently in the Union List under the 7th Schedule?",
+          "back": "98 subjects."
+        },
+        {
+          "front": "Which article states that central law prevails in case of conflict in the Concurrent List?",
+          "back": "Article 254."
+        },
+        {
+          "front": "Is English included in the 8th Schedule of the Constitution?",
+          "back": "No, English is not in the 8th Schedule."
+        },
+        {
+          "front": "What is the legal status of laws added to the 9th Schedule after April 24, 1973?",
+          "back": "They can be reviewed by courts if they violate the basic structure of the Constitution."
+        },
+        {
+          "front": "Which amendment added the 10th Schedule (Anti-defection law) to the Constitution?",
+          "back": "The 52nd Amendment (1985)."
+        },
+        {
+          "front": "How many subjects are assigned to Urban Local Bodies in the 12th Schedule?",
+          "back": "18 subjects."
+        },
+        {
+          "front": "5th Schedule vs 6th Schedule — key difference?",
+          "back": "5th Schedule: Scheduled Areas — for SCs/STs in states OTHER than 4 NE states. Governor makes Regulations. 6th Schedule: Tribal Areas — ONLY in Assam, Meghalaya, Tripura, Mizoram. Has Autonomous District Councils(ADCs) with legislative+judicial powers. Much stronger autonomy than 5th Schedule."
+        },
+        {
+          "front": "7th Schedule — how many subjects in each list?",
+          "back": "Union List: 97 subjects (Centre exclusive). State List: 61 subjects (State primary, Centre can override). Concurrent List: 52 subjects (Both can legislate, Centre prevails in conflict under Art 254). Originally: Union: 97, State: 66, Concurrent: 47."
+        },
+        {
+          "front": "8th Schedule — how many languages? Which were added when?",
+          "back": "22 languages total. Original 14(1950). +Sindhi(21st Amendment,1967). +Konkani+Manipuri+Nepali(71st Amendment,1992). +Bodo+Dogri+Maithili+Santhali(92nd Amendment,2003). English is NOT in 8th Schedule."
+        },
+        {
+          "front": "9th Schedule — can laws in it be challenged in court?",
+          "back": "Originally NO — complete immunity. But I.R. Coelho case(2007, SC): Laws added to 9th Schedule AFTER April 24, 1973(Kesavananda Bharati date) CAN be reviewed if they violate the Basic Structure of the Constitution. Pre-1973 laws : absolute immunity. Post-1973 : limited immunity."
+        },
+        {
+          "front": "11th vs 12th Schedule — subjects count?",
+          "back": "11th Schedule: 29 subjects — Panchayati Raj Institutions (73rd Amendment, 1992). 12th Schedule: 18 subjects — Urban Local Bodies/Municipalities (74th Amendment, 1992). Memory trick: Higher schedule number : fewer subjects."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

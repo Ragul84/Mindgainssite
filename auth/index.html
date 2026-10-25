@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Signing you in · MindGains</title>
+  <link rel="icon" href="/assets/icons/mindgains-header-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root { --ink:#0d1b2a; --ink-2:#475569; --teal:#0b7a72; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { min-height:100dvh; display:grid; place-items:center; padding:24px;
+      background:#fbfcfd; color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+    .card { text-align:center; max-width:380px; }
+    .logo { width:56px; height:56px; border-radius:16px; object-fit:cover; margin-bottom:18px; }
+    h1 { font-size:19px; font-weight:600; letter-spacing:-.01em; }
+    p { margin-top:8px; font-size:14px; line-height:1.6; color:var(--ink-2); }
+    .spin { width:30px; height:30px; margin:22px auto 0; border-radius:50%;
+      border:3px solid rgba(11,167,158,.22); border-top-color:var(--teal);
+      animation:spin .8s linear infinite; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    .act { display:none; margin-top:20px; }
+    .act a { display:inline-flex; align-items:center; justify-content:center; height:44px; padding:0 22px;
+      border-radius:12px; background:var(--teal); color:#fff; font-weight:600; font-size:14.5px; text-decoration:none; }
+    .err { display:none; margin-top:14px; font-size:13.5px; color:#b4232a; }
+    @media (prefers-reduced-motion:reduce) { .spin { animation:none; } }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img class="logo" src="/assets/icons/mindgains-header-logo.png" alt="MindGains" />
+    <h1 id="t">Signing you in…</h1>
+    <p id="s">One moment — taking you back to where you left off.</p>
+    <div class="spin" id="spin" aria-hidden="true"></div>
+    <div class="err" id="err"></div>
+    <div class="act" id="act"><a href="/">Continue to MindGains</a></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/assets/auth.js"></script>
+  <script>
+    /* The single OAuth landing page. Every sign-in redirects here, so only this one URL needs
+       to be allowlisted in Supabase — adding pages to the site never breaks login again.
+       It swaps the code for a session, then returns the user to the page they started on. */
+    (function () {
+      var DEFAULT_BACK = '/';
+      function backTo() {
+        var p = DEFAULT_BACK;
+        try { p = sessionStorage.getItem(MG.auth.RETURN_KEY) || DEFAULT_BACK; } catch (e) {}
+        try { sessionStorage.removeItem(MG.auth.RETURN_KEY); } catch (e) {}
+        // only ever return to a path on this site, never to an absolute url someone injected
+        if (typeof p !== 'string' || p.charAt(0) !== '/' || p.charAt(1) === '/') p = DEFAULT_BACK;
+        return p;
+      }
+      function fail(msg) {
+        document.getElementById('t').textContent = "Couldn't sign you in";
+        document.getElementById('s').textContent = 'You can head back and try again.';
+        document.getElementById('spin').style.display = 'none';
+        var e = document.getElementById('err');
+        if (msg) { e.textContent = msg; e.style.display = 'block'; }
+        document.getElementById('act').style.display = 'block';
+      }
+
+      // Supabase reports OAuth problems as query/hash params rather than throwing
+      var q = new URLSearchParams(location.search);
+      var h = new URLSearchParams((location.hash || '').replace(/^#/, ''));
+      var oauthErr = q.get('error_description') || h.get('error_description') || q.get('error') || h.get('error');
+      if (oauthErr) return fail(decodeURIComponent(oauthErr).slice(0, 160));
+
+      var done = false;
+      function finish(user) {
+        if (done) return;
+        done = true;
+        if (!user) return fail('No session was created.');
+        location.replace(backTo());
+      }
+
+      MG.auth.refresh().then(finish).catch(function () { finish(null); });
+      // detectSessionInUrl resolves asynchronously; don't leave the user on a spinner forever
+      setTimeout(function () { if (!done) MG.auth.refresh().then(finish).catch(function () { fail(); }); }, 2500);
+      setTimeout(function () { if (!done) fail('Timed out waiting for Google.'); }, 9000);
+    })();
+  </script>
+<script defer src="/assets/pv.js"></script>
+</body>
+</html>

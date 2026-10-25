@@ -1,0 +1,305 @@
+{
+  "zoneId": "geo-minerals",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "TNPSC Geography: Mineral & Power Resources of India",
+      "intro": "Today we study the 'Fuel of Development'. India has rich deposits of minerals, especially in the Chotanagpur plateau (the Ruhr of India). We explore metallic minerals like Iron and Gold, and non-metallic minerals like Mica and Limestone. We also look at the energy sector—Coal, Petroleum, and the rising Solar power. For TNPSC, knowing the major mining hubs like Kudremukh (Iron) and Digboi (Oil) is essential. Let's power up your knowledge today.",
+      "pages": [
+        {
+          "type": "facts",
+          "title": "Metallic Minerals",
+          "intro": "Metallic minerals are rocks that contain metals, which can be extracted and used to make things like tools, machines, and buildings. Iron ore is a metallic mineral used to make steel, and in India it is found mainly in the states of Odisha, Chhattisgarh, and Karnataka, including the Kudremukh mine in Karnataka. Manganese is another metallic mineral used in steelmaking and batteries, and Odisha has the largest deposits of manganese in India. Bauxite is the ore from which we get aluminium, a lightweight metal, and again Odisha is a major source of bauxite. Gold is a precious metallic mineral, and the Kolar gold fields in Karnataka used to produce it, but now they are mostly closed and no longer actively mined.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Iron Ore",
+                  "value": "Odisha, Chhattisgarh, Karnataka (Kudremukh)"
+                },
+                {
+                  "label": "Manganese",
+                  "value": "Odisha (Largest)"
+                },
+                {
+                  "label": "Bauxite (Aluminium)",
+                  "value": "Odisha"
+                },
+                {
+                  "label": "Gold",
+                  "value": "Kolar (Karnataka) - now mostly closed"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "facts",
+          "title": "Non-Metallic Minerals",
+          "intro": "Non-metallic minerals are minerals that do not contain metal, such as mica, limestone, and gypsum. Mica is a mineral used in electronics and paints, and India is a leading producer of it; one major source is the Nellore district in Andhra Pradesh. Limestone is a sedimentary rock used to make cement and in construction, and it is found in large quantities in Madhya Pradesh and Rajasthan. Gypsum is a soft mineral used to make plaster and fertilizer, and it is mainly found in Rajasthan.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Mica",
+                  "value": "Andhra Pradesh (Nellore) - India is a leading producer"
+                },
+                {
+                  "label": "Limestone",
+                  "value": "MP, Rajasthan"
+                },
+                {
+                  "label": "Gypsum",
+                  "value": "Rajasthan"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "facts",
+          "title": "Energy Resources (Conventional)",
+          "intro": "Conventional energy resources are natural fuels that have been used for many years, like coal, petroleum, and natural gas. Coal is a black rock that is burned to create electricity, and it supplies about 70 percent of India's electricity, with the largest coal mining area being Jharia in the state of Jharkhand. Petroleum, also called crude oil, is a liquid fuel used for vehicles and factories; Digboi in Assam is the oldest oil-producing field in India, while the Mumbai High field off the coast is the largest. Natural gas is a fuel that comes out of the ground as a gas, often used for cooking and generating power, and the Krishna-Godavari basin in eastern India is a major area where natural gas is found.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Coal",
+                  "Most important (70% of electricity)"
+                ],
+                [
+                  "Petroleum",
+                  "Digboi (Assam - oldest), Mumbai High (largest)"
+                ],
+                [
+                  "Natural Gas",
+                  "Krishna-Godavari basin"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Item",
+                "Exam fact"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "facts",
+          "title": "Non-Conventional Energy",
+          "intro": "Non-Conventional Energy means energy sources that are not the usual fossil fuels like coal or oil, and these sources are renewable or more sustainable. Solar energy comes from sunlight; in India, the states of Rajasthan and Gujarat have very large solar power projects because they get lots of sun, and the country has set huge goals to increase solar electricity. Wind energy uses the wind to spin turbines and make electricity; Tamil Nadu, especially the Muppandal area, is the leading state in India for wind power. Nuclear energy uses the heat from splitting atoms inside a reactor to generate electricity; in India, two major nuclear power plants are Kalpakkam in Tamil Nadu and Tarapur in Maharashtra.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Solar",
+                  "value": "Rajasthan/Gujarat (India has massive targets)"
+                },
+                {
+                  "label": "Wind",
+                  "value": "Tamil Nadu (Muppandal) is the leader in India"
+                },
+                {
+                  "label": "Nuclear",
+                  "value": "Kalpakkam (TN), Tarapur (MH)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Mineral Hubs",
+          "intro": "The Chotanagpur Plateau, a large region in eastern India, is called the \"Ruhr of India\" because it contains huge amounts of valuable minerals like coal, iron ore, and mica, similar to the Ruhr region in Germany which is famous for its coal mining. This plateau is located mainly in the state of Jharkhand and parts of nearby states, making it one of India's most important sources of raw materials for industries. Mumbai High is the largest offshore oil field in India, meaning it is an area under the sea where crude oil and natural gas are extracted from beneath the ocean floor. It is located about 160 kilometers west of Mumbai in the Arabian Sea and was discovered in the 1970s, supplying a significant portion of India's domestic oil production.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "Which region is known as the 'Ruhr of India' due to its mineral wealth?",
+          "back": "The Chotanagpur Plateau."
+        },
+        {
+          "front": "Which state is the largest producer of Manganese in India?",
+          "back": "Odisha."
+        },
+        {
+          "front": "Which mine in Karnataka is a major hub for Iron Ore?",
+          "back": "Kudremukh."
+        },
+        {
+          "front": "Where is the oldest oil-producing field in India located?",
+          "back": "Digboi, Assam."
+        },
+        {
+          "front": "What percentage of India's electricity is supplied by coal?",
+          "back": "About 70 percent."
+        },
+        {
+          "front": "Which district in Andhra Pradesh is a major source of Mica?",
+          "back": "Nellore."
+        },
+        {
+          "front": "Which area in Tamil Nadu is the leader in wind power in India?",
+          "back": "Muppandal."
+        },
+        {
+          "front": "Where is the largest offshore oil field in India located?",
+          "back": "Mumbai High."
+        },
+        {
+          "front": "Which states are the primary producers of Limestone in India?",
+          "back": "Madhya Pradesh and Rajasthan."
+        },
+        {
+          "front": "Which state is the primary source for Gypsum in India?",
+          "back": "Rajasthan."
+        },
+        {
+          "front": "Which state is the \"Ruhr of India\"?",
+          "back": "Chotanagpur Plateau (Jharkhand/WB/Odisha region)."
+        },
+        {
+          "front": "Where is the oldest oil well in India?",
+          "back": "Digboi (Assam)."
+        },
+        {
+          "front": "Leading producer of Mica in India?",
+          "back": "Andhra Pradesh."
+        },
+        {
+          "front": "Where is the largest Coal mine in India?",
+          "back": "Jharia (Jharkhand)."
+        },
+        {
+          "front": "Which state leads in Wind energy in India?",
+          "back": "Tamil Nadu."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    },
+    {
+      "title": "TNPSC Geography: Industries & Trade in India",
+      "intro": "Today we master the 'Industrial Map of India'. We study the major industrial sectors like Iron & Steel (the backbone), Textiles (largest employer), and Information Technology (the future). We also explore the 'Golden Quadrilateral' and the trade patterns of India. For TNPSC, knowing the location of major steel plants (Bhilai, Bokaro) and the software hubs is vital. Let's map the economic engines today.",
+      "pages": [
+        {
+          "type": "concept",
+          "title": "Iron & Steel Industry",
+          "intro": "Iron and steel industry refers to the process of making steel, which is a strong metal used for buildings, machines, and tools. Steel is often called the index of industrial development because a country's steel production shows how advanced its industries are. TISCO, which stands for Tata Iron and Steel Company, started in 1907 in Jamshedpur and was the first private steel plant in India. After independence, the government set up large steel plants with help from other countries: Bhilai in Chhattisgarh with help from the USSR (now Russia), Rourkela in Odisha with help from Germany, Durgapur in West Bengal with help from the UK, and Bokaro in Jharkhand with help from the USSR. These plants are called integrated steel plants because they do all steps from iron ore to finished steel in one place.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Textile Industry",
+          "intro": "The textile industry makes cloth and fabric from materials like cotton and jute. The first textile mill in India was Fort Gloster, which was set up in Calcutta (now Kolkata) in the year 1818. Mumbai is called the Cottonopolis of India because it became the country's biggest center for cotton textile manufacturing. This textile industry is the largest employer in the organized sector, meaning it gives the most jobs to people working in registered businesses that follow official labor laws. Jute, a plant fiber used to make things like sacks and ropes, is processed in mills that are mostly located along the Hooghly River in West Bengal.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "IT & Electronics",
+          "intro": "Bengaluru, also known as Bangalore, is called the \"Silicon Valley of India\" because it is the country's biggest center for the information technology (IT) industry and electronics. IT means using computers and software to store, send, and process information. India earns a large part of its Gross Domestic Product (GDP) — the total value of all goods and services the country produces in a year — by selling software and IT services to other countries, which is called software exports. Besides Bengaluru, other important cities for IT and electronics are Hyderabad, Chennai, Pune, and Gurugram, where many technology companies have their offices and factories.",
+          "blocks": []
+        },
+        {
+          "type": "facts",
+          "title": "Transport & Trade",
+          "intro": "The Golden Quadrilateral is a highway network that connects four major Indian cities: Delhi, Mumbai, Chennai, and Kolkata, forming a large square shape on the map. India has 13 major ports, which are large harbors where ships load and unload goods, and the biggest of these is the Mumbai Port. Trade means the buying and selling of goods between countries. India sells goods to other countries, called exports, including computer software, precious stones like diamonds and gems, and spices like pepper and cardamom. India also buys goods from other countries, called imports, such as petroleum, which is crude oil used to make fuel, and gold, which is a precious metal used for jewelry.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Golden Quadrilateral",
+                  "value": "Connects Delhi-Mumbai-Chennai-Kolkata"
+                },
+                {
+                  "label": "Major Ports",
+                  "value": "13 major (Mumbai is largest)"
+                },
+                {
+                  "label": "Trade",
+                  "value": "India exports Software, Gems, Spices; imports Petroleum, Gold"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Industrial Regions",
+          "intro": "Industrial Regions are specific areas within a country where many factories and industries are clustered together due to advantages like raw materials, transport, and markets. The major industrial regions of India include the Mumbai-Pune region (centered around the cities of Mumbai and Pune in Maharashtra), the Hugli region (located along the Hugli River in West Bengal, with Kolkata as its main city), the Bengaluru-Tamil Nadu region (spanning Bangalore in Karnataka and parts of Tamil Nadu, known for electronics and manufacturing), the Gujarat region (covering industrial centers like Ahmedabad and Vadodara), the Chotanagpur region (in Jharkhand and surrounding areas, rich in minerals and heavy industries), and the Vishakhapatnam-Guntur region (along the coast of Andhra Pradesh, focused on ports and oil refining). Each region has developed around specific resources or infrastructure that makes production efficient and profitable.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "Which city is known as the 'Cottonopolis of India'?",
+          "back": "Mumbai."
+        },
+        {
+          "front": "What is the first private steel plant established in India?",
+          "back": "TISCO (Tata Iron and Steel Company), established in 1907 in Jamshedpur."
+        },
+        {
+          "front": "Which country helped establish the Rourkela steel plant in Odisha?",
+          "back": "Germany."
+        },
+        {
+          "front": "Which industry is the largest employer in the organized sector in India?",
+          "back": "The textile industry."
+        },
+        {
+          "front": "Where are the majority of India's jute mills concentrated?",
+          "back": "Along the Hooghly River in West Bengal."
+        },
+        {
+          "front": "Which city is referred to as the 'Silicon Valley of India'?",
+          "back": "Bengaluru."
+        },
+        {
+          "front": "What four cities are connected by the Golden Quadrilateral highway network?",
+          "back": "Delhi, Mumbai, Chennai, and Kolkata."
+        },
+        {
+          "front": "How many major ports does India have, and which is the largest?",
+          "back": "India has 13 major ports, and the Mumbai Port is the largest."
+        },
+        {
+          "front": "What are the primary imports of India mentioned in the text?",
+          "back": "Petroleum and gold."
+        },
+        {
+          "front": "What is the first textile mill established in India?",
+          "back": "Fort Gloster, set up in Calcutta in 1818."
+        },
+        {
+          "front": "\"Silicon Valley of India\"?",
+          "back": "Bengaluru."
+        },
+        {
+          "front": "First Iron & Steel plant in India?",
+          "back": "TISCO (Jamshedpur, 1907)."
+        },
+        {
+          "front": "\"Cottonopolis of India\"?",
+          "back": "Mumbai."
+        },
+        {
+          "front": "What is the \"Golden Quadrilateral\"?",
+          "back": "Highway project connecting 4 major metros (Delhi, Mumbai, Chennai, Kolkata)."
+        },
+        {
+          "front": "Where was the first Textile mill started?",
+          "back": "Fort Gloster, Calcutta (1818)."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

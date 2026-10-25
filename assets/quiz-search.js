@@ -212,41 +212,21 @@
     return x;
   };
 
+  // The bank is no longer public: the Worker deals a round of questions without answers and
+  // reveals each answer only after a pick, against a token tied to this round.
+  const set = (src || '').replace(/^.*\/assets\/quiz-data\//, '').replace(/\.json$/, '');
+  let round = null;
   async function load() {
-    if (quiz) return quiz;
-    const res = await fetch(src);
-    quiz = await res.json();
+    const res = await fetch(`/api/quiz/round?set=${encodeURIComponent(set)}`, { credentials: 'same-origin' });
+    if (!res.ok) throw new Error(res.status === 429 ? 'busy' : 'load');
+    round = await res.json();
+    quiz = { questions: round.questions };
     return quiz;
   }
 
-  const QUESTION_REPAIRS = {
-    'Consider: (A) All botanists are scientists. (B) No scientist is a mathematician. (C) Some botanists are mathematicians. Which statement is contradictory to the premises?': {
-      question: 'Consider: (A) All botanists are scientists. (B) No scientist is a mathematician. Which conclusion follows?',
-      options: [
-        'No botanist is a mathematician.',
-        'Some scientists are mathematicians.',
-        'All botanists are mathematicians.',
-        'Some botanists are not scientists.',
-      ],
-      answer_index: 0,
-      explanation: 'All botanists are scientists, and no scientist is a mathematician. Therefore, no botanist can be a mathematician.',
-    },
-    'Given: (1) Some athletes are not mathematicians. (2) All mathematicians are scientists. Which of the following must be true?': {
-      question: 'Given: (1) Some athletes are not mathematicians. (2) All mathematicians are scientists. Which of the following must be true?',
-      options: [
-        'All athletes are scientists.',
-        'No scientist is an athlete.',
-        'Some athletes are not mathematicians.',
-        'Some scientists are athletes.',
-      ],
-      answer_index: 2,
-      explanation: 'The first premise directly guarantees that some athletes are not mathematicians. The second premise does not establish any athlete–scientist relationship.',
-    },
-  };
 
   function current() {
-    const q = quiz.questions[order[idx]];
-    return QUESTION_REPAIRS[q.question] ? { ...q, ...QUESTION_REPAIRS[q.question] } : q;
+    return quiz.questions[order[idx]];
   }
 
   // ── Confetti Particle Burst Engine ──────────────────────────────────────────
@@ -422,13 +402,33 @@
   }
 
   // ── handle answer ────────────────────────────────────────────────────────
-  function answer(choice, effectiveOptions, q) {
+  async function answer(choice, effectiveOptions, q) {
     if (answered) return;
     answered = true;
 
     const buttons = [...optsEl.querySelectorAll('button')];
+    buttons.forEach((b) => { b.disabled = true; });
+    if (!Number.isInteger(q.answer_index)) {
+      try {
+        const res = await fetch('/api/quiz/check', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ set: round.set, ids: round.ids, token: round.token, id: q.id }),
+        });
+        if (!res.ok) throw new Error(String(res.status));
+        const r = await res.json();
+        q.answer_index = r.answer_index;
+        q.explanation = r.explanation;
+      } catch (e) {
+        answered = false;
+        buttons.forEach((b) => { b.disabled = false; });
+        feedback.hidden = false;
+        feedback.className = 'quiz-feedback is-wrong';
+        feedback.textContent = e.message === '429' ? 'Too fast. Wait a few seconds and tap again.' : 'Could not check that answer. Tap again.';
+        return;
+      }
+    }
     buttons.forEach((b, i) => {
-      b.disabled = true;
       if (i === q.answer_index) b.classList.add('correct');
       if (i === choice && i !== q.answer_index) b.classList.add('wrong', 'shake');
     });
@@ -530,76 +530,12 @@
   async function begin() {
     startBtn.disabled = true;
     startBtn.textContent = 'Loading…';
-    await load();
-    
-    // Split questions into statement-based and direct MCQs
-    const pattern = /(?:Statement\s*\d+|Statement\s*[I|V|X]+|\b[1-9]\.|\(\d{1,2}\))/i;
-    const statements = [];
-    const directs = [];
-    
-    const usable = (q) => Array.isArray(q.options)
-      && q.options.length === 4
-      && Number.isInteger(q.answer_index)
-      && q.answer_index >= 0
-      && q.answer_index < q.options.length
-      && q.options.every((option) => String(option).trim().length > 2)
-      && new Set(q.options.map((option) => String(option).trim().toLowerCase())).size === q.options.length;
-
-    quiz.questions.forEach((q, i) => {
-      if (!usable(q)) return;
-      if (pattern.test(q.question)) {
-        statements.push(i);
-      } else {
-        directs.push(i);
-      }
-    });
-    
-    // Target 20 questions total (10 statements, 10 directs)
-    const targetHalf = 10;
-    const shuffledStmts = shuffle(statements);
-    const shuffledDirects = shuffle(directs);
-    
-    let selectedStmts = [];
-    let selectedDirects = [];
-    
-    if (shuffledStmts.length >= targetHalf && shuffledDirects.length >= targetHalf) {
-      selectedStmts = shuffledStmts.slice(0, targetHalf);
-      selectedDirects = shuffledDirects.slice(0, targetHalf);
-    } else {
-      const limit = Math.min(shuffledStmts.length, shuffledDirects.length);
-      if (limit > 0) {
-        selectedStmts = shuffledStmts.slice(0, Math.max(targetHalf, limit));
-        selectedDirects = shuffledDirects.slice(0, Math.max(targetHalf, limit));
-      } else {
-        // Fallback: shuffle all and take first 20 if one pool is completely empty
-        const all = shuffle(quiz.questions.map((_, i) => i).filter((i) => usable(quiz.questions[i])));
-        order = all.slice(0, 20);
-        idx = 0;
-        score = 0;
-        mistakes = [];
-        started = Date.now();
-        nextBtn.textContent = 'Next →';
-        player.hidden = false;
-        document.documentElement.classList.add('mg-quiz-active');
-        let restartBtn = player.querySelector('[data-restart-quiz]');
-        if (!restartBtn) {
-          restartBtn = document.createElement('button');
-          restartBtn.type = 'button';
-          restartBtn.className = 'quiz-restart';
-          restartBtn.dataset.restartQuiz = '';
-          restartBtn.textContent = 'Restart';
-          restartBtn.addEventListener('click', begin);
-          player.querySelector('.quiz-status')?.appendChild(restartBtn);
-        }
-        startBtn.textContent = 'Restart Quiz';
-        startBtn.disabled = false;
-        render();
-        player.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        return;
-      }
+    try { await load(); } catch (e) {
+      startBtn.disabled = false;
+      startBtn.textContent = e.message === 'busy' ? 'Busy, try again in a minute' : 'Could not load, tap to retry';
+      return;
     }
-    
-    order = shuffle([...selectedStmts, ...selectedDirects]).slice(0, 20);
+    order = quiz.questions.map((_, i) => i);   // the Worker already picked and shuffled
     idx     = 0;
     score   = 0;
     mistakes = [];

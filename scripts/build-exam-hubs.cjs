@@ -17,7 +17,7 @@ const SITE = (process.env.BASE_URL || process.env.SITE_URL || 'https://mindgains
 const HUBS = {
   upsc: {
     exam: 'UPSC',
-    code: 'UPSC · Civil Services — Prelims &amp; Mains',
+    code: 'UPSC · CIVIL SERVICES',
     // ┌─────────────────────────────────────────────────────────────────────┐
     // │ SEO — keyword-optimised. This block is the ONLY place page <title>  │
     // │ and <meta description> come from. Edit deliberately; check Search   │
@@ -26,8 +26,9 @@ const HUBS = {
     // └─────────────────────────────────────────────────────────────────────┘
     title: 'UPSC Prelims Practice — PYQs & Topic Quizzes | MindGains',
     description: 'Free UPSC Prelims practice: previous-year questions and topic-wise quizzes across Polity, History, Economy, Geography, Environment and CSAT. No sign-up needed.',
-    h1: 'Your UPSC preparation, connected.',
-    heroP: 'A plan for your syllabus, concepts cited to your books, verified PYQs, Mains answers marked on the rubric, mock tests with an All-India Rank, spaced revision and Quiz Rooms with friends — one loop, built around the exam you’re actually preparing for.',
+    h1: 'Master the UPSC Civil Services Examination',
+    lede: 'Prepare for UPSC.',
+    heroP: 'Learn with textbook-grounded AI that cites its sources. Practise unlimited topic quizzes and real Previous Year Questions. Simulate Mains with answer evaluation and full-length mocks. Study alongside Miga, your AI companion — while MindGains tracks every mistake, finds your weak areas, and brings them back at the right time until they stick.',
     quizStart: '/upsc/polity/',
     quizHub: ['/upsc/polity/', 'Open UPSC Quiz Hub'],
     source: 'NCERT / standard sources',
@@ -39,11 +40,11 @@ const HUBS = {
       pyq: 'UPSC 2021 PYQ · which case established the Basic Structure doctrine?',
     },
     miga: {
-      title: 'Ask Miga. In your language.',
+      title: 'Stuck? Ask Miga.',
       langOn: 'हिंदी',
       q: 'बेसिक स्ट्रक्चर डॉक्ट्रिन का मतलब क्या है, आसान शब्दों में?',
       a: 'संविधान का एक "मूल ढाँचा" है जिसे संसद संशोधन से भी नहीं बदल सकती — जैसे न्यायिक समीक्षा, संघवाद, धर्मनिरपेक्षता। ये केशवानंद भारती (1973) में तय हुआ।',
-      p: 'Say the doubt out loud and get a clear, exam-focused answer back — in Hindi, Tamil, Telugu, Kannada, Malayalam or English. Grounded in your books, not a guess.',
+      p: 'Ask the follow-up you would normally keep to yourself. Ask why your answer was wrong. Ask for it simpler. Ask for a harder one. In Hindi, Tamil, Telugu, Kannada, Malayalam or English — typed or out loud.',
     },
     liveQ: {
       tag: 'UPSC · Polity · Judicial Review',
@@ -61,9 +62,9 @@ const HUBS = {
       ['/upsc/history/', 'History'],
       ['/upsc/geography/', 'Geography'],
     ],
-    androidP: 'Daily Dose, connected revision, Miga in your language and Quiz Rooms with friends — the full loop. Private beta, opening soon.',
+    androidP: 'Daily Dose. Textbook-aware Miga. PYQs. Mocks. Revision. Quiz Rooms. One learning history that doesn’t reset every time you close the app. MindGains for Android · Private beta.',
     faqs: [
-      ['How is this different from a normal UPSC quiz app?', 'MindGains connects the whole loop: a textbook explanation leads into a previous-year question, a wrong answer becomes spaced revision, revision earns XP, and XP feeds live Quiz Rooms with friends. Nothing you study is thrown away.'],
+      ['How is this different from a normal UPSC quiz app?', 'MindGains connects the whole loop: a textbook explanation leads into a previous-year question, a wrong answer becomes spaced revision, revision earns XP, and XP feeds live Quiz Rooms with friends. Nothing you learn is thrown away.'],
       ['Does MindGains replace standard UPSC books?', 'No. It works as a daily practice and revision layer alongside NCERT, standard books and classes — connecting what you read to real previous-year questions and keeping your mistakes coming back until they stick.'],
       ['Can I use MindGains for free?', 'Yes. Every UPSC topic quiz on the website is free with no sign-up. The Android app adds the Daily Dose, connected revision, Miga and Quiz Rooms.'],
     ],
@@ -71,12 +72,13 @@ const HUBS = {
 
   tnpsc: {
     exam: 'TNPSC',
-    code: 'TNPSC · Group 1, 2, 2A, 4 &amp; VAO',
+    code: 'TNPSC · GROUP 1, 2, 2A, 4 &amp; VAO',
     // SEO — see the banner in the UPSC block above.
     title: 'TNPSC Group 1, 2 & 4 Practice — PYQs & Quizzes | MindGains',
     description: 'Free TNPSC practice for Group 1, 2, 2A & 4: previous-year questions and topic-wise quizzes in Tamil and English — Tamil, History, Polity, GS and Aptitude.',
-    h1: 'Your TNPSC preparation, connected.',
-    heroP: 'A plan for your syllabus, concepts in Tamil, verified PYQs, Mains answers marked on the rubric, mock tests with an All-India Rank, spaced revision and Quiz Rooms with friends — one loop, built around the exam you’re actually preparing for.',
+    h1: 'TNPSC Preparation — PYQs, Samacheer Notes &amp; Mock Tests',
+    lede: 'Prepare for TNPSC.',
+    heroP: 'Learn from Samacheer. Practise real PYQs in Tamil or English. Take mocks. Ask Miga. And when you get something wrong, MindGains brings it back until it sticks.',
     quizStart: '/tnpsc/tamil/',
     quizHub: ['/tnpsc/tamil/', 'Open TNPSC Quiz Hub'],
     source: 'Samacheer / NCERT',
@@ -88,11 +90,11 @@ const HUBS = {
       pyq: 'TNPSC 2022 PYQ · which amendment added Art. 51A?',
     },
     miga: {
-      title: 'Ask Miga. In Tamil.',
+      title: 'Stuck? Ask Miga.',
       langOn: 'தமிழ்',
       q: 'டைரக்டிவ் ப்ரின்சிபிள்ஸ் ஏன் நீதிமன்றத்தில் அமல்படுத்த முடியாது?',
       a: '"Non-justiciable" — அதாவது அரசுக்கு வழிகாட்டுதல்கள், ஆனால் மீறினால் நீதிமன்றம் தலையிடாது. Art. 37 இதை தெளிவாக சொல்கிறது.',
-      p: 'Say the doubt out loud and get a clear, exam-focused answer back — in Tamil, Hindi, Telugu, Kannada, Malayalam or English. Grounded in your books, not a guess.',
+      p: 'Ask the follow-up you would normally keep to yourself. Ask why your answer was wrong. Ask for it simpler. Ask for a harder one. In Tamil, or Hindi, Telugu, Kannada, Malayalam and English — typed or out loud.',
     },
     liveQ: {
       tag: 'TNPSC · Polity · Directive Principles',
@@ -110,9 +112,9 @@ const HUBS = {
       ['/tnpsc/history/', 'History'],
       ['/tnpsc/polity/', 'Polity'],
     ],
-    androidP: 'Daily Dose for TNPSC, verified PYQs, Miga you can call in Tamil, and the State League. Private beta on Android.',
+    androidP: 'Daily Dose. Textbook-aware Miga in Tamil. PYQs. Mocks. Revision. Quiz Rooms. One learning history that doesn’t reset every time you close the app. MindGains for Android · Private beta.',
     faqs: [
-      ['How is this different from a normal TNPSC quiz app?', 'MindGains connects the whole loop: a textbook explanation leads into a previous-year question, a wrong answer becomes spaced revision, revision earns XP, and XP feeds live Quiz Rooms with friends. Nothing you study is thrown away.'],
+      ['How is this different from a normal TNPSC quiz app?', 'MindGains connects the whole loop: a textbook explanation leads into a previous-year question, a wrong answer becomes spaced revision, revision earns XP, and XP feeds live Quiz Rooms with friends. Nothing you learn is thrown away.'],
       ['Does MindGains support Tamil preparation?', 'Tamil is a first-class TNPSC track. Thirukkural, Sangam literature, grammar and modern Tamil all have dedicated topic quizzes, and you can ask Miga to explain in Tamil.'],
       ['Can I use MindGains for free?', 'Yes. Every TNPSC topic quiz on the website is free with no sign-up. The Android app adds the Daily Dose, connected revision, Miga and Quiz Rooms.'],
     ],
@@ -124,8 +126,9 @@ const HUBS = {
     // SEO — see the banner in the UPSC block above.
     title: 'SSC CGL, CHSL & MTS Practice — PYQs & Mock Quizzes | MindGains',
     description: 'Free SSC practice for CGL, CHSL, MTS, CPO and GD: previous-year questions and topic-wise mock quizzes across Reasoning, Quant, English and General Awareness.',
-    h1: 'Your SSC preparation, connected.',
-    heroP: 'A plan for your syllabus, concept shortcuts, verified PYQs, timed mocks with an All-India Rank, spaced revision and speed rounds with friends — one loop, built around the exam you’re actually preparing for.',
+    h1: 'SSC Preparation — CGL &amp; CHSL PYQs, Mock Tests &amp; Revision',
+    lede: 'Prepare for SSC.',
+    heroP: 'Learn the method. Practise real PYQs. Sit timed mocks. Ask Miga for the shortcut. And when you get something wrong, MindGains brings it back until it sticks.',
     quizStart: '/ssc/quant/',
     quizHub: ['/ssc/quant/', 'Open SSC Quiz Hub'],
     source: 'standard quant &amp; GK sources',
@@ -137,11 +140,11 @@ const HUBS = {
       pyq: 'SSC CGL 2023 PYQ · find the remainder when 7^103 is divided by 5',
     },
     miga: {
-      title: 'Ask Miga. In your language.',
+      title: 'Stuck? Ask Miga.',
       langOn: 'हिंदी',
       q: '7 की घात का last digit कैसे निकालें जल्दी से?',
       a: '7 की घातों का आखिरी अंक हर 4 पर दोहराता है: 7, 9, 3, 1। तो घात को 4 से भाग दो, शेषफल देखो — शेष 1→7, 2→9, 3→3, 0→1।',
-      p: 'Say the doubt out loud and get the method, the working and a shortcut — in Hindi, Tamil, Telugu, Kannada, Malayalam or English.',
+      p: 'Ask why your answer was wrong. Ask for the shortcut. Ask for it simpler, or for a harder one. In Hindi, Tamil, Telugu, Kannada, Malayalam or English — typed or out loud.',
     },
     liveQ: {
       tag: 'SSC · Quant · Number System',
@@ -157,11 +160,11 @@ const HUBS = {
       ['/ssc/english/synonyms-antonyms/', 'Synonyms &amp; Antonyms'],
       ['/ssc/quant/', 'Quant'],
       ['/ssc/reasoning/', 'Reasoning'],
-      ['/ssc/history/', 'History'],
+      ['/ssc/general-awareness/', 'General Awareness'],
     ],
-    androidP: 'Daily Dose for SSC, verified PYQs, Miga you can call in your language, and Quiz Rooms for speed rounds with friends. Private beta on Android.',
+    androidP: 'Daily Dose. Miga for the shortcut. PYQs. Timed mocks. Revision. Quiz Rooms. One learning history that doesn’t reset every time you close the app. MindGains for Android · Private beta.',
     faqs: [
-      ['How is this different from a normal SSC quiz app?', 'MindGains connects the loop: a concept explanation leads into a real previous-year question, a wrong answer becomes spaced revision, revision earns XP, and XP feeds live Quiz Rooms with friends. Practice never goes to waste.'],
+      ['How is this different from a normal SSC quiz app?', 'MindGains connects the loop: a concept explanation leads into a real previous-year question, a wrong answer becomes spaced revision, revision earns XP, and XP feeds live Quiz Rooms with friends. Nothing you learn is wasted.'],
       ['Which SSC subjects are covered?', 'The public quizzes cover SSC Quant, Reasoning, English, General Awareness, Science, History and Economy — topic by topic.'],
       ['Is it free?', 'Yes. Every SSC topic quiz on the website is free with no sign-up. The Android app adds the Daily Dose, connected revision, Miga and Quiz Rooms.'],
     ],
@@ -169,12 +172,13 @@ const HUBS = {
 
   rrb: {
     exam: 'RRB / Railway',
-    code: 'RRB · NTPC, Group D &amp; ALP',
+    code: 'RRB · NTPC, GROUP D &amp; ALP',
     // SEO — see the banner in the UPSC block above.
     title: 'RRB NTPC & Group D Practice — PYQs & Mock Quizzes | MindGains',
     description: 'Free RRB NTPC, Group D and ALP practice: previous-year questions and topic-wise mock quizzes across Maths, Reasoning, Science and General Awareness.',
-    h1: 'Your RRB preparation, connected.',
-    heroP: 'A plan for your syllabus, concept shortcuts, verified PYQs, timed mocks with an All-India Rank, spaced revision and speed rounds with friends — one loop, built around the exam you’re actually preparing for.',
+    h1: 'RRB Preparation — NTPC &amp; Group D PYQs and Mock Tests',
+    lede: 'Prepare for RRB.',
+    heroP: 'Learn the method. Practise real PYQs. Sit timed mocks. Ask Miga for the shortcut. And when you get something wrong, MindGains brings it back until it sticks.',
     quizStart: '/rrb/maths/',
     quizHub: ['/rrb/maths/', 'Open RRB Quiz Hub'],
     source: 'standard maths &amp; science sources',
@@ -186,11 +190,11 @@ const HUBS = {
       pyq: 'RRB NTPC 2021 PYQ · two trains, relative speed and crossing time',
     },
     miga: {
-      title: 'Ask Miga. In your language.',
+      title: 'Stuck? Ask Miga.',
       langOn: 'हिंदी',
       q: 'Relative speed कब जोड़ते हैं और कब घटाते हैं?',
       a: 'उलटी दिशा में चल रहे हों तो speeds जोड़ो; एक ही दिशा में हों तो घटाओ। फिर समय = कुल लंबाई ÷ relative speed।',
-      p: 'Say the doubt out loud and get the method, the working and a shortcut — in Hindi, Tamil, Telugu, Kannada, Malayalam or English.',
+      p: 'Ask why your answer was wrong. Ask for the shortcut. Ask for it simpler, or for a harder one. In Hindi, Tamil, Telugu, Kannada, Malayalam or English — typed or out loud.',
     },
     liveQ: {
       tag: 'RRB · Maths · Time, Speed &amp; Distance',
@@ -208,9 +212,9 @@ const HUBS = {
       ['/rrb/reasoning/', 'Reasoning'],
       ['/rrb/science/', 'Science'],
     ],
-    androidP: 'Daily Dose for RRB, verified PYQs, Miga you can call in your language, and Quiz Rooms for speed rounds with friends. Private beta on Android.',
+    androidP: 'Daily Dose. Miga for the shortcut. PYQs. Timed mocks. Revision. Quiz Rooms. One learning history that doesn’t reset every time you close the app. MindGains for Android · Private beta.',
     faqs: [
-      ['How is this different from a normal railway exam app?', 'MindGains connects the loop: a concept leads into a real previous-year question, a wrong answer becomes spaced revision, revision earns XP, and XP feeds live Quiz Rooms with friends. Nothing you practise is wasted.'],
+      ['How is this different from a normal railway exam app?', 'MindGains connects the loop: a concept leads into a real previous-year question, a wrong answer becomes spaced revision, revision earns XP, and XP feeds live Quiz Rooms with friends. Nothing you learn is wasted.'],
       ['Which RRB subjects are covered?', 'The public quizzes cover RRB Maths, Reasoning, Science and General Awareness — topic by topic, for NTPC, Group D and ALP.'],
       ['Is it free?', 'Yes. Every RRB topic quiz on the website is free with no sign-up. The Android app adds the Daily Dose, connected revision, Miga and Quiz Rooms.'],
     ],
@@ -218,12 +222,13 @@ const HUBS = {
 
   ncert: {
     exam: 'NCERT Foundation',
-    code: 'NCERT · Class 6–12 · UPSC-aligned',
+    code: 'NCERT · CLASS 6–12',
     // SEO — see the banner in the UPSC block above.
     title: 'NCERT Class 6–12 MCQs — Chapter-wise Practice Quizzes | MindGains',
     description: 'Free chapter-wise NCERT MCQ practice for Class 6 to 12: objective questions with answers across Science, Maths, Social Science, History and Geography.',
-    h1: 'Your NCERT foundation, connected.',
-    heroP: 'A chapter plan for your class, cited NCERT explanations, chapter questions and PYQs, exam-pattern tests, spaced revision and quizzes with friends — one loop, built around the books your exam is actually based on.',
+    h1: 'NCERT Class 6–12 — Chapter-wise MCQs, Notes &amp; PYQs',
+    lede: 'Build your NCERT foundation.',
+    heroP: 'Learn straight from the NCERT chapter. Practise chapter questions and PYQs. Take exam-pattern tests. Ask Miga in your language. And when you get something wrong, MindGains brings it back until it sticks.',
     quizStart: '/ncert/science/',
     quizHub: ['/ncert/science/', 'Open NCERT Quiz Hub'],
     source: 'NCERT textbooks',
@@ -235,11 +240,11 @@ const HUBS = {
       pyq: 'NCERT-based PYQ · in which part of the chloroplast does the Calvin cycle occur?',
     },
     miga: {
-      title: 'Ask Miga. In your language.',
+      title: 'Stuck? Ask Miga.',
       langOn: 'हिंदी',
       q: 'Light reaction और dark reaction में फर्क क्या है?',
       a: 'Light reaction thylakoid में होती है, प्रकाश चाहिए, ATP और NADPH बनते हैं। Dark reaction (Calvin cycle) stroma में होती है, प्रकाश की जरूरत नहीं, ग्लूकोज़ बनता है।',
-      p: 'Ask any chapter doubt out loud and get a clear answer — in Hindi, Tamil, Telugu, Kannada, Malayalam or English. Cited to the NCERT line.',
+      p: 'Ask the chapter doubt you would normally skip. Ask why your answer was wrong. Ask for it simpler. In Hindi, Tamil, Telugu, Kannada, Malayalam or English — typed or out loud, cited to the NCERT line.',
     },
     liveQ: {
       tag: 'NCERT · Class 11 Biology · Photosynthesis',
@@ -257,7 +262,7 @@ const HUBS = {
       ['/ncert/maths/', 'Maths'],
       ['/ncert/social-science/', 'Social Science'],
     ],
-    androidP: 'Daily Dose from your NCERT chapters, connected revision, Miga in your language, and Quiz Rooms with friends. Private beta on Android.',
+    androidP: 'Daily Dose from your chapters. Textbook-aware Miga in your language. PYQs. Exam-pattern tests. Revision. Quiz Rooms. One learning history that doesn’t reset every time you close the app. MindGains for Android · Private beta.',
     faqs: [
       ['Which classes are covered?', 'The public quizzes cover NCERT Class 6 to 12 across Science, Maths, Social Science, History, Geography and Economics — chapter by chapter.'],
       ['Is this useful for UPSC?', 'Yes. NCERT is the foundation of the UPSC syllabus, and every quiz here is tagged so you can move from a class chapter into UPSC-level practice.'],
@@ -267,12 +272,13 @@ const HUBS = {
 
   samacheer: {
     exam: 'Samacheer Kalvi',
-    code: 'Samacheer Kalvi · TN Board · Class 6–12',
+    code: 'SAMACHEER KALVI · TN BOARD · CLASS 6–12',
     // SEO — see the banner in the UPSC block above.
     title: 'Samacheer Kalvi Class 6–12 Questions & MCQ Quizzes | MindGains',
     description: 'Free Samacheer Kalvi practice for Class 6 to 12: topic-wise questions and MCQ quizzes in Tamil and English — Tamil, Science, Maths and Social Science. TNPSC-aligned.',
-    h1: 'Your Samacheer prep, connected.',
-    heroP: 'A chapter plan for your class, cited Samacheer explanations in Tamil, chapter questions, exam-pattern tests, spaced revision and quizzes with friends — one loop, built around the Tamil Nadu board syllabus.',
+    h1: 'Samacheer Kalvi Class 6–12 — Book-back Questions &amp; MCQ Practice',
+    lede: 'Learn your Samacheer.',
+    heroP: 'Learn straight from the Samacheer chapter, in Tamil. Practise chapter questions. Take exam-pattern tests. Ask Miga. And when you get something wrong, MindGains brings it back until it sticks.',
     quizStart: '/samacheer/tamil/',
     quizHub: ['/samacheer/tamil/', 'Open Samacheer Quiz Hub'],
     source: 'Samacheer Kalvi textbooks',
@@ -284,11 +290,11 @@ const HUBS = {
       pyq: 'Samacheer / TNPSC-style PYQ · the Mettur dam is built across which river?',
     },
     miga: {
-      title: 'Ask Miga. In Tamil.',
+      title: 'Stuck? Ask Miga.',
       langOn: 'தமிழ்',
       q: 'மேட்டூர் அணை எந்த ஆற்றில் கட்டப்பட்டுள்ளது?',
       a: 'மேட்டூர் அணை காவிரி (Cauvery) ஆற்றில் கட்டப்பட்டது, சேலம் மாவட்டத்தில். இது உலகின் மிகப்பெரிய அணைகளில் ஒன்று.',
-      p: 'Ask any chapter doubt out loud and get a clear answer back in Tamil — or Hindi, Telugu, Kannada, Malayalam and English.',
+      p: 'Ask the chapter doubt you would normally skip. Ask why your answer was wrong. Ask for it simpler. In Tamil, or Hindi, Telugu, Kannada, Malayalam and English — typed or out loud.',
     },
     liveQ: {
       tag: 'Samacheer · Class 10 Geography · Tamil Nadu',
@@ -306,7 +312,7 @@ const HUBS = {
       ['/samacheer/maths/', 'Maths'],
       ['/samacheer/science/', 'Science'],
     ],
-    androidP: 'Daily Dose from your Samacheer chapters, connected revision, Miga in Tamil, and Quiz Rooms with friends. Private beta on Android.',
+    androidP: 'Daily Dose from your chapters. Miga in Tamil. PYQs. Exam-pattern tests. Revision. Quiz Rooms. One learning history that doesn’t reset every time you close the app. MindGains for Android · Private beta.',
     faqs: [
       ['Which Samacheer classes are covered?', 'The public quizzes cover Samacheer Kalvi Class 6 to 12 across Tamil, Science, Maths, Social Science, History and Computer Science — chapter by chapter.'],
       ['Does it help with TNPSC?', 'Yes. The Samacheer syllabus is the base of the TNPSC General Studies paper, and quizzes are tagged so you can move from a school chapter into TNPSC-level practice.'],
@@ -362,58 +368,121 @@ function svg(paths, cls) {
 
 /* --------------------------------------------------------------- template --- */
 
-function page(id, hub, count) {
+const BUILD_V = '20261017d';
+const NL_SHOWCASE = fs.readFileSync(path.join(__dirname, 'partials', 'nationlap-showcase.html'), 'utf8');
+const FOOTER = `<footer class="mg-foot">
+  <div class="mg-foot-in">
+    <div class="mg-foot-brand">
+      <a href="/"><img src="/assets/icons/mindgains-logo-192.png" alt="" width="28" height="28" loading="lazy">MindGains</a>
+      <p>Textbook-aware practice for India's competitive exams. Daily current affairs, quizzes and NationLap.</p>
+    </div>
+    <nav class="mg-foot-exams" aria-label="Exams"><h4>Exams</h4><ul>
+      <li><a href="/upsc/">UPSC</a></li><li><a href="/tnpsc/">TNPSC</a></li><li><a href="/ssc/">SSC</a></li>
+      <li><a href="/rrb/">RRB</a></li><li><a href="/ncert/">NCERT</a></li><li><a href="/samacheer/">Samacheer</a></li>
+    </ul></nav>
+    <nav aria-label="Practice"><h4>Practice</h4><ul>
+      <li><a href="/nationlap/?affairs=1">Current affairs</a></li><li><a href="/quiz/">Quiz Hub</a></li>
+      <li><a href="/nationlap/">NationLap</a></li><li><a href="/editorial/">Editorial</a></li>
+    </ul></nav>
+    <nav aria-label="Company"><h4>Company</h4><ul>
+      <li><a href="/about/">About MindGains</a></li><li><a href="/get/">Get the app</a></li><li><a href="/blog/">Blog</a></li>
+      <li><a href="/privacy/">Privacy</a></li><li><a href="/data-deletion/">Delete my data</a></li>
+    </ul></nav>
+  </div>
+  <div class="mg-foot-legal"><span>© ${new Date().getFullYear()} MindGains Labs Private Limited</span><a href="/privacy/">Privacy</a><a href="/data-deletion/">Data deletion</a><a href="/sitemap.xml">Sitemap</a><a href="https://www.instagram.com/mindgains_ai/" rel="me noopener" target="_blank">Instagram</a><a href="https://www.linkedin.com/company/mindgains-ai" rel="me noopener" target="_blank">LinkedIn</a><a href="https://x.com/MindgainsIndia" rel="me noopener" target="_blank">X</a></div>
+</footer>`;
+
+const TAGLINE = {
+  upsc: 'Previous-year questions and topic quizzes for Prelims, every answer explained from the books you already read.',
+  tnpsc: 'Group 1, 2, 2A &amp; 4 practice: PYQs and topic quizzes, explained from your Samacheer books.',
+  ssc: 'CGL &amp; CHSL practice across Quant, Reasoning, English and GA, with every answer explained.',
+  rrb: 'NTPC &amp; Group D practice across Maths, Reasoning, Science and GA, with every answer explained.',
+  ncert: 'Chapter-wise MCQs for Class 6–12, every answer traced back to the NCERT chapter.',
+  samacheer: 'Book-back questions and chapter MCQs for TN Board Class 6–12, free.',
+};
+const SUBJECT_LABEL = {
+  'csat-quant': 'CSAT Quant', 'csat-english': 'CSAT English', 'general-aware': 'General Awareness',
+  'general-awareness': 'General Awareness', 'social-science': 'Social Science', computer: 'Computer Science',
+  quant: 'Quantitative Aptitude', maths: 'Maths', economy: 'Economy', economics: 'Economics',
+};
+const SUBJECT_ICON = {
+  polity: '<path d="M3 21h18M5 21V10M19 21V10M9 21V10M15 21V10M2 10 12 3l10 7Z"/>',
+  history: '<path d="M8 3h11v15a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-2h13"/><path d="M8 3a3 3 0 0 0-3 3v10M12 8h4M12 12h4"/>',
+  geography: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>',
+  economics: '<path d="M3 17l6-6 4 4 8-8M15 7h6v6"/>',
+  environment: '<path d="M11 20A7 7 0 0 1 4 13c0-6 7-10 16-10-1 9-5 16-11 16Z"/><path d="M4 21c4-6 8-9 12-11"/>',
+  science: '<path d="M9 3h6M10 3v6L4 19a1.5 1.5 0 0 0 1.3 2h13.4a1.5 1.5 0 0 0 1.3-2L14 9V3"/><path d="M7 15h10"/>',
+  physics: '<circle cx="12" cy="12" r="1.6"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/>',
+  chemistry: '<path d="M9 3h6M10 3v6L4 19a1.5 1.5 0 0 0 1.3 2h13.4a1.5 1.5 0 0 0 1.3-2L14 9V3"/><circle cx="10" cy="16" r="1"/><circle cx="14" cy="18" r="1"/>',
+  biology: '<path d="M6 3c0 6 12 6 12 12M18 3c0 6-12 6-12 12M6 21c0-2 1-3 2.5-4M18 21c0-2-1-3-2.5-4M8 7h8M8 13h8"/>',
+  maths: '<path d="M18 4H6l6 8-6 8h12"/>',
+  quant: '<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h2M14 12h2M8 16h2M14 16h2"/>',
+  reasoning: '<path d="M12 5a3 3 0 1 0-5.9.8A3 3 0 0 0 4 11a3 3 0 0 0 1.5 5.2A3 3 0 0 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.9.8A3 3 0 0 1 20 11a3 3 0 0 1-1.5 5.2A3 3 0 0 1 12 18Z"/>',
+  english: '<path d="M4 18 9 5l5 13M5.5 14h7M17 10a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm3 0v8"/>',
+  tamil: '<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19a2 2 0 0 0 2 2h13M9 8h6M9 12h4"/>',
+  computer: '<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>',
+  'general-awareness': '<path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3Z"/>',
+  'social-science': '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a5 5 0 0 1 3.5 6"/>',
+};
+SUBJECT_ICON.economy = SUBJECT_ICON.economics; SUBJECT_ICON['general-aware'] = SUBJECT_ICON['general-awareness'];
+SUBJECT_ICON['csat-quant'] = SUBJECT_ICON.quant; SUBJECT_ICON['csat-english'] = SUBJECT_ICON.english;
+const TINTS = ['#0b7a72', '#4f46e5', '#b45309', '#be185d', '#0369a1', '#15803d', '#7c3aed', '#c2410c'];
+
+function subjectsOf(id) {
+  const dir = path.join(ROOT, id);
+  return fs.readdirSync(dir, { withFileTypes: true })
+    .filter((e) => e.isDirectory() && e.name !== 'preview' && fs.existsSync(path.join(dir, e.name, 'index.html')))
+    .map((e) => {
+      const sub = path.join(dir, e.name);
+      const topics = fs.readdirSync(sub, { withFileTypes: true })
+        .filter((t) => t.isDirectory() && fs.existsSync(path.join(sub, t.name, 'index.html'))).length;
+      const label = SUBJECT_LABEL[e.name] || e.name.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+      return { slug: e.name, label, topics };
+    })
+    .sort((a, b) => b.topics - a.topics);
+}
+
+const ARROW = '<svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+
+function page(id, hub) {
   const url = `${SITE}/${id}/`;
-  const jsonld = [
-    { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+  const exam = stripTags(hub.exam);
+  const subjects = subjectsOf(id);
+  const topicTotal = subjects.reduce((n, s) => n + s.topics, 0);
+  const SCHOOL = id === 'ncert' || id === 'samacheer';
+  const jsonld = { '@context': 'https://schema.org', '@graph': [
+    { '@type': 'BreadcrumbList', itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
-      { '@type': 'ListItem', position: 2, name: stripTags(hub.exam), item: url },
+      { '@type': 'ListItem', position: 2, name: exam, item: url },
     ] },
-    { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: hub.faqs.map(([q, a]) => ({
+    { '@type': 'FAQPage', mainEntity: hub.faqs.map(([q, a]) => ({
       '@type': 'Question', name: stripTags(q), acceptedAnswer: { '@type': 'Answer', text: stripTags(a) },
     })) },
-  ];
+  ] };
 
-  // Per-exam shape of the preparation cycle.
-  const MAINS = id === 'upsc' || id === 'tnpsc';
-  const SCHOOL = id === 'ncert' || id === 'samacheer';
-  const TEST_LINE = SCHOOL
-    ? 'Chapter tests in the exam pattern, timed, with a clear score.'
-    : "Timed mocks in the real exam pattern, with an All-India Rank so you know where you stand.";
-
-  const arc = ['Plan', 'Learn', 'Practise', 'Test', ...(MAINS ? ['Write'] : []), 'Fix', 'Compete'];
-  const verbs = arc.map((v) => `<span><b>${v}</b></span>`).join('');
-
-  const beats = [
-    [IC.calendar, 'Plan', 'A study plan built from your syllabus, your exam date and your weak areas.'],
-    [IC.book, 'Learn', 'Daily Dose lessons cited to your books — or blueprint any topic into its own lesson path.'],
-    [IC.check, 'Practise', 'Topic quizzes, verified PYQs and 10-question sprints, tagged to what the exam actually asks.'],
-    [IC.clock, 'Test', TEST_LINE],
-    ...(MAINS ? [[IC.pen, 'Write', 'Draft a Mains answer and Miga marks it on the official rubric — structure, content, the lot.']] : []),
-    [IC.loop, 'Fix', 'Every wrong answer — from a quiz, a PYQ or a mock — comes back as spaced revision until it sticks.'],
-    [IC.users, 'Compete', "Your XP feeds live Quiz Rooms with friends and your state's leaderboard."],
-  ];
-  const loopNodes = beats.map(([ic, h, p], i) => `      <div class="node">
-        <span class="nt n${(i % 7) + 1}" aria-hidden="true">${svg(ic)}</span>
-        <h4>${h}</h4><p>${p}</p>${i < beats.length - 1 ? '\n        <span class="lead" aria-hidden="true">→</span>' : ''}
-      </div>`).join('\n');
-
-  const opts = hub.liveQ.opts.map((o, i) => `        <button class="opt" data-i="${i}">${esc(o)}</button>`).join('\n');
-  const chips = hub.chips.map(([href, label]) => `      <a href="${attr(href)}">${raw(label)}</a>`).join('\n');
-  const faqs = hub.faqs.map(([q, a]) => `    <details>
-      <summary>${raw(q)}</summary>
-      <p>${raw(a)}</p>
-    </details>`).join('\n');
+  const subjectCards = subjects.map((s, i) => `      <a class="subj" href="/${id}/${s.slug}/" style="--tint:${TINTS[i % TINTS.length]}">
+        <span class="subj-ic">${svg(SUBJECT_ICON[s.slug] || IC.book)}</span>
+        <span class="subj-t">${esc(s.label)}</span>
+        <span class="subj-n">${s.topics ? `${s.topics} topic${s.topics === 1 ? '' : 's'}` : 'Practice set'}</span>
+        ${ARROW}
+      </a>`).join('\n');
+  const opts = hub.liveQ.opts.map((o, i) => `          <button class="opt" data-i="${i}"><span class="opt-k">${'ABCD'[i]}</span><span>${esc(o)}</span></button>`).join('\n');
+  const chips = hub.chips.map(([href, label]) => `        <a href="${attr(href)}">${raw(label)}</a>`).join('\n');
+  const faqs = hub.faqs.map(([q, a]) => `      <details>
+        <summary>${raw(q)}</summary>
+        <p>${raw(a)}</p>
+      </details>`).join('\n');
 
   return `<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>${esc(hub.title)}</title>
 <meta name="description" content="${attr(hub.description)}">
 <link rel="canonical" href="${attr(url)}">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="MindGains AI">
 <meta property="og:title" content="${attr(hub.title)}">
 <meta property="og:description" content="${attr(hub.description)}">
 <meta property="og:url" content="${attr(url)}">
@@ -421,206 +490,148 @@ function page(id, hub, count) {
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="theme-color" content="#00d4c7">
-<link rel="stylesheet" href="/assets/exam-hubs.css">
-<script type="application/ld+json">${JSON.stringify(jsonld[0])}</script>
-<script type="application/ld+json">${JSON.stringify(jsonld[1])}</script>
+<meta name="theme-color" content="#fbfcfd">
+<link rel="stylesheet" href="/assets/exam-hub-v2.css?v=${BUILD_V}">
+<link rel="stylesheet" href="/assets/site-footer.css?v=3">
+<script type="application/ld+json">${JSON.stringify(jsonld)}</script>
 </head>
-<body>
+<body class="hub-v2">
 
-<header>
+<header class="hh">
   <div class="wrap hin">
-    <a class="brand" href="/"><span class="dot" aria-hidden="true"></span>MindGains</a>
+    <a class="brand" href="/"><img src="/assets/icons/mindgains-logo-192.png" alt="" width="28" height="28">MindGains</a>
     <div class="hnav">
       <a class="lnk" href="/">All exams</a>
-      <a class="lnk" href="${attr(hub.quizStart)}">Quizzes</a>
+      <a class="lnk" href="#subjects">Subjects</a>
+      <a class="lnk" href="/nationlap/?affairs=1">Current affairs</a>
+      <a class="lnk" href="/nationlap/">NationLap</a>
       <a class="btn sm" href="/get/">Get the app</a>
     </div>
   </div>
 </header>
 
 <main>
-
-  <section class="wrap hero">
-    <span class="kick">${raw(hub.code)}</span>
-    <h1>${esc(hub.h1)}</h1>
-    <p>${raw(hub.heroP)}</p>
-    <div class="hero-actions">
-      <a class="btn" href="${attr(hub.quizStart)}">Start practising free</a>
-      <a class="btn ghost" href="/get/">MindGains for Android — coming soon</a>
-    </div>
-    <div class="verbs" aria-hidden="true">${verbs}</div>
-  </section>
-
-  <section class="wrap sec">
-    <div class="sec-head">
-      <span class="kick">Every day</span>
-      <h2>It starts with today's dose.</h2>
-      <p>One focused lesson from the ${stripTags(hub.exam)} syllabus, a recall card and a real question — chosen for where you are, waiting when you open the app.</p>
-    </div>
-    <div class="scene split" style="margin-top:26px">
-      <div class="dose" aria-label="Example ${stripTags(hub.exam)} daily dose">
-        <div class="dtop"><span>${stripTags(hub.exam)} · Daily Dose · Day ${hub.dose.day}</span><span class="streak">🔥 ${hub.dose.streak}-day streak</span></div>
-        <h3>${raw(hub.dose.topic)}</h3>
-        <p class="sub">${hub.dose.mins}-min lesson · 1 recall card · 1 question</p>
-        <div class="row">
-          <span class="ic" aria-hidden="true">${svg(IC.book)}</span>
-          <span class="tx">Learn <span>${raw(hub.dose.learn)}</span></span>
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="wrap hero-in">
+      <div class="hero-copy">
+        <span class="pill"><i></i>${raw(hub.code)}</span>
+        <h1>${esc(hub.h1)}</h1>
+        <p class="lede">${raw(TAGLINE[id] || '')}</p>
+        <div class="cta-row">
+          <a class="btn" href="#subjects">Start practising ${ARROW}</a>
+          <a class="btn ghost" href="/nationlap/?affairs=1">Today's current affairs</a>
         </div>
-        <div class="row">
-          <span class="ic" aria-hidden="true">${svg(IC.check)}</span>
-          <span class="tx">Practise <span>${raw(hub.dose.pyq)}</span></span>
-        </div>
-        <div class="bar"><i></i></div>
+        <ul class="stats">
+          <li><b>${topicTotal}</b><span>topic quizzes</span></li>
+          <li><b>${subjects.length}</b><span>subjects</span></li>
+          <li><b>Free</b><span>no sign-up</span></li>
+        </ul>
       </div>
-      <div>
-        <h3 style="font-family:Poppins,sans-serif;font-weight:600;font-size:19px;letter-spacing:-.02em;margin:0 0 8px">Not another feed to scroll.</h3>
-        <p style="margin:0;color:var(--ink-2);font-size:15px">The dose knows what you've done, what you got wrong, and what the exam actually asks. Miss a day and your streak reminds you — in your language.</p>
-      </div>
-    </div>
-  </section>
 
-  <section class="wrap sec">
-    <div class="sec-head">
-      <span class="kick">The part that matters</span>
-      <h2>Your whole preparation, in one loop.</h2>
-      <p>From your first study plan to your last revision before the exam, every part of MindGains feeds the next — so nothing you study is ever wasted.</p>
-    </div>
-    <div class="loop">
-${loopNodes}
-    </div>
-  </section>
-
-  <section class="wrap sec">
-    <div class="scene split">
-      <div>
-        <span class="kick">With friends</span>
-        <h2 class="scene-h">Studying is better with competition.</h2>
-        <p class="scene-p">Create a Quiz Room on any topic. Invite your friends. See who actually knows it — live, question by question.</p>
-        <a class="btn" href="/get/">Create a Quiz Room</a>
-      </div>
-      <div class="room" aria-label="Example live Quiz Room">
-        <div class="rt"><b>Constitution Challenge ⚡</b></div>
-        <div class="rmeta">6 players · 10 questions</div>
-        <div class="lb">
-          <div class="lr me"><span class="av" style="background:#6d63ff">R</span> Ragul <span class="xp">820 XP</span></div>
-          <div class="lr"><span class="av" style="background:#f43f5e">A</span> Arun <span class="xp">760 XP</span></div>
-          <div class="lr"><span class="av" style="background:#f59e0b">N</span> Naveen <span class="xp">690 XP</span></div>
-        </div>
-        <div class="q">Question 7 / 10</div>
-        <div class="reacts" aria-hidden="true"><span>🔥</span><span>😮</span><span>😅</span><span>👏</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="wrap sec">
-    <div class="scene split">
-      <div class="miga-card" aria-label="Asking Miga">
-        <div class="mrow"><span class="mav" aria-hidden="true"></span><span class="bubble">${raw(hub.miga.q)}</span></div>
-        <div class="mrow"><span class="bubble you">${raw(hub.miga.a)}</span></div>
-        <div class="mic" aria-hidden="true">🎙️ Tap to ask out loud</div>
-        <div class="langs" aria-hidden="true"><span class="on">${raw(hub.miga.langOn)}</span><span>हिंदी</span><span>தமிழ்</span><span>తెలుగు</span><span>ಕನ್ನಡ</span><span>English</span></div>
-      </div>
-      <div>
-        <span class="kick">When you're stuck</span>
-        <h2 class="scene-h">${esc(hub.miga.title)}</h2>
-        <p class="scene-p">${raw(hub.miga.p)}</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="wrap sec">
-    <div class="sec-head">
-      <span class="kick">Already live</span>
-      <h2>You don't have to wait for the app.</h2>
-      <p>The Quiz Hub is open now — free, no sign-up. Try a real ${stripTags(hub.exam)} question:</p>
-    </div>
-    <div class="qz" style="margin-top:22px">
-      <span class="qtag">${raw(hub.liveQ.tag)}</span>
-      <p class="qq">${esc(hub.liveQ.q)}</p>
-      <div id="qz-opts">
+      <div class="qcard" aria-label="Try a real ${esc(exam)} question">
+        <div class="qcard-top"><span class="qtag">${raw(hub.liveQ.tag)}</span><span class="qlive">Try one</span></div>
+        <p class="qq">${esc(hub.liveQ.q)}</p>
+        <div id="qz-opts">
 ${opts}
+        </div>
+        <div class="expl" id="qz-expl">${esc(hub.liveQ.expl)}</div>
+        <a class="qnext" id="qz-next" href="${attr(hub.liveQ.next[0])}">More like this ${ARROW}</a>
       </div>
-      <div class="expl" id="qz-expl">${esc(hub.liveQ.expl)}</div>
-      <a class="btn next" id="qz-next" href="${attr(hub.liveQ.next[0])}">${raw(hub.liveQ.next[1])}</a>
     </div>
   </section>
 
-  <section class="wrap sec practice-chips">
+  <section class="wrap sec" id="subjects">
     <div class="sec-head">
-      <span class="kick">Practise free</span>
-      <h2>Popular ${stripTags(hub.exam)} topics</h2>
+      <h2>Pick a subject</h2>
+      <p>Every quiz is free. Each answer comes with the reason it's right.</p>
     </div>
-    <div class="chips" style="margin-top:18px">
+    <div class="subjects">
+${subjectCards}
+    </div>
+    <div class="popular">
+      <span>Popular</span>
+      <div class="chips">
 ${chips}
-    </div>
-    <a class="btn" style="margin-top:16px" href="${attr(hub.quizHub[0])}">${raw(hub.quizHub[1])}</a>
-  </section>
-
-  <section class="wrap sec" style="padding-bottom:44px">
-    <div class="band">
-      <div>
-        <h2>MindGains for Android</h2>
-        <p>${raw(hub.androidP)}</p>
       </div>
-      <a class="btn" href="/get/">Get early access</a>
     </div>
   </section>
 
-  <section class="wrap faq sec" style="padding-top:8px">
-    <h2>${stripTags(hub.exam)} FAQs</h2>
-${faqs}
+  ${NL_SHOWCASE.replace('a {{EXAM}}', ({ upsc: 'a UPSC ', tnpsc: 'a TNPSC ', ssc: 'an SSC ', rrb: 'an RRB ', ncert: 'an NCERT ', samacheer: 'a Samacheer ' })[id] || 'a ')}
+
+  <section class="wrap sec">
+    <div class="bento">
+      <a class="tile tile-ca" href="/nationlap/?affairs=1">
+        <span class="tile-k">Every morning · 5am</span>
+        <h3>Today's current affairs</h3>
+        <p>The day's exam-worthy news, each fact with its source. Race it in two minutes.</p>
+        <span class="tile-go">Race today's affairs ${ARROW}</span>
+      </a>
+      <a class="tile tile-nl" href="/quiz/">
+        <span class="tile-k">160,000+ questions</span>
+        <h3>Quiz Hub</h3>
+        <p>Search any topic across every exam and practise with answers explained.</p>
+        <span class="tile-go">Open Quiz Hub ${ARROW}</span>
+      </a>
+    </div>
   </section>
 
+  <section class="wrap sec">
+    <div class="sec-head"><h2>Why it sticks</h2></div>
+    <div class="feats">
+      <div class="feat"><span class="feat-ic">${svg(IC.book)}</span><h3>Answers from your textbook</h3><p>Miga, the AI tutor, explains from ${raw(hub.source)} and shows where the answer came from.</p></div>
+      <div class="feat"><span class="feat-ic">${svg(IC.loop)}</span><h3>Mistakes come back</h3><p>Every question you miss returns as revision at the right time, until you get it right.</p></div>
+      <div class="feat"><span class="feat-ic">${svg(IC.target)}</span><h3>${SCHOOL ? 'Real exam questions' : 'Real PYQs'}</h3><p>${SCHOOL ? 'Practise the way your board exam asks, with every option explained.' : `See how ${esc(exam)} actually asked each topic, with every option explained.`}</p></div>
+    </div>
+  </section>
+
+  <section class="wrap sec">
+    <div class="band">
+      <picture class="band-art">
+        <source srcset="/assets/miga/miga-hero.webp" type="image/webp">
+        <img src="/assets/miga/miga-hero.png" alt="" width="104" height="104" loading="lazy">
+      </picture>
+      <div class="band-copy">
+        <h2>Take it with you</h2>
+        <p>Daily Dose, revision, mocks and Quiz Rooms with friends, in the MindGains app.</p>
+      </div>
+      <a class="btn" href="/get/">Get the app</a>
+    </div>
+  </section>
+
+  <section class="wrap sec faq">
+    <div class="sec-head"><h2>${esc(exam)} FAQs</h2></div>
+    <div class="faq-list">
+${faqs}
+    </div>
+  </section>
 </main>
 
-<footer>
-  <div class="wrap fin">
-    <span class="fb">MindGains</span>
-    <nav>
-      <a href="/upsc/">UPSC</a>
-      <a href="/tnpsc/">TNPSC</a>
-      <a href="/ssc/">SSC</a>
-      <a href="/rrb/">RRB</a>
-      <a href="/ncert/">NCERT</a>
-      <a href="/samacheer/">Samacheer</a>
-      <a href="/quiz/">Quiz Hub</a>
-      <a href="/editorial/">Editorial</a>
-      <a href="/get/">Get the app</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/terms.html">Terms</a>
-    </nav>
-    <span class="cc">© 2026 MindGains Labs Private Limited</span>
-  </div>
-</footer>
+${FOOTER}
 
 <script>
-  (function(){
-    var ANSWER = ${hub.liveQ.answer}, done = false;
-    var opts = document.querySelectorAll('#qz-opts .opt');
-    var expl = document.getElementById('qz-expl');
-    var next = document.getElementById('qz-next');
-    opts.forEach(function(b){
-      b.addEventListener('click', function(){
-        if(done) return;
-        done = true;
-        var i = +b.dataset.i;
-        opts.forEach(function(o){ o.disabled = true; });
-        opts[ANSWER].classList.add('right');
-        if(i !== ANSWER) b.classList.add('wrong');
-        expl.classList.add('show');
-        next.classList.add('show');
-      });
+(function(){
+  var ANSWER = ${hub.liveQ.answer}, done = false;
+  var opts = document.querySelectorAll('#qz-opts .opt');
+  opts.forEach(function(b){
+    b.addEventListener('click', function(){
+      if(done) return; done = true;
+      opts.forEach(function(o){ o.disabled = true; });
+      opts[ANSWER].classList.add('right');
+      if(+b.dataset.i !== ANSWER) b.classList.add('wrong');
+      document.getElementById('qz-expl').classList.add('show');
+      document.getElementById('qz-next').classList.add('show');
     });
-  })();
+  });
+})();
 </script>
-
+<script defer src="/assets/pv.js"></script>
+<script defer src="/assets/nav-mobile.js"></script>
 </body>
 </html>
 `;
@@ -646,9 +657,9 @@ function main() {
   for (const id of ids) {
     const dir = path.join(ROOT, id);
     fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(path.join(dir, 'index.html'), page(id, HUBS[id], counts[id]), 'utf8');
+    fs.writeFileSync(path.join(dir, 'index.html'), page(id, HUBS[id]), 'utf8');
   }
-  updateSitemap(ids);
+  // sitemap entries are managed by build-sitemap.cjs
   console.log(`Generated ${ids.length} exam pages: ${ids.join(', ')}`);
 }
 

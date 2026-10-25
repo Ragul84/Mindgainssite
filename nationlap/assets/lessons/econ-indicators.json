@@ -1,0 +1,340 @@
+{
+  "zoneId": "econ-indicators",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "UPSC Economy: National Income & Basic Concepts",
+      "intro": "Today we study the 'Scorecard of the Nation'. How do we measure the progress of 1.4 billion people? We explore the concepts of GDP, GNP, NNP, and the Human Development Index (HDI). For UPSC, focus on the 'Difference between Nominal and Real GDP', the 'GDP Deflator', and the various methods of calculating national income. This is the macro-foundation of the Indian Economy.",
+      "pages": [
+        {
+          "type": "concept",
+          "title": "GDP (Gross Domestic Product)",
+          "intro": "Total money value of all final goods and services produced within a country's borders in one year.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Scope",
+                  "value": "Geographical boundary (Domestic)"
+                },
+                {
+                  "label": "Ownership",
+                  "value": "Irrelevant; includes foreign-owned production inside country"
+                },
+                {
+                  "label": "Goods counted",
+                  "value": "Only final goods to avoid double counting"
+                },
+                {
+                  "label": "Measurement",
+                  "value": "In domestic currency (e.g., rupees for India)"
+                },
+                {
+                  "label": "Purpose",
+                  "value": "Indicates size and health of the economy"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "GNP (Gross National Product)",
+          "intro": "Total market value of all final goods and services produced by a country's citizens, anywhere in the world, in one year.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Basis",
+                  "Production within domestic territory",
+                  "Production by citizens (anywhere)"
+                ],
+                [
+                  "Ownership",
+                  "Irrelevant",
+                  "Citizenship matters"
+                ],
+                [
+                  "Formula",
+                  "GDP = GNP – NFIA",
+                  "GNP = GDP + NFIA"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "",
+                "GDP",
+                "GNP"
+              ]
+            },
+            {
+              "text": "NFIA = Income earned by citizens abroad MINUS income earned by foreigners domestically. A positive NFIA makes GNP > GDP.",
+              "type": "trap"
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Real vs Nominal GDP",
+          "intro": "Nominal GDP uses current prices; Real GDP uses base-year prices to remove inflation and show true quantity change.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Prices used",
+                  "Current year prices",
+                  "Fixed base-year prices"
+                ],
+                [
+                  "Effect of inflation",
+                  "Included",
+                  "Removed"
+                ],
+                [
+                  "Indicates",
+                  "Monetary value",
+                  "Actual output/quantity change"
+                ],
+                [
+                  "Example: 10 apples, price rises ₹1→₹2",
+                  "Year 2: ₹20",
+                  "Year 2: ₹10 (no real growth)"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "",
+                "Nominal GDP",
+                "Real GDP"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "GDP Deflator",
+          "intro": "A measure of overall price change in an economy, calculated as (Nominal GDP / Real GDP) × 100.",
+          "blocks": [
+            {
+              "text": "It reflects general price rise (inflation) across all goods and services in the economy, unlike CPI which uses a fixed basket.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "formula",
+          "title": "HDI (Human Development Index)",
+          "intro": "UNDP index measuring human well-being through Health, Education, and Standard of Living, scored 0 to 1.",
+          "blocks": [
+            {
+              "type": "mindmap",
+              "center": "HDI",
+              "branches": [
+                {
+                  "label": "Health",
+                  "value": "Life expectancy at birth"
+                },
+                {
+                  "label": "Education",
+                  "value": "Mean years of schooling + Expected years of schooling"
+                },
+                {
+                  "label": "Standard of Living",
+                  "value": "GNI per capita (PPP adjusted)"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "What is the primary focus of GDP?",
+          "back": "GDP focuses on the total value of goods and services produced within the geographical boundary of a country."
+        },
+        {
+          "front": "What is the primary focus of GNP?",
+          "back": "GNP focuses on the total value of goods and services produced by the citizens of a country, regardless of their location."
+        },
+        {
+          "front": "What is the formula for GNP?",
+          "back": "GNP is calculated as GDP plus Net Factor Income from Abroad (NFIA)."
+        },
+        {
+          "front": "How is Nominal GDP calculated?",
+          "back": "Nominal GDP is calculated using current market prices."
+        },
+        {
+          "front": "How is Real GDP calculated?",
+          "back": "Real GDP is calculated using base year prices to adjust for inflation."
+        },
+        {
+          "front": "Which measure is considered the true indicator of economic growth?",
+          "back": "Real GDP is the true indicator of economic growth because it adjusts for inflation."
+        },
+        {
+          "front": "What is the GDP Deflator?",
+          "back": "The GDP Deflator is the ratio of Nominal GDP to Real GDP."
+        },
+        {
+          "front": "What does the GDP Deflator measure?",
+          "back": "It serves as a comprehensive measure of inflation in an economy."
+        },
+        {
+          "front": "Which organization publishes the HDI?",
+          "back": "The Human Development Index (HDI) is published by the UNDP."
+        },
+        {
+          "front": "What are the three dimensions of the HDI?",
+          "back": "The three dimensions are Health (life expectancy), Education (mean/expected years of schooling), and Standard of Living (GNI per capita)."
+        },
+        {
+          "front": "What is GDP?",
+          "back": "Value of goods/services produced WITHIN a country."
+        },
+        {
+          "front": "GNP : GDP + ?",
+          "back": "NFIA (Net Factor Income from Abroad)."
+        },
+        {
+          "front": "Why is Real GDP better?",
+          "back": "Because it accounts for inflation (calculated at base year prices)."
+        },
+        {
+          "front": "Dimensions of HDI?",
+          "back": "Health, Education, Standard of Living."
+        },
+        {
+          "front": "Formula for GDP Deflator?",
+          "back": "(Nominal GDP / Real GDP) × 100."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    },
+    {
+      "title": "UPSC Economy: Inflation & Business Cycles",
+      "intro": "Today we study the 'Erosion of Value'. Inflation is the sustained rise in the general price level, affecting everything from your cup of tea to the nation's budget. We explore WPI, CPI, and the concepts of 'Headline' vs 'Core' inflation. For UPSC, focus on 'Why inflation happens' (Demand-pull vs Cost-push) and the 'Impact of inflation' on debtors and creditors. Let's master the dynamics of prices today.",
+      "pages": [
+        {
+          "type": "formula",
+          "title": "What is Inflation?",
+          "intro": "Inflation is a general and sustained rise in the prices of goods and services in an economy over a period of time. When prices go up, each unit of currency, like a rupee or a dollar, can buy fewer goods and services, which means the purchasing power of money falls. Inflation is measured as a percentage rate, which tells you how much prices have increased compared to the same time last year. For example, if the inflation rate is 5%, something that cost 100 rupees last year now costs 105 rupees. This does not mean every single item becomes more expensive, but that the average price level across the economy has increased.",
+          "blocks": []
+        },
+        {
+          "type": "facts",
+          "title": "Types of Inflation",
+          "intro": "Inflation means a general rise in the prices of goods and services over time. The first type is demand-pull inflation, which happens when too much money is available and people want to buy more goods than the economy can produce, so prices are pulled up. The second type is cost-push inflation, which occurs when the cost of making goods, such as raw materials or wages, goes up, pushing producers to raise prices. The third type is built-in inflation, also called a wage-price spiral, where workers demand higher wages to keep up with rising prices, and businesses raise prices further to cover the higher wages, creating a continuous cycle. These three types explain different causes of inflation.",
+          "blocks": [
+            {
+              "rows": [
+                [
+                  "Demand-Pull",
+                  "Too much money chasing too few goods"
+                ],
+                [
+                  "Cost-Push",
+                  "Increase in cost of production (Raw materials, Wages)"
+                ],
+                [
+                  "Built-in",
+                  "Wage-price spiral"
+                ]
+              ],
+              "type": "table",
+              "headers": [
+                "Item",
+                "Exam fact"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Measurement in India",
+          "intro": "The Consumer Price Index, or CPI, measures the average change in prices of goods and services that ordinary people buy at the retail level, meaning from shops and markets. The Reserve Bank of India, which is the country's central bank, uses the CPI to decide its monetary policy, such as setting interest rates to control inflation. The Wholesale Price Index, or WPI, measures the average change in prices of goods traded between businesses at the wholesale level, before they reach retail stores. Because the CPI tracks what a common person actually pays for everyday items like food and transport, it is considered more representative of the cost of living for the average citizen than the WPI.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Headline vs Core Inflation",
+          "intro": "Headline inflation is the overall rate of price increase in an economy, calculated by including all goods and services, even those with very unstable prices like food and fuel. Core inflation is a separate measure that removes the prices of food and fuel to show the stable, long-term trend of price changes in the rest of the economy. The reason we remove food and fuel is that their prices can jump up and down suddenly due to weather, seasons, or global oil markets, which can hide the true direction of other prices. For example, if a bad monsoon causes food prices to spike, headline inflation will rise sharply, but core inflation might stay low if other items like clothes and electronics are not getting more expensive. Central banks, like the Reserve Bank of India (RBI), pay more attention to core inflation when deciding whether to raise or lower interest rates, because it gives a clearer picture of ongoing demand and cost pressures in the economy. In India, the Consumer Price Index (CPI) is the main measure used for both headline and core inflation, with the core version excluding the food and beverages group and the fuel and light group from the calculation.",
+          "blocks": []
+        },
+        {
+          "type": "concept",
+          "title": "Impact of Inflation",
+          "intro": "Inflation means a general rise in the prices of goods and services over time, which reduces the purchasing power of money. When inflation occurs, debtors, or people who have borrowed money, gain because they repay their loans with money that is worth less than when they borrowed it. Conversely, creditors, or people who have lent money, lose because they are repaid with money that has less value. Fixed income groups, such as pensioners or salaried employees whose wages do not rise with inflation, lose because their money buys fewer goods. Additionally, a country's exports become less competitive because its goods become more expensive for foreign buyers compared to goods from countries with lower inflation.",
+          "blocks": []
+        }
+      ],
+      "cards": [
+        {
+          "front": "What is the primary effect of inflation on money?",
+          "back": "It leads to a fall in the purchasing power of money."
+        },
+        {
+          "front": "What defines demand-pull inflation?",
+          "back": "It occurs when there is too much money chasing too few goods."
+        },
+        {
+          "front": "What is the cause of cost-push inflation?",
+          "back": "An increase in the cost of production, such as raw materials or wages."
+        },
+        {
+          "front": "What is another term for built-in inflation?",
+          "back": "It is known as a wage-price spiral."
+        },
+        {
+          "front": "Which index does the RBI use for monetary policy?",
+          "back": "The Consumer Price Index (CPI)."
+        },
+        {
+          "front": "Why is CPI considered more representative than WPI?",
+          "back": "Because CPI is more representative of the common man."
+        },
+        {
+          "front": "What does headline inflation include that core inflation excludes?",
+          "back": "It includes volatile food and fuel prices."
+        },
+        {
+          "front": "How does inflation affect debtors?",
+          "back": "Debtors (borrowers) gain because they repay loans with money worth less than when they borrowed it."
+        },
+        {
+          "front": "How does inflation affect creditors?",
+          "back": "Creditors (lenders) lose because they are repaid with money that has less value."
+        },
+        {
+          "front": "What is the impact of inflation on a country's exports?",
+          "back": "Exports become less competitive because goods become more expensive for foreign buyers."
+        },
+        {
+          "front": "Which index does RBI use for inflation targeting?",
+          "back": "CPI (Combined)."
+        },
+        {
+          "front": "What is \"Core Inflation\"?",
+          "back": "Headline inflation minus volatile items (Food & Fuel)."
+        },
+        {
+          "front": "Who gains from inflation: Debtor or Creditor?",
+          "back": "Debtor (Borrower)."
+        },
+        {
+          "front": "What is \"Stagflation\"?",
+          "back": "High Inflation + Low Growth + High Unemployment."
+        },
+        {
+          "front": "What is \"Deflation\"?",
+          "back": "Persistent fall in the general price level."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}

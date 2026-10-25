@@ -1,0 +1,203 @@
+{
+  "zoneId": "history-indus",
+  "source": "master_content_vault",
+  "exportedAt": "2026-09-25",
+  "parts": [
+    {
+      "title": "UPSC History: Indus Valley Civilization & Vedic Age",
+      "intro": "Today we travel back to the 'Dawn of Indian Civilization'. We start with the Indus Valley Civilization (IVC)—one of the world's first urban civilizations, known for its grid-pattern cities and drainage systems. We then transition to the Vedic Age, which laid the spiritual and social foundations of India. For a UPSC aspirant, the shift from the 'Urban' IVC to the 'Rural/Pastoral' Vedic culture is a critical conceptual bridge. Focus on the sites, the archaeological finds, and the evolution of social structures from Early to Late Vedic periods.",
+      "pages": [
+        {
+          "type": "facts",
+          "title": "Indus Valley Civilization (2500–1750 BCE)",
+          "intro": "The Indus Valley Civilization existed from around 2500 to 1750 BCE. Its cities had advanced urban planning: a grid system of streets, buildings made of burnt bricks (kiln-fired, not sun-dried), covered drainage for wastewater, and a raised fortress area called a Citadel. Key sites include Harappa (with Cemetery R37, a burial ground), Mohenjo-daro (with the Great Bath, a large public pool), Lothal (with a dockyard, a port for",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Urban features",
+                  "value": "Grid system, burnt bricks, drainage, Citadel"
+                },
+                {
+                  "label": "Major Sites",
+                  "value": "Harappa (Cemetery R37), Mohenjo-daro (Great Bath), Lothal (Dockyard), Dholavira (Water reservoir, 3-tier city), Rakhigarhi (Largest site)"
+                },
+                {
+                  "label": "Trade",
+                  "value": "Seals (Steatite), Beads, Lapis Lazuli (from Afghanistan)"
+                },
+                {
+                  "label": "Script",
+                  "value": "Boustrophedon (undeciphered)"
+                },
+                {
+                  "label": "Religion",
+                  "value": "Mother Goddess, Pashupati Seal, Peepal tree"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "facts",
+          "title": "Early Vedic Period (1500–1000 BCE)",
+          "intro": "The Early Vedic Period, from 1500 to 1000 BCE (Before Common Era), was a time when society was based on tribes called Jana, and people were herders who considered cattle, known as Gau, their most valuable wealth. Politically, they had two assemblies: the Sabha, a council of elders, and the Samiti, a larger gathering of the tribe that helped make decisions. Their religion focused on natural forces, worshipping gods like Indra for rain, Agni for fire, and Varuna for water, and they did not build idols or temples. The Rig Veda, the oldest religious text from this period, contains the Gayatri Mantra, which is a famous prayer for enlightenment.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Society",
+                  "value": "Tribal (Jana), Pastoral"
+                },
+                {
+                  "label": "Main wealth",
+                  "value": "Cow (Gau)"
+                },
+                {
+                  "label": "Political",
+                  "value": "Sabha & Samiti (assemblies)"
+                },
+                {
+                  "label": "Religion",
+                  "value": "Natural forces (Indra-Rain, Agni-Fire, Varuna-Water)"
+                },
+                {
+                  "label": "Rig Veda",
+                  "value": "Oldest, contains Gayatri Mantra"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concept",
+          "title": "Later Vedic Period (1000–600 BCE)",
+          "intro": "During the Later Vedic Period, from about 1000 to 600 BCE, people shifted to settled farming, which led to the rise of small kingdoms called Janapadas (literally \"foot of the tribe,\" meaning early territorial states). The Varna system, which divided society into four broad groups (Brahmins priests, Kshatriyas warriors, Vaishyas merchants and farmers, Shudras laborers), became hereditary, meaning your birth determined your lifelong social rank. The status of women declined significantly, as they were no longer given equal opportunities in education or religious ceremonies. Religious life focused on elaborate rituals and animal sacrifices, and new gods appeared: Prajapati (the creator), Vishnu (the preserver), and Rudra (a storm god later linked to Shiva). Three more Vedas were composed during this time: the Sama Veda (collection of melodies for chanting), the Yajur Veda (prose formulas for sacrifices), and the Atharva Veda (spells and charms for daily life).",
+          "blocks": []
+        },
+        {
+          "type": "facts",
+          "title": "Archaeological Cultures",
+          "intro": "The Indus Valley Civilization (IVC) is famous for its Harappan black-on-red painted pottery, which means pots with black designs painted on a red surface. Ochre Coloured Pottery (OCP) is a different type of pottery that belongs to the late or post-Harappan phase, meaning it came after the main IVC period. Moving to the Vedic period, the Early Vedic people used painted pottery that came before a style called Painted Grey Ware (PGW). Painted Grey Ware is a type of fine, grey-colored pottery with geometric painted designs, and it is associated with the Later Vedic period",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "IVC",
+                  "value": "Harappan black-on-red painted pottery (OCP belongs to the late/post-Harappan phase)"
+                },
+                {
+                  "label": "Early Vedic",
+                  "value": "pre-PGW painted pottery"
+                },
+                {
+                  "label": "Later Vedic",
+                  "value": "Painted Grey Ware (PGW); Northern Black Polished Ware (NBPW) begins towards its end"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "facts",
+          "title": "Key Terms (Terminology)",
+          "intro": "Gavisthi was an ancient term for a war or battle, literally meaning a search for cows, because cattle were a primary form of wealth and raiding for them was a common cause of conflict. Duhitri is the Sanskrit word for daughter, which literally means \"milker of the cow,\" reflecting a daughter's traditional role in helping with dairy tasks. Bali originally meant a voluntary offering or gift given to a chief or king, but over time it became a compulsory tax that people had to pay. Kula refers to the family unit, which was the basic social and economic group in ancient Indian society. Gramani was the title for the village head or leader, who was responsible for managing the village's affairs, settling disputes, and collecting taxes for the king.",
+          "blocks": [
+            {
+              "type": "fact_grid",
+              "items": [
+                {
+                  "label": "Gavisthi",
+                  "value": "Search for cows (War)"
+                },
+                {
+                  "label": "Duhitri",
+                  "value": "Daughter (Milker of cow)"
+                },
+                {
+                  "label": "Bali",
+                  "value": "Voluntary offering (later compulsory tax)"
+                },
+                {
+                  "label": "Kula",
+                  "value": "Family"
+                },
+                {
+                  "label": "Gramani",
+                  "value": "Village head"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cards": [
+        {
+          "front": "Which site of the Indus Valley Civilization is known for its dockyard?",
+          "back": "Lothal."
+        },
+        {
+          "front": "What was the primary form of wealth during the Early Vedic period?",
+          "back": "Cattle, known as Gau."
+        },
+        {
+          "front": "What were the two political assemblies of the Early Vedic period?",
+          "back": "Sabha (council of elders) and Samiti (gathering of the tribe)."
+        },
+        {
+          "front": "What does the term 'Gavisthi' mean in the Vedic context?",
+          "back": "It refers to a war or battle, literally meaning a search for cows."
+        },
+        {
+          "front": "Which pottery style is associated with the Later Vedic period?",
+          "back": "Painted Grey Ware (PGW)."
+        },
+        {
+          "front": "What was the original meaning of 'Bali' in the Vedic period?",
+          "back": "It was a voluntary offering or gift to a chief or king, which later became a compulsory tax."
+        },
+        {
+          "front": "What is the literal meaning of the Sanskrit word 'Duhitri'?",
+          "back": "Milker of the cow."
+        },
+        {
+          "front": "Which site is considered the largest site of the Indus Valley Civilization?",
+          "back": "Rakhigarhi."
+        },
+        {
+          "front": "What was the title for the village head in the Vedic period?",
+          "back": "Gramani."
+        },
+        {
+          "front": "Which religious text contains the Gayatri Mantra?",
+          "back": "The Rig Veda."
+        },
+        {
+          "front": "Which IVC site had a Dockyard?",
+          "back": "Lothal (Gujarat)."
+        },
+        {
+          "front": "What is the \"Sabha\" and \"Samiti\"?",
+          "back": "Tribal assemblies of the Early Vedic period. Sabha was for elders, Samiti for the general folk."
+        },
+        {
+          "front": "Oldest Veda?",
+          "back": "Rig Veda."
+        },
+        {
+          "front": "IVC site with 3-part city division?",
+          "back": "Dholavira."
+        },
+        {
+          "front": "Main wealth in Rig Vedic society?",
+          "back": "Cattle/Cow (Gau)."
+        }
+      ],
+      "weightage": 10,
+      "yield": "high_yield"
+    }
+  ]
+}
