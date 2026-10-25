@@ -10,3 +10,8 @@ node_modules/
 
 # Wrangler local state
 .wrangler/
+
+# Local Worker secrets (wrangler dev)
+.dev.vars
+.dev.vars.*
+
