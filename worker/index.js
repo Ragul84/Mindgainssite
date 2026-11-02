@@ -10,6 +10,7 @@
  */
 
 import { CANARIES, canaryGroup } from './canaries.js';
+import { makeGame } from './game.js';
 
 const ROUND_SIZE = 20;
 const HALF = 10;
@@ -140,11 +141,15 @@ async function check(request, env) {
   return json({ id, answer_index: q.answer_index, explanation: q.explanation || '' });
 }
 
+// Cut-Off Run: /api/game/* (see game.js)
+const game = makeGame({ json, hmac, loadBank, limited, usable });
+
 export default {
   async fetch(request, env) {
     const { pathname } = new URL(request.url);
     if (pathname === '/api/quiz/round') return round(request, env);
     if (pathname === '/api/quiz/check') return check(request, env);
+    if (pathname.startsWith('/api/game/')) return game(request, env, pathname);
     // The raw bank is for this Worker only.
     if (pathname.startsWith('/assets/quiz-data/')) return new Response('Not found', { status: 404 });
     return env.ASSETS.fetch(request);
