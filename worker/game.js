@@ -101,6 +101,49 @@ async function pyqPool(env, exam) {
   pyqCache.set(exam, { at: Date.now(), rows });
   return rows;
 }
+// Level to plan. Story levels 1..OPEN (default 12, chapters of 3), then the endless Exam Season.
+// Chapter 1 easy, chapters 2 and 3 medium, chapter 4 and the Season hard. Every 3rd Season stage
+// (its boss) is a PYQ year gate: stage 3 is 2015, stage 6 is 2016, and so on, capped at PYQ_LAST_YEAR.
+function levelPlan(lv, env, exParam) {
+  const open = Math.max(3, Math.round((Number(env.STORY_OPEN) || 12) / 3) * 3), last = Number(env.PYQ_LAST_YEAR) || 2025;
+  const tier = lv && lv % 12 === 0 ? 2 : lv >= 3 && lv % 4 === 0 ? 1 : 0;
+  if (!lv) return { diff: 0, year: 0, exam: 'UPSC', tier: 0 };
+  const diff = lv <= 3 ? 1 : lv <= 9 ? 2 : 3;
+  const st = lv - open, gate = st > 0 && st % 3 === 0;
+  const exam = String(exParam).toLowerCase() === 'tnpsc' ? 'TNPSC' : 'UPSC', first = exam === 'TNPSC' ? 2016 : 2015;
+  return { diff, tier, exam, year: gate ? Math.min(last, first + st / 3 - 1) : 0, gatePyq: gate ? 2 : 0 };
+}
+const yearCache = new Map();
+async function pyqYear(env, exam, year, subjects) {
+  const k = exam + year;
+  let rows = yearCache.get(k);
+  if (!rows || Date.now() - rows.at > 15 * 60000) {
+    const r = await sbGet(env, `pyq_questions?select=${PYQ_SEL}&exam=eq.${encodeURIComponent(exam)}&year=eq.${year}&${PYQ_FILTER}&limit=400`);
+    rows = { at: Date.now(), list: r ? (await r.json()).map(cleanPyq).filter(Boolean) : [] };
+    yearCache.set(k, rows);
+  }
+  let l = rows.list;
+  if (subjects && subjects.length) { const f = l.filter((q) => subjects.includes(q.subj)); if (f.length) l = f; }
+  return l.slice().sort(() => Math.random() - 0.5);
+}
+const SEEN_DAYS = 30, SEEN_KEEP = 800;
+async function recentSeen(env, uid) {
+  if (!env.GAME_DB) return [];
+  try {
+    const r = await env.GAME_DB.prepare('SELECT qid FROM game_seen WHERE uid = ?1 AND at > ?2 ORDER BY at DESC LIMIT ?3')
+      .bind(uid, Date.now() - SEEN_DAYS * 864e5, SEEN_KEEP).all();
+    return (r.results || []).map((x) => x.qid);
+  } catch { return []; } // table missing: rounds still work, just without the repeat filter
+}
+async function markSeen(env, uid, ids) {
+  if (!env.GAME_DB || !ids.length) return;
+  try {
+    const now = Date.now(), st = env.GAME_DB.prepare('INSERT OR REPLACE INTO game_seen (uid, qid, at) VALUES (?1, ?2, ?3)');
+    const batch = ids.map((id) => st.bind(uid, id, now));
+    if (Math.random() < 0.05) batch.push(env.GAME_DB.prepare('DELETE FROM game_seen WHERE at < ?1').bind(now - SEEN_DAYS * 864e5));
+    await env.GAME_DB.batch(batch);
+  } catch { /* best effort */ }
+}
 async function pyqById(env, id) {
   for (const c of pyqCache.values()) { const q = c.rows.find((x) => x.id === id); if (q) return q; }
   const r = await sbGet(env, `pyq_questions?select=${PYQ_SEL}&id=eq.${encodeURIComponent(id.slice(4))}&${PYQ_FILTER}&limit=1`);
@@ -172,12 +215,35 @@ export function makeGame({ json, hmac, loadBank, limited, usable }) {
     const useRedis = redisReady(env) && url.searchParams.get('src') !== 'legacy';
     const exclude = new Set((url.searchParams.get('exclude') || '').split(',').slice(0, 300));
     const items = [], seen = new Set();
+    // Progression (PROGRESSION_PLAN.md): level sets a difficulty band and, on Season boss stages, a PYQ year gate.
+    const lv = Math.max(0, Math.min(9999, parseInt(url.searchParams.get('level') || url.searchParams.get('lv') || '0', 10) || 0));
+    const plan = levelPlan(lv, env, exParam);
+    const dq = String(url.searchParams.get('diff') || '').toLowerCase();
+    const diff = ({ 1: 1, 2: 2, 3: 3, easy: 1, medium: 2, hard: 3 })[dq] || plan.diff;
+    const topic = String(url.searchParams.get('topic') || '').toLowerCase().replace(/[^a-z0-9 -]/g, '').slice(0, 40);
+    const yq = parseInt(url.searchParams.get('pyq_year') || '', 10);
+    const gateYear = (yq >= 1990 && yq <= 2100) ? yq : plan.year;
+    const gateExam = PYQ_EXAMS[exParam] || plan.exam;
+    // No repeats per player: ids served in the last 30 days are skipped (D1 game_seen, keyed by login or device).
+    const who = await identify(request, env, { device: url.searchParams.get('device') || '' }).catch(() => null);
+    const seenRows = who ? await recentSeen(env, who.uid) : [];
+    for (const id of seenRows) exclude.add(id);
+    if (gateYear && !pyq) {
+      for (const q of await pyqYear(env, gateExam, gateYear, want)) {
+        if (items.length >= (plan.gatePyq || 1)) break;
+        if (seen.has(q.id) || exclude.has(q.id)) continue;
+        seen.add(q.id);
+        items.push({ id: q.id, subject: q.subj, exam: q.exam, question: q.question, options: q.options, answer_index: q.answer_index,
+          explanation: '', source: `${q.exam} ${q.year || ''}`.trim(), pyq_year: q.year, difficulty: 3, long: isLong(q), gate: true });
+      }
+    }
     // Previous year questions first: all of the round in PYQ mode, about a fifth in a normal level.
     const wantPyq = pyq ? n : pyqMode === 'mix' ? Math.round(n / 5) : 0;
     if (wantPyq) {
       let pool = [];
       for (const ex of exams) pool = pool.concat(await pyqPool(env, ex));
       if (!pyq && want.length) pool = pool.filter((q) => want.includes(q.subj));
+      if (yq >= 1990) pool = pool.filter((q) => +q.year === yq);
       for (let t = 0; t < pool.length * 2 && items.length < wantPyq; t++) {
         const q = pool[(Math.random() * pool.length) | 0];
         if (!q || seen.has(q.id) || exclude.has(q.id)) continue;
@@ -187,7 +253,7 @@ export function makeGame({ json, hmac, loadBank, limited, usable }) {
       }
     }
     if (!pyq && useRedis && items.length < n) {
-      try { items.push(...await redisRound(env, { subjects, exam: bankExam, n: n - items.length, exclude, seen, isLong })); } catch { /* fall back to the legacy sets below */ }
+      try { items.push(...await redisRound(env, { subjects, exam: bankExam, n: n - items.length, exclude, seen, isLong, topic, diff })); } catch { /* fall back to the legacy sets below */ }
     }
     for (let tries = 0; !pyq && items.length < n && tries < n * 10; tries++) {
       const subj = subjects[tries % subjects.length];
@@ -208,7 +274,9 @@ export function makeGame({ json, hmac, loadBank, limited, usable }) {
     const payload = b64u(JSON.stringify({ r: rid(), i: items.map((x) => x.id), t: Date.now(), e: bankExam }));
     const token = payload + '.' + await hmac(env.QUIZ_SECRET, 'game|' + payload);
     // The bank has no previous-year tags yet, so a PYQ-only request returns what it can and says so.
-    return json({ token, items, exam: bankExam, source: useRedis ? 'bank' : 'legacy', pyq_available: items.some((x) => x.pyq_year), ttl: ROUND_TTL_MS });
+    if (who) await markSeen(env, who.uid, items.map((x) => x.id));
+    return json({ token, items, exam: bankExam, source: useRedis ? 'bank' : 'legacy', pyq_available: items.some((x) => x.pyq_year), ttl: ROUND_TTL_MS,
+      plan: { level: lv, diff, topic: topic || null, pyq_gate: gateYear ? `${gateExam} ${gateYear}` : null, tier: plan.tier, repeats_skipped: seenRows.length } });
   }
 
   async function submit(request, env) {

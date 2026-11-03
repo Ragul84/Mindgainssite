@@ -58,11 +58,19 @@ export function examList() {
   return BANK_EXAMS.filter((e) => n[e]).map((e) => ({ id: e, name: EXAM_NAME[e], questions: n[e] }));
 }
 
-function keysFor(subj, exam) {
-  const out = [];
+const slug = (t) => String(t || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+/** Topic slugs per game subject, from the 4th part of the key (quiz:subject:history:upsc:ancient-kingdoms). */
+export function topicList(subj) {
+  const t = new Set();
+  for (const k of KEYS) if (REDIS_MAP[k].s === subj && k.split(':')[4]) t.add(k.split(':')[4]);
+  return [...t].sort();
+}
+function keysFor(subj, exam, topic) {
+  const out = [], tp = slug(topic);
   KEYS.forEach((k, i) => {
     const m = REDIS_MAP[k];
     if (m.s !== subj) return;
+    if (tp && !slug(k.split(':').slice(2).join('-')).includes(tp)) return;
     const w = exam === 'all' ? Object.values(m.e).reduce((a, b) => a + b, 0) : m.e[exam] || 0;
     if (w > 0) out.push([i, w]);
   });
@@ -71,11 +79,15 @@ function keysFor(subj, exam) {
 const wpick = (arr) => { let s = 0; for (const x of arr) s += x[1]; let r = Math.random() * s; for (const x of arr) { if ((r -= x[1]) < 0) return x; } return arr[arr.length - 1]; };
 
 /** Fill up to n items for the given game subjects and exam. seen/exclude hold ids and text hashes. */
-export async function redisRound(env, { subjects, exam, n, exclude, seen, isLong }) {
+export async function redisRound(env, { subjects, exam, n, exclude, seen, isLong, topic = '', diff = 0 }) {
   const items = [], texts = new Set();
-  const pools = subjects.map((s) => [s, keysFor(s, exam)]).filter((p) => p[1].length);
+  // A topic narrows the keys; if no key of a subject matches it, that subject keeps all its keys.
+  const pools = subjects.map((s) => [s, (topic && keysFor(s, exam, topic).length) ? keysFor(s, exam, topic) : keysFor(s, exam)]).filter((p) => p[1].length);
   if (!pools.length) return items;
-  for (let pass = 0; pass < 3 && items.length < n; pass++) {
+  // diff (1 easy, 2 medium, 3 hard) is strict for the first passes, then relaxed so a round is never short.
+  const DN = { easy: 1, medium: 2, hard: 3 };
+  for (let pass = 0; pass < 5 && items.length < n; pass++) {
+    const strict = diff && pass < 3;
     const picks = [];
     for (let j = 0; j < (n - items.length) * 2 + 4; j++) {
       const [subj, ks] = pools[(items.length + j) % pools.length];
@@ -89,6 +101,7 @@ export async function redisRound(env, { subjects, exam, n, exclude, seen, isLong
       if (!q) continue;
       const kx = KEYS[picks[j].ki].split(':')[3];
       if (exam !== 'all' && q.exams.length && !q.exams.includes(exam) && kx !== exam) continue;
+      if (strict && (DN[q.difficulty] || 2) !== diff) continue;
       const h = await h6(q.question), id = `rq:${picks[j].ki}:${picks[j].idx}:${h}`, nt = norm(q.question);
       if (seen.has(id) || exclude.has(id) || texts.has(nt)) continue;
       seen.add(id); texts.add(nt);

@@ -683,7 +683,7 @@ const Remote={user:null,saveT:null,
   sb(path,opt={}){const c=CONFIG.supabase;return fetch(c.url.replace(/\/$/,'')+'/rest/v1/'+path,Object.assign({},opt,{headers:Object.assign({apikey:c.anonKey,Authorization:'Bearer '+((this.user&&this.user.token)||c.anonKey),'content-type':'application/json'},opt.headers||{})}))},
   async loadQuestions(subjects,o={}){try{let rows=null;
     if(CONFIG.gameApi){const seen=store.get('cor_seen',[]).slice(-60);
-      const r=await fetch(gameUrl('/round?n=30'+(o.pyq===1?'&pyq=1':'&pyq=mix')+((o.exam||PL.exam)?'&exam='+(o.exam||PL.exam):'')+(subjects&&subjects.length?'&subjects='+encodeURIComponent(subjects.join(',')):'')+(seen.length?'&exclude='+encodeURIComponent(seen.map(x=>x.slice(1)).join(',')):'')),{credentials:'same-origin'});
+      const r=await fetch(gameUrl('/round?n=30'+(o.pyq===1?'&pyq=1':'&pyq=mix')+((o.exam||PL.exam)?'&exam='+(o.exam||PL.exam):'')+(subjects&&subjects.length?'&subjects='+encodeURIComponent(subjects.join(',')):'')+(seen.length?'&exclude='+encodeURIComponent(seen.map(x=>x.slice(1)).join(',')):'')+'&device='+DEV+(o.pyq!==1&&typeof level==='number'?'&level='+(o.lv||level):'')+(o.topic?'&topic='+encodeURIComponent(o.topic):'')),{credentials:'same-origin',headers:authH()});
       if(!r.ok)return;const j=await r.json();const items=(j.items||[]).map(mapRemoteRow).filter(Boolean);
       if(items.length){mergeRemote(items);ROUND={token:j.token,ids:new Set(items.map(x=>x.id)),at:Date.now(),spent:false};track('questions_loaded',{n:items.length})}return items.length}
     if(CONFIG.supabase.url){const r=await this.sb(`${CONFIG.supabase.table}?select=*&limit=2000`);if(r.ok)rows=await r.json()}
@@ -1801,7 +1801,7 @@ function renderResult(line,tab){const r=lastRes;
   <h2 class="r2h">${r.quick?`${r.right}/${r.n} correct`:r.win?'Cleared':r.near?'So close!':r.fail==='cutoff'?'Below cut-off':'Batch lost'}</h2>
   ${r.win&&!r.quick?`<div class="r2sub">AIR ${r.air.toLocaleString('en-IN')}</div>`:r.near?`<div class="r2sub">${r.left} more aspirants needed</div>`:''}
   ${(r.mode==='level'||r.mode==='challenge')?starRow(r.stars):''}
-  <button class="r2stat" id="goDet"><b>${r.right}/${r.n}</b> correct<span>,</span><b>+${r.win||r.quick?r.earned:r.notes}</b> marks<i>Details</i></button>`;
+  <button class="r2stat" id="goDet"><b>${r.right}/${r.n}</b> correct<span>·</span><b>+${r.win||r.quick?r.earned:r.notes}</b> marks<i>Details</i></button>`;
   const cmp=r.target!=null?`<div class="r2note">${r.score>=r.target?'You beat':'You missed'} your friend's ${r.target.toLocaleString('en-IN')}</div>`:'';
   const unl=r.unlocked.length?`<div class="r2note">New style unlocked: ${esc(r.unlocked.join(', '))}</div>`:'';
   const again=r.quick?'Play again':!r.win?'Retry':r.mode==='level'?'Next level':'Play level '+level;
