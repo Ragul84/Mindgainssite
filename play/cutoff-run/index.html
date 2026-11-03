@@ -314,6 +314,81 @@ body.rm .mnd,body.rm .mpin{animation:none}
 .soclose{font-family:var(--display);font-size:46px;color:#ff8a1f;-webkit-text-stroke:2px var(--ink);margin:0;animation:cpop .5s ease-out}
 .btn.retry{background:linear-gradient(180deg,#ff9f43,#ff6b1a);font-size:22px}
 #qt{max-height:34vh;overflow-y:auto}#sheet .st b{white-space:nowrap}.ans,.opt span{word-break:normal;overflow-wrap:normal;hyphens:none}#sheet .sq{max-height:46vh;overflow-y:auto}
+
+/* exam-paper question layout */
+#qt,.sheet .sq{white-space:normal}
+#qt{pointer-events:auto;touch-action:pan-y;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+.qx-stem{display:block;white-space:pre-line}
+#qt small+.qx-stem{margin-top:1px}
+.qx-list~.qx-tail,.qx-match~.qx-tail{display:block;margin-top:7px;font-family:var(--body);font-size:14px;font-weight:800;line-height:1.3;color:#4a5875}
+.qx-list{list-style:none;margin:7px 0 0;padding:0;display:grid;gap:5px}
+.qx-list li{display:grid;grid-template-columns:auto 1fr;align-items:baseline;gap:8px;font-family:var(--body);font-weight:700;font-size:14.5px;line-height:1.38;color:#24314d;background:#f5f7fb;border-left:3px solid var(--omr);border-radius:4px 8px 8px 4px;padding:6px 9px;text-wrap:pretty}
+.qx-list li b{font-weight:900;color:var(--omr);white-space:nowrap;font-size:13px;letter-spacing:.02em}
+.qx-list li.ar,.qx-list li.stk{grid-template-columns:1fr;gap:1px}
+.qx-list li.ar b,.qx-list li.stk b{font-size:11.5px;text-transform:uppercase;letter-spacing:.07em}
+.qx-list.seq li{background:#fff;border:1.5px solid #dfe5f0;border-left:3px solid var(--blue)}.qx-list.seq li b{color:var(--blue)}
+.qx-match{width:100%;border-collapse:separate;border-spacing:0;margin:7px 0 0;font-family:var(--body);font-size:13.5px;font-weight:700;line-height:1.32;color:#24314d;table-layout:fixed;border:1.5px solid #d7deeb;border-radius:8px;overflow:hidden}
+.qx-match th{background:#eef2f9;font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;font-weight:900;text-align:left;padding:5px 8px;color:#14213d;border-bottom:1.5px solid #d7deeb}
+.qx-match th em{display:block;font-style:normal;text-transform:none;letter-spacing:0;color:#5a6b8c;font-weight:700;font-size:12px}
+.qx-match td{padding:6px 8px;vertical-align:top;border-top:1px solid #e6ebf3;overflow-wrap:break-word}
+.qx-match tr:first-child td{border-top:0}
+.qx-match td+td,.qx-match th+th{border-left:1.5px solid #d7deeb}
+.qx-match td b{color:var(--omr);font-weight:900;margin-right:2px}
+.fmtq .qx-stem{font-size:16.5px;line-height:1.25}
+.big .qx-list li,.big .qx-match{font-size:16px}
+.ans{display:flex;align-items:center;justify-content:center;gap:8px;text-align:left}
+.ans .abub{flex:none;width:24px;height:24px;border-radius:50%;border:2px solid var(--ink);display:grid;place-items:center;font-size:13px;font-style:normal;background:#fff}
+.sheet .sb .ans{white-space:normal;overflow-wrap:normal;word-break:normal}
+.sheet .st span{font-size:11.5px;line-height:1.15;text-align:right;white-space:normal}
+
+/* result v2 */
+#rcard.r2card{background:#fff;border:0;border-radius:28px;box-shadow:0 20px 60px rgba(20,33,61,.18);padding:18px 20px 16px;max-height:calc(100dvh - 24px);overflow:hidden;position:relative}
+.r2{display:flex;flex-direction:column;align-items:center;text-align:center}
+.r2top{width:100%;display:flex;justify-content:space-between;align-items:center}
+.r2chip{font:700 14px/1 var(--f,inherit);color:#b45309;background:#fff7ed;border:1px solid #fed7aa;border-radius:99px;padding:7px 12px}
+.r2chip.up{background:#ffedd5}
+.r2link{background:none;border:0;font:600 14px inherit;color:#64748b;padding:8px 4px;cursor:pointer}
+.r2hero{height:128px;width:128px;border-radius:50%;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;margin:6px 0 10px;background:radial-gradient(circle at 50% 40%,#ecfdf5,#d1fae5)}
+.r2hero.lose{background:radial-gradient(circle at 50% 40%,#f8fafc,#e2e8f0)}
+.r2hero .miga{width:104px!important;margin-bottom:-6px}
+.r2eye{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#94a3b8;font-weight:700}
+.r2h{font-size:40px;line-height:1.05;margin:6px 0 2px;color:#0f172a;letter-spacing:-.02em}
+.r2sub{font-size:16px;color:#475569;font-weight:600;margin-bottom:2px}
+.r2 .stars{margin:6px 0 0}
+.r2stat{margin:12px 0 4px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:99px;padding:10px 16px;font-size:15px;color:#475569;display:flex;gap:6px;align-items:center;cursor:pointer}
+.r2stat b{color:#0f172a}.r2stat span{color:#cbd5e1}.r2stat i{font-style:normal;color:#2563eb;font-weight:600;margin-left:6px;font-size:13px}
+.r2note{font-size:13px;color:#64748b;margin-top:6px}
+.r2acts{width:100%;margin-top:18px;display:flex;flex-direction:column;align-items:center;gap:4px}
+.r2main{width:100%;font-size:20px;padding:16px}
+.r2sec{background:none;border:0;color:#b45309;font-weight:700;font-size:15px;padding:10px;cursor:pointer;text-decoration:underline;text-underline-offset:4px}
+.r2dock{width:100%;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:14px;padding-top:14px;border-top:1px solid #f1f5f9}
+.r2ic{position:relative;background:none;border:0;display:flex;flex-direction:column;align-items:center;gap:6px;color:#334155;font-size:12px;font-weight:600;cursor:pointer;padding:6px 0;border-radius:14px}
+.r2ic svg{width:26px;height:26px}.r2ic.on{background:#f1f5f9}
+.r2ic em{position:absolute;top:0;left:calc(50% + 8px);min-width:18px;height:18px;border-radius:9px;background:#ef4444;color:#fff;font:700 11px/18px inherit;font-style:normal;padding:0 5px}
+.r2shade{position:absolute;inset:0;background:rgba(15,23,42,.28);border-radius:28px}
+.r2sheet{position:absolute;left:0;right:0;bottom:0;max-height:78%;background:#fff;border-radius:24px 24px 28px 28px;box-shadow:0 -10px 40px rgba(15,23,42,.18);display:flex;flex-direction:column;padding:8px 18px 14px;animation:r2up .22s ease-out}
+@keyframes r2up{from{transform:translateY(40px);opacity:0}}
+.r2grab{width:40px;height:4px;border-radius:2px;background:#e2e8f0;margin:2px auto 8px}
+.r2sh{display:flex;justify-content:space-between;align-items:center}.r2sh h3{margin:0;font-size:19px;color:#0f172a}
+.r2body{overflow:auto;padding-top:8px;text-align:left}
+.r2flame{display:flex;align-items:baseline;gap:8px;margin:4px 0 10px}.r2flame b{font-size:28px}.r2flame small{color:#64748b}
+.r2det div{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid #f1f5f9;font-size:15px;color:#475569}.r2det b{color:#0f172a}
+/* top 10 pass */
+.rdaily{display:grid;grid-template-columns:88px 1fr;gap:10px;align-items:stretch;margin:12px 0 4px;background:#fff8ec;border:2px solid #ffd9a8;border-radius:14px;padding:10px}
+.flame{display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:12px;background:linear-gradient(#ffb347,#f2601a);color:#fff;text-align:center;padding:6px}
+.flame b{font-family:var(--display);font-size:34px;line-height:1}.flame b:before{content:'🔥';display:block;font-size:22px}.flame small{font-size:11px;font-weight:800;line-height:1.15}
+.flame.up{animation:pulse 1s 2}
+.rmis{display:grid;gap:6px}.rm{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12.5px;font-weight:800;line-height:1.2;color:var(--ink)}
+.rm i{font-style:normal;color:#5a6b8c;white-space:nowrap}.rm.cl span{color:#8a94a8;text-decoration:line-through}.rm .btn.sm{padding:4px 8px;font-size:13px;margin:0;width:auto;white-space:nowrap}
+.rev li.mk em{display:block;margin-bottom:6px}.mkrow{display:flex;gap:8px;font-size:13px;line-height:1.3;margin-top:2px}.mkrow span{flex:none;width:92px;color:#5a6b8c;font-weight:800}
+.mkrow s{color:#c0283a}.mkrow.ok b{color:#1f9e5a}
+.mast{display:grid;gap:10px;margin:10px 0 14px}.tmrow .mtop{display:flex;justify-content:space-between;font-weight:900}.tmrow small{color:#5a6b8c;font-weight:700;font-size:12px}
+.tmrow .pbar{display:block;height:10px;border-radius:6px;background:#e9eef6;overflow:hidden;margin:4px 0}.tmrow .pbar i{display:block;height:100%;background:linear-gradient(90deg,#3ddc84,#2f6bff)}
+.fc{position:relative}.fc .rar{position:absolute;top:-8px;right:-6px;font-style:normal;font-family:var(--display);font-size:11px;padding:1px 6px;border-radius:8px;border:2px solid var(--ink);background:#fff}
+.fc.r1{box-shadow:0 0 0 3px #5aa8ff}.fc.r1 .rar{background:#d8e8ff}.fc.r2{box-shadow:0 0 0 3px #f2a900,0 0 18px #ffd23f}.fc.r2 .rar{background:#ffe27a}
+.mnd .tier{position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);font:900 9px/1 system-ui;letter-spacing:.06em;padding:2px 5px;border-radius:6px;background:#c0283a;color:#fff;white-space:nowrap}.mnd .tier.t2{background:#14213d}
+.mnd.season{width:40px;height:40px}.msoon{position:absolute;z-index:2;transform:translate(-50%,-50%);width:186px;background:#fff;border:3px dashed #14213d;border-radius:16px;padding:12px 14px;text-align:center;font:800 13px/1.35 system-ui;color:#4a5875;box-shadow:0 4px 0 rgba(20,33,61,.25)}
+.msoon b{display:block;font-family:"Lilita One",system-ui;font-weight:400;font-size:18px;color:#14213d}
 </style>
 
 <div id="wrap">
@@ -372,11 +447,11 @@ const BANK={
 ["Max strength of Rajya Sabha?","250","245","Art. 80 caps it at 250: 238 elected + 12 nominated. Its present strength is 245.","Constitution, Art. 80"],
 ["Finance Commission article?","Article 280","Article 148","Art. 280: a Finance Commission every five years. Art. 148 is the CAG.","Constitution, Art. 280"],
 ["GST came via which amendment?","101st","99th","The 101st Amendment Act, 2016 brought GST and the GST Council (Art. 279A).","Constitution, Art. 279A"],
-["Right to Education article?","Article 21A","Article 45A","The 86th Amendment (2002) added Art. 21A: free education for children aged 6–14.","Constitution, Art. 21A"]],
+["Right to Education article?","Article 21A","Article 45A","The 86th Amendment (2002) added Art. 21A: free education for children aged 6 to 14.","Constitution, Art. 21A"]],
 "History":[
 ["Indian National Congress founded?","1885","1905","Founded in December 1885 in Bombay. W.C. Bonnerjee was the first president.","NCERT Modern India"],
 ["Jallianwala Bagh massacre?","1919","1922","13 April 1919, Amritsar, under General Dyer, after the Rowlatt Act protests.","NCERT Modern India"],
-["Dandi Salt March?","1930","1942","12 March – 6 April 1930, from Sabarmati Ashram. It began Civil Disobedience.","NCERT Modern India"],
+["Dandi Salt March?","1930","1942","12 March to 6 April 1930, from Sabarmati Ashram. It began Civil Disobedience.","NCERT Modern India"],
 ["Quit India Movement?","1942","1930","Launched on 8 August 1942 in Bombay with the call 'Do or Die'.","NCERT Modern India"],
 ["Partition of Bengal?","1905","1911","Curzon partitioned Bengal in 1905. It was annulled in 1911.","NCERT Modern India"],
 ["Purna Swaraj resolution session?","Lahore 1929","Karachi 1931","The Lahore session (Dec 1929, Nehru) passed Purna Swaraj. 26 January 1930 was marked as Independence Day.","NCERT Modern India"],
@@ -395,7 +470,7 @@ const BANK={
 ["Black soil is also called?","Regur","Laterite","Black soil (regur) forms from Deccan basalt and is good for cotton.","NCERT Class 10 Contemporary India II"],
 ["Which river flows west?","Narmada","Mahanadi","The Narmada and Tapi flow west through rift valleys into the Arabian Sea.","NCERT Class 11 India Physical Environment"],
 ["Largest state by area?","Rajasthan","Madhya Pradesh","Rajasthan is the largest state, about 3.42 lakh sq km.","NCERT Class 9 Contemporary India"],
-["Ten Degree Channel separates?","Andaman–Nicobar","Lakshadweep–Maldives","The 10° Channel separates Andaman from Nicobar. The 8° Channel separates Minicoy from the Maldives.","NCERT Class 11 India Physical Environment"],
+["Ten Degree Channel separates?","Andaman and Nicobar","Lakshadweep and Maldives","The 10° Channel separates Andaman from Nicobar. The 8° Channel separates Minicoy from the Maldives.","NCERT Class 11 India Physical Environment"],
 ["Silent Valley NP is in?","Kerala","Karnataka","Silent Valley is in Palakkad, Kerala. It is known for the lion-tailed macaque.","Ministry of Environment"]],
 "Economy":[
 ["RBI was set up in?","1935","1949","Set up on 1 April 1935 under the RBI Act, 1934. Nationalised in 1949.","RBI"],
@@ -443,7 +518,7 @@ const STMT=[
 const STMT_OPTS=["Only I","Only II","Both I & II"];
 // "How many are correct?" (UPSC format): [subject, [3 statements], number correct (0-3), why]
 const HOWMANY=[
-["Polity",["Rajya Sabha can be dissolved by the President.","Money Bills start only in Lok Sabha.","Art. 21A gives free education to children aged 6–14."],2,"Only Rajya Sabha is wrong: it is a permanent House."],
+["Polity",["Rajya Sabha can be dissolved by the President.","Money Bills start only in Lok Sabha.","Art. 21A gives free education to children aged 6 to 14."],2,"Only Rajya Sabha is wrong: it is a permanent House."],
 ["Polity",["Fundamental Duties are in Part IVA.","They were added by the 42nd Amendment.","Courts can enforce them directly."],2,"Fundamental Duties are not directly enforceable in courts."],
 ["Polity",["Art. 352 deals with National Emergency.","Art. 360 deals with Financial Emergency.","Art. 356 deals with President's Rule."],3,"All three are correct."],
 ["History",["The Dandi March began in 1930.","Quit India began in 1942.","Bengal was partitioned in 1911."],2,"Bengal was partitioned in 1905. The partition was annulled in 1911."],
@@ -459,12 +534,12 @@ const HOWMANY=[
 const HM_OPTS=["Only one","Only two","All three","None"];
 // Match the pair: [subject, correct pair, wrong pair, why]
 const MATCH=[
-["History","Lothal – Dockyard","Kalibangan – Great Bath","The Great Bath is at Mohenjo-daro, not Kalibangan."],["History","Champaran – Indigo","Kheda – Salt","Kheda (1918) was about land revenue during crop failure."],
-["Polity","Art. 17 – Untouchability","Art. 19 – Remedies","Remedies are in Art. 32. Art. 19 gives six freedoms."],["Polity","10th Sch. – Anti-defection","9th Sch. – Languages","Languages are in the Eighth Schedule."],
-["Geography","Regur – Black soil","Laterite – Alluvium","Laterite is a leached soil of high-rainfall areas, not alluvium."],["Geography","Palk Strait – Sri Lanka","Ten Degree – Maldives","The Ten Degree Channel separates Andaman and Nicobar."],
-["Economy","MPC – Repo rate","NITI Aayog – Repo rate","NITI Aayog is a policy think tank. It does not set rates."],["Economy","MGNREGA – 100 days","RBI – set up 1949","RBI was set up in 1935 and nationalised in 1949."],
-["Environment","Gir – Asiatic lion","Kaziranga – Snow leopard","Kaziranga is known for the one-horned rhino."],["Environment","Ramsar – Wetlands","Montreal – Wetlands","Montreal is about the ozone layer."],
-["Science","Iodine – Goitre","Vitamin C – Rickets","Lack of Vitamin C causes scurvy. Rickets is from lack of Vitamin D."],["Science","Aditya-L1 – Sun","Chandrayaan-3 – Mars","Chandrayaan-3 went to the Moon."]];
+["History","Lothal: Dockyard","Kalibangan: Great Bath","The Great Bath is at Mohenjo-daro, not Kalibangan."],["History","Champaran: Indigo","Kheda: Salt","Kheda (1918) was about land revenue during crop failure."],
+["Polity","Art. 17: Untouchability","Art. 19: Remedies","Remedies are in Art. 32. Art. 19 gives six freedoms."],["Polity","10th Sch.: Anti-defection","9th Sch.: Languages","Languages are in the Eighth Schedule."],
+["Geography","Regur: Black soil","Laterite: Alluvium","Laterite is a leached soil of high-rainfall areas, not alluvium."],["Geography","Palk Strait: Sri Lanka","Ten Degree: Maldives","The Ten Degree Channel separates Andaman and Nicobar."],
+["Economy","MPC: Repo rate","NITI Aayog: Repo rate","NITI Aayog is a policy think tank. It does not set rates."],["Economy","MGNREGA: 100 days","RBI: set up 1949","RBI was set up in 1935 and nationalised in 1949."],
+["Environment","Gir: Asiatic lion","Kaziranga: Snow leopard","Kaziranga is known for the one-horned rhino."],["Environment","Ramsar: Wetlands","Montreal: Wetlands","Montreal is about the ozone layer."],
+["Science","Iodine: Goitre","Vitamin C: Rickets","Lack of Vitamin C causes scurvy. Rickets is from lack of Vitamin D."],["Science","Aditya-L1: Sun","Chandrayaan-3: Mars","Chandrayaan-3 went to the Moon."]];
 // Current affairs: [question, correct, wrong, why, source]
 const CA=[
 ["Chandrayaan-3 landed on the Moon in?","August 2023","August 2021","Vikram landed on 23 August 2023, now National Space Day.","ISRO"],
@@ -511,6 +586,12 @@ const SETS={fighters:{n:'Freedom Fighters',col:'#ffe0c2',bonus:'+3 starting aspi
 const BOSSES={Polity:{n:'Constitution Giant',c:'#5b6cff'},History:{n:'Time Rakshasa',c:'#b8743a'},Geography:{n:'Monsoon Dragon',c:'#1fb5a8'},Economy:{n:'Inflation Monster',c:'#e0a100'},Environment:{n:'Smog Beast',c:'#6b7a5a'},Science:{n:'Glitch Robot',c:'#8a5cff'}};
 const LEVEL_SUBJ=[["Polity","History"],["Geography","Economy"],["Environment","Science"]];
 const SUBJ=Object.keys(BANK);
+// Progression: story chapters are open up to TUNE.storyOpen (default 12, chapter 4 boss). After that the Exam Season runs forever.
+const STORY_OPEN=()=>Math.max(3,Math.floor(((typeof TUNE!=='undefined'&&TUNE.storyOpen)||12)/3)*3);
+const isSeason=l=>l>STORY_OPEN(),seasonOf=l=>{const k=l-STORY_OPEN();return{s:Math.ceil(k/30),k:(k-1)%30+1}};
+const levelTier=l=>l<3?0:l%12===0?2:l%4===0?1:0; // 0 normal, 1 hard, 2 super hard
+const TIER_NAME=['','HARD LEVEL','SUPER HARD'];
+const lvName=l=>isSeason(l)?`Season ${seasonOf(l).s}, stage ${seasonOf(l).k}`:`Level ${l}`;
 const subjFor=l=>l<=3?LEVEL_SUBJ[l-1]:[SUBJ[(l*2)%6],SUBJ[(l*2+1)%6]];
 
 // ===================================================== SETUP =====================================================
@@ -728,11 +809,11 @@ function dueIds(){const now=Date.now(),ids=new Set(allQ().map(x=>x.id));return O
 function subjAcc(s){const v=PL.subj[s];return v&&v.n?v.c/v.n:null}
 function weakest(){let w=null,b=2;for(const s of SUBJ){const a=subjAcc(s);const v=a==null?.5:a;if(v<b){b=v;w=s}}return w}
 // ---- picker: review items first, then items near the player's rating ----
-class Picker{constructor(subs,r,adaptive){this.subs=subs;this.r=r;this.ad=adaptive;this.used=new Set()}
+class Picker{constructor(subs,r,adaptive,boost){this.subs=subs;this.r=r;this.ad=adaptive;this.used=new Set();this.boost=boost||0}
   take(f,strict){const all=allQ();let c=all.filter(x=>!this.used.has(x.id)&&f(x));if(!c.length&&!strict)c=all.filter(f);if(!c.length)return null;let it=null;
     if(this.ad){const now=Date.now(),due=c.filter(x=>{const st=PL.q[x.id];return st&&st.due&&st.due<=now});
       if(due.length&&this.r()<.55)it=due[this.r()*due.length|0];
-      else{let best=1e9;for(const x of c){const st=PL.q[x.id],ri=st?st.r:x.r0,sc=Math.abs(ri-PL.rating)+(st?60:0)+this.r()*120;if(sc<best){best=sc;it=x}}}}
+      else{let best=1e9;for(const x of c){const st=PL.q[x.id],ri=st?st.r:x.r0,sc=Math.abs(ri-(PL.rating+this.boost))+(st?60:0)+this.r()*120;if(sc<best){best=sc;it=x}}}}
     else it=c[this.r()*c.length|0];
     this.used.add(it.id);return it}
   gate(sub,n=2){const sh=x=>!x.opts&&x.a.length<=SHORT&&x.w.every(w=>w.length<=SHORT);
@@ -764,11 +845,11 @@ const PACE_D=28,DASH_D=5.5;
 let paceF=store.get('cor_pace',1);
 function buildLevel(l,mode,opts={}){
   const subs=mode==='daily'?SUBJ:subjFor(l);
-  const picker=new Picker(subs,R,!opts.seeded);
-  const nQ=mode==='daily'?7:Math.min(5+Math.ceil(l/2),8),items=[];let z=10;
+  const tier=mode==='daily'?0:levelTier(l),picker=new Picker(subs,R,!opts.seeded,tier*150+Math.min(250,(l-1)*8));
+  const nQ=mode==='daily'?6:Math.min(4+Math.floor((l-1)/3),6),items=[];let z=10;
   const obsTypes=l===1?['saw','hole','cow','fan']:l===2?['saw','hammer','hole','slider','cow','auto','fan']:['saw','hammer','hole','slider','msaw','cow','auto','press','fan'];
   const mathPairs=[["×2","+10"],["+30","×2"],["×3","-10"],["+20","-15"],["×2","÷2"],["+40","×2"],["×3","+25"],["+15","-20"]];
-  const arenaAt=l===1?1:Math.floor(nQ/2);const arena=((window.storyIsBossLevel?storyIsBossLevel(l):l%2===0)&&mode!=='daily')?'boss':'shoot';
+  const branchAt0=(l>=2&&mode!=='daily')?nQ-2:-1,arenaAt=branchAt0===2?1:2;const arena=((window.storyIsBossLevel?storyIsBossLevel(l):l%2===0)&&mode!=='daily')?'boss':'shoot';
   const branchAt=(l>=2&&mode!=='daily')?nQ-2:-1;
   const addObs=(t,zz)=>{
     if(t==='saw')items.push({type:'saw',z:zz,side:R()<.5?-1:1});
@@ -785,29 +866,31 @@ function buildLevel(l,mode,opts={}){
     if(t==='ambush'){const x=rpick([-1,1]);if(x)items.push({type:'recruit',z:z+4,x:-x*1.3,n:Math.round(4+R()*3)});items.push({type:'ambush',z:z+15,x,wide:x===0});return z+27}
     if(t==='math'){const p=rpick(mathPairs),sw=R()<.5;items.push({type:'math',z:z+10,ops:sw?[p[1],p[0]]:p,ans:sw?[p[1],p[0]]:p});return z+22}
     return z};
-  const SEG=['field','gauntlet','ramp','ambush','math','math'];let lastSeg='',roadLeft=0;
+  const SEG=['field','gauntlet','ramp','ambush','math','math'];let lastSeg='',roadLeft=0,qi=0;
   for(let i=0;i<nQ;i++){
     let segs;
-    if(i===0)segs=['field',l===1?'ramp':'gauntlet'];
-    else{const a=rpick(SEG.filter(x=>x!==lastSeg));const b=rpick(SEG.filter(x=>x!==a));segs=[a,b]}
+    // about 15 to 20 s of running, dodging and number gates before each question
+    if(i===0)segs=['field',l===1?'ramp':'gauntlet','math'];
+    else{const a=rpick(SEG.filter(x=>x!==lastSeg));const b=rpick(SEG.filter(x=>x!==a));const c=rpick(SEG.filter(x=>x!==b&&!(x==='math'&&(a==='math'||b==='math'))));segs=[a,b,c]}
     lastSeg=segs[1];for(const t of segs)z=seg(t,z);
     if(i===1||i===4){items.push({type:'pu',z:z+2,x:rpick([-1.2,1.2]),kind:rpick(['shield','coffee','magnet'])});z+=6}
-    if(i===branchAt){z+=PACE_D;items.push({type:'branch',z,subs:subs.slice(0,2)});z+=10;roadLeft=2}
+    if(i===branchAt){z+=PACE_D;items.push({type:'branch',z,subs:subs.slice(0,2)});z+=10;z=seg(rpick(['field','ramp','gauntlet']),z);roadLeft=2}
+    // the Doubt Attack or boss arena takes this slot instead of a gate question, so questions never bunch up
+    if(i===arenaAt&&roadLeft===0){items.push({type:arena,z:z+4});z+=16;continue}
     let q;
     if(roadLeft>0){q={kind:'road',subj:'?',q:'',ans:['',''],correct:0};roadLeft--}
-    else if(mode==='daily'&&i<6)q=picker.ca()||picker.gate();
-    else if(i===2)q=picker.kind('stmt')||picker.gate();
-    else if(i===3&&l>=2)q=picker.kind('howmany')||picker.gate();
-    else if(i===4)q=picker.kind('match')||picker.gate();
-    else if(i===5&&l>=2)q=csatQ(R);
+    else if(mode==='daily'&&qi<6)q=picker.ca()||picker.gate();
+    else if(qi===1)q=picker.kind('stmt')||picker.gate();
+    else if(qi===2)q=(l>=2&&picker.kind('howmany'))||picker.kind('match')||picker.gate();
+    else if(qi===3&&l>=2)q=picker.kind('match')||picker.gate();
+    else if(qi===4&&l>=2)q=csatQ(R);
     else q=picker.gate();
     for(let k=0;k<3;k++)items.push({type:'note',z:z+3+k*2,x:0});
     z+=PACE_D+2;
-    items.push(Object.assign({type:'quiz',z},q));
+    items.push(Object.assign({type:'quiz',z},q));qi++;
     z+=10;
-    if(i===arenaAt){items.push({type:arena,z});z+=12}
   }
-  return{items,rivalZ:z+14,cutoff:(mode==='daily'?70:TUNE.cutBase+TUNE.cutStep*(l-1)),picker,subs};
+  return{items,rivalZ:z+14,cutoff:Math.round((mode==='daily'?70:TUNE.cutBase+TUNE.cutStep*(l-1))*[1,1.2,1.4][tier]),picker,subs,tier};
 }
 function readTime(it){if(it.type==='branch')return 5.5*Math.max(1,paceF);const words=(it.q+' '+it.ans.join(' ')).split(/\s+/).filter(Boolean).length;
   let t=TUNE.readBase+TUNE.readPerWord*words+(it.ans.length>=3?.9:0)+(it.kind==='csat'?1.5:0);if(S&&S.lv===1&&(S.qSeen||0)<=2)t+=1.2;return Math.max(4,Math.min(16,t*paceF))}
@@ -831,19 +914,20 @@ function newRun(mode,opts={}){
   if(quick){R=Math.random;const subs=mode==='weak'?[weakest()]:subjFor(Math.max(1,level-1)).concat(subjFor(level));L=buildQuick(mode,[...new Set(subs)])}
   else{R=mulberry(seed);L=buildLevel(lv,mode,{seeded:mode==='challenge'||mode==='daily'});R=Math.random}
   S={mode,lv,seed:quick?null:seed,target:opts.target??null,quick,timeLeft:quick?TUNE.quickSeconds:0,phase:'run',dist:0,x:0,tx:0,count:0,speed:Math.min(TUNE.speedBase+lv*TUNE.speedStep,TUNE.speedMax),items:L.items,rivalZ:L.rivalZ,cutoff:L.cutoff,picker:L.picker,subs:L.subs,
-     rivalCount:L.cutoff,rivals:[],members:[],flyers:[],standers:[],parts:[],texts:[],log:[],streak:0,t:0,shake:0,tight:1,
+     tier:L.tier||0,rivalCount:L.cutoff,rivals:[],members:[],flyers:[],standers:[],parts:[],texts:[],log:[],streak:0,t:0,shake:0,tight:1,
      gained:0,notes:0,mult:1,stepIdx:-1,survivors:0,battleT:0,endT:0,ladderZ:L.rivalZ+5,hint:lv===1&&mode==='level'?2.5:0,
      shieldT:0,coffeeT:0,magnetT:0,topperT:0,bullets:[],arena:null,boss:null,mainsB:0,intB:0,newCards:[],bossWin:false,revived:false};
   S.stepCost=6+lv*2;S.v=S.speed;S.airY=0;S.gaps=L.items.filter(i=>i.type==='ramp').map(i=>[i.z+3,i.z+3+i.air]);S.steerLock=false;S.pace=null;S.exam={c:0,w:0,s:0};S.dmgs=[];S.rings=[];S.slowmo=0;S.ladderEnd=S.ladderZ+STEPS.length*STEP_D;
   addMembers(10+bonus.start(),0,0);
   const rn=Math.min(CAP,S.rivalCount);for(let i=0;i<rn;i++){const t=phylN(i,rn);S.rivals.push({ox:t[0],oz:t[1],vx:0,vz:0,x:t[0],z:t[1],look:makeLook(true),ph:rnd(0,6)})}
-  const label={daily:'Daily',quick:'Quick',review:'Review',csat:'CSAT',weak:'Practice',pyq:'PYQ',challenge:'Challenge'}[mode]||'Level '+lv;
+  const label={daily:'Daily',quick:'Quick',review:'Review',csat:'CSAT',weak:'Practice',pyq:'PYQ',challenge:'Challenge'}[mode]||(isSeason(lv)?'Stage '+seasonOf(lv).k:'Level '+lv)+(S.tier?' '+['','HARD','SUPER'][S.tier]:'');
   $('lvl').textContent=label;$('need').hidden=false;
   const th=THEME();
   if(quick)banner({quick:'Quick Revision',review:'Review',csat:'CSAT Rush',weak:'Weak-topic practice',pyq:'PYQ practice'}[mode],TUNE.quickSeconds+' seconds, answer as many as you can');
   else if(mode==='challenge')banner('Challenge!','Beat your friend: '+(S.target||0).toLocaleString('en-IN')+' marks');
   else banner(mode==='daily'?'Current Affairs Run':lv===1?'Drag to steer!':'Level '+lv,mode==='daily'?'Streak '+daily.streak+', today\'s set':subjFor(lv).join(' + ')+(subjFor(lv).includes(th.subj)?', '+th.n+' +10':''));
   if(window.storyNewRun)storyNewRun(mode,lv,seed||1);
+  if(S.tier)setTimeout(()=>{if(S&&S.lv===lv)banner(TIER_NAME[S.tier],'Higher cut-off, tougher questions. Win for a rare card',2.2)},2300);
   track('level_start',{mode,lv});
 }
 function failRun(kind){if(S.revived||S.quick||kind==='boss'){S.phase='end';S.endT=kind==='cutoff'?1.4:1.2;S.fail=kind==='boss'?'batch':kind;closeSheet();return}
@@ -938,7 +1022,7 @@ function update(dt){
   if(S.phase==='run'&&ng){const dz=ng.z-S.dist;
     if(ng.type==='branch'&&!ng.warned&&dz<PACE_D+26){ng.warned=true;banner('ROAD SPLIT AHEAD',ng.subs.join(' or '),2.2)}
     if(ng.ans&&ng.ans.length>=3&&dz<PACE_D+2)tight=ng.ans.length===4?.4:.55;
-    if(dz>0&&dz<=PACE_D){
+    if(dz>0&&dz<=PACE_D&&S.cardIt===ng){
       if(!S.pace||S.pace.it!==ng){if(ng.type==='quiz')S.qSeen=(S.qSeen||0)+1;S.pace={it:ng,T:readTime(ng),el:0,locked:false,dash:false};$('lock').disabled=false;$('lock').textContent='LOCK ⚡ DASH';
         if(ng.type==='branch')sfx.power();
         else if(!store.get('cor_tut',false)){store.set('cor_tut',true);{const aq=activeQ();if(!(aq&&aq.obj&&aq.obj.pyqx))banner('Steer into your answer','Tap LOCK to dash early',2.6)}}}
@@ -994,7 +1078,10 @@ function update(dt){
     if(S.battleT>.5){const k=Math.min(S.count,S.rivalCount,Math.max(1,Math.round(S.battleRate*dt)));
       if(k>0){loseN(k);S.rivalCount-=k;while(S.rivals.length>Math.min(CAP,S.rivalCount)){const r=S.rivals.pop();S.flyers.push({x:r.x,y:.2,z:S.rivalZ+r.z,vx:rnd(-4,4),vy:rnd(4,8),vz:rnd(0,3),rot:0,vr:rnd(-14,14),look:r.look,life:2})}sfx.pop();S.shake=.1}}
     if(S.count<=0)failRun('cutoff');
-    else if(S.rivalCount<=0){S.phase='mains';S.survivors=S.count;sfx.yay();confetti(S.dist+2);confetti(S.dist+2,S.x-1);confetti(S.dist+2,S.x+1);S.slowmo=.6;vib([30,40,60]);banner('PRELIMS CLEARED!','Next: Mains answer writing',1.4);setTimeout(startMains,1300)}}
+    else if(S.rivalCount<=0){S.phase='mains';S.survivors=S.count;sfx.yay();confetti(S.dist+2);confetti(S.dist+2,S.x-1);confetti(S.dist+2,S.x+1);S.slowmo=.6;vib([30,40,60]);
+      const full=S.mode==='daily'||(window.storyIsBossLevel&&storyIsBossLevel(S.lv));
+      if(full){banner('PRELIMS CLEARED!','Next: Mains answer writing',1.4);setTimeout(startMains,1300)}
+      else{S.mainsB=.6;S.intB=.6;banner('PRELIMS CLEARED!','Climb the rank ladder',1.3);setTimeout(()=>{if(S&&S.phase==='mains'){S.phase='climb';S.speed=6}},1200)}}}
   if(S.phase==='climb'){
     const i=Math.floor((S.dist-S.ladderZ)/STEP_D);
     if(i>S.stepIdx&&i>=0&&i<STEPS.length){const keep=Math.min(S.count,S.stepCost);
@@ -1026,7 +1113,7 @@ function passGate(it){
   it.done=true;
   if(it.type==='branch'){const side=laneOf(2,S.x);it.picked=side;const sub=it.subs[side];
     if(qRow===it){qHold=.8;const st=$('stamp');st.textContent=sub.toUpperCase()+' ROAD';st.style.color='#1f9e5a';st.className='stamp show';$('opts').querySelectorAll('.opt').forEach((e,i)=>e.classList.toggle('ok',i===side))}
-    let k=0;for(const r of S.items)if(r.kind==='road'&&k<2){Object.assign(r,S.picker.gate(sub));r.road=true;k++}
+    let k=0;for(const r of S.items)if(r.kind==='road'&&k<2){const g=S.picker.gate(sub)||S.picker.gate();if(g){Object.assign(r,g);r.road=true}else r.done=true;k++}
     S.steerLock=false;S.road=sub;banner(sub.toUpperCase()+' ROAD','Strong subject: +5 on each true gate',1.3);sfx.power();return}
   const n=it.ans.length,side=laneOf(n,S.x);it.picked=side;
   if(it.type==='math'){const op=it.ops[side],v=parseInt(op.slice(1));let c=S.count;
@@ -1040,7 +1127,7 @@ function passGate(it){
     comboUI(cm);hitFx(true);S.rings.push({x:S.x,z:S.dist+.4,r:.5,life:.45,col:'#3ddc84'});S.rings.push({x:S.x,z:S.dist+.4,r:.2,life:.35,col:'#ffffff'});
     ftext('+'+add,'#3ddc84');qResult(it,side,true,'✓ +'+add);if(S.streak===2||Math.random()<.25)mascotSay('cheer',pick(['Nailed it!','Topper move!','Correct! Batch growing!','Sharp!']),1.3);sfx.good();confetti(S.dist+1);S.gained+=10;if(pc&&pc.locked&&pc.lockedAt<pc.T*.6){const qb=10+S.lv*2;S.gained+=qb;ftext('QUICK +'+qb,'#2ec4ff',S.dist+3.5)}
     if(S.streak%3===0)startTopper();else if(S.streak>=2)ftext('STREAK ×'+S.streak,'#ffd23f',S.dist+2.5)}
-  else{const hadCombo=S.streak>=2;S.streak=0;comboUI(0,hadCombo);hitFx(false);const ls=loseN(Math.ceil(S.count*.4*bonus.soft()));ftext('✗ WRONG','#ff4d5e');qResult(it,side,false,'✗ −'+ls);mascotSay('sad','Remember: '+it.ans[it.correct],2);sfx.bad();S.shake=.5;ftext(it.ans[it.correct]+' ✓','#ffffff',S.dist+3)}
+  else{const hadCombo=S.streak>=2;S.streak=0;comboUI(0,hadCombo);hitFx(false);const ls=loseN(Math.ceil(S.count*.4*bonus.soft()));ftext('-'+ls,'#ff2d44',S.dist+1.2);ftext('✗ WRONG','#ff4d5e');qResult(it,side,false,'✗ -'+ls);sfx.bad();S.shake=.6;vib([40,30,40]);ftext(it.ans[it.correct]+' ✓','#ffffff',S.dist+3)}
 }
 function logQ(it,side,ok,pc){S.log.push({id:it.id,ms:pc?Math.round(pc.el*1000):0,q:it.q,a:it.ans[it.correct],chose:it.ans[side],ok,why:it.why,src:it.src,locked:!!(pc&&pc.locked),head:it.head})}
 function logA(q,side,ok){S.log.push({q:q.q,a:q.ans[q.correct],chose:side<0?'(time up)':q.ans[side],ok,why:q.why,src:q.src})}
@@ -1054,8 +1141,10 @@ function activeQ(){
   if(ng.z-S.dist>PACE_D)return null;return{obj:ng,dist:ng.z-S.dist}}
 function updateQ(dt){
   const q=$('q');
-  if(qRow&&qRow.done&&qHold>-1){qHold-=dt;if(qHold<=0){q.classList.add('out');if(qHold<-.3){q.hidden=true;q.classList.remove('out');qRow=null;qHold=-2}}return}
-  const a=activeQ();if(!a){if(!qRow||!qRow.done)q.hidden=true;return}
+  if(qRow&&qRow.done&&qHold>-1){const a2=activeQ();if(a2&&a2.obj!==qRow){q.classList.remove('out');qRow=null;qHold=-2}
+    else{S.cardIt=null;qHold-=dt;if(qHold<=0){q.classList.add('out');if(qHold<-.3){q.hidden=true;q.classList.remove('out');qRow=null;qHold=-2}}return}}
+  const a=activeQ();if(!a){if(!qRow||!qRow.done)q.hidden=true;S.cardIt=null;return}
+  S.cardIt=a.obj;
   const it=a.obj;
   if(qRow!==it){qRow=it;qHold=0;qNo++;qStart=a.dist??1;
     if(a.branch){qNo--;$('qno').textContent='CHOOSE YOUR ROAD';$('qsub').textContent='';$('qt').innerHTML='<small>Steer or tap a road. Your next 2 questions come from it.</small>';
@@ -1064,10 +1153,11 @@ function updateQ(dt){
       $('stamp').className='stamp';q.hidden=false;q.style.animation='none';q.offsetHeight;q.style.animation=''}
     else{
     $('qno').textContent=a.shoot?'DOUBT ATTACK':'Q.'+qNo;$('qsub').textContent=it.pyqx||it.subj;
-    $('qt').innerHTML=(a.shoot?'<small>Shoot the TRUE answer</small>':it.head?`<small>${esc(it.head)}</small>`:'')+esc(it.q);
-    const n=it.ans.length;$('opts').style.gridTemplateColumns=n===4?'1fr 1fr':`repeat(${n},1fr)`;$('opts').classList.toggle('n3',n===3);$('opts').classList.toggle('n4',n===4);$('qwhy').hidden=true;$('lock').disabled=false;$('skip').disabled=false;$('lock').textContent='LOCK ⚡ DASH';$('skip').textContent='SKIP';
-    $('opts').innerHTML=it.ans.map((s,i)=>`<div class="opt" data-i="${i}"><i class="bub">${'ABCD'[i]}</i><span>${esc(s)}</span></div>`).join('');
+    $('qt').innerHTML=(a.shoot?'<small>Shoot the TRUE answer</small>':'')+qHTML(it,a.shoot?'':it.head);$('qt').scrollTop=0;$('qt').classList.toggle('fmtq',qKind(it)!=='plain');
+    const n=it.ans.length;$('opts').style.gridTemplateColumns=n===4?'1fr 1fr':n===3&&optLong(it.ans)?'1fr':`repeat(${n},1fr)`;$('opts').classList.toggle('n3',n===3);$('opts').classList.toggle('n4',n===4);$('qwhy').hidden=true;$('lock').disabled=false;$('skip').disabled=false;$('lock').textContent='LOCK ⚡ DASH';$('skip').textContent='SKIP';
+    $('opts').innerHTML=it.ans.map((s,i)=>`<div class="opt" data-i="${i}"><i class="bub">${'ABCD'[i]}</i><span>${esc(optText(s))}</span></div>`).join('');
     $('stamp').className='stamp';q.hidden=false;q.style.animation='none';q.offsetHeight;q.style.animation=''}}
+  else if(q.hidden&&!it.done){q.hidden=false;q.style.animation='none';q.offsetHeight;q.style.animation=''} // card was hidden by a revive, scroll or banner pause: bring it back
   q.style.top=Math.max(92,HOR-q.offsetHeight-4)+'px';
   $('qbar').style.width=(a.shoot?Math.max(0,100-S.arena.t/12*100):(S.pace&&S.pace.it===it?Math.max(0,100-S.pace.el/S.pace.T*100):100))+'%';$('lock').hidden=!!(a.shoot||a.branch);$('skip').hidden=!!(a.shoot||a.branch);
   const side=laneOf(a.branch?2:it.ans.length,S.x);$('opts').querySelectorAll('.opt').forEach((e,i)=>e.classList.toggle('on',i===side))
@@ -1122,7 +1212,7 @@ const BOSS_ATK={Polity:['dash','compass'],History:['compass','protractor'],Geogr
 const ATK_NAME={dash:'CHARGE!',compass:'COMPASS STRIKE!',protractor:'PROTRACTOR BOOMERANG!',fire:'FIRE BREATH!'};
 function startBoss(it){const sub=S.subs[0],B0=BOSSES[sub];S.phase='boss';S.tx=S.x;
   S.boss={sub,name:B0.n,col:B0.c,hp:3,max:3,x:0,zHome:S.dist+11,dz:0,flash:0,st:'intro',t:0,asked:0,rage:false,atk:null,vol:[],dead:false,crouch:0,mouth:0,enter:0};
-  banner('BOSS FIGHT!',B0.n,1.6);sfx.roar();S.shake=.5;mascotSay('wow','Dodge the red zones. Answer to strike back!',2.4)}
+  banner('BOSS FIGHT!',B0.n,1.6);sfx.roar();S.shake=.5;if(!window.STORY)mascotSay('wow','Dodge the red zones. Answer to strike back!',2.4)}
 function bossAttack(){const B=S.boss;if(!B)return;const pool=BOSS_ATK[B.sub],type=pick(pool),side=S.x<0?-1:1;
   const a={type,t:0,tele:B.rage?.8:1.15,hit:false};
   if(type==='dash'||type==='protractor'){a.x0=side<0?-2:0;a.x1=side<0?0:2;if(B.rage){a.x0=side<0?-2:-.7;a.x1=side<0?.7:2}a.cx=(a.x0+a.x1)/2;a.dur=type==='dash'?1.15:1.25;a.impact=type==='dash'?.3:.45}
@@ -1187,13 +1277,64 @@ function pressH(it){const c=(S.t*.75+it.ph)%1;if(c<.45)return 2.2;if(c<.52)retur
 function fanA(it){return S.t*1.25+it.ph}
 function airAt(z){if(!S.items)return 0;for(const it of S.items)if(it.type==='ramp'){const a=z-it.z;if(a>=0&&a<3)return a/3;if(a>=3&&a<3+it.air){const u=(a-3)/it.air;return(1-u)+4*2.4*u*(1-u)}}return 0}
 function inGap(z){return S.gaps&&S.gaps.some(g=>z>g[0]&&z<g[1])}
+// ---------- exam-paper formatting for statement, match and sequence questions ----------
+const QF_TAIL=/\s+(?=(?:which|select|choose|how many|of the above|consider the|code|identify|pick|find)\b[^]*$)/i;
+function qfSplitTail(s){const m=QF_TAIL.exec(s);if(!m||m.index<1)return[s.trim(),''];return[s.slice(0,m.index).trim(),s.slice(m.index).trim()]}
+// Split "x (1) a (2) b" / "1. a 2. b" / "I. a II. b" / "Statement 1: a Statement 2: b" into [stem,[items],tail]
+function qfItems(t){
+  const pats=[
+    {re:/(?:^|\s)statement[\s-]*(\d+|[ivx]+)\s*[:.)-]\s*/gi},
+    {re:/(?:^|\s)(assertion|reason)\s*(?:\((?:a|r)\))?\s*[:.-]\s*/gi,ar:1},
+    {re:/(?:^|\s)\(\s*(\d|[ivx]{1,4}|[a-f])\s*\)\s*/gi},
+    {re:/(?:^|[\s:])(\d)[.)]\s+(?=\S)/g},
+    {re:/(?:^|[\s:])([IVX]{1,4})[.)]\s+(?=\S)/g},
+    {re:/(?:^|[\s:])([A-F])[.)]\s+(?=\S)/g}];
+  for(const p of pats){const ms=[...t.matchAll(p.re)];if(ms.length<2)continue;
+    if(!p.ar){const k=ms.map(m=>m[1].toLowerCase());const seq=['1','2','3','4','5','6'],rom=['i','ii','iii','iv','v','vi'],al=['a','b','c','d','e','f'];
+      const ok=[seq,rom,al].some(s=>k.every((x,i)=>x===s[i]));if(!ok)continue}
+    const stem=t.slice(0,ms[0].index).trim(),items=[];
+    for(let i=0;i<ms.length;i++){const a=ms[i].index+ms[i][0].length,b=i+1<ms.length?ms[i+1].index:t.length;items.push({k:p.ar?(ms[i][1][0].toUpperCase()==='A'?'A':'R'):ms[i][1],v:t.slice(a,b).trim()})}
+    let tail='';const last=items[items.length-1];const sp=qfSplitTail(last.v);last.v=sp[0];tail=sp[1];
+    if(items.some(x=>!x.v))continue;return{stem,items,tail,ar:!!p.ar,st:p===pats[0]}}
+  return null}
+function qfMatch(t){const s=t.replace(/\s+/g,' ');
+  const all2=[...s.matchAll(/(?:list|column)[\s-]*(?:ii|2)\b\s*(?:\([^)]{0,40}\))?\s*[:.-]?/gi)];if(!all2.length)return null;const m2=all2[all2.length-1];
+  const all1=[...s.slice(0,m2.index).matchAll(/(?:list|column)[\s-]*(?:i|1)\b(?![\s-]*(?:ii|2)\b)\s*(?:\([^)]{0,40}\))?\s*[:.-]?/gi)];if(!all1.length)return null;const m1=all1[all1.length-1];
+  const stem=s.slice(0,m1.index).replace(/[\s:,-]+$/,'').trim();
+  const h1=(s.slice(m1.index,m1.index+m1[0].length).match(/\(([^)]+)\)/)||[])[1]||'',h2=(m2[0].match(/\(([^)]+)\)/)||[])[1]||'';
+  const L=qfItems(s.slice(m1.index+m1[0].length,m2.index).trim()),R=qfItems(s.slice(m2.index+m2[0].length).trim());
+  if(!L||!R||L.items.length<2||R.items.length<2)return null;
+  return{stem:stem||'Match List I with List II',h1,h2,L:L.items,R:R.items,tail:R.tail||L.tail||''}}
+const QF_SEQ=/\b(arrange|chronolog|sequence|correct order|in order|ascending|descending)\b/i;
+function qKind(q){const t=String(q.q||'');if(/(?:list|column)[\s-]*(?:ii|2)\b/i.test(t)&&qfMatch(t))return'match';
+  if(QF_SEQ.test(t)&&qfItems(t.replace(/\n/g,' ')))return'seq';
+  const it=qfItems(t.replace(/\n/g,' '));return it?(it.ar?'ar':'stmt'):'plain'}
+// Returns HTML for the question text block
+const QF_DROP=/\s*(?:select|choose|pick|mark)\s+(?:the\s+)?(?:correct|right)\s+(?:answer|option|code)s?\b[^.?!]*(?:code[s]?|options?|below|given)[^.?!]*[.:]?\s*$|\s*(?:codes?|options?)\s*:\s*$/i;
+function qHTML(q,head){const t=String(q.q||'').replace(QF_DROP,'').replace(/\s*\n\s*/g,' \n').trim(),H=head?`<small>${esc(head)}</small>`:'';
+  const mt=qfMatch(t.replace(/\n/g,' '));
+  if(mt){const n=Math.max(mt.L.length,mt.R.length);let rows='';for(let i=0;i<n;i++){const a=mt.L[i],b=mt.R[i];rows+=`<tr><td>${a?`<b>${esc(a.k.toUpperCase())}.</b> ${esc(a.v)}`:''}</td><td>${b?`<b>${esc(b.k)}.</b> ${esc(b.v)}`:''}</td></tr>`}
+    return`${H}<span class="qx-stem">${esc(mt.stem)}</span><table class="qx-match"><thead><tr><th>List I${mt.h1?`<em>${esc(mt.h1)}</em>`:''}</th><th>List II${mt.h2?`<em>${esc(mt.h2)}</em>`:''}</th></tr></thead><tbody>${rows}</tbody></table>${mt.tail&&!/^(select|choose|pick|mark|code)/i.test(mt.tail)?`<span class="qx-tail">${esc(mt.tail)}</span>`:''}`}
+  const it=qfItems(t.replace(/\n/g,' '));
+  if(it){const seq=QF_SEQ.test(t);const lab=x=>it.ar?(x.k==='A'?'Assertion (A)':'Reason (R)'):it.st?'Statement '+x.k:x.k;
+    const li=it.items.map(x=>`<li${it.ar?' class="ar"':''}><b>${esc(lab(x))}${it.ar||/^Statement/.test(lab(x))?'':'.'}</b><span>${esc(x.v)}</span></li>`).join('');
+    const stem=it.stem||(it.ar?'Consider the following:':seq?'Arrange in the correct order:':'Consider the following statements:');
+    return`${H}<span class="qx-stem">${esc(stem)}</span><ol class="qx-list${seq?' seq':''}">${li}</ol>${it.tail&&!/^(select|choose|pick|mark|code)/i.test(it.tail)?`<span class="qx-tail">${esc(it.tail)}</span>`:''}`}
+  return H+`<span class="qx-stem">${esc(t)}</span>`}
+// Option text tidy: "(1) - (2) - (3) - (4)" becomes "1, 2, 3, 4"
+function optText(s){s=String(s);if(/^[\s(]*[1-9][\s)]*(?:[-,\u2013\u2014>\s]+[\s(]*[1-9][\s)]*){2,}$/.test(s))return s.match(/[1-9]/g).join(', ');
+  if(/^\s*\(\s*[ivx]{1,4}\s*\)(?:[-,\u2013\u2014>\s]+\(\s*[ivx]{1,4}\s*\)){2,}\s*$/i.test(s))return s.match(/[ivx]{1,4}/gi).join(', ');
+  if(/^\s*[a-di-v]{1,3}\s*[-\u2013\u2014]\s*\w{1,4}(?:\s*,\s*[a-di-v]{1,3}\s*[-\u2013\u2014]\s*\w{1,4}){1,5}\s*$/i.test(s))return s.replace(/\s*[-\u2013\u2014]\s*/g,'\u2011').replace(/\s*,\s*/g,', '); // match codes: keep each pair together
+  return s.replace(/\s*[\u2013\u2014]\s*/g,' - ')}
+function optLong(ans){return ans.some(a=>optText(a).length>16)}
+
 // ---------- bottom-sheet quiz (boss, interview, raid) ----------
 let sheetTimer=null;
 function closeSheet(){$('sheet').hidden=true;if(sheetTimer){cancelAnimationFrame(sheetTimer);sheetTimer=null}}
 function sheetQuiz({title,tag,q,time,onDone}){
   const sh=$('sheet');sh.hidden=false;sh.style.animation='none';sh.offsetHeight;sh.style.animation='';
-  sh.innerHTML=`<div class="st"><b>${esc(title)}</b><span>${esc(tag||'')}</span><i class="tm"><i id="stm"></i></i></div><div class="sq">${q.head?esc(q.head)+'\n':''}${esc(q.q)}</div>
-   <div class="sb" style="grid-template-columns:repeat(${q.ans.length},1fr)">${q.ans.map((a,i)=>`<button class="ans" data-i="${i}">${esc(a)}</button>`).join('')}</div><div class="fb" id="sfb"></div>`;
+  sh.innerHTML=`<div class="st"><b>${esc(title)}</b><span>${esc(tag||'')}</span><i class="tm"><i id="stm"></i></i></div><div class="sq${qKind(q)!=='plain'?' fmtq':''}">${qHTML(q,q.head)}</div>
+   <div class="sb" style="grid-template-columns:${q.ans.length===4?'1fr 1fr':q.ans.length===3&&optLong(q.ans)?'1fr':`repeat(${q.ans.length},1fr)`}">${q.ans.map((a,i)=>`<button class="ans" data-i="${i}"><i class="abub">${'ABCD'[i]}</i>${esc(optText(a))}</button>`).join('')}</div><div class="fb" id="sfb"></div>`;
   let doneF=false;const t0=performance.now();
   const finish=side=>{if(doneF)return;doneF=true;if(sheetTimer)cancelAnimationFrame(sheetTimer);sheetTimer=null;const ok=side===q.correct;
     sh.querySelectorAll('.ans').forEach((b,i)=>{b.disabled=true;if(i===q.correct)b.classList.add('ok');else if(i===side)b.classList.add('no')});
@@ -1605,8 +1746,11 @@ function hideToast(){$('toast').classList.remove('show')}
 // ===================================================== SCREENS =====================================================
 function hideAll(){['menu','result','town','album','pop','mapov'].forEach(id=>$(id).hidden=true)}
 function service(m){return m>=4?'IAS: Indian Administrative Service':m>=3?'IPS: Indian Police Service':m>=2?'IRS: Indian Revenue Service':m>=1.4?'IA&AS: Audit and Accounts':'Mains cleared'}
-function openPack(n){const out=[];for(let i=0;i<n;i++){const c=pick(CARDS);const isNew=!owned[c.id];owned[c.id]=(owned[c.id]||0)+1;if(!isNew)bank+=20;out.push({c,isNew})}saveMeta();return out}
-const fcHTML=(c)=>`<div class="fc" style="background:${SETS[c.set].col}"><span class="ico">${c.ic}</span><b>${esc(c.n)}</b><span>${esc(c.f)}</span></div>`;
+const RAR=c=>{const i=CARDS.indexOf(c);return i%7===6?2:i%3===2?1:0},RAR_N=['Common','Rare','Legendary'];
+function pickCard(min){const pity=(PL.pity||0)>=7;const roll=Math.random();let want=roll<.05?2:roll<.3?1:0;if(pity)want=Math.max(want,1);want=Math.max(want,min||0);
+  let pool=CARDS.filter(c=>RAR(c)===want);if(!pool.length)pool=CARDS;const c=pick(pool);PL.pity=RAR(c)?0:(PL.pity||0)+1;return c}
+function openPack(n,minRare){const out=[];for(let i=0;i<n;i++){const c=pickCard(i===0?minRare:0);const isNew=!owned[c.id];owned[c.id]=(owned[c.id]||0)+1;if(!isNew)bank+=20;out.push({c,isNew})}saveMeta();return out}
+const fcHTML=(c)=>`<div class="fc r${RAR(c)}" style="background:${SETS[c.set].col}">${RAR(c)?`<i class="rar">${RAR_N[RAR(c)]}</i>`:''}<span class="ico">${c.ic}</span><b>${esc(c.n)}</b><span>${esc(c.f)}</span></div>`;
 const ownedCount=()=>CARDS.filter(c=>owned[c.id]).length;
 // ---- result ----
 // ---- result ----
@@ -1616,14 +1760,15 @@ const MODE_NAMES={daily:'Current Affairs Run',quick:'Quick Revision',review:'Rev
 function showResult(){
   $('need').hidden=true;$('q').hidden=true;closeSheet();qRow=null;hideToast();
   const quick=!!S.quick,right=S.log.filter(l=>l.ok).length,win=!S.fail;
-  const lvLabel=S.mode==='challenge'?`Challenge, Level ${S.lv}`:MODE_NAMES[S.mode]||`Level ${S.lv}, ${subjFor(S.lv).join(' + ')}`;
+  const lvLabel=S.mode==='challenge'?`Challenge, Level ${S.lv}`:MODE_NAMES[S.mode]||`${lvName(S.lv)}${S.tier?', '+TIER_NAME[S.tier].toLowerCase():''}, ${subjFor(S.lv).join(' + ')}`;
   let earned=S.notes,pack=[],total=0,air=0,stars=0;
   if(S.bossWin)pack=pack.concat(openPack(3));
   if(quick){earned=Math.max(0,S.gained);bank+=earned;mission('quick')}
   else if(!win)bank+=S.notes;
-  else{total=S.mult+S.mainsB+S.intB;earned=Math.round(S.survivors*total*.15)+S.gained;bank+=earned;air=Math.max(1,Math.round(12000/(S.survivors*total+8)));S.air=air;S.total=total;
+  else{total=S.mult+S.mainsB+S.intB;earned=Math.round(Math.min(S.survivors,400)*total*.15)+S.gained; // cap so one huge crowd cannot pay 10x a normal level
+  bank+=earned;air=Math.max(1,Math.round(12000/(S.survivors*total+8)));S.air=air;S.total=total;
     if(S.mode==='daily'){const k=todayKey();if(daily.last!==k){daily.streak=(daily.last&&dayNum(k)-dayNum(daily.last)===1)?daily.streak+1:1;daily.last=k;pack=pack.concat(openPack(2))}}
-    else if(S.mode==='level'){if(S.lv>=level){level=S.lv+1;cleared++;if(cleared%2===0)raidDue=true}pack=pack.concat(openPack(2))}
+    else if(S.mode==='level'){if(S.lv>=level){level=S.lv+1;cleared++;if(cleared%2===0)raidDue=true}pack=pack.concat(openPack(2,S.tier?S.tier:0))}
     mission('clear');week.score+=earned}
   const acc=S.log.length?right/S.log.length:0;
   if(!quick&&S.mode!=='daily'){stars=win?1+(acc>=.8?1:0)+(total>=4?1:0):0;if(S.mode==='level'&&stars>(PL.stars[S.lv]||0))PL.stars[S.lv]=stars}
@@ -1636,48 +1781,56 @@ function showResult(){
   const line=quick?(acc>=.8?'Sharp revision! Your weak topics are shrinking.':'Good practice. Wrong ones come back for review.'):
     win?(total>=4?pick(['IAS! Call the whole family!','Topper energy! LBSNAA is waiting.']):pick(['Cleared! Next time, aim for IAS.','Nice run! Climb higher next time.'])):
     (S.fail==='cutoff'?pick(['So close! Grow the batch at true gates.','Recruit the grey aspirants. We beat it next time!']):'Steer away from obstacles early!');
-  const near=!win&&S.fail==='cutoff'&&S.rivalCount<=Math.max(8,Math.round(S.cutoff*.3));lastRes={near,left:S.rivalCount,win,quick,mode:S.mode,lv:S.lv,seed:S.seed,lvLabel,right,n:S.log.length,earned,total,air,pack,wrongs:S.log.filter(l=>!l.ok),log:S.log.slice(),cutoff:S.cutoff,notes:S.notes,fail:S.fail,stars,exam:{...S.exam},code,target:S.target,score,newDay,streak:PL.streak.n,unlocked};
+  const near=!win&&S.fail==='cutoff'&&S.rivalCount<=Math.max(8,Math.round(S.cutoff*.3));lastRes={tier:S.tier||0,near,left:S.rivalCount,win,quick,mode:S.mode,lv:S.lv,seed:S.seed,lvLabel,right,n:S.log.length,earned,total,air,pack,wrongs:S.log.filter(l=>!l.ok),log:S.log.slice(),cutoff:S.cutoff,notes:S.notes,fail:S.fail,stars,exam:{...S.exam},code,target:S.target,score,newDay,streak:PL.streak.n,unlocked};
   renderResult(line,'rev');
-  const rr0=lastRes;Remote.submitRun(rr0).then(j=>{if(!j||lastRes!==rr0)return;rr0.league=j;if(j.challenge)rr0.code=j.challenge;if(!$('result').hidden)renderResult(line,'rev')});
+  if(!PL.consent){const keep=lastRes;setTimeout(()=>{if(lastRes===keep&&!$('result').hidden)openConsent(true,()=>{lastRes=keep;renderResult(line,'rev')})},1600)}
+  const rr0=lastRes;if(PL.consent)Remote.submitRun(rr0).then(j=>{if(!j||lastRes!==rr0)return;rr0.league=j;if(j.challenge)rr0.code=j.challenge;if(!$('result').hidden)renderResult(line,'rev')});
 }
 const starRow=n=>`<div class="stars" role="img" aria-label="${n} of 3 stars">${[0,1,2].map(i=>`<span class="${i<n?'on':''}">★</span>`).join('')}</div>`;
-function revItem(l){return`<li class="${l.ok?'':'w'}">${l.skipped?'<span class="tag">Skipped</span>':l.locked&&!l.ok?'<span class="tag sure">Sure but wrong</span>':''}<em>${esc(l.q)}</em> Answer: ${esc(l.a)}${l.ok||l.skipped?'':`, you: <s>${esc(l.chose)}</s>`}${l.why?`<div class="rw">${esc(l.why)}${l.src?` <i>(${esc(l.src)})</i>`:''}</div>`:''}</li>`}
+function revItem(l){if(!l.ok)return`<li class="w mk">${l.skipped?'<span class="tag">Skipped</span>':l.locked?'<span class="tag sure">Sure but wrong</span>':''}<em>${esc(String(l.q).replace(QF_DROP,'').replace(/\s+/g,' '))}</em>
+    <div class="mkrow"><span>Your answer</span><s>${esc(optText(l.chose))}</s></div><div class="mkrow ok"><span>Correct</span><b>${esc(optText(l.a))}</b></div>${l.why?`<div class="rw">${esc(String(l.why).split(/(?<=[.!?])\s/)[0])}</div>`:''}</li>`;
+  return`<li class="${l.ok?'':'w'}">${l.skipped?'<span class="tag">Skipped</span>':l.locked&&!l.ok?'<span class="tag sure">Sure but wrong</span>':''}<em>${esc(l.q)}</em> Answer: ${esc(l.a)}${l.ok||l.skipped?'':`, you: <s>${esc(l.chose)}</s>`}${l.why?`<div class="rw">${esc(l.why)}${l.src?` <i>(${esc(l.src)})</i>`:''}</div>`:''}</li>`}
 function renderResult(line,tab){const r=lastRes;
-  const hero=`<div class="stage ${r.win?'win':'lose'}">${r.win?'<div class="rays"></div>':''}<div class="bubble r">${esc(line)}</div>${miga(r.win?'cheer':'sad',r.win&&r.total>=4?'trophy':'')}</div>`;
-  const head=r.quick?`<div class="rhead"><div class="eyebrow">${esc(r.lvLabel)}</div><h2 class="air">${r.right}/${r.n} correct</h2></div>`
-    :r.win?`<div class="rhead"><div class="eyebrow">${esc(r.lvLabel)}, cleared</div><h2 class="air">AIR ${r.air.toLocaleString('en-IN')}</h2><div class="service">${service(r.total)}</div></div>`
-    :r.near?`<div class="rhead"><div class="eyebrow">${esc(r.lvLabel)}</div><h2 class="soclose">So close!</h2><div class="service">Only ${r.left} more aspirants needed</div></div>`
-    :`<div class="rhead"><div class="eyebrow">${esc(r.lvLabel)}</div><h2 class="air" style="font-size:40px">${r.fail==='cutoff'?'Below cut-off':'Batch lost'}</h2></div>`;
-  const stars=(r.mode==='level'||r.mode==='challenge')?starRow(r.stars):'';
-  const acc=r.n?Math.round(r.right/r.n*100):0;
-  const stats=r.quick?`<div class="stats"><div><b>${acc}%</b><small>Accuracy</small></div><div><b>${examMarks(r.exam)}</b><small>UPSC marks</small></div><div><b>+${r.earned}</b><small>Marks</small></div></div>`
-    :`<div class="stats"><div><b>${r.right}/${r.n}</b><small>Correct</small></div><div><b>${r.win?'×'+r.total.toFixed(1):r.cutoff}</b><small>${r.win?'Rank power':'Cut-off'}</small></div><div><b>+${r.win?r.earned:r.notes}</b><small>Marks</small></div></div>`;
-  const meta=`<p class="note ctr">Streak ${r.streak} day${r.streak===1?'':'s'}${r.newDay?', +1 today':''}, UPSC marking ${examMarks(r.exam)} (${r.exam.c} right, ${r.exam.w} wrong, ${r.exam.s} skipped)</p>`;
-  const cmp=r.target!=null?`<div class="cmp ${r.score>=r.target?'win':'lose'}">${r.score>=r.target?'You beat':'You missed'} your friend's ${r.target.toLocaleString('en-IN')} with ${r.score.toLocaleString('en-IN')}</div>`:'';
-  const unl=r.unlocked.length?`<div class="unlock">New style unlocked: ${esc(r.unlocked.join(', '))}. Open Style to use it.</div>`:'';
-  const packBtn=r.pack.length&&!r.packOpened?`<button class="btn gold" id="openPack">Open card pack, ${r.pack.length} cards</button>${r.doubled||!hasAds()?'':'<button class="more" id="dblPack">Watch an ad to double the pack</button>'}`:'';
-  const again=r.quick?'Play again':!r.win?'Retry now':r.mode==='level'?'Next level':'Play level '+level;
-  const tabs=`<div class="tabs"><button data-t="rev" class="${tab==='rev'?'on':''}">Revise${r.wrongs.length?', '+r.wrongs.length+' to fix':''}</button><button data-t="lg" class="${tab==='lg'?'on':''}">League</button></div>`;
-  let body='';
-  if(tab==='rev'){const wr=r.wrongs.slice().sort((a,b)=>(b.locked?1:0)-(a.locked?1:0)),show=r.showAll?wr.concat(r.log.filter(l=>l.ok)):wr;
+  const I=p=>`<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
+  const IC={mis:I('<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.7M12 17h.01"/>'),tgt:I('<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>'),cup:I('<path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 20h8"/>'),shr:I('<circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="m8.2 10.8 7.6-4.4M8.2 13.2l7.6 4.4"/>')};
+  ensureMissions();const ML=PL.missions.list,stk=PL.streak.n||0,claim=ML.filter(m=>m.done&&!m.claimed).length;
+  const sh=r.sheet||'';
+  const rhead2=`<div class="r2top"><span class="r2chip${r.newDay?' up':''}" title="Day streak">🔥 ${stk}</span><button class="r2link" id="goMenu">Menu</button></div>
+  <div class="r2hero ${r.win?'win':'lose'}">${miga(r.win?'cheer':'sad','')}</div>
+  <div class="r2eye">${esc(r.lvLabel)}</div>
+  <h2 class="r2h">${r.quick?`${r.right}/${r.n} correct`:r.win?'Cleared':r.near?'So close!':r.fail==='cutoff'?'Below cut-off':'Batch lost'}</h2>
+  ${r.win&&!r.quick?`<div class="r2sub">AIR ${r.air.toLocaleString('en-IN')}</div>`:r.near?`<div class="r2sub">${r.left} more aspirants needed</div>`:''}
+  ${(r.mode==='level'||r.mode==='challenge')?starRow(r.stars):''}
+  <button class="r2stat" id="goDet"><b>${r.right}/${r.n}</b> correct<span>,</span><b>+${r.win||r.quick?r.earned:r.notes}</b> marks<i>Details</i></button>`;
+  const cmp=r.target!=null?`<div class="r2note">${r.score>=r.target?'You beat':'You missed'} your friend's ${r.target.toLocaleString('en-IN')}</div>`:'';
+  const unl=r.unlocked.length?`<div class="r2note">New style unlocked: ${esc(r.unlocked.join(', '))}</div>`:'';
+  const again=r.quick?'Play again':!r.win?'Retry':r.mode==='level'?'Next level':'Play level '+level;
+  const acts=`<div class="r2acts"><button class="btn r2main" id="again">${again}</button>${r.pack.length&&!r.packOpened?`<button class="r2sec" id="openPack">Open card pack, ${r.pack.length} cards</button>`:''}</div>`;
+  const dk=(id,ic,lb,bd)=>`<button class="r2ic${sh===id?' on':''}" data-sh="${id}">${ic}${bd?`<em>${bd}</em>`:''}<span>${lb}</span></button>`;
+  const dock=`<div class="r2dock">${dk('rev',IC.mis,'Mistakes',r.wrongs.length||'')}${dk('mis',IC.tgt,'Missions',claim||'')}${dk('lg',IC.cup,'League','')}${r.code||(r.win&&!r.quick)?dk('share',IC.shr,r.win?'Share':'Dare','') :dk('mast',IC.tgt.replace('r="9"','r="9" stroke-dasharray="3 3"'),'Mastery','')}</div>`;
+  let body='',tt='';
+  if(sh==='rev'){tt=r.wrongs.length?`Review your mistakes, ${r.wrongs.length}`:'Review';const wr=r.wrongs.slice().sort((a,b)=>(b.locked?1:0)-(a.locked?1:0)),show=r.showAll?wr.concat(r.log.filter(l=>l.ok)):wr;
     body=show.length?`<ul class="rev">${show.map(revItem).join('')}</ul>`:`<p class="note ctr">No mistakes. Perfect run!</p>`;
-    if(r.log.length>r.wrongs.length&&!r.showAll)body+=`<button class="more" id="showAll">Show all ${r.log.length} questions</button>`}
-  else body=leagueHTML();
-  const showShare=r.win&&!r.quick;
-  const lg=r.league?`<p class="note ctr"><b>+${r.league.points} league points</b>${r.league.capped?' (daily cap reached)':''}. Week total ${r.league.week_total}</p>`:'';
-  const againBtn=`<button class="btn${!r.win&&!r.quick?' retry':''}" id="again">${again}</button>`;
-  $('rcard').innerHTML=hero+head+(!r.win&&!r.quick?againBtn:'')+stars+stats+lg+meta+cmp+unl+packBtn+(!r.win&&!r.quick?'':againBtn)+(r.code?'<button class="btn alt sm" id="goChal">Challenge a friend</button>':'')+
-    `<div class="dock ${showShare?'d5':'d4'}"><button class="tile" id="goMap">${tile('map','Map')}</button><button class="tile" id="goTown">${tile('town','Town',bank>=cheapest()?'!':'')}</button><button class="tile" id="goAlbum">${tile('cards','Cards')}</button>${showShare?`<button class="tile" id="goShare">${tile('share','Share')}</button>`:''}<button class="tile" id="goMenu">${tile('home','Menu')}</button></div>`+tabs+body;
+    if(r.log.length>r.wrongs.length&&!r.showAll)body+=`<button class="more" id="showAll">Show all ${r.log.length} questions</button>`;
+    body+=`<button class="more" id="goMastery">Topic mastery</button>`}
+  else if(sh==='mis'){tt='Streak and missions';body=`<div class="r2flame"><b>🔥 ${stk}</b><small>day streak${r.newDay?', +1 today':''}</small></div><div class="rmis">${ML.map((m,i)=>`<div class="rm ${m.claimed?'cl':m.done?'dn':''}"><span>${esc(missionText(m))}</span>${m.claimed?'<i>Claimed</i>':m.done?`<button class="btn sm gold" data-rc="${i}">Claim +60</button>`:`<i>${m.p}/${m.goal}</i>`}</div>`).join('')}</div><button class="more" id="goMastery">Topic mastery</button>`}
+  else if(sh==='lg'){tt='League';body=(r.league?`<p class="note ctr"><b>+${r.league.points} league points</b>${r.league.capped?' (daily cap reached)':''}. Week total ${r.league.week_total}</p>`:'')+leagueHTML()}
+  else if(sh==='det'){tt='Run details';body=`<div class="r2det"><div><span>Correct</span><b>${r.right}/${r.n}</b></div>${r.quick?'':`<div><span>${r.win?'Rank power':'Cut-off'}</span><b>${r.win?'×'+r.total.toFixed(1):r.cutoff}</b></div>`}<div><span>Marks earned</span><b>+${r.win||r.quick?r.earned:r.notes}</b></div><div><span>UPSC marking</span><b>${examMarks(r.exam)}</b></div><div><span>Right, wrong, skipped</span><b>${r.exam.c}, ${r.exam.w}, ${r.exam.s}</b></div>${r.win&&!r.quick?`<div><span>Service</span><b>${service(r.total)}</b></div>`:''}</div>${r.doubled||!hasAds()||!r.pack.length||r.packOpened?'':'<button class="more" id="dblPack">Watch an ad to double the pack</button>'}`}
+  const sheet=sh?`<div class="r2shade" id="r2shade"></div><div class="r2sheet"><div class="r2grab"></div><div class="r2sh"><h3>${tt}</h3><button class="r2link" id="r2x">Close</button></div><div class="r2body">${body}</div></div>`:'';
+  $('rcard').innerHTML=`<div class="r2">${rhead2}${cmp}${unl}${acts}${dock}</div>${sheet}`;
+  $('rcard').classList.add('r2card');
   $('result').hidden=false;
+  const go=v=>{r.sheet=v;renderResult(line,tab)};
+  $('rcard').querySelectorAll('[data-sh]').forEach(b=>b.onclick=()=>{const v=b.dataset.sh;if(v==='share'){if(r.win&&!r.quick)openShare();else openChallenge(r.code,r.score)}else if(v==='mast')openMastery('result');else go(sh===v?'':v)});
+  $('goDet').onclick=()=>go('det');if($('r2x'))$('r2x').onclick=()=>go('');if($('r2shade'))$('r2shade').onclick=()=>go('');
+  $('rcard').querySelectorAll('[data-rc]').forEach(b=>b.onclick=()=>{const m=PL.missions.list[+b.dataset.rc];if(m.done&&!m.claimed){m.claimed=true;bank+=60;saveP();saveMeta();initAudio();sfx.coin();renderResult(line,tab)}});
+  if($('goMastery'))$('goMastery').onclick=()=>openMastery('result');
   $('again').onclick=()=>{if(r.quick)start(r.mode);else if(!r.win)start(r.mode==='challenge'?'challenge':r.mode,{lv:r.lv,seed:r.mode==='daily'?undefined:r.seed,target:r.target??undefined});else start('level',{lv:level})};
   if(r.win&&!r.rained){r.rained=true;coinRain(r.total>=4?44:28)}
-  $('goMap').onclick=openMap;$('goTown').onclick=openTown;$('goAlbum').onclick=()=>openAlbum('result');$('goMenu').onclick=openMenu;
-  if($('goShare'))$('goShare').onclick=openShare;
-  if($('goChal'))$('goChal').onclick=()=>openChallenge(r.code,r.score);
+  $('goMenu').onclick=openMenu;
   if($('openPack'))$('openPack').onclick=()=>{r.packOpened=true;packReveal(r.pack,()=>{$('pop').hidden=true;renderResult(line,tab)})};
   if($('dblPack'))$('dblPack').onclick=async()=>{const ok=await Ads.rewarded('double_pack');if(ok){r.doubled=true;r.pack=r.pack.concat(openPack(r.pack.length))}renderResult(line,tab)};
-  if($('showAll'))$('showAll').onclick=()=>{r.showAll=true;renderResult(line,'rev')};
-  $('rcard').querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>renderResult(line,b.dataset.t));
+  if($('showAll'))$('showAll').onclick=()=>{r.showAll=true;renderResult(line,tab)};
   $('marks').textContent=bank.toLocaleString('en-IN');
 }
 // ---- pack reveal ----
@@ -1717,9 +1870,11 @@ function openShare(){const r=lastRes;const c=document.createElement('canvas');c.
     txt(r.mode==='daily'?'CURRENT AFFAIRS RUN':'LEVEL '+r.lv+' CLEARED',540,250,44,'#d6336c',null);
     txt('AIR '+r.air.toLocaleString('en-IN'),540,385,150,'#14213d',null);
     txt(service(r.total).split(', ')[0],540,515,84,'#2f6bff',null);
-    txt(r.right+'/'+r.n+' correct, ×'+r.total.toFixed(1)+' rank power',540,615,38,'#5a6b8c',null);
-    if(img)sx.drawImage(img,320,700,440,484);
-    txt('Can you beat my rank?',540,1255,52,'#fff');txt('MindGains',540,1318,40,'#14213d',null);
+    txt(r.right+'/'+r.n+' correct'+(r.tier?', '+TIER_NAME[r.tier].toLowerCase():''),540,615,38,'#5a6b8c',null);
+    {const hard=r.log.filter(l=>l.ok&&!l.skipped&&String(l.q).length>=30&&!/^which pair/i.test(l.q)).sort((a,b)=>String(b.q).length-String(a.q).length)[0];if(hard){const qq=String(hard.q).replace(QF_DROP,'').replace(/\s+/g,' ');txt('I got this right',540,1150,34,'#fff');txt((qq.length>40?qq.slice(0,38).replace(/\s\S*$/,'')+'...':qq),540,1200,36,'#fff')}}
+    if(r.code)txt('Challenge code '+r.code,540,1085,34,'#14213d',null);
+    if(img)sx.drawImage(img,360,660,360,396);
+    txt('Can you beat my AIR '+r.air.toLocaleString('en-IN')+'?',540,1262,52,'#fff');txt('MindGains',540,1318,40,'#14213d',null);
     ctx=saved;const url=c.toDataURL('image/png');
     $('pcard').innerHTML=`<div class="hdr"><h3>Your share card</h3><button class="x" id="pclose">Done</button></div><img class="shareimg" src="${url}" alt="My Cut-Off Run result card"><p class="note">Long-press the image to save or share it.</p>`;
     $('pop').hidden=false;$('pclose').onclick=()=>$('pop').hidden=true};
@@ -1881,6 +2036,18 @@ function mapNode(l){const m=$('msheet'),boss=l%2===0,subs=subjFor(l),B=boss?BOSS
     ${lock?'':`<button class="btn big" id="msplay">${l<level?'Play again':'Play'}</button>`}`;
   m.hidden=false;$('msx').onclick=()=>m.hidden=true;if(!lock)$('msplay').onclick=()=>start('level',{lv:l});sfx&&sfx.pop&&sfx.pop()}
 $('mapBack').onclick=openMenu;$('mapPrac').onclick=openPractice;
+// ---- topic mastery ----
+function masteryData(){const sub={};const byId={};for(const x of allQ())byId[x.id]=x.subj;
+  for(const s of SUBJ)sub[s]={seen:0,mast:0,acc:subjAcc(s)};
+  for(const [id,q] of Object.entries(PL.q)){const s=byId[id];if(!s||!sub[s])continue;sub[s].seen++;if(q.box>=3)sub[s].mast++}
+  return SUBJ.map(s=>{const d=sub[s],pct=Math.round(100*(d.seen?(.6*(d.mast/d.seen)+.4*(d.acc||0)):0));return{s,pct,seen:d.seen,mast:d.mast,acc:d.acc}})}
+function openMastery(from){hideAll();const D=masteryData(),due=dueIds().length,weak=D.slice().sort((a,b)=>a.pct-b.pct)[0];
+  $('pcard').innerHTML=`<div class="hdr"><h2>Topic mastery</h2><button class="x" id="tmx">Back</button></div>
+   <p class="note">A topic is mastered when you get its questions right on 3 spaced reviews in a row. Wrong answers come back the same day.</p>
+   <div class="mast">${D.map(d=>`<div class="tmrow"><div class="mtop"><b>${esc(d.s)}</b><span>${d.pct}%</span></div><i class="pbar"><i style="width:${d.pct}%"></i></i><small>${d.seen} seen, ${d.mast} mastered${d.acc!=null?', '+Math.round(d.acc*100)+'% right':''}</small></div>`).join('')}</div>
+   <button class="btn" id="tmFix">${due?`Fix ${Math.min(5,due)} weak question${Math.min(5,due)>1?'s':''}`:`Practise ${esc(weak.s)}`}</button>`;
+  $('pop').hidden=false;$('pcard').scrollTop=0;$('tmx').onclick=()=>{$('pop').hidden=true;if(from==='result'&&lastRes)$('result').hidden=false;else openMenu()};
+  $('tmFix').onclick=()=>start(due?'review':'weak')}
 // ---- missions ----
 function openMissions(){hideAll();ensureMissions();const M=PL.missions,th=THEME(),stk=streakNow();
   const rows=M.list.map((m,i)=>`<div class="mis ${m.done?'done':''}"><b>${esc(missionText(m))}</b>${m.claimed?'<span class="note">Claimed</span>':m.done?`<button class="btn sm" data-c="${i}">Claim +60</button>`:`<span class="note">${m.p}/${m.goal}</span>`}<i class="pbar"><i style="width:${Math.round(m.p/m.goal*100)}%"></i></i></div>`).join('');
@@ -1933,7 +2100,7 @@ function openSettings(){hideAll();const st=PL.settings,an=!!(PL.consent&&PL.cons
     PL=JSON.parse(JSON.stringify(P0));level=1;bank=0;up={hostel:0,coaching:0,library:0,chai:0};owned={};daily={last:null,streak:0};cleared=0;raidDue=false;week={id:weekId(),score:0};EVQ=[];
     applySettings();openConsent(true)};
   $('sclose').onclick=()=>{$('pop').hidden=true;openMenu()}}
-function openConsent(first){hideAll();const c=PL.consent||{};
+function openConsent(first,after){hideAll();const c=PL.consent||{};
   $('pcard').innerHTML=`<div class="stage"><div class="bubble r">${first?'Hi! I am MIGA. Before we play, please read this.':'Here is how we use your data.'}</div>${miga('happy')}</div>
     <h2>${first?'Welcome to Cut-Off Run':'Privacy notice'}</h2>
     <p>Cut-Off Run is made by MindGains Labs. It saves your game progress (levels, answers, cards and settings) on this device. If you sign in through the MindGains app, your progress is also saved to your account.</p>
@@ -1954,7 +2121,7 @@ function openConsent(first){hideAll();const c=PL.consent||{};
     if(age==='minor'&&!$('cG').checked){$('cErr').textContent='A parent or guardian must agree before you play.';return}
     if(!$('cE').checked){$('cErr').textContent='Progress saving is needed to play the game.';return}
     PL.consent={v:1,ts:Date.now(),adult:age==='adult',guardian:age==='minor',essential:true,analytics:$('cA').checked};saveP();track('consent',{analytics:PL.consent.analytics,adult:PL.consent.adult});
-    $('pop').hidden=true;openMenu()}}
+    $('pop').hidden=true;if(after)after();else openMenu()}}
 // ---- menu ----
 const MENU_LINES=['Ready to beat the cut-off?','Every TRUE gate grows our batch!','Sure of the answer? Tap LOCK for a speed bonus.','Not sure? SKIP costs nothing. Just like UPSC negative marking!','Wrong answers come back in Review. That is how memory works!','Bosses throw compasses. Dodge the red zones!'];
 function openMenu(){hideAll();hideToast();ensureMissions();$('menu').hidden=false;$('playT').textContent='Play level '+level;$('playS').textContent=subjFor(level).slice(0,3).join(', ');
@@ -1976,13 +2143,13 @@ $('lock').addEventListener('pointerdown',e=>e.stopPropagation());$('skip').addEv
 $('play').onclick=()=>start('level',{lv:level});$('daily').onclick=()=>start('daily');$('quickBtn').onclick=()=>start(quickRemaining()>0?'quick':'review');
 $('toMap').onclick=openMap;$('toMissions').onclick=openMissions;$('toAlbum1').onclick=()=>openAlbum('menu');$('toMore').onclick=openMore;
 function openMore(){hideAll();const {myR}=leagueData(),th=THEME(),row=(id,ic,l,n)=>`<button class="btn ${n||'blue'} sm" id="${id}">${ICON[ic]}<span>${l}</span></button>`;
-  $('pcard').innerHTML=`<h2 class="ttl" style="font-size:30px">More</h2><p class="note ctr">This week: ${th.n}, ${th.subj} gates give +10</p><div class="mlist">${row('mTown','town','Study Town'+(bank>=cheapest()?', new upgrade':''),'')}${row('mLeague','cup','League, rank #'+myR,'')}${row('mStyle','shirt','Style, shirts and tracks','pink')}${row('mCode','key','Enter challenge code','pink')}${row('mSet','gear','Settings','blue')}</div><button class="x" id="mBack" style="align-self:center">Back</button>`;
-  $('pop').hidden=false;$('mTown').onclick=openTown;$('mLeague').onclick=openLeague;$('mStyle').onclick=openStyle;$('mCode').onclick=openCode;$('mSet').onclick=openSettings;$('mBack').onclick=openMenu}
+  $('pcard').innerHTML=`<h2 class="ttl" style="font-size:30px">More</h2><p class="note ctr">This week: ${th.n}, ${th.subj} gates give +10</p><div class="mlist">${row('mMast','cup','Topic mastery','')}${row('mTown','town','Study Town'+(bank>=cheapest()?', new upgrade':''),'')}${row('mLeague','cup','League, rank #'+myR,'')}${row('mStyle','shirt','Style, shirts and tracks','pink')}${row('mCode','key','Enter challenge code','pink')}${row('mSet','gear','Settings','blue')}</div><button class="x" id="mBack" style="align-self:center">Back</button>`;
+  $('pop').hidden=false;$('mTown').onclick=openTown;if($('mMast'))$('mMast').onclick=()=>openMastery('menu');$('mLeague').onclick=openLeague;$('mStyle').onclick=openStyle;$('mCode').onclick=openCode;$('mSet').onclick=openSettings;$('mBack').onclick=openMenu}
 // ---- boot ----
 if(!store.get('cor_p',null)&&matchMedia('(prefers-reduced-motion: reduce)').matches)PL.settings.motion=false;
 applySettings();ensureMissions();
 Remote.loadTuning();Remote.loadQuestions(typeof subjFor==="function"?subjFor(level):null);Remote.league();
-if(!PL.consent)openConsent(true);else openMenu();
+openMenu(); // play first: the privacy and age sheet comes after the first run
 track('app_open',{v:CONFIG.version,q:allQ().length});
 
 let fpsAcc=0,fpsN=0;

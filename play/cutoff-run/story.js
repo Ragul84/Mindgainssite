@@ -32,8 +32,10 @@ const CH=[
   line:'Appa: Tamil Nadu will be proud. Now go serve your district.'}
 ];
 ST.CH=CH;
-const chOf=l=>CH[Math.floor((Math.max(1,l)-1)/LV_PER_CH)%CH.length];
-const chIdx=l=>Math.floor((Math.max(1,l)-1)/LV_PER_CH)%CH.length;
+// Story chapters up to STORY_OPEN, then the Exam Season replays the open chapters' scenery with harder questions.
+const OPENL=()=>typeof STORY_OPEN==='function'?STORY_OPEN():24,OPENC=()=>Math.max(1,Math.min(CH.length,OPENL()/LV_PER_CH));
+const chIdx=l=>{l=Math.max(1,l);const o=OPENL();return l<=o?Math.floor((l-1)/LV_PER_CH)%CH.length:Math.floor((l-o-1)/LV_PER_CH)%OPENC()};
+const chOf=l=>CH[chIdx(l)];window.OPENL=OPENL;
 ST.chOf=chOf;ST.chIdx=chIdx;
 ST.isBossLevel=l=>l%LV_PER_CH===0;
 window.storyIsBossLevel=ST.isBossLevel;
@@ -272,13 +274,16 @@ function bld(g,k){g.translate(85,326);rrp(g,-78,-300,156,300,4);fs(g,'#e6d5bf',4
 for(let i=0;i<5;i++)PROPS['bld'+i]=[6.2,170,330,g=>bld(g,i)];
 const SETS={village:['hut','palm','banyan','hay','marigold','palm'],coaching:['bld0','chaiStall','bld1','xerox','bld2','lamp','bld3','bld4'],library:['shelf','readDesk','shelf','globe','shelf','lamp'],exam:['examDesk','examDesk','cooler','plant','examDesk','lamp'],
  mains:['paper','pen','paper','ink','paper','paper'],interview:['hedge','sandLamp','chhatri','fountain','hedge','sandLamp'],academy:['pine','cottage','pine','bench','flag','pine'],chennai:['palm','auto','boat','lamp','palm','auto']};
-function propSprite(k){const d=PROPS[k];return sprite('p_'+k,d[1],d[2],d[3])}
+const PADX=k=>Math.round(PROPS[k][1]*.4),PADT=k=>Math.round(PROPS[k][2]*.22);
+function propSprite(k){const d=PROPS[k],px=PADX(k),pt=PADT(k);return sprite('p2_'+k,d[1]+2*px,d[2]+pt,g=>{g.translate(px,pt);d[3](g)})}
+const propH=k=>PROPS[k][0]*(PROPS[k][2]+PADT(k))/PROPS[k][2];
 ST.propSprite=propSprite;ST.PROPS=PROPS;
 function h32(n){n=(n^61)^(n>>>16);n=n+(n<<3)|0;n^=n>>>4;n=Math.imul(n,0x27d4eb2d);return(n^(n>>>15))>>>0}
 ST.sideProps=function(D){const C=S.story.ch,set=SETS[C.k],step=window.__lowQ?9:6,lim=Math.min(camZ+70,S.ladderZ-3);
   for(let z=Math.ceil((camZ+1)/step)*step;z<lim;z+=step){const h=h32(z|0);for(const sg of[-1,1]){const hh=h32(h+(sg>0?7:3));if(hh%5===0)continue;const k=set[hh%set.length],d=PROPS[k];const big=d[0]>3;
     const x=sg*(big?(C.k==='coaching'?4.6:4.3):3.1+(hh%3)*.35),zz=z+(hh%100)/100*2;if(C.k==='chennai'&&(k==='boat'))continue;
-    D.push({z:zz,f:()=>{const p=P(x,0,zz);if(!p)return;blit(propSprite(k),p[0],p[1],p[2],d[0])}})}}};
+    D.push({z:zz,f:()=>{const p=P(x,0,zz);if(!p)return;const c=propSprite(k),hp=p[2]*propH(k),wp=hp*c.width/c.height*.6,l=p[0]-wp/2,r=p[0]+wp/2,vis=Math.max(0,Math.min(r,W)-Math.max(l,0))/Math.max(1,wp);
+      if(vis<.35)return;blit(c,p[0],p[1],p[2],propH(k),vis<.75?(vis-.35)/.4:null)}})}}};
 })();
 
 (function(){
@@ -433,7 +438,10 @@ window.storyNewRun=function(mode,lv,seed){
   const Q=S.items.filter(i=>i.type==='quiz').sort((a,b)=>a.z-b.z),lane=()=>[-1.2,0,1.2][(r()*3)|0];
   const mid=i=>Q[i+1]?(Q[i].z+Q[i+1].z)/2:Q[i].z+8;
   if(Q[0])S.story.items.push({k:'chai',z:mid(0),x:lane()});
-  if(Q[1]&&mode!=='daily')S.story.items.push({k:'scroll',z:mid(1),x:lane()});
+  // golden scroll goes in the longest stretch that has no arena or road split, so it never lands right next to another question
+  if(Q[1]&&mode!=='daily'){const E=S.items.filter(i=>i.type==='quiz'||['shoot','boss','branch'].includes(i.type)).sort((a,b)=>a.z-b.z);let bz=null,bg=0;
+    for(let i=0;i<E.length-1;i++){if(E[i].type!=='quiz')continue;const g=E[i+1].z-E[i].z;const free=g-(E[i+1].type==='quiz'||E[i+1].type==='branch'?PACE_D:0);if(free>bg){bg=free;bz=E[i].z+free/2}}
+    if(bz!=null)S.story.items.push({k:'scroll',z:bz,x:lane()})}
   if(Q.length>3&&mode==='level'&&!SP().letters[ci]&&lv%3!==0)S.story.items.push({k:'letter',z:mid(2),x:r()<.5?-1.55:1.55});
   if(mode==='level')banner(ch.n,'Chapter '+(ci+1)+', level '+((lv-1)%3+1)+' of 3'+(lv%3===0?', boss level':''),2)};
 // ---------- hero stage changes ----------
@@ -517,7 +525,12 @@ window.storyOverlay=function(){const s=S&&S.story;if(!s)return;
       ctx.globalAlpha=Math.max(0,1-u/1.2);for(let i=0;i<10;i++){const a=i*.628+u*3,r=R*(.4+u*.6);ctx.fillStyle=i%2?'#ffd23f':'#fff';ctx.beginPath();ctx.arc(Math.cos(a)*r,Math.sin(a)*r,4,0,6.283);ctx.fill()}}
     else{ctx.globalAlpha=Math.max(0,.6-u);ctx.strokeStyle='#ff4d5e';ctx.lineWidth=6;ctx.beginPath();ctx.arc(0,0,R*.5,0,6.283);ctx.stroke()}
     ctx.restore()}
-  if(S.chai>0&&S.phase!=='done'){const x=W-114,y=H*.56;ctx.fillStyle='rgba(20,33,61,.85)';rrp(ctx,x,y,104,34,17);ctx.fill();ctx.drawImage(itemSprite('chai'),x+2,y-2,38,38);ctx.font='16px "Lilita One",sans-serif';ctx.fillStyle='#fff';ctx.textAlign='left';ctx.textBaseline='middle';ctx.fillText('x'+S.chai+' revive',x+40,y+18)}
+  if(S.chai>0&&S.phase!=='done'){const hud=document.querySelector('.hud'),hb=hud?hud.getBoundingClientRect():null,cr=cv.getBoundingClientRect();
+    const r=17,x=14+r,y=(hb?hb.bottom-cr.top:64)+10+r,gt=s.chaiGot==null?(s.chaiGot=S.t):s.chaiGot,pop=Math.max(0,1-(S.t-gt)*2.5),k=1+pop*.35;
+    ctx.save();ctx.translate(x,y);ctx.scale(k,k);ctx.globalAlpha=.94;ctx.fillStyle='#fff';ctx.strokeStyle='rgba(20,33,61,.9)';ctx.lineWidth=2;ctx.beginPath();ctx.arc(0,0,r,0,6.283);ctx.fill();ctx.stroke();
+    ctx.drawImage(itemSprite('chai'),-r+3,-r+1,2*r-6,2*r-6);
+    if(S.chai>1){ctx.fillStyle='#f2601a';ctx.beginPath();ctx.arc(r*.75,-r*.75,8,0,6.283);ctx.fill();ctx.font='11px "Lilita One",sans-serif';ctx.fillStyle='#fff';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(S.chai,r*.75,-r*.75+.5)}
+    ctx.restore()}else if(s)s.chaiGot=null;
   ST.bossHud&&ST.bossHud();
   if(s.arrive&&s.arrive.t>.9){ctx.globalAlpha=Math.min(1,(s.arrive.t-.9)*3);bubble(s.ch.line,W/2,H*.2,Math.min(W*.86,340));
     txt(s.ch.n.toUpperCase()+(s.final?': CHAPTER COMPLETE':''),W/2,H*.2-24,s.final?20:18,'#ffd23f');ctx.globalAlpha=1}};
@@ -539,20 +552,20 @@ document.head.appendChild(css);
 const BAND={village:['#bfe6a0','#9fd47f'],coaching:['#f3d9b5','#e6c290'],library:['#e9d6bd','#d6bb96'],exam:['#dfe6f2','#c3cfe2'],mains:['#efe4cf','#dcc9a5'],interview:['#f2d7b8','#e3b88c'],academy:['#cfe8d2','#a8d3ae'],chennai:['#bfe7f2','#f3e1b0']};
 const LAND={village:'hut',coaching:'bld1',library:'shelf',exam:'examDesk',mains:'paper',interview:'chhatri',academy:'pine',chennai:'boat'};
 window.openMap=function(){hideAll();const ov=$('mapov');ov.hidden=false;$('msheet').hidden=true;const SP=ST.SP();
-  const N=Math.max(9,Math.ceil((level+4)/3)*3),cw=Math.min(ov.clientWidth||390,480),GAP=124,BOT=150,TOPP=260,H=BOT+(N-1)*GAP+TOPP;
+  const OP=OPENL(),SOON=OP<CH.length*3?1:0,N=Math.max(9,Math.ceil((Math.max(level,OP)+(level>OP?4:1))/3)*3),cw=Math.min(ov.clientWidth||390,480),GAP=124,BOT=150,TOPP=260,H=BOT+(N-1)*GAP+TOPP;
   const X=l=>Math.round(cw/2+Math.sin(l*1.1+.5)*cw*.26),Y=l=>H-BOT-(l-1)*GAP;let rs=11;const r2=()=>(rs=(rs*16807)%2147483647)/2147483647;
   let bg='',dec='',top='';const nC=N/3;
-  for(let c=0;c<nC;c++){const ch=CH[c%8],y1=c===0?H:Y(c*3+1)+GAP/2,y0=c===nC-1?0:Y(c*3+3)-GAP/2,[a,b]=BAND[ch.k];
+  for(let c=0;c<nC;c++){const ch=CH[ST.chIdx(c*3+1)],y1=c===0?H:Y(c*3+1)+GAP/2,y0=c===nC-1?0:Y(c*3+3)-GAP/2,[a,b]=BAND[ch.k];
     bg+=`<rect x="0" y="${y0}" width="${cw}" height="${y1-y0}" fill="${a}"/>`;for(let k=0;k<10;k++)bg+=`<ellipse cx="${r2()*cw}" cy="${y0+r2()*(y1-y0)}" rx="${12+r2()*18}" ry="${4+r2()*4}" fill="${b}" opacity=".8"/>`;
     if(c>0)bg+=`<path d="M0 ${y1}h${cw}" stroke="#14213d" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round" opacity=".35"/>`;
     const sy=Y(c*3+2),side=X(c*3+2)>cw/2?-1:1,sx=side<0?Math.max(70,X(c*3+2)-125):Math.min(cw-70,X(c*3+2)+125);
-    dec+=signSVG(sx,sy-34,'Ch '+(c%8+1)+': '+ch.n);
+    dec+=signSVG(sx,sy-34,c*3<OP?'Ch '+(c+1)+': '+ch.n:'Exam Season '+(Math.floor((c*3-OP)/30)+1));
     const pk=LAND[ch.k],L=ST.propSprite&&ST.propSprite(pk);if(L)dec+=`<image href="${img('p_'+pk,()=>L)}" x="${sx-34}" y="${sy-12}" width="68" height="${68*L.height/L.width}"/>`;
     // family arch at chapter end
     const fy=Y(c*3+3)-6,fx=X(c*3+3)>cw/2?Math.max(52,X(c*3+3)-118):Math.min(cw-52,X(c*3+3)+118);
     dec+=`<image href="${img('fam',()=>ST.famSprite('amma',0))}" x="${fx-30}" y="${fy-50}" width="30" height="58"/><image href="${img('fam2',()=>ST.famSprite('appa',1))}" x="${fx}" y="${fy-50}" width="30" height="58"/>`;
     // collectibles hint
-    const got=!!SP.letters[c%8],ly=Y(c*3+1)-20,lx=X(c*3+1)>cw/2?28:cw-28;
+    const got=!!SP.letters[ST.chIdx(c*3+1)],ly=Y(c*3+1)-20,lx=X(c*3+1)>cw/2?28:cw-28;
     dec+=`<image href="${img('it_letter',()=>ST.itemSprite('letter'))}" x="${lx-18}" y="${ly-18}" width="36" height="36" opacity="${got?1:.35}"/>`;
     dec+=`<image href="${img('it_chai',()=>ST.itemSprite('chai'))}" x="${(lx<cw/2?cw-60:30)}" y="${Y(c*3+2)+30}" width="30" height="30"/>`;
     dec+=`<image href="${img('it_scroll',()=>ST.itemSprite('scroll'))}" x="${(lx<cw/2?cw-56:26)}" y="${Y(c*3+1)+28}" width="30" height="30"/>`}
@@ -563,19 +576,20 @@ window.openMap=function(){hideAll();const ov=$('mapov');ov.hidden=false;$('mshee
   dec+=`<g transform="translate(${X(1)-70} ${H-26})">${decoSVG('house',0,0,1.15)}</g>`+signSVG(Math.min(cw-62,X(1)+78),H-34,'Home village');
   const fogY=Y(Math.min(N,level+3))-GAP*.4;
   const fog=`<defs><linearGradient id="mfog" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".97"/><stop offset=".75" stop-color="#fff" stop-opacity=".82"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs><rect x="0" y="0" width="${cw}" height="${fogY}" fill="url(#mfog)"/>
-    <g transform="translate(${cw/2} 120)"><text y="0" text-anchor="middle" font-family="Lilita One,system-ui" font-size="22" fill="#14213d">The Officer Journey</text><text y="22" text-anchor="middle" font-family="system-ui" font-weight="700" font-size="12" fill="#4a5875">8 chapters from your village to the finale</text></g>`;
+    <g transform="translate(${cw/2} 120)"><text y="0" text-anchor="middle" font-family="Lilita One,system-ui" font-size="22" fill="#14213d">The Officer Journey</text><text y="22" text-anchor="middle" font-family="system-ui" font-weight="700" font-size="12" fill="#4a5875">${OP/3} story chapters, then the endless Exam Season</text></g>`;
   let nodes='';const lockI='<svg class="lk" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="12" rx="3" fill="#5d6884"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="#5d6884" stroke-width="3"/></svg>';
-  for(let l=1;l<=N;l++){const boss=ST.isBossLevel(l),st=PL.stars[l]||0,cls=l<level?'done':l===level?'cur':'lock',ch=ST.chOf(l),D=boss?ST.DEF[ch.boss]:null;
-    nodes+=`<button class="mnd ${cls}${boss?' boss':''}" data-l="${l}" style="left:${X(l)}px;top:${Y(l)}px" aria-label="Level ${l}">${boss?`<img class="bimg" src="${img('b_'+ch.boss,()=>ST.bossSprite(ch.boss))}" alt=""><span class="bt" style="background:${D.c}">BOSS</span>`:''}${cls==='lock'?lockI:l}${l<level?`<span class="ms">${[0,1,2].map(i=>`<span class="${i<st?'on':''}">★</span>`).join('')}</span>`:''}</button>`}
+  for(let l=1;l<=N;l++){const boss=ST.isBossLevel(l),st=PL.stars[l]||0,cls=l<level?'done':l===level?'cur':'lock',ch=ST.chOf(l),D=boss?ST.DEF[ch.boss]:null,tr=levelTier(l),sea=l>OP;
+    nodes+=`<button class="mnd ${cls}${boss?' boss':''}${sea?' season':''}" data-l="${l}" style="left:${X(l)}px;top:${Y(l)}px" aria-label="${lvName(l)}">${boss?`<img class="bimg" src="${img('b_'+ch.boss,()=>ST.bossSprite(ch.boss))}" alt=""><span class="bt" style="background:${D.c}">BOSS</span>`:''}${cls==='lock'?lockI:sea?l-OP:l}${tr&&!boss?`<span class="tier t${tr}">${tr===2?'SUPER':'HARD'}</span>`:''}${l<level?`<span class="ms">${[0,1,2].map(i=>`<span class="${i<st?'on':''}">★</span>`).join('')}</span>`:''}</button>`}
+  if(SOON){const nx=CH[OP/3];const mx=(X(OP)+X(OP+1))/2,sxp=mx>cw/2?Math.max(108,mx-150):Math.min(cw-108,mx+150);nodes+=`<div class="msoon" style="left:${sxp}px;top:${Y(OP)-GAP*.5}px"><b>Coming soon</b>Ch ${OP/3+1}: ${esc(nx.n)}. Exam Season is open now</div>`}
   const cl=Math.min(level,N),hs=Math.max(SP.best||0,ST.chOf(cl).base);
   nodes+=`<div class="mpin hero" style="left:${X(cl)}px;top:${Y(cl)-(ST.isBossLevel(cl)?40:30)}px"><img src="${img('hero'+hs,()=>ST.heroSprite(hs,'front','cheer',0))}" alt=""></div>`;
   $('mworld').style.width=cw+'px';$('mworld').style.height=H+'px';$('mworld').innerHTML=`<svg class="mbg" width="${cw}" height="${H}" viewBox="0 0 ${cw} ${H}" aria-hidden="true">${bg}${road}${dec}${fog}</svg>`+nodes;
-  $('mapReg').textContent=ST.chOf(level).n+', Level '+level;$('mapStars').textContent='★ '+totalStars();
+  $('mapReg').textContent=level>OP?lvName(level):ST.chOf(level).n+', Level '+level;$('mapStars').textContent='★ '+totalStars();
   const due=dueIds().length;$('mapDue').hidden=!due;$('mapDue').textContent=due;
   const sc=$('mscroll');requestAnimationFrame(()=>{sc.scrollTop=Math.max(0,Y(cl)-sc.clientHeight*.62)});
   $('mworld').querySelectorAll('.mnd').forEach(b=>b.onclick=()=>mapNode(+b.dataset.l))};
 window.mapNode=function(l){const m=$('msheet'),boss=ST.isBossLevel(l),ch=ST.chOf(l),ci=ST.chIdx(l),subs=subjFor(l),D=boss?ST.DEF[ch.boss]:null,st=PL.stars[l]||0,lock=l>level,SP=ST.SP();
-  m.innerHTML=`<div class="mh"><h3>Chapter ${ci+1}, level ${(l-1)%3+1}</h3><button class="x" id="msx">Close</button></div>
+  m.innerHTML=`<div class="mh"><h3>${l>OPENL()?esc(lvName(l)):`Chapter ${ci+1}, level ${(l-1)%3+1}`}${levelTier(l)?', '+TIER_NAME[levelTier(l)].toLowerCase():''}</h3><button class="x" id="msx">Close</button></div>
     <div class="mrow2"><span class="chip theme">${esc(ch.n)}</span>${subs.map(x=>`<span class="chip">${esc(x)}</span>`).join('')}</div>
     <div class="foe"><i style="background:${boss?D.c:'#8be36b'}"></i>${boss?'Boss: '+esc(D.n)+', answers in '+esc(D.sub==='MIX'?'all subjects':D.w):'Run, choose your road, grow as '+esc(STAGES[ch.base].n)}</div>
     <div><span class="mchip"><img src="${img('it_scroll',()=>ST.itemSprite('scroll'))}">Golden PYQ scroll, 3x marks</span><span class="mchip"><img src="${img('it_chai',()=>ST.itemSprite('chai'))}">Chai cup, free revive</span></div>
