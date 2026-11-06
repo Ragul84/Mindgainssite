@@ -93,6 +93,7 @@ export class Menu {
       <div class="title-actions">
         <button type="button" class="btn primary play-btn">TODAY'S RACE<small class="play-sub">Today's news, raced in 3 minutes</small></button>
         <button type="button" class="btn resume-btn hidden">RESUME CUP</button>
+        <button type="button" class="title-archive">Past months · UPSC · TNPSC · SSC lessons ›</button>
         <div class="title-row">
           <button type="button" class="btn affairs-btn">BHARAT YATRA</button>
           <button type="button" class="btn quick-btn">QUICK RACE</button>
@@ -120,6 +121,12 @@ export class Menu {
     t.querySelector('.affairs-btn').addEventListener('click', (e) => {
       e.stopPropagation();
       this.h.onMap?.();
+    });
+    // The month archive (every card since April) and the syllabus lessons live on the journey map.
+    t.querySelector('.title-archive').addEventListener('click', (e) => {
+      e.stopPropagation();
+      bus.emit('ui:confirm');
+      this.h.onJourney?.();
     });
     this.playSub = t.querySelector('.play-sub');
     t.querySelector('.board-btn').addEventListener('click', (e) => {

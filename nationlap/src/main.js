@@ -760,6 +760,7 @@ const menu = new Menu(uiRoot, {
   onQuit: () => goToTitle(),
   // The title's map is Bharat Yatra now; the syllabus journey stays reachable from a Ready card.
   onMap: () => yatra.open(),
+  onJourney: () => journeyMap.open(),
   // quick race is topic-less on purpose: clear any zone left over from a previous journey run,
   // or its billboards and quiz pool would leak into a race the player didn't pick a topic for
   // ...and it goes straight onto the track: a single race, no cup, no topic, no Ready card
