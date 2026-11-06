@@ -2036,3 +2036,144 @@ body:has(.ready-screen.active, .avatar-screen.active, .pause-screen.active, .loa
   .title-row .quick-btn, .title-row .board-btn { flex: 1 1 calc(50% - 4px); }
   body.touch-mode[data-state="title"] .hof-strip { top: auto; bottom: calc(8vh + 262px + env(safe-area-inset-bottom, 0px)); width: min(340px, 90vw); }
 }
+
+/* ---------------------------------------------------------------- title layout v2
+   One column, top to bottom: wordmark, actions, Hall of Fame. Before this the wordmark was
+   sized by width only and the actions and the strip were each pinned to their own bottom
+   offset, so a wide-but-short window (or a zoomed browser) slid LAP under PLAY and the strip
+   over the tagline. Now the wordmark is capped by height too, the actions sit in the flow, and
+   the bottom padding reserves the strip's room, so nothing on this screen can overlap. */
+.title-screen { justify-content: space-between; gap: 18px;
+  padding: max(84px, calc(8vh + env(safe-area-inset-top, 0px))) 24px calc(118px + env(safe-area-inset-bottom, 0px)); box-sizing: border-box; }
+.title-screen .game-rail { display: none; }
+.title-screen .logo { margin-top: 0; flex: 0 1 auto; }
+.title-screen .logo-line.l1 { font-size: clamp(46px, min(13vw, 16vh), 190px); }
+.title-screen .logo-line.l2 { font-size: clamp(32px, min(6.6vw, 8vh), 96px); }
+.title-screen .title-actions { position: relative; bottom: auto; left: auto; transform: none; margin-top: auto; width: min(560px, 92vw); gap: 12px; }
+.title-screen .play-btn { width: min(340px, 80vw); }
+/* the three secondaries are one set: same size, same type, one line each */
+.title-screen .title-row { flex-wrap: nowrap; gap: 10px; }
+.title-screen .title-row .btn { flex: 1 1 0; min-width: 0; font-size: clamp(14px, 1.4vw, 17px); padding: 13px 10px; white-space: nowrap; letter-spacing: .6px; line-height: 1.1; }
+.title-screen .title-foot { justify-content: flex-start; left: 24px; right: auto; bottom: 16px; font-size: 12px; opacity: .7; }
+
+/* Hall of Fame strip in the game's own language: the indigo button panel, white rim, gold label */
+.hof-strip { bottom: calc(14px + env(safe-area-inset-bottom, 0px)); max-width: min(560px, 92vw); width: min(560px, 92vw); box-sizing: border-box;
+  padding: 10px 16px 11px; border-radius: 16px; gap: 4px 12px;
+  background: linear-gradient(180deg, rgba(74, 91, 216, .94) 0%, rgba(44, 53, 160, .94) 100%);
+  border: 3px solid rgba(255, 255, 255, .9); box-shadow: 0 6px 0 #161b5c, 0 10px 20px rgba(0, 0, 0, .3);
+  color: #fff; font-size: 13.5px; text-shadow: 0 1px 0 rgba(0, 0, 0, .25); }
+.hof-strip b { font-family: var(--display); font-weight: 400; color: #ffd23f; font-size: 14px; letter-spacing: .12em; text-shadow: 0 2px 0 rgba(0, 0, 0, .3); }
+.hof-strip .hs-row i { color: #c9d0ff; }
+.hof-strip .hs-row.top i, .hof-strip .hs-row em { color: #ffd23f; }
+body.touch-mode[data-state="title"] .hof-strip { top: auto !important; bottom: calc(14px + env(safe-area-inset-bottom, 0px)) !important; width: min(560px, 92vw) !important; }
+
+@media (max-width: 900px) { .title-screen .title-foot { display: none; } }
+@media (max-width: 560px) {
+  .title-screen { padding-bottom: calc(112px + env(safe-area-inset-bottom, 0px)); gap: 12px; }
+  .title-screen .title-row { flex-wrap: wrap; gap: 8px; }
+  .title-screen .title-row .btn { font-size: 14px !important; padding: 11px 8px !important; }
+  .title-screen .title-row .affairs-btn { flex: 1 1 100%; }
+  .title-screen .title-row .quick-btn, .title-screen .title-row .board-btn { flex: 1 1 calc(50% - 4px); }
+  .hof-strip { font-size: 12.5px; padding: 8px 12px 9px; }
+}
+@media (max-height: 460px) and (orientation: landscape) {
+  .title-screen { padding-top: 56px; padding-bottom: 92px; gap: 8px; }
+  .title-screen .logo-line.l1 { font-size: clamp(36px, 15vh, 90px); }
+  .title-screen .logo-line.l2 { font-size: clamp(24px, 8vh, 50px); }
+}
+
+/* TODAY'S RACE: the front door, with the streak line under the label */
+.title-screen .play-btn { display: flex; flex-direction: column; align-items: center; gap: 3px; line-height: 1; }
+.play-sub { font-family: var(--body); font-weight: 800; font-size: clamp(11px, 1.1vw, 13px); letter-spacing: .2px; text-shadow: none; color: rgba(255, 255, 255, .92); }
+/* finish card: streak + share, under the recap */
+.res-share { margin-top: 10px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.rs-streak { font-family: var(--body); font-weight: 800; font-size: 15px; color: #ffd23f; }
+.rs-streak:empty { display: none; }
+.rs-btns { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.res-share .btn.small { min-width: 0; font-size: 14px; padding: 9px 14px; }
+.res-share .rs-wa { background: linear-gradient(180deg, #4ee07a 0%, #1fa855 100%); box-shadow: 0 5px 0 #13703a, 0 8px 16px rgba(0, 0, 0, .3); }
+
+/* ---------------------------------------------------------------- affairs brief v2
+   The news gets the parchment. Before, the big title, rule, subtitle and a four-step rules
+   box took about two thirds of it, and the facts read through a slot at the bottom. Now the
+   header is one small line, the rules are one line on the first two races only, and the list
+   takes every pixel left between the header and START. */
+.si-affairs-mode .si-stage { width: min(760px, 94vw); margin-top: 8px; }
+.si-affairs-mode .si-parchment { padding: 14px 22px 20px; }
+.si-affairs-mode .si-rule { display: none; }
+.si-affairs-mode .si-title { display: inline; font-size: clamp(16px, 1.8vw, 20px); letter-spacing: .06em; margin: 0; }
+.si-affairs-mode .si-affairs { margin-top: 0; }
+.si-affairs-mode .si-aff-meta { display: inline; margin: 0 0 0 10px; font-size: clamp(10px, 1.1vw, 12px); letter-spacing: .14em; }
+.si-aff-how { flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 8px; max-width: none;
+  margin: 8px auto 0; padding: 6px 10px; text-align: center; font-size: clamp(11.5px, 1.2vw, 13px); font-weight: 700;
+  background: rgba(255, 255, 255, .45); border: 0; border-radius: 999px; }
+.si-aff-how i { font-style: normal; color: #b98a3c; font-weight: 900; }
+.si-affairs-mode .si-aff-list { max-width: 72ch; margin-top: 10px; padding: 14px 18px;
+  max-height: calc(100dvh - 190px) !important; min-height: 160px; }
+.si-affairs-mode .si-aff-how:not([hidden]) ~ .si-aff-list { max-height: calc(100dvh - 228px) !important; }
+.si-affairs-mode .si-aff-list li { font-size: clamp(14px, 1.45vw, 17px); line-height: 1.5; margin-bottom: 12px; }
+.si-affairs-mode .si-start { margin-top: 10px; min-height: 48px; }
+.si-affairs-mode .si-seal { top: -12px; left: -8px; transform: scale(.72); }
+@media (max-width: 560px) {
+  .si-affairs-mode .si-parchment { padding: 12px 14px 18px; }
+  .si-affairs-mode .si-aff-meta { display: block; margin: 2px 0 0; }
+  .si-affairs-mode .si-aff-list { padding: 12px 12px; max-height: calc(100dvh - 205px) !important; }
+  .si-affairs-mode .si-aff-how:not([hidden]) ~ .si-aff-list { max-height: calc(100dvh - 262px) !important; }
+}
+@media (max-height: 520px) {
+  .si-affairs-mode .si-aff-list { max-height: calc(100dvh - 150px) !important; }
+  .si-affairs-mode .si-aff-how:not([hidden]) ~ .si-aff-list { max-height: calc(100dvh - 186px) !important; }
+}
+
+/* ---------------------------------------------------------------- title v3: fewer things
+   Wordmark, one primary, three secondaries, and (only when there are names) one quiet line of
+   today's toppers. The tagline repeated the primary button's own sub-line, and the footer was
+   a copyright and a keyboard hint nobody needs on the first screen. */
+.title-screen .title-tagline, .title-screen .title-foot { display: none; }
+.title-screen { padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
+.hof-strip { flex-wrap: nowrap; gap: 14px; width: auto !important; max-width: min(620px, 92vw); padding: 8px 16px; border-radius: 999px;
+  background: rgba(16, 20, 52, .62); border: 1px solid rgba(255, 255, 255, .22); box-shadow: none; backdrop-filter: blur(6px);
+  font-size: 13px; white-space: nowrap; overflow: hidden; }
+.hof-strip.empty { display: none !important; }
+.hof-strip b { width: auto; font-family: var(--body); font-weight: 800; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #ffd23f; text-shadow: none; }
+.hof-strip .hs-row { overflow: hidden; text-overflow: ellipsis; }
+body.touch-mode[data-state="title"] .hof-strip { width: auto !important; }
+@media (max-width: 560px) { .title-screen { padding-bottom: calc(66px + env(safe-area-inset-bottom, 0px)); } .hof-strip { gap: 10px; font-size: 12px; } }
+.hof-strip:empty { display: none !important; }
+@media (max-width: 560px) { .si-aff-how i { display: none; } .si-aff-how span:not(:last-child)::after { content: ' ·'; color: #b98a3c; } }
+
+/* ---------------------------------------------------------------- Bharat Yatra */
+.yatra { position: absolute; inset: 0; z-index: 40; display: flex; align-items: center; justify-content: center; padding: 16px;
+  background: radial-gradient(ellipse at center, rgba(20, 26, 80, .78), rgba(8, 10, 30, .92)); pointer-events: auto; }
+.yatra.hidden { display: none; }
+.yt-panel { width: min(900px, 96vw); max-height: 94dvh; overflow: auto; padding: 18px 20px 20px; border-radius: 20px; box-sizing: border-box;
+  background: linear-gradient(180deg, #2c35a0, #1b2170); border: 3px solid rgba(255, 255, 255, .9); box-shadow: 0 8px 0 #11154a, 0 20px 40px rgba(0, 0, 0, .45);
+  display: flex; flex-direction: column; gap: 14px; color: #fff; }
+.yt-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.yt-title { font-family: var(--display); font-size: clamp(24px, 3vw, 34px); color: #ffd23f; letter-spacing: 1px; text-shadow: 0 3px 0 rgba(0, 0, 0, .35); }
+.yt-sub { font-family: var(--body); font-weight: 700; font-size: 14px; opacity: .85; }
+.yt-head .btn.small, .yt-panel .btn.small { min-width: 0; font-size: 14px; padding: 8px 14px; }
+.yt-body { display: flex; gap: 18px; align-items: center; justify-content: center; flex-wrap: wrap; }
+.yt-map { position: relative; flex: none; }
+.yt-tile { position: absolute; width: 44px; height: 44px; border-radius: 10px; border: 2px solid rgba(255, 255, 255, .35); cursor: pointer;
+  background: rgba(255, 255, 255, .1); color: #fff; font-family: var(--display); font-size: 13px; letter-spacing: .5px; padding: 0;
+  transition: transform .12s ease, background .15s; }
+.yt-tile:hover { transform: translateY(-2px); background: rgba(255, 255, 255, .2); }
+.yt-tile.tried { background: rgba(255, 210, 63, .22); border-color: rgba(255, 210, 63, .6); }
+.yt-tile.done { background: linear-gradient(180deg, #ffd23f, #f29b1f); color: #3a2400; border-color: #fff; }
+.yt-tile.on { outline: 3px solid #fff; outline-offset: 2px; }
+.yt-tile i { position: absolute; top: -6px; right: -6px; width: 16px; height: 16px; border-radius: 50%; background: #1fa855; color: #fff;
+  font-style: normal; font-size: 10px; line-height: 16px; border: 2px solid #fff; }
+.yt-card { flex: 1 1 240px; max-width: 320px; padding: 16px; border-radius: 14px; background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .2);
+  display: flex; flex-direction: column; gap: 8px; align-items: flex-start; font-family: var(--body); }
+.yt-hint { font-weight: 700; font-size: 15px; line-height: 1.45; opacity: .9; }
+.yt-name { font-family: var(--display); font-size: 26px; line-height: 1.1; }
+.yt-tag { font-weight: 700; font-size: 14px; opacity: .8; }
+.yt-best { font-weight: 800; font-size: 13px; color: #ffd23f; }
+.yt-go { min-width: 0; width: 100%; font-size: 18px; padding: 12px 14px; margin-top: 4px; }
+.yt-share { align-self: center; background: linear-gradient(180deg, #4ee07a 0%, #1fa855 100%); box-shadow: 0 5px 0 #13703a; }
+@media (max-width: 560px) {
+  .yt-panel { padding: 14px 12px; }
+  .yt-map { transform: scale(.78); transform-origin: top center; margin-bottom: -76px; }
+  .yt-card { max-width: none; }
+}

@@ -12,18 +12,25 @@
  *   POST /api/game/submit      {token, answers:[{id,c,ms}], lv, seed, win, score, device}
  *   GET  /api/game/league?week=ID
  *   GET  /api/game/challenge?code=CR..
+ *   Daily Paper, All-India Mock, groups, Bharat Board: see game-social.js
  *
  * Bindings: QUIZ_SECRET (existing secret), GAME_DB (D1, new), GAME_ROUND_RL + GAME_SUBMIT_RL
  * (rate limit, new). Optional vars: SUPABASE_URL, SUPABASE_ANON_KEY, PROFILE_TABLE.
  */
 
 import { redisReady, redisRound, redisById, examList, BANK_EXAMS } from './redisbank.js';
+import { makeSocial, cleanState } from './game-social.js';
 
 const ROUND_MAX = 30;
 const ROUND_TTL_MS = 30 * 60 * 1000;
 const DAILY_CAP = 3000;
 const ROUND_CAP = 600;
-const SUBJECTS = ['Polity', 'History', 'Geography', 'Economy', 'Environment', 'Science', 'Current Affairs', 'CSAT'];
+const SUBJECTS = ['Polity', 'History', 'Geography', 'Economy', 'Environment', 'Science', 'Current Affairs', 'CSAT', 'Physics', 'Chemistry', 'Biology'];
+const GS = ['Polity', 'History', 'Geography', 'Economy', 'Environment', 'Science'];
+// Entrance-exam tracks run on the NCERT Class 11 and 12 sets only (legacy JSON, no Redis, no PYQ gates yet).
+// JEE has no Class 11-12 Maths set yet, so it is Physics and Chemistry for now.
+export const TRACKS = { neet: ['Physics', 'Chemistry', 'Biology'], jee: ['Physics', 'Chemistry'] };
+const GAME_EXAMS = BANK_EXAMS.concat(Object.keys(TRACKS));
 
 // Game subject -> quiz-data sets. Exam-wide general studies only; state-specific sets are left out.
 const SETS = {
@@ -34,6 +41,9 @@ const SETS = {
   Environment: ['upsc/environment/biodiversity', 'upsc/environment/climate-change', 'upsc/environment/ecology-basics', 'upsc/environment/env-laws', 'upsc/environment/pollution', 'upsc/environment/protected-areas', 'upsc/geography/environment-eco', 'ssc/geography/environment'],
   Science: ['upsc/science/biology', 'upsc/science/biotech', 'upsc/science/chemistry', 'upsc/science/defence-tech', 'upsc/science/disease-health', 'upsc/science/energy', 'upsc/science/physics', 'upsc/science/space-tech', 'ssc/science/science-tech'],
   'Current Affairs': ['rrb/general-aware/current-affairs', 'ssc/polity/current-gk'],
+  Physics: ['ncert/physics/class11', 'ncert/physics/class12'],
+  Chemistry: ['ncert/chemistry/class11', 'ncert/chemistry/class12'],
+  Biology: ['ncert/biology/class11', 'ncert/biology/class12'],
   CSAT: ['upsc/csat-quant/data-sufficiency', 'upsc/csat-quant/logical-reasoning', 'upsc/csat-quant/number-system', 'upsc/csat-quant/percentage', 'upsc/csat-quant/speed-distance', 'upsc/csat-quant/time-work'],
 };
 const SET_OF = new Map();
@@ -199,20 +209,23 @@ export function makeGame({ json, hmac, loadBank, limited, usable }) {
     return { uid: 'g_' + dev, name: 'Guest ' + dev.slice(0, 4).toUpperCase(), city: '', guest: true };
   }
 
+  const social = makeSocial({ TRACKS, json, hmac, loadBank, usable, limited, identify, SETS, b64u, rid, weekId, dayId, isLong, ttl: ROUND_TTL_MS });
+
   async function round(request, env) {
     const url = new URL(request.url);
     const ip = request.headers.get('cf-connecting-ip') || 'na';
     if (await limited(env.GAME_ROUND_RL, 'gr:' + ip, 6)) return json({ error: 'slow down' }, 429, { 'retry-after': '60' });
-    const want = (url.searchParams.get('subjects') || '').split(',').map((s) => s.trim()).filter((s) => SUBJECTS.includes(s));
-    const subjects = want.length ? want : SUBJECTS.filter((s) => s !== 'CSAT' && s !== 'Current Affairs');
-    const n = Math.max(5, Math.min(ROUND_MAX, Number(url.searchParams.get('n')) || ROUND_MAX));
-    const pyqMode = url.searchParams.get('pyq') || '0';
-    const pyq = pyqMode === '1';
     const exParam = (url.searchParams.get('exam') || 'both').toLowerCase();
+    const track = TRACKS[exParam];
+    const want = (url.searchParams.get('subjects') || '').split(',').map((s) => s.trim()).filter((s) => (track || SUBJECTS).includes(s));
+    const subjects = want.length ? want : (track || GS);
+    const n = Math.max(5, Math.min(ROUND_MAX, Number(url.searchParams.get('n')) || ROUND_MAX));
+    const pyqMode = track ? '0' : url.searchParams.get('pyq') || '0';
+    const pyq = pyqMode === '1';
     const exams = (exParam === 'both' || exParam === 'all') ? Object.values(PYQ_EXAMS) : [PYQ_EXAMS[exParam]].filter(Boolean);
     // Main bank: the MindWhite Redis lists when the Worker has REDIS_URL + REDIS_TOKEN, else the legacy JSON sets.
-    const bankExam = BANK_EXAMS.includes(exParam) ? exParam : 'all';
-    const useRedis = redisReady(env) && url.searchParams.get('src') !== 'legacy';
+    const bankExam = GAME_EXAMS.includes(exParam) ? exParam : 'all';
+    const useRedis = !track && redisReady(env) && url.searchParams.get('src') !== 'legacy';
     const exclude = new Set((url.searchParams.get('exclude') || '').split(',').slice(0, 300));
     const items = [], seen = new Set();
     // Progression (PROGRESSION_PLAN.md): level sets a difficulty band and, on Season boss stages, a PYQ year gate.
@@ -228,7 +241,7 @@ export function makeGame({ json, hmac, loadBank, limited, usable }) {
     const who = await identify(request, env, { device: url.searchParams.get('device') || '' }).catch(() => null);
     const seenRows = who ? await recentSeen(env, who.uid) : [];
     for (const id of seenRows) exclude.add(id);
-    if (gateYear && !pyq) {
+    if (gateYear && !pyq && !track) {
       for (const q of await pyqYear(env, gateExam, gateYear, want)) {
         if (items.length >= (plan.gatePyq || 1)) break;
         if (seen.has(q.id) || exclude.has(q.id)) continue;
@@ -264,6 +277,8 @@ export function makeGame({ json, hmac, loadBank, limited, usable }) {
       const idx = (Math.random() * bank.questions.length) | 0;
       const q = bank.questions[idx], id = `${set}#${idx}`;
       if (!q || !usable(q) || q.canary || seen.has(id) || exclude.has(id)) continue;
+      // Track sets carry easy/medium/hard tags, so honour the level's band for most picks.
+      if (track && diff && tries < n * 6 && Math.abs((DIFF[q.difficulty] || 2) - diff) > 0) continue;
       seen.add(id);
       items.push({
         id, subject: subj, question: q.question, options: q.options, answer_index: q.answer_index,
@@ -337,12 +352,15 @@ export function makeGame({ json, hmac, loadBank, limited, usable }) {
       db.prepare('INSERT INTO game_runs (rid, uid, week, day, points, correct, wrong, flagged, created_at) VALUES (?1,?2,?3,?4,?5,?6,?7,?8,?9)')
         .bind(P.r, who.uid, week, day, award, correct, wrong, tooFast ? 1 : 0, now),
       // The exam comes from the signed round token, not from the client body.
-      db.prepare(`INSERT INTO game_league (uid, week, name, city, score, guest, updated_at, exam) VALUES (?1,?2,?3,?4,?5,?6,?7,?8)
+      db.prepare(`INSERT INTO game_league (uid, week, name, city, score, guest, updated_at, exam, state) VALUES (?1,?2,?3,?4,?5,?6,?7,?8,?9)
                   ON CONFLICT(uid, week) DO UPDATE SET score = score + excluded.score, name = excluded.name, city = excluded.city, updated_at = excluded.updated_at,
-                  exam = CASE WHEN excluded.exam <> '' THEN excluded.exam ELSE game_league.exam END`)
-        .bind(who.uid, week, who.name, who.city, award, who.guest ? 1 : 0, now, BANK_EXAMS.includes(P.e) ? P.e : ''),
+                  exam = CASE WHEN excluded.exam <> '' THEN excluded.exam ELSE game_league.exam END,
+                  state = CASE WHEN excluded.state <> '' THEN excluded.state ELSE game_league.state END`)
+        .bind(who.uid, week, who.name, who.city, award, who.guest ? 1 : 0, now, GAME_EXAMS.includes(P.e) ? P.e : '', cleanState(body.state)),
     ]);
     const tot = await db.prepare('SELECT score FROM game_league WHERE uid=?1 AND week=?2').bind(who.uid, week).first();
+    // Daily Paper and All-India Mock rounds also get an all-India rank (first submit only).
+    const event = P.k ? await social.recordEvent(env, P, who, { pts, ms: msSum, correct, wrong, skipped }, body).catch(() => null) : null;
 
     // A friend challenge is only issued for a run that passed the checks above.
     let challenge = null;
@@ -351,7 +369,7 @@ export function makeGame({ json, hmac, loadBank, limited, usable }) {
       const target = Math.min(Math.round(score), 4000 + lv * 400);
       challenge = await signChallenge(env, lv, seed, target);
     }
-    return json({ points: award, capped: award < pts, correct, wrong, skipped, too_fast: tooFast, week, week_total: Number((tot && tot.score) || award), challenge });
+    return json({ points: award, capped: award < pts, correct, wrong, skipped, too_fast: tooFast, week, week_total: Number((tot && tot.score) || award), challenge, event });
   }
 
   async function signChallenge(env, lv, seed, target) {
@@ -388,7 +406,7 @@ export function makeGame({ json, hmac, loadBank, limited, usable }) {
     const lim = Math.max(3, Math.min(50, Number(url.searchParams.get('limit')) || 20));
     const where = ['week = ?1'], args = [week];
     if (city) { where.push(`city = ?${args.length + 1} COLLATE NOCASE`); args.push(city); }
-    if (BANK_EXAMS.includes(exam)) { where.push(`exam = ?${args.length + 1}`); args.push(exam); }
+    if (GAME_EXAMS.includes(exam)) { where.push(`exam = ?${args.length + 1}`); args.push(exam); }
     const w = where.join(' AND ') + ' ' + guests;
     const { results } = await db.prepare(`SELECT uid, name, city, exam, score FROM game_league WHERE ${w} AND score > 0 ORDER BY score DESC, updated_at ASC LIMIT ${lim}`).bind(...args).all();
     const cnt = await db.prepare(`SELECT COUNT(*) AS n FROM game_league WHERE ${w} AND score > 0`).bind(...args).first();
@@ -409,6 +427,7 @@ export function makeGame({ json, hmac, loadBank, limited, usable }) {
     if (pathname === '/api/game/league') return league(request, env);
     if (pathname === '/api/game/exams') return json({ exams: redisReady(env) ? examList() : [], pyq: Object.values(PYQ_EXAMS) });
     if (pathname === '/api/game/challenge') return challenge(request, env);
+    if (social.routes[pathname]) return social.routes[pathname](request, env);
     return json({ error: 'not found' }, 404);
   };
 }

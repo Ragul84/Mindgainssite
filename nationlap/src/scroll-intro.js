@@ -172,17 +172,19 @@ export function createScrollIntro({ uiRoot, onStudy, onDone }) {
 
     subjectEl.textContent = '';
     const archive = label && label !== 'UPSC · SSC';
-    titleEl.textContent = laps > 1 ? `LAP ${lap} OF ${laps}` : (archive ? label.toUpperCase() : "TODAY'S AFFAIRS");
-    affMeta.textContent = `${archive ? label : "TODAY'S AFFAIRS"} · READ THESE ${cards.length}`;
-    // First scroll only: say plainly what the race does with what you are about to read.
-    affHow.innerHTML = howTo
-      ? `<b>How it works</b>
-         <span>1. Read these ${cards.length} facts, especially the ★ lines.</span>
-         <span>2. Every fact = one gate. Before each gate its question pops up — steer through the gate with the right answer (<em class="ha">◀ blue</em> or <em class="hb">orange ▶</em>).</span>
-         <span>3. Time slows down as you reach each gate so you can read it. Right gate = boost, wrong = spin.</span>
-         ${laps > 1 ? `<span>4. Cross the line and the next ${laps - 1 === 1 ? 'batch' : 'batches'} of facts unroll${laps - 1 === 1 ? 's' : ''} for lap ${lap + 1}${laps > 2 ? '–' + laps : ''}.</span>` : ''}`
+    // One compact line of context, so the facts get the parchment rather than the chrome.
+    titleEl.textContent = laps > 1 ? `LAP ${lap} / ${laps}` : (archive ? label.toUpperCase() : "TODAY'S RACE");
+    const yatra = cards[0] && cards[0].cat === 'bharat';
+    affMeta.textContent = `${yatra ? 'Bharat Yatra' : archive ? label : "Today's affairs"} · ${cards.length} facts`;
+    // The rules as one line, not a four-step box: shown on a player's first two races only.
+    let seen = 0;
+    try { seen = parseInt(localStorage.getItem('nl_howto_seen') || '0', 10) || 0; } catch (e) {}
+    const showHow = howTo && seen < 2;
+    if (showHow) { try { localStorage.setItem('nl_howto_seen', String(seen + 1)); } catch (e) {} }
+    affHow.innerHTML = showHow
+      ? `<span>Read the ★ lines</span><i>→</i><span>Steer through the right gate <em class="ha">◀ blue</em> <em class="hb">orange ▶</em></span><i>→</i><span>Right = boost</span>`
       : '';
-    affHow.hidden = !howTo;
+    affHow.hidden = !showHow;
     affList.innerHTML = '';
     for (const c of cards) {
       const li = document.createElement('li');

@@ -90,24 +90,24 @@ export class Menu {
         <div class="logo-swoosh"></div>
       </div>
       <div class="title-actions">
-        <button type="button" class="btn primary play-btn">PLAY</button>
+        <button type="button" class="btn primary play-btn">TODAY'S RACE<small class="play-sub">Today's news, raced in 3 minutes</small></button>
         <button type="button" class="btn resume-btn hidden">RESUME CUP</button>
         <div class="title-row">
-          <button type="button" class="btn affairs-btn">TODAY'S AFFAIRS<i class="aff-dot"></i></button>
+          <button type="button" class="btn affairs-btn">BHARAT YATRA</button>
           <button type="button" class="btn quick-btn">QUICK RACE</button>
           <button type="button" class="btn board-btn">INDIA BOARD</button>
         </div>
-        <div class="title-tagline">Read a topic. Race it. Remember it.</div>
+        <div class="title-tagline">Know your India, every day.</div>
       </div>
       <div class="title-foot">
         <span>© NationLap · MindGains</span>
         <span class="mute-hint"><span class="kc">M</span> mute</span>
       </div>`;
-    // PLAY is the campaign: it opens the journey map, so a race is always entered through a
-    // topic — which is what puts the lesson in front of the player before they drive.
+    // The front door is today's news race: one tap from the title to the day's briefing.
     t.querySelector('.play-btn').addEventListener('click', (e) => {
       e.stopPropagation();
-      this.h.onMap?.();
+      bus.emit('ui:confirm');
+      this.h.onAffairs?.();
     });
     // Quick race is the deliberate opt-out: straight onto the track, no topic, no lesson.
     t.querySelector('.quick-btn').addEventListener('click', (e) => {
@@ -115,13 +115,12 @@ export class Menu {
       bus.emit('ui:confirm');
       this.h.onQuickRace?.();
     });
-    // The day's affairs as a race: the briefing replaces the lesson scroll, the gates carry
-    // the facts, and the recap is the revision card.
+    // BHARAT YATRA: the map of India, one race per state.
     t.querySelector('.affairs-btn').addEventListener('click', (e) => {
       e.stopPropagation();
-      bus.emit('ui:confirm');
-      this.h.onAffairs?.();
+      this.h.onMap?.();
     });
+    this.playSub = t.querySelector('.play-sub');
     t.querySelector('.board-btn').addEventListener('click', (e) => {
       e.stopPropagation();
       bus.emit('ui:confirm');
@@ -152,6 +151,13 @@ export class Menu {
     this.account = acct || null;
     this._refreshTitleRacer();
   }
+  /** Line under TODAY'S RACE: the streak to keep, or the invitation to start one. */
+  setNewsStreak(st) {
+    if (!this.playSub || !st) return;
+    this.playSub.textContent = st.today ? `🔥 ${st.n}-day streak · done for today, race again`
+      : st.n ? `🔥 ${st.n}-day streak · race today to keep it` : "Today's news, raced in 3 minutes";
+  }
+
   _refreshTitleRacer() {
     if (!this.titleRacer) return;
     const ch = playerCharacter();

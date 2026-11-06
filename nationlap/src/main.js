@@ -22,6 +22,9 @@ import { createJourneyMap } from './journey-map.js';
 import { createLessonReader, lessonCards, loadLesson } from './lesson-reader.js';
 import { createScrollIntro } from './scroll-intro.js';
 import { loadLatest, loadMonth, availableMonths, monthLabel, splitLaps, quizItem, FACTS_PER_LAP } from './affairs.js';
+import { newsStreak, bumpNewsStreak } from './news-streak.js';
+import { createYatra, recordStateRun, stampedCount, STAMP_AT } from './bharat.js';
+import { formatTime } from './race.js';
 import { createFactGates } from './fact-gates.js';
 import { createHallOfFame, fetchToppers } from './hall-of-fame.js';
 import { createTouchControls, isTouchDevice } from './touch-controls.js';
@@ -237,9 +240,11 @@ async function refreshHofStrip() {
   }
   const rows = await fetchToppers('today', 5);
   const esc = (t) => String(t).replace(/[&<>"]/g, (m) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[m]));
+  // One quiet line of the top three. An empty board says nothing rather than "no names yet".
+  hofStrip.classList.toggle('empty', !rows.length);
   hofStrip.innerHTML = rows.length
-    ? `<b>🏛 HALL OF FAME · TODAY</b>${rows.map((r, i) => `<span class="hs-row${i < 3 ? ' top' : ''}"><i>#${r.rank}</i> ${esc(r.name)} <em>${r.xp} XP</em></span>`).join('')}`
-    : `<b>🏛 HALL OF FAME · TODAY</b><span class="hs-row">No names yet today — race today's affairs and be the first.</span>`;
+    ? `<b>Today's toppers</b>${rows.slice(0, 3).map((r, i) => `<span class="hs-row${i < 3 ? ' top' : ''}"><i>#${r.rank}</i> ${esc(r.name)}</span>`).join('')}`
+    : '';
 }
 setTimeout(() => safe('hofStrip', refreshHofStrip), 2500);
 setInterval(() => { if (state === 'title') safe('hofStrip', refreshHofStrip); }, 120000);
@@ -321,6 +326,41 @@ async function showLeague(run) {
     box.innerHTML = `<div class="lg-line">${e.message === 'only today counts' ? 'Only today’s race counts for the board.' : 'Could not reach the board — your result is safe on this device.'}</div>${pushBtn}`;
   }
   wire();
+}
+
+/* The finish card for today's race: the streak, and one tap to send the result on WhatsApp.
+   The link opens straight into today's race, so whoever gets it plays the same news. */
+function showFinishShare(run, results) {
+  const st = bumpNewsStreak();
+  menu.setNewsStreak?.(newsStreak());
+  const panel = uiRoot.querySelector('.res-recap');
+  if (!panel) return;
+  const me = results.find((r) => r.isPlayer);
+  const r = affairsRecap();
+  const time = me && Number.isFinite(me.time) ? formatTime(me.time) : '';
+  let link = location.origin + '/nationlap/?affairs=1';
+  // Upload the lap now, while the player reads the card, so the share link can carry it.
+  // A friend who opens it races today's news against this exact kart.
+  const lap = lastLap; lastLap = null;
+  if (lap) {
+    fetch('/api/game/ghost', { method: 'POST', headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ rec: lap, kind: 'affairs', name: account.accountName?.() || playerCharacter().name || 'A friend' }) })
+      .then((x) => x.json()).then((j) => { if (j && j.code) link += '&ghost=' + j.code; }).catch(() => {});
+  }
+  const text = `Today's India${time ? ' in ' + time : ''} · ${r.clean}/${r.total} stories ✓${st.n > 1 ? ` · 🔥 ${st.n}-day streak` : ''}
+${lap ? 'Race my ghost through' : 'Race'} today's news on NationLap:`;
+  const box = document.createElement('div');
+  box.className = 'res-share';
+  box.innerHTML = `<div class="rs-streak">${st.n ? `🔥 <b>${st.n}</b>-day news streak${st.bumped && st.n > 1 ? ' · +1 today' : ''}` : ''}</div>
+    <div class="rs-btns"><button class="btn small rs-wa">SHARE ON WHATSAPP</button><button class="btn small rs-more">SHARE</button></div>`;
+  panel.appendChild(box);
+  const fire = (to) => { try { bus.emit('ui:confirm'); } catch (e) {} };
+  box.querySelector('.rs-wa').addEventListener('click', (e) => { e.stopPropagation(); fire('wa'); window.open('https://wa.me/?text=' + encodeURIComponent(text + ' ' + link), '_blank', 'noopener'); });
+  box.querySelector('.rs-more').addEventListener('click', async (e) => {
+    e.stopPropagation(); fire('native');
+    try { if (navigator.share) { await navigator.share({ text, url: link }); return; } } catch (err) { if (err && err.name === 'AbortError') return; }
+    try { await navigator.clipboard.writeText(text + ' ' + link); e.target.textContent = 'COPIED'; } catch (err) { /* nothing more to do */ }
+  });
 }
 
 /* This lap's gates, rebuilt when the lap changes so lap 2 asks lap 2's facts. */
@@ -589,6 +629,39 @@ async function startAffairsRace(monthKey) {
      comes back, which is the revision the mode exists for. */
   startRace({ difficulty: 'hard', laps: lapsFacts.length });
 }
+/* Bharat Yatra: one race per state, on the affairs machinery (brief, gates, recap). A state's
+   cards are one lap; the result stamps the passport instead of touching the news streak or the
+   India board, which are for today's news only. */
+function startStateRace(code, name, cards) {
+  if (!cards.length) { hud.toast?.('That state is not ready yet.'); return; }
+  hud.setWrongWayLine?.(null);
+  hud.setItemNames?.(null);
+  affairsRun = {
+    date: '', label: name, monthKey: null, state: code, stateCards: cards,
+    lapsFacts: [cards], lapIdx: 0, brief: cards, gates: cards.filter((c) => c.gate),
+    allGates: cards.filter((c) => c.gate), results: [], boost: false,
+  };
+  focusedZone = null; focusedCards = null; focusedLesson = null;
+  cupRun = null;
+  startRace({ difficulty: 'normal', laps: 1 });
+}
+const yatra = createYatra({ uiRoot, onRace: (code, name, cards) => startStateRace(code, name, cards), onClose: () => {} });
+
+/* The stamp, under the recap of a state race. */
+function showStateResult(run) {
+  const panel = uiRoot.querySelector('.res-recap');
+  const r = affairsRecap();
+  const fresh = recordStateRun(run.state, r.clean, r.total);
+  if (!panel) return;
+  const ok = r.total && r.clean / r.total >= STAMP_AT;
+  const box = document.createElement('div');
+  box.className = 'res-share';
+  box.innerHTML = `<div class="rs-streak">${ok ? (fresh ? `✓ ${run.label} stamped! ${stampedCount()} of 36 in your passport` : `✓ ${run.label} is in your passport`) : `${Math.round(STAMP_AT * 100)}% stamps ${run.label}. Race it again`}</div>
+    <div class="rs-btns"><button class="btn small rs-map">BHARAT YATRA MAP</button></div>`;
+  panel.appendChild(box);
+  box.querySelector('.rs-map').addEventListener('click', (e) => { e.stopPropagation(); hud.hideResults(); goToTitle(); setTimeout(() => yatra.open(), 600); });
+}
+
 let focusedLesson = null; // whether this zone has a lesson at all — decides if the scroll drops
 const lessonReader = createLessonReader({ uiRoot, awardXp });
 // The study scroll that unfurls over the grid. Reading happens here, inside the race, on a
@@ -666,7 +739,8 @@ const menu = new Menu(uiRoot, {
   onResume: () => resume(),
   onRestart: () => { menu.hideAll(); startRace(lastSettings); },
   onQuit: () => goToTitle(),
-  onMap: () => journeyMap.open(),
+  // The title's map is Bharat Yatra now; the syllabus journey stays reachable from a Ready card.
+  onMap: () => yatra.open(),
   // quick race is topic-less on purpose: clear any zone left over from a previous journey run,
   // or its billboards and quiz pool would leak into a race the player didn't pick a topic for
   // ...and it goes straight onto the track: a single race, no cup, no topic, no Ready card
@@ -1069,6 +1143,8 @@ function resume() {
 // ---------------------------------------------------------------------------------------------
 let recorder = null;
 let ghost = null;
+let friendGhost = null;   // {name, rec} from a ?ghost= share link
+let lastLap = null;       // today's-race lap, kept so the finish card can share it
 let raceElapsedMs = 0;
 
 function disposeGhost() { try { ghost?.dispose(); } catch (e) {} ghost = null; }
@@ -1078,8 +1154,10 @@ async function spawnGhost(w) {
   disposeGhost();
   const zoneId = focusedZone?.id || null;
   let rec = null, label = 'Your best';
-  const rival = await account.bestGhost(zoneId).catch(() => null);
-  if (rival?.recording) { rec = rival.recording; label = rival.player_name || 'Rival'; }
+  // A friend's shared lap comes first on today's race: that is the race the link was sent for.
+  const rival = friendGhost && affairsRun ? null : await account.bestGhost(zoneId).catch(() => null);
+  if (friendGhost && affairsRun) { rec = friendGhost.rec; label = friendGhost.name + "'s lap"; }
+  else if (rival?.recording) { rec = rival.recording; label = rival.player_name || 'Rival'; }
   else rec = loadPersonalBest(zoneId);
   if (!rec) return;
   ghost = safe('ghost.spawn', () => createGhost({
@@ -1132,6 +1210,7 @@ bus.on('race:finish', (d) => {
   // bank the lap: a new personal best always, and the account's ghost when signed in
   const rec = recorder?.finish(raceElapsedMs);
   recorder = null;
+  if (rec && affairsRun && !affairsRun.monthKey && !affairsRun.state) lastLap = rec;
   if (rec) {
     const zoneId = focusedZone?.id || null;
     if (savePersonalBest(zoneId, rec)) hud.toast?.('New best lap saved');
@@ -1196,10 +1275,13 @@ bus.on('race:end', (d) => {
         recap: affairsRecap(),
         laps: world.race.laps,
         facts: world.factsSeen || [],
-        onRestart: () => (affairsRun ? startAffairsRace(affairsRun.monthKey) : startRace(lastSettings)),
+        onRestart: () => (affairsRun?.state ? startStateRace(affairsRun.state, affairsRun.label, affairsRun.stateCards)
+          : affairsRun ? startAffairsRace(affairsRun.monthKey) : startRace(lastSettings)),
         onMenu: () => goToTitle(),
       });
-      if (affairsRun) safe('league', () => showLeague(affairsRun));
+      if (affairsRun?.state) safe('passport', () => showStateResult(affairsRun));
+      else if (affairsRun) safe('league', () => showLeague(affairsRun));
+      if (affairsRun && !affairsRun.monthKey && !affairsRun.state) safe('share', () => showFinishShare(affairsRun, results));
     }
   }, 200);
 });
@@ -1402,13 +1484,23 @@ async function boot() {
   // hitches afterwards, but it traded a title that plays for a loading screen that sits there,
   // which is worse to sit through. Shaders are precompiled inside buildWorld instead.
   menu.showTitle();
+  menu.setNewsStreak?.(newsStreak());
   refreshResumeButton();
   setState('title');
   audio.playMusic('menu');
   // first launch: set up "you" (name, face, kart colour) before anything else
   // mindgains.ai's "Current affairs" links land here with ?affairs: straight into today's race
   // (after the one-time racer setup, if this is a first visit).
-  pendingAffairs = new URLSearchParams(location.search).has('affairs');
+  const qs = new URLSearchParams(location.search);
+  pendingAffairs = qs.has('affairs') || qs.has('ghost');
+  // ?ghost=CODE: a friend's lap from a share link. Fetched before the race builds its world;
+  // if it is slow or gone, the race simply runs with the usual ghost.
+  const ghostCode = (qs.get('ghost') || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 8);
+  if (ghostCode) {
+    await fetch('/api/game/ghost?code=' + ghostCode).then((x) => (x.ok ? x.json() : null)).then((j) => {
+      if (j && j.rec) { friendGhost = { name: String(j.name || 'A friend').slice(0, 20), rec: j.rec }; hud.toast?.(`Racing ${friendGhost.name}'s lap`); }
+    }).catch(() => {});
+  }
   if (!hasProfile()) menu.showAvatar({ first: true });
   else if (pendingAffairs) { pendingAffairs = false; startAffairsRace(); }
 
