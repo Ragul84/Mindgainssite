@@ -23,7 +23,7 @@ import { createLessonReader, lessonCards, loadLesson } from './lesson-reader.js'
 import { createScrollIntro } from './scroll-intro.js';
 import { loadLatest, loadMonth, availableMonths, monthLabel, splitLaps, quizItem, FACTS_PER_LAP } from './affairs.js';
 import { newsStreak, bumpNewsStreak } from './news-streak.js';
-import { createYatra, recordStateRun, stampedCount, STAMP_AT } from './bharat.js';
+import { createYatra, recordStateRun, stampedCount, STAMP_AT, stateLaps } from './bharat.js';
 import { STATES, myState, isFamily, applyFamily, deviceId } from './prefs.js';
 import { formatTime } from './race.js';
 import { createFactGates } from './fact-gates.js';
@@ -425,19 +425,20 @@ function updateGatePrompt(w) {
     }
   }
   const show = best && bestD < 380;
-  /* Cinematic slow motion for the last stretch before the arch: the question is up at full
-     speed first, then time drops to ~30% so there is room to read both answers and steer. */
-  const slow = show && bestD < 170;
-  slowTarget = slow ? 0.3 : 1;
+  /* Slow motion only for the last few seconds before the arch. It used to start 170 m out at
+     30% speed — about 19 seconds of crawling. Now it starts when the arch is ~4 s away at the
+     slowed speed (at least 25 m, so a slow kart still gets a moment), at 45% speed. */
+  const v = Math.max(8, Math.abs(p?.speed || 0));
+  const slow = show && bestD < Math.max(25, v * 0.45 * 4);
+  slowTarget = slow ? 0.45 : 1;
   document.body.classList.toggle('gate-slowmo', !!slow);
   if (!show) { if (gatePromptFor) { gatePromptEl.classList.remove('show'); gatePromptFor = null; } return; }
   if (gatePromptFor !== best) {
     gatePromptFor = best;
     const c = best.card;
     const esc = (t) => String(t).replace(/[&<>"]/g, (m) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[m]));
-    gatePromptEl.innerHTML = `<b>${esc(c.ask || c.stamp)}</b>
-      <span class="gp-row"><i class="gp-a">◀ ${esc(c.gate.a)}</i><i class="gp-b">${esc(c.gate.b)} ▶</i></span>
-      <small>Drive through the right gate</small>`;
+    // Only the question: the two answers are already written on the arches ahead.
+    gatePromptEl.innerHTML = `<b>${esc(c.ask || c.stamp)}</b>`;
     gatePromptEl.classList.add('show');
   }
 }
@@ -651,14 +652,15 @@ function startStateRace(code, name, cards) {
   if (!cards.length) { hud.toast?.('That state is not ready yet.'); return; }
   hud.setWrongWayLine?.(null);
   hud.setItemNames?.(null);
+  const laps = stateLaps(cards);
   affairsRun = {
     date: '', label: name, monthKey: null, state: code, stateCards: cards,
-    lapsFacts: [cards], lapIdx: 0, brief: cards, gates: cards.filter((c) => c.gate),
+    lapsFacts: laps, lapIdx: 0, brief: laps[0], gates: laps[0].filter((c) => c.gate),
     allGates: cards.filter((c) => c.gate), results: [], boost: false,
   };
   focusedZone = null; focusedCards = null; focusedLesson = null;
   cupRun = null;
-  startRace({ difficulty: isFamily() ? 'easy' : 'normal', laps: 1 });
+  startRace({ difficulty: isFamily() ? 'easy' : 'normal', laps: laps.length });
 }
 const yatra = createYatra({ uiRoot, onRace: (code, name, cards) => startStateRace(code, name, cards), onClose: () => {} });
 

@@ -1,0 +1,1273 @@
+{
+ "_about": "Must-know facts per state/UT for NationLap Bharat Yatra. Only settled, slow-changing facts: no office-holders, no counts that change. Each list is single answers usable as two-option gates. region: N, NE, E, C, W, S, IS. land: hills|coast|desert|forest|plains|islands|city.",
+ "AP": {
+  "region": "S",
+  "land": "coast",
+  "borders": [
+   "Telangana",
+   "Odisha",
+   "Chhattisgarh",
+   "Karnataka",
+   "Tamil Nadu"
+  ],
+  "rivers": [
+   "Godavari",
+   "Krishna",
+   "Penna"
+  ],
+  "dance": [
+   "Kuchipudi"
+  ],
+  "festivals": [
+   "Sankranti",
+   "Ugadi"
+  ],
+  "landmarks": [
+   "Tirumala Venkateswara Temple",
+   "Araku Valley",
+   "Lepakshi Temple"
+  ],
+  "parks": [
+   "Papikonda National Park"
+  ],
+  "knownFor": [
+   "Kalamkari art",
+   "Guntur chillies",
+   "Kondapalli toys"
+  ]
+ },
+ "AR": {
+  "region": "NE",
+  "land": "hills",
+  "borders": [
+   "Assam",
+   "Nagaland",
+   "Bhutan",
+   "China",
+   "Myanmar"
+  ],
+  "rivers": [
+   "Siang",
+   "Subansiri",
+   "Kameng"
+  ],
+  "dance": [
+   "Ponung"
+  ],
+  "festivals": [
+   "Losar",
+   "Solung",
+   "Mopin"
+  ],
+  "landmarks": [
+   "Tawang Monastery",
+   "Sela Pass",
+   "Ziro Valley"
+  ],
+  "parks": [
+   "Namdapha National Park"
+  ],
+  "knownFor": [
+   "Easternmost state of India",
+   "First sunrise in India at Dong"
+  ]
+ },
+ "AS": {
+  "region": "NE",
+  "land": "plains",
+  "borders": [
+   "Arunachal Pradesh",
+   "Nagaland",
+   "Manipur",
+   "Mizoram",
+   "Tripura",
+   "Meghalaya",
+   "West Bengal",
+   "Bhutan",
+   "Bangladesh"
+  ],
+  "rivers": [
+   "Brahmaputra",
+   "Barak"
+  ],
+  "dance": [
+   "Sattriya",
+   "Bihu dance"
+  ],
+  "festivals": [
+   "Bohag Bihu",
+   "Ambubachi Mela"
+  ],
+  "landmarks": [
+   "Kamakhya Temple",
+   "Majuli river island"
+  ],
+  "parks": [
+   "Kaziranga National Park",
+   "Manas National Park"
+  ],
+  "knownFor": [
+   "Assam tea",
+   "Muga silk",
+   "One-horned rhinoceros"
+  ]
+ },
+ "BR": {
+  "region": "E",
+  "land": "plains",
+  "borders": [
+   "Uttar Pradesh",
+   "Jharkhand",
+   "West Bengal",
+   "Nepal"
+  ],
+  "rivers": [
+   "Ganga",
+   "Kosi",
+   "Gandak",
+   "Son"
+  ],
+  "dance": [
+   "Jat-Jatin"
+  ],
+  "festivals": [
+   "Chhath Puja"
+  ],
+  "landmarks": [
+   "Mahabodhi Temple, Bodh Gaya",
+   "Ruins of Nalanda",
+   "Vikramashila"
+  ],
+  "parks": [
+   "Valmiki National Park"
+  ],
+  "knownFor": [
+   "Madhubani painting",
+   "Makhana (fox nut)",
+   "Birthplace of Buddhism"
+  ]
+ },
+ "CH": {
+  "region": "N",
+  "land": "city",
+  "borders": [
+   "Punjab",
+   "Haryana"
+  ],
+  "rivers": [
+   "Ghaggar"
+  ],
+  "dance": [],
+  "festivals": [
+   "Teej",
+   "Baisakhi"
+  ],
+  "landmarks": [
+   "Capitol Complex",
+   "Rock Garden",
+   "Sukhna Lake"
+  ],
+  "parks": [],
+  "knownFor": [
+   "Planned by Le Corbusier",
+   "Shared capital of Punjab and Haryana"
+  ]
+ },
+ "CT": {
+  "region": "C",
+  "land": "forest",
+  "borders": [
+   "Madhya Pradesh",
+   "Uttar Pradesh",
+   "Jharkhand",
+   "Odisha",
+   "Andhra Pradesh",
+   "Telangana",
+   "Maharashtra"
+  ],
+  "rivers": [
+   "Mahanadi",
+   "Indravati"
+  ],
+  "dance": [
+   "Panthi",
+   "Raut Nacha"
+  ],
+  "festivals": [
+   "Bastar Dussehra",
+   "Hareli"
+  ],
+  "landmarks": [
+   "Chitrakote Falls",
+   "Bhoramdeo Temple"
+  ],
+  "parks": [
+   "Indravati National Park",
+   "Kanger Ghati National Park"
+  ],
+  "knownFor": [
+   "Rice Bowl of India",
+   "Dhokra metal craft"
+  ]
+ },
+ "DH": {
+  "region": "W",
+  "land": "coast",
+  "borders": [
+   "Gujarat",
+   "Maharashtra"
+  ],
+  "rivers": [
+   "Daman Ganga"
+  ],
+  "dance": [
+   "Tarpa dance"
+  ],
+  "festivals": [
+   "Diwali"
+  ],
+  "landmarks": [
+   "Moti Daman Fort",
+   "Bom Jesus Church, Daman"
+  ],
+  "parks": [],
+  "knownFor": [
+   "Former Portuguese territory",
+   "Merged into one UT in 2020"
+  ]
+ },
+ "DL": {
+  "region": "N",
+  "land": "city",
+  "borders": [
+   "Haryana",
+   "Uttar Pradesh"
+  ],
+  "rivers": [
+   "Yamuna"
+  ],
+  "dance": [],
+  "festivals": [
+   "Diwali",
+   "Phool Walon Ki Sair"
+  ],
+  "landmarks": [
+   "Red Fort",
+   "Qutub Minar",
+   "Humayun's Tomb",
+   "India Gate"
+  ],
+  "parks": [],
+  "knownFor": [
+   "National capital",
+   "Three UNESCO World Heritage Sites"
+  ]
+ },
+ "GA": {
+  "region": "W",
+  "land": "coast",
+  "borders": [
+   "Maharashtra",
+   "Karnataka"
+  ],
+  "rivers": [
+   "Mandovi",
+   "Zuari"
+  ],
+  "dance": [
+   "Dekhni",
+   "Fugdi"
+  ],
+  "festivals": [
+   "Goa Carnival",
+   "Shigmo"
+  ],
+  "landmarks": [
+   "Basilica of Bom Jesus",
+   "Fort Aguada",
+   "Dudhsagar Falls"
+  ],
+  "parks": [
+   "Bhagwan Mahavir National Park"
+  ],
+  "knownFor": [
+   "Smallest state by area",
+   "Liberated from Portugal in 1961",
+   "Feni"
+  ]
+ },
+ "GJ": {
+  "region": "W",
+  "land": "desert",
+  "borders": [
+   "Rajasthan",
+   "Madhya Pradesh",
+   "Maharashtra",
+   "Dadra and Nagar Haveli and Daman and Diu",
+   "Pakistan"
+  ],
+  "rivers": [
+   "Narmada",
+   "Sabarmati",
+   "Tapi",
+   "Mahi"
+  ],
+  "dance": [
+   "Garba",
+   "Dandiya Raas"
+  ],
+  "festivals": [
+   "Navratri",
+   "Uttarayan kite festival",
+   "Rann Utsav"
+  ],
+  "landmarks": [
+   "Statue of Unity",
+   "Rani ki Vav",
+   "Somnath Temple",
+   "Dholavira"
+  ],
+  "parks": [
+   "Gir National Park",
+   "Marine National Park, Gulf of Kutch"
+  ],
+  "knownFor": [
+   "Longest coastline of any state",
+   "Asiatic lions of Gir",
+   "Patola silk"
+  ]
+ },
+ "HP": {
+  "region": "N",
+  "land": "hills",
+  "borders": [
+   "Jammu and Kashmir",
+   "Ladakh",
+   "Punjab",
+   "Haryana",
+   "Uttarakhand",
+   "Uttar Pradesh",
+   "China"
+  ],
+  "rivers": [
+   "Sutlej",
+   "Beas",
+   "Ravi",
+   "Chenab"
+  ],
+  "dance": [
+   "Nati"
+  ],
+  "festivals": [
+   "Kullu Dussehra",
+   "Losar"
+  ],
+  "landmarks": [
+   "Rohtang Pass",
+   "Atal Tunnel",
+   "Kalka-Shimla Railway"
+  ],
+  "parks": [
+   "Great Himalayan National Park"
+  ],
+  "knownFor": [
+   "Apples",
+   "Kullu shawls",
+   "Dev Bhoomi"
+  ]
+ },
+ "HR": {
+  "region": "N",
+  "land": "plains",
+  "borders": [
+   "Punjab",
+   "Himachal Pradesh",
+   "Uttar Pradesh",
+   "Rajasthan",
+   "Delhi",
+   "Chandigarh"
+  ],
+  "rivers": [
+   "Yamuna",
+   "Ghaggar"
+  ],
+  "dance": [
+   "Phag dance"
+  ],
+  "festivals": [
+   "Teej",
+   "Surajkund Crafts Mela"
+  ],
+  "landmarks": [
+   "Kurukshetra",
+   "Brahma Sarovar",
+   "Pinjore Gardens"
+  ],
+  "parks": [
+   "Sultanpur National Park"
+  ],
+  "knownFor": [
+   "Formed from Punjab in 1966",
+   "Wrestling and boxing champions"
+  ]
+ },
+ "JH": {
+  "region": "E",
+  "land": "forest",
+  "borders": [
+   "Bihar",
+   "Uttar Pradesh",
+   "Chhattisgarh",
+   "Odisha",
+   "West Bengal"
+  ],
+  "rivers": [
+   "Damodar",
+   "Subarnarekha",
+   "Koel"
+  ],
+  "dance": [
+   "Chhau",
+   "Jhumair"
+  ],
+  "festivals": [
+   "Sarhul",
+   "Karma",
+   "Sohrai"
+  ],
+  "landmarks": [
+   "Hundru Falls",
+   "Baidyanath Temple, Deoghar",
+   "Parasnath Hill"
+  ],
+  "parks": [
+   "Betla National Park"
+  ],
+  "knownFor": [
+   "Largest coal and mica reserves",
+   "Sohrai painting"
+  ]
+ },
+ "JK": {
+  "region": "N",
+  "land": "hills",
+  "borders": [
+   "Ladakh",
+   "Himachal Pradesh",
+   "Punjab",
+   "Pakistan"
+  ],
+  "rivers": [
+   "Jhelum",
+   "Chenab",
+   "Tawi"
+  ],
+  "dance": [
+   "Rouf",
+   "Kud"
+  ],
+  "festivals": [
+   "Tulip Festival",
+   "Navroz"
+  ],
+  "landmarks": [
+   "Dal Lake",
+   "Vaishno Devi Shrine",
+   "Gulmarg",
+   "Mughal Gardens, Srinagar"
+  ],
+  "parks": [
+   "Dachigam National Park"
+  ],
+  "knownFor": [
+   "Saffron of Pampore",
+   "Pashmina shawls",
+   "Became a UT in 2019"
+  ]
+ },
+ "KA": {
+  "region": "S",
+  "land": "plains",
+  "borders": [
+   "Goa",
+   "Maharashtra",
+   "Telangana",
+   "Andhra Pradesh",
+   "Tamil Nadu",
+   "Kerala"
+  ],
+  "rivers": [
+   "Kaveri",
+   "Krishna",
+   "Tungabhadra",
+   "Sharavathi"
+  ],
+  "dance": [
+   "Yakshagana"
+  ],
+  "festivals": [
+   "Mysuru Dasara",
+   "Ugadi"
+  ],
+  "landmarks": [
+   "Hampi",
+   "Mysore Palace",
+   "Pattadakal",
+   "Jog Falls"
+  ],
+  "parks": [
+   "Bandipur National Park",
+   "Nagarhole National Park"
+  ],
+  "knownFor": [
+   "Mysore silk",
+   "Coffee of Coorg",
+   "Sandalwood"
+  ]
+ },
+ "KL": {
+  "region": "S",
+  "land": "coast",
+  "borders": [
+   "Karnataka",
+   "Tamil Nadu"
+  ],
+  "rivers": [
+   "Periyar",
+   "Bharathapuzha",
+   "Pamba"
+  ],
+  "dance": [
+   "Kathakali",
+   "Mohiniyattam"
+  ],
+  "festivals": [
+   "Onam",
+   "Vishu",
+   "Thrissur Pooram"
+  ],
+  "landmarks": [
+   "Alappuzha backwaters",
+   "Padmanabhaswamy Temple",
+   "Sabarimala"
+  ],
+  "parks": [
+   "Periyar Tiger Reserve",
+   "Silent Valley National Park",
+   "Eravikulam National Park"
+  ],
+  "knownFor": [
+   "Spices",
+   "Highest literacy rate",
+   "Ayurveda"
+  ]
+ },
+ "LA": {
+  "region": "N",
+  "land": "hills",
+  "borders": [
+   "Jammu and Kashmir",
+   "Himachal Pradesh",
+   "China",
+   "Pakistan"
+  ],
+  "rivers": [
+   "Indus",
+   "Shyok",
+   "Zanskar"
+  ],
+  "dance": [
+   "Cham dance"
+  ],
+  "festivals": [
+   "Hemis Festival",
+   "Losar"
+  ],
+  "landmarks": [
+   "Pangong Tso",
+   "Hemis Monastery",
+   "Khardung La",
+   "Nubra Valley"
+  ],
+  "parks": [
+   "Hemis National Park"
+  ],
+  "knownFor": [
+   "Cold desert",
+   "Snow leopards",
+   "Became a UT in 2019"
+  ]
+ },
+ "LD": {
+  "region": "IS",
+  "land": "islands",
+  "borders": [],
+  "rivers": [],
+  "dance": [
+   "Kolkali"
+  ],
+  "festivals": [
+   "Eid"
+  ],
+  "landmarks": [
+   "Agatti Island",
+   "Minicoy Lighthouse"
+  ],
+  "parks": [],
+  "knownFor": [
+   "Coral atolls",
+   "Smallest UT by area",
+   "Coconut and fishing"
+  ]
+ },
+ "MH": {
+  "region": "W",
+  "land": "coast",
+  "borders": [
+   "Gujarat",
+   "Madhya Pradesh",
+   "Chhattisgarh",
+   "Telangana",
+   "Karnataka",
+   "Goa",
+   "Dadra and Nagar Haveli and Daman and Diu"
+  ],
+  "rivers": [
+   "Godavari",
+   "Krishna",
+   "Bhima"
+  ],
+  "dance": [
+   "Lavani",
+   "Koli dance"
+  ],
+  "festivals": [
+   "Ganesh Chaturthi",
+   "Gudi Padwa"
+  ],
+  "landmarks": [
+   "Ajanta Caves",
+   "Ellora Caves",
+   "Gateway of India",
+   "Elephanta Caves"
+  ],
+  "parks": [
+   "Tadoba Andhari Tiger Reserve",
+   "Sanjay Gandhi National Park"
+  ],
+  "knownFor": [
+   "Financial capital Mumbai",
+   "Paithani sarees",
+   "Alphonso mangoes"
+  ]
+ },
+ "ML": {
+  "region": "NE",
+  "land": "hills",
+  "borders": [
+   "Assam",
+   "Bangladesh"
+  ],
+  "rivers": [
+   "Umiam",
+   "Simsang"
+  ],
+  "dance": [
+   "Nongkrem dance",
+   "Wangala dance"
+  ],
+  "festivals": [
+   "Wangala",
+   "Shad Suk Mynsiem"
+  ],
+  "landmarks": [
+   "Living root bridges",
+   "Nohkalikai Falls",
+   "Mawsynram"
+  ],
+  "parks": [
+   "Nokrek National Park",
+   "Balphakram National Park"
+  ],
+  "knownFor": [
+   "Abode of the Clouds",
+   "Among the wettest places on Earth"
+  ]
+ },
+ "MN": {
+  "region": "NE",
+  "land": "hills",
+  "borders": [
+   "Nagaland",
+   "Assam",
+   "Mizoram",
+   "Myanmar"
+  ],
+  "rivers": [
+   "Imphal",
+   "Barak"
+  ],
+  "dance": [
+   "Manipuri"
+  ],
+  "festivals": [
+   "Yaoshang",
+   "Lai Haraoba",
+   "Sangai Festival"
+  ],
+  "landmarks": [
+   "Loktak Lake",
+   "Kangla Fort"
+  ],
+  "parks": [
+   "Keibul Lamjao National Park"
+  ],
+  "knownFor": [
+   "Only floating national park",
+   "Sangai deer",
+   "Birthplace of modern polo"
+  ]
+ },
+ "MP": {
+  "region": "C",
+  "land": "forest",
+  "borders": [
+   "Uttar Pradesh",
+   "Chhattisgarh",
+   "Maharashtra",
+   "Gujarat",
+   "Rajasthan"
+  ],
+  "rivers": [
+   "Narmada",
+   "Chambal",
+   "Betwa",
+   "Son"
+  ],
+  "dance": [
+   "Matki dance",
+   "Tertali"
+  ],
+  "festivals": [
+   "Khajuraho Dance Festival",
+   "Simhastha Kumbh, Ujjain"
+  ],
+  "landmarks": [
+   "Khajuraho temples",
+   "Sanchi Stupa",
+   "Bhimbetka rock shelters"
+  ],
+  "parks": [
+   "Kanha National Park",
+   "Bandhavgarh National Park",
+   "Pench National Park"
+  ],
+  "knownFor": [
+   "Tiger State of India",
+   "Chanderi and Maheshwari sarees",
+   "Soybean"
+  ]
+ },
+ "MZ": {
+  "region": "NE",
+  "land": "hills",
+  "borders": [
+   "Manipur",
+   "Assam",
+   "Tripura",
+   "Myanmar",
+   "Bangladesh"
+  ],
+  "rivers": [
+   "Tlawng",
+   "Chhimtuipui"
+  ],
+  "dance": [
+   "Cheraw (bamboo dance)"
+  ],
+  "festivals": [
+   "Chapchar Kut"
+  ],
+  "landmarks": [
+   "Phawngpui (Blue Mountain)",
+   "Vantawng Falls"
+  ],
+  "parks": [
+   "Phawngpui National Park",
+   "Murlen National Park"
+  ],
+  "knownFor": [
+   "Bamboo",
+   "High literacy rate"
+  ]
+ },
+ "NL": {
+  "region": "NE",
+  "land": "hills",
+  "borders": [
+   "Assam",
+   "Arunachal Pradesh",
+   "Manipur",
+   "Myanmar"
+  ],
+  "rivers": [
+   "Doyang",
+   "Dhansiri"
+  ],
+  "dance": [
+   "War dance"
+  ],
+  "festivals": [
+   "Hornbill Festival",
+   "Moatsu"
+  ],
+  "landmarks": [
+   "Kohima War Cemetery",
+   "Dzukou Valley"
+  ],
+  "parks": [
+   "Ntangki National Park"
+  ],
+  "knownFor": [
+   "Land of Festivals",
+   "Naga shawls"
+  ]
+ },
+ "OR": {
+  "region": "E",
+  "land": "coast",
+  "borders": [
+   "West Bengal",
+   "Jharkhand",
+   "Chhattisgarh",
+   "Andhra Pradesh"
+  ],
+  "rivers": [
+   "Mahanadi",
+   "Brahmani",
+   "Baitarani"
+  ],
+  "dance": [
+   "Odissi",
+   "Gotipua"
+  ],
+  "festivals": [
+   "Rath Yatra, Puri",
+   "Raja Parba"
+  ],
+  "landmarks": [
+   "Konark Sun Temple",
+   "Jagannath Temple, Puri",
+   "Chilika Lake"
+  ],
+  "parks": [
+   "Bhitarkanika National Park",
+   "Simlipal National Park"
+  ],
+  "knownFor": [
+   "Pattachitra painting",
+   "Olive Ridley turtle nesting",
+   "Formed in 1936"
+  ]
+ },
+ "PB": {
+  "region": "N",
+  "land": "plains",
+  "borders": [
+   "Jammu and Kashmir",
+   "Himachal Pradesh",
+   "Haryana",
+   "Rajasthan",
+   "Chandigarh",
+   "Pakistan"
+  ],
+  "rivers": [
+   "Sutlej",
+   "Beas",
+   "Ravi"
+  ],
+  "dance": [
+   "Bhangra",
+   "Giddha"
+  ],
+  "festivals": [
+   "Baisakhi",
+   "Lohri"
+  ],
+  "landmarks": [
+   "Golden Temple, Amritsar",
+   "Jallianwala Bagh",
+   "Wagah Border"
+  ],
+  "parks": [],
+  "knownFor": [
+   "Granary of India",
+   "Phulkari embroidery"
+  ]
+ },
+ "PY": {
+  "region": "S",
+  "land": "coast",
+  "borders": [
+   "Tamil Nadu",
+   "Kerala",
+   "Andhra Pradesh"
+  ],
+  "rivers": [
+   "Sankarabarani",
+   "Chunnambar"
+  ],
+  "dance": [],
+  "festivals": [
+   "Masi Magam",
+   "Bastille Day"
+  ],
+  "landmarks": [
+   "Auroville",
+   "Promenade Beach",
+   "French Quarter (White Town)"
+  ],
+  "parks": [],
+  "knownFor": [
+   "Former French territory",
+   "Four separate districts"
+  ]
+ },
+ "RJ": {
+  "region": "W",
+  "land": "desert",
+  "borders": [
+   "Punjab",
+   "Haryana",
+   "Uttar Pradesh",
+   "Madhya Pradesh",
+   "Gujarat",
+   "Pakistan"
+  ],
+  "rivers": [
+   "Chambal",
+   "Luni",
+   "Banas"
+  ],
+  "dance": [
+   "Ghoomar",
+   "Kalbelia"
+  ],
+  "festivals": [
+   "Pushkar Fair",
+   "Desert Festival, Jaisalmer",
+   "Gangaur"
+  ],
+  "landmarks": [
+   "Hawa Mahal",
+   "Amber Fort",
+   "Chittorgarh Fort",
+   "Jantar Mantar, Jaipur"
+  ],
+  "parks": [
+   "Ranthambore National Park",
+   "Keoladeo National Park"
+  ],
+  "knownFor": [
+   "Largest state by area",
+   "Thar Desert",
+   "Blue Pottery"
+  ]
+ },
+ "SK": {
+  "region": "NE",
+  "land": "hills",
+  "borders": [
+   "West Bengal",
+   "Nepal",
+   "Bhutan",
+   "China"
+  ],
+  "rivers": [
+   "Teesta",
+   "Rangeet"
+  ],
+  "dance": [
+   "Cham dance",
+   "Singhi Chham"
+  ],
+  "festivals": [
+   "Losar",
+   "Saga Dawa",
+   "Pang Lhabsol"
+  ],
+  "landmarks": [
+   "Kangchenjunga",
+   "Rumtek Monastery",
+   "Nathu La",
+   "Tsomgo Lake"
+  ],
+  "parks": [
+   "Khangchendzonga National Park"
+  ],
+  "knownFor": [
+   "First fully organic state",
+   "Large cardamom",
+   "Joined India in 1975"
+  ]
+ },
+ "TG": {
+  "region": "S",
+  "land": "plains",
+  "borders": [
+   "Maharashtra",
+   "Chhattisgarh",
+   "Andhra Pradesh",
+   "Karnataka"
+  ],
+  "rivers": [
+   "Godavari",
+   "Krishna",
+   "Musi"
+  ],
+  "dance": [
+   "Perini Sivatandavam"
+  ],
+  "festivals": [
+   "Bathukamma",
+   "Bonalu"
+  ],
+  "landmarks": [
+   "Charminar",
+   "Golconda Fort",
+   "Ramappa Temple"
+  ],
+  "parks": [
+   "Kawal Tiger Reserve"
+  ],
+  "knownFor": [
+   "Youngest state, formed 2014",
+   "Pochampally ikat",
+   "Hyderabadi biryani"
+  ]
+ },
+ "TN": {
+  "region": "S",
+  "land": "coast",
+  "borders": [
+   "Kerala",
+   "Karnataka",
+   "Andhra Pradesh",
+   "Puducherry",
+   "Sri Lanka (by sea)"
+  ],
+  "rivers": [
+   "Kaveri",
+   "Vaigai",
+   "Thamirabarani"
+  ],
+  "dance": [
+   "Bharatanatyam",
+   "Karagattam"
+  ],
+  "festivals": [
+   "Pongal",
+   "Karthigai Deepam"
+  ],
+  "landmarks": [
+   "Meenakshi Amman Temple",
+   "Brihadeeswarar Temple",
+   "Shore Temple, Mahabalipuram",
+   "Vivekananda Rock Memorial"
+  ],
+  "parks": [
+   "Mudumalai National Park",
+   "Gulf of Mannar Marine National Park"
+  ],
+  "knownFor": [
+   "Kanchipuram silk",
+   "Tamil, the oldest living classical language",
+   "Thanjavur paintings"
+  ]
+ },
+ "TR": {
+  "region": "NE",
+  "land": "hills",
+  "borders": [
+   "Assam",
+   "Mizoram",
+   "Bangladesh"
+  ],
+  "rivers": [
+   "Gomati",
+   "Khowai"
+  ],
+  "dance": [
+   "Hojagiri"
+  ],
+  "festivals": [
+   "Kharchi Puja",
+   "Garia Puja"
+  ],
+  "landmarks": [
+   "Ujjayanta Palace",
+   "Neermahal",
+   "Unakoti rock carvings"
+  ],
+  "parks": [
+   "Clouded Leopard National Park"
+  ],
+  "knownFor": [
+   "Bamboo and cane craft",
+   "Queen pineapple"
+  ]
+ },
+ "UK": {
+  "region": "N",
+  "land": "hills",
+  "borders": [
+   "Himachal Pradesh",
+   "Uttar Pradesh",
+   "China",
+   "Nepal"
+  ],
+  "rivers": [
+   "Ganga",
+   "Yamuna",
+   "Alaknanda",
+   "Bhagirathi"
+  ],
+  "dance": [
+   "Langvir Nritya",
+   "Chholiya"
+  ],
+  "festivals": [
+   "Kumbh Mela, Haridwar",
+   "Phool Dei"
+  ],
+  "landmarks": [
+   "Kedarnath Temple",
+   "Badrinath Temple",
+   "Valley of Flowers",
+   "Har Ki Pauri"
+  ],
+  "parks": [
+   "Jim Corbett National Park",
+   "Nanda Devi National Park"
+  ],
+  "knownFor": [
+   "Source of the Ganga at Gangotri",
+   "Formed in 2000",
+   "Chipko movement"
+  ]
+ },
+ "UP": {
+  "region": "N",
+  "land": "plains",
+  "borders": [
+   "Uttarakhand",
+   "Himachal Pradesh",
+   "Haryana",
+   "Delhi",
+   "Rajasthan",
+   "Madhya Pradesh",
+   "Chhattisgarh",
+   "Jharkhand",
+   "Bihar",
+   "Nepal"
+  ],
+  "rivers": [
+   "Ganga",
+   "Yamuna",
+   "Gomti",
+   "Ghaghara"
+  ],
+  "dance": [
+   "Kathak"
+  ],
+  "festivals": [
+   "Kumbh Mela, Prayagraj",
+   "Holi of Barsana",
+   "Dev Deepawali, Varanasi"
+  ],
+  "landmarks": [
+   "Taj Mahal",
+   "Fatehpur Sikri",
+   "Agra Fort",
+   "Kashi Vishwanath Temple"
+  ],
+  "parks": [
+   "Dudhwa National Park"
+  ],
+  "knownFor": [
+   "Most Lok Sabha seats (80)",
+   "Chikankari of Lucknow",
+   "Banarasi silk"
+  ]
+ },
+ "WB": {
+  "region": "E",
+  "land": "plains",
+  "borders": [
+   "Sikkim",
+   "Assam",
+   "Bihar",
+   "Jharkhand",
+   "Odisha",
+   "Nepal",
+   "Bhutan",
+   "Bangladesh"
+  ],
+  "rivers": [
+   "Hooghly",
+   "Teesta",
+   "Damodar"
+  ],
+  "dance": [
+   "Gaudiya Nritya",
+   "Chhau (Purulia)"
+  ],
+  "festivals": [
+   "Durga Puja",
+   "Poila Boishakh"
+  ],
+  "landmarks": [
+   "Victoria Memorial",
+   "Howrah Bridge",
+   "Darjeeling Himalayan Railway",
+   "Santiniketan"
+  ],
+  "parks": [
+   "Sundarbans National Park"
+  ],
+  "knownFor": [
+   "Darjeeling tea",
+   "Rosogolla",
+   "Royal Bengal tiger"
+  ]
+ },
+ "AN": {
+  "region": "IS",
+  "land": "islands",
+  "borders": [
+   "Myanmar (by sea)",
+   "Indonesia (by sea)"
+  ],
+  "rivers": [],
+  "dance": [
+   "Nicobarese dance"
+  ],
+  "festivals": [
+   "Island Tourism Festival"
+  ],
+  "landmarks": [
+   "Cellular Jail",
+   "Radhanagar Beach",
+   "Barren Island volcano"
+  ],
+  "parks": [
+   "Mahatma Gandhi Marine National Park",
+   "Campbell Bay National Park"
+  ],
+  "knownFor": [
+   "India's only active volcano",
+   "Indira Point, southernmost tip of India",
+   "Capital renamed Sri Vijaya Puram in 2024"
+  ]
+ }
+}

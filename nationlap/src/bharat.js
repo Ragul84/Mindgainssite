@@ -34,16 +34,19 @@ let data = null;
 /** All states as {code, name, tagline, capital, language, formed, lokSabha, facts[]}. */
 export async function loadStates() {
   if (data) return data;
-  const [meta, gk] = await Promise.all([
+  const [meta, gk, core] = await Promise.all([
     fetch('/assets/data/states_meta.json').then((r) => r.json()),
     fetch('/assets/data/states_gk.json').then((r) => r.json()),
+    fetch('/assets/data/states_core.json').then((r) => r.json()).catch(() => ({})),
   ]);
   data = {};
   for (const [k, m] of Object.entries(meta)) {
     const code = KEY_CODE[k], g = gk[k] || {};
     if (!code) continue;
     data[code] = { code, name: m.state, tagline: m.tagline || '', lokSabha: m.lokSabha, capital: g.capital || '',
-      language: g.language || '', formed: String(g.formed || ''), facts: Array.isArray(g.facts) ? g.facts : [] };
+      language: g.language || '', formed: String(g.formed || ''), facts: Array.isArray(g.facts) ? g.facts : [],
+      // states_core.json: the must-know lists (borders, rivers, dance, festivals, landmarks, parks, knownFor)
+      ...(core[code] || {}) };
   }
   return data;
 }
@@ -57,7 +60,8 @@ const hash = (s) => { let h = 7; for (const ch of s) h = (h * 31 + ch.charCodeAt
 
 /** A wrong answer of the same kind, from another state, picked the same way every time. */
 function decoy(all, st, field, right) {
-  const pool = [...new Set(Object.values(all).map((x) => plain(x[field])).filter((v) => v && v !== right))];
+  // English is an additional official language in several states, so it is never a "wrong" answer.
+  const pool = [...new Set(Object.values(all).map((x) => plain(x[field])).filter((v) => v && v !== right && !(field === 'language' && v === 'English')))];
   return pool.length ? pool[hash(st.code + field) % pool.length] : '';
 }
 
@@ -85,7 +89,47 @@ export function stateCards(all, code) {
     const w = String(Math.max(1, +seats + ((hash(code + 'ls') % 2) ? 3 : -2) * (+seats > 6 ? 2 : 1)));
     out.push(card(st, 4, `${st.name}: Lok Sabha`, '', `${st.name} sends ${seats} member${seats === '1' ? '' : 's'} to the Lok Sabha.`, `Lok Sabha seats from ${st.name}?`, seats, w === seats ? String(+seats + 1) : w));
   }
-  st.facts.forEach((f, i) => out.push(card(st, 10 + i, 'Did you know', f, '', '', '', '')));
+  // The must-know lists. A wrong option comes from another state and is never one of this
+  // state's own answers, so a gate can't mark a true fact wrong.
+  const list = (k) => (Array.isArray(st[k]) ? st[k] : []);
+  const otherPool = (k) => [...new Set(Object.values(all).filter((x) => x.code !== code).flatMap((x) => (Array.isArray(x[k]) ? x[k] : [])))]
+    .filter((v) => !list(k).includes(v));
+  const pickOther = (k, salt) => { const pool = otherPool(k); return pool.length ? pool[hash(code + k + salt) % pool.length] : ''; };
+  let n = 20;
+  const ASK = {
+    rivers: [(v) => `A major river of ${st.name}?`, (v) => `${v} flows through ${st.name}.`, 2],
+    dance: [(v) => `A dance of ${st.name}?`, (v) => `${v} is a dance form of ${st.name}.`, 1],
+    festivals: [(v) => `A festival of ${st.name}?`, (v) => `${v} is celebrated in ${st.name}.`, 1],
+    landmarks: [(v) => `Which is in ${st.name}?`, (v) => `${v} is in ${st.name}.`, 2],
+    parks: [(v) => `A national park in ${st.name}?`, (v) => `${v} is in ${st.name}.`, 1],
+  };
+  // Neighbours: the decoy is a state that does not border this one.
+  const names = Object.values(all).map((x) => x.name);
+  const nb = list('borders').filter((b) => names.includes(b)).slice(0, 2);
+  nb.forEach((b, i) => {
+    const not = names.filter((x) => x !== st.name && !list('borders').includes(x));
+    const w = not.length ? not[hash(code + 'nb' + i) % not.length] : '';
+    out.push(card(st, n++, `${st.name}: neighbours`, '', `${st.name} shares a border with ${list('borders').join(', ')}.`, `Which borders ${st.name}?`, b, w));
+  });
+  for (const [k, [ask, line, max]] of Object.entries(ASK)) {
+    list(k).slice(0, max).forEach((v, i) => {
+      out.push(card(st, n++, `${st.name}: ${k === 'parks' ? 'national park' : k.replace(/s$/, '')}`, '', line(v), ask(v), v, pickOther(k, i)));
+    });
+  }
+  // Known-for lines and the Know Your India facts are read in the brief, not gated: they are
+  // sentences, too long for an arch.
+  list('knownFor').forEach((f, i) => out.push(card(st, 60 + i, 'Known for', f, '', '', '', '')));
+  st.facts.forEach((f, i) => out.push(card(st, 70 + i, 'Did you know', f, '', '', '', '')));
+  return out;
+}
+
+/** Split a state's cards into up to 3 laps of about 7, each lap with its share of gates. */
+export function stateLaps(cards) {
+  const gated = cards.filter((c) => c.gate), plainCards = cards.filter((c) => !c.gate);
+  const laps = Math.max(1, Math.min(3, Math.ceil(cards.length / 7)));
+  const out = Array.from({ length: laps }, () => []);
+  gated.forEach((c, i) => out[i % laps].push(c));
+  plainCards.forEach((c, i) => out[i % laps].push(c));
   return out;
 }
 
@@ -113,6 +157,7 @@ export function createYatra({ uiRoot, onRace, onClose }) {
   let pick = null;
 
   async function open() {
+    pick = null;
     const all = await loadStates().catch(() => null);
     if (!all) { root.innerHTML = '<div class="yt-panel"><p class="yt-sub">Could not load the map. Check your connection.</p><button class="btn" data-x>BACK</button></div>'; show(); return; }
     render(all);
@@ -124,26 +169,48 @@ export function createYatra({ uiRoot, onRace, onClose }) {
   }
   function close() { root.classList.add('hidden'); }
 
+  const REGIONS = [['N', 'North'], ['NE', 'North-East'], ['E', 'East'], ['C', 'Central'], ['W', 'West'], ['S', 'South'], ['IS', 'Islands']];
+  const HUE = { N: 210, NE: 150, E: 18, C: 95, W: 35, S: 330, IS: 190 };
+  // A small landscape per state, drawn in SVG: hills, coast, desert, forest, plains, islands, city.
+  const LAND = {
+    hills: '<path d="M2 34 18 12l10 12 8-8 18 18z" fill="#fff" opacity=".9"/><path d="M14 17l4-5 4 5z" fill="#fff"/>',
+    coast: '<path d="M2 26c8-6 14 6 22 0s14 6 22 0 6 2 10 0v12H2z" fill="#fff" opacity=".9"/><circle cx="44" cy="12" r="6" fill="#fff"/>',
+    desert: '<path d="M2 34c10-10 20-10 30 0 6-6 14-8 24 0z" fill="#fff" opacity=".9"/><circle cx="16" cy="12" r="6" fill="#fff"/>',
+    forest: '<path d="M10 34V24M28 34V20M46 34V24" stroke="#fff" stroke-width="3"/><path d="M10 6 2 24h16zM28 2 18 22h20zM46 6l-8 18h16z" fill="#fff" opacity=".9"/>',
+    plains: '<path d="M2 28h52v6H2z" fill="#fff" opacity=".9"/><path d="M8 28c4-10 8-10 12 0M30 28c4-12 10-12 14 0" stroke="#fff" stroke-width="3" fill="none"/><circle cx="44" cy="10" r="5" fill="#fff"/>',
+    islands: '<path d="M2 30c8-4 16 4 24 0s16 4 30 0v8H2z" fill="#fff" opacity=".7"/><path d="M14 30c2-8 10-8 12 0z" fill="#fff"/><path d="M20 22c-1-8 3-14 8-16M20 22c4-6 10-6 14-4" stroke="#fff" stroke-width="2.5" fill="none"/>',
+    city: '<path d="M4 34V18h8v16M14 34V8h10v26M26 34V14h8v20M36 34V22h8v12M46 34V12h6v22" fill="#fff" opacity=".9"/>',
+  };
+
   function render(all) {
     const p = passport(), n = stampedCount();
-    const Z = 44, G = 6;
-    const tiles = Object.keys(TILE).map((k) => {
-      const [c, r] = TILE[k], s = p[k], st = all[k];
-      const cls = s?.stamped ? 'done' : s ? 'tried' : '';
-      return `<button class="yt-tile ${cls}${pick === k ? ' on' : ''}" data-st="${k}" style="left:${c * (Z + G)}px;top:${r * (Z + G)}px" title="${esc(st ? st.name : k)}">${k}${s?.stamped ? '<i>✓</i>' : ''}</button>`;
+    const groups = REGIONS.map(([r, label]) => {
+      const sts = Object.values(all).filter((x) => (x.region || 'N') === r).sort((a, b) => a.name.localeCompare(b.name));
+      if (!sts.length) return '';
+      return `<div class="yt-region"><div class="yt-rlabel">${label}</div><div class="yt-stamps">${sts.map((st) => {
+        const s = p[st.code], h = HUE[st.region || 'N'] + (hash(st.code) % 30) - 15;
+        return `<button class="yt-stamp${s?.stamped ? ' done' : s ? ' tried' : ''}${pick === st.code ? ' on' : ''}" data-st="${st.code}" style="--h:${h}">
+          <svg viewBox="0 0 56 38" aria-hidden="true">${LAND[st.land] || LAND.plains}</svg>
+          <b>${esc(st.name)}</b>${s?.stamped ? '<i class="yt-seal">✓ STAMPED</i>' : s ? `<i class="yt-try">${Math.round(s.best * 100)}%</i>` : ''}</button>`;
+      }).join('')}</div></div>`;
     }).join('');
     const st = pick && all[pick], s = pick && p[pick];
+    const nGates = st ? stateCards(all, pick).filter((c) => c.gate).length : 0;
     const side = st
-      ? `<div class="yt-card"><div class="yt-name">${esc(st.name)}</div><div class="yt-tag">${esc(st.tagline)}</div>
+      ? `<div class="yt-card" style="--h:${HUE[st.region || 'N']}"><svg class="yt-art" viewBox="0 0 56 38" aria-hidden="true">${LAND[st.land] || LAND.plains}</svg>
+          <div><div class="yt-name">${esc(st.name)}</div><div class="yt-tag">${esc(st.tagline)}</div></div>
+          <div class="yt-facts">Capital ${esc(plain(st.capital) || st.capital)} · ${nGates} questions over ${stateLaps(stateCards(all, pick)).length} laps</div>
           <div class="yt-best">${s ? (s.stamped ? `✓ Stamped · best ${Math.round(s.best * 100)}%` : `Best ${Math.round(s.best * 100)}% · ${Math.round(STAMP_AT * 100)}% stamps it`) : `Score ${Math.round(STAMP_AT * 100)}% to stamp it`}</div>
           <button class="btn primary yt-go" data-go="${pick}">RACE ${esc(st.name.toUpperCase())}</button></div>`
-      : `<div class="yt-card yt-hint">Pick a state on the map. Read its card, race its gates, and stamp it in your passport.</div>`;
+      : '';
     root.innerHTML = `<div class="yt-panel">
-        <div class="yt-head"><div><div class="yt-title">BHARAT YATRA</div><div class="yt-sub">${n} of 36 states and UTs stamped</div></div><button class="btn small" data-x>BACK</button></div>
-        <div class="yt-body"><div class="yt-map" style="width:${9 * (Z + G) - G}px;height:${7 * (Z + G) - G}px">${tiles}</div>${side}</div>
+        <div class="yt-head"><div><div class="yt-title">BHARAT YATRA</div><div class="yt-sub">Your Bharat Passport · ${n} of 36 stamped</div></div><button class="btn small" data-x>BACK</button></div>
+        <div class="yt-progress"><i style="width:${Math.round((n / 36) * 100)}%"></i></div>
+        ${side}
+        <div class="yt-list">${groups}</div>
         ${n ? `<button class="btn small yt-share">SHARE MY PASSPORT</button>` : ''}
       </div>`;
-    root.querySelectorAll('[data-st]').forEach((b) => b.addEventListener('click', (e) => { e.stopPropagation(); pick = b.dataset.st; render(all); show(); }));
+    root.querySelectorAll('[data-st]').forEach((b) => b.addEventListener('click', (e) => { e.stopPropagation(); pick = b.dataset.st; render(all); show(); root.querySelector('.yt-panel').scrollTop = 0; }));
     root.querySelector('[data-go]')?.addEventListener('click', (e) => { e.stopPropagation(); const k = e.currentTarget.dataset.go; close(); onRace?.(k, all[k].name, stateCards(all, k)); });
     root.querySelector('.yt-share')?.addEventListener('click', (e) => {
       e.stopPropagation();

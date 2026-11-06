@@ -2200,3 +2200,38 @@ body.touch-mode[data-state="title"] .hof-strip { width: auto !important; }
 .family-mode .res-recap-row { font-size: 16px; }
 .av-field { flex: 1 1 150px; min-width: 0; }
 .av-toggle b { font-size: 12px; line-height: 1.25; }
+
+/* item slot label: what the item does, also on touch (it used to be hidden there) */
+.touch-mode .item-hint { display: block; font-size: 10px; }
+
+/* Bharat Yatra v2: passport stamps by region */
+.yt-panel { width: min(980px, 96vw); }
+.yt-progress { height: 8px; border-radius: 4px; background: rgba(255, 255, 255, .15); overflow: hidden; margin-top: -4px; }
+.yt-progress i { display: block; height: 100%; background: linear-gradient(90deg, #ff9933, #ffffff 50%, #138808); }
+.yt-list { display: flex; flex-direction: column; gap: 14px; }
+.yt-rlabel { font: 800 12px var(--body); letter-spacing: .16em; text-transform: uppercase; color: #ffd23f; margin-bottom: 8px; }
+.yt-stamps { display: grid; grid-template-columns: repeat(auto-fill, minmax(124px, 1fr)); gap: 10px; }
+.yt-stamp { position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 12px 8px 10px; cursor: pointer;
+  color: #fff; font: 800 13px/1.15 var(--body); text-align: center; border: 0; border-radius: 10px;
+  background: linear-gradient(160deg, hsl(var(--h) 55% 46%), hsl(var(--h) 60% 32%));
+  /* perforated stamp edge */
+  -webkit-mask: radial-gradient(circle at 5px 5px, transparent 3px, #000 3.5px) -5px -5px / 10px 10px, linear-gradient(#000, #000) center / calc(100% - 8px) calc(100% - 8px) no-repeat;
+          mask: radial-gradient(circle at 5px 5px, transparent 3px, #000 3.5px) -5px -5px / 10px 10px, linear-gradient(#000, #000) center / calc(100% - 8px) calc(100% - 8px) no-repeat;
+  transition: transform .12s ease, filter .15s; }
+.yt-stamp:hover { transform: translateY(-2px) rotate(-1deg); filter: brightness(1.1); }
+.yt-stamp svg { width: 56px; height: 38px; opacity: .95; }
+.yt-stamp.on { filter: brightness(1.18); box-shadow: inset 0 0 0 3px #fff; }
+.yt-stamp:not(.done):not(.tried) { filter: saturate(.55) brightness(.92); }
+.yt-stamp:not(.done):not(.tried):hover, .yt-stamp.on { filter: none; }
+.yt-seal { position: absolute; top: 34%; left: 50%; transform: translate(-50%, -50%) rotate(-14deg); font: 900 11px var(--body); letter-spacing: .1em; font-style: normal;
+  color: #ffd23f; border: 2px solid #ffd23f; border-radius: 6px; padding: 2px 6px; background: rgba(0, 0, 0, .25); white-space: nowrap; }
+.yt-try { font: 800 11px var(--body); font-style: normal; color: #ffd23f; }
+.yt-card { max-width: none; flex: none; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 6px 14px; padding: 14px 16px;
+  background: linear-gradient(135deg, hsl(var(--h) 50% 40% / .55), rgba(255, 255, 255, .06)); }
+.yt-card .yt-art { width: 72px; height: 50px; flex: none; }
+.yt-card .yt-name { font-size: 24px; }
+.yt-card > div:nth-child(2) { flex: 1; min-width: 150px; }
+.yt-card .yt-facts, .yt-card .yt-best { flex-basis: 100%; }
+.yt-facts { font: 700 13px var(--body); opacity: .85; }
+.yt-card .yt-go { flex-basis: 100%; }
+@media (max-width: 560px) { .yt-stamps { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 8px; } .yt-stamp { font-size: 12px; } }

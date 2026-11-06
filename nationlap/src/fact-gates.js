@@ -115,6 +115,7 @@ export function createFactGates(scene, track, cards) {
       triggered: false,
       // lane A is left of centre, so a negative lateral means the player chose A
       answerIsA: card.gate.answer === 'a',
+      tan: (() => { try { const v = track.getTangentAt(t); return v && { x: v.x, z: v.z }; } catch { return null; } })(),
     });
   });
 
@@ -131,7 +132,11 @@ export function createFactGates(scene, track, cards) {
       const dz = player.position.z - g.position.z;
       const d2 = dx * dx + dz * dz;
 
-      if (!g.triggered && d2 < TRIGGER_R * TRIGGER_R) {
+      // Fire once the kart is through the arch, not on approach: the boost or the spin has to
+      // follow the choice you can see you made. "Through" = past the arch's plane along the track.
+      let past = true;
+      if (g.tan) past = dx * g.tan.x + dz * g.tan.z >= 0;
+      if (!g.triggered && d2 < TRIGGER_R * TRIGGER_R && past) {
         g.triggered = true;
         let lateral = 0;
         try { lateral = track.getSurfaceInfo(player.position.x, player.position.z)?.lateral ?? 0; } catch { /* keep 0 */ }
