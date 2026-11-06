@@ -24,6 +24,7 @@ import { createScrollIntro } from './scroll-intro.js';
 import { loadLatest, loadMonth, availableMonths, monthLabel, splitLaps, quizItem, FACTS_PER_LAP } from './affairs.js';
 import { newsStreak, bumpNewsStreak } from './news-streak.js';
 import { createYatra, recordStateRun, stampedCount, STAMP_AT } from './bharat.js';
+import { STATES, myState, isFamily, applyFamily, deviceId } from './prefs.js';
 import { formatTime } from './race.js';
 import { createFactGates } from './fact-gates.js';
 import { createHallOfFame, fetchToppers } from './hall-of-fame.js';
@@ -352,8 +353,22 @@ ${lap ? 'Race my ghost through' : 'Race'} today's news on NationLap:`;
   const box = document.createElement('div');
   box.className = 'res-share';
   box.innerHTML = `<div class="rs-streak">${st.n ? `🔥 <b>${st.n}</b>-day news streak${st.bumped && st.n > 1 ? ' · +1 today' : ''}` : ''}</div>
+    <div class="rs-state"></div>
     <div class="rs-btns"><button class="btn small rs-wa">SHARE ON WHATSAPP</button><button class="btn small rs-more">SHARE</button></div>`;
   panel.appendChild(box);
+  // Most Informed State: today's finish counts for the player's state (turnout, one per day).
+  const stEl = box.querySelector('.rs-state'), st0 = myState();
+  if (!st0) {
+    stEl.innerHTML = `<button class="rs-link">Pick your state</button> to count for it on the Most Informed State board`;
+    stEl.querySelector('.rs-link').addEventListener('click', (e) => { e.stopPropagation(); hud.hideResults(); menu.showAvatar({ first: false }); });
+  } else {
+    fetch('/api/game/informed', { method: 'POST', headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ state: st0, device: deviceId(), clean: r.clean, total: r.total }) })
+      .then((x) => x.json()).then((j) => {
+        const row = (j.states || []).find((s) => s.code === st0);
+        if (row) stEl.textContent = `🗺 ${STATES[st0]} is #${row.rank} of ${j.states.length} most informed states this week`;
+      }).catch(() => {});
+  }
   const fire = (to) => { try { bus.emit('ui:confirm'); } catch (e) {} };
   box.querySelector('.rs-wa').addEventListener('click', (e) => { e.stopPropagation(); fire('wa'); window.open('https://wa.me/?text=' + encodeURIComponent(text + ' ' + link), '_blank', 'noopener'); });
   box.querySelector('.rs-more').addEventListener('click', async (e) => {
@@ -627,7 +642,7 @@ async function startAffairsRace(monthKey) {
   /* Three laps over the same eight gates. You already know the corners by the second lap, so
      the only thing still being tested is the fact — and a gate you fluffed first time round
      comes back, which is the revision the mode exists for. */
-  startRace({ difficulty: 'hard', laps: lapsFacts.length });
+  startRace({ difficulty: isFamily() ? 'easy' : 'hard', laps: lapsFacts.length });
 }
 /* Bharat Yatra: one race per state, on the affairs machinery (brief, gates, recap). A state's
    cards are one lap; the result stamps the passport instead of touching the news streak or the
@@ -643,7 +658,7 @@ function startStateRace(code, name, cards) {
   };
   focusedZone = null; focusedCards = null; focusedLesson = null;
   cupRun = null;
-  startRace({ difficulty: 'normal', laps: 1 });
+  startRace({ difficulty: isFamily() ? 'easy' : 'normal', laps: 1 });
 }
 const yatra = createYatra({ uiRoot, onRace: (code, name, cards) => startStateRace(code, name, cards), onClose: () => {} });
 
@@ -749,7 +764,7 @@ const menu = new Menu(uiRoot, {
     hud.setItemNames?.(null); hud.setWrongWayLine?.(null); hud.setGateMarks?.(null);
     focusedZone = null; focusedCards = null; focusedLesson = null;
     cupRun = null;
-    startRace({ difficulty: 'normal', laps: RACE.laps });
+    startRace({ difficulty: isFamily() ? 'easy' : 'normal', laps: RACE.laps });
   },
   // Today's affairs: one race whose content is the day's cards rather than a syllabus topic.
   onAffairs: () => startAffairsRace(),
@@ -1483,6 +1498,7 @@ async function boot() {
   // An earlier version held LOADING here until every shader had compiled — technically fewer
   // hitches afterwards, but it traded a title that plays for a loading screen that sits there,
   // which is worse to sit through. Shaders are precompiled inside buildWorld instead.
+  applyFamily();
   menu.showTitle();
   menu.setNewsStreak?.(newsStreak());
   refreshResumeButton();

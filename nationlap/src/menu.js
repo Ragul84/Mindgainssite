@@ -1,6 +1,7 @@
 // Title screen, first-run racer setup ("you"), the pre-race Ready card, pause menu, gamepad navigation.
 // The old CHOOSE YOUR RACER grid is gone: the journey map already picks the topic, the player
 // races as themselves, and the 8 themed characters are the subject mentors / rival aspirants.
+import { STATES, myState, setMyState, isFamily, setFamily } from './prefs.js';
 import { bus } from './events.js';
 import { AVATARS, KART_COLORS, NAME_MAX, loadProfile, saveProfile, playerCharacter } from './player.js';
 
@@ -226,6 +227,10 @@ export class Menu {
         <div class="av-label">KART COLOUR</div>
         <div class="av-colors"></div>
         <div class="av-note">Every kart has the same balanced stats — you win on the quiz, not the car.</div>
+        <div class="av-row2">
+          <label class="av-field"><span class="av-label">YOUR STATE</span><select class="av-state"><option value="">Choose your state</option>${Object.entries(STATES).sort((x, y) => x[1].localeCompare(y[1])).map(([k, v]) => `<option value="${k}">${v}</option>`).join('')}</select></label>
+          <label class="av-field av-fam"><span class="av-label">FAMILY MODE</span><span class="av-toggle"><input type="checkbox" class="av-family"><i></i><b>Gentler rivals, bigger text</b></span></label>
+        </div>
         <button type="button" class="btn primary av-save">LET'S RACE!</button>
       </div>`;
     this.avName = a.querySelector('.av-name');
@@ -236,6 +241,10 @@ export class Menu {
     this.avBack = a.querySelector('.avatar-back');
     this.avBack.addEventListener('click', () => this._avatarBack());
     a.querySelector('.av-save').addEventListener('click', () => this._avatarSave());
+    this.avState = a.querySelector('.av-state');
+    this.avFamily = a.querySelector('.av-family');
+    this.avState.addEventListener('change', () => setMyState(this.avState.value));
+    this.avFamily.addEventListener('change', () => setFamily(this.avFamily.checked));
     KART_COLORS.forEach((c, i) => {
       const b = el('button', 'av-color', this.avColors);
       b.type = 'button'; b.style.background = hex(c); b.title = 'Kart colour'; b.setAttribute('aria-label', `Kart colour ${i + 1}`);
@@ -331,6 +340,8 @@ export class Menu {
     this.avatarFirst = first;
     this.draft = loadProfile();
     this.avName.value = this.draft.name;
+    this.avState.value = myState();
+    this.avFamily.checked = isFamily();
     this.avBack.style.display = first ? 'none' : '';
     this._refreshAvatar();
     this._showOnly(this.avatarEl);

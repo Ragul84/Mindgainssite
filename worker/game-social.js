@@ -23,6 +23,8 @@
  *   GET  /api/game/bharat                 state board
  *   POST /api/game/ghost  {rec, name, kind}  NationLap: store a lap to share, returns a code
  *   GET  /api/game/ghost?code=            NationLap: the lap behind a share link
+ *   POST /api/game/informed {state, device, clean, total}  NationLap: count today's race for a state
+ *   GET  /api/game/informed               NationLap: Most Informed State, last 7 days
  *
  * D1 tables: worker/game-schema-004-social.sql
  */
@@ -293,7 +295,27 @@ export function makeSocial({ TRACKS, json, hmac, loadBank, usable, limited, iden
     return json({ error: 'try again' }, 500);
   }
 
+  // Most Informed State: how many people from each state kept up with the news this week.
+  // It counts finishes, one per device per IST day, so the measure is turnout, not marks; the
+  // graded India board stays where it is. Accuracy is shown beside it, never ranked on.
+  async function informed(request, env) {
+    if (!env.GAME_DB) return json({ states: [] });
+    const db = env.GAME_DB, now = Date.now(), day = dayId(now);
+    if (request.method === 'POST') {
+      if (await limited(env.GAME_SUBMIT_RL, 'gi:' + (request.headers.get('cf-connecting-ip') || 'na'), 10)) return json({ error: 'slow down' }, 429, { 'retry-after': '60' });
+      const b = await body(request);
+      const st = cleanState(b && b.state), dev = String((b && b.device) || '').replace(/[^a-z0-9]/gi, '').slice(0, 32);
+      const total = Math.max(0, Math.min(30, Number(b && b.total) | 0)), clean = Math.max(0, Math.min(total, Number(b && b.clean) | 0));
+      if (!st || dev.length < 8 || !total) return json({ error: 'bad request' }, 400);
+      await db.prepare('INSERT OR IGNORE INTO nl_informed (day, uid, state, clean, total, at) VALUES (?1,?2,?3,?4,?5,?6)').bind(day, 'd_' + dev, st, clean, total, now).run();
+    }
+    const { results } = await db.prepare(`SELECT state, COUNT(*) AS n, SUM(clean) AS c, SUM(total) AS t FROM nl_informed WHERE day > ?1 GROUP BY state ORDER BY n DESC, c DESC LIMIT 40`).bind(day - 7).all();
+    const states = (results || []).map((r, i) => ({ rank: i + 1, code: r.state, name: STATES[r.state] || r.state, players: r.n, accuracy: r.t ? Math.round((r.c / r.t) * 100) : 0 }));
+    return json({ days: 7, states }, 200, request.method === 'GET' ? { 'cache-control': 'public, max-age=60' } : {});
+  }
+
   const routes = {
+    '/api/game/informed': informed,
     '/api/game/ghost': ghost,
     '/api/game/paper': paper, '/api/game/mock': mock, '/api/game/event': eventBoard,
     '/api/game/group/create': groupCreate, '/api/game/group/join': groupJoin, '/api/game/group/leave': groupLeave,
