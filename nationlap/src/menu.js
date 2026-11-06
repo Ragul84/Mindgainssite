@@ -91,10 +91,10 @@ export class Menu {
         <div class="logo-swoosh"></div>
       </div>
       <div class="title-actions">
-        <button type="button" class="btn primary play-btn">TODAY'S RACE<small class="play-sub">Today's news, raced in 3 minutes</small></button>
+        <button type="button" class="btn primary play-btn">LEARN &amp; RACE<small class="play-sub">Read a lesson, then race it</small></button>
         <button type="button" class="btn resume-btn hidden">RESUME CUP</button>
-        <button type="button" class="title-archive">Past months · Syllabus lessons ›</button>
         <div class="title-row">
+          <button type="button" class="btn news-btn">TODAY'S NEWS<small class="news-sub"></small></button>
           <button type="button" class="btn affairs-btn">BHARAT YATRA</button>
           <button type="button" class="btn quick-btn">QUICK RACE</button>
           <button type="button" class="btn board-btn">INDIA BOARD</button>
@@ -105,8 +105,13 @@ export class Menu {
         <span>© NationLap · MindGains</span>
         <span class="mute-hint"><span class="kc">M</span> mute</span>
       </div>`;
-    // The front door is today's news race: one tap from the title to the day's briefing.
+    // The front door is the syllabus: pick a lesson, read it, race it.
     t.querySelector('.play-btn').addEventListener('click', (e) => {
+      e.stopPropagation();
+      bus.emit('ui:confirm');
+      this.h.onJourney?.();
+    });
+    t.querySelector('.news-btn').addEventListener('click', (e) => {
       e.stopPropagation();
       bus.emit('ui:confirm');
       this.h.onAffairs?.();
@@ -122,13 +127,8 @@ export class Menu {
       e.stopPropagation();
       this.h.onMap?.();
     });
-    // The month archive (every card since April) and the syllabus lessons live on the journey map.
-    t.querySelector('.title-archive').addEventListener('click', (e) => {
-      e.stopPropagation();
-      bus.emit('ui:confirm');
-      this.h.onJourney?.();
-    });
-    this.playSub = t.querySelector('.play-sub');
+    this.newsSub = t.querySelector('.news-sub');
+
     t.querySelector('.board-btn').addEventListener('click', (e) => {
       e.stopPropagation();
       bus.emit('ui:confirm');
@@ -159,11 +159,10 @@ export class Menu {
     this.account = acct || null;
     this._refreshTitleRacer();
   }
-  /** Line under TODAY'S RACE: the streak to keep, or the invitation to start one. */
+  /** The news streak, small under TODAY'S NEWS. */
   setNewsStreak(st) {
-    if (!this.playSub || !st) return;
-    this.playSub.textContent = st.today ? `🔥 ${st.n}-day streak · done for today, race again`
-      : st.n ? `🔥 ${st.n}-day streak · race today to keep it` : "Today's news, raced in 3 minutes";
+    if (!this.newsSub || !st) return;
+    this.newsSub.textContent = st.n ? `🔥 ${st.n} day${st.n > 1 ? 's' : ''}${st.today ? ' ✓' : ''}` : '';
   }
 
   _refreshTitleRacer() {
@@ -199,7 +198,7 @@ export class Menu {
       <div class="game-rail left"></div>
       <div class="game-rail right"></div>
       <div class="ready-panel" role="dialog" aria-modal="true" aria-labelledby="ready-topic">
-        <div class="rd-head"><span class="rd-eyebrow">READY?</span><button type="button" class="rd-esc ready-back" aria-label="Back to map"><span class="esc-hint">ESC · </span>MAP</button></div>
+        <div class="rd-head"><span class="rd-eyebrow">READY?</span><button type="button" class="rd-esc ready-back" aria-label="Back to map"><span class="esc-hint">ESC · </span>BACK</button></div>
         <h2 class="ready-topic" id="ready-topic"></h2>
         <div class="ready-subject"></div>
         <section class="rd-section ready-mentor">
