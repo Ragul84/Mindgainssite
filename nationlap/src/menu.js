@@ -162,7 +162,13 @@ export class Menu {
   /** The news streak, small under TODAY'S NEWS. */
   setNewsStreak(st) {
     if (!this.newsSub || !st) return;
-    this.newsSub.textContent = st.n ? `🔥 ${st.n} day${st.n > 1 ? 's' : ''}${st.today ? ' ✓' : ''}` : '';
+    this._streakText = st.n ? `🔥 ${st.n} day${st.n > 1 ? 's' : ''}${st.today ? ' ✓' : ''}` : '';
+    this.newsSub.textContent = this._latestText || this._streakText;
+  }
+  /** While the feed is behind, the button says which day's news it holds. */
+  setNewsLatest(text) {
+    this._latestText = text || '';
+    if (this.newsSub) this.newsSub.textContent = this._latestText || this._streakText || '';
   }
 
   _refreshTitleRacer() {

@@ -21,7 +21,7 @@ import { preloadMiga } from './assets-preload.js';
 import { createJourneyMap } from './journey-map.js';
 import { createLessonReader, lessonCards, loadLesson } from './lesson-reader.js';
 import { createScrollIntro } from './scroll-intro.js';
-import { loadLatest, loadMonth, availableMonths, monthLabel, splitLaps, quizItem, FACTS_PER_LAP } from './affairs.js';
+import { istToday, loadLatest, loadMonth, availableMonths, monthLabel, splitLaps, quizItem, FACTS_PER_LAP } from './affairs.js';
 import { newsStreak, bumpNewsStreak } from './news-streak.js';
 import { createYatra, recordStateRun, stampedCount, STAMP_AT, stateLaps } from './bharat.js';
 import { STATES, myState, isFamily, applyFamily, deviceId } from './prefs.js';
@@ -248,6 +248,9 @@ async function refreshHofStrip() {
     : '';
 }
 setTimeout(() => safe('hofStrip', refreshHofStrip), 2500);
+loadLatest().then((d) => {
+  if (d.date && d.date < istToday()) menu.setNewsLatest?.('Latest: ' + new Date(d.date + 'T00:00:00').toLocaleDateString('en-IN', { day: 'numeric', month: 'short' }));
+}).catch(() => {});
 setInterval(() => { if (state === 'title') safe('hofStrip', refreshHofStrip); }, 120000);
 
 /* A one-line notice over the title screen (the HUD, and its toast, is hidden there). */
@@ -360,8 +363,9 @@ function showFinishShare(run, results) {
       body: JSON.stringify({ rec: lap, kind: 'affairs', name: account.accountName?.() || playerCharacter().name || 'A friend' }) })
       .then((x) => x.json()).then((j) => { if (j && j.code) link += '&ghost=' + j.code; }).catch(() => {});
   }
-  const text = `Today's India${time ? ' in ' + time : ''} · ${r.clean}/${r.total} stories ✓${st.n > 1 ? ` · 🔥 ${st.n}-day streak` : ''}
-${lap ? 'Race my ghost through' : 'Race'} today's news on NationLap:`;
+  const stale = /^Latest news/.test(run.label || '');
+  const text = `${stale ? "India's news" : "Today's India"}${time ? ' in ' + time : ''} · ${r.clean}/${r.total} stories ✓${st.n > 1 ? ` · 🔥 ${st.n}-day streak` : ''}
+${lap ? 'Race my ghost through' : 'Race'} ${stale ? 'the latest' : "today's"} news on NationLap:`;
   const box = document.createElement('div');
   box.className = 'res-share';
   box.innerHTML = `<div class="rs-streak">${st.n ? `🔥 <b>${st.n}</b>-day news streak${st.bumped && st.n > 1 ? ' · +1 today' : ''}` : ''}</div>
@@ -643,6 +647,8 @@ async function startAffairsRace(monthKey) {
   } else {
     const day = await loadLatest();
     cards = day.cards; date = day.date; label = '';
+    // Never call an old set "today": while the feed is paused the race says which day it is.
+    if (date && date < istToday()) label = 'Latest news · ' + new Date(date + 'T00:00:00').toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
   }
   if (!cards.length) {
     hud.toast?.(monthKey ? 'Nothing recorded for that month.' : 'No affairs yet — the page fills at 5am.');
@@ -1171,7 +1177,7 @@ function showIntroCard() {
   const name = (world && world.track && world.track.name) || 'Grand Circuit';
   const d = { easy: '50cc', normal: '100cc', hard: '150cc' }[lastSettings.difficulty] || '';
   const focusLine = affairsRun
-    ? `<div class="ic-focus">TODAY'S AFFAIRS</div>`
+    ? `<div class="ic-focus">${/^Latest news/.test(affairsRun.label || '') ? affairsRun.label.toUpperCase() : affairsRun.monthKey ? 'NEWS ARCHIVE' : "TODAY'S AFFAIRS"}</div>`
     : focusedZone ? `<div class="ic-focus">FOCUS: ${focusedZone.topic}</div>` : '';
   const note = focusedZone ? pendingIntroNote : '';
   pendingIntroNote = ''; // one-shot: never carries into a later race
