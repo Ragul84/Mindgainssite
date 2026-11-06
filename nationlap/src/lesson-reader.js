@@ -59,16 +59,25 @@ const RENDER = {
     el('p', 'lr-trap-text', box, b.text);
   },
 
+  // A real table, so a row's cells always line up. The first column holds the row labels
+  // when the header above it is blank; on a phone, CSS turns each row into a small card.
   table(b, parent) {
-    const wrap = el('div', 'lr-versus', parent);
     const heads = b.headers || [];
-    const cols = heads.length || (b.rows?.[0]?.length ?? 0);
-    for (let c = 0; c < cols; c++) {
-      const col = el('div', 'lr-vcol', wrap);
-      el('div', 'lr-vhead', col, heads[c] || '');
-      for (const row of b.rows || []) el('div', 'lr-vcell', col, row[c] ?? '');
+    const wrap = el('div', 'lr-table-wrap', parent);
+    const cols = Math.max(heads.length, ...(b.rows || []).map((r) => r.length), 0);
+    const t = el('table', 'lr-table' + (cols >= 3 ? ' cols3' : ''), wrap);
+    if (heads.some(Boolean)) {
+      const tr = el('tr', null, el('thead', null, t));
+      heads.forEach((h) => el('th', null, tr, h || ''));
     }
-    if (cols === 2) el('div', 'lr-vs', wrap, 'VS');
+    const body = el('tbody', null, t);
+    for (const row of b.rows || []) {
+      const tr = el('tr', null, body);
+      row.forEach((cell, c) => {
+        const td = el(c === 0 && !heads[0] ? 'th' : 'td', null, tr, cell ?? '');
+        if (heads[c]) td.dataset.h = heads[c];
+      });
+    }
   },
 
   timeline(b, parent) {
@@ -96,7 +105,8 @@ const RENDER = {
     const grid = el('div', 'lr-grid', parent);
     for (const it of b.items || []) {
       const tile = el('div', 'lr-tile', grid);
-      el('span', 'lr-tile-text', tile, it.label || it.detail || '');
+      el('b', 'lr-tile-label', tile, it.label || '');
+      if (it.value || it.detail) el('span', 'lr-tile-value', tile, it.value || it.detail);
     }
   },
 };
@@ -108,7 +118,7 @@ export function createLessonReader({ uiRoot, onDone, awardXp }) {
       <div class="lr-top">
         <div class="lr-badge"><span class="lr-subject"></span><span class="lr-topic"></span></div>
         <div class="lr-clock hidden"><span class="lr-clock-num"></span><i>SEC</i></div>
-        <button type="button" class="lr-skip">SKIP &rsaquo;&rsaquo;</button>
+        <button type="button" class="lr-skip">SKIP TO RACE &rsaquo;</button>
       </div>
       <div class="lr-road"><div class="lr-road-fill"></div><div class="lr-kart"></div><div class="lr-checkpoints"></div></div>
       <div class="lr-stage"></div>
@@ -142,10 +152,11 @@ export function createLessonReader({ uiRoot, onDone, awardXp }) {
   /** Flatten parts -> one page list, injecting a title card at each part boundary. */
   function flatten(lesson) {
     const out = [];
-    for (const part of lesson.parts || []) {
-      out.push({ kind: 'part', title: part.title, intro: part.intro });
+    const parts = lesson.parts || [];
+    parts.forEach((part, n) => {
+      out.push({ kind: 'part', title: part.title, intro: part.intro, n: n + 1, of: parts.length });
       for (const p of part.pages || []) out.push({ kind: 'page', ...p });
-    }
+    });
     out.push({ kind: 'end' });
     return out;
   }
@@ -170,7 +181,7 @@ export function createLessonReader({ uiRoot, onDone, awardXp }) {
 
     if (p.kind === 'part') {
       card.classList.add('lr-card-part');
-      el('div', 'lr-part-kicker', card, 'NEW SECTION');
+      el('div', 'lr-part-kicker', card, `SECTION ${p.n} OF ${p.of}`);
       el('h2', 'lr-part-title', card, p.title);
       if (p.intro) el('p', 'lr-part-intro', card, p.intro);
     } else if (p.kind === 'end') {
@@ -185,6 +196,7 @@ export function createLessonReader({ uiRoot, onDone, awardXp }) {
       for (const b of p.blocks || []) RENDER[b.type]?.(b, body);
     }
 
+    stage.scrollTop = 0;
     const last = idx === pages.length - 1;
     prevBtn.disabled = idx === 0;
     nextBtn.textContent = last ? 'START RACE' : 'NEXT';
@@ -236,6 +248,13 @@ export function createLessonReader({ uiRoot, onDone, awardXp }) {
     onDone?.(completed);
   }
 
+  // swipe left / right on a phone turns the page; a vertical scroll never does
+  let sx = 0, sy = 0;
+  stage.addEventListener('touchstart', (e) => { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive: true });
+  stage.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.6) go(dx < 0 ? 1 : -1);
+  }, { passive: true });
   nextBtn.addEventListener('click', () => go(1));
   prevBtn.addEventListener('click', () => go(-1));
   skipBtn.addEventListener('click', () => done(false));
