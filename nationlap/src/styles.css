@@ -2235,3 +2235,9 @@ body.touch-mode[data-state="title"] .hof-strip { width: auto !important; }
 .yt-facts { font: 700 13px var(--body); opacity: .85; }
 .yt-card .yt-go { flex-basis: 100%; }
 @media (max-width: 560px) { .yt-stamps { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 8px; } .yt-stamp { font-size: 12px; } }
+
+/* Phone: answers under the question, big and side-by-side */
+.touch-mode .gate-prompt { width: min(94vw, 520px); }
+.touch-mode .gate-prompt .gp-row { display: flex; gap: 8px; margin-top: 8px; }
+.touch-mode .gate-prompt .gp-row i { flex: 1 1 0; min-width: 0; padding: 8px 10px; border-radius: 10px; color: #fff; font-size: 15px; line-height: 1.2; overflow-wrap: anywhere; display: flex; align-items: center; }
+.touch-mode .gate-prompt .gp-b { justify-content: flex-end; }

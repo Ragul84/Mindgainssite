@@ -438,7 +438,9 @@ function updateGatePrompt(w) {
     const c = best.card;
     const esc = (t) => String(t).replace(/[&<>"]/g, (m) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[m]));
     // Only the question: the two answers are already written on the arches ahead.
-    gatePromptEl.innerHTML = `<b>${esc(c.ask || c.stamp)}</b>`;
+    // On a phone the arch signs are small, so the two answers ride under the question there.
+    gatePromptEl.innerHTML = `<b>${esc(c.ask || c.stamp)}</b>` + (document.body.classList.contains('touch-mode') && c.gate
+      ? `<div class="gp-row"><i class="gp-a">◀ ${esc(c.gate.a)}</i><i class="gp-b">${esc(c.gate.b)} ▶</i></div>` : '');
     gatePromptEl.classList.add('show');
   }
 }

@@ -176,15 +176,9 @@ export function createScrollIntro({ uiRoot, onStudy, onDone }) {
     titleEl.textContent = laps > 1 ? `LAP ${lap} / ${laps}` : (archive ? label.toUpperCase() : "TODAY'S RACE");
     const yatra = cards[0] && cards[0].cat === 'bharat';
     affMeta.textContent = `${yatra ? 'Bharat Yatra' : archive ? label : "Today's affairs"} · ${cards.length} facts`;
-    // The rules as one line, not a four-step box: shown on a player's first two races only.
-    let seen = 0;
-    try { seen = parseInt(localStorage.getItem('nl_howto_seen') || '0', 10) || 0; } catch (e) {}
-    const showHow = howTo && seen < 2;
-    if (showHow) { try { localStorage.setItem('nl_howto_seen', String(seen + 1)); } catch (e) {} }
-    affHow.innerHTML = showHow
-      ? `<span>Read the ★ lines</span><i>→</i><span>Steer through the right gate <em class="ha">◀ blue</em> <em class="hb">orange ▶</em></span><i>→</i><span>Right = boost</span>`
-      : '';
-    affHow.hidden = !showHow;
+    // No rules box: the gate shows its question and two labelled arches, which explains itself.
+    affHow.innerHTML = '';
+    affHow.hidden = true;
     affList.innerHTML = '';
     for (const c of cards) {
       const li = document.createElement('li');

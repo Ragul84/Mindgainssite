@@ -19,7 +19,8 @@ const TRIGGER_R = 13;
 const RESET_R = 46;
 
 function labelTexture(text, color) {
-  const W = 512, H = 128;
+  // 2:1 sign with up to two lines: one long line shrank to ~22px and was unreadable on a phone.
+  const W = 512, H = 256;
   const c = document.createElement('canvas');
   c.width = W; c.height = H;
   const ctx = c.getContext('2d');
@@ -27,24 +28,33 @@ function labelTexture(text, color) {
   const hex = '#' + (color >>> 0).toString(16).padStart(6, '0').slice(-6);
   ctx.fillStyle = '#0a0f1c';
   ctx.fillRect(0, 0, W, H);
-  ctx.strokeStyle = hex; ctx.lineWidth = 8; ctx.strokeRect(4, 4, W - 8, H - 8);
+  ctx.strokeStyle = hex; ctx.lineWidth = 10; ctx.strokeRect(5, 5, W - 10, H - 10);
 
-  // Shrink to fit rather than clip: a label that runs off the sign is worse than a small one,
-  // and the pairs vary from "Assam" to "Kasturirangan Committee".
-  let size = 58;
+  const words = String(text).toUpperCase().split(/\s+/);
+  const fits = (lines, size) => {
+    ctx.font = `900 ${size}px Inter, system-ui, sans-serif`;
+    return lines.every((l) => ctx.measureText(l).width <= W - 48);
+  };
+  // best split into one or two lines, at the largest size that fits
+  let best = { lines: [words.join(' ')], size: 24 };
+  for (let size = 92; size >= 24; size -= 4) {
+    if (fits([words.join(' ')], size) && size * 1.0 <= H - 40) { best = { lines: [words.join(' ')], size }; break; }
+    let ok = null;
+    for (let k = 1; k < words.length; k++) {
+      const two = [words.slice(0, k).join(' '), words.slice(k).join(' ')];
+      if (size * 2.2 <= H - 24 && fits(two, size)) { ok = two; break; }
+    }
+    if (ok) { best = { lines: ok, size }; break; }
+  }
+  ctx.font = `900 ${best.size}px Inter, system-ui, sans-serif`;
   ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-  do {
-    ctx.font = `800 ${size}px Inter, system-ui, sans-serif`;
-    if (ctx.measureText(text).width <= W - 56) break;
-    size -= 3;
-  } while (size > 22);
-
-  ctx.shadowColor = hex; ctx.shadowBlur = 18;
+  ctx.shadowColor = hex; ctx.shadowBlur = 14;
   ctx.fillStyle = '#ffffff';
-  ctx.fillText(text.toUpperCase(), W / 2, H / 2 + 2);
+  const lh = best.size * 1.08, y0 = H / 2 - (lh * (best.lines.length - 1)) / 2 + 4;
+  best.lines.forEach((l, n) => ctx.fillText(l, W / 2, y0 + n * lh));
 
   const tex = new THREE.CanvasTexture(c);
-  tex.anisotropy = 4;
+  tex.anisotropy = 8;
   return tex;
 }
 
@@ -92,8 +102,8 @@ export function createFactGates(scene, track, cards) {
       const tex = labelTexture(text, color);
       const signMat = new THREE.MeshBasicMaterial({ map: tex, transparent: true });
       disposables.push(tex, signMat);
-      const sign = new THREE.Mesh(new THREE.PlaneGeometry(laneW * 0.92, laneW * 0.92 / 4), signMat);
-      sign.position.set(0, 6.9, 0);
+      const sign = new THREE.Mesh(new THREE.PlaneGeometry(laneW * 0.96, laneW * 0.48), signMat);
+      sign.position.set(0, 6.6 + laneW * 0.24, 0);
 
       // a soft curtain so the opening reads as a thing you pass THROUGH, not past
       const curtainMat = new THREE.MeshBasicMaterial({
