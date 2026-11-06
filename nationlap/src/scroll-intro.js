@@ -155,8 +155,9 @@ export function createScrollIntro({ uiRoot, onStudy, onDone }) {
     void root.offsetWidth;
     root.querySelector('.si-stage').style.animation = '';
     stopTicker();
-    ticker = setInterval(tick, 1000);
     bus.emit?.('scroll:open', { zoneId: zone?.id });
+    // A lesson is read untimed: straight into the reader, and the race waits until it closes.
+    study();
   }
 
   /**

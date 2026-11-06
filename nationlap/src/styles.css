@@ -2245,3 +2245,15 @@ body.touch-mode[data-state="title"] .hof-strip { width: auto !important; }
 .title-archive { display: block; margin: 8px auto 0; background: none; border: 0; cursor: pointer; color: rgba(255,255,255,.82);
   font: 700 13px var(--body); letter-spacing: .02em; text-decoration: underline; text-underline-offset: 3px; }
 .title-archive:hover { color: #ffd23f; }
+
+/* Lesson reader on phones: the whole screen is the page, controls are one slim bar */
+@media (max-width: 700px), (max-height: 520px) {
+  .lr-frame { width: 100vw; height: 100dvh; border-radius: 0; padding: calc(10px + env(safe-area-inset-top, 0px)) 12px calc(10px + env(safe-area-inset-bottom, 0px)); gap: 8px; }
+  .lr-road { height: 6px; }
+  .lr-kart, .lr-checkpoints { display: none; }
+  .lr-stage { align-items: stretch; }
+  .lr-card { max-height: none; height: 100%; padding: 18px 16px; border-radius: 14px; }
+  .lr-text, .lr-page-intro { font-size: 16.5px; line-height: 1.65; }
+  .lr-prev, .lr-next { font-size: 15px; padding: 10px 18px; }
+  .lr-skip { font-size: 12px; padding: 6px 10px; }
+}

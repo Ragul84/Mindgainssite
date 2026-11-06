@@ -687,7 +687,7 @@ const lessonReader = createLessonReader({ uiRoot, awardXp });
 // shared clock — not on a menu screen before it.
 const scrollIntro = createScrollIntro({
   uiRoot,
-  onStudy: (secondsLeft) => lessonReader.show(focusedZone, { timeLimitSec: secondsLeft }),
+  onStudy: () => lessonReader.show(focusedZone),
   onDone: ({ read } = {}) => {
     // Skipping the brief costs the boost token. It is a real choice, not a shortcut.
     if (affairsRun?.midBrief) {
