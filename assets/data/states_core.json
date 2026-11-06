@@ -8,7 +8,8 @@
    "Odisha",
    "Chhattisgarh",
    "Karnataka",
-   "Tamil Nadu"
+   "Tamil Nadu",
+   "Puducherry"
   ],
   "rivers": [
    "Godavari",
@@ -385,7 +386,8 @@
    "Uttar Pradesh",
    "Rajasthan",
    "Delhi",
-   "Chandigarh"
+   "Chandigarh",
+   "Uttarakhand"
   ],
   "rivers": [
    "Yamuna",
@@ -444,7 +446,7 @@
    "Betla National Park"
   ],
   "knownFor": [
-   "Largest coal and mica reserves",
+   "Largest coal reserves",
    "Sohrai painting"
   ]
  },
@@ -530,7 +532,8 @@
   "land": "coast",
   "borders": [
    "Karnataka",
-   "Tamil Nadu"
+   "Tamil Nadu",
+   "Puducherry"
   ],
   "rivers": [
    "Periyar",
@@ -1123,6 +1126,7 @@
   "borders": [
    "Himachal Pradesh",
    "Uttar Pradesh",
+   "Haryana",
    "China",
    "Nepal"
   ],
