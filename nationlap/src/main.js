@@ -279,7 +279,12 @@ function lessonQuizItems(cards) {
     // beside a full sentence), so the shape of an option never gives the answer away.
     const head = (t) => t.toLowerCase().split(/[\s,.]+/)[0];
     const score = (b) => (head(b) === head(right) ? 0 : 1) + Math.abs(b.length - right.length) / 40 + Math.random() * 0.3;
-    const wrong = backs.filter((b) => b !== right).sort((x, y) => score(x) - score(y)).slice(0, 3);
+    // Lessons repeat a fact in two wordings ("Article 44." / "Article 44. It falls under..."),
+    // so an option that is the same answer said differently is never offered as wrong.
+    const key = (t) => t.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const same = (b) => { const x = key(b), y = key(right); return x.startsWith(y) || y.startsWith(x); };
+    const sameQ = new Set(usable.filter((o) => key(o.front) === key(c.front)).map(ans));
+    const wrong = backs.filter((b) => b !== right && !same(b) && !sameQ.has(b)).sort((x, y) => score(x) - score(y)).slice(0, 3);
     if (wrong.length < 3) return null;
     const opts = shuffle([right, ...wrong]);
     return { id: 'lesson:' + (focusedZone?.id || '') + ':' + i, q: c.front, opts, ans: opts.indexOf(right), explain: c.back.trim() };
