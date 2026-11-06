@@ -29,7 +29,7 @@
 .hof-mt{margin-top:4px;font:500 12px/1.3 Inter;color:#6b7686;text-align:center;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .hof-sc{margin-top:6px;font:800 clamp(16px,2vw,20px)/1 var(--disp);color:var(--ink)}
 .hof-sc small{font:600 11px Inter;color:#8090a3;margin-left:3px}
-.hof-empty .hof-fig{opacity:.35}
+.hof-empty .hof-fig{opacity:.55}
 /* board */
 .hof-board{position:relative;margin-top:clamp(26px,4vw,40px);background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 1px 2px rgba(13,27,42,.04),0 16px 34px -24px rgba(13,27,42,.25)}
 .hof-fl{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:14px 16px;border-bottom:1px solid var(--line)}
