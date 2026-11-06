@@ -152,11 +152,13 @@
       "cards": [
         {
           "front": "What is the primary focus of GDP?",
-          "back": "GDP focuses on the total value of goods and services produced within the geographical boundary of a country."
+          "back": "GDP focuses on the total value of goods and services produced within the geographical boundary of a country.",
+          "short": "Output produced within the country's borders"
         },
         {
           "front": "What is the primary focus of GNP?",
-          "back": "GNP focuses on the total value of goods and services produced by the citizens of a country, regardless of their location."
+          "back": "GNP focuses on the total value of goods and services produced by the citizens of a country, regardless of their location.",
+          "short": "Output produced by a country's citizens, wherever they are"
         },
         {
           "front": "What is the formula for GNP?",
@@ -188,7 +190,8 @@
         },
         {
           "front": "What are the three dimensions of the HDI?",
-          "back": "The three dimensions are Health (life expectancy), Education (mean/expected years of schooling), and Standard of Living (GNI per capita)."
+          "back": "The three dimensions are Health (life expectancy), Education (mean/expected years of schooling), and Standard of Living (GNI per capita).",
+          "short": "Health, education and standard of living"
         },
         {
           "front": "What is GDP?",
@@ -302,7 +305,8 @@
         },
         {
           "front": "How does inflation affect debtors?",
-          "back": "Debtors (borrowers) gain because they repay loans with money worth less than when they borrowed it."
+          "back": "Debtors (borrowers) gain because they repay loans with money worth less than when they borrowed it.",
+          "short": "They gain: they repay with money worth less"
         },
         {
           "front": "How does inflation affect creditors?",

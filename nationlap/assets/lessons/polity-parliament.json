@@ -112,23 +112,28 @@
         },
         {
           "front": "Is the President a member of the Parliament?",
-          "back": "NO. The President is NOT a member of either House and does not sit in Parliament. However, the President is an INTEGRAL PART of Parliament because no bill becomes law without presidential assent."
+          "back": "NO. The President is NOT a member of either House and does not sit in Parliament. However, the President is an INTEGRAL PART of Parliament because no bill becomes law without presidential assent.",
+          "short": "No, but Parliament includes the President"
         },
         {
           "front": "What is a \"Quorum\"?",
-          "back": "The minimum number of members required to be present to conduct the business of the House. It is 1/10th of the total membership (including the presiding officer). For LS, it is ~55; for RS, it is ~25."
+          "back": "The minimum number of members required to be present to conduct the business of the House. It is 1/10th of the total membership (including the presiding officer). For LS, it is ~55; for RS, it is ~25.",
+          "short": "The minimum members present to run the House: one-tenth"
         },
         {
           "front": "Who decides if a Bill is a \"Money Bill\"?",
-          "back": "The Speaker of the Lok Sabha. Their decision is final and cannot be challenged in any court or by the President or the Rajya Sabha."
+          "back": "The Speaker of the Lok Sabha. Their decision is final and cannot be challenged in any court or by the President or the Rajya Sabha.",
+          "short": "The Lok Sabha Speaker"
         },
         {
           "front": "Difference between Prorogation and Dissolution?",
-          "back": "Prorogation ends a SESSION of the House (LS or RS). Dissolution ends the LIFE of the House (ONLY Lok Sabha). Rajya Sabha is a permanent house and is never dissolved."
+          "back": "Prorogation ends a SESSION of the House (LS or RS). Dissolution ends the LIFE of the House (ONLY Lok Sabha). Rajya Sabha is a permanent house and is never dissolved.",
+          "short": "One ends a session; the other ends the Lok Sabha's term"
         },
         {
           "front": "Who presides over a \"Joint Sitting\" of Parliament?",
-          "back": "The Speaker of the Lok Sabha. If the Speaker is absent, the Deputy Speaker. If they are absent, the Deputy Chairman of Rajya Sabha (NOT the Chairman/VP)."
+          "back": "The Speaker of the Lok Sabha. If the Speaker is absent, the Deputy Speaker. If they are absent, the Deputy Chairman of Rajya Sabha (NOT the Chairman/VP).",
+          "short": "The Lok Sabha Speaker"
         }
       ],
       "weightage": 10,
@@ -283,23 +288,28 @@
         },
         {
           "front": "What is a \"Money Bill\"? (Art 110)",
-          "back": "A bill dealing exclusively with taxation, borrowing, or expenditure from the Consolidated Fund. The Speaker's decision on whether a bill is a Money Bill is FINAL. RS can only delay it for 14 days."
+          "back": "A bill dealing exclusively with taxation, borrowing, or expenditure from the Consolidated Fund. The Speaker's decision on whether a bill is a Money Bill is FINAL. RS can only delay it for 14 days.",
+          "short": "A bill only on taxes, borrowing or Consolidated Fund spending"
         },
         {
           "front": "Can a \"Joint Sitting\" be held for a Constitution Amendment Bill?",
-          "back": "NO. Article 368 requires each House to pass the amendment bill separately by a special majority. If there is a deadlock, the bill fails."
+          "back": "NO. Article 368 requires each House to pass the amendment bill separately by a special majority. If there is a deadlock, the bill fails.",
+          "short": "No, each House must pass it separately"
         },
         {
           "front": "Difference between \"Absolute Majority\" and \"Effective Majority\"?",
-          "back": "Absolute : >50% of TOTAL seats (e.g., 272+ in LS). Effective : >50% of (Total seats - Vacancies). Effective majority is used to remove the Speaker/Deputy Speaker and Vice President."
+          "back": "Absolute : >50% of TOTAL seats (e.g., 272+ in LS). Effective : >50% of (Total seats - Vacancies). Effective majority is used to remove the Speaker/Deputy Speaker and Vice President.",
+          "short": "Total seats vs. total minus vacancies"
         },
         {
           "front": "Maximum life of an Ordinance?",
-          "back": "6 months and 6 weeks. 6 months is the maximum gap between two sessions of Parliament, and the ordinance expires 6 weeks after Parliament reassembles unless approved."
+          "back": "6 months and 6 weeks. 6 months is the maximum gap between two sessions of Parliament, and the ordinance expires 6 weeks after Parliament reassembles unless approved.",
+          "short": "6 months and 6 weeks"
         },
         {
           "front": "Does a bill pending in Rajya Sabha lapse when Lok Sabha dissolves?",
-          "back": "ONLY if it was already passed by the Lok Sabha. If it was introduced in Rajya Sabha and is still pending there without having gone to LS, it does NOT lapse."
+          "back": "ONLY if it was already passed by the Lok Sabha. If it was introduced in Rajya Sabha and is still pending there without having gone to LS, it does NOT lapse.",
+          "short": "Only if the Lok Sabha had already passed it"
         }
       ],
       "weightage": 10,

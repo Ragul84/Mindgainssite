@@ -147,7 +147,8 @@
         },
         {
           "front": "What is the primary function of Article 13?",
-          "back": "It declares that any law inconsistent with Fundamental Rights shall be void, establishing the basis for Judicial Review."
+          "back": "It declares that any law inconsistent with Fundamental Rights shall be void, establishing the basis for Judicial Review.",
+          "short": "Laws violating Fundamental Rights are void"
         },
         {
           "front": "Who has special immunity under Article 361 as an exception to Article 14?",
@@ -163,7 +164,8 @@
         },
         {
           "front": "What is the 'carry forward' rule in public employment?",
-          "back": "It allows unfilled reserved positions from previous years to be filled in later years, even if the total exceeds 50%."
+          "back": "It allows unfilled reserved positions from previous years to be filled in later years, even if the total exceeds 50%.",
+          "short": "Unfilled reserved posts carry over to later years"
         },
         {
           "front": "Is the right to abolition of untouchability (Article 17) an absolute right?",
@@ -179,27 +181,33 @@
         },
         {
           "front": "What does 'reasonable classification' under Article 14 permit?",
-          "back": "It allows the government to create different rules for different groups of people if the classification has a fair and logical basis."
+          "back": "It allows the government to create different rules for different groups of people if the classification has a fair and logical basis.",
+          "short": "Different rules for groups on a fair, logical basis"
         },
         {
           "front": "Article 13 and Judicial Review—what is the link?",
-          "back": "Art 13 provides the basis for Judicial Review. It says any law (statute, ordinance, custom) that violates Fundamental Rights is VOID. The SC (Art 32) and HC (Art 226) use this power to strike down unconstitutional laws."
+          "back": "Art 13 provides the basis for Judicial Review. It says any law (statute, ordinance, custom) that violates Fundamental Rights is VOID. The SC (Art 32) and HC (Art 226) use this power to strike down unconstitutional laws.",
+          "short": "It makes rights-violating laws void, the basis of review"
         },
         {
           "front": "Does Art 14 apply to non-citizens?",
-          "back": "YES. Article 14 (Equality before law) applies to all persons, whether citizens or foreigners/legal corporations. However, Articles 15, 16, 19, 29, and 30 are available ONLY to citizens."
+          "back": "YES. Article 14 (Equality before law) applies to all persons, whether citizens or foreigners/legal corporations. However, Articles 15, 16, 19, 29, and 30 are available ONLY to citizens.",
+          "short": "Yes, it covers all persons"
         },
         {
           "front": "Article 15: The \"ONLY\" Trap?",
-          "back": "The State cannot discriminate ONLY on grounds of religion, race, caste, sex, place of birth. It CAN discriminate on other grounds like residence (e.g., domicile requirements for state schemes), unless prohibited elsewhere."
+          "back": "The State cannot discriminate ONLY on grounds of religion, race, caste, sex, place of birth. It CAN discriminate on other grounds like residence (e.g., domicile requirements for state schemes), unless prohibited elsewhere.",
+          "short": "Bars discrimination only on the five listed grounds"
         },
         {
           "front": "Which Fundamental Right is considered \"Absolute\"?",
-          "back": "Article 17 (Abolition of Untouchability). Unlike most other FRs (like Art 19) which have \"reasonable restrictions\", Art 17 has no exceptions. Practicing untouchability is a crime."
+          "back": "Article 17 (Abolition of Untouchability). Unlike most other FRs (like Art 19) which have \"reasonable restrictions\", Art 17 has no exceptions. Practicing untouchability is a crime.",
+          "short": "Article 17 (Abolition of Untouchability)"
         },
         {
           "front": "Are Bharat Ratna and Padma Awards \"Titles\" under Art 18?",
-          "back": "NO. The SC in Balaji Raghavan case (1996) ruled they are \"National Honours\", not titles. However, they cannot be used as prefixes (e.g., \"Bharat Ratna X\") or suffixes to the name."
+          "back": "NO. The SC in Balaji Raghavan case (1996) ruled they are \"National Honours\", not titles. However, they cannot be used as prefixes (e.g., \"Bharat Ratna X\") or suffixes to the name.",
+          "short": "No, they are national honours (Balaji Raghavan, 1996)"
         }
       ],
       "weightage": 10,
@@ -376,7 +384,8 @@
         },
         {
           "front": "What are the three rights of a person under punitive detention?",
-          "back": "To be informed of the grounds of arrest, to consult a lawyer, and to be produced before a magistrate within 24 hours."
+          "back": "To be informed of the grounds of arrest, to consult a lawyer, and to be produced before a magistrate within 24 hours.",
+          "short": "Grounds, a lawyer, and a magistrate within 24 hours"
         },
         {
           "front": "Who must approve the extension of preventive detention beyond three months?",
@@ -384,23 +393,28 @@
         },
         {
           "front": "Which freedoms under Art 19 are suspended during National Emergency?",
-          "back": "Art 19 is automatically suspended ONLY if National Emergency is declared on grounds of \"WAR or EXTERNAL AGGRESSION\". It is NOT suspended if emergency is due to \"Armed Rebellion\" (44th Amendment)."
+          "back": "Art 19 is automatically suspended ONLY if National Emergency is declared on grounds of \"WAR or EXTERNAL AGGRESSION\". It is NOT suspended if emergency is due to \"Armed Rebellion\" (44th Amendment).",
+          "short": "All six, but only for war or external aggression"
         },
         {
           "front": "Can Art 20 and 21 be suspended during Emergency?",
-          "back": "NO. Under the 44th Amendment (1978), the enforcement of rights guaranteed by Articles 20 and 21 cannot be suspended even during a National Emergency under Article 359."
+          "back": "NO. Under the 44th Amendment (1978), the enforcement of rights guaranteed by Articles 20 and 21 cannot be suspended even during a National Emergency under Article 359.",
+          "short": "No, not since the 44th Amendment"
         },
         {
           "front": "\"Procedure Established by Law\" vs \"Due Process of Law\"?",
-          "back": "Procedure Established: Law must be followed (Art 21 literal). Due Process: The law itself must be \"fair, just and reasonable\" (SC added this in Maneka Gandhi case). India now effectively follows Due Process."
+          "back": "Procedure Established: Law must be followed (Art 21 literal). Due Process: The law itself must be \"fair, just and reasonable\" (SC added this in Maneka Gandhi case). India now effectively follows Due Process.",
+          "short": "The second also tests whether the law itself is fair"
         },
         {
           "front": "Is the \"Right to Privacy\" a Fundamental Right?",
-          "back": "YES. In the Justice K.S. Puttaswamy case (2017), a 9-judge bench of the SC ruled that the Right to Privacy is an intrinsic part of the Right to Life and Personal Liberty under Article 21."
+          "back": "YES. In the Justice K.S. Puttaswamy case (2017), a 9-judge bench of the SC ruled that the Right to Privacy is an intrinsic part of the Right to Life and Personal Liberty under Article 21.",
+          "short": "Yes (Puttaswamy, 2017)"
         },
         {
           "front": "Maximum duration of Preventive Detention without Advisory Board?",
-          "back": "3 months. To extend beyond 3 months, an Advisory Board (consisting of persons qualified to be HC judges) must report sufficient cause."
+          "back": "3 months. To extend beyond 3 months, an Advisory Board (consisting of persons qualified to be HC judges) must report sufficient cause.",
+          "short": "3 months"
         }
       ],
       "weightage": 10,
@@ -536,7 +550,8 @@
         },
         {
           "front": "What is the exception to the prohibition of forced labour under Article 23?",
-          "back": "The State can impose compulsory service for public purposes, such as military or social service."
+          "back": "The State can impose compulsory service for public purposes, such as military or social service.",
+          "short": "Compulsory service for public purposes"
         },
         {
           "front": "Which article grants the right to manage religious affairs?",
@@ -572,23 +587,28 @@
         },
         {
           "front": "Art 32 vs Art 226—which is wider?",
-          "back": "Art 226 (High Court) is WIDER. SC (Art 32) can issue writs ONLY for Fundamental Rights. HC (Art 226) can issue writs for FRs AND \"any other purpose\" (legal rights). Also, Art 32 is itself a FR, while Art 226 is a constitutional right."
+          "back": "Art 226 (High Court) is WIDER. SC (Art 32) can issue writs ONLY for Fundamental Rights. HC (Art 226) can issue writs for FRs AND \"any other purpose\" (legal rights). Also, Art 32 is itself a FR, while Art 226 is a constitutional right.",
+          "short": "Article 226: High Courts can also enforce other legal rights"
         },
         {
           "front": "Can the State compel someone to provide \"compulsory service\"?",
-          "back": "YES. Under Article 23, the State can impose compulsory service for public purposes (like military conscription or social service) without paying, provided it does not discriminate on religion, race, caste, or class."
+          "back": "YES. Under Article 23, the State can impose compulsory service for public purposes (like military conscription or social service) without paying, provided it does not discriminate on religion, race, caste, or class.",
+          "short": "Yes, for public purposes, without discrimination"
         },
         {
           "front": "Does Art 25 allow forced conversions?",
-          "back": "NO. Art 25 allows propagation (spreading the message), but the SC in Rev. Stainislaus case (1977) ruled it does NOT include the right to convert another person by force, fraud, or inducement."
+          "back": "NO. Art 25 allows propagation (spreading the message), but the SC in Rev. Stainislaus case (1977) ruled it does NOT include the right to convert another person by force, fraud, or inducement.",
+          "short": "No (Rev. Stainislaus, 1977)"
         },
         {
           "front": "Which type of minorities are recognized under Art 30?",
-          "back": "RELIGIOUS and LINGUISTIC minorities. The Constitution does not define the term \"minority\" but recognizes these two types for the purpose of establishing educational institutions."
+          "back": "RELIGIOUS and LINGUISTIC minorities. The Constitution does not define the term \"minority\" but recognizes these two types for the purpose of establishing educational institutions.",
+          "short": "Religious and linguistic"
         },
         {
           "front": "Habeas Corpus—can it be issued against private individuals?",
-          "back": "YES. Unlike most other writs (like Mandamus or Quo-Warranto) which are issued against public authorities, Habeas Corpus can be issued against both public authorities AND private individuals."
+          "back": "YES. Unlike most other writs (like Mandamus or Quo-Warranto) which are issued against public authorities, Habeas Corpus can be issued against both public authorities AND private individuals.",
+          "short": "Yes, against private persons as well"
         }
       ],
       "weightage": 10,

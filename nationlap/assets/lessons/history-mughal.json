@@ -80,11 +80,13 @@
         },
         {
           "front": "What were the two numerical ranks assigned to a Mansabdar?",
-          "back": "Every Mansabdar was assigned a Zat rank (personal rank/salary) and a Sawar rank (number of cavalrymen to maintain)."
+          "back": "Every Mansabdar was assigned a Zat rank (personal rank/salary) and a Sawar rank (number of cavalrymen to maintain).",
+          "short": "Zat (personal rank) and Sawar (cavalry to maintain)"
         },
         {
           "front": "Were Mansabdari ranks hereditary?",
-          "back": "No, the ranks were not hereditary, meaning they did not automatically pass to an heir upon the death of the Mansabdar."
+          "back": "No, the ranks were not hereditary, meaning they did not automatically pass to an heir upon the death of the Mansabdar.",
+          "short": "No, they did not pass to heirs"
         },
         {
           "front": "Who introduced the Dahshala land revenue system?",

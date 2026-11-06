@@ -178,7 +178,8 @@
         },
         {
           "front": "What is the primary difference between reverse word coding and opposite letter coding?",
-          "back": "Reverse word coding changes the order of letters, while opposite letter coding replaces each letter with its alphabet opposite."
+          "back": "Reverse word coding changes the order of letters, while opposite letter coding replaces each letter with its alphabet opposite.",
+          "short": "One reverses letter order; the other swaps each letter's pair"
         },
         {
           "front": "In number coding, what value is assigned to the letter A?",

@@ -2395,3 +2395,8 @@ body.touch-mode[data-state="title"] .hof-strip { width: auto !important; }
 .lj-pips i { width: 22px; height: 5px; border-radius: 3px; background: rgba(255, 255, 255, .2); }
 .lj-pips i.on { background: #22d36e; }
 .lj-pips i.cur { background: #ffd23f; }
+
+.nl-notice { position: absolute; left: 50%; top: calc(14px + env(safe-area-inset-top, 0px)); z-index: 60; transform: translate(-50%, -20px); opacity: 0;
+  max-width: min(560px, 92vw); padding: 10px 16px; border-radius: 12px; background: #1b2170; border: 2px solid #ffd23f; color: #fff;
+  font: 800 14px/1.35 var(--body); text-align: center; box-shadow: 0 6px 18px rgba(0,0,0,.4); transition: .25s; pointer-events: none; }
+.nl-notice.show { opacity: 1; transform: translate(-50%, 0); }

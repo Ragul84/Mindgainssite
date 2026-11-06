@@ -176,7 +176,8 @@
         },
         {
           "front": "What is the main difference between Equity and Debt investments?",
-          "back": "Equity represents ownership in a company with variable returns, while Debt represents a loan with fixed interest."
+          "back": "Equity represents ownership in a company with variable returns, while Debt represents a loan with fixed interest.",
+          "short": "Equity is ownership with variable returns; debt is a loan with fixed interest"
         },
         {
           "front": "When was SEBI established as a statutory body?",

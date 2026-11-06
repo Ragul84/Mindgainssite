@@ -121,7 +121,8 @@
         },
         {
           "front": "What is the maximum duration of President's Rule?",
-          "back": "Three years, with extensions beyond one year requiring Election Commission certification and an active national emergency."
+          "back": "Three years, with extensions beyond one year requiring Election Commission certification and an active national emergency.",
+          "short": "Three years"
         },
         {
           "front": "In which case did the Supreme Court rule that President's Rule is subject to judicial review?",
@@ -141,19 +142,23 @@
         },
         {
           "front": "\"Armed Rebellion\" vs \"Internal Disturbance\"?",
-          "back": "\"Internal Disturbance\" was a vague term used to justify the 1975 Emergency. The 44th Amendment (1978) replaced it with \"Armed Rebellion\" to ensure National Emergency can only be declared for violent uprisings, not peaceful protests."
+          "back": "\"Internal Disturbance\" was a vague term used to justify the 1975 Emergency. The 44th Amendment (1978) replaced it with \"Armed Rebellion\" to ensure National Emergency can only be declared for violent uprisings, not peaceful protests.",
+          "short": "The 44th Amendment replaced the first with the second"
         },
         {
           "front": "Which FRs can NEVER be suspended during Emergency?",
-          "back": "Articles 20 (Protection in conviction) and 21 (Right to Life and Liberty). This safeguard was added by the 44th Amendment."
+          "back": "Articles 20 (Protection in conviction) and 21 (Right to Life and Liberty). This safeguard was added by the 44th Amendment.",
+          "short": "Articles 20 and 21"
         },
         {
           "front": "Art 356 vs Art 365—what is the link?",
-          "back": "Art 356 is the power to impose President's Rule. Art 365 is a GROUND for it—stating that if a state fails to follow the Union's lawful directions, it is a failure of constitutional machinery."
+          "back": "Art 356 is the power to impose President's Rule. Art 365 is a GROUND for it—stating that if a state fails to follow the Union's lawful directions, it is a failure of constitutional machinery.",
+          "short": "Defying Union directions (365) is a ground for 356"
         },
         {
           "front": "What did the S.R. Bommai Case (1994) rule?",
-          "back": "The SC ruled that the proclamation of President's Rule is subject to Judicial Review. Secularism is a basic structure, and its violation can be a ground for Art 356. The assembly should not be dissolved until Parliament approves the proclamation."
+          "back": "The SC ruled that the proclamation of President's Rule is subject to Judicial Review. Secularism is a basic structure, and its violation can be a ground for Art 356. The assembly should not be dissolved until Parliament approves the proclamation.",
+          "short": "President's Rule is open to judicial review"
         },
         {
           "front": "Has India ever declared a Financial Emergency?",

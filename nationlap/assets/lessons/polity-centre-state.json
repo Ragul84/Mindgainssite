@@ -111,7 +111,8 @@
         },
         {
           "front": "What is the limitation on a state government's borrowing power compared to the Union?",
-          "back": "States can only borrow internally and require Union permission if they have outstanding debt."
+          "back": "States can only borrow internally and require Union permission if they have outstanding debt.",
+          "short": "Only within India, with Union consent if in debt to it"
         },
         {
           "front": "What key recommendation did the Punchhi Commission make regarding Governors?",
@@ -119,23 +120,28 @@
         },
         {
           "front": "What is \"Residuary Power\"? (Art 248)",
-          "back": "The power to make laws on any subject not mentioned in the Union, State, or Concurrent lists. In India, this power belongs EXCLUSIVELY to the Parliament (Centre). In USA, it belongs to States."
+          "back": "The power to make laws on any subject not mentioned in the Union, State, or Concurrent lists. In India, this power belongs EXCLUSIVELY to the Parliament (Centre). In USA, it belongs to States.",
+          "short": "Power over unlisted subjects; it rests with Parliament"
         },
         {
           "front": "Art 249—how can Parliament legislate on a State subject?",
-          "back": "If the Rajya Sabha passes a resolution supported by 2/3rd of members present and voting, declaring that it is in the \"national interest\" for Parliament to do so. Such a law lasts for 1 year."
+          "back": "If the Rajya Sabha passes a resolution supported by 2/3rd of members present and voting, declaring that it is in the \"national interest\" for Parliament to do so. Such a law lasts for 1 year.",
+          "short": "After a Rajya Sabha resolution by two-thirds"
         },
         {
           "front": "Inter-State Council—which Article and who chairs?",
-          "back": "Article 263. It is a constitutional body. It is chaired by the Prime Minister. Members include CMs of all states and administrators of UTs."
+          "back": "Article 263. It is a constitutional body. It is chaired by the Prime Minister. Members include CMs of all states and administrators of UTs.",
+          "short": "Article 263, chaired by the Prime Minister"
         },
         {
           "front": "Finance Commission—Article and Tenure?",
-          "back": "Article 280. It is a quasi-judicial body constituted by the President every 5 years (or earlier). It recommends tax devolution between Centre and States."
+          "back": "Article 280. It is a quasi-judicial body constituted by the President every 5 years (or earlier). It recommends tax devolution between Centre and States.",
+          "short": "Article 280, every 5 years"
         },
         {
           "front": "Can a State borrow from foreign markets?",
-          "back": "NO. Under Article 293, a State can only borrow within the territory of India. Only the Union Govt (Art 292) can borrow from international sources."
+          "back": "NO. Under Article 293, a State can only borrow within the territory of India. Only the Union Govt (Art 292) can borrow from international sources.",
+          "short": "No, only within India (Article 293)"
         }
       ],
       "weightage": 10,

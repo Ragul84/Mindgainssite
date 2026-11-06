@@ -152,7 +152,8 @@
         },
         {
           "front": "Which type of amendment does not fall under the procedure of Article 368?",
-          "back": "Amendments by simple majority, such as admission of states, salaries, and rules of procedure."
+          "back": "Amendments by simple majority, such as admission of states, salaries, and rules of procedure.",
+          "short": "Changes by simple majority, e.g. admitting new states"
         },
         {
           "front": "What majority is required to amend Fundamental Rights and DPSPs under Article 368?",
@@ -164,7 +165,8 @@
         },
         {
           "front": "What was the landmark ruling in the Kesavananda Bharati case (1973)?",
-          "back": "Parliament can amend Fundamental Rights but cannot alter the 'Basic Structure' of the Constitution."
+          "back": "Parliament can amend Fundamental Rights but cannot alter the 'Basic Structure' of the Constitution.",
+          "short": "Parliament can amend FRs but not the Basic Structure"
         },
         {
           "front": "Which amendment added the words 'Socialist', 'Secular', and 'Integrity' to the Preamble?",
@@ -180,11 +182,13 @@
         },
         {
           "front": "Can a \"Joint Sitting\" be held for an Amendment Bill?",
-          "back": "NO. Article 368 requires that each House must pass the amendment bill separately by a special majority. If one House rejects it, the bill fails."
+          "back": "NO. Article 368 requires that each House must pass the amendment bill separately by a special majority. If one House rejects it, the bill fails.",
+          "short": "No, each House must pass it separately"
         },
         {
           "front": "What is the \"Basic Structure Doctrine\"?",
-          "back": "A judicial innovation from the Kesavananda Bharati case (1973). It says that certain features of the Constitution (like democracy, secularism, judicial review) are so fundamental that they cannot be removed even by a constitutional amendment."
+          "back": "A judicial innovation from the Kesavananda Bharati case (1973). It says that certain features of the Constitution (like democracy, secularism, judicial review) are so fundamental that they cannot be removed even by a constitutional amendment.",
+          "short": "Core features no amendment can remove (Kesavananda, 1973)"
         },
         {
           "front": "Which Amendment made it compulsory for the President to give assent to an Amendment Bill?",
@@ -192,11 +196,13 @@
         },
         {
           "front": "Is \"Judicial Review\" part of the Basic Structure?",
-          "back": "YES. In Minerva Mills (1980) and L. Chandra Kumar (1997), the SC reaffirmed that Judicial Review is a basic feature."
+          "back": "YES. In Minerva Mills (1980) and L. Chandra Kumar (1997), the SC reaffirmed that Judicial Review is a basic feature.",
+          "short": "Yes (Minerva Mills 1980, L. Chandra Kumar 1997)"
         },
         {
           "front": "Majority required for a state to ratify an amendment?",
-          "back": "SIMPLE MAJORITY. Even if the Union passes it by Special Majority, the states only need a simple majority of members present and voting to ratify."
+          "back": "SIMPLE MAJORITY. Even if the Union passes it by Special Majority, the states only need a simple majority of members present and voting to ratify.",
+          "short": "Simple majority of the state legislature"
         }
       ],
       "weightage": 10,
@@ -293,7 +299,8 @@
         },
         {
           "front": "Are Fundamental Duties justiciable in a court of law?",
-          "back": "No, they are non-justiciable, though courts can use them to determine the constitutionality of a law."
+          "back": "No, they are non-justiciable, though courts can use them to determine the constitutionality of a law.",
+          "short": "No, though courts may use them to judge a law"
         },
         {
           "front": "Which amendment is famously known as the 'Mini Constitution'?",
@@ -321,11 +328,13 @@
         },
         {
           "front": "Were FDs in the original Constitution?",
-          "back": "NO. They were added by the 42nd Amendment in 1976 based on the Swaran Singh Committee recommendation. Only the 11th duty was added later by the 86th Amendment in 2002."
+          "back": "NO. They were added by the 42nd Amendment in 1976 based on the Swaran Singh Committee recommendation. Only the 11th duty was added later by the 86th Amendment in 2002.",
+          "short": "No, added by the 42nd Amendment in 1976"
         },
         {
           "front": "Are FDs \"Justiciable\"?",
-          "back": "NO. Similar to DPSPs, Fundamental Duties are non-justiciable. You cannot be punished by a court for not following them, unless there is a specific law made by Parliament (like the Prevention of Insults to National Honour Act)."
+          "back": "NO. Similar to DPSPs, Fundamental Duties are non-justiciable. You cannot be punished by a court for not following them, unless there is a specific law made by Parliament (like the Prevention of Insults to National Honour Act).",
+          "short": "No, only where a specific law enforces one"
         },
         {
           "front": "Which Amendment removed the \"Right to Property\" from FRs?",
@@ -337,7 +346,8 @@
         },
         {
           "front": "Can a Constitution Amendment Bill be introduced by a Private Member?",
-          "back": "YES. It can be introduced either by a Minister or a private member and does not require prior permission of the President."
+          "back": "YES. It can be introduced either by a Minister or a private member and does not require prior permission of the President.",
+          "short": "Yes, by a minister or a private member"
         }
       ],
       "weightage": 10,

@@ -250,16 +250,28 @@ async function refreshHofStrip() {
 setTimeout(() => safe('hofStrip', refreshHofStrip), 2500);
 setInterval(() => { if (state === 'title') safe('hofStrip', refreshHofStrip); }, 120000);
 
+/* A one-line notice over the title screen (the HUD, and its toast, is hidden there). */
+let noticeEl = null, noticeTimer = 0;
+function titleNotice(msg) {
+  if (!noticeEl) { noticeEl = document.createElement('div'); noticeEl.className = 'nl-notice'; noticeEl.setAttribute('role', 'status'); uiRoot.appendChild(noticeEl); }
+  noticeEl.textContent = msg;
+  noticeEl.classList.add('show');
+  clearTimeout(noticeTimer);
+  noticeTimer = setTimeout(() => noticeEl.classList.remove('show'), 6000);
+}
+
 /* Flashcards (front/back) -> multiple choice. The right option is the card's own answer; the
    three wrong ones are answers to OTHER cards in the same lesson, so they are on-topic and
    plausible rather than random. Long answers make unreadable buttons, so those cards are
    left to the billboards. */
 function lessonQuizItems(cards) {
-  const usable = (cards || []).filter((c) => c && c.front && c.back && c.back.length <= 90);
+  // `short` is a button-length version of a long answer; the full one shows after answering
+  const ans = (c) => (c.short || c.back || '').trim();
+  const usable = (cards || []).filter((c) => c && c.front && ans(c) && ans(c).length <= 90);
   if (usable.length < 4) return [];
-  const backs = [...new Set(usable.map((c) => c.back.trim()))];
+  const backs = [...new Set(usable.map(ans))];
   return usable.map((c, i) => {
-    const right = c.back.trim();
+    const right = ans(c);
     // Wrong options that LOOK like the right one ("Article 12." beside "Article 26.", not
     // beside a full sentence), so the shape of an option never gives the answer away.
     const head = (t) => t.toLowerCase().split(/[\s,.]+/)[0];
@@ -267,7 +279,7 @@ function lessonQuizItems(cards) {
     const wrong = backs.filter((b) => b !== right).sort((x, y) => score(x) - score(y)).slice(0, 3);
     if (wrong.length < 3) return null;
     const opts = shuffle([right, ...wrong]);
-    return { id: 'lesson:' + (focusedZone?.id || '') + ':' + i, q: c.front, opts, ans: opts.indexOf(right), explain: right };
+    return { id: 'lesson:' + (focusedZone?.id || '') + ':' + i, q: c.front, opts, ans: opts.indexOf(right), explain: c.back.trim() };
   }).filter(Boolean);
 }
 
@@ -788,7 +800,16 @@ const menu = new Menu(uiRoot, {
   },
   onResume: () => resume(),
   onRestart: () => { menu.hideAll(); startRace(lastSettings); },
-  onQuit: () => goToTitle(),
+  onQuit: () => {
+    // Leaving mid-lesson keeps every point: say so, and where to pick up.
+    const z = focusedZone, sec = focusedSection, n = focusedSectionCount;
+    const note = z && sec != null && sectionRun(z) ? (() => {
+      const st = sectionState(z.id, n)[sec];
+      return `Progress saved · ${z.topic}${n > 1 ? `, section ${sec + 1}` : ''}: ${st.correct}/${SECTION_THRESHOLD} correct. Continue from Learn & Race.`;
+    })() : '';
+    goToTitle();
+    if (note) setTimeout(() => titleNotice(note), 400);
+  },
   // The title's map is Bharat Yatra now; the syllabus journey stays reachable from a Ready card.
   onMap: () => yatra.open(),
   onJourney: () => journeyMap.open(),

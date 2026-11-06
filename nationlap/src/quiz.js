@@ -262,7 +262,9 @@ export function createQuizSystem({ uiRoot, onResult }) {
             else if (bi === i && !correct) btn.classList.add('wrong');
           });
           hintEl.textContent = item.explain ? (correct ? '✓ ' : '✗ ') + item.explain : (correct ? 'Correct!' : 'Not quite');
-          setTimeout(() => close({ correct, kart }), correct ? 1100 : 1500);
+          // a longer explanation gets time to be read
+          const extra = Math.min(2200, Math.max(0, (item.explain || '').length - 60) * 18);
+          setTimeout(() => close({ correct, kart }), (correct ? 1100 : 1500) + extra);
         };
       });
     });

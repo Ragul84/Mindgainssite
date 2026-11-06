@@ -268,7 +268,8 @@
         },
         {
           "front": "What is the EJOTY trick used for in alphabet series?",
-          "back": "It assigns values to letters (E=5, J=10, O=15, T=20, Y=25) to help count gaps forward or backward in steps of five."
+          "back": "It assigns values to letters (E=5, J=10, O=15, T=20, Y=25) to help count gaps forward or backward in steps of five.",
+          "short": "Recalling letter positions in steps of five"
         },
         {
           "front": "How should you approach a repeating letter series with 12 total positions?",
@@ -288,7 +289,8 @@
         },
         {
           "front": "What is a double difference series?",
-          "back": "A series where the differences between the numbers themselves form a new pattern that can be analyzed separately."
+          "back": "A series where the differences between the numbers themselves form a new pattern that can be analyzed separately.",
+          "short": "One where the differences themselves form a series"
         },
         {
           "front": "What type of series growth is typically associated with multiplication or division?",

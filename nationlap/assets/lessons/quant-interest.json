@@ -96,7 +96,8 @@
         },
         {
           "front": "What is the key rule regarding the amount of Simple Interest paid each year?",
-          "back": "The interest amount remains the same for every year because it is based only on the original principal."
+          "back": "The interest amount remains the same for every year because it is based only on the original principal.",
+          "short": "It stays the same each year"
         },
         {
           "front": "What is the formula for calculating a yearly installment under Simple Interest?",
@@ -116,7 +117,8 @@
         },
         {
           "front": "A sum triples in 4 years (SI). How many years to become 9 times?",
-          "back": "Triples means SI : 2P. 2P in 4 yrs → P in 2 yrs. 9 times means SI : 8P. 8P will take 8 * 2 : 16 years."
+          "back": "Triples means SI : 2P. 2P in 4 yrs → P in 2 yrs. 9 times means SI : 8P. 8P will take 8 * 2 : 16 years.",
+          "short": "16 years"
         },
         {
           "front": "Ratio for 3-year CI calculation?",

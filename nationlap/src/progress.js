@@ -13,6 +13,8 @@ const KEY = 'tkr_zone_progress';
 
 /** Correct answers needed to first clear a zone. */
 export const COMPLETE_THRESHOLD = 5;
+/** Correct answers that clear one section of a lesson (a section is ~5 pages and one race). */
+export const SECTION_THRESHOLD = 4;
 /** Days until a cleared zone falls due again, one entry per review stage. */
 export const REVIEW_INTERVALS_DAYS = [3, 7, 21, 50];
 
@@ -42,7 +44,10 @@ function rec(state, zoneId) {
     wrong: r.wrong || 0,
     stage: r.stage || 0,       // how many spaced reviews have been passed
     reviewAt: r.reviewAt || 0, // epoch ms; 0 = not yet cleared, so not scheduled
-    sec: Array.isArray(r.sec) ? r.sec.slice() : [],   // correct answers per lesson section
+    // correct answers per lesson section. Progress from before sections existed carries over
+    // into section 1, so nobody loses ground they had earned.
+    sec: Array.isArray(r.sec) ? r.sec.slice()
+      : (r.correct > 0 && r.correct < COMPLETE_THRESHOLD ? [Math.min(SECTION_THRESHOLD, r.correct)] : []),
   };
 }
 
@@ -92,8 +97,6 @@ function scheduleNext(r) {
   r.reviewAt = Date.now() + days * DAY_MS;
 }
 
-/** Correct answers that clear one section of a lesson (a section is ~5 pages and one race). */
-export const SECTION_THRESHOLD = 4;
 
 /** Per-section progress for a zone with `n` sections: [{ correct, cleared }]. */
 export function sectionState(zoneId, n) {

@@ -71,7 +71,8 @@
         },
         {
           "front": "How is efficiency defined in the context of the LCM method?",
-          "back": "Efficiency is the amount of work done per day, found by dividing the total work by the number of days."
+          "back": "Efficiency is the amount of work done per day, found by dividing the total work by the number of days.",
+          "short": "Work done per day: total work ÷ days"
         },
         {
           "front": "What is the relationship between efficiency and time for the same amount of work?",

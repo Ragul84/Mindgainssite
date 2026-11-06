@@ -121,7 +121,8 @@
         },
         {
           "front": "Who are the members of the NITI Aayog Governing Council?",
-          "back": "The Prime Minister, Chief Ministers of all states, and Lieutenant Governors of Union Territories."
+          "back": "The Prime Minister, Chief Ministers of all states, and Lieutenant Governors of Union Territories.",
+          "short": "PM, all state CMs and UT Lieutenant Governors"
         },
         {
           "front": "When was NITI Aayog established?",

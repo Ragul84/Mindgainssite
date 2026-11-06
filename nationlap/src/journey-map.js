@@ -80,12 +80,17 @@ export function createJourneyMap({ uiRoot, onAffairs, onMonths, onSelectZone, on
       const status = {
         due: '<span class="lj-st due">↻ Review due</span>',
         done: `<span class="lj-st done">✓ Cleared${z.mastered ? ' · ★ Mastered' : ''}</span>`,
-        next: `<span class="lj-st next">${titles.length > 1 ? `Section ${nextSec + 1} of ${titles.length} · read, then race` : 'Read · then race'}</span>`,
+        next: `<span class="lj-st next">${(() => {
+          const k = Math.max(0, nextSec), got = (z.sec && z.sec[k]) || 0;
+          const where = titles.length > 1 ? `Section ${k + 1} of ${titles.length}` : '';
+          if (got) return `Continue${where ? ' · ' + where : ''} · ${got}/${SECTION_THRESHOLD} correct`;
+          return where ? `${where} · read, then race` : 'Read · then race';
+        })()}</span>`,
         open: '<span class="lj-st">Read · then race</span>',
         locked: '<span class="lj-st locked">Clear the one before</span>',
       }[state];
       const right = state === 'locked' ? `<span class="lj-lock">${iconSvg('lock')}</span>`
-        : `<span class="lj-go">${state === 'next' || state === 'due' ? 'START' : '▶'}</span>`;
+        : `<span class="lj-go">${state === 'due' ? 'REVIEW' : state === 'next' ? (((z.sec || []).some(Boolean)) ? 'CONTINUE' : 'START') : '▶'}</span>`;
       return `<button type="button" class="lj-card ${state}" data-i="${i}">
         <span class="lj-num">${state === 'done' ? '✓' : i + 1}</span>
         <span class="lj-txt"><b>${esc(z.topic)}</b>${status}${pips}</span>${right}</button>`;
