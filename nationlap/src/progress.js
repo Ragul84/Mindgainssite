@@ -42,6 +42,7 @@ function rec(state, zoneId) {
     wrong: r.wrong || 0,
     stage: r.stage || 0,       // how many spaced reviews have been passed
     reviewAt: r.reviewAt || 0, // epoch ms; 0 = not yet cleared, so not scheduled
+    sec: Array.isArray(r.sec) ? r.sec.slice() : [],   // correct answers per lesson section
   };
 }
 
@@ -79,6 +80,7 @@ export function getJourney() {
       ...z, unlocked, completed, due,
       correct: r.correct, wrong: r.wrong, stage: r.stage,
       reviewAt: r.reviewAt,
+      sec: r.sec,
       accuracy: attempts ? r.correct / attempts : 0,
       mastered: r.stage >= REVIEW_INTERVALS_DAYS.length,
     };
@@ -88,6 +90,40 @@ export function getJourney() {
 function scheduleNext(r) {
   const days = REVIEW_INTERVALS_DAYS[Math.min(r.stage, REVIEW_INTERVALS_DAYS.length - 1)];
   r.reviewAt = Date.now() + days * DAY_MS;
+}
+
+/** Correct answers that clear one section of a lesson (a section is ~5 pages and one race). */
+export const SECTION_THRESHOLD = 4;
+
+/** Per-section progress for a zone with `n` sections: [{ correct, cleared }]. */
+export function sectionState(zoneId, n) {
+  const r = rec(load(), zoneId);
+  const done = r.correct >= COMPLETE_THRESHOLD;
+  return Array.from({ length: n }, (_, i) => {
+    const c = Math.min(SECTION_THRESHOLD, r.sec[i] || 0);
+    return { correct: done ? SECTION_THRESHOLD : c, cleared: done || c >= SECTION_THRESHOLD };
+  });
+}
+
+/**
+ * One answer inside a section race. A wrong answer costs a point, as for zones. Clearing the
+ * last open section clears the lesson, which unlocks the next one and starts its reviews.
+ */
+export function recordSection(zoneId, i, n, ok) {
+  if (!zoneId) return null;
+  const state = load();
+  const r = rec(state, zoneId);
+  r.sec[i] = Math.max(0, Math.min(SECTION_THRESHOLD, (r.sec[i] || 0) + (ok ? 1 : -1)));
+  if (!ok) r.wrong += 1;
+  const sectionCleared = ok && r.sec[i] >= SECTION_THRESHOLD;
+  let justCompleted = false;
+  const all = Array.from({ length: n }, (_, k) => (r.sec[k] || 0) >= SECTION_THRESHOLD).every(Boolean);
+  if (all && r.correct < COMPLETE_THRESHOLD) {
+    r.correct = COMPLETE_THRESHOLD; r.stage = 0; scheduleNext(r); justCompleted = true;
+  }
+  state[zoneId] = r;
+  save(state);
+  return { sectionCleared, justCompleted, correct: r.sec[i] };
 }
 
 export function recordCorrect(zoneId) {

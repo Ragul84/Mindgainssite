@@ -2390,3 +2390,8 @@ body.touch-mode[data-state="title"] .hof-strip { width: auto !important; }
 .lesson-reader .lr-card { min-height: 0; }
 .lesson-reader .lr-card-part { display: block !important; padding-top: clamp(28px, 6vw, 56px); }
 .lesson-reader .lr-card-end { min-height: calc(100% - 4px); }
+
+.lj-pips { display: flex; gap: 4px; margin-top: 4px; }
+.lj-pips i { width: 22px; height: 5px; border-radius: 3px; background: rgba(255, 255, 255, .2); }
+.lj-pips i.on { background: #22d36e; }
+.lj-pips i.cur { background: #ffd23f; }

@@ -29,7 +29,7 @@ import { formatTime } from './race.js';
 import { createFactGates } from './fact-gates.js';
 import { createHallOfFame, fetchToppers } from './hall-of-fame.js';
 import { createTouchControls, isTouchDevice } from './touch-controls.js';
-import { recordCorrect, recordWrong, getJourney, COMPLETE_THRESHOLD, rawZones, replaceZones } from './progress.js';
+import { recordCorrect, recordWrong, getJourney, COMPLETE_THRESHOLD, rawZones, replaceZones, recordSection, sectionState, SECTION_THRESHOLD } from './progress.js';
 import * as account from './account.js';
 import { createRecorder, createGhost, loadPersonalBest, savePersonalBest } from './ghost.js';
 
@@ -491,8 +491,11 @@ const quiz = createQuizSystem({
     if (correct === true) {
       progress.streak++;
       awardXp(20 + Math.min(30, progress.streak * 5));
-      const rec = isZoneUnlocked(pendingZone?.id) ? recordCorrect(pendingZone.id) : null;
+      const inSection = sectionRun(pendingZone);
+      const rec = !isZoneUnlocked(pendingZone?.id) ? null
+        : inSection ? recordSection(pendingZone.id, focusedSection, focusedSectionCount, true) : recordCorrect(pendingZone.id);
       if (rec?.justCompleted) hud.toast?.((pendingZone?.topic || 'Topic') + ' cleared! Next one unlocked.');
+      else if (rec?.sectionCleared) hud.toast?.(`Section ${focusedSection + 1} cleared!`);
       // correct answer = instant, guaranteed speed payoff — no waiting to press the item
       // button. Streak makes it stronger, so a hot run genuinely pulls away from the pack.
       const streakBonus = Math.min(5, progress.streak - 1);
@@ -511,7 +514,10 @@ const quiz = createQuizSystem({
       progress.streak = 0;
       awardXp(4); // small consolation XP for attempting
       // a wrong answer costs ground on the zone, so it can't be cleared by guessing through
-      if (isZoneUnlocked(pendingZone?.id)) recordWrong(pendingZone.id);
+      if (isZoneUnlocked(pendingZone?.id)) {
+        if (sectionRun(pendingZone)) recordSection(pendingZone.id, focusedSection, focusedSectionCount, false);
+        else recordWrong(pendingZone.id);
+      }
       // wrong answer = confused/dazed hit: kart spins out and loses most of its speed,
       // same physical reaction as getting shelled — the quiz has real stakes on track.
       kart.applyHit?.('tumble');
@@ -586,6 +592,26 @@ bus.on('game:state', (d) => {
 });
 let focusedZone = null;
 let focusedCards = null;  // recall prompts for focusedZone, from its lesson's flashcards
+/* A lesson is read and raced one section (~5 pages) at a time: the race asks only from the
+   section just read. null when the zone has no lesson. */
+let focusedSection = null, focusedSectionCount = 0, focusedSectionTitle = '';
+/** True while this race's answers count toward a section rather than the whole zone. */
+function sectionRun(zone) {
+  if (!zone || focusedSection == null || zone.id !== focusedZone?.id) return false;
+  const sp = stopProgress(zone.id);
+  return !!sp && !sp.zone.completed;
+}
+/** The section to race next: the first not yet cleared; a cleared lesson revisits one at random. */
+async function pickSection(zone, want = null) {
+  focusedSection = null; focusedSectionCount = 0; focusedSectionTitle = '';
+  const lesson = zone ? await loadLesson(zone.id) : null;
+  const n = lesson?.parts?.length || 0;
+  if (!n) return;
+  const st = sectionState(zone.id, n);
+  let i = want != null && want >= 0 && want < n ? want : st.findIndex((x) => !x.cleared);
+  if (i < 0) i = Math.floor(Math.random() * n);
+  focusedSection = i; focusedSectionCount = n; focusedSectionTitle = lesson.parts[i].title || '';
+}
 /* The affairs race runs on a shorter loop: a lap carries ~6 facts, not 24 boards, and the full
    9.5 km circuit was a 4-minute lap of nothing to read. */
 const AFFAIRS_TRACK_SCALE = 2.4;
@@ -687,7 +713,7 @@ const lessonReader = createLessonReader({ uiRoot, awardXp });
 // shared clock — not on a menu screen before it.
 const scrollIntro = createScrollIntro({
   uiRoot,
-  onStudy: () => lessonReader.show(focusedZone),
+  onStudy: () => lessonReader.show(focusedZone, { section: focusedSection }),
   onDone: ({ read } = {}) => {
     // Skipping the brief costs the boost token. It is a real choice, not a shortcut.
     if (affairsRun?.midBrief) {
@@ -715,7 +741,8 @@ const journeyMap = createJourneyMap({
     focusedZone = zone;
     // Both fetched here rather than at world-build time, because building the world is
     // synchronous. The lesson JSON is cached, so the grid scroll re-reads it for free.
-    focusedCards = await lessonCards(zone.id);
+    await pickSection(zone, zone.section);
+    focusedCards = await lessonCards(zone.id, focusedSection);
     focusedLesson = await loadLesson(zone.id);
     // the map already picked the topic, so no racer picker: a short Ready card, then race
     menu.showReady(readyInfo(zone));
@@ -743,6 +770,10 @@ function readyInfo(zone) {
     completed: !!(sp && sp.zone.completed),
     nextTopic: sp && sp.next ? sp.next.topic : null,
     cupName: cup ? cup.name : '',
+    section: focusedSection != null && !(sp && sp.zone.completed) ? (() => {
+      const st = sectionState(zone.id, focusedSectionCount)[focusedSection];
+      return { i: focusedSection, n: focusedSectionCount, title: focusedSectionTitle, correct: st.correct, threshold: SECTION_THRESHOLD };
+    })() : null,
     heats: cup ? cup.heats : [],
   };
 }
@@ -1040,6 +1071,14 @@ let pendingIntroNote = '';   // one-shot line for the next intro card (set by st
 function heatTopicNote() {
   const sp = focusedZone && stopProgress(focusedZone.id);
   if (!sp) return '';
+  if (!sp.zone.completed && focusedSection != null) {
+    const st = sectionState(sp.zone.id, focusedSectionCount);
+    const left = st.filter((x) => !x.cleared).length;
+    const me = st[focusedSection];
+    return me.cleared
+      ? (left ? `Section ${focusedSection + 1} cleared · ${left} section${left > 1 ? 's' : ''} to go` : '')
+      : `Section ${focusedSection + 1}: ${me.correct}/${SECTION_THRESHOLD} correct · get ${SECTION_THRESHOLD} to clear it`;
+  }
   if (!sp.zone.completed) return `Get ${COMPLETE_THRESHOLD} right to unlock the next stop — ${sp.zone.correct}/${COMPLETE_THRESHOLD} correct`;
   if (raceStartCleared === false) {
     return sp.next && sp.next.unlocked ? `New stop unlocked: ${sp.next.topic}!` : `Topic cleared: ${sp.zone.topic}!`;
@@ -1050,7 +1089,8 @@ function heatTopicNote() {
 /** Point the race at a zone: its billboards, recall cards, study scroll and quiz pool. */
 async function setFocusZone(zone) {
   focusedZone = zone || null;
-  focusedCards = zone ? await lessonCards(zone.id) : null;
+  await pickSection(zone);
+  focusedCards = zone ? await lessonCards(zone.id, focusedSection) : null;
   focusedLesson = zone ? await loadLesson(zone.id) : null;
 }
 async function startHeat() {

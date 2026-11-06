@@ -8,7 +8,8 @@
 // Stops are locked/unlocked/completed per progress.js. Picking one makes it the focus of the
 // next race (main.js's focusedZone), and correct answers there unlock the next.
 import { CHARACTERS } from './config.js';
-import { getJourney, SUBJECT_ORDER, COMPLETE_THRESHOLD } from './progress.js';
+import { getJourney, SUBJECT_ORDER, SECTION_THRESHOLD } from './progress.js';
+import { lessonIndex } from './lesson-reader.js';
 import { iconSvg } from './icons.js';
 
 const SUBJECT_COLOR = new Map(CHARACTERS.map((c) => [c.subject, c.color]));
@@ -38,6 +39,7 @@ export function createJourneyMap({ uiRoot, onAffairs, onMonths, onSelectZone, on
 
   let activeSubject = null;
   let months = null;          // loaded once per open
+  let sections = {};          // zoneId -> section titles
   let hintTimer = 0;
 
   function close() {
@@ -70,11 +72,15 @@ export function createJourneyMap({ uiRoot, onAffairs, onMonths, onSelectZone, on
     }).join('');
 
     const cards = zones.map((z, i) => {
+      const titles = sections[z.id] || [];
+      const sec = titles.map((_, k) => z.completed || ((z.sec && z.sec[k]) || 0) >= SECTION_THRESHOLD);
+      const nextSec = sec.indexOf(false);
+      const pips = titles.length > 1 ? `<span class="lj-pips">${sec.map((d, k) => `<i class="${d ? 'on' : k === nextSec && z.unlocked ? 'cur' : ''}"></i>`).join('')}</span>` : '';
       const state = z.due ? 'due' : z.completed ? 'done' : z.unlocked ? (i === hereIdx ? 'next' : 'open') : 'locked';
       const status = {
         due: '<span class="lj-st due">↻ Review due</span>',
         done: `<span class="lj-st done">✓ Cleared${z.mastered ? ' · ★ Mastered' : ''}</span>`,
-        next: `<span class="lj-st next">${z.correct ? `${z.correct}/${COMPLETE_THRESHOLD} correct` : 'Read · then race'}</span>`,
+        next: `<span class="lj-st next">${titles.length > 1 ? `Section ${nextSec + 1} of ${titles.length} · read, then race` : 'Read · then race'}</span>`,
         open: '<span class="lj-st">Read · then race</span>',
         locked: '<span class="lj-st locked">Clear the one before</span>',
       }[state];
@@ -82,7 +88,7 @@ export function createJourneyMap({ uiRoot, onAffairs, onMonths, onSelectZone, on
         : `<span class="lj-go">${state === 'next' || state === 'due' ? 'START' : '▶'}</span>`;
       return `<button type="button" class="lj-card ${state}" data-i="${i}">
         <span class="lj-num">${state === 'done' ? '✓' : i + 1}</span>
-        <span class="lj-txt"><b>${esc(z.topic)}</b>${status}</span>${right}</button>`;
+        <span class="lj-txt"><b>${esc(z.topic)}</b>${status}${pips}</span>${right}</button>`;
     }).join('');
 
     const monthsHtml = months == null ? '<span class="lj-note">Loading…</span>'
@@ -139,6 +145,8 @@ export function createJourneyMap({ uiRoot, onAffairs, onMonths, onSelectZone, on
     months = null;
     root.classList.remove('hidden');
     render();
+    try { sections = (await lessonIndex()) || {}; } catch (e) { sections = {}; }
+    if (!root.classList.contains('hidden')) render();
     try { months = (await onMonths?.()) || []; } catch (e) { months = []; }
     if (!root.classList.contains('hidden')) render();
   }

@@ -323,13 +323,17 @@ export class Menu {
       r.querySelector('.rm-name').innerHTML = `${esc(m.name)}<span class="rm-role">Your ${esc(info.subject || '')} mentor</span>`;
       r.querySelector('.rm-line').textContent = `“${info.mentorLine || ''}”`;
     }
-    const n = Math.max(1, info.threshold | 0), c = Math.max(0, Math.min(n, info.correct | 0));
+    const sec = info.section;
+    const n = Math.max(1, (sec ? sec.threshold : info.threshold) | 0), c = Math.max(0, Math.min(n, (sec ? sec.correct : info.correct) | 0));
     const shown = info.completed ? n : c;
-    r.querySelector('.rp-title').textContent = info.completed ? 'STOP CLEARED' : 'NEXT STOP';
+    const unlock = info.nextTopic ? `<b>${esc(info.nextTopic)}</b>` : 'the next stop';
+    r.querySelector('.rp-title').textContent = info.completed ? 'STOP CLEARED' : sec && sec.n > 1 ? `SECTION ${sec.i + 1} OF ${sec.n}` : 'NEXT STOP';
     r.querySelector('.rp-count').textContent = `${shown} / ${n} correct`;
     r.querySelector('.rp-label').innerHTML = info.completed
       ? 'Cleared ✓ — a review run keeps it fresh.'
-      : `Get ${n} right to unlock ${info.nextTopic ? `<b>${esc(info.nextTopic)}</b>` : 'the next stop'}.`;
+      : sec && sec.n > 1
+        ? `<b>${esc(sec.title)}</b><br>Read this section, then race it. Clear all ${sec.n} sections to unlock ${unlock}.`
+        : `Read the lesson, then get ${n} right to unlock ${unlock}.`;
     const bar = r.querySelector('.rp-bar');
     bar.setAttribute('aria-valuemax', String(n));
     bar.setAttribute('aria-valuenow', String(shown));

@@ -38,9 +38,18 @@ export async function loadLesson(zoneId) {
  * The zone's flashcards, flattened across its parts — question/answer pairs the billboards use
  * as recall prompts during the race. Empty array when the zone has no exported lesson.
  */
-export async function lessonCards(zoneId) {
+export async function lessonCards(zoneId, section = null) {
   const lesson = await loadLesson(zoneId);
-  return (lesson?.parts || []).flatMap((p) => p.cards || []);
+  const parts = lesson?.parts || [];
+  if (section != null && parts[section]) return parts[section].cards || [];
+  return parts.flatMap((p) => p.cards || []);
+}
+
+let indexP = null;
+/** zoneId -> section titles, for screens that list lessons without loading each one. */
+export function lessonIndex() {
+  if (!indexP) indexP = fetch('assets/lessons/_index.json').then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
+  return indexP;
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -150,10 +159,11 @@ export function createLessonReader({ uiRoot, onDone, awardXp }) {
   let ticker = null;   // set only when the caller imposes a time limit (the grid scroll does)
 
   /** Flatten parts -> one page list, injecting a title card at each part boundary. */
-  function flatten(lesson) {
+  function flatten(lesson, only) {
     const out = [];
     const parts = lesson.parts || [];
     parts.forEach((part, n) => {
+      if (only != null && n !== only) return;
       out.push({ kind: 'part', title: part.title, intro: part.intro, n: n + 1, of: parts.length });
       for (const p of part.pages || []) out.push({ kind: 'page', ...p });
     });
@@ -186,8 +196,8 @@ export function createLessonReader({ uiRoot, onDone, awardXp }) {
       if (p.intro) el('p', 'lr-part-intro', card, p.intro);
     } else if (p.kind === 'end') {
       card.classList.add('lr-card-end');
-      el('div', 'lr-end-title', card, 'LESSON COMPLETE');
-      el('p', 'lr-end-sub', card, 'The billboards on this track are your recall cues. Go race it.');
+      el('div', 'lr-end-title', card, sectionLabel ? 'SECTION READ' : 'LESSON COMPLETE');
+      el('p', 'lr-end-sub', card, 'Every question in this race comes from the pages you just read.');
       el('div', 'lr-end-xp', card, '+40 XP');
     } else {
       el('h2', 'lr-page-title', card, p.title || '');
@@ -271,13 +281,17 @@ export function createLessonReader({ uiRoot, onDone, awardXp }) {
    * when the zone has no exported lesson at all. The caller needs to tell "skipped" from
    * "nothing to show": skipping still counts as read, a missing lesson must not.
    */
-  async function show(zone, { timeLimitSec } = {}) {
+  let sectionLabel = '';
+  async function show(zone, { timeLimitSec, section = null } = {}) {
     const lesson = await loadLesson(zone?.id);
     if (!lesson || !lesson.parts?.length) return null;
-    pages = flatten(lesson);
+    const n = lesson.parts.length;
+    const only = section != null && n > 1 ? section : null;
+    sectionLabel = only != null ? `Section ${only + 1} of ${n}` : '';
+    pages = flatten(lesson, only);
     idx = 0;
     subjectEl.textContent = (zone.subject || '').toUpperCase();
-    topicEl.textContent = zone.topic || '';
+    topicEl.textContent = (zone.topic || '') + (sectionLabel ? ' · ' + sectionLabel : '');
     renderCheckpoints();
     renderPage();
     open = true;
