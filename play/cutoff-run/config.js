@@ -14,5 +14,6 @@ window.CUTOFF_CONFIG = {
   tuningEndpoint: '',    // optional: GET JSON that overrides game tuning (speed, cut-off, read time)
   leagueEndpoint: '',    // optional: replaces the Supabase league table calls
   saveEndpoint: '',       // optional: replaces the Supabase progress table calls
-  gameApi: '/api/game'  // mindgains.ai Worker
+  gameApi: '/api/game', // mindgains.ai Worker
+  examDates: []         // menu countdown chip, e.g. [{name: 'UPSC Prelims', date: 'YYYY-MM-DD'}]. Use only officially notified dates.
 };

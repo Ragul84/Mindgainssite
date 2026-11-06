@@ -119,11 +119,13 @@
         },
         {
           "front": "Why is the CAG referred to as the 'Guardian of the Public Purse'?",
-          "back": "Because its main job is to audit all money records and accounts of the Union and State governments."
+          "back": "Because its main job is to audit all money records and accounts of the Union and State governments.",
+          "short": "It audits all Union and State accounts"
         },
         {
           "front": "Is the CAG eligible for further government office after retirement?",
-          "back": "No, the CAG is not eligible for any further office under the Union or any State government."
+          "back": "No, the CAG is not eligible for any further office under the Union or any State government.",
+          "short": "No, it is barred from any further government office"
         },
         {
           "front": "Who has the authority to remove a member of the State Public Service Commission (SPSC)?",
@@ -147,23 +149,28 @@
         },
         {
           "front": "Who conducts elections for Panchayats and Municipalities?",
-          "back": "The STATE ELECTION COMMISSION (established under Art 243K and 243ZA). The Election Commission of India (ECI) does NOT conduct local body elections."
+          "back": "The STATE ELECTION COMMISSION (established under Art 243K and 243ZA). The Election Commission of India (ECI) does NOT conduct local body elections.",
+          "short": "The State Election Commission"
         },
         {
           "front": "Can the CAG hold further office after retirement?",
-          "back": "NO. Under Article 148, the CAG is not eligible for any further office under the Government of India or any State Government after they cease to hold office. This ensures independence."
+          "back": "NO. Under Article 148, the CAG is not eligible for any further office under the Government of India or any State Government after they cease to hold office. This ensures independence.",
+          "short": "No (Article 148)"
         },
         {
           "front": "Who can remove a member of a State Public Service Commission (SPSC)?",
-          "back": "ONLY the PRESIDENT (not the Governor). Although the Governor appoints them, the power of removal is vested in the President to ensure independence from state political pressure."
+          "back": "ONLY the PRESIDENT (not the Governor). Although the Governor appoints them, the power of removal is vested in the President to ensure independence from state political pressure.",
+          "short": "Only the President"
         },
         {
           "front": "Are Finance Commission recommendations binding?",
-          "back": "NO. They are advisory in nature. However, governments usually accept them as a matter of constitutional convention."
+          "back": "NO. They are advisory in nature. However, governments usually accept them as a matter of constitutional convention.",
+          "short": "No, they are advisory"
         },
         {
           "front": "Article 312—what is it?",
-          "back": "The power of Rajya Sabha to create one or more All-India Services (like IAS, IPS, IFoS) by passing a resolution by 2/3rd majority."
+          "back": "The power of Rajya Sabha to create one or more All-India Services (like IAS, IPS, IFoS) by passing a resolution by 2/3rd majority.",
+          "short": "Rajya Sabha's power to create All-India Services"
         }
       ],
       "weightage": 10,
@@ -249,7 +256,8 @@
         },
         {
           "front": "What is the primary limitation of the NHRC's enforcement power?",
-          "back": "It has only advisory powers and cannot punish or enforce recommendations, leading to it being called a 'toothless tiger'."
+          "back": "It has only advisory powers and cannot punish or enforce recommendations, leading to it being called a 'toothless tiger'.",
+          "short": "It can only recommend, not enforce"
         },
         {
           "front": "Who is eligible to be the Chairman of the NHRC?",
@@ -265,11 +273,13 @@
         },
         {
           "front": "Which officials are included in the selection committee for the Lokpal?",
-          "back": "The Prime Minister (Chair), Speaker of the Lok Sabha, Leader of the Opposition in the Lok Sabha, the CJI (or nominee), and an eminent jurist."
+          "back": "The Prime Minister (Chair), Speaker of the Lok Sabha, Leader of the Opposition in the Lok Sabha, the CJI (or nominee), and an eminent jurist.",
+          "short": "PM, Speaker, LoP in Lok Sabha, CJI and an eminent jurist"
         },
         {
           "front": "Is the CBI a Statutory Body?",
-          "back": "NO. The CBI is NOT a statutory body. It derives its powers from the Delhi Special Police Establishment Act, 1946, but was created by an executive resolution of the Ministry of Home Affairs in 1963."
+          "back": "NO. The CBI is NOT a statutory body. It derives its powers from the Delhi Special Police Establishment Act, 1946, but was created by an executive resolution of the Ministry of Home Affairs in 1963.",
+          "short": "No, it was set up by an executive resolution in 1963"
         },
         {
           "front": "What is the time limit for life and liberty RTI requests?",
@@ -281,11 +291,13 @@
         },
         {
           "front": "Does the Lokpal have jurisdiction over the Prime Minister?",
-          "back": "YES, but with certain safeguards (e.g., in-camera proceedings, 2/3rd bench approval for inquiry related to international relations, security, etc.)."
+          "back": "YES, but with certain safeguards (e.g., in-camera proceedings, 2/3rd bench approval for inquiry related to international relations, security, etc.).",
+          "short": "Yes, with safeguards"
         },
         {
           "front": "Is NITI Aayog a Constitutional Body?",
-          "back": "NO. It is an executive body (think-tank) created by a Cabinet resolution in 2015, replacing the Planning Commission."
+          "back": "NO. It is an executive body (think-tank) created by a Cabinet resolution in 2015, replacing the Planning Commission.",
+          "short": "No, an executive body set up by Cabinet resolution in 2015"
         }
       ],
       "weightage": 10,

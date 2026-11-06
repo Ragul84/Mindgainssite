@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#14213d">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#14213d"><link rel="manifest" href="manifest.webmanifest">
 <!-- Optional runtime config. A missing config.js is fine: the game then uses its local question bank. -->
 <script src="config.js"></script>
 <title>Cut-Off Run</title>
@@ -413,7 +413,8 @@ body.rm .mnd,body.rm .mpin{animation:none}
       <div class="mtop" id="mchips"></div>
       <h1 class="ttl">Cut-Off Run</h1>
       <button class="btn big" id="play"><span id="playT">Play level 1</span><small id="playS">UPSC Prelims run</small></button>
-      <div class="bgrid"><button class="btn pink sm" id="daily">Current Affairs</button><button class="btn blue sm" id="quickBtn">Quick Revision</button></div>
+      <div class="bgrid"><button class="btn gold sm" id="paperBtn">Daily Paper</button><button class="btn sm" id="mockBtn">All-India Mock</button></div>
+      <div class="bgrid"><button class="btn pink sm" id="daily">Today's news ↗</button><button class="btn blue sm" id="quickBtn">Quick Revision</button></div>
       <div class="dock d4"><button class="tile" id="toMap"></button><button class="tile" id="toMissions"></button><button class="tile" id="toAlbum1"></button><button class="tile" id="toMore"></button></div>
     </div>
   </div>
@@ -583,7 +584,7 @@ const CARDS=[
 {id:'m5',set:'missions',ic:'🫧',n:'Montreal Protocol',f:'Signed in 1987 to protect the ozone layer.'},
 {id:'m6',set:'missions',ic:'🌍',n:'Paris Agreement',f:'2015. Keep warming well below 2°C.'}];
 const SETS={fighters:{n:'Freedom Fighters',col:'#ffe0c2',bonus:'+3 starting aspirants'},articles:{n:'Articles',col:'#d8e6ff',bonus:'+5 on every true gate'},parks:{n:'National Parks',col:'#d6f5dc',bonus:'Obstacles hit 10% softer'},missions:{n:'Missions & Treaties',col:'#efe0ff',bonus:'+2 marks per note'}};
-const BOSSES={Polity:{n:'Constitution Giant',c:'#5b6cff'},History:{n:'Time Rakshasa',c:'#b8743a'},Geography:{n:'Monsoon Dragon',c:'#1fb5a8'},Economy:{n:'Inflation Monster',c:'#e0a100'},Environment:{n:'Smog Beast',c:'#6b7a5a'},Science:{n:'Glitch Robot',c:'#8a5cff'}};
+const BOSSES={Physics:{n:'Vector Golem',c:'#2f6bff'},Chemistry:{n:'Reaction Hydra',c:'#16a34a'},Biology:{n:'Cell Kraken',c:'#d6336c'},Polity:{n:'Constitution Giant',c:'#5b6cff'},History:{n:'Time Rakshasa',c:'#b8743a'},Geography:{n:'Monsoon Dragon',c:'#1fb5a8'},Economy:{n:'Inflation Monster',c:'#e0a100'},Environment:{n:'Smog Beast',c:'#6b7a5a'},Science:{n:'Glitch Robot',c:'#8a5cff'}};
 const LEVEL_SUBJ=[["Polity","History"],["Geography","Economy"],["Environment","Science"]];
 const SUBJ=Object.keys(BANK);
 // Progression: story chapters are open up to TUNE.storyOpen (default 12, chapter 4 boss). After that the Exam Season runs forever.
@@ -592,7 +593,11 @@ const isSeason=l=>l>STORY_OPEN(),seasonOf=l=>{const k=l-STORY_OPEN();return{s:Ma
 const levelTier=l=>l<3?0:l%12===0?2:l%4===0?1:0; // 0 normal, 1 hard, 2 super hard
 const TIER_NAME=['','HARD LEVEL','SUPER HARD'];
 const lvName=l=>isSeason(l)?`Season ${seasonOf(l).s}, stage ${seasonOf(l).k}`:`Level ${l}`;
-const subjFor=l=>l<=3?LEVEL_SUBJ[l-1]:[SUBJ[(l*2)%6],SUBJ[(l*2+1)%6]];
+// NEET and JEE tracks swap the six GS subjects for NCERT Class 11-12 science (JEE: Physics and Chemistry until a Maths set exists).
+const TRACK_SUBJ={neet:['Physics','Chemistry','Biology'],jee:['Physics','Chemistry']};
+const trackSubj=()=>typeof PL!=='undefined'&&TRACK_SUBJ[PL.exam]||null;
+const subjList=()=>trackSubj()||SUBJ;
+const subjFor=l=>{const t=trackSubj();if(t)return t.length===2?(l%2?[t[0],t[1]]:[t[1],t[0]]):[t[(l-1)%3],t[l%3]];return l<=3?LEVEL_SUBJ[l-1]:[SUBJ[(l*2)%6],SUBJ[(l*2+1)%6]]};
 
 // ===================================================== SETUP =====================================================
 const wrap=document.getElementById('wrap'),cv=document.getElementById('c'),$=id=>document.getElementById(id);
@@ -661,7 +666,7 @@ function flushEvents(){if(!CONFIG.analyticsEndpoint||!EVQ.length)return;const ba
 setInterval(flushEvents,20000);addEventListener('pagehide',flushEvents);
 addEventListener('error',e=>track('error',{msg:String(e.message).slice(0,200),line:e.lineno,col:e.colno}));
 addEventListener('unhandledrejection',e=>track('error',{msg:String(e.reason).slice(0,200)}));
-const SUBJ_ALIASES={'current affairs':'Current Affairs','art and culture':'History','science and technology':'Science',polity:'Polity',constitution:'Polity',governance:'Polity',history:'History',culture:'History',geography:'Geography',economy:'Economy',economics:'Economy',environment:'Environment',ecology:'Environment',science:'Science',technology:'Science',csat:'CSAT'};
+const SUBJ_ALIASES={physics:'Physics',chemistry:'Chemistry',biology:'Biology','current affairs':'Current Affairs','art and culture':'History','science and technology':'Science',polity:'Polity',constitution:'Polity',governance:'Polity',history:'History',culture:'History',geography:'Geography',economy:'Economy',economics:'Economy',environment:'Environment',ecology:'Environment',science:'Science',technology:'Science',csat:'CSAT'};
 function normSubj(x){x=String(x||'').toLowerCase().trim();if(SUBJ_ALIASES[x])return SUBJ_ALIASES[x];for(const k in SUBJ_ALIASES)if(x.includes(k))return SUBJ_ALIASES[k];return null}
 const hash36=s=>{let h=0;for(const c of s)h=(h*31+c.charCodeAt(0))|0;return Math.abs(h).toString(36)};
 function mapRemoteRow(r){try{let o=r.options??r.choices;if(typeof o==='string')o=JSON.parse(o);if(!Array.isArray(o)||o.length<2)return null;o=o.map(x=>String(x).trim());
@@ -685,7 +690,7 @@ const Remote={user:null,saveT:null,
     if(CONFIG.gameApi){const seen=store.get('cor_seen',[]).slice(-60);
       const r=await fetch(gameUrl('/round?n=30'+(o.pyq===1?'&pyq=1':'&pyq=mix')+((o.exam||PL.exam)?'&exam='+(o.exam||PL.exam):'')+(subjects&&subjects.length?'&subjects='+encodeURIComponent(subjects.join(',')):'')+(seen.length?'&exclude='+encodeURIComponent(seen.map(x=>x.slice(1)).join(',')):'')+'&device='+DEV+(o.pyq!==1&&typeof level==='number'?'&level='+(o.lv||level):'')+(o.topic?'&topic='+encodeURIComponent(o.topic):'')),{credentials:'same-origin',headers:authH()});
       if(!r.ok)return;const j=await r.json();const items=(j.items||[]).map(mapRemoteRow).filter(Boolean);
-      if(items.length){mergeRemote(items);ROUND={token:j.token,ids:new Set(items.map(x=>x.id)),at:Date.now(),spent:false};track('questions_loaded',{n:items.length})}return items.length}
+      if(items.length){mergeRemote(items);if(!(ROUND&&ROUND.paper&&!ROUND.spent))ROUND={token:j.token,ids:new Set(items.map(x=>x.id)),at:Date.now(),spent:false};track('questions_loaded',{n:items.length})}return items.length}
     if(CONFIG.supabase.url){const r=await this.sb(`${CONFIG.supabase.table}?select=*&limit=2000`);if(r.ok)rows=await r.json()}
     else if(CONFIG.questionsEndpoint){const r=await fetch(CONFIG.questionsEndpoint);if(r.ok){const j=await r.json();rows=Array.isArray(j)?j:j.items}}
     if(!rows)return;const items=rows.map(mapRemoteRow).filter(Boolean);if(items.length){REMOTE=items;store.set('cor_qcache',items.slice(0,2000));track('questions_loaded',{n:items.length})}}catch(e){}},
@@ -704,7 +709,7 @@ const Remote={user:null,saveT:null,
     store.set('cor_seen',store.get('cor_seen',[]).concat(ans.map(a=>'r'+a.id)).slice(-300));
     setTimeout(()=>this.loadQuestions(subjFor(level)),400);
     if(!ans.length)return null;
-    try{const r=await fetch(gameUrl('/submit'),{method:'POST',credentials:'same-origin',headers:Object.assign({'content-type':'application/json'},authH()),body:JSON.stringify({token:rd.token,answers:ans,win:res.win,lv:res.lv,seed:res.seed,score:res.score,device:DEV})});
+    try{const r=await fetch(gameUrl('/submit'),{method:'POST',credentials:'same-origin',headers:Object.assign({'content-type':'application/json'},authH()),body:JSON.stringify({token:rd.token,answers:ans,win:res.win,lv:res.lv,seed:res.seed,score:res.score,device:DEV,state:PL.state||'',grid:res.log.map(l=>l.skipped?'S':l.ok?'G':'R').join('')})});
       const j=await r.json().catch(()=>null);if(j&&r.ok){this.league();return j}return null}catch(e){return null}},
   async verifyCode(code){if(!CONFIG.gameApi)return null;try{const r=await fetch(gameUrl('/challenge?code='+encodeURIComponent(code)));const j=await r.json();return j&&j.ok?j:false}catch(e){return null}},
   async submitScore(score){if(!this.user||CONFIG.gameApi)return;try{const body={user_id:this.user.id,name:this.user.name||'Aspirant',city:this.user.city||'',week:week.id,score};
@@ -807,7 +812,7 @@ function recordAnswer(q,ok,o={}){if(!q)return;
 }
 function dueIds(){const now=Date.now(),ids=new Set(allQ().map(x=>x.id));return Object.keys(PL.q).filter(id=>PL.q[id].due&&PL.q[id].due<=now&&ids.has(id))}
 function subjAcc(s){const v=PL.subj[s];return v&&v.n?v.c/v.n:null}
-function weakest(){let w=null,b=2;for(const s of SUBJ){const a=subjAcc(s);const v=a==null?.5:a;if(v<b){b=v;w=s}}return w}
+function weakest(){let w=null,b=2;for(const s of subjList()){const a=subjAcc(s);const v=a==null?.5:a;if(v<b){b=v;w=s}}return w}
 // ---- picker: review items first, then items near the player's rating ----
 class Picker{constructor(subs,r,adaptive,boost){this.subs=subs;this.r=r;this.ad=adaptive;this.used=new Set();this.boost=boost||0}
   take(f,strict){const all=allQ();let c=all.filter(x=>!this.used.has(x.id)&&f(x));if(!c.length&&!strict)c=all.filter(f);if(!c.length)return null;let it=null;
@@ -898,10 +903,10 @@ function tunePace(pc,ok){if(!pc)return;if(pc.locked){const r=pc.lockedAt/pc.T;pa
 function lockAnswer(){const pc=S&&S.pace;if(!pc||pc.locked||S.phase!=='run'||pc.it.type!=='quiz'||pc.it.done)return;pc.locked=true;pc.lockedAt=pc.el;
   const n=pc.it.ans.length,i=laneOf(n,S.x),lw=4/n;S.tx=-2+lw*(i+.5);S.steerLock=true;$('lock').disabled=true;$('lock').textContent='LOCKED: '+'ABCD'[i]+' ⚡';sfx.power()}
 function skipAnswer(){const pc=S&&S.pace;if(!pc||pc.locked||S.phase!=='run'||pc.it.type!=='quiz'||pc.it.done)return;pc.locked=true;pc.skipped=true;pc.lockedAt=pc.el;S.steerLock=true;$('lock').disabled=true;$('skip').disabled=true;$('skip').textContent='SKIPPED';sfx.tick()}
-const QUICK_MODES=['quick','review','csat','weak','pyq'];
+const QUICK_MODES=['quick','review','csat','weak','pyq','paper'];
 function buildQuick(mode,subs){const picker=new Picker(subs,Math.random,true),items=[];let z=10;
-  for(let i=0;i<16;i++){let q;
-    if(mode==='csat'){const it=picker.take(x=>x.subj==='CSAT'&&(x.opts||x.a),true);q=it?toGate(it,picker.r,it.opts?2:Math.min(4,1+it.w.length)):csatQ()}else if(mode==='review')q=picker.due()||picker.gate();else if(mode==='pyq')q=picker.pyq()||picker.gate();else if(mode==='weak')q=picker.gate(subs[0]);else q=(i%4===3?picker.kind('stmt'):null)||picker.gate();
+  for(let i=0,n=mode==='paper'?PAPER.ids.length:16;i<n;i++){let q;
+    if(mode==='csat'){const it=picker.take(x=>x.subj==='CSAT'&&(x.opts||x.a),true);q=it?toGate(it,picker.r,it.opts?2:Math.min(4,1+it.w.length)):csatQ()}else if(mode==='review')q=picker.due()||picker.gate();else if(mode==='pyq')q=picker.pyq()||picker.gate();else if(mode==='paper'){const it=window.PAPER&&allQ().find(x=>x.id===PAPER.ids[i]);q=it?toGate(it,picker.r,it.opts?2:Math.min(4,1+it.w.length)):null}else if(mode==='weak')q=picker.gate(subs[0]);else q=(i%4===3?picker.kind('stmt'):null)||picker.gate();
     if(!q)break;if(i%3===1)items.push({type:'recruit',z:z+4,x:rpick([-1.2,1.2]),n:4});
     for(let k=0;k<3;k++)items.push({type:'note',z:z+7+k*2,x:rpick([-1,0,1])});
     z+=PACE_D+4;items.push(Object.assign({type:'quiz',z},q));z+=6}
@@ -913,22 +918,24 @@ function newRun(mode,opts={}){
   let L;
   if(quick){R=Math.random;const subs=mode==='weak'?[weakest()]:subjFor(Math.max(1,level-1)).concat(subjFor(level));L=buildQuick(mode,[...new Set(subs)])}
   else{R=mulberry(seed);L=buildLevel(lv,mode,{seeded:mode==='challenge'||mode==='daily'});R=Math.random}
-  S={mode,lv,seed:quick?null:seed,target:opts.target??null,quick,timeLeft:quick?TUNE.quickSeconds:0,phase:'run',dist:0,x:0,tx:0,count:0,speed:Math.min(TUNE.speedBase+lv*TUNE.speedStep,TUNE.speedMax),items:L.items,rivalZ:L.rivalZ,cutoff:L.cutoff,picker:L.picker,subs:L.subs,
+  S={mode,lv,seed:quick?null:seed,target:opts.target??null,quick,timeLeft:mode==='paper'?PAPER.secs:quick?TUNE.quickSeconds:0,phase:'run',dist:0,x:0,tx:0,count:0,speed:Math.min(TUNE.speedBase+lv*TUNE.speedStep,TUNE.speedMax),items:L.items,rivalZ:L.rivalZ,cutoff:L.cutoff,picker:L.picker,subs:L.subs,
      tier:L.tier||0,rivalCount:L.cutoff,rivals:[],members:[],flyers:[],standers:[],parts:[],texts:[],log:[],streak:0,t:0,shake:0,tight:1,
      gained:0,notes:0,mult:1,stepIdx:-1,survivors:0,battleT:0,endT:0,ladderZ:L.rivalZ+5,hint:lv===1&&mode==='level'?2.5:0,
      shieldT:0,coffeeT:0,magnetT:0,topperT:0,bullets:[],arena:null,boss:null,mainsB:0,intB:0,newCards:[],bossWin:false,revived:false};
   S.stepCost=6+lv*2;S.v=S.speed;S.airY=0;S.gaps=L.items.filter(i=>i.type==='ramp').map(i=>[i.z+3,i.z+3+i.air]);S.steerLock=false;S.pace=null;S.exam={c:0,w:0,s:0};S.dmgs=[];S.rings=[];S.slowmo=0;S.ladderEnd=S.ladderZ+STEPS.length*STEP_D;
   addMembers(10+bonus.start(),0,0);
   const rn=Math.min(CAP,S.rivalCount);for(let i=0;i<rn;i++){const t=phylN(i,rn);S.rivals.push({ox:t[0],oz:t[1],vx:0,vz:0,x:t[0],z:t[1],look:makeLook(true),ph:rnd(0,6)})}
-  const label={daily:'Daily',quick:'Quick',review:'Review',csat:'CSAT',weak:'Practice',pyq:'PYQ',challenge:'Challenge'}[mode]||(isSeason(lv)?'Stage '+seasonOf(lv).k:'Level '+lv)+(S.tier?' '+['','HARD','SUPER'][S.tier]:'');
+  const label={paper:'Paper',daily:'Daily',quick:'Quick',review:'Review',csat:'CSAT',weak:'Practice',pyq:'PYQ',challenge:'Challenge'}[mode]||(isSeason(lv)?'Stage '+seasonOf(lv).k:'Level '+lv)+(S.tier?' '+['','HARD','SUPER'][S.tier]:'');
   $('lvl').textContent=label;$('need').hidden=false;
   const th=THEME();
-  if(quick)banner({quick:'Quick Revision',review:'Review',csat:'CSAT Rush',weak:'Weak-topic practice',pyq:'PYQ practice'}[mode],TUNE.quickSeconds+' seconds, answer as many as you can');
+  if(mode==='paper')banner(PAPER.title,PAPER.ids.length+' questions, same for all of India');
+  else if(quick)banner({quick:'Quick Revision',review:'Review',csat:'CSAT Rush',weak:'Weak-topic practice',pyq:'PYQ practice'}[mode],TUNE.quickSeconds+' seconds, answer as many as you can');
   else if(mode==='challenge')banner('Challenge!','Beat your friend: '+(S.target||0).toLocaleString('en-IN')+' marks');
   else banner(mode==='daily'?'Current Affairs Run':lv===1?'Drag to steer!':'Level '+lv,mode==='daily'?'Streak '+daily.streak+', today\'s set':subjFor(lv).join(' + ')+(subjFor(lv).includes(th.subj)?', '+th.n+' +10':''));
   if(window.storyNewRun)storyNewRun(mode,lv,seed||1);
   if(S.tier)setTimeout(()=>{if(S&&S.lv===lv)banner(TIER_NAME[S.tier],'Higher cut-off, tougher questions. Win for a rare card',2.2)},2300);
   track('level_start',{mode,lv});
+  if(window.replayStart)replayStart();
 }
 function failRun(kind){if(S.revived||S.quick||kind==='boss'){S.phase='end';S.endT=kind==='cutoff'?1.4:1.2;S.fail=kind==='boss'?'batch':kind;closeSheet();return}
   S.phase='revive';S.fail=kind;closeSheet();setTimeout(showRevive,700)}
@@ -1756,8 +1763,9 @@ const ownedCount=()=>CARDS.filter(c=>owned[c.id]).length;
 // ---- result ----
 let lastRes=null;
 const examMarks=e=>Math.round((e.c*2-e.w*.66)*100)/100;
-const MODE_NAMES={daily:'Current Affairs Run',quick:'Quick Revision',review:'Review',csat:'CSAT Rush',weak:'Weak-topic practice',pyq:'PYQ practice'};
+const MODE_NAMES={paper:'Daily Paper',daily:'Current Affairs Run',quick:'Quick Revision',review:'Review',csat:'CSAT Rush',weak:'Weak-topic practice',pyq:'PYQ practice'};
 function showResult(){
+  if(window.replayStop)replayStop();
   $('need').hidden=true;$('q').hidden=true;closeSheet();qRow=null;hideToast();
   const quick=!!S.quick,right=S.log.filter(l=>l.ok).length,win=!S.fail;
   const lvLabel=S.mode==='challenge'?`Challenge, Level ${S.lv}`:MODE_NAMES[S.mode]||`${lvName(S.lv)}${S.tier?', '+TIER_NAME[S.tier].toLowerCase():''}, ${subjFor(S.lv).join(' + ')}`;
@@ -1817,7 +1825,7 @@ function renderResult(line,tab){const r=lastRes;
   else if(sh==='lg'){tt='League';body=(r.league?`<p class="note ctr"><b>+${r.league.points} league points</b>${r.league.capped?' (daily cap reached)':''}. Week total ${r.league.week_total}</p>`:'')+leagueHTML()}
   else if(sh==='det'){tt='Run details';body=`<div class="r2det"><div><span>Correct</span><b>${r.right}/${r.n}</b></div>${r.quick?'':`<div><span>${r.win?'Rank power':'Cut-off'}</span><b>${r.win?'×'+r.total.toFixed(1):r.cutoff}</b></div>`}<div><span>Marks earned</span><b>+${r.win||r.quick?r.earned:r.notes}</b></div><div><span>UPSC marking</span><b>${examMarks(r.exam)}</b></div><div><span>Right, wrong, skipped</span><b>${r.exam.c}, ${r.exam.w}, ${r.exam.s}</b></div>${r.win&&!r.quick?`<div><span>Service</span><b>${service(r.total)}</b></div>`:''}</div>${r.doubled||!hasAds()||!r.pack.length||r.packOpened?'':'<button class="more" id="dblPack">Watch an ad to double the pack</button>'}`}
   const sheet=sh?`<div class="r2shade" id="r2shade"></div><div class="r2sheet"><div class="r2grab"></div><div class="r2sh"><h3>${tt}</h3><button class="r2link" id="r2x">Close</button></div><div class="r2body">${body}</div></div>`:'';
-  $('rcard').innerHTML=`<div class="r2">${rhead2}${cmp}${unl}${acts}${dock}</div>${sheet}`;
+  $('rcard').innerHTML=`<div class="r2">${rhead2}${cmp}${unl}${window.paperBlock?paperBlock(r):''}${window.replayBlock?replayBlock(r):''}${acts}${dock}</div>${sheet}`;
   $('rcard').classList.add('r2card');
   $('result').hidden=false;
   const go=v=>{r.sheet=v;renderResult(line,tab)};
@@ -1832,6 +1840,7 @@ function renderResult(line,tab){const r=lastRes;
   if($('dblPack'))$('dblPack').onclick=async()=>{const ok=await Ads.rewarded('double_pack');if(ok){r.doubled=true;r.pack=r.pack.concat(openPack(r.pack.length))}renderResult(line,tab)};
   if($('showAll'))$('showAll').onclick=()=>{r.showAll=true;renderResult(line,tab)};
   $('marks').textContent=bank.toLocaleString('en-IN');
+  if(window.paperBind)paperBind(r);if(window.replayBind)replayBind(r);
 }
 // ---- pack reveal ----
 function packReveal(list,done){let i=-1;const pc=$('pcard');
@@ -1876,8 +1885,9 @@ function openShare(){const r=lastRes;const c=document.createElement('canvas');c.
     if(img)sx.drawImage(img,360,660,360,396);
     txt('Can you beat my AIR '+r.air.toLocaleString('en-IN')+'?',540,1262,52,'#fff');txt('MindGains',540,1318,40,'#14213d',null);
     ctx=saved;const url=c.toDataURL('image/png');
-    $('pcard').innerHTML=`<div class="hdr"><h3>Your share card</h3><button class="x" id="pclose">Done</button></div><img class="shareimg" src="${url}" alt="My Cut-Off Run result card"><p class="note">Long-press the image to save or share it.</p>`;
-    $('pop').hidden=false;$('pclose').onclick=()=>$('pop').hidden=true};
+    $('pcard').innerHTML=`<div class="hdr"><h3>Your share card</h3><button class="x" id="pclose">Done</button></div><img class="shareimg" src="${url}" alt="My Cut-Off Run result card">${window.shareRow?shareRow():'<p class="note">Long-press the image to save or share it.</p>'}`;
+    $('pop').hidden=false;$('pclose').onclick=()=>$('pop').hidden=true;
+    if(window.shareBind)shareBind(c,`I cleared ${r.mode==='daily'?'the Current Affairs Run':'Level '+r.lv} with AIR ${r.air.toLocaleString('en-IN')} in Cut-Off Run 🔥${PL.state&&window.STATE_NAME?' ('+STATE_NAME(PL.state)+')':''} Can you beat me?`,r.code)};
   const img=new Image();img.onload=()=>paint(img);img.onerror=()=>paint(null);img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220" width="440" height="484">${migaInner('cheer','trophy')}</svg>`)}
 // ---- town ----
 const cheapest=()=>Math.min(...BUILD.filter(b=>up[b.k]<b.max).map(b=>cost(b.k,up[b.k])),Infinity);
@@ -1937,8 +1947,8 @@ function copyText(txt,el){const done=()=>{if(el){el.textContent='Copied';setTime
 function openChallenge(code,score){const msg=`I scored ${score.toLocaleString('en-IN')} in Cut-Off Run. Can you beat me? Open the game, tap "Enter challenge code" and type ${code}`;
   $('pcard').innerHTML=`<div class="hdr"><h2>Challenge a friend</h2><button class="x" id="cclose">Done</button></div>
     <div class="stage"><div class="bubble r">Send this code. Your friend races the same course to beat ${score.toLocaleString('en-IN')} marks.</div>${miga('point')}</div>
-    <div class="codebox" id="codebox">${code}</div><button class="btn blue sm" id="ccopy">Copy message</button><p class="note ctr">The questions adapt to each player, so the course is the same, but the questions can differ.</p>`;
-  $('pop').hidden=false;$('cclose').onclick=()=>$('pop').hidden=true;$('ccopy').onclick=e=>copyText(msg,e.currentTarget);track('challenge_share',{})}
+    <div class="codebox" id="codebox">${code}</div>${window.shareRow?shareRow(true):''}<button class="btn blue sm" id="ccopy">Copy message</button><p class="note ctr">The questions adapt to each player, so the course is the same, but the questions can differ.</p>`;
+  $('pop').hidden=false;$('cclose').onclick=()=>$('pop').hidden=true;$('ccopy').onclick=e=>copyText(msg,e.currentTarget);if(window.shareBind)shareBind(null,`I scored ${score.toLocaleString('en-IN')} in Cut-Off Run. Race my exact course and beat me 👇`,code);track('challenge_share',{})}
 function openCode(){hideAll();
   $('pcard').innerHTML=`<div class="hdr"><h2>Enter a challenge code</h2><button class="x" id="kclose">Back</button></div>
     <div class="stage"><div class="bubble r">Got a code from a friend? Race the same course and beat their score!</div>${miga('wow')}</div>
@@ -1950,7 +1960,7 @@ function openCode(){hideAll();
 // ---- syllabus map + practice modes ----
 const quickRemaining=()=>PL.pro?Infinity:(PL.quickDay!==todayKey()?TUNE.freeQuickPerDay:Math.max(0,TUNE.freeQuickPerDay-PL.quickN));
 function openPractice(){hideAll();const top=Math.max(level+2,8),due=dueIds().length,w=weakest(),ql=quickRemaining(),hasPyq=allQ().some(x=>x.pyq);
-  const mast=SUBJ.concat(['CSAT']).map(s=>{const a=subjAcc(s),v=PL.subj[s];const col=a==null?'var(--line)':a>=.75?'var(--good)':a>=.5?'var(--gold)':'var(--bad)';
+  const mast=(trackSubj()||SUBJ.concat(['CSAT'])).map(s=>{const a=subjAcc(s),v=PL.subj[s];const col=a==null?'var(--line)':a>=.75?'var(--good)':a>=.5?'var(--gold)':'var(--bad)';
     return`<div class="mrow"><span>${s}</span><i class="mbar"><b style="width:${a==null?0:Math.round(a*100)}%;background:${col}"></b></i><small>${a==null?'not yet':Math.round(a*100)+'%, '+v.n}</small></div>`}).join('');
   let nodes='';for(let l=top;l>=1;l--){const st=PL.stars[l]||0,cls=l<level?'done':l===level?'cur':'lock';
     nodes+=`<button class="node ${cls}" data-l="${l}" ${l>level?'disabled':''}><b>${l>level?'🔒 ':''}${l}</b><small>${subjFor(l).join(', ')}</small>${l<=level?starRow(st):''}</button>`}
@@ -2038,9 +2048,9 @@ function mapNode(l){const m=$('msheet'),boss=l%2===0,subs=subjFor(l),B=boss?BOSS
 $('mapBack').onclick=openMenu;$('mapPrac').onclick=openPractice;
 // ---- topic mastery ----
 function masteryData(){const sub={};const byId={};for(const x of allQ())byId[x.id]=x.subj;
-  for(const s of SUBJ)sub[s]={seen:0,mast:0,acc:subjAcc(s)};
+  for(const s of subjList())sub[s]={seen:0,mast:0,acc:subjAcc(s)};
   for(const [id,q] of Object.entries(PL.q)){const s=byId[id];if(!s||!sub[s])continue;sub[s].seen++;if(q.box>=3)sub[s].mast++}
-  return SUBJ.map(s=>{const d=sub[s],pct=Math.round(100*(d.seen?(.6*(d.mast/d.seen)+.4*(d.acc||0)):0));return{s,pct,seen:d.seen,mast:d.mast,acc:d.acc}})}
+  return subjList().map(s=>{const d=sub[s],pct=Math.round(100*(d.seen?(.6*(d.mast/d.seen)+.4*(d.acc||0)):0));return{s,pct,seen:d.seen,mast:d.mast,acc:d.acc}})}
 function openMastery(from){hideAll();const D=masteryData(),due=dueIds().length,weak=D.slice().sort((a,b)=>a.pct-b.pct)[0];
   $('pcard').innerHTML=`<div class="hdr"><h2>Topic mastery</h2><button class="x" id="tmx">Back</button></div>
    <p class="note">A topic is mastered when you get its questions right on 3 spaced reviews in a row. Wrong answers come back the same day.</p>
@@ -2081,16 +2091,16 @@ function applySettings(){window.__snd=!!PL.settings.sound;document.body.classLis
 function openSettings(){hideAll();const st=PL.settings,an=!!(PL.consent&&PL.consent.analytics);
   const row=(id,l,d,on)=>`<label class="setline" for="${id}"><span>${l}<small>${d}</small></span><input type="checkbox" id="${id}" ${on?'checked':''}></label>`;
   $('pcard').innerHTML=`<div class="hdr"><h2>Settings</h2><button class="x" id="sclose">Back</button></div>
-    <div class="set">${row('sSnd','Sound','Sound effects in the game',st.sound)}${row('sHap','Vibration','Short vibrations on hits and answers',st.haptic)}${row('sMot','Motion effects','Screen shake and moving decorations',st.motion)}${row('sBig','Large text','Bigger questions and answers',st.big)}
+    <div class="set">${row('sSnd','Sound','Sound effects in the game',st.sound)}${row('sHap','Vibration','Short vibrations on hits and answers',st.haptic)}${row('sMot','Motion effects','Screen shake and moving decorations',st.motion)}${row('sBig','Large text','Bigger questions and answers',st.big)}${row('sRep','Record replays','Keeps a short clip of each run to share. Off saves battery',st.replay!==false)}
       <label class="setline" for="sQ"><span>Graphics quality<small>Auto lowers the quality on slow phones</small></span><select id="sQ"><option value="auto">Auto</option><option value="high">High</option><option value="low">Low</option></select></label>
-      <label class="setline" for="sEx"><span>Exam<small>Questions in your runs come from this exam's bank</small></span><select id="sEx"><option value="">Mixed</option><option value="upsc">UPSC</option><option value="tnpsc">TNPSC</option><option value="ssc">SSC</option><option value="rrb">RRB</option><option value="banking">Banking</option></select></label></div>
+      <label class="setline" for="sEx"><span>Exam<small>Questions in your runs come from this exam's bank</small></span><select id="sEx"><option value="">Mixed</option><option value="upsc">UPSC</option><option value="tnpsc">TNPSC</option><option value="ssc">SSC</option><option value="rrb">RRB</option><option value="banking">Banking</option><option value="neet">NEET (Physics, Chemistry, Biology)</option><option value="jee">JEE (Physics, Chemistry)</option></select></label></div>
     <div class="eyebrow">Privacy</div>
     <div class="set">${row('sAn','Share gameplay data','Anonymous data about answers and levels, used to improve questions and difficulty',an)}</div>
     <button class="more" id="sNotice">Read the privacy notice</button>
     <button class="btn alt sm" id="sDel">Delete my data on this device</button><div class="err" id="sDelMsg"></div>
     <p class="note ctr">Cut-Off Run ${CONFIG.version}${PL.pro?', <span class="pro">PRO</span>':''}</p>`;
   $('pop').hidden=false;$('sQ').value=st.quality;$('sEx').value=PL.exam||'';$('sEx').onchange=e=>{PL.exam=e.target.value;saveP();try{Remote.loadQuestions&&Remote.loadQuestions(null,{})}catch(_){}};
-  const bind=(id,k)=>$(id).onchange=e=>{st[k]=e.target.checked;saveP();applySettings()};bind('sSnd','sound');bind('sHap','haptic');bind('sMot','motion');bind('sBig','big');
+  const bind=(id,k)=>$(id).onchange=e=>{st[k]=e.target.checked;saveP();applySettings()};bind('sSnd','sound');bind('sHap','haptic');bind('sMot','motion');bind('sBig','big');bind('sRep','replay');
   $('sQ').onchange=e=>{st.quality=e.target.value;if(st.quality==='auto')window.__lowQ=false;saveP();applySettings()};
   $('sAn').onchange=e=>{PL.consent=Object.assign(PL.consent||{},{analytics:e.target.checked,ts:Date.now()});saveP()};
   $('sNotice').onclick=()=>openConsent(false);
@@ -2125,7 +2135,7 @@ function openConsent(first,after){hideAll();const c=PL.consent||{};
 // ---- menu ----
 const MENU_LINES=['Ready to beat the cut-off?','Every TRUE gate grows our batch!','Sure of the answer? Tap LOCK for a speed bonus.','Not sure? SKIP costs nothing. Just like UPSC negative marking!','Wrong answers come back in Review. That is how memory works!','Bosses throw compasses. Dodge the red zones!'];
 function openMenu(){hideAll();hideToast();ensureMissions();$('menu').hidden=false;$('playT').textContent='Play level '+level;$('playS').textContent=subjFor(level).slice(0,3).join(', ');
-  const done=daily.last===todayKey();$('daily').textContent=done?`Daily done, ${daily.streak}`:'Current Affairs';
+  $('daily').textContent="Today's news ↗";
   const ql=quickRemaining();$('quickBtn').textContent=ql===Infinity||ql>0?'Quick Revision':'Review';
   const stk=streakNow(),due=dueIds().length,th=THEME();
   $('mchips').innerHTML=`<span class="chip fire">🔥 Streak ${stk}</span>${PL.pro?'<span class="pro">PRO</span>':''}`;
@@ -2140,11 +2150,11 @@ function start(mode,opts={}){
   initAudio();hideAll();hideToast();closeSheet();qRow=null;qNo=0;$('q').hidden=true;newRun(mode,opts)}
 $('opts').addEventListener('click',e=>{const o=e.target.closest('.opt');if(!o||!S||S.phase!=='run'||!qRow||qRow.done||S.steerLock)return;const n=$('opts').children.length,i=+o.dataset.i;S.tx=-2+4/n*(i+.5);initAudio();sfx.tick()});
 $('lock').addEventListener('pointerdown',e=>e.stopPropagation());$('skip').addEventListener('pointerdown',e=>e.stopPropagation());$('skip').onclick=e=>{e.stopPropagation();initAudio();skipAnswer()};$('lock').onclick=e=>{e.stopPropagation();initAudio();lockAnswer()};
-$('play').onclick=()=>start('level',{lv:level});$('daily').onclick=()=>start('daily');$('quickBtn').onclick=()=>start(quickRemaining()>0?'quick':'review');
+$('play').onclick=()=>start('level',{lv:level});$('daily').onclick=()=>{track('to_nationlap',{});location.href='/nationlap/?affairs=1'};/* current affairs live in NationLap */$('quickBtn').onclick=()=>start(quickRemaining()>0?'quick':'review');
 $('toMap').onclick=openMap;$('toMissions').onclick=openMissions;$('toAlbum1').onclick=()=>openAlbum('menu');$('toMore').onclick=openMore;
 function openMore(){hideAll();const {myR}=leagueData(),th=THEME(),row=(id,ic,l,n)=>`<button class="btn ${n||'blue'} sm" id="${id}">${ICON[ic]}<span>${l}</span></button>`;
-  $('pcard').innerHTML=`<h2 class="ttl" style="font-size:30px">More</h2><p class="note ctr">This week: ${th.n}, ${th.subj} gates give +10</p><div class="mlist">${row('mMast','cup','Topic mastery','')}${row('mTown','town','Study Town'+(bank>=cheapest()?', new upgrade':''),'')}${row('mLeague','cup','League, rank #'+myR,'')}${row('mStyle','shirt','Style, shirts and tracks','pink')}${row('mCode','key','Enter challenge code','pink')}${row('mSet','gear','Settings','blue')}</div><button class="x" id="mBack" style="align-self:center">Back</button>`;
-  $('pop').hidden=false;$('mTown').onclick=openTown;if($('mMast'))$('mMast').onclick=()=>openMastery('menu');$('mLeague').onclick=openLeague;$('mStyle').onclick=openStyle;$('mCode').onclick=openCode;$('mSet').onclick=openSettings;$('mBack').onclick=openMenu}
+  $('pcard').innerHTML=`<h2 class="ttl" style="font-size:30px">More</h2><p class="note ctr">This week: ${th.n}, ${th.subj} gates give +10</p><div class="mlist">${row('mMast','cup','Topic mastery','')}${row('mTown','town','Study Town'+(bank>=cheapest()?', new upgrade':''),'')}${row('mLeague','cup','League, rank #'+myR,'')}${row('mStyle','shirt','Style, shirts and tracks','pink')}${row('mGroups','cup','Groups and colleges','')}${row('mBharat','map','Bharat Board','')}${row('mCode','key','Enter challenge code','pink')}${row('mSet','gear','Settings','blue')}</div><button class="x" id="mBack" style="align-self:center">Back</button>`;
+  $('pop').hidden=false;$('mTown').onclick=openTown;if($('mMast'))$('mMast').onclick=()=>openMastery('menu');$('mLeague').onclick=openLeague;$('mStyle').onclick=openStyle;$('mCode').onclick=openCode;$('mSet').onclick=openSettings;$('mGroups').onclick=()=>window.openGroups&&openGroups();$('mBharat').onclick=()=>window.openBharat&&openBharat();$('mBack').onclick=openMenu}
 // ---- boot ----
 if(!store.get('cor_p',null)&&matchMedia('(prefers-reduced-motion: reduce)').matches)PL.settings.motion=false;
 applySettings();ensureMissions();
@@ -2160,5 +2170,7 @@ function loop(now){let dt=Math.min(.04,(now-last)/1000);last=now;if(S&&S.slowmo>
 requestAnimationFrame(loop);
 </script>
 <script src="story.js"></script>
+<script src="social.js"></script>
+<script src="replay.js"></script>
 
 </html>

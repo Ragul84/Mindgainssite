@@ -63,7 +63,8 @@
       "cards": [
         {
           "front": "What is the geological origin of the Himalayas?",
-          "back": "They are fold mountains formed by the collision between the Indian Plate and the Eurasian Plate."
+          "back": "They are fold mountains formed by the collision between the Indian Plate and the Eurasian Plate.",
+          "short": "Fold mountains from the Indian–Eurasian plate collision"
         },
         {
           "front": "What are the three parallel ranges of the Himalayas?",
@@ -197,7 +198,8 @@
         },
         {
           "front": "How do the Eastern Ghats differ from the Western Ghats in structure?",
-          "back": "The Eastern Ghats are discontinuous and lower, having been eroded by rivers flowing into the Bay of Bengal."
+          "back": "The Eastern Ghats are discontinuous and lower, having been eroded by rivers flowing into the Bay of Bengal.",
+          "short": "Lower and broken, cut through by east-flowing rivers"
         },
         {
           "front": "What are the three divisions of the Western Coastal Plain?",

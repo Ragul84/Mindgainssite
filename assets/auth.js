@@ -109,8 +109,33 @@
     for (var i = 0; i < chipTargets.length; i++) paintChip(chipTargets[i]);
   }
 
+  // Desktop header styles for the chip, injected once so every page that mounts it looks the same.
+  // The mobile menu (nav-mobile.js) has its own, more specific rules.
+  function chipCss() {
+    if (document.getElementById('mg-auth-css')) return;
+    var st = document.createElement('style');
+    st.id = 'mg-auth-css';
+    st.textContent =
+      '.mg-auth-user{position:relative;display:inline-flex;align-items:center}' +
+      '.mg-auth-me{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 12px 0 4px;border:1px solid rgba(13,27,42,.12);border-radius:999px;background:#fff;color:#0d1b2a;font:600 14px/1 Inter,system-ui,sans-serif;cursor:pointer;box-shadow:0 1px 2px rgba(13,27,42,.06)}' +
+      '.mg-auth-me:hover{border-color:rgba(13,27,42,.25)}' +
+      '.mg-auth-user img,.mg-auth-ini{width:32px;height:32px;border-radius:50%;object-fit:cover;flex:0 0 auto}' +
+      '.mg-auth-ini{display:grid;place-items:center;background:#0b7a72;color:#fff;font:700 14px/1 Inter,system-ui,sans-serif}' +
+      '.mg-auth-name{max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}' +
+      '.mg-auth-me svg{width:12px;height:12px;opacity:.55}' +
+      '.mg-auth-pop{position:absolute;right:0;top:calc(100% + 8px);min-width:200px;padding:6px;background:#fff;border:1px solid rgba(13,27,42,.1);border-radius:14px;box-shadow:0 16px 40px -12px rgba(13,27,42,.3);z-index:60}' +
+      '.mg-auth-pop[hidden]{display:none}' +
+      '.mg-auth-pop small{display:block;padding:8px 10px 6px;color:#6b7686;font:500 12px/1.3 Inter,system-ui,sans-serif;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}' +
+      '.mg-auth-out{display:block;width:100%;text-align:left;padding:10px;border:0;border-radius:10px;background:none;color:#b42318;font:600 14px Inter,system-ui,sans-serif;cursor:pointer}' +
+      '.mg-auth-out:hover{background:#fef3f2}' +
+      '.mg-auth-btn{height:40px;padding:0 16px;border:1px solid rgba(13,27,42,.15);border-radius:999px;background:#fff;color:#0d1b2a;font:600 14px Inter,system-ui,sans-serif;cursor:pointer}' +
+      '@media (max-width:900px){.mg-auth-name{display:none}.mg-auth-me{padding:0 8px 0 4px}}';
+    document.head.appendChild(st);
+  }
+
   function paintChip(host) {
     if (!host) return;
+    chipCss();
     host.innerHTML = '';
     var u = cached;
     if (!u) {
@@ -124,27 +149,47 @@
     }
     var wrap = document.createElement('div');
     wrap.className = 'mg-auth-user';
+    // Avatar + first name; the button opens a small menu with the full name and Sign out.
+    var me = document.createElement('button');
+    me.type = 'button';
+    me.className = 'mg-auth-me';
+    me.setAttribute('aria-haspopup', 'true');
+    me.setAttribute('aria-expanded', 'false');
     if (u.photoURL) {
       var img = document.createElement('img');
       img.src = u.photoURL; img.alt = ''; img.referrerPolicy = 'no-referrer';
-      wrap.appendChild(img);
+      me.appendChild(img);
     } else {
       var ini = document.createElement('span');
       ini.className = 'mg-auth-ini';
       ini.textContent = (u.displayName || '?').charAt(0).toUpperCase();
-      wrap.appendChild(ini);
+      me.appendChild(ini);
     }
     var name = document.createElement('span');
     name.className = 'mg-auth-name';
-    name.textContent = u.displayName;
-    wrap.appendChild(name);
+    name.textContent = String(u.displayName || 'You').split(/\s+/)[0];
+    me.appendChild(name);
+    me.insertAdjacentHTML('beforeend', '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>');
+    wrap.appendChild(me);
+    var pop = document.createElement('div');
+    pop.className = 'mg-auth-pop';
+    pop.hidden = true;
+    var full = document.createElement('small');
+    full.textContent = u.displayName || '';
+    pop.appendChild(full);
     var out = document.createElement('button');
     out.type = 'button';
     out.className = 'mg-auth-out';
-    out.title = 'Sign out';
     out.textContent = 'Sign out';
     out.addEventListener('click', function () { signOut(); });
-    wrap.appendChild(out);
+    pop.appendChild(out);
+    wrap.appendChild(pop);
+    var close = function (e) { if (!wrap.contains(e.target)) { pop.hidden = true; me.setAttribute('aria-expanded', 'false'); document.removeEventListener('click', close); } };
+    me.addEventListener('click', function () {
+      pop.hidden = !pop.hidden;
+      me.setAttribute('aria-expanded', String(!pop.hidden));
+      if (!pop.hidden) setTimeout(function () { document.addEventListener('click', close); }, 0);
+    });
     host.appendChild(wrap);
   }
 

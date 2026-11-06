@@ -103,7 +103,8 @@
       "cards": [
         {
           "front": "What was the immediate military cause of the 1857 Revolt?",
-          "back": "The introduction of greased cartridges for new rifles, rumored to be made from cow and pig fat."
+          "back": "The introduction of greased cartridges for new rifles, rumored to be made from cow and pig fat.",
+          "short": "Greased cartridges rumoured to use cow and pig fat"
         },
         {
           "front": "Who was the nominal leader of the 1857 rebellion in Delhi?",

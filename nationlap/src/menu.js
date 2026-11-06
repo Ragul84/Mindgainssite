@@ -1,6 +1,7 @@
 // Title screen, first-run racer setup ("you"), the pre-race Ready card, pause menu, gamepad navigation.
 // The old CHOOSE YOUR RACER grid is gone: the journey map already picks the topic, the player
 // races as themselves, and the 8 themed characters are the subject mentors / rival aspirants.
+import { STATES, myState, setMyState, isFamily, setFamily } from './prefs.js';
 import { bus } from './events.js';
 import { AVATARS, KART_COLORS, NAME_MAX, loadProfile, saveProfile, playerCharacter } from './player.js';
 
@@ -90,24 +91,30 @@ export class Menu {
         <div class="logo-swoosh"></div>
       </div>
       <div class="title-actions">
-        <button type="button" class="btn primary play-btn">PLAY</button>
+        <button type="button" class="btn primary play-btn">LEARN &amp; RACE<small class="play-sub">Read a lesson, then race it</small></button>
         <button type="button" class="btn resume-btn hidden">RESUME CUP</button>
         <div class="title-row">
-          <button type="button" class="btn affairs-btn">TODAY'S AFFAIRS<i class="aff-dot"></i></button>
+          <button type="button" class="btn news-btn">TODAY'S NEWS<small class="news-sub"></small></button>
+          <button type="button" class="btn affairs-btn">BHARAT YATRA</button>
           <button type="button" class="btn quick-btn">QUICK RACE</button>
           <button type="button" class="btn board-btn">INDIA BOARD</button>
         </div>
-        <div class="title-tagline">Read a topic. Race it. Remember it.</div>
+        <div class="title-tagline">Know your India, every day.</div>
       </div>
       <div class="title-foot">
         <span>© NationLap · MindGains</span>
         <span class="mute-hint"><span class="kc">M</span> mute</span>
       </div>`;
-    // PLAY is the campaign: it opens the journey map, so a race is always entered through a
-    // topic — which is what puts the lesson in front of the player before they drive.
+    // The front door is the syllabus: pick a lesson, read it, race it.
     t.querySelector('.play-btn').addEventListener('click', (e) => {
       e.stopPropagation();
-      this.h.onMap?.();
+      bus.emit('ui:confirm');
+      this.h.onJourney?.();
+    });
+    t.querySelector('.news-btn').addEventListener('click', (e) => {
+      e.stopPropagation();
+      bus.emit('ui:confirm');
+      this.h.onAffairs?.();
     });
     // Quick race is the deliberate opt-out: straight onto the track, no topic, no lesson.
     t.querySelector('.quick-btn').addEventListener('click', (e) => {
@@ -115,13 +122,13 @@ export class Menu {
       bus.emit('ui:confirm');
       this.h.onQuickRace?.();
     });
-    // The day's affairs as a race: the briefing replaces the lesson scroll, the gates carry
-    // the facts, and the recap is the revision card.
+    // BHARAT YATRA: the map of India, one race per state.
     t.querySelector('.affairs-btn').addEventListener('click', (e) => {
       e.stopPropagation();
-      bus.emit('ui:confirm');
-      this.h.onAffairs?.();
+      this.h.onMap?.();
     });
+    this.newsSub = t.querySelector('.news-sub');
+
     t.querySelector('.board-btn').addEventListener('click', (e) => {
       e.stopPropagation();
       bus.emit('ui:confirm');
@@ -152,6 +159,18 @@ export class Menu {
     this.account = acct || null;
     this._refreshTitleRacer();
   }
+  /** The news streak, small under TODAY'S NEWS. */
+  setNewsStreak(st) {
+    if (!this.newsSub || !st) return;
+    this._streakText = st.n ? `🔥 ${st.n} day${st.n > 1 ? 's' : ''}${st.today ? ' ✓' : ''}` : '';
+    this.newsSub.textContent = this._latestText || this._streakText;
+  }
+  /** While the feed is behind, the button says which day's news it holds. */
+  setNewsLatest(text) {
+    this._latestText = text || '';
+    if (this.newsSub) this.newsSub.textContent = this._latestText || this._streakText || '';
+  }
+
   _refreshTitleRacer() {
     if (!this.titleRacer) return;
     const ch = playerCharacter();
@@ -185,7 +204,7 @@ export class Menu {
       <div class="game-rail left"></div>
       <div class="game-rail right"></div>
       <div class="ready-panel" role="dialog" aria-modal="true" aria-labelledby="ready-topic">
-        <div class="rd-head"><span class="rd-eyebrow">READY?</span><button type="button" class="rd-esc ready-back" aria-label="Back to map"><span class="esc-hint">ESC · </span>MAP</button></div>
+        <div class="rd-head"><span class="rd-eyebrow">READY?</span><button type="button" class="rd-esc ready-back" aria-label="Back to map"><span class="esc-hint">ESC · </span>BACK</button></div>
         <h2 class="ready-topic" id="ready-topic"></h2>
         <div class="ready-subject"></div>
         <section class="rd-section ready-mentor">
@@ -220,6 +239,10 @@ export class Menu {
         <div class="av-label">KART COLOUR</div>
         <div class="av-colors"></div>
         <div class="av-note">Every kart has the same balanced stats — you win on the quiz, not the car.</div>
+        <div class="av-row2">
+          <label class="av-field"><span class="av-label">YOUR STATE</span><select class="av-state"><option value="">Choose your state</option>${Object.entries(STATES).sort((x, y) => x[1].localeCompare(y[1])).map(([k, v]) => `<option value="${k}">${v}</option>`).join('')}</select></label>
+          <label class="av-field av-fam"><span class="av-label">FAMILY MODE</span><span class="av-toggle"><input type="checkbox" class="av-family"><i></i><b>Gentler rivals, bigger text</b></span></label>
+        </div>
         <button type="button" class="btn primary av-save">LET'S RACE!</button>
       </div>`;
     this.avName = a.querySelector('.av-name');
@@ -230,6 +253,10 @@ export class Menu {
     this.avBack = a.querySelector('.avatar-back');
     this.avBack.addEventListener('click', () => this._avatarBack());
     a.querySelector('.av-save').addEventListener('click', () => this._avatarSave());
+    this.avState = a.querySelector('.av-state');
+    this.avFamily = a.querySelector('.av-family');
+    this.avState.addEventListener('change', () => setMyState(this.avState.value));
+    this.avFamily.addEventListener('change', () => setFamily(this.avFamily.checked));
     KART_COLORS.forEach((c, i) => {
       const b = el('button', 'av-color', this.avColors);
       b.type = 'button'; b.style.background = hex(c); b.title = 'Kart colour'; b.setAttribute('aria-label', `Kart colour ${i + 1}`);
@@ -302,13 +329,17 @@ export class Menu {
       r.querySelector('.rm-name').innerHTML = `${esc(m.name)}<span class="rm-role">Your ${esc(info.subject || '')} mentor</span>`;
       r.querySelector('.rm-line').textContent = `“${info.mentorLine || ''}”`;
     }
-    const n = Math.max(1, info.threshold | 0), c = Math.max(0, Math.min(n, info.correct | 0));
+    const sec = info.section;
+    const n = Math.max(1, (sec ? sec.threshold : info.threshold) | 0), c = Math.max(0, Math.min(n, (sec ? sec.correct : info.correct) | 0));
     const shown = info.completed ? n : c;
-    r.querySelector('.rp-title').textContent = info.completed ? 'STOP CLEARED' : 'NEXT STOP';
+    const unlock = info.nextTopic ? `<b>${esc(info.nextTopic)}</b>` : 'the next stop';
+    r.querySelector('.rp-title').textContent = info.completed ? 'STOP CLEARED' : sec && sec.n > 1 ? `SECTION ${sec.i + 1} OF ${sec.n}` : 'NEXT STOP';
     r.querySelector('.rp-count').textContent = `${shown} / ${n} correct`;
     r.querySelector('.rp-label').innerHTML = info.completed
       ? 'Cleared ✓ — a review run keeps it fresh.'
-      : `Get ${n} right to unlock ${info.nextTopic ? `<b>${esc(info.nextTopic)}</b>` : 'the next stop'}.`;
+      : sec && sec.n > 1
+        ? `<b>${esc(sec.title)}</b><br>Read this section, then race it. Clear all ${sec.n} sections to unlock ${unlock}.`
+        : `Read the lesson, then get ${n} right to unlock ${unlock}.`;
     const bar = r.querySelector('.rp-bar');
     bar.setAttribute('aria-valuemax', String(n));
     bar.setAttribute('aria-valuenow', String(shown));
@@ -325,6 +356,8 @@ export class Menu {
     this.avatarFirst = first;
     this.draft = loadProfile();
     this.avName.value = this.draft.name;
+    this.avState.value = myState();
+    this.avFamily.checked = isFamily();
     this.avBack.style.display = first ? 'none' : '';
     this._refreshAvatar();
     this._showOnly(this.avatarEl);

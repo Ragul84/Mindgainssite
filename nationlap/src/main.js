@@ -21,11 +21,15 @@ import { preloadMiga } from './assets-preload.js';
 import { createJourneyMap } from './journey-map.js';
 import { createLessonReader, lessonCards, loadLesson } from './lesson-reader.js';
 import { createScrollIntro } from './scroll-intro.js';
-import { loadLatest, loadMonth, availableMonths, monthLabel, splitLaps, quizItem, FACTS_PER_LAP } from './affairs.js';
+import { istToday, loadLatest, loadMonth, availableMonths, monthLabel, splitLaps, quizItem, FACTS_PER_LAP } from './affairs.js';
+import { newsStreak, bumpNewsStreak } from './news-streak.js';
+import { createYatra, recordStateRun, stampedCount, STAMP_AT, stateLaps } from './bharat.js';
+import { STATES, myState, isFamily, applyFamily, deviceId } from './prefs.js';
+import { formatTime } from './race.js';
 import { createFactGates } from './fact-gates.js';
 import { createHallOfFame, fetchToppers } from './hall-of-fame.js';
 import { createTouchControls, isTouchDevice } from './touch-controls.js';
-import { recordCorrect, recordWrong, getJourney, COMPLETE_THRESHOLD, rawZones, replaceZones } from './progress.js';
+import { recordCorrect, recordWrong, getJourney, COMPLETE_THRESHOLD, rawZones, replaceZones, recordSection, sectionState, SECTION_THRESHOLD } from './progress.js';
 import * as account from './account.js';
 import { createRecorder, createGhost, loadPersonalBest, savePersonalBest } from './ghost.js';
 
@@ -237,23 +241,40 @@ async function refreshHofStrip() {
   }
   const rows = await fetchToppers('today', 5);
   const esc = (t) => String(t).replace(/[&<>"]/g, (m) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[m]));
+  // One quiet line of the top three. An empty board says nothing rather than "no names yet".
+  hofStrip.classList.toggle('empty', !rows.length);
   hofStrip.innerHTML = rows.length
-    ? `<b>🏛 HALL OF FAME · TODAY</b>${rows.map((r, i) => `<span class="hs-row${i < 3 ? ' top' : ''}"><i>#${r.rank}</i> ${esc(r.name)} <em>${r.xp} XP</em></span>`).join('')}`
-    : `<b>🏛 HALL OF FAME · TODAY</b><span class="hs-row">No names yet today — race today's affairs and be the first.</span>`;
+    ? `<b>Today's toppers</b>${rows.slice(0, 3).map((r, i) => `<span class="hs-row${i < 3 ? ' top' : ''}"><i>#${r.rank}</i> ${esc(r.name)}</span>`).join('')}`
+    : '';
 }
 setTimeout(() => safe('hofStrip', refreshHofStrip), 2500);
+loadLatest().then((d) => {
+  if (d.date && d.date < istToday()) menu.setNewsLatest?.('Latest: ' + new Date(d.date + 'T00:00:00').toLocaleDateString('en-IN', { day: 'numeric', month: 'short' }));
+}).catch(() => {});
 setInterval(() => { if (state === 'title') safe('hofStrip', refreshHofStrip); }, 120000);
+
+/* A one-line notice over the title screen (the HUD, and its toast, is hidden there). */
+let noticeEl = null, noticeTimer = 0;
+function titleNotice(msg) {
+  if (!noticeEl) { noticeEl = document.createElement('div'); noticeEl.className = 'nl-notice'; noticeEl.setAttribute('role', 'status'); uiRoot.appendChild(noticeEl); }
+  noticeEl.textContent = msg;
+  noticeEl.classList.add('show');
+  clearTimeout(noticeTimer);
+  noticeTimer = setTimeout(() => noticeEl.classList.remove('show'), 6000);
+}
 
 /* Flashcards (front/back) -> multiple choice. The right option is the card's own answer; the
    three wrong ones are answers to OTHER cards in the same lesson, so they are on-topic and
    plausible rather than random. Long answers make unreadable buttons, so those cards are
    left to the billboards. */
 function lessonQuizItems(cards) {
-  const usable = (cards || []).filter((c) => c && c.front && c.back && c.back.length <= 90);
+  // `short` is a button-length version of a long answer; the full one shows after answering
+  const ans = (c) => (c.short || c.back || '').trim();
+  const usable = (cards || []).filter((c) => c && c.front && ans(c) && ans(c).length <= 90);
   if (usable.length < 4) return [];
-  const backs = [...new Set(usable.map((c) => c.back.trim()))];
+  const backs = [...new Set(usable.map(ans))];
   return usable.map((c, i) => {
-    const right = c.back.trim();
+    const right = ans(c);
     // Wrong options that LOOK like the right one ("Article 12." beside "Article 26.", not
     // beside a full sentence), so the shape of an option never gives the answer away.
     const head = (t) => t.toLowerCase().split(/[\s,.]+/)[0];
@@ -261,7 +282,7 @@ function lessonQuizItems(cards) {
     const wrong = backs.filter((b) => b !== right).sort((x, y) => score(x) - score(y)).slice(0, 3);
     if (wrong.length < 3) return null;
     const opts = shuffle([right, ...wrong]);
-    return { id: 'lesson:' + (focusedZone?.id || '') + ':' + i, q: c.front, opts, ans: opts.indexOf(right), explain: right };
+    return { id: 'lesson:' + (focusedZone?.id || '') + ':' + i, q: c.front, opts, ans: opts.indexOf(right), explain: c.back.trim() };
   }).filter(Boolean);
 }
 
@@ -323,6 +344,56 @@ async function showLeague(run) {
   wire();
 }
 
+/* The finish card for today's race: the streak, and one tap to send the result on WhatsApp.
+   The link opens straight into today's race, so whoever gets it plays the same news. */
+function showFinishShare(run, results) {
+  const st = bumpNewsStreak();
+  menu.setNewsStreak?.(newsStreak());
+  const panel = uiRoot.querySelector('.res-recap');
+  if (!panel) return;
+  const me = results.find((r) => r.isPlayer);
+  const r = affairsRecap();
+  const time = me && Number.isFinite(me.time) ? formatTime(me.time) : '';
+  let link = location.origin + '/nationlap/?affairs=1';
+  // Upload the lap now, while the player reads the card, so the share link can carry it.
+  // A friend who opens it races today's news against this exact kart.
+  const lap = lastLap; lastLap = null;
+  if (lap) {
+    fetch('/api/game/ghost', { method: 'POST', headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ rec: lap, kind: 'affairs', name: account.accountName?.() || playerCharacter().name || 'A friend' }) })
+      .then((x) => x.json()).then((j) => { if (j && j.code) link += '&ghost=' + j.code; }).catch(() => {});
+  }
+  const stale = /^Latest news/.test(run.label || '');
+  const text = `${stale ? "India's news" : "Today's India"}${time ? ' in ' + time : ''} · ${r.clean}/${r.total} stories ✓${st.n > 1 ? ` · 🔥 ${st.n}-day streak` : ''}
+${lap ? 'Race my ghost through' : 'Race'} ${stale ? 'the latest' : "today's"} news on NationLap:`;
+  const box = document.createElement('div');
+  box.className = 'res-share';
+  box.innerHTML = `<div class="rs-streak">${st.n ? `🔥 <b>${st.n}</b>-day news streak${st.bumped && st.n > 1 ? ' · +1 today' : ''}` : ''}</div>
+    <div class="rs-state"></div>
+    <div class="rs-btns"><button class="btn small rs-wa">SHARE ON WHATSAPP</button><button class="btn small rs-more">SHARE</button></div>`;
+  panel.appendChild(box);
+  // Most Informed State: today's finish counts for the player's state (turnout, one per day).
+  const stEl = box.querySelector('.rs-state'), st0 = myState();
+  if (!st0) {
+    stEl.innerHTML = `<button class="rs-link">Pick your state</button> to count for it on the Most Informed State board`;
+    stEl.querySelector('.rs-link').addEventListener('click', (e) => { e.stopPropagation(); hud.hideResults(); menu.showAvatar({ first: false }); });
+  } else {
+    fetch('/api/game/informed', { method: 'POST', headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ state: st0, device: deviceId(), clean: r.clean, total: r.total }) })
+      .then((x) => x.json()).then((j) => {
+        const row = (j.states || []).find((s) => s.code === st0);
+        if (row) stEl.textContent = `🗺 ${STATES[st0]} is #${row.rank} of ${j.states.length} most informed states this week`;
+      }).catch(() => {});
+  }
+  const fire = (to) => { try { bus.emit('ui:confirm'); } catch (e) {} };
+  box.querySelector('.rs-wa').addEventListener('click', (e) => { e.stopPropagation(); fire('wa'); window.open('https://wa.me/?text=' + encodeURIComponent(text + ' ' + link), '_blank', 'noopener'); });
+  box.querySelector('.rs-more').addEventListener('click', async (e) => {
+    e.stopPropagation(); fire('native');
+    try { if (navigator.share) { await navigator.share({ text, url: link }); return; } } catch (err) { if (err && err.name === 'AbortError') return; }
+    try { await navigator.clipboard.writeText(text + ' ' + link); e.target.textContent = 'COPIED'; } catch (err) { /* nothing more to do */ }
+  });
+}
+
 /* This lap's gates, rebuilt when the lap changes so lap 2 asks lap 2's facts. */
 function buildLapGates(w) {
   safe('factGates.dispose', () => w.factGates?.dispose());
@@ -370,19 +441,22 @@ function updateGatePrompt(w) {
     }
   }
   const show = best && bestD < 380;
-  /* Cinematic slow motion for the last stretch before the arch: the question is up at full
-     speed first, then time drops to ~30% so there is room to read both answers and steer. */
-  const slow = show && bestD < 170;
-  slowTarget = slow ? 0.3 : 1;
+  /* Slow motion only for the last few seconds before the arch. It used to start 170 m out at
+     30% speed — about 19 seconds of crawling. Now it starts when the arch is ~4 s away at the
+     slowed speed (at least 25 m, so a slow kart still gets a moment), at 45% speed. */
+  const v = Math.max(8, Math.abs(p?.speed || 0));
+  const slow = show && bestD < Math.max(25, v * 0.45 * 4);
+  slowTarget = slow ? 0.45 : 1;
   document.body.classList.toggle('gate-slowmo', !!slow);
   if (!show) { if (gatePromptFor) { gatePromptEl.classList.remove('show'); gatePromptFor = null; } return; }
   if (gatePromptFor !== best) {
     gatePromptFor = best;
     const c = best.card;
     const esc = (t) => String(t).replace(/[&<>"]/g, (m) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[m]));
-    gatePromptEl.innerHTML = `<b>${esc(c.ask || c.stamp)}</b>
-      <span class="gp-row"><i class="gp-a">◀ ${esc(c.gate.a)}</i><i class="gp-b">${esc(c.gate.b)} ▶</i></span>
-      <small>Drive through the right gate</small>`;
+    // Only the question: the two answers are already written on the arches ahead.
+    // On a phone the arch signs are small, so the two answers ride under the question there.
+    gatePromptEl.innerHTML = `<b>${esc(c.ask || c.stamp)}</b>` + (document.body.classList.contains('touch-mode') && c.gate
+      ? `<div class="gp-row"><i class="gp-a">◀ ${esc(c.gate.a)}</i><i class="gp-b">${esc(c.gate.b)} ▶</i></div>` : '');
     gatePromptEl.classList.add('show');
   }
 }
@@ -433,8 +507,11 @@ const quiz = createQuizSystem({
     if (correct === true) {
       progress.streak++;
       awardXp(20 + Math.min(30, progress.streak * 5));
-      const rec = isZoneUnlocked(pendingZone?.id) ? recordCorrect(pendingZone.id) : null;
+      const inSection = sectionRun(pendingZone);
+      const rec = !isZoneUnlocked(pendingZone?.id) ? null
+        : inSection ? recordSection(pendingZone.id, focusedSection, focusedSectionCount, true) : recordCorrect(pendingZone.id);
       if (rec?.justCompleted) hud.toast?.((pendingZone?.topic || 'Topic') + ' cleared! Next one unlocked.');
+      else if (rec?.sectionCleared) hud.toast?.(`Section ${focusedSection + 1} cleared!`);
       // correct answer = instant, guaranteed speed payoff — no waiting to press the item
       // button. Streak makes it stronger, so a hot run genuinely pulls away from the pack.
       const streakBonus = Math.min(5, progress.streak - 1);
@@ -453,7 +530,10 @@ const quiz = createQuizSystem({
       progress.streak = 0;
       awardXp(4); // small consolation XP for attempting
       // a wrong answer costs ground on the zone, so it can't be cleared by guessing through
-      if (isZoneUnlocked(pendingZone?.id)) recordWrong(pendingZone.id);
+      if (isZoneUnlocked(pendingZone?.id)) {
+        if (sectionRun(pendingZone)) recordSection(pendingZone.id, focusedSection, focusedSectionCount, false);
+        else recordWrong(pendingZone.id);
+      }
       // wrong answer = confused/dazed hit: kart spins out and loses most of its speed,
       // same physical reaction as getting shelled — the quiz has real stakes on track.
       kart.applyHit?.('tumble');
@@ -528,6 +608,26 @@ bus.on('game:state', (d) => {
 });
 let focusedZone = null;
 let focusedCards = null;  // recall prompts for focusedZone, from its lesson's flashcards
+/* A lesson is read and raced one section (~5 pages) at a time: the race asks only from the
+   section just read. null when the zone has no lesson. */
+let focusedSection = null, focusedSectionCount = 0, focusedSectionTitle = '';
+/** True while this race's answers count toward a section rather than the whole zone. */
+function sectionRun(zone) {
+  if (!zone || focusedSection == null || zone.id !== focusedZone?.id) return false;
+  const sp = stopProgress(zone.id);
+  return !!sp && !sp.zone.completed;
+}
+/** The section to race next: the first not yet cleared; a cleared lesson revisits one at random. */
+async function pickSection(zone, want = null) {
+  focusedSection = null; focusedSectionCount = 0; focusedSectionTitle = '';
+  const lesson = zone ? await loadLesson(zone.id) : null;
+  const n = lesson?.parts?.length || 0;
+  if (!n) return;
+  const st = sectionState(zone.id, n);
+  let i = want != null && want >= 0 && want < n ? want : st.findIndex((x) => !x.cleared);
+  if (i < 0) i = Math.floor(Math.random() * n);
+  focusedSection = i; focusedSectionCount = n; focusedSectionTitle = lesson.parts[i].title || '';
+}
 /* The affairs race runs on a shorter loop: a lap carries ~6 facts, not 24 boards, and the full
    9.5 km circuit was a 4-minute lap of nothing to read. */
 const AFFAIRS_TRACK_SCALE = 2.4;
@@ -547,6 +647,8 @@ async function startAffairsRace(monthKey) {
   } else {
     const day = await loadLatest();
     cards = day.cards; date = day.date; label = '';
+    // Never call an old set "today": while the feed is paused the race says which day it is.
+    if (date && date < istToday()) label = 'Latest news · ' + new Date(date + 'T00:00:00').toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
   }
   if (!cards.length) {
     hud.toast?.(monthKey ? 'Nothing recorded for that month.' : 'No affairs yet — the page fills at 5am.');
@@ -587,15 +689,49 @@ async function startAffairsRace(monthKey) {
   /* Three laps over the same eight gates. You already know the corners by the second lap, so
      the only thing still being tested is the fact — and a gate you fluffed first time round
      comes back, which is the revision the mode exists for. */
-  startRace({ difficulty: 'hard', laps: lapsFacts.length });
+  startRace({ difficulty: isFamily() ? 'easy' : 'hard', laps: lapsFacts.length });
 }
+/* Bharat Yatra: one race per state, on the affairs machinery (brief, gates, recap). A state's
+   cards are one lap; the result stamps the passport instead of touching the news streak or the
+   India board, which are for today's news only. */
+function startStateRace(code, name, cards) {
+  if (!cards.length) { hud.toast?.('That state is not ready yet.'); return; }
+  hud.setWrongWayLine?.(null);
+  hud.setItemNames?.(null);
+  const laps = stateLaps(cards);
+  affairsRun = {
+    date: '', label: name, monthKey: null, state: code, stateCards: cards,
+    lapsFacts: laps, lapIdx: 0, brief: laps[0], gates: laps[0].filter((c) => c.gate),
+    allGates: cards.filter((c) => c.gate), results: [], boost: false,
+  };
+  focusedZone = null; focusedCards = null; focusedLesson = null;
+  cupRun = null;
+  startRace({ difficulty: isFamily() ? 'easy' : 'normal', laps: laps.length });
+}
+const yatra = createYatra({ uiRoot, onRace: (code, name, cards) => startStateRace(code, name, cards), onClose: () => {} });
+
+/* The stamp, under the recap of a state race. */
+function showStateResult(run) {
+  const panel = uiRoot.querySelector('.res-recap');
+  const r = affairsRecap();
+  const fresh = recordStateRun(run.state, r.clean, r.total);
+  if (!panel) return;
+  const ok = r.total && r.clean / r.total >= STAMP_AT;
+  const box = document.createElement('div');
+  box.className = 'res-share';
+  box.innerHTML = `<div class="rs-streak">${ok ? (fresh ? `✓ ${run.label} stamped! ${stampedCount()} of 36 in your passport` : `✓ ${run.label} is in your passport`) : `${Math.round(STAMP_AT * 100)}% stamps ${run.label}. Race it again`}</div>
+    <div class="rs-btns"><button class="btn small rs-map">BHARAT YATRA MAP</button></div>`;
+  panel.appendChild(box);
+  box.querySelector('.rs-map').addEventListener('click', (e) => { e.stopPropagation(); hud.hideResults(); goToTitle(); setTimeout(() => yatra.open(), 600); });
+}
+
 let focusedLesson = null; // whether this zone has a lesson at all — decides if the scroll drops
 const lessonReader = createLessonReader({ uiRoot, awardXp });
 // The study scroll that unfurls over the grid. Reading happens here, inside the race, on a
 // shared clock — not on a menu screen before it.
 const scrollIntro = createScrollIntro({
   uiRoot,
-  onStudy: (secondsLeft) => lessonReader.show(focusedZone, { timeLimitSec: secondsLeft }),
+  onStudy: () => lessonReader.show(focusedZone, { section: focusedSection }),
   onDone: ({ read } = {}) => {
     // Skipping the brief costs the boost token. It is a real choice, not a shortcut.
     if (affairsRun?.midBrief) {
@@ -623,7 +759,8 @@ const journeyMap = createJourneyMap({
     focusedZone = zone;
     // Both fetched here rather than at world-build time, because building the world is
     // synchronous. The lesson JSON is cached, so the grid scroll re-reads it for free.
-    focusedCards = await lessonCards(zone.id);
+    await pickSection(zone, zone.section);
+    focusedCards = await lessonCards(zone.id, focusedSection);
     focusedLesson = await loadLesson(zone.id);
     // the map already picked the topic, so no racer picker: a short Ready card, then race
     menu.showReady(readyInfo(zone));
@@ -651,6 +788,10 @@ function readyInfo(zone) {
     completed: !!(sp && sp.zone.completed),
     nextTopic: sp && sp.next ? sp.next.topic : null,
     cupName: cup ? cup.name : '',
+    section: focusedSection != null && !(sp && sp.zone.completed) ? (() => {
+      const st = sectionState(zone.id, focusedSectionCount)[focusedSection];
+      return { i: focusedSection, n: focusedSectionCount, title: focusedSectionTitle, correct: st.correct, threshold: SECTION_THRESHOLD };
+    })() : null,
     heats: cup ? cup.heats : [],
   };
 }
@@ -665,8 +806,19 @@ const menu = new Menu(uiRoot, {
   },
   onResume: () => resume(),
   onRestart: () => { menu.hideAll(); startRace(lastSettings); },
-  onQuit: () => goToTitle(),
-  onMap: () => journeyMap.open(),
+  onQuit: () => {
+    // Leaving mid-lesson keeps every point: say so, and where to pick up.
+    const z = focusedZone, sec = focusedSection, n = focusedSectionCount;
+    const note = z && sec != null && sectionRun(z) ? (() => {
+      const st = sectionState(z.id, n)[sec];
+      return `Progress saved · ${z.topic}${n > 1 ? `, section ${sec + 1}` : ''}: ${st.correct}/${SECTION_THRESHOLD} correct. Continue from Learn & Race.`;
+    })() : '';
+    goToTitle();
+    if (note) setTimeout(() => titleNotice(note), 400);
+  },
+  // The title's map is Bharat Yatra now; the syllabus journey stays reachable from a Ready card.
+  onMap: () => yatra.open(),
+  onJourney: () => journeyMap.open(),
   // quick race is topic-less on purpose: clear any zone left over from a previous journey run,
   // or its billboards and quiz pool would leak into a race the player didn't pick a topic for
   // ...and it goes straight onto the track: a single race, no cup, no topic, no Ready card
@@ -675,7 +827,7 @@ const menu = new Menu(uiRoot, {
     hud.setItemNames?.(null); hud.setWrongWayLine?.(null); hud.setGateMarks?.(null);
     focusedZone = null; focusedCards = null; focusedLesson = null;
     cupRun = null;
-    startRace({ difficulty: 'normal', laps: RACE.laps });
+    startRace({ difficulty: isFamily() ? 'easy' : 'normal', laps: RACE.laps });
   },
   // Today's affairs: one race whose content is the day's cards rather than a syllabus topic.
   onAffairs: () => startAffairsRace(),
@@ -946,6 +1098,14 @@ let pendingIntroNote = '';   // one-shot line for the next intro card (set by st
 function heatTopicNote() {
   const sp = focusedZone && stopProgress(focusedZone.id);
   if (!sp) return '';
+  if (!sp.zone.completed && focusedSection != null) {
+    const st = sectionState(sp.zone.id, focusedSectionCount);
+    const left = st.filter((x) => !x.cleared).length;
+    const me = st[focusedSection];
+    return me.cleared
+      ? (left ? `Section ${focusedSection + 1} cleared · ${left} section${left > 1 ? 's' : ''} to go` : '')
+      : `Section ${focusedSection + 1}: ${me.correct}/${SECTION_THRESHOLD} correct · get ${SECTION_THRESHOLD} to clear it`;
+  }
   if (!sp.zone.completed) return `Get ${COMPLETE_THRESHOLD} right to unlock the next stop — ${sp.zone.correct}/${COMPLETE_THRESHOLD} correct`;
   if (raceStartCleared === false) {
     return sp.next && sp.next.unlocked ? `New stop unlocked: ${sp.next.topic}!` : `Topic cleared: ${sp.zone.topic}!`;
@@ -956,7 +1116,8 @@ function heatTopicNote() {
 /** Point the race at a zone: its billboards, recall cards, study scroll and quiz pool. */
 async function setFocusZone(zone) {
   focusedZone = zone || null;
-  focusedCards = zone ? await lessonCards(zone.id) : null;
+  await pickSection(zone);
+  focusedCards = zone ? await lessonCards(zone.id, focusedSection) : null;
   focusedLesson = zone ? await loadLesson(zone.id) : null;
 }
 async function startHeat() {
@@ -1016,7 +1177,7 @@ function showIntroCard() {
   const name = (world && world.track && world.track.name) || 'Grand Circuit';
   const d = { easy: '50cc', normal: '100cc', hard: '150cc' }[lastSettings.difficulty] || '';
   const focusLine = affairsRun
-    ? `<div class="ic-focus">TODAY'S AFFAIRS</div>`
+    ? `<div class="ic-focus">${/^Latest news/.test(affairsRun.label || '') ? affairsRun.label.toUpperCase() : affairsRun.monthKey ? 'NEWS ARCHIVE' : "TODAY'S AFFAIRS"}</div>`
     : focusedZone ? `<div class="ic-focus">FOCUS: ${focusedZone.topic}</div>` : '';
   const note = focusedZone ? pendingIntroNote : '';
   pendingIntroNote = ''; // one-shot: never carries into a later race
@@ -1069,6 +1230,8 @@ function resume() {
 // ---------------------------------------------------------------------------------------------
 let recorder = null;
 let ghost = null;
+let friendGhost = null;   // {name, rec} from a ?ghost= share link
+let lastLap = null;       // today's-race lap, kept so the finish card can share it
 let raceElapsedMs = 0;
 
 function disposeGhost() { try { ghost?.dispose(); } catch (e) {} ghost = null; }
@@ -1078,8 +1241,10 @@ async function spawnGhost(w) {
   disposeGhost();
   const zoneId = focusedZone?.id || null;
   let rec = null, label = 'Your best';
-  const rival = await account.bestGhost(zoneId).catch(() => null);
-  if (rival?.recording) { rec = rival.recording; label = rival.player_name || 'Rival'; }
+  // A friend's shared lap comes first on today's race: that is the race the link was sent for.
+  const rival = friendGhost && affairsRun ? null : await account.bestGhost(zoneId).catch(() => null);
+  if (friendGhost && affairsRun) { rec = friendGhost.rec; label = friendGhost.name + "'s lap"; }
+  else if (rival?.recording) { rec = rival.recording; label = rival.player_name || 'Rival'; }
   else rec = loadPersonalBest(zoneId);
   if (!rec) return;
   ghost = safe('ghost.spawn', () => createGhost({
@@ -1132,6 +1297,7 @@ bus.on('race:finish', (d) => {
   // bank the lap: a new personal best always, and the account's ghost when signed in
   const rec = recorder?.finish(raceElapsedMs);
   recorder = null;
+  if (rec && affairsRun && !affairsRun.monthKey && !affairsRun.state) lastLap = rec;
   if (rec) {
     const zoneId = focusedZone?.id || null;
     if (savePersonalBest(zoneId, rec)) hud.toast?.('New best lap saved');
@@ -1196,10 +1362,13 @@ bus.on('race:end', (d) => {
         recap: affairsRecap(),
         laps: world.race.laps,
         facts: world.factsSeen || [],
-        onRestart: () => (affairsRun ? startAffairsRace(affairsRun.monthKey) : startRace(lastSettings)),
+        onRestart: () => (affairsRun?.state ? startStateRace(affairsRun.state, affairsRun.label, affairsRun.stateCards)
+          : affairsRun ? startAffairsRace(affairsRun.monthKey) : startRace(lastSettings)),
         onMenu: () => goToTitle(),
       });
-      if (affairsRun) safe('league', () => showLeague(affairsRun));
+      if (affairsRun?.state) safe('passport', () => showStateResult(affairsRun));
+      else if (affairsRun) safe('league', () => showLeague(affairsRun));
+      if (affairsRun && !affairsRun.monthKey && !affairsRun.state) safe('share', () => showFinishShare(affairsRun, results));
     }
   }, 200);
 });
@@ -1401,14 +1570,25 @@ async function boot() {
   // An earlier version held LOADING here until every shader had compiled — technically fewer
   // hitches afterwards, but it traded a title that plays for a loading screen that sits there,
   // which is worse to sit through. Shaders are precompiled inside buildWorld instead.
+  applyFamily();
   menu.showTitle();
+  menu.setNewsStreak?.(newsStreak());
   refreshResumeButton();
   setState('title');
   audio.playMusic('menu');
   // first launch: set up "you" (name, face, kart colour) before anything else
   // mindgains.ai's "Current affairs" links land here with ?affairs: straight into today's race
   // (after the one-time racer setup, if this is a first visit).
-  pendingAffairs = new URLSearchParams(location.search).has('affairs');
+  const qs = new URLSearchParams(location.search);
+  pendingAffairs = qs.has('affairs') || qs.has('ghost');
+  // ?ghost=CODE: a friend's lap from a share link. Fetched before the race builds its world;
+  // if it is slow or gone, the race simply runs with the usual ghost.
+  const ghostCode = (qs.get('ghost') || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 8);
+  if (ghostCode) {
+    await fetch('/api/game/ghost?code=' + ghostCode).then((x) => (x.ok ? x.json() : null)).then((j) => {
+      if (j && j.rec) { friendGhost = { name: String(j.name || 'A friend').slice(0, 20), rec: j.rec }; hud.toast?.(`Racing ${friendGhost.name}'s lap`); }
+    }).catch(() => {});
+  }
   if (!hasProfile()) menu.showAvatar({ first: true });
   else if (pendingAffairs) { pendingAffairs = false; startAffairsRace(); }
 

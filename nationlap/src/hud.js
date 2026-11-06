@@ -106,11 +106,28 @@ function starPath(g, cx, cy, r1, r2) {
   g.closePath();
 }
 
+/* Boost: two speed chevrons and a flame. The boost used to be drawn as a mushroom, which is a
+   convention from other kart games; players here read it as a random object, not "go faster". */
+function boost(g, x, y, s) {
+  g.save(); g.translate(x, y); g.scale(s, s);
+  g.lineJoin = 'round'; g.strokeStyle = '#3a1a00'; g.lineWidth = 6;
+  const grd = g.createLinearGradient(-40, 0, 44, 0);
+  grd.addColorStop(0, '#ffd23f'); grd.addColorStop(1, '#ff6a1f');
+  g.fillStyle = grd;
+  for (const dx of [-24, 6]) {
+    g.beginPath(); g.moveTo(dx - 14, -34); g.lineTo(dx + 18, 0); g.lineTo(dx - 14, 34); g.lineTo(dx - 2, 34);
+    g.lineTo(dx + 30, 0); g.lineTo(dx - 2, -34); g.closePath(); g.fill(); g.stroke();
+  }
+  g.restore();
+}
+/* What each item does, in two words, shown under the slot. */
+export const ITEM_LABEL = { mushroom: 'BOOST', triple_mushroom: 'BOOST', banana: 'DROP BANANA', green_shell: 'FIRE SHELL',
+  red_shell: 'HOMING SHELL', star: 'SHIELD', lightning: 'SHRINK ALL', blue_shell: 'HIT LEADER' };
+
 function drawItem(g, type) {
   switch (type) {
-    case 'mushroom': mushroom(g, 64, 62, 1.05); break;
-    case 'triple_mushroom':
-      mushroom(g, 64, 42, 0.6); mushroom(g, 34, 86, 0.6); mushroom(g, 94, 86, 0.6); break;
+    case 'mushroom': boost(g, 64, 64, 1.15); break;
+    case 'triple_mushroom': boost(g, 64, 64, 1.15); break;
     case 'banana': {
       g.save(); g.translate(64, 64);
       g.strokeStyle = '#3a2a05'; g.lineWidth = 5;
@@ -537,6 +554,8 @@ export class HUD {
       if (key !== this._lastItemKey) {
         this.itemImg.src = itemIcon(player.item);
         this.itemCount.textContent = count > 1 ? '×' + count : '';
+        const touch = document.body.classList.contains('touch-mode');
+        this.itemHint.textContent = (touch ? '' : 'E / SHIFT · ') + (ITEM_LABEL[player.item] || 'USE');
       }
     } else {
       key = 'none';

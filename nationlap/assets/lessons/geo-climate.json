@@ -188,7 +188,8 @@
         },
         {
           "front": "Which regions receive rainfall from the North-East Monsoon?",
-          "back": "The North-East Monsoon provides rain to the coast of Tamil Nadu and the coast of Andhra Pradesh."
+          "back": "The North-East Monsoon provides rain to the coast of Tamil Nadu and the coast of Andhra Pradesh.",
+          "short": "The Tamil Nadu and Andhra Pradesh coasts"
         },
         {
           "front": "What is the impact of El-Nino on the Indian monsoon?",

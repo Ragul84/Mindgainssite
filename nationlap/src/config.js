@@ -56,7 +56,7 @@ export const POINTS_TABLE = [15, 12, 10, 8, 6, 4, 2, 1];
 export const CUPS = [
   {
     id: 'upsc-sprint',
-    name: 'UPSC Sprint Cup',
+    name: 'Nation Cup',
     subjectFocus: 'Polity',
     heats: [
       { difficulty: 'easy', laps: 1 },

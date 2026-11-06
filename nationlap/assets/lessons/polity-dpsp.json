@@ -145,7 +145,8 @@
         },
         {
           "front": "Are DPSPs \"Justiciable\"?",
-          "back": "NO. Art 37 clearly states that DPSPs are non-justiciable (not enforceable by courts). However, they are fundamental in the governance of the country and it is the duty of the State to apply these in making laws."
+          "back": "NO. Art 37 clearly states that DPSPs are non-justiciable (not enforceable by courts). However, they are fundamental in the governance of the country and it is the duty of the State to apply these in making laws.",
+          "short": "No, they cannot be enforced in court (Article 37)"
         },
         {
           "front": "Which Article deals with the Uniform Civil Code (UCC)?",
@@ -157,7 +158,8 @@
         },
         {
           "front": "What was the outcome of the Minerva Mills Case (1980)?",
-          "back": "The SC ruled that the Indian Constitution is founded on the bedrock of the balance between Fundamental Rights and Directive Principles. They are complementary to each other."
+          "back": "The SC ruled that the Indian Constitution is founded on the bedrock of the balance between Fundamental Rights and Directive Principles. They are complementary to each other.",
+          "short": "FRs and DPSPs must stay in balance"
         },
         {
           "front": "Article 40—what does it prescribe?",
