@@ -62,7 +62,8 @@ async function loadBank(env, set) {
   return bank;
 }
 
-const usable = (q) => Array.isArray(q.options)
+// `retired` marks a question kept only so the indices after it stay stable (ids are set#index).
+const usable = (q) => !q.retired && Array.isArray(q.options)
   && q.options.length === 4
   && Number.isInteger(q.answer_index)
   && q.answer_index >= 0 && q.answer_index < 4
