@@ -49,7 +49,7 @@
         {
           "type": "concept",
           "title": "GST (Goods and Services Tax)",
-          "intro": "A single, destination-based indirect tax under 'One Nation, One Tax', with dual structure and five rate tiers.",
+          "intro": "A single, destination-based indirect tax under 'One Nation, One Tax', with a dual structure. Since 22 September 2025 it has two main rates, 5% and 18%, plus 40% for luxury and sin goods.",
           "blocks": [
             {
               "type": "mindmap",
@@ -69,7 +69,7 @@
                 },
                 {
                   "label": "Rate Tiers",
-                  "value": "0%, 5%, 12%, 18%, 28%"
+                  "value": "5% and 18% (main), 40% (luxury/sin goods), since 22 Sept 2025. Earlier: 5, 12, 18, 28%"
                 }
               ]
             }
@@ -214,7 +214,7 @@
                 },
                 {
                   "label": "Slabs",
-                  "value": "0%, 5%, 12%, 18%, 28%"
+                  "value": "5% and 18% (main), 40% (luxury/sin goods), since 22 Sept 2025. Earlier: 5, 12, 18, 28%"
                 }
               ]
             }
@@ -305,8 +305,8 @@
           "back": "The 101st Constitutional Amendment."
         },
         {
-          "front": "What are the five GST tax slabs?",
-          "back": "0%, 5%, 12%, 18%, and 28%."
+          "front": "What are the main GST rates since September 2025?",
+          "back": "5% and 18%, with a 40% rate for luxury and sin goods (from 22 Sept 2025; earlier 5, 12, 18 and 28%)."
         },
         {
           "front": "Which article of the Indian Constitution established the GST Council?",

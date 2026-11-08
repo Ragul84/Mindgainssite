@@ -124,7 +124,7 @@
           "back": "The Chotanagpur Plateau."
         },
         {
-          "front": "Which state is the largest producer of Manganese in India?",
+          "front": "Which state has the largest manganese ore reserves in India?",
           "back": "Odisha."
         },
         {
@@ -208,7 +208,7 @@
         {
           "type": "facts",
           "title": "Transport & Trade",
-          "intro": "The Golden Quadrilateral is a highway network that connects four major Indian cities: Delhi, Mumbai, Chennai, and Kolkata, forming a large square shape on the map. India has 13 major ports, which are large harbors where ships load and unload goods, and the biggest of these is the Mumbai Port. Trade means the buying and selling of goods between countries. India sells goods to other countries, called exports, including computer software, precious stones like diamonds and gems, and spices like pepper and cardamom. India also buys goods from other countries, called imports, such as petroleum, which is crude oil used to make fuel, and gold, which is a precious metal used for jewelry.",
+          "intro": "The Golden Quadrilateral is a highway network that connects four major Indian cities: Delhi, Mumbai, Chennai, and Kolkata, forming a large square shape on the map. India has 12 major ports, which are large harbours run by the Centre where ships load and unload goods; Deendayal Port (Kandla) handles the most cargo, and a 13th, Vadhavan, is being built. Trade means the buying and selling of goods between countries. India sells goods to other countries, called exports, including computer software, precious stones like diamonds and gems, and spices like pepper and cardamom. India also buys goods from other countries, called imports, such as petroleum, which is crude oil used to make fuel, and gold, which is a precious metal used for jewelry.",
           "blocks": [
             {
               "type": "fact_grid",
@@ -219,7 +219,7 @@
                 },
                 {
                   "label": "Major Ports",
-                  "value": "13 major (Mumbai is largest)"
+                  "value": "12 major (Deendayal/Kandla handles the most cargo)"
                 },
                 {
                   "label": "Trade",
@@ -266,8 +266,8 @@
           "back": "Delhi, Mumbai, Chennai, and Kolkata."
         },
         {
-          "front": "How many major ports does India have, and which is the largest?",
-          "back": "India has 13 major ports, and the Mumbai Port is the largest."
+          "front": "How many major ports does India have, and which handles the most cargo?",
+          "back": "India has 12 major ports; Deendayal Port (Kandla) handles the most cargo."
         },
         {
           "front": "What are the primary imports of India mentioned in the text?",

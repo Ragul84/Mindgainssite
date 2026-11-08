@@ -16,7 +16,7 @@
         {
           "type": "formula",
           "title": "Monetary Policy Committee (MPC)",
-          "intro": "The Monetary Policy Committee, or MPC, is a group of six members who decide the key interest rate for India's economy. Three members come from the Reserve Bank of India, or RBI, and three come from the Indian government. The committee is led by the Governor of the RBI. The MPC meets four times every year to set the Repo Rate, which is the interest rate at which the RBI lends money to commercial banks. Their main goal is to keep inflation, meaning the general rise in prices, close to a target of 4 percent, with a allowed range of 2 percent above or below that number (so between 2 and 6 percent).",
+          "intro": "The Monetary Policy Committee, or MPC, is a group of six members who decide the key interest rate for India's economy. Three members come from the Reserve Bank of India, or RBI, and three come from the Indian government. The committee is led by the Governor of the RBI. The MPC must meet at least four times a year (in practice it meets six times) to set the Repo Rate, which is the interest rate at which the RBI lends money to commercial banks. Their main goal is to keep inflation, meaning the general rise in prices, close to a target of 4 percent, with a allowed range of 2 percent above or below that number (so between 2 and 6 percent).",
           "blocks": []
         },
         {

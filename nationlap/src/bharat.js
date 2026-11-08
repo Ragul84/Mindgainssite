@@ -158,7 +158,7 @@ export function createYatra({ uiRoot, onRace, onClose }) {
 
   async function open() {
     pick = null;
-    const all = await loadStates().catch(() => null);
+    const [all] = await Promise.all([loadStates().catch(() => null), loadMap()]);
     if (!all) { root.innerHTML = '<div class="yt-panel"><p class="yt-sub">Could not load the map. Check your connection.</p><button class="btn" data-x>BACK</button></div>'; show(); return; }
     render(all);
     show();
@@ -182,18 +182,37 @@ export function createYatra({ uiRoot, onRace, onClose }) {
     city: '<path d="M4 34V18h8v16M14 34V8h10v26M26 34V14h8v20M36 34V22h8v12M46 34V12h6v22" fill="#fff" opacity=".9"/>',
   };
 
+  // The map itself: India's states and UTs as drawn on official maps (DataMeet's Survey of
+  // India / Census based boundaries, including all of J&K and Ladakh), one tappable shape each.
+  let MAP = null;
+  async function loadMap() {
+    if (!MAP) MAP = await fetch('/assets/data/india_map.json').then((r) => r.json()).catch(() => null);
+    return MAP;
+  }
+  // Too small to tap as a shape, so they also get a dot.
+  const TINY = new Set(['CH', 'DL', 'GA', 'PY', 'DH', 'LD', 'SK', 'TR', 'AN']);
+
   function render(all) {
     const p = passport(), n = stampedCount();
-    const groups = REGIONS.map(([r, label]) => {
-      const sts = Object.values(all).filter((x) => (x.region || 'N') === r).sort((a, b) => a.name.localeCompare(b.name));
-      if (!sts.length) return '';
-      return `<div class="yt-region"><div class="yt-rlabel">${label}</div><div class="yt-stamps">${sts.map((st) => {
-        const s = p[st.code], h = HUE[st.region || 'N'] + (hash(st.code) % 30) - 15;
-        return `<button class="yt-stamp${s?.stamped ? ' done' : s ? ' tried' : ''}${pick === st.code ? ' on' : ''}" data-st="${st.code}" style="--h:${h}">
-          <svg viewBox="0 0 56 38" aria-hidden="true">${LAND[st.land] || LAND.plains}</svg>
-          <b>${esc(st.name)}</b>${s?.stamped ? '<i class="yt-seal">✓ STAMPED</i>' : s ? `<i class="yt-try">${Math.round(s.best * 100)}%</i>` : ''}</button>`;
-      }).join('')}</div></div>`;
-    }).join('');
+    const m = MAP;
+    const fill = (st) => {
+      const s = p[st.code];
+      if (s?.stamped) return '#22b35e';
+      if (s) return '#e2733a';
+      return `hsl(${HUE[st.region || 'N'] + (hash(st.code) % 24) - 12} 38% 46%)`;
+    };
+    const shapes = m ? Object.values(all).filter((st) => m.states[st.code]).map((st) =>
+      `<path class="ym-st${pick === st.code ? ' on' : ''}" data-st="${st.code}" d="${m.states[st.code].d}" fill="${fill(st)}"><title>${esc(st.name)}</title></path>`).join('') : '';
+    const dots = m ? Object.values(all).filter((st) => TINY.has(st.code) && m.states[st.code]).map((st) => {
+      const [x, y] = m.states[st.code].c;
+      return `<circle class="ym-dot${pick === st.code ? ' on' : ''}" data-st="${st.code}" cx="${x}" cy="${y}" r="11" fill="${fill(st)}"><title>${esc(st.name)}</title></circle>`;
+    }).join('') : '';
+    // the picked state is drawn again on top, so its gold outline is never hidden by a neighbour
+    const top = m && pick && m.states[pick] ? `<path class="ym-top" d="${m.states[pick].d}"/>` : '';
+    const map = m
+      ? `<svg class="ym-svg" viewBox="0 0 ${m.w} ${m.h}" role="img" aria-label="Map of India">${shapes}${top}${dots}</svg>`
+      : '<p class="yt-sub">Map unavailable. Pick a state from the list.</p>';
+
     const st = pick && all[pick], s = pick && p[pick];
     const nGates = st ? stateCards(all, pick).filter((c) => c.gate).length : 0;
     const side = st
@@ -202,15 +221,24 @@ export function createYatra({ uiRoot, onRace, onClose }) {
           <div class="yt-facts">Capital ${esc(plain(st.capital) || st.capital)} · ${nGates} questions over ${stateLaps(stateCards(all, pick)).length} laps</div>
           <div class="yt-best">${s ? (s.stamped ? `✓ Stamped · best ${Math.round(s.best * 100)}%` : `Best ${Math.round(s.best * 100)}% · ${Math.round(STAMP_AT * 100)}% stamps it`) : `Score ${Math.round(STAMP_AT * 100)}% to stamp it`}</div>
           <button class="btn primary yt-go" data-go="${pick}">RACE ${esc(st.name.toUpperCase())}</button></div>`
-      : '';
-    root.innerHTML = `<div class="yt-panel">
+      : `<div class="yt-card ym-hint"><div class="yt-name">Pick a state</div><div class="yt-tag">Tap any state or UT on the map. Race it, learn its must-know facts, and stamp your Bharat Passport.</div>
+          <div class="ym-key"><span><i style="background:#22b35e"></i>Stamped</span><span><i style="background:#e2733a"></i>Tried</span><span><i style="background:hsl(210 38% 46%)"></i>Not yet</span></div></div>`;
+    const chips = Object.values(all).sort((a, b) => a.name.localeCompare(b.name)).map((x) =>
+      `<button class="ym-chip${p[x.code]?.stamped ? ' done' : ''}${pick === x.code ? ' on' : ''}" data-st="${x.code}">${p[x.code]?.stamped ? '✓ ' : ''}${esc(x.name)}</button>`).join('');
+
+    root.innerHTML = `<div class="yt-panel ym-panel">
         <div class="yt-head"><div><div class="yt-title">BHARAT YATRA</div><div class="yt-sub">Your Bharat Passport · ${n} of 36 stamped</div></div><button class="btn small" data-x>BACK</button></div>
         <div class="yt-progress"><i style="width:${Math.round((n / 36) * 100)}%"></i></div>
-        ${side}
-        <div class="yt-list">${groups}</div>
+        <div class="ym-body"><div class="ym-map">${map}</div><div class="ym-side">${side}</div></div>
+        <details class="ym-list"><summary>All states &amp; UTs</summary><div class="ym-chips">${chips}</div></details>
         ${n ? `<button class="btn small yt-share">SHARE MY PASSPORT</button>` : ''}
+        <div class="ym-credit">Map: DataMeet, based on Survey of India boundaries</div>
       </div>`;
-    root.querySelectorAll('[data-st]').forEach((b) => b.addEventListener('click', (e) => { e.stopPropagation(); pick = b.dataset.st; render(all); show(); root.querySelector('.yt-panel').scrollTop = 0; }));
+    root.querySelectorAll('[data-st]').forEach((b) => b.addEventListener('click', (e) => {
+      e.stopPropagation(); pick = b.dataset.st; render(all); show();
+      // on a phone the card sits under the map: bring it into view
+      if (window.innerWidth < 760) root.querySelector('.ym-side')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }));
     root.querySelector('[data-go]')?.addEventListener('click', (e) => { e.stopPropagation(); const k = e.currentTarget.dataset.go; close(); onRace?.(k, all[k].name, stateCards(all, k)); });
     root.querySelector('.yt-share')?.addEventListener('click', (e) => {
       e.stopPropagation();

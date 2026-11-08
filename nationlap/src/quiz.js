@@ -145,7 +145,7 @@ export function createQuizSystem({ uiRoot, onResult }) {
 
   /** The bank shipped with the build (dev/export-quiz.mjs), used when the proxy isn't there. */
   function fetchStatic(pool) {
-    return fetch(`assets/quiz/${pool}.json?v=20261017`)
+    return fetch(`assets/quiz/${pool}.json?v=20261109`)
       .then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
       .then((raw) => normalise(raw, pool))
       .catch(() => []);

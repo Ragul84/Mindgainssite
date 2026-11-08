@@ -28,7 +28,7 @@
         {
           "type": "formula",
           "title": "Drainage Patterns",
-          "intro": "Drainage patterns describe how rivers and their tributaries arrange themselves across the land based on the shape of the ground and the rocks underneath. The dendritic pattern looks like the branches of a tree, where smaller streams join the main river at irregular angles, and the Ganga river system is a classic example of this. The trellis pattern forms when tributaries join the main river at nearly right angles, resembling a garden trellis, and the Narmada river in central India shows this shape because the land is folded into parallel ridges and valleys. The radial pattern occurs when rivers flow outward in all directions from a central high point, like water spreading from the top of a dome, and the Narmada and Son rivers both begin at the Amarkantak plateau and flow away from it in different directions.",
+          "intro": "Drainage patterns describe how rivers and their tributaries arrange themselves across the land based on the shape of the ground and the rocks underneath. The dendritic pattern looks like the branches of a tree, where smaller streams join the main river at irregular angles, and the Ganga river system is a classic example of this. The trellis pattern forms when tributaries join the main river at nearly right angles, resembling a garden trellis, and it is seen where the land is folded into parallel ridges and valleys, such as in the old fold hills of the upper Himalaya and Singhbhum. The radial pattern occurs when rivers flow outward in all directions from a central high point, like water spreading from the top of a dome, and the Narmada and Son rivers both begin at the Amarkantak plateau and flow away from it in different directions.",
           "blocks": [
             {
               "type": "fact_grid",
@@ -39,7 +39,7 @@
                 },
                 {
                   "label": "Trellis",
-                  "value": "Right-angled tributaries (Narmada)"
+                  "value": "Right-angled tributaries (folded hills)"
                 },
                 {
                   "label": "Radial",

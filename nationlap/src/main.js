@@ -284,7 +284,12 @@ function lessonQuizItems(cards) {
     const key = (t) => t.toLowerCase().replace(/[^a-z0-9]/g, '');
     const same = (b) => { const x = key(b), y = key(right); return x.startsWith(y) || y.startsWith(x); };
     const sameQ = new Set(usable.filter((o) => key(o.front) === key(c.front)).map(ans));
-    const wrong = backs.filter((b) => b !== right && !same(b) && !sameQ.has(b)).sort((x, y) => score(x) - score(y)).slice(0, 3);
+    // A yes/no answer must never sit beside another answer starting the same way ("Yes, ..."
+    // twice reads as two right answers); the opposite word is the natural wrong option.
+    const yn = /^(yes|no)/i.exec(right)?.[1]?.toLowerCase();
+    const ynOf = (b) => /^(yes|no)/i.exec(b)?.[1]?.toLowerCase();
+    const wrong = backs.filter((b) => b !== right && !same(b) && !sameQ.has(b) && !(yn && ynOf(b) === yn))
+      .sort((x, y) => (yn ? (ynOf(x) ? -1 : 0) - (ynOf(y) ? -1 : 0) : 0) || score(x) - score(y)).slice(0, 3);
     if (wrong.length < 3) return null;
     const opts = shuffle([right, ...wrong]);
     return { id: 'lesson:' + (focusedZone?.id || '') + ':' + i, q: c.front, opts, ans: opts.indexOf(right), explain: c.back.trim() };

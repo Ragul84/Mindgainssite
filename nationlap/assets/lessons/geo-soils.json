@@ -80,7 +80,7 @@
         {
           "type": "concept",
           "title": "Biosphere Reserves (18 in India)",
-          "intro": "There are 18 Biosphere Reserves in India. A Biosphere Reserve is a special area designated to protect important natural habitats while also allowing people to live and use resources sustainably. These reserves are part of the MAB program, which stands for the Man and the Biosphere Programme, a project run by UNESCO (United Nations Educational, Scientific and Cultural Organization) to promote a balanced relationship between people and nature. The very first Biosphere Reserve established in India was the Nilgiris Biosphere Reserve in 1986. Other examples include Panna Biosphere Reserve, Cold Desert Biosphere Reserve, and Agasthyamalai Biosphere Reserve. Out of India's 18 Biosphere Reserves, 12 are part of the UNESCO World Network of Biosphere Reserves, which means they are recognized internationally for their value in conservation and sustainable development.",
+          "intro": "There are 18 Biosphere Reserves in India. A Biosphere Reserve is a special area designated to protect important natural habitats while also allowing people to live and use resources sustainably. These reserves are part of the MAB program, which stands for the Man and the Biosphere Programme, a project run by UNESCO (United Nations Educational, Scientific and Cultural Organization) to promote a balanced relationship between people and nature. The very first Biosphere Reserve established in India was the Nilgiris Biosphere Reserve in 1986. Other examples include Panna Biosphere Reserve, Cold Desert Biosphere Reserve, and Agasthyamalai Biosphere Reserve. Out of India's 18 Biosphere Reserves, 13 are part of the UNESCO World Network (Cold Desert was added in 2025) of Biosphere Reserves, which means they are recognized internationally for their value in conservation and sustainable development.",
           "blocks": []
         },
         {
@@ -120,7 +120,7 @@
           "back": "Nilgiris."
         },
         {
-          "front": "How many Indian Biosphere Reserves are part of the UNESCO World Network?",
+          "front": "How many Indian Biosphere Reserves are in the UNESCO World Network (as of 2025)?",
           "back": "12."
         },
         {

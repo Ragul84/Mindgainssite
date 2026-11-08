@@ -246,7 +246,7 @@
         {
           "type": "concept",
           "title": "Repeating Letter Series",
-          "intro": "In a Repeating Letter Series question, you are given a sequence of letters with some blanks, like a b b a a b a b a, and you need to find the missing letters. First, count the total number of positions in the sequence, including the blanks. If the total is 12, try grouping the letters into sets of 3 or 4, because 12 can be divided evenly by 3 or 4. If the total is 15, try grouping into sets of 3 or 5, because 15 can be divided evenly by 3 or 5. Once you have groups, look for a repeating pattern, such as the same three-letter or four-letter block appearing over and over. For example, in a b b a a b a b a, there are 12 positions, so group them into four sets of three: a b , b a , a b a, b a. The pattern is \"a b a\" repeating, so the blanks are filled with \"a\", \"b\", and \"a\" to make each group \"a b a\".",
+          "intro": "In a Repeating Letter Series question, you are given a sequence of letters with some blanks and you need to find the missing letters. First, count the total number of positions in the sequence, including the blanks. If the total is 12, try grouping the letters into sets of 3 or 4, because 12 can be divided evenly by 3 or 4. If the total is 15, try grouping into sets of 3 or 5, because 15 can be divided evenly by 3 or 5. Once you have groups, look for a repeating pattern, such as the same three-letter or four-letter block appearing over and over.",
           "blocks": []
         },
         {
