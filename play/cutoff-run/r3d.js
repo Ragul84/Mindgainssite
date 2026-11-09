@@ -235,13 +235,14 @@ function frame(o) {
   for (let i = 0; i < pool.length; i++) {
     const p = pool[i], s = Math.floor(i / 2), slot = first + ((s - first) % SLOTS + SLOTS) % SLOTS;
     p.position.set(p.userData.side * p.userData.dx, 0, -(slot * SLOT + p.userData.off));
+    p.visible = (window.__r3props || 1) >= 1 || (s % 2 === 0);
   }
   // batch
   const ms = S ? S.members : [], t = S ? S.t : 0, running = S && (S.phase === 'run' || S.phase === 'climb');
   ensureCrowd(ms.length);
   for (let i = 0; i < crowd.length; i++) {
     const st = crowd[i], m = ms[i];
-    st.visible = !!m; if (!m) continue;
+    st.visible = !!m && i < (window.__r3crowd || 36); if (!st.visible) continue;
     const air = o.air ? o.air(m) : 0;
     st.position.set(S.x + m.x, (m.y || 0) + air, -(S.dist + m.z));
     const ph = t * 9 + (m.ph || 0), L = st.userData.limbs, a = running ? 1 : .15;
@@ -271,7 +272,50 @@ function frame(o) {
   const fz = S ? S.dist : cz + 6;
   sun.target.position.set(S ? S.x : 0, 0, -fz - 4); sun.position.copy(sun.target.position).addScaledVector(SUN, 30);
   renderer.render(scene, cam);
+  perf();
 }
+
+// ---------------------------------------------------------------- speed: three quality tiers, then 2D
+// Every 2 s of play we look at the average frame time. Too slow steps down a tier (sharpness, shadows,
+// scenery, crowd size); still too slow on the lowest tier hands the race back to 2D for good on this
+// device. Fast enough for a while steps back up one tier.
+let tier = -1, acc = 0, nF = 0, lastT = 0, goodRuns = 0, slowAtLowest = 0;
+const TIERS = [
+  { dpr: Math.min(2, devicePixelRatio || 1), shadow: 1024, shadows: true, props: 1, crowd: 36 },
+  { dpr: Math.min(1.5, devicePixelRatio || 1), shadow: 512, shadows: true, props: 1, crowd: 28 },
+  { dpr: 1, shadow: 512, shadows: false, props: .5, crowd: 20 },
+];
+function setTier(t) {
+  tier = t; const T = TIERS[t];
+  renderer.setPixelRatio(T.dpr); lastW = 0;
+  renderer.shadowMap.enabled = T.shadows; sun.castShadow = T.shadows;
+  if (T.shadows) { sun.shadow.mapSize.set(T.shadow, T.shadow); if (sun.shadow.map) { sun.shadow.map.dispose(); sun.shadow.map = null; } }
+  scene.traverse((o) => { if (o.material) { const ms = Array.isArray(o.material) ? o.material : [o.material]; ms.forEach((m) => (m.needsUpdate = true)); } });
+  window.__r3crowd = T.crowd; window.__r3props = T.props;
+  try { localStorage.setItem('cor_r3d_tier', String(t)); } catch (e) {}
+}
+setTier(Math.min(2, +(localStorage.getItem('cor_r3d_tier') || 0)));
+function perf() {
+  const now = performance.now(), dt = lastT ? now - lastT : 16; lastT = now;
+  if (dt > 250) return;                         // tab was hidden or paused: not a real frame
+  acc += dt; nF++;
+  if (acc < 2000) return;
+  const avg = acc / nF; acc = 0; nF = 0;
+  if (avg > 30) {                              // under ~33 fps
+    goodRuns = 0;
+    if (tier < TIERS.length - 1) setTier(tier + 1);
+    else if (avg > 40 && ++slowAtLowest >= 2) fallBack('slow');
+  } else if (avg < 19 && tier > 0 && ++goodRuns >= 5) { goodRuns = 0; setTier(tier - 1); }
+  else slowAtLowest = 0;
+}
+function fallBack(why) {
+  window.__r3on = false; window.R3D = null;
+  cv.style.display = 'none';
+  try { localStorage.setItem('cor_r3d', 'fail'); } catch (e) {}
+  if (window.track) try { track('r3d_fallback', { why }); } catch (e) {}
+  renderer.dispose();
+}
+cv.addEventListener('webglcontextlost', (e) => { e.preventDefault(); fallBack('context'); });
 
 window.R3D = { on: true, frame };
 window.__r3on = true;

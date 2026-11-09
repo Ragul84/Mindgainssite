@@ -2206,7 +2206,7 @@ function openSettings(){hideAll();const st=PL.settings,an=!!(PL.consent&&PL.cons
   const row=(id,l,d,on)=>`<label class="setline" for="${id}"><span>${l}<small>${d}</small></span><input type="checkbox" id="${id}" ${on?'checked':''}></label>`;
   $('pcard').innerHTML=`<div class="hdr"><h2>Settings</h2><button class="x" id="sclose">Back</button></div>
     <div class="set">${row('sSnd','Sound','Sound effects in the game',st.sound)}${row('sHap','Vibration','Short vibrations on hits and answers',st.haptic)}${row('sMot','Motion effects','Screen shake and moving decorations',st.motion)}${row('sBig','Large text','Bigger questions and answers',st.big)}${row('sRep','Record replays','Keeps a short clip of each run to share. Off saves battery',st.replay!==false)}
-      <label class="setline" for="sQ"><span>Graphics quality<small>Auto lowers the quality on slow phones</small></span><select id="sQ"><option value="auto">Auto</option><option value="high">High</option><option value="low">Low</option></select></label>
+      <label class="setline" for="sQ"><span>Graphics quality<small>Auto lowers the quality on slow phones</small></span><select id="sQ"><option value="auto">Auto</option><option value="high">High</option><option value="low">Low</option></select></label><label class="setline" for="s3d"><span>3D world<small>Off gives the classic 2D look. Reloads the game.</small></span><input type="checkbox" id="s3d"></label>
       <label class="setline" for="sEx"><span>Exam<small>Questions in your runs come from this exam's bank</small></span><select id="sEx"><option value="">Mixed</option><option value="upsc">UPSC</option><option value="tnpsc">TNPSC</option><option value="ssc">SSC</option><option value="rrb">RRB</option><option value="banking">Banking</option><option value="neet">NEET (Physics, Chemistry, Biology)</option><option value="jee">JEE (Physics, Chemistry)</option></select></label></div>
     <div class="eyebrow">Privacy</div>
     <div class="set">${row('sAn','Share gameplay data','Anonymous data about answers and levels, used to improve questions and difficulty',an)}</div>
@@ -2216,6 +2216,7 @@ function openSettings(){hideAll();const st=PL.settings,an=!!(PL.consent&&PL.cons
   $('pop').hidden=false;$('sQ').value=st.quality;$('sEx').value=PL.exam||'';$('sEx').onchange=e=>{PL.exam=e.target.value;saveP();try{Remote.loadQuestions&&Remote.loadQuestions(null,{})}catch(_){}};
   const bind=(id,k)=>$(id).onchange=e=>{st[k]=e.target.checked;saveP();applySettings()};bind('sSnd','sound');bind('sHap','haptic');bind('sMot','motion');bind('sBig','big');bind('sRep','replay');
   $('sQ').onchange=e=>{st.quality=e.target.value;if(st.quality==='auto')window.__lowQ=false;saveP();applySettings()};
+  $('s3d').checked=!!window.__r3on||localStorage.getItem('cor_r3d')==='1';$('s3d').onchange=e=>{try{localStorage.setItem('cor_r3d',e.target.checked?'1':'0');localStorage.removeItem('cor_r3d_tier')}catch(_){}location.reload()};
   $('sAn').onchange=e=>{PL.consent=Object.assign(PL.consent||{},{analytics:e.target.checked,ts:Date.now()});saveP()};
   $('sNotice').onclick=()=>openConsent(false);
   let armed=false;$('sDel').onclick=()=>{if(!armed){armed=true;$('sDel').textContent='Tap again to delete everything';$('sDelMsg').textContent='This removes your progress, cards and settings from this device. It cannot be undone.';return}
@@ -2286,8 +2287,12 @@ requestAnimationFrame(loop);
 </script>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
 <script>/* 3D world test: ?r3d=1 turns it on (remembered), ?r3d=0 turns it off. Read here, before social.js clears the query. */
-{const q=location.search;if(/[?&]r3d=1/.test(q))localStorage.setItem('cor_r3d','1');if(/[?&]r3d=0/.test(q))localStorage.removeItem('cor_r3d')}</script>
-<script type="module">if(localStorage.getItem('cor_r3d')==='1')import('./r3d.js?v=4').catch(e=>console.error(e));</script>
+{const q=location.search;if(/[?&]r3d=1/.test(q))localStorage.setItem('cor_r3d','1');if(/[?&]r3d=0/.test(q))localStorage.setItem('cor_r3d','0')}</script>
+<script type="module">/* 3D is the default. Stays 2D when the player chose 2D (?r3d=0 or Settings), when this device fell back for speed,
+   when the game's quality is set to low, or when WebGL is missing. */
+{const v=localStorage.getItem('cor_r3d'),gl=(()=>{try{return !!document.createElement('canvas').getContext('webgl2')}catch(e){return false}})();
+ let low=false;try{low=(JSON.parse(localStorage.getItem('cor_p')||'{}').settings||{}).quality==='low'}catch(e){}
+ if(v==='1'||(v!=='0'&&v!=='fail'&&gl&&!low))import('./r3d.js?v=5').catch(e=>console.error(e))}</script>
 <script src="story.js"></script>
 <script src="social.js"></script>
 <script src="replay.js"></script>
