@@ -8,6 +8,7 @@ import * as THREE from 'three';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
 import { stage2 } from './r3d-stage2.js?v=2';
 import { stage3 } from './r3d-stage3.js?v=1';
+import { makeRegions } from './r3d-regions.js?v=1';
 
 const host = document.getElementById('wrap'), c2d = document.getElementById('c');
 const cv = document.createElement('canvas');
@@ -30,9 +31,9 @@ const mat = (c, r = .8, extra = {}) => new THREE.MeshStandardMaterial({ color: c
 // ---------------------------------------------------------------- sky + light (follow the camera)
 const SUN = new THREE.Vector3(.45, .55, -.7).normalize();
 const sky = new THREE.Mesh(new THREE.SphereGeometry(250, 32, 16), new THREE.ShaderMaterial({
-  side: THREE.BackSide, depthWrite: false, fog: false, uniforms: { uSun: { value: SUN } },
+  side: THREE.BackSide, depthWrite: false, fog: false, uniforms: { uSun: { value: SUN }, uTop: { value: new THREE.Color(0x3a8fe0) }, uHz: { value: new THREE.Color(0xd6ecfb) } },
   vertexShader: 'varying vec3 d;void main(){d=normalize(position);gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',
-  fragmentShader: 'uniform vec3 uSun;varying vec3 d;void main(){float y=d.y;vec3 top=vec3(.20,.55,.95),hz=vec3(.83,.92,.98);vec3 c=mix(hz,top,pow(smoothstep(0.,.6,y),.8));float s=max(dot(normalize(d),uSun),0.);c+=vec3(1.,.93,.75)*(pow(s,80.)*.9+pow(s,6.)*.12);gl_FragColor=vec4(c,1.);}',
+  fragmentShader: 'uniform vec3 uSun;uniform vec3 uTop;uniform vec3 uHz;varying vec3 d;void main(){float y=d.y;vec3 top=uTop,hz=uHz;vec3 c=mix(hz,top,pow(smoothstep(0.,.6,y),.8));float s=max(dot(normalize(d),uSun),0.);c+=vec3(1.,.93,.75)*(pow(s,80.)*.9+pow(s,6.)*.12);gl_FragColor=vec4(c,1.);}',
 }));
 sky.renderOrder = -1; scene.add(sky);
 scene.add(new THREE.HemisphereLight(0xdff1ff, 0x6f9a52, 1.15));
@@ -58,7 +59,8 @@ grass.rotation.x = -Math.PI / 2; grass.position.y = -.01; grass.receiveShadow = 
 const roadT = noiseTex('#efd9ae', ['#e6cc9a', '#f6e4c0', '#e9d2a4'], 600, 512, true); const ROAD_TILE = 4; roadT.repeat.set(1, LEN / ROAD_TILE);
 const road = new THREE.Mesh(new THREE.PlaneGeometry(4, LEN), new THREE.MeshStandardMaterial({ map: roadT, roughness: .95 }));
 road.rotation.x = -Math.PI / 2; road.receiveShadow = true; scene.add(road);
-const kerbs = [-1, 1].map((sx) => { const k = new THREE.Mesh(new RoundedBoxGeometry(.22, .1, LEN, 2, .03), mat(0xffffff, .5)); k.position.set(sx * 2.08, .04, 0); k.receiveShadow = true; scene.add(k); return k; });
+const kerbMat = mat(0xffffff, .5);
+const kerbs = [-1, 1].map((sx) => { const k = new THREE.Mesh(new RoundedBoxGeometry(.22, .1, LEN, 2, .03), kerbMat); k.position.set(sx * 2.08, .04, 0); k.receiveShadow = true; scene.add(k); return k; });
 
 // ---------------------------------------------------------------- scenery pool (recycled along the road)
 const canopyG = new THREE.IcosahedronGeometry(1, 2);
@@ -93,20 +95,31 @@ function flowers() {
 }
 const h32 = (n) => { n = Math.imul(n ^ 61 ^ (n >>> 16), 9); n ^= n >>> 4; n = Math.imul(n, 0x27d4eb2d); return (n ^ (n >>> 15)) >>> 0; };
 const SLOT = 7, SLOTS = 18;                      // one prop per side every 7 units, 18 slots deep
-const pool = [];
-for (let i = 0; i < SLOTS * 2; i++) {
-  const side = i % 2 ? 1 : -1, h = h32(i * 7 + 3);
-  const kind = h % 7;
-  let obj;
-  if (kind < 2) obj = tree(.55 + (h % 5) * .04, ((h >> 4) % 7 - 3) * .01);
-  else if (kind < 4) obj = palm(.55 + (h % 4) * .04);
-  else if (kind === 4) obj = house([0xfff4e3, 0xe8f3ff, 0xffe9d6][h % 3], [0xd9573b, 0x3b7bd9, 0xe07a2e][(h >> 3) % 3]);
-  else obj = flowers();
-  obj.scale.multiplyScalar(kind === 4 ? .55 : kind > 4 ? .5 : 1);
-  obj.userData = { side, kind, off: (h % 100) / 100 * SLOT * .6, dx: kind === 4 ? 6 + (h % 3) : kind > 4 ? 2.9 : 3.3 + (h % 4) * .5 };
-  if (kind === 4) obj.rotation.y = side < 0 ? .5 : -.5;
-  scene.add(obj); pool.push(obj);
+const REGIONS = makeRegions({ mat, tree, palm, house, flowers });
+let pool = [], regionKey = null;
+function retex(tex, cols, dashes) {
+  const fresh = noiseTex(cols[0], cols.slice(1), dashes ? 600 : 900, 512, dashes);
+  tex.image = fresh.image; tex.needsUpdate = true;
 }
+function setRegion(k) {
+  const R = REGIONS[k] || REGIONS.village; regionKey = k;
+  for (const o of pool) scene.remove(o);
+  pool = [];
+  const bag = []; R.props.forEach((p, idx) => { for (let w = 0; w < p[1]; w++) bag.push(idx); });
+  for (let i = 0; i < SLOTS * 2; i++) {
+    const side = i % 2 ? 1 : -1, h = h32(i * 7 + 3), [build, , dx, sc] = R.props[bag[h % bag.length]];
+    const obj = build(h >>> 3); obj.scale.multiplyScalar(sc);
+    obj.traverse((m) => { if (m.isMesh) m.castShadow = true; });
+    obj.userData = { side, off: (h % 100) / 100 * SLOT * .6, dx: dx + ((h >>> 5) % 3) * .35 };
+    obj.rotation.y = (side < 0 ? .45 : -.45) + (((h >>> 7) % 5) - 2) * .08;
+    scene.add(obj); pool.push(obj);
+  }
+  sky.material.uniforms.uTop.value.set(R.sky[0]); sky.material.uniforms.uHz.value.set(R.sky[1]);
+  scene.fog.color.set(R.fog);
+  retex(grassT, R.ground, false); retex(roadT, R.road, true);
+  kerbMat.color.set(R.kerb);
+}
+setRegion('village');
 
 // ---------------------------------------------------------------- students (pool, synced to S.members)
 const SKIN = [0xc98e62, 0xb57a52, 0xd9a27a, 0xa86d47, 0xc08458];
@@ -217,6 +230,7 @@ function frame(o) {
   grass.position.z = -mid; road.position.z = -mid; kerbs.forEach((k) => (k.position.z = -mid));
   roadT.offset.y = (mid % ROAD_TILE) / ROAD_TILE; grassT.offset.y = (mid % 6) / 6;
   // scenery: slot index from the camera so props stream past
+  const rk = (S && S.story && S.story.ch && S.story.ch.k) || 'village'; if (rk !== regionKey) setRegion(rk);
   const first = Math.floor(cz / SLOT);
   for (let i = 0; i < pool.length; i++) {
     const p = pool[i], s = Math.floor(i / 2), slot = first + ((s - first) % SLOTS + SLOTS) % SLOTS;
