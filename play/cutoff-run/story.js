@@ -503,7 +503,7 @@ window.storyFinish=function(){if(!S||!S.story)return false;const s=S.story,z0=S.
   const V=villLooks();V.forEach((l,i)=>{const x=(i<3?-1:1)*(2.45+(i%3)*.28),zz=z0-.1+(i%3)*.2,p=P(x,y0+jump(i),zz);if(p)guy(p[0],p[1],p[2]*.95,l,{t:S.t,ph:i,face:'front',cheer:true})});
   return true};
 window.storyD=function(D){const s=S.story;if(!s)return;
-  ST.sideProps(D);
+  if(!window.__r3on)ST.sideProps(D);
   {const z0=S.ladderEnd+2,y0=STEPS.length*.3,arr=s.arrive;if(z0-camZ<70){const jump=k=>arr?Math.abs(Math.sin(S.t*7+k))*.2:Math.abs(Math.sin(S.t*3+k))*.05;
     [['paati',-1.95,z0-.3],['amma',-1.3,z0-.7],['appa',1.4,z0-.6]].forEach(([w,x,zz],i)=>D.push({z:zz,f:()=>{const p=P(x,y0+jump(i+3),zz);if(p)blit(ST.famSprite(w,(Math.floor(S.t*(arr?6:2))+i)%4),p[0],p[1],p[2],1.25)}}));
     if(arr){const u=Math.min(1,arr.t/1.1),hx=S.x+(-.72-S.x)*u,hz=arr.z0+(z0-.75-arr.z0)*u;D.push({z:hz-.01,f:()=>{const p=P(hx,y0*Math.min(1,u*1.4),hz);if(!p)return;
