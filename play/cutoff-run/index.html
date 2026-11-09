@@ -937,7 +937,7 @@ function csatQ(r=Math.random){const ri=(a,b)=>a+Math.floor(r()*(b-a+1));const t=
 
 // ===================================================== LEVEL BUILD =====================================================
 let S=null;
-const STEPS=[1.2,1.4,1.6,1.8,2,2.5,3,3.5,4,5],STEP_D=2.4;
+const STEPS=[1.2,1.4,1.6,1.8,2,2.5,3,3.5,4,5],STEP_D=2.4;window.STEPS=STEPS;window.STEP_D=STEP_D;
 const stepStage=i=>i<4?'MAINS':i<7?'INTERVIEW':'LBSNAA';
 const CAP=36; /* figures drawn; the badge carries the real count, so a big batch reads as a group, not a blob */
 const PACE_D=28,DASH_D=5.5;
@@ -1632,15 +1632,15 @@ function draw(){
   if(S.boss)drawZone();
   for(let i=STEPS.length-1;i>=0;i--){const z0=S.ladderZ+i*STEP_D,z1=z0+STEP_D,y=(i+1)*.3;if(z1<camZ+.45)continue;
     const col=['#ff4d5e','#ff8a1f','#ffd23f','#9be15d','#3ddc84','#2ec4ff','#2f6bff','#8a5cff','#d14dff','#ff4da6'][i];
-    const zz=Math.max(z0,camZ+.45);quad(P(-2,y,z1),P(2,y,z1),P(2,y,zz),P(-2,y,zz),col);
-    if(z0>camZ+.45&&z0-camZ<38){quad(P(-2,y-.3,z0),P(2,y-.3,z0),P(2,y,z0),P(-2,y,z0),'rgba(0,0,0,.28)');const f=P(0,y-.15,z0);if(f){txt('×'+STEPS[i],f[0],f[1],Math.max(11,f[2]*.4),'#fff');if(i===0||i===4||i===7)txt(stepStage(i),f[0]-f[2]*1.4,f[1],Math.max(7,f[2]*.2),'#fff')}}}
+    const zz=Math.max(z0,camZ+.45);if(!r3)quad(P(-2,y,z1),P(2,y,z1),P(2,y,zz),P(-2,y,zz),col);
+    if(z0>camZ+.45&&z0-camZ<38){if(!r3)quad(P(-2,y-.3,z0),P(2,y-.3,z0),P(2,y,z0),P(-2,y,z0),'rgba(0,0,0,.28)');const f=P(0,y-.15,z0);if(f){txt('×'+STEPS[i],f[0],f[1],Math.max(11,f[2]*.4),'#fff');if(i===0||i===4||i===7)txt(stepStage(i),f[0]-f[2]*1.4,f[1],Math.max(7,f[2]*.2),'#fff')}}}
   const D=[];
   for(const it of S.items)if((!S.boss||it.z<S.boss.z-1)&&(it.z>S.dist-1.2||it.type==='quiz'||it.type==='math'||it.type==='branch')&&it.z>camZ+.3&&it.z-camZ<(it.type==='quiz'||it.type==='math'||it.type==='branch'?55:42)&&it.type!=='hole'&&it.type!=='shoot'&&it.type!=='boss'&&it.type!=='ramp'&&it.type!=='ambush')D.push({z:it.z,f:()=>drawItem(it)});
   if(S.members.length&&(S.phase==='run'||S.phase==='battle'||S.phase==='shoot'||S.phase==='boss')){const sp=r3?null:P(S.x,0,S.dist+.15);if(sp){const r=(clusterR()*S.tight+.3)*sp[2];ctx.fillStyle='rgba(0,30,80,.16)';ctx.beginPath();ctx.ellipse(sp[0],sp[1]-r*.05,r,r*.32,0,0,6.283);ctx.fill()}}
   S.bb=null;for(const m of S.members)D.push({z:S.dist+m.z,f:()=>{const p=P(S.x+m.x,m.y+climbY+(S.phase==='run'?airAt(S.dist+m.z):S.airY),S.dist+m.z);if(p){const k=p[2]*crowdK(S.members.length),b=S.bb||(S.bb=[1e9,1e9,-1e9,-1e9]);b[0]=Math.min(b[0],p[0]-k*.4);b[2]=Math.max(b[2],p[0]+k*.4);b[1]=Math.min(b[1],p[1]-k*1.15);b[3]=Math.max(b[3],p[1]+k*.12)}if(p&&!r3)guy(p[0],p[1],p[2]*crowdK(S.members.length),m.look,{run:(S.phase==='run'&&S.airY<.1)||S.phase==='climb',t:S.t,ph:m.ph,face:'back'})}});
-  for(const r of S.rivals)if(S.rivalZ-camZ<48)D.push({z:S.rivalZ+r.z,f:()=>{const p=P(r.x,0,S.rivalZ+r.z);if(p)guy(p[0],p[1],p[2]*crowdK(S.rivals.length),r.look,{run:S.phase==='battle',t:S.t,ph:r.ph,face:'front',angry:true})}});
-  for(const st of S.standers)D.push({z:st.z,f:()=>{const p=P(st.x,st.y,st.z);if(p)guy(p[0],p[1],p[2],st.look,{t:S.t,ph:st.ph,face:'front',cheer:true,lift:Math.abs(Math.sin(S.t*6+st.ph))*p[2]*.08})}});
-  for(const f of S.flyers)D.push({z:f.z,f:()=>{const p=P(f.x,f.y,f.z);if(p){ctx.globalAlpha=Math.min(1,f.life*1.5);guy(p[0],p[1],p[2],f.look,{t:S.t,ph:0,face:'front',panic:true,rot:f.rot,noShadow:true});ctx.globalAlpha=1}}});
+  if(!r3)for(const r of S.rivals)if(S.rivalZ-camZ<48)D.push({z:S.rivalZ+r.z,f:()=>{const p=P(r.x,0,S.rivalZ+r.z);if(p)guy(p[0],p[1],p[2]*crowdK(S.rivals.length),r.look,{run:S.phase==='battle',t:S.t,ph:r.ph,face:'front',angry:true})}});
+  if(!r3)for(const st of S.standers)D.push({z:st.z,f:()=>{const p=P(st.x,st.y,st.z);if(p)guy(p[0],p[1],p[2],st.look,{t:S.t,ph:st.ph,face:'front',cheer:true,lift:Math.abs(Math.sin(S.t*6+st.ph))*p[2]*.08})}});
+  if(!r3)for(const f of S.flyers)D.push({z:f.z,f:()=>{const p=P(f.x,f.y,f.z);if(p){ctx.globalAlpha=Math.min(1,f.life*1.5);guy(p[0],p[1],p[2],f.look,{t:S.t,ph:0,face:'front',panic:true,rot:f.rot,noShadow:true});ctx.globalAlpha=1}}});
   if(S.arena)for(const m of S.arena.mons)if(m.alive&&m.z-camZ<40)D.push({z:m.z,f:()=>{const p=P(m.x,0,m.z);if(!p)return;
       if(m.kind==='min'){monster(p[0],p[1],p[2]*.75,m,S.t);return}
       monster(p[0],p[1],p[2]*1.35,m,S.t);
@@ -1648,7 +1648,7 @@ function draw(){
         ctx.fillStyle='#fff';rr(lp[0]-w/2,lp[1]-h,w,h,fs*.3);ctx.fill();ctx.strokeStyle='#14213d';ctx.lineWidth=2;ctx.stroke();L.forEach((l,i)=>txt(l,lp[0]+fs*.38,lp[1]-h+fs*.3+fs*.55+i*fs*1.1,fs,'#14213d',null));
         txt(m.label,lp[0]-w/2+fs*.6,lp[1]-h/2,fs*.9,'#d6336c',null);
         const bw=Math.max(40,lp[2]*.75),by=lp[1]+4;ctx.fillStyle='#14213d';rr(lp[0]-bw/2-2,by-2,bw+4,9,4);ctx.fill();ctx.fillStyle='#ff4d5e';rr(lp[0]-bw/2,by,bw*m.hp/m.max,5,3);ctx.fill()}}});
-  for(const it of S.items)if(it.type==='ambush'&&it.init&&it.n>0&&it.z-camZ<46&&it.z>camZ){for(const e of it.crowd)D.push({z:it.z+e.oz,f:()=>{const p=P(it.x+e.ox,0,it.z+e.oz);if(p)guy(p[0],p[1],p[2]*crowdK(it.crowd.length),e.look,{run:!!it.fighting,t:S.t,ph:e.ph,face:'front',angry:true})}});
+  for(const it of S.items)if(it.type==='ambush'&&it.init&&it.n>0&&it.z-camZ<46&&it.z>camZ){if(!r3)for(const e of it.crowd)D.push({z:it.z+e.oz,f:()=>{const p=P(it.x+e.ox,0,it.z+e.oz);if(p)guy(p[0],p[1],p[2]*crowdK(it.crowd.length),e.look,{run:!!it.fighting,t:S.t,ph:e.ph,face:'front',angry:true})}});
     D.push({z:it.z-.5,f:()=>{const p=P(it.x,1.25+it.r*.4,it.z);if(!p)return;const t=String(it.n),fs=Math.max(14,p[2]*.28);ctx.font=`${fs}px "Lilita One",sans-serif`;const w=ctx.measureText(t).width+20,h=fs*1.4;ctx.fillStyle='#14213d';rr(p[0]-w/2-3,p[1]-h/2-3,w+6,h+6,10);ctx.fill();ctx.fillStyle='#ff4d5e';rr(p[0]-w/2,p[1]-h/2,w,h,8);ctx.fill();txt(t,p[0],p[1]+1,fs,'#fff')}})}
   if(S.boss){D.push({z:bossZ(S.boss),f:()=>bossDraw(S.boss)});D.push({z:S.dist+.2,f:drawBossFx})}
   if(S.rivalCount>0&&S.rivalZ-camZ<45)D.push({z:S.rivalZ+2,f:drawCutoffSign});
@@ -2287,7 +2287,7 @@ requestAnimationFrame(loop);
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
 <script>/* 3D world test: ?r3d=1 turns it on (remembered), ?r3d=0 turns it off. Read here, before social.js clears the query. */
 {const q=location.search;if(/[?&]r3d=1/.test(q))localStorage.setItem('cor_r3d','1');if(/[?&]r3d=0/.test(q))localStorage.removeItem('cor_r3d')}</script>
-<script type="module">if(localStorage.getItem('cor_r3d')==='1')import('./r3d.js?v=2').catch(e=>console.error(e));</script>
+<script type="module">if(localStorage.getItem('cor_r3d')==='1')import('./r3d.js?v=3').catch(e=>console.error(e));</script>
 <script src="story.js"></script>
 <script src="social.js"></script>
 <script src="replay.js"></script>

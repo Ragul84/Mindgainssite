@@ -6,7 +6,8 @@
 // places at a gate lands on the 3D gate. Game coordinates map straight across: X = x, Y = y, Z = -z.
 import * as THREE from 'three';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
-import { stage2 } from './r3d-stage2.js?v=1';
+import { stage2 } from './r3d-stage2.js?v=2';
+import { stage3 } from './r3d-stage3.js?v=1';
 
 const host = document.getElementById('wrap'), c2d = document.getElementById('c');
 const cv = document.createElement('canvas');
@@ -141,7 +142,7 @@ function student(i, grey = false, lead = false) {
   for (const sx of [-1, 1]) { const e = new THREE.Mesh(geo.ear, skin); e.position.set(sx * .24, 1.69, 0); g.add(e); }
   const cap = new THREE.Mesh(geo.cap, hairM); cap.position.y = 1.72; cap.rotation.x = .38; g.add(cap);
   if (girl) { const p = new THREE.Mesh(geo.plait, hairM); p.position.set(0, 1.38, .2); p.rotation.x = .25; g.add(p); }
-  g.scale.setScalar(K); g.userData = { limbs };
+  g.scale.setScalar(K); g.userData = { limbs, shirtParts: g.children.filter((c) => c.material === SHIRT).concat(limbs.slice(2).map((a) => a.children[0])), bag };
   return g;
 }
 const crowd = [];
@@ -168,6 +169,7 @@ function makeMiga() {
 }
 const miga = makeMiga(); scene.add(miga);
 const stage2Update = stage2({ scene, mat, student, K });
+const stage3Update = stage3({ scene, mat, student, K });
 
 // ---------------------------------------------------------------- gates (one arch per lane)
 const LANE_COL = [0x1cb0f6, 0x58cc02, 0xffc800, 0xff4b8b];
@@ -239,6 +241,7 @@ function frame(o) {
     miga.userData.legs.forEach((l, i) => (l.rotation.x = Math.sin(ph + i * Math.PI / 2) * .8)); miga.userData.tail.rotation.z = Math.sin(t * 6) * .4;
   } else miga.visible = false;
   stage2Update(S, miga);
+  stage3Update(S);
   // gates
   const live = new Set();
   if (S) for (const it of S.items) {
