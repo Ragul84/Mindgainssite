@@ -131,7 +131,7 @@ openMenu=function(){_openMenu();
   const pb=$('paperBtn'),mb=$('mockBtn');if(pb)pb.onclick=()=>startEvent('paper');if(mb)mb.onclick=()=>startEvent('mock');
   const ex=(CONFIG.examDates||[]).map(e=>({n:e.name,d:Math.ceil((new Date(e.date+'T00:00:00+05:30')-Date.now())/864e5)})).filter(e=>e.d>=0).sort((a,b)=>a.d-b.d)[0];
   if(ex&&$('mchips'))$('mchips').insertAdjacentHTML('beforeend',`<span class="chip">⏳ ${esc(ex.n)} in ${ex.d} day${ex.d===1?'':'s'}</span>`);
-  if(online()&&mb)fetch(gameUrl('/mock?status=1&device='+DEV)).then(r=>r.json()).then(j=>{if(j.live)mb.textContent='Mock LIVE now';}).catch(()=>{})};
+  if(online()&&mb)fetch(gameUrl('/mock?status=1&device='+DEV)).then(r=>r.json()).then(j=>{if(j.live){mb.classList.add('live');($('mockSub')||mb).textContent='LIVE now · tap to join'}}).catch(()=>{})};
 
 // ---------- deep links: ?c=challenge  ?g=group  ?paper=1  ?mock=1 ----------
 function deepLink(){const p=new URLSearchParams(location.search);if(![...p.keys()].length)return;

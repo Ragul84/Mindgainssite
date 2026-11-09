@@ -57,8 +57,8 @@ function sprite(key,w,h,fn){if(SPR[key])return SPR[key];const c=document.createE
 ST.sprite=sprite;
 function rrp(g,x,y,w,h,r){g.beginPath();if(g.roundRect)g.roundRect(x,y,w,h,Math.max(0,r));else g.rect(x,y,w,h)}
 ST.rrp=rrp;
-const INK='#14213d';
-function fs(g,fill,lw){g.fillStyle=fill;g.fill();if(lw){g.lineWidth=lw;g.strokeStyle=INK;g.stroke()}}
+const INK='rgba(20,33,61,.32)';
+function fs(g,fill,lw){g.fillStyle=fill;g.fill();if(lw){g.lineWidth=lw*.55;g.strokeStyle=INK;g.stroke()}} /* soft outline: thin, translucent */
 ST.fs=fs;
 // draw a sprite anchored at feet (sx,sy) with world height hw (units) at projection scale s
 function blit(c,sx,sy,s,hw,alpha){const hp=s*hw,wp=hp*c.width/c.height;if(hp<2)return;if(alpha!=null)ctx.globalAlpha=alpha;ctx.drawImage(c,sx-wp/2,sy-hp,wp,hp);if(alpha!=null)ctx.globalAlpha=1}
@@ -172,7 +172,7 @@ ST.famSprite=famSprite;
 
 (function(){
 'use strict';
-const ST=window.STORY,{sprite,rrp,fs,blit}=ST,INK='#14213d';
+const ST=window.STORY,{sprite,rrp,fs,blit}=ST,INK='rgba(20,33,61,.32)';
 const FONT='"Lilita One","Arial Black",sans-serif';
 function T(g,t,x,y,size,fill,stroke){g.font=`${size}px ${FONT}`;g.textAlign='center';g.textBaseline='middle';if(stroke){g.lineWidth=Math.max(2,size*.18);g.strokeStyle=stroke;g.strokeText(t,x,y)}g.fillStyle=fill;g.fillText(t,x,y)}
 ST.T=T;
@@ -279,16 +279,16 @@ function propSprite(k){const d=PROPS[k],px=PADX(k),pt=PADT(k);return sprite('p2_
 const propH=k=>PROPS[k][0]*(PROPS[k][2]+PADT(k))/PROPS[k][2];
 ST.propSprite=propSprite;ST.PROPS=PROPS;
 function h32(n){n=(n^61)^(n>>>16);n=n+(n<<3)|0;n^=n>>>4;n=Math.imul(n,0x27d4eb2d);return(n^(n>>>15))>>>0}
-ST.sideProps=function(D){const C=S.story.ch,set=SETS[C.k],step=window.__lowQ?9:6,lim=Math.min(camZ+70,S.ladderZ-3);
-  for(let z=Math.ceil((camZ+1)/step)*step;z<lim;z+=step){const h=h32(z|0);for(const sg of[-1,1]){const hh=h32(h+(sg>0?7:3));if(hh%5===0)continue;const k=set[hh%set.length],d=PROPS[k];const big=d[0]>3;
-    const x=sg*(big?(C.k==='coaching'?4.6:4.3):3.1+(hh%3)*.35),zz=z+(hh%100)/100*2;if(C.k==='chennai'&&(k==='boat'))continue;
+ST.sideProps=function(D){const C=S.story.ch,set=SETS[C.k],step=window.__lowQ?14:11,lim=Math.min(camZ+70,S.ladderZ-3);
+  for(let z=Math.ceil((camZ+1)/step)*step;z<lim;z+=step){const h=h32(z|0);for(const sg of[-1,1]){const hh=h32(h+(sg>0?7:3));if(hh%5<2)continue;/* sparse roadside: the road and the gates are the subject */const k=set[hh%set.length],d=PROPS[k];const big=d[0]>3;
+    const x=sg*(big?(C.k==='coaching'?5.2:5.4):3.6+(hh%3)*.4),zz=z+(hh%100)/100*2;if(C.k==='chennai'&&(k==='boat'))continue;
     D.push({z:zz,f:()=>{const p=P(x,0,zz);if(!p)return;const c=propSprite(k),hp=p[2]*propH(k),wp=hp*c.width/c.height*.6,l=p[0]-wp/2,r=p[0]+wp/2,vis=Math.max(0,Math.min(r,W)-Math.max(l,0))/Math.max(1,wp);
-      if(vis<.35)return;blit(c,p[0],p[1],p[2],propH(k),vis<.75?(vis-.35)/.4:null)}})}}};
+      if(vis<.35)return;const far=Math.max(.25,Math.min(1,(70-(zz-camZ))/38)),a=(vis<.75?(vis-.35)/.4:1)*far;blit(c,p[0],p[1],p[2],propH(k),a<.99?a:null)}})}}};
 })();
 
 (function(){
 'use strict';
-const ST=window.STORY,{sprite,rrp,fs,T}=ST,INK='#14213d';
+const ST=window.STORY,{sprite,rrp,fs,T}=ST,INK='rgba(20,33,61,.32)';
 const BW=360,BH=420;
 function gem(g,x,y,r,c){g.beginPath();g.moveTo(x,y-r);g.lineTo(x+r*.8,y);g.lineTo(x,y+r);g.lineTo(x-r*.8,y);g.closePath();fs(g,c||'#3ee6e0',3);g.fillStyle='rgba(255,255,255,.7)';g.beginPath();g.arc(x-r*.2,y-r*.3,r*.22,0,6.283);g.fill()}
 function glow(g,x,y,r,c){const gr=g.createRadialGradient(x,y,0,x,y,r);gr.addColorStop(0,c);gr.addColorStop(1,'rgba(0,0,0,0)');g.fillStyle=gr;g.beginPath();g.arc(x,y,r,0,6.283);g.fill()}
@@ -418,7 +418,7 @@ const _end=window.bossEnd;window.bossEnd=function(){const B=S&&S.boss;const win=
 
 (function(){
 'use strict';
-const ST=window.STORY,{CH,STAGES,sprite,rrp,fs,T,blit}=ST,INK='#14213d';
+const ST=window.STORY,{CH,STAGES,sprite,rrp,fs,T,blit}=ST,INK='rgba(20,33,61,.32)';
 const LETTERS=['Kanna, eat on time and sleep well. Love, Amma.','Proud of you for leaving home to chase this. Appa.','Read slowly, remember forever. Your Paati.','We prayed for you this morning. Stay calm. Amma.',
  'Your little cousin says she wants to be like you. Appa.','Wear the cream jacket. You look like a leader. Paati.','The village school wants you to visit and speak. Amma.','Come home soon. Your favourite payasam is waiting. Appa.'];
 ST.LETTERS=LETTERS;

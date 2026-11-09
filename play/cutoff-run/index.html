@@ -389,6 +389,94 @@ body.rm .mnd,body.rm .mpin{animation:none}
 .mnd .tier{position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);font:900 9px/1 system-ui;letter-spacing:.06em;padding:2px 5px;border-radius:6px;background:#c0283a;color:#fff;white-space:nowrap}.mnd .tier.t2{background:#14213d}
 .mnd.season{width:40px;height:40px}.msoon{position:absolute;z-index:2;transform:translate(-50%,-50%);width:186px;background:#fff;border:3px dashed #14213d;border-radius:16px;padding:12px 14px;text-align:center;font:800 13px/1.35 system-ui;color:#4a5875;box-shadow:0 4px 0 rgba(20,33,61,.25)}
 .msoon b{display:block;font-family:"Lilita One",system-ui;font-weight:400;font-size:18px;color:#14213d}
+
+/* ===== Design system v3 (Duolingo-grade calm): one button, colours with jobs, white space =====
+   green = go / correct, blue = info, gold = rewards, red = wrong. Everything else is white + grey. */
+:root{
+  --go:#58cc02; --go-d:#46a302; --info:#1cb0f6; --info-d:#1899d6; --rw:#ffc800; --rw-d:#e5a500; --no:#ff4b4b; --no-d:#ea2b2b;
+  --sf:#ffffff; --sf2:#f7f7f7; --ln:#e5e5e5; --tx:#3c3c3c; --tx2:#777777;
+}
+.card{border:0;border-radius:24px;box-shadow:0 18px 50px rgba(0,0,0,.28);padding:20px 18px;gap:14px;color:var(--tx)}
+.card h1,.ttl{color:var(--tx);text-shadow:none;letter-spacing:-.5px}
+.btn{font-size:19px;letter-spacing:.3px;color:#fff;background:var(--go);border:0;border-radius:16px;padding:13px 12px;box-shadow:0 4px 0 var(--go-d);text-shadow:none;transition:filter .12s}
+.btn:hover{filter:brightness(1.05)}
+.btn:active{transform:translateY(4px);box-shadow:0 0 0 var(--go-d)}
+.btn.blue{background:var(--info);box-shadow:0 4px 0 var(--info-d);font-size:17px}
+.btn.alt,.btn.retry{background:var(--go);box-shadow:0 4px 0 var(--go-d)}
+.btn.pink{background:var(--sf);color:var(--tx);box-shadow:0 0 0 2px var(--ln) inset,0 4px 0 var(--ln);font-size:17px}
+.btn.gold{background:var(--rw);color:#4b3a00;box-shadow:0 4px 0 var(--rw-d);animation:none}
+.btn.sm{font-size:16px;padding:9px;box-shadow:0 3px 0 rgba(0,0,0,.18)}
+.btn.blue.sm{box-shadow:0 3px 0 var(--info-d)}.btn.gold.sm{box-shadow:0 3px 0 var(--rw-d)}
+.btn.big{font-size:24px;padding:15px 12px}
+.x{background:var(--sf);border:2px solid var(--ln);border-radius:12px;color:var(--tx2);font-size:15px;padding:6px 14px}
+.chip{border:2px solid var(--ln);background:var(--sf);color:var(--tx)}
+.chip.fire{background:#fff4e5;border-color:#ffd9a8;color:#c2410c}
+.stage{border:0;border-radius:18px}
+.bubble{border:2px solid var(--ln);box-shadow:none;color:var(--tx)}
+.bubble.r:after{border-left-color:var(--ln)}.bubble.l:after{border-right-color:var(--ln)}
+.note,.eyebrow,.sub{color:var(--tx2)}
+
+/* home */
+.card.home{gap:12px;padding:18px 16px 10px}
+.hm-top{display:flex;align-items:center;gap:12px}
+.hm-miga{flex:none;width:92px}.hm-miga .miga{width:92px}
+.hm-hi{display:flex;flex-direction:column;gap:4px;min-width:0}
+.hm-hi .mtop{justify-content:flex-start;min-height:0}
+.hm-hi .ttl{font-size:34px;text-align:left;color:var(--tx)}
+.hm-bub{margin:0;font-weight:800;font-size:14px;line-height:1.3;color:var(--tx2)}
+.hm-sec{font-family:var(--display);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--tx2);margin:2px 2px -4px}
+.hm-list{display:flex;flex-direction:column;gap:8px}
+.hm-row{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:var(--sf);border:2px solid var(--ln);border-radius:16px;padding:10px 12px;box-shadow:0 3px 0 var(--ln);cursor:pointer;color:var(--tx);font-family:var(--body)}
+.hm-row:active{transform:translateY(3px);box-shadow:none}
+.hm-row:focus-visible{outline:3px solid var(--info);outline-offset:2px}
+.hm-ic{flex:none;width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-style:normal;font-size:20px;font-weight:900;color:#fff;background:#a0aec0}
+.hm-ic svg{width:22px;height:22px}
+.hm-ic.gold{background:var(--rw);color:#4b3a00}.hm-ic.blue{background:var(--info)}.hm-ic.green{background:var(--go)}
+.hm-t{flex:1;min-width:0;display:flex;flex-direction:column}
+.hm-t b{font-family:var(--display);font-weight:400;font-size:17px;line-height:1.15}
+.hm-t small{font-weight:700;font-size:12.5px;color:var(--tx2);line-height:1.25}
+.hm-row em{font-style:normal;font-size:24px;color:#c4c4c4;line-height:1}
+.hm-row.live{border-color:var(--no)}.hm-row.live small{color:var(--no);font-weight:900}
+.tabbar{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ln);margin:4px -16px 0;padding:8px 6px 2px}
+.tabbar .tile{background:none;border:0;box-shadow:none;color:var(--tx2);font-size:12px;padding:4px 0}
+.tabbar .tile svg{width:28px;height:28px}
+.tabbar .tile:active{transform:none}
+#pcard .hm-list .hm-ic{background:#eef2f7;color:var(--tx)}
+
+/* question card: calm, answers are the buttons */
+.q{border:0;border-radius:18px;background:#fff;background-image:none;box-shadow:0 10px 28px rgba(0,0,0,.25);padding:0 0 12px;overflow:hidden}
+.qh{background:none;color:var(--tx2);padding:10px 14px 0;font-size:12px}
+.qh .tm{background:var(--ln)}.qh .tm b{background:var(--info)}
+#qt{color:var(--tx);font-size:18px;padding:6px 14px 10px}
+.opts{gap:8px;padding:0 12px}
+.opt{border:2px solid var(--ln);border-radius:14px;padding:10px 10px;box-shadow:0 3px 0 var(--ln);font-size:16px;background:#fff;color:var(--tx)}
+.opt .bub{border:2px solid var(--ln);color:var(--tx2);width:26px;height:26px;font-size:13px}
+.opt.on{border-color:var(--info);background:#ddf4ff;box-shadow:0 3px 0 var(--info-d);transform:none}
+.opt.on .bub{border-color:var(--info);color:var(--info-d)}
+.opt.fill .bub{background:var(--tx);border-color:var(--tx);color:#fff}
+.opt.ok{border-color:var(--go);background:#d7ffb8;box-shadow:0 3px 0 var(--go-d)}
+.opt.no{border-color:var(--no);background:#ffdfe0;box-shadow:0 3px 0 var(--no-d)}
+#lock{display:none!important}
+.qbtns{justify-content:flex-end;margin:6px 12px 0}
+.lock.skip{background:none;border:0;box-shadow:none;color:var(--tx2);font-family:var(--display);font-size:14px;letter-spacing:.06em;padding:4px 6px;text-shadow:none}
+.stamp{border-width:2px;background:#fff}
+
+/* HUD: lighter chrome */
+.lvl{background:var(--sf);color:var(--tx);border:0;text-shadow:none;box-shadow:0 3px 0 rgba(0,0,0,.18);font-size:16px;padding:4px 12px}
+.bar{background:rgba(0,0,0,.25);border:0;height:12px}.bar i{background:var(--rw)}
+.marks{background:var(--sf);color:var(--tx);border:0;box-shadow:0 3px 0 rgba(0,0,0,.18);font-size:16px}
+.need{border:0;box-shadow:0 3px 0 rgba(0,0,0,.18);font-size:13px}
+body{background:#0f1c33}
+.sheet{border:0;border-radius:22px;box-shadow:0 14px 40px rgba(0,0,0,.3)}
+.ans{border:2px solid var(--ln);box-shadow:0 3px 0 var(--ln);font-family:var(--body);font-weight:900;color:var(--tx);background:#fff}
+.ans.ok{border-color:var(--go);background:#d7ffb8}.ans.no{border-color:var(--no);background:#ffdfe0}
+.stats div,.mis,.brow,.mode,.bld{border:0;background:var(--sf2)}
+.mode,.pick,.settile,.node{border:2px solid var(--ln);box-shadow:0 3px 0 var(--ln)}
+.banner{text-shadow:0 3px 12px rgba(0,0,0,.35)}
+.mbar2{border-bottom:0;box-shadow:0 2px 12px rgba(0,0,0,.12)}
+.mnd{border:0;box-shadow:0 5px 0 rgba(0,0,0,.2)}
+.tile .badge,.mprac .badge{border:0}
+@media (min-width:700px){#wrap{max-width:440px;margin:18px auto;height:calc(100% - 36px);border-radius:28px;box-shadow:0 30px 80px rgba(0,0,0,.45)}}
 </style>
 
 <div id="wrap">
@@ -408,14 +496,20 @@ body.rm .mnd,body.rm .mpin{animation:none}
 
   <div class="toast" id="toast"></div>
   <div class="ov" id="menu">
-    <div class="card">
-      <div class="stage"><div class="bubble r" id="mbub">Ready to beat the cut-off?</div><div id="mmiga"></div></div>
-      <div class="mtop" id="mchips"></div>
-      <h1 class="ttl">Cut-Off Run</h1>
+    <div class="card home">
+      <div class="hm-top">
+        <div class="hm-miga" id="mmiga"></div>
+        <div class="hm-hi"><div class="mtop" id="mchips"></div><h1 class="ttl">Cut-Off Run</h1><p class="hm-bub" id="mbub">Ready to beat the cut-off?</p></div>
+      </div>
       <button class="btn big" id="play"><span id="playT">Play level 1</span><small id="playS">UPSC Prelims run</small></button>
-      <div class="bgrid"><button class="btn gold sm" id="paperBtn">Daily Paper</button><button class="btn sm" id="mockBtn">All-India Mock</button></div>
-      <div class="bgrid"><button class="btn pink sm" id="daily">Today's news ↗</button><button class="btn blue sm" id="quickBtn">Quick Revision</button></div>
-      <div class="dock d4"><button class="tile" id="toMap"></button><button class="tile" id="toMissions"></button><button class="tile" id="toAlbum1"></button><button class="tile" id="toMore"></button></div>
+      <div class="hm-sec">Today</div>
+      <div class="hm-list">
+        <button class="hm-row" id="paperBtn"><i class="hm-ic gold">✎</i><span class="hm-t"><b>Daily Paper</b><small>10 questions · same for all India</small></span><em>›</em></button>
+        <button class="hm-row" id="mockBtn"><i class="hm-ic blue">◎</i><span class="hm-t"><b>All-India Mock</b><small id="mockSub">Every Sunday, 8–9 PM</small></span><em>›</em></button>
+        <button class="hm-row" id="quickBtn"><i class="hm-ic green">↻</i><span class="hm-t"><b id="quickT">Quick Revision</b><small>A short run from your weak spots</small></span><em>›</em></button>
+      </div>
+      <button id="daily" hidden></button>
+      <nav class="tabbar"><button class="tile" id="toMap"></button><button class="tile" id="toMissions"></button><button class="tile" id="toAlbum1"></button><button class="tile" id="toMore"></button></nav>
     </div>
   </div>
   <div class="ov" id="result" hidden><div class="coins" id="coins"></div><div class="card" id="rcard"></div></div>
@@ -845,7 +939,7 @@ function csatQ(r=Math.random){const ri=(a,b)=>a+Math.floor(r()*(b-a+1));const t=
 let S=null;
 const STEPS=[1.2,1.4,1.6,1.8,2,2.5,3,3.5,4,5],STEP_D=2.4;
 const stepStage=i=>i<4?'MAINS':i<7?'INTERVIEW':'LBSNAA';
-const CAP=70;
+const CAP=36; /* figures drawn; the badge carries the real count, so a big batch reads as a group, not a blob */
 const PACE_D=28,DASH_D=5.5;
 let paceF=store.get('cor_pace',1);
 function buildLevel(l,mode,opts={}){
@@ -900,8 +994,8 @@ function buildLevel(l,mode,opts={}){
 function readTime(it){if(it.type==='branch')return 5.5*Math.max(1,paceF);const words=(it.q+' '+it.ans.join(' ')).split(/\s+/).filter(Boolean).length;
   let t=TUNE.readBase+TUNE.readPerWord*words+(it.ans.length>=3?.9:0)+(it.kind==='csat'?1.5:0);if(S&&S.lv===1&&(S.qSeen||0)<=2)t+=1.2;return Math.max(4,Math.min(16,t*paceF))}
 function tunePace(pc,ok){if(!pc)return;if(pc.locked){const r=pc.lockedAt/pc.T;paceF=paceF*.8+.2*Math.max(.7,Math.min(1.3,r*1.2))}else if(!ok)paceF=Math.min(1.35,paceF*1.06);else paceF=paceF*.95+.05;store.set('cor_pace',paceF)}
-function lockAnswer(){const pc=S&&S.pace;if(!pc||pc.locked||S.phase!=='run'||pc.it.type!=='quiz'||pc.it.done)return;pc.locked=true;pc.lockedAt=pc.el;
-  const n=pc.it.ans.length,i=laneOf(n,S.x),lw=4/n;S.tx=-2+lw*(i+.5);S.steerLock=true;$('lock').disabled=true;$('lock').textContent='LOCKED: '+'ABCD'[i]+' ⚡';sfx.power()}
+function lockAnswer(pickI){const pc=S&&S.pace;if(!pc||pc.locked||S.phase!=='run'||pc.it.type!=='quiz'||pc.it.done)return;pc.locked=true;pc.lockedAt=pc.el;
+  const n=pc.it.ans.length,i=pickI??laneOf(n,S.x),lw=4/n;S.tx=-2+lw*(i+.5);S.steerLock=true;$('lock').disabled=true;$('lock').textContent='LOCKED: '+'ABCD'[i]+' ⚡';sfx.power()}
 function skipAnswer(){const pc=S&&S.pace;if(!pc||pc.locked||S.phase!=='run'||pc.it.type!=='quiz'||pc.it.done)return;pc.locked=true;pc.skipped=true;pc.lockedAt=pc.el;S.steerLock=true;$('lock').disabled=true;$('skip').disabled=true;$('skip').textContent='SKIPPED';sfx.tick()}
 const QUICK_MODES=['quick','review','csat','weak','pyq','paper'];
 function buildQuick(mode,subs){const picker=new Picker(subs,Math.random,true),items=[];let z=10;
@@ -958,11 +1052,13 @@ function doRevive(how){S.revived=true;const n=Math.max(20+S.lv*4,S.fail==='cutof
   S.phase=S.fail==='cutoff'?'battle':'run';S.fail=null;S.shieldT=2;banner('REVIVED!','+'+n+' aspirants',1.2);sfx.yay();track('revive',{how,n})}
 // ===================================================== CROWD =====================================================
 const GA=2.39996;
-function spacing(n){return Math.min(.15,.74/Math.sqrt(Math.max(1,n)))}
+// Wider than before (was .15 / .74): the batch reads as people in rows, not a black blob of heads,
+// while the cluster still fits a lane so steering to A or B works.
+function spacing(n){return Math.min(.26,.95/Math.sqrt(Math.max(1,n)))}
 function phylN(i,n){const sp=spacing(n),r=sp*Math.sqrt(i+.3);return[r*Math.cos(i*GA),r*Math.sin(i*GA)*1.7]}
 function phyl(i){return phylN(i,S?Math.min(CAP,Math.max(S.members.length,1)):10)}
 function clusterR(){const n=Math.min(CAP,Math.max(1,S.members.length));return(spacing(n)*Math.sqrt(n))*S.tight+.12}
-function crowdK(n){return n>45?.78:n>25?.88:1}
+function crowdK(n){return n>45?.72:n>25?.82:n>12?.92:1}
 function addMembers(n,fromX,fromZ){
   n=Math.max(0,Math.round(n));S.count+=n;if(n>0)S.cPop=Math.min(.7,(S.cPop||0)+.3);const want=Math.min(CAP,S.count);
   while(S.members.length<want){const t=phyl(S.members.length);S.members.push({ox:t[0],oz:t[1],x:fromX+rnd(-.2,.2),z:fromZ+rnd(-.2,.2),vx:0,vz:0,y:0,vy:fromZ?2.5:0,look:makeLook(false),ph:rnd(0,6)})}
@@ -1132,9 +1228,10 @@ function passGate(it){
   const ok=side===it.correct;logQ(it,side,ok,pc);if(window.storyAnswer)storyAnswer(ok);tunePace(pc,ok);recordAnswer(it,ok,{locked:!!(pc&&pc.locked),ms:pc?pc.el*1000:0});if(ok)S.exam.c++;else S.exam.w++;if(ok&&THEME().subj===it.subj){S.gained+=10;ftext('THEME +10','#ff7aa8',S.dist+4)}
   if(ok){S.streak++;const cm=1+.15*Math.min(4,S.streak-1);const add=Math.round((Math.ceil(S.count*.5)+5+bonus.gate()+(S.streak>=3?5:0)+(it.road?5:0)+(it.kind==='stmt'?8:0))*cm);addMembers(add,0,-1.5);
     comboUI(cm);hitFx(true);S.rings.push({x:S.x,z:S.dist+.4,r:.5,life:.45,col:'#3ddc84'});S.rings.push({x:S.x,z:S.dist+.4,r:.2,life:.35,col:'#ffffff'});
-    ftext('+'+add,'#3ddc84');qResult(it,side,true,'✓ +'+add);if(S.streak===2||Math.random()<.25)mascotSay('cheer',pick(['Nailed it!','Topper move!','Correct! Batch growing!','Sharp!']),1.3);sfx.good();confetti(S.dist+1);S.gained+=10;if(pc&&pc.locked&&pc.lockedAt<pc.T*.6){const qb=10+S.lv*2;S.gained+=qb;ftext('QUICK +'+qb,'#2ec4ff',S.dist+3.5)}
+    ftext('+'+add,'#3ddc84');qResult(it,side,true,'✓ +'+add);// MIGA reacts to every answer, briefly: the mascot is feedback, not decoration.
+    mascotSay('cheer',S.streak>=3?'Streak ×'+S.streak+'! Unstoppable!':pick(['Nailed it!','Topper move!','Correct! Batch growing!','Sharp!']),1.1);sfx.good();confetti(S.dist+1);S.gained+=10;if(pc&&pc.locked&&pc.lockedAt<pc.T*.6){const qb=10+S.lv*2;S.gained+=qb;ftext('QUICK +'+qb,'#2ec4ff',S.dist+3.5)}
     if(S.streak%3===0)startTopper();else if(S.streak>=2)ftext('STREAK ×'+S.streak,'#ffd23f',S.dist+2.5)}
-  else{const hadCombo=S.streak>=2;S.streak=0;comboUI(0,hadCombo);hitFx(false);const ls=loseN(Math.ceil(S.count*.4*bonus.soft()));ftext('-'+ls,'#ff2d44',S.dist+1.2);ftext('✗ WRONG','#ff4d5e');qResult(it,side,false,'✗ -'+ls);sfx.bad();S.shake=.6;vib([40,30,40]);ftext(it.ans[it.correct]+' ✓','#ffffff',S.dist+3)}
+  else{const hadCombo=S.streak>=2;S.streak=0;comboUI(0,hadCombo);hitFx(false);const ls=loseN(Math.ceil(S.count*.4*bonus.soft()));ftext('-'+ls,'#ff2d44',S.dist+1.2);ftext('✗ WRONG','#ff4d5e');qResult(it,side,false,'✗ -'+ls);sfx.bad();S.shake=.6;vib([40,30,40]);ftext(it.ans[it.correct]+' ✓','#ffffff',S.dist+3);mascotSay('sad',pick(['Close! Remember this one.','We will see it again in Review.','Shake it off, next gate!']),1.4)}
 }
 function logQ(it,side,ok,pc){S.log.push({id:it.id,ms:pc?Math.round(pc.el*1000):0,q:it.q,a:it.ans[it.correct],chose:it.ans[side],ok,why:it.why,src:it.src,locked:!!(pc&&pc.locked),head:it.head})}
 function logA(q,side,ok){S.log.push({q:q.q,a:q.ans[q.correct],chose:side<0?'(time up)':q.ans[side],ok,why:q.why,src:q.src})}
@@ -1329,7 +1426,7 @@ function qHTML(q,head){const t=String(q.q||'').replace(QF_DROP,'').replace(/\s*\
     return`${H}<span class="qx-stem">${esc(stem)}</span><ol class="qx-list${seq?' seq':''}">${li}</ol>${it.tail&&!/^(select|choose|pick|mark|code)/i.test(it.tail)?`<span class="qx-tail">${esc(it.tail)}</span>`:''}`}
   return H+`<span class="qx-stem">${esc(t)}</span>`}
 // Option text tidy: "(1) - (2) - (3) - (4)" becomes "1, 2, 3, 4"
-function optText(s){s=String(s);if(/^[\s(]*[1-9][\s)]*(?:[-,\u2013\u2014>\s]+[\s(]*[1-9][\s)]*){2,}$/.test(s))return s.match(/[1-9]/g).join(', ');
+function optText(s){s=String(s).replace(/^\s*\(?[A-Da-d][.)]\s+(?=\S)/,'');if(/^[\s(]*[1-9][\s)]*(?:[-,\u2013\u2014>\s]+[\s(]*[1-9][\s)]*){2,}$/.test(s))return s.match(/[1-9]/g).join(', ');
   if(/^\s*\(\s*[ivx]{1,4}\s*\)(?:[-,\u2013\u2014>\s]+\(\s*[ivx]{1,4}\s*\)){2,}\s*$/i.test(s))return s.match(/[ivx]{1,4}/gi).join(', ');
   if(/^\s*[a-di-v]{1,3}\s*[-\u2013\u2014]\s*\w{1,4}(?:\s*,\s*[a-di-v]{1,3}\s*[-\u2013\u2014]\s*\w{1,4}){1,5}\s*$/i.test(s))return s.replace(/\s*[-\u2013\u2014]\s*/g,'\u2011').replace(/\s*,\s*/g,', '); // match codes: keep each pair together
   return s.replace(/\s*[\u2013\u2014]\s*/g,' - ')}
@@ -1683,7 +1780,7 @@ function drawSaw(cx,z,R){const c=P(cx,R,z),b=P(cx,0,z);if(!c||!b)return;const r=
 // ===================================================== MASCOT: MIGA =====================================================
 let migaN=0;
 function migaInner(mood='happy',prop=''){const u='g'+(migaN++);
-  const O='#14213d',ow='stroke="#14213d" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"';
+  const O='#1d6f8c',ow='stroke="#1d6f8c" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"';
   const defs=`<defs>
    <linearGradient id="mgB${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5fe0f7"/><stop offset="1" stop-color="#16a6d0"/></linearGradient>
    <linearGradient id="mgH${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6be6fa"/><stop offset=".75" stop-color="#29bfe3"/><stop offset="1" stop-color="#1aa8d2"/></linearGradient>
@@ -1728,7 +1825,7 @@ function migaInner(mood='happy',prop=''){const u='g'+(migaN++);
   <path d="M40 96 q-4 -52 60 -56 q64 4 60 56 q8 6 14 18 q-12 0 -16 -4 q-6 34 -58 36 q-52 -2 -58 -36 q-4 4 -16 4 q6 -12 14 -18z" fill="url(#mgH${u})" ${ow}/>
   <path d="M62 116 q8 -18 26 -14 q12 -12 24 0 q18 -4 26 14 q-6 28 -38 28 q-32 0 -38 -28z" fill="#eafcff"/>
   <path d="M78 46 q-2 -26 18 -40 q-4 16 6 22 q6 -20 26 -24 q-10 14 -4 28 q12 -8 22 -4 q-14 6 -16 22 q-26 -10 -52 -4z" fill="url(#mgM${u})" ${ow}/>
-  ${(()=>{try{return PL.cos.cap}catch(e){return false}})()?'<path d="M58 38 L100 20 L142 38 L100 56z" fill="#14213d"/><rect x="82" y="42" width="36" height="12" rx="3" fill="#14213d"/><path d="M136 40 v22" stroke="#ffd23f" stroke-width="3"/><circle cx="136" cy="64" r="4.5" fill="#ffd23f"/>':''}
+  ${(()=>{try{return PL.cos.cap}catch(e){return false}})()?'<path d="M58 38 L100 20 L142 38 L100 56z" fill="#1d6f8c"/><rect x="82" y="42" width="36" height="12" rx="3" fill="#1d6f8c"/><path d="M136 40 v22" stroke="#ffd23f" stroke-width="3"/><circle cx="136" cy="64" r="4.5" fill="#ffd23f"/>':''}
   ${E[mood]||E.happy}
   <path d="M92 112 q8 -5 16 0 q-2 9 -8 10 q-6 -1 -8 -10z" fill="${O}"/><ellipse cx="97" cy="113" rx="2.5" ry="1.6" fill="#fff" opacity=".7"/>
   ${Mo[mood]||Mo.happy}
@@ -2133,10 +2230,9 @@ function openConsent(first,after){hideAll();const c=PL.consent||{};
     PL.consent={v:1,ts:Date.now(),adult:age==='adult',guardian:age==='minor',essential:true,analytics:$('cA').checked};saveP();track('consent',{analytics:PL.consent.analytics,adult:PL.consent.adult});
     $('pop').hidden=true;if(after)after();else openMenu()}}
 // ---- menu ----
-const MENU_LINES=['Ready to beat the cut-off?','Every TRUE gate grows our batch!','Sure of the answer? Tap LOCK for a speed bonus.','Not sure? SKIP costs nothing. Just like UPSC negative marking!','Wrong answers come back in Review. That is how memory works!','Bosses throw compasses. Dodge the red zones!'];
+const MENU_LINES=['Ready to beat the cut-off?','Every TRUE gate grows our batch!','Tap an answer to run through its gate. Sure answers earn a dash!','Not sure? SKIP costs nothing. Just like UPSC negative marking!','Wrong answers come back in Review. That is how memory works!','Bosses throw compasses. Dodge the red zones!'];
 function openMenu(){hideAll();hideToast();ensureMissions();$('menu').hidden=false;$('playT').textContent='Play level '+level;$('playS').textContent=subjFor(level).slice(0,3).join(', ');
-  $('daily').textContent="Today's news ↗";
-  const ql=quickRemaining();$('quickBtn').textContent=ql===Infinity||ql>0?'Quick Revision':'Review';
+  const ql=quickRemaining();$('quickT').textContent=ql===Infinity||ql>0?'Quick Revision':'Review';
   const stk=streakNow(),due=dueIds().length,th=THEME();
   $('mchips').innerHTML=`<span class="chip fire">🔥 Streak ${stk}</span>${PL.pro?'<span class="pro">PRO</span>':''}`;
   $('mmiga').innerHTML=miga(level===1&&bank===0?'happy':pick(['happy','point','cheer']));$('mbub').textContent=level===1&&bank===0?'Hi! I am MIGA. Let us beat the UPSC cut-off together!':pick(MENU_LINES);
@@ -2148,13 +2244,15 @@ function start(mode,opts={}){
   if((mode==='quick'||mode==='csat')&&!PL.pro){const left=quickRemaining();if(left<=0){hideAll();$('pcard').innerHTML=`<div class="stage"><div class="bubble r">You used today's free Quick Revisions. Review and weak-topic practice are always free!</div>${miga('think')}</div><button class="btn" id="qlRev">Start Review</button><button class="btn blue sm" id="qlWeak">Practise weakest subject</button><p class="note ctr">MindGains Pro gives unlimited Quick Revision runs.</p><button class="x" id="qlBack" style="align-self:center">Back</button>`;$('pop').hidden=false;$('qlRev').onclick=()=>start('review');$('qlWeak').onclick=()=>start('weak');$('qlBack').onclick=()=>{$('pop').hidden=true;openMenu()};return}
     if(PL.quickDay!==todayKey()){PL.quickDay=todayKey();PL.quickN=0}PL.quickN++;saveP()}
   initAudio();hideAll();hideToast();closeSheet();qRow=null;qNo=0;$('q').hidden=true;newRun(mode,opts)}
-$('opts').addEventListener('click',e=>{const o=e.target.closest('.opt');if(!o||!S||S.phase!=='run'||!qRow||qRow.done||S.steerLock)return;const n=$('opts').children.length,i=+o.dataset.i;S.tx=-2+4/n*(i+.5);initAudio();sfx.tick()});
+$('opts').addEventListener('click',e=>{const o=e.target.closest('.opt');if(!o||!S||S.phase!=='run'||!qRow||qRow.done||S.steerLock)return;const n=$('opts').children.length,i=+o.dataset.i;S.tx=-2+4/n*(i+.5);initAudio();sfx.tick();
+  // A tap on an answer commits to it (roads only steer): one decision, not choose-then-lock.
+  if(!o.classList.contains('road'))lockAnswer(i)});
 $('lock').addEventListener('pointerdown',e=>e.stopPropagation());$('skip').addEventListener('pointerdown',e=>e.stopPropagation());$('skip').onclick=e=>{e.stopPropagation();initAudio();skipAnswer()};$('lock').onclick=e=>{e.stopPropagation();initAudio();lockAnswer()};
 $('play').onclick=()=>start('level',{lv:level});$('daily').onclick=()=>{track('to_nationlap',{});location.href='/nationlap/?affairs=1'};/* current affairs live in NationLap */$('quickBtn').onclick=()=>start(quickRemaining()>0?'quick':'review');
 $('toMap').onclick=openMap;$('toMissions').onclick=openMissions;$('toAlbum1').onclick=()=>openAlbum('menu');$('toMore').onclick=openMore;
-function openMore(){hideAll();const {myR}=leagueData(),th=THEME(),row=(id,ic,l,n)=>`<button class="btn ${n||'blue'} sm" id="${id}">${ICON[ic]}<span>${l}</span></button>`;
-  $('pcard').innerHTML=`<h2 class="ttl" style="font-size:30px">More</h2><p class="note ctr">This week: ${th.n}, ${th.subj} gates give +10</p><div class="mlist">${row('mMast','cup','Topic mastery','')}${row('mTown','town','Study Town'+(bank>=cheapest()?', new upgrade':''),'')}${row('mLeague','cup','League, rank #'+myR,'')}${row('mStyle','shirt','Style, shirts and tracks','pink')}${row('mGroups','cup','Groups and colleges','')}${row('mBharat','map','Bharat Board','')}${row('mCode','key','Enter challenge code','pink')}${row('mSet','gear','Settings','blue')}</div><button class="x" id="mBack" style="align-self:center">Back</button>`;
-  $('pop').hidden=false;$('mTown').onclick=openTown;if($('mMast'))$('mMast').onclick=()=>openMastery('menu');$('mLeague').onclick=openLeague;$('mStyle').onclick=openStyle;$('mCode').onclick=openCode;$('mSet').onclick=openSettings;$('mGroups').onclick=()=>window.openGroups&&openGroups();$('mBharat').onclick=()=>window.openBharat&&openBharat();$('mBack').onclick=openMenu}
+function openMore(){hideAll();const {myR}=leagueData(),th=THEME(),row=(id,ic,l)=>`<button class="hm-row" id="${id}"><i class="hm-ic">${ICON[ic]}</i><span class="hm-t"><b>${l}</b></span><em>›</em></button>`;
+  $('pcard').innerHTML=`<h2 class="ttl" style="font-size:30px">More</h2><p class="note ctr">This week: ${th.n}, ${th.subj} gates give +10</p><div class="hm-list">${row('mNews','map',"Today's news race (NationLap)")}${row('mMast','cup','Topic mastery','')}${row('mTown','town','Study Town'+(bank>=cheapest()?', new upgrade':''),'')}${row('mLeague','cup','League, rank #'+myR,'')}${row('mStyle','shirt','Style, shirts and tracks','pink')}${row('mGroups','cup','Groups and colleges','')}${row('mBharat','map','Bharat Board','')}${row('mCode','key','Enter challenge code','pink')}${row('mSet','gear','Settings','blue')}</div><button class="x" id="mBack" style="align-self:center">Back</button>`;
+  $('pop').hidden=false;$('mNews').onclick=()=>{track('to_nationlap',{});location.href='/nationlap/?affairs=1'};$('mTown').onclick=openTown;if($('mMast'))$('mMast').onclick=()=>openMastery('menu');$('mLeague').onclick=openLeague;$('mStyle').onclick=openStyle;$('mCode').onclick=openCode;$('mSet').onclick=openSettings;$('mGroups').onclick=()=>window.openGroups&&openGroups();$('mBharat').onclick=()=>window.openBharat&&openBharat();$('mBack').onclick=openMenu}
 // ---- boot ----
 if(!store.get('cor_p',null)&&matchMedia('(prefers-reduced-motion: reduce)').matches)PL.settings.motion=false;
 applySettings();ensureMissions();
