@@ -6,6 +6,7 @@
 // places at a gate lands on the 3D gate. Game coordinates map straight across: X = x, Y = y, Z = -z.
 import * as THREE from 'three';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+import { stage2 } from './r3d-stage2.js?v=1';
 
 const host = document.getElementById('wrap'), c2d = document.getElementById('c');
 const cv = document.createElement('canvas');
@@ -117,20 +118,22 @@ const geo = {
 };
 const M = { pants: mat(0x2b3a67, .7), shoe: mat(0x222222, .4), shirt: mat(0xffffff, .65), bags: [0x2f6bff, 0x16a34a, 0x7c3aed, 0x0ea5e9, 0xff7a45].map((c) => mat(c, .55)),
   skin: SKIN.map((c) => mat(c, .55)), hair: HAIRC.map((c) => mat(c, .45)) };
-function student(i) {
+const greyShirt = mat(0xb9c0cc, .7), greyPants = mat(0x8a93a3, .7), saffronBag = mat(0xff8a1f, .5);
+function student(i, grey = false, lead = false) {
   const g = new THREE.Group(), skin = M.skin[i % SKIN.length], hairM = M.hair[i % 4], girl = i % 3 === 1, limbs = [];
+  const SHIRT = grey ? greyShirt : M.shirt, PANTS = grey ? greyPants : M.pants;
   const sh = (m) => { m.castShadow = true; return m; };
   for (const sx of [-1, 1]) {
     const leg = new THREE.Group(); leg.position.set(sx * .12, .72, 0);
-    const l = sh(new THREE.Mesh(geo.leg, M.pants)); l.position.y = -.33; leg.add(l);
+    const l = sh(new THREE.Mesh(geo.leg, PANTS)); l.position.y = -.33; leg.add(l);
     const s = new THREE.Mesh(geo.shoe, M.shoe); s.position.set(0, -.68, -.04); leg.add(s);
     g.add(leg); limbs.push(leg);
   }
-  const shirt = sh(new THREE.Mesh(shirtG, M.shirt)); shirt.position.y = .66; shirt.scale.set(1, 1, .72); g.add(shirt);
-  const bag = sh(new THREE.Mesh(geo.bag, M.bags[i % M.bags.length])); bag.position.set(0, 1.0, .27); g.add(bag);
+  const shirt = sh(new THREE.Mesh(shirtG, SHIRT)); shirt.position.y = .66; shirt.scale.set(1, 1, .72); g.add(shirt);
+  const bag = sh(new THREE.Mesh(geo.bag, lead ? saffronBag : grey ? greyPants : M.bags[i % M.bags.length])); bag.position.set(0, 1.0, .27); g.add(bag);
   for (const sx of [-1, 1]) {
     const arm = new THREE.Group(); arm.position.set(sx * .31, 1.26, 0);
-    const sl = new THREE.Mesh(geo.sleeve, M.shirt); sl.position.y = -.12; arm.add(sl);
+    const sl = new THREE.Mesh(geo.sleeve, SHIRT); sl.position.y = -.12; arm.add(sl);
     const fo = new THREE.Mesh(geo.fore, skin); fo.position.y = -.42; arm.add(fo);
     arm.rotation.z = sx * .12; g.add(arm); limbs.push(arm);
   }
@@ -164,6 +167,7 @@ function makeMiga() {
   return g;
 }
 const miga = makeMiga(); scene.add(miga);
+const stage2Update = stage2({ scene, mat, student, K });
 
 // ---------------------------------------------------------------- gates (one arch per lane)
 const LANE_COL = [0x1cb0f6, 0x58cc02, 0xffc800, 0xff4b8b];
@@ -234,6 +238,7 @@ function frame(o) {
     miga.visible = true; miga.position.set(Math.max(-1.85, Math.min(1.85, S.x + side * 1.25)), Math.abs(Math.sin(ph)) * .07, -(S.dist + .4));
     miga.userData.legs.forEach((l, i) => (l.rotation.x = Math.sin(ph + i * Math.PI / 2) * .8)); miga.userData.tail.rotation.z = Math.sin(t * 6) * .4;
   } else miga.visible = false;
+  stage2Update(S, miga);
   // gates
   const live = new Set();
   if (S) for (const it of S.items) {

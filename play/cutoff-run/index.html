@@ -1620,9 +1620,10 @@ function draw(){
   }
   if(!S)return;
   for(const it of S.items)if(it.type==='hole'){const x0=it.side<0?-2:.7,x1=it.side<0?-.7:2;const z0=Math.max(it.z,camZ+.45);if(it.z1<camZ+.45)continue;
-    quad(P(x0,0,it.z1),P(x1,0,it.z1),P(x1,0,z0),P(x0,0,z0),'#1aa3ee');quad(P(x0,0,it.z1),P(x1,0,it.z1),P(x1,-.25,it.z1),P(x0,-.25,it.z1),'#0b6fbf');
+    if(!r3)quad(P(x0,0,it.z1),P(x1,0,it.z1),P(x1,0,z0),P(x0,0,z0),'#1aa3ee');if(!r3)quad(P(x0,0,it.z1),P(x1,0,it.z1),P(x1,-.25,it.z1),P(x0,-.25,it.z1),'#0b6fbf');
     const p=P((x0+x1)/2,.02,(it.z+it.z1)/2);if(p&&it.z-camZ<40)txt('GAP',p[0],p[1],Math.max(9,p[2]*.35),'#fff')}
   for(const it of S.items)if(it.type==='ramp'){const z0=it.z,z1=it.z+3,g1=z1+it.air;if(g1<camZ+.45||z0-camZ>60)continue;
+    if(r3){const lp=P(0,.7,z0+1.5);if(lp&&z0-camZ<40&&z1>camZ+.45)txt('JUMP!',lp[0],lp[1],Math.max(12,lp[2]*.45),'#fff');continue}
     const gz0=Math.max(z1,camZ+.45);if(g1>gz0){quad(P(-2.4,0,g1),P(2.4,0,g1),P(2.4,0,gz0),P(-2.4,0,gz0),'#2fbaf7');quad(P(-2.35,0,g1),P(2.35,0,g1),P(2.35,-.5,g1),P(-2.35,-.5,g1),'#9fc3e8');
       for(let k=0;k<4;k++){const wz=gz0+((k*2.7+S.t*1.5)%(g1-gz0));const a=P(-2,0,wz),b=P(2,0,wz);if(a&&b){ctx.strokeStyle='rgba(255,255,255,.5)';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(a[0]+(b[0]-a[0])*(.1+k*.2),a[1]);ctx.lineTo(a[0]+(b[0]-a[0])*(.2+k*.2),a[1]);ctx.stroke()}}}
     if(z1>camZ+.45){const zz=Math.max(z0,camZ+.45),yy=(zz-z0)/3;quad(P(-2,1,z1),P(2,1,z1),P(2,yy,zz),P(-2,yy,zz),'#ff8a1f');
@@ -1704,6 +1705,7 @@ function board(text,cx,cy,pw,s,dark){let fs=Math.min(28,s*.26);ctx.font=`${fs}px
   L.forEach((ln,i)=>txt(ln,cx,by+fs*.3+fs*.58+i*fs*1.15,fs,dark?'#ffd23f':'#14213d',null))}
 function drawItem(it){
   const z=it.z,p0=P(0,0,z);if(!p0)return;const s=p0[2];
+  if(window.__r3on&&R3_CAPTION[it.type]){R3_CAPTION[it.type](it,z);return}
   switch(it.type){
   case'quiz':case'math':case'branch':{
     const top=2.1,n=it.type==='branch'?2:it.ans.length,lw=4/n,ng=nextGate(),near=it.type!=='quiz'||ng===it;
@@ -1779,6 +1781,14 @@ function drawItem(it){
       txt(it.label,(a[0]+c[0])/2,(a[1]+c[1])/2,Math.max(9,s*.24),'#fff');const g=P(-2,.05,z),g2=P(2,.05,z);ctx.fillStyle='rgba(20,33,61,.35)';ctx.fillRect(g[0],g[1]-2,g2[0]-g[0],4)}break}
   }
 }
+// In 3D mode these objects are models; the 2D layer only writes their captions.
+const R3_CAPTION={
+ recruit(it,z){if(it.done)return;const p=P(it.x,1.2,z);if(p)txt('+'+it.n,p[0],p[1],Math.max(12,p[2]*.3),'#fff')},
+ cow(it,z){const lp=P(cowX(it),1.3,z);if(lp&&it.z-S.dist<26)txt('Holy cow!',lp[0],lp[1],Math.max(10,lp[2]*.2),'#fff')},
+ auto(it,z){const lp=P(autoX(it),1.4,z);if(lp&&it.z-S.dist<26)txt('AUTO!',lp[0],lp[1],Math.max(10,lp[2]*.2),'#ffd23f')},
+ fan(it,z){const lp=P(it.px,1.5,z);if(lp&&it.z-S.dist<26)txt('HOSTEL FAN',lp[0],lp[1],Math.max(10,lp[2]*.2),'#fff')},
+ saw(it,z){const p=P(it.side,1.25,z);if(p)txt('−⅓ NEGATIVE MARKING',p[0],p[1],Math.max(8,p[2]*.17),'#ff4d5e','#fff')},
+ msaw(){},hammer(){},slider(){},press(){}};
 function drawSaw(cx,z,R){const c=P(cx,R,z),b=P(cx,0,z);if(!c||!b)return;const r=R*c[2];
   ctx.fillStyle='#5a0c18';ctx.fillRect(c[0]-r*1.1,b[1]-r*.12,r*2.2,r*.24);
   ctx.save();ctx.translate(c[0],c[1]);ctx.rotate(S.t*14);ctx.fillStyle='#d9dde6';ctx.beginPath();for(let i=0;i<20;i++){const a=i/20*6.283,q=i%2?r*.78:r;ctx.lineTo(Math.cos(a)*q,Math.sin(a)*q)}ctx.fill();
@@ -2277,7 +2287,7 @@ requestAnimationFrame(loop);
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
 <script>/* 3D world test: ?r3d=1 turns it on (remembered), ?r3d=0 turns it off. Read here, before social.js clears the query. */
 {const q=location.search;if(/[?&]r3d=1/.test(q))localStorage.setItem('cor_r3d','1');if(/[?&]r3d=0/.test(q))localStorage.removeItem('cor_r3d')}</script>
-<script type="module">if(localStorage.getItem('cor_r3d')==='1')import('./r3d.js?v=1').catch(e=>console.error(e));</script>
+<script type="module">if(localStorage.getItem('cor_r3d')==='1')import('./r3d.js?v=2').catch(e=>console.error(e));</script>
 <script src="story.js"></script>
 <script src="social.js"></script>
 <script src="replay.js"></script>
