@@ -1,0 +1,172 @@
+{
+ "retire": [
+  43,
+  60,
+  61,
+  90,
+  115,
+  116,
+  117,
+  118,
+  119,
+  120,
+  212,
+  213,
+  214,
+  261,
+  263,
+  264,
+  265,
+  312,
+  313,
+  314,
+  315,
+  316,
+  343,
+  453,
+  454,
+  455,
+  495,
+  546,
+  548,
+  550,
+  581,
+  582,
+  583,
+  584,
+  585,
+  586
+ ],
+ "fix": {
+  "20": {
+   "question": "Match List I with List II: List I (Metal) A. Gold B. Copper C. Zinc D. Silver E. Aluminium List II (Use) 1. Photography 2. Electrical wiring 3. Galvanization 4. Jewelry 5. Aircraft manufacturing",
+   "options": [
+    "A-4, B-2, C-3, D-1, E-5",
+    "A-4, B-2, C-1, D-3, E-5",
+    "A-4, B-2, C-3, D-5, E-1",
+    "A-4, B-1, C-3, D-2, E-5"
+   ],
+   "answer_index": 0,
+   "explanation": "Gold is used in jewellery, copper in wiring, zinc to galvanise iron, silver (as silver halides) in photography and aluminium in aircraft."
+  },
+  "25": {
+   "question": "Match List I with List II: List I (Method) A. Auto-reduction of the sulphide ore B. Roasting, then reduction with coke C. Reduction in a blast furnace D. Electrolysis of fused alumina List II (Metal) 1. Copper 2. Aluminum 3. Iron 4. Zinc",
+   "options": [
+    "A-1, B-3, C-4, D-2",
+    "A-1, B-4, C-3, D-2",
+    "A-1, B-4, C-2, D-3",
+    "A-2, B-4, C-3, D-1"
+   ],
+   "answer_index": 1,
+   "explanation": "Copper is obtained by auto-reduction, zinc by roasting and carbon reduction, iron in a blast furnace and aluminium by electrolysis (Hall-Héroult)."
+  },
+  "211": {
+   "question": "Match List I with List II: List I (Group) A. Group 14 B. Group 13 C. Group 17 D. Group 15 E. Group 16 List II (First member) 1. Boron 2. Carbon 3. Fluorine 4. Oxygen 5. Nitrogen",
+   "options": [
+    "A-5, B-1, C-3, D-2, E-4",
+    "A-2, B-1, C-5, D-3, E-4",
+    "A-2, B-3, C-1, D-5, E-4",
+    "A-2, B-1, C-3, D-5, E-4"
+   ],
+   "answer_index": 3,
+   "explanation": "Group 13 starts with boron, 14 with carbon, 15 with nitrogen, 16 with oxygen and 17 with fluorine."
+  },
+  "262": {
+   "question": "Match the group with its family name: List I (Group) A. Group 15 B. Group 13 C. Group 16 D. Group 14 List II (Family name) 1. Icosagens 2. Tetragens 3. Chalcogens 4. Pnictogens",
+   "options": [
+    "A-3, B-1, C-4, D-2",
+    "A-1, B-4, C-3, D-2",
+    "A-4, B-1, C-3, D-2",
+    "A-4, B-1, C-2, D-3"
+   ],
+   "answer_index": 2,
+   "explanation": "Group 13 elements are icosagens, group 14 tetragens, group 15 pnictogens and group 16 chalcogens."
+  },
+  "339": {
+   "question": "Match List I with List II: List I (Term) A. Coordination compound B. Ligand C. Coordination number D. Chelating ligand List II (Definition) 1. Molecule or ion attached to the central metal 2. Complex of transition metals 3. Ligand that forms multiple bonds with metal 4. Number of ligand bonds to the central metal",
+   "options": [
+    "A-2, B-3, C-4, D-1",
+    "A-2, B-4, C-1, D-3",
+    "A-1, B-2, C-4, D-3",
+    "A-2, B-1, C-4, D-3"
+   ],
+   "answer_index": 3,
+   "explanation": "A coordination compound is a complex of a metal, a ligand is attached to the central metal, the coordination number counts the ligand bonds and a chelating ligand binds through several atoms."
+  },
+  "401": {
+   "question": "Match List I with List II: List I (Substance) A. Vinegar B. Tea C. Sour milk (curd) List II (Acid it contains) 1. Lactic acid 2. Tannic acid 3. Acetic acid",
+   "options": [
+    "A-2, B-3, C-1",
+    "A-3, B-2, C-1",
+    "A-1, B-2, C-3",
+    "A-3, B-1, C-2"
+   ],
+   "answer_index": 1,
+   "explanation": "Vinegar contains acetic acid, tea tannic acid and sour milk lactic acid."
+  },
+  "402": {
+   "question": "Match List I with List II: List I (Law / scientist) A. Ostwald's dilution law B. Henderson equation C. Peter Debye List II (Associated with) 1. Dipole moments 2. Buffer solution 3. Weak electrolyte",
+   "options": [
+    "A-3, B-1, C-2",
+    "A-2, B-3, C-1",
+    "A-3, B-2, C-1",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 2,
+   "explanation": "Ostwald's law describes weak electrolytes, the Henderson equation is used to prepare buffers and Debye studied dipole moments."
+  },
+  "411": {
+   "question": "Match List I with List II: List I (Metal) A. Copper B. Zinc C. Gold D. Silver E. Aluminium List II (Use) 1. Photography 2. Jewelry 3. Electrical wiring 4. Galvanization 5. Aircraft manufacturing",
+   "options": [
+    "A-2, B-4, C-3, D-1, E-5",
+    "A-1, B-4, C-2, D-3, E-5",
+    "A-4, B-3, C-2, D-1, E-5",
+    "A-3, B-4, C-2, D-1, E-5"
+   ],
+   "answer_index": 3,
+   "explanation": "Copper is used in wiring, zinc for galvanisation, gold in jewellery, silver in photography and aluminium in aircraft."
+  },
+  "481": {
+   "question": "Match List I with List II: List I (Metal) A. Gold B. Aluminium C. Zinc D. Iron List II (Extraction method) 1. Roasting and reduction 2. Blast furnace smelting 3. Electrolytic reduction 4. Cyanidation process",
+   "options": [
+    "A-2, B-3, C-1, D-4",
+    "A-4, B-3, C-1, D-2",
+    "A-3, B-4, C-1, D-2",
+    "A-4, B-2, C-1, D-3"
+   ],
+   "answer_index": 1,
+   "explanation": "Gold is leached by cyanidation, aluminium is made by electrolysis, zinc by roasting and reduction, and iron is smelted in a blast furnace."
+  },
+  "547": {
+   "question": "Match List I with List II: List I (Ore) A. Haematite B. Zinc blende C. Feldspar List II (Combined state) 1. Silicates 2. Sulphides 3. Oxides",
+   "options": [
+    "A-2, B-3, C-1",
+    "A-3, B-1, C-2",
+    "A-1, B-2, C-3",
+    "A-3, B-2, C-1"
+   ],
+   "answer_index": 3,
+   "explanation": "Haematite is an oxide ore, zinc blende a sulphide ore and feldspar a silicate mineral."
+  },
+  "549": {
+   "question": "Match List I with List II: List I (Metal) A. Iron B. Copper C. Gold List II (Symbol) 1. Fe 2. Au 3. Cu",
+   "options": [
+    "A-1, B-2, C-3",
+    "A-1, B-3, C-2",
+    "A-2, B-3, C-1",
+    "A-3, B-1, C-2"
+   ],
+   "answer_index": 1,
+   "explanation": "Iron is Fe (ferrum), copper Cu (cuprum) and gold Au (aurum)."
+  },
+  "590": {
+   "question": "Match List I with List II: List I (Alcohol) A. Ethanol B. Methanol List II (Application) 1. Industrial solvent 2. Additive to petrol",
+   "options": [
+    "A-2, B-1",
+    "A-1, B-2"
+   ],
+   "answer_index": 0,
+   "explanation": "Ethanol is blended into petrol; methanol is widely used as an industrial solvent."
+  }
+ }
+}

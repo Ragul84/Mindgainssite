@@ -1,0 +1,154 @@
+{
+ "retire": [
+  112,
+  113,
+  114,
+  115,
+  116,
+  143,
+  144,
+  145,
+  146,
+  147,
+  148,
+  160,
+  196,
+  200,
+  217,
+  218,
+  219,
+  272,
+  273,
+  275,
+  277,
+  330,
+  397,
+  398,
+  399,
+  400,
+  401,
+  439,
+  440,
+  441,
+  442,
+  443,
+  444,
+  474,
+  498
+ ],
+ "fix": {
+  "17": {
+   "question": "Match List I with List II: List I (Scientist) A. J.J. Thomson B. Ernest Rutherford C. Niels Bohr D. Erwin Schrödinger List II (Contribution) 1. Proposed nuclear model 2. Wave equation for electrons 3. Introduced quantum jumps 4. Discovered electrons",
+   "options": [
+    "A-4, B-1, C-2, D-3",
+    "A-4, B-1, C-3, D-2",
+    "A-1, B-4, C-3, D-2",
+    "A-2, B-1, C-3, D-4"
+   ],
+   "answer_index": 1,
+   "explanation": "Thomson discovered the electron, Rutherford proposed the nuclear model, Bohr introduced quantum jumps between orbits and Schrödinger wrote the wave equation for electrons."
+  },
+  "27": {
+   "question": "Match List I with List II: List I (Principle) A. Pauli exclusion principle B. Hund's rule C. Aufbau principle D. Heisenberg uncertainty principle List II (Statement) 1. No two electrons have identical quantum numbers 2. Electrons occupy degenerate orbitals singly first 3. Uncertainty in position and momentum of electrons 4. Electrons fill orbitals starting from lowest energy",
+   "options": [
+    "A-1, B-3, C-4, D-2",
+    "A-1, B-2, C-3, D-4",
+    "A-1, B-4, C-2, D-3",
+    "A-1, B-2, C-4, D-3"
+   ],
+   "answer_index": 3,
+   "explanation": "Pauli: no two electrons share all four quantum numbers; Hund: degenerate orbitals fill singly first; Aufbau: lowest energy first; Heisenberg: position and momentum cannot both be known exactly."
+  },
+  "31": {
+   "question": "Match List I with List II: List I (Orbital) A. s orbital B. p orbital C. d orbital D. f orbital List II (Shape) 1. Cloverleaf shape 2. Dumbbell shape 3. Spherical shape 4. Complex shape",
+   "options": [
+    "A-1, B-2, C-3, D-4",
+    "A-3, B-1, C-2, D-4",
+    "A-4, B-2, C-1, D-3",
+    "A-3, B-2, C-1, D-4"
+   ],
+   "answer_index": 3,
+   "explanation": "s orbitals are spherical, p dumbbell-shaped, most d orbitals cloverleaf-shaped and f orbitals more complex."
+  },
+  "111": {
+   "question": "Match List I with List II: List I (Element) A. Calcium B. Sodium List II (Group) 1. Alkali Metal 2. Alkaline Earth Metal",
+   "options": [
+    "A-1, B-2",
+    "A-2, B-1"
+   ],
+   "answer_index": 1,
+   "explanation": "Calcium is an alkaline earth metal (group 2); sodium is an alkali metal (group 1)."
+  },
+  "169": {
+   "question": "Match List I with List II: List I (Property) A. Enthalpy B. Entropy C. Gibbs free energy D. Internal energy List II (Symbol) 1. U 2. H 3. G 4. S",
+   "options": [
+    "A-2, B-3, C-4, D-1",
+    "A-2, B-4, C-3, D-1",
+    "A-3, B-4, C-2, D-1",
+    "A-2, B-1, C-3, D-4"
+   ],
+   "answer_index": 1,
+   "explanation": "Enthalpy is H, entropy S, Gibbs free energy G and internal energy U."
+  },
+  "216": {
+   "question": "Match List I with List II: List I (Example) A. Air B. Brass C. Sea water List II (Type of solution) 1. Liquid solution 2. Solid solution 3. Gaseous solution",
+   "options": [
+    "A-3, B-2, C-1",
+    "A-3, B-1, C-2",
+    "A-1, B-2, C-3",
+    "A-2, B-3, C-1"
+   ],
+   "answer_index": 0,
+   "explanation": "Air is a gaseous solution, brass a solid solution and sea water a liquid solution."
+  },
+  "247": {
+   "question": "Match List I with List II: List I (Example) A. Malathion B. Cotton C. Paracetamol tablets D. Nylon List II (Category) 1. Pesticide 2. Synthetic Fibre 3. Natural Fibre 4. Pharmaceutical",
+   "options": [
+    "A-1, B-2, C-4, D-3",
+    "A-1, B-3, C-2, D-4",
+    "A-3, B-1, C-4, D-2",
+    "A-1, B-3, C-4, D-2"
+   ],
+   "answer_index": 3,
+   "explanation": "Malathion is a pesticide, cotton a natural fibre, tablets are pharmaceuticals and nylon is a synthetic fibre."
+  },
+  "274": {
+   "question": "Match List I with List II: List I (Gas) A. Noble gases B. Hydrogen List II (Atomicity) 1. Monoatomic 2. Diatomic",
+   "options": [
+    "A-1, B-2",
+    "A-2, B-1"
+   ],
+   "answer_index": 0,
+   "explanation": "Noble gases exist as single atoms; hydrogen exists as H2 molecules."
+  },
+  "276": {
+   "question": "Match List I with List II: List I (Compound) A. Sodium chloride B. Carbon tetrachloride List II (Property) 1. Hard and brittle 2. Liquid",
+   "options": [
+    "A-1, B-2",
+    "A-2, B-1"
+   ],
+   "answer_index": 0,
+   "explanation": "Ionic sodium chloride is hard and brittle; covalent carbon tetrachloride is a liquid."
+  },
+  "396": {
+   "question": "Match List I with List II: List I (Compound) A. Chloroquine B. Freon (CFC-113) C. Chloramphenicol D. Chloroform List II (Use) 1. Typhoid treatment 2. Cleaning electronics 3. Anesthetic 4. Malaria treatment",
+   "options": [
+    "A-4, B-2, C-1, D-3",
+    "A-3, B-2, C-1, D-4",
+    "A-4, B-1, C-2, D-3",
+    "A-4, B-2, C-3, D-1"
+   ],
+   "answer_index": 0,
+   "explanation": "Chloroquine treats malaria, CFC-113 was used to clean electronics, chloramphenicol treats typhoid and chloroform was an early anaesthetic."
+  },
+  "473": {
+   "question": "Match List I with List II: List I (Method) A. Pauling's method B. Slater's rules List II (Used for) 1. Effective nuclear charge 2. Ionic radius",
+   "options": [
+    "A-1, B-2",
+    "A-2, B-1"
+   ],
+   "answer_index": 1,
+   "explanation": "Pauling's method estimates ionic radii; Slater's rules estimate effective nuclear charge."
+  }
+ }
+}

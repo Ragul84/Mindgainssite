@@ -1,0 +1,243 @@
+{
+ "43": "retire",
+ "60": "retire",
+ "61": "retire",
+ "90": "retire",
+ "115": "retire",
+ "116": "retire",
+ "117": "retire",
+ "118": "retire",
+ "119": "retire",
+ "120": "retire",
+ "212": "retire",
+ "213": "retire",
+ "214": "retire",
+ "261": "retire",
+ "263": "retire",
+ "264": "retire",
+ "265": "retire",
+ "312": "retire",
+ "313": "retire",
+ "314": "retire",
+ "315": "retire",
+ "316": "retire",
+ "343": "retire",
+ "453": "retire",
+ "454": "retire",
+ "455": "retire",
+ "495": "retire",
+ "546": "retire",
+ "548": "retire",
+ "550": "retire",
+ "581": "retire",
+ "582": "retire",
+ "583": "retire",
+ "584": "retire",
+ "585": "retire",
+ "586": "retire",
+ "20": {
+  "lh": "Metal",
+  "rh": "Use",
+  "L": [
+   "Gold",
+   "Copper",
+   "Zinc",
+   "Silver",
+   "Aluminium",
+   null
+  ],
+  "why": "Gold is used in jewellery, copper in wiring, zinc to galvanise iron, silver (as silver halides) in photography and aluminium in aircraft.",
+  "R": [
+   "Jewelry",
+   "Electrical wiring",
+   "Galvanization",
+   "Photography",
+   "Aircraft manufacturing",
+   "Construction"
+  ]
+ },
+ "25": {
+  "lh": "Method",
+  "rh": "Metal",
+  "L": [
+   "Auto-reduction of the sulphide ore",
+   "Roasting, then reduction with coke",
+   "Reduction in a blast furnace",
+   "Electrolysis of fused alumina"
+  ],
+  "why": "Copper is obtained by auto-reduction, zinc by roasting and carbon reduction, iron in a blast furnace and aluminium by electrolysis (Hall-Héroult).",
+  "R": [
+   "Copper",
+   "Zinc",
+   "Iron",
+   "Aluminum"
+  ]
+ },
+ "211": {
+  "lh": "Group",
+  "rh": "First member",
+  "L": [
+   "Group 14",
+   null,
+   "Group 13",
+   "Group 17",
+   "Group 15",
+   "Group 16"
+  ],
+  "why": "Group 13 starts with boron, 14 with carbon, 15 with nitrogen, 16 with oxygen and 17 with fluorine.",
+  "R": [
+   "Carbon",
+   "Helium",
+   "Boron",
+   "Fluorine",
+   "Nitrogen",
+   "Oxygen"
+  ]
+ },
+ "262": {
+  "stem": "Match the group with its family name:",
+  "lh": "Group",
+  "rh": "Family name",
+  "L": [
+   "Group 15",
+   "Group 13",
+   "Group 16",
+   "Group 14"
+  ],
+  "why": "Group 13 elements are icosagens, group 14 tetragens, group 15 pnictogens and group 16 chalcogens.",
+  "R": [
+   "Pnictogens",
+   "Icosagens",
+   "Chalcogens",
+   "Tetragens"
+  ]
+ },
+ "339": {
+  "lh": "Term",
+  "rh": "Definition",
+  "L": [
+   "Coordination compound",
+   "Ligand",
+   "Coordination number",
+   "Chelating ligand"
+  ],
+  "why": "A coordination compound is a complex of a metal, a ligand is attached to the central metal, the coordination number counts the ligand bonds and a chelating ligand binds through several atoms.",
+  "R": [
+   "Complex of transition metals",
+   "Molecule or ion attached to the central metal",
+   "Number of ligand bonds to the central metal",
+   "Ligand that forms multiple bonds with metal"
+  ]
+ },
+ "401": {
+  "lh": "Substance",
+  "rh": "Acid it contains",
+  "L": [
+   "Vinegar",
+   "Tea",
+   "Sour milk (curd)"
+  ],
+  "why": "Vinegar contains acetic acid, tea tannic acid and sour milk lactic acid.",
+  "R": [
+   "Acetic acid",
+   "Tannic acid",
+   "Lactic acid"
+  ]
+ },
+ "402": {
+  "lh": "Law / scientist",
+  "rh": "Associated with",
+  "L": [
+   "Ostwald's dilution law",
+   "Henderson equation",
+   "Peter Debye"
+  ],
+  "why": "Ostwald's law describes weak electrolytes, the Henderson equation is used to prepare buffers and Debye studied dipole moments.",
+  "R": [
+   "Weak electrolyte",
+   "Buffer solution",
+   "Dipole moments"
+  ]
+ },
+ "411": {
+  "lh": "Metal",
+  "rh": "Use",
+  "L": [
+   "Copper",
+   "Zinc",
+   "Gold",
+   null,
+   "Silver",
+   "Aluminium"
+  ],
+  "why": "Copper is used in wiring, zinc for galvanisation, gold in jewellery, silver in photography and aluminium in aircraft.",
+  "R": [
+   "Electrical wiring",
+   "Galvanization",
+   "Jewelry",
+   "Construction",
+   "Photography",
+   "Aircraft manufacturing"
+  ]
+ },
+ "481": {
+  "lh": "Metal",
+  "rh": "Extraction method",
+  "L": [
+   "Gold",
+   "Aluminium",
+   "Zinc",
+   "Iron"
+  ],
+  "why": "Gold is leached by cyanidation, aluminium is made by electrolysis, zinc by roasting and reduction, and iron is smelted in a blast furnace.",
+  "R": [
+   "Cyanidation process",
+   "Electrolytic reduction",
+   "Roasting and reduction",
+   "Blast furnace smelting"
+  ]
+ },
+ "547": {
+  "lh": "Ore",
+  "rh": "Combined state",
+  "L": [
+   "Haematite",
+   "Zinc blende",
+   "Feldspar"
+  ],
+  "why": "Haematite is an oxide ore, zinc blende a sulphide ore and feldspar a silicate mineral.",
+  "R": [
+   "Oxides",
+   "Sulphides",
+   "Silicates"
+  ]
+ },
+ "549": {
+  "lh": "Metal",
+  "rh": "Symbol",
+  "L": [
+   "Iron",
+   "Copper",
+   "Gold"
+  ],
+  "why": "Iron is Fe (ferrum), copper Cu (cuprum) and gold Au (aurum).",
+  "R": [
+   "Fe",
+   "Cu",
+   "Au"
+  ]
+ },
+ "590": {
+  "lh": "Alcohol",
+  "rh": "Application",
+  "L": [
+   "Ethanol",
+   "Methanol"
+  ],
+  "why": "Ethanol is blended into petrol; methanol is widely used as an industrial solvent.",
+  "R": [
+   "Additive to petrol",
+   "Industrial solvent"
+  ]
+ }
+}

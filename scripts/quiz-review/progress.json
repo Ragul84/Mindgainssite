@@ -123,5 +123,15 @@
   "reviewed_to": null,
   "total": 392,
   "retired": 3
+ },
+ "samacheer/chemistry/class11": {
+  "reviewed_to": null,
+  "total": 508,
+  "retired": 35
+ },
+ "samacheer/chemistry/class12": {
+  "reviewed_to": null,
+  "total": 604,
+  "retired": 36
  }
 }

@@ -1,0 +1,206 @@
+{
+ "112": "retire",
+ "113": "retire",
+ "114": "retire",
+ "115": "retire",
+ "116": "retire",
+ "143": "retire",
+ "144": "retire",
+ "145": "retire",
+ "146": "retire",
+ "147": "retire",
+ "148": "retire",
+ "160": "retire",
+ "196": "retire",
+ "200": "retire",
+ "217": "retire",
+ "218": "retire",
+ "219": "retire",
+ "272": "retire",
+ "273": "retire",
+ "275": "retire",
+ "277": "retire",
+ "330": "retire",
+ "397": "retire",
+ "398": "retire",
+ "399": "retire",
+ "400": "retire",
+ "401": "retire",
+ "439": "retire",
+ "440": "retire",
+ "441": "retire",
+ "442": "retire",
+ "443": "retire",
+ "444": "retire",
+ "474": "retire",
+ "498": "retire",
+ "17": {
+  "lh": "Scientist",
+  "rh": "Contribution",
+  "L": [
+   "J.J. Thomson",
+   "Ernest Rutherford",
+   "Niels Bohr",
+   "Erwin Schrödinger"
+  ],
+  "why": "Thomson discovered the electron, Rutherford proposed the nuclear model, Bohr introduced quantum jumps between orbits and Schrödinger wrote the wave equation for electrons.",
+  "R": [
+   "Discovered electrons",
+   "Proposed nuclear model",
+   "Introduced quantum jumps",
+   "Wave equation for electrons"
+  ]
+ },
+ "27": {
+  "lh": "Principle",
+  "rh": "Statement",
+  "L": [
+   "Pauli exclusion principle",
+   "Hund's rule",
+   "Aufbau principle",
+   "Heisenberg uncertainty principle"
+  ],
+  "why": "Pauli: no two electrons share all four quantum numbers; Hund: degenerate orbitals fill singly first; Aufbau: lowest energy first; Heisenberg: position and momentum cannot both be known exactly.",
+  "R": [
+   "No two electrons have identical quantum numbers",
+   "Electrons occupy degenerate orbitals singly first",
+   "Electrons fill orbitals starting from lowest energy",
+   "Uncertainty in position and momentum of electrons"
+  ]
+ },
+ "31": {
+  "lh": "Orbital",
+  "rh": "Shape",
+  "L": [
+   "s orbital",
+   "p orbital",
+   "d orbital",
+   "f orbital"
+  ],
+  "why": "s orbitals are spherical, p dumbbell-shaped, most d orbitals cloverleaf-shaped and f orbitals more complex.",
+  "R": [
+   "Spherical shape",
+   "Dumbbell shape",
+   "Cloverleaf shape",
+   "Complex shape"
+  ]
+ },
+ "111": {
+  "lh": "Element",
+  "rh": "Group",
+  "L": [
+   "Calcium",
+   "Sodium"
+  ],
+  "why": "Calcium is an alkaline earth metal (group 2); sodium is an alkali metal (group 1).",
+  "R": [
+   "Alkaline Earth Metal",
+   "Alkali Metal"
+  ]
+ },
+ "169": {
+  "lh": "Property",
+  "rh": "Symbol",
+  "L": [
+   "Enthalpy",
+   "Entropy",
+   "Gibbs free energy",
+   "Internal energy"
+  ],
+  "why": "Enthalpy is H, entropy S, Gibbs free energy G and internal energy U.",
+  "R": [
+   "H",
+   "S",
+   "G",
+   "U"
+  ]
+ },
+ "216": {
+  "lh": "Example",
+  "rh": "Type of solution",
+  "L": [
+   "Air",
+   "Brass",
+   "Sea water"
+  ],
+  "why": "Air is a gaseous solution, brass a solid solution and sea water a liquid solution.",
+  "R": [
+   "Gaseous solution",
+   "Solid solution",
+   "Liquid solution"
+  ]
+ },
+ "247": {
+  "lh": "Example",
+  "rh": "Category",
+  "L": [
+   "Malathion",
+   "Cotton",
+   "Paracetamol tablets",
+   "Nylon"
+  ],
+  "why": "Malathion is a pesticide, cotton a natural fibre, tablets are pharmaceuticals and nylon is a synthetic fibre.",
+  "R": [
+   "Pesticide",
+   "Natural Fibre",
+   "Pharmaceutical",
+   "Synthetic Fibre"
+  ]
+ },
+ "274": {
+  "lh": "Gas",
+  "rh": "Atomicity",
+  "L": [
+   "Noble gases",
+   "Hydrogen"
+  ],
+  "why": "Noble gases exist as single atoms; hydrogen exists as H2 molecules.",
+  "R": [
+   "Monoatomic",
+   "Diatomic"
+  ]
+ },
+ "276": {
+  "lh": "Compound",
+  "rh": "Property",
+  "L": [
+   "Sodium chloride",
+   "Carbon tetrachloride"
+  ],
+  "why": "Ionic sodium chloride is hard and brittle; covalent carbon tetrachloride is a liquid.",
+  "R": [
+   "Hard and brittle",
+   "Liquid"
+  ]
+ },
+ "396": {
+  "lh": "Compound",
+  "rh": "Use",
+  "L": [
+   "Chloroquine",
+   "Freon (CFC-113)",
+   "Chloramphenicol",
+   "Chloroform"
+  ],
+  "why": "Chloroquine treats malaria, CFC-113 was used to clean electronics, chloramphenicol treats typhoid and chloroform was an early anaesthetic.",
+  "R": [
+   "Malaria treatment",
+   "Cleaning electronics",
+   "Typhoid treatment",
+   "Anesthetic"
+  ]
+ },
+ "473": {
+  "lh": "Method",
+  "rh": "Used for",
+  "L": [
+   "Pauling's method",
+   "Slater's rules"
+  ],
+  "why": "Pauling's method estimates ionic radii; Slater's rules estimate effective nuclear charge.",
+  "R": [
+   "Ionic radius",
+   "Effective nuclear charge"
+  ]
+ }
+}
