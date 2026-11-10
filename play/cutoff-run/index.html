@@ -561,7 +561,10 @@ body{background:#0f1c33}
 .banner small{display:inline!important;font-size:13px!important;margin:0 0 0 8px!important;font-family:Nunito,system-ui,sans-serif;font-weight:800}
 #q.shootq .opts{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:6px!important;margin-top:6px}
 #q.shootq .opt{padding:6px 6px!important;font-size:13px!important;flex-direction:row!important;align-items:center!important;gap:5px!important;min-height:0!important;box-shadow:0 2px 0 var(--ln)!important}
-#q.shootq .opt>*:first-child{transform:scale(.8);flex:none}
+#q.shootq .opt>*:first-child{display:none}
+#q.shootq .opt{font-size:12.5px!important;line-height:1.2!important;border-width:2px 2px 2px 6px!important;justify-content:center;text-align:center}
+#q.shootq .opt span{overflow-wrap:anywhere}
+#q.shootq .opt:nth-child(1){border-left-color:#1cb0f6!important}#q.shootq .opt:nth-child(2){border-left-color:#58cc02!important}#q.shootq .opt:nth-child(3){border-left-color:#ffb400!important}
 #q.shootq #qt{min-height:0!important}
 #q.shootq{padding-bottom:10px!important}
 #q.shootq #qt{font-size:15px!important;line-height:1.3!important}
@@ -1360,7 +1363,7 @@ function updateQ(dt){
     $('stamp').className='stamp';q.hidden=false;q.style.animation='none';q.offsetHeight;q.style.animation=''}}
   else if(q.hidden&&!it.done){q.hidden=false;q.style.animation='none';q.offsetHeight;q.style.animation=''} // card was hidden by a revive, scroll or banner pause: bring it back
   q.style.top=Math.max(92,HOR-q.offsetHeight-4)+'px';
-  $('qbar').style.width=(a.shoot?Math.max(0,100-S.arena.t/12*100):(S.pace&&S.pace.it===it?Math.max(0,100-S.pace.el/S.pace.T*100):100))+'%';$('q').classList.toggle('shootq',!!a.shoot);$('lock').hidden=!!(a.shoot||a.branch);$('skip').hidden=!!(a.shoot||a.branch);
+  $('qbar').style.width=(a.shoot?Math.max(0,100-S.arena.t/14*100):(S.pace&&S.pace.it===it?Math.max(0,100-S.pace.el/S.pace.T*100):100))+'%';$('q').classList.toggle('shootq',!!a.shoot);$('lock').hidden=!!(a.shoot||a.branch);$('skip').hidden=!!(a.shoot||a.branch);
   const side=laneOf(a.branch?2:it.ans.length,S.x);$('opts').querySelectorAll('.opt').forEach((e,i)=>e.classList.toggle('on',i===side))
 }
 function qResult(it,side,ok,txt){if(qRow!==it)return;qHold=ok?.7:side<0?.8:1.05;
@@ -1373,20 +1376,23 @@ function qResult(it,side,ok,txt){if(qRow!==it)return;qHold=ok?.7:side<0?.8:1.05;
 // ---------- Doubt Attack: real shooter ----------
 function startShoot(it){
   const sub=pick(S.subs),q=S.picker.gate(sub,3);
-  const big=Math.max(14,Math.round(8+Math.sqrt(S.count)*3));
-  const mons=q.ans.map((a,i)=>({kind:'big',x:-1.33+i*1.33,z:S.dist+16+i*.5,hp:big,max:big,ok:i===q.correct,alive:true,ph:rnd(0,6),flash:0,label:'ABCD'[i],r:.55}));
-  const nm=10+S.lv*3;for(let k=0;k<nm;k++)mons.push({kind:'min',x:rnd(-1.7,1.7),z:S.dist+9+k*.85+rnd(0,1),hp:2,max:2,alive:true,ph:rnd(0,6),flash:0,r:.32});
-  S.phase='shoot';S.arena={q,t:0,fire:0,done:false,endT:0,mons};
+  const big=Math.max(10,Math.round(6+Math.sqrt(S.count)*1.5));
+  const mons=q.ans.map((a,i)=>({kind:'big',x:-1.33+i*1.33,z:S.dist+11,hp:big,max:big,ok:i===q.correct,alive:true,ph:rnd(0,6),flash:0,label:'ABCD'[i],r:.55}));
+  const nm=0;for(let k=0;k<nm;k++)mons.push({kind:'min',x:rnd(-1.7,1.7),z:S.dist+9+k*.85+rnd(0,1),hp:2,max:2,alive:true,ph:rnd(0,6),flash:0,r:.32});
+  S.phase='shoot';S.arena={q,t:0,fire:0,done:false,endT:0,mons,armed:null,lane:-1,hold:0};
   0;sfx.roar();S.shake=.3;
 }
 function dmgNum(x,y,z,t,col){S.dmgs.push({x:x+rnd(-.15,.15),y,z,t,col,life:.55})}
 function updateShoot(dt){
   const A=S.arena;A.t+=dt;
   if(!A.done){
-    const rate=Math.min(30,6+Math.sqrt(S.count)*2.4);A.fire-=dt;
-    while(A.fire<=0){A.fire+=1/rate;const m=S.members[(Math.random()*S.members.length)|0];if(!m)break;const bx=S.x+m.x,bz=S.dist+m.z+.3;
+    /* read first, then shoot: nothing fires until you choose (tap an answer, or stay in one lane for a second) */
+    if(A.armed==null){const ln=laneOf(3,S.x);if(ln===A.lane)A.hold+=dt;else{A.lane=ln;A.hold=0}if(A.t>1.5&&A.hold>1.1)A.armed=ln;if(A.t>14){ftext('Too slow','#ff4d5e');endShoot(false)}}
+    const tgt=A.armed==null?null:A.mons.find(m=>m.kind==='big'&&m.label==='ABC'[A.armed]&&m.alive);if(tgt)S.tx=tgt.x;
+    const rate=Math.min(30,8+Math.sqrt(S.count)*2.4);if(tgt)A.fire-=dt;
+    while(tgt&&A.fire<=0){A.fire+=1/rate;const m=S.members[(Math.random()*S.members.length)|0];if(!m)break;const bx=tgt.x+rnd(-.22,.22),bz=S.dist+m.z+.3;
       S.bullets.push({x:bx,y:.75,z:bz,vx:0,vy:0,g:0,vz:22,life:1.1,shot:true});S.parts.push({x:bx,y:.8,z:bz+.2,vx:0,vy:0,vz:0,life:.06,col:'#fff3a0',sz:.16,flash:true});sfx.shot()}
-    for(const m of A.mons){if(!m.alive)continue;m.flash=Math.max(0,m.flash-dt);m.z-=dt*(m.kind==='min'?2.1+S.lv*.12:1.15+S.lv*.08);
+    for(const m of A.mons){if(!m.alive)continue;m.flash=Math.max(0,m.flash-dt);m.z-=dt*(m.kind==='min'?2.1+S.lv*.12:0);
       for(const b of S.bullets){if(b.life>0&&b.shot&&Math.abs(b.x-m.x)<m.r&&Math.abs(b.z-m.z)<m.r+.25){b.life=0;m.hp--;m.flash=.07;m.z+=m.kind==='min'?.12:.035;
         for(let k=0;k<3;k++)S.parts.push({x:b.x,y:.75,z:m.z-.2,vx:rnd(-2,2),vy:rnd(0,3),vz:rnd(-2,0),life:.25,col:k?'#ffffff':'#ffd23f',sz:.07});
         dmgNum(m.x,m.kind==='min'?1:1.6,m.z,'1',m.kind==='min'?'#ffffff':'#ffd23f');if(m.hp<=0){killMon(m);break}}}
@@ -2372,6 +2378,7 @@ function start(mode,opts={}){
   if((mode==='quick'||mode==='csat')&&!PL.pro){const left=quickRemaining();if(left<=0){hideAll();$('pcard').innerHTML=`<div class="stage"><div class="bubble r">You used today's free Quick Revisions. Review and weak-topic practice are always free!</div>${miga('think')}</div><button class="btn" id="qlRev">Start Review</button><button class="btn blue sm" id="qlWeak">Practise weakest subject</button><p class="note ctr">MindGains Pro gives unlimited Quick Revision runs.</p><button class="x" id="qlBack" style="align-self:center">Back</button>`;$('pop').hidden=false;$('qlRev').onclick=()=>start('review');$('qlWeak').onclick=()=>start('weak');$('qlBack').onclick=()=>{$('pop').hidden=true;openMenu()};return}
     if(PL.quickDay!==todayKey()){PL.quickDay=todayKey();PL.quickN=0}PL.quickN++;saveP()}
   initAudio();hideAll();hideToast();closeSheet();qRow=null;qNo=0;$('q').hidden=true;newRun(mode,opts)}
+$('opts').addEventListener('click',e=>{const A=S&&S.arena;if(A&&S.phase==='shoot'&&!A.done&&A.armed==null){const o=e.target.closest('.opt');if(o){A.armed=+o.dataset.i;initAudio();sfx.tick()}return}})
 $('opts').addEventListener('click',e=>{const o=e.target.closest('.opt');if(!o||!S||S.phase!=='run'||!qRow||qRow.done||S.steerLock)return;const n=$('opts').children.length,i=+o.dataset.i;S.tx=-2+4/n*(i+.5);initAudio();sfx.tick();
   // A tap on an answer commits to it (roads only steer): one decision, not choose-then-lock.
   if(!o.classList.contains('road'))lockAnswer(i)});
