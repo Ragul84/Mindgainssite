@@ -113,5 +113,15 @@
   "reviewed_to": null,
   "total": 410,
   "retired": 9
+ },
+ "samacheer/physics/class11": {
+  "reviewed_to": null,
+  "total": 359,
+  "retired": 4
+ },
+ "samacheer/physics/class12": {
+  "reviewed_to": null,
+  "total": 392,
+  "retired": 3
  }
 }

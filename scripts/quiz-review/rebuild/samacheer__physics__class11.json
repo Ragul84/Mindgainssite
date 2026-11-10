@@ -1,0 +1,588 @@
+{
+ "97": "retire",
+ "98": "retire",
+ "143": "retire",
+ "255": "retire",
+ "48": {
+  "lh": "Process",
+  "rh": "Constant",
+  "L": [
+   "Isobaric",
+   "Isothermal",
+   "Adiabatic",
+   "Isochoric"
+  ],
+  "R": [
+   "Pressure",
+   "Temperature",
+   "No heat exchange",
+   "Volume"
+  ],
+  "why": "Isobaric: constant pressure; isothermal: constant temperature; adiabatic: no heat exchange; isochoric: constant volume."
+ },
+ "49": {
+  "lh": "Law",
+  "rh": "About",
+  "L": [
+   "Second law of thermodynamics",
+   "Zeroth law",
+   "Gay-Lussac's law",
+   "First law of thermodynamics"
+  ],
+  "why": "The second law brings in entropy, the zeroth law defines thermal equilibrium, Gay-Lussac's law gives P ∝ T and the first law is energy conservation.",
+  "R": [
+   "Entropy",
+   "Thermal Equilibrium",
+   "P proportional to T",
+   "Energy Conservation"
+  ]
+ },
+ "50": {
+  "lh": "Gas",
+  "rh": "Cv",
+  "L": [
+   "Diatomic gas",
+   "Monatomic gas",
+   null,
+   "Non-linear polyatomic gas"
+  ],
+  "why": "Molar Cv is 3/2 R for a monatomic gas, 5/2 R for a diatomic gas and 3 R for a non-linear polyatomic gas.",
+  "R": [
+   "5/2 R",
+   "3/2 R",
+   "Variable",
+   "3 R"
+  ]
+ },
+ "51": {
+  "lh": "Quantity",
+  "rh": "SI unit",
+  "L": [
+   "Heat",
+   "Pressure",
+   "Temperature",
+   "Entropy"
+  ],
+  "why": "Heat is measured in joules, pressure in pascals, temperature in kelvin and entropy in J/K.",
+  "R": [
+   "Joule",
+   "Pascal",
+   "Kelvin",
+   "J/K"
+  ]
+ },
+ "52": {
+  "lh": "Process",
+  "rh": "Relation",
+  "L": [
+   "Isobaric",
+   "Adiabatic",
+   "Isochoric",
+   "Isothermal"
+  ],
+  "why": "Isobaric: P constant; adiabatic: PV^γ constant; isochoric: V constant; isothermal: PV constant.",
+  "R": [
+   "P = constant",
+   "PV^gamma = constant",
+   "V = constant",
+   "PV = constant"
+  ]
+ },
+ "94": {
+  "lh": "Quantity",
+  "rh": "SI unit",
+  "L": [
+   "Velocity",
+   "Acceleration",
+   "Displacement",
+   "Jerk",
+   null
+  ],
+  "why": "Velocity is in m/s, acceleration m/s², displacement m and jerk (rate of change of acceleration) m/s³.",
+  "R": [
+   "m/s",
+   "m/s^2",
+   "m",
+   "m/s^3",
+   "m/s"
+  ]
+ },
+ "95": {
+  "lh": "Motion",
+  "rh": "Feature",
+  "L": [
+   "Uniform motion",
+   "Uniformly accelerated motion",
+   "Projectile motion",
+   "Uniform circular motion",
+   "Free fall"
+  ],
+  "why": "Uniform motion has constant velocity, uniformly accelerated motion constant acceleration, projectiles follow a parabola, circular motion has centripetal acceleration and free fall has acceleration g.",
+  "R": [
+   "Constant Velocity",
+   "Constant Acceleration",
+   "Parabolic Path",
+   "Centripetal Acceleration",
+   "Acceleration = g"
+  ]
+ },
+ "96": {
+  "lh": "Formula",
+  "rh": "Gives",
+  "L": [
+   "v = u + at",
+   "s = ut + ½at²",
+   "v² = u² + 2as",
+   "R = u² sin 2θ / g",
+   "H = u² sin²θ / 2g"
+  ],
+  "why": "The three equations of motion give final velocity, displacement and the velocity-displacement relation; the last two give a projectile's range and maximum height.",
+  "R": [
+   "Final Velocity",
+   "Displacement",
+   "Velocity-Displacement",
+   "Range",
+   "Max Height"
+  ]
+ },
+ "139": {
+  "lh": "Constant",
+  "rh": "Symbol",
+  "L": [
+   "Universal gas constant",
+   "Molar mass",
+   "Boltzmann constant",
+   "Avogadro number"
+  ],
+  "why": "R is the gas constant, M the molar mass, k Boltzmann's constant and Nₐ Avogadro's number.",
+  "R": [
+   "R",
+   "M",
+   "k",
+   "Na"
+  ]
+ },
+ "140": {
+  "lh": "Molecule",
+  "rh": "Degrees of freedom",
+  "L": [
+   "Diatomic (rigid)",
+   "Diatomic (with vibration)",
+   "Monatomic",
+   "Non-linear triatomic"
+  ],
+  "why": "A monatomic gas has 3, a rigid diatomic 5, a vibrating diatomic 7 and a non-linear triatomic 6 degrees of freedom.",
+  "R": [
+   "5",
+   "7",
+   "3",
+   "6"
+  ]
+ },
+ "141": {
+  "lh": "Law",
+  "rh": "Held constant",
+  "L": [
+   "Gay-Lussac's law",
+   "Boyle's law",
+   "Avogadro's law",
+   "Charles's law"
+  ],
+  "why": "Gay-Lussac's law holds volume constant, Boyle's law temperature, Charles's law pressure, and Avogadro's law compares gases at the same P, V and T.",
+  "R": [
+   "Volume",
+   "Temperature",
+   "P, V, T",
+   "Pressure"
+  ]
+ },
+ "142": {
+  "lh": "Speed",
+  "rh": "Formula",
+  "L": [
+   "Most probable speed",
+   "RMS speed",
+   "Ratio of RMS to most probable speed",
+   "Mean speed"
+  ],
+  "R": [
+   "√(2RT/M)",
+   "√(3RT/M)",
+   "√1.5",
+   "√(8RT/πM)"
+  ],
+  "why": "v_mp = √(2RT/M), v_rms = √(3RT/M), v_mean = √(8RT/πM), so v_rms/v_mp = √1.5."
+ },
+ "171": {
+  "lh": "Law",
+  "rh": "Statement",
+  "L": [
+   "Newton's first law",
+   "Conservation of momentum",
+   "Newton's second law",
+   "Newton's third law"
+  ],
+  "why": "The first law is the law of inertia, momentum stays constant without external force, the second law is F = dp/dt and the third law pairs action and reaction.",
+  "R": [
+   "Law of Inertia",
+   "Momentum is constant",
+   "F = dp/dt",
+   "Action and Reaction"
+  ]
+ },
+ "172": {
+  "lh": "Friction",
+  "rh": "Characteristic",
+  "L": [
+   "Kinetic friction",
+   "Static friction",
+   "Limiting friction",
+   "Rolling friction"
+  ],
+  "why": "Kinetic friction is roughly constant, static friction adjusts itself, limiting friction is the maximum static value and rolling friction is the smallest.",
+  "R": [
+   "Constant value",
+   "Self-adjusting",
+   "Maximum static",
+   "Minimum value"
+  ]
+ },
+ "173": {
+  "lh": "Quantity",
+  "rh": "SI unit",
+  "L": [
+   "Momentum",
+   "Coefficient of friction",
+   "Force",
+   "Impulse"
+  ],
+  "why": "Momentum is in kg m/s, the coefficient of friction has no unit, force is in newtons and impulse in N s.",
+  "R": [
+   "kg m/s",
+   "Dimensionless",
+   "Newton",
+   "N s"
+  ]
+ },
+ "174": {
+  "lh": "Concept",
+  "rh": "Example",
+  "L": [
+   "Centripetal force",
+   "Inertia of rest",
+   "Inertia of direction",
+   "Newton's third law"
+  ],
+  "why": "Gravity provides centripetal force for planets, dusting a carpet shows inertia of rest, mud flying off a wheel inertia of direction and a runner pushing back on the ground Newton's third law.",
+  "R": [
+   "Planetary motion",
+   "Dusting a carpet",
+   "Mud flying off wheel",
+   "Athlete running"
+  ]
+ },
+ "175": {
+  "lh": "Force",
+  "rh": "Nature",
+  "L": [
+   "Normal force",
+   "Friction",
+   "Tension",
+   "Gravitational force"
+  ],
+  "why": "The normal force is perpendicular to the surface, friction opposes motion, tension pulls and gravity attracts.",
+  "R": [
+   "Perpendicular force",
+   "Opposing force",
+   "Pulling force",
+   "Attractive force"
+  ]
+ },
+ "203": {
+  "lh": "Quantity",
+  "rh": "Formula",
+  "L": [
+   "Angular momentum",
+   "Torque",
+   "Angular acceleration",
+   "Moment of inertia"
+  ],
+  "why": "L = Iω, τ = r × F, α = dω/dt and I = Σmr².",
+  "R": [
+   "Iω",
+   "r x F",
+   "dω/dt",
+   "Σmr²"
+  ]
+ },
+ "204": {
+  "lh": "Body (about centre)",
+  "rh": "Moment of inertia",
+  "L": [
+   "Solid sphere",
+   "Thin ring",
+   "Hollow sphere",
+   "Disc"
+  ],
+  "why": "Solid sphere 2/5 MR², ring MR², hollow sphere 2/3 MR², disc 1/2 MR².",
+  "R": [
+   "2/5 MR²",
+   "MR²",
+   "2/3 MR²",
+   "1/2 MR²"
+  ]
+ },
+ "205": {
+  "lh": "Linear quantity",
+  "rh": "Rotational analogue",
+  "L": [
+   "Force",
+   "Linear momentum",
+   "Mass",
+   "Linear velocity"
+  ],
+  "why": "Force ↔ torque, momentum ↔ angular momentum, mass ↔ moment of inertia, velocity ↔ angular velocity.",
+  "R": [
+   "Torque",
+   "Angular Momentum",
+   "Moment of Inertia",
+   "Angular Velocity"
+  ]
+ },
+ "206": {
+  "lh": "Result",
+  "rh": "Statement",
+  "L": [
+   "Perpendicular axis theorem",
+   "Radius of gyration",
+   "Parallel axis theorem"
+  ],
+  "why": "The perpendicular axis theorem gives Iz = Ix + Iy, the radius of gyration is k = √(I/M) and the parallel axis theorem gives I = Icm + Md².",
+  "R": [
+   "Iz = Ix + Iy",
+   "k = √(I/M)",
+   "I = Icm + Md²"
+  ]
+ },
+ "207": {
+  "lh": "Energy",
+  "rh": "Formula",
+  "L": [
+   "Rotational kinetic energy",
+   "Kinetic energy of rolling",
+   "Translational kinetic energy"
+  ],
+  "why": "Rotational KE = ½Iω², translational KE = ½mv² and a rolling body has both.",
+  "R": [
+   "1/2 Iω²",
+   "1/2 mv² + 1/2 Iω²",
+   "1/2 mv²"
+  ]
+ },
+ "219": {
+  "lh": "Term",
+  "rh": "Description",
+  "L": [
+   "Amplitude",
+   "Frequency",
+   "Damping",
+   "Time period",
+   "Resonance"
+  ],
+  "why": "Amplitude is maximum displacement, frequency oscillations per second, damping the fall in amplitude, the period the time for one oscillation and resonance maximum amplitude at the natural frequency.",
+  "R": [
+   "Maximum displacement",
+   "Number of oscillations/sec",
+   "Reduction in amplitude",
+   "Time for one oscillation",
+   "Maximum amplitude at natural frequency"
+  ]
+ },
+ "253": {
+  "lh": "Modulus / ratio",
+  "rh": "Definition",
+  "L": [
+   "Bulk modulus",
+   "Young's modulus",
+   "Poisson's ratio",
+   "Rigidity modulus"
+  ],
+  "why": "Bulk modulus is volume stress/strain, Young's modulus longitudinal stress/strain, Poisson's ratio lateral/longitudinal strain and rigidity modulus shear stress/strain.",
+  "R": [
+   "Volumetric stress/strain",
+   "Longitudinal stress/strain",
+   "Lateral strain/Longitudinal strain",
+   "Shearing stress/strain"
+  ]
+ },
+ "254": {
+  "lh": "Term",
+  "rh": "Characteristic",
+  "L": [
+   "Real fluid",
+   "Ideal fluid",
+   "Turbulent flow",
+   "Streamline flow"
+  ],
+  "why": "Real fluids have viscosity, ideal fluids none; turbulent flow is chaotic and streamline flow moves in smooth layers.",
+  "R": [
+   "Has viscosity",
+   "Zero viscosity",
+   "Chaotic motion",
+   "Smooth layers"
+  ]
+ },
+ "256": {
+  "lh": "Quantity",
+  "rh": "Unit",
+  "L": [
+   "Pressure",
+   "Surface tension",
+   "Strain",
+   "Coefficient of viscosity"
+  ],
+  "why": "Pressure is in N/m², surface tension in N/m, strain has no unit and viscosity is in Pa s.",
+  "R": [
+   "N/m²",
+   "N/m",
+   "Dimensionless",
+   "Pa.s"
+  ]
+ },
+ "257": {
+  "lh": "Law",
+  "rh": "Deals with",
+  "L": [
+   "Bernoulli's theorem",
+   "Hooke's law",
+   "Pascal's law",
+   "Stokes' law"
+  ],
+  "why": "Bernoulli's theorem is about fluid flow, Hooke's law elasticity, Pascal's law pressure in fluids and Stokes' law viscous force.",
+  "R": [
+   "Fluid dynamics",
+   "Elasticity",
+   "Fluid pressure",
+   "Viscous force"
+  ]
+ },
+ "291": {
+  "lh": "Term",
+  "rh": "Definition",
+  "L": [
+   "Energy",
+   "Work",
+   "Power"
+  ],
+  "why": "Energy is the capacity to do work, work is force × displacement and power is work done per unit time.",
+  "R": [
+   "Capacity to do work",
+   "Force × Displacement",
+   "Work done per unit time"
+  ]
+ },
+ "332": {
+  "lh": "Process",
+  "rh": "Constant",
+  "L": [
+   "Isobaric",
+   "Adiabatic",
+   "Isothermal",
+   "Isochoric"
+  ],
+  "R": [
+   "Pressure",
+   "No heat exchange",
+   "Temperature",
+   "Volume"
+  ],
+  "why": "Isobaric: constant pressure; adiabatic: no heat exchange; isothermal: constant temperature; isochoric: constant volume."
+ },
+ "333": {
+  "lh": "Law of thermodynamics",
+  "rh": "About",
+  "L": [
+   "Second law",
+   "Third law",
+   "Zeroth law",
+   "First law"
+  ],
+  "why": "Zeroth law – thermal equilibrium; first – energy conservation; second – entropy; third – absolute zero.",
+  "R": [
+   "Entropy",
+   "Absolute Zero",
+   "Thermal Equilibrium",
+   "Energy Conservation"
+  ]
+ },
+ "334": {
+  "lh": "Quantity",
+  "rh": "SI unit",
+  "L": [
+   "Temperature",
+   "Heat",
+   "Entropy",
+   "Pressure"
+  ],
+  "why": "Temperature in kelvin, heat in joules, entropy in J/K and pressure in pascals.",
+  "R": [
+   "Kelvin",
+   "Joule",
+   "J/K",
+   "Pascal"
+  ]
+ },
+ "335": {
+  "lh": "Gas",
+  "rh": "γ",
+  "L": [
+   "Diatomic gas",
+   "Polyatomic gas",
+   "Monatomic gas",
+   null
+  ],
+  "why": "γ is about 1.67 for monatomic, 1.40 for diatomic and 1.33 for polyatomic gases.",
+  "R": [
+   "1.40",
+   "1.33",
+   "1.67",
+   "Variable"
+  ]
+ },
+ "356": {
+  "stem": "Match the symbol with the quantity:",
+  "lh": "Symbol",
+  "rh": "Quantity",
+  "L": [
+   "g",
+   "G",
+   "T",
+   "v_esc"
+  ],
+  "why": "g is the acceleration due to gravity, G the universal gravitational constant, T a time period and v_esc the escape velocity.",
+  "R": [
+   "Acceleration due to gravity",
+   "Universal Constant",
+   "Time Period",
+   "Escape Velocity"
+  ]
+ },
+ "358": {
+  "stem": "Match the quantity with its SI unit:",
+  "lh": "Quantity",
+  "rh": "SI unit",
+  "L": [
+   "Gravitational potential",
+   "Gravitational constant",
+   "Gravitational potential energy",
+   "Acceleration due to gravity"
+  ],
+  "why": "Gravitational potential is in J/kg, G in N m²/kg², potential energy in joules and g in m/s².",
+  "R": [
+   "J/kg",
+   "N m²/kg²",
+   "Joule",
+   "m/s²"
+  ]
+ }
+}

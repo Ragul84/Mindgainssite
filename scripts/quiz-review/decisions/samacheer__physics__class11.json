@@ -1,0 +1,384 @@
+{
+ "retire": [
+  97,
+  98,
+  143,
+  255
+ ],
+ "fix": {
+  "48": {
+   "question": "Match List I with List II: List I (Process) A. Isobaric B. Isothermal C. Adiabatic D. Isochoric List II (Constant) 1. Temperature 2. Pressure 3. Volume 4. No heat exchange",
+   "options": [
+    "A-2, B-1, C-4, D-3",
+    "A-1, B-2, C-4, D-3",
+    "A-3, B-1, C-4, D-2",
+    "A-4, B-1, C-2, D-3"
+   ],
+   "answer_index": 0,
+   "explanation": "Isobaric: constant pressure; isothermal: constant temperature; adiabatic: no heat exchange; isochoric: constant volume."
+  },
+  "49": {
+   "question": "Match List I with List II: List I (Law) A. Second law of thermodynamics B. Zeroth law C. Gay-Lussac's law D. First law of thermodynamics List II (About) 1. Energy Conservation 2. Thermal Equilibrium 3. P proportional to T 4. Entropy",
+   "options": [
+    "A-4, B-3, C-2, D-1",
+    "A-4, B-2, C-3, D-1",
+    "A-3, B-2, C-4, D-1",
+    "A-2, B-4, C-3, D-1"
+   ],
+   "answer_index": 1,
+   "explanation": "The second law brings in entropy, the zeroth law defines thermal equilibrium, Gay-Lussac's law gives P ∝ T and the first law is energy conservation."
+  },
+  "50": {
+   "question": "Match List I with List II: List I (Gas) A. Diatomic gas B. Monatomic gas C. Non-linear polyatomic gas List II (Cv) 1. 3/2 R 2. 5/2 R 3. 3 R",
+   "options": [
+    "A-1, B-2, C-3",
+    "A-3, B-1, C-2",
+    "A-2, B-1, C-3",
+    "A-2, B-3, C-1"
+   ],
+   "answer_index": 2,
+   "explanation": "Molar Cv is 3/2 R for a monatomic gas, 5/2 R for a diatomic gas and 3 R for a non-linear polyatomic gas."
+  },
+  "51": {
+   "question": "Match List I with List II: List I (Quantity) A. Heat B. Pressure C. Temperature D. Entropy List II (SI unit) 1. J/K 2. Kelvin 3. Pascal 4. Joule",
+   "options": [
+    "A-4, B-1, C-2, D-3",
+    "A-4, B-2, C-3, D-1",
+    "A-4, B-3, C-1, D-2",
+    "A-4, B-3, C-2, D-1"
+   ],
+   "answer_index": 3,
+   "explanation": "Heat is measured in joules, pressure in pascals, temperature in kelvin and entropy in J/K."
+  },
+  "52": {
+   "question": "Match List I with List II: List I (Process) A. Isobaric B. Adiabatic C. Isochoric D. Isothermal List II (Relation) 1. V = constant 2. PV^gamma = constant 3. PV = constant 4. P = constant",
+   "options": [
+    "A-4, B-2, C-1, D-3",
+    "A-4, B-3, C-1, D-2",
+    "A-3, B-2, C-1, D-4",
+    "A-4, B-1, C-2, D-3"
+   ],
+   "answer_index": 0,
+   "explanation": "Isobaric: P constant; adiabatic: PV^γ constant; isochoric: V constant; isothermal: PV constant."
+  },
+  "94": {
+   "question": "Match List I with List II: List I (Quantity) A. Velocity B. Acceleration C. Displacement D. Jerk List II (SI unit) 1. m/s 2. m/s^3 3. m 4. m/s^2",
+   "options": [
+    "A-1, B-3, C-4, D-2",
+    "A-1, B-4, C-2, D-3",
+    "A-1, B-4, C-3, D-2",
+    "A-2, B-4, C-3, D-1"
+   ],
+   "answer_index": 2,
+   "explanation": "Velocity is in m/s, acceleration m/s², displacement m and jerk (rate of change of acceleration) m/s³."
+  },
+  "95": {
+   "question": "Match List I with List II: List I (Motion) A. Uniform motion B. Uniformly accelerated motion C. Projectile motion D. Uniform circular motion E. Free fall List II (Feature) 1. Constant Velocity 2. Centripetal Acceleration 3. Acceleration = g 4. Parabolic Path 5. Constant Acceleration",
+   "options": [
+    "A-1, B-4, C-5, D-2, E-3",
+    "A-3, B-5, C-4, D-2, E-1",
+    "A-2, B-5, C-4, D-1, E-3",
+    "A-1, B-5, C-4, D-2, E-3"
+   ],
+   "answer_index": 3,
+   "explanation": "Uniform motion has constant velocity, uniformly accelerated motion constant acceleration, projectiles follow a parabola, circular motion has centripetal acceleration and free fall has acceleration g."
+  },
+  "96": {
+   "question": "Match List I with List II: List I (Formula) A. v = u + at B. s = ut + ½at² C. v² = u² + 2as D. R = u² sin 2θ / g E. H = u² sin²θ / 2g List II (Gives) 1. Range 2. Max Height 3. Final Velocity 4. Velocity-Displacement 5. Displacement",
+   "options": [
+    "A-3, B-5, C-4, D-1, E-2",
+    "A-3, B-1, C-4, D-5, E-2",
+    "A-3, B-2, C-4, D-1, E-5",
+    "A-3, B-5, C-4, D-2, E-1"
+   ],
+   "answer_index": 0,
+   "explanation": "The three equations of motion give final velocity, displacement and the velocity-displacement relation; the last two give a projectile's range and maximum height."
+  },
+  "139": {
+   "question": "Match List I with List II: List I (Constant) A. Universal gas constant B. Molar mass C. Boltzmann constant D. Avogadro number List II (Symbol) 1. M 2. R 3. Na 4. k",
+   "options": [
+    "A-2, B-1, C-3, D-4",
+    "A-4, B-1, C-2, D-3",
+    "A-1, B-2, C-4, D-3",
+    "A-2, B-1, C-4, D-3"
+   ],
+   "answer_index": 3,
+   "explanation": "R is the gas constant, M the molar mass, k Boltzmann's constant and Nₐ Avogadro's number."
+  },
+  "140": {
+   "question": "Match List I with List II: List I (Molecule) A. Diatomic (rigid) B. Diatomic (with vibration) C. Monatomic D. Non-linear triatomic List II (Degrees of freedom) 1. 6 2. 7 3. 5 4. 3",
+   "options": [
+    "A-3, B-2, C-4, D-1",
+    "A-3, B-4, C-2, D-1",
+    "A-3, B-2, C-1, D-4",
+    "A-4, B-2, C-3, D-1"
+   ],
+   "answer_index": 0,
+   "explanation": "A monatomic gas has 3, a rigid diatomic 5, a vibrating diatomic 7 and a non-linear triatomic 6 degrees of freedom."
+  },
+  "141": {
+   "question": "Match List I with List II: List I (Law) A. Gay-Lussac's law B. Boyle's law C. Avogadro's law D. Charles's law List II (Held constant) 1. Pressure 2. P, V, T 3. Temperature 4. Volume",
+   "options": [
+    "A-4, B-3, C-1, D-2",
+    "A-4, B-3, C-2, D-1",
+    "A-4, B-2, C-3, D-1",
+    "A-2, B-3, C-4, D-1"
+   ],
+   "answer_index": 1,
+   "explanation": "Gay-Lussac's law holds volume constant, Boyle's law temperature, Charles's law pressure, and Avogadro's law compares gases at the same P, V and T."
+  },
+  "142": {
+   "question": "Match List I with List II: List I (Speed) A. Most probable speed B. RMS speed C. Ratio of RMS to most probable speed D. Mean speed List II (Formula) 1. √(8RT/πM) 2. √(3RT/M) 3. √(2RT/M) 4. √1.5",
+   "options": [
+    "A-3, B-4, C-2, D-1",
+    "A-3, B-2, C-1, D-4",
+    "A-3, B-2, C-4, D-1",
+    "A-3, B-1, C-4, D-2"
+   ],
+   "answer_index": 2,
+   "explanation": "v_mp = √(2RT/M), v_rms = √(3RT/M), v_mean = √(8RT/πM), so v_rms/v_mp = √1.5."
+  },
+  "171": {
+   "question": "Match List I with List II: List I (Law) A. Newton's first law B. Conservation of momentum C. Newton's second law D. Newton's third law List II (Statement) 1. Law of Inertia 2. Momentum is constant 3. F = dp/dt 4. Action and Reaction",
+   "options": [
+    "A-1, B-4, C-3, D-2",
+    "A-1, B-2, C-4, D-3",
+    "A-3, B-2, C-1, D-4",
+    "A-1, B-2, C-3, D-4"
+   ],
+   "answer_index": 3,
+   "explanation": "The first law is the law of inertia, momentum stays constant without external force, the second law is F = dp/dt and the third law pairs action and reaction."
+  },
+  "172": {
+   "question": "Match List I with List II: List I (Friction) A. Kinetic friction B. Static friction C. Limiting friction D. Rolling friction List II (Characteristic) 1. Self-adjusting 2. Maximum static 3. Constant value 4. Minimum value",
+   "options": [
+    "A-3, B-1, C-2, D-4",
+    "A-2, B-1, C-3, D-4",
+    "A-3, B-2, C-1, D-4",
+    "A-4, B-1, C-2, D-3"
+   ],
+   "answer_index": 0,
+   "explanation": "Kinetic friction is roughly constant, static friction adjusts itself, limiting friction is the maximum static value and rolling friction is the smallest."
+  },
+  "173": {
+   "question": "Match List I with List II: List I (Quantity) A. Momentum B. Coefficient of friction C. Force D. Impulse List II (SI unit) 1. N s 2. Newton 3. Dimensionless 4. kg m/s",
+   "options": [
+    "A-1, B-3, C-2, D-4",
+    "A-4, B-3, C-2, D-1",
+    "A-3, B-4, C-2, D-1",
+    "A-4, B-2, C-3, D-1"
+   ],
+   "answer_index": 1,
+   "explanation": "Momentum is in kg m/s, the coefficient of friction has no unit, force is in newtons and impulse in N s."
+  },
+  "174": {
+   "question": "Match List I with List II: List I (Concept) A. Centripetal force B. Inertia of rest C. Inertia of direction D. Newton's third law List II (Example) 1. Mud flying off wheel 2. Planetary motion 3. Dusting a carpet 4. Athlete running",
+   "options": [
+    "A-4, B-3, C-1, D-2",
+    "A-1, B-3, C-2, D-4",
+    "A-2, B-3, C-1, D-4",
+    "A-2, B-1, C-3, D-4"
+   ],
+   "answer_index": 2,
+   "explanation": "Gravity provides centripetal force for planets, dusting a carpet shows inertia of rest, mud flying off a wheel inertia of direction and a runner pushing back on the ground Newton's third law."
+  },
+  "175": {
+   "question": "Match List I with List II: List I (Force) A. Normal force B. Friction C. Tension D. Gravitational force List II (Nature) 1. Pulling force 2. Opposing force 3. Attractive force 4. Perpendicular force",
+   "options": [
+    "A-1, B-2, C-4, D-3",
+    "A-4, B-1, C-2, D-3",
+    "A-2, B-4, C-1, D-3",
+    "A-4, B-2, C-1, D-3"
+   ],
+   "answer_index": 3,
+   "explanation": "The normal force is perpendicular to the surface, friction opposes motion, tension pulls and gravity attracts."
+  },
+  "203": {
+   "question": "Match List I with List II: List I (Quantity) A. Angular momentum B. Torque C. Angular acceleration D. Moment of inertia List II (Formula) 1. r x F 2. Σmr² 3. dω/dt 4. Iω",
+   "options": [
+    "A-4, B-3, C-1, D-2",
+    "A-4, B-2, C-3, D-1",
+    "A-3, B-1, C-4, D-2",
+    "A-4, B-1, C-3, D-2"
+   ],
+   "answer_index": 3,
+   "explanation": "L = Iω, τ = r × F, α = dω/dt and I = Σmr²."
+  },
+  "204": {
+   "question": "Match List I with List II: List I (Body (about centre)) A. Solid sphere B. Thin ring C. Hollow sphere D. Disc List II (Moment of inertia) 1. 2/3 MR² 2. 1/2 MR² 3. MR² 4. 2/5 MR²",
+   "options": [
+    "A-4, B-3, C-1, D-2",
+    "A-3, B-4, C-1, D-2",
+    "A-2, B-3, C-1, D-4",
+    "A-1, B-3, C-4, D-2"
+   ],
+   "answer_index": 0,
+   "explanation": "Solid sphere 2/5 MR², ring MR², hollow sphere 2/3 MR², disc 1/2 MR²."
+  },
+  "205": {
+   "question": "Match List I with List II: List I (Linear quantity) A. Force B. Linear momentum C. Mass D. Linear velocity List II (Rotational analogue) 1. Moment of Inertia 2. Angular Velocity 3. Torque 4. Angular Momentum",
+   "options": [
+    "A-3, B-1, C-4, D-2",
+    "A-3, B-4, C-1, D-2",
+    "A-2, B-4, C-1, D-3",
+    "A-3, B-2, C-1, D-4"
+   ],
+   "answer_index": 1,
+   "explanation": "Force ↔ torque, momentum ↔ angular momentum, mass ↔ moment of inertia, velocity ↔ angular velocity."
+  },
+  "206": {
+   "question": "Match List I with List II: List I (Result) A. Perpendicular axis theorem B. Radius of gyration C. Parallel axis theorem List II (Statement) 1. k = √(I/M) 2. I = Icm + Md² 3. Iz = Ix + Iy",
+   "options": [
+    "A-3, B-2, C-1",
+    "A-1, B-3, C-2",
+    "A-3, B-1, C-2",
+    "A-2, B-1, C-3"
+   ],
+   "answer_index": 2,
+   "explanation": "The perpendicular axis theorem gives Iz = Ix + Iy, the radius of gyration is k = √(I/M) and the parallel axis theorem gives I = Icm + Md²."
+  },
+  "207": {
+   "question": "Match List I with List II: List I (Energy) A. Rotational kinetic energy B. Kinetic energy of rolling C. Translational kinetic energy List II (Formula) 1. 1/2 mv² 2. 1/2 mv² + 1/2 Iω² 3. 1/2 Iω²",
+   "options": [
+    "A-2, B-3, C-1",
+    "A-3, B-1, C-2",
+    "A-1, B-2, C-3",
+    "A-3, B-2, C-1"
+   ],
+   "answer_index": 3,
+   "explanation": "Rotational KE = ½Iω², translational KE = ½mv² and a rolling body has both."
+  },
+  "219": {
+   "question": "Match List I with List II: List I (Term) A. Amplitude B. Frequency C. Damping D. Time period E. Resonance List II (Description) 1. Time for one oscillation 2. Number of oscillations/sec 3. Maximum amplitude at natural frequency 4. Reduction in amplitude 5. Maximum displacement",
+   "options": [
+    "A-1, B-2, C-4, D-5, E-3",
+    "A-2, B-5, C-4, D-1, E-3",
+    "A-5, B-2, C-1, D-4, E-3",
+    "A-5, B-2, C-4, D-1, E-3"
+   ],
+   "answer_index": 3,
+   "explanation": "Amplitude is maximum displacement, frequency oscillations per second, damping the fall in amplitude, the period the time for one oscillation and resonance maximum amplitude at the natural frequency."
+  },
+  "253": {
+   "question": "Match List I with List II: List I (Modulus / ratio) A. Bulk modulus B. Young's modulus C. Poisson's ratio D. Rigidity modulus List II (Definition) 1. Shearing stress/strain 2. Volumetric stress/strain 3. Lateral strain/Longitudinal strain 4. Longitudinal stress/strain",
+   "options": [
+    "A-3, B-4, C-2, D-1",
+    "A-2, B-4, C-3, D-1",
+    "A-2, B-3, C-4, D-1",
+    "A-4, B-2, C-3, D-1"
+   ],
+   "answer_index": 1,
+   "explanation": "Bulk modulus is volume stress/strain, Young's modulus longitudinal stress/strain, Poisson's ratio lateral/longitudinal strain and rigidity modulus shear stress/strain."
+  },
+  "254": {
+   "question": "Match List I with List II: List I (Term) A. Real fluid B. Ideal fluid C. Turbulent flow D. Streamline flow List II (Characteristic) 1. Smooth layers 2. Zero viscosity 3. Chaotic motion 4. Has viscosity",
+   "options": [
+    "A-4, B-3, C-2, D-1",
+    "A-2, B-4, C-3, D-1",
+    "A-4, B-2, C-3, D-1",
+    "A-4, B-2, C-1, D-3"
+   ],
+   "answer_index": 2,
+   "explanation": "Real fluids have viscosity, ideal fluids none; turbulent flow is chaotic and streamline flow moves in smooth layers."
+  },
+  "256": {
+   "question": "Match List I with List II: List I (Quantity) A. Pressure B. Surface tension C. Strain D. Coefficient of viscosity List II (Unit) 1. N/m 2. Pa.s 3. Dimensionless 4. N/m²",
+   "options": [
+    "A-4, B-1, C-3, D-2",
+    "A-1, B-4, C-3, D-2",
+    "A-3, B-1, C-4, D-2",
+    "A-2, B-1, C-3, D-4"
+   ],
+   "answer_index": 0,
+   "explanation": "Pressure is in N/m², surface tension in N/m, strain has no unit and viscosity is in Pa s."
+  },
+  "257": {
+   "question": "Match List I with List II: List I (Law) A. Bernoulli's theorem B. Hooke's law C. Pascal's law D. Stokes' law List II (Deals with) 1. Fluid dynamics 2. Fluid pressure 3. Viscous force 4. Elasticity",
+   "options": [
+    "A-2, B-4, C-1, D-3",
+    "A-1, B-4, C-2, D-3",
+    "A-3, B-4, C-2, D-1",
+    "A-1, B-3, C-2, D-4"
+   ],
+   "answer_index": 1,
+   "explanation": "Bernoulli's theorem is about fluid flow, Hooke's law elasticity, Pascal's law pressure in fluids and Stokes' law viscous force."
+  },
+  "291": {
+   "question": "Match List I with List II: List I (Term) A. Energy B. Work C. Power List II (Definition) 1. Force × Displacement 2. Capacity to do work 3. Work done per unit time",
+   "options": [
+    "A-1, B-2, C-3",
+    "A-3, B-1, C-2",
+    "A-2, B-3, C-1",
+    "A-2, B-1, C-3"
+   ],
+   "answer_index": 3,
+   "explanation": "Energy is the capacity to do work, work is force × displacement and power is work done per unit time."
+  },
+  "332": {
+   "question": "Match List I with List II: List I (Process) A. Isobaric B. Adiabatic C. Isothermal D. Isochoric List II (Constant) 1. No heat exchange 2. Volume 3. Pressure 4. Temperature",
+   "options": [
+    "A-3, B-1, C-4, D-2",
+    "A-1, B-3, C-4, D-2",
+    "A-4, B-1, C-3, D-2",
+    "A-3, B-4, C-1, D-2"
+   ],
+   "answer_index": 0,
+   "explanation": "Isobaric: constant pressure; adiabatic: no heat exchange; isothermal: constant temperature; isochoric: constant volume."
+  },
+  "333": {
+   "question": "Match List I with List II: List I (Law of thermodynamics) A. Second law B. Third law C. Zeroth law D. First law List II (About) 1. Thermal Equilibrium 2. Entropy 3. Energy Conservation 4. Absolute Zero",
+   "options": [
+    "A-2, B-1, C-4, D-3",
+    "A-2, B-4, C-1, D-3",
+    "A-1, B-4, C-2, D-3",
+    "A-3, B-4, C-1, D-2"
+   ],
+   "answer_index": 1,
+   "explanation": "Zeroth law – thermal equilibrium; first – energy conservation; second – entropy; third – absolute zero."
+  },
+  "334": {
+   "question": "Match List I with List II: List I (Quantity) A. Temperature B. Heat C. Entropy D. Pressure List II (SI unit) 1. Kelvin 2. J/K 3. Joule 4. Pascal",
+   "options": [
+    "A-2, B-3, C-1, D-4",
+    "A-1, B-3, C-4, D-2",
+    "A-1, B-3, C-2, D-4",
+    "A-1, B-4, C-2, D-3"
+   ],
+   "answer_index": 2,
+   "explanation": "Temperature in kelvin, heat in joules, entropy in J/K and pressure in pascals."
+  },
+  "335": {
+   "question": "Match List I with List II: List I (Gas) A. Diatomic gas B. Polyatomic gas C. Monatomic gas List II (γ) 1. 1.67 2. 1.33 3. 1.40",
+   "options": [
+    "A-1, B-2, C-3",
+    "A-3, B-1, C-2",
+    "A-2, B-3, C-1",
+    "A-3, B-2, C-1"
+   ],
+   "answer_index": 3,
+   "explanation": "γ is about 1.67 for monatomic, 1.40 for diatomic and 1.33 for polyatomic gases."
+  },
+  "356": {
+   "question": "Match the symbol with the quantity: List I (Symbol) A. g B. G C. T D. v_esc List II (Quantity) 1. Escape Velocity 2. Universal Constant 3. Acceleration due to gravity 4. Time Period",
+   "options": [
+    "A-3, B-2, C-4, D-1",
+    "A-3, B-2, C-1, D-4",
+    "A-3, B-1, C-4, D-2",
+    "A-2, B-3, C-4, D-1"
+   ],
+   "answer_index": 0,
+   "explanation": "g is the acceleration due to gravity, G the universal gravitational constant, T a time period and v_esc the escape velocity."
+  },
+  "358": {
+   "question": "Match the quantity with its SI unit: List I (Quantity) A. Gravitational potential B. Gravitational constant C. Gravitational potential energy D. Acceleration due to gravity List II (SI unit) 1. J/kg 2. m/s² 3. Joule 4. N m²/kg²",
+   "options": [
+    "A-3, B-4, C-1, D-2",
+    "A-1, B-2, C-3, D-4",
+    "A-1, B-4, C-3, D-2",
+    "A-2, B-4, C-3, D-1"
+   ],
+   "answer_index": 2,
+   "explanation": "Gravitational potential is in J/kg, G in N m²/kg², potential energy in joules and g in m/s²."
+  }
+ }
+}

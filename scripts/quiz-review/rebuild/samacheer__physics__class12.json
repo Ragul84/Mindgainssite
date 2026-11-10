@@ -1,0 +1,506 @@
+{
+ "208": "retire",
+ "315": "retire",
+ "372": "retire",
+ "45": {
+  "lh": "Radiation",
+  "rh": "Is",
+  "L": [
+   "Beta particle",
+   "Gamma ray",
+   "Alpha particle"
+  ],
+  "why": "A beta particle is an electron, a gamma ray a high-energy photon and an alpha particle a helium nucleus.",
+  "R": [
+   "Electron",
+   "High energy photon",
+   "Helium Nucleus"
+  ]
+ },
+ "46": {
+  "lh": "Hydrogen series",
+  "rh": "Region",
+  "L": [
+   "Balmer series",
+   "Paschen series",
+   "Lyman series"
+  ],
+  "why": "The Balmer series is visible, Paschen infrared and Lyman ultraviolet.",
+  "R": [
+   "Visible",
+   "Infrared",
+   "Ultraviolet"
+  ]
+ },
+ "47": {
+  "lh": "Scientist",
+  "rh": "Known for",
+  "L": [
+   "Niels Bohr",
+   "Albert Einstein",
+   "Ernest Rutherford"
+  ],
+  "why": "Bohr proposed quantised orbits, Einstein explained the photoelectric effect and Rutherford discovered the nucleus.",
+  "R": [
+   "Quantized orbits",
+   "Photoelectric effect",
+   "Nucleus"
+  ]
+ },
+ "48": {
+  "lh": "Decay",
+  "rh": "Emits",
+  "L": [
+   "Gamma decay",
+   "Alpha decay",
+   "Beta decay"
+  ],
+  "why": "Gamma decay emits a photon, alpha decay a helium nucleus and beta decay an electron.",
+  "R": [
+   "Photon",
+   "He nucleus",
+   "Electron"
+  ]
+ },
+ "49": {
+  "lh": "Quantity",
+  "rh": "Unit",
+  "L": [
+   "Activity",
+   "Wavelength",
+   "Energy"
+  ],
+  "why": "Radioactivity is measured in becquerels, wavelength often in ångströms and particle energy in electron volts.",
+  "R": [
+   "Becquerel",
+   "Angstrom",
+   "eV"
+  ]
+ },
+ "84": {
+  "stem": "Match the material with its class:",
+  "lh": "Material",
+  "rh": "Class",
+  "L": [
+   "Glass",
+   "Copper",
+   "Constantan",
+   "Silicon"
+  ],
+  "why": "Glass is an insulator, copper a conductor, constantan an alloy and silicon a semiconductor.",
+  "R": [
+   "Insulator",
+   "Conductor",
+   "Alloy",
+   "Semiconductor"
+  ]
+ },
+ "153": {
+  "lh": "Quantity",
+  "rh": "SI unit",
+  "L": [
+   "Capacitance",
+   "Resistance",
+   "Inductance",
+   "Magnetic flux"
+  ],
+  "why": "Capacitance is in farads, resistance ohms, inductance henries and magnetic flux webers.",
+  "R": [
+   "Farad",
+   "Ohm",
+   "Henry",
+   "Weber"
+  ]
+ },
+ "154": {
+  "lh": "AC circuit with only",
+  "rh": "Phase",
+  "L": [
+   "Capacitor",
+   "Resistor",
+   "LCR combination",
+   "Inductor"
+  ],
+  "why": "In a capacitor the current leads, in a resistor it is in phase, in an inductor the voltage leads and in an LCR circuit it depends on XL and XC.",
+  "R": [
+   "Current leads",
+   "In phase",
+   "Depends on XL/XC",
+   "Voltage leads"
+  ]
+ },
+ "155": {
+  "lh": "Law",
+  "rh": "Gives",
+  "L": [
+   "Lenz's law",
+   "Ampère's circuital law",
+   "Faraday's law",
+   "Ohm's law"
+  ],
+  "why": "Lenz's law gives the direction of induced EMF, Faraday's law its magnitude, Ampère's law the field around a current and Ohm's law V = IR.",
+  "R": [
+   "Direction of EMF",
+   "B field around wire",
+   "Magnitude of EMF",
+   "V = IR"
+  ]
+ },
+ "156": {
+  "lh": "Device",
+  "rh": "Function",
+  "L": [
+   "Fuse",
+   "Transformer",
+   "Galvanometer",
+   "Capacitor"
+  ],
+  "why": "A fuse limits current, a transformer changes voltage, a galvanometer detects current and a capacitor stores energy.",
+  "R": [
+   "Current limit",
+   "Voltage change",
+   "Current detection",
+   "Energy storage"
+  ]
+ },
+ "157": {
+  "lh": "Quantity",
+  "rh": "Formula",
+  "L": [
+   "Capacitive reactance",
+   "Impedance of LCR circuit",
+   "Inductive reactance",
+   "Resonant frequency"
+  ],
+  "why": "XC = 1/(2πfC), Z = √(R² + (XL - XC)²), XL = 2πfL and f₀ = 1/(2π√LC).",
+  "R": [
+   "1/(2πfC)",
+   "sqrt(R² + (XL-XC)²)",
+   "2πfL",
+   "1/(2π√LC)"
+  ]
+ },
+ "205": {
+  "lh": "Wave",
+  "rh": "Application",
+  "L": [
+   "Microwaves",
+   "X-rays",
+   "Radio waves",
+   "Infrared"
+  ],
+  "why": "Microwaves are used in radar, X-rays in medical imaging, radio waves in broadcasting and infrared in night vision.",
+  "R": [
+   "Radar",
+   "Medical Imaging",
+   "Broadcasting",
+   "Night Vision"
+  ]
+ },
+ "206": {
+  "lh": "Wave",
+  "rh": "Source",
+  "L": [
+   "Visible light",
+   "Gamma rays",
+   "Radio waves",
+   "X-rays"
+  ],
+  "why": "Visible light comes from excited atoms, gamma rays from nuclear decay, radio waves from oscillating circuits and X-rays from inner-electron transitions.",
+  "R": [
+   "Atomic excitation",
+   "Nuclear decay",
+   "Oscillating circuits",
+   "Electron transition"
+  ]
+ },
+ "207": {
+  "lh": "Wave",
+  "rh": "Property",
+  "L": [
+   "Heat (thermal) radiation",
+   "Lowest frequency",
+   "Used for sterilisation",
+   "Highest frequency"
+  ],
+  "why": "Infrared is felt as heat, radio waves have the lowest frequency, ultraviolet sterilises and gamma rays have the highest frequency.",
+  "R": [
+   "Infrared",
+   "Radio waves",
+   "Ultraviolet",
+   "Gamma rays"
+  ]
+ },
+ "209": {
+  "lh": "Wave",
+  "rh": "Effect / use",
+  "L": [
+   "Infrared",
+   "X-rays",
+   "Ultraviolet",
+   "Gamma rays"
+  ],
+  "why": "Infrared heats, X-rays image bones, ultraviolet causes sunburn and gamma rays are used in cancer therapy.",
+  "R": [
+   "Heating",
+   "Bone imaging",
+   "Sunburn",
+   "Cancer therapy"
+  ]
+ },
+ "242": {
+  "lh": "Modulation",
+  "rh": "What changes",
+  "L": [
+   "FM",
+   "AM",
+   "PCM",
+   "PM"
+  ],
+  "why": "In FM the frequency varies, in AM the amplitude, in PM the phase, and PCM codes the signal digitally.",
+  "R": [
+   "Frequency varies",
+   "Amplitude varies",
+   "Digital coding",
+   "Phase varies"
+  ]
+ },
+ "243": {
+  "lh": "Component",
+  "rh": "Function",
+  "L": [
+   "Demodulator",
+   "Modulator",
+   "Filter",
+   "Amplifier"
+  ],
+  "why": "A demodulator recovers the original signal, a modulator combines signal and carrier, a filter removes unwanted frequencies and an amplifier boosts the signal.",
+  "R": [
+   "Extracts original signal",
+   "Combines signal and carrier",
+   "Removes unwanted frequencies",
+   "Increases signal strength"
+  ]
+ },
+ "244": {
+  "lh": "Frequency range",
+  "rh": "Band",
+  "L": [
+   "300 kHz - 3 MHz",
+   "3 - 30 kHz",
+   "30 - 300 MHz",
+   "3 - 30 MHz"
+  ],
+  "why": "VLF is 3-30 kHz, MF 300 kHz-3 MHz, HF 3-30 MHz and VHF 30-300 MHz.",
+  "R": [
+   "MF",
+   "VLF",
+   "VHF",
+   "HF"
+  ]
+ },
+ "245": {
+  "lh": "PCM step",
+  "rh": "Description",
+  "L": [
+   "Quantisation",
+   "Sampling",
+   "Reconstruction",
+   "Encoding"
+  ],
+  "why": "Sampling makes time discrete, quantisation makes amplitude discrete, encoding turns it into binary and reconstruction recovers the analogue signal.",
+  "R": [
+   "Discrete amplitude",
+   "Discrete time",
+   "Analog recovery",
+   "Binary sequence"
+  ]
+ },
+ "246": {
+  "lh": "Receiver / transmitter part",
+  "rh": "Use",
+  "L": [
+   "Mixer",
+   "Oscillator",
+   "Tuner",
+   "Antenna"
+  ],
+  "why": "A mixer converts frequency, an oscillator generates the carrier, the tuner selects a station and the antenna radiates or picks up the signal.",
+  "R": [
+   "Frequency conversion",
+   "Generates carrier",
+   "Station selection",
+   "Signal radiation"
+  ]
+ },
+ "266": {
+  "lh": "Term",
+  "rh": "Definition",
+  "L": [
+   "Electric field",
+   "Electric potential",
+   "Electric flux",
+   "Coulomb's law"
+  ],
+  "why": "The electric field is the region where a charge feels force, potential is work per unit charge, flux the number of field lines through a surface and Coulomb's law gives the force between point charges.",
+  "R": [
+   "Region around a charge where force acts",
+   "Work done per unit charge to move charge",
+   "Number of electric field lines passing through a surface",
+   "Force between two point charges"
+  ]
+ },
+ "316": {
+  "lh": "Formula",
+  "rh": "For",
+  "L": [
+   "B = μ₀I / 2πr",
+   "B = μ₀nI",
+   "τ = NIAB sin θ",
+   "F = qvB sin θ"
+  ],
+  "R": [
+   "Field of a long straight wire",
+   "Field inside a solenoid",
+   "Torque on a current loop",
+   "Magnetic (Lorentz) force on a charge"
+  ],
+  "why": "B = μ₀I/2πr for a straight wire, B = μ₀nI inside a solenoid, τ = NIAB sin θ on a coil and F = qvB sin θ on a moving charge."
+ },
+ "317": {
+  "lh": "Unit",
+  "rh": "Quantity",
+  "L": [
+   "Tesla",
+   "Weber",
+   "A m²",
+   "Henry"
+  ],
+  "why": "Magnetic field is in tesla, flux in weber, magnetic moment in A m² and inductance in henry.",
+  "R": [
+   "Magnetic Field",
+   "Magnetic Flux",
+   "Magnetic Moment",
+   "Inductance"
+  ]
+ },
+ "318": {
+  "lh": "Device",
+  "rh": "Function",
+  "L": [
+   "Cyclotron",
+   "Galvanometer",
+   "Ammeter",
+   "Voltmeter"
+  ],
+  "why": "A cyclotron accelerates particles, a galvanometer detects current, an ammeter measures current and a voltmeter voltage.",
+  "R": [
+   "Particle acceleration",
+   "Current detection",
+   "Current measurement",
+   "Voltage measurement"
+  ]
+ },
+ "319": {
+  "lh": "Property / use",
+  "rh": "Material",
+  "L": [
+   "Used for permanent magnets",
+   "Used for electromagnet cores",
+   "Diamagnetic",
+   "Paramagnetic"
+  ],
+  "why": "Steel keeps its magnetism (permanent magnets), soft iron is easily magnetised (electromagnets), bismuth is diamagnetic and oxygen paramagnetic.",
+  "R": [
+   "Steel",
+   "Soft Iron",
+   "Bismuth",
+   "Oxygen"
+  ]
+ },
+ "339": {
+  "lh": "Term",
+  "rh": "Description",
+  "L": [
+   "Principal axis",
+   "Focal length",
+   "Principal focus",
+   "Aperture"
+  ],
+  "why": "The principal axis passes through the centre of the lens, focal length is the lens-to-focus distance, the focus is where rays meet or seem to diverge from and the aperture is the opening's diameter.",
+  "R": [
+   "Line passing through the center of the lens",
+   "Distance from lens to focus",
+   "Point where rays converge or appear to diverge",
+   "Diameter of the lens opening"
+  ]
+ },
+ "344": {
+  "lh": "Phenomenon",
+  "rh": "Description",
+  "L": [
+   "Rainbow",
+   "Dispersion",
+   "Total internal reflection",
+   "Mirage",
+   "Refraction"
+  ],
+  "why": "A rainbow is coloured bands in the sky, dispersion splits light into colours, total internal reflection keeps light inside a medium, a mirage looks like water and refraction is bending between media.",
+  "R": [
+   "Color bands in the sky",
+   "Separation of light into colors",
+   "Complete reflection within a medium",
+   "Apparent image of water",
+   "Bending of light as it passes from one medium to another"
+  ]
+ },
+ "370": {
+  "lh": "Formula",
+  "rh": "Concept",
+  "L": [
+   "tan i_p = μ",
+   "β = λD/d",
+   "I = I₀ cos²θ",
+   "a sin θ = λ"
+  ],
+  "why": "tan i_p = μ is Brewster's law, β = λD/d the fringe width, I = I₀cos²θ Malus' law and a sin θ = λ the first diffraction minimum.",
+  "R": [
+   "Brewster's Law",
+   "Fringe width",
+   "Malus Law",
+   "First minima in diffraction"
+  ]
+ },
+ "371": {
+  "lh": "Wave",
+  "rh": "Property",
+  "L": [
+   "Spherical wavefront",
+   "Transverse wave",
+   "Plane wavefront",
+   "Cylindrical wavefront"
+  ],
+  "why": "A point source gives spherical wavefronts, only transverse waves can be polarised, distant sources give plane wavefronts and a line source gives cylindrical ones.",
+  "R": [
+   "Point source",
+   "Polarizable",
+   "Parallel wavefronts",
+   "Line source"
+  ]
+ },
+ "388": {
+  "lh": "Process",
+  "rh": "Description",
+  "L": [
+   "Gamma decay",
+   "Alpha decay",
+   "Beta decay"
+  ],
+  "why": "Gamma decay emits high-energy photons, alpha decay a helium nucleus and beta decay an electron or positron.",
+  "R": [
+   "Emission of high energy photons",
+   "Emission of Helium nucleus",
+   "Emission of electron or positron"
+  ]
+ }
+}
