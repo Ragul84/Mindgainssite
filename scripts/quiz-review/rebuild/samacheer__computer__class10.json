@@ -1,0 +1,434 @@
+{
+ "153": "retire",
+ "156": "retire",
+ "223": "retire",
+ "251": "retire",
+ "64": {
+  "lh": "Component",
+  "rh": "Function",
+  "L": [
+   "Resistor",
+   "Capacitor",
+   "Diode",
+   "Transistor"
+  ],
+  "why": "A resistor limits current, a capacitor stores energy, a diode passes current one way and a transistor amplifies.",
+  "R": [
+   "Limits current",
+   "Stores electrical energy",
+   "Allows current in one direction",
+   "Amplifies signals"
+  ]
+ },
+ "65": {
+  "lh": "Device",
+  "rh": "Application",
+  "L": [
+   "Capacitor",
+   "Transistor",
+   "Rectifier",
+   "Zener diode"
+  ],
+  "why": "Capacitors filter and store energy, transistors switch and amplify, rectifiers convert AC to DC and Zener diodes regulate voltage.",
+  "R": [
+   "Filtering and energy storage",
+   "Switching and amplification",
+   "Converts AC to DC",
+   "Voltage regulation"
+  ]
+ },
+ "73": {
+  "lh": "Technology",
+  "rh": "Description",
+  "L": [
+   "Wi-Fi",
+   "Optical fibre",
+   "Bluetooth",
+   "Cellular (4G/5G)"
+  ],
+  "why": "Wi-Fi is a wireless LAN, optical fibre carries data as light, Bluetooth is short-range wireless and cellular networks serve mobile phones.",
+  "R": [
+   "Wireless local area network",
+   "High-speed data transmission using light",
+   "Short-range wireless communication",
+   "Mobile network communication"
+  ]
+ },
+ "78": {
+  "lh": "Device",
+  "rh": "Function",
+  "L": [
+   "Modem",
+   "Switch",
+   "Router",
+   "Repeater"
+  ],
+  "why": "A modem connects to the Internet, a switch connects devices in a LAN, a router routes data between networks and a repeater extends signal range.",
+  "R": [
+   "Connects to the internet",
+   "Connects multiple devices in a LAN",
+   "Routes data between networks",
+   "Extends signal range"
+  ]
+ },
+ "80": {
+  "lh": "Medium",
+  "rh": "Characteristic",
+  "L": [
+   "Wireless media",
+   "Wired media",
+   "Optical fibre",
+   "Radio waves"
+  ],
+  "why": "Wireless media need no cables, wired media use cables such as Ethernet, optical fibre uses light and radio waves are used for broadcasting.",
+  "R": [
+   "No physical cables needed",
+   "Uses physical cables like Ethernet",
+   "Uses light for high-speed data transfer",
+   "Used for broadcasting and wireless communication"
+  ]
+ },
+ "86": {
+  "lh": "Term",
+  "rh": "Definition",
+  "L": [
+   "Table",
+   "Primary key",
+   "SQL",
+   "Record"
+  ],
+  "why": "A table stores data in rows and columns, a primary key identifies a record, SQL queries databases and a record is a single row.",
+  "R": [
+   "Stores data in rows and columns",
+   "Uniquely identifies a record",
+   "Language used to query databases",
+   "A single row in a table"
+  ]
+ },
+ "87": {
+  "lh": "Database",
+  "rh": "Description",
+  "L": [
+   "Relational database",
+   "NoSQL database",
+   "Distributed database",
+   "Object-oriented database"
+  ],
+  "why": "Relational databases use tables, NoSQL databases handle large unstructured data, distributed databases spread across locations and object-oriented databases store objects.",
+  "R": [
+   "Data stored in tables",
+   "Handles large volumes of unstructured data",
+   "Data stored across multiple locations",
+   "Stores data as objects"
+  ]
+ },
+ "90": {
+  "lh": "Term",
+  "rh": "Function",
+  "L": [
+   "Index",
+   "View",
+   "Trigger",
+   "Schema"
+  ],
+  "why": "An index speeds retrieval, a view is a virtual table from a query, a trigger runs on certain events and a schema defines the structure.",
+  "R": [
+   "Speeds up data retrieval",
+   "Virtual table based on query",
+   "Automatically executes on certain events",
+   "Defines database structure"
+  ]
+ },
+ "94": {
+  "lh": "Tag",
+  "rh": "Purpose",
+  "L": [
+   "<img>",
+   "<ul>",
+   "<table>"
+  ],
+  "why": "<img> inserts an image, <ul> an unordered list and <table> tabular data.",
+  "R": [
+   "Inserting Image",
+   "Unordered List",
+   "Tabular Data"
+  ]
+ },
+ "114": {
+  "lh": "Component",
+  "rh": "Function",
+  "L": [
+   "Transistor",
+   "LED",
+   "Diode",
+   "Zener diode"
+  ],
+  "why": "A transistor amplifies, an LED emits light, a diode rectifies and a Zener diode regulates voltage.",
+  "R": [
+   "Amplification",
+   "Light Emission",
+   "Rectification",
+   "Voltage Regulation"
+  ]
+ },
+ "115": {
+  "lh": "Gate",
+  "rh": "Logic",
+  "L": [
+   "OR gate",
+   "NOT gate",
+   "NAND gate",
+   "AND gate"
+  ],
+  "why": "OR is logical sum, NOT inversion, NAND an inverted product and AND a logical product.",
+  "R": [
+   "Sum",
+   "Inversion",
+   "Inverted Product",
+   "Product"
+  ]
+ },
+ "116": {
+  "lh": "Semiconductor",
+  "rh": "Majority carriers / nature",
+  "L": [
+   "N-type",
+   "P-type",
+   "Extrinsic",
+   "Intrinsic"
+  ],
+  "why": "N-type has electrons as majority carriers, P-type holes; extrinsic semiconductors are doped and intrinsic ones have equal electrons and holes.",
+  "R": [
+   "Electrons",
+   "Holes",
+   "Doped semiconductor",
+   "Equal electrons and holes"
+  ]
+ },
+ "117": {
+  "lh": "Terminal",
+  "rh": "Role",
+  "L": [
+   "Base",
+   "Gate",
+   "Emitter",
+   "Collector"
+  ],
+  "why": "In a BJT the base controls current, the emitter supplies carriers and the collector collects them; in a FET the gate is the control terminal.",
+  "R": [
+   "Controls current",
+   "FET control terminal",
+   "Supplies carriers",
+   "Collects carriers"
+  ]
+ },
+ "154": {
+  "lh": "BJT terminal",
+  "rh": "Characteristic",
+  "L": [
+   "Base",
+   "Collector",
+   "Emitter"
+  ],
+  "why": "The base is very thin, the collector is the largest and the emitter is heavily doped.",
+  "R": [
+   "Very thin",
+   "Largest size",
+   "Heavily doped"
+  ]
+ },
+ "155": {
+  "lh": "Bias",
+  "rh": "Effect on diode",
+  "L": [
+   "Reverse bias",
+   "Forward bias"
+  ],
+  "why": "A reverse-biased diode has very high resistance; a forward-biased diode has low resistance.",
+  "R": [
+   "High Resistance",
+   "Low Resistance"
+  ]
+ },
+ "157": {
+  "lh": "Rectifier",
+  "rh": "Diodes used",
+  "L": [
+   "Bridge rectifier",
+   "Half-wave rectifier",
+   "Centre-tap full-wave rectifier"
+  ],
+  "why": "A half-wave rectifier uses one diode, a centre-tap full-wave rectifier two and a bridge rectifier four.",
+  "R": [
+   "4 Diodes",
+   "1 Diode",
+   "2 Diodes"
+  ]
+ },
+ "158": {
+  "lh": "Semiconductor",
+  "rh": "Property",
+  "L": [
+   "Extrinsic",
+   "Intrinsic"
+  ],
+  "why": "Extrinsic semiconductors are doped; intrinsic ones are pure.",
+  "R": [
+   "Doped",
+   "Pure"
+  ]
+ },
+ "224": {
+  "lh": "Topology",
+  "rh": "Characteristic",
+  "L": [
+   "Bus",
+   "Ring",
+   "Star",
+   "Mesh"
+  ],
+  "why": "A bus uses a single cable, a ring a circular path, a star a central hub and a mesh interconnects every node.",
+  "R": [
+   "Single Cable",
+   "Circular Path",
+   "Central Hub",
+   "Interconnected"
+  ]
+ },
+ "225": {
+  "lh": "Protocol",
+  "rh": "Use",
+  "L": [
+   "FTP",
+   "HTTP",
+   "TCP",
+   "SMTP"
+  ],
+  "why": "FTP transfers files, HTTP serves web pages, TCP gives reliable delivery and SMTP sends email.",
+  "R": [
+   "File Transfer",
+   "Web Browsing",
+   "Reliable Delivery",
+   "Email Sending"
+  ]
+ },
+ "226": {
+  "lh": "Device",
+  "rh": "Function",
+  "L": [
+   "Router",
+   "Repeater",
+   "Gateway",
+   "Bridge"
+  ],
+  "why": "A router routes packets, a repeater boosts signals, a gateway converts between protocols and a bridge connects LANs.",
+  "R": [
+   "Packet Routing",
+   "Signal Boosting",
+   "Protocol Conversion",
+   "Connecting LANs"
+  ]
+ },
+ "227": {
+  "lh": "Mode",
+  "rh": "Example",
+  "L": [
+   "Full duplex",
+   "Simplex",
+   "Multiplexing",
+   "Half duplex"
+  ],
+  "why": "A telephone is full duplex, radio broadcasting simplex, a walkie-talkie half duplex, and multiplexing sends many signals over one link.",
+  "R": [
+   "Telephone",
+   "Radio",
+   "Multiple signals",
+   "Walkie-talkie"
+  ]
+ },
+ "228": {
+  "lh": "Technology",
+  "rh": "Range",
+  "L": [
+   "Wi-Fi",
+   "NFC",
+   "Bluetooth",
+   "Cellular network"
+  ],
+  "why": "NFC works over a few centimetres, Bluetooth over a few metres, Wi-Fi over tens of metres and cellular networks over kilometres.",
+  "R": [
+   "Medium",
+   "Very Short",
+   "Short",
+   "Long"
+  ]
+ },
+ "229": {
+  "lh": "Medium",
+  "rh": "Made of / uses",
+  "L": [
+   "Optical fibre cable",
+   "Radio waves",
+   "Twisted pair cable",
+   "Coaxial cable"
+  ],
+  "why": "Optical fibre is glass or plastic, radio waves are electromagnetic, twisted pair uses copper wires and coaxial cable is shielded copper.",
+  "R": [
+   "Glass/Plastic",
+   "Electromagnetic",
+   "Copper wires",
+   "Shielded Copper"
+  ]
+ },
+ "249": {
+  "lh": "Command",
+  "rh": "Category",
+  "L": [
+   "INSERT",
+   "COMMIT",
+   "CREATE",
+   "GRANT"
+  ],
+  "why": "INSERT is DML, COMMIT TCL, CREATE DDL and GRANT DCL.",
+  "R": [
+   "DML",
+   "TCL",
+   "DDL",
+   "DCL"
+  ]
+ },
+ "250": {
+  "lh": "Term",
+  "rh": "Meaning",
+  "L": [
+   "Relation",
+   "Tuple",
+   "Domain",
+   "Attribute"
+  ],
+  "why": "A relation is a table, a tuple a row, a domain the set of permitted values and an attribute a column.",
+  "R": [
+   "A table",
+   "A row in a table",
+   "Set of permitted values",
+   "A column in a table"
+  ]
+ },
+ "252": {
+  "lh": "Command",
+  "rh": "Action",
+  "L": [
+   "DROP TABLE",
+   "DELETE",
+   "CREATE TABLE",
+   "ALTER TABLE"
+  ],
+  "why": "DROP TABLE removes a table, DELETE removes rows, CREATE TABLE makes a new table and ALTER TABLE changes its structure.",
+  "R": [
+   "Remove table",
+   "Remove rows",
+   "New table",
+   "Change structure"
+  ]
+ }
+}

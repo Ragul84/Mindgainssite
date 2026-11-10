@@ -1,0 +1,217 @@
+{
+ "44": "retire",
+ "93": "retire",
+ "95": "retire",
+ "118": "retire",
+ "119": "retire",
+ "120": "retire",
+ "142": "retire",
+ "144": "retire",
+ "145": "retire",
+ "177": "retire",
+ "178": "retire",
+ "180": "retire",
+ "203": "retire",
+ "204": "retire",
+ "251": "retire",
+ "252": "retire",
+ "253": "retire",
+ "331": "retire",
+ "364": "retire",
+ "366": "retire",
+ "399": "retire",
+ "400": "retire",
+ "427": "retire",
+ "428": "retire",
+ "429": "retire",
+ "430": "retire",
+ "488": "retire",
+ "489": "retire",
+ "490": "retire",
+ "45": {
+  "lh": "Analytical Engine part",
+  "rh": "Role",
+  "L": [
+   "Punched-card control",
+   "The Mill",
+   "The Store"
+  ],
+  "why": "Babbage's Analytical Engine was controlled by punched cards, did arithmetic in the Mill (like an ALU) and held numbers in the Store (memory).",
+  "R": [
+   "Basic flow control",
+   "Arithmetic Logic Unit",
+   "Integrated memory"
+  ]
+ },
+ "46": {
+  "lh": "Device",
+  "rh": "Significance",
+  "L": [
+   "Analytical Engine",
+   "Abacus"
+  ],
+  "why": "The Analytical Engine was the first general-purpose computer design; the abacus was the first calculating device.",
+  "R": [
+   "General-purpose computer concept",
+   "First calculating device"
+  ]
+ },
+ "92": {
+  "lh": "Term",
+  "rh": "Description",
+  "L": [
+   "User-defined functions",
+   "Built-in functions",
+   "Modular programming",
+   "Code reusability"
+  ],
+  "why": "User-defined functions are written by the programmer, built-in ones come with the standard library, modular programming splits work into sub-programs and reuse removes duplicate code.",
+  "R": [
+   "Created by users",
+   "Available in standard library",
+   "Dividing into manageable sub-programs",
+   "Eliminates code duplication"
+  ]
+ },
+ "94": {
+  "lh": "Function type",
+  "rh": "Comes from",
+  "L": [
+   "User-defined function",
+   "Built-in function"
+  ],
+  "why": "User-defined functions are written by the programmer; built-in functions come from the C++ standard library.",
+  "R": [
+   "Programmer",
+   "C++ Standard Library"
+  ]
+ },
+ "143": {
+  "lh": "Language",
+  "rh": "Paradigm",
+  "L": [
+   "The C language",
+   "The C++ language"
+  ],
+  "why": "C is a procedural language; C++ supports object-oriented programming.",
+  "R": [
+   "Procedural",
+   "Object Oriented"
+  ]
+ },
+ "179": {
+  "lh": "Type",
+  "rh": "Default access of members",
+  "L": [
+   "struct",
+   "class"
+  ],
+  "why": "In C++ the members of a struct are public by default and those of a class private.",
+  "R": [
+   "Public",
+   "Private"
+  ]
+ },
+ "202": {
+  "lh": "Concept",
+  "rh": "Description",
+  "L": [
+   "Function overloading",
+   "Polymorphism",
+   "Operator overloading",
+   "Overload resolution"
+  ],
+  "why": "Function overloading reuses a name with different parameters, polymorphism means many forms, operator overloading gives operators new meanings and overload resolution picks the right function.",
+  "R": [
+   "Same name, different parameters",
+   "Many forms",
+   "Polymorphism via operators",
+   "Selecting the appropriate function"
+  ]
+ },
+ "330": {
+  "lh": "Item",
+  "rh": "Role",
+  "L": [
+   "Memory",
+   "Intel",
+   "Microprocessor",
+   "Clock"
+  ],
+  "why": "Memory stores instructions, Intel developed the 4004, the microprocessor performs all tasks and the clock drives it.",
+  "R": [
+   "Stores instructions",
+   "Developed 4004",
+   "Major component performing all tasks",
+   "Drives the microprocessor"
+  ]
+ },
+ "332": {
+  "lh": "Abbreviation",
+  "rh": "Stands for",
+  "L": [
+   "I/O",
+   "CPU",
+   "ALU",
+   "IC"
+  ],
+  "why": "I/O is input/output, CPU the central processing unit, ALU the arithmetic and logic unit and IC an integrated circuit.",
+  "R": [
+   "Input / Output",
+   "Central Processing Unit",
+   "Arithmetic and Logic unit",
+   "Integrated Circuit"
+  ]
+ },
+ "365": {
+  "lh": "Software",
+  "rh": "Purpose",
+  "L": [
+   "Operating system",
+   "Device drivers",
+   "MS Word",
+   "VLC media player"
+  ],
+  "why": "The OS is the user interface, device drivers run hardware, MS Word creates documents and VLC plays audio and video.",
+  "R": [
+   "User interface",
+   "Run hardware",
+   "Create text document",
+   "Play audio/video"
+  ]
+ },
+ "398": {
+  "lh": "OS function",
+  "rh": "Description",
+  "L": [
+   "File management",
+   "Memory management",
+   "Process management",
+   "Security"
+  ],
+  "why": "File management handles files and folders, memory management RAM, process management running tasks and security protects the system.",
+  "R": [
+   "Manages files and folders",
+   "Manages RAM",
+   "Manages execution of tasks",
+   "Protects the system"
+  ]
+ },
+ "401": {
+  "lh": "OS function",
+  "rh": "Manages",
+  "L": [
+   "Memory management",
+   "Device management",
+   "File management",
+   "Process management"
+  ],
+  "why": "Memory management looks after RAM, device management I/O devices, file management directories and process management CPU tasks.",
+  "R": [
+   "RAM",
+   "I/O devices",
+   "Directories",
+   "CPU tasks"
+  ]
+ }
+}

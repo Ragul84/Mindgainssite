@@ -1,0 +1,292 @@
+{
+ "retire": [
+  153,
+  156,
+  223,
+  251
+ ],
+ "fix": {
+  "64": {
+   "question": "Match List I with List II: List I (Component) A. Resistor B. Capacitor C. Diode D. Transistor List II (Function) 1. Amplifies signals 2. Limits current 3. Stores electrical energy 4. Allows current in one direction",
+   "options": [
+    "A-2, B-3, C-4, D-1",
+    "A-4, B-3, C-2, D-1",
+    "A-1, B-3, C-4, D-2",
+    "A-2, B-3, C-1, D-4"
+   ],
+   "answer_index": 0,
+   "explanation": "A resistor limits current, a capacitor stores energy, a diode passes current one way and a transistor amplifies."
+  },
+  "65": {
+   "question": "Match List I with List II: List I (Device) A. Capacitor B. Transistor C. Rectifier D. Zener diode List II (Application) 1. Converts AC to DC 2. Voltage regulation 3. Filtering and energy storage 4. Switching and amplification",
+   "options": [
+    "A-3, B-1, C-4, D-2",
+    "A-3, B-4, C-1, D-2",
+    "A-2, B-4, C-1, D-3",
+    "A-4, B-3, C-1, D-2"
+   ],
+   "answer_index": 1,
+   "explanation": "Capacitors filter and store energy, transistors switch and amplify, rectifiers convert AC to DC and Zener diodes regulate voltage."
+  },
+  "73": {
+   "question": "Match List I with List II: List I (Technology) A. Wi-Fi B. Optical fibre C. Bluetooth D. Cellular (4G/5G) List II (Description) 1. Mobile network communication 2. High-speed data transmission using light 3. Short-range wireless communication 4. Wireless local area network",
+   "options": [
+    "A-3, B-2, C-4, D-1",
+    "A-4, B-2, C-3, D-1",
+    "A-2, B-4, C-3, D-1",
+    "A-4, B-1, C-3, D-2"
+   ],
+   "answer_index": 1,
+   "explanation": "Wi-Fi is a wireless LAN, optical fibre carries data as light, Bluetooth is short-range wireless and cellular networks serve mobile phones."
+  },
+  "78": {
+   "question": "Match List I with List II: List I (Device) A. Modem B. Switch C. Router D. Repeater List II (Function) 1. Extends signal range 2. Connects multiple devices in a LAN 3. Routes data between networks 4. Connects to the internet",
+   "options": [
+    "A-4, B-1, C-3, D-2",
+    "A-4, B-2, C-1, D-3",
+    "A-4, B-2, C-3, D-1",
+    "A-3, B-2, C-4, D-1"
+   ],
+   "answer_index": 2,
+   "explanation": "A modem connects to the Internet, a switch connects devices in a LAN, a router routes data between networks and a repeater extends signal range."
+  },
+  "80": {
+   "question": "Match List I with List II: List I (Medium) A. Wireless media B. Wired media C. Optical fibre D. Radio waves List II (Characteristic) 1. Uses physical cables like Ethernet 2. No physical cables needed 3. Uses light for high-speed data transfer 4. Used for broadcasting and wireless communication",
+   "options": [
+    "A-2, B-1, C-3, D-4",
+    "A-1, B-2, C-3, D-4",
+    "A-2, B-4, C-3, D-1",
+    "A-2, B-1, C-4, D-3"
+   ],
+   "answer_index": 0,
+   "explanation": "Wireless media need no cables, wired media use cables such as Ethernet, optical fibre uses light and radio waves are used for broadcasting."
+  },
+  "86": {
+   "question": "Match List I with List II: List I (Term) A. Table B. Primary key C. SQL D. Record List II (Definition) 1. Uniquely identifies a record 2. Stores data in rows and columns 3. A single row in a table 4. Language used to query databases",
+   "options": [
+    "A-2, B-4, C-1, D-3",
+    "A-3, B-1, C-4, D-2",
+    "A-2, B-1, C-4, D-3",
+    "A-2, B-1, C-3, D-4"
+   ],
+   "answer_index": 2,
+   "explanation": "A table stores data in rows and columns, a primary key identifies a record, SQL queries databases and a record is a single row."
+  },
+  "87": {
+   "question": "Match List I with List II: List I (Database) A. Relational database B. NoSQL database C. Distributed database D. Object-oriented database List II (Description) 1. Data stored across multiple locations 2. Stores data as objects 3. Handles large volumes of unstructured data 4. Data stored in tables",
+   "options": [
+    "A-4, B-3, C-2, D-1",
+    "A-4, B-2, C-1, D-3",
+    "A-4, B-1, C-3, D-2",
+    "A-4, B-3, C-1, D-2"
+   ],
+   "answer_index": 3,
+   "explanation": "Relational databases use tables, NoSQL databases handle large unstructured data, distributed databases spread across locations and object-oriented databases store objects."
+  },
+  "90": {
+   "question": "Match List I with List II: List I (Term) A. Index B. View C. Trigger D. Schema List II (Function) 1. Speeds up data retrieval 2. Defines database structure 3. Virtual table based on query 4. Automatically executes on certain events",
+   "options": [
+    "A-3, B-1, C-4, D-2",
+    "A-1, B-4, C-3, D-2",
+    "A-1, B-3, C-4, D-2",
+    "A-4, B-3, C-1, D-2"
+   ],
+   "answer_index": 2,
+   "explanation": "An index speeds retrieval, a view is a virtual table from a query, a trigger runs on certain events and a schema defines the structure."
+  },
+  "94": {
+   "question": "Match List I with List II: List I (Tag) A. <img> B. <ul> C. <table> List II (Purpose) 1. Unordered List 2. Inserting Image 3. Tabular Data",
+   "options": [
+    "A-3, B-1, C-2",
+    "A-2, B-3, C-1",
+    "A-2, B-1, C-3",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 2,
+   "explanation": "<img> inserts an image, <ul> an unordered list and <table> tabular data."
+  },
+  "114": {
+   "question": "Match List I with List II: List I (Component) A. Transistor B. LED C. Diode D. Zener diode List II (Function) 1. Voltage Regulation 2. Amplification 3. Light Emission 4. Rectification",
+   "options": [
+    "A-2, B-4, C-3, D-1",
+    "A-4, B-3, C-2, D-1",
+    "A-2, B-3, C-4, D-1",
+    "A-1, B-3, C-4, D-2"
+   ],
+   "answer_index": 2,
+   "explanation": "A transistor amplifies, an LED emits light, a diode rectifies and a Zener diode regulates voltage."
+  },
+  "115": {
+   "question": "Match List I with List II: List I (Gate) A. OR gate B. NOT gate C. NAND gate D. AND gate List II (Logic) 1. Sum 2. Product 3. Inversion 4. Inverted Product",
+   "options": [
+    "A-1, B-3, C-2, D-4",
+    "A-1, B-2, C-4, D-3",
+    "A-4, B-3, C-1, D-2",
+    "A-1, B-3, C-4, D-2"
+   ],
+   "answer_index": 3,
+   "explanation": "OR is logical sum, NOT inversion, NAND an inverted product and AND a logical product."
+  },
+  "116": {
+   "question": "Match List I with List II: List I (Semiconductor) A. N-type B. P-type C. Extrinsic D. Intrinsic List II (Majority carriers / nature) 1. Holes 2. Electrons 3. Equal electrons and holes 4. Doped semiconductor",
+   "options": [
+    "A-2, B-1, C-4, D-3",
+    "A-2, B-1, C-3, D-4",
+    "A-3, B-1, C-4, D-2",
+    "A-4, B-1, C-2, D-3"
+   ],
+   "answer_index": 0,
+   "explanation": "N-type has electrons as majority carriers, P-type holes; extrinsic semiconductors are doped and intrinsic ones have equal electrons and holes."
+  },
+  "117": {
+   "question": "Match List I with List II: List I (Terminal) A. Base B. Gate C. Emitter D. Collector List II (Role) 1. Collects carriers 2. Controls current 3. FET control terminal 4. Supplies carriers",
+   "options": [
+    "A-1, B-3, C-4, D-2",
+    "A-2, B-3, C-4, D-1",
+    "A-3, B-2, C-4, D-1",
+    "A-2, B-4, C-3, D-1"
+   ],
+   "answer_index": 1,
+   "explanation": "In a BJT the base controls current, the emitter supplies carriers and the collector collects them; in a FET the gate is the control terminal."
+  },
+  "154": {
+   "question": "Match List I with List II: List I (BJT terminal) A. Base B. Collector C. Emitter List II (Characteristic) 1. Heavily doped 2. Largest size 3. Very thin",
+   "options": [
+    "A-2, B-3, C-1",
+    "A-1, B-2, C-3",
+    "A-3, B-2, C-1",
+    "A-3, B-1, C-2"
+   ],
+   "answer_index": 2,
+   "explanation": "The base is very thin, the collector is the largest and the emitter is heavily doped."
+  },
+  "155": {
+   "question": "Match List I with List II: List I (Bias) A. Reverse bias B. Forward bias List II (Effect on diode) 1. High Resistance 2. Low Resistance",
+   "options": [
+    "A-2, B-1",
+    "A-1, B-2"
+   ],
+   "answer_index": 1,
+   "explanation": "A reverse-biased diode has very high resistance; a forward-biased diode has low resistance."
+  },
+  "157": {
+   "question": "Match List I with List II: List I (Rectifier) A. Bridge rectifier B. Half-wave rectifier C. Centre-tap full-wave rectifier List II (Diodes used) 1. 1 Diode 2. 4 Diodes 3. 2 Diodes",
+   "options": [
+    "A-2, B-3, C-1",
+    "A-2, B-1, C-3",
+    "A-1, B-2, C-3",
+    "A-3, B-1, C-2"
+   ],
+   "answer_index": 1,
+   "explanation": "A half-wave rectifier uses one diode, a centre-tap full-wave rectifier two and a bridge rectifier four."
+  },
+  "158": {
+   "question": "Match List I with List II: List I (Semiconductor) A. Extrinsic B. Intrinsic List II (Property) 1. Pure 2. Doped",
+   "options": [
+    "A-2, B-1",
+    "A-1, B-2"
+   ],
+   "answer_index": 0,
+   "explanation": "Extrinsic semiconductors are doped; intrinsic ones are pure."
+  },
+  "224": {
+   "question": "Match List I with List II: List I (Topology) A. Bus B. Ring C. Star D. Mesh List II (Characteristic) 1. Interconnected 2. Central Hub 3. Circular Path 4. Single Cable",
+   "options": [
+    "A-4, B-3, C-2, D-1",
+    "A-4, B-2, C-3, D-1",
+    "A-3, B-4, C-2, D-1",
+    "A-1, B-3, C-2, D-4"
+   ],
+   "answer_index": 0,
+   "explanation": "A bus uses a single cable, a ring a circular path, a star a central hub and a mesh interconnects every node."
+  },
+  "225": {
+   "question": "Match List I with List II: List I (Protocol) A. FTP B. HTTP C. TCP D. SMTP List II (Use) 1. File Transfer 2. Reliable Delivery 3. Email Sending 4. Web Browsing",
+   "options": [
+    "A-3, B-4, C-2, D-1",
+    "A-1, B-4, C-2, D-3",
+    "A-2, B-4, C-1, D-3",
+    "A-4, B-1, C-2, D-3"
+   ],
+   "answer_index": 1,
+   "explanation": "FTP transfers files, HTTP serves web pages, TCP gives reliable delivery and SMTP sends email."
+  },
+  "226": {
+   "question": "Match List I with List II: List I (Device) A. Router B. Repeater C. Gateway D. Bridge List II (Function) 1. Signal Boosting 2. Packet Routing 3. Connecting LANs 4. Protocol Conversion",
+   "options": [
+    "A-2, B-1, C-3, D-4",
+    "A-2, B-3, C-4, D-1",
+    "A-2, B-1, C-4, D-3",
+    "A-4, B-1, C-2, D-3"
+   ],
+   "answer_index": 2,
+   "explanation": "A router routes packets, a repeater boosts signals, a gateway converts between protocols and a bridge connects LANs."
+  },
+  "227": {
+   "question": "Match List I with List II: List I (Mode) A. Full duplex B. Simplex C. Multiplexing D. Half duplex List II (Example) 1. Walkie-talkie 2. Telephone 3. Multiple signals 4. Radio",
+   "options": [
+    "A-2, B-3, C-4, D-1",
+    "A-2, B-1, C-3, D-4",
+    "A-3, B-4, C-2, D-1",
+    "A-2, B-4, C-3, D-1"
+   ],
+   "answer_index": 3,
+   "explanation": "A telephone is full duplex, radio broadcasting simplex, a walkie-talkie half duplex, and multiplexing sends many signals over one link."
+  },
+  "228": {
+   "question": "Match List I with List II: List I (Technology) A. Wi-Fi B. NFC C. Bluetooth D. Cellular network List II (Range) 1. Medium 2. Long 3. Very Short 4. Short",
+   "options": [
+    "A-1, B-3, C-4, D-2",
+    "A-1, B-3, C-2, D-4",
+    "A-3, B-1, C-4, D-2",
+    "A-2, B-3, C-4, D-1"
+   ],
+   "answer_index": 0,
+   "explanation": "NFC works over a few centimetres, Bluetooth over a few metres, Wi-Fi over tens of metres and cellular networks over kilometres."
+  },
+  "229": {
+   "question": "Match List I with List II: List I (Medium) A. Optical fibre cable B. Radio waves C. Twisted pair cable D. Coaxial cable List II (Made of / uses) 1. Electromagnetic 2. Copper wires 3. Glass/Plastic 4. Shielded Copper",
+   "options": [
+    "A-1, B-3, C-2, D-4",
+    "A-3, B-1, C-2, D-4",
+    "A-4, B-1, C-2, D-3",
+    "A-3, B-1, C-4, D-2"
+   ],
+   "answer_index": 1,
+   "explanation": "Optical fibre is glass or plastic, radio waves are electromagnetic, twisted pair uses copper wires and coaxial cable is shielded copper."
+  },
+  "249": {
+   "question": "Match List I with List II: List I (Command) A. INSERT B. COMMIT C. CREATE D. GRANT List II (Category) 1. DCL 2. TCL 3. DDL 4. DML",
+   "options": [
+    "A-3, B-2, C-4, D-1",
+    "A-4, B-2, C-3, D-1",
+    "A-4, B-3, C-2, D-1",
+    "A-2, B-4, C-3, D-1"
+   ],
+   "answer_index": 1,
+   "explanation": "INSERT is DML, COMMIT TCL, CREATE DDL and GRANT DCL."
+  },
+  "250": {
+   "question": "Match List I with List II: List I (Term) A. Relation B. Tuple C. Domain D. Attribute List II (Meaning) 1. A table 2. Set of permitted values 3. A column in a table 4. A row in a table",
+   "options": [
+    "A-2, B-4, C-1, D-3",
+    "A-1, B-2, C-4, D-3",
+    "A-1, B-4, C-2, D-3",
+    "A-4, B-1, C-2, D-3"
+   ],
+   "answer_index": 2,
+   "explanation": "A relation is a table, a tuple a row, a domain the set of permitted values and an attribute a column."
+  },
+  "252": {
+   "question": "Match List I with List II: List I (Command) A. DROP TABLE B. DELETE C. CREATE TABLE D. ALTER TABLE List II (Action) 1. New table 2. Change structure 3. Remove table 4. Remove rows",
+   "options": [
+    "A-3, B-4, C-1, D-2",
+    "A-3, B-1, C-4, D-2",
+    "A-2, B-4, C-1, D-3",
+    "A-3, B-4, C-2, D-1"
+   ],
+   "answer_index": 0,
+   "explanation": "DROP TABLE removes a table, DELETE removes rows, CREATE TABLE makes a new table and ALTER TABLE changes its structure."
+  }
+ }
+}

@@ -163,5 +163,20 @@
   "reviewed_to": null,
   "total": 231,
   "retired": 3
+ },
+ "samacheer/computer/class10": {
+  "reviewed_to": null,
+  "total": 254,
+  "retired": 4
+ },
+ "samacheer/computer/class11": {
+  "reviewed_to": null,
+  "total": 506,
+  "retired": 29
+ },
+ "samacheer/computer/class12": {
+  "reviewed_to": null,
+  "total": 332,
+  "retired": 11
  }
 }

@@ -1,0 +1,159 @@
+{
+ "retire": [
+  44,
+  93,
+  95,
+  118,
+  119,
+  120,
+  142,
+  144,
+  145,
+  177,
+  178,
+  180,
+  203,
+  204,
+  251,
+  252,
+  253,
+  331,
+  364,
+  366,
+  399,
+  400,
+  427,
+  428,
+  429,
+  430,
+  488,
+  489,
+  490
+ ],
+ "fix": {
+  "45": {
+   "question": "Match List I with List II: List I (Analytical Engine part) A. Punched-card control B. The Mill C. The Store List II (Role) 1. Basic flow control 2. Integrated memory 3. Arithmetic Logic Unit",
+   "options": [
+    "A-2, B-3, C-1",
+    "A-1, B-3, C-2",
+    "A-1, B-2, C-3",
+    "A-3, B-1, C-2"
+   ],
+   "answer_index": 1,
+   "explanation": "Babbage's Analytical Engine was controlled by punched cards, did arithmetic in the Mill (like an ALU) and held numbers in the Store (memory)."
+  },
+  "46": {
+   "question": "Match List I with List II: List I (Device) A. Analytical Engine B. Abacus List II (Significance) 1. General-purpose computer concept 2. First calculating device",
+   "options": [
+    "A-1, B-2",
+    "A-2, B-1"
+   ],
+   "answer_index": 0,
+   "explanation": "The Analytical Engine was the first general-purpose computer design; the abacus was the first calculating device."
+  },
+  "92": {
+   "question": "Match List I with List II: List I (Term) A. User-defined functions B. Built-in functions C. Modular programming D. Code reusability List II (Description) 1. Eliminates code duplication 2. Available in standard library 3. Dividing into manageable sub-programs 4. Created by users",
+   "options": [
+    "A-4, B-2, C-3, D-1",
+    "A-4, B-3, C-2, D-1",
+    "A-4, B-1, C-3, D-2",
+    "A-2, B-4, C-3, D-1"
+   ],
+   "answer_index": 0,
+   "explanation": "User-defined functions are written by the programmer, built-in ones come with the standard library, modular programming splits work into sub-programs and reuse removes duplicate code."
+  },
+  "94": {
+   "question": "Match List I with List II: List I (Function type) A. User-defined function B. Built-in function List II (Comes from) 1. Programmer 2. C++ Standard Library",
+   "options": [
+    "A-1, B-2",
+    "A-2, B-1"
+   ],
+   "answer_index": 0,
+   "explanation": "User-defined functions are written by the programmer; built-in functions come from the C++ standard library."
+  },
+  "143": {
+   "question": "Match List I with List II: List I (Language) A. The C language B. The C++ language List II (Paradigm) 1. Procedural 2. Object Oriented",
+   "options": [
+    "A-2, B-1",
+    "A-1, B-2"
+   ],
+   "answer_index": 1,
+   "explanation": "C is a procedural language; C++ supports object-oriented programming."
+  },
+  "179": {
+   "question": "Match List I with List II: List I (Type) A. struct B. class List II (Default access of members) 1. Private 2. Public",
+   "options": [
+    "A-1, B-2",
+    "A-2, B-1"
+   ],
+   "answer_index": 1,
+   "explanation": "In C++ the members of a struct are public by default and those of a class private."
+  },
+  "202": {
+   "question": "Match List I with List II: List I (Concept) A. Function overloading B. Polymorphism C. Operator overloading D. Overload resolution List II (Description) 1. Polymorphism via operators 2. Many forms 3. Same name, different parameters 4. Selecting the appropriate function",
+   "options": [
+    "A-2, B-3, C-1, D-4",
+    "A-3, B-2, C-4, D-1",
+    "A-3, B-2, C-1, D-4",
+    "A-4, B-2, C-1, D-3"
+   ],
+   "answer_index": 2,
+   "explanation": "Function overloading reuses a name with different parameters, polymorphism means many forms, operator overloading gives operators new meanings and overload resolution picks the right function."
+  },
+  "330": {
+   "question": "Match List I with List II: List I (Item) A. Memory B. Intel C. Microprocessor D. Clock List II (Role) 1. Major component performing all tasks 2. Stores instructions 3. Developed 4004 4. Drives the microprocessor",
+   "options": [
+    "A-2, B-1, C-3, D-4",
+    "A-2, B-4, C-1, D-3",
+    "A-2, B-3, C-1, D-4",
+    "A-3, B-2, C-1, D-4"
+   ],
+   "answer_index": 2,
+   "explanation": "Memory stores instructions, Intel developed the 4004, the microprocessor performs all tasks and the clock drives it."
+  },
+  "332": {
+   "question": "Match List I with List II: List I (Abbreviation) A. I/O B. CPU C. ALU D. IC List II (Stands for) 1. Central Processing Unit 2. Integrated Circuit 3. Input / Output 4. Arithmetic and Logic unit",
+   "options": [
+    "A-3, B-1, C-4, D-2",
+    "A-1, B-3, C-4, D-2",
+    "A-4, B-1, C-3, D-2",
+    "A-3, B-4, C-1, D-2"
+   ],
+   "answer_index": 0,
+   "explanation": "I/O is input/output, CPU the central processing unit, ALU the arithmetic and logic unit and IC an integrated circuit."
+  },
+  "365": {
+   "question": "Match List I with List II: List I (Software) A. Operating system B. Device drivers C. MS Word D. VLC media player List II (Purpose) 1. Play audio/video 2. Create text document 3. User interface 4. Run hardware",
+   "options": [
+    "A-2, B-4, C-3, D-1",
+    "A-3, B-4, C-2, D-1",
+    "A-3, B-2, C-4, D-1",
+    "A-3, B-1, C-2, D-4"
+   ],
+   "answer_index": 1,
+   "explanation": "The OS is the user interface, device drivers run hardware, MS Word creates documents and VLC plays audio and video."
+  },
+  "398": {
+   "question": "Match List I with List II: List I (OS function) A. File management B. Memory management C. Process management D. Security List II (Description) 1. Manages files and folders 2. Manages execution of tasks 3. Manages RAM 4. Protects the system",
+   "options": [
+    "A-2, B-3, C-1, D-4",
+    "A-1, B-4, C-2, D-3",
+    "A-1, B-3, C-2, D-4",
+    "A-1, B-2, C-3, D-4"
+   ],
+   "answer_index": 2,
+   "explanation": "File management handles files and folders, memory management RAM, process management running tasks and security protects the system."
+  },
+  "401": {
+   "question": "Match List I with List II: List I (OS function) A. Memory management B. Device management C. File management D. Process management List II (Manages) 1. RAM 2. I/O devices 3. CPU tasks 4. Directories",
+   "options": [
+    "A-4, B-2, C-1, D-3",
+    "A-1, B-2, C-4, D-3",
+    "A-3, B-2, C-4, D-1",
+    "A-2, B-1, C-4, D-3"
+   ],
+   "answer_index": 1,
+   "explanation": "Memory management looks after RAM, device management I/O devices, file management directories and process management CPU tasks."
+  }
+ }
+}

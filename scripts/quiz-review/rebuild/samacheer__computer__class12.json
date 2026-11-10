@@ -1,0 +1,224 @@
+{
+ "44": "retire",
+ "98": "retire",
+ "139": "retire",
+ "140": "retire",
+ "222": "retire",
+ "223": "retire",
+ "243": "retire",
+ "244": "retire",
+ "264": "retire",
+ "265": "retire",
+ "328": "retire",
+ "22": {
+  "lh": "Term",
+  "rh": "Linked with",
+  "L": [
+   "Script mode",
+   "Interactive mode",
+   "IDLE"
+  ],
+  "why": "Script mode saves code in .py files, interactive mode shows the >>> prompt and IDLE is Python's Integrated Development Learning Environment.",
+  "R": [
+   ".py extension",
+   "Command prompt (>>>)",
+   "Integrated Development Learning Environment"
+  ]
+ },
+ "42": {
+  "lh": "Control structure",
+  "rh": "Description",
+  "L": [
+   "Alternative (branching)",
+   "Sequential",
+   "Iterative (looping)"
+  ],
+  "why": "Branching skips code depending on a condition, sequential code runs one statement after another and iteration repeats code.",
+  "R": [
+   "Skip a segment based on a condition",
+   "Executed one after another",
+   "Repeat a segment multiple times"
+  ]
+ },
+ "43": {
+  "lh": "Structure",
+  "rh": "Also called",
+  "L": [
+   "Iterative",
+   "Alternative",
+   "Sequential"
+  ],
+  "why": "Iterative means looping, alternative means branching and sequential means one after another.",
+  "R": [
+   "Looping",
+   "Branching",
+   "One after another"
+  ]
+ },
+ "64": {
+  "lh": "Function",
+  "rh": "Description",
+  "L": [
+   "Lambda function",
+   "User-defined function",
+   "Recursive function"
+  ],
+  "why": "A lambda is an anonymous function, a user-defined function is written by the user and a recursive function calls itself.",
+  "R": [
+   "Anonymous un-named function",
+   "Defined by the users themselves",
+   "Functions that call itself"
+  ]
+ },
+ "97": {
+  "lh": "Term",
+  "rh": "Description",
+  "L": [
+   "Index",
+   "List",
+   "Mutable elements"
+  ],
+  "why": "An index is a position counted from zero, a list is an ordered collection in square brackets and its mutable elements can be replaced or removed.",
+  "R": [
+   "Position beginning with zero",
+   "Ordered collection in square brackets",
+   "Can be replaced or removed"
+  ]
+ },
+ "115": {
+  "lh": "Term",
+  "rh": "Definition",
+  "L": [
+   "Arguments",
+   "Subroutine",
+   "Function"
+  ],
+  "why": "Arguments are values passed to a function, a subroutine is a small piece of code reused often and a function is a unit of code that does a task.",
+  "R": [
+   "Values passed to a function",
+   "A small section of code used repeatedly",
+   "A unit of code that performs a particular task"
+  ]
+ },
+ "138": {
+  "lh": "Term",
+  "rh": "Description",
+  "L": [
+   "Object",
+   "Class",
+   "Method"
+  ],
+  "why": "An object is an instance of a class, a class is the template and a method is a function defined inside a class.",
+  "R": [
+   "Instance of a class",
+   "Template for the object",
+   "Function defined inside a class"
+  ]
+ },
+ "163": {
+  "lh": "Term",
+  "rh": "Definition",
+  "L": [
+   "DBMS",
+   "Data",
+   "Database",
+   "Information"
+  ],
+  "why": "A DBMS manages databases, data are raw facts, a database is an organised collection of data and information is processed, useful data.",
+  "R": [
+   "Software to manage databases",
+   "Raw facts stored in a computer",
+   "Organized collection of related data",
+   "Processed data that is useful"
+  ]
+ },
+ "177": {
+  "lh": "SQL command",
+  "rh": "Function",
+  "L": [
+   "DELETE",
+   "INSERT",
+   "UPDATE"
+  ],
+  "why": "DELETE removes records, INSERT adds them and UPDATE modifies them.",
+  "R": [
+   "Remove records",
+   "Add new records",
+   "Modify existing records"
+  ]
+ },
+ "197": {
+  "stem": "Match the language with its typical use:",
+  "lh": "Language",
+  "rh": "Typical use",
+  "L": [
+   "Python",
+   "C++"
+  ],
+  "why": "Python is often used as a scripting and glue language; C++ for general-purpose, performance-heavy programs.",
+  "R": [
+   "Scripting and glue language",
+   "General purpose programming"
+  ]
+ },
+ "203": {
+  "stem": "Match the language with its characteristic:",
+  "lh": "Language",
+  "rh": "Characteristic",
+  "L": [
+   "Python",
+   "C++"
+  ],
+  "why": "Python is interpreted and dynamically typed; C++ is compiled and statically typed.",
+  "R": [
+   "Interpreted, dynamic-typed",
+   "Compiled, statically typed"
+  ]
+ },
+ "285": {
+  "stem": "In the statement a := 5, match each part with its role:",
+  "lh": "Part",
+  "rh": "Role",
+  "L": [
+   "The value 5",
+   "The name a",
+   "The symbol :="
+  ],
+  "why": "5 is the object, a is the variable name and := binds the name to the object.",
+  "R": [
+   "Object",
+   "Variable name",
+   "Binding operator"
+  ]
+ },
+ "286": {
+  "lh": "Programming term",
+  "rh": "Dictionary analogy",
+  "L": [
+   "Name",
+   "Object",
+   "Namespace"
+  ],
+  "why": "A namespace is like a dictionary: names are like its words and objects like their meanings.",
+  "R": [
+   "Word",
+   "Meaning",
+   "Dictionary"
+  ]
+ },
+ "312": {
+  "lh": "Task",
+  "rh": "Description",
+  "L": [
+   "Insertion",
+   "Searching",
+   "Sorting"
+  ],
+  "why": "Insertion adds an item, searching finds one and sorting arranges items in order.",
+  "R": [
+   "To add an item to a data structure",
+   "To find an item in a data structure",
+   "To arrange items in a specific order"
+  ]
+ }
+}

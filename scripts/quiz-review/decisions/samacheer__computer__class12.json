@@ -1,0 +1,167 @@
+{
+ "retire": [
+  44,
+  98,
+  139,
+  140,
+  222,
+  223,
+  243,
+  244,
+  264,
+  265,
+  328
+ ],
+ "fix": {
+  "22": {
+   "question": "Match List I with List II: List I (Term) A. Script mode B. Interactive mode C. IDLE List II (Linked with) 1. Integrated Development Learning Environment 2. .py extension 3. Command prompt (>>>)",
+   "options": [
+    "A-3, B-2, C-1",
+    "A-2, B-1, C-3",
+    "A-2, B-3, C-1",
+    "A-1, B-3, C-2"
+   ],
+   "answer_index": 2,
+   "explanation": "Script mode saves code in .py files, interactive mode shows the >>> prompt and IDLE is Python's Integrated Development Learning Environment."
+  },
+  "42": {
+   "question": "Match List I with List II: List I (Control structure) A. Alternative (branching) B. Sequential C. Iterative (looping) List II (Description) 1. Skip a segment based on a condition 2. Repeat a segment multiple times 3. Executed one after another",
+   "options": [
+    "A-3, B-1, C-2",
+    "A-2, B-3, C-1",
+    "A-1, B-3, C-2",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 2,
+   "explanation": "Branching skips code depending on a condition, sequential code runs one statement after another and iteration repeats code."
+  },
+  "43": {
+   "question": "Match List I with List II: List I (Structure) A. Iterative B. Alternative C. Sequential List II (Also called) 1. One after another 2. Looping 3. Branching",
+   "options": [
+    "A-3, B-2, C-1",
+    "A-1, B-3, C-2",
+    "A-2, B-1, C-3",
+    "A-2, B-3, C-1"
+   ],
+   "answer_index": 3,
+   "explanation": "Iterative means looping, alternative means branching and sequential means one after another."
+  },
+  "64": {
+   "question": "Match List I with List II: List I (Function) A. Lambda function B. User-defined function C. Recursive function List II (Description) 1. Anonymous un-named function 2. Defined by the users themselves 3. Functions that call itself",
+   "options": [
+    "A-1, B-2, C-3",
+    "A-2, B-1, C-3",
+    "A-1, B-3, C-2",
+    "A-3, B-2, C-1"
+   ],
+   "answer_index": 0,
+   "explanation": "A lambda is an anonymous function, a user-defined function is written by the user and a recursive function calls itself."
+  },
+  "97": {
+   "question": "Match List I with List II: List I (Term) A. Index B. List C. Mutable elements List II (Description) 1. Ordered collection in square brackets 2. Can be replaced or removed 3. Position beginning with zero",
+   "options": [
+    "A-2, B-1, C-3",
+    "A-3, B-1, C-2",
+    "A-3, B-2, C-1",
+    "A-1, B-3, C-2"
+   ],
+   "answer_index": 1,
+   "explanation": "An index is a position counted from zero, a list is an ordered collection in square brackets and its mutable elements can be replaced or removed."
+  },
+  "115": {
+   "question": "Match List I with List II: List I (Term) A. Arguments B. Subroutine C. Function List II (Definition) 1. Values passed to a function 2. A small section of code used repeatedly 3. A unit of code that performs a particular task",
+   "options": [
+    "A-2, B-1, C-3",
+    "A-3, B-2, C-1",
+    "A-1, B-3, C-2",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 3,
+   "explanation": "Arguments are values passed to a function, a subroutine is a small piece of code reused often and a function is a unit of code that does a task."
+  },
+  "138": {
+   "question": "Match List I with List II: List I (Term) A. Object B. Class C. Method List II (Description) 1. Instance of a class 2. Template for the object 3. Function defined inside a class",
+   "options": [
+    "A-3, B-2, C-1",
+    "A-1, B-3, C-2",
+    "A-1, B-2, C-3",
+    "A-2, B-1, C-3"
+   ],
+   "answer_index": 2,
+   "explanation": "An object is an instance of a class, a class is the template and a method is a function defined inside a class."
+  },
+  "163": {
+   "question": "Match List I with List II: List I (Term) A. DBMS B. Data C. Database D. Information List II (Definition) 1. Processed data that is useful 2. Organized collection of related data 3. Raw facts stored in a computer 4. Software to manage databases",
+   "options": [
+    "A-4, B-2, C-3, D-1",
+    "A-1, B-3, C-2, D-4",
+    "A-4, B-3, C-1, D-2",
+    "A-4, B-3, C-2, D-1"
+   ],
+   "answer_index": 3,
+   "explanation": "A DBMS manages databases, data are raw facts, a database is an organised collection of data and information is processed, useful data."
+  },
+  "177": {
+   "question": "Match List I with List II: List I (SQL command) A. DELETE B. INSERT C. UPDATE List II (Function) 1. Add new records 2. Modify existing records 3. Remove records",
+   "options": [
+    "A-1, B-3, C-2",
+    "A-3, B-1, C-2",
+    "A-2, B-1, C-3",
+    "A-3, B-2, C-1"
+   ],
+   "answer_index": 1,
+   "explanation": "DELETE removes records, INSERT adds them and UPDATE modifies them."
+  },
+  "197": {
+   "question": "Match the language with its typical use: List I (Language) A. Python B. C++ List II (Typical use) 1. Scripting and glue language 2. General purpose programming",
+   "options": [
+    "A-2, B-1",
+    "A-1, B-2"
+   ],
+   "answer_index": 1,
+   "explanation": "Python is often used as a scripting and glue language; C++ for general-purpose, performance-heavy programs."
+  },
+  "203": {
+   "question": "Match the language with its characteristic: List I (Language) A. Python B. C++ List II (Characteristic) 1. Interpreted, dynamic-typed 2. Compiled, statically typed",
+   "options": [
+    "A-2, B-1",
+    "A-1, B-2"
+   ],
+   "answer_index": 1,
+   "explanation": "Python is interpreted and dynamically typed; C++ is compiled and statically typed."
+  },
+  "285": {
+   "question": "In the statement a := 5, match each part with its role: List I (Part) A. The value 5 B. The name a C. The symbol := List II (Role) 1. Object 2. Binding operator 3. Variable name",
+   "options": [
+    "A-2, B-3, C-1",
+    "A-1, B-3, C-2",
+    "A-3, B-1, C-2",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 1,
+   "explanation": "5 is the object, a is the variable name and := binds the name to the object."
+  },
+  "286": {
+   "question": "Match List I with List II: List I (Programming term) A. Name B. Object C. Namespace List II (Dictionary analogy) 1. Meaning 2. Word 3. Dictionary",
+   "options": [
+    "A-2, B-3, C-1",
+    "A-1, B-2, C-3",
+    "A-2, B-1, C-3",
+    "A-3, B-1, C-2"
+   ],
+   "answer_index": 2,
+   "explanation": "A namespace is like a dictionary: names are like its words and objects like their meanings."
+  },
+  "312": {
+   "question": "Match List I with List II: List I (Task) A. Insertion B. Searching C. Sorting List II (Description) 1. To arrange items in a specific order 2. To add an item to a data structure 3. To find an item in a data structure",
+   "options": [
+    "A-2, B-3, C-1",
+    "A-2, B-1, C-3",
+    "A-1, B-3, C-2",
+    "A-3, B-2, C-1"
+   ],
+   "answer_index": 0,
+   "explanation": "Insertion adds an item, searching finds one and sorting arranges items in order."
+  }
+ }
+}
