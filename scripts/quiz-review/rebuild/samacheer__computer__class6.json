@@ -1,0 +1,209 @@
+{
+ "31": "retire",
+ "99": "retire",
+ "108": "retire",
+ "120": "retire",
+ "123": "retire",
+ "126": "retire",
+ "130": "retire",
+ "133": "retire",
+ "17": {
+  "lh": "Hardware",
+  "rh": "Function",
+  "L": [
+   "Keyboard",
+   "CPU",
+   "Monitor"
+  ],
+  "why": "The keyboard is an input device for typing, the CPU processes instructions and the monitor displays output.",
+  "R": [
+   "Input device for typing text",
+   "Processes instructions",
+   "Output device to display visuals"
+  ]
+ },
+ "18": {
+  "lh": "Category",
+  "rh": "Example",
+  "L": [
+   "Application software",
+   "Hardware (input device)",
+   "System software (operating system)"
+  ],
+  "why": "Paint is application software, a microphone is an input device and Windows is an operating system.",
+  "R": [
+   "Paint",
+   "Microphone",
+   "Windows"
+  ]
+ },
+ "19": {
+  "lh": "Storage device",
+  "rh": "Characteristic",
+  "L": [
+   "Pen drive",
+   "RAM",
+   "Hard disk"
+  ],
+  "why": "A pen drive is portable, RAM is temporary and a hard disk stores data permanently.",
+  "R": [
+   "Portable storage",
+   "Temporary storage",
+   "Permanent storage"
+  ]
+ },
+ "32": {
+  "lh": "Category",
+  "rh": "Example",
+  "L": [
+   "System software",
+   "Operating system",
+   "Application software"
+  ],
+  "why": "A device driver is system software, Windows is an operating system and a word processor is application software.",
+  "R": [
+   "Device Driver",
+   "Windows",
+   "Word Processor"
+  ]
+ },
+ "52": {
+  "lh": "Shortcut",
+  "rh": "Action",
+  "L": [
+   "Ctrl + M",
+   "F5",
+   "Ctrl + D"
+  ],
+  "why": "Ctrl + M inserts a new slide, F5 starts the slide show and Ctrl + D duplicates a slide.",
+  "R": [
+   "Insert New Slide",
+   "Start Slide Show",
+   "Duplicate Slide"
+  ]
+ },
+ "53": {
+  "lh": "View",
+  "rh": "Used for",
+  "L": [
+   "Slide Sorter view",
+   "Normal view",
+   "Reading view"
+  ],
+  "why": "Slide Sorter rearranges slides, Normal view is for editing and Reading view shows the show in a window.",
+  "R": [
+   "Rearranging slides",
+   "Editing slides",
+   "Viewing in a window"
+  ]
+ },
+ "54": {
+  "lh": "Tab",
+  "rh": "Action",
+  "L": [
+   "Design tab",
+   "Insert tab",
+   "Animations tab"
+  ],
+  "why": "The Design tab changes themes, the Insert tab adds pictures and the Animations tab adds entrance effects.",
+  "R": [
+   "Change Theme",
+   "Add Pictures",
+   "Add Entrance Effect"
+  ]
+ },
+ "70": {
+  "lh": "Term",
+  "rh": "Description",
+  "L": [
+   "Taskbar",
+   "Icon",
+   "Wallpaper"
+  ],
+  "why": "The taskbar is the bar at the bottom, an icon is a small picture and the wallpaper is the background image.",
+  "R": [
+   "Bottom bar",
+   "Small picture",
+   "Background image"
+  ]
+ },
+ "71": {
+  "lh": "Mouse action",
+  "rh": "Result",
+  "L": [
+   "Right-click",
+   "Drag and drop",
+   "Double-click"
+  ],
+  "why": "Right-click shows options and properties, drag and drop moves a file and double-click opens it.",
+  "R": [
+   "Show properties",
+   "Move a file",
+   "Open a file"
+  ]
+ },
+ "72": {
+  "lh": "Shortcut",
+  "rh": "Action",
+  "L": [
+   "Ctrl + V",
+   "Ctrl + X",
+   "Ctrl + C"
+  ],
+  "why": "Ctrl + C copies, Ctrl + X cuts and Ctrl + V pastes.",
+  "R": [
+   "Paste",
+   "Cut",
+   "Copy"
+  ]
+ },
+ "83": {
+  "lh": "Format",
+  "rh": "Shortcut",
+  "L": [
+   "Italic",
+   "Underline",
+   "Bold"
+  ],
+  "why": "Ctrl + I makes text italic, Ctrl + U underlines it and Ctrl + B makes it bold.",
+  "R": [
+   "Ctrl + I",
+   "Ctrl + U",
+   "Ctrl + B"
+  ]
+ },
+ "84": {
+  "lh": "Alignment",
+  "rh": "Description",
+  "L": [
+   "Justify",
+   "Centre"
+  ],
+  "why": "Justified text has even edges on both sides; centred text sits in the middle.",
+  "R": [
+   "Even edges on both sides",
+   "Text aligned to middle"
+  ]
+ },
+ "95": {
+  "lh": "Device",
+  "rh": "Function",
+  "L": [
+   "Speaker",
+   "Printer",
+   null,
+   "Monitor",
+   "Keyboard",
+   "Scanner"
+  ],
+  "why": "Speakers output sound, printers print documents, monitors display output, keyboards input data and scanners turn physical images into digital ones.",
+  "R": [
+   "Outputs sound",
+   "Prints documents",
+   "Stores data",
+   "Displays output",
+   "Input data",
+   "Converts physical images to digital"
+  ]
+ }
+}

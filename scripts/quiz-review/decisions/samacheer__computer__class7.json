@@ -1,0 +1,222 @@
+{
+ "retire": [
+  136,
+  137,
+  175,
+  176,
+  177,
+  178,
+  179
+ ],
+ "fix": {
+  "20": {
+   "question": "Match List I with List II: List I (Term) A. Encryption B. Firewall C. Antivirus List II (Definition) 1. Scrambles data to make it unreadable 2. Monitors and controls network traffic 3. Protects against malware",
+   "options": [
+    "A-1, B-2, C-3",
+    "A-3, B-2, C-1",
+    "A-2, B-1, C-3",
+    "A-1, B-3, C-2"
+   ],
+   "answer_index": 0,
+   "explanation": "Encryption scrambles data, a firewall monitors and controls network traffic and antivirus software protects against malware."
+  },
+  "33": {
+   "question": "Match List I with List II: List I (Pioneer) A. Blaise Pascal B. Herman Hollerith C. Charles Babbage D. Ada Lovelace List II (Contribution) 1. Invented the Pascaline 2. Designed the Analytical Engine 3. Wrote the first computer program 4. Developed the tabulating machine for the US Census",
+   "options": [
+    "A-1, B-4, C-3, D-2",
+    "A-1, B-4, C-2, D-3",
+    "A-1, B-3, C-2, D-4",
+    "A-2, B-4, C-1, D-3"
+   ],
+   "answer_index": 1,
+   "explanation": "Pascal invented the Pascaline, Hollerith the census tabulating machine, Babbage designed the Analytical Engine and Ada Lovelace wrote the first computer program."
+  },
+  "34": {
+   "question": "Match List I with List II: List I (Generation) A. Fourth generation B. First generation C. Second generation D. Third generation List II (Technology) 1. Vacuum Tubes 2. Transistors 3. Microprocessors 4. Integrated Circuits (ICs)",
+   "options": [
+    "A-2, B-1, C-3, D-4",
+    "A-3, B-2, C-1, D-4",
+    "A-3, B-1, C-2, D-4",
+    "A-3, B-4, C-2, D-1"
+   ],
+   "answer_index": 2,
+   "explanation": "First: vacuum tubes; second: transistors; third: integrated circuits; fourth: microprocessors."
+  },
+  "35": {
+   "question": "Match List I with List II: List I (Device) A. Difference Engine B. Jacquard loom C. Abacus D. Pascaline List II (Description) 1. Ancient manual calculating tool 2. Mechanical calculator for addition and subtraction 3. Mechanical calculator for polynomial functions 4. Automated weaving using punched cards",
+   "options": [
+    "A-3, B-1, C-4, D-2",
+    "A-2, B-4, C-1, D-3",
+    "A-3, B-2, C-1, D-4",
+    "A-3, B-4, C-1, D-2"
+   ],
+   "answer_index": 3,
+   "explanation": "The Difference Engine computed polynomials, the Jacquard loom wove with punched cards, the abacus is an ancient manual tool and the Pascaline added and subtracted."
+  },
+  "53": {
+   "question": "Match List I with List II: List I (Term) A. Search engine B. Web browser C. Internet Service Provider List II (Definition) 1. Software to access the web 2. Tool to find information online 3. Provides Internet access",
+   "options": [
+    "A-1, B-2, C-3",
+    "A-2, B-1, C-3",
+    "A-2, B-3, C-1",
+    "A-3, B-1, C-2"
+   ],
+   "answer_index": 1,
+   "explanation": "A search engine finds information, a browser accesses the web and an ISP provides Internet access."
+  },
+  "54": {
+   "question": "Match List I with List II: List I (Service) A. Video conferencing B. Email C. Online gaming List II (Function) 1. Live visual communication 2. Playing games with others over the Internet 3. Sending messages",
+   "options": [
+    "A-1, B-2, C-3",
+    "A-2, B-3, C-1",
+    "A-1, B-3, C-2",
+    "A-3, B-1, C-2"
+   ],
+   "answer_index": 2,
+   "explanation": "Video conferencing gives live visual communication, email sends messages and online gaming lets people play together."
+  },
+  "55": {
+   "question": "Match List I with List II: List I (Protocol) A. HTTP B. FTP C. SMTP List II (Purpose) 1. Transferring web pages 2. Transferring files 3. Sending emails",
+   "options": [
+    "A-3, B-2, C-1",
+    "A-2, B-1, C-3",
+    "A-1, B-3, C-2",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 3,
+   "explanation": "HTTP transfers web pages, FTP transfers files and SMTP sends email."
+  },
+  "73": {
+   "question": "Match List I with List II: List I (Excel term) A. Formula bar B. Cell address C. Workbook List II (Description) 1. Displays the content of the active cell 2. Unique identifier of a cell, such as A1 3. A file containing one or more worksheets",
+   "options": [
+    "A-3, B-2, C-1",
+    "A-1, B-2, C-3",
+    "A-2, B-1, C-3",
+    "A-1, B-3, C-2"
+   ],
+   "answer_index": 1,
+   "explanation": "The formula bar shows the active cell's content, a cell address (like A1) identifies a cell and a workbook holds one or more worksheets."
+  },
+  "74": {
+   "question": "Match List I with List II: List I (Function) A. SUM B. AVERAGE C. COUNT List II (Purpose) 1. Counts the number of cells with numbers 2. Calculates the mean of numbers 3. Adds numbers in a range",
+   "options": [
+    "A-2, B-3, C-1",
+    "A-3, B-1, C-2",
+    "A-3, B-2, C-1",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 2,
+   "explanation": "SUM adds numbers, AVERAGE finds the mean and COUNT counts cells with numbers."
+  },
+  "75": {
+   "question": "Match List I with List II: List I (Term) A. Worksheet B. Cell C. Range List II (Definition) 1. A grid of rows and columns 2. Intersection of a row and a column 3. A group of selected cells",
+   "options": [
+    "A-2, B-1, C-3",
+    "A-1, B-3, C-2",
+    "A-3, B-2, C-1",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 3,
+   "explanation": "A worksheet is a grid of rows and columns, a cell the meeting of a row and a column and a range a group of selected cells."
+  },
+  "93": {
+   "question": "Match List I with List II: List I (Device) A. CD / DVD B. RAM C. Hard disk List II (Category) 1. Magnetic Storage 2. Optical Storage 3. Primary Memory",
+   "options": [
+    "A-2, B-1, C-3",
+    "A-2, B-3, C-1",
+    "A-1, B-3, C-2",
+    "A-3, B-2, C-1"
+   ],
+   "answer_index": 1,
+   "explanation": "CDs and DVDs are optical storage, RAM is primary memory and a hard disk is magnetic storage."
+  },
+  "94": {
+   "question": "Match List I with List II: List I (Unit) A. 1 GB B. 1 KB C. 1 MB List II (Equals) 1. 1024 Bytes 2. 1024 MB 3. 1024 KB",
+   "options": [
+    "A-3, B-1, C-2",
+    "A-2, B-3, C-1",
+    "A-2, B-1, C-3",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 2,
+   "explanation": "1 KB = 1024 bytes, 1 MB = 1024 KB and 1 GB = 1024 MB."
+  },
+  "131": {
+   "question": "Match List I with List II: List I (Term) A. Firewall B. Malware C. Two-factor authentication D. Phishing List II (Description) 1. Network filter 2. Malicious software 3. Fake emails for data 4. Two-step verification",
+   "options": [
+    "A-3, B-2, C-4, D-1",
+    "A-2, B-1, C-4, D-3",
+    "A-1, B-3, C-4, D-2",
+    "A-1, B-2, C-4, D-3"
+   ],
+   "answer_index": 3,
+   "explanation": "A firewall filters network traffic, malware is malicious software, two-factor authentication is two-step verification and phishing uses fake emails to steal data."
+  },
+  "132": {
+   "question": "Match List I with List II: List I (Malware) A. Trojan horse B. Ransomware C. Worm D. Spyware List II (Characteristic) 1. Replicates itself 2. Steals info secretly 3. Demands money 4. Disguised as useful",
+   "options": [
+    "A-4, B-3, C-1, D-2",
+    "A-3, B-4, C-1, D-2",
+    "A-4, B-1, C-3, D-2",
+    "A-4, B-3, C-2, D-1"
+   ],
+   "answer_index": 0,
+   "explanation": "A Trojan pretends to be useful, ransomware demands money, a worm copies itself across networks and spyware secretly steals information."
+  },
+  "133": {
+   "question": "Match List I with List II: List I (Protocol / tool) A. HTTPS B. VPN C. HTTP D. SSL / TLS List II (Purpose) 1. Secured web transfer 2. Encryption layer 3. Private tunnel 4. Unsecured web transfer",
+   "options": [
+    "A-4, B-3, C-1, D-2",
+    "A-1, B-3, C-4, D-2",
+    "A-3, B-1, C-4, D-2",
+    "A-1, B-4, C-3, D-2"
+   ],
+   "answer_index": 1,
+   "explanation": "HTTPS is secured web transfer, a VPN a private tunnel, HTTP unsecured web transfer and SSL/TLS the encryption layer."
+  },
+  "134": {
+   "question": "Match List I with List II: List I (Term) A. Cyberbullying B. Trolling C. Netiquette D. Spamming List II (Behaviour) 1. Provoking others 2. Bulk messaging 3. Online harassment 4. Polite behavior",
+   "options": [
+    "A-2, B-1, C-4, D-3",
+    "A-3, B-4, C-1, D-2",
+    "A-3, B-1, C-4, D-2",
+    "A-1, B-3, C-4, D-2"
+   ],
+   "answer_index": 2,
+   "explanation": "Cyberbullying is online harassment, trolling provokes others, netiquette is polite behaviour and spamming is bulk messaging."
+  },
+  "135": {
+   "question": "Match List I with List II: List I (Tool) A. Backup B. Antivirus C. Encryption D. Password manager List II (Function) 1. Scrambles data 2. Stores passwords 3. Copies data 4. Removes viruses",
+   "options": [
+    "A-3, B-4, C-2, D-1",
+    "A-3, B-2, C-1, D-4",
+    "A-1, B-4, C-3, D-2",
+    "A-3, B-4, C-1, D-2"
+   ],
+   "answer_index": 3,
+   "explanation": "A backup copies data, antivirus removes viruses, encryption scrambles data and a password manager stores passwords."
+  },
+  "173": {
+   "question": "Match List I with List II: List I (Generation) A. Second generation B. First generation C. Fourth generation D. Third generation List II (Technology) 1. Integrated Circuits 2. Microprocessors 3. Vacuum Tubes 4. Transistors",
+   "options": [
+    "A-1, B-3, C-2, D-4",
+    "A-4, B-3, C-2, D-1",
+    "A-3, B-4, C-2, D-1",
+    "A-4, B-2, C-3, D-1"
+   ],
+   "answer_index": 1,
+   "explanation": "Vacuum tubes – first, transistors – second, integrated circuits – third, microprocessors – fourth."
+  },
+  "174": {
+   "question": "Match List I with List II: List I (Inventor) A. Blaise Pascal B. Charles Babbage C. Herman Hollerith D. John Napier List II (Invention) 1. Tabulating Machine 2. Pascaline 3. Analytical Engine 4. Napier's Bones",
+   "options": [
+    "A-4, B-3, C-1, D-2",
+    "A-1, B-3, C-2, D-4",
+    "A-2, B-3, C-1, D-4",
+    "A-2, B-1, C-3, D-4"
+   ],
+   "answer_index": 2,
+   "explanation": "Pascal made the Pascaline, Babbage designed the Analytical Engine, Hollerith the tabulating machine and Napier invented Napier's bones."
+  }
+ }
+}

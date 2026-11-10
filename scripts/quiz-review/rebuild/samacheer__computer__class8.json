@@ -1,0 +1,216 @@
+{
+ "108": "retire",
+ "145": "retire",
+ "149": "retire",
+ "150": "retire",
+ "183": "retire",
+ "63": {
+  "lh": "Term",
+  "rh": "Definition",
+  "L": [
+   "Field",
+   "Table",
+   "Record"
+  ],
+  "why": "A field is a column, a table a collection of related records and a record a single entry.",
+  "R": [
+   "A column in a table",
+   "A collection of related records",
+   "A single entry in a table"
+  ]
+ },
+ "64": {
+  "lh": "Term",
+  "rh": "Description",
+  "L": [
+   "DBMS",
+   "Foreign key",
+   "Primary key"
+  ],
+  "why": "A DBMS is software that manages databases, a foreign key links tables and a primary key uniquely identifies a record.",
+  "R": [
+   "Software to manage databases",
+   "Links tables together",
+   "Uniquely identifies a record"
+  ]
+ },
+ "65": {
+  "lh": "SQL command",
+  "rh": "Action",
+  "L": [
+   "INSERT",
+   "UPDATE",
+   "SELECT"
+  ],
+  "why": "INSERT adds new data, UPDATE modifies existing data and SELECT retrieves data.",
+  "R": [
+   "Adds new data",
+   "Modifies existing data",
+   "Retrieves data"
+  ]
+ },
+ "84": {
+  "lh": "Term",
+  "rh": "Definition",
+  "L": [
+   "Bug",
+   "Syntax",
+   "Pseudocode"
+  ],
+  "R": [
+   "An error in a program",
+   "Rules for correctly structured statements in a language",
+   "An informal, high-level description of an algorithm"
+  ],
+  "why": "A bug is an error in a program, syntax the rules of correctly formed statements and pseudocode an informal description of an algorithm."
+ },
+ "85": {
+  "lh": "Term",
+  "rh": "Description",
+  "L": [
+   "High-level language",
+   "Source code",
+   "Low-level language"
+  ],
+  "why": "High-level languages are close to natural language, source code is what the programmer writes and low-level languages are close to machine code.",
+  "R": [
+   "Easier for humans to read and write, closer to natural language.",
+   "The code written by a programmer in a human-readable language.",
+   "Closer to machine code, difficult for humans to read."
+  ]
+ },
+ "86": {
+  "lh": "Concept",
+  "rh": "Description",
+  "L": [
+   "Function",
+   "If-else statement",
+   "Loop"
+  ],
+  "R": [
+   "A reusable block of code that performs one task",
+   "Runs different code depending on whether a condition is true",
+   "Runs a block of code repeatedly"
+  ],
+  "why": "A function is reusable code for one task, if-else chooses between blocks on a condition and a loop repeats code."
+ },
+ "144": {
+  "lh": "Term",
+  "rh": "Description",
+  "L": [
+   "Record",
+   "Report",
+   "Field",
+   "Query"
+  ],
+  "why": "A record is a row, a report formatted output, a field a column and a query a request to retrieve data.",
+  "R": [
+   "Row in a table",
+   "Formatted output",
+   "Column in a table",
+   "Data retrieval request"
+  ]
+ },
+ "146": {
+  "lh": "Data type",
+  "rh": "Example field",
+  "L": [
+   "Number",
+   "Boolean (Yes/No)",
+   "Text",
+   "Date/Time"
+  ],
+  "why": "Age is a number, IsActive a yes/no Boolean, Name text and DOB a date.",
+  "R": [
+   "Age",
+   "IsActive",
+   "Name",
+   "DOB"
+  ]
+ },
+ "147": {
+  "lh": "Object",
+  "rh": "Purpose",
+  "L": [
+   "Form",
+   "Report",
+   "Table",
+   "Query"
+  ],
+  "why": "Forms are for input, reports for printing, tables store data and queries search it.",
+  "R": [
+   "Input data",
+   "Print data",
+   "Store data",
+   "Search data"
+  ]
+ },
+ "148": {
+  "lh": "Key",
+  "rh": "Property",
+  "L": [
+   "Foreign key",
+   "Candidate key",
+   "Primary key",
+   "Composite key"
+  ],
+  "why": "A foreign key links tables, a candidate key could serve as the primary key, a primary key uniquely identifies a row and a composite key uses several columns.",
+  "R": [
+   "Links tables",
+   "Potential primary key",
+   "Unique identifier",
+   "Multiple columns"
+  ]
+ },
+ "181": {
+  "lh": "Number system",
+  "rh": "Base",
+  "L": [
+   "Decimal",
+   "Hexadecimal",
+   "Binary",
+   "Octal"
+  ],
+  "why": "Decimal is base 10, hexadecimal base 16, binary base 2 and octal base 8.",
+  "R": [
+   "10",
+   "16",
+   "2",
+   "8"
+  ]
+ },
+ "182": {
+  "lh": "Hex digit",
+  "rh": "Decimal value",
+  "L": [
+   "C",
+   "A",
+   "D",
+   "B"
+  ],
+  "why": "In hexadecimal A = 10, B = 11, C = 12 and D = 13.",
+  "R": [
+   "12",
+   "10",
+   "13",
+   "11"
+  ]
+ },
+ "184": {
+  "lh": "System",
+  "rh": "Base",
+  "L": [
+   "Octal",
+   "Decimal",
+   "Binary",
+   "Hexadecimal"
+  ],
+  "why": "Octal uses base eight, decimal ten, binary two and hexadecimal sixteen.",
+  "R": [
+   "Eight",
+   "Ten",
+   "Two",
+   "Sixteen"
+  ]
+ }
+}

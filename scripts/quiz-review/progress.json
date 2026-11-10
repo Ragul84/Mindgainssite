@@ -143,5 +143,25 @@
   "reviewed_to": null,
   "total": 997,
   "retired": 25
+ },
+ "samacheer/computer/class6": {
+  "reviewed_to": null,
+  "total": 134,
+  "retired": 8
+ },
+ "samacheer/computer/class7": {
+  "reviewed_to": null,
+  "total": 193,
+  "retired": 7
+ },
+ "samacheer/computer/class8": {
+  "reviewed_to": null,
+  "total": 194,
+  "retired": 5
+ },
+ "samacheer/computer/class9": {
+  "reviewed_to": null,
+  "total": 231,
+  "retired": 3
  }
 }

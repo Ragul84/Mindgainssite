@@ -1,0 +1,154 @@
+{
+ "retire": [
+  108,
+  145,
+  149,
+  150,
+  183
+ ],
+ "fix": {
+  "63": {
+   "question": "Match List I with List II: List I (Term) A. Field B. Table C. Record List II (Definition) 1. A collection of related records 2. A single entry in a table 3. A column in a table",
+   "options": [
+    "A-3, B-2, C-1",
+    "A-2, B-1, C-3",
+    "A-1, B-3, C-2",
+    "A-3, B-1, C-2"
+   ],
+   "answer_index": 3,
+   "explanation": "A field is a column, a table a collection of related records and a record a single entry."
+  },
+  "64": {
+   "question": "Match List I with List II: List I (Term) A. DBMS B. Foreign key C. Primary key List II (Description) 1. Software to manage databases 2. Links tables together 3. Uniquely identifies a record",
+   "options": [
+    "A-1, B-2, C-3",
+    "A-2, B-1, C-3",
+    "A-1, B-3, C-2",
+    "A-3, B-2, C-1"
+   ],
+   "answer_index": 0,
+   "explanation": "A DBMS is software that manages databases, a foreign key links tables and a primary key uniquely identifies a record."
+  },
+  "65": {
+   "question": "Match List I with List II: List I (SQL command) A. INSERT B. UPDATE C. SELECT List II (Action) 1. Adds new data 2. Modifies existing data 3. Retrieves data",
+   "options": [
+    "A-3, B-2, C-1",
+    "A-1, B-2, C-3",
+    "A-1, B-3, C-2",
+    "A-2, B-1, C-3"
+   ],
+   "answer_index": 1,
+   "explanation": "INSERT adds new data, UPDATE modifies existing data and SELECT retrieves data."
+  },
+  "84": {
+   "question": "Match List I with List II: List I (Term) A. Bug B. Syntax C. Pseudocode List II (Definition) 1. Rules for correctly structured statements in a language 2. An error in a program 3. An informal, high-level description of an algorithm",
+   "options": [
+    "A-2, B-1, C-3",
+    "A-2, B-3, C-1",
+    "A-3, B-1, C-2",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 0,
+   "explanation": "A bug is an error in a program, syntax the rules of correctly formed statements and pseudocode an informal description of an algorithm."
+  },
+  "85": {
+   "question": "Match List I with List II: List I (Term) A. High-level language B. Source code C. Low-level language List II (Description) 1. Easier for humans to read and write, closer to natural language 2. The code written by a programmer in a human-readable language 3. Closer to machine code, difficult for humans to read",
+   "options": [
+    "A-2, B-1, C-3",
+    "A-1, B-2, C-3",
+    "A-1, B-3, C-2",
+    "A-3, B-2, C-1"
+   ],
+   "answer_index": 1,
+   "explanation": "High-level languages are close to natural language, source code is what the programmer writes and low-level languages are close to machine code."
+  },
+  "86": {
+   "question": "Match List I with List II: List I (Concept) A. Function B. If-else statement C. Loop List II (Description) 1. A reusable block of code that performs one task 2. Runs different code depending on whether a condition is true 3. Runs a block of code repeatedly",
+   "options": [
+    "A-3, B-2, C-1",
+    "A-1, B-3, C-2",
+    "A-1, B-2, C-3",
+    "A-2, B-1, C-3"
+   ],
+   "answer_index": 2,
+   "explanation": "A function is reusable code for one task, if-else chooses between blocks on a condition and a loop repeats code."
+  },
+  "144": {
+   "question": "Match List I with List II: List I (Term) A. Record B. Report C. Field D. Query List II (Description) 1. Formatted output 2. Row in a table 3. Column in a table 4. Data retrieval request",
+   "options": [
+    "A-2, B-1, C-3, D-4",
+    "A-2, B-4, C-3, D-1",
+    "A-4, B-1, C-3, D-2",
+    "A-3, B-1, C-2, D-4"
+   ],
+   "answer_index": 0,
+   "explanation": "A record is a row, a report formatted output, a field a column and a query a request to retrieve data."
+  },
+  "146": {
+   "question": "Match List I with List II: List I (Data type) A. Number B. Boolean (Yes/No) C. Text D. Date/Time List II (Example field) 1. IsActive 2. Age 3. DOB 4. Name",
+   "options": [
+    "A-2, B-1, C-3, D-4",
+    "A-4, B-1, C-2, D-3",
+    "A-2, B-1, C-4, D-3",
+    "A-2, B-3, C-4, D-1"
+   ],
+   "answer_index": 2,
+   "explanation": "Age is a number, IsActive a yes/no Boolean, Name text and DOB a date."
+  },
+  "147": {
+   "question": "Match List I with List II: List I (Object) A. Form B. Report C. Table D. Query List II (Purpose) 1. Search data 2. Print data 3. Input data 4. Store data",
+   "options": [
+    "A-3, B-4, C-2, D-1",
+    "A-4, B-2, C-3, D-1",
+    "A-1, B-2, C-4, D-3",
+    "A-3, B-2, C-4, D-1"
+   ],
+   "answer_index": 3,
+   "explanation": "Forms are for input, reports for printing, tables store data and queries search it."
+  },
+  "148": {
+   "question": "Match List I with List II: List I (Key) A. Foreign key B. Candidate key C. Primary key D. Composite key List II (Property) 1. Potential primary key 2. Multiple columns 3. Unique identifier 4. Links tables",
+   "options": [
+    "A-4, B-1, C-3, D-2",
+    "A-4, B-1, C-2, D-3",
+    "A-4, B-3, C-1, D-2",
+    "A-1, B-4, C-3, D-2"
+   ],
+   "answer_index": 0,
+   "explanation": "A foreign key links tables, a candidate key could serve as the primary key, a primary key uniquely identifies a row and a composite key uses several columns."
+  },
+  "181": {
+   "question": "Match List I with List II: List I (Number system) A. Decimal B. Hexadecimal C. Binary D. Octal List II (Base) 1. 10 2. 2 3. 16 4. 8",
+   "options": [
+    "A-2, B-3, C-1, D-4",
+    "A-1, B-3, C-2, D-4",
+    "A-3, B-1, C-2, D-4",
+    "A-1, B-4, C-2, D-3"
+   ],
+   "answer_index": 1,
+   "explanation": "Decimal is base 10, hexadecimal base 16, binary base 2 and octal base 8."
+  },
+  "182": {
+   "question": "Match List I with List II: List I (Hex digit) A. C B. A C. D D. B List II (Decimal value) 1. 12 2. 10 3. 11 4. 13",
+   "options": [
+    "A-3, B-2, C-4, D-1",
+    "A-4, B-2, C-1, D-3",
+    "A-1, B-2, C-4, D-3",
+    "A-1, B-2, C-3, D-4"
+   ],
+   "answer_index": 2,
+   "explanation": "In hexadecimal A = 10, B = 11, C = 12 and D = 13."
+  },
+  "184": {
+   "question": "Match List I with List II: List I (System) A. Octal B. Decimal C. Binary D. Hexadecimal List II (Base) 1. Eight 2. Sixteen 3. Ten 4. Two",
+   "options": [
+    "A-1, B-3, C-4, D-2",
+    "A-1, B-2, C-4, D-3",
+    "A-1, B-4, C-3, D-2",
+    "A-2, B-3, C-4, D-1"
+   ],
+   "answer_index": 0,
+   "explanation": "Octal uses base eight, decimal ten, binary two and hexadecimal sixteen."
+  }
+ }
+}

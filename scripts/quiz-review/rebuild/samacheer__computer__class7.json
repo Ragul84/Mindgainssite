@@ -1,0 +1,314 @@
+{
+ "136": "retire",
+ "137": "retire",
+ "175": "retire",
+ "176": "retire",
+ "177": "retire",
+ "178": "retire",
+ "179": "retire",
+ "20": {
+  "lh": "Term",
+  "rh": "Definition",
+  "L": [
+   "Encryption",
+   "Firewall",
+   "Antivirus"
+  ],
+  "why": "Encryption scrambles data, a firewall monitors and controls network traffic and antivirus software protects against malware.",
+  "R": [
+   "Scrambles data to make it unreadable.",
+   "Monitors and controls network traffic.",
+   "Protects against malware."
+  ]
+ },
+ "33": {
+  "lh": "Pioneer",
+  "rh": "Contribution",
+  "L": [
+   "Blaise Pascal",
+   "Herman Hollerith",
+   "Charles Babbage",
+   "Ada Lovelace"
+  ],
+  "why": "Pascal invented the Pascaline, Hollerith the census tabulating machine, Babbage designed the Analytical Engine and Ada Lovelace wrote the first computer program.",
+  "R": [
+   "Invented the Pascaline",
+   "Developed the tabulating machine for the US Census",
+   "Designed the Analytical Engine",
+   "Wrote the first computer program"
+  ]
+ },
+ "34": {
+  "lh": "Generation",
+  "rh": "Technology",
+  "L": [
+   "Fourth generation",
+   "First generation",
+   "Second generation",
+   "Third generation"
+  ],
+  "why": "First: vacuum tubes; second: transistors; third: integrated circuits; fourth: microprocessors.",
+  "R": [
+   "Microprocessors",
+   "Vacuum Tubes",
+   "Transistors",
+   "Integrated Circuits (ICs)"
+  ]
+ },
+ "35": {
+  "lh": "Device",
+  "rh": "Description",
+  "L": [
+   "Difference Engine",
+   "Jacquard loom",
+   "Abacus",
+   "Pascaline"
+  ],
+  "why": "The Difference Engine computed polynomials, the Jacquard loom wove with punched cards, the abacus is an ancient manual tool and the Pascaline added and subtracted.",
+  "R": [
+   "Mechanical calculator for polynomial functions",
+   "Automated weaving using punched cards",
+   "Ancient manual calculating tool",
+   "Mechanical calculator for addition and subtraction"
+  ]
+ },
+ "53": {
+  "lh": "Term",
+  "rh": "Definition",
+  "L": [
+   "Search engine",
+   "Web browser",
+   "Internet Service Provider"
+  ],
+  "why": "A search engine finds information, a browser accesses the web and an ISP provides Internet access.",
+  "R": [
+   "Tool to find information online",
+   "Software to access the web",
+   "Provides Internet access"
+  ]
+ },
+ "54": {
+  "lh": "Service",
+  "rh": "Function",
+  "L": [
+   "Video conferencing",
+   "Email",
+   "Online gaming"
+  ],
+  "why": "Video conferencing gives live visual communication, email sends messages and online gaming lets people play together.",
+  "R": [
+   "Live visual communication",
+   "Sending messages",
+   "Playing games with others over the Internet"
+  ]
+ },
+ "55": {
+  "lh": "Protocol",
+  "rh": "Purpose",
+  "L": [
+   "HTTP",
+   "FTP",
+   "SMTP"
+  ],
+  "why": "HTTP transfers web pages, FTP transfers files and SMTP sends email.",
+  "R": [
+   "Transferring web pages",
+   "Transferring files",
+   "Sending emails"
+  ]
+ },
+ "73": {
+  "lh": "Excel term",
+  "rh": "Description",
+  "L": [
+   "Formula bar",
+   "Cell address",
+   "Workbook"
+  ],
+  "why": "The formula bar shows the active cell's content, a cell address (like A1) identifies a cell and a workbook holds one or more worksheets.",
+  "R": [
+   "Displays the content of the active cell",
+   "Unique identifier of a cell, such as A1",
+   "A file containing one or more worksheets"
+  ]
+ },
+ "74": {
+  "lh": "Function",
+  "rh": "Purpose",
+  "L": [
+   "SUM",
+   "AVERAGE",
+   "COUNT"
+  ],
+  "why": "SUM adds numbers, AVERAGE finds the mean and COUNT counts cells with numbers.",
+  "R": [
+   "Adds numbers in a range",
+   "Calculates the mean of numbers",
+   "Counts the number of cells with numbers"
+  ]
+ },
+ "75": {
+  "lh": "Term",
+  "rh": "Definition",
+  "L": [
+   "Worksheet",
+   "Cell",
+   "Range"
+  ],
+  "why": "A worksheet is a grid of rows and columns, a cell the meeting of a row and a column and a range a group of selected cells.",
+  "R": [
+   "A grid of rows and columns",
+   "Intersection of a row and a column",
+   "A group of selected cells"
+  ]
+ },
+ "93": {
+  "lh": "Device",
+  "rh": "Category",
+  "L": [
+   "CD / DVD",
+   "RAM",
+   "Hard disk"
+  ],
+  "why": "CDs and DVDs are optical storage, RAM is primary memory and a hard disk is magnetic storage.",
+  "R": [
+   "Optical Storage",
+   "Primary Memory",
+   "Magnetic Storage"
+  ]
+ },
+ "94": {
+  "lh": "Unit",
+  "rh": "Equals",
+  "L": [
+   "1 GB",
+   "1 KB",
+   "1 MB"
+  ],
+  "why": "1 KB = 1024 bytes, 1 MB = 1024 KB and 1 GB = 1024 MB.",
+  "R": [
+   "1024 MB",
+   "1024 Bytes",
+   "1024 KB"
+  ]
+ },
+ "131": {
+  "lh": "Term",
+  "rh": "Description",
+  "L": [
+   "Firewall",
+   "Malware",
+   "Two-factor authentication",
+   "Phishing"
+  ],
+  "why": "A firewall filters network traffic, malware is malicious software, two-factor authentication is two-step verification and phishing uses fake emails to steal data.",
+  "R": [
+   "Network filter",
+   "Malicious software",
+   "Two-step verification",
+   "Fake emails for data"
+  ]
+ },
+ "132": {
+  "lh": "Malware",
+  "rh": "Characteristic",
+  "L": [
+   "Trojan horse",
+   "Ransomware",
+   "Worm",
+   "Spyware"
+  ],
+  "why": "A Trojan pretends to be useful, ransomware demands money, a worm copies itself across networks and spyware secretly steals information.",
+  "R": [
+   "Disguised as useful",
+   "Demands money",
+   "Replicates itself",
+   "Steals info secretly"
+  ]
+ },
+ "133": {
+  "lh": "Protocol / tool",
+  "rh": "Purpose",
+  "L": [
+   "HTTPS",
+   "VPN",
+   "HTTP",
+   "SSL / TLS"
+  ],
+  "why": "HTTPS is secured web transfer, a VPN a private tunnel, HTTP unsecured web transfer and SSL/TLS the encryption layer.",
+  "R": [
+   "Secured web transfer",
+   "Private tunnel",
+   "Unsecured web transfer",
+   "Encryption layer"
+  ]
+ },
+ "134": {
+  "lh": "Term",
+  "rh": "Behaviour",
+  "L": [
+   "Cyberbullying",
+   "Trolling",
+   "Netiquette",
+   "Spamming"
+  ],
+  "why": "Cyberbullying is online harassment, trolling provokes others, netiquette is polite behaviour and spamming is bulk messaging.",
+  "R": [
+   "Online harassment",
+   "Provoking others",
+   "Polite behavior",
+   "Bulk messaging"
+  ]
+ },
+ "135": {
+  "lh": "Tool",
+  "rh": "Function",
+  "L": [
+   "Backup",
+   "Antivirus",
+   "Encryption",
+   "Password manager"
+  ],
+  "why": "A backup copies data, antivirus removes viruses, encryption scrambles data and a password manager stores passwords.",
+  "R": [
+   "Copies data",
+   "Removes viruses",
+   "Scrambles data",
+   "Stores passwords"
+  ]
+ },
+ "173": {
+  "lh": "Generation",
+  "rh": "Technology",
+  "L": [
+   "Second generation",
+   "First generation",
+   "Fourth generation",
+   "Third generation"
+  ],
+  "why": "Vacuum tubes – first, transistors – second, integrated circuits – third, microprocessors – fourth.",
+  "R": [
+   "Transistors",
+   "Vacuum Tubes",
+   "Microprocessors",
+   "Integrated Circuits"
+  ]
+ },
+ "174": {
+  "lh": "Inventor",
+  "rh": "Invention",
+  "L": [
+   "Blaise Pascal",
+   "Charles Babbage",
+   "Herman Hollerith",
+   "John Napier"
+  ],
+  "why": "Pascal made the Pascaline, Babbage designed the Analytical Engine, Hollerith the tabulating machine and Napier invented Napier's bones.",
+  "R": [
+   "Pascaline",
+   "Analytical Engine",
+   "Tabulating Machine",
+   "Napier's Bones"
+  ]
+ }
+}

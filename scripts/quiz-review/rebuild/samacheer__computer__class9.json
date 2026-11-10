@@ -1,0 +1,272 @@
+{
+ "103": "retire",
+ "210": "retire",
+ "228": "retire",
+ "57": {
+  "lh": "Symbol",
+  "rh": "Meaning",
+  "L": [
+   "Diamond",
+   "Parallelogram",
+   "Oval",
+   "Rectangle"
+  ],
+  "why": "A diamond is a decision, a parallelogram input/output, an oval start/end and a rectangle a process.",
+  "R": [
+   "Decision",
+   "Input/Output",
+   "Start/End",
+   "Process"
+  ]
+ },
+ "58": {
+  "lh": "Term",
+  "rh": "Definition",
+  "L": [
+   "Flowchart",
+   "Algorithm",
+   "Loop",
+   "Conditional statement"
+  ],
+  "why": "A flowchart draws an algorithm, an algorithm is a step-by-step procedure, a loop repeats code and a conditional runs code based on a condition.",
+  "R": [
+   "A graphical representation of an algorithm.",
+   "A step-by-step procedure to solve a problem.",
+   "A control structure that repeats a block of code.",
+   "A statement that executes code based on a condition."
+  ]
+ },
+ "81": {
+  "lh": "Tag",
+  "rh": "Function",
+  "L": [
+   "<img>",
+   "<p>",
+   "<h1>",
+   "<a>"
+  ],
+  "why": "<img> shows an image, <p> a paragraph, <h1> the main heading and <a> a hyperlink.",
+  "R": [
+   "Image",
+   "Paragraph",
+   "Main heading",
+   "Hyperlink"
+  ]
+ },
+ "82": {
+  "lh": "Attribute",
+  "rh": "Purpose",
+  "L": [
+   "href",
+   "src",
+   "target",
+   "alt"
+  ],
+  "why": "href is the link destination, src the image source, target the window a link opens in and alt the image's alternative text.",
+  "R": [
+   "Link destination",
+   "Image source",
+   "Link target window",
+   "Alternative text for image"
+  ]
+ },
+ "83": {
+  "lh": "List",
+  "rh": "Tag",
+  "L": [
+   "Ordered list",
+   "List item",
+   "Description list",
+   "Unordered list"
+  ],
+  "why": "<ol> makes an ordered list, <ul> an unordered list, <dl> a description list and <li> a list item.",
+  "R": [
+   "<ol>",
+   "<li>",
+   "<dl>",
+   "<ul>"
+  ]
+ },
+ "101": {
+  "lh": "Keyword",
+  "rh": "Use",
+  "L": [
+   "if",
+   "for",
+   "while"
+  ],
+  "why": "if runs code conditionally, for iterates over a sequence and while repeats as long as a condition is true.",
+  "R": [
+   "Used for conditional execution of code.",
+   "Used for iterating over a sequence.",
+   "Used for executing code as long as a condition is true."
+  ]
+ },
+ "102": {
+  "lh": "Operator",
+  "rh": "Operation",
+  "L": [
+   "The - operator",
+   "The * operator",
+   "The + operator"
+  ],
+  "why": "- subtracts, * multiplies and + adds.",
+  "R": [
+   "Subtraction",
+   "Multiplication",
+   "Addition"
+  ]
+ },
+ "111": {
+  "lh": "Term",
+  "rh": "Definition",
+  "L": [
+   "Client",
+   "Protocol",
+   "Server",
+   "IP address"
+  ],
+  "why": "A client requests services, a protocol sets rules for communication, a server provides services and an IP address labels each device on a network.",
+  "R": [
+   "A computer that requests data or services from a server.",
+   "A set of rules that govern data communication.",
+   "A computer that provides data or services to other computers.",
+   "A unique numerical label assigned to each device connected to a computer network."
+  ]
+ },
+ "117": {
+  "lh": "Symbol",
+  "rh": "Function",
+  "L": [
+   "Diamond",
+   "Oval",
+   "Rectangle"
+  ],
+  "why": "A diamond is a decision, an oval start/stop and a rectangle processing.",
+  "R": [
+   "Decision",
+   "Start/Stop",
+   "Processing"
+  ]
+ },
+ "204": {
+  "lh": "Tag",
+  "rh": "Effect",
+  "L": [
+   "<u>",
+   "<b>",
+   "<i>"
+  ],
+  "why": "<u> underlines, <b> makes bold and <i> makes italic.",
+  "R": [
+   "Underlined text",
+   "Bold text",
+   "Italic text"
+  ]
+ },
+ "205": {
+  "lh": "Tag",
+  "rh": "Type",
+  "L": [
+   "<ol>",
+   "<li>",
+   "<ul>"
+  ],
+  "why": "<ol> is an ordered list, <ul> an unordered list and <li> a list item.",
+  "R": [
+   "Ordered List",
+   "List Item",
+   "Unordered List"
+  ]
+ },
+ "206": {
+  "lh": "Tag",
+  "rh": "Role",
+  "L": [
+   "<td>",
+   "<th>",
+   "<tr>"
+  ],
+  "why": "<tr> is a table row, <th> a header cell and <td> a data cell.",
+  "R": [
+   "Table Data",
+   "Table Header",
+   "Table Row"
+  ]
+ },
+ "207": {
+  "lh": "Tag",
+  "rh": "Purpose",
+  "L": [
+   "<img>",
+   "<p>",
+   "<a>"
+  ],
+  "why": "<img> shows an image, <p> a paragraph and <a> a hyperlink.",
+  "R": [
+   "Image",
+   "Paragraph",
+   "Hyperlink"
+  ]
+ },
+ "208": {
+  "lh": "Attribute",
+  "rh": "Used in",
+  "L": [
+   "src",
+   "bgcolor",
+   "href"
+  ],
+  "why": "src belongs to <img>, bgcolor to <body> and href to <a>.",
+  "R": [
+   "<img>",
+   "<body>",
+   "<a>"
+  ]
+ },
+ "209": {
+  "lh": "Tag",
+  "rh": "Size",
+  "L": [
+   "<h6>",
+   "<h3>",
+   "<h1>"
+  ],
+  "why": "<h1> is the largest heading and <h6> the smallest.",
+  "R": [
+   "Smallest",
+   "Medium",
+   "Largest"
+  ]
+ },
+ "227": {
+  "lh": "Operator",
+  "rh": "Function",
+  "L": [
+   "%",
+   "/",
+   "**"
+  ],
+  "why": "% gives the remainder (modulus), / divides and ** raises to a power.",
+  "R": [
+   "Modulus",
+   "Division",
+   "Exponentiation"
+  ]
+ },
+ "229": {
+  "lh": "Term",
+  "rh": "Description",
+  "L": [
+   "Literal",
+   "IDLE",
+   "Keyword"
+  ],
+  "why": "A literal is a fixed value, IDLE is Python's integrated development environment and a keyword is a reserved word.",
+  "R": [
+   "Fixed value",
+   "Integrated Development Environment",
+   "Reserved word"
+  ]
+ }
+}

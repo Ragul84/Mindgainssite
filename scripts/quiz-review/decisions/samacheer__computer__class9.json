@@ -1,0 +1,196 @@
+{
+ "retire": [
+  103,
+  210,
+  228
+ ],
+ "fix": {
+  "57": {
+   "question": "Match List I with List II: List I (Symbol) A. Diamond B. Parallelogram C. Oval D. Rectangle List II (Meaning) 1. Process 2. Decision 3. Input/Output 4. Start/End",
+   "options": [
+    "A-1, B-3, C-4, D-2",
+    "A-2, B-3, C-4, D-1",
+    "A-2, B-4, C-3, D-1",
+    "A-2, B-3, C-1, D-4"
+   ],
+   "answer_index": 1,
+   "explanation": "A diamond is a decision, a parallelogram input/output, an oval start/end and a rectangle a process."
+  },
+  "58": {
+   "question": "Match List I with List II: List I (Term) A. Flowchart B. Algorithm C. Loop D. Conditional statement List II (Definition) 1. A statement that executes code based on a condition 2. A graphical representation of an algorithm 3. A control structure that repeats a block of code 4. A step-by-step procedure to solve a problem",
+   "options": [
+    "A-4, B-2, C-3, D-1",
+    "A-1, B-4, C-3, D-2",
+    "A-2, B-4, C-3, D-1",
+    "A-2, B-1, C-3, D-4"
+   ],
+   "answer_index": 2,
+   "explanation": "A flowchart draws an algorithm, an algorithm is a step-by-step procedure, a loop repeats code and a conditional runs code based on a condition."
+  },
+  "81": {
+   "question": "Match List I with List II: List I (Tag) A. <img> B. <p> C. <h1> D. <a> List II (Function) 1. Paragraph 2. Hyperlink 3. Main heading 4. Image",
+   "options": [
+    "A-4, B-2, C-3, D-1",
+    "A-4, B-1, C-3, D-2",
+    "A-4, B-1, C-2, D-3",
+    "A-4, B-3, C-1, D-2"
+   ],
+   "answer_index": 1,
+   "explanation": "<img> shows an image, <p> a paragraph, <h1> the main heading and <a> a hyperlink."
+  },
+  "82": {
+   "question": "Match List I with List II: List I (Attribute) A. href B. src C. target D. alt List II (Purpose) 1. Alternative text for image 2. Image source 3. Link destination 4. Link target window",
+   "options": [
+    "A-3, B-4, C-2, D-1",
+    "A-4, B-2, C-3, D-1",
+    "A-3, B-2, C-4, D-1",
+    "A-1, B-2, C-4, D-3"
+   ],
+   "answer_index": 2,
+   "explanation": "href is the link destination, src the image source, target the window a link opens in and alt the image's alternative text."
+  },
+  "83": {
+   "question": "Match List I with List II: List I (List) A. Ordered list B. List item C. Description list D. Unordered list List II (Tag) 1. <ol> 2. <ul> 3. <dl> 4. <li>",
+   "options": [
+    "A-1, B-2, C-3, D-4",
+    "A-1, B-4, C-2, D-3",
+    "A-1, B-3, C-4, D-2",
+    "A-1, B-4, C-3, D-2"
+   ],
+   "answer_index": 3,
+   "explanation": "<ol> makes an ordered list, <ul> an unordered list, <dl> a description list and <li> a list item."
+  },
+  "101": {
+   "question": "Match List I with List II: List I (Keyword) A. if B. for C. while List II (Use) 1. Used for executing code as long as a condition is true 2. Used for iterating over a sequence 3. Used for conditional execution of code",
+   "options": [
+    "A-3, B-1, C-2",
+    "A-3, B-2, C-1",
+    "A-2, B-3, C-1",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 1,
+   "explanation": "if runs code conditionally, for iterates over a sequence and while repeats as long as a condition is true."
+  },
+  "102": {
+   "question": "Match List I with List II: List I (Operator) A. The - operator B. The * operator C. The + operator List II (Operation) 1. Addition 2. Subtraction 3. Multiplication",
+   "options": [
+    "A-3, B-2, C-1",
+    "A-2, B-1, C-3",
+    "A-2, B-3, C-1",
+    "A-1, B-3, C-2"
+   ],
+   "answer_index": 2,
+   "explanation": "- subtracts, * multiplies and + adds."
+  },
+  "111": {
+   "question": "Match List I with List II: List I (Term) A. Client B. Protocol C. Server D. IP address List II (Definition) 1. A set of rules that govern data communication 2. A computer that requests data or services from a server 3. A computer that provides data or services to other computers 4. A unique numerical label assigned to each device connected to a computer network",
+   "options": [
+    "A-2, B-4, C-3, D-1",
+    "A-2, B-3, C-1, D-4",
+    "A-2, B-1, C-4, D-3",
+    "A-2, B-1, C-3, D-4"
+   ],
+   "answer_index": 3,
+   "explanation": "A client requests services, a protocol sets rules for communication, a server provides services and an IP address labels each device on a network."
+  },
+  "117": {
+   "question": "Match List I with List II: List I (Symbol) A. Diamond B. Oval C. Rectangle List II (Function) 1. Decision 2. Processing 3. Start/Stop",
+   "options": [
+    "A-3, B-1, C-2",
+    "A-1, B-3, C-2",
+    "A-1, B-2, C-3",
+    "A-2, B-3, C-1"
+   ],
+   "answer_index": 1,
+   "explanation": "A diamond is a decision, an oval start/stop and a rectangle processing."
+  },
+  "204": {
+   "question": "Match List I with List II: List I (Tag) A. <u> B. <b> C. <i> List II (Effect) 1. Underlined text 2. Bold text 3. Italic text",
+   "options": [
+    "A-1, B-2, C-3",
+    "A-3, B-2, C-1",
+    "A-2, B-1, C-3",
+    "A-1, B-3, C-2"
+   ],
+   "answer_index": 0,
+   "explanation": "<u> underlines, <b> makes bold and <i> makes italic."
+  },
+  "205": {
+   "question": "Match List I with List II: List I (Tag) A. <ol> B. <li> C. <ul> List II (Type) 1. List Item 2. Ordered List 3. Unordered List",
+   "options": [
+    "A-2, B-3, C-1",
+    "A-2, B-1, C-3",
+    "A-1, B-2, C-3",
+    "A-3, B-1, C-2"
+   ],
+   "answer_index": 1,
+   "explanation": "<ol> is an ordered list, <ul> an unordered list and <li> a list item."
+  },
+  "206": {
+   "question": "Match List I with List II: List I (Tag) A. <td> B. <th> C. <tr> List II (Role) 1. Table Header 2. Table Row 3. Table Data",
+   "options": [
+    "A-3, B-2, C-1",
+    "A-1, B-3, C-2",
+    "A-3, B-1, C-2",
+    "A-2, B-1, C-3"
+   ],
+   "answer_index": 2,
+   "explanation": "<tr> is a table row, <th> a header cell and <td> a data cell."
+  },
+  "207": {
+   "question": "Match List I with List II: List I (Tag) A. <img> B. <p> C. <a> List II (Purpose) 1. Hyperlink 2. Paragraph 3. Image",
+   "options": [
+    "A-2, B-3, C-1",
+    "A-3, B-1, C-2",
+    "A-1, B-2, C-3",
+    "A-3, B-2, C-1"
+   ],
+   "answer_index": 3,
+   "explanation": "<img> shows an image, <p> a paragraph and <a> a hyperlink."
+  },
+  "208": {
+   "question": "Match List I with List II: List I (Attribute) A. src B. bgcolor C. href List II (Used in) 1. <body> 2. <img> 3. <a>",
+   "options": [
+    "A-2, B-1, C-3",
+    "A-2, B-3, C-1",
+    "A-1, B-2, C-3",
+    "A-3, B-1, C-2"
+   ],
+   "answer_index": 0,
+   "explanation": "src belongs to <img>, bgcolor to <body> and href to <a>."
+  },
+  "209": {
+   "question": "Match List I with List II: List I (Tag) A. <h6> B. <h3> C. <h1> List II (Size) 1. Smallest 2. Medium 3. Largest",
+   "options": [
+    "A-1, B-3, C-2",
+    "A-1, B-2, C-3",
+    "A-3, B-2, C-1",
+    "A-2, B-1, C-3"
+   ],
+   "answer_index": 1,
+   "explanation": "<h1> is the largest heading and <h6> the smallest."
+  },
+  "227": {
+   "question": "Match List I with List II: List I (Operator) A. % B. / C. ** List II (Function) 1. Modulus 2. Division 3. Exponentiation",
+   "options": [
+    "A-2, B-1, C-3",
+    "A-1, B-3, C-2",
+    "A-3, B-2, C-1",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 3,
+   "explanation": "% gives the remainder (modulus), / divides and ** raises to a power."
+  },
+  "229": {
+   "question": "Match List I with List II: List I (Term) A. Literal B. IDLE C. Keyword List II (Description) 1. Reserved word 2. Fixed value 3. Integrated Development Environment",
+   "options": [
+    "A-2, B-1, C-3",
+    "A-2, B-3, C-1",
+    "A-3, B-2, C-1",
+    "A-1, B-3, C-2"
+   ],
+   "answer_index": 1,
+   "explanation": "A literal is a fixed value, IDLE is Python's integrated development environment and a keyword is a reserved word."
+  }
+ }
+}

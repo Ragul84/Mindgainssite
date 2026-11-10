@@ -1,0 +1,155 @@
+{
+ "retire": [
+  31,
+  99,
+  108,
+  120,
+  123,
+  126,
+  130,
+  133
+ ],
+ "fix": {
+  "17": {
+   "question": "Match List I with List II: List I (Hardware) A. Keyboard B. CPU C. Monitor List II (Function) 1. Output device to display visuals 2. Processes instructions 3. Input device for typing text",
+   "options": [
+    "A-3, B-1, C-2",
+    "A-3, B-2, C-1",
+    "A-2, B-3, C-1",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 1,
+   "explanation": "The keyboard is an input device for typing, the CPU processes instructions and the monitor displays output."
+  },
+  "18": {
+   "question": "Match List I with List II: List I (Category) A. Application software B. Hardware (input device) C. System software (operating system) List II (Example) 1. Windows 2. Microphone 3. Paint",
+   "options": [
+    "A-2, B-3, C-1",
+    "A-3, B-1, C-2",
+    "A-3, B-2, C-1",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 2,
+   "explanation": "Paint is application software, a microphone is an input device and Windows is an operating system."
+  },
+  "19": {
+   "question": "Match List I with List II: List I (Storage device) A. Pen drive B. RAM C. Hard disk List II (Characteristic) 1. Temporary storage 2. Portable storage 3. Permanent storage",
+   "options": [
+    "A-3, B-1, C-2",
+    "A-1, B-2, C-3",
+    "A-2, B-3, C-1",
+    "A-2, B-1, C-3"
+   ],
+   "answer_index": 3,
+   "explanation": "A pen drive is portable, RAM is temporary and a hard disk stores data permanently."
+  },
+  "32": {
+   "question": "Match List I with List II: List I (Category) A. System software B. Operating system C. Application software List II (Example) 1. Device Driver 2. Windows 3. Word Processor",
+   "options": [
+    "A-1, B-2, C-3",
+    "A-3, B-2, C-1",
+    "A-2, B-1, C-3",
+    "A-1, B-3, C-2"
+   ],
+   "answer_index": 0,
+   "explanation": "A device driver is system software, Windows is an operating system and a word processor is application software."
+  },
+  "52": {
+   "question": "Match List I with List II: List I (Shortcut) A. Ctrl + M B. F5 C. Ctrl + D List II (Action) 1. Start Slide Show 2. Duplicate Slide 3. Insert New Slide",
+   "options": [
+    "A-3, B-1, C-2",
+    "A-3, B-2, C-1",
+    "A-2, B-1, C-3",
+    "A-1, B-3, C-2"
+   ],
+   "answer_index": 0,
+   "explanation": "Ctrl + M inserts a new slide, F5 starts the slide show and Ctrl + D duplicates a slide."
+  },
+  "53": {
+   "question": "Match List I with List II: List I (View) A. Slide Sorter view B. Normal view C. Reading view List II (Used for) 1. Editing slides 2. Rearranging slides 3. Viewing in a window",
+   "options": [
+    "A-1, B-2, C-3",
+    "A-2, B-1, C-3",
+    "A-2, B-3, C-1",
+    "A-3, B-1, C-2"
+   ],
+   "answer_index": 1,
+   "explanation": "Slide Sorter rearranges slides, Normal view is for editing and Reading view shows the show in a window."
+  },
+  "54": {
+   "question": "Match List I with List II: List I (Tab) A. Design tab B. Insert tab C. Animations tab List II (Action) 1. Change Theme 2. Add Entrance Effect 3. Add Pictures",
+   "options": [
+    "A-1, B-2, C-3",
+    "A-2, B-3, C-1",
+    "A-1, B-3, C-2",
+    "A-3, B-1, C-2"
+   ],
+   "answer_index": 2,
+   "explanation": "The Design tab changes themes, the Insert tab adds pictures and the Animations tab adds entrance effects."
+  },
+  "70": {
+   "question": "Match List I with List II: List I (Term) A. Taskbar B. Icon C. Wallpaper List II (Description) 1. Small picture 2. Background image 3. Bottom bar",
+   "options": [
+    "A-1, B-3, C-2",
+    "A-3, B-2, C-1",
+    "A-3, B-1, C-2",
+    "A-2, B-1, C-3"
+   ],
+   "answer_index": 2,
+   "explanation": "The taskbar is the bar at the bottom, an icon is a small picture and the wallpaper is the background image."
+  },
+  "71": {
+   "question": "Match List I with List II: List I (Mouse action) A. Right-click B. Drag and drop C. Double-click List II (Result) 1. Open a file 2. Show properties 3. Move a file",
+   "options": [
+    "A-2, B-1, C-3",
+    "A-1, B-3, C-2",
+    "A-3, B-2, C-1",
+    "A-2, B-3, C-1"
+   ],
+   "answer_index": 3,
+   "explanation": "Right-click shows options and properties, drag and drop moves a file and double-click opens it."
+  },
+  "72": {
+   "question": "Match List I with List II: List I (Shortcut) A. Ctrl + V B. Ctrl + X C. Ctrl + C List II (Action) 1. Copy 2. Cut 3. Paste",
+   "options": [
+    "A-3, B-2, C-1",
+    "A-3, B-1, C-2",
+    "A-2, B-3, C-1",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 0,
+   "explanation": "Ctrl + C copies, Ctrl + X cuts and Ctrl + V pastes."
+  },
+  "83": {
+   "question": "Match List I with List II: List I (Format) A. Italic B. Underline C. Bold List II (Shortcut) 1. Ctrl + U 2. Ctrl + B 3. Ctrl + I",
+   "options": [
+    "A-3, B-2, C-1",
+    "A-1, B-3, C-2",
+    "A-2, B-1, C-3",
+    "A-3, B-1, C-2"
+   ],
+   "answer_index": 3,
+   "explanation": "Ctrl + I makes text italic, Ctrl + U underlines it and Ctrl + B makes it bold."
+  },
+  "84": {
+   "question": "Match List I with List II: List I (Alignment) A. Justify B. Centre List II (Description) 1. Text aligned to middle 2. Even edges on both sides",
+   "options": [
+    "A-2, B-1",
+    "A-1, B-2"
+   ],
+   "answer_index": 0,
+   "explanation": "Justified text has even edges on both sides; centred text sits in the middle."
+  },
+  "95": {
+   "question": "Match List I with List II: List I (Device) A. Speaker B. Printer C. Monitor D. Keyboard E. Scanner List II (Function) 1. Outputs sound 2. Input data 3. Converts physical images to digital 4. Displays output 5. Prints documents",
+   "options": [
+    "A-1, B-4, C-5, D-2, E-3",
+    "A-3, B-5, C-4, D-2, E-1",
+    "A-2, B-5, C-4, D-1, E-3",
+    "A-1, B-5, C-4, D-2, E-3"
+   ],
+   "answer_index": 3,
+   "explanation": "Speakers output sound, printers print documents, monitors display output, keyboards input data and scanners turn physical images into digital ones."
+  }
+ }
+}
