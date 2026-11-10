@@ -479,6 +479,63 @@ body{background:#0f1c33}
 .mnd{border:0;box-shadow:0 5px 0 rgba(0,0,0,.2)}
 .tile .badge,.mprac .badge{border:0}
 @media (min-width:700px){#wrap{max-width:440px;margin:18px auto;height:calc(100% - 36px);border-radius:28px;box-shadow:0 30px 80px rgba(0,0,0,.45)}}
+/* ---- result screen v2: game style (navy hero band, bold title, big stars, stat tiles, tiled dock and sheets) ---- */
+#rcard.r2card{padding:0 0 14px;overflow:hidden auto;border-radius:28px;background:#fff;box-shadow:0 6px 0 rgba(20,33,61,.25),0 24px 60px rgba(10,16,40,.35)}
+.r2{padding:0 18px}
+.r2top{position:absolute;left:0;right:0;top:0;width:auto;box-sizing:border-box;padding:12px 14px;z-index:2}
+.r2chip{font-family:var(--display);font-weight:400;font-size:16px;color:#fff;background:rgba(255,255,255,.16);border:2px solid rgba(255,255,255,.35)}
+.r2chip.up{background:#ff8a1f;border-color:#ffd23f}
+.r2link{color:#fff;font-family:var(--display);font-weight:400;font-size:15px;background:rgba(255,255,255,.16);border-radius:99px;padding:7px 14px}
+.r2hero{position:relative;width:calc(100% + 36px);height:176px;margin:0 -18px 12px;border-radius:28px 28px 0 0;overflow:hidden;align-items:flex-end;
+  background:radial-gradient(circle at 50% 115%,#ffd23f 0,#ff8a1f 22%,rgba(255,138,31,0) 48%),linear-gradient(#1b2a5c,#2c4a9a)}
+.r2hero::before{content:"";position:absolute;inset:-40%;background:repeating-conic-gradient(from 0deg at 50% 62%,rgba(255,255,255,.09) 0 10deg,rgba(255,255,255,0) 10deg 22deg);animation:r2spin 26s linear infinite}
+.r2hero.lose{background:radial-gradient(circle at 50% 115%,#94a3b8 0,rgba(148,163,184,0) 45%),linear-gradient(#26304a,#3b4766)}
+.r2hero.lose::before{opacity:.4}
+.r2hero .miga{position:relative;width:132px!important;margin-bottom:-10px;filter:drop-shadow(0 6px 0 rgba(10,16,40,.35))}
+@keyframes r2spin{to{transform:rotate(360deg)}}
+.r2eye{color:#5a6b8c;font-family:var(--display);font-weight:400;letter-spacing:.08em;font-size:13px}
+.r2h{font-family:var(--display);font-weight:400;font-size:44px;color:#14213d;letter-spacing:0;margin:4px 0 0;text-shadow:0 3px 0 #ffd23f}
+.r2hero.lose~.r2h{text-shadow:0 3px 0 #cbd5e1}
+.r2sub{font-family:var(--display);font-weight:400;font-size:20px;color:#2563eb;margin-top:2px}
+.r2 .stars{font-size:42px;gap:8px;margin:8px 0 2px}
+.r2 .stars span{-webkit-text-stroke:2px #14213d;color:#e2e8f0}
+.r2 .stars span.on{color:#ffd23f;filter:drop-shadow(0 0 8px rgba(255,200,0,.55));animation:r2star .5s both}
+.r2 .stars span.on:nth-child(2){animation-delay:.15s}.r2 .stars span.on:nth-child(3){animation-delay:.3s}
+@keyframes r2star{0%{transform:scale(0) rotate(-40deg)}70%{transform:scale(1.25)}100%{transform:scale(1)}}
+.r2stat{width:100%;display:grid;grid-template-columns:1fr 1fr auto;gap:8px;align-items:stretch;background:none;border:0;padding:0;margin:14px 0 2px}
+.r2stat>div{background:#f3f6fc;border:2px solid #e3e9f5;border-radius:16px;padding:9px 6px;display:flex;flex-direction:column;align-items:center;box-shadow:0 3px 0 #e3e9f5}
+.r2stat>div b{font-family:var(--display);font-weight:400;font-size:24px;color:#14213d;line-height:1.1}
+.r2stat>div small{font-size:12px;font-weight:800;color:#5a6b8c;text-transform:uppercase;letter-spacing:.06em}
+.r2stat>div.mk b{color:#16a34a}
+.r2stat>i{align-self:center;font-style:normal;font-family:var(--display);font-weight:400;font-size:14px;color:#fff;background:#2563eb;border-radius:12px;padding:10px 10px;box-shadow:0 3px 0 #1d4ed8}
+.r2note{font-weight:800;color:#14213d;background:#fff7d6;border-radius:12px;padding:7px 12px;margin-top:8px}
+.r2sec{font-family:var(--display);font-weight:400;text-decoration:none;color:#14213d;background:#fff1e0;border:2px solid #ffcf99;border-radius:99px;padding:9px 18px;margin-top:6px;box-shadow:0 3px 0 #ffcf99}
+.r2acts{margin-top:14px}
+.r2main{font-family:var(--display);font-size:22px;border-radius:18px}
+.r2dock{gap:8px;border-top:0;padding-top:4px;margin-top:12px}
+.r2ic{background:#f3f6fc;border:2px solid #e3e9f5;border-radius:16px;padding:10px 0 8px;color:#14213d;font-family:var(--display);font-weight:400;font-size:13px;box-shadow:0 3px 0 #e3e9f5}
+.r2ic svg{width:24px;height:24px;stroke-width:2.2}
+.r2ic.on{background:#dbeafe;border-color:#93c5fd;box-shadow:0 3px 0 #93c5fd}
+.r2ic em{top:-7px;left:auto;right:6px;border:2px solid #fff;font-family:var(--display);font-weight:400;height:20px;line-height:16px}
+/* sheets */
+.r2shade{background:rgba(10,16,40,.5)}
+.r2sheet{padding:8px 16px 16px;border-top:4px solid #ffd23f}
+.r2sh h3{font-family:var(--display);font-weight:400;font-size:22px;color:#14213d}
+.r2sh .r2link{color:#14213d;background:#f3f6fc}
+.r2det{display:grid;gap:8px}
+.r2det div{background:#f3f6fc;border:0;border-radius:14px;padding:12px 14px;font-weight:700}
+.r2det b{font-family:var(--display);font-weight:400;font-size:18px}
+.rev{gap:8px}
+.rev li{background:#f0fdf4;border:2px solid #bbf7d0;border-left:6px solid #22c55e;border-radius:14px;padding:10px 12px;font-weight:700;color:#14213d}
+.rev li.w{background:#fff1f2;border-color:#fecdd3;border-left-color:#ef4444}
+.rev .tag{background:#14213d;color:#fff}
+.rmis{gap:8px}
+.rm{background:#f3f6fc;border-radius:14px;padding:12px;font-size:14px}
+.rm.dn{background:#fff7d6;box-shadow:inset 0 0 0 2px #ffd23f}
+.rm i{font-family:var(--display);font-weight:400;font-size:15px;color:#2563eb}
+.r2flame{background:linear-gradient(90deg,#ff8a1f,#ffb347);color:#fff;border-radius:16px;padding:12px 16px;align-items:center}
+.r2flame small{color:#fff;font-weight:800}
+.r2body .more{display:block;width:100%;margin-top:10px;background:#f3f6fc;border-radius:14px;padding:12px;color:#2563eb;font-size:16px}
 </style>
 
 <div id="wrap">
@@ -1937,7 +1994,7 @@ function renderResult(line,tab){const r=lastRes;
   <h2 class="r2h">${r.quick?`${r.right}/${r.n} correct`:r.win?'Cleared':r.near?'So close!':r.fail==='cutoff'?'Below cut-off':'Batch lost'}</h2>
   ${r.win&&!r.quick?`<div class="r2sub">AIR ${r.air.toLocaleString('en-IN')}</div>`:r.near?`<div class="r2sub">${r.left} more aspirants needed</div>`:''}
   ${(r.mode==='level'||r.mode==='challenge')?starRow(r.stars):''}
-  <button class="r2stat" id="goDet"><b>${r.right}/${r.n}</b> correct<span>·</span><b>+${r.win||r.quick?r.earned:r.notes}</b> marks<i>Details</i></button>`;
+  <button class="r2stat" id="goDet"><div><b>${r.right}/${r.n}</b><small>correct</small></div><div class="mk"><b>+${r.win||r.quick?r.earned:r.notes}</b><small>marks</small></div><i>Details ›</i></button>`;
   const cmp=r.target!=null?`<div class="r2note">${r.score>=r.target?'You beat':'You missed'} your friend's ${r.target.toLocaleString('en-IN')}</div>`:'';
   const unl=r.unlocked.length?`<div class="r2note">New style unlocked: ${esc(r.unlocked.join(', '))}</div>`:'';
   const again=r.quick?'Play again':!r.win?'Retry':r.mode==='level'?'Next level':'Play level '+level;
