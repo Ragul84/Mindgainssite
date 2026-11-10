@@ -1,0 +1,260 @@
+{
+ "215": "retire",
+ "250": "retire",
+ "305": "retire",
+ "311": "retire",
+ "360": "retire",
+ "442": "retire",
+ "444": "retire",
+ "483": "retire",
+ "560": "retire",
+ "561": "retire",
+ "564": "retire",
+ "653": "retire",
+ "738": "retire",
+ "763": "retire",
+ "870": "retire",
+ "871": "retire",
+ "872": "retire",
+ "873": "retire",
+ "874": "retire",
+ "910": "retire",
+ "912": "retire",
+ "941": "retire",
+ "942": "retire",
+ "944": "retire",
+ "992": "retire",
+ "195": {
+  "lh": "Process",
+  "rh": "Description",
+  "L": [
+   "Sexual reproduction",
+   "Vegetative propagation",
+   "Male gametogenesis",
+   "Asexual reproduction"
+  ],
+  "why": "Sexual reproduction involves gametes, asexual reproduction does not, vegetative propagation grows new plants from parts of the parent and male gametogenesis forms the male gametes.",
+  "R": [
+   "Involves gametes",
+   "New plants from parts of the parent",
+   "Formation of male gametes",
+   "Involves no gametes"
+  ]
+ },
+ "201": {
+  "lh": "Term",
+  "rh": "Definition",
+  "L": [
+   "Fertilisation",
+   "Pollination",
+   "Megasporogenesis",
+   "Microsporogenesis"
+  ],
+  "why": "Fertilisation is fusion of gametes, pollination the transfer of pollen, megasporogenesis the formation of megaspores and microsporogenesis that of microspores.",
+  "R": [
+   "Fusion of gametes",
+   "Transfer of pollen",
+   "Formation of megaspores",
+   "Formation of microspores"
+  ]
+ },
+ "205": {
+  "lh": "Pollination",
+  "rh": "Characteristic",
+  "L": [
+   "Cross-pollination (xenogamy)",
+   "Anemophily",
+   "Self-pollination (autogamy)",
+   "Hydrophily"
+  ],
+  "why": "Xenogamy brings pollen from another plant's flower, anemophily uses wind, autogamy uses pollen of the same flower and hydrophily uses water.",
+  "R": [
+   "Pollen from different flowers",
+   "Pollen carried by wind",
+   "Pollen from the same flower",
+   "Pollen carried by water"
+  ]
+ },
+ "238": {
+  "lh": "Branch of genetics",
+  "rh": "Studies",
+  "L": [
+   "Quantitative genetics",
+   "Population genetics",
+   "Transmission genetics",
+   "Molecular genetics"
+  ],
+  "why": "Quantitative genetics studies traits controlled by many genes, population genetics heredity in groups, transmission genetics how genes pass between generations and molecular genetics gene structure and function.",
+  "R": [
+   "Studies traits governed by many genes",
+   "Focuses on heredity in groups",
+   "Deals with gene transmission",
+   "Studies gene structure and function"
+  ]
+ },
+ "439": {
+  "lh": "Title",
+  "rh": "Person",
+  "L": [
+   "Father of Indian ecology",
+   "Father of ecology",
+   "Father of modern ecology"
+  ],
+  "why": "R. Misra is called the father of Indian ecology, Alexander von Humboldt the father of ecology and Eugene P. Odum the father of modern ecology.",
+  "R": [
+   "R. Misra",
+   "Alexander von Humbolt",
+   "Eugene P. Odum"
+  ]
+ },
+ "440": {
+  "lh": "Greek word",
+  "rh": "Meaning",
+  "L": [
+   "Logos",
+   "Oikos"
+  ],
+  "why": "'Ecology' comes from oikos (house) and logos (study).",
+  "R": [
+   "Study",
+   "House"
+  ]
+ },
+ "441": {
+  "lh": "Scientist",
+  "rh": "Year",
+  "L": [
+   "Ernst Haeckel",
+   "Reiter"
+  ],
+  "why": "Reiter proposed the term in 1868 and Haeckel defined ecology in 1869.",
+  "R": [
+   "1869",
+   "1868"
+  ]
+ },
+ "443": {
+  "lh": "Unit studied",
+  "rh": "Level",
+  "L": [
+   "Biome",
+   "Individual"
+  ],
+  "why": "A biome is studied at a large (landscape) scale; an individual at the organism level.",
+  "R": [
+   "Large scale level",
+   "Organism level"
+  ]
+ },
+ "558": {
+  "lh": "Term",
+  "rh": "Meaning",
+  "L": [
+   "Logos",
+   "Abiotic",
+   "Oikos",
+   "Biotic"
+  ],
+  "why": "Oikos means house, logos study, biotic living and abiotic non-living.",
+  "R": [
+   "Study",
+   "Non-living",
+   "House",
+   "Living"
+  ]
+ },
+ "559": {
+  "lh": "Level",
+  "rh": "Description",
+  "L": [
+   "Community",
+   "Biosphere",
+   "Population",
+   "Ecosystem"
+  ],
+  "why": "A community is all populations in an area, the biosphere the largest biological system, a population one kind of organism and an ecosystem the living and non-living parts together.",
+  "R": [
+   "All populations in an area",
+   "Largest biological system",
+   "Group of one kind of organism",
+   "Biotic and Abiotic together"
+  ]
+ },
+ "562": {
+  "lh": "Level",
+  "rh": "Scale",
+  "L": [
+   "Population",
+   "Community",
+   "Ecosphere",
+   "Biome"
+  ],
+  "why": "A population is a group of individuals, a community lives in a given area, the ecosphere is global and a biome is sub-continental in scale.",
+  "R": [
+   "Group of individuals",
+   "Given area",
+   "Global/Earth",
+   "Sub continental"
+  ]
+ },
+ "563": {
+  "lh": "Component",
+  "rh": "Refers to",
+  "L": [
+   "Abiotic component",
+   "Biotic component"
+  ],
+  "why": "The abiotic component is the non-living environment; the biotic component is the community of organisms.",
+  "R": [
+   "Non-living environment",
+   "Community"
+  ]
+ },
+ "660": {
+  "lh": "Hormone",
+  "rh": "Function",
+  "L": [
+   "FSH",
+   "Testosterone",
+   null,
+   "Progesterone"
+  ],
+  "why": "FSH stimulates follicle development, testosterone develops male secondary sexual characters and progesterone maintains pregnancy.",
+  "R": [
+   "Stimulates follicle development",
+   "Develops male secondary sexual characteristics",
+   "Regulates female reproductive cycle",
+   "Maintains pregnancy"
+  ]
+ },
+ "911": {
+  "lh": "Reproduction",
+  "rh": "Characteristic",
+  "L": [
+   "Sexual reproduction",
+   "Asexual reproduction"
+  ],
+  "why": "Sexual reproduction involves gametes; asexual reproduction does not.",
+  "R": [
+   "Gametes involved",
+   "No gametes involved"
+  ]
+ },
+ "943": {
+  "lh": "Application",
+  "rh": "Field",
+  "L": [
+   "DNA fingerprinting",
+   "Mendel's pea experiments",
+   "High-yielding crop varieties",
+   "Gene therapy"
+  ],
+  "why": "DNA fingerprinting is used in forensics, Mendel's experiments founded classical genetics, crop breeding serves agriculture and gene therapy medicine.",
+  "R": [
+   "Forensic science",
+   "Classical Genetics",
+   "Agriculture",
+   "Medicine"
+  ]
+ }
+}

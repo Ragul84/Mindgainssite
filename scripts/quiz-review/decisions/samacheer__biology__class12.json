@@ -1,0 +1,186 @@
+{
+ "retire": [
+  215,
+  250,
+  305,
+  311,
+  360,
+  442,
+  444,
+  483,
+  560,
+  561,
+  564,
+  653,
+  738,
+  763,
+  870,
+  871,
+  872,
+  873,
+  874,
+  910,
+  912,
+  941,
+  942,
+  944,
+  992
+ ],
+ "fix": {
+  "195": {
+   "question": "Match List I with List II: List I (Process) A. Sexual reproduction B. Vegetative propagation C. Male gametogenesis D. Asexual reproduction List II (Description) 1. Involves gametes 2. Formation of male gametes 3. Involves no gametes 4. New plants from parts of the parent",
+   "options": [
+    "A-3, B-4, C-2, D-1",
+    "A-2, B-4, C-1, D-3",
+    "A-4, B-1, C-2, D-3",
+    "A-1, B-4, C-2, D-3"
+   ],
+   "answer_index": 3,
+   "explanation": "Sexual reproduction involves gametes, asexual reproduction does not, vegetative propagation grows new plants from parts of the parent and male gametogenesis forms the male gametes."
+  },
+  "201": {
+   "question": "Match List I with List II: List I (Term) A. Fertilisation B. Pollination C. Megasporogenesis D. Microsporogenesis List II (Definition) 1. Formation of megaspores 2. Transfer of pollen 3. Formation of microspores 4. Fusion of gametes",
+   "options": [
+    "A-1, B-2, C-4, D-3",
+    "A-4, B-2, C-1, D-3",
+    "A-4, B-2, C-3, D-1",
+    "A-4, B-3, C-1, D-2"
+   ],
+   "answer_index": 1,
+   "explanation": "Fertilisation is fusion of gametes, pollination the transfer of pollen, megasporogenesis the formation of megaspores and microsporogenesis that of microspores."
+  },
+  "205": {
+   "question": "Match List I with List II: List I (Pollination) A. Cross-pollination (xenogamy) B. Anemophily C. Self-pollination (autogamy) D. Hydrophily List II (Characteristic) 1. Pollen from the same flower 2. Pollen carried by water 3. Pollen from different flowers 4. Pollen carried by wind",
+   "options": [
+    "A-3, B-1, C-4, D-2",
+    "A-3, B-4, C-1, D-2",
+    "A-2, B-4, C-1, D-3",
+    "A-3, B-2, C-1, D-4"
+   ],
+   "answer_index": 1,
+   "explanation": "Xenogamy brings pollen from another plant's flower, anemophily uses wind, autogamy uses pollen of the same flower and hydrophily uses water."
+  },
+  "238": {
+   "question": "Match List I with List II: List I (Branch of genetics) A. Quantitative genetics B. Population genetics C. Transmission genetics D. Molecular genetics List II (Studies) 1. Studies gene structure and function 2. Studies traits governed by many genes 3. Deals with gene transmission 4. Focuses on heredity in groups",
+   "options": [
+    "A-1, B-4, C-3, D-2",
+    "A-3, B-4, C-2, D-1",
+    "A-2, B-4, C-3, D-1",
+    "A-2, B-4, C-1, D-3"
+   ],
+   "answer_index": 2,
+   "explanation": "Quantitative genetics studies traits controlled by many genes, population genetics heredity in groups, transmission genetics how genes pass between generations and molecular genetics gene structure and function."
+  },
+  "439": {
+   "question": "Match List I with List II: List I (Title) A. Father of Indian ecology B. Father of ecology C. Father of modern ecology List II (Person) 1. R. Misra 2. Alexander von Humbolt 3. Eugene P. Odum",
+   "options": [
+    "A-1, B-3, C-2",
+    "A-2, B-1, C-3",
+    "A-3, B-2, C-1",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 3,
+   "explanation": "R. Misra is called the father of Indian ecology, Alexander von Humboldt the father of ecology and Eugene P. Odum the father of modern ecology."
+  },
+  "440": {
+   "question": "Match List I with List II: List I (Greek word) A. Logos B. Oikos List II (Meaning) 1. Study 2. House",
+   "options": [
+    "A-1, B-2",
+    "A-2, B-1"
+   ],
+   "answer_index": 0,
+   "explanation": "'Ecology' comes from oikos (house) and logos (study)."
+  },
+  "441": {
+   "question": "Match List I with List II: List I (Scientist) A. Ernst Haeckel B. Reiter List II (Year) 1. 1869 2. 1868",
+   "options": [
+    "A-2, B-1",
+    "A-1, B-2"
+   ],
+   "answer_index": 1,
+   "explanation": "Reiter proposed the term in 1868 and Haeckel defined ecology in 1869."
+  },
+  "443": {
+   "question": "Match List I with List II: List I (Unit studied) A. Biome B. Individual List II (Level) 1. Organism level 2. Large scale level",
+   "options": [
+    "A-1, B-2",
+    "A-2, B-1"
+   ],
+   "answer_index": 1,
+   "explanation": "A biome is studied at a large (landscape) scale; an individual at the organism level."
+  },
+  "558": {
+   "question": "Match List I with List II: List I (Term) A. Logos B. Abiotic C. Oikos D. Biotic List II (Meaning) 1. Study 2. House 3. Non-living 4. Living",
+   "options": [
+    "A-1, B-4, C-2, D-3",
+    "A-2, B-3, C-1, D-4",
+    "A-1, B-3, C-2, D-4",
+    "A-1, B-2, C-3, D-4"
+   ],
+   "answer_index": 2,
+   "explanation": "Oikos means house, logos study, biotic living and abiotic non-living."
+  },
+  "559": {
+   "question": "Match List I with List II: List I (Level) A. Community B. Biosphere C. Population D. Ecosystem List II (Description) 1. Biotic and Abiotic together 2. Largest biological system 3. Group of one kind of organism 4. All populations in an area",
+   "options": [
+    "A-4, B-1, C-3, D-2",
+    "A-3, B-2, C-4, D-1",
+    "A-4, B-3, C-2, D-1",
+    "A-4, B-2, C-3, D-1"
+   ],
+   "answer_index": 3,
+   "explanation": "A community is all populations in an area, the biosphere the largest biological system, a population one kind of organism and an ecosystem the living and non-living parts together."
+  },
+  "562": {
+   "question": "Match List I with List II: List I (Level) A. Population B. Community C. Ecosphere D. Biome List II (Scale) 1. Given area 2. Global/Earth 3. Group of individuals 4. Sub continental",
+   "options": [
+    "A-1, B-3, C-2, D-4",
+    "A-3, B-1, C-4, D-2",
+    "A-3, B-1, C-2, D-4",
+    "A-2, B-1, C-3, D-4"
+   ],
+   "answer_index": 2,
+   "explanation": "A population is a group of individuals, a community lives in a given area, the ecosphere is global and a biome is sub-continental in scale."
+  },
+  "563": {
+   "question": "Match List I with List II: List I (Component) A. Abiotic component B. Biotic component List II (Refers to) 1. Non-living environment 2. Community",
+   "options": [
+    "A-2, B-1",
+    "A-1, B-2"
+   ],
+   "answer_index": 1,
+   "explanation": "The abiotic component is the non-living environment; the biotic component is the community of organisms."
+  },
+  "660": {
+   "question": "Match List I with List II: List I (Hormone) A. FSH B. Testosterone C. Progesterone List II (Function) 1. Develops male secondary sexual characteristics 2. Maintains pregnancy 3. Stimulates follicle development",
+   "options": [
+    "A-3, B-1, C-2",
+    "A-1, B-3, C-2",
+    "A-2, B-1, C-3",
+    "A-3, B-2, C-1"
+   ],
+   "answer_index": 0,
+   "explanation": "FSH stimulates follicle development, testosterone develops male secondary sexual characters and progesterone maintains pregnancy."
+  },
+  "911": {
+   "question": "Match List I with List II: List I (Reproduction) A. Sexual reproduction B. Asexual reproduction List II (Characteristic) 1. Gametes involved 2. No gametes involved",
+   "options": [
+    "A-2, B-1",
+    "A-1, B-2"
+   ],
+   "answer_index": 1,
+   "explanation": "Sexual reproduction involves gametes; asexual reproduction does not."
+  },
+  "943": {
+   "question": "Match List I with List II: List I (Application) A. DNA fingerprinting B. Mendel's pea experiments C. High-yielding crop varieties D. Gene therapy List II (Field) 1. Forensic science 2. Medicine 3. Agriculture 4. Classical Genetics",
+   "options": [
+    "A-4, B-1, C-3, D-2",
+    "A-1, B-4, C-2, D-3",
+    "A-3, B-4, C-1, D-2",
+    "A-1, B-4, C-3, D-2"
+   ],
+   "answer_index": 3,
+   "explanation": "DNA fingerprinting is used in forensics, Mendel's experiments founded classical genetics, crop breeding serves agriculture and gene therapy medicine."
+  }
+ }
+}

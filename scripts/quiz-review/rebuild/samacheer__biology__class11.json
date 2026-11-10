@@ -1,0 +1,530 @@
+{
+ "42": "retire",
+ "43": "retire",
+ "44": "retire",
+ "45": "retire",
+ "46": "retire",
+ "47": "retire",
+ "129": "retire",
+ "130": "retire",
+ "131": "retire",
+ "132": "retire",
+ "133": "retire",
+ "134": "retire",
+ "243": "retire",
+ "244": "retire",
+ "245": "retire",
+ "246": "retire",
+ "247": "retire",
+ "248": "retire",
+ "311": "retire",
+ "313": "retire",
+ "315": "retire",
+ "316": "retire",
+ "387": "retire",
+ "388": "retire",
+ "462": "retire",
+ "463": "retire",
+ "465": "retire",
+ "531": "retire",
+ "532": "retire",
+ "533": "retire",
+ "578": "retire",
+ "581": "retire",
+ "634": "retire",
+ "635": "retire",
+ "684": "retire",
+ "685": "retire",
+ "686": "retire",
+ "687": "retire",
+ "688": "retire",
+ "689": "retire",
+ "754": "retire",
+ "765": "retire",
+ "796": "retire",
+ "797": "retire",
+ "907": "retire",
+ "946": "retire",
+ "947": "retire",
+ "948": "retire",
+ "949": "retire",
+ "950": "retire",
+ "958": "retire",
+ "961": "retire",
+ "1012": "retire",
+ "1013": "retire",
+ "1014": "retire",
+ "1015": "retire",
+ "1016": "retire",
+ "1017": "retire",
+ "156": {
+  "stem": "Match the plant part with its main function:",
+  "lh": "Part",
+  "rh": "Function",
+  "L": [
+   "Leaves",
+   "Stems",
+   "Roots"
+  ],
+  "why": "Leaves carry out photosynthesis, stems support the plant and transport materials, and roots anchor it and absorb water.",
+  "R": [
+   "Photosynthesis",
+   "Support and transport",
+   "Anchor and absorb water"
+  ]
+ },
+ "170": {
+  "lh": "Term",
+  "rh": "Definition",
+  "L": [
+   "Inflorescence",
+   "Floral diagram"
+  ],
+  "why": "An inflorescence is a group of flowers on a plant; a floral diagram is a symbolic representation of a flower's structure.",
+  "R": [
+   "Group of flowers on a plant",
+   "Symbolic representation of flower structure"
+  ]
+ },
+ "179": {
+  "stem": "Match the term with its description:",
+  "lh": "Term",
+  "rh": "Description",
+  "L": [
+   "Nucleus",
+   "DNA sequencing",
+   "Herbarium",
+   "Morphology"
+  ],
+  "why": "The nucleus controls cell activities, DNA sequencing reads genetic information, a herbarium keeps preserved specimens and morphology studies plant form.",
+  "R": [
+   "Controls cell activities",
+   "Determines genetic information",
+   "Preserved plant specimens",
+   "Study of plant form"
+  ]
+ },
+ "267": {
+  "lh": "Biomolecule",
+  "rh": "Monomer",
+  "L": [
+   "Polysaccharides",
+   "Proteins",
+   "Nucleic acids"
+  ],
+  "why": "Polysaccharides are built from sugars, proteins from amino acids and nucleic acids from nucleotides.",
+  "R": [
+   "Sugars",
+   "Amino acids",
+   "Nucleotides"
+  ]
+ },
+ "271": {
+  "lh": "Mineral",
+  "rh": "Role in plants",
+  "L": [
+   "Magnesium",
+   "Calcium"
+  ],
+  "why": "Magnesium is part of chlorophyll; calcium (as calcium pectate) stabilises the cell wall.",
+  "R": [
+   "Chlorophyll synthesis",
+   "Cell wall stability"
+  ]
+ },
+ "276": {
+  "lh": "Biomolecule",
+  "rh": "Nature",
+  "L": [
+   "Lipids",
+   "Proteins"
+  ],
+  "why": "Lipids are hydrophobic; proteins are polypeptides.",
+  "R": [
+   "Hydrophobic molecules",
+   "Polypeptides"
+  ]
+ },
+ "280": {
+  "lh": "Mineral",
+  "rh": "Function in plants",
+  "L": [
+   "Magnesium",
+   "Nitrogen"
+  ],
+  "why": "Magnesium is needed to form chlorophyll; nitrogen is needed to make proteins.",
+  "R": [
+   "Chlorophyll formation",
+   "Protein synthesis"
+  ]
+ },
+ "312": {
+  "lh": "Botanist",
+  "rh": "Known for",
+  "L": [
+   "Katherine Esau",
+   "Nehemiah Grew"
+  ],
+  "why": "Katherine Esau wrote 'Anatomy of Seed Plants'; Nehemiah Grew is called the father of plant anatomy.",
+  "R": [
+   "Anatomy of Seed Plants",
+   "Father of Plant Anatomy"
+  ]
+ },
+ "314": {
+  "lh": "Tissue",
+  "rh": "Nature",
+  "L": [
+   "Permanent tissue",
+   "Meristematic tissue"
+  ],
+  "why": "Permanent tissues have stopped dividing; meristematic tissues keep dividing.",
+  "R": [
+   "Non-divisible",
+   "Divisible"
+  ]
+ },
+ "338": {
+  "lh": "Part of nephron",
+  "rh": "Function",
+  "L": [
+   "Proximal convoluted tubule",
+   "Glomerulus",
+   "Loop of Henle",
+   "Distal convoluted tubule"
+  ],
+  "why": "The glomerulus filters plasma, the PCT reabsorbs nutrients, the loop of Henle concentrates urine and the DCT regulates pH and electrolytes.",
+  "R": [
+   "Reabsorbs nutrients",
+   "Filters blood plasma",
+   "Concentrates urine",
+   "Regulates pH and electrolytes"
+  ]
+ },
+ "344": {
+  "lh": "Waste",
+  "rh": "Main excretors",
+  "L": [
+   "Uric acid",
+   "Urea",
+   "Ammonia"
+  ],
+  "why": "Birds and reptiles excrete uric acid (uricotelic), mammals urea (ureotelic) and many aquatic animals ammonia (ammonotelic).",
+  "R": [
+   "Birds and reptiles",
+   "Humans and mammals",
+   "Aquatic animals"
+  ]
+ },
+ "348": {
+  "lh": "Excretory product",
+  "rh": "Comes from",
+  "L": [
+   "Creatinine",
+   "Urea",
+   "Uric acid"
+  ],
+  "why": "Creatinine comes from muscle metabolism, urea is the main nitrogenous waste from amino acids and uric acid comes from nucleic acid breakdown.",
+  "R": [
+   "Muscle metabolism waste",
+   "Nitrogenous waste",
+   "Nucleic acid waste"
+  ]
+ },
+ "383": {
+  "stem": "Match the organ or factor with its role in the endocrine system:",
+  "lh": "Organ / factor",
+  "rh": "Role",
+  "L": [
+   "Kidney",
+   "Target organ",
+   "Liver",
+   "Klotho"
+  ],
+  "why": "The kidney excretes hormones, target organs carry the receptors, the liver inactivates hormones and the klotho protein is linked with anti-ageing.",
+  "R": [
+   "Excretion of hormones",
+   "Contains receptors",
+   "Inactivation of hormones",
+   "Anti-aging"
+  ]
+ },
+ "460": {
+  "lh": "Specialist",
+  "rh": "Studies",
+  "L": [
+   "Taxonomist",
+   "Embryologist",
+   "Physiologist"
+  ],
+  "why": "A taxonomist names and classifies, an embryologist studies early development and a physiologist studies body processes such as metabolism.",
+  "R": [
+   "Naming and classification",
+   "Early developmental stages",
+   "Metabolic processes"
+  ]
+ },
+ "461": {
+  "lh": "Culture",
+  "rh": "Animal reared",
+  "L": [
+   "Apiculture",
+   "Vermiculture",
+   "Sericulture"
+  ],
+  "why": "Apiculture rears honeybees, vermiculture earthworms and sericulture silkworms.",
+  "R": [
+   "Honeybee",
+   "Earthworm",
+   "Silk worm"
+  ]
+ },
+ "464": {
+  "lh": "Animal",
+  "rh": "Culture",
+  "L": [
+   "Silkworm",
+   "Lac insect",
+   "Honeybee"
+  ],
+  "why": "Silkworms are reared in sericulture, lac insects in lac culture and honeybees in apiculture.",
+  "R": [
+   "Sericulture",
+   "Lac culture",
+   "Apiculture"
+  ]
+ },
+ "496": {
+  "lh": "Group",
+  "rh": "Defining feature",
+  "L": [
+   "Kingdom Animalia",
+   "Chordates",
+   "Metazoa",
+   "Non-chordates"
+  ],
+  "why": "All animals are heterotrophic, chordates have a notochord, metazoans are multicellular and non-chordates lack a notochord.",
+  "R": [
+   "Heterotrophic",
+   "Presence of notochord",
+   "Multicellular",
+   "Absence of notochord"
+  ]
+ },
+ "529": {
+  "lh": "Tissue",
+  "rh": "Main function",
+  "L": [
+   "Muscular tissue",
+   "Epithelial tissue",
+   "Connective tissue"
+  ],
+  "why": "Muscle tissue moves, epithelium covers and connective tissue supports.",
+  "R": [
+   "Movement",
+   "Covering",
+   "Support"
+  ]
+ },
+ "530": {
+  "lh": "Example",
+  "rh": "Level of organisation",
+  "L": [
+   "Digestive system",
+   "Neuron",
+   "Heart"
+  ],
+  "why": "The digestive system is an organ system, a neuron a cell and the heart an organ.",
+  "R": [
+   "Organ system",
+   "Cell",
+   "Organ"
+  ]
+ },
+ "579": {
+  "lh": "Scientific name",
+  "rh": "Animal",
+  "L": [
+   "Periplaneta americana",
+   "Lampito mauritii",
+   "Hoplobatrachus tigerinus"
+  ],
+  "why": "Periplaneta americana is the cockroach, Lampito mauritii the earthworm and Hoplobatrachus (Rana) tigerinus the Indian bullfrog.",
+  "R": [
+   "Cockroach",
+   "Earthworm",
+   "Frog"
+  ]
+ },
+ "580": {
+  "lh": "Rank (earthworm)",
+  "rh": "Name",
+  "L": [
+   "Species",
+   "Class",
+   "Genus"
+  ],
+  "why": "Lampito mauritii belongs to class Clitellata; Lampito is its genus and mauritii its species.",
+  "R": [
+   "mauritii",
+   "Clitellata",
+   "Lampito"
+  ]
+ },
+ "582": {
+  "lh": "Level",
+  "rh": "Combine to",
+  "L": [
+   "Organs",
+   "Tissues"
+  ],
+  "why": "Tissues combine to form organs, and organs form organ systems.",
+  "R": [
+   "Form organ systems",
+   "Form organs"
+  ]
+ },
+ "630": {
+  "lh": "Tooth",
+  "rh": "Function",
+  "L": [
+   "Canines",
+   "Molars",
+   "Incisors"
+  ],
+  "why": "Canines tear, molars grind and incisors cut.",
+  "R": [
+   "Tearing",
+   "Grinding",
+   "Cutting"
+  ]
+ },
+ "631": {
+  "lh": "Nutrient",
+  "rh": "Role",
+  "L": [
+   "Proteins",
+   "Vitamins and minerals",
+   "Carbohydrates"
+  ],
+  "why": "Proteins build the body, vitamins and minerals regulate body processes and carbohydrates give energy.",
+  "R": [
+   "Body building",
+   "Regulation",
+   "Energy production"
+  ]
+ },
+ "632": {
+  "lh": "Term",
+  "rh": "Description",
+  "L": [
+   "Autotrophs",
+   "Digestion",
+   "Heterodont dentition"
+  ],
+  "why": "Autotrophs make their own food, digestion converts food into absorbable forms and heterodont dentition has four kinds of teeth.",
+  "R": [
+   "Synthesize their own food",
+   "Absorbable forms",
+   "Four different types of teeth"
+  ]
+ },
+ "633": {
+  "lh": "Tooth",
+  "rh": "Shape",
+  "L": [
+   "Canine",
+   "Incisor"
+  ],
+  "why": "Canines are dagger-shaped; incisors are chisel-like.",
+  "R": [
+   "Dagger shaped",
+   "Chisel like"
+  ]
+ },
+ "647": {
+  "stem": "Match the respiratory organ with the animal:",
+  "lh": "Organ",
+  "rh": "Animal",
+  "L": [
+   "Gills",
+   "Tracheal tubes",
+   "Skin",
+   "Lungs"
+  ],
+  "why": "Fishes breathe with gills, insects through tracheae, earthworms through their skin and humans with lungs.",
+  "R": [
+   "Fishes",
+   "Insects",
+   "Earthworms",
+   "Humans"
+  ]
+ },
+ "651": {
+  "stem": "Match the respiratory disorder with its description:",
+  "lh": "Disorder",
+  "rh": "Description",
+  "L": [
+   "Asthma",
+   "COPD",
+   "Lung cancer"
+  ],
+  "why": "Asthma narrows and blocks the air passages, COPD is chronic obstructive pulmonary disease and lung cancer is uncontrolled cell growth.",
+  "R": [
+   "Blockage of air passages",
+   "Chronic obstructive pulmonary disease",
+   "Uncontrolled cell growth"
+  ]
+ },
+ "750": {
+  "lh": "Movement",
+  "rh": "Description",
+  "L": [
+   "Ciliary movement",
+   "Flagellar movement",
+   "Muscular movement",
+   "Amoeboid movement"
+  ],
+  "why": "Ciliary movement uses cilia, flagellar movement flagella, muscular movement muscles and amoeboid movement is seen in macrophages.",
+  "R": [
+   "Movement involving cilia",
+   "Movement involving flagella",
+   "Movement generated by muscles",
+   "Movement exhibited by macrophages"
+  ]
+ },
+ "761": {
+  "lh": "Disorder",
+  "rh": "Description",
+  "L": [
+   "Osteoporosis",
+   "Arthritis",
+   "Rickets",
+   "Sprain"
+  ],
+  "why": "Osteoporosis weakens bones, arthritis inflames joints, rickets comes from vitamin D deficiency and a sprain stretches ligaments.",
+  "R": [
+   "Weakening of bones",
+   "Inflammation of joints",
+   "Vitamin D deficiency",
+   "Stretching of ligaments"
+  ]
+ },
+ "910": {
+  "lh": "Mineral",
+  "rh": "Function",
+  "L": [
+   "Magnesium",
+   "Potassium",
+   "Phosphorus",
+   "Nitrogen"
+  ],
+  "why": "Magnesium is part of chlorophyll, potassium regulates stomata, phosphorus (in ATP) transfers energy and nitrogen is needed for proteins.",
+  "R": [
+   "Chlorophyll component",
+   "Regulates stomata",
+   "Energy transfer",
+   "Protein synthesis"
+  ]
+ }
+}

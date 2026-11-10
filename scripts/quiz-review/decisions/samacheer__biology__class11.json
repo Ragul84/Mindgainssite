@@ -1,0 +1,389 @@
+{
+ "retire": [
+  42,
+  43,
+  44,
+  45,
+  46,
+  47,
+  129,
+  130,
+  131,
+  132,
+  133,
+  134,
+  243,
+  244,
+  245,
+  246,
+  247,
+  248,
+  311,
+  313,
+  315,
+  316,
+  387,
+  388,
+  462,
+  463,
+  465,
+  531,
+  532,
+  533,
+  578,
+  581,
+  634,
+  635,
+  684,
+  685,
+  686,
+  687,
+  688,
+  689,
+  754,
+  765,
+  796,
+  797,
+  907,
+  946,
+  947,
+  948,
+  949,
+  950,
+  958,
+  961,
+  1012,
+  1013,
+  1014,
+  1015,
+  1016,
+  1017
+ ],
+ "fix": {
+  "156": {
+   "question": "Match the plant part with its main function: List I (Part) A. Leaves B. Stems C. Roots List II (Function) 1. Photosynthesis 2. Support and transport 3. Anchor and absorb water",
+   "options": [
+    "A-1, B-2, C-3",
+    "A-3, B-2, C-1",
+    "A-2, B-1, C-3",
+    "A-1, B-3, C-2"
+   ],
+   "answer_index": 0,
+   "explanation": "Leaves carry out photosynthesis, stems support the plant and transport materials, and roots anchor it and absorb water."
+  },
+  "170": {
+   "question": "Match List I with List II: List I (Term) A. Inflorescence B. Floral diagram List II (Definition) 1. Symbolic representation of flower structure 2. Group of flowers on a plant",
+   "options": [
+    "A-2, B-1",
+    "A-1, B-2"
+   ],
+   "answer_index": 0,
+   "explanation": "An inflorescence is a group of flowers on a plant; a floral diagram is a symbolic representation of a flower's structure."
+  },
+  "179": {
+   "question": "Match the term with its description: List I (Term) A. Nucleus B. DNA sequencing C. Herbarium D. Morphology List II (Description) 1. Determines genetic information 2. Controls cell activities 3. Study of plant form 4. Preserved plant specimens",
+   "options": [
+    "A-2, B-1, C-3, D-4",
+    "A-2, B-4, C-1, D-3",
+    "A-4, B-1, C-2, D-3",
+    "A-2, B-1, C-4, D-3"
+   ],
+   "answer_index": 3,
+   "explanation": "The nucleus controls cell activities, DNA sequencing reads genetic information, a herbarium keeps preserved specimens and morphology studies plant form."
+  },
+  "267": {
+   "question": "Match List I with List II: List I (Biomolecule) A. Polysaccharides B. Proteins C. Nucleic acids List II (Monomer) 1. Nucleotides 2. Amino acids 3. Sugars",
+   "options": [
+    "A-2, B-3, C-1",
+    "A-1, B-2, C-3",
+    "A-3, B-1, C-2",
+    "A-3, B-2, C-1"
+   ],
+   "answer_index": 3,
+   "explanation": "Polysaccharides are built from sugars, proteins from amino acids and nucleic acids from nucleotides."
+  },
+  "271": {
+   "question": "Match List I with List II: List I (Mineral) A. Magnesium B. Calcium List II (Role in plants) 1. Chlorophyll synthesis 2. Cell wall stability",
+   "options": [
+    "A-2, B-1",
+    "A-1, B-2"
+   ],
+   "answer_index": 1,
+   "explanation": "Magnesium is part of chlorophyll; calcium (as calcium pectate) stabilises the cell wall."
+  },
+  "276": {
+   "question": "Match List I with List II: List I (Biomolecule) A. Lipids B. Proteins List II (Nature) 1. Hydrophobic molecules 2. Polypeptides",
+   "options": [
+    "A-1, B-2",
+    "A-2, B-1"
+   ],
+   "answer_index": 0,
+   "explanation": "Lipids are hydrophobic; proteins are polypeptides."
+  },
+  "280": {
+   "question": "Match List I with List II: List I (Mineral) A. Magnesium B. Nitrogen List II (Function in plants) 1. Protein synthesis 2. Chlorophyll formation",
+   "options": [
+    "A-2, B-1",
+    "A-1, B-2"
+   ],
+   "answer_index": 0,
+   "explanation": "Magnesium is needed to form chlorophyll; nitrogen is needed to make proteins."
+  },
+  "312": {
+   "question": "Match List I with List II: List I (Botanist) A. Katherine Esau B. Nehemiah Grew List II (Known for) 1. Anatomy of Seed Plants 2. Father of Plant Anatomy",
+   "options": [
+    "A-1, B-2",
+    "A-2, B-1"
+   ],
+   "answer_index": 0,
+   "explanation": "Katherine Esau wrote 'Anatomy of Seed Plants'; Nehemiah Grew is called the father of plant anatomy."
+  },
+  "314": {
+   "question": "Match List I with List II: List I (Tissue) A. Permanent tissue B. Meristematic tissue List II (Nature) 1. Divisible 2. Non-divisible",
+   "options": [
+    "A-2, B-1",
+    "A-1, B-2"
+   ],
+   "answer_index": 0,
+   "explanation": "Permanent tissues have stopped dividing; meristematic tissues keep dividing."
+  },
+  "338": {
+   "question": "Match List I with List II: List I (Part of nephron) A. Proximal convoluted tubule B. Glomerulus C. Loop of Henle D. Distal convoluted tubule List II (Function) 1. Filters blood plasma 2. Regulates pH and electrolytes 3. Concentrates urine 4. Reabsorbs nutrients",
+   "options": [
+    "A-2, B-1, C-3, D-4",
+    "A-3, B-1, C-4, D-2",
+    "A-4, B-1, C-3, D-2",
+    "A-4, B-3, C-1, D-2"
+   ],
+   "answer_index": 2,
+   "explanation": "The glomerulus filters plasma, the PCT reabsorbs nutrients, the loop of Henle concentrates urine and the DCT regulates pH and electrolytes."
+  },
+  "344": {
+   "question": "Match List I with List II: List I (Waste) A. Uric acid B. Urea C. Ammonia List II (Main excretors) 1. Humans and mammals 2. Aquatic animals 3. Birds and reptiles",
+   "options": [
+    "A-3, B-1, C-2",
+    "A-1, B-3, C-2",
+    "A-3, B-2, C-1",
+    "A-2, B-1, C-3"
+   ],
+   "answer_index": 0,
+   "explanation": "Birds and reptiles excrete uric acid (uricotelic), mammals urea (ureotelic) and many aquatic animals ammonia (ammonotelic)."
+  },
+  "348": {
+   "question": "Match List I with List II: List I (Excretory product) A. Creatinine B. Urea C. Uric acid List II (Comes from) 1. Muscle metabolism waste 2. Nucleic acid waste 3. Nitrogenous waste",
+   "options": [
+    "A-1, B-3, C-2",
+    "A-2, B-3, C-1",
+    "A-1, B-2, C-3",
+    "A-3, B-1, C-2"
+   ],
+   "answer_index": 0,
+   "explanation": "Creatinine comes from muscle metabolism, urea is the main nitrogenous waste from amino acids and uric acid comes from nucleic acid breakdown."
+  },
+  "383": {
+   "question": "Match the organ or factor with its role in the endocrine system: List I (Organ / factor) A. Kidney B. Target organ C. Liver D. Klotho List II (Role) 1. Excretion of hormones 2. Contains receptors 3. Inactivation of hormones 4. Anti-aging",
+   "options": [
+    "A-3, B-2, C-1, D-4",
+    "A-1, B-3, C-2, D-4",
+    "A-4, B-2, C-3, D-1",
+    "A-1, B-2, C-3, D-4"
+   ],
+   "answer_index": 3,
+   "explanation": "The kidney excretes hormones, target organs carry the receptors, the liver inactivates hormones and the klotho protein is linked with anti-ageing."
+  },
+  "460": {
+   "question": "Match List I with List II: List I (Specialist) A. Taxonomist B. Embryologist C. Physiologist List II (Studies) 1. Early developmental stages 2. Naming and classification 3. Metabolic processes",
+   "options": [
+    "A-2, B-1, C-3",
+    "A-1, B-2, C-3",
+    "A-3, B-1, C-2",
+    "A-2, B-3, C-1"
+   ],
+   "answer_index": 0,
+   "explanation": "A taxonomist names and classifies, an embryologist studies early development and a physiologist studies body processes such as metabolism."
+  },
+  "461": {
+   "question": "Match List I with List II: List I (Culture) A. Apiculture B. Vermiculture C. Sericulture List II (Animal reared) 1. Earthworm 2. Honeybee 3. Silk worm",
+   "options": [
+    "A-2, B-3, C-1",
+    "A-2, B-1, C-3",
+    "A-3, B-1, C-2",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 1,
+   "explanation": "Apiculture rears honeybees, vermiculture earthworms and sericulture silkworms."
+  },
+  "464": {
+   "question": "Match List I with List II: List I (Animal) A. Silkworm B. Lac insect C. Honeybee List II (Culture) 1. Lac culture 2. Sericulture 3. Apiculture",
+   "options": [
+    "A-2, B-1, C-3",
+    "A-2, B-3, C-1",
+    "A-1, B-2, C-3",
+    "A-3, B-1, C-2"
+   ],
+   "answer_index": 0,
+   "explanation": "Silkworms are reared in sericulture, lac insects in lac culture and honeybees in apiculture."
+  },
+  "496": {
+   "question": "Match List I with List II: List I (Group) A. Kingdom Animalia B. Chordates C. Metazoa D. Non-chordates List II (Defining feature) 1. Presence of notochord 2. Heterotrophic 3. Multicellular 4. Absence of notochord",
+   "options": [
+    "A-2, B-1, C-3, D-4",
+    "A-4, B-1, C-3, D-2",
+    "A-2, B-4, C-3, D-1",
+    "A-3, B-1, C-2, D-4"
+   ],
+   "answer_index": 0,
+   "explanation": "All animals are heterotrophic, chordates have a notochord, metazoans are multicellular and non-chordates lack a notochord."
+  },
+  "529": {
+   "question": "Match List I with List II: List I (Tissue) A. Muscular tissue B. Epithelial tissue C. Connective tissue List II (Main function) 1. Covering 2. Support 3. Movement",
+   "options": [
+    "A-1, B-3, C-2",
+    "A-3, B-1, C-2",
+    "A-3, B-2, C-1",
+    "A-2, B-1, C-3"
+   ],
+   "answer_index": 1,
+   "explanation": "Muscle tissue moves, epithelium covers and connective tissue supports."
+  },
+  "530": {
+   "question": "Match List I with List II: List I (Example) A. Digestive system B. Neuron C. Heart List II (Level of organisation) 1. Organ 2. Organ system 3. Cell",
+   "options": [
+    "A-1, B-3, C-2",
+    "A-2, B-1, C-3",
+    "A-2, B-3, C-1",
+    "A-3, B-2, C-1"
+   ],
+   "answer_index": 2,
+   "explanation": "The digestive system is an organ system, a neuron a cell and the heart an organ."
+  },
+  "579": {
+   "question": "Match List I with List II: List I (Scientific name) A. Periplaneta americana B. Lampito mauritii C. Hoplobatrachus tigerinus List II (Animal) 1. Cockroach 2. Frog 3. Earthworm",
+   "options": [
+    "A-2, B-3, C-1",
+    "A-1, B-2, C-3",
+    "A-3, B-1, C-2",
+    "A-1, B-3, C-2"
+   ],
+   "answer_index": 3,
+   "explanation": "Periplaneta americana is the cockroach, Lampito mauritii the earthworm and Hoplobatrachus (Rana) tigerinus the Indian bullfrog."
+  },
+  "580": {
+   "question": "Match List I with List II: List I (Rank (earthworm)) A. Species B. Class C. Genus List II (Name) 1. mauritii 2. Lampito 3. Clitellata",
+   "options": [
+    "A-1, B-3, C-2",
+    "A-3, B-1, C-2",
+    "A-2, B-3, C-1",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 0,
+   "explanation": "Lampito mauritii belongs to class Clitellata; Lampito is its genus and mauritii its species."
+  },
+  "582": {
+   "question": "Match List I with List II: List I (Level) A. Organs B. Tissues List II (Combine to) 1. Form organs 2. Form organ systems",
+   "options": [
+    "A-2, B-1",
+    "A-1, B-2"
+   ],
+   "answer_index": 0,
+   "explanation": "Tissues combine to form organs, and organs form organ systems."
+  },
+  "630": {
+   "question": "Match List I with List II: List I (Tooth) A. Canines B. Molars C. Incisors List II (Function) 1. Grinding 2. Cutting 3. Tearing",
+   "options": [
+    "A-3, B-2, C-1",
+    "A-1, B-3, C-2",
+    "A-3, B-1, C-2",
+    "A-2, B-1, C-3"
+   ],
+   "answer_index": 2,
+   "explanation": "Canines tear, molars grind and incisors cut."
+  },
+  "631": {
+   "question": "Match List I with List II: List I (Nutrient) A. Proteins B. Vitamins and minerals C. Carbohydrates List II (Role) 1. Regulation 2. Energy production 3. Body building",
+   "options": [
+    "A-3, B-2, C-1",
+    "A-1, B-3, C-2",
+    "A-2, B-1, C-3",
+    "A-3, B-1, C-2"
+   ],
+   "answer_index": 3,
+   "explanation": "Proteins build the body, vitamins and minerals regulate body processes and carbohydrates give energy."
+  },
+  "632": {
+   "question": "Match List I with List II: List I (Term) A. Autotrophs B. Digestion C. Heterodont dentition List II (Description) 1. Four different types of teeth 2. Absorbable forms 3. Synthesize their own food",
+   "options": [
+    "A-3, B-2, C-1",
+    "A-3, B-1, C-2",
+    "A-1, B-2, C-3",
+    "A-2, B-3, C-1"
+   ],
+   "answer_index": 0,
+   "explanation": "Autotrophs make their own food, digestion converts food into absorbable forms and heterodont dentition has four kinds of teeth."
+  },
+  "633": {
+   "question": "Match List I with List II: List I (Tooth) A. Canine B. Incisor List II (Shape) 1. Chisel like 2. Dagger shaped",
+   "options": [
+    "A-1, B-2",
+    "A-2, B-1"
+   ],
+   "answer_index": 1,
+   "explanation": "Canines are dagger-shaped; incisors are chisel-like."
+  },
+  "647": {
+   "question": "Match the respiratory organ with the animal: List I (Organ) A. Gills B. Tracheal tubes C. Skin D. Lungs List II (Animal) 1. Insects 2. Humans 3. Earthworms 4. Fishes",
+   "options": [
+    "A-4, B-1, C-2, D-3",
+    "A-4, B-3, C-1, D-2",
+    "A-2, B-1, C-3, D-4",
+    "A-4, B-1, C-3, D-2"
+   ],
+   "answer_index": 3,
+   "explanation": "Fishes breathe with gills, insects through tracheae, earthworms through their skin and humans with lungs."
+  },
+  "651": {
+   "question": "Match the respiratory disorder with its description: List I (Disorder) A. Asthma B. COPD C. Lung cancer List II (Description) 1. Uncontrolled cell growth 2. Chronic obstructive pulmonary disease 3. Blockage of air passages",
+   "options": [
+    "A-1, B-2, C-3",
+    "A-3, B-1, C-2",
+    "A-2, B-3, C-1",
+    "A-3, B-2, C-1"
+   ],
+   "answer_index": 3,
+   "explanation": "Asthma narrows and blocks the air passages, COPD is chronic obstructive pulmonary disease and lung cancer is uncontrolled cell growth."
+  },
+  "750": {
+   "question": "Match List I with List II: List I (Movement) A. Ciliary movement B. Flagellar movement C. Muscular movement D. Amoeboid movement List II (Description) 1. Movement generated by muscles 2. Movement involving cilia 3. Movement exhibited by macrophages 4. Movement involving flagella",
+   "options": [
+    "A-2, B-1, C-4, D-3",
+    "A-1, B-4, C-2, D-3",
+    "A-2, B-4, C-1, D-3",
+    "A-2, B-4, C-3, D-1"
+   ],
+   "answer_index": 2,
+   "explanation": "Ciliary movement uses cilia, flagellar movement flagella, muscular movement muscles and amoeboid movement is seen in macrophages."
+  },
+  "761": {
+   "question": "Match List I with List II: List I (Disorder) A. Osteoporosis B. Arthritis C. Rickets D. Sprain List II (Description) 1. Stretching of ligaments 2. Inflammation of joints 3. Vitamin D deficiency 4. Weakening of bones",
+   "options": [
+    "A-4, B-3, C-2, D-1",
+    "A-4, B-2, C-3, D-1",
+    "A-1, B-2, C-3, D-4",
+    "A-4, B-2, C-1, D-3"
+   ],
+   "answer_index": 1,
+   "explanation": "Osteoporosis weakens bones, arthritis inflames joints, rickets comes from vitamin D deficiency and a sprain stretches ligaments."
+  },
+  "910": {
+   "question": "Match List I with List II: List I (Mineral) A. Magnesium B. Potassium C. Phosphorus D. Nitrogen List II (Function) 1. Protein synthesis 2. Chlorophyll component 3. Regulates stomata 4. Energy transfer",
+   "options": [
+    "A-2, B-1, C-4, D-3",
+    "A-3, B-2, C-4, D-1",
+    "A-2, B-3, C-4, D-1",
+    "A-4, B-3, C-2, D-1"
+   ],
+   "answer_index": 2,
+   "explanation": "Magnesium is part of chlorophyll, potassium regulates stomata, phosphorus (in ATP) transfers energy and nitrogen is needed for proteins."
+  }
+ }
+}

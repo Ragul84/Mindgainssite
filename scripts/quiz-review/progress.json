@@ -133,5 +133,15 @@
   "reviewed_to": null,
   "total": 604,
   "retired": 36
+ },
+ "samacheer/biology/class11": {
+  "reviewed_to": null,
+  "total": 1063,
+  "retired": 58
+ },
+ "samacheer/biology/class12": {
+  "reviewed_to": null,
+  "total": 997,
+  "retired": 25
  }
 }
