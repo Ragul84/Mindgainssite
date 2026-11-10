@@ -1,0 +1,191 @@
+{
+ "retire": [
+  216,
+  244,
+  306,
+  310,
+  336,
+  337,
+  380,
+  398,
+  400
+ ],
+ "fix": {
+  "183": {
+   "question": "Match List I with List II: List I (Formula) A. d/dx(eˣ) = eˣ B. d/dx(sin x) = cos x C. d/dx(x²) = 2x D. d/dx(ln x) = 1/x List II (Gives) 1. Rate of change of exponential function 2. Rate of change of quadratic function 3. Rate of change of sine function 4. Rate of change of natural logarithm",
+   "options": [
+    "A-1, B-4, C-2, D-3",
+    "A-2, B-3, C-1, D-4",
+    "A-4, B-3, C-2, D-1",
+    "A-1, B-3, C-2, D-4"
+   ],
+   "answer_index": 3,
+   "explanation": "Each formula is the derivative, i.e. the rate of change, of that function."
+  },
+  "189": {
+   "question": "Match List I with List II: List I (Quantity) A. Acceleration B. Velocity C. Rate of heating or cooling D. Slope of the tangent at a point List II (Is the derivative of) 1. Velocity 2. Displacement 3. Temperature with respect to time 4. The function at that point",
+   "options": [
+    "A-1, B-2, C-4, D-3",
+    "A-1, B-2, C-3, D-4",
+    "A-4, B-2, C-3, D-1",
+    "A-3, B-2, C-1, D-4"
+   ],
+   "answer_index": 1,
+   "explanation": "Acceleration is the derivative of velocity, velocity of displacement, the heating rate of temperature and the tangent slope of the function itself."
+  },
+  "206": {
+   "question": "Match List I with List II: List I (Matrix) A. Singular matrix B. Non-singular matrix C. Diagonal matrix D. Skew-symmetric matrix List II (Property) 1. Determinant is non-zero 2. Determinant is zero 3. A matrix where A^T = -A 4. Non-zero entries only on the diagonal",
+   "options": [
+    "A-4, B-1, C-2, D-3",
+    "A-2, B-3, C-4, D-1",
+    "A-2, B-1, C-4, D-3",
+    "A-2, B-4, C-1, D-3"
+   ],
+   "answer_index": 2,
+   "explanation": "A singular matrix has determinant zero, a non-singular one a non-zero determinant, a diagonal matrix has non-zero entries only on the diagonal and a skew-symmetric matrix satisfies Aᵀ = -A."
+  },
+  "245": {
+   "question": "Match List I with List II: List I (Power) A. i to the power 1 B. i to the power 2 C. i to the power 3 D. i to the power 4 List II (Value) 1. i 2. 1 3. -1 4. -i",
+   "options": [
+    "A-1, B-4, C-3, D-2",
+    "A-1, B-3, C-4, D-2",
+    "A-1, B-3, C-2, D-4",
+    "A-1, B-2, C-4, D-3"
+   ],
+   "answer_index": 1,
+   "explanation": "i¹ = i, i² = -1, i³ = -i and i⁴ = 1."
+  },
+  "246": {
+   "question": "Match List I with List II: List I (Form) A. Rectangular form B. Polar form C. Exponential form D. Modulus |z| List II (Representation) 1. sqrt(x^2 + y^2) 2. x + iy 3. r e^(i theta) 4. r(cos theta + i sin theta)",
+   "options": [
+    "A-2, B-4, C-1, D-3",
+    "A-3, B-4, C-2, D-1",
+    "A-2, B-4, C-3, D-1",
+    "A-4, B-2, C-3, D-1"
+   ],
+   "answer_index": 2,
+   "explanation": "z = x + iy is the rectangular form, r(cos θ + i sin θ) the polar form, re^(iθ) the exponential form and √(x² + y²) the modulus."
+  },
+  "247": {
+   "question": "Match List I with List II: List I (Complex number) A. z = 1 B. z = i C. z = -1 D. z = -i List II (Principal argument) 1. 0 2. -pi/2 3. pi/2 4. pi",
+   "options": [
+    "A-1, B-2, C-4, D-3",
+    "A-1, B-3, C-2, D-4",
+    "A-3, B-1, C-4, D-2",
+    "A-1, B-3, C-4, D-2"
+   ],
+   "answer_index": 3,
+   "explanation": "1 lies on the positive real axis (0), i on the positive imaginary axis (π/2), -1 on the negative real axis (π) and -i on the negative imaginary axis (-π/2)."
+  },
+  "299": {
+   "question": "Match List I with List II: List I (Count) A. Subsets of an n-element set B. Arrangements of n distinct objects C. Relations from an m-set to an n-set D. Functions from an n-set to an m-set List II (Formula) 1. m^n 2. n! 3. 2^n 4. 2^(mn)",
+   "options": [
+    "A-4, B-2, C-3, D-1",
+    "A-1, B-2, C-4, D-3",
+    "A-3, B-4, C-2, D-1",
+    "A-3, B-2, C-4, D-1"
+   ],
+   "answer_index": 3,
+   "explanation": "There are 2ⁿ subsets, n! arrangements, 2^(mn) relations and mⁿ functions."
+  },
+  "300": {
+   "question": "Match List I with List II: List I (Relation) A. Reflexive B. Equivalence C. Symmetric D. Transitive List II (Property) 1. Reflexive, symmetric and transitive 2. aRb gives bRa 3. aRa for every a 4. aRb and bRc give aRc",
+   "options": [
+    "A-2, B-3, C-1, D-4",
+    "A-3, B-2, C-1, D-4",
+    "A-2, B-1, C-3, D-4",
+    "A-4, B-3, C-1, D-2"
+   ],
+   "answer_index": 0,
+   "explanation": "Reflexive: aRa for every a; symmetric: aRb gives bRa; transitive: aRb and bRc give aRc; an equivalence relation is all three."
+  },
+  "301": {
+   "question": "Match List I with List II: List I (Function) A. Injective B. Bijective C. Constant function D. Surjective List II (Definition) 1. One-to-one 2. All map to one element 3. One-to-one and Onto 4. Onto",
+   "options": [
+    "A-3, B-1, C-2, D-4",
+    "A-1, B-3, C-2, D-4",
+    "A-1, B-4, C-2, D-3",
+    "A-2, B-3, C-1, D-4"
+   ],
+   "answer_index": 1,
+   "explanation": "Injective means one-to-one, surjective onto, bijective both, and a constant function maps everything to one element."
+  },
+  "302": {
+   "question": "Set P has 2 elements and set Q has 3 elements. Match List I with List II: List I (Set) A. P × Q B. Power set of Q C. Power set of P D. Q × Q List II (Number of elements) 1. 4 2. 8 3. 6 4. 9",
+   "options": [
+    "A-4, B-2, C-1, D-3",
+    "A-3, B-2, C-4, D-1",
+    "A-3, B-2, C-1, D-4",
+    "A-1, B-2, C-3, D-4"
+   ],
+   "answer_index": 2,
+   "explanation": "n(P × Q) = 2 × 3 = 6, the power set of Q has 2³ = 8 elements, that of P has 2² = 4, and n(Q × Q) = 9."
+  },
+  "335": {
+   "question": "Match List I with List II: List I (Derivative) A. Second derivative f''(x) B. Second derivative of displacement C. First derivative f'(x) D. First derivative of displacement List II (Meaning) 1. Concavity 2. Velocity 3. Acceleration 4. Slope of tangent",
+   "options": [
+    "A-4, B-3, C-1, D-2",
+    "A-1, B-2, C-4, D-3",
+    "A-1, B-4, C-3, D-2",
+    "A-1, B-3, C-4, D-2"
+   ],
+   "answer_index": 3,
+   "explanation": "f''(x) tells concavity, d²s/dt² is acceleration, f'(x) is the slope of the tangent and ds/dt is velocity."
+  },
+  "338": {
+   "question": "Match List I with List II: List I (Rate) A. d/dr of circumference 2πr B. d/ds of square area s² C. d/dr of circle area πr² D. d/dr of sphere volume 4πr³/3 List II (Value) 1. 2s 2. 4πr^2 3. 2πr 4. 2π",
+   "options": [
+    "A-2, B-1, C-3, D-4",
+    "A-3, B-1, C-4, D-2",
+    "A-4, B-1, C-3, D-2",
+    "A-4, B-3, C-1, D-2"
+   ],
+   "answer_index": 2,
+   "explanation": "d(2πr)/dr = 2π, d(s²)/ds = 2s, d(πr²)/dr = 2πr and d((4/3)πr³)/dr = 4πr²."
+  },
+  "378": {
+   "question": "Match List I with List II: List I (Region) A. Circle of radius r B. Ellipse with semi-axes a and b C. Region between y² = 4ax and its latus rectum D. Rectangle List II (Area) 1. πr^2 2. πab 3. 8a^2/3 4. length * width",
+   "options": [
+    "A-1, B-2, C-4, D-3",
+    "A-3, B-2, C-1, D-4",
+    "A-1, B-2, C-3, D-4",
+    "A-1, B-3, C-2, D-4"
+   ],
+   "answer_index": 2,
+   "explanation": "Circle: πr²; ellipse: πab; parabola y² = 4ax cut by its latus rectum: 8a²/3; rectangle: length × width."
+  },
+  "379": {
+   "question": "Match List I with List II: List I (Function) A. f(x) = x B. f(x) = x² C. f(x) = x³ D. f(x) = 1 List II (Integral over [0, 1]) 1. 1/3 2. 1/2 3. 1 4. 1/4",
+   "options": [
+    "A-2, B-3, C-4, D-1",
+    "A-2, B-1, C-3, D-4",
+    "A-3, B-1, C-4, D-2",
+    "A-2, B-1, C-4, D-3"
+   ],
+   "answer_index": 3,
+   "explanation": "∫₀¹ x dx = 1/2, ∫₀¹ x² dx = 1/3, ∫₀¹ x³ dx = 1/4 and ∫₀¹ 1 dx = 1."
+  },
+  "381": {
+   "question": "Match List I with List II: List I (Curve) A. Circle B. Ellipse C. Parabola D. Straight line List II (Standard equation) 1. y^2 = 4ax 2. y = mx + c 3. x^2 + y^2 = r^2 4. x^2/a^2 + y^2/b^2 = 1",
+   "options": [
+    "A-3, B-2, C-1, D-4",
+    "A-3, B-4, C-1, D-2",
+    "A-1, B-4, C-3, D-2",
+    "A-3, B-1, C-4, D-2"
+   ],
+   "answer_index": 1,
+   "explanation": "Circle: x² + y² = r²; ellipse: x²/a² + y²/b² = 1; parabola: y² = 4ax; line: y = mx + c."
+  },
+  "399": {
+   "question": "Match List I with List II: List I (Expression) A. A · adj A B. A⁻¹ C. |kA| for A of order n List II (Equals) 1. k^n|A| 2. (1/|A|)adj A 3. |A|I",
+   "options": [
+    "A-2, B-3, C-1",
+    "A-3, B-1, C-2",
+    "A-1, B-2, C-3",
+    "A-3, B-2, C-1"
+   ],
+   "answer_index": 3,
+   "explanation": "A · adj A = |A| I, A⁻¹ = (1/|A|) adj A and |kA| = kⁿ|A|."
+  }
+ }
+}

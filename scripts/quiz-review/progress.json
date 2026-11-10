@@ -98,5 +98,20 @@
   "reviewed_to": null,
   "total": 140,
   "retired": 1
+ },
+ "samacheer/economics/class11": {
+  "reviewed_to": null,
+  "total": 473,
+  "retired": 36
+ },
+ "samacheer/economics/class12": {
+  "reviewed_to": null,
+  "total": 431,
+  "retired": 24
+ },
+ "samacheer/maths/class12": {
+  "reviewed_to": null,
+  "total": 410,
+  "retired": 9
  }
 }

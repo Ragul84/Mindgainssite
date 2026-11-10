@@ -1,0 +1,160 @@
+{
+ "14": "retire",
+ "53": "retire",
+ "54": "retire",
+ "55": "retire",
+ "56": "retire",
+ "86": "retire",
+ "87": "retire",
+ "88": "retire",
+ "89": "retire",
+ "117": "retire",
+ "118": "retire",
+ "174": "retire",
+ "175": "retire",
+ "176": "retire",
+ "177": "retire",
+ "178": "retire",
+ "206": "retire",
+ "207": "retire",
+ "208": "retire",
+ "209": "retire",
+ "210": "retire",
+ "211": "retire",
+ "255": "retire",
+ "265": "retire",
+ "297": "retire",
+ "298": "retire",
+ "299": "retire",
+ "300": "retire",
+ "301": "retire",
+ "302": "retire",
+ "358": "retire",
+ "359": "retire",
+ "412": "retire",
+ "463": "retire",
+ "464": "retire",
+ "465": "retire",
+ "23": {
+  "lh": "Approach",
+  "rh": "Description",
+  "L": [
+   "Static economics",
+   "Dynamic economics",
+   "Traditional approach",
+   "Modern approach"
+  ],
+  "why": "Static economics looks at conditions at one point in time, dynamic economics at change over time; the traditional approach rests on classical theory and the modern approach adds recent developments.",
+  "R": [
+   "Deals with conditions at a point in time",
+   "Studies changes over time",
+   "Based on classical theories",
+   "Incorporates recent developments"
+  ]
+ },
+ "84": {
+  "lh": "Term",
+  "rh": "Characteristic",
+  "L": [
+   "Production",
+   "Land",
+   "Scale of production"
+  ],
+  "why": "Production is the creation of value, land is a passive factor and the scale of production influences cost.",
+  "R": [
+   "Creation of value",
+   "Passive factor",
+   "Influences cost"
+  ]
+ },
+ "85": {
+  "lh": "Term",
+  "rh": "Characteristic",
+  "L": [
+   "Production",
+   "Economies of scale",
+   "Land"
+  ],
+  "why": "Production transforms inputs into output, economies of scale are the benefits of producing on a large scale and land is a free gift of nature.",
+  "R": [
+   "Transforms inputs to output",
+   "Benefit of large scale",
+   "Free gift of nature"
+  ]
+ },
+ "173": {
+  "lh": "Factor of production",
+  "rh": "Income",
+  "L": [
+   "Labour",
+   "Organisation (entrepreneur)",
+   "Land",
+   "Capital"
+  ],
+  "why": "Labour earns wages, the entrepreneur profit, land rent and capital interest.",
+  "R": [
+   "Wage",
+   "Profit",
+   "Rent",
+   "Interest"
+  ]
+ },
+ "370": {
+  "lh": "Trade",
+  "rh": "Meaning",
+  "L": [
+   "Export trade",
+   "Import trade"
+  ],
+  "why": "Export trade is selling surplus goods to other countries; import trade is buying goods from them.",
+  "R": [
+   "Selling surplus goods to other countries",
+   "Buying goods from other countries"
+  ]
+ },
+ "431": {
+  "lh": "Characteristic of wants",
+  "rh": "Meaning",
+  "L": [
+   "Wants are unlimited",
+   "Wants become habits",
+   "Each want is satiable",
+   "Wants are alternative",
+   "Wants are competitive"
+  ],
+  "why": "Wants are countless, can turn into habits, can each be satisfied at a time, can be met in different ways and compete for limited resources.",
+  "R": [
+   "Number of wants is countless and various",
+   "Wants turn into regular behaviors",
+   "Wants can be satisfied at a point in time",
+   "Different ways to satisfy the same want",
+   "Wants compete for limited resources"
+  ]
+ },
+ "436": {
+  "lh": "Term",
+  "rh": "Characteristic",
+  "L": [
+   "Production",
+   "Land"
+  ],
+  "why": "Production is the creation or addition of value; land is a primary factor of production.",
+  "R": [
+   "Creation or addition of value",
+   "Primary factor of production"
+  ]
+ },
+ "470": {
+  "lh": "Characteristic of wants",
+  "rh": "Example",
+  "L": [
+   "Wants have alternatives",
+   "Wants become habits"
+  ],
+  "why": "Choosing idly, dosa or chappathi shows wants have alternatives; drinking tea every morning shows wants become habits.",
+  "R": [
+   "Idly, dosa or chappathi",
+   "Drinking tea in the morning"
+  ]
+ }
+}

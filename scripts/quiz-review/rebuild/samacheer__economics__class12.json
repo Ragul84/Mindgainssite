@@ -1,0 +1,109 @@
+{
+ "15": "retire",
+ "30": "retire",
+ "78": "retire",
+ "80": "retire",
+ "120": "retire",
+ "181": "retire",
+ "182": "retire",
+ "183": "retire",
+ "184": "retire",
+ "185": "retire",
+ "264": "retire",
+ "265": "retire",
+ "266": "retire",
+ "267": "retire",
+ "296": "retire",
+ "297": "retire",
+ "298": "retire",
+ "299": "retire",
+ "300": "retire",
+ "301": "retire",
+ "369": "retire",
+ "370": "retire",
+ "429": "retire",
+ "430": "retire",
+ "16": {
+  "lh": "Term",
+  "rh": "Definition",
+  "L": [
+   "Monetary policy",
+   "Commercial banks",
+   "Fiscal policy",
+   "Central bank"
+  ],
+  "why": "Monetary policy regulates credit, commercial banks accept deposits, fiscal policy covers taxation and spending and the central bank manages the currency.",
+  "R": [
+   "Regulation of the amount of credit in the economy",
+   "Financial institutions that accept deposits",
+   "Government policy regarding taxation and spending",
+   "The bank that manages a country's currency"
+  ]
+ },
+ "35": {
+  "lh": "Term",
+  "rh": "Meaning",
+  "L": [
+   "Economic indicators",
+   "Microeconomics",
+   "Aggregate",
+   "Macroeconomics"
+  ],
+  "why": "Economic indicators are statistics about the economy, microeconomics studies individual markets, an aggregate is a total and macroeconomics studies the economy as a whole.",
+  "R": [
+   "Statistics that provide information about the economy",
+   "Study of individual markets",
+   "Total or whole",
+   "Study of the economy as a whole"
+  ]
+ },
+ "152": {
+  "lh": "Item",
+  "rh": "Description",
+  "L": [
+   "J.M. Keynes",
+   "Ragnar Frisch",
+   "1936",
+   "Makros"
+  ],
+  "why": "Keynes is the father of modern macroeconomics, Ragnar Frisch coined 'micro' and 'macro', the General Theory was published in 1936 and 'makros' is Greek for large.",
+  "R": [
+   "Father of Modern Macro Economics",
+   "Coined 'micro' and 'macro'",
+   "Publication of General Theory",
+   "Greek word for 'large'"
+  ]
+ },
+ "263": {
+  "lh": "Example",
+  "rh": "GDP component",
+  "L": [
+   "Machinery bought by firms",
+   "Food bought by households",
+   "Goods sold abroad",
+   "Roads built by the government"
+  ],
+  "why": "GDP = C + I + G + (X - M): household purchases are consumption, machinery is investment, government projects are government purchases and goods sold abroad are exports.",
+  "R": [
+   "Investment goods",
+   "Consumption goods",
+   "Exports",
+   "Government purchases"
+  ]
+ },
+ "368": {
+  "lh": "Bank",
+  "rh": "Description",
+  "L": [
+   "Bank of England",
+   "Bank of Venice",
+   "Sveriges Riksbank"
+  ],
+  "why": "The Bank of England (1694) shaped modern banking, the Bank of Venice (1157) is counted as the first lending bank and Sweden's Riksbank is the oldest central bank.",
+  "R": [
+   "Founded in 1694, developed banking fundamentals",
+   "World's first finance-lending bank",
+   "Oldest central bank in the world"
+  ]
+ }
+}

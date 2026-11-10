@@ -1,0 +1,282 @@
+{
+ "216": "retire",
+ "244": "retire",
+ "306": "retire",
+ "310": "retire",
+ "336": "retire",
+ "337": "retire",
+ "380": "retire",
+ "398": "retire",
+ "400": "retire",
+ "183": {
+  "lh": "Formula",
+  "rh": "Gives",
+  "L": [
+   "d/dx(eˣ) = eˣ",
+   "d/dx(sin x) = cos x",
+   "d/dx(x²) = 2x",
+   "d/dx(ln x) = 1/x"
+  ],
+  "why": "Each formula is the derivative, i.e. the rate of change, of that function.",
+  "R": [
+   "Rate of change of exponential function",
+   "Rate of change of sine function",
+   "Rate of change of quadratic function",
+   "Rate of change of natural logarithm"
+  ]
+ },
+ "189": {
+  "lh": "Quantity",
+  "rh": "Is the derivative of",
+  "L": [
+   "Acceleration",
+   "Velocity",
+   "Rate of heating or cooling",
+   "Slope of the tangent at a point"
+  ],
+  "R": [
+   "Velocity",
+   "Displacement",
+   "Temperature with respect to time",
+   "The function at that point"
+  ],
+  "why": "Acceleration is the derivative of velocity, velocity of displacement, the heating rate of temperature and the tangent slope of the function itself."
+ },
+ "206": {
+  "lh": "Matrix",
+  "rh": "Property",
+  "L": [
+   "Singular matrix",
+   "Non-singular matrix",
+   "Diagonal matrix",
+   "Skew-symmetric matrix"
+  ],
+  "why": "A singular matrix has determinant zero, a non-singular one a non-zero determinant, a diagonal matrix has non-zero entries only on the diagonal and a skew-symmetric matrix satisfies Aᵀ = -A.",
+  "R": [
+   "Determinant is zero",
+   "Determinant is non-zero",
+   "Non-zero entries only on the diagonal",
+   "A matrix where A^T = -A"
+  ]
+ },
+ "245": {
+  "lh": "Power",
+  "rh": "Value",
+  "L": [
+   "i to the power 1",
+   "i to the power 2",
+   "i to the power 3",
+   "i to the power 4"
+  ],
+  "R": [
+   "i",
+   "-1",
+   "-i",
+   "1"
+  ],
+  "why": "i¹ = i, i² = -1, i³ = -i and i⁴ = 1."
+ },
+ "246": {
+  "lh": "Form",
+  "rh": "Representation",
+  "L": [
+   "Rectangular form",
+   "Polar form",
+   "Exponential form",
+   "Modulus |z|"
+  ],
+  "why": "z = x + iy is the rectangular form, r(cos θ + i sin θ) the polar form, re^(iθ) the exponential form and √(x² + y²) the modulus.",
+  "R": [
+   "x + iy",
+   "r(cos theta + i sin theta)",
+   "r e^(i theta)",
+   "sqrt(x^2 + y^2)"
+  ]
+ },
+ "247": {
+  "lh": "Complex number",
+  "rh": "Principal argument",
+  "L": [
+   "z = 1",
+   "z = i",
+   "z = -1",
+   "z = -i"
+  ],
+  "why": "1 lies on the positive real axis (0), i on the positive imaginary axis (π/2), -1 on the negative real axis (π) and -i on the negative imaginary axis (-π/2).",
+  "R": [
+   "0",
+   "pi/2",
+   "pi",
+   "-pi/2"
+  ]
+ },
+ "299": {
+  "lh": "Count",
+  "rh": "Formula",
+  "L": [
+   "Subsets of an n-element set",
+   "Arrangements of n distinct objects",
+   "Relations from an m-set to an n-set",
+   "Functions from an n-set to an m-set"
+  ],
+  "why": "There are 2ⁿ subsets, n! arrangements, 2^(mn) relations and mⁿ functions.",
+  "R": [
+   "2^n",
+   "n!",
+   "2^(mn)",
+   "m^n"
+  ]
+ },
+ "300": {
+  "lh": "Relation",
+  "rh": "Property",
+  "L": [
+   "Reflexive",
+   "Equivalence",
+   "Symmetric",
+   "Transitive"
+  ],
+  "why": "Reflexive: aRa for every a; symmetric: aRb gives bRa; transitive: aRb and bRc give aRc; an equivalence relation is all three.",
+  "R": [
+   "aRb gives bRa",
+   "aRa for every a",
+   "Reflexive, symmetric and transitive",
+   "aRb and bRc give aRc"
+  ]
+ },
+ "301": {
+  "lh": "Function",
+  "rh": "Definition",
+  "L": [
+   "Injective",
+   "Bijective",
+   "Constant function",
+   "Surjective"
+  ],
+  "why": "Injective means one-to-one, surjective onto, bijective both, and a constant function maps everything to one element.",
+  "R": [
+   "One-to-one",
+   "One-to-one and Onto",
+   "All map to one element",
+   "Onto"
+  ]
+ },
+ "302": {
+  "stem": "Set P has 2 elements and set Q has 3 elements. Match List I with List II:",
+  "lh": "Set",
+  "rh": "Number of elements",
+  "L": [
+   "P × Q",
+   "Power set of Q",
+   "Power set of P",
+   "Q × Q"
+  ],
+  "R": [
+   "6",
+   "8",
+   "4",
+   "9"
+  ],
+  "why": "n(P × Q) = 2 × 3 = 6, the power set of Q has 2³ = 8 elements, that of P has 2² = 4, and n(Q × Q) = 9."
+ },
+ "335": {
+  "lh": "Derivative",
+  "rh": "Meaning",
+  "L": [
+   "Second derivative f''(x)",
+   "Second derivative of displacement",
+   "First derivative f'(x)",
+   "First derivative of displacement"
+  ],
+  "why": "f''(x) tells concavity, d²s/dt² is acceleration, f'(x) is the slope of the tangent and ds/dt is velocity.",
+  "R": [
+   "Concavity",
+   "Acceleration",
+   "Slope of tangent",
+   "Velocity"
+  ]
+ },
+ "338": {
+  "lh": "Rate",
+  "rh": "Value",
+  "L": [
+   "d/dr of circumference 2πr",
+   "d/ds of square area s²",
+   "d/dr of circle area πr²",
+   "d/dr of sphere volume 4πr³/3"
+  ],
+  "why": "d(2πr)/dr = 2π, d(s²)/ds = 2s, d(πr²)/dr = 2πr and d((4/3)πr³)/dr = 4πr².",
+  "R": [
+   "2π",
+   "2s",
+   "2πr",
+   "4πr^2"
+  ]
+ },
+ "378": {
+  "lh": "Region",
+  "rh": "Area",
+  "L": [
+   "Circle of radius r",
+   "Ellipse with semi-axes a and b",
+   "Region between y² = 4ax and its latus rectum",
+   "Rectangle"
+  ],
+  "why": "Circle: πr²; ellipse: πab; parabola y² = 4ax cut by its latus rectum: 8a²/3; rectangle: length × width.",
+  "R": [
+   "πr^2",
+   "πab",
+   "8a^2/3",
+   "length * width"
+  ]
+ },
+ "379": {
+  "lh": "Function",
+  "rh": "Integral over [0, 1]",
+  "L": [
+   "f(x) = x",
+   "f(x) = x²",
+   "f(x) = x³",
+   "f(x) = 1"
+  ],
+  "why": "∫₀¹ x dx = 1/2, ∫₀¹ x² dx = 1/3, ∫₀¹ x³ dx = 1/4 and ∫₀¹ 1 dx = 1.",
+  "R": [
+   "1/2",
+   "1/3",
+   "1/4",
+   "1"
+  ]
+ },
+ "381": {
+  "lh": "Curve",
+  "rh": "Standard equation",
+  "L": [
+   "Circle",
+   "Ellipse",
+   "Parabola",
+   "Straight line"
+  ],
+  "why": "Circle: x² + y² = r²; ellipse: x²/a² + y²/b² = 1; parabola: y² = 4ax; line: y = mx + c.",
+  "R": [
+   "x^2 + y^2 = r^2",
+   "x^2/a^2 + y^2/b^2 = 1",
+   "y^2 = 4ax",
+   "y = mx + c"
+  ]
+ },
+ "399": {
+  "lh": "Expression",
+  "rh": "Equals",
+  "L": [
+   "A · adj A",
+   "A⁻¹",
+   "|kA| for A of order n"
+  ],
+  "why": "A · adj A = |A| I, A⁻¹ = (1/|A|) adj A and |kA| = kⁿ|A|.",
+  "R": [
+   "|A|I",
+   "(1/|A|)adj A",
+   "k^n|A|"
+  ]
+ }
+}

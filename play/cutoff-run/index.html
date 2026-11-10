@@ -1543,7 +1543,7 @@ function mtSegments(t){
   const re=/(?:^|[\s\/(;,:|])(?:(?:site|feature|item|column|list)\s+)?(?:\(([A-Fa-f]|[1-6]|i{1,3}|iv)\)|([A-Fa-f]|[1-6])(?:[.)]|\s*[\-–—:\uFFFD](?=\s)))\s*(?=\S)/g;
   const ms=[...t.matchAll(re)];const segs=[];
   for(let i=0;i<ms.length;i++){const m=ms[i],k=m[1]||m[2],a=m.index+m[0].length,b=i+1<ms.length?ms[i+1].index:t.length;
-    const v=t.slice(a,b).replace(/^[\s\-–—:\uFFFD]+|[\s\-–—:;,.\uFFFD]+$/g,'').replace(/\s*(?:list|column)\s*(?:ii|2|i|1)\b.*$/i,'').replace(/[\s|]+(?:site|feature|item)?[\s|]*$/i,'').replace(/[\s|\-–—:;,]+$/,'').trim();
+    const v=t.slice(a,b).replace(/^\s*(?:[\-–—:\uFFFD]\s+)?/,'').replace(/[\s–—:;,.\uFFFD]+$/,'').replace(/\s*(?:list|column)\s*(?:ii|2|i|1)\b.*$/i,'').replace(/\s+(?:\||site|feature|item)\s*$/i,'').replace(/\s+[\-–—:;,]+$/,'').replace(/[;,]+$/,'').trim();
     segs.push({k,kind:/^\d$/.test(k)||/^i/i.test(k)&&k.length>1?'n':/^[ivx]+$/i.test(k)&&m[1]?'n':'l',v,at:m.index})}
   return segs}
 function mtRun(segs,kind){const out=[];let want=0;const seqL='abcdef',seqN='123456';
