@@ -568,6 +568,22 @@ body{background:#0f1c33}
 #q.shootq #qt{min-height:0!important}
 #q.shootq{padding-bottom:10px!important}
 #q.shootq #qt{font-size:15px!important;line-height:1.3!important}
+/* Library stop: match the following */
+.mstop{position:absolute;inset:0;z-index:40;background:rgba(10,16,40,.58);display:flex;align-items:center;justify-content:center;padding:14px}
+.mpanel{width:100%;max-width:420px;background:#fff;border-radius:22px;padding:14px;box-shadow:0 8px 0 rgba(10,16,40,.3);animation:r2up .22s ease-out}
+.mhd{display:flex;justify-content:space-between;align-items:center;font:900 11px Nunito,sans-serif;letter-spacing:.08em;color:#5a6b8c;text-transform:uppercase}
+.mtag{background:#14213d;color:#ffd23f;border-radius:99px;padding:3px 9px;font-family:var(--display);font-weight:400;letter-spacing:.03em}
+.mh{font-family:var(--display);font-size:22px;color:#14213d;margin:8px 0 10px;line-height:1.1}
+.mcols{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:10px 34px}
+.mlines{position:absolute;left:0;top:0;pointer-events:none;overflow:visible;z-index:0}
+.mt{position:relative;z-index:1;min-height:54px;border-radius:14px;border:2px solid #e3e9f5;background:#f3f6fc;display:flex;align-items:center;justify-content:center;text-align:center;font:900 13.5px/1.2 Nunito,sans-serif;color:#14213d;padding:6px 8px;box-shadow:0 3px 0 #e3e9f5;cursor:pointer}
+.mt.l{font-family:var(--display);font-weight:400;font-size:16px}
+.mt[style*="--c"]{border-color:var(--c);box-shadow:0 3px 0 var(--c);background:#fff}
+.mt.sel{border-color:#ffb400;background:#fff7d6;box-shadow:0 0 0 4px rgba(255,180,0,.35)}
+.mt.ok{border-color:#22c55e;background:#eefbe2}.mt.bad{border-color:#ef4444;background:#fff1f2}
+.mft{display:flex;justify-content:space-between;align-items:center;margin-top:14px;font:800 12.5px Nunito,sans-serif;color:#5a6b8c;gap:10px}
+.mcheck{font-family:var(--display);font-size:18px;color:#fff;background:#58cc02;border:0;border-radius:14px;padding:11px 22px;box-shadow:0 4px 0 #46a302;cursor:pointer}
+.mcheck:disabled{opacity:.4;cursor:default}
 </style>
 
 <div id="wrap">
@@ -583,6 +599,7 @@ body{background:#0f1c33}
   <div class="q" id="q" hidden><div class="qh"><span id="qno">Q.1</span><span id="qsub">Polity</span><i class="tm"><b id="qbar"></b></i></div><span id="qt"></span><div class="opts" id="opts"></div><div class="qbtns"><button class="lock" id="lock">LOCK ⚡ DASH</button><button class="lock skip" id="skip">SKIP</button></div><div class="why" id="qwhy" hidden></div><div class="stamp" id="stamp"></div></div>
   <div class="flash" id="flash"></div>
   <div class="banner" id="banner"></div>
+  <div class="mstop" id="match" hidden></div>
   <div class="sheet" id="sheet" hidden></div>
 
   <div class="toast" id="toast"></div>
@@ -1218,6 +1235,7 @@ function update(dt){
   let gx=S.tx;if(S.phase==='run'){const g=S.items.find(r=>!r.done&&(r.type==='quiz'||r.type==='math'||r.type==='branch'));if(g&&g.z-S.dist<9&&g.z-S.dist>-1){const n=g.ans?g.ans.length:g.ops?g.ops.length:2,lw=4/n;gx=-2+lw*(laneOf(n,S.tx)+.5)}}
   S.x+=(gx-S.x)*Math.min(1,dt*10);
   // ---- smart pacing: cruise → read (time budget from text length, tuned to the player) → dash ----
+  if(S.phase==='run'){const g=nextGate();if(g&&g.type==='quiz'&&!g.done&&!g.mTried&&g.z-S.dist<PACE_D+1&&matchSpec(g)){g.mTried=true;if(startMatch(g))return}}
   let target=S.speed*(S.coffeeT>0?1.5:1),rate=3,tight=1;const ng=nextGate();
   if(S.phase==='run'&&ng){const dz=ng.z-S.dist;
     if(ng.type==='branch'&&!ng.warned&&dz<PACE_D+26){ng.warned=true;banner('ROAD SPLIT AHEAD',ng.subs.join(' or '),2.2)}
@@ -1512,6 +1530,60 @@ function qfMatch(t){const s=t.replace(/\s+/g,' ');
   const L=qfItems(s.slice(m1.index+m1[0].length,m2.index).trim()),R=qfItems(s.slice(m2.index+m2[0].length).trim());
   if(!L||!R||L.items.length<2||R.items.length<2)return null;
   return{stem:stem||'Match List I with List II',h1,h2,L:L.items,R:R.items,tail:R.tail||L.tail||''}}
+// ---------- Match the following: parsed into pairs and played as a Library stop ----------
+/* Reads a match question in either style:
+   "List I ... List II ..." (UPSC) or "a. Osmium b. Lithium ... | 1. Best conductor 2. ..." (state exams),
+   and the answer key from the correct option, e.g. "(a)-2 (b)-1 (c)-4 (d)-3" or "2 1 4 3".
+   Returns {stem, L:[{k,v}], R:[{k,v}], key:[rightIndex per left item]} or null. */
+const MK=k=>{k=String(k).toLowerCase().replace(/[^a-z0-9]/g,'');const rom={i:1,ii:2,iii:3,iv:4,v:5,vi:6};if(/^\d+$/.test(k))return'n'+(+k);if(rom[k]&&k.length>1)return'n'+rom[k];if(/^[a-f]$/.test(k))return'l'+k;if(rom[k])return'n'+rom[k];return k};
+function matchSpec(q){if(!q||!/match/i.test(String(q.q||'')))return null;if(q._mt!==undefined)return q._mt;
+  let t=String(q.q||'').replace(/\s+/g,' ').trim(),L=null,R=null,stem='Match the following';
+  const lm=qfMatch(t);
+  if(lm){L=lm.L;R=lm.R;stem=lm.stem}
+  else{let a,b;const bar=t.indexOf('|');
+    if(bar>0){a=t.slice(0,bar);b=t.slice(bar+1)}
+    else{const f=t.search(/(?:^|\s)[\(]?[aA][\.\)]\s/);const r=f<0?-1:t.slice(f+2).search(/(?:^|\s)[\(]?(?:1|i)[\.\)]\s/);if(r<0)return q._mt=null;a=t.slice(0,f+2+r);b=t.slice(f+2+r)}
+    const A=qfItems(a.trim().replace(/(^|[\s:])([a-f])([.)])\s/g,(m,p,l,d)=>p+l.toUpperCase()+d+" ")),B=qfItems(b.trim());if(!A||!B)return q._mt=null;L=A.items;R=B.items;if(A.stem)stem=A.stem.replace(/[:\s]+$/,'')}
+  if(!L||!R||L.length<2||L.length>5||R.length<L.length||R.length>6)return q._mt=null;
+  const ans=String((q.ans||[])[q.correct]||'');let key=null;
+  const pairs=[...ans.matchAll(/\(?([a-fA-F]|i{1,3}|iv|v|vi)\)?\s*[-–—:→=]\s*\(?(\d|i{1,3}|iv|v|vi|[a-f])\)?/g)];
+  const Lk=L.map(x=>MK(x.k)),Rk=R.map(x=>MK(x.k));
+  if(pairs.length>=L.length){key=L.map(()=>-1);for(const p of pairs){const li=Lk.indexOf(MK(p[1])),ri=Rk.indexOf(MK(p[2]));if(li>=0&&ri>=0)key[li]=ri}}
+  else{const seq=ans.match(/\b(\d|i{1,3}|iv)\b/g);if(seq&&seq.length===L.length)key=seq.map(s=>Rk.indexOf(MK(s)))}
+  if(!key||key.some(k=>k<0)||new Set(key).size!==key.length)return q._mt=null;
+  return q._mt={stem,L,R,key}}
+
+let MS=null; // the open Library stop
+function startMatch(it){const mt=matchSpec(it);if(!mt)return false;
+  S.phase='match';S.steerLock=true;$('q').hidden=true;
+  MS={it,mt,pick:-1,pairs:mt.L.map(()=>-1),checked:false};
+  const el=$('match');el.hidden=false;renderMatch();sfx.power();return true}
+const MCOL=['#1cb0f6','#58cc02','#ffb400','#ff5a6e','#8a5cff'];
+function renderMatch(){const {mt,pairs,pick,checked}=MS,el=$('match');
+  const usedR=new Map();pairs.forEach((r,l)=>{if(r>=0)usedR.set(r,l)});
+  const tL=mt.L.map((x,i)=>{const c=pairs[i]>=0?MCOL[i%5]:'';const st=checked?(pairs[i]===mt.key[i]?' ok':' bad'):'';return`<button class="mt l${i===pick?' sel':''}${st}" data-l="${i}" style="${c?`--c:${c}`:''}">${esc(x.v)}</button>`});
+  const tR=mt.R.map((x,j)=>{const l=usedR.get(j);const c=l!=null?MCOL[l%5]:'';return`<button class="mt r" data-r="${j}" style="${c?`--c:${c}`:''}">${esc(x.v)}</button>`});
+  let rows='';for(let i=0;i<Math.max(tL.length,tR.length);i++)rows+=(tL[i]||'<span></span>')+(tR[i]||'<span></span>');
+  const all=pairs.every(r=>r>=0),good=checked?pairs.filter((r,i)=>r===mt.key[i]).length:0;
+  el.innerHTML=`<div class="mpanel"><div class="mhd"><span class="mtag">LIBRARY STOP · MATCH</span><span>${MS.it.pyq?'3× marks':''}</span></div>
+    <div class="mh">${esc(mt.stem.length>60?'Match the pairs':mt.stem)}</div>
+    <div class="mcols"><svg class="mlines"></svg>${rows}</div>
+    <div class="mft"><span>${checked?(good===pairs.length?'All pairs right!':`${good} of ${pairs.length} right`):pick>=0?'Now tap its partner':'Tap an item, then its partner'}</span>
+    <button class="mcheck" ${all&&!checked?'':'disabled'}>${checked?'…':'Check'}</button></div></div>`;
+  requestAnimationFrame(drawMatchLines)}
+function drawMatchLines(){if(!MS)return;const box=document.querySelector('#match .mcols'),svg=document.querySelector('#match .mlines');if(!box||!svg)return;const B=box.getBoundingClientRect();let d='';
+  MS.pairs.forEach((r,l)=>{if(r<0)return;const a=box.querySelector(`[data-l="${l}"]`).getBoundingClientRect(),b=box.querySelector(`[data-r="${r}"]`).getBoundingClientRect();
+    const x1=a.right-B.left,y1=a.top+a.height/2-B.top,x2=b.left-B.left,y2=b.top+b.height/2-B.top,mx=(x1+x2)/2;
+    const col=MS.checked?(r===MS.mt.key[l]?'#22c55e':'#ef4444'):MCOL[l%5];d+=`<path d="M${x1} ${y1} C${mx} ${y1} ${mx} ${y2} ${x2} ${y2}" stroke="${col}" stroke-width="4" fill="none" stroke-linecap="round"/>`});
+  svg.setAttribute('width',B.width);svg.setAttribute('height',B.height);svg.innerHTML=d}
+function matchTap(e){if(!MS||MS.checked)return;const b=e.target.closest('button');if(!b)return;initAudio();
+  if(b.classList.contains('mcheck')){checkMatch();return}
+  if(b.dataset.l!=null){const l=+b.dataset.l;if(MS.pairs[l]>=0&&MS.pick!==l){MS.pairs[l]=-1}MS.pick=MS.pick===l?-1:l;sfx.tick();renderMatch();return}
+  if(b.dataset.r!=null&&MS.pick>=0){const r=+b.dataset.r;MS.pairs=MS.pairs.map(x=>x===r?-1:x);MS.pairs[MS.pick]=r;
+    const nx=MS.pairs.findIndex(x=>x<0);MS.pick=nx;sfx.pop();renderMatch()}}
+function checkMatch(){MS.checked=true;const ok=MS.pairs.every((r,i)=>r===MS.mt.key[i]);renderMatch();ok?sfx.good():sfx.bad();
+  setTimeout(()=>{const it=MS.it,n=it.ans.length,lw=4/n,side=ok?it.correct:(it.correct+1)%n;$('match').hidden=true;MS=null;
+    S.phase='run';S.x=S.tx=-2+lw*(side+.5);passGate(it)},1500)}
 const QF_SEQ=/\b(arrange|chronolog|sequence|correct order|in order|ascending|descending)\b/i;
 function qKind(q){const t=String(q.q||'');if(/(?:list|column)[\s-]*(?:ii|2)\b/i.test(t)&&qfMatch(t))return'match';
   if(QF_SEQ.test(t)&&qfItems(t.replace(/\n/g,' ')))return'seq';
@@ -1522,6 +1594,8 @@ function qHTML(q,head){const t=String(q.q||'').replace(QF_DROP,'').replace(/\s*\
   const mt=qfMatch(t.replace(/\n/g,' '));
   if(mt){const n=Math.max(mt.L.length,mt.R.length);let rows='';for(let i=0;i<n;i++){const a=mt.L[i],b=mt.R[i];rows+=`<tr><td>${a?`<b>${esc(a.k.toUpperCase())}.</b> ${esc(a.v)}`:''}</td><td>${b?`<b>${esc(b.k)}.</b> ${esc(b.v)}`:''}</td></tr>`}
     return`${H}<span class="qx-stem">${esc(mt.stem)}</span><table class="qx-match"><thead><tr><th>List I${mt.h1?`<em>${esc(mt.h1)}</em>`:''}</th><th>List II${mt.h2?`<em>${esc(mt.h2)}</em>`:''}</th></tr></thead><tbody>${rows}</tbody></table>${mt.tail&&!/^(select|choose|pick|mark|code)/i.test(mt.tail)?`<span class="qx-tail">${esc(mt.tail)}</span>`:''}`}
+  {const ms=!mt&&matchSpec(q);if(ms){const n=Math.max(ms.L.length,ms.R.length);let rows='';for(let i=0;i<n;i++){const a=ms.L[i],b=ms.R[i];rows+=`<tr><td>${a?`<b>${esc(a.k)}.</b> ${esc(a.v)}`:''}</td><td>${b?`<b>${esc(b.k)}.</b> ${esc(b.v)}`:''}</td></tr>`}
+    return`${H}<span class="qx-stem">${esc(ms.stem)}</span><table class="qx-match"><tbody>${rows}</tbody></table>`}}
   const it=qfItems(t.replace(/\n/g,' '));
   if(it){const seq=QF_SEQ.test(t);const lab=x=>it.ar?(x.k==='A'?'Assertion (A)':'Reason (R)'):it.st?'Statement '+x.k:x.k;
     const li=it.items.map(x=>`<li${it.ar?' class="ar"':''}><b>${esc(lab(x))}${it.ar||/^Statement/.test(lab(x))?'':'.'}</b><span>${esc(x.v)}</span></li>`).join('');
@@ -2378,6 +2452,7 @@ function start(mode,opts={}){
   if((mode==='quick'||mode==='csat')&&!PL.pro){const left=quickRemaining();if(left<=0){hideAll();$('pcard').innerHTML=`<div class="stage"><div class="bubble r">You used today's free Quick Revisions. Review and weak-topic practice are always free!</div>${miga('think')}</div><button class="btn" id="qlRev">Start Review</button><button class="btn blue sm" id="qlWeak">Practise weakest subject</button><p class="note ctr">MindGains Pro gives unlimited Quick Revision runs.</p><button class="x" id="qlBack" style="align-self:center">Back</button>`;$('pop').hidden=false;$('qlRev').onclick=()=>start('review');$('qlWeak').onclick=()=>start('weak');$('qlBack').onclick=()=>{$('pop').hidden=true;openMenu()};return}
     if(PL.quickDay!==todayKey()){PL.quickDay=todayKey();PL.quickN=0}PL.quickN++;saveP()}
   initAudio();hideAll();hideToast();closeSheet();qRow=null;qNo=0;$('q').hidden=true;newRun(mode,opts)}
+$('match').addEventListener('click',matchTap);
 $('opts').addEventListener('click',e=>{const A=S&&S.arena;if(A&&S.phase==='shoot'&&!A.done&&A.armed==null){const o=e.target.closest('.opt');if(o){A.armed=+o.dataset.i;initAudio();sfx.tick()}return}})
 $('opts').addEventListener('click',e=>{const o=e.target.closest('.opt');if(!o||!S||S.phase!=='run'||!qRow||qRow.done||S.steerLock)return;const n=$('opts').children.length,i=+o.dataset.i;S.tx=-2+4/n*(i+.5);initAudio();sfx.tick();
   // A tap on an answer commits to it (roads only steer): one decision, not choose-then-lock.
