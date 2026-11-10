@@ -275,7 +275,7 @@ for(let i=0;i<5;i++)PROPS['bld'+i]=[6.2,170,330,g=>bld(g,i)];
 const SETS={village:['hut','palm','banyan','hay','marigold','palm'],coaching:['bld0','chaiStall','bld1','xerox','bld2','lamp','bld3','bld4'],library:['shelf','readDesk','shelf','globe','shelf','lamp'],exam:['examDesk','examDesk','cooler','plant','examDesk','lamp'],
  mains:['paper','pen','paper','ink','paper','paper'],interview:['hedge','sandLamp','chhatri','fountain','hedge','sandLamp'],academy:['pine','cottage','pine','bench','flag','pine'],chennai:['palm','auto','boat','lamp','palm','auto']};
 const PADX=k=>Math.round(PROPS[k][1]*.4),PADT=k=>Math.round(PROPS[k][2]*.22);
-function propSprite(k){const d=PROPS[k],px=PADX(k),pt=PADT(k);return sprite('p2_'+k,d[1]+2*px,d[2]+pt,g=>{g.translate(px,pt);d[3](g)})}
+function propSprite(k){const d=PROPS[k],px=PADX(k),pt=PADT(k);return sprite('p2_'+k,d[1]+2*px,d[2]+pt,g=>{g.translate(px,pt);g.filter='saturate(.6) brightness(.97)';d[3](g);g.filter='none'})}
 const propH=k=>PROPS[k][0]*(PROPS[k][2]+PADT(k))/PROPS[k][2];
 ST.propSprite=propSprite;ST.PROPS=PROPS;
 function h32(n){n=(n^61)^(n>>>16);n=n+(n<<3)|0;n^=n>>>4;n=Math.imul(n,0x27d4eb2d);return(n^(n>>>15))>>>0}
