@@ -1234,7 +1234,7 @@ function update(dt){
 
   for(const it of S.items){
     if(!it.done&&S.dist>=it.z&&(it.type==='quiz'||it.type==='math'||it.type==='branch'))passGate(it);
-    if(it.type==='recruit'&&!it.done&&Math.abs(S.dist-it.z)<.8&&Math.abs(S.x-it.x)<clusterR()+.55){it.done=true;addMembers(it.n,it.x-S.x,it.z-S.dist);ftext('+'+it.n+' joined','#ffffff',it.z,it.x);sfx.boing()}
+    if(it.type==='recruit'&&!it.done&&Math.abs(S.dist-it.z)<.8&&Math.abs(S.x-it.x)<clusterR()+.55){it.done=true;addMembers(it.n,it.x-S.x,it.z-S.dist);sfx.boing()}
     if(it.type==='note'&&!it.done){
       if(S.magnetT>0&&it.z-S.dist<7&&it.z>S.dist-1){it.x+=(S.x-it.x)*Math.min(1,dt*6)}
       if(Math.abs(S.dist-it.z)<.6&&Math.abs(S.x-it.x)<clusterR()+.25){it.done=true;it.fly=0;const v=bonus.note()*(S.topperT>0||it.gold?3:1);S.notes+=v;S.gained+=v;sfx.coin()}}
@@ -1830,7 +1830,7 @@ function drawItem(it){
     if(it.type==='branch'&&!it.done){const p=P(0,top+.6,z);if(p)txt('CHOOSE YOUR ROAD',p[0],p[1],Math.max(13,p[2]*.25),'#fff')}
     break}
   case'recruit':if(!it.done){const n=Math.min(it.n,8);for(let k=n-1;k>=0;k--){const t=phylN(k,n);const p=P(it.x+t[0],0,z+t[1]);if(p)guy(p[0],p[1],p[2],GREY,{t:S.t,ph:k,face:'front',lift:Math.abs(Math.sin(S.t*5+k))*p[2]*.05})}
-      const p=P(it.x,1.2,z);if(p)txt('+'+it.n,p[0],p[1],Math.max(12,p[2]*.3),'#fff')}break;
+      }break;
   case'note':{if(it.done&&it.fly>.5)break;const lift=(it.y??0)+(it.done?it.fly*6:.35+Math.sin(S.t*3+z)*.08);const p=P(it.x,lift,z);if(!p)break;const k=p[2];
     ctx.save();ctx.translate(p[0],p[1]);ctx.rotate(Math.sin(S.t*2+z)*.3);ctx.globalAlpha=it.done?Math.max(0,1-it.fly*2):1;
     ctx.fillStyle='#14213d';rr(-k*.17,-k*.13,k*.34,k*.26,k*.04);ctx.fill();ctx.fillStyle=it.gold||S.topperT>0?'#ffb800':'#ffd23f';rr(-k*.15,-k*.11,k*.3,k*.22,k*.03);ctx.fill();
@@ -1885,7 +1885,7 @@ function drawItem(it){
 }
 // In 3D mode these objects are models; the 2D layer only writes their captions.
 const R3_CAPTION={
- recruit(it,z){if(it.done)return;const p=P(it.x,1.2,z);if(p)txt('+'+it.n,p[0],p[1],Math.max(12,p[2]*.3),'#fff')},
+ recruit(it,z){if(it.done)return;},
  cow(it,z){const lp=P(cowX(it),1.3,z);if(lp&&it.z-S.dist<26)0},
  auto(it,z){const lp=P(autoX(it),1.4,z);if(lp&&it.z-S.dist<26)0},
  fan(it,z){const lp=P(it.px,1.5,z);if(lp&&it.z-S.dist<26)0},
