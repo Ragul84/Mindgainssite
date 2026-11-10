@@ -1121,7 +1121,9 @@ function update(dt){
   const moving=S.phase==='run'||S.phase==='climb';
   if(steerable()){if(keys.ArrowLeft||keys.a)S.tx-=5*dt;if(keys.ArrowRight||keys.d)S.tx+=5*dt;const lim=Math.max(.3,1.9-clusterR());S.tx=Math.max(-lim,Math.min(lim,S.tx))}
   if(S.phase==='climb')S.tx*=.92;
-  S.x+=(S.tx-S.x)*Math.min(1,dt*10);
+  /* near a gate the batch slides to the middle of the lane the player is steering into, so it never sits on the line between two gates */
+  let gx=S.tx;if(S.phase==='run'){const g=S.items.find(r=>!r.done&&(r.type==='quiz'||r.type==='math'||r.type==='branch'));if(g&&g.z-S.dist<9&&g.z-S.dist>-1){const n=g.ans?g.ans.length:g.ops?g.ops.length:2,lw=4/n;gx=-2+lw*(laneOf(n,S.tx)+.5)}}
+  S.x+=(gx-S.x)*Math.min(1,dt*10);
   // ---- smart pacing: cruise → read (time budget from text length, tuned to the player) → dash ----
   let target=S.speed*(S.coffeeT>0?1.5:1),rate=3,tight=1;const ng=nextGate();
   if(S.phase==='run'&&ng){const dz=ng.z-S.dist;
@@ -1137,6 +1139,8 @@ function update(dt){
     }}
   for(const it of S.items)if(it.type==='ambush'&&it.fighting){target=0;rate=14}
   if(S.airY>.2)target=Math.max(target,S.speed*.85);
+  /* the whole batch takes the lead's gate (quiz, math or road split), so squeeze it into one lane as it nears any gate */
+  if(S.phase==='run'){const g=S.items.find(r=>!r.done&&(r.type==='quiz'||r.type==='math'||r.type==='branch'));if(g){const dz=g.z-S.dist;if(dz<9&&dz>-1){const n=g.ans?g.ans.length:g.ops?g.ops.length:2;let mx=.01;for(const m of S.members)mx=Math.max(mx,Math.abs(m.ox));tight=Math.min(tight,Math.max(.12,(2/n-.3)/mx))}}}
   if(S.phase==='boss')tight=.42;else if(S.phase==='shoot')tight=.7;
   S.tight+=(tight-S.tight)*Math.min(1,dt*6);
   S.v+=(target-S.v)*Math.min(1,dt*rate);
