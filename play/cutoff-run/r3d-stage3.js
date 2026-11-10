@@ -20,37 +20,50 @@ export function stage3({ scene, mat, student, K }) {
       hideFrom(n) { for (let i = n; i < list.length; i++) list[i].visible = false; },
     };
   }
-  // Doubt monsters: the ambush batches. Hunched blobs with one glowing eye, horns, claws and a toothy grin.
-  const MON = [[0x5b2a86, 0x3a1857], [0x2d5f6b, 0x173a42], [0x8a2a3c, 0x55172a], [0x4a3a8f, 0x2b2160]].map(([a, b]) => [mat(a, .55), mat(b, .6)]);
-  const eyeM = new THREE.MeshStandardMaterial({ color: 0xfff27a, emissive: 0xffe14a, emissiveIntensity: 2.2, roughness: .3 });
-  const pupilM = mat(0x111111, .2), toothM = mat(0xfaf5e6, .4), hornM = mat(0xe8dcc0, .5), mouthM = mat(0x1a0610, .8);
-  const mg = { body: new THREE.SphereGeometry(.55, 22, 16), belly: new THREE.SphereGeometry(.36, 16, 12), eye: new THREE.SphereGeometry(.26, 16, 12), pupil: new THREE.SphereGeometry(.09, 10, 8),
-    horn: new THREE.ConeGeometry(.09, .36, 8), leg: new THREE.CapsuleGeometry(.12, .18, 3, 8), arm: new THREE.CapsuleGeometry(.09, .34, 3, 8), claw: new THREE.ConeGeometry(.05, .14, 6),
-    mouth: new RoundedBoxGeometry(.42, .12, .1, 2, .04), tooth: new THREE.ConeGeometry(.035, .08, 5) };
+  // Doubt ghouls: the ambush batches. Tall, hunched, grey-violet skin, ragged hood, two glowing eyes,
+  // long arms reaching for the batch. Our own design for the game.
+  const SKINS = [0x9a8fb3, 0x8fa39a, 0xa8949c, 0x8d93ad].map((c) => mat(c, .7));
+  const HOODS = [0x3b2f5c, 0x2f4a45, 0x5a2a3a, 0x2c3256].map((c) => mat(c, .85));
+  const pantM = mat(0x2a2633, .9);
+  const eyeM = new THREE.MeshStandardMaterial({ color: 0xfff27a, emissive: 0xffd23f, emissiveIntensity: 3, roughness: .3 });
+  const mg = {
+    leg: new THREE.CapsuleGeometry(.1, .5, 3, 8), foot: new RoundedBoxGeometry(.18, .1, .3, 2, .04),
+    torso: new RoundedBoxGeometry(.56, .66, .36, 3, .12), rag: new THREE.ConeGeometry(.36, .3, 6, 1, true),
+    upper: new THREE.CapsuleGeometry(.075, .42, 3, 8), fore: new THREE.CapsuleGeometry(.065, .42, 3, 8), hand: new THREE.SphereGeometry(.09, 10, 8),
+    head: new THREE.SphereGeometry(.24, 18, 14), hood: new THREE.SphereGeometry(.3, 18, 12, 0, Math.PI * 2, 0, Math.PI * .62),
+    eye: new THREE.SphereGeometry(.055, 10, 8), jaw: new RoundedBoxGeometry(.2, .08, .1, 2, .03),
+  };
+  const jawM = mat(0x1a0d14, .8);
   function monster(i) {
-    const g = new THREE.Group(), [skin, dark] = MON[i % MON.length], limbs = [];
+    const g = new THREE.Group(), skin = SKINS[i % 4], hood = HOODS[(i >> 1) % 4], limbs = [];
     const sh = (m) => { m.castShadow = true; return m; };
-    for (const sx of [-1, 1]) { const leg = new THREE.Group(); leg.position.set(sx * .24, .32, 0); const l = sh(new THREE.Mesh(mg.leg, dark)); l.position.y = -.14; leg.add(l); g.add(leg); limbs.push(leg); }
-    const body = sh(new THREE.Mesh(mg.body, skin)); body.scale.set(1, 1.05, .9); body.position.y = .82; body.rotation.x = .25; g.add(body);
-    const belly = new THREE.Mesh(mg.belly, dark); belly.position.set(0, .74, .32); belly.scale.set(1, 1, .5); g.add(belly);
-    const eye = new THREE.Mesh(mg.eye, eyeM); eye.position.set(0, 1.0, .44); g.add(eye);
-    const pu = new THREE.Mesh(mg.pupil, pupilM); pu.position.set(0, 1.0, .68); g.add(pu);
-    const mouth = new THREE.Mesh(mg.mouth, mouthM); mouth.position.set(0, .7, .5); g.add(mouth);
-    for (let t = 0; t < 4; t++) { const tt = new THREE.Mesh(mg.tooth, toothM); tt.position.set(-.13 + t * .087, .73, .55); tt.rotation.x = Math.PI; g.add(tt); }
-    for (const sx of [-1, 1]) { const h = new THREE.Mesh(mg.horn, hornM); h.position.set(sx * .3, 1.36, 0); h.rotation.z = -sx * .45; g.add(h); }
     for (const sx of [-1, 1]) {
-      const arm = new THREE.Group(); arm.position.set(sx * .5, 1.0, .1);
-      const a = sh(new THREE.Mesh(mg.arm, skin)); a.position.y = -.2; arm.add(a);
-      for (let c = -1; c <= 1; c++) { const cl = new THREE.Mesh(mg.claw, hornM); cl.position.set(c * .05, -.45, .03); cl.rotation.x = Math.PI; arm.add(cl); }
-      arm.rotation.set(-1.1, 0, sx * .35); g.add(arm); limbs.push(arm);
+      const leg = new THREE.Group(); leg.position.set(sx * .15, .82, 0);
+      const l = sh(new THREE.Mesh(mg.leg, pantM)); l.position.y = -.36; leg.add(l);
+      const f = new THREE.Mesh(mg.foot, skin); f.position.set(0, -.74, -.06); leg.add(f);
+      g.add(leg); limbs.push(leg);
     }
-    g.scale.setScalar(K * 1.75); g.userData = { limbs, shirtParts: [], bag: null, monster: true };
+    const body = new THREE.Group(); body.position.y = .86; body.rotation.x = -.45; g.add(body);   // hunched forward
+    const torso = sh(new THREE.Mesh(mg.torso, hood)); torso.position.y = .32; body.add(torso);
+    const rag = new THREE.Mesh(mg.rag, hood); rag.position.y = -.04; rag.rotation.y = .3; body.add(rag);
+    const head = sh(new THREE.Mesh(mg.head, skin)); head.position.set(0, .82, -.08); body.add(head);
+    const hd = new THREE.Mesh(mg.hood, hood); hd.position.set(0, .86, -.02); hd.rotation.x = -.5; body.add(hd);
+    for (const sx of [-1, 1]) { const e = new THREE.Mesh(mg.eye, eyeM); e.position.set(sx * .09, .84, -.3); body.add(e); }
+    const jaw = new THREE.Mesh(mg.jaw, jawM); jaw.position.set(0, .68, -.27); body.add(jaw);
+    for (const sx of [-1, 1]) {
+      const arm = new THREE.Group(); arm.position.set(sx * .34, .58, 0);
+      const u = sh(new THREE.Mesh(mg.upper, hood)); u.position.y = -.24; arm.add(u);
+      const fo = sh(new THREE.Mesh(mg.fore, skin)); fo.position.y = -.66; arm.add(fo);
+      const h = new THREE.Mesh(mg.hand, skin); h.position.y = -.92; arm.add(h);
+      body.add(arm); limbs.push(arm);
+    }
+    g.scale.setScalar(K * 1.45); g.userData = { limbs, shirtParts: [], bag: null, monster: true };
     return g;
   }
   function monPool() {
     const list = [];
     return {
-      get(i) { while (list.length <= i) { const m = monster(list.length); m.rotation.y = 0; scene.add(m); list.push(m); } const m = list[i]; m.visible = true; return m; },
+      get(i) { while (list.length <= i) { const m = monster(list.length); m.rotation.y = Math.PI; scene.add(m); list.push(m); } const m = list[i]; m.visible = true; return m; },
       hideFrom(n) { for (let i = n; i < list.length; i++) list[i].visible = false; },
     };
   }
@@ -92,7 +105,7 @@ export function stage3({ scene, mat, student, K }) {
     rivals.hideFrom(n);
     // ambush batches on the road
     n = 0;
-    for (const it of S.items) if (it.type === 'ambush' && it.init && it.n > 0 && it.z - S.dist < 46 && it.z > S.dist - 6) for (const e of it.crowd) { const s = ambush.get(n++), ph = t * 9 + e.ph, L = s.userData.limbs; s.position.set(it.x + e.ox, Math.abs(Math.sin(ph)) * .06, -(it.z + e.oz)); L[0].rotation.x = Math.sin(ph) * .6; L[1].rotation.x = -Math.sin(ph) * .6; L[2].rotation.x = -1.2 + Math.sin(ph * (it.fighting ? 1.6 : .4)) * .5; L[3].rotation.x = -1.2 - Math.sin(ph * (it.fighting ? 1.6 : .4)) * .5; }
+    for (const it of S.items) if (it.type === 'ambush' && it.init && it.n > 0 && it.z - S.dist < 46 && it.z > S.dist - 6) for (const e of it.crowd) { const s = ambush.get(n++), ph = t * 9 + e.ph, L = s.userData.limbs; s.position.set(it.x + e.ox, Math.abs(Math.sin(ph)) * .06, -(it.z + e.oz)); L[0].rotation.x = Math.sin(ph) * .6; L[1].rotation.x = -Math.sin(ph) * .6; L[2].rotation.x = 1.5 + Math.sin(ph * (it.fighting ? 1.6 : .5)) * .35; L[3].rotation.x = 1.5 - Math.sin(ph * (it.fighting ? 1.6 : .5)) * .35; }
     ambush.hideFrom(n);
     // students left cheering on the steps
     n = 0;

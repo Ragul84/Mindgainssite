@@ -7,9 +7,9 @@
 import * as THREE from 'three';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
 import { stage2 } from './r3d-stage2.js?v=3';
-import { stage3 } from './r3d-stage3.js?v=4';
+import { stage3 } from './r3d-stage3.js?v=5';
 import { makeRegions } from './r3d-regions.js?v=1';
-import { makeCity, CITY } from './r3d-city.js?v=1';
+import { makeCity, CITY } from './r3d-city.js?v=2';
 
 const host = document.getElementById('wrap'), c2d = document.getElementById('c');
 const cv = document.createElement('canvas');
@@ -20,7 +20,7 @@ c2d.style.position = 'relative';
 
 const renderer = new THREE.WebGLRenderer({ canvas: cv, antialias: true, powerPreference: 'high-performance' });
 renderer.setPixelRatio(Math.min(2, devicePixelRatio || 1));
-renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
+renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.25;
 renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 const scene = new THREE.Scene();
 scene.fog = new THREE.Fog(CITY.fog, 30, 250);
@@ -37,8 +37,10 @@ const sky = new THREE.Mesh(new THREE.SphereGeometry(250, 32, 16), new THREE.Shad
   fragmentShader: 'uniform vec3 uSun;uniform vec3 uTop;uniform vec3 uHz;varying vec3 d;void main(){float y=d.y;vec3 top=uTop,hz=uHz;vec3 c=mix(hz,top,pow(smoothstep(0.,.6,y),.8));float s=max(dot(normalize(d),uSun),0.);c+=vec3(1.,.93,.75)*(pow(s,80.)*.9+pow(s,6.)*.12);gl_FragColor=vec4(c,1.);}',
 }));
 sky.renderOrder = -1; scene.add(sky);
-scene.add(new THREE.HemisphereLight(0xa9bfff, 0x3a3048, 1.1));
-const sun = new THREE.DirectionalLight(0xffd2a8, 2.0);
+scene.add(new THREE.HemisphereLight(0xdfe6ff, 0x6a5a70, 1.6));
+const sun = new THREE.DirectionalLight(0xffe2c4, 2.6);
+// key light comes from behind the camera so the batch is lit, not silhouetted; the sky's sun glow stays ahead
+const KEY = new THREE.Vector3(.35, .8, .5).normalize();
 sun.castShadow = true; sun.shadow.mapSize.set(1024, 1024);
 Object.assign(sun.shadow.camera, { left: -8, right: 8, top: 10, bottom: -10, near: .5, far: 60 });
 sun.shadow.bias = -.0006; sun.shadow.radius = 3;
@@ -126,7 +128,7 @@ function setRegion(k) {
 setRegion('village');
 
 // ---------------------------------------------------------------- students (pool, synced to S.members)
-const SKIN = [0xc98e62, 0xb57a52, 0xd9a27a, 0xa86d47, 0xc08458];
+const SKIN = [0xf0c09a, 0xe3ad85, 0xf5cdaa, 0xd99f78, 0xebb892];
 const HAIRC = [0x1d1410, 0x2a1d14, 0x16100c, 0x3a2618];
 const shirtG = new THREE.LatheGeometry([[0, 0], [.26, 0], [.29, .12], [.3, .42], [.27, .6], [.16, .7], [0, .72]].map((q) => new THREE.Vector2(q[0], q[1])), 14);
 const geo = {
@@ -149,7 +151,7 @@ const geoC = {
   bow: new THREE.SphereGeometry(.07, 8, 6), tuft: new THREE.ConeGeometry(.12, .2, 7),
 };
 const shoeM = mat(0xf5f5f5, .5), flapM = mat(0xffffff, .5), bowM = mat(0xff4d6d, .4);
-const HAIRL = [0x4a2e1c, 0x5a3622, 0x3a2416].map((c) => mat(c, .3));
+const HAIRL = [0x6b4428, 0x7a4e2c, 0x553620].map((c) => mat(c, .35));
 function student(i, grey = false, lead = false) {
   const g = new THREE.Group(), skin = M.skin[i % SKIN.length], hairM = HAIRL[i % 3], girl = i % 2 === 1, limbs = [];
   const SHIRT = grey ? greyShirt : SHIRTS[i % SHIRTS.length], PANT = grey ? greyPants : PANTS[i % 3];
@@ -292,7 +294,7 @@ function frame(o) {
   for (const [it, g] of gateObjs) if (!live.has(it)) { scene.remove(g); gateObjs.delete(it); }
   // shadow camera follows the batch
   const fz = S ? S.dist : cz + 6;
-  sun.target.position.set(S ? S.x : 0, 0, -fz - 4); sun.position.copy(sun.target.position).addScaledVector(SUN, 30);
+  sun.target.position.set(S ? S.x : 0, 0, -fz - 4); sun.position.copy(sun.target.position).addScaledVector(KEY, 30);
   renderer.render(scene, cam);
   if (!readySent) { readySent = true; dispatchEvent(new Event('r3d-ready')); }
   perf();

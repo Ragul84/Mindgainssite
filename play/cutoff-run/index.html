@@ -1678,7 +1678,7 @@ function draw(){
       ctx.fillStyle='rgba(255,255,255,.9)';ctx.beginPath();ctx.arc(cx-r*.28,cy-r*.62,r*.06,0,6.283);ctx.fill();ctx.beginPath();ctx.arc(cx+r*.55,cy+r*.5,r*.03,0,6.283);ctx.fill()}}
   if(S.count>0&&S.phase!=='done'){const p=P(S.x,climbY+S.airY+1.2+clusterR()*.5,S.dist+.3);if(p){const t=String(S.count),fs=Math.max(18,p[2]*.3)*(1+(S.cPop||0)*.6);ctx.font=`${fs}px "Lilita One",sans-serif`;const w=ctx.measureText(t).width+24,h=fs*1.45;
     ctx.fillStyle='#14213d';rr(p[0]-w/2-3,p[1]-h/2-3,w+6,h+6,12);ctx.fill();ctx.fillStyle=S.count>=S.rivalCount||S.phase==='climb'?'#5ee89a':'#ff8a1f';rr(p[0]-w/2,p[1]-h/2,w,h,10);ctx.fill();txt(t,p[0],p[1]+1,fs,'#fff')}}
-  for(const t of S.texts){const q=P(t.x,t.y,t.z);if(!q)continue;ctx.globalAlpha=Math.min(1,t.life*1.6);txt(t.t,q[0],q[1],Math.max(18,Math.min(44,q[2]*.4)),t.col);ctx.globalAlpha=1}
+  {/* floating texts: shrink long ones to fit the screen, keep them inside the edges and never on top of each other */const L=[];for(const t of S.texts){const q=P(t.x,t.y,t.z);if(!q)continue;let fs=Math.max(18,Math.min(40,q[2]*.4));ctx.font=fs+'px "Lilita One",sans-serif';const w=ctx.measureText(t.t).width,mw=W-32;if(w>mw)fs*=mw/w;const hw=Math.min(w,mw)/2;L.push({t,x:Math.max(16+hw,Math.min(W-16-hw,q[0])),y:q[1],fs})}const cap=S?P(S.x,2.9,S.dist):null,maxY=cap?cap[1]-26:H;L.sort((a,b)=>b.y-a.y);for(let i=0;i<L.length;i++){const o=L[i];if(o.y>maxY)o.y=maxY;if(i){const g=(L[i-1].fs+o.fs)*.6;if(L[i-1].y-o.y<g)o.y=L[i-1].y-g}}for(const o of L){ctx.globalAlpha=Math.min(1,o.t.life*1.6);txt(o.t.t,o.x,o.y,o.fs,o.t.col);ctx.globalAlpha=1}}
   if(S.phase==='run'&&(S.v>S.speed*1.15||S.coffeeT>0||S.airY>.3)){ctx.strokeStyle='rgba(255,255,255,.55)';ctx.lineWidth=2.5;const cx=W/2,cy=HOR+30;for(let i=0;i<18;i++){const a=i*.349+(i%3)*.1,r0=W*.3+((i*53+S.t*1400)%(W*.45));ctx.beginPath();ctx.moveTo(cx+Math.cos(a)*r0,cy+Math.sin(a)*r0*.85);ctx.lineTo(cx+Math.cos(a)*(r0+46),cy+Math.sin(a)*(r0+46)*.85);ctx.stroke()}}
   if(!window.__lowQ){if(!draw.vg||draw.vg.w!==W||draw.vg.h!==H){const v=ctx.createRadialGradient(W/2,H*.55,Math.min(W,H)*.35,W/2,H*.55,Math.max(W,H)*.8);v.addColorStop(0,'rgba(10,20,50,0)');v.addColorStop(1,'rgba(10,20,50,.28)');draw.vg={g:v,w:W,h:H}}ctx.fillStyle=draw.vg.g;ctx.fillRect(0,0,W,H)}
 
@@ -2320,7 +2320,7 @@ if(window.__want3d){
   window.__bootFail=()=>finish(false);
   setTimeout(()=>finish(false),15000);
 }</script>
-<script type="module">if(window.__want3d)import('./r3d.js?v=10').catch(e=>{console.error(e);window.__bootFail&&__bootFail()});</script>
+<script type="module">if(window.__want3d)import('./r3d.js?v=11').catch(e=>{console.error(e);window.__bootFail&&__bootFail()});</script>
 <script src="story.js"></script>
 <script src="social.js"></script>
 <script src="replay.js"></script>

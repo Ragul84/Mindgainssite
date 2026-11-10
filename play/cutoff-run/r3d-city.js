@@ -46,20 +46,28 @@ export function makeCity({ scene, mat }) {
   const texs = WALLS.map((w) => windowTex(w, .35));
   const mats = texs.map((t) => new THREE.MeshStandardMaterial({ map: t, roughness: .8, emissive: 0xffd58a, emissiveMap: t, emissiveIntensity: .35 }));
   const roofM = mat(0x56648c, .9), tankM = mat(0x2b2b2b, .6), gopM = mat(0xd9a05b, .7);
-  const DEPTH = 220, blocks = [];
+  // city blocks on a street grid: columns parallel to the bridge, a street between every block.
+  // Blocks near the bridge stay well below the deck; only the far columns grow tall.
+  const DEPTH = 180, ROW = 10, COLS = [12, 21, 31, 42], blocks = [];
   let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
-  for (let i = 0; i < 90; i++) {
-    const side = i % 2 ? 1 : -1, w = 3 + rnd() * 4, d = 3 + rnd() * 4;
-    const h = 6 + Math.pow(rnd(), 1.5) * 20;                          // most stay below the deck, a few rise past it
-    const m = mats[(rnd() * mats.length) | 0].clone(); m.map = m.map.clone(); m.map.repeat.set(Math.max(1, Math.round(w / 2)), Math.max(1, Math.round(h / 5))); m.map.needsUpdate = true; m.emissiveMap = m.map;
+  for (let r = 0; r < DEPTH / ROW; r++) for (const side of [-1, 1]) COLS.forEach((cx, ci) => {
+    if (rnd() < .18) return;                                         // the odd park or open plot
+    const w = 6.2 + rnd() * 1.2, d = 6.6 + rnd() * 1.2;
+    const cap = [9, 12, 18, 26][ci], h = Math.min(cap, 5 + rnd() * cap);
+    const m = mats[(rnd() * mats.length) | 0].clone(); m.map = m.map.clone(); m.map.repeat.set(Math.max(1, Math.round(w / 2)), Math.max(1, Math.round(h / 4))); m.map.needsUpdate = true; m.emissiveMap = m.map;
     const b = new THREE.Group();
     const body = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m); body.position.y = h / 2; b.add(body);
     const roof = new THREE.Mesh(new THREE.BoxGeometry(w + .2, .3, d + .2), roofM); roof.position.y = h + .15; b.add(roof);
-    if (rnd() < .5) { const t = new THREE.Mesh(new THREE.CylinderGeometry(.45, .45, .8, 10), tankM); t.position.set((rnd() - .5) * w * .5, h + .7, (rnd() - .5) * d * .5); b.add(t); }
-    if (rnd() < .06) { const gp = new THREE.Mesh(new THREE.CylinderGeometry(.6, 2, 5, 4), gopM); gp.position.y = h + 2.8; gp.rotation.y = Math.PI / 4; b.add(gp); }
-    const x = side * (6 + rnd() * 34);
-    b.userData = { x, off: rnd() * DEPTH };
-    b.position.set(x, G, 0); root.add(b); blocks.push(b);
+    if (rnd() < .45) { const t = new THREE.Mesh(new THREE.CylinderGeometry(.5, .5, .9, 10), tankM); t.position.set((rnd() - .5) * w * .5, h + .75, (rnd() - .5) * d * .5); b.add(t); }
+    if (ci >= 2 && rnd() < .05) { const gp = new THREE.Mesh(new THREE.CylinderGeometry(.7, 2.4, 6, 4), gopM); gp.position.y = h + 3.3; gp.rotation.y = Math.PI / 4; b.add(gp); }
+    b.userData = { x: side * cx, off: r * ROW };
+    root.add(b); blocks.push(b);
+  });
+  // streets between the columns
+  const streetM = mat(0x3a4670, .95);
+  for (const side of [-1, 1]) for (let c = 0; c < COLS.length; c++) {
+    const sx = c === 0 ? 6.5 : (COLS[c - 1] + COLS[c]) / 2;
+    const st = new THREE.Mesh(new THREE.PlaneGeometry(2.4, 900), streetM); st.rotation.x = -Math.PI / 2; st.position.set(side * sx, G + .03, 0); st.userData.street = true; root.add(st); blocks.push(st);
   }
   // far skyline band so the horizon is never empty
   const far = [];
@@ -73,7 +81,7 @@ export function makeCity({ scene, mat }) {
   function update(camZ) {
     const base = Math.floor(camZ / SEG) * SEG;
     segs.forEach((s, i) => s.position.z = -(base + i * SEG - SEG));
-    for (const b of blocks) { const z = camZ - 10 + ((b.userData.off - camZ) % DEPTH + DEPTH) % DEPTH; b.position.set(b.userData.x, G, -z); }
+    for (const b of blocks) { if (b.userData.street) { b.position.z = -camZ; continue; } const z = camZ - 10 + ((b.userData.off - camZ) % DEPTH + DEPTH) % DEPTH; b.position.set(b.userData.x, G, -z); }
     const rz = 140 - ((camZ % 160) + 160) % 160; river.position.z = -(camZ + rz);
     for (const b of far) b.position.set(b.userData.x, G + b.userData.h / 2, -(camZ + 230));
     ground.position.z = -camZ;
