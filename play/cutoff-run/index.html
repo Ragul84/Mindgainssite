@@ -559,6 +559,12 @@ body{background:#0f1c33}
 .r2ic em{top:2px;right:auto;left:calc(50% + 6px)}
 .banner{top:40%!important;padding:7px 16px 8px!important;border-radius:99px!important;font-size:19px!important;line-height:1.1!important;background:rgba(20,33,61,.82)!important;box-shadow:none!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .banner small{display:inline!important;font-size:13px!important;margin:0 0 0 8px!important;font-family:Nunito,system-ui,sans-serif;font-weight:800}
+#q.shootq .opts{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:6px!important;margin-top:6px}
+#q.shootq .opt{padding:6px 6px!important;font-size:13px!important;flex-direction:row!important;align-items:center!important;gap:5px!important;min-height:0!important;box-shadow:0 2px 0 var(--ln)!important}
+#q.shootq .opt>*:first-child{transform:scale(.8);flex:none}
+#q.shootq #qt{min-height:0!important}
+#q.shootq{padding-bottom:10px!important}
+#q.shootq #qt{font-size:15px!important;line-height:1.3!important}
 </style>
 
 <div id="wrap">
@@ -1354,7 +1360,7 @@ function updateQ(dt){
     $('stamp').className='stamp';q.hidden=false;q.style.animation='none';q.offsetHeight;q.style.animation=''}}
   else if(q.hidden&&!it.done){q.hidden=false;q.style.animation='none';q.offsetHeight;q.style.animation=''} // card was hidden by a revive, scroll or banner pause: bring it back
   q.style.top=Math.max(92,HOR-q.offsetHeight-4)+'px';
-  $('qbar').style.width=(a.shoot?Math.max(0,100-S.arena.t/12*100):(S.pace&&S.pace.it===it?Math.max(0,100-S.pace.el/S.pace.T*100):100))+'%';$('lock').hidden=!!(a.shoot||a.branch);$('skip').hidden=!!(a.shoot||a.branch);
+  $('qbar').style.width=(a.shoot?Math.max(0,100-S.arena.t/12*100):(S.pace&&S.pace.it===it?Math.max(0,100-S.pace.el/S.pace.T*100):100))+'%';$('q').classList.toggle('shootq',!!a.shoot);$('lock').hidden=!!(a.shoot||a.branch);$('skip').hidden=!!(a.shoot||a.branch);
   const side=laneOf(a.branch?2:it.ans.length,S.x);$('opts').querySelectorAll('.opt').forEach((e,i)=>e.classList.toggle('on',i===side))
 }
 function qResult(it,side,ok,txt){if(qRow!==it)return;qHold=ok?.7:side<0?.8:1.05;
@@ -1371,7 +1377,7 @@ function startShoot(it){
   const mons=q.ans.map((a,i)=>({kind:'big',x:-1.33+i*1.33,z:S.dist+16+i*.5,hp:big,max:big,ok:i===q.correct,alive:true,ph:rnd(0,6),flash:0,label:'ABCD'[i],r:.55}));
   const nm=10+S.lv*3;for(let k=0;k<nm;k++)mons.push({kind:'min',x:rnd(-1.7,1.7),z:S.dist+9+k*.85+rnd(0,1),hp:2,max:2,alive:true,ph:rnd(0,6),flash:0,r:.32});
   S.phase='shoot';S.arena={q,t:0,fire:0,done:false,endT:0,mons};
-  banner('DOUBT ATTACK!','Steer to aim, shoot the TRUE answer',1.5);sfx.roar();S.shake=.3;
+  0;sfx.roar();S.shake=.3;
 }
 function dmgNum(x,y,z,t,col){S.dmgs.push({x:x+rnd(-.15,.15),y,z,t,col,life:.55})}
 function updateShoot(dt){
@@ -1745,9 +1751,9 @@ function draw(){
   if(S.arena)for(const m of S.arena.mons)if(m.alive&&m.z-camZ<40)D.push({z:m.z,f:()=>{const p=P(m.x,0,m.z);if(!p)return;
       if(m.kind==='min'){monster(p[0],p[1],p[2]*.75,m,S.t,true);return}
       monster(p[0],p[1],p[2]*1.35,m,S.t);
-      const lp=P(m.x,1.55,m.z);if(lp){const ans=S.arena.q.ans['ABC'.indexOf(m.label)];const fs=Math.max(11,Math.min(22,lp[2]*.2));ctx.font=`${fs}px "Lilita One",sans-serif`;const L=wrapText(ans,Math.max(70,lp[2]*1.15)).slice(0,2);const w=Math.max(...L.map(l=>ctx.measureText(l).width))+fs*1.7,h=L.length*fs*1.1+fs*.5;
-        ctx.fillStyle='#fff';rr(lp[0]-w/2,lp[1]-h,w,h,fs*.3);ctx.fill();ctx.strokeStyle='#14213d';ctx.lineWidth=2;ctx.stroke();L.forEach((l,i)=>txt(l,lp[0]+fs*.38,lp[1]-h+fs*.3+fs*.55+i*fs*1.1,fs,'#14213d',null));
-        txt(m.label,lp[0]-w/2+fs*.6,lp[1]-h/2,fs*.9,'#d6336c',null);
+      const lp=P(m.x,1.55,m.z);if(lp){/* letter badge only: the answers are on the question card */const r=Math.max(11,Math.min(19,lp[2]*.17)),col={A:'#1cb0f6',B:'#58cc02',C:'#ffb400'}[m.label]||'#8a5cff';
+        ctx.fillStyle='#14213d';ctx.beginPath();ctx.arc(lp[0],lp[1]-r+2,r+3,0,6.283);ctx.fill();ctx.fillStyle=col;ctx.beginPath();ctx.arc(lp[0],lp[1]-r,r,0,6.283);ctx.fill();
+        txt(m.label,lp[0],lp[1]-r+1,r*1.3,'#fff','#14213d');
         const bw=Math.max(40,lp[2]*.75),by=lp[1]+4;ctx.fillStyle='#14213d';rr(lp[0]-bw/2-2,by-2,bw+4,9,4);ctx.fill();ctx.fillStyle='#ff4d5e';rr(lp[0]-bw/2,by,bw*m.hp/m.max,5,3);ctx.fill()}}});
   for(const it of S.items)if(it.type==='ambush'&&it.init&&it.n>0&&it.z-camZ<46&&it.z>camZ){if(!r3)for(const e of it.crowd)D.push({z:it.z+e.oz,f:()=>{const p=P(it.x+e.ox,0,it.z+e.oz);if(p)monster(p[0],p[1],p[2]*.9,e,S.t,true)}});
     D.push({z:it.z-.5,f:()=>{const p=P(it.x,1.25+it.r*.4,it.z);if(!p)return;const t=String(it.n),fs=Math.max(14,p[2]*.28);ctx.font=`${fs}px "Lilita One",sans-serif`;const w=ctx.measureText(t).width+20,h=fs*1.4;ctx.fillStyle='#14213d';rr(p[0]-w/2-3,p[1]-h/2-3,w+6,h+6,10);ctx.fill();ctx.fillStyle='#ff4d5e';rr(p[0]-w/2,p[1]-h/2,w,h,8);ctx.fill();txt(t,p[0],p[1]+1,fs,'#fff')}})}
