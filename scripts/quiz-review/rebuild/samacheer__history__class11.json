@@ -1,0 +1,474 @@
+{
+ "40": "retire",
+ "61": {
+  "lh": "Event",
+  "rh": "Year",
+  "L": [
+   "Battle of Kanauj",
+   "Second Battle of Panipat",
+   "Battle of Chausa",
+   "Death of Sher Shah"
+  ],
+  "why": "Chausa 1539, Kanauj 1540, Sher Shah's death 1545, Second Panipat 1556.",
+  "R": [
+   "1540",
+   "1556",
+   "1539",
+   "1545"
+  ]
+ },
+ "62": {
+  "lh": "Treaty",
+  "rh": "Year",
+  "L": [
+   "Treaty of Madras",
+   "Treaty of Warna",
+   "Treaty of Paris",
+   "Treaty of Salbai"
+  ],
+  "why": "Warna 1731, Madras 1769, Salbai 1782, Paris 1783.",
+  "R": [
+   "1769",
+   "1731",
+   "1783",
+   "1782"
+  ]
+ },
+ "63": {
+  "lh": "Death of",
+  "rh": "Year",
+  "L": [
+   "Shivaji",
+   "Babur",
+   "Aurangzeb",
+   "Krishnadeva Raya"
+  ],
+  "why": "Krishnadeva Raya died in 1529, Babur in 1530, Shivaji in 1680 and Aurangzeb in 1707.",
+  "R": [
+   "1680",
+   "1530",
+   "1707",
+   "1529"
+  ]
+ },
+ "92": {
+  "lh": "Thinker",
+  "rh": "Focus",
+  "L": [
+   "Han Feizi",
+   "Sun Tzu",
+   "Confucius",
+   "Laozi"
+  ],
+  "why": "Han Feizi shaped Legalism (strict law), Sun Tzu wrote on military strategy, Confucius stressed social order and Laozi (Taoism) harmony with nature.",
+  "R": [
+   "Strict Law",
+   "Military Strategy",
+   "Social Order",
+   "Nature"
+  ]
+ },
+ "93": {
+  "lh": "City",
+  "rh": "Civilisation",
+  "L": [
+   "Cuzco",
+   "Chang'an",
+   "Tenochtitlan",
+   "Tikal"
+  ],
+  "why": "Cuzco was the Inca capital, Chang'an a great Chinese capital, Tenochtitlan the Aztec capital and Tikal a major Maya city.",
+  "R": [
+   "Inca",
+   "China",
+   "Aztec",
+   "Maya"
+  ]
+ },
+ "94": {
+  "lh": "Dynasty",
+  "rh": "Associated with",
+  "L": [
+   "Zhou",
+   "Han",
+   "Shang",
+   "Qin"
+  ],
+  "why": "The Zhou claimed the Mandate of Heaven, the Han built the civil service, the Shang used oracle bones and the Qin linked up the Great Wall.",
+  "R": [
+   "Mandate of Heaven",
+   "Civil Service",
+   "Oracle Bones",
+   "Great Wall"
+  ]
+ },
+ "95": "retire",
+ "96": {
+  "lh": "Structure",
+  "rh": "Civilisation",
+  "L": [
+   "Great Wall",
+   "Machu Picchu",
+   "Pyramids of Giza",
+   "Chichen Itza"
+  ],
+  "why": "The Great Wall is Chinese, Machu Picchu Inca, the Giza pyramids Egyptian and Chichen Itza Maya.",
+  "R": [
+   "China",
+   "Inca",
+   "Egypt",
+   "Maya"
+  ]
+ },
+ "153": {
+  "lh": "Term (Mesopotamia)",
+  "rh": "Meaning",
+  "L": [
+   "Cuneiform",
+   "Ziggurat",
+   "Akkad",
+   "Sumer"
+  ],
+  "why": "Cuneiform is wedge-shaped writing, a ziggurat a temple tower, Akkad the central region and Sumer the southern region of Mesopotamia.",
+  "R": [
+   "Wedge-shaped writing",
+   "Temple Tower",
+   "Central region",
+   "Southern region"
+  ]
+ },
+ "154": {
+  "lh": "Mesopotamian god",
+  "rh": "Domain",
+  "L": [
+   "Enlil",
+   "Shamash (Utu)",
+   "Anu",
+   "Ishtar (Inanna)"
+  ],
+  "why": "Enlil was god of air, Shamash of the Sun, Anu of the sky and Ishtar of love and war.",
+  "R": [
+   "Air God",
+   "Sun God",
+   "Sky God",
+   "Love and War"
+  ]
+ },
+ "155": "retire",
+ "156": {
+  "lh": "Material",
+  "rh": "Source",
+  "L": [
+   "Lapis lazuli",
+   "Copper",
+   "Cedar wood",
+   null
+  ],
+  "why": "Mesopotamia imported lapis lazuli from Afghanistan, copper from Oman and cedar wood from Lebanon.",
+  "R": [
+   "Afghanistan",
+   "Oman",
+   "Lebanon",
+   "Egypt"
+  ]
+ },
+ "157": "retire",
+ "158": "retire",
+ "169": "retire",
+ "170": "retire",
+ "171": "retire",
+ "172": "retire",
+ "173": "retire",
+ "174": "retire",
+ "200": {
+  "lh": "Battle",
+  "rh": "Year",
+  "L": [
+   "Battle of Kanauj",
+   "Battle of Haldighati",
+   "Battle of Chausa"
+  ],
+  "why": "Chausa 1539, Kanauj 1540, Haldighati 1576.",
+  "R": [
+   "1540",
+   "1576",
+   "1539"
+  ]
+ },
+ "201": {
+  "lh": "Act / settlement",
+  "rh": "Year",
+  "L": [
+   "Pitt's India Act",
+   "Regulating Act",
+   "Permanent Settlement"
+  ],
+  "why": "Regulating Act 1773, Pitt's India Act 1784, Permanent Settlement 1793.",
+  "R": [
+   "1784",
+   "1773",
+   "1793"
+  ]
+ },
+ "202": {
+  "lh": "Carnatic War",
+  "rh": "Began",
+  "L": [
+   "Second Carnatic War",
+   "First Carnatic War",
+   "Third Carnatic War"
+  ],
+  "why": "The First Carnatic War began in 1746, the Second in 1749 and the Third in 1756.",
+  "R": [
+   "1749",
+   "1746",
+   "1756"
+  ]
+ },
+ "231": {
+  "lh": "Period",
+  "rh": "Typical tools",
+  "L": [
+   "Mesolithic",
+   "Palaeolithic",
+   "Chalcolithic",
+   "Neolithic"
+  ],
+  "why": "Microliths mark the Mesolithic, hand axes the Palaeolithic, copper tools the Chalcolithic and polished stone tools the Neolithic.",
+  "R": [
+   "Microliths",
+   "Hand axe",
+   "Copper tools",
+   "Polished stone"
+  ]
+ },
+ "232": {
+  "lh": "Hominin",
+  "rh": "Name means",
+  "L": [
+   "Homo erectus",
+   "Homo habilis",
+   "Australopithecus",
+   "Homo sapiens"
+  ],
+  "why": "Homo erectus means upright man, Homo habilis handy man, Australopithecus southern ape and Homo sapiens wise man.",
+  "R": [
+   "Upright man",
+   "Handy man",
+   "Southern ape",
+   "Wise man"
+  ]
+ },
+ "233": "retire",
+ "234": "retire",
+ "235": {
+  "lh": "Fossil find",
+  "rh": "Region",
+  "L": [
+   "Neanderthal man",
+   "Lucy (Australopithecus)",
+   "Java man",
+   "Peking man"
+  ],
+  "why": "Neanderthal man was found in Germany, Lucy in Ethiopia, Java man in Indonesia and Peking man in China.",
+  "R": [
+   "Germany",
+   "Ethiopia",
+   "Indonesia",
+   "China"
+  ]
+ },
+ "236": "retire",
+ "265": {
+  "lh": "Example",
+  "rh": "Type of source",
+  "L": [
+   "Edicts of Ashoka",
+   "Vedas",
+   "Punch-marked coins",
+   "Arthashastra"
+  ],
+  "why": "Ashoka's edicts are inscriptions, the Vedas religious literature, coins numismatic sources and the Arthashastra secular literature.",
+  "R": [
+   "Inscriptions",
+   "Religious Literature",
+   "Numismatic Source",
+   "Secular Literature"
+  ]
+ },
+ "266": {
+  "lh": "Period",
+  "rh": "Characteristic",
+  "L": [
+   "Historic period",
+   "Prehistoric period",
+   "Modern period",
+   "Protohistoric period"
+  ],
+  "why": "The historic period has deciphered writing, the prehistoric none, the protohistoric (e.g. Harappan) has writing not yet deciphered and the modern period saw industrialisation.",
+  "R": [
+   "Deciphered writing",
+   "No writing",
+   "Industrialization",
+   "Undeciphered writing"
+  ]
+ },
+ "267": {
+  "lh": "Historian / school",
+  "rh": "Focus",
+  "L": [
+   "Annales school",
+   "Herodotus",
+   "Karl Marx",
+   "Leopold von Ranke"
+  ],
+  "why": "The Annales school pioneered social history, Herodotus is the father of history, Marx saw history as class struggle and Ranke founded scientific history.",
+  "R": [
+   "Social History",
+   "Father of History",
+   "Class Struggle",
+   "Scientific History"
+  ]
+ },
+ "268": "retire",
+ "269": "retire",
+ "276": "retire",
+ "320": {
+  "lh": "Philosopher",
+  "rh": "Known for",
+  "L": [
+   "Plato",
+   "Socrates",
+   "Epicurus",
+   "Aristotle"
+  ],
+  "why": "Plato founded the Academy, Socrates taught by questioning, Epicurus founded Epicureanism and Aristotle tutored Alexander the Great.",
+  "R": [
+   "Founded the Academy",
+   "Socratic Method of questioning",
+   "Founded Epicureanism",
+   "Taught Alexander the Great"
+  ]
+ },
+ "321": {
+  "lh": "Roman structure",
+  "rh": "Purpose",
+  "L": [
+   "Aqueduct",
+   "Forum",
+   "Colosseum",
+   "Pantheon"
+  ],
+  "why": "Aqueducts carried water, the Forum was the public square, the Colosseum hosted gladiator games and the Pantheon was a temple to all the gods.",
+  "R": [
+   "Water transport",
+   "Public square",
+   "Gladiatorial games",
+   "Temple to all gods"
+  ]
+ },
+ "322": {
+  "lh": "Greek term",
+  "rh": "Meaning",
+  "L": [
+   "Ostracism",
+   "Hoplite",
+   "Polis",
+   "Agora"
+  ],
+  "why": "Ostracism was banishment by vote, a hoplite a foot soldier, a polis a city-state and the agora a marketplace.",
+  "R": [
+   "Banishment",
+   "Foot soldier",
+   "City-state",
+   "Marketplace"
+  ]
+ },
+ "323": {
+  "lh": "Roman leader",
+  "rh": "Remembered as",
+  "L": [
+   "Nero",
+   "Constantine",
+   "Augustus",
+   "Julius Caesar"
+  ],
+  "why": "Nero is remembered as a tyrant, Constantine founded Constantinople, Augustus was the first emperor and Julius Caesar was made dictator for life.",
+  "R": [
+   "Infamous tyrant",
+   "Founder of Constantinople",
+   "First Emperor",
+   "Dictator for life"
+  ]
+ },
+ "324": {
+  "lh": "War",
+  "rh": "Fought between",
+  "L": [
+   "Punic Wars",
+   "Gallic Wars",
+   "Greco-Persian Wars",
+   "Peloponnesian War"
+  ],
+  "why": "The Punic Wars were Rome against Carthage, the Gallic Wars Rome against the Gauls, the Greco-Persian Wars Greece against Persia and the Peloponnesian War Athens against Sparta.",
+  "R": [
+   "Rome vs Carthage",
+   "Rome vs Gauls",
+   "Greece vs Persia",
+   "Athens vs Sparta"
+  ]
+ },
+ "325": {
+  "lh": "Greek god",
+  "rh": "Domain",
+  "L": [
+   "Poseidon",
+   "Athena",
+   "Zeus",
+   "Ares"
+  ],
+  "why": "Poseidon ruled the sea, Athena wisdom, Zeus was king of the gods and Ares god of war.",
+  "R": [
+   "Sea",
+   "Wisdom",
+   "King of Gods",
+   "War"
+  ]
+ },
+ "327": {
+  "lh": "Emperor",
+  "rh": "Known for",
+  "L": [
+   "Shah Jahan",
+   "Akbar",
+   "Aurangzeb"
+  ],
+  "why": "Shah Jahan built the Taj Mahal, Akbar founded Din-i-Ilahi and Aurangzeb pushed the empire into the Deccan.",
+  "R": [
+   "Taj Mahal",
+   "Din-i-Ilahi",
+   "Expansion to Deccan"
+  ]
+ },
+ "352": {
+  "lh": "Civilisation",
+  "rh": "Achievement",
+  "L": [
+   "Olmec",
+   "Maya",
+   "Inca",
+   "Han China",
+   "Aztec",
+   null
+  ],
+  "why": "The Olmecs carved colossal stone heads, the Maya built an advanced calendar, the Inca built Machu Picchu, Han China invented paper and the Aztecs built Tenochtitlan.",
+  "R": [
+   "Created colossal stone heads",
+   "Developed an advanced calendar",
+   "Built Machu Picchu",
+   "Invention of papermaking",
+   "Constructed Tenochtitlán",
+   "Famous for pottery and metallurgy"
+  ]
+ }
+}

@@ -1,0 +1,337 @@
+{
+ "39": "retire",
+ "68": "retire",
+ "69": "retire",
+ "70": "retire",
+ "71": "retire",
+ "72": "retire",
+ "109": {
+  "stem": "Match the person or body with the description:",
+  "lh": "Person / body",
+  "rh": "Description",
+  "L": [
+   "T. Muthuswami Iyer",
+   "G. Subramaniya Iyer",
+   "Madras Mahajana Sabha"
+  ],
+  "why": "T. Muthuswami Iyer was the first Indian judge of the Madras High Court, G. Subramaniya Iyer co-founded The Hindu and the Madras Mahajana Sabha was an early nationalist organisation.",
+  "R": [
+   "First Indian judge of Madras High Court",
+   "Founder of The Hindu",
+   "Organization with nationalist objectives"
+  ]
+ },
+ "125": {
+  "lh": "Season (Tamil Nadu)",
+  "rh": "Harvest period",
+  "L": [
+   "Kar / Kuruvai",
+   "Samba",
+   "Navarai"
+  ],
+  "why": "The Kar (Kuruvai) crop is harvested in August-September, Samba in January-February and Navarai in February-March.",
+  "R": [
+   "August-September",
+   "January-February",
+   "February-March"
+  ]
+ },
+ "134": "retire",
+ "166": {
+  "lh": "Soil",
+  "rh": "Characteristic",
+  "L": [
+   "Black soil",
+   "Alluvial soil",
+   "Laterite soil",
+   "Red soil"
+  ],
+  "why": "Black soil is sticky when wet, alluvial soil is rich in potash, laterite soil forms by leaching and red soil contains kaolinitic minerals.",
+  "R": [
+   "Sticky when wet",
+   "Rich in potash",
+   "Leaching process",
+   "Kaolinitic minerals"
+  ]
+ },
+ "167": {
+  "lh": "Soil",
+  "rh": "Distribution",
+  "L": [
+   "Red soil",
+   "Alluvial soil",
+   "Laterite soil",
+   "Black soil"
+  ],
+  "why": "Red soil covers much of Tamil Nadu, alluvial soil the Ganga valley, laterite soil areas with alternate wet and dry seasons and black soil the Maharashtra plateau.",
+  "R": [
+   "Tamil Nadu",
+   "Ganga river valley",
+   "Wet and dry regions",
+   "Maharashtra plateau"
+  ]
+ },
+ "168": {
+  "lh": "Soil",
+  "rh": "Suited crop",
+  "L": [
+   "Black soil",
+   "Red soil",
+   "Alluvial soil",
+   "Laterite soil"
+  ],
+  "why": "Black soil suits cotton, red soil pulses, alluvial soil sugarcane and laterite soil crops that grow in leached soils such as cashew and tea.",
+  "R": [
+   "Cotton",
+   "Pulses",
+   "Sugarcane",
+   "Leached soil crops"
+  ]
+ },
+ "169": {
+  "lh": "Soil",
+  "rh": "Formed from",
+  "L": [
+   "Alluvial soil",
+   "Laterite soil",
+   "Black soil",
+   "Red soil"
+  ],
+  "why": "Alluvial soil comes from river sediment, laterite soil from leaching, black soil from Deccan trap basalt and red soil from crystalline rocks.",
+  "R": [
+   "River sediments",
+   "Leaching",
+   "Basalts of Deccan trap",
+   "Crystalline rocks"
+  ]
+ },
+ "170": "retire",
+ "198": {
+  "lh": "Point",
+  "rh": "Description",
+  "L": [
+   "Kanniyakumari",
+   "Guhar Moti (Gujarat)",
+   "Indira Col",
+   "Indira Point"
+  ],
+  "why": "Kanniyakumari is the southern tip of the mainland, Guhar Moti in Gujarat the westernmost point, Indira Col the northernmost and Indira Point the southernmost point of India.",
+  "R": [
+   "South Mainland",
+   "West",
+   "North",
+   "Southmost Point"
+  ]
+ },
+ "199": {
+  "lh": "Measure",
+  "rh": "Description",
+  "L": [
+   "2,933 km",
+   "3,214 km",
+   "5 hours 30 minutes",
+   "About 30°"
+  ],
+  "why": "India stretches 2,933 km east-west and 3,214 km north-south; IST is 5 h 30 min ahead of GMT; the longitudinal extent is about 30°.",
+  "R": [
+   "East-West extension",
+   "North-South extent",
+   "IST ahead of GMT",
+   "Longitudinal difference"
+  ]
+ },
+ "200": "retire",
+ "201": "retire",
+ "202": "retire",
+ "230": "retire",
+ "231": "retire",
+ "232": {
+  "lh": "Term",
+  "rh": "Definition",
+  "L": [
+   "Death rate",
+   "Population density",
+   null,
+   "Birth rate",
+   "Population growth"
+  ],
+  "why": "The death rate is deaths per thousand a year, density persons per sq km, the birth rate live births per thousand a year and growth the rise or fall of population over time.",
+  "R": [
+   "Deaths per thousand people in a year",
+   "Number of persons per sq km",
+   "Influenced by birth, death and migration",
+   "Live births per thousand people in a year",
+   "Increase or decrease of population over time"
+  ]
+ },
+ "233": "retire",
+ "234": "retire",
+ "262": "retire",
+ "263": "retire",
+ "264": "retire",
+ "265": "retire",
+ "266": "retire",
+ "300": "retire",
+ "307": "retire",
+ "339": {
+  "lh": "Extremity of Tamil Nadu",
+  "rh": "Direction",
+  "L": [
+   "Pulicat Lake",
+   "Point Calimere",
+   "Anaimalai Hills",
+   "Cape Comorin"
+  ],
+  "why": "Tamil Nadu reaches Pulicat Lake in the north, Point Calimere in the east, the Anaimalai Hills in the west and Cape Comorin in the south.",
+  "R": [
+   "North",
+   "East",
+   "West",
+   "South"
+  ]
+ },
+ "340": {
+  "lh": "Neighbour of Tamil Nadu",
+  "rh": "Direction",
+  "L": [
+   "Kerala",
+   "Indian Ocean",
+   "Bay of Bengal",
+   "Andhra Pradesh"
+  ],
+  "why": "Kerala lies to the west, the Indian Ocean to the south, the Bay of Bengal to the east and Andhra Pradesh to the north.",
+  "R": [
+   "West",
+   "South",
+   "East",
+   "North"
+  ]
+ },
+ "341": "retire",
+ "342": "retire",
+ "343": "retire",
+ "367": {
+  "lh": "Scholar",
+  "rh": "Contribution",
+  "L": [
+   "Robert Caldwell",
+   "Ziegenbalg",
+   "U.V. Swaminatha Iyer",
+   "F.W. Ellis",
+   "C.W. Damodaram Pillai"
+  ],
+  "why": "Caldwell wrote the Comparative Grammar of the Dravidian Languages, Ziegenbalg set up the press at Tranquebar, U.V. Swaminatha Iyer published Civaka Chintamani, Ellis founded the College of Fort St George and Damodaram Pillai edited Tolkappiyam.",
+  "R": [
+   "Comparative Grammar of Dravidian Languages",
+   "Printing press in Tranquebar",
+   "Published Civakachinthamani",
+   "College of Fort St George",
+   "Edited Tolkappiyam"
+  ]
+ },
+ "368": "retire",
+ "370": "retire",
+ "430": "retire",
+ "431": "retire",
+ "432": "retire",
+ "477": {
+  "lh": "Dictator",
+  "rh": "Country",
+  "L": [
+   "Hitler",
+   "Franco",
+   "Mussolini"
+  ],
+  "why": "Hitler ruled Germany, Franco Spain and Mussolini Italy.",
+  "R": [
+   "Germany",
+   "Spain",
+   "Italy"
+  ]
+ },
+ "478": {
+  "lh": "Term",
+  "rh": "Description",
+  "L": [
+   "Isolationism",
+   "Aryan",
+   "Nazi"
+  ],
+  "why": "Isolationism was the US approach of staying out of world affairs, 'Aryan' was the Nazi notion of a pure race and Nazi stands for the National Socialist party.",
+  "R": [
+   "US approach",
+   "Pure race notion",
+   "National Socialist party"
+  ]
+ },
+ "479": {
+  "lh": "Cause",
+  "rh": "Effect",
+  "L": [
+   "Hyperinflation",
+   "Hitler's oratory",
+   "War reparations"
+  ],
+  "why": "Hyperinflation made the mark worthless, Hitler's speeches swayed people and the reparations of the Versailles treaty bred discontent in Germany.",
+  "R": [
+   "Worthless currency",
+   "Swaying the people",
+   "Discontent in Germany"
+  ]
+ },
+ "480": {
+  "lh": "Person",
+  "rh": "Role",
+  "L": [
+   "Adolf Hitler",
+   "Francisco Franco",
+   "Woodrow Wilson"
+  ],
+  "why": "Hitler led the Nazi party, Franco was Spain's dictator and Woodrow Wilson proposed the League of Nations.",
+  "R": [
+   "Founded Nazi party",
+   "Spanish Dictator",
+   "Initiated League of Nations"
+  ]
+ },
+ "502": "retire",
+ "513": {
+  "lh": "Place",
+  "rh": "Annual rainfall",
+  "L": [
+   "Bikaner",
+   "Kolkata"
+  ],
+  "why": "As the textbook notes, Bikaner receives about 24 cm of rain a year and Kolkata about 119 cm.",
+  "R": [
+   "24 cm rainfall",
+   "119 cm rainfall"
+  ]
+ },
+ "520": {
+  "lh": "Movement type",
+  "rh": "Characteristic",
+  "L": [
+   "Religious movement",
+   "Restorative rebellion"
+  ],
+  "why": "Religious movements sought to restructure society on religious principles; restorative rebellions tried to restore the old order.",
+  "R": [
+   "Restructuring society on religious principles",
+   "Restore old order"
+  ]
+ },
+ "521": {
+  "lh": "Leader",
+  "rh": "Associated with",
+  "L": [
+   "Dudu Mian",
+   "Haji Shariatullah"
+  ],
+  "why": "Haji Shariatullah launched the Farazi movement; his son Dudu Mian declared that land belongs to God.",
+  "R": [
+   "Land belongs to God",
+   "Launched Farazi movement"
+  ]
+ }
+}

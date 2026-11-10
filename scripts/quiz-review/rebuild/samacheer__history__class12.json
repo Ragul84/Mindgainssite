@@ -1,0 +1,218 @@
+{
+ "45": "retire",
+ "46": "retire",
+ "72": {
+  "lh": "Revolution",
+  "rh": "Year",
+  "L": [
+   "February Revolution (France)",
+   "July Revolution (France)",
+   "French Revolution",
+   "Paris Commune"
+  ],
+  "why": "The French Revolution began in 1789, the July Revolution came in 1830, the February Revolution in 1848 and the Paris Commune in 1871.",
+  "R": [
+   "1848",
+   "1830",
+   "1789",
+   "1871"
+  ]
+ },
+ "73": "retire",
+ "103": {
+  "lh": "Item",
+  "rh": "Linked with",
+  "L": [
+   "Champaran Satyagraha",
+   "Gandhi's birthplace",
+   "Sabarmati Ashram",
+   "Gandhi's political guru"
+  ],
+  "why": "Champaran is in Bihar, Gandhi was born at Porbandar, the Sabarmati Ashram is in Ahmedabad and his political guru was G.K. Gokhale.",
+  "R": [
+   "Bihar",
+   "Porbandar",
+   "Ahmedabad",
+   "G.K. Gokhale"
+  ]
+ },
+ "104": {
+  "lh": "Event in Gandhi's life",
+  "rh": "Year",
+  "L": [
+   "Return to India",
+   "Champaran movement",
+   "Birth of Gandhi",
+   "Years in South Africa"
+  ],
+  "R": [
+   "1915",
+   "1917",
+   "1869",
+   "1893-1914"
+  ],
+  "why": "Gandhi was born in 1869, lived in South Africa from 1893 to 1914, returned to India in 1915 and led Champaran in 1917."
+ },
+ "105": {
+  "lh": "Person / group (Champaran)",
+  "rh": "Role",
+  "L": [
+   "Champaran peasants (ryots)",
+   "European indigo planters",
+   "Gandhi",
+   "G.K. Gokhale"
+  ],
+  "why": "The ryots grew indigo, the European planters exploited them, Gandhi came as a satyagrahi and Gokhale was his mentor.",
+  "R": [
+   "Indigo cultivators",
+   "Exploiters",
+   "Satyagrahi",
+   "Mentor"
+  ]
+ },
+ "106": "retire",
+ "115": {
+  "lh": "Term",
+  "rh": "Description",
+  "L": [
+   "Mahatma Gandhi",
+   "Satyagraha",
+   "Champaran",
+   "G.K. Gokhale",
+   null,
+   "Porbandar"
+  ],
+  "why": "Gandhi led the freedom movement, satyagraha was his non-violent technique, Champaran his first mass movement in India, Gokhale his political guru and Porbandar his birthplace.",
+  "R": [
+   "Leader of Indian independence movement",
+   "Non-violent resistance technique",
+   "Location of Gandhi's first mass movement",
+   "Gandhi's political Guru",
+   "Peasants exploited in Champaran",
+   "Birthplace of Gandhi"
+  ]
+ },
+ "162": {
+  "stem": "Match the item with its significance:",
+  "lh": "Item",
+  "rh": "Significance",
+  "L": [
+   "1857",
+   "Persian",
+   "1875",
+   "English"
+  ],
+  "why": "Persian was the Mughal court language, English predominated by the mid-19th century, 1857 was the last gasp of the old ruling class and the Arya Samaj was founded in 1875.",
+  "R": [
+   "Last gasp of ruling class",
+   "Mughal court language",
+   "Foundation of Arya Samaj",
+   "Predominant by mid-19th century"
+  ]
+ },
+ "163": "retire",
+ "165": "retire",
+ "199": {
+  "lh": "Movement",
+  "rh": "Location",
+  "L": [
+   "Champaran Satyagraha",
+   "Kheda Satyagraha",
+   "Non-Cooperation Movement",
+   "Salt Satyagraha"
+  ],
+  "why": "Champaran was in Bihar, Kheda in Gujarat, Non-Cooperation was nationwide and the Salt March ended at Dandi.",
+  "R": [
+   "Bihar",
+   "Gujarat",
+   "Nationwide",
+   "Dandi"
+  ]
+ },
+ "234": "retire",
+ "236": "retire",
+ "238": "retire",
+ "270": {
+  "stem": "Match the priority with the policy area:",
+  "lh": "Priority",
+  "rh": "Policy area",
+  "L": [
+   "Research",
+   "Literacy",
+   "Heavy industry",
+   "Rural economy"
+  ],
+  "why": "Research falls under science and technology, literacy under education, heavy industry under the investment strategy and the rural economy under the Green Revolution.",
+  "R": [
+   "Science and Technology",
+   "Education",
+   "Investment Strategy",
+   "Green Revolution"
+  ]
+ },
+ "271": "retire",
+ "332": "retire",
+ "333": "retire",
+ "334": {
+  "lh": "Year",
+  "rh": "Event",
+  "L": [
+   "1916",
+   "1905",
+   "1911"
+  ],
+  "why": "Japan defeated Russia in 1905, the Chinese Revolution came in 1911 and the Lucknow Pact was signed in 1916.",
+  "R": [
+   "Lucknow Pact",
+   "Japan defeated Russia",
+   "Chinese revolution"
+  ]
+ },
+ "335": {
+  "lh": "Movement / act",
+  "rh": "Nature",
+  "L": [
+   "Lucknow Pact",
+   "Rowlatt Act",
+   "Home Rule Movement"
+  ],
+  "why": "The Lucknow Pact was a Congress-League (Hindu-Muslim) agreement, the Rowlatt Act a repressive law and the Home Rule movement a campaign for self-government.",
+  "R": [
+   "Hindu-Muslim Agreement",
+   "Draconic/Repressive",
+   "Self-governance movement"
+  ]
+ },
+ "336": {
+  "lh": "Region",
+  "rh": "Home Rule League led by",
+  "L": [
+   "Maharashtra, Karnataka, Central Provinces and Berar",
+   "Rest of India"
+  ],
+  "why": "Tilak's Home Rule League covered Maharashtra (except Bombay city), Karnataka, the Central Provinces and Berar; Annie Besant's league covered the rest of India.",
+  "R": [
+   "Tilak",
+   "Annie Besant"
+  ]
+ },
+ "337": "retire",
+ "426": "retire",
+ "431": "retire",
+ "441": "retire",
+ "539": {
+  "lh": "Place / event",
+  "rh": "Location",
+  "L": [
+   "Champaran",
+   "Gandhi's birthplace",
+   "Sabarmati Ashram"
+  ],
+  "why": "Champaran is in Bihar, Gandhi was born at Porbandar and the Sabarmati Ashram is in Ahmedabad.",
+  "R": [
+   "Bihar",
+   "Porbandar",
+   "Ahmedabad"
+  ]
+ }
+}

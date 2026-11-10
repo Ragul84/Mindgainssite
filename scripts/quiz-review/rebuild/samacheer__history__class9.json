@@ -1,0 +1,150 @@
+{
+ "325": "retire",
+ "350": "retire",
+ "373": {
+  "lh": "Gas",
+  "rh": "Share of dry air",
+  "L": [
+   "Oxygen",
+   "Carbon dioxide",
+   "Nitrogen",
+   "Argon"
+  ],
+  "why": "Nitrogen 78%, oxygen 21%, argon 0.93% and carbon dioxide about 0.03%.",
+  "R": [
+   "21%",
+   "0.03%",
+   "78%",
+   "0.93%"
+  ]
+ },
+ "374": {
+  "lh": "Gas",
+  "rh": "Discovered by",
+  "L": [
+   "Oxygen",
+   "Nitrogen"
+  ],
+  "why": "Joseph Priestley discovered oxygen (1774); Daniel Rutherford discovered nitrogen (1772).",
+  "R": [
+   "Joseph Priestly",
+   "Daniel Rutherford"
+  ]
+ },
+ "375": {
+  "lh": "Gas",
+  "rh": "Function",
+  "L": [
+   "Ozone",
+   "Oxygen",
+   "Carbon dioxide",
+   "Nitrogen"
+  ],
+  "why": "Ozone shields us from UV rays, oxygen is vital for living things, carbon dioxide absorbs heat and nitrogen dilutes oxygen.",
+  "R": [
+   "Protects from UV radiation",
+   "Important for living organisms",
+   "Absorbs heat",
+   "Acts as a diluent"
+  ]
+ },
+ "376": "retire",
+ "401": "retire",
+ "402": "retire",
+ "403": "retire",
+ "404": "retire",
+ "428": "retire",
+ "429": "retire",
+ "430": "retire",
+ "431": "retire",
+ "485": "retire",
+ "486": "retire",
+ "499": {
+  "lh": "Term",
+  "rh": "Definition",
+  "L": [
+   "Political party",
+   "Election",
+   "Pressure group"
+  ],
+  "why": "A political party is an organised group that contests elections, an election is the process of choosing public officials and a pressure group seeks to influence policy without contesting.",
+  "R": [
+   "An organized group contesting elections",
+   "A decision-making process to choose public officials",
+   "An organization seeking to influence policy"
+  ]
+ },
+ "525": {
+  "lh": "Sector",
+  "rh": "Description",
+  "L": [
+   "Secondary sector",
+   "Primary sector",
+   "Tertiary sector"
+  ],
+  "why": "The primary sector is agriculture, the secondary sector industry and the tertiary sector services.",
+  "R": [
+   "Industrial sector",
+   "Agricultural sector",
+   "Service sector"
+  ]
+ },
+ "526": {
+  "lh": "Term",
+  "rh": "Role",
+  "L": [
+   "Employers",
+   "Employees"
+  ],
+  "why": "Employers pay rewards for work; employees are the people engaged in the economic activity.",
+  "R": [
+   "Pay rewards for work",
+   "Engaged in economic activities"
+  ]
+ },
+ "527": {
+  "lh": "Age group",
+  "rh": "Classification",
+  "L": [
+   "15 to 60 years",
+   "Below 15 years",
+   "Above 60 years"
+  ],
+  "why": "As the textbook classifies it: people aged 15-60 form the workforce, those below 15 are children and those above 60 are excluded from the workforce.",
+  "R": [
+   "Workforce",
+   "Children",
+   "Excluded"
+  ]
+ },
+ "528": "retire",
+ "544": {
+  "lh": "International unit",
+  "rh": "Indian equivalent",
+  "L": [
+   "1 million",
+   "1 billion"
+  ],
+  "why": "One million is 10 lakh; one billion is 100 crore.",
+  "R": [
+   "10 lakh",
+   "100 crore"
+  ]
+ },
+ "545": {
+  "lh": "Evidence",
+  "rh": "Field of study",
+  "L": [
+   "Material remains (artefacts)",
+   "Rock layers",
+   "Human fossils"
+  ],
+  "why": "Archaeology studies material remains, geology rock layers and palaeoanthropology human fossils.",
+  "R": [
+   "Archaeology",
+   "Geology",
+   "Palaeoanthropology"
+  ]
+ },
+ "557": "retire"
+}

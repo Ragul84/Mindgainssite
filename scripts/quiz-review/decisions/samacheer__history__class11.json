@@ -1,0 +1,320 @@
+{
+ "retire": [
+  40,
+  95,
+  155,
+  157,
+  158,
+  169,
+  170,
+  171,
+  172,
+  173,
+  174,
+  233,
+  234,
+  236,
+  268,
+  269,
+  276
+ ],
+ "fix": {
+  "61": {
+   "question": "Match List I with List II: List I (Event) A. Battle of Kanauj B. Second Battle of Panipat C. Battle of Chausa D. Death of Sher Shah List II (Year) 1. 1539 2. 1540 3. 1545 4. 1556",
+   "options": [
+    "A-2, B-1, C-4, D-3",
+    "A-2, B-4, C-1, D-3",
+    "A-2, B-4, C-3, D-1",
+    "A-2, B-3, C-1, D-4"
+   ],
+   "answer_index": 1,
+   "explanation": "Chausa 1539, Kanauj 1540, Sher Shah's death 1545, Second Panipat 1556."
+  },
+  "62": {
+   "question": "Match List I with List II: List I (Treaty) A. Treaty of Madras B. Treaty of Warna C. Treaty of Paris D. Treaty of Salbai List II (Year) 1. 1731 2. 1782 3. 1783 4. 1769",
+   "options": [
+    "A-4, B-1, C-2, D-3",
+    "A-2, B-1, C-3, D-4",
+    "A-4, B-1, C-3, D-2",
+    "A-4, B-2, C-3, D-1"
+   ],
+   "answer_index": 2,
+   "explanation": "Warna 1731, Madras 1769, Salbai 1782, Paris 1783."
+  },
+  "63": {
+   "question": "Match List I with List II: List I (Death of) A. Shivaji B. Babur C. Aurangzeb D. Krishnadeva Raya List II (Year) 1. 1680 2. 1530 3. 1707 4. 1529",
+   "options": [
+    "A-1, B-2, C-4, D-3",
+    "A-2, B-1, C-3, D-4",
+    "A-4, B-2, C-3, D-1",
+    "A-1, B-2, C-3, D-4"
+   ],
+   "answer_index": 3,
+   "explanation": "Krishnadeva Raya died in 1529, Babur in 1530, Shivaji in 1680 and Aurangzeb in 1707."
+  },
+  "92": {
+   "question": "Match List I with List II: List I (Thinker) A. Han Feizi B. Sun Tzu C. Confucius D. Laozi List II (Focus) 1. Nature 2. Military Strategy 3. Social Order 4. Strict Law",
+   "options": [
+    "A-4, B-2, C-3, D-1",
+    "A-4, B-3, C-2, D-1",
+    "A-4, B-1, C-3, D-2",
+    "A-2, B-4, C-3, D-1"
+   ],
+   "answer_index": 0,
+   "explanation": "Han Feizi shaped Legalism (strict law), Sun Tzu wrote on military strategy, Confucius stressed social order and Laozi (Taoism) harmony with nature."
+  },
+  "93": {
+   "question": "Match List I with List II: List I (City) A. Cuzco B. Chang'an C. Tenochtitlan D. Tikal List II (Civilisation) 1. Maya 2. China 3. Aztec 4. Inca",
+   "options": [
+    "A-1, B-2, C-3, D-4",
+    "A-4, B-2, C-3, D-1",
+    "A-2, B-4, C-3, D-1",
+    "A-4, B-1, C-3, D-2"
+   ],
+   "answer_index": 1,
+   "explanation": "Cuzco was the Inca capital, Chang'an a great Chinese capital, Tenochtitlan the Aztec capital and Tikal a major Maya city."
+  },
+  "94": {
+   "question": "Match List I with List II: List I (Dynasty) A. Zhou B. Han C. Shang D. Qin List II (Associated with) 1. Mandate of Heaven 2. Great Wall 3. Oracle Bones 4. Civil Service",
+   "options": [
+    "A-1, B-3, C-4, D-2",
+    "A-1, B-4, C-2, D-3",
+    "A-1, B-4, C-3, D-2",
+    "A-2, B-4, C-3, D-1"
+   ],
+   "answer_index": 2,
+   "explanation": "The Zhou claimed the Mandate of Heaven, the Han built the civil service, the Shang used oracle bones and the Qin linked up the Great Wall."
+  },
+  "96": {
+   "question": "Match List I with List II: List I (Structure) A. Great Wall B. Machu Picchu C. Pyramids of Giza D. Chichen Itza List II (Civilisation) 1. Egypt 2. Maya 3. China 4. Inca",
+   "options": [
+    "A-3, B-4, C-1, D-2",
+    "A-4, B-3, C-1, D-2",
+    "A-2, B-4, C-1, D-3",
+    "A-3, B-1, C-4, D-2"
+   ],
+   "answer_index": 0,
+   "explanation": "The Great Wall is Chinese, Machu Picchu Inca, the Giza pyramids Egyptian and Chichen Itza Maya."
+  },
+  "153": {
+   "question": "Match List I with List II: List I (Term (Mesopotamia)) A. Cuneiform B. Ziggurat C. Akkad D. Sumer List II (Meaning) 1. Temple Tower 2. Central region 3. Wedge-shaped writing 4. Southern region",
+   "options": [
+    "A-2, B-1, C-3, D-4",
+    "A-3, B-1, C-2, D-4",
+    "A-4, B-1, C-2, D-3",
+    "A-1, B-3, C-2, D-4"
+   ],
+   "answer_index": 1,
+   "explanation": "Cuneiform is wedge-shaped writing, a ziggurat a temple tower, Akkad the central region and Sumer the southern region of Mesopotamia."
+  },
+  "154": {
+   "question": "Match List I with List II: List I (Mesopotamian god) A. Enlil B. Shamash (Utu) C. Anu D. Ishtar (Inanna) List II (Domain) 1. Sun God 2. Sky God 3. Air God 4. Love and War",
+   "options": [
+    "A-2, B-1, C-3, D-4",
+    "A-3, B-2, C-1, D-4",
+    "A-3, B-1, C-2, D-4",
+    "A-3, B-4, C-2, D-1"
+   ],
+   "answer_index": 2,
+   "explanation": "Enlil was god of air, Shamash of the Sun, Anu of the sky and Ishtar of love and war."
+  },
+  "156": {
+   "question": "Match List I with List II: List I (Material) A. Lapis lazuli B. Copper C. Cedar wood List II (Source) 1. Afghanistan 2. Oman 3. Lebanon",
+   "options": [
+    "A-1, B-2, C-3",
+    "A-3, B-2, C-1",
+    "A-2, B-1, C-3",
+    "A-1, B-3, C-2"
+   ],
+   "answer_index": 0,
+   "explanation": "Mesopotamia imported lapis lazuli from Afghanistan, copper from Oman and cedar wood from Lebanon."
+  },
+  "200": {
+   "question": "Match List I with List II: List I (Battle) A. Battle of Kanauj B. Battle of Haldighati C. Battle of Chausa List II (Year) 1. 1540 2. 1576 3. 1539",
+   "options": [
+    "A-1, B-2, C-3",
+    "A-2, B-1, C-3",
+    "A-1, B-3, C-2",
+    "A-3, B-2, C-1"
+   ],
+   "answer_index": 0,
+   "explanation": "Chausa 1539, Kanauj 1540, Haldighati 1576."
+  },
+  "201": {
+   "question": "Match List I with List II: List I (Act / settlement) A. Pitt's India Act B. Regulating Act C. Permanent Settlement List II (Year) 1. 1773 2. 1784 3. 1793",
+   "options": [
+    "A-1, B-2, C-3",
+    "A-2, B-1, C-3",
+    "A-3, B-1, C-2",
+    "A-2, B-3, C-1"
+   ],
+   "answer_index": 1,
+   "explanation": "Regulating Act 1773, Pitt's India Act 1784, Permanent Settlement 1793."
+  },
+  "202": {
+   "question": "Match List I with List II: List I (Carnatic War) A. Second Carnatic War B. First Carnatic War C. Third Carnatic War List II (Began) 1. 1756 2. 1746 3. 1749",
+   "options": [
+    "A-2, B-3, C-1",
+    "A-3, B-1, C-2",
+    "A-3, B-2, C-1",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 2,
+   "explanation": "The First Carnatic War began in 1746, the Second in 1749 and the Third in 1756."
+  },
+  "231": {
+   "question": "Match List I with List II: List I (Period) A. Mesolithic B. Palaeolithic C. Chalcolithic D. Neolithic List II (Typical tools) 1. Polished stone 2. Copper tools 3. Microliths 4. Hand axe",
+   "options": [
+    "A-1, B-4, C-2, D-3",
+    "A-3, B-4, C-1, D-2",
+    "A-2, B-4, C-3, D-1",
+    "A-3, B-4, C-2, D-1"
+   ],
+   "answer_index": 3,
+   "explanation": "Microliths mark the Mesolithic, hand axes the Palaeolithic, copper tools the Chalcolithic and polished stone tools the Neolithic."
+  },
+  "232": {
+   "question": "Match List I with List II: List I (Hominin) A. Homo erectus B. Homo habilis C. Australopithecus D. Homo sapiens List II (Name means) 1. Upright man 2. Southern ape 3. Wise man 4. Handy man",
+   "options": [
+    "A-1, B-4, C-2, D-3",
+    "A-1, B-4, C-3, D-2",
+    "A-1, B-2, C-4, D-3",
+    "A-1, B-3, C-2, D-4"
+   ],
+   "answer_index": 0,
+   "explanation": "Homo erectus means upright man, Homo habilis handy man, Australopithecus southern ape and Homo sapiens wise man."
+  },
+  "235": {
+   "question": "Match List I with List II: List I (Fossil find) A. Neanderthal man B. Lucy (Australopithecus) C. Java man D. Peking man List II (Region) 1. China 2. Germany 3. Indonesia 4. Ethiopia",
+   "options": [
+    "A-1, B-4, C-3, D-2",
+    "A-2, B-4, C-1, D-3",
+    "A-4, B-2, C-3, D-1",
+    "A-2, B-4, C-3, D-1"
+   ],
+   "answer_index": 3,
+   "explanation": "Neanderthal man was found in Germany, Lucy in Ethiopia, Java man in Indonesia and Peking man in China."
+  },
+  "265": {
+   "question": "Match List I with List II: List I (Example) A. Edicts of Ashoka B. Vedas C. Punch-marked coins D. Arthashastra List II (Type of source) 1. Numismatic Source 2. Secular Literature 3. Inscriptions 4. Religious Literature",
+   "options": [
+    "A-3, B-1, C-4, D-2",
+    "A-3, B-4, C-1, D-2",
+    "A-4, B-3, C-1, D-2",
+    "A-2, B-4, C-1, D-3"
+   ],
+   "answer_index": 1,
+   "explanation": "Ashoka's edicts are inscriptions, the Vedas religious literature, coins numismatic sources and the Arthashastra secular literature."
+  },
+  "266": {
+   "question": "Match List I with List II: List I (Period) A. Historic period B. Prehistoric period C. Modern period D. Protohistoric period List II (Characteristic) 1. Deciphered writing 2. Industrialization 3. Undeciphered writing 4. No writing",
+   "options": [
+    "A-4, B-1, C-2, D-3",
+    "A-3, B-4, C-2, D-1",
+    "A-1, B-4, C-2, D-3",
+    "A-1, B-4, C-3, D-2"
+   ],
+   "answer_index": 2,
+   "explanation": "The historic period has deciphered writing, the prehistoric none, the protohistoric (e.g. Harappan) has writing not yet deciphered and the modern period saw industrialisation."
+  },
+  "267": {
+   "question": "Match List I with List II: List I (Historian / school) A. Annales school B. Herodotus C. Karl Marx D. Leopold von Ranke List II (Focus) 1. Class Struggle 2. Social History 3. Scientific History 4. Father of History",
+   "options": [
+    "A-4, B-2, C-1, D-3",
+    "A-3, B-4, C-1, D-2",
+    "A-2, B-1, C-4, D-3",
+    "A-2, B-4, C-1, D-3"
+   ],
+   "answer_index": 3,
+   "explanation": "The Annales school pioneered social history, Herodotus is the father of history, Marx saw history as class struggle and Ranke founded scientific history."
+  },
+  "320": {
+   "question": "Match List I with List II: List I (Philosopher) A. Plato B. Socrates C. Epicurus D. Aristotle List II (Known for) 1. Taught Alexander the Great 2. Founded the Academy 3. Founded Epicureanism 4. Socratic Method of questioning",
+   "options": [
+    "A-2, B-4, C-3, D-1",
+    "A-2, B-4, C-1, D-3",
+    "A-4, B-2, C-3, D-1",
+    "A-2, B-1, C-3, D-4"
+   ],
+   "answer_index": 0,
+   "explanation": "Plato founded the Academy, Socrates taught by questioning, Epicurus founded Epicureanism and Aristotle tutored Alexander the Great."
+  },
+  "321": {
+   "question": "Match List I with List II: List I (Roman structure) A. Aqueduct B. Forum C. Colosseum D. Pantheon List II (Purpose) 1. Temple to all gods 2. Water transport 3. Public square 4. Gladiatorial games",
+   "options": [
+    "A-1, B-3, C-4, D-2",
+    "A-2, B-3, C-4, D-1",
+    "A-2, B-3, C-1, D-4",
+    "A-4, B-3, C-2, D-1"
+   ],
+   "answer_index": 1,
+   "explanation": "Aqueducts carried water, the Forum was the public square, the Colosseum hosted gladiator games and the Pantheon was a temple to all the gods."
+  },
+  "322": {
+   "question": "Match List I with List II: List I (Greek term) A. Ostracism B. Hoplite C. Polis D. Agora List II (Meaning) 1. City-state 2. Marketplace 3. Foot soldier 4. Banishment",
+   "options": [
+    "A-4, B-3, C-2, D-1",
+    "A-4, B-1, C-3, D-2",
+    "A-4, B-3, C-1, D-2",
+    "A-3, B-4, C-1, D-2"
+   ],
+   "answer_index": 2,
+   "explanation": "Ostracism was banishment by vote, a hoplite a foot soldier, a polis a city-state and the agora a marketplace."
+  },
+  "323": {
+   "question": "Match List I with List II: List I (Roman leader) A. Nero B. Constantine C. Augustus D. Julius Caesar List II (Remembered as) 1. Founder of Constantinople 2. First Emperor 3. Infamous tyrant 4. Dictator for life",
+   "options": [
+    "A-3, B-2, C-1, D-4",
+    "A-2, B-1, C-3, D-4",
+    "A-3, B-4, C-2, D-1",
+    "A-3, B-1, C-2, D-4"
+   ],
+   "answer_index": 3,
+   "explanation": "Nero is remembered as a tyrant, Constantine founded Constantinople, Augustus was the first emperor and Julius Caesar was made dictator for life."
+  },
+  "324": {
+   "question": "Match List I with List II: List I (War) A. Punic Wars B. Gallic Wars C. Greco-Persian Wars D. Peloponnesian War List II (Fought between) 1. Athens vs Sparta 2. Rome vs Gauls 3. Rome vs Carthage 4. Greece vs Persia",
+   "options": [
+    "A-3, B-2, C-4, D-1",
+    "A-3, B-4, C-2, D-1",
+    "A-1, B-2, C-4, D-3",
+    "A-4, B-2, C-3, D-1"
+   ],
+   "answer_index": 0,
+   "explanation": "The Punic Wars were Rome against Carthage, the Gallic Wars Rome against the Gauls, the Greco-Persian Wars Greece against Persia and the Peloponnesian War Athens against Sparta."
+  },
+  "325": {
+   "question": "Match List I with List II: List I (Greek god) A. Poseidon B. Athena C. Zeus D. Ares List II (Domain) 1. Wisdom 2. King of Gods 3. Sea 4. War",
+   "options": [
+    "A-3, B-2, C-1, D-4",
+    "A-3, B-1, C-2, D-4",
+    "A-4, B-1, C-2, D-3",
+    "A-1, B-3, C-2, D-4"
+   ],
+   "answer_index": 1,
+   "explanation": "Poseidon ruled the sea, Athena wisdom, Zeus was king of the gods and Ares god of war."
+  },
+  "327": {
+   "question": "Match List I with List II: List I (Emperor) A. Shah Jahan B. Akbar C. Aurangzeb List II (Known for) 1. Taj Mahal 2. Expansion to Deccan 3. Din-i-Ilahi",
+   "options": [
+    "A-1, B-2, C-3",
+    "A-2, B-3, C-1",
+    "A-3, B-1, C-2",
+    "A-1, B-3, C-2"
+   ],
+   "answer_index": 3,
+   "explanation": "Shah Jahan built the Taj Mahal, Akbar founded Din-i-Ilahi and Aurangzeb pushed the empire into the Deccan."
+  },
+  "352": {
+   "question": "Match List I with List II: List I (Civilisation) A. Olmec B. Maya C. Inca D. Han China E. Aztec List II (Achievement) 1. Developed an advanced calendar 2. Invention of papermaking 3. Created colossal stone heads 4. Built Machu Picchu 5. Constructed Tenochtitlán",
+   "options": [
+    "A-3, B-1, C-4, D-2, E-5",
+    "A-3, B-1, C-5, D-2, E-4",
+    "A-3, B-2, C-4, D-1, E-5",
+    "A-3, B-1, C-4, D-5, E-2"
+   ],
+   "answer_index": 0,
+   "explanation": "The Olmecs carved colossal stone heads, the Maya built an advanced calendar, the Inca built Machu Picchu, Han China invented paper and the Aztecs built Tenochtitlan."
+  }
+ }
+}

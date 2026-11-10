@@ -1,0 +1,240 @@
+{
+ "retire": [
+  39,
+  68,
+  69,
+  70,
+  71,
+  72,
+  134,
+  170,
+  200,
+  201,
+  202,
+  230,
+  231,
+  233,
+  234,
+  262,
+  263,
+  264,
+  265,
+  266,
+  300,
+  307,
+  341,
+  342,
+  343,
+  368,
+  370,
+  430,
+  431,
+  432,
+  502
+ ],
+ "fix": {
+  "109": {
+   "question": "Match the person or body with the description: List I (Person / body) A. T. Muthuswami Iyer B. G. Subramaniya Iyer C. Madras Mahajana Sabha List II (Description) 1. Organization with nationalist objectives 2. Founder of The Hindu 3. First Indian judge of Madras High Court",
+   "options": [
+    "A-1, B-2, C-3",
+    "A-3, B-2, C-1",
+    "A-3, B-1, C-2",
+    "A-2, B-3, C-1"
+   ],
+   "answer_index": 1,
+   "explanation": "T. Muthuswami Iyer was the first Indian judge of the Madras High Court, G. Subramaniya Iyer co-founded The Hindu and the Madras Mahajana Sabha was an early nationalist organisation."
+  },
+  "125": {
+   "question": "Match List I with List II: List I (Season (Tamil Nadu)) A. Kar / Kuruvai B. Samba C. Navarai List II (Harvest period) 1. August-September 2. February-March 3. January-February",
+   "options": [
+    "A-1, B-2, C-3",
+    "A-1, B-3, C-2",
+    "A-2, B-3, C-1",
+    "A-3, B-1, C-2"
+   ],
+   "answer_index": 1,
+   "explanation": "The Kar (Kuruvai) crop is harvested in August-September, Samba in January-February and Navarai in February-March."
+  },
+  "166": {
+   "question": "Match List I with List II: List I (Soil) A. Black soil B. Alluvial soil C. Laterite soil D. Red soil List II (Characteristic) 1. Sticky when wet 2. Kaolinitic minerals 3. Rich in potash 4. Leaching process",
+   "options": [
+    "A-2, B-3, C-4, D-1",
+    "A-4, B-3, C-1, D-2",
+    "A-1, B-3, C-4, D-2",
+    "A-1, B-3, C-2, D-4"
+   ],
+   "answer_index": 2,
+   "explanation": "Black soil is sticky when wet, alluvial soil is rich in potash, laterite soil forms by leaching and red soil contains kaolinitic minerals."
+  },
+  "167": {
+   "question": "Match List I with List II: List I (Soil) A. Red soil B. Alluvial soil C. Laterite soil D. Black soil List II (Distribution) 1. Ganga river valley 2. Wet and dry regions 3. Maharashtra plateau 4. Tamil Nadu",
+   "options": [
+    "A-4, B-2, C-1, D-3",
+    "A-1, B-4, C-2, D-3",
+    "A-4, B-1, C-3, D-2",
+    "A-4, B-1, C-2, D-3"
+   ],
+   "answer_index": 3,
+   "explanation": "Red soil covers much of Tamil Nadu, alluvial soil the Ganga valley, laterite soil areas with alternate wet and dry seasons and black soil the Maharashtra plateau."
+  },
+  "168": {
+   "question": "Match List I with List II: List I (Soil) A. Black soil B. Red soil C. Alluvial soil D. Laterite soil List II (Suited crop) 1. Leached soil crops 2. Sugarcane 3. Pulses 4. Cotton",
+   "options": [
+    "A-4, B-3, C-2, D-1",
+    "A-2, B-3, C-4, D-1",
+    "A-4, B-2, C-3, D-1",
+    "A-4, B-3, C-1, D-2"
+   ],
+   "answer_index": 0,
+   "explanation": "Black soil suits cotton, red soil pulses, alluvial soil sugarcane and laterite soil crops that grow in leached soils such as cashew and tea."
+  },
+  "169": {
+   "question": "Match List I with List II: List I (Soil) A. Alluvial soil B. Laterite soil C. Black soil D. Red soil List II (Formed from) 1. Crystalline rocks 2. River sediments 3. Basalts of Deccan trap 4. Leaching",
+   "options": [
+    "A-2, B-3, C-4, D-1",
+    "A-2, B-4, C-3, D-1",
+    "A-3, B-4, C-2, D-1",
+    "A-2, B-1, C-3, D-4"
+   ],
+   "answer_index": 1,
+   "explanation": "Alluvial soil comes from river sediment, laterite soil from leaching, black soil from Deccan trap basalt and red soil from crystalline rocks."
+  },
+  "198": {
+   "question": "Match List I with List II: List I (Point) A. Kanniyakumari B. Guhar Moti (Gujarat) C. Indira Col D. Indira Point List II (Description) 1. South Mainland 2. North 3. Southmost Point 4. West",
+   "options": [
+    "A-4, B-1, C-2, D-3",
+    "A-1, B-3, C-2, D-4",
+    "A-1, B-4, C-2, D-3",
+    "A-2, B-4, C-1, D-3"
+   ],
+   "answer_index": 2,
+   "explanation": "Kanniyakumari is the southern tip of the mainland, Guhar Moti in Gujarat the westernmost point, Indira Col the northernmost and Indira Point the southernmost point of India."
+  },
+  "199": {
+   "question": "Match List I with List II: List I (Measure) A. 2,933 km B. 3,214 km C. 5 hours 30 minutes D. About 30° List II (Description) 1. North-South extent 2. Longitudinal difference 3. IST ahead of GMT 4. East-West extension",
+   "options": [
+    "A-4, B-3, C-1, D-2",
+    "A-3, B-1, C-4, D-2",
+    "A-2, B-1, C-3, D-4",
+    "A-4, B-1, C-3, D-2"
+   ],
+   "answer_index": 3,
+   "explanation": "India stretches 2,933 km east-west and 3,214 km north-south; IST is 5 h 30 min ahead of GMT; the longitudinal extent is about 30°."
+  },
+  "232": {
+   "question": "Match List I with List II: List I (Term) A. Death rate B. Population density C. Birth rate D. Population growth List II (Definition) 1. Deaths per thousand people in a year 2. Live births per thousand people in a year 3. Increase or decrease of population over time 4. Number of persons per sq km",
+   "options": [
+    "A-1, B-4, C-2, D-3",
+    "A-1, B-4, C-3, D-2",
+    "A-1, B-2, C-4, D-3",
+    "A-1, B-3, C-2, D-4"
+   ],
+   "answer_index": 0,
+   "explanation": "The death rate is deaths per thousand a year, density persons per sq km, the birth rate live births per thousand a year and growth the rise or fall of population over time."
+  },
+  "339": {
+   "question": "Match List I with List II: List I (Extremity of Tamil Nadu) A. Pulicat Lake B. Point Calimere C. Anaimalai Hills D. Cape Comorin List II (Direction) 1. East 2. North 3. South 4. West",
+   "options": [
+    "A-2, B-3, C-4, D-1",
+    "A-2, B-4, C-1, D-3",
+    "A-1, B-2, C-4, D-3",
+    "A-2, B-1, C-4, D-3"
+   ],
+   "answer_index": 3,
+   "explanation": "Tamil Nadu reaches Pulicat Lake in the north, Point Calimere in the east, the Anaimalai Hills in the west and Cape Comorin in the south."
+  },
+  "340": {
+   "question": "Match List I with List II: List I (Neighbour of Tamil Nadu) A. Kerala B. Indian Ocean C. Bay of Bengal D. Andhra Pradesh List II (Direction) 1. North 2. West 3. South 4. East",
+   "options": [
+    "A-2, B-3, C-4, D-1",
+    "A-4, B-3, C-2, D-1",
+    "A-1, B-3, C-4, D-2",
+    "A-2, B-3, C-1, D-4"
+   ],
+   "answer_index": 0,
+   "explanation": "Kerala lies to the west, the Indian Ocean to the south, the Bay of Bengal to the east and Andhra Pradesh to the north."
+  },
+  "367": {
+   "question": "Match List I with List II: List I (Scholar) A. Robert Caldwell B. Ziegenbalg C. U.V. Swaminatha Iyer D. F.W. Ellis E. C.W. Damodaram Pillai List II (Contribution) 1. Comparative Grammar of Dravidian Languages 2. Published Civakachinthamani 3. Printing press in Tranquebar 4. College of Fort St George 5. Edited Tolkappiyam",
+   "options": [
+    "A-1, B-5, C-2, D-4, E-3",
+    "A-2, B-3, C-1, D-4, E-5",
+    "A-1, B-3, C-4, D-2, E-5",
+    "A-1, B-3, C-2, D-4, E-5"
+   ],
+   "answer_index": 3,
+   "explanation": "Caldwell wrote the Comparative Grammar of the Dravidian Languages, Ziegenbalg set up the press at Tranquebar, U.V. Swaminatha Iyer published Civaka Chintamani, Ellis founded the College of Fort St George and Damodaram Pillai edited Tolkappiyam."
+  },
+  "477": {
+   "question": "Match List I with List II: List I (Dictator) A. Hitler B. Franco C. Mussolini List II (Country) 1. Spain 2. Germany 3. Italy",
+   "options": [
+    "A-1, B-2, C-3",
+    "A-2, B-1, C-3",
+    "A-2, B-3, C-1",
+    "A-3, B-1, C-2"
+   ],
+   "answer_index": 1,
+   "explanation": "Hitler ruled Germany, Franco Spain and Mussolini Italy."
+  },
+  "478": {
+   "question": "Match List I with List II: List I (Term) A. Isolationism B. Aryan C. Nazi List II (Description) 1. National Socialist party 2. US approach 3. Pure race notion",
+   "options": [
+    "A-1, B-3, C-2",
+    "A-2, B-1, C-3",
+    "A-2, B-3, C-1",
+    "A-3, B-2, C-1"
+   ],
+   "answer_index": 2,
+   "explanation": "Isolationism was the US approach of staying out of world affairs, 'Aryan' was the Nazi notion of a pure race and Nazi stands for the National Socialist party."
+  },
+  "479": {
+   "question": "Match List I with List II: List I (Cause) A. Hyperinflation B. Hitler's oratory C. War reparations List II (Effect) 1. Swaying the people 2. Worthless currency 3. Discontent in Germany",
+   "options": [
+    "A-2, B-3, C-1",
+    "A-1, B-2, C-3",
+    "A-3, B-1, C-2",
+    "A-2, B-1, C-3"
+   ],
+   "answer_index": 3,
+   "explanation": "Hyperinflation made the mark worthless, Hitler's speeches swayed people and the reparations of the Versailles treaty bred discontent in Germany."
+  },
+  "480": {
+   "question": "Match List I with List II: List I (Person) A. Adolf Hitler B. Francisco Franco C. Woodrow Wilson List II (Role) 1. Spanish Dictator 2. Founded Nazi party 3. Initiated League of Nations",
+   "options": [
+    "A-2, B-1, C-3",
+    "A-3, B-1, C-2",
+    "A-1, B-2, C-3",
+    "A-2, B-3, C-1"
+   ],
+   "answer_index": 0,
+   "explanation": "Hitler led the Nazi party, Franco was Spain's dictator and Woodrow Wilson proposed the League of Nations."
+  },
+  "513": {
+   "question": "Match List I with List II: List I (Place) A. Bikaner B. Kolkata List II (Annual rainfall) 1. 24 cm rainfall 2. 119 cm rainfall",
+   "options": [
+    "A-2, B-1",
+    "A-1, B-2"
+   ],
+   "answer_index": 1,
+   "explanation": "As the textbook notes, Bikaner receives about 24 cm of rain a year and Kolkata about 119 cm."
+  },
+  "520": {
+   "question": "Match List I with List II: List I (Movement type) A. Religious movement B. Restorative rebellion List II (Characteristic) 1. Restructuring society on religious principles 2. Restore old order",
+   "options": [
+    "A-1, B-2",
+    "A-2, B-1"
+   ],
+   "answer_index": 0,
+   "explanation": "Religious movements sought to restructure society on religious principles; restorative rebellions tried to restore the old order."
+  },
+  "521": {
+   "question": "Match List I with List II: List I (Leader) A. Dudu Mian B. Haji Shariatullah List II (Associated with) 1. Launched Farazi movement 2. Land belongs to God",
+   "options": [
+    "A-1, B-2",
+    "A-2, B-1"
+   ],
+   "answer_index": 1,
+   "explanation": "Haji Shariatullah launched the Farazi movement; his son Dudu Mian declared that land belongs to God."
+  }
+ }
+}

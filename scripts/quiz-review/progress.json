@@ -38,5 +38,25 @@
   "reviewed_to": null,
   "total": 260,
   "retired": 8
+ },
+ "samacheer/history/class10": {
+  "reviewed_to": null,
+  "total": 523,
+  "retired": 31
+ },
+ "samacheer/history/class11": {
+  "reviewed_to": null,
+  "total": 361,
+  "retired": 17
+ },
+ "samacheer/history/class12": {
+  "reviewed_to": null,
+  "total": 540,
+  "retired": 16
+ },
+ "samacheer/history/class9": {
+  "reviewed_to": null,
+  "total": 561,
+  "retired": 15
  }
 }
