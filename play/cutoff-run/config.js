@@ -15,5 +15,6 @@ window.CUTOFF_CONFIG = {
   leagueEndpoint: '',    // optional: replaces the Supabase league table calls
   saveEndpoint: '',       // optional: replaces the Supabase progress table calls
   gameApi: '/api/game', // mindgains.ai Worker
+  world3d: false,       // false = everyone plays the classic 2D world (players can still switch in Settings only when this is true)
   examDates: []         // menu countdown chip, e.g. [{name: 'UPSC Prelims', date: 'YYYY-MM-DD'}]. Use only officially notified dates.
 };
