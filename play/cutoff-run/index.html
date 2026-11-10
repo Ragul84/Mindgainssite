@@ -1581,7 +1581,7 @@ function renderMatch(){const {mt,pairs,pick,checked}=MS,el=$('match');
   let rows='';for(let i=0;i<Math.max(tL.length,tR.length);i++)rows+=(tL[i]||'<span></span>')+(tR[i]||'<span></span>');
   const all=pairs.every(r=>r>=0),good=checked?pairs.filter((r,i)=>r===mt.key[i]).length:0;
   el.innerHTML=`<div class="mpanel"><div class="mhd"><span class="mtag">LIBRARY STOP · MATCH</span><span>${MS.it.pyq?'3× marks':''}</span></div>
-    <div class="mh">${esc(mt.stem.length>60?'Match the pairs':mt.stem)}</div>
+    <div class="mh">${esc(mt.stem.length>60||mt.stem.length<14?'Match the pairs':mt.stem)}</div>
     <div class="mcols"><svg class="mlines"></svg>${rows}</div>
     <div class="mft"><span>${checked?(good===pairs.length?'All pairs right!':`${good} of ${pairs.length} right`):pick>=0?'Now tap its partner':'Tap an item, then its partner'}</span>
     <button class="mcheck" ${all&&!checked?'':'disabled'}>${checked?'…':'Check'}</button></div></div>`;
