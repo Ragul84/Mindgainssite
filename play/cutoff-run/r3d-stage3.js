@@ -20,7 +20,41 @@ export function stage3({ scene, mat, student, K }) {
       hideFrom(n) { for (let i = n; i < list.length; i++) list[i].visible = false; },
     };
   }
-  const rivals = pool(true), ambush = pool(true), standers = pool(true), flyers = pool(true);
+  // Doubt monsters: the ambush batches. Hunched blobs with one glowing eye, horns, claws and a toothy grin.
+  const MON = [[0x5b2a86, 0x3a1857], [0x2d5f6b, 0x173a42], [0x8a2a3c, 0x55172a], [0x4a3a8f, 0x2b2160]].map(([a, b]) => [mat(a, .55), mat(b, .6)]);
+  const eyeM = new THREE.MeshStandardMaterial({ color: 0xfff27a, emissive: 0xffe14a, emissiveIntensity: 2.2, roughness: .3 });
+  const pupilM = mat(0x111111, .2), toothM = mat(0xfaf5e6, .4), hornM = mat(0xe8dcc0, .5), mouthM = mat(0x1a0610, .8);
+  const mg = { body: new THREE.SphereGeometry(.55, 22, 16), belly: new THREE.SphereGeometry(.36, 16, 12), eye: new THREE.SphereGeometry(.26, 16, 12), pupil: new THREE.SphereGeometry(.09, 10, 8),
+    horn: new THREE.ConeGeometry(.09, .36, 8), leg: new THREE.CapsuleGeometry(.12, .18, 3, 8), arm: new THREE.CapsuleGeometry(.09, .34, 3, 8), claw: new THREE.ConeGeometry(.05, .14, 6),
+    mouth: new RoundedBoxGeometry(.42, .12, .1, 2, .04), tooth: new THREE.ConeGeometry(.035, .08, 5) };
+  function monster(i) {
+    const g = new THREE.Group(), [skin, dark] = MON[i % MON.length], limbs = [];
+    const sh = (m) => { m.castShadow = true; return m; };
+    for (const sx of [-1, 1]) { const leg = new THREE.Group(); leg.position.set(sx * .24, .32, 0); const l = sh(new THREE.Mesh(mg.leg, dark)); l.position.y = -.14; leg.add(l); g.add(leg); limbs.push(leg); }
+    const body = sh(new THREE.Mesh(mg.body, skin)); body.scale.set(1, 1.05, .9); body.position.y = .82; body.rotation.x = .25; g.add(body);
+    const belly = new THREE.Mesh(mg.belly, dark); belly.position.set(0, .74, .32); belly.scale.set(1, 1, .5); g.add(belly);
+    const eye = new THREE.Mesh(mg.eye, eyeM); eye.position.set(0, 1.0, .44); g.add(eye);
+    const pu = new THREE.Mesh(mg.pupil, pupilM); pu.position.set(0, 1.0, .68); g.add(pu);
+    const mouth = new THREE.Mesh(mg.mouth, mouthM); mouth.position.set(0, .7, .5); g.add(mouth);
+    for (let t = 0; t < 4; t++) { const tt = new THREE.Mesh(mg.tooth, toothM); tt.position.set(-.13 + t * .087, .73, .55); tt.rotation.x = Math.PI; g.add(tt); }
+    for (const sx of [-1, 1]) { const h = new THREE.Mesh(mg.horn, hornM); h.position.set(sx * .3, 1.36, 0); h.rotation.z = -sx * .45; g.add(h); }
+    for (const sx of [-1, 1]) {
+      const arm = new THREE.Group(); arm.position.set(sx * .5, 1.0, .1);
+      const a = sh(new THREE.Mesh(mg.arm, skin)); a.position.y = -.2; arm.add(a);
+      for (let c = -1; c <= 1; c++) { const cl = new THREE.Mesh(mg.claw, hornM); cl.position.set(c * .05, -.45, .03); cl.rotation.x = Math.PI; arm.add(cl); }
+      arm.rotation.set(-1.1, 0, sx * .35); g.add(arm); limbs.push(arm);
+    }
+    g.scale.setScalar(K * 1.75); g.userData = { limbs, shirtParts: [], bag: null, monster: true };
+    return g;
+  }
+  function monPool() {
+    const list = [];
+    return {
+      get(i) { while (list.length <= i) { const m = monster(list.length); m.rotation.y = 0; scene.add(m); list.push(m); } const m = list[i]; m.visible = true; return m; },
+      hideFrom(n) { for (let i = n; i < list.length; i++) list[i].visible = false; },
+    };
+  }
+  const rivals = pool(true), ambush = monPool(), standers = pool(true), flyers = pool(true);
   const swing = (s, ph, a) => { const L = s.userData.limbs; L[0].rotation.x = Math.sin(ph) * .75 * a; L[1].rotation.x = -Math.sin(ph) * .75 * a; L[2].rotation.x = -Math.sin(ph) * .7 * a; L[3].rotation.x = Math.sin(ph) * .7 * a; };
   const cheer = (s, ph) => { const L = s.userData.limbs; L[0].rotation.x = L[1].rotation.x = 0; L[2].rotation.z = 2.6 + Math.sin(ph) * .3; L[3].rotation.z = -2.6 - Math.sin(ph) * .3; };
   const relax = (s) => { const L = s.userData.limbs; L[2].rotation.z = .12; L[3].rotation.z = -.12; };
@@ -58,7 +92,7 @@ export function stage3({ scene, mat, student, K }) {
     rivals.hideFrom(n);
     // ambush batches on the road
     n = 0;
-    for (const it of S.items) if (it.type === 'ambush' && it.init && it.n > 0 && it.z - S.dist < 46 && it.z > S.dist - 6) for (const e of it.crowd) { const s = ambush.get(n++, e.look); s.position.set(it.x + e.ox, 0, -(it.z + e.oz)); swing(s, t * 9 + e.ph, it.fighting ? 1 : .1); relax(s); }
+    for (const it of S.items) if (it.type === 'ambush' && it.init && it.n > 0 && it.z - S.dist < 46 && it.z > S.dist - 6) for (const e of it.crowd) { const s = ambush.get(n++), ph = t * 9 + e.ph, L = s.userData.limbs; s.position.set(it.x + e.ox, Math.abs(Math.sin(ph)) * .06, -(it.z + e.oz)); L[0].rotation.x = Math.sin(ph) * .6; L[1].rotation.x = -Math.sin(ph) * .6; L[2].rotation.x = -1.2 + Math.sin(ph * (it.fighting ? 1.6 : .4)) * .5; L[3].rotation.x = -1.2 - Math.sin(ph * (it.fighting ? 1.6 : .4)) * .5; }
     ambush.hideFrom(n);
     // students left cheering on the steps
     n = 0;

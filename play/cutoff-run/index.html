@@ -696,8 +696,10 @@ const subjFor=l=>{const t=trackSubj();if(t)return t.length===2?(l%2?[t[0],t[1]]:
 // ===================================================== SETUP =====================================================
 const wrap=document.getElementById('wrap'),cv=document.getElementById('c'),$=id=>document.getElementById(id);
 let ctx=cv.getContext('2d');
-let W=400,H=800,F=540,HOR=260;
-function resize(){const d=window.__lowQ?1:Math.min(2,devicePixelRatio||1);W=wrap.clientWidth;H=wrap.clientHeight;cv.width=W*d;cv.height=H*d;ctx.setTransform(d,0,0,d,0,0);F=Math.min(W*1.35,H*.62);HOR=H*.8-4*F/6}
+let W=400,H=800,F=540,HOR=260,CAMH=4,CAMB=6;
+/* camera rig: height above the road and distance behind the batch. The 3D world raises it into a flyover view. */
+window.camRig=(h,b)=>{CAMH=h;CAMB=b;resize()};
+function resize(){const d=window.__lowQ?1:Math.min(2,devicePixelRatio||1);W=wrap.clientWidth;H=wrap.clientHeight;cv.width=W*d;cv.height=H*d;ctx.setTransform(d,0,0,d,0,0);F=Math.min(W*1.35,H*.62);HOR=H*.8-CAMH*F/CAMB}
 addEventListener('resize',resize);resize();
 const store={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 let R=Math.random;
@@ -1592,7 +1594,7 @@ function draw(){
   ctx.clearRect(0,0,W,H);
   const d=S?S.dist:idleD,sh=S&&S.shake&&PL.settings.motion?(Math.random()-.5)*S.shake*.35:0,TR=(window.storyTR&&storyTR())||TRACKS[PL.cos.track]||TRACKS.sky;
   const climbY=S&&(S.phase==='climb'||S.phase==='end'||S.phase==='done')&&S.stepIdx>=0?(S.stepIdx+1)*.3:0;
-  camZ=d-6;camX=(S?S.x*.35:0)+sh;camY=4+climbY*.8;
+  camZ=d-CAMB;camX=(S?S.x*.35:0)+sh;camY=CAMH+climbY*.8;
   // 3D mode (?r3d=1): the WebGL canvas underneath draws sky, road, scenery, the batch and gate arches with the same
   // camera; this canvas then only draws labels and effects on top.
   const r3=!!(window.__r3on&&window.R3D);if(r3){try{R3D.frame({S,camX,camY,camZ,W,H,F,HOR,air:m=>S.phase==='run'?airAt(S.dist+m.z):S.airY})}catch(e){console.error(e)}}
@@ -1621,7 +1623,7 @@ function draw(){
   if(!S)return;
   for(const it of S.items)if(it.type==='hole'){const x0=it.side<0?-2:.7,x1=it.side<0?-.7:2;const z0=Math.max(it.z,camZ+.45);if(it.z1<camZ+.45)continue;
     if(!r3)quad(P(x0,0,it.z1),P(x1,0,it.z1),P(x1,0,z0),P(x0,0,z0),'#1aa3ee');if(!r3)quad(P(x0,0,it.z1),P(x1,0,it.z1),P(x1,-.25,it.z1),P(x0,-.25,it.z1),'#0b6fbf');
-    const p=P((x0+x1)/2,.02,(it.z+it.z1)/2);if(p&&it.z-camZ<40)txt('GAP',p[0],p[1],Math.max(9,p[2]*.35),'#fff')}
+    const p=P((x0+x1)/2,.02,(it.z+it.z1)/2);if(p&&it.z-camZ<40)0}
   for(const it of S.items)if(it.type==='ramp'){const z0=it.z,z1=it.z+3,g1=z1+it.air;if(g1<camZ+.45||z0-camZ>60)continue;
     if(r3){const lp=P(0,.7,z0+1.5);if(lp&&z0-camZ<40&&z1>camZ+.45)txt('JUMP!',lp[0],lp[1],Math.max(12,lp[2]*.45),'#fff');continue}
     const gz0=Math.max(z1,camZ+.45);if(g1>gz0){quad(P(-2.4,0,g1),P(2.4,0,g1),P(2.4,0,gz0),P(-2.4,0,gz0),'#2fbaf7');quad(P(-2.35,0,g1),P(2.35,0,g1),P(2.35,-.5,g1),P(-2.35,-.5,g1),'#9fc3e8');
@@ -1751,43 +1753,43 @@ function drawItem(it){
     ctx.fillStyle='#ffb3c1';ctx.beginPath();ctx.ellipse(k*.58,-k*.6,k*.08,k*.07,0,0,6.283);ctx.fill();
     ctx.fillStyle='#e0b060';ctx.beginPath();ctx.moveTo(k*.38,-k*.78);ctx.lineTo(k*.32,-k*.92);ctx.lineTo(k*.44,-k*.8);ctx.moveTo(k*.5,-k*.79);ctx.lineTo(k*.54,-k*.94);ctx.lineTo(k*.58,-k*.79);ctx.fill();
     ctx.fillStyle='#111';ctx.beginPath();ctx.arc(k*.47,-k*.69,k*.025,0,6.283);ctx.fill();ctx.fillStyle='#ffd23f';ctx.beginPath();ctx.arc(k*.36,-k*.52,k*.04,0,6.283);ctx.fill();
-    ctx.restore();const lp=P(x,1.3,z);if(lp&&it.z-S.dist<26)txt('Holy cow!',lp[0],lp[1],Math.max(10,lp[2]*.2),'#fff');break}
+    ctx.restore();const lp=P(x,1.3,z);if(lp&&it.z-S.dist<26)0;break}
   case'auto':{const x=autoX(it),p=P(x,0,z);if(!p)break;const k=p[2],dir=Math.cos(S.t*1.5+it.ph)>=0?1:-1;ctx.save();ctx.translate(p[0],p[1]);
     ctx.fillStyle='rgba(0,40,90,.2)';ctx.beginPath();ctx.ellipse(0,0,k*.55,k*.1,0,0,6.283);ctx.fill();ctx.scale(dir,1);ctx.lineWidth=Math.max(1.5,k*.025);ctx.strokeStyle='#14213d';
     ctx.fillStyle='#1f8a3a';rr(-k*.45,-k*.5,k*.8,k*.38,k*.08);ctx.fill();ctx.stroke();
     ctx.fillStyle='#ffd23f';ctx.beginPath();ctx.moveTo(-k*.45,-k*.5);ctx.lineTo(-k*.45,-k*.9);ctx.quadraticCurveTo(-k*.1,-k*1.02,k*.3,-k*.88);ctx.lineTo(k*.38,-k*.5);ctx.closePath();ctx.fill();ctx.stroke();
     ctx.fillStyle='#bfe9ff';ctx.beginPath();ctx.moveTo(k*.12,-k*.84);ctx.lineTo(k*.3,-k*.85);ctx.lineTo(k*.36,-k*.55);ctx.lineTo(k*.12,-k*.55);ctx.closePath();ctx.fill();ctx.stroke();
     ctx.fillStyle='#222';[-.3,.25].forEach(wx=>{ctx.beginPath();ctx.arc(wx*k,-k*.1,k*.1,0,6.283);ctx.fill()});ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(k*.4,-k*.4,k*.04,0,6.283);ctx.fill();
-    ctx.restore();const lp=P(x,1.4,z);if(lp&&it.z-S.dist<26)txt('AUTO!',lp[0],lp[1],Math.max(10,lp[2]*.2),'#ffd23f');break}
+    ctx.restore();const lp=P(x,1.4,z);if(lp&&it.z-S.dist<26)0;break}
   case'press':{const h=pressH(it),x0=it.side<0?-2:0,x1=it.side<0?0:2;
     quad(P(x0+.1,.02,z+.5),P(x1-.1,.02,z+.5),P(x1-.1,.02,z-.5),P(x0+.1,.02,z-.5),`rgba(20,33,61,${.15+.35*(1-h/2.2)})`);
     const pa=P(x0,0,z),pb=P(x0,3.1,z),pc=P(x1,3.1,z),pd=P(x1,0,z);if(pa&&pb&&pc&&pd){ctx.strokeStyle='#3a4256';ctx.lineWidth=Math.max(3,s*.08);ctx.beginPath();ctx.moveTo(pa[0],pa[1]);ctx.lineTo(pb[0],pb[1]);ctx.lineTo(pc[0],pc[1]);ctx.lineTo(pd[0],pd[1]);ctx.stroke()}
-    const a=P(x0+.1,h+.8,z),c=P(x1-.1,h,z);if(a&&c){ctx.fillStyle='#14213d';rr(a[0]-3,a[1]-3,c[0]-a[0]+6,c[1]-a[1]+6,s*.08);ctx.fill();ctx.fillStyle='#c0283a';rr(a[0],a[1],c[0]-a[0],c[1]-a[1],s*.06);ctx.fill();txt('EXAM PRESSURE',(a[0]+c[0])/2,(a[1]+c[1])/2,Math.max(8,s*.16),'#fff')}
+    const a=P(x0+.1,h+.8,z),c=P(x1-.1,h,z);if(a&&c){ctx.fillStyle='#14213d';rr(a[0]-3,a[1]-3,c[0]-a[0]+6,c[1]-a[1]+6,s*.08);ctx.fill();ctx.fillStyle='#c0283a';rr(a[0],a[1],c[0]-a[0],c[1]-a[1],s*.06);ctx.fill();0}
     break}
   case'fan':{const A=fanA(it),c=Math.cos(A),sn=Math.sin(A),e1=P(it.px+c*.95,.55,z+sn*.95),e2=P(it.px-c*.95,.55,z-sn*.95),hub=P(it.px,.55,z),base=P(it.px,0,z);
     if(hub&&base){ctx.strokeStyle='#3a4256';ctx.lineWidth=Math.max(3,s*.07);ctx.beginPath();ctx.moveTo(base[0],base[1]);ctx.lineTo(hub[0],hub[1]);ctx.stroke()}
     [e1,e2].forEach(e=>{if(!e||!hub)return;ctx.lineCap='round';ctx.strokeStyle='#14213d';ctx.lineWidth=Math.max(5,(e[2]+hub[2])*.13);ctx.beginPath();ctx.moveTo(hub[0],hub[1]);ctx.lineTo(e[0],e[1]);ctx.stroke();ctx.strokeStyle='#8b5a2b';ctx.lineWidth=Math.max(3,(e[2]+hub[2])*.09);ctx.stroke()});
-    if(hub){ctx.fillStyle='#c9ccd4';ctx.beginPath();ctx.arc(hub[0],hub[1],Math.max(4,hub[2]*.14),0,6.283);ctx.fill();const lp=P(it.px,1.5,z);if(lp&&it.z-S.dist<26)txt('HOSTEL FAN',lp[0],lp[1],Math.max(10,lp[2]*.2),'#fff')}
+    if(hub){ctx.fillStyle='#c9ccd4';ctx.beginPath();ctx.arc(hub[0],hub[1],Math.max(4,hub[2]*.14),0,6.283);ctx.fill();const lp=P(it.px,1.5,z);if(lp&&it.z-S.dist<26)0}
     break}
-  case'saw':{for(const c of[it.side*.55,it.side*1.45])drawSaw(c,z,.45);const p=P(it.side,1.25,z);if(p)txt('−⅓ NEGATIVE MARKING',p[0],p[1],Math.max(8,p[2]*.17),'#ff4d5e','#fff');break}
+  case'saw':{for(const c of[it.side*.55,it.side*1.45])drawSaw(c,z,.45);const p=P(it.side,1.25,z);if(p)0;break}
   case'msaw':{const p1=P(-1.9,.1,z),p2=P(1.9,.1,z);if(p1&&p2){ctx.fillStyle='#5a0c18';ctx.fillRect(p1[0],p1[1]-s*.04,p2[0]-p1[0],s*.08)}drawSaw(msawX(it),z,.55);break}
   case'hammer':{const h=hammerHead(it),pv=P(0,3.3,z),hd=P(h.x,h.y,z);if(pv&&hd){
       const l=P(-2.2,0,z),r=P(2.2,0,z),lt=P(-2.2,3.4,z),rt=P(2.2,3.4,z);ctx.strokeStyle='#3a4256';ctx.lineWidth=Math.max(3,s*.1);ctx.beginPath();ctx.moveTo(l[0],l[1]);ctx.lineTo(lt[0],lt[1]);ctx.lineTo(rt[0],rt[1]);ctx.lineTo(r[0],r[1]);ctx.stroke();
       ctx.lineWidth=Math.max(2,s*.06);ctx.beginPath();ctx.moveTo(pv[0],pv[1]);ctx.lineTo(hd[0],hd[1]);ctx.stroke();
       ctx.save();ctx.translate(hd[0],hd[1]);ctx.rotate(-h.a);const k=s;ctx.fillStyle='#14213d';rr(-k*.38,-k*.6,k*.76,k*1.2,k*.12);ctx.fill();
       const g2=ctx.createLinearGradient(0,-k*.5,0,k*.5);g2.addColorStop(0,'#ff4da6');g2.addColorStop(1,'#8a5cff');ctx.fillStyle=g2;rr(-k*.32,-k*.52,k*.64,k*1.04,k*.08);ctx.fill();
-      txt('Reels',0,0,Math.max(8,k*.2),'#fff');ctx.fillStyle='#fff';ctx.beginPath();ctx.moveTo(-k*.06,k*.2);ctx.lineTo(k*.1,k*.28);ctx.lineTo(-k*.06,k*.36);ctx.fill();ctx.restore()}break}
+      0;ctx.fillStyle='#fff';ctx.beginPath();ctx.moveTo(-k*.06,k*.2);ctx.lineTo(k*.1,k*.28);ctx.lineTo(-k*.06,k*.36);ctx.fill();ctx.restore()}break}
   case'slider':{const x=sliderX(it),a=P(x-.7,1.1,z),c=P(x+.7,0,z);if(a&&c){ctx.fillStyle='#14213d';rr(a[0]-3,a[1]-3,c[0]-a[0]+6,c[1]-a[1]+6,s*.1);ctx.fill();ctx.fillStyle='#e50914';rr(a[0],a[1],c[0]-a[0],c[1]-a[1],s*.08);ctx.fill();
-      txt(it.label,(a[0]+c[0])/2,(a[1]+c[1])/2,Math.max(9,s*.24),'#fff');const g=P(-2,.05,z),g2=P(2,.05,z);ctx.fillStyle='rgba(20,33,61,.35)';ctx.fillRect(g[0],g[1]-2,g2[0]-g[0],4)}break}
+      0;const g=P(-2,.05,z),g2=P(2,.05,z);ctx.fillStyle='rgba(20,33,61,.35)';ctx.fillRect(g[0],g[1]-2,g2[0]-g[0],4)}break}
   }
 }
 // In 3D mode these objects are models; the 2D layer only writes their captions.
 const R3_CAPTION={
  recruit(it,z){if(it.done)return;const p=P(it.x,1.2,z);if(p)txt('+'+it.n,p[0],p[1],Math.max(12,p[2]*.3),'#fff')},
- cow(it,z){const lp=P(cowX(it),1.3,z);if(lp&&it.z-S.dist<26)txt('Holy cow!',lp[0],lp[1],Math.max(10,lp[2]*.2),'#fff')},
- auto(it,z){const lp=P(autoX(it),1.4,z);if(lp&&it.z-S.dist<26)txt('AUTO!',lp[0],lp[1],Math.max(10,lp[2]*.2),'#ffd23f')},
- fan(it,z){const lp=P(it.px,1.5,z);if(lp&&it.z-S.dist<26)txt('HOSTEL FAN',lp[0],lp[1],Math.max(10,lp[2]*.2),'#fff')},
- saw(it,z){const p=P(it.side,1.25,z);if(p)txt('−⅓ NEGATIVE MARKING',p[0],p[1],Math.max(8,p[2]*.17),'#ff4d5e','#fff')},
+ cow(it,z){const lp=P(cowX(it),1.3,z);if(lp&&it.z-S.dist<26)0},
+ auto(it,z){const lp=P(autoX(it),1.4,z);if(lp&&it.z-S.dist<26)0},
+ fan(it,z){const lp=P(it.px,1.5,z);if(lp&&it.z-S.dist<26)0},
+ saw(it,z){const p=P(it.side,1.25,z);if(p)0},
  msaw(){},hammer(){},slider(){},press(){}};
 function drawSaw(cx,z,R){const c=P(cx,R,z),b=P(cx,0,z);if(!c||!b)return;const r=R*c[2];
   ctx.fillStyle='#5a0c18';ctx.fillRect(c[0]-r*1.1,b[1]-r*.12,r*2.2,r*.24);
@@ -2302,7 +2304,7 @@ requestAnimationFrame(loop);
 {const v=localStorage.getItem('cor_r3d'),gl=(()=>{try{return !!document.createElement('canvas').getContext('webgl2')}catch(e){return false}})();
  let low=false;try{low=(JSON.parse(localStorage.getItem('cor_p')||'{}').settings||{}).quality==='low'}catch(e){}
  const site=!(window.CUTOFF_CONFIG&&CUTOFF_CONFIG.world3d===false);
- window.__want3d=site&&(v==='1'||(v!=='0'&&v!=='fail'&&gl&&!low))}
+ window.__want3d=v==='1'||(site&&v!=='0'&&v!=='fail'&&gl&&!low)}
 /* Loading screen: the game opens straight into 3D, never swapping style mid-race. The bar creeps while the
    engine downloads, fills when the first 3D frame is drawn, then fades out. After 15 s we give up for this
    visit and open in 2D, so a slow connection never leaves a player staring at a bar. */
@@ -2318,7 +2320,7 @@ if(window.__want3d){
   window.__bootFail=()=>finish(false);
   setTimeout(()=>finish(false),15000);
 }</script>
-<script type="module">if(window.__want3d)import('./r3d.js?v=7').catch(e=>{console.error(e);window.__bootFail&&__bootFail()});</script>
+<script type="module">if(window.__want3d)import('./r3d.js?v=10').catch(e=>{console.error(e);window.__bootFail&&__bootFail()});</script>
 <script src="story.js"></script>
 <script src="social.js"></script>
 <script src="replay.js"></script>

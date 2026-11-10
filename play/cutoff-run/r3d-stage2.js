@@ -58,12 +58,12 @@ export function stage2({ scene, mat, student, K }) {
       const arm = new THREE.Group(); arm.position.set(0, 3.3, -it.z); g.add(arm);
       const rod = new THREE.Mesh(new THREE.CylinderGeometry(.04, .04, 2.6, 8), metal); rod.position.y = -1.3; arm.add(rod);
       const phone = sh(new THREE.Mesh(new RoundedBoxGeometry(.76, 1.2, .18, 3, .1), mat(0x14213d, .3))); phone.position.y = -2.6; arm.add(phone);
-      const scr = new THREE.Mesh(new THREE.PlaneGeometry(.64, 1.04), new THREE.MeshBasicMaterial({ map: label('Reels', '#c04bff', '#fff', 128, 208), toneMapped: false })); scr.position.set(0, -2.6, .1); arm.add(scr);
+      const scr = new THREE.Mesh(new THREE.PlaneGeometry(.64, 1.04), new THREE.MeshBasicMaterial({ color: 0xc04bff, toneMapped: false })); scr.position.set(0, -2.6, .1); arm.add(scr);
       return { g, update(it) { arm.rotation.z = Math.atan2(window.hammerHead(it).x, 2.6); } };
     },
     slider(it) {
       const g = new THREE.Group(), blk = sh(new THREE.Mesh(new RoundedBoxGeometry(1.4, 1.1, .5, 3, .1), mat(0xe50914, .45))); g.add(blk);
-      const t = new THREE.Mesh(new THREE.PlaneGeometry(1.25, .62), new THREE.MeshBasicMaterial({ map: label(it.label || 'BINGE', '#e50914'), toneMapped: false, transparent: true })); t.position.z = .26; blk.add(t);
+      const t = new THREE.Mesh(new THREE.PlaneGeometry(1.25, .62), new THREE.MeshBasicMaterial({ map: label(it.label || 'BINGE', '#e50914'), toneMapped: false, transparent: true })); t.visible = false; blk.add(t);
       const rail = new THREE.Mesh(new THREE.BoxGeometry(4, .04, .1), mat(0x14213d, .5)); rail.position.set(0, .03, -it.z); g.add(rail);
       return { g, update(it) { blk.position.set(window.sliderX(it), .55, -it.z); } };
     },
@@ -72,7 +72,7 @@ export function stage2({ scene, mat, student, K }) {
       for (const x of [x0, x1]) { const p = sh(new THREE.Mesh(new THREE.CylinderGeometry(.08, .1, 3.1, 10), metal)); p.position.set(x, 1.55, -it.z); g.add(p); }
       const top = sh(new THREE.Mesh(new RoundedBoxGeometry(x1 - x0 + .2, .2, .5, 2, .05), metal)); top.position.set(cx, 3.1, -it.z); g.add(top);
       const blk = sh(new THREE.Mesh(new RoundedBoxGeometry(x1 - x0 - .2, .8, .9, 3, .1), mat(0xc0283a, .45))); g.add(blk);
-      const t = new THREE.Mesh(new THREE.PlaneGeometry(x1 - x0 - .4, .5), new THREE.MeshBasicMaterial({ map: label('EXAM PRESSURE', '#c0283a'), toneMapped: false })); t.position.z = .46; blk.add(t);
+      const t = new THREE.Mesh(new THREE.PlaneGeometry(x1 - x0 - .4, .5), new THREE.MeshBasicMaterial({ map: label('EXAM PRESSURE', '#c0283a'), toneMapped: false })); t.visible = false; blk.add(t);
       const shadow = new THREE.Mesh(new THREE.PlaneGeometry(x1 - x0 - .2, 1), new THREE.MeshBasicMaterial({ color: 0x14213d, transparent: true, opacity: .2, depthWrite: false })); shadow.rotation.x = -Math.PI / 2; shadow.position.set(cx, .02, -it.z); g.add(shadow);
       return { g, update(it) { const h = window.pressH(it); blk.position.set(cx, h + .4, -it.z); shadow.material.opacity = .12 + .35 * (1 - h / 2.2); } };
     },

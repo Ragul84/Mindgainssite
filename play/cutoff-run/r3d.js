@@ -6,9 +6,10 @@
 // places at a gate lands on the 3D gate. Game coordinates map straight across: X = x, Y = y, Z = -z.
 import * as THREE from 'three';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
-import { stage2 } from './r3d-stage2.js?v=2';
-import { stage3 } from './r3d-stage3.js?v=1';
+import { stage2 } from './r3d-stage2.js?v=3';
+import { stage3 } from './r3d-stage3.js?v=4';
 import { makeRegions } from './r3d-regions.js?v=1';
+import { makeCity, CITY } from './r3d-city.js?v=1';
 
 const host = document.getElementById('wrap'), c2d = document.getElementById('c');
 const cv = document.createElement('canvas');
@@ -22,7 +23,7 @@ renderer.setPixelRatio(Math.min(2, devicePixelRatio || 1));
 renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
 renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 const scene = new THREE.Scene();
-scene.fog = new THREE.Fog(0xcfe6f5, 40, 110);
+scene.fog = new THREE.Fog(CITY.fog, 30, 250);
 const cam = new THREE.PerspectiveCamera();
 const K = 0.45; // the art-test models were built at ~2.2x game scale
 
@@ -36,8 +37,8 @@ const sky = new THREE.Mesh(new THREE.SphereGeometry(250, 32, 16), new THREE.Shad
   fragmentShader: 'uniform vec3 uSun;uniform vec3 uTop;uniform vec3 uHz;varying vec3 d;void main(){float y=d.y;vec3 top=uTop,hz=uHz;vec3 c=mix(hz,top,pow(smoothstep(0.,.6,y),.8));float s=max(dot(normalize(d),uSun),0.);c+=vec3(1.,.93,.75)*(pow(s,80.)*.9+pow(s,6.)*.12);gl_FragColor=vec4(c,1.);}',
 }));
 sky.renderOrder = -1; scene.add(sky);
-scene.add(new THREE.HemisphereLight(0xdff1ff, 0x6f9a52, 1.15));
-const sun = new THREE.DirectionalLight(0xfff1d6, 2.2);
+scene.add(new THREE.HemisphereLight(0xa9bfff, 0x3a3048, 1.1));
+const sun = new THREE.DirectionalLight(0xffd2a8, 2.0);
 sun.castShadow = true; sun.shadow.mapSize.set(1024, 1024);
 Object.assign(sun.shadow.camera, { left: -8, right: 8, top: 10, bottom: -10, near: .5, far: 60 });
 sun.shadow.bias = -.0006; sun.shadow.radius = 3;
@@ -55,7 +56,8 @@ function noiseTex(base, spots, n, size = 512, dashes = false) {
 const LEN = 160;
 const grassT = noiseTex('#8fcf63', ['#7fbf55', '#a3db74', '#86c75c', '#b3e083'], 900); grassT.repeat.set(12, LEN / 6);
 const grass = new THREE.Mesh(new THREE.PlaneGeometry(70, LEN), new THREE.MeshStandardMaterial({ map: grassT, roughness: 1 }));
-grass.rotation.x = -Math.PI / 2; grass.position.y = -.01; grass.receiveShadow = true; scene.add(grass);
+grass.rotation.x = -Math.PI / 2; grass.position.y = -.01; grass.receiveShadow = true; grass.visible = false; scene.add(grass);
+const city = makeCity({ scene, mat });
 const roadT = noiseTex('#efd9ae', ['#e6cc9a', '#f6e4c0', '#e9d2a4'], 600, 512, true); const ROAD_TILE = 4; roadT.repeat.set(1, LEN / ROAD_TILE);
 const road = new THREE.Mesh(new THREE.PlaneGeometry(4, LEN), new THREE.MeshStandardMaterial({ map: roadT, roughness: .95 }));
 road.rotation.x = -Math.PI / 2; road.receiveShadow = true; scene.add(road);
@@ -112,12 +114,14 @@ function setRegion(k) {
     obj.traverse((m) => { if (m.isMesh) m.castShadow = true; });
     obj.userData = { side, off: (h % 100) / 100 * SLOT * .6, dx: dx + ((h >>> 5) % 3) * .35 };
     obj.rotation.y = (side < 0 ? .45 : -.45) + (((h >>> 7) % 5) - 2) * .08;
-    scene.add(obj); pool.push(obj);
+    pool.push(obj);
   }
   sky.material.uniforms.uTop.value.set(R.sky[0]); sky.material.uniforms.uHz.value.set(R.sky[1]);
-  scene.fog.color.set(R.fog);
-  retex(grassT, R.ground, false); retex(roadT, R.road, true);
-  kerbMat.color.set(R.kerb);
+  // the flyover keeps one dusk look across chapters
+  sky.material.uniforms.uTop.value.set(CITY.skyTop); sky.material.uniforms.uHz.value.set(CITY.skyHz);
+  scene.fog.color.set(CITY.fog);
+  retex(roadT, ['#4a5068', '#525a74', '#454b62', '#4e566e'], true);
+  kerbMat.color.set(0xe8ecf4);
 }
 setRegion('village');
 
@@ -133,29 +137,46 @@ const geo = {
 const M = { pants: mat(0x2b3a67, .7), shoe: mat(0x222222, .4), shirt: mat(0xffffff, .65), bags: [0x2f6bff, 0x16a34a, 0x7c3aed, 0x0ea5e9, 0xff7a45].map((c) => mat(c, .55)),
   skin: SKIN.map((c) => mat(c, .55)), hair: HAIRC.map((c) => mat(c, .45)) };
 const greyShirt = mat(0xb9c0cc, .7), greyPants = mat(0x8a93a3, .7), saffronBag = mat(0xff8a1f, .5);
+// chibi students: big head, short body, own shirt colour, braid or tuft, schoolbag. Same hooks as before:
+// limbs = [legL, legR, armL, armR], shirtParts (recoloured for rival batches), bag.
+const SHIRTS = [0xffffff, 0xf4d35e, 0x7cc6fe, 0xff8fa3, 0xb8e986, 0xffb26b].map((c) => mat(c, .6));
+const PANTS = [0x2b3a67, 0x3d405b, 0x22223b].map((c) => mat(c, .7));
+const geoC = {
+  leg: new THREE.CapsuleGeometry(.11, .26, 3, 8), shoe: new RoundedBoxGeometry(.2, .13, .32, 2, .06), body: new RoundedBoxGeometry(.5, .5, .34, 3, .14),
+  skirt: new THREE.CylinderGeometry(.2, .32, .26, 14), bag: new RoundedBoxGeometry(.42, .44, .2, 2, .08), flap: new RoundedBoxGeometry(.38, .16, .06, 2, .03),
+  sleeve: new THREE.CapsuleGeometry(.09, .12, 3, 8), hand: new THREE.SphereGeometry(.085, 10, 8), head: new THREE.SphereGeometry(.3, 22, 16),
+  ear: new THREE.SphereGeometry(.07, 8, 6), cap: new THREE.SphereGeometry(.32, 22, 12, 0, Math.PI * 2, 0, Math.PI * .5), braid: new THREE.CapsuleGeometry(.08, .4, 3, 8),
+  bow: new THREE.SphereGeometry(.07, 8, 6), tuft: new THREE.ConeGeometry(.12, .2, 7),
+};
+const shoeM = mat(0xf5f5f5, .5), flapM = mat(0xffffff, .5), bowM = mat(0xff4d6d, .4);
+const HAIRL = [0x4a2e1c, 0x5a3622, 0x3a2416].map((c) => mat(c, .3));
 function student(i, grey = false, lead = false) {
-  const g = new THREE.Group(), skin = M.skin[i % SKIN.length], hairM = M.hair[i % 4], girl = i % 3 === 1, limbs = [];
-  const SHIRT = grey ? greyShirt : M.shirt, PANTS = grey ? greyPants : M.pants;
+  const g = new THREE.Group(), skin = M.skin[i % SKIN.length], hairM = HAIRL[i % 3], girl = i % 2 === 1, limbs = [];
+  const SHIRT = grey ? greyShirt : SHIRTS[i % SHIRTS.length], PANT = grey ? greyPants : PANTS[i % 3];
   const sh = (m) => { m.castShadow = true; return m; };
   for (const sx of [-1, 1]) {
-    const leg = new THREE.Group(); leg.position.set(sx * .12, .72, 0);
-    const l = sh(new THREE.Mesh(geo.leg, PANTS)); l.position.y = -.33; leg.add(l);
-    const s = new THREE.Mesh(geo.shoe, M.shoe); s.position.set(0, -.68, -.04); leg.add(s);
+    const leg = new THREE.Group(); leg.position.set(sx * .13, .5, 0);
+    const l = sh(new THREE.Mesh(geoC.leg, girl && !grey ? skin : PANT)); l.position.y = -.2; leg.add(l);
+    const s = new THREE.Mesh(geoC.shoe, shoeM); s.position.set(0, -.42, -.05); leg.add(s);
     g.add(leg); limbs.push(leg);
   }
-  const shirt = sh(new THREE.Mesh(shirtG, SHIRT)); shirt.position.y = .66; shirt.scale.set(1, 1, .72); g.add(shirt);
-  const bag = sh(new THREE.Mesh(geo.bag, lead ? saffronBag : grey ? greyPants : M.bags[i % M.bags.length])); bag.position.set(0, 1.0, .27); g.add(bag);
+  const body = sh(new THREE.Mesh(geoC.body, SHIRT)); body.position.y = .76; g.add(body);
+  if (girl) { const sk = new THREE.Mesh(geoC.skirt, PANT); sk.position.y = .5; g.add(sk); }
+  const bag = sh(new THREE.Mesh(geoC.bag, lead ? saffronBag : grey ? greyPants : M.bags[i % M.bags.length])); bag.position.set(0, .82, .25); g.add(bag);
+  const flap = new THREE.Mesh(geoC.flap, flapM); flap.position.set(0, .72, .36); g.add(flap);
+  const sleeves = [];
   for (const sx of [-1, 1]) {
-    const arm = new THREE.Group(); arm.position.set(sx * .31, 1.26, 0);
-    const sl = new THREE.Mesh(geo.sleeve, SHIRT); sl.position.y = -.12; arm.add(sl);
-    const fo = new THREE.Mesh(geo.fore, skin); fo.position.y = -.42; arm.add(fo);
-    arm.rotation.z = sx * .12; g.add(arm); limbs.push(arm);
+    const arm = new THREE.Group(); arm.position.set(sx * .3, .95, 0);
+    const sl = new THREE.Mesh(geoC.sleeve, SHIRT); sl.position.y = -.08; arm.add(sl); sleeves.push(sl);
+    const h = new THREE.Mesh(geoC.hand, skin); h.position.y = -.26; arm.add(h);
+    arm.rotation.z = sx * .18; g.add(arm); limbs.push(arm);
   }
-  const head = sh(new THREE.Mesh(geo.head, skin)); head.scale.set(1, 1.08, 1); head.position.y = 1.7; g.add(head);
-  for (const sx of [-1, 1]) { const e = new THREE.Mesh(geo.ear, skin); e.position.set(sx * .24, 1.69, 0); g.add(e); }
-  const cap = new THREE.Mesh(geo.cap, hairM); cap.position.y = 1.72; cap.rotation.x = .38; g.add(cap);
-  if (girl) { const p = new THREE.Mesh(geo.plait, hairM); p.position.set(0, 1.38, .2); p.rotation.x = .25; g.add(p); }
-  g.scale.setScalar(K); g.userData = { limbs, shirtParts: g.children.filter((c) => c.material === SHIRT).concat(limbs.slice(2).map((a) => a.children[0])), bag };
+  const head = sh(new THREE.Mesh(geoC.head, skin)); head.position.y = 1.3; g.add(head);
+  for (const sx of [-1, 1]) { const e = new THREE.Mesh(geoC.ear, skin); e.position.set(sx * .3, 1.28, 0); g.add(e); }
+  const cap = new THREE.Mesh(geoC.cap, hairM); cap.position.y = 1.33; cap.rotation.x = .3; g.add(cap);
+  if (girl) { const br = new THREE.Mesh(geoC.braid, hairM); br.position.set(0, 1.0, .28); br.rotation.x = .35; g.add(br); const bw = new THREE.Mesh(geoC.bow, bowM); bw.position.set(0, 1.22, .33); g.add(bw); }
+  else if (i % 4 === 0) { const t = new THREE.Mesh(geoC.tuft, hairM); t.position.set(.05, 1.66, -.05); t.rotation.z = -.4; g.add(t); }
+  g.scale.setScalar(K * 1.25); g.userData = { limbs, shirtParts: [body, ...sleeves], bag };
   return g;
 }
 const crowd = [];
@@ -228,6 +249,7 @@ function frame(o) {
   const cz = o.camZ, mid = cz + LEN / 2 - 8;
   sky.position.copy(cam.position);
   grass.position.z = -mid; road.position.z = -mid; kerbs.forEach((k) => (k.position.z = -mid));
+  city.update(cz);
   roadT.offset.y = (mid % ROAD_TILE) / ROAD_TILE; grassT.offset.y = (mid % 6) / 6;
   // scenery: slot index from the camera so props stream past
   const rk = (S && S.story && S.story.ch && S.story.ch.k) || 'village'; if (rk !== regionKey) setRegion(rk);
@@ -321,3 +343,4 @@ cv.addEventListener('webglcontextlost', (e) => { e.preventDefault(); fallBack('c
 
 window.R3D = { on: true, frame };
 window.__r3on = true;
+if (window.camRig) window.camRig(7.5, 10);   // flyover: higher and further back than the 2D view
