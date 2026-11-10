@@ -1,0 +1,551 @@
+{
+ "15": {
+  "lh": "Layer",
+  "rh": "Height / position",
+  "L": [
+   "Ozone layer",
+   "Exosphere",
+   "Mesosphere",
+   "Troposphere"
+  ],
+  "why": "The ozone layer lies within the stratosphere, the exosphere begins around 700 km, the mesosphere spans about 50-85 km and the troposphere about 0-12 km.",
+  "R": [
+   "Within the stratosphere",
+   "700 km and above",
+   "50-85 km",
+   "0-12 km"
+  ]
+ },
+ "21": {
+  "lh": "Gas",
+  "rh": "Share of dry air",
+  "L": [
+   "Carbon dioxide",
+   "Nitrogen",
+   "Oxygen",
+   "Argon"
+  ],
+  "why": "Dry air is about 78% nitrogen, 21% oxygen, 0.93% argon and 0.04% carbon dioxide.",
+  "R": [
+   "0.04%",
+   "78%",
+   "21%",
+   "0.93%"
+  ]
+ },
+ "25": {
+  "lh": "Layer",
+  "rh": "Characteristic",
+  "L": [
+   "Exosphere",
+   null,
+   "Troposphere",
+   "Stratosphere",
+   null,
+   "Thermosphere"
+  ],
+  "why": "The exosphere is the outer boundary, weather happens in the troposphere, the stratosphere holds the ozone layer and auroras occur in the thermosphere.",
+  "R": [
+   "Outer boundary of atmosphere",
+   "Absorbs ultraviolet radiation",
+   "Weather occurs here",
+   "Contains ozone layer",
+   "Temperature decreases with altitude",
+   "Auroras occur here"
+  ]
+ },
+ "54": {
+  "lh": "Term",
+  "rh": "Definition",
+  "L": [
+   "Isobar",
+   "Isotherm",
+   "Convection",
+   "Albedo",
+   null,
+   "Advection"
+  ],
+  "why": "An isobar joins places of equal pressure, an isotherm equal temperature; convection moves heat vertically, advection horizontally; albedo is a surface's reflectivity.",
+  "R": [
+   "Line of equal pressure",
+   "Line of equal temperature",
+   "Vertical transport of heat",
+   "Reflectivity of a surface",
+   "Rate of temperature decrease with height",
+   "Horizontal transport of heat"
+  ]
+ },
+ "55": "retire",
+ "56": {
+  "lh": "Process",
+  "rh": "How heat moves",
+  "L": [
+   "Conduction",
+   "Radiation",
+   "Convection",
+   null,
+   "Advection",
+   "Greenhouse effect"
+  ],
+  "why": "Conduction is by direct contact, radiation by electromagnetic waves, convection by moving fluid, advection by wind and the greenhouse effect traps heat.",
+  "R": [
+   "Direct contact",
+   "Electromagnetic waves",
+   "Fluid movement",
+   "Taking in energy",
+   "Wind movement",
+   "Heat trapping"
+  ]
+ },
+ "57": {
+  "lh": "Instrument",
+  "rh": "Measures",
+  "L": [
+   "Thermometer",
+   "Barometer",
+   "Hygrometer",
+   "Anemometer",
+   null,
+   "Rain gauge"
+  ],
+  "why": "Thermometer – temperature, barometer – pressure, hygrometer – humidity, anemometer – wind speed, rain gauge – precipitation.",
+  "R": [
+   "Temperature",
+   "Pressure",
+   "Humidity",
+   "Wind Speed",
+   "Solar Radiation",
+   "Precipitation"
+  ]
+ },
+ "58": "retire",
+ "59": "retire",
+ "87": {
+  "lh": "Cloud",
+  "rh": "Characteristic",
+  "L": [
+   "Stratus",
+   "Cirrus",
+   "Nimbus",
+   "Cumulus"
+  ],
+  "why": "Stratus clouds are layered and overcast, cirrus high and wispy, nimbus rain-bearing and cumulus cotton-like in fair weather.",
+  "R": [
+   "Layered, overcast",
+   "High altitude, wispy",
+   "Rain bearing",
+   "Cotton-like, fair weather"
+  ]
+ },
+ "88": {
+  "lh": "Wind",
+  "rh": "Region",
+  "L": [
+   "Polar easterlies",
+   "Trade winds",
+   "Westerlies"
+  ],
+  "why": "Polar easterlies blow in polar regions, trade winds in the tropics and westerlies in the mid-latitudes.",
+  "R": [
+   "Polar regions",
+   "Tropics",
+   "Mid-latitudes"
+  ]
+ },
+ "89": {
+  "lh": "Rainfall type",
+  "rh": "Cause",
+  "L": [
+   "Orographic rainfall",
+   "Frontal (cyclonic) rainfall",
+   "Convectional rainfall"
+  ],
+  "why": "Orographic rain comes when mountains force air up, frontal rain when air rises along a front and convectional rain when the surface heats the air.",
+  "R": [
+   "Mountain barrier",
+   "Frontal lifting",
+   "Surface heating"
+  ]
+ },
+ "90": {
+  "lh": "Term",
+  "rh": "Definition",
+  "L": [
+   "Condensation",
+   "Humidity",
+   "Saturation"
+  ],
+  "why": "Condensation turns gas into liquid, humidity is the amount of water vapour in air and saturated air holds the most vapour it can.",
+  "R": [
+   "Gas to liquid",
+   "Amount of water vapor",
+   "Max vapor capacity"
+  ]
+ },
+ "91": "retire",
+ "92": "retire",
+ "120": {
+  "lh": "Biome",
+  "rh": "Vegetation",
+  "L": [
+   "Taiga",
+   "Hot desert",
+   "Tundra",
+   "Savanna"
+  ],
+  "why": "The taiga has conifers, deserts xerophytes, the tundra lichens and mosses and the savanna tall grasses.",
+  "R": [
+   "Coniferous trees",
+   "Xerophytic plants",
+   "Lichens and Mosses",
+   "Tall grasses"
+  ]
+ },
+ "121": {
+  "lh": "Trophic level (grass → grasshopper → frog → snake)",
+  "rh": "Example",
+  "L": [
+   "Secondary consumer",
+   "Producer",
+   "Tertiary consumer",
+   "Primary consumer"
+  ],
+  "why": "Grass is the producer, the grasshopper the primary consumer, the frog the secondary consumer and the snake the tertiary consumer.",
+  "R": [
+   "Frog",
+   "Grass",
+   "Snake",
+   "Grasshopper"
+  ]
+ },
+ "122": {
+  "lh": "Cycle",
+  "rh": "Key process",
+  "L": [
+   "Nitrogen cycle",
+   "Carbon cycle",
+   "Phosphorus cycle",
+   "Water cycle"
+  ],
+  "why": "Nitrogen fixation drives the nitrogen cycle, photosynthesis the carbon cycle, weathering of rocks releases phosphorus and evapotranspiration moves water.",
+  "R": [
+   "Nitrogen Fixation",
+   "Photosynthesis",
+   "Weathering of rocks",
+   "Evapotranspiration"
+  ]
+ },
+ "123": "retire",
+ "124": {
+  "lh": "Biome",
+  "rh": "Climate",
+  "L": [
+   "Hot desert",
+   "Tundra",
+   "Tropical rainforest",
+   "Taiga"
+  ],
+  "why": "Deserts are arid, the tundra freezing, rainforests hot and humid and the taiga cold and snowy.",
+  "R": [
+   "Arid",
+   "Freezing",
+   "Hot and Humid",
+   "Cold and Snowy"
+  ]
+ },
+ "152": {
+  "lh": "Planet",
+  "rh": "Known as",
+  "L": [
+   "Mars",
+   "Jupiter",
+   "Saturn",
+   "Venus"
+  ],
+  "why": "Mars is the red planet, Jupiter the largest, Saturn the ringed planet and Venus Earth's twin.",
+  "R": [
+   "Red Planet",
+   "Largest Planet",
+   "Ringed Planet",
+   "Earth's Twin"
+  ]
+ },
+ "153": {
+  "lh": "Body",
+  "rh": "Type",
+  "L": [
+   "Moon",
+   "Sun",
+   "Ceres",
+   "Halley's Comet"
+  ],
+  "why": "The Moon is a satellite, the Sun a star, Ceres an asteroid (dwarf planet) and Halley's a comet.",
+  "R": [
+   "Satellite",
+   "Star",
+   "Asteroid",
+   "Comet"
+  ]
+ },
+ "154": {
+  "lh": "Planet",
+  "rh": "Position from the Sun",
+  "L": [
+   "Earth",
+   "Mercury",
+   "Neptune",
+   "Mars"
+  ],
+  "why": "Mercury is 1st, Earth 3rd, Mars 4th and Neptune 8th from the Sun.",
+  "R": [
+   "3rd",
+   "1st",
+   "8th",
+   "4th"
+  ]
+ },
+ "155": "retire",
+ "156": {
+  "lh": "Moon",
+  "rh": "Planet",
+  "L": [
+   "Titan",
+   "Phobos",
+   "Triton",
+   "Ganymede"
+  ],
+  "why": "Titan orbits Saturn, Phobos Mars, Triton Neptune and Ganymede Jupiter.",
+  "R": [
+   "Saturn",
+   "Mars",
+   "Neptune",
+   "Jupiter"
+  ]
+ },
+ "184": "retire",
+ "185": {
+  "lh": "Feature",
+  "rh": "Description",
+  "L": [
+   "Ocean trench",
+   "Continental shelf",
+   "Seamount",
+   "Abyssal plain"
+  ],
+  "why": "Trenches are the deepest points, the shelf is the shallow edge, a seamount is an underwater mountain and the abyssal plain is the flat floor.",
+  "R": [
+   "Deepest point",
+   "Shallow edge",
+   "Underwater mountain",
+   "Flat floor"
+  ]
+ },
+ "186": {
+  "lh": "Tide",
+  "rh": "When / what",
+  "L": [
+   "Spring tide",
+   "Neap tide",
+   "High tide",
+   "Low tide"
+  ],
+  "why": "Spring tides come at full (and new) moon, neap tides at the quarter moons; high tide is the maximum water level and low tide the minimum.",
+  "R": [
+   "Full Moon",
+   "First Quarter Moon",
+   "Maximum water level",
+   "Minimum water level"
+  ]
+ },
+ "187": "retire",
+ "188": {
+  "lh": "Ocean",
+  "rh": "Characteristic",
+  "L": [
+   "Pacific Ocean",
+   "Arctic Ocean",
+   "Indian Ocean",
+   "Atlantic Ocean"
+  ],
+  "why": "The Pacific is the largest, the Arctic the smallest, the Indian Ocean the warmest and the Atlantic S-shaped.",
+  "R": [
+   "Largest",
+   "Smallest",
+   "Warmest",
+   "S-shaped"
+  ]
+ },
+ "189": "retire",
+ "217": {
+  "lh": "Range",
+  "rh": "Location",
+  "L": [
+   "Nilgiris",
+   "Aravalli",
+   "Karakoram",
+   "Vindhya"
+  ],
+  "why": "The Nilgiris are in South India, the Aravallis in Rajasthan, the Karakoram in Ladakh and the Vindhyas in Central India.",
+  "R": [
+   "South India",
+   "Rajasthan",
+   "Ladakh",
+   "Central India"
+  ]
+ },
+ "218": {
+  "lh": "River",
+  "rh": "Origin",
+  "L": [
+   "Yamuna",
+   "Ganga",
+   "Godavari",
+   "Narmada"
+  ],
+  "why": "The Yamuna rises at Yamunotri, the Ganga at Gangotri, the Godavari near Nashik and the Narmada at Amarkantak.",
+  "R": [
+   "Yamunotri",
+   "Gangotri",
+   "Nasik",
+   "Amarkantak"
+  ]
+ },
+ "219": {
+  "lh": "Coast",
+  "rh": "Region",
+  "L": [
+   "Malabar Coast",
+   "Konkan Coast",
+   "Northern Circars",
+   "Coromandel Coast"
+  ],
+  "why": "The Malabar Coast is in Kerala, the Konkan Coast in Maharashtra and Goa, the Northern Circars in Andhra Pradesh and the Coromandel Coast in Tamil Nadu.",
+  "R": [
+   "Kerala",
+   "Maharashtra/Goa",
+   "Andhra Pradesh",
+   "Tamil Nadu"
+  ]
+ },
+ "220": {
+  "lh": "Peak",
+  "rh": "Range",
+  "L": [
+   "Mount Everest",
+   "Guru Shikhar",
+   "K2 (Godwin-Austen)",
+   "Anamudi"
+  ],
+  "why": "Everest is in the Himalayas, Guru Shikhar in the Aravallis, K2 in the Karakoram and Anamudi in the Western Ghats.",
+  "R": [
+   "Himalayas",
+   "Aravali",
+   "Karakoram",
+   "Western Ghats"
+  ]
+ },
+ "221": {
+  "lh": "Soil",
+  "rh": "Region",
+  "L": [
+   "Black soil",
+   "Alluvial soil",
+   "Laterite soil",
+   "Red soil"
+  ],
+  "why": "Black soil covers the Deccan Trap, alluvial soil the northern plains, laterite soil the Western Ghats and red soil the southern plateau.",
+  "R": [
+   "Deccan Trap",
+   "Northern Plains",
+   "Western Ghats",
+   "Southern Plateau"
+  ]
+ },
+ "222": {
+  "lh": "Pass",
+  "rh": "State / UT",
+  "L": [
+   "Shipki La",
+   "Nathu La",
+   "Zoji La",
+   "Bomdi La"
+  ],
+  "why": "Shipki La is in Himachal Pradesh, Nathu La in Sikkim, Zoji La in Jammu and Kashmir (Ladakh road) and Bomdi La in Arunachal Pradesh.",
+  "R": [
+   "Himachal Pradesh",
+   "Sikkim",
+   "Jammu & Kashmir",
+   "Arunachal Pradesh"
+  ]
+ },
+ "242": "retire",
+ "243": "retire",
+ "244": {
+  "lh": "Parent rock",
+  "rh": "Metamorphic product",
+  "L": [
+   "Limestone",
+   "Shale",
+   "Sandstone",
+   "Granite"
+  ],
+  "why": "Limestone becomes marble, shale becomes slate, sandstone becomes quartzite and granite becomes gneiss.",
+  "R": [
+   "Marble",
+   "Slate",
+   "Quartzite",
+   "Gneiss"
+  ]
+ },
+ "245": {
+  "lh": "Mineral",
+  "rh": "Property",
+  "L": [
+   "Diamond",
+   "Talc",
+   "Quartz",
+   "Calcite"
+  ],
+  "why": "Diamond is the hardest mineral, talc the softest, quartz resists weathering and calcite fizzes with acid.",
+  "R": [
+   "Hardest mineral",
+   "Softest mineral",
+   "High resistance to weathering",
+   "Reacts with acid"
+  ]
+ },
+ "255": {
+  "lh": "Layer",
+  "rh": "Property",
+  "L": [
+   "Stratosphere",
+   "Thermosphere",
+   "Troposphere",
+   "Mesosphere"
+  ],
+  "why": "The stratosphere holds the ozone layer, the thermosphere (ionosphere) reflects radio waves, weather happens in the troposphere and meteors burn in the mesosphere.",
+  "R": [
+   "Ozone layer",
+   "Radio waves",
+   "Weather phenomena",
+   "Meteor burning"
+  ]
+ },
+ "256": {
+  "lh": "Gas",
+  "rh": "Share of dry air",
+  "L": [
+   "Carbon dioxide",
+   "Argon",
+   "Nitrogen",
+   "Oxygen"
+  ],
+  "why": "Nitrogen 78%, oxygen 21%, argon 0.9% and carbon dioxide 0.04%.",
+  "R": [
+   "0.04%",
+   "0.9%",
+   "78%",
+   "21%"
+  ]
+ }
+}

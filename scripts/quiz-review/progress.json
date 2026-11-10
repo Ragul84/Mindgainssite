@@ -3,5 +3,40 @@
   "reviewed_to": 400,
   "total": 400,
   "retired": 285
+ },
+ "samacheer/geography/class10": {
+  "reviewed_to": null,
+  "total": 215,
+  "retired": 10
+ },
+ "samacheer/geography/class11": {
+  "reviewed_to": null,
+  "total": 258,
+  "retired": 12
+ },
+ "samacheer/geography/class12": {
+  "reviewed_to": null,
+  "total": 459,
+  "retired": 5
+ },
+ "samacheer/geography/class6": {
+  "reviewed_to": null,
+  "total": 157,
+  "retired": 2
+ },
+ "samacheer/geography/class7": {
+  "reviewed_to": null,
+  "total": 218,
+  "retired": 4
+ },
+ "samacheer/geography/class8": {
+  "reviewed_to": null,
+  "total": 255,
+  "retired": 8
+ },
+ "samacheer/geography/class9": {
+  "reviewed_to": null,
+  "total": 260,
+  "retired": 8
  }
 }

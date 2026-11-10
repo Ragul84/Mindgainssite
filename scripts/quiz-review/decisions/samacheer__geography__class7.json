@@ -1,0 +1,340 @@
+{
+ "retire": [
+  132,
+  175,
+  177,
+  215
+ ],
+ "fix": {
+  "27": {
+   "question": "Match List I with List II: List I (Layer) A. Stratosphere B. Troposphere C. Thermosphere List II (Characteristic) 1. Ionization 2. Ozone layer 3. Weather changes",
+   "options": [
+    "A-2, B-1, C-3",
+    "A-3, B-2, C-1",
+    "A-1, B-3, C-2",
+    "A-2, B-3, C-1"
+   ],
+   "answer_index": 3,
+   "explanation": "The stratosphere holds the ozone layer, weather happens in the troposphere and the thermosphere contains the ionised ionosphere."
+  },
+  "28": {
+   "question": "Match List I with List II: List I (Gas) A. Nitrogen B. Carbon dioxide C. Oxygen List II (Role) 1. Respiration 2. Plant growth 3. Photosynthesis",
+   "options": [
+    "A-2, B-3, C-1",
+    "A-3, B-2, C-1",
+    "A-2, B-1, C-3",
+    "A-1, B-3, C-2"
+   ],
+   "answer_index": 0,
+   "explanation": "Nitrogen helps plant growth, plants take in carbon dioxide for photosynthesis and living things use oxygen in respiration."
+  },
+  "29": {
+   "question": "Match List I with List II: List I (Instrument) A. Barometer B. Anemometer C. Thermometer List II (Measures) 1. Temperature 2. Pressure 3. Wind speed",
+   "options": [
+    "A-2, B-1, C-3",
+    "A-2, B-3, C-1",
+    "A-3, B-2, C-1",
+    "A-1, B-3, C-2"
+   ],
+   "answer_index": 1,
+   "explanation": "A barometer measures pressure, an anemometer wind speed and a thermometer temperature."
+  },
+  "34": {
+   "question": "Match List I with List II: List I (Sphere) A. Atmosphere B. Lithosphere C. Hydrosphere List II (Description) 1. Gaseous envelope of Earth 2. All water bodies 3. Earth's solid outer layer",
+   "options": [
+    "A-3, B-1, C-2",
+    "A-1, B-2, C-3",
+    "A-1, B-3, C-2",
+    "A-2, B-3, C-1"
+   ],
+   "answer_index": 2,
+   "explanation": "The atmosphere is the envelope of gases, the lithosphere the solid outer layer and the hydrosphere all water bodies."
+  },
+  "36": {
+   "question": "Match List I with List II: List I (Organism) A. Mangrove trees B. Teak trees C. Blue whale List II (Habitat) 1. Coastal areas 2. Open ocean 3. Forests",
+   "options": [
+    "A-1, B-3, C-2",
+    "A-2, B-3, C-1",
+    "A-1, B-2, C-3",
+    "A-3, B-1, C-2"
+   ],
+   "answer_index": 0,
+   "explanation": "Mangroves grow on tidal coasts, teak grows in forests and the blue whale lives in the open ocean."
+  },
+  "41": {
+   "question": "Match List I with List II: List I (Ecosystem) A. Hot desert B. Tundra C. Tropical rainforest List II (Climate) 1. Hot and humid 2. Arid and dry 3. Cold and dry",
+   "options": [
+    "A-2, B-1, C-3",
+    "A-2, B-3, C-1",
+    "A-1, B-3, C-2",
+    "A-3, B-2, C-1"
+   ],
+   "answer_index": 1,
+   "explanation": "Hot deserts are arid, the tundra is cold and dry and tropical rainforests are hot and humid."
+  },
+  "55": {
+   "question": "Match List I with List II: List I (Layer) A. Core B. Crust C. Mantle List II (Description) 1. Innermost part of the Earth 2. Outermost solid shell of a rocky planet 3. Layer between the crust and the core",
+   "options": [
+    "A-3, B-2, C-1",
+    "A-2, B-1, C-3",
+    "A-1, B-3, C-2",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 3,
+   "explanation": "The core is the innermost part, the crust the outermost solid shell and the mantle lies between them."
+  },
+  "56": {
+   "question": "Match List I with List II: List I (Landform) A. Volcano B. V-shaped valley C. U-shaped valley List II (Agent) 1. Water flow 2. Molten rock eruption 3. Ice movement",
+   "options": [
+    "A-2, B-1, C-3",
+    "A-2, B-3, C-1",
+    "A-1, B-2, C-3",
+    "A-3, B-1, C-2"
+   ],
+   "answer_index": 0,
+   "explanation": "Volcanoes form from erupting molten rock, rivers cut V-shaped valleys and glaciers carve U-shaped valleys."
+  },
+  "57": {
+   "question": "Match List I with List II: List I (Layer) A. Asthenosphere B. Outer core C. Lithosphere List II (Nature) 1. Semi-molten layer 2. Rigid outer layer 3. Liquid metallic layer",
+   "options": [
+    "A-3, B-1, C-2",
+    "A-1, B-3, C-2",
+    "A-1, B-2, C-3",
+    "A-2, B-3, C-1"
+   ],
+   "answer_index": 1,
+   "explanation": "The asthenosphere is semi-molten, the outer core is liquid metal and the lithosphere is the rigid outer layer."
+  },
+  "71": {
+   "question": "Match List I with List II: List I (Sphere) A. Biosphere B. Lithosphere C. Atmosphere D. Hydrosphere List II (Definition) 1. The solid outer layer of the Earth 2. The zone of life on Earth 3. The blanket of gases surrounding the Earth 4. All the water on the Earth's surface",
+   "options": [
+    "A-2, B-4, C-3, D-1",
+    "A-4, B-1, C-3, D-2",
+    "A-1, B-2, C-3, D-4",
+    "A-2, B-1, C-3, D-4"
+   ],
+   "answer_index": 3,
+   "explanation": "The biosphere is the zone of life, the lithosphere the solid outer layer, the atmosphere the blanket of gases and the hydrosphere the water on Earth's surface."
+  },
+  "72": {
+   "question": "Match List I with List II: List I (Layer) A. Mesosphere B. Thermosphere C. Stratosphere D. Troposphere List II (Characteristic) 1. Contains the ozone layer 2. Weather phenomena occur here 3. Auroras occur here 4. Meteors burn up here",
+   "options": [
+    "A-4, B-3, C-1, D-2",
+    "A-4, B-2, C-1, D-3",
+    "A-4, B-1, C-3, D-2",
+    "A-1, B-3, C-4, D-2"
+   ],
+   "answer_index": 0,
+   "explanation": "Meteors burn up in the mesosphere, auroras glow in the thermosphere, the stratosphere holds the ozone layer and weather happens in the troposphere."
+  },
+  "77": {
+   "question": "Match List I with List II: List I (Example) A. Air B. Plants and animals C. Oceans D. Mountains List II (Domain) 1. Lithosphere 2. Atmosphere 3. Hydrosphere 4. Biosphere",
+   "options": [
+    "A-4, B-2, C-3, D-1",
+    "A-2, B-4, C-3, D-1",
+    "A-2, B-3, C-4, D-1",
+    "A-1, B-4, C-3, D-2"
+   ],
+   "answer_index": 1,
+   "explanation": "Air belongs to the atmosphere, living things to the biosphere, oceans to the hydrosphere and mountains to the lithosphere."
+  },
+  "89": {
+   "question": "Match List I with List II: List I (Method) A. Check dams B. Drip irrigation C. Planting trees List II (Purpose) 1. Precise water delivery to roots 2. Slowing down runoff 3. Increasing soil absorption",
+   "options": [
+    "A-3, B-1, C-2",
+    "A-2, B-1, C-3",
+    "A-1, B-2, C-3",
+    "A-2, B-3, C-1"
+   ],
+   "answer_index": 1,
+   "explanation": "Check dams slow runoff, drip irrigation delivers water to the roots and trees help rain soak into the ground."
+  },
+  "93": {
+   "question": "Match List I with List II: List I (Layer) A. Thermosphere B. Troposphere C. Mesosphere List II (Feature) 1. Meteors burn up 2. Ionosphere 3. Weather phenomena",
+   "options": [
+    "A-2, B-1, C-3",
+    "A-2, B-3, C-1",
+    "A-1, B-3, C-2",
+    "A-3, B-2, C-1"
+   ],
+   "answer_index": 1,
+   "explanation": "The ionosphere lies in the thermosphere, weather happens in the troposphere and meteors burn up in the mesosphere."
+  },
+  "131": {
+   "question": "Match List I with List II: List I (Gas) A. Carbon dioxide B. Nitrogen C. Argon D. Oxygen List II (Share of dry air) 1. 0.03% 2. 78% 3. 21% 4. 0.9%",
+   "options": [
+    "A-3, B-2, C-4, D-1",
+    "A-2, B-1, C-4, D-3",
+    "A-1, B-3, C-4, D-2",
+    "A-1, B-2, C-4, D-3"
+   ],
+   "answer_index": 3,
+   "explanation": "Dry air is about 78% nitrogen, 21% oxygen, 0.93% argon and 0.03-0.04% carbon dioxide."
+  },
+  "133": {
+   "question": "Match List I with List II: List I (Gas) A. Oxygen B. Argon C. Nitrogen D. Carbon dioxide List II (Use) 1. Respiration 2. Photosynthesis 3. Light bulbs 4. Fertilizers",
+   "options": [
+    "A-4, B-3, C-1, D-2",
+    "A-1, B-3, C-4, D-2",
+    "A-3, B-1, C-4, D-2",
+    "A-1, B-4, C-3, D-2"
+   ],
+   "answer_index": 1,
+   "explanation": "Oxygen is used in respiration, argon fills light bulbs, nitrogen goes into fertilisers and carbon dioxide is used in photosynthesis."
+  },
+  "134": {
+   "question": "Match List I with List II: List I (Boundary) A. Stratopause B. Thermopause C. Tropopause D. Mesopause List II (Layers it separates) 1. Thermosphere-Exosphere 2. Mesosphere-Thermosphere 3. Stratosphere-Mesosphere 4. Troposphere-Stratosphere",
+   "options": [
+    "A-2, B-1, C-4, D-3",
+    "A-3, B-4, C-1, D-2",
+    "A-3, B-1, C-4, D-2",
+    "A-1, B-3, C-4, D-2"
+   ],
+   "answer_index": 2,
+   "explanation": "The tropopause tops the troposphere, the stratopause the stratosphere, the mesopause the mesosphere and the thermopause the thermosphere."
+  },
+  "135": {
+   "question": "Match List I with List II: List I (Term) A. Humidity B. Atmosphere C. Evaporation D. Condensation List II (Meaning) 1. Liquid to gas 2. Gas to liquid 3. Water vapor in air 4. Blanket of air",
+   "options": [
+    "A-3, B-4, C-2, D-1",
+    "A-3, B-2, C-1, D-4",
+    "A-1, B-4, C-3, D-2",
+    "A-3, B-4, C-1, D-2"
+   ],
+   "answer_index": 3,
+   "explanation": "Humidity is water vapour in the air, the atmosphere is the blanket of air, evaporation turns liquid into gas and condensation turns gas into liquid."
+  },
+  "136": {
+   "question": "Match List I with List II: List I (Layer) A. Stratosphere B. Thermosphere C. Troposphere D. Mesosphere List II (Approximate height) 1. 12-50 km 2. 0-12 km 3. 50-80 km 4. 80-700 km",
+   "options": [
+    "A-1, B-4, C-2, D-3",
+    "A-1, B-4, C-3, D-2",
+    "A-1, B-3, C-2, D-4",
+    "A-1, B-2, C-4, D-3"
+   ],
+   "answer_index": 0,
+   "explanation": "As given in the textbook: troposphere 0-12 km, stratosphere 12-50 km, mesosphere 50-80 km, thermosphere 80-700 km."
+  },
+  "176": {
+   "question": "Match List I with List II: List I (Organism (grass → grasshopper → frog → snake)) A. Frog B. Grass C. Snake D. Grasshopper List II (Role) 1. Secondary Consumer 2. Tertiary Consumer 3. Producer 4. Primary Consumer",
+   "options": [
+    "A-1, B-3, C-2, D-4",
+    "A-1, B-2, C-3, D-4",
+    "A-2, B-3, C-1, D-4",
+    "A-1, B-3, C-4, D-2"
+   ],
+   "answer_index": 0,
+   "explanation": "Grass is the producer, the grasshopper the primary consumer, the frog the secondary consumer and the snake the tertiary consumer."
+  },
+  "178": {
+   "question": "Match List I with List II: List I (Relationship) A. Predation B. Mutualism C. Competition D. Parasitism List II (Meaning) 1. One eats another 2. Both struggle for resources 3. Both benefit 4. One benefits, one harmed",
+   "options": [
+    "A-3, B-1, C-2, D-4",
+    "A-1, B-3, C-4, D-2",
+    "A-1, B-3, C-2, D-4",
+    "A-4, B-3, C-2, D-1"
+   ],
+   "answer_index": 2,
+   "explanation": "In predation one eats another, in mutualism both benefit, in competition both struggle for resources and in parasitism one benefits while the other is harmed."
+  },
+  "179": {
+   "question": "Match List I with List II: List I (Abiotic factor) A. Soil B. Sunlight C. Air D. Water List II (Provides) 1. Light energy 2. Minerals 3. H2O 4. Oxygen/CO2",
+   "options": [
+    "A-2, B-1, C-3, D-4",
+    "A-2, B-4, C-1, D-3",
+    "A-4, B-1, C-2, D-3",
+    "A-2, B-1, C-4, D-3"
+   ],
+   "answer_index": 3,
+   "explanation": "Soil supplies minerals, the Sun light energy, air oxygen and carbon dioxide, and water H2O."
+  },
+  "180": {
+   "question": "Match List I with List II: List I (Consumer) A. Carnivore B. Decomposer C. Herbivore D. Omnivore List II (Diet) 1. Meat eater 2. Waste eater 3. Plant eater 4. Both eater",
+   "options": [
+    "A-1, B-2, C-3, D-4",
+    "A-1, B-2, C-4, D-3",
+    "A-1, B-3, C-2, D-4",
+    "A-2, B-1, C-3, D-4"
+   ],
+   "answer_index": 0,
+   "explanation": "Carnivores eat meat, decomposers break down waste and dead matter, herbivores eat plants and omnivores eat both."
+  },
+  "181": {
+   "question": "Match List I with List II: List I (Sphere) A. Hydrosphere B. Biosphere C. Atmosphere D. Lithosphere List II (Made of) 1. Water 2. Air 3. Life 4. Land",
+   "options": [
+    "A-2, B-3, C-1, D-4",
+    "A-1, B-3, C-2, D-4",
+    "A-3, B-1, C-2, D-4",
+    "A-1, B-4, C-2, D-3"
+   ],
+   "answer_index": 1,
+   "explanation": "The hydrosphere is water, the biosphere life, the atmosphere air and the lithosphere land."
+  },
+  "182": {
+   "question": "Match List I with List II: List I (Process) A. Respiration B. Transpiration C. Photosynthesis D. Decomposition List II (Result) 1. Energy release 2. Water loss 3. Nutrient recycling 4. Food production",
+   "options": [
+    "A-3, B-2, C-4, D-1",
+    "A-4, B-2, C-1, D-3",
+    "A-1, B-2, C-4, D-3",
+    "A-1, B-2, C-3, D-4"
+   ],
+   "answer_index": 2,
+   "explanation": "Respiration releases energy, transpiration loses water, photosynthesis makes food and decomposition recycles nutrients."
+  },
+  "212": {
+   "question": "Match List I with List II: List I (Layer) A. Sima B. Nife C. Sial List II (Composition) 1. Silica and Magnesium 2. Nickel and Iron 3. Silica and Aluminium",
+   "options": [
+    "A-1, B-2, C-3",
+    "A-2, B-1, C-3",
+    "A-1, B-3, C-2",
+    "A-3, B-2, C-1"
+   ],
+   "answer_index": 0,
+   "explanation": "Sial is silica and aluminium, sima silica and magnesium, and nife nickel and iron."
+  },
+  "213": {
+   "question": "Match List I with List II: List I (Rock type) A. Sedimentary B. Metamorphic C. Igneous List II (Example) 1. Sandstone 2. Basalt 3. Quartzite",
+   "options": [
+    "A-2, B-3, C-1",
+    "A-1, B-3, C-2",
+    "A-3, B-1, C-2",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 1,
+   "explanation": "Sandstone is sedimentary, quartzite metamorphic and basalt igneous."
+  },
+  "214": {
+   "question": "Match List I with List II: List I (Landform) A. Sand dunes B. U-shaped valley C. V-shaped valley List II (Agent of erosion) 1. Wind 2. River 3. Glacier",
+   "options": [
+    "A-3, B-1, C-2",
+    "A-2, B-3, C-1",
+    "A-1, B-3, C-2",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 2,
+   "explanation": "Wind builds sand dunes, glaciers carve U-shaped valleys and rivers cut V-shaped valleys."
+  },
+  "216": {
+   "question": "Match List I with List II: List I (Process) A. Deposition and compaction of layers B. Heat and pressure C. Cooling of magma List II (Rock formed) 1. Igneous 2. Metamorphic 3. Sedimentary",
+   "options": [
+    "A-3, B-2, C-1",
+    "A-3, B-1, C-2",
+    "A-1, B-2, C-3",
+    "A-2, B-3, C-1"
+   ],
+   "answer_index": 0,
+   "explanation": "Layers deposited and compacted give sedimentary rock, heat and pressure give metamorphic rock and cooling magma gives igneous rock."
+  },
+  "217": {
+   "question": "Match List I with List II: List I (Feature) A. Mushroom rock B. Moraine C. Ox-bow lake List II (Found in) 1. Glacial area 2. Desert 3. River plain",
+   "options": [
+    "A-3, B-1, C-2",
+    "A-2, B-1, C-3",
+    "A-1, B-2, C-3",
+    "A-2, B-3, C-1"
+   ],
+   "answer_index": 1,
+   "explanation": "Wind shapes mushroom rocks in deserts, glaciers leave moraines and rivers form ox-bow lakes on their plains."
+  }
+ }
+}

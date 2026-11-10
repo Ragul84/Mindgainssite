@@ -1,0 +1,170 @@
+{
+ "retire": [
+  37,
+  38,
+  39,
+  74,
+  83,
+  90,
+  118,
+  119,
+  139,
+  140
+ ],
+ "fix": {
+  "36": {
+   "question": "Match List I with List II: List I (City) A. Coimbatore B. Chennai C. Tiruppur D. Erode E. Sivakasi List II (Known for) 1. Knitwear 2. Automobiles 3. Fireworks 4. Turmeric 5. Textiles",
+   "options": [
+    "A-5, B-2, C-1, D-4, E-3",
+    "A-5, B-2, C-3, D-4, E-1",
+    "A-5, B-4, C-1, D-2, E-3",
+    "A-5, B-2, C-1, D-3, E-4"
+   ],
+   "answer_index": 0,
+   "explanation": "Coimbatore is a textile hub, Chennai makes automobiles, Tiruppur knitwear, Erode turmeric and Sivakasi fireworks."
+  },
+  "40": {
+   "question": "Match List I with List II: List I (City) A. Coimbatore B. Chennai C. Thanjavur D. Tiruppur E. Sivakasi List II (Nickname) 1. Detroit of Asia 2. Knitwear Capital 3. Firecracker Hub 4. Manchester of South India 5. Rice Bowl of TN",
+   "options": [
+    "A-4, B-1, C-5, D-2, E-3",
+    "A-5, B-1, C-4, D-2, E-3",
+    "A-2, B-1, C-5, D-4, E-3",
+    "A-4, B-1, C-3, D-2, E-5"
+   ],
+   "answer_index": 0,
+   "explanation": "Coimbatore is the Manchester of South India, Chennai the Detroit of Asia, Thanjavur the rice bowl of Tamil Nadu, Tiruppur the knitwear capital and Sivakasi the firecracker hub."
+  },
+  "67": {
+   "question": "Match List I with List II: List I (Range) A. Aravalli B. Himalayas C. Nilgiris D. Western Ghats List II (Characteristic) 1. Oldest Range 2. Fold Mountains 3. Meeting Point 4. Continuous Range",
+   "options": [
+    "A-1, B-3, C-2, D-4",
+    "A-4, B-2, C-3, D-1",
+    "A-3, B-2, C-1, D-4",
+    "A-1, B-2, C-3, D-4"
+   ],
+   "answer_index": 3,
+   "explanation": "The Aravallis are India's oldest range, the Himalayas are young fold mountains, the Eastern and Western Ghats meet in the Nilgiris and the Western Ghats form a continuous range."
+  },
+  "68": {
+   "question": "Match List I with List II: List I (River) A. Godavari B. Ganga C. Kaveri List II (Origin) 1. Brahmagiri 2. Gangotri 3. Nasik",
+   "options": [
+    "A-3, B-2, C-1",
+    "A-1, B-2, C-3",
+    "A-2, B-3, C-1",
+    "A-3, B-1, C-2"
+   ],
+   "answer_index": 0,
+   "explanation": "The Godavari rises near Nashik, the Ganga at Gangotri and the Kaveri at Brahmagiri (Talakaveri)."
+  },
+  "69": {
+   "question": "Match List I with List II: List I (Soil) A. Alluvial soil B. Red soil C. Black soil D. Laterite soil List II (Crop) 1. Cashew 2. Wheat 3. Pulses 4. Cotton",
+   "options": [
+    "A-2, B-3, C-1, D-4",
+    "A-2, B-3, C-4, D-1",
+    "A-2, B-4, C-3, D-1",
+    "A-2, B-1, C-4, D-3"
+   ],
+   "answer_index": 1,
+   "explanation": "Alluvial soil suits wheat, red soil pulses and millets, black soil cotton and laterite soil cashew."
+  },
+  "70": {
+   "question": "Match List I with List II: List I (State) A. Odisha B. Maharashtra C. Kerala D. Tamil Nadu List II (Coast) 1. Malabar Coast 2. Coromandel Coast 3. Konkan Coast 4. Utkal Coast",
+   "options": [
+    "A-4, B-3, C-2, D-1",
+    "A-2, B-3, C-1, D-4",
+    "A-4, B-3, C-1, D-2",
+    "A-3, B-4, C-1, D-2"
+   ],
+   "answer_index": 2,
+   "explanation": "Odisha has the Utkal Coast, Maharashtra the Konkan Coast, Kerala the Malabar Coast and Tamil Nadu the Coromandel Coast."
+  },
+  "71": {
+   "question": "Match List I with List II: List I (Forest type) A. Thorn and scrub forest B. Tropical deciduous forest C. Mangrove forest D. Tropical evergreen forest List II (Region) 1. Moderate Rain 2. Desert 3. Deltaic 4. Heavy Rain",
+   "options": [
+    "A-2, B-4, C-3, D-1",
+    "A-4, B-1, C-3, D-2",
+    "A-1, B-2, C-3, D-4",
+    "A-2, B-1, C-3, D-4"
+   ],
+   "answer_index": 3,
+   "explanation": "Thorn forests grow in desert areas, deciduous forests where rain is moderate, mangroves in deltas and evergreen forests where rain is heavy."
+  },
+  "116": {
+   "question": "Match List I with List II: List I (Settlement type) A. Linear settlement B. Compact settlement C. Hamlet D. Dispersed settlement List II (Characteristic) 1. Clustered houses 2. Along a road 3. Isolated houses 4. Small clusters",
+   "options": [
+    "A-2, B-1, C-4, D-3",
+    "A-2, B-1, C-3, D-4",
+    "A-3, B-1, C-4, D-2",
+    "A-4, B-1, C-2, D-3"
+   ],
+   "answer_index": 0,
+   "explanation": "Linear settlements line a road, compact settlements have clustered houses, hamlets are small clusters and dispersed settlements have isolated houses."
+  },
+  "117": {
+   "question": "Match List I with List II: List I (City) A. Madurai B. Salem C. Coimbatore D. Tiruchirappalli E. Chennai List II (Nickname) 1. Manchester of South India 2. Steel City 3. Gateway to South India 4. Rockfort City 5. Temple City",
+   "options": [
+    "A-5, B-3, C-1, D-4, E-2",
+    "A-5, B-2, C-1, D-4, E-3",
+    "A-5, B-2, C-4, D-1, E-3",
+    "A-5, B-2, C-3, D-4, E-1"
+   ],
+   "answer_index": 1,
+   "explanation": "Madurai is the temple city, Salem the steel city, Coimbatore the Manchester of South India, Tiruchirappalli the Rockfort city and Chennai the gateway to South India."
+  },
+  "120": {
+   "question": "Match List I with List II: List I (Term) A. Death rate B. Literacy rate C. Birth rate D. Growth rate E. Sex ratio List II (Meaning) 1. Deaths per 1000 2. Live births per 1000 3. Percentage change in pop 4. Females per 1000 males 5. Percentage who can read/write",
+   "options": [
+    "A-1, B-5, C-2, D-3, E-4",
+    "A-4, B-5, C-2, D-3, E-1",
+    "A-1, B-5, C-4, D-3, E-2",
+    "A-1, B-3, C-2, D-5, E-4"
+   ],
+   "answer_index": 0,
+   "explanation": "The death rate is deaths per 1000, the literacy rate the share who can read and write, the birth rate live births per 1000, the growth rate the percentage change in population and the sex ratio females per 1000 males."
+  },
+  "138": {
+   "question": "Match List I with List II: List I (Dam) A. Sardar Sarovar B. Tehri C. Tungabhadra Dam D. Nagarjuna Sagar List II (River) 1. Bhagirathi 2. Narmada 3. Krishna 4. Tungabhadra",
+   "options": [
+    "A-1, B-2, C-4, D-3",
+    "A-2, B-3, C-4, D-1",
+    "A-2, B-1, C-4, D-3",
+    "A-2, B-1, C-3, D-4"
+   ],
+   "answer_index": 2,
+   "explanation": "Sardar Sarovar is on the Narmada, Tehri on the Bhagirathi, the Tungabhadra Dam on the Tungabhadra and Nagarjuna Sagar on the Krishna."
+  },
+  "141": {
+   "question": "Match List I with List II: List I (Term) A. Watershed B. Water table C. Aquifer D. Desalination List II (Definition) 1. Removing salt from water 2. Water-bearing rock layer 3. Upper level of groundwater 4. Area draining into a stream",
+   "options": [
+    "A-4, B-3, C-1, D-2",
+    "A-4, B-3, C-2, D-1",
+    "A-4, B-2, C-3, D-1",
+    "A-2, B-3, C-4, D-1"
+   ],
+   "answer_index": 1,
+   "explanation": "A watershed is the area draining into a stream, the water table the upper level of groundwater, an aquifer a water-bearing rock layer and desalination the removal of salt."
+  },
+  "205": {
+   "question": "Match List I with List II: List I (River) A. Yamuna B. Indravati C. Jhelum D. Subansiri List II (Basin) 1. Indus Basin 2. Brahmaputra Basin 3. Ganga Basin 4. Godavari Basin",
+   "options": [
+    "A-3, B-1, C-4, D-2",
+    "A-3, B-4, C-1, D-2",
+    "A-2, B-4, C-1, D-3",
+    "A-3, B-2, C-1, D-4"
+   ],
+   "answer_index": 1,
+   "explanation": "The Yamuna joins the Ganga, the Indravati the Godavari, the Jhelum the Indus system and the Subansiri the Brahmaputra."
+  },
+  "209": {
+   "question": "Match List I with List II: List I (Lake) A. Wular Lake B. Vembanad Lake C. Sambhar Lake D. Chilika Lake List II (State / UT) 1. Odisha 2. Kerala 3. Rajasthan 4. Jammu and Kashmir",
+   "options": [
+    "A-1, B-2, C-3, D-4",
+    "A-4, B-2, C-3, D-1",
+    "A-3, B-2, C-4, D-1",
+    "A-4, B-2, C-1, D-3"
+   ],
+   "answer_index": 1,
+   "explanation": "Wular is in Jammu and Kashmir, Vembanad in Kerala, Sambhar in Rajasthan and Chilika in Odisha."
+  }
+ }
+}

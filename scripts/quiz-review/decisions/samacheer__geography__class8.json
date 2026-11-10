@@ -1,0 +1,289 @@
+{
+ "retire": [
+  72,
+  76,
+  82,
+  95,
+  201,
+  205,
+  206,
+  243
+ ],
+ "fix": {
+  "20": {
+   "question": "Match List I with List II: List I (Layer) A. Stratosphere B. Thermosphere C. Mesosphere D. Troposphere List II (Characteristic) 1. Ozone layer is found here 2. Meteors burn up here 3. Aurora occurs here 4. Weather occurs here",
+   "options": [
+    "A-1, B-3, C-2, D-4",
+    "A-1, B-2, C-3, D-4",
+    "A-1, B-4, C-2, D-3",
+    "A-1, B-3, C-4, D-2"
+   ],
+   "answer_index": 0,
+   "explanation": "The ozone layer is in the stratosphere, auroras occur in the thermosphere, meteors burn up in the mesosphere and weather happens in the troposphere."
+  },
+  "45": {
+   "question": "Match List I with List II: List I (Biome) A. Tropical rainforest B. Tundra C. Tropical grassland D. Desert List II (Feature) 1. Xerophytes 2. Savanna 3. Canopy 4. Permafrost",
+   "options": [
+    "A-1, B-4, C-2, D-3",
+    "A-3, B-4, C-2, D-1",
+    "A-4, B-3, C-2, D-1",
+    "A-3, B-4, C-1, D-2"
+   ],
+   "answer_index": 1,
+   "explanation": "Rainforests have a dense canopy, the tundra permafrost, tropical grasslands are called savannas and deserts have xerophytes."
+  },
+  "46": {
+   "question": "Match List I with List II: List I (Organism (plant → grasshopper → frog → eagle)) A. Primary consumer B. Tertiary consumer C. Producer D. Secondary consumer List II (Trophic level) 1. Eagle 2. Green plant 3. Grasshopper 4. Frog",
+   "options": [
+    "A-4, B-1, C-2, D-3",
+    "A-3, B-2, C-1, D-4",
+    "A-3, B-1, C-2, D-4",
+    "A-3, B-4, C-2, D-1"
+   ],
+   "answer_index": 2,
+   "explanation": "The green plant is the producer, the grasshopper the primary consumer, the frog the secondary consumer and the eagle the tertiary consumer."
+  },
+  "47": {
+   "question": "Match List I with List II: List I (Abiotic factor) A. Water B. Soil C. Temperature D. Light List II (Impact) 1. Metabolism 2. Hydration 3. Anchorage 4. Photosynthesis",
+   "options": [
+    "A-2, B-3, C-4, D-1",
+    "A-2, B-1, C-3, D-4",
+    "A-1, B-3, C-2, D-4",
+    "A-2, B-3, C-1, D-4"
+   ],
+   "answer_index": 3,
+   "explanation": "Water hydrates, soil anchors plants, temperature controls metabolism and light drives photosynthesis."
+  },
+  "48": {
+   "question": "Match List I with List II: List I (Forest type) A. Tropical evergreen forest B. Mangrove forest C. Coniferous forest D. Temperate deciduous forest List II (Location) 1. Coastal areas 2. Amazon 3. Temperate zones 4. Taiga",
+   "options": [
+    "A-2, B-1, C-4, D-3",
+    "A-1, B-2, C-4, D-3",
+    "A-3, B-1, C-4, D-2",
+    "A-4, B-1, C-2, D-3"
+   ],
+   "answer_index": 0,
+   "explanation": "Tropical evergreen forest covers the Amazon, mangroves line coasts, coniferous forest forms the taiga and deciduous forests grow in temperate zones."
+  },
+  "71": {
+   "question": "Match List I with List II: List I (Ocean) A. Atlantic Ocean B. Pacific Ocean C. Arctic Ocean D. Indian Ocean List II (Characteristic) 1. Deepest Ocean 2. S-shaped 3. Smallest Ocean 4. Named after a country",
+   "options": [
+    "A-2, B-4, C-3, D-1",
+    "A-4, B-1, C-3, D-2",
+    "A-1, B-2, C-3, D-4",
+    "A-2, B-1, C-3, D-4"
+   ],
+   "answer_index": 3,
+   "explanation": "The Atlantic is S-shaped, the Pacific is the deepest, the Arctic the smallest and the Indian Ocean is the only one named after a country."
+  },
+  "73": {
+   "question": "Match List I with List II: List I (Current) A. Cold currents B. Warm currents C. Deep (thermohaline) currents D. Surface currents List II (Movement) 1. Wind driven 2. Equator to Poles 3. Density driven 4. Poles to Equator",
+   "options": [
+    "A-3, B-2, C-4, D-1",
+    "A-4, B-2, C-3, D-1",
+    "A-2, B-4, C-3, D-1",
+    "A-4, B-1, C-3, D-2"
+   ],
+   "answer_index": 1,
+   "explanation": "Cold currents flow from the poles towards the equator, warm currents from the equator towards the poles, deep currents are driven by density and surface currents by wind."
+  },
+  "74": {
+   "question": "Match List I with List II: List I (Rank by size) A. Third largest B. Smallest C. Largest D. Second largest List II (Ocean) 1. Atlantic 2. Indian 3. Arctic 4. Pacific",
+   "options": [
+    "A-1, B-3, C-4, D-2",
+    "A-4, B-3, C-2, D-1",
+    "A-2, B-3, C-4, D-1",
+    "A-2, B-3, C-1, D-4"
+   ],
+   "answer_index": 2,
+   "explanation": "By area: Pacific > Atlantic > Indian > Arctic."
+  },
+  "85": {
+   "question": "Match List I with List II: List I (Landform) A. Plateau B. Plain C. Mountain D. Valley List II (Formation) 1. Tectonic movements 2. Sediment deposition 3. River erosion 4. Uplifted flatland",
+   "options": [
+    "A-4, B-1, C-2, D-3",
+    "A-4, B-2, C-1, D-3",
+    "A-2, B-4, C-1, D-3",
+    "A-4, B-2, C-3, D-1"
+   ],
+   "answer_index": 1,
+   "explanation": "Plateaus are uplifted flatlands, plains are built by sediment, mountains rise through tectonic movement and valleys are cut by rivers."
+  },
+  "90": {
+   "question": "Match List I with List II: List I (Term) A. Drought B. Landslide C. Cyclone D. Flood List II (Definition) 1. A prolonged period of abnormally low rainfall 2. An overflow of a large amount of water beyond its normal confines 3. The sliding down of a mass of earth or rock from a mountain or cliff 4. A system of winds rotating inward to an area of low atmospheric pressure",
+   "options": [
+    "A-3, B-1, C-4, D-2",
+    "A-1, B-4, C-3, D-2",
+    "A-1, B-3, C-4, D-2",
+    "A-4, B-3, C-1, D-2"
+   ],
+   "answer_index": 2,
+   "explanation": "A drought is a long spell of low rain, a landslide a mass of earth sliding down, a cyclone winds rotating into low pressure and a flood water overflowing its normal limits."
+  },
+  "102": {
+   "question": "Match List I with List II: List I (Phase) A. Preparedness B. Recovery C. Mitigation D. Response List II (Description) 1. Restoring normalcy and rebuilding after a disaster 2. Developing plans and training for potential disasters 3. Reducing the likelihood or impact of future disasters 4. Immediate actions taken during and after a disaster",
+   "options": [
+    "A-2, B-1, C-4, D-3",
+    "A-1, B-2, C-3, D-4",
+    "A-2, B-1, C-3, D-4",
+    "A-3, B-1, C-2, D-4"
+   ],
+   "answer_index": 2,
+   "explanation": "Preparedness is planning and training, recovery is rebuilding afterwards, mitigation reduces future risk and response is the immediate action during and after a disaster."
+  },
+  "116": {
+   "question": "Match List I with List II: List I (Rock type) A. Sedimentary B. Metamorphic C. Igneous List II (Example) 1. Marble 2. Basalt 3. Sandstone",
+   "options": [
+    "A-3, B-1, C-2",
+    "A-3, B-2, C-1",
+    "A-1, B-3, C-2",
+    "A-2, B-1, C-3"
+   ],
+   "answer_index": 0,
+   "explanation": "Sandstone is sedimentary, marble metamorphic and basalt igneous."
+  },
+  "117": {
+   "question": "Match List I with List II: List I (Mineral) A. Talc B. Quartz C. Diamond List II (Known for) 1. Softness 2. Hardness 3. Crystal structure",
+   "options": [
+    "A-3, B-1, C-2",
+    "A-1, B-3, C-2",
+    "A-1, B-2, C-3",
+    "A-2, B-3, C-1"
+   ],
+   "answer_index": 1,
+   "explanation": "Talc is the softest mineral, quartz is known for its crystals and diamond is the hardest."
+  },
+  "121": {
+   "question": "Match List I with List II: List I (Layer) A. Mesosphere B. Exosphere C. Thermosphere D. Stratosphere List II (Characteristic) 1. Meteors burn up in this layer 2. Outermost layer, gradually fades into space 3. Auroras occur here; International Space Station orbits here 4. Contains the ozone layer",
+   "options": [
+    "A-2, B-1, C-3, D-4",
+    "A-1, B-2, C-3, D-4",
+    "A-4, B-2, C-3, D-1",
+    "A-1, B-3, C-2, D-4"
+   ],
+   "answer_index": 1,
+   "explanation": "Meteors burn in the mesosphere, the exosphere fades into space, auroras and the ISS are in the thermosphere and the stratosphere holds the ozone layer."
+  },
+  "200": {
+   "question": "Match List I with List II: List I (Biome) A. Hot desert B. Tropical rainforest C. Tundra D. Taiga List II (Typical plants) 1. Epiphytes 2. Pine trees 3. Mosses and Lichens 4. Cacti",
+   "options": [
+    "A-4, B-1, C-3, D-2",
+    "A-4, B-3, C-1, D-2",
+    "A-2, B-1, C-3, D-4",
+    "A-4, B-2, C-3, D-1"
+   ],
+   "answer_index": 0,
+   "explanation": "Deserts have cacti, rainforests epiphytes, the tundra mosses and lichens and the taiga pine trees."
+  },
+  "202": {
+   "question": "Match List I with List II: List I (Trophic level (grass → grasshopper → frog → snake)) A. Secondary consumer B. Tertiary consumer C. Producer D. Primary consumer List II (Example) 1. Grass 2. Snake 3. Frog 4. Grasshopper",
+   "options": [
+    "A-2, B-3, C-1, D-4",
+    "A-3, B-2, C-4, D-1",
+    "A-3, B-2, C-1, D-4",
+    "A-4, B-2, C-1, D-3"
+   ],
+   "answer_index": 2,
+   "explanation": "Grass is the producer, the grasshopper the primary consumer, the frog the secondary consumer and the snake the tertiary consumer."
+  },
+  "203": {
+   "question": "Match List I with List II: List I (Gas) A. Carbon dioxide B. Water vapour C. Oxygen D. Nitrogen List II (Role) 1. Rainfall 2. Protein synthesis 3. Respiration 4. Photosynthesis",
+   "options": [
+    "A-4, B-3, C-1, D-2",
+    "A-4, B-2, C-3, D-1",
+    "A-3, B-1, C-4, D-2",
+    "A-4, B-1, C-3, D-2"
+   ],
+   "answer_index": 3,
+   "explanation": "Carbon dioxide is used in photosynthesis, water vapour brings rain, oxygen is used in respiration and nitrogen in making proteins."
+  },
+  "204": {
+   "question": "Match List I with List II: List I (Region) A. Africa B. Argentina C. North America D. Central Asia List II (Grassland) 1. Prairies 2. Steppes 3. Pampas 4. Savanna",
+   "options": [
+    "A-4, B-3, C-1, D-2",
+    "A-3, B-4, C-1, D-2",
+    "A-2, B-3, C-1, D-4",
+    "A-1, B-3, C-4, D-2"
+   ],
+   "answer_index": 0,
+   "explanation": "Savannas are in Africa, pampas in Argentina, prairies in North America and steppes in Central Asia."
+  },
+  "207": {
+   "question": "Match List I with List II: List I (Component) A. Air B. Living things C. Rocks and soil D. Water List II (Sphere) 1. Biosphere 2. Lithosphere 3. Atmosphere 4. Hydrosphere",
+   "options": [
+    "A-3, B-2, C-1, D-4",
+    "A-3, B-4, C-2, D-1",
+    "A-1, B-3, C-2, D-4",
+    "A-3, B-1, C-2, D-4"
+   ],
+   "answer_index": 3,
+   "explanation": "Air makes up the atmosphere, living things the biosphere, rocks and soil the lithosphere and water the hydrosphere."
+  },
+  "244": {
+   "question": "Match List I with List II: List I (Ocean floor feature) A. Abyssal plain B. Ocean trench C. Continental shelf D. Continental slope List II (Description) 1. Steep drop 2. Shallow edge 3. Deepest part 4. Flat floor",
+   "options": [
+    "A-4, B-3, C-2, D-1",
+    "A-4, B-1, C-2, D-3",
+    "A-2, B-3, C-4, D-1",
+    "A-4, B-2, C-3, D-1"
+   ],
+   "answer_index": 0,
+   "explanation": "The abyssal plain is the flat deep floor, trenches are the deepest parts, the shelf is the shallow edge and the slope is the steep drop."
+  },
+  "245": {
+   "question": "Match List I with List II: List I (Ocean) A. Southern Ocean B. Arctic Ocean C. Atlantic Ocean D. Pacific Ocean List II (Location) 1. Antarctica 2. Between Asia and America 3. North Pole 4. Between America and Europe",
+   "options": [
+    "A-1, B-4, C-3, D-2",
+    "A-1, B-3, C-4, D-2",
+    "A-1, B-3, C-2, D-4",
+    "A-1, B-2, C-4, D-3"
+   ],
+   "answer_index": 1,
+   "explanation": "The Southern Ocean surrounds Antarctica, the Arctic covers the North Pole, the Atlantic lies between the Americas and Europe and the Pacific between Asia and the Americas."
+  },
+  "246": {
+   "question": "Match List I with List II: List I (Term) A. Ocean current B. Ocean trench C. Salinity D. Tide List II (Meaning) 1. Water level rise 2. Water flow 3. Salt content 4. Deep valley",
+   "options": [
+    "A-2, B-4, C-1, D-3",
+    "A-3, B-4, C-2, D-1",
+    "A-2, B-4, C-3, D-1",
+    "A-4, B-2, C-3, D-1"
+   ],
+   "answer_index": 2,
+   "explanation": "A current is a flow of water, a trench a deep valley in the ocean floor, salinity the salt content and a tide the regular rise of sea level."
+  },
+  "247": {
+   "question": "Match List I with List II: List I (Current) A. Humboldt Current B. Gulf Stream C. Benguela Current D. Kuroshio Current List II (Region) 1. South Pacific 2. North Pacific 3. North Atlantic 4. South Atlantic",
+   "options": [
+    "A-1, B-2, C-4, D-3",
+    "A-1, B-3, C-2, D-4",
+    "A-3, B-1, C-4, D-2",
+    "A-1, B-3, C-4, D-2"
+   ],
+   "answer_index": 3,
+   "explanation": "The Humboldt (Peru) Current is in the South Pacific, the Gulf Stream in the North Atlantic, the Benguela in the South Atlantic and the Kuroshio in the North Pacific."
+  },
+  "248": {
+   "question": "Match List I with List II: List I (Ocean) A. Indian Ocean B. Arctic Ocean C. Pacific Ocean D. Atlantic Ocean List II (Depth feature) 1. Shallowest 2. Mariana Trench 3. Puerto Rico Trench 4. Java Trench",
+   "options": [
+    "A-4, B-1, C-2, D-3",
+    "A-2, B-1, C-4, D-3",
+    "A-4, B-2, C-1, D-3",
+    "A-3, B-1, C-2, D-4"
+   ],
+   "answer_index": 0,
+   "explanation": "The Java (Sunda) Trench is the deepest point of the Indian Ocean, the Arctic is the shallowest ocean, the Mariana Trench is in the Pacific and the Puerto Rico Trench in the Atlantic."
+  },
+  "254": {
+   "question": "Match List I with List II: List I (Landform) A. Delta B. U-shaped valley C. Sand dune List II (Agent) 1. Glacier 2. River 3. Wind",
+   "options": [
+    "A-2, B-3, C-1",
+    "A-3, B-1, C-2",
+    "A-2, B-1, C-3",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 2,
+   "explanation": "Rivers build deltas, glaciers carve U-shaped valleys and wind piles up sand dunes."
+  }
+ }
+}

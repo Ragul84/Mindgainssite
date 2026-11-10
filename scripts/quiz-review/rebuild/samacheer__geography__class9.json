@@ -1,0 +1,489 @@
+{
+ "29": {
+  "lh": "Atmospheric layer",
+  "rh": "Feature",
+  "L": [
+   "Stratosphere",
+   "Troposphere",
+   "Thermosphere",
+   "Mesosphere"
+  ],
+  "why": "The ozone layer lies in the stratosphere; weather happens in the troposphere; the ionosphere is part of the thermosphere; meteors burn up in the mesosphere.",
+  "R": [
+   "Ozone layer",
+   "Weather phenomena",
+   "Ionosphere",
+   "Meteors burn"
+  ]
+ },
+ "30": {
+  "lh": "Gas",
+  "rh": "Share of dry air",
+  "L": [
+   "Carbon dioxide",
+   "Oxygen",
+   "Nitrogen",
+   "Argon"
+  ],
+  "why": "Dry air is about 78% nitrogen, 21% oxygen, 0.93% argon and 0.03-0.04% carbon dioxide.",
+  "R": [
+   "0.03%",
+   "21%",
+   "78%",
+   "0.9%"
+  ]
+ },
+ "31": {
+  "lh": "Instrument",
+  "rh": "Measures",
+  "L": [
+   "Hygrometer",
+   "Thermometer",
+   "Barometer",
+   "Anemometer"
+  ],
+  "why": "A hygrometer measures humidity, a thermometer temperature, a barometer air pressure and an anemometer wind speed.",
+  "R": [
+   "Humidity",
+   "Temperature",
+   "Pressure",
+   "Wind Speed"
+  ]
+ },
+ "32": {
+  "lh": "Boundary",
+  "rh": "Layers it separates",
+  "L": [
+   "Stratopause",
+   "Tropopause",
+   "Thermopause",
+   "Mesopause"
+  ],
+  "why": "The tropopause separates troposphere and stratosphere, the stratopause stratosphere and mesosphere, the mesopause mesosphere and thermosphere, and the thermopause the thermosphere (ionosphere) and exosphere.",
+  "R": [
+   "Stratosphere-Mesosphere",
+   "Troposphere-Stratosphere",
+   "Ionosphere-Exosphere",
+   "Mesosphere-Thermosphere"
+  ]
+ },
+ "59": {
+  "lh": "Biome",
+  "rh": "Characteristic",
+  "L": [
+   "Savanna",
+   "Tundra",
+   "Taiga",
+   "Hot desert"
+  ],
+  "why": "Savannas are tropical grasslands, the tundra has permafrost, the taiga is coniferous forest and hot deserts have cacti and other xerophytes.",
+  "R": [
+   "Grasslands",
+   "Permafrost",
+   "Coniferous trees",
+   "Cacti"
+  ]
+ },
+ "60": {
+  "lh": "Trophic level",
+  "rh": "Example (grass → rabbit → snake → eagle)",
+  "L": [
+   "Secondary consumer",
+   "Tertiary consumer",
+   "Producer",
+   "Primary consumer"
+  ],
+  "why": "In the chain grass → rabbit → snake → eagle, grass is the producer, the rabbit the primary consumer, the snake the secondary consumer and the eagle the tertiary consumer.",
+  "R": [
+   "Snake",
+   "Eagle",
+   "Grass",
+   "Rabbit"
+  ]
+ },
+ "61": {
+  "lh": "Forest type",
+  "rh": "Location",
+  "L": [
+   "Mangrove forest",
+   "Tropical deciduous forest",
+   "Tropical evergreen rainforest",
+   "Coniferous forest (taiga)"
+  ],
+  "why": "The Sundarbans are mangroves, Central India has tropical deciduous forest, the Amazon basin is tropical evergreen rainforest and Siberia is coniferous taiga.",
+  "R": [
+   "Sunderbans",
+   "Central India",
+   "Amazon Basin",
+   "Siberia"
+  ]
+ },
+ "62": "retire",
+ "82": {
+  "lh": "Ocean",
+  "rh": "Characteristic",
+  "L": [
+   "Atlantic Ocean",
+   "Pacific Ocean",
+   "Arctic Ocean",
+   "Indian Ocean"
+  ],
+  "why": "The Atlantic is S-shaped, the Pacific is ringed by the Ring of Fire, the Arctic is the smallest ocean and the Indian Ocean is land-locked on its northern side.",
+  "R": [
+   "S-shaped",
+   "Ring of Fire",
+   "Smallest ocean",
+   "Land-locked nature"
+  ]
+ },
+ "83": "retire",
+ "84": {
+  "lh": "Ocean relief",
+  "rh": "Description",
+  "L": [
+   "Abyssal plain",
+   "Ocean trench",
+   "Continental shelf",
+   "Continental slope"
+  ],
+  "why": "The abyssal plain is the flat deep-sea floor, trenches are the deepest parts, the continental shelf is the shallow edge and the continental slope is the steep drop beyond it.",
+  "R": [
+   "Flat bottom",
+   "Deepest part",
+   "Shallow edge",
+   "Steep drop"
+  ]
+ },
+ "85": {
+  "lh": "Water body",
+  "rh": "Salinity",
+  "L": [
+   "Estuary",
+   "Baltic Sea",
+   "Dead Sea",
+   "Open ocean"
+  ],
+  "why": "Estuaries mix fresh and sea water; the Baltic Sea has low salinity from river inflow; the Dead Sea is extremely salty; the open ocean averages about 35 parts per thousand.",
+  "R": [
+   "Mixed salinity",
+   "Low salinity",
+   "Very high salinity",
+   "Medium salinity"
+  ]
+ },
+ "87": {
+  "lh": "Endogenetic process",
+  "rh": "Description",
+  "L": [
+   "Folding",
+   "Faulting",
+   "Volcanism",
+   "Earthquake"
+  ],
+  "why": "Folding bends rocks under stress, faulting cracks the crust, volcanism erupts magma and an earthquake is sudden shaking from fault movement.",
+  "R": [
+   "Bending of rocks due to stress",
+   "Cracks in the Earth's crust",
+   "Eruption of magma from beneath the Earth's surface",
+   "Sudden shaking due to fault movement"
+  ]
+ },
+ "94": {
+  "lh": "Mountain type",
+  "rh": "Formation",
+  "L": [
+   "Block mountains",
+   "Fold mountains",
+   "Volcanic mountains",
+   "Residual mountains"
+  ],
+  "why": "Block mountains form by faulting, fold mountains by folding, volcanic mountains by eruptions and residual mountains are what remains after erosion.",
+  "R": [
+   "Formed by faulting",
+   "Formed by folding",
+   "Formed by volcanic activity",
+   "Remaining after erosion"
+  ]
+ },
+ "106": {
+  "lh": "Process",
+  "rh": "Description",
+  "L": [
+   "Erosion",
+   "Weathering",
+   "Deposition",
+   "Mass wasting"
+  ],
+  "why": "Erosion removes surface material, weathering breaks rocks in place, deposition lays sediment down elsewhere and mass wasting moves rock downslope under gravity.",
+  "R": [
+   "Removal of surface material by agents like water or wind",
+   "Breakdown of rocks in situ",
+   "Accumulation of sediments in new locations",
+   "Downward movement of rocks due to gravity"
+  ]
+ },
+ "113": {
+  "lh": "Landform",
+  "rh": "Formation",
+  "L": [
+   "V-shaped valley",
+   "U-shaped valley",
+   "Sand dune",
+   "Delta"
+  ],
+  "why": "Rivers cut V-shaped valleys, glaciers carve U-shaped valleys, wind deposits sand dunes and rivers build deltas at their mouths.",
+  "R": [
+   "Formed by river erosion",
+   "Formed by glacial erosion",
+   "Formed by wind deposition",
+   "Formed by river deposition at mouth"
+  ]
+ },
+ "132": {
+  "lh": "Term",
+  "rh": "Description",
+  "L": [
+   "Urbanisation",
+   "Pollution",
+   "Deforestation",
+   "Conservation"
+  ],
+  "why": "Urbanisation is the growth of cities, pollution is contamination of the environment, deforestation is clearing forests and conservation is protecting natural resources.",
+  "R": [
+   "Growth of cities and the migration of people to urban areas.",
+   "Contamination of the environment with harmful substances.",
+   "Clearing of forests for other land uses.",
+   "Protection and preservation of natural resources."
+  ]
+ },
+ "133": {
+  "lh": "Sphere",
+  "rh": "Description",
+  "L": [
+   "Biosphere",
+   "Atmosphere",
+   "Lithosphere",
+   "Hydrosphere"
+  ],
+  "why": "The biosphere is the zone of life, the atmosphere the envelope of gases, the lithosphere the solid outer layer and the hydrosphere all of Earth's water.",
+  "R": [
+   "Zone of life on Earth.",
+   "Gaseous envelope surrounding the Earth.",
+   "Solid outer layer of the Earth.",
+   "All the water on Earth."
+  ]
+ },
+ "134": "retire",
+ "139": {
+  "lh": "Layer",
+  "rh": "Characteristic",
+  "L": [
+   "Stratosphere",
+   "Exosphere",
+   "Troposphere"
+  ],
+  "why": "The stratosphere holds the ozone layer, the exosphere is the outermost boundary with space and the troposphere is where weather happens.",
+  "R": [
+   "Ozone layer",
+   "Outer space boundary",
+   "Weather phenomena"
+  ]
+ },
+ "174": "retire",
+ "175": {
+  "lh": "Cloud",
+  "rh": "Appearance",
+  "L": [
+   "Stratus",
+   "Nimbus",
+   "Cirrus",
+   "Cumulus"
+  ],
+  "why": "Stratus clouds form sheets, nimbus clouds bring rain, cirrus clouds are wispy and feathery and cumulus clouds look like cotton heaps.",
+  "R": [
+   "Layered/Sheet",
+   "Rain-bearing",
+   "Wispy/Feathery",
+   "Cotton-like"
+  ]
+ },
+ "176": {
+  "lh": "Process",
+  "rh": "Definition",
+  "L": [
+   "Condensation",
+   "Transpiration",
+   "Evaporation",
+   "Precipitation"
+  ],
+  "why": "Condensation turns vapour into liquid, transpiration is water loss from plants, evaporation turns liquid into vapour and precipitation is water or snow falling.",
+  "R": [
+   "Gas to Liquid",
+   "Water loss from plants",
+   "Liquid to Gas",
+   "Falling water/snow"
+  ]
+ },
+ "177": "retire",
+ "178": {
+  "lh": "Term",
+  "rh": "Meaning",
+  "L": [
+   "Albedo",
+   "Saturation",
+   "Lapse rate",
+   "Temperature inversion"
+  ],
+  "why": "Albedo is reflectivity, saturated air holds the most water vapour it can, the lapse rate is the change of temperature with height and an inversion is warm air lying above cold air.",
+  "R": [
+   "Reflectivity",
+   "Max water vapor",
+   "Temp change with height",
+   "Warm air above cold"
+  ]
+ },
+ "179": {
+  "lh": "Gas",
+  "rh": "Role",
+  "L": [
+   "Carbon dioxide",
+   "Ozone",
+   "Oxygen",
+   "Nitrogen"
+  ],
+  "why": "Carbon dioxide traps heat (greenhouse effect), ozone absorbs UV rays, oxygen is used in respiration and nitrogen is essential for plant growth.",
+  "R": [
+   "Greenhouse effect",
+   "UV protection",
+   "Respiration",
+   "Plant growth"
+  ]
+ },
+ "180": "retire",
+ "219": {
+  "lh": "Adaptation",
+  "rh": "Biome",
+  "L": [
+   "Cone-shaped trees that shed snow",
+   "Low-growing plants and thick fur",
+   "Plants that store water in stems",
+   "Drip-tip leaves"
+  ],
+  "why": "Conical conifers suit the taiga, low plants and thick fur suit the tundra, water-storing stems suit deserts and drip-tip leaves suit rainforests.",
+  "R": [
+   "Taiga",
+   "Tundra",
+   "Desert",
+   "Rainforest"
+  ]
+ },
+ "220": {
+  "lh": "Cycle",
+  "rh": "Key element",
+  "L": [
+   "Nitrogen cycle",
+   "Oxygen cycle",
+   "Carbon cycle",
+   "Water cycle"
+  ],
+  "why": "Each cycle is named after the substance it moves: N2, O2, CO2 and H2O.",
+  "R": [
+   "N2",
+   "O2",
+   "CO2",
+   "H2O"
+  ]
+ },
+ "221": {
+  "lh": "Organism",
+  "rh": "Role",
+  "L": [
+   "Deer",
+   "Grass",
+   "Tiger",
+   "Fungi"
+  ],
+  "why": "The deer is a primary consumer, grass a producer, the tiger an apex predator and fungi decomposers.",
+  "R": [
+   "Primary Consumer",
+   "Producer",
+   "Apex Predator",
+   "Decomposer"
+  ]
+ },
+ "222": {
+  "lh": "Component",
+  "rh": "Sphere",
+  "L": [
+   "Air",
+   "Living things",
+   "Rocks and soil",
+   "Water"
+  ],
+  "why": "Air makes up the atmosphere, living things the biosphere, rocks and soil the lithosphere and water the hydrosphere.",
+  "R": [
+   "Atmosphere",
+   "Biosphere",
+   "Lithosphere",
+   "Hydrosphere"
+  ]
+ },
+ "223": {
+  "lh": "Climate",
+  "rh": "Biome",
+  "L": [
+   "Very cold and treeless",
+   "Hot and wet all year",
+   "Long cold winters, short summers",
+   "Very low rainfall"
+  ],
+  "why": "Tundra is cold and treeless, rainforest hot and wet, taiga has long cold winters and deserts get very little rain.",
+  "R": [
+   "Tundra",
+   "Rainforest",
+   "Taiga",
+   "Desert"
+  ]
+ },
+ "255": "retire",
+ "256": {
+  "lh": "Tide",
+  "rh": "Moon phase",
+  "L": [
+   "Neap tide",
+   "Spring tide"
+  ],
+  "why": "Neap tides occur at the quarter moons, when Sun and Moon pull at right angles; spring tides occur at full and new moon, when they line up.",
+  "R": [
+   "Quarter Moon",
+   "Full Moon"
+  ]
+ },
+ "257": "retire",
+ "258": {
+  "lh": "Factor",
+  "rh": "Effect on salinity",
+  "L": [
+   "Heavy rainfall and river inflow",
+   "High evaporation"
+  ],
+  "why": "Fresh water from rain and rivers lowers salinity; evaporation leaves salt behind and raises it.",
+  "R": [
+   "Decreases Salinity",
+   "Increases Salinity"
+  ]
+ },
+ "259": {
+  "lh": "Trench",
+  "rh": "Ocean",
+  "L": [
+   "Puerto Rico Trench",
+   "Mariana Trench"
+  ],
+  "why": "The Puerto Rico Trench is the deepest point of the Atlantic; the Mariana Trench, in the Pacific, is the deepest on Earth.",
+  "R": [
+   "Atlantic",
+   "Pacific"
+  ]
+ }
+}

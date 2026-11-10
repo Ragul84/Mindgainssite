@@ -1,0 +1,484 @@
+{
+ "27": {
+  "lh": "Layer",
+  "rh": "Characteristic",
+  "L": [
+   "Stratosphere",
+   "Troposphere",
+   "Thermosphere"
+  ],
+  "why": "The stratosphere holds the ozone layer, weather happens in the troposphere and the thermosphere contains the ionised ionosphere.",
+  "R": [
+   "Ozone layer",
+   "Weather changes",
+   "Ionization"
+  ]
+ },
+ "28": {
+  "lh": "Gas",
+  "rh": "Role",
+  "L": [
+   "Nitrogen",
+   "Carbon dioxide",
+   "Oxygen"
+  ],
+  "why": "Nitrogen helps plant growth, plants take in carbon dioxide for photosynthesis and living things use oxygen in respiration.",
+  "R": [
+   "Plant growth",
+   "Photosynthesis",
+   "Respiration"
+  ]
+ },
+ "29": {
+  "lh": "Instrument",
+  "rh": "Measures",
+  "L": [
+   "Barometer",
+   "Anemometer",
+   "Thermometer"
+  ],
+  "why": "A barometer measures pressure, an anemometer wind speed and a thermometer temperature.",
+  "R": [
+   "Pressure",
+   "Wind speed",
+   "Temperature"
+  ]
+ },
+ "34": {
+  "lh": "Sphere",
+  "rh": "Description",
+  "L": [
+   "Atmosphere",
+   "Lithosphere",
+   "Hydrosphere"
+  ],
+  "why": "The atmosphere is the envelope of gases, the lithosphere the solid outer layer and the hydrosphere all water bodies.",
+  "R": [
+   "Gaseous envelope of Earth",
+   "Earth's solid outer layer",
+   "All water bodies"
+  ]
+ },
+ "36": {
+  "lh": "Organism",
+  "rh": "Habitat",
+  "L": [
+   "Mangrove trees",
+   "Teak trees",
+   "Blue whale"
+  ],
+  "why": "Mangroves grow on tidal coasts, teak grows in forests and the blue whale lives in the open ocean.",
+  "R": [
+   "Coastal areas",
+   "Forests",
+   "Open ocean"
+  ]
+ },
+ "41": {
+  "lh": "Ecosystem",
+  "rh": "Climate",
+  "L": [
+   "Hot desert",
+   "Tundra",
+   "Tropical rainforest"
+  ],
+  "why": "Hot deserts are arid, the tundra is cold and dry and tropical rainforests are hot and humid.",
+  "R": [
+   "Arid and dry",
+   "Cold and dry",
+   "Hot and humid"
+  ]
+ },
+ "55": {
+  "lh": "Layer",
+  "rh": "Description",
+  "L": [
+   "Core",
+   "Crust",
+   "Mantle"
+  ],
+  "why": "The core is the innermost part, the crust the outermost solid shell and the mantle lies between them.",
+  "R": [
+   "Innermost part of the Earth.",
+   "Outermost solid shell of a rocky planet.",
+   "Layer between the crust and the core."
+  ]
+ },
+ "56": {
+  "lh": "Landform",
+  "rh": "Agent",
+  "L": [
+   "Volcano",
+   "V-shaped valley",
+   "U-shaped valley"
+  ],
+  "why": "Volcanoes form from erupting molten rock, rivers cut V-shaped valleys and glaciers carve U-shaped valleys.",
+  "R": [
+   "Molten rock eruption",
+   "Water flow",
+   "Ice movement"
+  ]
+ },
+ "57": {
+  "lh": "Layer",
+  "rh": "Nature",
+  "L": [
+   "Asthenosphere",
+   "Outer core",
+   "Lithosphere"
+  ],
+  "why": "The asthenosphere is semi-molten, the outer core is liquid metal and the lithosphere is the rigid outer layer.",
+  "R": [
+   "Semi-molten layer",
+   "Liquid metallic layer",
+   "Rigid outer layer"
+  ]
+ },
+ "71": {
+  "lh": "Sphere",
+  "rh": "Definition",
+  "L": [
+   "Biosphere",
+   "Lithosphere",
+   "Atmosphere",
+   "Hydrosphere"
+  ],
+  "why": "The biosphere is the zone of life, the lithosphere the solid outer layer, the atmosphere the blanket of gases and the hydrosphere the water on Earth's surface.",
+  "R": [
+   "The zone of life on Earth.",
+   "The solid outer layer of the Earth.",
+   "The blanket of gases surrounding the Earth.",
+   "All the water on the Earth's surface."
+  ]
+ },
+ "72": {
+  "lh": "Layer",
+  "rh": "Characteristic",
+  "L": [
+   "Mesosphere",
+   "Thermosphere",
+   "Stratosphere",
+   "Troposphere"
+  ],
+  "why": "Meteors burn up in the mesosphere, auroras glow in the thermosphere, the stratosphere holds the ozone layer and weather happens in the troposphere.",
+  "R": [
+   "Meteors burn up here.",
+   "Auroras occur here.",
+   "Contains the ozone layer.",
+   "Weather phenomena occur here."
+  ]
+ },
+ "77": {
+  "lh": "Example",
+  "rh": "Domain",
+  "L": [
+   "Air",
+   "Plants and animals",
+   "Oceans",
+   "Mountains"
+  ],
+  "why": "Air belongs to the atmosphere, living things to the biosphere, oceans to the hydrosphere and mountains to the lithosphere.",
+  "R": [
+   "Atmosphere",
+   "Biosphere",
+   "Hydrosphere",
+   "Lithosphere"
+  ]
+ },
+ "89": {
+  "lh": "Method",
+  "rh": "Purpose",
+  "L": [
+   "Check dams",
+   "Drip irrigation",
+   "Planting trees"
+  ],
+  "why": "Check dams slow runoff, drip irrigation delivers water to the roots and trees help rain soak into the ground.",
+  "R": [
+   "Slowing down runoff",
+   "Precise water delivery to roots",
+   "Increasing soil absorption"
+  ]
+ },
+ "93": {
+  "lh": "Layer",
+  "rh": "Feature",
+  "L": [
+   "Thermosphere",
+   "Troposphere",
+   "Mesosphere"
+  ],
+  "why": "The ionosphere lies in the thermosphere, weather happens in the troposphere and meteors burn up in the mesosphere.",
+  "R": [
+   "Ionosphere",
+   "Weather phenomena",
+   "Meteors burn up"
+  ]
+ },
+ "131": {
+  "lh": "Gas",
+  "rh": "Share of dry air",
+  "L": [
+   "Carbon dioxide",
+   "Nitrogen",
+   "Argon",
+   "Oxygen"
+  ],
+  "why": "Dry air is about 78% nitrogen, 21% oxygen, 0.93% argon and 0.03-0.04% carbon dioxide.",
+  "R": [
+   "0.03%",
+   "78%",
+   "0.9%",
+   "21%"
+  ]
+ },
+ "132": "retire",
+ "133": {
+  "lh": "Gas",
+  "rh": "Use",
+  "L": [
+   "Oxygen",
+   "Argon",
+   "Nitrogen",
+   "Carbon dioxide"
+  ],
+  "why": "Oxygen is used in respiration, argon fills light bulbs, nitrogen goes into fertilisers and carbon dioxide is used in photosynthesis.",
+  "R": [
+   "Respiration",
+   "Light bulbs",
+   "Fertilizers",
+   "Photosynthesis"
+  ]
+ },
+ "134": {
+  "lh": "Boundary",
+  "rh": "Layers it separates",
+  "L": [
+   "Stratopause",
+   "Thermopause",
+   "Tropopause",
+   "Mesopause"
+  ],
+  "why": "The tropopause tops the troposphere, the stratopause the stratosphere, the mesopause the mesosphere and the thermopause the thermosphere.",
+  "R": [
+   "Stratosphere-Mesosphere",
+   "Thermosphere-Exosphere",
+   "Troposphere-Stratosphere",
+   "Mesosphere-Thermosphere"
+  ]
+ },
+ "135": {
+  "lh": "Term",
+  "rh": "Meaning",
+  "L": [
+   "Humidity",
+   "Atmosphere",
+   "Evaporation",
+   "Condensation"
+  ],
+  "why": "Humidity is water vapour in the air, the atmosphere is the blanket of air, evaporation turns liquid into gas and condensation turns gas into liquid.",
+  "R": [
+   "Water vapor in air",
+   "Blanket of air",
+   "Liquid to gas",
+   "Gas to liquid"
+  ]
+ },
+ "136": {
+  "lh": "Layer",
+  "rh": "Approximate height",
+  "L": [
+   "Stratosphere",
+   "Thermosphere",
+   "Troposphere",
+   "Mesosphere"
+  ],
+  "why": "As given in the textbook: troposphere 0-12 km, stratosphere 12-50 km, mesosphere 50-80 km, thermosphere 80-700 km.",
+  "R": [
+   "12-50 km",
+   "80-700 km",
+   "0-12 km",
+   "50-80 km"
+  ]
+ },
+ "175": "retire",
+ "176": {
+  "lh": "Organism (grass → grasshopper → frog → snake)",
+  "rh": "Role",
+  "L": [
+   "Frog",
+   "Grass",
+   "Snake",
+   "Grasshopper"
+  ],
+  "why": "Grass is the producer, the grasshopper the primary consumer, the frog the secondary consumer and the snake the tertiary consumer.",
+  "R": [
+   "Secondary Consumer",
+   "Producer",
+   "Tertiary Consumer",
+   "Primary Consumer"
+  ]
+ },
+ "177": "retire",
+ "178": {
+  "lh": "Relationship",
+  "rh": "Meaning",
+  "L": [
+   "Predation",
+   "Mutualism",
+   "Competition",
+   "Parasitism"
+  ],
+  "why": "In predation one eats another, in mutualism both benefit, in competition both struggle for resources and in parasitism one benefits while the other is harmed.",
+  "R": [
+   "One eats another",
+   "Both benefit",
+   "Both struggle for resources",
+   "One benefits, one harmed"
+  ]
+ },
+ "179": {
+  "lh": "Abiotic factor",
+  "rh": "Provides",
+  "L": [
+   "Soil",
+   "Sunlight",
+   "Air",
+   "Water"
+  ],
+  "why": "Soil supplies minerals, the Sun light energy, air oxygen and carbon dioxide, and water H2O.",
+  "R": [
+   "Minerals",
+   "Light energy",
+   "Oxygen/CO2",
+   "H2O"
+  ]
+ },
+ "180": {
+  "lh": "Consumer",
+  "rh": "Diet",
+  "L": [
+   "Carnivore",
+   "Decomposer",
+   "Herbivore",
+   "Omnivore"
+  ],
+  "why": "Carnivores eat meat, decomposers break down waste and dead matter, herbivores eat plants and omnivores eat both.",
+  "R": [
+   "Meat eater",
+   "Waste eater",
+   "Plant eater",
+   "Both eater"
+  ]
+ },
+ "181": {
+  "lh": "Sphere",
+  "rh": "Made of",
+  "L": [
+   "Hydrosphere",
+   "Biosphere",
+   "Atmosphere",
+   "Lithosphere"
+  ],
+  "why": "The hydrosphere is water, the biosphere life, the atmosphere air and the lithosphere land.",
+  "R": [
+   "Water",
+   "Life",
+   "Air",
+   "Land"
+  ]
+ },
+ "182": {
+  "lh": "Process",
+  "rh": "Result",
+  "L": [
+   "Respiration",
+   "Transpiration",
+   "Photosynthesis",
+   "Decomposition"
+  ],
+  "why": "Respiration releases energy, transpiration loses water, photosynthesis makes food and decomposition recycles nutrients.",
+  "R": [
+   "Energy release",
+   "Water loss",
+   "Food production",
+   "Nutrient recycling"
+  ]
+ },
+ "212": {
+  "lh": "Layer",
+  "rh": "Composition",
+  "L": [
+   "Sima",
+   "Nife",
+   "Sial"
+  ],
+  "why": "Sial is silica and aluminium, sima silica and magnesium, and nife nickel and iron.",
+  "R": [
+   "Silica and Magnesium",
+   "Nickel and Iron",
+   "Silica and Aluminium"
+  ]
+ },
+ "213": {
+  "lh": "Rock type",
+  "rh": "Example",
+  "L": [
+   "Sedimentary",
+   "Metamorphic",
+   "Igneous"
+  ],
+  "why": "Sandstone is sedimentary, quartzite metamorphic and basalt igneous.",
+  "R": [
+   "Sandstone",
+   "Quartzite",
+   "Basalt"
+  ]
+ },
+ "214": {
+  "lh": "Landform",
+  "rh": "Agent of erosion",
+  "L": [
+   "Sand dunes",
+   "U-shaped valley",
+   "V-shaped valley"
+  ],
+  "why": "Wind builds sand dunes, glaciers carve U-shaped valleys and rivers cut V-shaped valleys.",
+  "R": [
+   "Wind",
+   "Glacier",
+   "River"
+  ]
+ },
+ "215": "retire",
+ "216": {
+  "lh": "Process",
+  "rh": "Rock formed",
+  "L": [
+   "Deposition and compaction of layers",
+   "Heat and pressure",
+   "Cooling of magma"
+  ],
+  "why": "Layers deposited and compacted give sedimentary rock, heat and pressure give metamorphic rock and cooling magma gives igneous rock.",
+  "R": [
+   "Sedimentary",
+   "Metamorphic",
+   "Igneous"
+  ]
+ },
+ "217": {
+  "lh": "Feature",
+  "rh": "Found in",
+  "L": [
+   "Mushroom rock",
+   "Moraine",
+   "Ox-bow lake"
+  ],
+  "why": "Wind shapes mushroom rocks in deserts, glaciers leave moraines and rivers form ox-bow lakes on their plains.",
+  "R": [
+   "Desert",
+   "Glacial area",
+   "River plain"
+  ]
+ }
+}

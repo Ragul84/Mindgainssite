@@ -1,0 +1,429 @@
+{
+ "20": {
+  "lh": "Layer",
+  "rh": "Characteristic",
+  "L": [
+   "Stratosphere",
+   "Thermosphere",
+   "Mesosphere",
+   "Troposphere"
+  ],
+  "why": "The ozone layer is in the stratosphere, auroras occur in the thermosphere, meteors burn up in the mesosphere and weather happens in the troposphere.",
+  "R": [
+   "Ozone layer is found here",
+   "Aurora occurs here",
+   "Meteors burn up here",
+   "Weather occurs here"
+  ]
+ },
+ "45": {
+  "lh": "Biome",
+  "rh": "Feature",
+  "L": [
+   "Tropical rainforest",
+   "Tundra",
+   "Tropical grassland",
+   "Desert"
+  ],
+  "why": "Rainforests have a dense canopy, the tundra permafrost, tropical grasslands are called savannas and deserts have xerophytes.",
+  "R": [
+   "Canopy",
+   "Permafrost",
+   "Savanna",
+   "Xerophytes"
+  ]
+ },
+ "46": {
+  "lh": "Organism (plant → grasshopper → frog → eagle)",
+  "rh": "Trophic level",
+  "L": [
+   "Primary consumer",
+   "Tertiary consumer",
+   "Producer",
+   "Secondary consumer"
+  ],
+  "why": "The green plant is the producer, the grasshopper the primary consumer, the frog the secondary consumer and the eagle the tertiary consumer.",
+  "R": [
+   "Grasshopper",
+   "Eagle",
+   "Green plant",
+   "Frog"
+  ]
+ },
+ "47": {
+  "lh": "Abiotic factor",
+  "rh": "Impact",
+  "L": [
+   "Water",
+   "Soil",
+   "Temperature",
+   "Light"
+  ],
+  "why": "Water hydrates, soil anchors plants, temperature controls metabolism and light drives photosynthesis.",
+  "R": [
+   "Hydration",
+   "Anchorage",
+   "Metabolism",
+   "Photosynthesis"
+  ]
+ },
+ "48": {
+  "lh": "Forest type",
+  "rh": "Location",
+  "L": [
+   "Tropical evergreen forest",
+   "Mangrove forest",
+   "Coniferous forest",
+   "Temperate deciduous forest"
+  ],
+  "why": "Tropical evergreen forest covers the Amazon, mangroves line coasts, coniferous forest forms the taiga and deciduous forests grow in temperate zones.",
+  "R": [
+   "Amazon",
+   "Coastal areas",
+   "Taiga",
+   "Temperate zones"
+  ]
+ },
+ "71": {
+  "lh": "Ocean",
+  "rh": "Characteristic",
+  "L": [
+   "Atlantic Ocean",
+   "Pacific Ocean",
+   "Arctic Ocean",
+   "Indian Ocean"
+  ],
+  "why": "The Atlantic is S-shaped, the Pacific is the deepest, the Arctic the smallest and the Indian Ocean is the only one named after a country.",
+  "R": [
+   "S-shaped",
+   "Deepest Ocean",
+   "Smallest Ocean",
+   "Named after a country"
+  ]
+ },
+ "72": "retire",
+ "73": {
+  "lh": "Current",
+  "rh": "Movement",
+  "L": [
+   "Cold currents",
+   "Warm currents",
+   "Deep (thermohaline) currents",
+   "Surface currents"
+  ],
+  "why": "Cold currents flow from the poles towards the equator, warm currents from the equator towards the poles, deep currents are driven by density and surface currents by wind.",
+  "R": [
+   "Poles to Equator",
+   "Equator to Poles",
+   "Density driven",
+   "Wind driven"
+  ]
+ },
+ "74": {
+  "lh": "Rank by size",
+  "rh": "Ocean",
+  "L": [
+   "Third largest",
+   "Smallest",
+   "Largest",
+   "Second largest"
+  ],
+  "why": "By area: Pacific > Atlantic > Indian > Arctic.",
+  "R": [
+   "Indian",
+   "Arctic",
+   "Pacific",
+   "Atlantic"
+  ]
+ },
+ "76": "retire",
+ "82": "retire",
+ "85": {
+  "lh": "Landform",
+  "rh": "Formation",
+  "L": [
+   "Plateau",
+   "Plain",
+   "Mountain",
+   "Valley"
+  ],
+  "why": "Plateaus are uplifted flatlands, plains are built by sediment, mountains rise through tectonic movement and valleys are cut by rivers.",
+  "R": [
+   "Uplifted flatland",
+   "Sediment deposition",
+   "Tectonic movements",
+   "River erosion"
+  ]
+ },
+ "90": {
+  "lh": "Term",
+  "rh": "Definition",
+  "L": [
+   "Drought",
+   "Landslide",
+   "Cyclone",
+   "Flood"
+  ],
+  "why": "A drought is a long spell of low rain, a landslide a mass of earth sliding down, a cyclone winds rotating into low pressure and a flood water overflowing its normal limits.",
+  "R": [
+   "A prolonged period of abnormally low rainfall.",
+   "The sliding down of a mass of earth or rock from a mountain or cliff.",
+   "A system of winds rotating inward to an area of low atmospheric pressure.",
+   "An overflow of a large amount of water beyond its normal confines."
+  ]
+ },
+ "95": "retire",
+ "102": {
+  "lh": "Phase",
+  "rh": "Description",
+  "L": [
+   "Preparedness",
+   "Recovery",
+   "Mitigation",
+   "Response"
+  ],
+  "why": "Preparedness is planning and training, recovery is rebuilding afterwards, mitigation reduces future risk and response is the immediate action during and after a disaster.",
+  "R": [
+   "Developing plans and training for potential disasters.",
+   "Restoring normalcy and rebuilding after a disaster.",
+   "Reducing the likelihood or impact of future disasters.",
+   "Immediate actions taken during and after a disaster."
+  ]
+ },
+ "116": {
+  "lh": "Rock type",
+  "rh": "Example",
+  "L": [
+   "Sedimentary",
+   "Metamorphic",
+   "Igneous"
+  ],
+  "why": "Sandstone is sedimentary, marble metamorphic and basalt igneous.",
+  "R": [
+   "Sandstone",
+   "Marble",
+   "Basalt"
+  ]
+ },
+ "117": {
+  "lh": "Mineral",
+  "rh": "Known for",
+  "L": [
+   "Talc",
+   "Quartz",
+   "Diamond"
+  ],
+  "why": "Talc is the softest mineral, quartz is known for its crystals and diamond is the hardest.",
+  "R": [
+   "Softness",
+   "Crystal structure",
+   "Hardness"
+  ]
+ },
+ "121": {
+  "lh": "Layer",
+  "rh": "Characteristic",
+  "L": [
+   "Mesosphere",
+   "Exosphere",
+   "Thermosphere",
+   "Stratosphere"
+  ],
+  "why": "Meteors burn in the mesosphere, the exosphere fades into space, auroras and the ISS are in the thermosphere and the stratosphere holds the ozone layer.",
+  "R": [
+   "Meteors burn up in this layer",
+   "Outermost layer, gradually fades into space",
+   "Auroras occur here; International Space Station orbits here",
+   "Contains the ozone layer"
+  ]
+ },
+ "200": {
+  "lh": "Biome",
+  "rh": "Typical plants",
+  "L": [
+   "Hot desert",
+   "Tropical rainforest",
+   "Tundra",
+   "Taiga"
+  ],
+  "why": "Deserts have cacti, rainforests epiphytes, the tundra mosses and lichens and the taiga pine trees.",
+  "R": [
+   "Cacti",
+   "Epiphytes",
+   "Mosses and Lichens",
+   "Pine trees"
+  ]
+ },
+ "201": "retire",
+ "202": {
+  "lh": "Trophic level (grass → grasshopper → frog → snake)",
+  "rh": "Example",
+  "L": [
+   "Secondary consumer",
+   "Tertiary consumer",
+   "Producer",
+   "Primary consumer"
+  ],
+  "why": "Grass is the producer, the grasshopper the primary consumer, the frog the secondary consumer and the snake the tertiary consumer.",
+  "R": [
+   "Frog",
+   "Snake",
+   "Grass",
+   "Grasshopper"
+  ]
+ },
+ "203": {
+  "lh": "Gas",
+  "rh": "Role",
+  "L": [
+   "Carbon dioxide",
+   "Water vapour",
+   "Oxygen",
+   "Nitrogen"
+  ],
+  "why": "Carbon dioxide is used in photosynthesis, water vapour brings rain, oxygen is used in respiration and nitrogen in making proteins.",
+  "R": [
+   "Photosynthesis",
+   "Rainfall",
+   "Respiration",
+   "Protein synthesis"
+  ]
+ },
+ "204": {
+  "lh": "Region",
+  "rh": "Grassland",
+  "L": [
+   "Africa",
+   "Argentina",
+   "North America",
+   "Central Asia"
+  ],
+  "why": "Savannas are in Africa, pampas in Argentina, prairies in North America and steppes in Central Asia.",
+  "R": [
+   "Savanna",
+   "Pampas",
+   "Prairies",
+   "Steppes"
+  ]
+ },
+ "205": "retire",
+ "206": "retire",
+ "207": {
+  "lh": "Component",
+  "rh": "Sphere",
+  "L": [
+   "Air",
+   "Living things",
+   "Rocks and soil",
+   "Water"
+  ],
+  "why": "Air makes up the atmosphere, living things the biosphere, rocks and soil the lithosphere and water the hydrosphere.",
+  "R": [
+   "Atmosphere",
+   "Biosphere",
+   "Lithosphere",
+   "Hydrosphere"
+  ]
+ },
+ "243": "retire",
+ "244": {
+  "lh": "Ocean floor feature",
+  "rh": "Description",
+  "L": [
+   "Abyssal plain",
+   "Ocean trench",
+   "Continental shelf",
+   "Continental slope"
+  ],
+  "why": "The abyssal plain is the flat deep floor, trenches are the deepest parts, the shelf is the shallow edge and the slope is the steep drop.",
+  "R": [
+   "Flat floor",
+   "Deepest part",
+   "Shallow edge",
+   "Steep drop"
+  ]
+ },
+ "245": {
+  "lh": "Ocean",
+  "rh": "Location",
+  "L": [
+   "Southern Ocean",
+   "Arctic Ocean",
+   "Atlantic Ocean",
+   "Pacific Ocean"
+  ],
+  "why": "The Southern Ocean surrounds Antarctica, the Arctic covers the North Pole, the Atlantic lies between the Americas and Europe and the Pacific between Asia and the Americas.",
+  "R": [
+   "Antarctica",
+   "North Pole",
+   "Between America and Europe",
+   "Between Asia and America"
+  ]
+ },
+ "246": {
+  "lh": "Term",
+  "rh": "Meaning",
+  "L": [
+   "Ocean current",
+   "Ocean trench",
+   "Salinity",
+   "Tide"
+  ],
+  "why": "A current is a flow of water, a trench a deep valley in the ocean floor, salinity the salt content and a tide the regular rise of sea level.",
+  "R": [
+   "Water flow",
+   "Deep valley",
+   "Salt content",
+   "Water level rise"
+  ]
+ },
+ "247": {
+  "lh": "Current",
+  "rh": "Region",
+  "L": [
+   "Humboldt Current",
+   "Gulf Stream",
+   "Benguela Current",
+   "Kuroshio Current"
+  ],
+  "why": "The Humboldt (Peru) Current is in the South Pacific, the Gulf Stream in the North Atlantic, the Benguela in the South Atlantic and the Kuroshio in the North Pacific.",
+  "R": [
+   "South Pacific",
+   "North Atlantic",
+   "South Atlantic",
+   "North Pacific"
+  ]
+ },
+ "248": {
+  "lh": "Ocean",
+  "rh": "Depth feature",
+  "L": [
+   "Indian Ocean",
+   "Arctic Ocean",
+   "Pacific Ocean",
+   "Atlantic Ocean"
+  ],
+  "why": "The Java (Sunda) Trench is the deepest point of the Indian Ocean, the Arctic is the shallowest ocean, the Mariana Trench is in the Pacific and the Puerto Rico Trench in the Atlantic.",
+  "R": [
+   "Java Trench",
+   "Shallowest",
+   "Mariana Trench",
+   "Puerto Rico Trench"
+  ]
+ },
+ "254": {
+  "lh": "Landform",
+  "rh": "Agent",
+  "L": [
+   "Delta",
+   "U-shaped valley",
+   "Sand dune"
+  ],
+  "why": "Rivers build deltas, glaciers carve U-shaped valleys and wind piles up sand dunes.",
+  "R": [
+   "River",
+   "Glacier",
+   "Wind"
+  ]
+ }
+}

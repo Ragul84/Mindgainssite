@@ -1,0 +1,327 @@
+{
+ "retire": [
+  62,
+  83,
+  134,
+  174,
+  177,
+  180,
+  255,
+  257
+ ],
+ "fix": {
+  "29": {
+   "question": "Match List I with List II: List I (Atmospheric layer) A. Stratosphere B. Troposphere C. Thermosphere D. Mesosphere List II (Feature) 1. Weather phenomena 2. Ionosphere 3. Meteors burn 4. Ozone layer",
+   "options": [
+    "A-3, B-1, C-2, D-4",
+    "A-4, B-1, C-2, D-3",
+    "A-4, B-1, C-3, D-2",
+    "A-4, B-3, C-2, D-1"
+   ],
+   "answer_index": 1,
+   "explanation": "The ozone layer lies in the stratosphere; weather happens in the troposphere; the ionosphere is part of the thermosphere; meteors burn up in the mesosphere."
+  },
+  "30": {
+   "question": "Match List I with List II: List I (Gas) A. Carbon dioxide B. Oxygen C. Nitrogen D. Argon List II (Share of dry air) 1. 0.9% 2. 78% 3. 0.03% 4. 21%",
+   "options": [
+    "A-3, B-1, C-2, D-4",
+    "A-4, B-3, C-2, D-1",
+    "A-3, B-4, C-2, D-1",
+    "A-1, B-4, C-2, D-3"
+   ],
+   "answer_index": 2,
+   "explanation": "Dry air is about 78% nitrogen, 21% oxygen, 0.93% argon and 0.03-0.04% carbon dioxide."
+  },
+  "31": {
+   "question": "Match List I with List II: List I (Instrument) A. Hygrometer B. Thermometer C. Barometer D. Anemometer List II (Measures) 1. Pressure 2. Temperature 3. Humidity 4. Wind Speed",
+   "options": [
+    "A-1, B-2, C-3, D-4",
+    "A-3, B-1, C-2, D-4",
+    "A-4, B-2, C-1, D-3",
+    "A-3, B-2, C-1, D-4"
+   ],
+   "answer_index": 3,
+   "explanation": "A hygrometer measures humidity, a thermometer temperature, a barometer air pressure and an anemometer wind speed."
+  },
+  "32": {
+   "question": "Match List I with List II: List I (Boundary) A. Stratopause B. Tropopause C. Thermopause D. Mesopause List II (Layers it separates) 1. Troposphere-Stratosphere 2. Stratosphere-Mesosphere 3. Mesosphere-Thermosphere 4. Ionosphere-Exosphere",
+   "options": [
+    "A-2, B-1, C-4, D-3",
+    "A-4, B-1, C-2, D-3",
+    "A-3, B-1, C-4, D-2",
+    "A-1, B-2, C-4, D-3"
+   ],
+   "answer_index": 0,
+   "explanation": "The tropopause separates troposphere and stratosphere, the stratopause stratosphere and mesosphere, the mesopause mesosphere and thermosphere, and the thermopause the thermosphere (ionosphere) and exosphere."
+  },
+  "59": {
+   "question": "Match List I with List II: List I (Biome) A. Savanna B. Tundra C. Taiga D. Hot desert List II (Characteristic) 1. Cacti 2. Permafrost 3. Coniferous trees 4. Grasslands",
+   "options": [
+    "A-3, B-2, C-4, D-1",
+    "A-4, B-3, C-2, D-1",
+    "A-1, B-2, C-3, D-4",
+    "A-4, B-2, C-3, D-1"
+   ],
+   "answer_index": 3,
+   "explanation": "Savannas are tropical grasslands, the tundra has permafrost, the taiga is coniferous forest and hot deserts have cacti and other xerophytes."
+  },
+  "60": {
+   "question": "Match List I with List II: List I (Trophic level) A. Secondary consumer B. Tertiary consumer C. Producer D. Primary consumer List II (Example (grass → rabbit → snake → eagle)) 1. Grass 2. Rabbit 3. Snake 4. Eagle",
+   "options": [
+    "A-3, B-4, C-1, D-2",
+    "A-1, B-4, C-3, D-2",
+    "A-3, B-1, C-4, D-2",
+    "A-2, B-4, C-1, D-3"
+   ],
+   "answer_index": 0,
+   "explanation": "In the chain grass → rabbit → snake → eagle, grass is the producer, the rabbit the primary consumer, the snake the secondary consumer and the eagle the tertiary consumer."
+  },
+  "61": {
+   "question": "Match List I with List II: List I (Forest type) A. Mangrove forest B. Tropical deciduous forest C. Tropical evergreen rainforest D. Coniferous forest (taiga) List II (Location) 1. Amazon Basin 2. Sunderbans 3. Siberia 4. Central India",
+   "options": [
+    "A-2, B-1, C-4, D-3",
+    "A-2, B-4, C-1, D-3",
+    "A-2, B-4, C-3, D-1",
+    "A-2, B-3, C-1, D-4"
+   ],
+   "answer_index": 1,
+   "explanation": "The Sundarbans are mangroves, Central India has tropical deciduous forest, the Amazon basin is tropical evergreen rainforest and Siberia is coniferous taiga."
+  },
+  "82": {
+   "question": "Match List I with List II: List I (Ocean) A. Atlantic Ocean B. Pacific Ocean C. Arctic Ocean D. Indian Ocean List II (Characteristic) 1. Land-locked nature 2. Ring of Fire 3. S-shaped 4. Smallest ocean",
+   "options": [
+    "A-3, B-4, C-2, D-1",
+    "A-4, B-2, C-3, D-1",
+    "A-3, B-2, C-4, D-1",
+    "A-1, B-2, C-4, D-3"
+   ],
+   "answer_index": 2,
+   "explanation": "The Atlantic is S-shaped, the Pacific is ringed by the Ring of Fire, the Arctic is the smallest ocean and the Indian Ocean is land-locked on its northern side."
+  },
+  "84": {
+   "question": "Match List I with List II: List I (Ocean relief) A. Abyssal plain B. Ocean trench C. Continental shelf D. Continental slope List II (Description) 1. Deepest part 2. Flat bottom 3. Steep drop 4. Shallow edge",
+   "options": [
+    "A-2, B-1, C-4, D-3",
+    "A-2, B-3, C-4, D-1",
+    "A-1, B-2, C-4, D-3",
+    "A-2, B-4, C-1, D-3"
+   ],
+   "answer_index": 0,
+   "explanation": "The abyssal plain is the flat deep-sea floor, trenches are the deepest parts, the continental shelf is the shallow edge and the continental slope is the steep drop beyond it."
+  },
+  "85": {
+   "question": "Match List I with List II: List I (Water body) A. Estuary B. Baltic Sea C. Dead Sea D. Open ocean List II (Salinity) 1. Very high salinity 2. Low salinity 3. Medium salinity 4. Mixed salinity",
+   "options": [
+    "A-4, B-1, C-2, D-3",
+    "A-4, B-2, C-1, D-3",
+    "A-2, B-4, C-1, D-3",
+    "A-4, B-2, C-3, D-1"
+   ],
+   "answer_index": 1,
+   "explanation": "Estuaries mix fresh and sea water; the Baltic Sea has low salinity from river inflow; the Dead Sea is extremely salty; the open ocean averages about 35 parts per thousand."
+  },
+  "87": {
+   "question": "Match List I with List II: List I (Endogenetic process) A. Folding B. Faulting C. Volcanism D. Earthquake List II (Description) 1. Eruption of magma from beneath the Earth's surface 2. Sudden shaking due to fault movement 3. Cracks in the Earth's crust 4. Bending of rocks due to stress",
+   "options": [
+    "A-4, B-3, C-2, D-1",
+    "A-4, B-2, C-1, D-3",
+    "A-4, B-1, C-3, D-2",
+    "A-4, B-3, C-1, D-2"
+   ],
+   "answer_index": 3,
+   "explanation": "Folding bends rocks under stress, faulting cracks the crust, volcanism erupts magma and an earthquake is sudden shaking from fault movement."
+  },
+  "94": {
+   "question": "Match List I with List II: List I (Mountain type) A. Block mountains B. Fold mountains C. Volcanic mountains D. Residual mountains List II (Formation) 1. Formed by faulting 2. Remaining after erosion 3. Formed by volcanic activity 4. Formed by folding",
+   "options": [
+    "A-1, B-3, C-4, D-2",
+    "A-1, B-4, C-2, D-3",
+    "A-1, B-4, C-3, D-2",
+    "A-2, B-4, C-3, D-1"
+   ],
+   "answer_index": 2,
+   "explanation": "Block mountains form by faulting, fold mountains by folding, volcanic mountains by eruptions and residual mountains are what remains after erosion."
+  },
+  "106": {
+   "question": "Match List I with List II: List I (Process) A. Erosion B. Weathering C. Deposition D. Mass wasting List II (Description) 1. Accumulation of sediments in new locations 2. Removal of surface material by agents like water or wind 3. Breakdown of rocks in situ 4. Downward movement of rocks due to gravity",
+   "options": [
+    "A-3, B-2, C-1, D-4",
+    "A-2, B-3, C-4, D-1",
+    "A-2, B-3, C-1, D-4",
+    "A-2, B-4, C-1, D-3"
+   ],
+   "answer_index": 2,
+   "explanation": "Erosion removes surface material, weathering breaks rocks in place, deposition lays sediment down elsewhere and mass wasting moves rock downslope under gravity."
+  },
+  "113": {
+   "question": "Match List I with List II: List I (Landform) A. V-shaped valley B. U-shaped valley C. Sand dune D. Delta List II (Formation) 1. Formed by wind deposition 2. Formed by river deposition at mouth 3. Formed by river erosion 4. Formed by glacial erosion",
+   "options": [
+    "A-1, B-4, C-3, D-2",
+    "A-3, B-4, C-1, D-2",
+    "A-3, B-2, C-1, D-4",
+    "A-3, B-1, C-4, D-2"
+   ],
+   "answer_index": 1,
+   "explanation": "Rivers cut V-shaped valleys, glaciers carve U-shaped valleys, wind deposits sand dunes and rivers build deltas at their mouths."
+  },
+  "132": {
+   "question": "Match List I with List II: List I (Term) A. Urbanisation B. Pollution C. Deforestation D. Conservation List II (Description) 1. Clearing of forests for other land uses 2. Protection and preservation of natural resources 3. Contamination of the environment with harmful substances 4. Growth of cities and the migration of people to urban areas",
+   "options": [
+    "A-4, B-3, C-1, D-2",
+    "A-3, B-4, C-1, D-2",
+    "A-4, B-1, C-3, D-2",
+    "A-4, B-3, C-2, D-1"
+   ],
+   "answer_index": 0,
+   "explanation": "Urbanisation is the growth of cities, pollution is contamination of the environment, deforestation is clearing forests and conservation is protecting natural resources."
+  },
+  "133": {
+   "question": "Match List I with List II: List I (Sphere) A. Biosphere B. Atmosphere C. Lithosphere D. Hydrosphere List II (Description) 1. Zone of life on Earth 2. All the water on Earth 3. Gaseous envelope surrounding the Earth 4. Solid outer layer of the Earth",
+   "options": [
+    "A-4, B-3, C-1, D-2",
+    "A-1, B-3, C-4, D-2",
+    "A-3, B-1, C-4, D-2",
+    "A-1, B-4, C-3, D-2"
+   ],
+   "answer_index": 1,
+   "explanation": "The biosphere is the zone of life, the atmosphere the envelope of gases, the lithosphere the solid outer layer and the hydrosphere all of Earth's water."
+  },
+  "139": {
+   "question": "Match List I with List II: List I (Layer) A. Stratosphere B. Exosphere C. Troposphere List II (Characteristic) 1. Weather phenomena 2. Ozone layer 3. Outer space boundary",
+   "options": [
+    "A-2, B-1, C-3",
+    "A-1, B-3, C-2",
+    "A-3, B-2, C-1",
+    "A-2, B-3, C-1"
+   ],
+   "answer_index": 3,
+   "explanation": "The stratosphere holds the ozone layer, the exosphere is the outermost boundary with space and the troposphere is where weather happens."
+  },
+  "175": {
+   "question": "Match List I with List II: List I (Cloud) A. Stratus B. Nimbus C. Cirrus D. Cumulus List II (Appearance) 1. Wispy/Feathery 2. Rain-bearing 3. Cotton-like 4. Layered/Sheet",
+   "options": [
+    "A-1, B-2, C-4, D-3",
+    "A-4, B-1, C-2, D-3",
+    "A-2, B-4, C-1, D-3",
+    "A-4, B-2, C-1, D-3"
+   ],
+   "answer_index": 3,
+   "explanation": "Stratus clouds form sheets, nimbus clouds bring rain, cirrus clouds are wispy and feathery and cumulus clouds look like cotton heaps."
+  },
+  "176": {
+   "question": "Match List I with List II: List I (Process) A. Condensation B. Transpiration C. Evaporation D. Precipitation List II (Definition) 1. Gas to Liquid 2. Liquid to Gas 3. Water loss from plants 4. Falling water/snow",
+   "options": [
+    "A-1, B-3, C-2, D-4",
+    "A-1, B-2, C-3, D-4",
+    "A-2, B-3, C-1, D-4",
+    "A-1, B-3, C-4, D-2"
+   ],
+   "answer_index": 0,
+   "explanation": "Condensation turns vapour into liquid, transpiration is water loss from plants, evaporation turns liquid into vapour and precipitation is water or snow falling."
+  },
+  "178": {
+   "question": "Match List I with List II: List I (Term) A. Albedo B. Saturation C. Lapse rate D. Temperature inversion List II (Meaning) 1. Reflectivity 2. Temp change with height 3. Max water vapor 4. Warm air above cold",
+   "options": [
+    "A-3, B-1, C-2, D-4",
+    "A-1, B-3, C-4, D-2",
+    "A-1, B-3, C-2, D-4",
+    "A-4, B-3, C-2, D-1"
+   ],
+   "answer_index": 2,
+   "explanation": "Albedo is reflectivity, saturated air holds the most water vapour it can, the lapse rate is the change of temperature with height and an inversion is warm air lying above cold air."
+  },
+  "179": {
+   "question": "Match List I with List II: List I (Gas) A. Carbon dioxide B. Ozone C. Oxygen D. Nitrogen List II (Role) 1. UV protection 2. Greenhouse effect 3. Plant growth 4. Respiration",
+   "options": [
+    "A-2, B-1, C-3, D-4",
+    "A-2, B-4, C-1, D-3",
+    "A-4, B-1, C-2, D-3",
+    "A-2, B-1, C-4, D-3"
+   ],
+   "answer_index": 3,
+   "explanation": "Carbon dioxide traps heat (greenhouse effect), ozone absorbs UV rays, oxygen is used in respiration and nitrogen is essential for plant growth."
+  },
+  "219": {
+   "question": "Match List I with List II: List I (Adaptation) A. Cone-shaped trees that shed snow B. Low-growing plants and thick fur C. Plants that store water in stems D. Drip-tip leaves List II (Biome) 1. Rainforest 2. Tundra 3. Desert 4. Taiga",
+   "options": [
+    "A-1, B-2, C-3, D-4",
+    "A-4, B-2, C-1, D-3",
+    "A-4, B-3, C-2, D-1",
+    "A-4, B-2, C-3, D-1"
+   ],
+   "answer_index": 3,
+   "explanation": "Conical conifers suit the taiga, low plants and thick fur suit the tundra, water-storing stems suit deserts and drip-tip leaves suit rainforests."
+  },
+  "220": {
+   "question": "Match List I with List II: List I (Cycle) A. Nitrogen cycle B. Oxygen cycle C. Carbon cycle D. Water cycle List II (Key element) 1. H2O 2. N2 3. O2 4. CO2",
+   "options": [
+    "A-2, B-3, C-4, D-1",
+    "A-2, B-1, C-4, D-3",
+    "A-3, B-2, C-4, D-1",
+    "A-2, B-3, C-1, D-4"
+   ],
+   "answer_index": 0,
+   "explanation": "Each cycle is named after the substance it moves: N2, O2, CO2 and H2O."
+  },
+  "221": {
+   "question": "Match List I with List II: List I (Organism) A. Deer B. Grass C. Tiger D. Fungi List II (Role) 1. Primary Consumer 2. Decomposer 3. Apex Predator 4. Producer",
+   "options": [
+    "A-4, B-1, C-3, D-2",
+    "A-1, B-4, C-3, D-2",
+    "A-2, B-4, C-3, D-1",
+    "A-3, B-4, C-1, D-2"
+   ],
+   "answer_index": 1,
+   "explanation": "The deer is a primary consumer, grass a producer, the tiger an apex predator and fungi decomposers."
+  },
+  "222": {
+   "question": "Match List I with List II: List I (Component) A. Air B. Living things C. Rocks and soil D. Water List II (Sphere) 1. Lithosphere 2. Hydrosphere 3. Biosphere 4. Atmosphere",
+   "options": [
+    "A-3, B-4, C-1, D-2",
+    "A-4, B-1, C-3, D-2",
+    "A-4, B-3, C-1, D-2",
+    "A-2, B-3, C-1, D-4"
+   ],
+   "answer_index": 2,
+   "explanation": "Air makes up the atmosphere, living things the biosphere, rocks and soil the lithosphere and water the hydrosphere."
+  },
+  "223": {
+   "question": "Match List I with List II: List I (Climate) A. Very cold and treeless B. Hot and wet all year C. Long cold winters, short summers D. Very low rainfall List II (Biome) 1. Desert 2. Rainforest 3. Taiga 4. Tundra",
+   "options": [
+    "A-4, B-1, C-3, D-2",
+    "A-4, B-2, C-1, D-3",
+    "A-4, B-3, C-2, D-1",
+    "A-4, B-2, C-3, D-1"
+   ],
+   "answer_index": 3,
+   "explanation": "Tundra is cold and treeless, rainforest hot and wet, taiga has long cold winters and deserts get very little rain."
+  },
+  "256": {
+   "question": "Match List I with List II: List I (Tide) A. Neap tide B. Spring tide List II (Moon phase) 1. Quarter Moon 2. Full Moon",
+   "options": [
+    "A-1, B-2",
+    "A-2, B-1"
+   ],
+   "answer_index": 0,
+   "explanation": "Neap tides occur at the quarter moons, when Sun and Moon pull at right angles; spring tides occur at full and new moon, when they line up."
+  },
+  "258": {
+   "question": "Match List I with List II: List I (Factor) A. Heavy rainfall and river inflow B. High evaporation List II (Effect on salinity) 1. Decreases Salinity 2. Increases Salinity",
+   "options": [
+    "A-1, B-2",
+    "A-2, B-1"
+   ],
+   "answer_index": 0,
+   "explanation": "Fresh water from rain and rivers lowers salinity; evaporation leaves salt behind and raises it."
+  },
+  "259": {
+   "question": "Match List I with List II: List I (Trench) A. Puerto Rico Trench B. Mariana Trench List II (Ocean) 1. Atlantic 2. Pacific",
+   "options": [
+    "A-2, B-1",
+    "A-1, B-2"
+   ],
+   "answer_index": 1,
+   "explanation": "The Puerto Rico Trench is the deepest point of the Atlantic; the Mariana Trench, in the Pacific, is the deepest on Earth."
+  }
+ }
+}

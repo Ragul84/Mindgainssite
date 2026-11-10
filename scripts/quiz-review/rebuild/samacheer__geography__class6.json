@@ -1,0 +1,115 @@
+{
+ "36": "retire",
+ "37": {
+  "lh": "Line",
+  "rh": "Value",
+  "L": [
+   "Equator",
+   "North Pole",
+   "Prime Meridian",
+   "South Pole"
+  ],
+  "R": [
+   "0° latitude",
+   "90° north latitude",
+   "0° longitude",
+   "90° south latitude"
+  ],
+  "why": "The Equator is 0° latitude, the poles are 90° N and 90° S, and the Prime Meridian is 0° longitude."
+ },
+ "38": {
+  "lh": "Parallel",
+  "rh": "Latitude",
+  "L": [
+   "Tropic of Cancer",
+   "Antarctic Circle",
+   "Tropic of Capricorn",
+   "Arctic Circle"
+  ],
+  "R": [
+   "23.5° N",
+   "66.5° S",
+   "23.5° S",
+   "66.5° N"
+  ],
+  "why": "The Tropic of Cancer is at 23.5° N, the Tropic of Capricorn at 23.5° S, the Arctic Circle at 66.5° N and the Antarctic Circle at 66.5° S."
+ },
+ "56": {
+  "lh": "Layer",
+  "rh": "Composition",
+  "L": [
+   "Mantle",
+   "Inner core",
+   "Crust",
+   "Outer core"
+  ],
+  "why": "The crust is mainly silica and aluminium, the mantle silica and magnesium, and the core iron and nickel (solid inner core, liquid outer core).",
+  "R": [
+   "Silicates and Magnesium",
+   "Iron and Nickel (Solid)",
+   "Silicates and Aluminum",
+   "Iron and Nickel (Liquid)"
+  ]
+ },
+ "57": {
+  "lh": "Discontinuity",
+  "rh": "Separates",
+  "L": [
+   "Gutenberg discontinuity",
+   "Lehmann discontinuity",
+   "Mohorovičić discontinuity"
+  ],
+  "why": "The Moho separates crust and mantle, the Gutenberg discontinuity mantle and outer core, and the Lehmann discontinuity outer and inner core.",
+  "R": [
+   "Mantle and Outer Core",
+   "Outer Core and Inner Core",
+   "Crust and Mantle"
+  ]
+ },
+ "72": "retire",
+ "85": {
+  "lh": "Body",
+  "rh": "Known as",
+  "L": [
+   "Earth",
+   "Sun",
+   "Mars"
+  ],
+  "why": "Earth is the blue planet, the Sun is the centre of the solar system and Mars is the red planet.",
+  "R": [
+   "Blue Planet",
+   "Center of Solar System",
+   "Red Planet"
+  ]
+ },
+ "86": {
+  "lh": "Position from the Sun",
+  "rh": "Planet",
+  "L": [
+   "Second",
+   "Third",
+   "First"
+  ],
+  "why": "The order from the Sun is Mercury, Venus, Earth.",
+  "R": [
+   "Venus",
+   "Earth",
+   "Mercury"
+  ]
+ },
+ "107": {
+  "lh": "Layer",
+  "rh": "Description",
+  "L": [
+   "Core",
+   "Crust",
+   "Mantle"
+  ],
+  "why": "The core is the hot dense centre, the crust the outer solid layer and the mantle the semi-solid layer below the crust.",
+  "R": [
+   "Inner hot, dense layer",
+   "Outer solid layer",
+   "Semi-solid layer beneath the crust"
+  ]
+ }
+}

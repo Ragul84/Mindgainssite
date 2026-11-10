@@ -1,0 +1,85 @@
+{
+ "retire": [
+  36,
+  72
+ ],
+ "fix": {
+  "37": {
+   "question": "Match List I with List II: List I (Line) A. Equator B. North Pole C. Prime Meridian D. South Pole List II (Value) 1. 90° south latitude 2. 90° north latitude 3. 0° longitude 4. 0° latitude",
+   "options": [
+    "A-4, B-2, C-1, D-3",
+    "A-4, B-2, C-3, D-1",
+    "A-3, B-2, C-4, D-1",
+    "A-4, B-3, C-2, D-1"
+   ],
+   "answer_index": 1,
+   "explanation": "The Equator is 0° latitude, the poles are 90° N and 90° S, and the Prime Meridian is 0° longitude."
+  },
+  "38": {
+   "question": "Match List I with List II: List I (Parallel) A. Tropic of Cancer B. Antarctic Circle C. Tropic of Capricorn D. Arctic Circle List II (Latitude) 1. 23.5° S 2. 23.5° N 3. 66.5° S 4. 66.5° N",
+   "options": [
+    "A-3, B-2, C-1, D-4",
+    "A-2, B-3, C-4, D-1",
+    "A-2, B-3, C-1, D-4",
+    "A-2, B-1, C-3, D-4"
+   ],
+   "answer_index": 2,
+   "explanation": "The Tropic of Cancer is at 23.5° N, the Tropic of Capricorn at 23.5° S, the Arctic Circle at 66.5° N and the Antarctic Circle at 66.5° S."
+  },
+  "56": {
+   "question": "Match List I with List II: List I (Layer) A. Mantle B. Inner core C. Crust D. Outer core List II (Composition) 1. Iron and Nickel (Liquid) 2. Silicates and Aluminum 3. Iron and Nickel (Solid) 4. Silicates and Magnesium",
+   "options": [
+    "A-4, B-3, C-2, D-1",
+    "A-4, B-1, C-2, D-3",
+    "A-3, B-4, C-2, D-1",
+    "A-2, B-3, C-4, D-1"
+   ],
+   "answer_index": 0,
+   "explanation": "The crust is mainly silica and aluminium, the mantle silica and magnesium, and the core iron and nickel (solid inner core, liquid outer core)."
+  },
+  "57": {
+   "question": "Match List I with List II: List I (Discontinuity) A. Gutenberg discontinuity B. Lehmann discontinuity C. Mohorovičić discontinuity List II (Separates) 1. Mantle and Outer Core 2. Crust and Mantle 3. Outer Core and Inner Core",
+   "options": [
+    "A-3, B-1, C-2",
+    "A-1, B-3, C-2",
+    "A-1, B-2, C-3",
+    "A-2, B-3, C-1"
+   ],
+   "answer_index": 1,
+   "explanation": "The Moho separates crust and mantle, the Gutenberg discontinuity mantle and outer core, and the Lehmann discontinuity outer and inner core."
+  },
+  "85": {
+   "question": "Match List I with List II: List I (Body) A. Earth B. Sun C. Mars List II (Known as) 1. Blue Planet 2. Center of Solar System 3. Red Planet",
+   "options": [
+    "A-2, B-1, C-3",
+    "A-1, B-2, C-3",
+    "A-1, B-3, C-2",
+    "A-3, B-2, C-1"
+   ],
+   "answer_index": 1,
+   "explanation": "Earth is the blue planet, the Sun is the centre of the solar system and Mars is the red planet."
+  },
+  "86": {
+   "question": "Match List I with List II: List I (Position from the Sun) A. Second B. Third C. First List II (Planet) 1. Venus 2. Earth 3. Mercury",
+   "options": [
+    "A-3, B-2, C-1",
+    "A-1, B-3, C-2",
+    "A-1, B-2, C-3",
+    "A-2, B-1, C-3"
+   ],
+   "answer_index": 2,
+   "explanation": "The order from the Sun is Mercury, Venus, Earth."
+  },
+  "107": {
+   "question": "Match List I with List II: List I (Layer) A. Core B. Crust C. Mantle List II (Description) 1. Inner hot, dense layer 2. Semi-solid layer beneath the crust 3. Outer solid layer",
+   "options": [
+    "A-1, B-2, C-3",
+    "A-2, B-3, C-1",
+    "A-3, B-1, C-2",
+    "A-1, B-3, C-2"
+   ],
+   "answer_index": 3,
+   "explanation": "The core is the hot dense centre, the crust the outer solid layer and the mantle the semi-solid layer below the crust."
+  }
+ }
+}

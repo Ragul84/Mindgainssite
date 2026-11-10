@@ -1,0 +1,260 @@
+{
+ "36": {
+  "lh": "City",
+  "rh": "Known for",
+  "L": [
+   "Coimbatore",
+   "Chennai",
+   "Tiruppur",
+   "Erode",
+   "Sivakasi"
+  ],
+  "why": "Coimbatore is a textile hub, Chennai makes automobiles, Tiruppur knitwear, Erode turmeric and Sivakasi fireworks.",
+  "R": [
+   "Textiles",
+   "Automobiles",
+   "Knitwear",
+   "Turmeric",
+   "Fireworks"
+  ]
+ },
+ "37": "retire",
+ "38": "retire",
+ "39": "retire",
+ "40": {
+  "lh": "City",
+  "rh": "Nickname",
+  "L": [
+   "Coimbatore",
+   "Chennai",
+   "Thanjavur",
+   "Tiruppur",
+   "Sivakasi"
+  ],
+  "why": "Coimbatore is the Manchester of South India, Chennai the Detroit of Asia, Thanjavur the rice bowl of Tamil Nadu, Tiruppur the knitwear capital and Sivakasi the firecracker hub.",
+  "R": [
+   "Manchester of South India",
+   "Detroit of Asia",
+   "Rice Bowl of TN",
+   "Knitwear Capital",
+   "Firecracker Hub"
+  ]
+ },
+ "67": {
+  "lh": "Range",
+  "rh": "Characteristic",
+  "L": [
+   "Aravalli",
+   "Himalayas",
+   "Nilgiris",
+   "Western Ghats"
+  ],
+  "why": "The Aravallis are India's oldest range, the Himalayas are young fold mountains, the Eastern and Western Ghats meet in the Nilgiris and the Western Ghats form a continuous range.",
+  "R": [
+   "Oldest Range",
+   "Fold Mountains",
+   "Meeting Point",
+   "Continuous Range"
+  ]
+ },
+ "68": {
+  "lh": "River",
+  "rh": "Origin",
+  "L": [
+   "Godavari",
+   "Ganga",
+   "Kaveri",
+   null
+  ],
+  "why": "The Godavari rises near Nashik, the Ganga at Gangotri and the Kaveri at Brahmagiri (Talakaveri).",
+  "R": [
+   "Nasik",
+   "Gangotri",
+   "Brahmagiri",
+   "Mansarovar"
+  ]
+ },
+ "69": {
+  "lh": "Soil",
+  "rh": "Crop",
+  "L": [
+   "Alluvial soil",
+   "Red soil",
+   "Black soil",
+   "Laterite soil"
+  ],
+  "why": "Alluvial soil suits wheat, red soil pulses and millets, black soil cotton and laterite soil cashew.",
+  "R": [
+   "Wheat",
+   "Pulses",
+   "Cotton",
+   "Cashew"
+  ]
+ },
+ "70": {
+  "lh": "State",
+  "rh": "Coast",
+  "L": [
+   "Odisha",
+   "Maharashtra",
+   "Kerala",
+   "Tamil Nadu"
+  ],
+  "why": "Odisha has the Utkal Coast, Maharashtra the Konkan Coast, Kerala the Malabar Coast and Tamil Nadu the Coromandel Coast.",
+  "R": [
+   "Utkal Coast",
+   "Konkan Coast",
+   "Malabar Coast",
+   "Coromandel Coast"
+  ]
+ },
+ "71": {
+  "lh": "Forest type",
+  "rh": "Region",
+  "L": [
+   "Thorn and scrub forest",
+   "Tropical deciduous forest",
+   "Mangrove forest",
+   "Tropical evergreen forest"
+  ],
+  "why": "Thorn forests grow in desert areas, deciduous forests where rain is moderate, mangroves in deltas and evergreen forests where rain is heavy.",
+  "R": [
+   "Desert",
+   "Moderate Rain",
+   "Deltaic",
+   "Heavy Rain"
+  ]
+ },
+ "74": "retire",
+ "83": "retire",
+ "90": "retire",
+ "116": {
+  "lh": "Settlement type",
+  "rh": "Characteristic",
+  "L": [
+   "Linear settlement",
+   null,
+   "Compact settlement",
+   "Hamlet",
+   "Dispersed settlement"
+  ],
+  "why": "Linear settlements line a road, compact settlements have clustered houses, hamlets are small clusters and dispersed settlements have isolated houses.",
+  "R": [
+   "Along a road",
+   "High density",
+   "Clustered houses",
+   "Small clusters",
+   "Isolated houses"
+  ]
+ },
+ "117": {
+  "lh": "City",
+  "rh": "Nickname",
+  "L": [
+   "Madurai",
+   "Salem",
+   "Coimbatore",
+   "Tiruchirappalli",
+   "Chennai"
+  ],
+  "why": "Madurai is the temple city, Salem the steel city, Coimbatore the Manchester of South India, Tiruchirappalli the Rockfort city and Chennai the gateway to South India.",
+  "R": [
+   "Temple City",
+   "Steel City",
+   "Manchester of South India",
+   "Rockfort City",
+   "Gateway to South India"
+  ]
+ },
+ "118": "retire",
+ "119": "retire",
+ "120": {
+  "lh": "Term",
+  "rh": "Meaning",
+  "L": [
+   "Death rate",
+   "Literacy rate",
+   "Birth rate",
+   "Growth rate",
+   "Sex ratio"
+  ],
+  "why": "The death rate is deaths per 1000, the literacy rate the share who can read and write, the birth rate live births per 1000, the growth rate the percentage change in population and the sex ratio females per 1000 males.",
+  "R": [
+   "Deaths per 1000",
+   "Percentage who can read/write",
+   "Live births per 1000",
+   "Percentage change in pop",
+   "Females per 1000 males"
+  ]
+ },
+ "138": {
+  "lh": "Dam",
+  "rh": "River",
+  "L": [
+   "Sardar Sarovar",
+   "Tehri",
+   "Tungabhadra Dam",
+   "Nagarjuna Sagar"
+  ],
+  "why": "Sardar Sarovar is on the Narmada, Tehri on the Bhagirathi, the Tungabhadra Dam on the Tungabhadra and Nagarjuna Sagar on the Krishna.",
+  "R": [
+   "Narmada",
+   "Bhagirathi",
+   "Tungabhadra",
+   "Krishna"
+  ]
+ },
+ "139": "retire",
+ "140": "retire",
+ "141": {
+  "lh": "Term",
+  "rh": "Definition",
+  "L": [
+   "Watershed",
+   "Water table",
+   "Aquifer",
+   "Desalination"
+  ],
+  "why": "A watershed is the area draining into a stream, the water table the upper level of groundwater, an aquifer a water-bearing rock layer and desalination the removal of salt.",
+  "R": [
+   "Area draining into a stream",
+   "Upper level of groundwater",
+   "Water-bearing rock layer",
+   "Removing salt from water"
+  ]
+ },
+ "205": {
+  "lh": "River",
+  "rh": "Basin",
+  "L": [
+   "Yamuna",
+   "Indravati",
+   "Jhelum",
+   "Subansiri"
+  ],
+  "why": "The Yamuna joins the Ganga, the Indravati the Godavari, the Jhelum the Indus system and the Subansiri the Brahmaputra.",
+  "R": [
+   "Ganga Basin",
+   "Godavari Basin",
+   "Indus Basin",
+   "Brahmaputra Basin"
+  ]
+ },
+ "209": {
+  "lh": "Lake",
+  "rh": "State / UT",
+  "L": [
+   "Wular Lake",
+   "Vembanad Lake",
+   "Sambhar Lake",
+   "Chilika Lake"
+  ],
+  "why": "Wular is in Jammu and Kashmir, Vembanad in Kerala, Sambhar in Rajasthan and Chilika in Odisha.",
+  "R": [
+   "Jammu and Kashmir",
+   "Kerala",
+   "Rajasthan",
+   "Odisha"
+  ]
+ }
+}

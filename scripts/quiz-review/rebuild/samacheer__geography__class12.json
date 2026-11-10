@@ -1,0 +1,276 @@
+{
+ "19": {
+  "lh": "Term",
+  "rh": "Definition",
+  "L": [
+   "Overpopulation",
+   "Demography",
+   "Migration",
+   "Population density"
+  ],
+  "why": "Overpopulation is more people than resources can support, demography the statistical study of populations, migration the movement of people and density the number of people per unit area.",
+  "R": [
+   "Condition where the number of people exceeds the resources available.",
+   "Statistical study of populations.",
+   "Movement of people from one place to another.",
+   "Number of people living per unit area."
+  ]
+ },
+ "22": {
+  "lh": "Aspect of population",
+  "rh": "Description",
+  "L": [
+   "Population structure",
+   "Population growth",
+   "Population distribution",
+   "Population size"
+  ],
+  "why": "Structure is the age-sex make-up, growth the change over time, distribution the spatial arrangement and size the total number.",
+  "R": [
+   "Composition of a population by age and sex.",
+   "Change in population over time.",
+   "Spatial arrangement of individuals.",
+   "Total number of individuals in a population."
+  ]
+ },
+ "39": {
+  "lh": "Settlement",
+  "rh": "Description",
+  "L": [
+   "Village",
+   "City",
+   "Hamlet",
+   "Oasis"
+  ],
+  "why": "A village is a group of rural houses, a city a large cluster of buildings, a hamlet a small rural settlement and an oasis a fertile spot in a desert.",
+  "R": [
+   "A group of houses in a rural area",
+   "A large cluster of buildings",
+   "A small rural settlement",
+   "A fertile area in a desert"
+  ]
+ },
+ "65": "retire",
+ "93": "retire",
+ "103": {
+  "lh": "Term",
+  "rh": "Definition",
+  "L": [
+   "Environment",
+   "Demography",
+   "Migration",
+   "Population density",
+   "Overpopulation",
+   null
+  ],
+  "why": "The environment is our natural surroundings, demography the study of human populations, migration the movement of people, density people per unit area and overpopulation numbers beyond what the environment can support.",
+  "R": [
+   "Natural surroundings",
+   "Study of human populations",
+   "Movement of people",
+   "Number of persons per unit area",
+   "When population exceeds environment capacity",
+   "Spatial arrangement of people"
+  ]
+ },
+ "177": {
+  "lh": "Term",
+  "rh": "Description",
+  "L": [
+   "Settlement",
+   "Site",
+   "Situation",
+   "Urban",
+   "Rural",
+   null
+  ],
+  "why": "A settlement is any human habitation, the site is the ground it stands on, the situation its position relative to its surroundings; urban relates to towns and rural to the countryside.",
+  "R": [
+   "Any human habitation from a house to a city",
+   "Physical location where a settlement is built",
+   "Location relative to surrounding features",
+   "Relating to a city or town",
+   "Relating to the countryside",
+   "Model explaining urban land use patterns"
+  ]
+ },
+ "194": {
+  "lh": "Resource",
+  "rh": "Nature",
+  "L": [
+   "Non-renewable resources",
+   "Renewable resources"
+  ],
+  "why": "Non-renewable resources are limited and exhaustible; renewable resources can be used again and again.",
+  "R": [
+   "Limited in quantity and exhaustible",
+   "Can be used again and again"
+  ]
+ },
+ "236": {
+  "lh": "Cultural parameter",
+  "rh": "Description",
+  "L": [
+   "Religion",
+   "Food habits",
+   "Architecture",
+   "Music"
+  ],
+  "why": "Religion covers spiritual beliefs and practices, food habits what and how people eat, architecture the design of buildings and music the art of organised sound.",
+  "R": [
+   "Beliefs and practices related to spirituality",
+   "Types of food and eating habits",
+   "Design and style of buildings",
+   "Art of organized sound"
+  ]
+ },
+ "241": {
+  "stem": "Match the geospatial technology with its primary function:",
+  "lh": "Technology",
+  "rh": "Function",
+  "L": [
+   "GNSS",
+   "GIS",
+   "Remote sensing"
+  ],
+  "why": "GNSS gives precise location, GIS analyses and manages spatial data and remote sensing collects data using sensors.",
+  "R": [
+   "Provides precise location information",
+   "Analyzes and manages spatial data",
+   "Collects spatial data using sensors"
+  ]
+ },
+ "259": {
+  "lh": "Pillar of sustainability",
+  "rh": "Description",
+  "L": [
+   "Social sustainability",
+   "Environmental sustainability",
+   "Cultural sustainability",
+   "Economic sustainability"
+  ],
+  "why": "Social sustainability ensures fair distribution, environmental sustainability minimises harm, cultural sustainability preserves values and practices and economic sustainability keeps the economy stable.",
+  "R": [
+   "Ensuring fair distribution of resources and opportunities",
+   "Using resources in a way that minimizes environmental harm",
+   "Preservation of cultural values and practices",
+   "Maintaining a stable and sustainable economy"
+  ]
+ },
+ "267": {
+  "lh": "Disaster",
+  "rh": "Common cause",
+  "L": [
+   "Fire accident",
+   "Drowning"
+  ],
+  "why": "Fires are often caused by electrical faults or negligence; drownings by the lack of safety measures at water bodies.",
+  "R": [
+   "Electrical faults or negligence",
+   "Lack of safety measures in water bodies"
+  ]
+ },
+ "271": {
+  "lh": "Disaster",
+  "rh": "Safety measure",
+  "L": [
+   "Road accident",
+   "Fire"
+  ],
+  "why": "Following traffic rules prevents road accidents; fire alarms give early warning of fire.",
+  "R": [
+   "Follow traffic rules",
+   "Install fire alarms"
+  ]
+ },
+ "278": {
+  "lh": "Disaster",
+  "rh": "Typical location",
+  "L": [
+   "Fire",
+   "Flood"
+  ],
+  "why": "Fires usually break out in factories and homes; floods hit low-lying areas.",
+  "R": [
+   "Factories and homes",
+   "Low-lying areas"
+  ]
+ },
+ "369": "retire",
+ "370": {
+  "stem": "Match the type of resource with its description:",
+  "lh": "Resource",
+  "rh": "Description",
+  "L": [
+   "Natural resources",
+   "Renewable resources",
+   "Human resources",
+   "Non-renewable resources"
+  ],
+  "why": "Natural resources occur in nature, renewable ones can be used again and again, human resources are skilled people and non-renewable ones are limited.",
+  "R": [
+   "Naturally occurring material",
+   "Used again and again",
+   "Skilled workers",
+   "Limited availability"
+  ]
+ },
+ "371": "retire",
+ "381": {
+  "stem": "Match the economic sector with its activity:",
+  "lh": "Sector",
+  "rh": "Activity",
+  "L": [
+   "Tertiary",
+   "Secondary",
+   "Primary"
+  ],
+  "why": "The primary sector extracts resources, the secondary sector manufactures and the tertiary sector provides services.",
+  "R": [
+   "Providing services",
+   "Manufacturing",
+   "Resource extraction"
+  ]
+ },
+ "397": {
+  "lh": "Term",
+  "rh": "Description",
+  "L": [
+   "Demography",
+   "Migration",
+   "Overpopulation",
+   "Environment",
+   "Population distribution",
+   null
+  ],
+  "why": "Demography is the statistical study of population, migration the movement of people, overpopulation numbers beyond capacity, the environment our natural surroundings and distribution the spatial arrangement of people.",
+  "R": [
+   "Study of human population statistics",
+   "Movement of people",
+   "Population exceeds environment capacity",
+   "Natural surroundings",
+   "Spatial arrangement of population",
+   "Rapid increase in human numbers"
+  ]
+ },
+ "436": {
+  "lh": "Definition",
+  "rh": "Term",
+  "L": [
+   "Number of people per unit area",
+   "Movement of people from one place to another",
+   "More people than resources can support",
+   "Statistical study of human population",
+   "Change in population size over time"
+  ],
+  "why": "Density is people per unit area, migration is movement, overpopulation exceeds capacity, demography is the statistical study and growth is the change over time.",
+  "R": [
+   "Population density",
+   "Migration",
+   "Overpopulation",
+   "Demography",
+   "Population growth"
+  ]
+ },
+ "455": "retire"
+}

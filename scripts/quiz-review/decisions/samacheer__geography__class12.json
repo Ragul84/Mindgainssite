@@ -1,0 +1,179 @@
+{
+ "retire": [
+  65,
+  93,
+  369,
+  371,
+  455
+ ],
+ "fix": {
+  "19": {
+   "question": "Match List I with List II: List I (Term) A. Overpopulation B. Demography C. Migration D. Population density List II (Definition) 1. Statistical study of populations 2. Movement of people from one place to another 3. Number of people living per unit area 4. Condition where the number of people exceeds the resources available",
+   "options": [
+    "A-1, B-4, C-2, D-3",
+    "A-3, B-1, C-2, D-4",
+    "A-4, B-1, C-3, D-2",
+    "A-4, B-1, C-2, D-3"
+   ],
+   "answer_index": 3,
+   "explanation": "Overpopulation is more people than resources can support, demography the statistical study of populations, migration the movement of people and density the number of people per unit area."
+  },
+  "22": {
+   "question": "Match List I with List II: List I (Aspect of population) A. Population structure B. Population growth C. Population distribution D. Population size List II (Description) 1. Spatial arrangement of individuals 2. Change in population over time 3. Total number of individuals in a population 4. Composition of a population by age and sex",
+   "options": [
+    "A-2, B-4, C-1, D-3",
+    "A-4, B-3, C-1, D-2",
+    "A-4, B-2, C-1, D-3",
+    "A-1, B-2, C-4, D-3"
+   ],
+   "answer_index": 2,
+   "explanation": "Structure is the age-sex make-up, growth the change over time, distribution the spatial arrangement and size the total number."
+  },
+  "39": {
+   "question": "Match List I with List II: List I (Settlement) A. Village B. City C. Hamlet D. Oasis List II (Description) 1. A small rural settlement 2. A large cluster of buildings 3. A group of houses in a rural area 4. A fertile area in a desert",
+   "options": [
+    "A-3, B-1, C-2, D-4",
+    "A-4, B-2, C-1, D-3",
+    "A-2, B-3, C-1, D-4",
+    "A-3, B-2, C-1, D-4"
+   ],
+   "answer_index": 3,
+   "explanation": "A village is a group of rural houses, a city a large cluster of buildings, a hamlet a small rural settlement and an oasis a fertile spot in a desert."
+  },
+  "103": {
+   "question": "Match List I with List II: List I (Term) A. Environment B. Demography C. Migration D. Population density E. Overpopulation List II (Definition) 1. When population exceeds environment capacity 2. Number of persons per unit area 3. Movement of people 4. Study of human populations 5. Natural surroundings",
+   "options": [
+    "A-5, B-2, C-3, D-4, E-1",
+    "A-5, B-1, C-3, D-2, E-4",
+    "A-3, B-4, C-5, D-2, E-1",
+    "A-5, B-4, C-3, D-2, E-1"
+   ],
+   "answer_index": 3,
+   "explanation": "The environment is our natural surroundings, demography the study of human populations, migration the movement of people, density people per unit area and overpopulation numbers beyond what the environment can support."
+  },
+  "177": {
+   "question": "Match List I with List II: List I (Term) A. Settlement B. Site C. Situation D. Urban E. Rural List II (Description) 1. Physical location where a settlement is built 2. Any human habitation from a house to a city 3. Relating to the countryside 4. Relating to a city or town 5. Location relative to surrounding features",
+   "options": [
+    "A-2, B-5, C-1, D-4, E-3",
+    "A-2, B-1, C-5, D-4, E-3",
+    "A-2, B-1, C-4, D-5, E-3",
+    "A-2, B-1, C-5, D-3, E-4"
+   ],
+   "answer_index": 1,
+   "explanation": "A settlement is any human habitation, the site is the ground it stands on, the situation its position relative to its surroundings; urban relates to towns and rural to the countryside."
+  },
+  "194": {
+   "question": "Match List I with List II: List I (Resource) A. Non-renewable resources B. Renewable resources List II (Nature) 1. Limited in quantity and exhaustible 2. Can be used again and again",
+   "options": [
+    "A-1, B-2",
+    "A-2, B-1"
+   ],
+   "answer_index": 0,
+   "explanation": "Non-renewable resources are limited and exhaustible; renewable resources can be used again and again."
+  },
+  "236": {
+   "question": "Match List I with List II: List I (Cultural parameter) A. Religion B. Food habits C. Architecture D. Music List II (Description) 1. Design and style of buildings 2. Beliefs and practices related to spirituality 3. Art of organized sound 4. Types of food and eating habits",
+   "options": [
+    "A-2, B-4, C-1, D-3",
+    "A-1, B-4, C-2, D-3",
+    "A-2, B-4, C-3, D-1",
+    "A-4, B-2, C-1, D-3"
+   ],
+   "answer_index": 0,
+   "explanation": "Religion covers spiritual beliefs and practices, food habits what and how people eat, architecture the design of buildings and music the art of organised sound."
+  },
+  "241": {
+   "question": "Match the geospatial technology with its primary function: List I (Technology) A. GNSS B. GIS C. Remote sensing List II (Function) 1. Analyzes and manages spatial data 2. Provides precise location information 3. Collects spatial data using sensors",
+   "options": [
+    "A-3, B-1, C-2",
+    "A-2, B-1, C-3",
+    "A-1, B-2, C-3",
+    "A-2, B-3, C-1"
+   ],
+   "answer_index": 1,
+   "explanation": "GNSS gives precise location, GIS analyses and manages spatial data and remote sensing collects data using sensors."
+  },
+  "259": {
+   "question": "Match List I with List II: List I (Pillar of sustainability) A. Social sustainability B. Environmental sustainability C. Cultural sustainability D. Economic sustainability List II (Description) 1. Using resources in a way that minimizes environmental harm 2. Preservation of cultural values and practices 3. Maintaining a stable and sustainable economy 4. Ensuring fair distribution of resources and opportunities",
+   "options": [
+    "A-4, B-2, C-1, D-3",
+    "A-4, B-3, C-2, D-1",
+    "A-2, B-1, C-4, D-3",
+    "A-4, B-1, C-2, D-3"
+   ],
+   "answer_index": 3,
+   "explanation": "Social sustainability ensures fair distribution, environmental sustainability minimises harm, cultural sustainability preserves values and practices and economic sustainability keeps the economy stable."
+  },
+  "267": {
+   "question": "Match List I with List II: List I (Disaster) A. Fire accident B. Drowning List II (Common cause) 1. Lack of safety measures in water bodies 2. Electrical faults or negligence",
+   "options": [
+    "A-1, B-2",
+    "A-2, B-1"
+   ],
+   "answer_index": 1,
+   "explanation": "Fires are often caused by electrical faults or negligence; drownings by the lack of safety measures at water bodies."
+  },
+  "271": {
+   "question": "Match List I with List II: List I (Disaster) A. Road accident B. Fire List II (Safety measure) 1. Follow traffic rules 2. Install fire alarms",
+   "options": [
+    "A-2, B-1",
+    "A-1, B-2"
+   ],
+   "answer_index": 1,
+   "explanation": "Following traffic rules prevents road accidents; fire alarms give early warning of fire."
+  },
+  "278": {
+   "question": "Match List I with List II: List I (Disaster) A. Fire B. Flood List II (Typical location) 1. Factories and homes 2. Low-lying areas",
+   "options": [
+    "A-1, B-2",
+    "A-2, B-1"
+   ],
+   "answer_index": 0,
+   "explanation": "Fires usually break out in factories and homes; floods hit low-lying areas."
+  },
+  "370": {
+   "question": "Match the type of resource with its description: List I (Resource) A. Natural resources B. Renewable resources C. Human resources D. Non-renewable resources List II (Description) 1. Naturally occurring material 2. Skilled workers 3. Used again and again 4. Limited availability",
+   "options": [
+    "A-2, B-3, C-1, D-4",
+    "A-4, B-3, C-2, D-1",
+    "A-1, B-3, C-2, D-4",
+    "A-1, B-2, C-3, D-4"
+   ],
+   "answer_index": 2,
+   "explanation": "Natural resources occur in nature, renewable ones can be used again and again, human resources are skilled people and non-renewable ones are limited."
+  },
+  "381": {
+   "question": "Match the economic sector with its activity: List I (Sector) A. Tertiary B. Secondary C. Primary List II (Activity) 1. Manufacturing 2. Providing services 3. Resource extraction",
+   "options": [
+    "A-3, B-1, C-2",
+    "A-2, B-1, C-3",
+    "A-1, B-2, C-3",
+    "A-2, B-3, C-1"
+   ],
+   "answer_index": 1,
+   "explanation": "The primary sector extracts resources, the secondary sector manufactures and the tertiary sector provides services."
+  },
+  "397": {
+   "question": "Match List I with List II: List I (Term) A. Demography B. Migration C. Overpopulation D. Environment E. Population distribution List II (Description) 1. Population exceeds environment capacity 2. Spatial arrangement of population 3. Movement of people 4. Study of human population statistics 5. Natural surroundings",
+   "options": [
+    "A-4, B-1, C-3, D-5, E-2",
+    "A-4, B-3, C-1, D-5, E-2",
+    "A-4, B-3, C-5, D-1, E-2",
+    "A-1, B-3, C-4, D-5, E-2"
+   ],
+   "answer_index": 1,
+   "explanation": "Demography is the statistical study of population, migration the movement of people, overpopulation numbers beyond capacity, the environment our natural surroundings and distribution the spatial arrangement of people."
+  },
+  "436": {
+   "question": "Match List I with List II: List I (Definition) A. Number of people per unit area B. Movement of people from one place to another C. More people than resources can support D. Statistical study of human population E. Change in population size over time List II (Term) 1. Population growth 2. Demography 3. Migration 4. Overpopulation 5. Population density",
+   "options": [
+    "A-5, B-3, C-4, D-2, E-1",
+    "A-5, B-3, C-2, D-4, E-1",
+    "A-4, B-3, C-5, D-2, E-1",
+    "A-5, B-4, C-3, D-2, E-1"
+   ],
+   "answer_index": 0,
+   "explanation": "Density is people per unit area, migration is movement, overpopulation exceeds capacity, demography is the statistical study and growth is the change over time."
+  }
+ }
+}
