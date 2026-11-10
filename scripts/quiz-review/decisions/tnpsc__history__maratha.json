@@ -1,0 +1,85 @@
+{
+ "retire": [],
+ "fix": {
+  "247": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "248": {
+   "options": [
+    "Shivaji surrendered 23 forts and retained 12",
+    "Shivaji ceded all forts to the Mughals and became a mansabdar",
+    "Shivaji agreed to pay an annual tribute of 40 lakh huns",
+    "Both A and C"
+   ]
+  },
+  "249": {
+   "options": [
+    "Shahu I",
+    "Balaji Vishwanath",
+    "Bajirao I",
+    "Madhavrao I"
+   ]
+  },
+  "250": {
+   "options": [
+    "Third Battle of Panipat; Maratha refusal to pay tribute to Ahmad Shah Abdali",
+    "Battle of Udgir; Maratha defeat by the Nizam",
+    "Battle of Poona; internal rivalry between Peshwas",
+    "Battle of Talegaon; British interference"
+   ]
+  },
+  "251": {
+   "options": [
+    "Military command over a province",
+    "Revenue collection and local administration in a pargana",
+    "Judicial functions in the capital",
+    "Diplomacy with the British"
+   ]
+  },
+  "252": {
+   "options": [
+    "Chimaji Appa; Bajirao I",
+    "Baji Prabhu; Shivaji",
+    "Santaji Ghorpade; Rajaram",
+    "Malharrao Holkar; Madhavrao I"
+   ]
+  },
+  "253": {
+   "options": [
+    "Complete independence of all Hindu kingdoms from Mughal rule",
+    "Establishment of a Maratha empire under a Hindu monarch free from foreign domination",
+    "A confederacy of Hindu rulers against the British",
+    "Religious tolerance and protection of all faiths"
+   ]
+  },
+  "254": {
+   "options": [
+    "Mahadji Shinde; restored British authority over Bengal",
+    "Nana Fadnavis; ended the First Anglo-Maratha War with status quo",
+    "Bajirao II; ceded territories to the British",
+    "Madhavrao II; recognised British supremacy in India"
+   ]
+  },
+  "255": {
+   "options": [
+    "Colaba - Gujarat",
+    "Vijaydurg - Maharashtra coast",
+    "Suvarnadurg - Karnataka",
+    "Gheria - Coromandel coast"
+   ]
+  },
+  "256": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  }
+ }
+}

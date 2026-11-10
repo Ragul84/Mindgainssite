@@ -1,0 +1,853 @@
+{
+ "retire": [],
+ "fix": {
+  "90": {
+   "options": [
+    "To control inflation and stabilize prices",
+    "To promote economic growth and increase employment",
+    "To reduce fiscal deficit and improve trade balance",
+    "To increase foreign exchange reserves and strengthen the rupee"
+   ]
+  },
+  "91": {
+   "options": [
+    "Money supply growth rate",
+    "Fiscal deficit as a percentage of GDP",
+    "Exchange rate fluctuations",
+    "Balance of trade"
+   ]
+  },
+  "92": {
+   "options": [
+    "Increase in exports and boost to national income",
+    "Decrease in imports and reduction in trade deficit",
+    "Increase in foreign investment and improvement in balance of payments",
+    "Reduction in economic growth and decrease in national income"
+   ]
+  },
+  "93": {
+   "options": [
+    "Implementation of minimum support price for farmers",
+    "Promotion of organic farming and reduction in fertilizer subsidies",
+    "Increase in agricultural credit and improvement in rural infrastructure",
+    "Reduction in agricultural imports and increase in food processing"
+   ]
+  },
+  "94": {
+   "options": [
+    "High inflation leads to high national income",
+    "Low inflation leads to low national income",
+    "High inflation reduces purchasing power, decreasing national income",
+    "Inflation has no impact on national income"
+   ]
+  },
+  "95": {
+   "options": [
+    "Capital account",
+    "Current account",
+    "Financial account",
+    "Official reserve account"
+   ]
+  },
+  "96": {
+   "options": [
+    "Increase in money supply, boost to economic growth",
+    "Decrease in money supply, reduction in inflation",
+    "No impact on national income",
+    "Increase in foreign exchange reserves, appreciation of the rupee"
+   ]
+  },
+  "97": {
+   "options": [
+    "Human Development Index (HDI)",
+    "Gini coefficient",
+    "Poverty ratio",
+    "All of the above"
+   ]
+  },
+  "98": {
+   "options": [
+    "Increase in national income due to increased exports",
+    "Decrease in national income due to reduced imports",
+    "No impact on national income",
+    "Increase in foreign exchange reserves, but no impact on national income"
+   ]
+  },
+  "99": {
+   "options": [
+    "Money supply growth rate",
+    "Exchange rate fluctuations",
+    "Food price inflation",
+    "All of the above"
+   ]
+  },
+  "104": {
+   "options": [
+    "Fiscal Deficit",
+    "Open Market Operations",
+    "Public Expenditure",
+    "Trade Policy"
+   ]
+  },
+  "105": {
+   "options": [
+    "Improvement in trade balance",
+    "Deterioration in trade balance",
+    "No impact on trade balance",
+    "Increase in foreign investment"
+   ]
+  },
+  "106": {
+   "options": [
+    "To increase money supply",
+    "To reduce inflation",
+    "To stabilize exchange rates",
+    "To promote economic growth"
+   ]
+  },
+  "107": {
+   "options": [
+    "Increase in national income",
+    "Decrease in national income",
+    "No impact on national income",
+    "Increase in foreign investment"
+   ]
+  },
+  "108": {
+   "options": [
+    "Fiscal deficit",
+    "Money supply",
+    "Repo rate",
+    "Government expenditure"
+   ]
+  },
+  "109": {
+   "options": [
+    "Balance of trade",
+    "Government revenue and expenditure",
+    "Money supply and interest rates",
+    "Exchange rates and foreign investment"
+   ]
+  },
+  "110": {
+   "options": [
+    "Government revenue and expenditure",
+    "Capital account and financial account",
+    "Money supply and interest rates",
+    "Exchange rates and foreign investment"
+   ]
+  },
+  "111": {
+   "options": [
+    "Minimum support price for farmers",
+    "Subsidy on fertilizers and pesticides",
+    "Investment in irrigation and agricultural infrastructure",
+    "Import duty on agricultural products"
+   ]
+  },
+  "112": {
+   "options": [
+    "Increase in purchasing power and decrease in savings",
+    "Decrease in purchasing power and increase in savings",
+    "No impact on purchasing power and savings",
+    "Increase in foreign investment and decrease in trade deficit"
+   ]
+  },
+  "113": {
+   "options": [
+    "Literacy rate and education",
+    "Infant mortality rate and healthcare",
+    "Unemployment rate and labor force participation",
+    "All of the above"
+   ]
+  },
+  "114": {
+   "options": [
+    "Population growth and demographic changes",
+    "Technological progress and innovation",
+    "Institutional framework and governance",
+    "All of the above"
+   ]
+  },
+  "115": {
+   "options": [
+    "Improvement in trade balance",
+    "Deterioration in trade balance",
+    "No impact on trade balance",
+    "Increase in foreign investment"
+   ]
+  },
+  "116": {
+   "options": [
+    "Increase in money supply",
+    "Increase in agricultural production",
+    "Decrease in industrial production",
+    "Reduction in government expenditure"
+   ]
+  },
+  "117": {
+   "options": [
+    "To reduce inflation",
+    "To increase foreign exchange reserves",
+    "To stabilize the exchange rate",
+    "To reduce money supply"
+   ]
+  },
+  "118": {
+   "options": [
+    "Repo rate",
+    "Reverse repo rate",
+    "Government expenditure",
+    "Open market operations"
+   ]
+  },
+  "119": {
+   "options": [
+    "To reduce fiscal deficit",
+    "To promote economic growth and price stability",
+    "To increase trade balance",
+    "To reduce agricultural subsidies"
+   ]
+  },
+  "120": {
+   "options": [
+    "Increases exports and decreases imports",
+    "Decreases exports and increases imports",
+    "Has no impact on trade balance",
+    "Increases both exports and imports"
+   ]
+  },
+  "121": {
+   "options": [
+    "Increase in money supply",
+    "Decrease in agricultural production",
+    "Reduction in government subsidies",
+    "All of the above"
+   ]
+  },
+  "122": {
+   "options": [
+    "To reduce inflation by selling government securities",
+    "To increase money supply by buying government securities",
+    "To stabilize the rupee by intervening in the forex market",
+    "To reduce fiscal deficit by increasing taxes"
+   ]
+  },
+  "123": {
+   "options": [
+    "Current Account",
+    "Capital Account",
+    "Financial Account",
+    "Official Reserve Account"
+   ]
+  },
+  "124": {
+   "options": [
+    "Increasing government subsidies to farmers",
+    "Improving agricultural productivity and market access",
+    "Reducing agricultural imports",
+    "Increasing agricultural taxes"
+   ]
+  },
+  "125": {
+   "options": [
+    "A trade surplus always increases national income",
+    "A trade deficit always decreases national income",
+    "Trade balance has no direct impact on national income",
+    "The impact depends on the underlying factors causing the trade balance"
+   ]
+  },
+  "126": {
+   "options": [
+    "Increasing government spending",
+    "Reducing taxes",
+    "Increasing government borrowing",
+    "All of the above"
+   ]
+  },
+  "127": {
+   "options": [
+    "Government revenue and expenditure",
+    "Money supply and credit creation",
+    "Current account and capital account",
+    "Fiscal deficit and public debt"
+   ]
+  },
+  "128": {
+   "options": [
+    "Increase in minimum support price for farmers",
+    "Reduction in agricultural subsidies and support",
+    "Implementation of contract farming and agricultural marketing reforms",
+    "Increase in food processing and storage capacity"
+   ]
+  },
+  "129": {
+   "options": [
+    "Per capita income and poverty ratio",
+    "Unemployment rate and labor force participation",
+    "Human development index and gender equality",
+    "All of the above"
+   ]
+  },
+  "130": {
+   "options": [
+    "Fiscal policy and government expenditure",
+    "Open market operations and reserve requirements",
+    "Exchange rate management and foreign exchange intervention",
+    "Public debt management and financial regulation"
+   ]
+  },
+  "131": {
+   "options": [
+    "Increase in money supply and inflation",
+    "Decrease in money supply and deflation",
+    "No impact on money supply",
+    "Increase in foreign exchange reserves"
+   ]
+  },
+  "132": {
+   "options": [
+    "Minimum Support Price",
+    "Agricultural subsidies",
+    "Deregulation of agricultural markets",
+    "Land ceiling laws"
+   ]
+  },
+  "133": {
+   "options": [
+    "Human Development Index",
+    "Poverty rate",
+    "Unemployment rate",
+    "All of the above"
+   ]
+  },
+  "134": {
+   "options": [
+    "Fiscal policy",
+    "Reserve requirements",
+    "Government spending",
+    "Taxation"
+   ]
+  },
+  "135": {
+   "options": [
+    "High inflation always leads to high national income",
+    "Low inflation always leads to low national income",
+    "High inflation can lead to decreased national income",
+    "Inflation has no impact on national income"
+   ]
+  },
+  "136": {
+   "options": [
+    "Capital Account",
+    "Current Account",
+    "Official Reserve Account",
+    "All of the above"
+   ]
+  },
+  "137": {
+   "options": [
+    "Increase in money supply and inflation",
+    "Decrease in money supply and deflation",
+    "No impact on money supply or inflation",
+    "Increase in foreign exchange reserves"
+   ]
+  },
+  "138": {
+   "options": [
+    "Human Development Index (HDI)",
+    "Poverty Rate",
+    "Unemployment Rate",
+    "All of the above"
+   ]
+  },
+  "139": {
+   "options": [
+    "To reduce fiscal deficit",
+    "To control inflation and stabilize prices",
+    "To increase agricultural production",
+    "To promote foreign trade"
+   ]
+  },
+  "140": {
+   "options": [
+    "Balance of trade",
+    "Government revenue and expenditure",
+    "Money supply and credit creation",
+    "Foreign exchange reserves"
+   ]
+  },
+  "141": {
+   "options": [
+    "Increase in exports and decrease in imports",
+    "Decrease in exports and increase in imports",
+    "No impact on trade balance",
+    "Increase in foreign investment"
+   ]
+  },
+  "142": {
+   "options": [
+    "Government expenditure on subsidies",
+    "Private remittances and foreign investment",
+    "Agricultural production and rural employment",
+    "Industrial production and manufacturing growth"
+   ]
+  },
+  "143": {
+   "options": [
+    "Human Development Index (HDI)",
+    "Gross Domestic Product (GDP) growth rate",
+    "Fiscal deficit and government debt",
+    "Balance of trade and foreign exchange reserves"
+   ]
+  },
+  "144": {
+   "options": [
+    "Trade surplus leads to high national income",
+    "Trade deficit leads to high national income",
+    "Trade surplus leads to low national income",
+    "No impact of trade balances on national income"
+   ]
+  },
+  "145": {
+   "options": [
+    "Population growth and demographic changes",
+    "Industrial production and manufacturing growth",
+    "Agricultural production and rural employment",
+    "All of the above"
+   ]
+  },
+  "146": {
+   "options": [
+    "Fiscal deficit",
+    "Revenue deficit",
+    "Primary deficit",
+    "Gross Domestic Product (GDP)"
+   ]
+  },
+  "147": {
+   "options": [
+    "Improvement in trade balance due to increased exports",
+    "Deterioration in trade balance due to decreased imports",
+    "No impact on trade balance",
+    "Increase in imports and decrease in exports"
+   ]
+  },
+  "148": {
+   "options": [
+    "Money supply growth",
+    "Agricultural productivity",
+    "Global commodity prices",
+    "All of the above"
+   ]
+  },
+  "149": {
+   "options": [
+    "To reduce the money supply and control inflation",
+    "To increase the money supply and promote growth",
+    "To stabilize the exchange rate without affecting money supply",
+    "To reduce foreign exchange reserves"
+   ]
+  },
+  "150": {
+   "options": [
+    "Current account",
+    "Capital account",
+    "Financial account",
+    "Official reserve account"
+   ]
+  },
+  "151": {
+   "options": [
+    "Decrease in agricultural productivity",
+    "Increase in agricultural employment",
+    "Improvement in agricultural productivity and competitiveness",
+    "No impact on GDP growth"
+   ]
+  },
+  "152": {
+   "options": [
+    "Life expectancy at birth",
+    "Literacy rate",
+    "Per capita income",
+    "All of the above"
+   ]
+  },
+  "153": {
+   "options": [
+    "A trade surplus always leads to an increase in national income",
+    "A trade deficit always leads to a decrease in national income",
+    "The impact of trade balance on national income depends on various factors",
+    "There is no relationship between trade balance and national income"
+   ]
+  },
+  "154": {
+   "options": [
+    "Inflation increases purchasing power",
+    "Inflation has no impact on purchasing power",
+    "Inflation decreases purchasing power",
+    "The impact of inflation on purchasing power depends on the type of inflation"
+   ]
+  },
+  "158": {
+   "options": [
+    "Increase in money supply",
+    "Decrease in money supply",
+    "No impact on money supply",
+    "Increase in foreign exchange reserves"
+   ]
+  },
+  "159": {
+   "options": [
+    "Minimum support price",
+    "Agricultural subsidy",
+    "Land reform",
+    "All of the above"
+   ]
+  },
+  "160": {
+   "options": [
+    "To reduce fiscal deficit",
+    "To promote economic growth and stability",
+    "To increase trade balance",
+    "To reduce agricultural subsidies"
+   ]
+  },
+  "161": {
+   "options": [
+    "Increase in productivity",
+    "Decrease in money supply",
+    "Increase in food prices",
+    "Decrease in imports"
+   ]
+  },
+  "162": {
+   "options": [
+    "Fiscal deficit",
+    "Open market operations",
+    "Trade balance",
+    "GDP growth rate"
+   ]
+  },
+  "163": {
+   "options": [
+    "Increase in agricultural production",
+    "Decrease in money supply",
+    "Increase in food prices",
+    "Decrease in foreign investment"
+   ]
+  },
+  "164": {
+   "options": [
+    "Minimum Support Price",
+    "Agricultural subsidies",
+    "Land reforms and liberalization",
+    "Import restrictions"
+   ]
+  },
+  "165": {
+   "options": [
+    "Demand-pull inflation",
+    "Cost-push inflation",
+    "Built-in inflation",
+    "Both A and B"
+   ]
+  },
+  "166": {
+   "options": [
+    "Visible trade balance",
+    "Invisible trade balance",
+    "Trade in services",
+    "Both A and B"
+   ]
+  },
+  "167": {
+   "options": [
+    "Human Development Index",
+    "Poverty rate",
+    "Unemployment rate",
+    "All of the above"
+   ]
+  },
+  "168": {
+   "options": [
+    "Open market operations",
+    "Reserve requirements",
+    "Interest rates",
+    "All of the above"
+   ]
+  },
+  "169": {
+   "options": [
+    "Increase in money supply and inflation",
+    "Decrease in money supply and deflation",
+    "No impact on money supply and inflation",
+    "Increase in foreign investment"
+   ]
+  },
+  "170": {
+   "options": [
+    "Human Development Index",
+    "Poverty rate",
+    "Unemployment rate",
+    "All of the above"
+   ]
+  },
+  "171": {
+   "options": [
+    "Trade surplus leads to high national income",
+    "Trade deficit leads to high national income",
+    "Trade surplus leads to low national income",
+    "No relationship between trade balance and national income"
+   ]
+  },
+  "172": {
+   "options": [
+    "Demand-pull inflation",
+    "Cost-push inflation",
+    "Monetary policy",
+    "Both A and B"
+   ]
+  },
+  "173": {
+   "options": [
+    "To reduce fiscal deficit",
+    "To promote economic growth and stability",
+    "To increase agricultural production",
+    "To reduce trade deficit"
+   ]
+  },
+  "174": {
+   "options": [
+    "Human development index",
+    "Poverty ratio",
+    "Unemployment rate",
+    "All of the above"
+   ]
+  },
+  "175": {
+   "options": [
+    "Fiscal policy",
+    "Open market operations",
+    "Foreign exchange intervention",
+    "Public expenditure"
+   ]
+  },
+  "176": {
+   "options": [
+    "Increase in productivity",
+    "Decrease in money supply",
+    "Increase in food prices",
+    "Decrease in foreign investment"
+   ]
+  },
+  "184": {
+   "options": [
+    "Interest rates",
+    "Money supply",
+    "Foreign exchange interventions",
+    "All of the above"
+   ]
+  },
+  "185": {
+   "options": [
+    "Increase in exports and boost to national income",
+    "Decrease in imports and reduction in trade deficit",
+    "Increase in foreign investment and capital inflows",
+    "Reduction in economic growth and increase in inflation"
+   ]
+  },
+  "186": {
+   "options": [
+    "Capital Account",
+    "Current Account",
+    "Fiscal Account",
+    "Monetary Account"
+   ]
+  },
+  "187": {
+   "options": [
+    "Increase in money supply and boost to national income",
+    "Decrease in interest rates and increase in borrowing",
+    "Reduction in inflation and increase in economic growth",
+    "No impact on national income or inflation"
+   ]
+  },
+  "188": {
+   "options": [
+    "Monetary policy rate",
+    "Government expenditure",
+    "Tax revenue",
+    "Foreign exchange reserves"
+   ]
+  },
+  "189": {
+   "options": [
+    "To increase money supply and reduce interest rates",
+    "To decrease money supply and increase interest rates",
+    "To neutralize the impact of foreign capital inflows",
+    "To promote foreign trade"
+   ]
+  },
+  "190": {
+   "options": [
+    "Trade surplus increases national income",
+    "Trade deficit decreases national income",
+    "Trade balance has no impact on national income",
+    "Both A and B"
+   ]
+  },
+  "191": {
+   "options": [
+    "Fiscal policy",
+    "Interest rates",
+    "Government spending",
+    "Trade policy"
+   ]
+  },
+  "192": {
+   "options": [
+    "Fiscal Deficit",
+    "Open Market Operations",
+    "Trade Balance",
+    "Foreign Exchange Reserves"
+   ]
+  },
+  "194": {
+   "options": [
+    "Increase in productivity",
+    "Decrease in money supply",
+    "Increase in food prices",
+    "Decrease in government expenditure"
+   ]
+  },
+  "195": {
+   "options": [
+    "Fiscal deficit",
+    "Open market operations",
+    "Government expenditure",
+    "Trade policy"
+   ]
+  },
+  "196": {
+   "options": [
+    "Increase in money supply and demand",
+    "Decrease in agricultural production",
+    "Reduction in government expenditure",
+    "Increase in foreign investment"
+   ]
+  },
+  "197": {
+   "options": [
+    "Interest rates and money supply",
+    "Government expenditure and taxation",
+    "Exchange rates and foreign investment",
+    "Trade policies and quotas"
+   ]
+  },
+  "198": {
+   "options": [
+    "Increase in exports and decrease in imports",
+    "Decrease in exports and increase in imports",
+    "No impact on trade balance",
+    "Increase in both exports and imports"
+   ]
+  },
+  "199": {
+   "options": [
+    "To increase foreign exchange reserves",
+    "To reduce inflation and stabilize prices",
+    "To neutralize the impact of foreign capital inflows",
+    "To promote economic growth and increase employment"
+   ]
+  },
+  "200": {
+   "options": [
+    "Increase in agricultural productivity and income",
+    "Decrease in agricultural productivity and income",
+    "No impact on agricultural productivity and income",
+    "Increase in agricultural imports and decrease in exports"
+   ]
+  },
+  "201": {
+   "options": [
+    "Increase in purchasing power",
+    "Decrease in savings rate",
+    "Reduction in investment and economic growth",
+    "Improvement in trade balance"
+   ]
+  },
+  "235": {
+   "options": [
+    "Fiscal deficit",
+    "Current account",
+    "Trade balance",
+    "National income"
+   ]
+  },
+  "236": {
+   "options": [
+    "Increase in money supply",
+    "Decrease in food production",
+    "Increase in foreign investment",
+    "Decrease in trade deficit"
+   ]
+  },
+  "237": {
+   "options": [
+    "Fiscal deficit decreases national income",
+    "Fiscal surplus increases national income",
+    "Fiscal deficit has no impact on national income",
+    "Fiscal surplus decreases national income"
+   ]
+  },
+  "238": {
+   "options": [
+    "Decrease in foreign exchange reserves",
+    "Increase in foreign exchange reserves",
+    "No impact on foreign exchange reserves",
+    "Increase in national income"
+   ]
+  },
+  "254": {
+   "options": [
+    "Fiscal deficit",
+    "Sterilized interventions",
+    "Trade balance",
+    "Government subsidies"
+   ]
+  },
+  "255": {
+   "options": [
+    "Capital account",
+    "Current account",
+    "Fiscal account",
+    "Savings account"
+   ]
+  },
+  "256": {
+   "options": [
+    "Decrease in national income",
+    "No impact on national income",
+    "Increase in national income",
+    "Increase in fiscal deficit"
+   ]
+  },
+  "257": {
+   "options": [
+    "Fiscal deficit",
+    "Government revenue",
+    "Government expenditure",
+    "Trade balance"
+   ]
+  },
+  "258": {
+   "options": [
+    "Decrease in national income",
+    "No impact on national income",
+    "Increase in national income",
+    "Increase in fiscal deficit"
+   ]
+  }
+ }
+}

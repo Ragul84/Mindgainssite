@@ -1,0 +1,309 @@
+{
+ "retire": [],
+ "fix": {
+  "35": {
+   "options": [
+    "Chandragupta I",
+    "Samudragupta",
+    "Chandragupta II",
+    "Skandagupta"
+   ]
+  },
+  "36": {
+   "options": [
+    "Maurya",
+    "Gupta",
+    "Sangam",
+    "Vijayanagara"
+   ]
+  },
+  "37": {
+   "options": [
+    "Hiuen Tsang",
+    "Fa-Hien",
+    "I-Tsing",
+    "Marco Polo"
+   ]
+  },
+  "38": {
+   "options": [
+    "Chola",
+    "Vardhana",
+    "Pallava",
+    "Rashtrakuta"
+   ]
+  },
+  "39": {
+   "options": [
+    "Maurya",
+    "Gupta",
+    "Chola",
+    "Pallava"
+   ]
+  },
+  "40": {
+   "options": [
+    "Chandragupta I",
+    "Samudragupta",
+    "Chandragupta II",
+    "Kumaragupta"
+   ]
+  },
+  "41": {
+   "options": [
+    "Tamil Nadu",
+    "Karnataka",
+    "Andhra Pradesh",
+    "Odisha"
+   ]
+  },
+  "42": {
+   "options": [
+    "Chera",
+    "Chola",
+    "Pandya",
+    "Pallava"
+   ]
+  },
+  "43": {
+   "options": [
+    "Kalidasa",
+    "Banabhatta",
+    "Harisena",
+    "Aryabhata"
+   ]
+  },
+  "80": {
+   "options": [
+    "Military conquests",
+    "Maritime trade",
+    "Art, literature, and science",
+    "Religious unification"
+   ]
+  },
+  "81": {
+   "options": [
+    "Xuanzang",
+    "Fa-Hien",
+    "I-Tsing",
+    "Marco Polo"
+   ]
+  },
+  "82": {
+   "options": [
+    "Mauryan",
+    "Gupta",
+    "Post-Gupta",
+    "Mughal"
+   ]
+  },
+  "83": {
+   "options": [
+    "Harshavardhana",
+    "Yashodharman",
+    "Pulakeshin II",
+    "Skandagupta"
+   ]
+  },
+  "84": {
+   "options": [
+    "Gupta",
+    "Pala",
+    "Rashtrakuta",
+    "Chola"
+   ]
+  },
+  "85": {
+   "options": [
+    "Mahendravarman I",
+    "Narasimhavarman I",
+    "Nandivarman II",
+    "Simhavishnu"
+   ]
+  },
+  "86": {
+   "options": [
+    "Mauryan",
+    "Gupta and Post-Gupta",
+    "Vijayanagara",
+    "British"
+   ]
+  },
+  "87": {
+   "options": [
+    "Chalukya",
+    "Rashtrakuta",
+    "Pallava",
+    "Chola"
+   ]
+  },
+  "88": {
+   "options": [
+    "Pandya",
+    "Chera",
+    "Rashtrakuta",
+    "Pallava"
+   ]
+  },
+  "89": {
+   "options": [
+    "Chola",
+    "Pandya",
+    "Chera",
+    "Pallava"
+   ]
+  },
+  "108": {
+   "options": [
+    "Hiuen Tsang",
+    "Fa-Hien",
+    "I-Tsing",
+    "Marco Polo"
+   ]
+  },
+  "109": {
+   "options": [
+    "Mauryan",
+    "Gupta",
+    "Post-Gupta",
+    "Kushan"
+   ]
+  },
+  "110": {
+   "options": [
+    "Rajaraja Chola I",
+    "Rajendra Chola I",
+    "Parantaka Chola I",
+    "Karikala Chola"
+   ]
+  },
+  "111": {
+   "options": [
+    "Samudragupta",
+    "Chandragupta II",
+    "Kumaragupta I",
+    "Skandagupta"
+   ]
+  },
+  "112": {
+   "options": [
+    "Pallava",
+    "Chalukya",
+    "Rashtrakuta",
+    "Pandya"
+   ]
+  },
+  "113": {
+   "options": [
+    "Chandragupta I",
+    "Samudragupta",
+    "Chandragupta II",
+    "Skandagupta"
+   ]
+  },
+  "114": {
+   "options": [
+    "Pallava",
+    "Pandya",
+    "Chola",
+    "Chera"
+   ]
+  },
+  "115": {
+   "options": [
+    "Mauryan",
+    "Gupta",
+    "Pallava",
+    "Chola"
+   ]
+  },
+  "116": {
+   "options": [
+    "Mihirakula",
+    "Toramana",
+    "Kanishka",
+    "Harsha"
+   ]
+  },
+  "117": {
+   "options": [
+    "Chola",
+    "Pandya",
+    "Pallava",
+    "Chalukya"
+   ]
+  },
+  "261": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "262": {
+   "options": [
+    "1, 2 and 3 only",
+    "1, 2 and 4 only",
+    "2, 3 and 4 only",
+    "1, 2, 3 and 4"
+   ]
+  },
+  "263": {
+   "options": [
+    "Pulakeshin II",
+    "Harsha",
+    "Narasimhavarman I",
+    "Mahendravarman I"
+   ]
+  },
+  "264": {
+   "options": [
+    "Samudragupta",
+    "Chandragupta II",
+    "Harsha",
+    "Skandagupta"
+   ]
+  },
+  "265": {
+   "options": [
+    "It was a period of extensive territorial expansion and military conquests.",
+    "It witnessed remarkable achievements in art, literature, science, and trade.",
+    "It saw the establishment of a centralized bureaucratic state.",
+    "It was marked by the complete absence of foreign invasions."
+   ]
+  },
+  "266": {
+   "options": [
+    "1, 2, 3, 4",
+    "3, 1, 2, 4",
+    "2, 1, 3, 4",
+    "4, 3, 1, 2"
+   ]
+  },
+  "267": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "268": {
+   "options": [
+    "Chandragupta I",
+    "Samudragupta",
+    "Chandragupta II",
+    "Skandagupta"
+   ]
+  },
+  "269": {
+   "options": [
+    "Pallavas",
+    "Chalukyas",
+    "Rashtrakutas",
+    "Cholas"
+   ]
+  }
+ }
+}

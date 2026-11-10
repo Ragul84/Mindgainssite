@@ -1,0 +1,37 @@
+{
+ "retire": [],
+ "fix": {
+  "200": {
+   "options": [
+    "Cauvery",
+    "Vaigai",
+    "Tamiraparani",
+    "Kaveri"
+   ]
+  },
+  "273": {
+   "options": [
+    "Maharashtra",
+    "Gujarat",
+    "Madhya Pradesh",
+    "Karnataka"
+   ]
+  },
+  "274": {
+   "options": [
+    "Mettur Dam",
+    "Bhavanisagar Dam",
+    "Stanley Reservoir",
+    "Kallanai Dam"
+   ]
+  },
+  "275": {
+   "options": [
+    "Kaveri",
+    "Vaigai",
+    "Tamiraparani",
+    "Palar"
+   ]
+  }
+ }
+}

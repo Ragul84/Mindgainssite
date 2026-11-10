@@ -1,0 +1,223 @@
+{
+ "retire": [
+  264
+ ],
+ "fix": {
+  "181": {
+   "options": [
+    "3 months",
+    "6 months",
+    "9 months",
+    "12 months"
+   ]
+  },
+  "182": {
+   "options": [
+    "The time after Question Hour",
+    "The time before Question Hour",
+    "The time for private members' bills",
+    "The time for adjournment motion"
+   ]
+  },
+  "183": {
+   "options": [
+    "President of India",
+    "Speaker of Lok Sabha",
+    "Chairman of Rajya Sabha",
+    "Prime Minister"
+   ]
+  },
+  "184": {
+   "options": [
+    "Pass the full budget",
+    "Withdraw money from the Consolidated Fund before the budget is passed",
+    "Reject a demand for grant",
+    "Introduce a new tax"
+   ]
+  },
+  "185": {
+   "options": [
+    "238",
+    "245",
+    "250",
+    "552"
+   ]
+  },
+  "186": {
+   "options": [
+    "Censure Motion",
+    "Ordinance making power",
+    "Prorogation of House",
+    "Dissolution of Lok Sabha"
+   ]
+  },
+  "187": {
+   "options": [
+    "Rights of citizens to petition Parliament",
+    "Special rights and immunities of MPs and committees",
+    "Powers of the President over Parliament",
+    "Rights of the media to cover debates"
+   ]
+  },
+  "245": {
+   "options": [
+    "It includes any position that receives a salary from the government, regardless of the nature of work.",
+    "It excludes positions held by ministers and parliamentary secretaries in all states.",
+    "It does not include offices held by members of Parliament as part of a parliamentary delegation abroad.",
+    "It includes the office of a government contractor who supplies goods to the state."
+   ]
+  },
+  "246": {
+   "options": [
+    "Only 1",
+    "Only 2",
+    "Both 1 and 2",
+    "Neither 1 nor 2"
+   ]
+  },
+  "247": {
+   "options": [
+    "A member voluntarily gives up membership of their political party.",
+    "A member votes against their party's whip in a confidence motion.",
+    "A member merges with another party when two-thirds of the party's legislators agree.",
+    "A member abstains from voting on a financial bill despite a party whip."
+   ]
+  },
+  "248": {
+   "options": [
+    "Rajya Sabha can reject a Money Bill, but Lok Sabha can override it with a joint sitting.",
+    "Rajya Sabha can only recommend amendments to a Money Bill, which Lok Sabha may accept or reject.",
+    "Both Houses have equal power to introduce a Money Bill.",
+    "Rajya Sabha has the power to veto the annual budget."
+   ]
+  },
+  "249": {
+   "options": [
+    "Freedom from arrest in civil cases during the session and 40 days before and after.",
+    "Freedom of speech in Parliament without being subject to any court proceedings.",
+    "Right to exclude strangers from the House during debates.",
+    "Exemption from jury service."
+   ]
+  },
+  "250": {
+   "options": [
+    "Only 1",
+    "Only 2",
+    "Both 1 and 2",
+    "Neither 1 nor 2"
+   ]
+  },
+  "251": {
+   "options": [
+    "It automatically becomes law after six months.",
+    "It lapses and must be reintroduced in the new Lok Sabha.",
+    "It is referred to the Rajya Sabha for final decision.",
+    "It is sent to the President for promulgation as an ordinance."
+   ]
+  },
+  "252": {
+   "options": [
+    "It is summoned by the President to resolve a deadlock on any bill, including Money Bills.",
+    "It is presided over by the Speaker of the Lok Sabha, and decisions are taken by a simple majority.",
+    "It can be convened only after the Rajya Sabha rejects a bill twice.",
+    "It requires a two-thirds majority of the total membership to pass a bill."
+   ]
+  },
+  "253": {
+   "options": [
+    "Starred question",
+    "Unstarred question",
+    "Short notice question",
+    "Supplementary question"
+   ]
+  },
+  "254": {
+   "options": [
+    "It examines the accounts of the government and the appropriation of funds, and its chairman is from the ruling party.",
+    "It examines the reports of the Comptroller and Auditor General (CAG), and its chairman is from the opposition.",
+    "It is a joint committee of both Houses, and its members are nominated by the President.",
+    "It has the power to summon the Prime Minister for questioning on financial matters."
+   ]
+  },
+  "265": {
+   "options": [
+    "A nominated member who joins a political party after six months is disqualified.",
+    "A split by one-third of the members of a political party is no longer a valid ground for exemption.",
+    "The Speaker's decision on disqualification is subject to judicial review only after the term of the House ends.",
+    "A member expelled by their political party is automatically disqualified from the House."
+   ]
+  },
+  "266": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "267": {
+   "options": [
+    "By a resolution passed by a simple majority of the Lok Sabha.",
+    "By a resolution passed by a majority of all members of the Lok Sabha, with 14 days' notice.",
+    "By the President on the recommendation of the Election Commission.",
+    "By a resolution passed by both Houses of Parliament in a joint sitting."
+   ]
+  },
+  "268": {
+   "options": [
+    "Freedom of speech in Parliament.",
+    "Immunity from civil arrest during the session.",
+    "Right to exclude strangers from the House.",
+    "Right to publish any defamatory matter about a citizen outside the House."
+   ]
+  },
+  "269": {
+   "options": [
+    "A bill pending in the Rajya Sabha that was passed by the Lok Sabha earlier.",
+    "A bill originating in the Rajya Sabha and pending there.",
+    "A bill passed by both Houses but awaiting Presidential assent.",
+    "A joint sitting bill pending in the Rajya Sabha."
+   ]
+  },
+  "270": {
+   "options": [
+    "Determining whether a bill is a Money Bill.",
+    "Resolving a conflict between the Lok Sabha and Rajya Sabha on a constitutional amendment.",
+    "Adjudicating a dispute over whether a state law encroaches upon a Union List subject.",
+    "Deciding the quorum requirement for a joint sitting."
+   ]
+  },
+  "271": {
+   "options": [
+    "Public Accounts Committee",
+    "Estimates Committee",
+    "Committee on Public Undertakings",
+    "Committee on Government Assurances"
+   ]
+  },
+  "272": {
+   "options": [
+    "A grant made in advance for a part of the financial year pending the passage of the budget.",
+    "A final vote on the entire budget after the demands for grants are passed.",
+    "A vote to reduce the salary of a minister as a disciplinary measure.",
+    "A vote to approve supplementary grants for unforeseen expenditure."
+   ]
+  },
+  "273": {
+   "options": [
+    "Election of the President.",
+    "Extent of executive power of the Union.",
+    "Representation of states in Parliament.",
+    "Abolition of the Legislative Council in a state."
+   ]
+  },
+  "274": {
+   "options": [
+    "It can be moved only in the Rajya Sabha.",
+    "It is a device to reduce the demand for grant to Re. 1.",
+    "It is used to challenge the policy underlying a demand for grant.",
+    "It is automatically passed if the Speaker does not object."
+   ]
+  }
+ }
+}

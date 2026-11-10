@@ -30,7 +30,21 @@
   ]
  },
  "27": "retire",
- "63": "retire",
+ "63": {
+  "stem": "Match the following:",
+  "L": [
+   "Supreme Court",
+   "District Court",
+   "PIL"
+  ],
+  "R": [
+   "Apex Court",
+   "Subordinate Court",
+   "Public Interest Litigation"
+  ],
+  "recovered": true,
+  "why": "Supreme Court – Apex Court; District Court – Subordinate Court; PIL – Public Interest Litigation."
+ },
  "120": {
   "lh": "Method",
   "rh": "Description",

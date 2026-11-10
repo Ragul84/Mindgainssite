@@ -1,0 +1,101 @@
+{
+ "retire": [],
+ "fix": {
+  "10": {
+   "options": [
+    "Sumerian",
+    "Egyptian",
+    "Indus Valley",
+    "Roman"
+   ]
+  },
+  "11": {
+   "options": [
+    "It established Christianity as the official state religion.",
+    "It outlawed all pagan religions within the empire.",
+    "It granted religious tolerance to Christians throughout the empire.",
+    "It initiated the construction of the Hagia Sophia."
+   ]
+  },
+  "12": {
+   "options": [
+    "The rise of the Sassanid Empire in Persia.",
+    "Increased trade with Eastern civilizations.",
+    "Invasions by Germanic tribes and internal political instability.",
+    "The conversion of emperors to Christianity."
+   ]
+  },
+  "13": {
+   "options": [
+    "England",
+    "France",
+    "Italy",
+    "Germany"
+   ]
+  },
+  "14": {
+   "options": [
+    "Jean-Jacques Rousseau",
+    "Voltaire",
+    "John Locke",
+    "Baron de Montesquieu"
+   ]
+  },
+  "18": {
+   "options": [
+    "Roman",
+    "Greek",
+    "Egyptian",
+    "Mesopotamian"
+   ]
+  },
+  "19": {
+   "options": [
+    "Julius Caesar",
+    "Augustus",
+    "Nero",
+    "Constantine"
+   ]
+  },
+  "20": {
+   "options": [
+    "Sumerian",
+    "Egyptian",
+    "Indus Valley",
+    "Mesopotamian"
+   ]
+  },
+  "21": {
+   "options": [
+    "Corinth",
+    "Thebes",
+    "Athens",
+    "Syracuse"
+   ]
+  },
+  "22": {
+   "options": [
+    "The Punic Wars",
+    "The assassination of Julius Caesar",
+    "The Battle of Adrianople",
+    "The Edict of Milan"
+   ]
+  },
+  "23": {
+   "options": [
+    "Ancient Egypt",
+    "Imperial China",
+    "Persian Empire",
+    "Maurya Empire"
+   ]
+  },
+  "24": {
+   "options": [
+    "East Asia",
+    "Sub-Saharan Africa",
+    "Europe",
+    "The Americas"
+   ]
+  }
+ }
+}

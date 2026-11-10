@@ -1,0 +1,85 @@
+{
+ "retire": [],
+ "fix": {
+  "81": {
+   "options": [
+    "Capital account",
+    "Current account",
+    "Financial account",
+    "Official reserve account"
+   ]
+  },
+  "82": {
+   "options": [
+    "Increase in imports and decrease in exports",
+    "Decrease in both imports and exports",
+    "Increase in exports and decrease in imports",
+    "No impact on trade balance"
+   ]
+  },
+  "83": {
+   "options": [
+    "Open market operations",
+    "Cash reserve ratio",
+    "Repo rate",
+    "All of the above"
+   ]
+  },
+  "84": {
+   "options": [
+    "Trade deficit",
+    "Balance of trade",
+    "Trade surplus",
+    "Current account deficit"
+   ]
+  },
+  "85": {
+   "options": [
+    "Increase in foreign investment",
+    "Decrease in government spending",
+    "Increase in interest rates",
+    "All of the above"
+   ]
+  },
+  "86": {
+   "options": [
+    "Exchange rates",
+    "Government policies",
+    "Natural disasters",
+    "Population growth"
+   ]
+  },
+  "87": {
+   "options": [
+    "Appreciation of its currency",
+    "Depreciation of its currency",
+    "Increase in foreign exchange reserves",
+    "Decrease in inflation"
+   ]
+  },
+  "88": {
+   "options": [
+    "Capital account",
+    "Current account",
+    "Financial account",
+    "Official reserve account"
+   ]
+  },
+  "89": {
+   "options": [
+    "Increase in money supply",
+    "Decrease in interest rates",
+    "Increase in interest rates",
+    "Decrease in reserve requirements"
+   ]
+  },
+  "90": {
+   "options": [
+    "Depreciation of the currency",
+    "Appreciation of the currency",
+    "No impact on the exchange rate",
+    "Increase in inflation"
+   ]
+  }
+ }
+}

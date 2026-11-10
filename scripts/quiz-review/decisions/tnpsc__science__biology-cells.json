@@ -1,0 +1,77 @@
+{
+ "retire": [],
+ "fix": {
+  "51": {
+   "options": [
+    "1,2 and 3 only",
+    "2 and 4 only",
+    "1,3 and 4 only",
+    "1,2,3 and 4"
+   ]
+  },
+  "52": {
+   "options": [
+    "Smooth endoplasmic reticulum",
+    "Rough endoplasmic reticulum",
+    "Peroxisomes",
+    "Lysosomes"
+   ]
+  },
+  "53": {
+   "options": [
+    "Both A and R are true and R is the correct explanation of A",
+    "Both A and R are true but R is not the correct explanation of A",
+    "A is true but R is false",
+    "A is false but R is true"
+   ]
+  },
+  "54": {
+   "options": [
+    "Singer and Nicolson",
+    "Watson and Crick",
+    "Schleiden and Schwann",
+    "Robert Hooke"
+   ]
+  },
+  "55": {
+   "options": [
+    "1,2 and 3 only",
+    "2,3 and 4 only",
+    "1,2,3 and 4",
+    "1 and 4 only"
+   ]
+  },
+  "56": {
+   "options": [
+    "3 only",
+    "1 and 3",
+    "2 and 4",
+    "1,2 and 4"
+   ]
+  },
+  "57": {
+   "options": [
+    "Both A and R are true and R is the correct explanation of A",
+    "Both A and R are true but R is not the correct explanation",
+    "A is true but R is false",
+    "A is false but R is true"
+   ]
+  },
+  "58": {
+   "options": [
+    "Synthesis of lipids",
+    "Storage of calcium ions",
+    "Synthesis of ATP",
+    "Detoxification"
+   ]
+  },
+  "59": {
+   "options": [
+    "1,2 and 3 only",
+    "1,2 and 4 only",
+    "2,3 and 4 only",
+    "1,3 and 4 only"
+   ]
+  }
+ }
+}

@@ -1,0 +1,189 @@
+{
+ "retire": [],
+ "fix": {
+  "99": {
+   "options": [
+    "Articles 36 to 51",
+    "Articles 14 to 35",
+    "Articles 52 to 151",
+    "Articles 12 to 35"
+   ]
+  },
+  "100": {
+   "options": [
+    "Article 45",
+    "Article 21A",
+    "Article 41",
+    "Article 46"
+   ]
+  },
+  "101": {
+   "options": [
+    "Organization of village panchayats",
+    "Prohibition of intoxicating drinks",
+    "Promotion of cooperative societies",
+    "Uniform civil code for the citizens"
+   ]
+  },
+  "102": {
+   "options": [
+    "Article 44",
+    "Article 43",
+    "Article 47",
+    "Article 48"
+   ]
+  },
+  "103": {
+   "options": [
+    "Golak Nath case",
+    "Kesavananda Bharati case",
+    "Champakam Dorairajan case",
+    "Minerva Mills case"
+   ]
+  },
+  "104": {
+   "options": [
+    "42nd Amendment",
+    "44th Amendment",
+    "86th Amendment",
+    "97th Amendment"
+   ]
+  },
+  "105": {
+   "options": [
+    "Article 48",
+    "Article 48A",
+    "Article 49",
+    "Article 50"
+   ]
+  },
+  "106": {
+   "options": [
+    "Article 39",
+    "Article 41",
+    "Article 42",
+    "Article 47"
+   ]
+  },
+  "126": {
+   "options": [
+    "Article 40",
+    "Article 43",
+    "Article 47",
+    "Article 48"
+   ]
+  },
+  "127": {
+   "options": [
+    "Article 46",
+    "Article 38",
+    "Article 39",
+    "Article 41"
+   ]
+  },
+  "128": {
+   "options": [
+    "Part III",
+    "Part IV",
+    "Part IV-A",
+    "Part V"
+   ]
+  },
+  "129": {
+   "options": [
+    "Kesavananda Bharati case",
+    "Minerva Mills case",
+    "Golaknath case",
+    "S.R. Bommai case"
+   ]
+  },
+  "130": {
+   "options": [
+    "Article 44",
+    "Article 45",
+    "Article 39A",
+    "Article 43A"
+   ]
+  },
+  "131": {
+   "options": [
+    "Judiciary",
+    "Executive",
+    "Legislature",
+    "Election Commission"
+   ]
+  },
+  "132": {
+   "options": [
+    "42nd Amendment",
+    "44th Amendment",
+    "73rd Amendment",
+    "86th Amendment"
+   ]
+  },
+  "133": {
+   "options": [
+    "Article 41 (right to work and public assistance)",
+    "Article 47 (duty to raise nutrition levels)",
+    "Article 39 (adequate means of livelihood)",
+    "Article 45 (early childhood care and education)"
+   ]
+  },
+  "206": {
+   "options": [
+    "Ireland",
+    "USA",
+    "Canada",
+    "Australia"
+   ]
+  },
+  "207": {
+   "options": [
+    "Enforceable by courts",
+    "Justiciable in nature",
+    "Non-justiciable in nature",
+    "Subject to judicial review"
+   ]
+  },
+  "208": {
+   "options": [
+    "42nd Amendment",
+    "44th Amendment",
+    "24th Amendment",
+    "73rd Amendment"
+   ]
+  },
+  "209": {
+   "options": [
+    "Article 44",
+    "Article 39",
+    "Article 48",
+    "Article 51"
+   ]
+  },
+  "210": {
+   "options": [
+    "Minerva Mills case",
+    "Kesavananda Bharati case",
+    "Golaknath case",
+    "Shankari Prasad case"
+   ]
+  },
+  "211": {
+   "options": [
+    "Article 40",
+    "Article 43",
+    "Article 45",
+    "Article 47"
+   ]
+  },
+  "212": {
+   "options": [
+    "Article 39(a) - Right to adequate livelihood",
+    "Article 41 - Right to work and public assistance",
+    "Article 45 - Free and compulsory education",
+    "Article 47 - Duty to raise nutrition levels"
+   ]
+  }
+ }
+}

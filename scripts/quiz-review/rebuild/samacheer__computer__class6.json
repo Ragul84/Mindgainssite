@@ -1,5 +1,19 @@
 {
- "31": "retire",
+ "31": {
+  "stem": "Match the computer component with its function:",
+  "L": [
+   "Keyboard",
+   "Monitor",
+   "CPU"
+  ],
+  "R": [
+   "Input device",
+   "Output device",
+   "Processing unit"
+  ],
+  "recovered": true,
+  "why": "Keyboard – Input device; Monitor – Output device; CPU – Processing unit."
+ },
  "99": "retire",
  "108": "retire",
  "120": "retire",

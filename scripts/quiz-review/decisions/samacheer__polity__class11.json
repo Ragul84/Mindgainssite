@@ -1,10 +1,17 @@
 {
  "retire": [
   12,
+  13,
+  14,
   27,
+  74,
+  75,
+  76,
   145,
   146,
   153,
+  155,
+  156,
   177,
   178,
   179,
@@ -44,6 +51,21 @@
    ],
    "answer_index": 0,
    "explanation": "Periyar championed social justice, Singaravelar communism, Strabo was a Greek geographer and Thiruvalluvar set out political ideas in the Thirukkural."
+  },
+  "118": {
+   "question": "What is the approximate date range of Sangam literature?"
+  },
+  "169": {
+   "question": "Which of the following are mentioned as advocates of Anarchism? 1. Peter Kropotkin 2. Leo Tolstoy 3. Bakunin 4. John Stuart Mill"
+  },
+  "212": {
+   "question": "Democracy derives its authority from:"
+  },
+  "218": {
+   "question": "What is the primary source of authority for democracy?"
+  },
+  "219": {
+   "question": "Which of the following is NOT a characteristic of public opinion?"
   }
  }
 }

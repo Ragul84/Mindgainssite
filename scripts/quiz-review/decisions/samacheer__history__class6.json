@@ -1,0 +1,149 @@
+{
+ "retire": [],
+ "fix": {
+  "155": {
+   "options": [
+    "Ganges",
+    "Indus",
+    "Yamuna",
+    "Brahmaputra"
+   ]
+  },
+  "156": {
+   "options": [
+    "Vedas",
+    "Sangam literature",
+    "Puranas",
+    "Buddhist texts"
+   ]
+  },
+  "157": {
+   "options": [
+    "Both A and R are true and R is the correct explanation",
+    "Both A and R are true but R is not the correct explanation",
+    "A is true, R is false",
+    "A is false, R is true"
+   ]
+  },
+  "158": {
+   "options": [
+    "i, ii, iii",
+    "i, iii, iv",
+    "ii, iii, iv",
+    "i, ii, iv"
+   ]
+  },
+  "230": {
+   "options": [
+    "Vedic Civilization",
+    "Indus Valley Civilization",
+    "Mauryan Empire",
+    "Gupta Empire"
+   ]
+  },
+  "231": {
+   "options": [
+    "Dancing Girl of Mohenjo-Daro",
+    "Nataraja (Shiva as Lord of Dance)",
+    "Mother Goddess figurine",
+    "Lion capital of Ashoka"
+   ]
+  },
+  "233": {
+   "options": [
+    "North India",
+    "Deccan",
+    "Tamilakam (South India)",
+    "Eastern India"
+   ]
+  },
+  "234": {
+   "options": [
+    "I and II only",
+    "II and III only",
+    "I, II and III",
+    "I only"
+   ]
+  },
+  "235": {
+   "options": [
+    "Rajendra Chola",
+    "Raja Raja Chola I",
+    "Kulothunga Chola I",
+    "Vikrama Chola"
+   ]
+  },
+  "343": {
+   "options": [
+    "Public bathing and religious rituals",
+    "Royal swimming pool",
+    "Grain storage",
+    "Drainage filtration"
+   ]
+  },
+  "344": {
+   "options": [
+    "Pandya",
+    "Chola",
+    "Chera",
+    "Pallava"
+   ]
+  },
+  "345": {
+   "options": [
+    "(i) and (ii) only",
+    "(i), (ii), and (iii) only",
+    "(ii), (iii), and (iv) only",
+    "All of the above"
+   ]
+  },
+  "346": {
+   "options": [
+    "Chandragupta Maurya",
+    "Ashoka",
+    "Akbar",
+    "Qutb-ud-din Aibak"
+   ]
+  },
+  "347": {
+   "options": [
+    "Itihasa (epics)",
+    "Smriti (law books)",
+    "Purana (ancient lore)",
+    "Agama (temple rituals)"
+   ]
+  },
+  "348": {
+   "options": [
+    "Deccan Plateau (Telangana)",
+    "Tamil Nadu",
+    "Gujarat",
+    "Bengal"
+   ]
+  },
+  "349": {
+   "options": [
+    "Rajaraja Chola I",
+    "Rajendra Chola I",
+    "Kulothunga Chola I",
+    "Vijayalaya Chola"
+   ]
+  },
+  "350": {
+   "options": [
+    "A military council",
+    "An assembly of poets and scholars",
+    "A trade guild",
+    "A royal court"
+   ]
+  },
+  "351": {
+   "options": [
+    "The Slave dynasty was founded by Qutb-ud-din Aibak.",
+    "Alauddin Khalji introduced market control policies.",
+    "Muhammad bin Tughlaq shifted the capital to Daulatabad.",
+    "All of the above"
+   ]
+  }
+ }
+}

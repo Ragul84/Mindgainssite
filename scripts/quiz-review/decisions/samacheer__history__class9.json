@@ -4,14 +4,10 @@
   350,
   376,
   401,
-  402,
   403,
   404,
-  428,
   429,
-  430,
   431,
-  485,
   486,
   528,
   557
@@ -109,6 +105,208 @@
    ],
    "answer_index": 1,
    "explanation": "Archaeology studies material remains, geology rock layers and palaeoanthropology human fossils."
+  },
+  "402": {
+   "question": "Match the components of the biosphere: List I A. Lithosphere B. Hydrosphere C. Atmosphere D. Biosphere List II 1. Air 2. Water 3. Land/Soil 4. Life",
+   "options": [
+    "A-4, B-2, C-1, D-3",
+    "A-3, B-2, C-4, D-1",
+    "A-3, B-2, C-1, D-4",
+    "A-1, B-2, C-3, D-4"
+   ],
+   "answer_index": 2,
+   "explanation": "Lithosphere – Land/Soil; Hydrosphere – Water; Atmosphere – Air; Biosphere – Life.",
+   "retired": false
+  },
+  "428": {
+   "question": "Match the Latin root to its meaning: List I A. Colonus B. Imperium List II 1. Farmer 2. To command",
+   "options": [
+    "A-1, B-2",
+    "A-2, B-1"
+   ],
+   "answer_index": 0,
+   "explanation": "Colonus – Farmer; Imperium – To command.",
+   "retired": false
+  },
+  "430": {
+   "question": "Match the term to its characteristic: List I A. Colonialism B. Imperialism List II 1. Transfer of population 2. Exercise of power",
+   "options": [
+    "A-1, B-2",
+    "A-2, B-1"
+   ],
+   "answer_index": 0,
+   "explanation": "Colonialism – Transfer of population; Imperialism – Exercise of power.",
+   "retired": false
+  },
+  "485": {
+   "question": "Match the following sources: List I A. Classical Literature B. Epigraphy C. Material Culture D. Foreign Literature List II 1. Archaeological excavations 2. Inscriptions 3. Sangam corpus 4. Non-Tamil texts",
+   "options": [
+    "A-3, B-4, C-1, D-2",
+    "A-3, B-2, C-1, D-4",
+    "A-2, B-3, C-1, D-4",
+    "A-3, B-2, C-4, D-1"
+   ],
+   "answer_index": 1,
+   "explanation": "Classical Literature – Sangam corpus; Epigraphy – Inscriptions; Material Culture – Archaeological excavations; Foreign Literature – Non-Tamil texts.",
+   "retired": false
+  },
+  "66": {
+   "options": [
+    "Period before the invention of writing",
+    "Period after the invention of writing",
+    "Period of the Industrial Revolution",
+    "Period of the Middle Ages"
+   ]
+  },
+  "68": {
+   "options": [
+    "Rule by a single person",
+    "Rule by the people",
+    "Rule by the military",
+    "Rule by a king"
+   ]
+  },
+  "69": {
+   "options": [
+    "Monarchy",
+    "Dictatorship",
+    "Democratic government",
+    "Theocracy"
+   ]
+  },
+  "70": {
+   "options": [
+    "Right to education",
+    "Right to life",
+    "Right to discriminate",
+    "Right to freedom of speech"
+   ]
+  },
+  "71": {
+   "options": [
+    "France",
+    "Germany",
+    "England",
+    "America"
+   ]
+  },
+  "73": {
+   "options": [
+    "Endogenetic and Exogenetic",
+    "Volcanic and Seismic",
+    "Erosional and Depositional",
+    "Weathering and Erosion"
+   ]
+  },
+  "74": {
+   "options": [
+    "Coal",
+    "Petroleum",
+    "Solar energy",
+    "Natural gas"
+   ]
+  },
+  "136": {
+   "options": [
+    "Razia Sultana",
+    "Chand Bibi",
+    "Rani Durgavati",
+    "Meerabai"
+   ]
+  },
+  "137": {
+   "options": [
+    "(i) and (ii)",
+    "(i) and (iii)",
+    "(ii) and (iv)",
+    "(iii) and (iv)"
+   ]
+  },
+  "143": {
+   "options": [
+    "Both Buddhism and Jainism rejected the authority of the Vedas.",
+    "Buddha advocated the caste system.",
+    "Mahavira was the founder of Buddhism.",
+    "The Upanishads are part of the Vedas."
+   ]
+  },
+  "174": {
+   "options": [
+    "Paiyampalli",
+    "Adichanallur",
+    "Arikamedu",
+    "Kodumanal"
+   ]
+  },
+  "175": {
+   "options": [
+    "(i) and (iv) only",
+    "(i), (ii) and (iii)",
+    "(ii) and (iii) only",
+    "(i) only"
+   ]
+  },
+  "179": {
+   "options": [
+    "(i) and (ii) only",
+    "(i), (ii) and (iv) only",
+    "(ii), (iii) and (iv) only",
+    "All of the above"
+   ]
+  },
+  "204": {
+   "options": [
+    "Athens",
+    "Corinth",
+    "Sparta",
+    "Thebes"
+   ]
+  },
+  "205": {
+   "options": [
+    "Periodic elections",
+    "Rule of law",
+    "One-party rule",
+    "Protection of fundamental rights"
+   ]
+  },
+  "206": {
+   "options": [
+    "73rd Amendment",
+    "74th Amendment",
+    "42nd Amendment",
+    "44th Amendment"
+   ]
+  },
+  "245": {
+   "question": "Which of the following periods is “Evolution of Humans and Society – Prehistoric Period”?"
+  },
+  "247": {
+   "question": "“The Beginning of the Modern Age”, which European power first established a trading post at Madras (Chennai)?"
+  },
+  "301": {
+   "question": "‘Colonialism in Asia and Africa’, which of the following policies was NOT a feature of British rule in India?"
+  },
+  "378": {
+   "question": "Which of the following is an example of a small unit of an ecosystem?"
+  },
+  "381": {
+   "question": "Which of the following is NOT listed as an example of an ecosystem?"
+  },
+  "407": {
+   "question": "When did decolonisation generally happen?"
+  },
+  "438": {
+   "question": "What is the primary objective of studying indigenous stories about disasters?"
+  },
+  "502": {
+   "question": "Who are called employees?"
+  },
+  "508": {
+   "question": "What is the nature of employment in India?"
+  },
+  "515": {
+   "question": "Which of the following are essential needs? I. Food, II. Clothes, III. Shelter, IV. Employment."
   }
  }
 }

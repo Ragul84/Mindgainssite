@@ -2,8 +2,12 @@
  "retire": [
   65,
   93,
+  215,
+  216,
   369,
   371,
+  376,
+  392,
   455
  ],
  "fix": {
@@ -174,6 +178,51 @@
    ],
    "answer_index": 0,
    "explanation": "Density is people per unit area, migration is movement, overpopulation exceeds capacity, demography is the statistical study and growth is the change over time."
+  },
+  "7": {
+   "question": "What is one of the greatest challenges related to population?"
+  },
+  "66": {
+   "question": "How many persons are born every day in the world?"
+  },
+  "72": {
+   "question": "How is the distribution of world population?"
+  },
+  "79": {
+   "question": "Which of the following are attributes of population study? I. Structure II. Distribution III. Size IV. Location changes"
+  },
+  "81": {
+   "question": "Which of the following are components of population change? I. Birth II. Migration III. Aging IV. Death"
+  },
+  "187": {
+   "question": "Which fuel is considered as the future fuel?"
+  },
+  "217": {
+   "question": "Which of the following is NOT a cultural parameter?"
+  },
+  "223": {
+   "question": "Which of the following is a cultural component?"
+  },
+  "250": {
+   "question": "What is the primary focus of sustainable development?"
+  },
+  "261": {
+   "question": "Which of the following best describes the interconnectivity?"
+  },
+  "340": {
+   "question": "Which of the following is identified as an important future fuel?"
+  },
+  "341": {
+   "question": "What is the primary basis for the economic development of any nation?"
+  },
+  "343": {
+   "question": "What is the speed of Voyager 1?"
+  },
+  "346": {
+   "question": "What limits the effectiveness of human resources?"
+  },
+  "456": {
+   "question": "What are some of the factors that make our planet increasingly precarious?"
   }
  }
 }

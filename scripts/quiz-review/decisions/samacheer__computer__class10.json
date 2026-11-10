@@ -1,7 +1,7 @@
 {
  "retire": [
+  39,
   153,
-  156,
   223,
   251
  ],
@@ -287,6 +287,26 @@
    ],
    "answer_index": 0,
    "explanation": "DROP TABLE removes a table, DELETE removes rows, CREATE TABLE makes a new table and ALTER TABLE changes its structure."
+  },
+  "156": {
+   "question": "Match the device to its symbol characteristic: List I A. Diode B. Transistor C. Resistor List II 1. Arrowhead 2. Three terminals 3. Zig-zag line",
+   "options": [
+    "A-1, B-2, C-3",
+    "A-3, B-2, C-1",
+    "A-2, B-1, C-3",
+    "A-1, B-3, C-2"
+   ],
+   "answer_index": 0,
+   "explanation": "Diode – Arrowhead; Transistor – Three terminals; Resistor – Zig-zag line.",
+   "retired": false
+  },
+  "51": {
+   "options": [
+    "INSERT",
+    "UPDATE",
+    "SELECT",
+    "DELETE"
+   ]
   }
  }
 }

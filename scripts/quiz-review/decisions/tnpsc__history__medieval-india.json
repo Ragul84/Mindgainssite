@@ -1,0 +1,85 @@
+{
+ "retire": [],
+ "fix": {
+  "269": {
+   "options": [
+    "Hampi",
+    "Madurai",
+    "Thanjavur",
+    "Kanchipuram"
+   ]
+  },
+  "270": {
+   "options": [
+    "Raja Raja Chola I",
+    "Rajendra Chola I",
+    "Karikala Chola",
+    "Parantaka Chola I"
+   ]
+  },
+  "271": {
+   "options": [
+    "Siraj-ud-Daulah",
+    "Mir Jafar",
+    "Tipu Sultan",
+    "Shuja-ud-Daulah"
+   ]
+  },
+  "272": {
+   "options": [
+    "Pandya",
+    "Chola",
+    "Chera",
+    "Pallava"
+   ]
+  },
+  "273": {
+   "options": [
+    "Samudragupta",
+    "Chandragupta Maurya",
+    "Ashoka",
+    "Harshavardhana"
+   ]
+  },
+  "274": {
+   "options": [
+    "Shivaji",
+    "Baji Rao I",
+    "Sambhaji",
+    "Peshwa Madhav Rao"
+   ]
+  },
+  "275": {
+   "options": [
+    "Mohenjo-Daro",
+    "Harappa",
+    "Lothal",
+    "Dholavira"
+   ]
+  },
+  "276": {
+   "options": [
+    "Periyar E. V. Ramasamy",
+    "B. R. Ambedkar",
+    "Jyotiba Phule",
+    "Raja Ram Mohan Roy"
+   ]
+  },
+  "277": {
+   "options": [
+    "Rig Veda",
+    "Sama Veda",
+    "Yajur Veda",
+    "Atharva Veda"
+   ]
+  },
+  "278": {
+   "options": [
+    "Narasimhavarman I",
+    "Mahendravarman I",
+    "Simhavishnu",
+    "Nandivarman II"
+   ]
+  }
+ }
+}

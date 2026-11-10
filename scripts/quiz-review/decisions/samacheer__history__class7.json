@@ -1,0 +1,159 @@
+{
+ "retire": [
+  251
+ ],
+ "fix": {
+  "50": {
+   "options": [
+    "Khilji dynasty",
+    "Tughlaq dynasty",
+    "Lodhi dynasty",
+    "Sayyid dynasty"
+   ]
+  },
+  "51": {
+   "options": [
+    "1757",
+    "1764",
+    "1773",
+    "1799"
+   ]
+  },
+  "52": {
+   "options": [
+    "It emphasized devotion to a personal god.",
+    "It rejected the caste system.",
+    "It was limited to North India only.",
+    "It supported idol worship strictly."
+   ]
+  },
+  "53": {
+   "options": [
+    "Shivaji",
+    "Sambhaji",
+    "Baji Rao I",
+    "Pratap Singh"
+   ]
+  },
+  "54": {
+   "options": [
+    "Rock edicts",
+    "Inscriptions",
+    "The Vedas",
+    "Coins"
+   ]
+  },
+  "55": {
+   "options": [
+    "He reimposed jizya tax.",
+    "He built the Taj Mahal.",
+    "He was known for religious tolerance.",
+    "He expanded the empire to its greatest extent."
+   ]
+  },
+  "77": {
+   "options": [
+    "Kalinga war – Ashoka",
+    "Battle of Talikota – Harsha",
+    "Battle of Plassey – Rajendra Chola",
+    "Battle of Takkolam – Pulakesin II"
+   ]
+  },
+  "79": {
+   "options": [
+    "The Pandyas had trade relations with the Roman Empire.",
+    "Madurai was the capital of the Pandyas.",
+    "The Pandya kingdom declined after the invasion of the Cholas.",
+    "The Pandyas never built any temples."
+   ]
+  },
+  "98": {
+   "options": [
+    "Tolkappiyam",
+    "Arthashastra",
+    "Indica",
+    "Rajatarangini"
+   ]
+  },
+  "100": {
+   "options": [
+    "Emphasis on personal devotion to a deity",
+    "Rejection of caste discrimination",
+    "Use of Persian language in hymns",
+    "Composition of devotional poetry in Tamil"
+   ]
+  },
+  "101": {
+   "options": [
+    "It was founded by Harihara and Bukka.",
+    "The capital was Hampi.",
+    "It was a major center of trade with the Roman Empire.",
+    "Both A and B"
+   ]
+  },
+  "103": {
+   "options": [
+    "Lord Dalhousie – Battle of Plassey",
+    "Lord Wellesley – Subsidiary Alliance",
+    "Lord Cornwallis – Doctrine of Lapse",
+    "Lord Curzon – Permanent Settlement"
+   ]
+  },
+  "104": {
+   "options": [
+    "Right to vote",
+    "Right to education",
+    "To protect the environment",
+    "Right to equality"
+   ]
+  },
+  "127": {
+   "options": [
+    "Akbar introduced the Din-i-Ilahi.",
+    "Shah Jahan built the Taj Mahal.",
+    "Aurangzeb followed a policy of religious tolerance.",
+    "Babur founded the Mughal Empire in 1526."
+   ]
+  },
+  "131": {
+   "options": [
+    "The Slave dynasty was founded by Qutb-ud-din Aibak.",
+    "Alauddin Khalji introduced market control measures.",
+    "Muhammad bin Tughlaq shifted the capital to Daulatabad.",
+    "The Lodi dynasty was the last dynasty of the Delhi Sultanate."
+   ]
+  },
+  "145": {
+   "options": [
+    "Both (A) and (B) are true",
+    "Both (A) and (B) are false",
+    "(A) is true, (B) is false",
+    "(A) is false, (B) is true"
+   ]
+  },
+  "147": {
+   "options": [
+    "Inscriptions",
+    "Coins",
+    "Manuscripts",
+    "Television"
+   ]
+  },
+  "148": {
+   "options": [
+    "Rajendra Chola – built Gangaikonda Cholapuram",
+    "Krishnadevaraya – ruled Vijayanagara in the 14th century",
+    "Iltutmish – introduced the Diwan-i-Kohi",
+    "Akbar – built the Qutub Minar"
+   ]
+  },
+  "149": {
+   "options": [
+    "Kamban",
+    "Tulsidas",
+    "Valmiki",
+    "Vedanta Desika"
+   ]
+  }
+ }
+}

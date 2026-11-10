@@ -1,0 +1,93 @@
+{
+ "retire": [],
+ "fix": {
+  "190": {
+   "options": [
+    "Kerala, Karnataka, Tamil Nadu, Puducherry",
+    "Karnataka, Tamil Nadu, Andhra Pradesh, Puducherry",
+    "Kerala, Karnataka, Tamil Nadu, Andhra Pradesh",
+    "Karnataka, Kerala, Tamil Nadu, Goa"
+   ]
+  },
+  "191": {
+   "options": [
+    "Laterite soil",
+    "Red soil",
+    "Alluvial soil",
+    "Black soil"
+   ]
+  },
+  "192": {
+   "options": [
+    "Summer",
+    "Winter",
+    "South-West Monsoon",
+    "North-East Monsoon"
+   ]
+  },
+  "193": {
+   "options": [
+    "Palar",
+    "Vaigai",
+    "Thamirabarani",
+    "Cauvery"
+   ]
+  },
+  "194": {
+   "options": [
+    "Nilgiri Hills",
+    "Palani Hills",
+    "Anaimalai Hills",
+    "Cardamom Hills"
+   ]
+  },
+  "195": {
+   "options": [
+    "Chennai",
+    "Ennore",
+    "Tuticorin",
+    "Mangaluru"
+   ]
+  },
+  "196": {
+   "options": [
+    "Thoothukudi",
+    "Ramanathapuram",
+    "Tirunelveli",
+    "Kanyakumari"
+   ]
+  },
+  "197": {
+   "options": [
+    "Black soil",
+    "Laterite soil",
+    "Sandy loam soil",
+    "Clayey soil"
+   ]
+  },
+  "198": {
+   "options": [
+    "Bhavani",
+    "Vaigai",
+    "Cauvery",
+    "Amaravati"
+   ]
+  },
+  "208": {
+   "options": [
+    "North-East Monsoon",
+    "South-West Monsoon",
+    "Western Disturbances",
+    "Cyclonic Storms from Arabian Sea"
+   ]
+  },
+  "209": {
+   "options": [
+    "Indian Ocean",
+    "Pacific Ocean",
+    "Atlantic Ocean",
+    "Southern Ocean"
+   ]
+  }
+ }
+}

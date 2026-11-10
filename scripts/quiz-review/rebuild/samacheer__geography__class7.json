@@ -301,7 +301,23 @@
    "50-80 km"
   ]
  },
- "175": "retire",
+ "175": {
+  "stem": "Match the components of the biosphere:",
+  "L": [
+   "Biotic",
+   "Abiotic",
+   "Producer",
+   "Consumer"
+  ],
+  "R": [
+   "Living things",
+   "Non-living things",
+   "Green plants",
+   "Animals"
+  ],
+  "recovered": true,
+  "why": "Biotic – Living things; Abiotic – Non-living things; Producer – Green plants; Consumer – Animals."
+ },
  "176": {
   "lh": "Organism (grass → grasshopper → frog → snake)",
   "rh": "Role",

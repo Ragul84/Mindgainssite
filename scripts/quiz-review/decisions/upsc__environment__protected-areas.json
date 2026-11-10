@@ -1,0 +1,661 @@
+{
+ "retire": [],
+ "fix": {
+  "109": {
+   "options": [
+    "1 and 3 only",
+    "2 and 3 only",
+    "3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "110": {
+   "options": [
+    "1 and 2 only",
+    "1, 2, 3 and 4",
+    "1, 2 and 4 only",
+    "3 and 4 only"
+   ]
+  },
+  "111": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "112": {
+   "options": [
+    "1 only",
+    "2 only",
+    "1 and 3 only",
+    "2 and 3 only"
+   ]
+  },
+  "113": {
+   "options": [
+    "It must contain a legally protected core area",
+    "It must have a buffer zone with human settlements",
+    "It must be larger than 5,000 sq km in area",
+    "It should serve as an in-situ conservation site for biodiversity"
+   ]
+  },
+  "114": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "115": {
+   "options": [
+    "Conservation Reserve",
+    "Community Reserve",
+    "Wildlife Sanctuary",
+    "Reserved Forest"
+   ]
+  },
+  "116": {
+   "options": [
+    "They are legally protected under the Wildlife Protection Act, 1972",
+    "They are exclusively notified by the state government",
+    "They are designated under an international treaty for wetland conservation",
+    "Mining activities are completely prohibited inside a Ramsar Site"
+   ]
+  },
+  "117": {
+   "options": [
+    "Kaziranga National Park",
+    "Corbett National Park",
+    "Hemis National Park",
+    "Sundarbans National Park"
+   ]
+  },
+  "118": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "129": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "130": {
+   "options": [
+    "Boundaries of a national park cannot be altered without state legislature approval, while sanctuary boundaries can be changed by the state government.",
+    "Grazing of livestock is prohibited in national parks but may be allowed in sanctuaries.",
+    "National parks are exclusively for wildlife conservation, while sanctuaries allow limited human activities like collection of forest produce.",
+    "Prior permission is required for entry into a national park, but not for a wildlife sanctuary."
+   ]
+  },
+  "131": {
+   "options": [
+    "Chilika Lake",
+    "Keoladeo National Park",
+    "Loktak Lake",
+    "Dal Lake"
+   ]
+  },
+  "132": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "133": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only"
+   ]
+  },
+  "134": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "135": {
+   "options": [
+    "Wildlife Sanctuary",
+    "National Park",
+    "Community Reserve",
+    "Tiger Reserve Core"
+   ]
+  },
+  "136": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "137": {
+   "options": [
+    "Kaziranga National Park",
+    "Corbett National Park",
+    "Kanha National Park",
+    "Sundarbans National Park"
+   ]
+  },
+  "138": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "139": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "140": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "141": {
+   "options": [
+    "1 only",
+    "2 and 3 only",
+    "1 and 2 only",
+    "1, 2 and 3"
+   ]
+  },
+  "142": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "143": {
+   "options": [
+    "1 and 2 only",
+    "1 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "144": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "145": {
+   "options": [
+    "1 and 2 only",
+    "2 only",
+    "3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "146": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "147": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "148": {
+   "options": [
+    "1 only",
+    "2 only",
+    "1 and 3 only",
+    "2 and 3 only"
+   ]
+  },
+  "229": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "230": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "231": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "232": {
+   "options": [
+    "1 only",
+    "2 and 3 only",
+    "1, 2 and 3",
+    "2 only"
+   ]
+  },
+  "233": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "234": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "235": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "236": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "237": {
+   "options": [
+    "Silent Valley National Park",
+    "Koyna Wildlife Sanctuary",
+    "Kanha National Park",
+    "Kudremukh National Park"
+   ]
+  },
+  "238": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "300": {
+   "options": [
+    "1 only",
+    "1 and 3 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "301": {
+   "options": [
+    "Only one",
+    "Only two",
+    "Only three",
+    "All four"
+   ]
+  },
+  "302": {
+   "options": [
+    "1 only",
+    "1 and 3 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "303": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "1 and 3 only",
+    "2 and 3 only"
+   ]
+  },
+  "304": {
+   "options": [
+    "Wildlife Sanctuary → National Park → Tiger Reserve",
+    "Conservation Reserve → Community Reserve → Wildlife Sanctuary",
+    "Community Reserve → Conservation Reserve → Wildlife Sanctuary",
+    "Wildlife Sanctuary → Conservation Reserve → National Park"
+   ]
+  },
+  "305": {
+   "options": [
+    "1 and 2 only",
+    "1 and 3 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "306": {
+   "options": [
+    "Kaziranga National Park",
+    "Keoladeo National Park",
+    "Sundarbans National Park",
+    "Gir National Park"
+   ]
+  },
+  "307": {
+   "options": [
+    "1, 2 and 3 only",
+    "1, 2 and 4 only",
+    "2, 3 and 4 only",
+    "1, 2, 3 and 4"
+   ]
+  },
+  "308": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 only",
+    "2 and 3 only"
+   ]
+  },
+  "309": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "310": {
+   "options": [
+    "1 only",
+    "1 and 3 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "311": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "312": {
+   "options": [
+    "1 only",
+    "1 and 3 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "313": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "314": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "315": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "316": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "317": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "318": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "357": {
+   "options": [
+    "1 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "358": {
+   "options": [
+    "1, 2, 3",
+    "2, 3, 4",
+    "1, 3, 4",
+    "1, 2, 3, 4"
+   ]
+  },
+  "359": {
+   "options": [
+    "1 only",
+    "2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "360": {
+   "options": [
+    "1 and 2 only",
+    "1 only",
+    "2 only",
+    "1, 2 and 3"
+   ]
+  },
+  "361": {
+   "options": [
+    "1 and 2 only",
+    "1 and 4 only",
+    "2 and 3 only",
+    "1, 2 and 4"
+   ]
+  },
+  "362": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "363": {
+   "options": [
+    "Kaziranga National Park",
+    "Namdapha National Park",
+    "Keibul Lamjao National Park",
+    "Silent Valley National Park"
+   ]
+  },
+  "364": {
+   "options": [
+    "1 and 2 only",
+    "2 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "365": {
+   "options": [
+    "Kanha National Park",
+    "Bandhavgarh National Park",
+    "Sundarbans National Park",
+    "Corbett National Park"
+   ]
+  },
+  "366": {
+   "options": [
+    "1 and 2 only",
+    "1 only",
+    "2 only",
+    "1, 2 and 3"
+   ]
+  },
+  "377": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "378": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "379": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "380": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "381": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "382": {
+   "options": [
+    "Areas adjacent to national parks and sanctuaries",
+    "Government-owned forests",
+    "Marine protected areas",
+    "Private lands"
+   ]
+  },
+  "383": {
+   "options": [
+    "1 only",
+    "2 only",
+    "Both 1 and 2",
+    "Neither 1 nor 2"
+   ]
+  },
+  "384": {
+   "options": [
+    "National Park",
+    "Wildlife Sanctuary",
+    "Biosphere Reserve",
+    "Community Reserve"
+   ]
+  },
+  "385": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "396": {
+   "options": [
+    "1 and 2 only",
+    "2 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "397": {
+   "options": [
+    "Only one pair",
+    "Only two pairs",
+    "Only three pairs",
+    "All four pairs"
+   ]
+  },
+  "398": {
+   "options": [
+    "A legally protected zone where all human activity is strictly prohibited, equivalent to a National Park.",
+    "A zone dedicated to conservation, research, and monitoring, with minimal human interference, often comprising existing protected areas.",
+    "A buffer zone surrounding the transition area, allowing limited resource extraction by local communities.",
+    "A multiple-use area where sustainable economic activities are promoted alongside biodiversity conservation."
+   ]
+  },
+  "399": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  }
+ }
+}

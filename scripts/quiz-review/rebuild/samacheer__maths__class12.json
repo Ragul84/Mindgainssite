@@ -5,7 +5,23 @@
  "310": "retire",
  "336": "retire",
  "337": "retire",
- "380": "retire",
+ "380": {
+  "stem": "Match the limit to the result for ∫ sin x dx:",
+  "L": [
+   "0 to π/2",
+   "0 to π",
+   "0 to 2π",
+   "0 to π/4"
+  ],
+  "R": [
+   "1",
+   "2",
+   "0",
+   "1 - 1/√2"
+  ],
+  "recovered": true,
+  "why": "0 to π/2 – 1; 0 to π – 2; 0 to 2π – 0; 0 to π/4 – 1 - 1/√2."
+ },
  "398": "retire",
  "400": "retire",
  "183": {

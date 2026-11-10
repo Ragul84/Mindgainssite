@@ -2,10 +2,13 @@
  "retire": [
   45,
   46,
-  73,
-  106,
+  71,
   163,
   165,
+  183,
+  184,
+  185,
+  189,
   234,
   236,
   238,
@@ -14,8 +17,10 @@
   333,
   337,
   426,
-  431,
-  441
+  441,
+  488,
+  489,
+  503
  ],
  "fix": {
   "72": {
@@ -147,6 +152,193 @@
    ],
    "answer_index": 3,
    "explanation": "Champaran is in Bihar, Gandhi was born at Porbandar and the Sabarmati Ashram is in Ahmedabad."
+  },
+  "73": {
+   "question": "Match the following events with their significance: List I A. Napoleon's defeat at Waterloo B. French Revolution C. Long Depression D. Unification of Germany List II 1. Rise of nationalism 2. Rise of liberalism 3. Economic hardship 4. End of Napoleonic Wars",
+   "options": [
+    "A-3, B-2, C-4, D-1",
+    "A-4, B-2, C-3, D-1",
+    "A-2, B-4, C-3, D-1",
+    "A-4, B-1, C-3, D-2"
+   ],
+   "answer_index": 1,
+   "explanation": "Napoleon's defeat at Waterloo – End of Napoleonic Wars; French Revolution – Rise of liberalism; Long Depression – Economic hardship; Unification of Germany – Rise of nationalism.",
+   "retired": false
+  },
+  "106": {
+   "question": "Match the following concepts: List I A. Precept B. Practice C. Faith D. Ahimsa List II 1. Belief 2. Rule/Instruction 3. Action 4. Non-violence",
+   "options": [
+    "A-3, B-2, C-1, D-4",
+    "A-2, B-3, C-4, D-1",
+    "A-2, B-3, C-1, D-4",
+    "A-2, B-4, C-1, D-3"
+   ],
+   "answer_index": 2,
+   "explanation": "Precept – Rule/Instruction; Practice – Action; Faith – Belief; Ahimsa – Non-violence.",
+   "retired": false
+  },
+  "431": {
+   "question": "Match the conspiracy cases with their years: List I A. Peshawar Conspiracy Case B. Kanpur Conspiracy Case C. Meerut Conspiracy Case List II 1. 1922 2. 1929 3. 1924",
+   "options": [
+    "A-3, B-1, C-2",
+    "A-1, B-2, C-3",
+    "A-2, B-3, C-1",
+    "A-1, B-3, C-2"
+   ],
+   "answer_index": 3,
+   "explanation": "Peshawar Conspiracy Case – 1922; Kanpur Conspiracy Case – 1924; Meerut Conspiracy Case – 1929.",
+   "retired": false
+  },
+  "135": {
+   "question": "Who did the British see as a force to keep the Congress in check?"
+  },
+  "139": {
+   "question": "What was the state of Muslims after the 1857 rebellion?"
+  },
+  "166": {
+   "options": [
+    "Industrialized and prosperous",
+    "Fragile and facing many problems",
+    "Fully developed agriculture sector",
+    "Dominated by technology and services"
+   ]
+  },
+  "167": {
+   "options": [
+    "Industry",
+    "Services",
+    "Agriculture",
+    "Technology"
+   ]
+  },
+  "168": {
+   "options": [
+    "Industrial workers",
+    "Artisans",
+    "Farmers",
+    "Teachers"
+   ]
+  },
+  "169": {
+   "options": [
+    "Highly mechanized",
+    "Overcrowded with low per capita income",
+    "Fully modernized",
+    "Dominated by large corporations"
+   ]
+  },
+  "170": {
+   "options": [
+    "Capitalist relations",
+    "Semi-feudal relations",
+    "Democratic relations",
+    "Socialist relations"
+   ]
+  },
+  "171": {
+   "options": [
+    "Tata Iron and Steel",
+    "Hindustan Aeronautics",
+    "Indian Oil",
+    "Reliance Industries"
+   ]
+  },
+  "172": {
+   "options": [
+    "Cotton spinning and weaving",
+    "Paper",
+    "Chemicals",
+    "Electronics"
+   ]
+  },
+  "173": {
+   "options": [
+    "To promote agriculture only",
+    "To develop the economy systematically",
+    "To privatize industries",
+    "To reduce literacy"
+   ]
+  },
+  "174": {
+   "options": [
+    "Industry",
+    "Agriculture",
+    "Services",
+    "Education"
+   ]
+  },
+  "175": {
+   "options": [
+    "To increase landholdings",
+    "To reduce land exploitation",
+    "To privatize land",
+    "To promote large estates"
+   ]
+  },
+  "176": {
+   "options": [
+    "To promote private enterprise",
+    "To control all industries",
+    "To develop key industries and infrastructure",
+    "To reduce government intervention"
+   ]
+  },
+  "177": {
+   "options": [
+    "To promote exports",
+    "To reduce imports",
+    "To build self-sufficiency and industrial base",
+    "To focus on agriculture"
+   ]
+  },
+  "178": {
+   "options": [
+    "Liberalization policies",
+    "Industrial regulation policies",
+    "Deregulation",
+    "Free-market policies"
+   ]
+  },
+  "179": {
+   "options": [
+    "Minimal involvement",
+    "Active role in planning and regulation",
+    "Complete privatization",
+    "No role"
+   ]
+  },
+  "180": {
+   "options": [
+    "Agriculture",
+    "Science and technology",
+    "Services",
+    "Retail"
+   ]
+  },
+  "181": {
+   "options": [
+    "Urbanization",
+    "Improving rural economy and infrastructure",
+    "Promoting industry",
+    "Expanding higher education"
+   ]
+  },
+  "182": {
+   "options": [
+    "Green Revolution",
+    "Rural employment schemes",
+    "Industrial licensing",
+    "Education schemes"
+   ]
+  },
+  "206": {
+   "question": "What was the 'last gasp' of the earlier ruling class?"
+  },
+  "217": {
+   "question": "Which of the following were the three strands of nationalism? 1. Indian nationalism 2. Hindu nationalism 3. Muslim nationalism 4. British nationalism"
+  },
+  "506": {
+   "question": "Which specific heavy industry is mentioned as the best known?"
   }
  }
 }

@@ -1,0 +1,17 @@
+{
+ "retire": [],
+ "fix": {
+  "30": {
+   "question": "What is the definition of industrialization?"
+  },
+  "194": {
+   "question": "The slave trade is associated with which continent?"
+  },
+  "200": {
+   "question": "Which of the following is NOT mentioned as a focus of timelines?"
+  },
+  "209": {
+   "question": "Which of the following is NOT listed as a technological innovation?"
+  }
+ }
+}

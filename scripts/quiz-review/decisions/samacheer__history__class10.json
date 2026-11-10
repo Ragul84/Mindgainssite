@@ -9,14 +9,12 @@
   134,
   170,
   200,
-  201,
   202,
   230,
   231,
   233,
   234,
   262,
-  263,
   264,
   265,
   266,
@@ -26,6 +24,7 @@
   342,
   343,
   368,
+  369,
   370,
   430,
   431,
@@ -235,6 +234,39 @@
    ],
    "answer_index": 1,
    "explanation": "Haji Shariatullah launched the Farazi movement; his son Dudu Mian declared that land belongs to God."
+  },
+  "201": {
+   "question": "Match the regions with their positions: List I A. Arunachal Pradesh B. Gujarat C. Jammu and Kashmir D. Kanniyakumari List II 1. North 2. West 3. South 4. East",
+   "options": [
+    "A-1, B-2, C-4, D-3",
+    "A-4, B-2, C-1, D-3",
+    "A-4, B-2, C-3, D-1",
+    "A-4, B-3, C-1, D-2"
+   ],
+   "answer_index": 1,
+   "explanation": "Arunachal Pradesh – East; Gujarat – West; Jammu and Kashmir – North; Kanniyakumari – South.",
+   "retired": false
+  },
+  "263": {
+   "question": "Match the district to the state: List I A. Singhbhum B. Sundargarh C. Bilaspur D. Shimoga List II 1. Jharkhand 2. Odisha 3. Chhattisgarh 4. Karnataka",
+   "options": [
+    "A-1, B-4, C-3, D-2",
+    "A-3, B-2, C-1, D-4",
+    "A-4, B-2, C-3, D-1",
+    "A-1, B-2, C-3, D-4"
+   ],
+   "answer_index": 3,
+   "explanation": "Singhbhum – Jharkhand; Sundargarh – Odisha; Bilaspur – Chhattisgarh; Shimoga – Karnataka.",
+   "retired": false
+  },
+  "15": {
+   "question": "What was the nature of land ownership in pre-British India?"
+  },
+  "208": {
+   "question": "What is the population of Maharashtra?"
+  },
+  "242": {
+   "question": "Which of the following is NOT listed as a metallic mineral?"
   }
  }
 }

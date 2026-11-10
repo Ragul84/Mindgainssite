@@ -1,0 +1,413 @@
+{
+ "retire": [],
+ "fix": {
+  "90": {
+   "options": [
+    "Reserve Deposit Ratio",
+    "Open Market Operations",
+    "Quantitative Easing",
+    "Fiscal Budget Cuts"
+   ]
+  },
+  "91": {
+   "options": [
+    "Foreign Investment",
+    "Higher Government Spending",
+    "Increased Tax Revenue",
+    "Inflation Control"
+   ]
+  },
+  "92": {
+   "options": [
+    "Decrease",
+    "No Effect",
+    "Increase",
+    "Depend on Import Prices"
+   ]
+  },
+  "93": {
+   "options": [
+    "Strong Domestic Consumption",
+    "Excessive Imports",
+    "High Capital Outflows",
+    "Low Foreign Reserves"
+   ]
+  },
+  "294": {
+   "options": [
+    "Increase inflation",
+    "Stabilize exchange rate",
+    "Control unemployment",
+    "Boost exports"
+   ]
+  },
+  "295": {
+   "options": [
+    "GDP Growth",
+    "Budget Surplus",
+    "Inflation Rate",
+    "Trade Deficit"
+   ]
+  },
+  "296": {
+   "options": [
+    "Increasing inflation",
+    "Lowering unemployment",
+    "Reducing interest rates",
+    "Expanding exports"
+   ]
+  },
+  "297": {
+   "options": [
+    "Expansionary Fiscal Policy",
+    "Monetary Policy",
+    "Tax Cuts",
+    "Investment Subsidies"
+   ]
+  },
+  "298": {
+   "options": [
+    "Trade Deficit",
+    "Interest Rates",
+    "GDP Growth",
+    "Unemployment"
+   ]
+  },
+  "299": {
+   "options": [
+    "Crop diversification",
+    "Irrigation systems",
+    "Fertilizer imports",
+    "Export promotion"
+   ]
+  },
+  "300": {
+   "options": [
+    "Low exports",
+    "High imports",
+    "Strong domestic demand",
+    "High inflation"
+   ]
+  },
+  "301": {
+   "options": [
+    "Government spending",
+    "Tax increases",
+    "Foreign reserves",
+    "Unemployment"
+   ]
+  },
+  "302": {
+   "options": [
+    "Monetary policies",
+    "Taxes",
+    "Inflation expectations",
+    "Debt levels"
+   ]
+  },
+  "303": {
+   "options": [
+    "High inflation",
+    "Budget surplus",
+    "External debt",
+    "Unemployment"
+   ]
+  },
+  "304": {
+   "options": [
+    "Trade deficits",
+    "Public investment",
+    "Private savings",
+    "Government taxes"
+   ]
+  },
+  "385": {
+   "options": [
+    "Regulate foreign exchange rates",
+    "Manage foreign reserves",
+    "Oversee commercial banks",
+    "Control inflation through direct subsidies"
+   ]
+  },
+  "386": {
+   "options": [
+    "Capital controls",
+    "Fiscal stimulus",
+    "Monetary expansion",
+    "Trade restrictions"
+   ]
+  },
+  "387": {
+   "options": [
+    "Reducing urban unemployment",
+    "Increasing agricultural productivity",
+    "Providing cash transfers to rural households",
+    "Promoting industrial growth"
+   ]
+  },
+  "388": {
+   "options": [
+    "Government printing excess currency",
+    "Global commodity prices",
+    "Monetary expansion",
+    "Weak supply chains"
+   ]
+  },
+  "493": {
+   "options": [
+    "Increase in export competitiveness",
+    "Decrease in export competitiveness",
+    "No impact on export competitiveness",
+    "Increase in import competitiveness"
+   ]
+  },
+  "494": {
+   "options": [
+    "Open Market Operations",
+    "Reverse Repo Rate",
+    "Cash Reserve Ratio",
+    "Statutory Liquidity Ratio"
+   ]
+  },
+  "495": {
+   "options": [
+    "Increase in agricultural production and decrease in inflation",
+    "Increase in agricultural production and increase in inflation",
+    "Decrease in agricultural production and decrease in inflation",
+    "Decrease in agricultural production and increase in inflation"
+   ]
+  },
+  "496": {
+   "options": [
+    "Current Account",
+    "Capital Account",
+    "Financial Account",
+    "Income Account"
+   ]
+  },
+  "497": {
+   "options": [
+    "To increase foreign investment in the services sector",
+    "To promote domestic manufacturing and increase employment",
+    "To reduce trade deficits by increasing exports",
+    "To decrease inflation by reducing money supply"
+   ]
+  },
+  "498": {
+   "options": [
+    "Fiscal Deficit",
+    "Revenue Deficit",
+    "Primary Deficit",
+    "Trade Deficit"
+   ]
+  },
+  "499": {
+   "options": [
+    "Increase in money supply",
+    "Decrease in money supply",
+    "No impact on money supply",
+    "Increase in credit creation"
+   ]
+  },
+  "500": {
+   "options": [
+    "Human Development Index (HDI)",
+    "Gross Domestic Product (GDP)",
+    "Per Capita Income",
+    "Poverty Rate"
+   ]
+  },
+  "501": {
+   "options": [
+    "Increase in money supply and decrease in exchange rate",
+    "Decrease in money supply and decrease in exchange rate",
+    "Increase in money supply and increase in exchange rate",
+    "Decrease in money supply and no impact on exchange rate"
+   ]
+  },
+  "502": {
+   "options": [
+    "Demand-Pull Inflation",
+    "Cost-Push Inflation",
+    "Built-In Inflation",
+    "Monetary Inflation"
+   ]
+  },
+  "530": {
+   "options": [
+    "Open Market Operations",
+    "Cash Reserve Ratio",
+    "Statutory Liquidity Ratio",
+    "All of the above"
+   ]
+  },
+  "531": {
+   "options": [
+    "Increase in money supply",
+    "Decrease in money supply",
+    "No impact on money supply",
+    "Increase in foreign exchange reserves"
+   ]
+  },
+  "532": {
+   "options": [
+    "Trade in goods",
+    "Trade in services",
+    "Income receipts",
+    "Transfer payments"
+   ]
+  },
+  "533": {
+   "options": [
+    "To increase foreign investment",
+    "To promote domestic manufacturing",
+    "To reduce trade deficit",
+    "To increase exports"
+   ]
+  },
+  "534": {
+   "options": [
+    "Fiscal Deficit",
+    "Revenue Deficit",
+    "Primary Deficit",
+    "Trade Deficit"
+   ]
+  },
+  "535": {
+   "options": [
+    "Increase in agricultural productivity",
+    "Decrease in agricultural employment",
+    "Increase in food prices",
+    "Decrease in rural poverty"
+   ]
+  },
+  "536": {
+   "options": [
+    "Demand-pull inflation",
+    "Cost-push inflation",
+    "Built-in inflation",
+    "Monetary inflation"
+   ]
+  },
+  "537": {
+   "options": [
+    "Trade surplus appreciates the rupee",
+    "Trade deficit depreciates the rupee",
+    "Trade balance has no impact on the rupee",
+    "Both A and B"
+   ]
+  },
+  "538": {
+   "options": [
+    "Human Development Index",
+    "Poverty Ratio",
+    "Unemployment Rate",
+    "Per Capita Income"
+   ]
+  },
+  "589": {
+   "options": [
+    "Open Market Operations",
+    "Reverse Repo Operations",
+    "Cash Reserve Ratio",
+    "Statutory Liquidity Ratio"
+   ]
+  },
+  "590": {
+   "options": [
+    "Increase in lending capacity",
+    "Decrease in lending capacity",
+    "No impact on lending capacity",
+    "Increase in deposit rates"
+   ]
+  },
+  "591": {
+   "options": [
+    "To reduce inflation",
+    "To increase foreign exchange reserves",
+    "To stabilize the exchange rate",
+    "To reduce fiscal deficit"
+   ]
+  },
+  "592": {
+   "options": [
+    "GDP growth rate",
+    "Inflation rate",
+    "Fiscal deficit",
+    "Trade balance"
+   ]
+  },
+  "593": {
+   "options": [
+    "Increase in inflation rate",
+    "Decrease in inflation rate",
+    "No impact on inflation rate",
+    "Increase in food prices"
+   ]
+  },
+  "594": {
+   "options": [
+    "Trade deficit",
+    "Trade surplus",
+    "Balance of trade",
+    "Current account deficit"
+   ]
+  },
+  "595": {
+   "options": [
+    "Human Development Index",
+    "Gini coefficient",
+    "Poverty line",
+    "Unemployment rate"
+   ]
+  },
+  "596": {
+   "options": [
+    "Increase in productivity",
+    "Decrease in money supply",
+    "Increase in aggregate demand",
+    "Decrease in government spending"
+   ]
+  },
+  "676": {
+   "options": [
+    "Current account balance",
+    "Capital account balance",
+    "Trade balance",
+    "Services balance"
+   ]
+  },
+  "677": {
+   "options": [
+    "Poverty reduction",
+    "Unemployment rate",
+    "Human development index",
+    "Gini coefficient"
+   ]
+  },
+  "678": {
+   "options": [
+    "Increase in money supply",
+    "Decrease in money supply",
+    "No impact on money supply",
+    "Uncertain impact on money supply"
+   ]
+  },
+  "679": {
+   "options": [
+    "Current account",
+    "Capital account",
+    "Financial account",
+    "Errors and omissions"
+   ]
+  },
+  "680": {
+   "options": [
+    "Liberalization of agricultural trade",
+    "Investment in agricultural infrastructure",
+    "Implementation of the minimum support price",
+    "Promotion of organic farming"
+   ]
+  }
+ }
+}

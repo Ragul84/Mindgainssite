@@ -2,8 +2,7 @@
  "retire": [
   97,
   98,
-  143,
-  255
+  143
  ],
  "fix": {
   "48": {
@@ -379,6 +378,322 @@
    ],
    "answer_index": 2,
    "explanation": "Gravitational potential is in J/kg, G in N m²/kg², potential energy in joules and g in m/s²."
+  },
+  "255": {
+   "question": "Match the phenomena with their causes: List I A. Capillarity B. Terminal Velocity C. Venturi Effect D. Elasticity List II 1. Viscous drag 2. Pressure difference 3. Intermolecular forces 4. Surface tension",
+   "options": [
+    "A-4, B-1, C-3, D-2",
+    "A-4, B-3, C-2, D-1",
+    "A-2, B-1, C-4, D-3",
+    "A-4, B-1, C-2, D-3"
+   ],
+   "answer_index": 3,
+   "explanation": "Capillarity – Surface tension; Terminal Velocity – Viscous drag; Venturi Effect – Pressure difference; Elasticity – Intermolecular forces.",
+   "retired": false
+  },
+  "39": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "40": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "41": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "42": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "43": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "85": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "86": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "87": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "88": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "89": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "130": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "131": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "132": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "133": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "134": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "162": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "163": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "164": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "165": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "166": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "194": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "195": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "196": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "197": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "198": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "244": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "245": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "246": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "247": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "248": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "323": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "324": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "325": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "326": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "327": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "350": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "351": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "352": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
   }
  }
 }

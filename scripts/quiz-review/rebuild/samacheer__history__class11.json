@@ -102,7 +102,23 @@
    "Great Wall"
   ]
  },
- "95": "retire",
+ "95": {
+  "stem": "Match the crop/resource to the region:",
+  "L": [
+   "Maize",
+   "Silk",
+   "Potatoes",
+   "Jade"
+  ],
+  "R": [
+   "Americas",
+   "China",
+   "Andes",
+   "Olmec"
+  ],
+  "recovered": true,
+  "why": "Maize – Americas; Silk – China; Potatoes – Andes; Jade – Olmec."
+ },
  "96": {
   "lh": "Structure",
   "rh": "Civilisation",
@@ -172,8 +188,40 @@
    "Egypt"
   ]
  },
- "157": "retire",
- "158": "retire",
+ "157": {
+  "stem": "Match the period with the dominant culture:",
+  "L": [
+   "Early Dynastic",
+   "Empire Period",
+   "Old Babylonian",
+   "Neo-Assyrian"
+  ],
+  "R": [
+   "Sumerian",
+   "Akkadian",
+   "Amorite",
+   "Assyrian"
+  ],
+  "recovered": true,
+  "why": "Early Dynastic – Sumerian; Empire Period – Akkadian; Old Babylonian – Amorite; Neo-Assyrian – Assyrian."
+ },
+ "158": {
+  "stem": "Match the writing tool with its use:",
+  "L": [
+   "Reed stylus",
+   "Clay tablet",
+   "Kiln",
+   "Scribe"
+  ],
+  "R": [
+   "Imprinting on clay",
+   "Storage medium",
+   "Hardening tablets",
+   "Professional writer"
+  ],
+  "recovered": true,
+  "why": "Reed stylus – Imprinting on clay; Clay tablet – Storage medium; Kiln – Hardening tablets; Scribe – Professional writer."
+ },
  "169": "retire",
  "170": "retire",
  "171": "retire",
@@ -260,7 +308,23 @@
   ]
  },
  "233": "retire",
- "234": "retire",
+ "234": {
+  "stem": "Match the tool with the period:",
+  "L": [
+   "Cleaver",
+   "Arrowhead",
+   "Celts",
+   "Copper axe"
+  ],
+  "R": [
+   "Paleolithic",
+   "Mesolithic",
+   "Neolithic",
+   "Chalcolithic"
+  ],
+  "recovered": true,
+  "why": "Cleaver – Paleolithic; Arrowhead – Mesolithic; Celts – Neolithic; Copper axe – Chalcolithic."
+ },
  "235": {
   "lh": "Fossil find",
   "rh": "Region",
@@ -278,7 +342,23 @@
    "China"
   ]
  },
- "236": "retire",
+ "236": {
+  "stem": "Match the activity with the age:",
+  "L": [
+   "Fire discovery",
+   "Dog domestication",
+   "Wheat cultivation",
+   "Metal smelting"
+  ],
+  "R": [
+   "Paleolithic",
+   "Mesolithic",
+   "Neolithic",
+   "Chalcolithic"
+  ],
+  "recovered": true,
+  "why": "Fire discovery – Paleolithic; Dog domestication – Mesolithic; Wheat cultivation – Neolithic; Metal smelting – Chalcolithic."
+ },
  "265": {
   "lh": "Example",
   "rh": "Type of source",
@@ -330,8 +410,40 @@
    "Scientific History"
   ]
  },
- "268": "retire",
- "269": "retire",
+ "268": {
+  "stem": "Match the source to the information it provides:",
+  "L": [
+   "Pottery",
+   "Inscriptions",
+   "Coins",
+   "Travelogues"
+  ],
+  "R": [
+   "Daily life/Trade",
+   "Royal decrees",
+   "Economic status",
+   "External views"
+  ],
+  "recovered": true,
+  "why": "Pottery – Daily life/Trade; Inscriptions – Royal decrees; Coins – Economic status; Travelogues – External views."
+ },
+ "269": {
+  "stem": "Match the tool to the period:",
+  "L": [
+   "Hand axe",
+   "Iron plow",
+   "Bronze sword",
+   "Polished stone"
+  ],
+  "R": [
+   "Paleolithic",
+   "Iron Age",
+   "Bronze Age",
+   "Neolithic"
+  ],
+  "recovered": true,
+  "why": "Hand axe – Paleolithic; Iron plow – Iron Age; Bronze sword – Bronze Age; Polished stone – Neolithic."
+ },
  "276": "retire",
  "320": {
   "lh": "Philosopher",

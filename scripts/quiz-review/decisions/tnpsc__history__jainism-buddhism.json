@@ -1,0 +1,295 @@
+{
+ "retire": [
+  243
+ ],
+ "fix": {
+  "62": {
+   "options": [
+    "Mahendravarman I",
+    "Rajaraja Chola I",
+    "Karikala Chola",
+    "Kharavela"
+   ]
+  },
+  "63": {
+   "options": [
+    "Angas",
+    "Upangas",
+    "Purvas",
+    "Prakirnakas"
+   ]
+  },
+  "64": {
+   "options": [
+    "Right faith, right knowledge, right conduct",
+    "Non-violence, truth, celibacy",
+    "Compassion, charity, meditation",
+    "Mind, speech, body"
+   ]
+  },
+  "65": {
+   "options": [
+    "Ashoka",
+    "Chandragupta Maurya",
+    "Bindusara",
+    "Brihadratha"
+   ]
+  },
+  "66": {
+   "options": [
+    "Kalabhra interregnum",
+    "Sangam period",
+    "Vijayanagara period",
+    "British period"
+   ]
+  },
+  "67": {
+   "options": [
+    "Second Buddhist Council",
+    "Third Buddhist Council",
+    "Fourth Buddhist Council",
+    "First Buddhist Council"
+   ]
+  },
+  "68": {
+   "options": [
+    "Silappadikaram",
+    "Manimekalai",
+    "Tolkappiyam",
+    "Thirukkural"
+   ]
+  },
+  "69": {
+   "options": [
+    "Great hero",
+    "Great teacher",
+    "Great sage",
+    "Great conqueror"
+   ]
+  },
+  "70": {
+   "options": [
+    "Rajaraja Chola I",
+    "Rajendra Chola I",
+    "Kulottunga I",
+    "Parantaka Chola I"
+   ]
+  },
+  "85": {
+   "options": [
+    "Jainism believes in the existence of a permanent soul (jiva), while Buddhism rejects the concept of an eternal soul (anatta).",
+    "Buddhism believes in a permanent soul (atman), while Jainism denies its existence.",
+    "Both Jainism and Buddhism believe in an eternal soul that transmigrates.",
+    "Both Jainism and Buddhism deny the existence of a soul."
+   ]
+  },
+  "86": {
+   "options": [
+    "Buddhism",
+    "Jainism",
+    "Ajivika",
+    "Charvaka"
+   ]
+  },
+  "87": {
+   "options": [
+    "Silappadikaram",
+    "Manimekalai",
+    "Tolkappiyam",
+    "Thirukkural"
+   ]
+  },
+  "88": {
+   "options": [
+    "Mahakashyapa",
+    "Moggaliputta Tissa",
+    "Nagarjuna",
+    "Ananda"
+   ]
+  },
+  "89": {
+   "options": [
+    "Ahimsa (non-violence)",
+    "Rejection of Vedic rituals",
+    "Belief in a creator god",
+    "Karma and rebirth"
+   ]
+  },
+  "90": {
+   "options": [
+    "Buddha, Dhamma, Sangha",
+    "Buddha, Dharma, Karma",
+    "Jiva, Ajiva, Moksha",
+    "Right faith, Right knowledge, Right conduct"
+   ]
+  },
+  "91": {
+   "options": [
+    "Chola kingdom",
+    "Pandya kingdom",
+    "Chera kingdom",
+    "Pallava kingdom"
+   ]
+  },
+  "92": {
+   "options": [
+    "Ashoka",
+    "Kanishka",
+    "Harshavardhana",
+    "Chandragupta Maurya"
+   ]
+  },
+  "93": {
+   "options": [
+    "Kanchipuram",
+    "Sravanabelagola",
+    "Kumbakonam",
+    "Madurai"
+   ]
+  },
+  "94": {
+   "options": [
+    "The practice of non-violence",
+    "The necessity of nudity for monks",
+    "The worship of Tirthankaras",
+    "The belief in karma"
+   ]
+  },
+  "113": {
+   "options": [
+    "Rishabhanatha",
+    "Mahavira",
+    "Parshvanatha",
+    "Neminatha"
+   ]
+  },
+  "114": {
+   "options": [
+    "Ashoka",
+    "Kanishka",
+    "Harshavardhana",
+    "Chandragupta Maurya"
+   ]
+  },
+  "115": {
+   "options": [
+    "Tolkappiyam",
+    "Silappadikaram",
+    "Manimekalai",
+    "Thirukkural"
+   ]
+  },
+  "116": {
+   "options": [
+    "Mahendravarman I",
+    "Narasimhavarman I",
+    "Nandivarman II",
+    "Simhavishnu"
+   ]
+  },
+  "117": {
+   "options": [
+    "Rajaraja I",
+    "Rajendra I",
+    "Kulothunga I",
+    "Vijayalaya"
+   ]
+  },
+  "118": {
+   "options": [
+    "First Jain Council",
+    "Second Jain Council",
+    "Third Jain Council",
+    "Fourth Jain Council"
+   ]
+  },
+  "119": {
+   "options": [
+    "Sixty-three Nayanmars",
+    "Sixty-three Jain monks",
+    "Twelve Alwars",
+    "Eighteen Siddhars"
+   ]
+  },
+  "201": {
+   "options": [
+    "Mahavira",
+    "Parsvanatha",
+    "Umashvati",
+    "Bhadrabahu"
+   ]
+  },
+  "202": {
+   "options": [
+    "Community of monks",
+    "Sacred texts",
+    "Four noble truths",
+    "Eightfold path"
+   ]
+  },
+  "203": {
+   "options": [
+    "Silappadikaram",
+    "Manimekalai",
+    "Jivaka Chintamani",
+    "Valayapathi"
+   ]
+  },
+  "204": {
+   "options": [
+    "Ashoka",
+    "Kanishka",
+    "Harsha",
+    "Samudragupta"
+   ]
+  },
+  "205": {
+   "options": [
+    "Meditation",
+    "Fasting unto death",
+    "Non-violence",
+    "Renunciation"
+   ]
+  },
+  "206": {
+   "options": [
+    "Fa-Hien",
+    "Hiuen Tsang",
+    "I-Tsing",
+    "Marco Polo"
+   ]
+  },
+  "207": {
+   "options": [
+    "Karnataka",
+    "Tamil Nadu",
+    "Kerala",
+    "Andhra Pradesh"
+   ]
+  },
+  "208": {
+   "options": [
+    "Three jewels (Buddha, Dharma, Sangha)",
+    "Three baskets (Tripitaka)",
+    "Three types of karma",
+    "Three stages of life"
+   ]
+  },
+  "209": {
+   "options": [
+    "Chandragupta Maurya",
+    "Bindusara",
+    "Ashoka",
+    "Dasharatha"
+   ]
+  },
+  "210": {
+   "options": [
+    "Chandragupta Maurya",
+    "Kharavela",
+    "King Dhruvasena",
+    "Harsha"
+   ]
+  }
+ }
+}

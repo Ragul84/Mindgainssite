@@ -1,0 +1,36 @@
+{
+ "retire": [
+  214,
+  215,
+  556
+ ],
+ "fix": {
+  "392": {
+   "options": [
+    "(i) and (ii) only",
+    "(ii), (iii) and (iv)",
+    "(i), (iii) and (iv)",
+    "(ii) only"
+   ]
+  },
+  "397": {
+   "options": [
+    "(i) and (ii) only",
+    "(ii) and (iii) only",
+    "(i), (ii), (iii) and (iv)",
+    "(i), (iii), (iv)"
+   ]
+  },
+  "410": {
+   "question": "'Fluids', the pressure exerted by a liquid at a given depth depends on:"
+  },
+  "587": {
+   "options": [
+    "Elements are arranged in increasing order of their atomic numbers.",
+    "There are 18 groups and 7 periods.",
+    "All elements in a group have the same number of electron shells.",
+    "The position of an element is determined by its electronic configuration."
+   ]
+  }
+ }
+}

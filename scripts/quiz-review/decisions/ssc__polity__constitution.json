@@ -1,0 +1,21 @@
+{
+ "retire": [],
+ "fix": {
+  "699": {
+   "options": [
+    "Article 148",
+    "Article 149",
+    "Article 150",
+    "Article 151"
+   ]
+  },
+  "700": {
+   "options": [
+    "4 years",
+    "5 years",
+    "6 years",
+    "Till death"
+   ]
+  }
+ }
+}

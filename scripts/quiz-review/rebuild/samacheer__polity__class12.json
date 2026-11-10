@@ -1,5 +1,23 @@
 {
- "43": "retire",
+ "43": {
+  "stem": "Match the following:",
+  "L": [
+   "FPTP",
+   "PR",
+   "Article 324",
+   "61st Amendment",
+   "VVPAT"
+  ],
+  "R": [
+   "Plurality System",
+   "Proportional Representation",
+   "Election Commission",
+   "Voting Age 18",
+   "Paper Audit Trail"
+  ],
+  "recovered": true,
+  "why": "FPTP – Plurality System; PR – Proportional Representation; Article 324 – Election Commission; 61st Amendment – Voting Age 18; VVPAT – Paper Audit Trail."
+ },
  "75": {
   "lh": "Office / body",
   "rh": "Description",
@@ -38,8 +56,44 @@
    "Duties of PM to furnish info"
   ]
  },
- "77": "retire",
- "78": "retire",
+ "77": {
+  "stem": "Match the following powers with the authority:",
+  "L": [
+   "Pardon",
+   "Portfolio Allocation",
+   "State Administration",
+   "Presiding over Rajya Sabha",
+   "Legal Advice to Govt"
+  ],
+  "R": [
+   "President",
+   "Prime Minister",
+   "Governor",
+   "Vice President",
+   "Attorney General"
+  ],
+  "recovered": true,
+  "why": "Pardon – President; Portfolio Allocation – Prime Minister; State Administration – Governor; Presiding over Rajya Sabha – Vice President; Legal Advice to Govt – Attorney General."
+ },
+ "78": {
+  "stem": "Match the following terms with their meanings:",
+  "L": [
+   "Nominal Head",
+   "Real Head",
+   "Collective Responsibility",
+   "Individual Responsibility",
+   "Pocket Veto"
+  ],
+  "R": [
+   "De Jure",
+   "De Facto",
+   "Joint accountability",
+   "Accountable to President",
+   "Indefinite delay"
+  ],
+  "recovered": true,
+  "why": "Nominal Head – De Jure; Real Head – De Facto; Collective Responsibility – Joint accountability; Individual Responsibility – Accountable to President; Pocket Veto – Indefinite delay."
+ },
  "79": "retire",
  "111": {
   "lh": "Subject",
@@ -262,7 +316,23 @@
    "Establishment of SC"
   ]
  },
- "217": "retire",
+ "217": {
+  "stem": "Match the term with the description:",
+  "L": [
+   "PIL",
+   "CJI",
+   "Judicial Review",
+   "Appellate"
+  ],
+  "R": [
+   "Public Interest Litigation",
+   "Chief Justice of India",
+   "Checking Law Validity",
+   "Hearing Appeals"
+  ],
+  "recovered": true,
+  "why": "PIL – Public Interest Litigation; CJI – Chief Justice of India; Judicial Review – Checking Law Validity; Appellate – Hearing Appeals."
+ },
  "218": {
   "lh": "Judge of the",
   "rh": "Retires at",
@@ -276,7 +346,23 @@
    "62 years"
   ]
  },
- "250": "retire",
+ "250": {
+  "stem": "Match the following roles with the respective officers:",
+  "L": [
+   "Presides over Lok Sabha",
+   "Presides over Rajya Sabha",
+   "Head of State",
+   "Head of Government"
+  ],
+  "R": [
+   "Speaker",
+   "Vice-President",
+   "President",
+   "Prime Minister"
+  ],
+  "recovered": true,
+  "why": "Presides over Lok Sabha – Speaker; Presides over Rajya Sabha – Vice-President; Head of State – President; Head of Government – Prime Minister."
+ },
  "251": "retire",
  "252": "retire",
  "253": "retire",

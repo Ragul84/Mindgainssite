@@ -1,0 +1,229 @@
+{
+ "retire": [],
+ "fix": {
+  "75": {
+   "options": [
+    "1 only",
+    "2 only",
+    "Both 1 and 2",
+    "Neither 1 nor 2"
+   ]
+  },
+  "76": {
+   "options": [
+    "Arsenic",
+    "Nitrate",
+    "Lead",
+    "Mercury"
+   ]
+  },
+  "77": {
+   "options": [
+    "1 only",
+    "2 only",
+    "Both 1 and 2",
+    "Neither 1 nor 2"
+   ]
+  },
+  "78": {
+   "options": [
+    "DDT",
+    "Carbon monoxide",
+    "Ozone",
+    "Methane"
+   ]
+  },
+  "79": {
+   "options": [
+    "1 only",
+    "2 only",
+    "Both 1 and 2",
+    "Neither 1 nor 2"
+   ]
+  },
+  "219": {
+   "options": [
+    "1 only",
+    "1 and 3",
+    "2 and 3",
+    "1, 2 and 3"
+   ]
+  },
+  "220": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "221": {
+   "options": [
+    "1 only",
+    "1 and 3",
+    "2 and 3",
+    "1, 2 and 3"
+   ]
+  },
+  "222": {
+   "options": [
+    "Carbon monoxide",
+    "Sulphur dioxide and nitrogen oxides",
+    "Particulate matter",
+    "Ozone"
+   ]
+  },
+  "223": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "224": {
+   "options": [
+    "Fluoride",
+    "Nitrate",
+    "Arsenic",
+    "Lead"
+   ]
+  },
+  "225": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "226": {
+   "options": [
+    "Carbon monoxide",
+    "Lead",
+    "Ozone at ground level",
+    "Sulphur dioxide"
+   ]
+  },
+  "227": {
+   "options": [
+    "1 and 2 only",
+    "1 and 3 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "228": {
+   "options": [
+    "The Noise Pollution (Regulation and Control) Rules, 2000",
+    "The Air (Prevention and Control of Pollution) Act, 1981",
+    "The Environmental Protection Act, 1986",
+    "The Public Liability Insurance Act, 1991"
+   ]
+  },
+  "278": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "279": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "339": {
+   "options": [
+    "1 and 2 only",
+    "1 and 3 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "340": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "1 and 3 only",
+    "2 and 3 only"
+   ]
+  },
+  "341": {
+   "options": [
+    "1, 2 and 3 only",
+    "1, 2 and 4 only",
+    "2, 3 and 4 only",
+    "1, 2, 3 and 4"
+   ]
+  },
+  "342": {
+   "options": [
+    "1 and 2 only",
+    "1 and 3 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "343": {
+   "options": [
+    "1 and 2 only",
+    "1 and 3 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "344": {
+   "options": [
+    "1 and 2 only",
+    "1 and 3 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "345": {
+   "options": [
+    "1 and 2 only",
+    "1, 2 and 3 only",
+    "2, 3 and 4 only",
+    "1, 2, 3 and 4"
+   ]
+  },
+  "346": {
+   "options": [
+    "1 and 2 only",
+    "1 and 3 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "347": {
+   "options": [
+    "1 and 2 only",
+    "1 and 3 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "348": {
+   "options": [
+    "1 and 2 only",
+    "1 and 3 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "399": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1,2 and 4 only",
+    "1,2,3 and 4"
+   ]
+  }
+ }
+}

@@ -1,0 +1,469 @@
+{
+ "retire": [],
+ "fix": {
+  "58": {
+   "options": [
+    "Statement 1 alone is sufficient, but statement 2 alone is not.",
+    "Statement 2 alone is sufficient, but statement 1 alone is not.",
+    "Both statements together are sufficient, but neither alone is sufficient.",
+    "Each statement alone is sufficient."
+   ]
+  },
+  "59": {
+   "options": [
+    "Statement 1 alone is sufficient, but statement 2 alone is not.",
+    "Statement 2 alone is sufficient, but statement 1 alone is not.",
+    "Both statements together are sufficient, but neither alone is sufficient.",
+    "Each statement alone is sufficient."
+   ]
+  },
+  "60": {
+   "options": [
+    "Statement 1 alone is sufficient, but statement 2 alone is not.",
+    "Statement 2 alone is sufficient, but statement 1 alone is not.",
+    "Both statements together are sufficient, but neither alone is sufficient.",
+    "Each statement alone is sufficient."
+   ]
+  },
+  "61": {
+   "options": [
+    "Statement 1 alone is sufficient, but statement 2 alone is not.",
+    "Statement 2 alone is sufficient, but statement 1 alone is not.",
+    "Both statements together are sufficient, but neither alone is sufficient.",
+    "Each statement alone is sufficient."
+   ]
+  },
+  "62": {
+   "options": [
+    "Statement 1 alone is sufficient, but statement 2 alone is not.",
+    "Statement 2 alone is sufficient, but statement 1 alone is not.",
+    "Both statements together are sufficient, but neither alone is sufficient.",
+    "Each statement alone is sufficient."
+   ]
+  },
+  "63": {
+   "options": [
+    "Statement 1 alone is sufficient, but statement 2 alone is not.",
+    "Statement 2 alone is sufficient, but statement 1 alone is not.",
+    "Both statements together are sufficient, but neither alone is sufficient.",
+    "Each statement alone is sufficient."
+   ]
+  },
+  "64": {
+   "options": [
+    "Statement 1 alone is sufficient, but statement 2 alone is not.",
+    "Statement 2 alone is sufficient, but statement 1 alone is not.",
+    "Both statements together are sufficient, but neither alone is sufficient.",
+    "Each statement alone is sufficient."
+   ]
+  },
+  "65": {
+   "options": [
+    "Statement 1 alone is sufficient, but statement 2 alone is not.",
+    "Statement 2 alone is sufficient, but statement 1 alone is not.",
+    "Both statements together are sufficient, but neither alone is sufficient.",
+    "Each statement alone is sufficient."
+   ]
+  },
+  "66": {
+   "options": [
+    "Statement 1 alone is sufficient, but statement 2 alone is not.",
+    "Statement 2 alone is sufficient, but statement 1 alone is not.",
+    "Both statements together are sufficient, but neither alone is sufficient.",
+    "Each statement alone is sufficient."
+   ]
+  },
+  "120": {
+   "options": [
+    "Statement I alone is sufficient",
+    "Statement II alone is sufficient",
+    "Both statements together are sufficient but neither alone",
+    "Neither statement alone nor together sufficient"
+   ]
+  },
+  "121": {
+   "options": [
+    "Statement I alone is sufficient",
+    "Statement II alone is sufficient",
+    "Both statements together are sufficient but neither alone",
+    "Neither statement alone nor together sufficient"
+   ]
+  },
+  "122": {
+   "options": [
+    "Statement I alone is sufficient",
+    "Statement II alone is sufficient",
+    "Both statements together are sufficient but neither alone",
+    "Neither statement alone nor together sufficient"
+   ]
+  },
+  "123": {
+   "options": [
+    "Statement I alone is sufficient",
+    "Statement II alone is sufficient",
+    "Both statements together are sufficient but neither alone",
+    "Neither statement alone nor together sufficient"
+   ]
+  },
+  "124": {
+   "options": [
+    "Statement I alone is sufficient",
+    "Statement II alone is sufficient",
+    "Both statements together are sufficient but neither alone",
+    "Neither statement alone nor together sufficient"
+   ]
+  },
+  "125": {
+   "options": [
+    "Statement I alone is sufficient",
+    "Statement II alone is sufficient",
+    "Both statements together are sufficient but neither alone",
+    "Neither statement alone nor together sufficient"
+   ]
+  },
+  "126": {
+   "options": [
+    "Statement I alone is sufficient",
+    "Statement II alone is sufficient",
+    "Both statements together are sufficient but neither alone",
+    "Neither statement alone nor together sufficient"
+   ]
+  },
+  "127": {
+   "options": [
+    "Statement I alone is sufficient",
+    "Statement II alone is sufficient",
+    "Both statements together are sufficient but neither alone",
+    "Neither statement alone nor together sufficient"
+   ]
+  },
+  "128": {
+   "options": [
+    "Statement I alone is sufficient",
+    "Statement II alone is sufficient",
+    "Both statements together are sufficient but neither alone",
+    "Neither statement alone nor together sufficient"
+   ]
+  },
+  "129": {
+   "options": [
+    "Statement I alone is sufficient",
+    "Statement II alone is sufficient",
+    "Both statements together are sufficient but neither alone",
+    "Neither statement alone nor together sufficient"
+   ]
+  },
+  "159": {
+   "options": [
+    "Statement 1 alone is sufficient, but Statement 2 alone is not sufficient.",
+    "Statement 2 alone is sufficient, but Statement 1 alone is not sufficient.",
+    "Both statements together are sufficient, but neither alone is sufficient.",
+    "Each statement alone is sufficient."
+   ]
+  },
+  "160": {
+   "options": [
+    "Statement 1 alone is sufficient, but Statement 2 alone is not sufficient.",
+    "Statement 2 alone is sufficient, but Statement 1 alone is not sufficient.",
+    "Both statements together are sufficient, but neither alone is sufficient.",
+    "Each statement alone is sufficient."
+   ]
+  },
+  "161": {
+   "options": [
+    "Statement 1 alone is sufficient, but Statement 2 alone is not sufficient.",
+    "Statement 2 alone is sufficient, but Statement 1 alone is not sufficient.",
+    "Both statements together are sufficient, but neither alone is sufficient.",
+    "Each statement alone is sufficient."
+   ]
+  },
+  "162": {
+   "options": [
+    "Statement 1 alone is sufficient, but Statement 2 alone is not sufficient.",
+    "Statement 2 alone is sufficient, but Statement 1 alone is not sufficient.",
+    "Both statements together are sufficient, but neither alone is sufficient.",
+    "Each statement alone is sufficient."
+   ]
+  },
+  "163": {
+   "options": [
+    "Statement 1 alone is sufficient, but Statement 2 alone is not sufficient.",
+    "Statement 2 alone is sufficient, but Statement 1 alone is not sufficient.",
+    "Both statements together are sufficient, but neither alone is sufficient.",
+    "Each statement alone is sufficient."
+   ]
+  },
+  "164": {
+   "options": [
+    "Statement 1 alone is sufficient, but Statement 2 alone is not sufficient.",
+    "Statement 2 alone is sufficient, but Statement 1 alone is not sufficient.",
+    "Both statements together are sufficient, but neither alone is sufficient.",
+    "Each statement alone is sufficient."
+   ]
+  },
+  "165": {
+   "options": [
+    "Statement 1 alone is sufficient, but Statement 2 alone is not sufficient.",
+    "Statement 2 alone is sufficient, but Statement 1 alone is not sufficient.",
+    "Both statements together are sufficient, but neither alone is sufficient.",
+    "Each statement alone is sufficient."
+   ]
+  },
+  "166": {
+   "options": [
+    "Statement 1 alone is sufficient, but Statement 2 alone is not sufficient.",
+    "Statement 2 alone is sufficient, but Statement 1 alone is not sufficient.",
+    "Both statements together are sufficient, but neither alone is sufficient.",
+    "Each statement alone is sufficient."
+   ]
+  },
+  "167": {
+   "options": [
+    "Statement 1 alone is sufficient, but Statement 2 alone is not sufficient.",
+    "Statement 2 alone is sufficient, but Statement 1 alone is not sufficient.",
+    "Both statements together are sufficient, but neither alone is sufficient.",
+    "Each statement alone is sufficient."
+   ]
+  },
+  "226": {
+   "options": [
+    "Statement I alone is sufficient",
+    "Statement II alone is sufficient",
+    "Both statements together are needed",
+    "Neither statement is sufficient"
+   ]
+  },
+  "227": {
+   "options": [
+    "Statement I alone is sufficient",
+    "Statement II alone is sufficient",
+    "Both statements together are needed",
+    "Either statement alone is sufficient"
+   ]
+  },
+  "228": {
+   "options": [
+    "Statement I alone is sufficient",
+    "Statement II alone is sufficient",
+    "Both statements together are needed",
+    "Neither statement is sufficient"
+   ]
+  },
+  "229": {
+   "options": [
+    "Statement I alone is sufficient",
+    "Statement II alone is sufficient",
+    "Both statements together are needed",
+    "Neither statement is sufficient"
+   ]
+  },
+  "230": {
+   "options": [
+    "Statement I alone is sufficient",
+    "Statement II alone is sufficient",
+    "Both statements together are needed",
+    "Neither statement is sufficient"
+   ]
+  },
+  "231": {
+   "options": [
+    "Statement I alone is sufficient",
+    "Statement II alone is sufficient",
+    "Both statements together are needed",
+    "Neither statement is sufficient"
+   ]
+  },
+  "232": {
+   "options": [
+    "Statement I alone is sufficient",
+    "Statement II alone is sufficient",
+    "Both statements together are needed",
+    "Either statement alone is sufficient"
+   ]
+  },
+  "233": {
+   "options": [
+    "Statement I alone is sufficient",
+    "Statement II alone is sufficient",
+    "Both statements together are needed",
+    "Neither statement is sufficient"
+   ]
+  },
+  "234": {
+   "options": [
+    "Statement I alone is sufficient",
+    "Statement II alone is sufficient",
+    "Both statements together are needed",
+    "Either statement alone is sufficient"
+   ]
+  },
+  "235": {
+   "options": [
+    "Statement I alone is sufficient",
+    "Statement II alone is sufficient",
+    "Both statements together are needed",
+    "Neither statement is sufficient"
+   ]
+  },
+  "318": {
+   "options": [
+    "Only I",
+    "Only II",
+    "Both I and II",
+    "Neither I nor II"
+   ]
+  },
+  "319": {
+   "options": [
+    "Only I",
+    "Only II",
+    "Both I and II",
+    "Neither I nor II"
+   ]
+  },
+  "320": {
+   "options": [
+    "Only I",
+    "Only II",
+    "Both I and II",
+    "Neither I nor II"
+   ]
+  },
+  "321": {
+   "options": [
+    "Only I",
+    "Only II",
+    "Both I and II",
+    "Neither I nor II"
+   ]
+  },
+  "322": {
+   "options": [
+    "Only I",
+    "Only II",
+    "Both I and II",
+    "Each statement alone is sufficient"
+   ]
+  },
+  "323": {
+   "options": [
+    "Only I",
+    "Only II",
+    "Both I and II",
+    "Neither I nor II"
+   ]
+  },
+  "324": {
+   "options": [
+    "Only I",
+    "Only II",
+    "Both I and II",
+    "Each statement alone is sufficient"
+   ]
+  },
+  "325": {
+   "options": [
+    "Only I",
+    "Only II",
+    "Both I and II",
+    "Neither I nor II"
+   ]
+  },
+  "326": {
+   "options": [
+    "Only I",
+    "Only II",
+    "Both I and II",
+    "Neither I nor II"
+   ]
+  },
+  "327": {
+   "options": [
+    "Only I",
+    "Only II",
+    "Both I and II",
+    "Neither I nor II"
+   ]
+  },
+  "344": {
+   "options": [
+    "Statement 1 alone is sufficient, but statement 2 alone is not.",
+    "Statement 2 alone is sufficient, but statement 1 alone is not.",
+    "Both statements together are sufficient, but neither alone is sufficient.",
+    "Each statement alone is sufficient."
+   ]
+  },
+  "345": {
+   "options": [
+    "Statement 1 alone is sufficient, but statement 2 alone is not.",
+    "Statement 2 alone is sufficient, but statement 1 alone is not.",
+    "Both statements together are sufficient, but neither alone is sufficient.",
+    "Neither statement alone nor together is sufficient."
+   ]
+  },
+  "346": {
+   "options": [
+    "Statement 1 alone is sufficient, but statement 2 alone is not.",
+    "Statement 2 alone is sufficient, but statement 1 alone is not.",
+    "Both statements together are sufficient, but neither alone is sufficient.",
+    "Each statement alone is sufficient."
+   ]
+  },
+  "347": {
+   "options": [
+    "Statement 1 alone is sufficient, but statement 2 alone is not.",
+    "Statement 2 alone is sufficient, but statement 1 alone is not.",
+    "Both statements together are sufficient, but neither alone is sufficient.",
+    "Neither statement alone nor together is sufficient."
+   ]
+  },
+  "348": {
+   "options": [
+    "Statement 1 alone is sufficient, but statement 2 alone is not.",
+    "Statement 2 alone is sufficient, but statement 1 alone is not.",
+    "Both statements together are sufficient, but neither alone is sufficient.",
+    "Each statement alone is sufficient."
+   ]
+  },
+  "349": {
+   "options": [
+    "Statement 1 alone is sufficient, but statement 2 alone is not.",
+    "Statement 2 alone is sufficient, but statement 1 alone is not.",
+    "Both statements together are sufficient, but neither alone is sufficient.",
+    "Neither statement alone nor together is sufficient."
+   ]
+  },
+  "350": {
+   "options": [
+    "Statement 1 alone is sufficient, but statement 2 alone is not.",
+    "Statement 2 alone is sufficient, but statement 1 alone is not.",
+    "Both statements together are sufficient, but neither alone is sufficient.",
+    "Neither statement alone nor together is sufficient."
+   ]
+  },
+  "351": {
+   "options": [
+    "Statement 1 alone is sufficient, but statement 2 alone is not.",
+    "Statement 2 alone is sufficient, but statement 1 alone is not.",
+    "Both statements together are sufficient, but neither alone is sufficient.",
+    "Neither statement alone nor together is sufficient."
+   ]
+  },
+  "352": {
+   "options": [
+    "Statement 1 alone is sufficient, but statement 2 alone is not.",
+    "Statement 2 alone is sufficient, but statement 1 alone is not.",
+    "Both statements together are sufficient, but neither alone is sufficient.",
+    "Neither statement alone nor together is sufficient."
+   ]
+  },
+  "353": {
+   "options": [
+    "Statement 1 alone is sufficient, but statement 2 alone is not.",
+    "Statement 2 alone is sufficient, but statement 1 alone is not.",
+    "Both statements together are sufficient, but neither alone is sufficient.",
+    "Each statement alone is sufficient."
+   ]
+  }
+ }
+}

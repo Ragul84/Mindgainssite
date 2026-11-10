@@ -1,0 +1,232 @@
+{
+ "retire": [
+  269,
+  462
+ ],
+ "fix": {
+  "332": {
+   "options": [
+    "Having keen understanding",
+    "Lacking common sense",
+    "Being completely ignorant",
+    "Having poor judgment"
+   ]
+  },
+  "333": {
+   "options": [
+    "Excessive self-love and self-admiration",
+    "Lack of self-confidence",
+    "Fear of failure",
+    "Indifference to others"
+   ]
+  },
+  "334": {
+   "options": [
+    "Strictly and severely",
+    "Leniently and gently",
+    "Randomly and chaotically",
+    "Slowly and gradually"
+   ]
+  },
+  "384": {
+   "options": [
+    "A single concept",
+    "A division into two parts",
+    "A combination of ideas",
+    "A complex system"
+   ]
+  },
+  "390": {
+   "options": [
+    "A mixture of different things",
+    "A group of similar things",
+    "A single entity",
+    "A empty set"
+   ]
+  },
+  "840": {
+   "options": [
+    "Transient",
+    "Enduring",
+    "Gregarious",
+    "Obdurate"
+   ]
+  },
+  "841": {
+   "options": [
+    "Relentless",
+    "Yielding",
+    "Discerning",
+    "Obsequious"
+   ]
+  },
+  "842": {
+   "options": [
+    "Obstinate",
+    "Tenacious",
+    "Discerning",
+    "Obsequious"
+   ]
+  },
+  "843": {
+   "options": [
+    "Astute",
+    "Indiscriminate",
+    "Obsequious",
+    "Tenacious"
+   ]
+  },
+  "849": {
+   "options": [
+    "Tenacious",
+    "Obsequious",
+    "Intractable",
+    "Vigilant"
+   ]
+  },
+  "850": {
+   "options": [
+    "Deceptive",
+    "Obsequious",
+    "Gregarious",
+    "Tenacious"
+   ]
+  },
+  "851": {
+   "options": [
+    "Loquacious",
+    "Reticent",
+    "Vigilant",
+    "Tenacious"
+   ]
+  },
+  "852": {
+   "options": [
+    "Recalcitrant",
+    "Obsequious",
+    "Ephemeral",
+    "Gregarious"
+   ]
+  },
+  "854": {
+   "options": [
+    "Stubborn",
+    "Compliant",
+    "Intractable",
+    "Resilient"
+   ]
+  },
+  "855": {
+   "options": [
+    "Unyielding",
+    "Inflexible",
+    "Flexible",
+    "Rigid"
+   ]
+  },
+  "864": {
+   "options": [
+    "Obsequious",
+    "Respected",
+    "Ephemeral",
+    "Gregarious"
+   ]
+  },
+  "865": {
+   "options": [
+    "Discerning",
+    "Astute",
+    "Foolish",
+    "Prudent"
+   ]
+  },
+  "867": {
+   "options": [
+    "Weary",
+    "Resilient",
+    "Vigilant",
+    "Ebullient"
+   ]
+  },
+  "876": {
+   "options": [
+    "Loquacious",
+    "Laconic",
+    "Garrulous",
+    "Effusive"
+   ]
+  },
+  "877": {
+   "options": [
+    "Elucidate",
+    "Confound",
+    "Mitigate",
+    "Exacerbate"
+   ]
+  },
+  "882": {
+   "options": [
+    "Imitable",
+    "Unique",
+    "Obdurate",
+    "Gregarious"
+   ]
+  },
+  "888": {
+   "options": [
+    "Stable",
+    "Tenacious",
+    "Ephemeral",
+    "Gregarious"
+   ]
+  },
+  "889": {
+   "options": [
+    "Gregarious",
+    "Recalcitrant",
+    "Recluse",
+    "Obsequious"
+   ]
+  },
+  "890": {
+   "options": [
+    "Ephemeral",
+    "Permanent",
+    "Gregarious",
+    "Obsequious"
+   ]
+  },
+  "891": {
+   "options": [
+    "Despise",
+    "Venerate",
+    "Obsequious",
+    "Gregarious"
+   ]
+  },
+  "892": {
+   "options": [
+    "Exuberant",
+    "Reticent",
+    "Recalcitrant",
+    "Somber"
+   ]
+  },
+  "894": {
+   "options": [
+    "Oscillate",
+    "Decisive",
+    "Inscrutable",
+    "Abstruse"
+   ]
+  },
+  "902": {
+   "options": [
+    "Recalcitrant",
+    "Compliant",
+    "Obdurate",
+    "Debonair"
+   ]
+  }
+ }
+}

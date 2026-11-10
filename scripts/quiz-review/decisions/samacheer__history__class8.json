@@ -1,0 +1,143 @@
+{
+ "retire": [
+  339
+ ],
+ "fix": {
+  "169": {
+   "options": [
+    "Lord Ripon",
+    "A.O. Hume",
+    "W.C. Banerjee",
+    "Dadabhai Naoroji"
+   ]
+  },
+  "170": {
+   "options": [
+    "Superior artillery of the British",
+    "Betrayal by Mir Jafar",
+    "Lack of soldiers in the Nawab's army",
+    "Floods in the battlefield"
+   ]
+  },
+  "171": {
+   "options": [
+    "Macaulay's Minute supported Indian languages",
+    "Wood's Dispatch of 1854 recommended English education",
+    "Hunter Commission opposed female education",
+    "Calcutta University was established in 1857"
+   ]
+  },
+  "172": {
+   "options": [
+    "Regulating Act (1773)",
+    "Pitt's India Act (1784)",
+    "Government of India Act (1858)",
+    "Indian Councils Act (1861)"
+   ]
+  },
+  "173": {
+   "options": [
+    "Child marriage was legally banned by Lord Canning",
+    "Ishwar Chandra Vidyasagar campaigned for widow remarriage",
+    "The Age of Consent Act was passed in 1891",
+    "All of the above"
+   ]
+  },
+  "174": {
+   "options": [
+    "Warren Hastings",
+    "Lord Wellesley",
+    "Lord Hastings",
+    "Lord Dalhousie"
+   ]
+  },
+  "209": {
+   "options": [
+    "French",
+    "Dutch",
+    "Portuguese",
+    "English"
+   ]
+  },
+  "210": {
+   "options": [
+    "Siraj-ud-Daulah",
+    "Mir Jafar",
+    "Tipu Sultan",
+    "Shah Alam II"
+   ]
+  },
+  "212": {
+   "options": [
+    "High tariffs on Indian textiles in Britain",
+    "Destruction of Indian looms by the British",
+    "Introduction of machine-made textiles from England",
+    "Increased demand for Indian cotton textiles globally"
+   ]
+  },
+  "213": {
+   "options": [
+    "Promotion of only vernacular languages",
+    "Establishment of a system of education from primary to university level",
+    "Complete withdrawal of government support for education",
+    "Focus only on religious education"
+   ]
+  },
+  "214": {
+   "options": [
+    "It fixed the revenue demand permanently.",
+    "It recognized the zamindars as owners of the land.",
+    "It was beneficial for the peasants.",
+    "It was introduced by Lord Cornwallis."
+   ]
+  },
+  "215": {
+   "options": [
+    "Bombay (Mumbai)",
+    "Calcutta (Kolkata)",
+    "Madras (Chennai)",
+    "Kanpur"
+   ]
+  },
+  "216": {
+   "options": [
+    "Nana Saheb",
+    "Kunwar Singh",
+    "Rani Lakshmi Bai",
+    "Bahadur Shah Zafar"
+   ]
+  },
+  "341": {
+   "options": [
+    "Macaulay's Minute (1835)",
+    "Wood's Despatch (1854)",
+    "Hunter Commission (1882)",
+    "Raleigh Commission (1902)"
+   ]
+  },
+  "342": {
+   "options": [
+    "Ooty",
+    "Shimla",
+    "Darjeeling",
+    "Mussorie"
+   ]
+  },
+  "343": {
+   "options": [
+    "Calcutta",
+    "Bombay",
+    "Madras",
+    "Kanpur"
+   ]
+  },
+  "349": {
+   "options": [
+    "i, ii, iii",
+    "i, ii, iv",
+    "i, iii, iv",
+    "all of these"
+   ]
+  }
+ }
+}

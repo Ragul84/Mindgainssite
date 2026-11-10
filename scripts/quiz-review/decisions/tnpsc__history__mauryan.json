@@ -1,0 +1,21 @@
+{
+ "retire": [],
+ "fix": {
+  "163": {
+   "options": [
+    "Brahmi",
+    "Kharosthi",
+    "Devanagari",
+    "Tamil-Brahmi"
+   ]
+  },
+  "164": {
+   "options": [
+    "Cheran",
+    "Pandyan",
+    "Cholan",
+    "Pallavan"
+   ]
+  }
+ }
+}

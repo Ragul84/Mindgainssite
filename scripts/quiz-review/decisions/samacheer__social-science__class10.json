@@ -1,0 +1,17 @@
+{
+ "retire": [
+  20,
+  67
+ ],
+ "fix": {
+  "14": {
+   "question": "I) The Chief Justice and other judges of the Supreme Court hold the office up to the age of 62 years."
+  },
+  "61": {
+   "question": "Who granted the English “golden Fireman” in 1632?"
+  },
+  "83": {
+   "question": "Transport provides door to door services."
+  }
+ }
+}

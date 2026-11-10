@@ -1,0 +1,173 @@
+{
+ "retire": [],
+ "fix": {
+  "6": {
+   "options": [
+    "Wells",
+    "Rivers",
+    "Canals",
+    "Rainwater"
+   ]
+  },
+  "7": {
+   "options": [
+    "Temples",
+    "Forts",
+    "Public Baths",
+    "Tombs"
+   ]
+  },
+  "8": {
+   "options": [
+    "Mohenjo-Daro",
+    "Harappa",
+    "Lothal",
+    "Kalibangan"
+   ]
+  },
+  "9": {
+   "options": [
+    "Wheat",
+    "Barley",
+    "Rice",
+    "Cotton"
+   ]
+  },
+  "10": {
+   "options": [
+    "Muqaddam",
+    "Amil",
+    "Zamindar",
+    "Chaudhary"
+   ]
+  },
+  "11": {
+   "options": [
+    "Hinduism",
+    "Buddhism",
+    "Jainism",
+    "None"
+   ]
+  },
+  "12": {
+   "options": [
+    "Treaty of Westphalia",
+    "Treaty of Versailles",
+    "No treaty",
+    "Indus Valley Treaty"
+   ]
+  },
+  "13": {
+   "options": [
+    "Caste system",
+    "Class system",
+    "Matriarchal society",
+    "None"
+   ]
+  },
+  "14": {
+   "options": [
+    "Non-Cooperation Movement",
+    "Civil Disobedience Movement",
+    "None",
+    "Quit India Movement"
+   ]
+  },
+  "15": {
+   "options": [
+    "Regulating Act",
+    "Pitts India Act",
+    "None",
+    "Government of India Act"
+   ]
+  },
+  "327": {
+   "options": [
+    "Amil",
+    "Muqaddam",
+    "Governor",
+    "None"
+   ]
+  },
+  "328": {
+   "options": [
+    "Use of iron",
+    "Use of bronze",
+    "Seals and pottery",
+    "Sculptures"
+   ]
+  },
+  "329": {
+   "options": [
+    "Harappa",
+    "Mohenjo-Daro",
+    "Lothal",
+    "Kalibangan"
+   ]
+  },
+  "368": {
+   "options": [
+    "Defensive structure",
+    "Administrative center",
+    "Religious complex",
+    "Commercial hub"
+   ]
+  },
+  "369": {
+   "options": [
+    "Mohenjo-Daro",
+    "Harappa",
+    "Lothal",
+    "Kalibangan"
+   ]
+  },
+  "370": {
+   "options": [
+    "Mohenjo-Daro",
+    "Harappa",
+    "Lothal",
+    "Dholavira"
+   ]
+  },
+  "371": {
+   "options": [
+    "Use of arches",
+    "Use of domes",
+    "Use of columns",
+    "Use of baked bricks"
+   ]
+  },
+  "372": {
+   "options": [
+    "Wheat",
+    "Barley",
+    "Rice",
+    "Cotton"
+   ]
+  },
+  "373": {
+   "options": [
+    "Redware pottery",
+    "Blackware pottery",
+    "Greyware pottery",
+    "Polychrome pottery"
+   ]
+  },
+  "374": {
+   "options": [
+    "Monarchy",
+    "Democracy",
+    "Oligarchy",
+    "Decentralized governance"
+   ]
+  },
+  "385": {
+   "options": [
+    "Pashupati seal",
+    "Indus seal",
+    "Harappan seal",
+    "Mohenjo-Daro seal"
+   ]
+  }
+ }
+}

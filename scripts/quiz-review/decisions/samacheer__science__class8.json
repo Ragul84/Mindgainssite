@@ -1,0 +1,29 @@
+{
+ "retire": [
+  421
+ ],
+ "fix": {
+  "518": {
+   "question": "'Light', what is the angle of incidence when the reflected ray is perpendicular to the incident ray?"
+  },
+  "521": {
+   "question": "Which of the following is a macronutrient required by plants, 'Plant Kingdom'?"
+  },
+  "528": {
+   "options": [
+    "Angle of incidence is always equal to angle of reflection",
+    "Incident ray, reflected ray and normal lie in different planes",
+    "The path of light is reversible",
+    "Both A and C"
+   ]
+  },
+  "530": {
+   "options": [
+    "(i) and (ii)",
+    "(ii) and (iii)",
+    "(i), (ii) and (iv)",
+    "(i), (iii) and (iv)"
+   ]
+  }
+ }
+}

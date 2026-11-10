@@ -1,0 +1,85 @@
+{
+ "retire": [],
+ "fix": {
+  "160": {
+   "options": [
+    "Arcot",
+    "Tanjore",
+    "Trichinopoly",
+    "Madras"
+   ]
+  },
+  "161": {
+   "options": [
+    "Warren Hastings",
+    "Lord Cornwallis",
+    "Lord Wellesley",
+    "Lord Dalhousie"
+   ]
+  },
+  "162": {
+   "options": [
+    "Regulating Act of 1773",
+    "Pitt's India Act of 1784",
+    "Charter Act of 1813",
+    "Charter Act of 1833"
+   ]
+  },
+  "163": {
+   "options": [
+    "Mysore",
+    "Punjab",
+    "Awadh",
+    "Satara"
+   ]
+  },
+  "164": {
+   "options": [
+    "Doctrine of Lapse",
+    "Greased cartridges",
+    "Heavy taxation",
+    "Abolition of sati"
+   ]
+  },
+  "165": {
+   "options": [
+    "Raja Ram Mohan Roy",
+    "Dayananda Saraswati",
+    "Swami Vivekananda",
+    "Keshab Chandra Sen"
+   ]
+  },
+  "166": {
+   "options": [
+    "Surat (1907)",
+    "Calcutta (1906)",
+    "Lucknow (1916)",
+    "Bombay (1915)"
+   ]
+  },
+  "167": {
+   "options": [
+    "Lahore",
+    "Amritsar",
+    "Delhi",
+    "Calcutta"
+   ]
+  },
+  "168": {
+   "options": [
+    "Rajaraja I",
+    "Rajendra I",
+    "Kulothunga I",
+    "Vijayalaya"
+   ]
+  },
+  "169": {
+   "options": [
+    "Vijayanagara Empire",
+    "Bahmani Sultanate",
+    "Delhi Sultanate",
+    "Maratha Empire"
+   ]
+  }
+ }
+}

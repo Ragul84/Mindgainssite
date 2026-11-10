@@ -1,0 +1,91 @@
+{
+ "retire": [
+  128,
+  248
+ ],
+ "fix": {
+  "139": {
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ]
+  },
+  "140": {
+   "options": [
+    "f",
+    "2f",
+    "infinity",
+    "between f and 2f"
+   ]
+  },
+  "141": {
+   "options": [
+    "a convergent beam of light",
+    "a divergent beam of light",
+    "a parallel beam of light",
+    "a coloured beam of light"
+   ]
+  },
+  "142": {
+   "options": [
+    "Positive",
+    "negative",
+    "either positive or negative",
+    "zero"
+   ]
+  },
+  "143": {
+   "options": [
+    "focus",
+    "infinity",
+    "at 2f",
+    "between f and 2f"
+   ]
+  },
+  "144": {
+   "options": [
+    "4m",
+    "–40m",
+    "–0.25 m",
+    "–2.5 m"
+   ]
+  },
+  "145": {
+   "options": [
+    "behind the retina",
+    "on the retina",
+    "in front of the retina",
+    "on the blind spot"
+   ]
+  },
+  "146": {
+   "options": [
+    "convex lens",
+    "concave lens",
+    "convex mirror",
+    "Bi focal lenses"
+   ]
+  },
+  "147": {
+   "options": [
+    "A convex lens of focal length 5 cm",
+    "A concave lens of focal length 5 cm",
+    "A convex lens of focal length 10 cm",
+    "A concave lens of focal length 10 cm"
+   ]
+  },
+  "148": {
+   "options": [
+    "VB = VG = VR",
+    "VB > VG >VR",
+    "VB < VG < VR",
+    "VB < VG > VR"
+   ]
+  },
+  "165": {
+   "question": "Which of the following is NOT a characteristic of light?"
+  }
+ }
+}

@@ -1,5 +1,7 @@
 {
- "retire": [],
+ "retire": [
+  22
+ ],
  "fix": {
   "44": {
    "question": "Match List I with List II: List I (Term) A. Dictatorship B. Democracy C. Monarchy D. Universal adult franchise List II (Definition) 1. Rule by a king or queen 2. Government by the people 3. Rule by a single person with absolute power 4. Right to vote for all adults",

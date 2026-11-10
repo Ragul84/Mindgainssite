@@ -8,11 +8,57 @@
  "87": "retire",
  "88": "retire",
  "89": "retire",
- "117": "retire",
- "118": "retire",
+ "117": {
+  "stem": "Match the following explicit cost examples:",
+  "L": [
+   "Labor",
+   "Building",
+   "Capital",
+   "Inputs"
+  ],
+  "R": [
+   "Wages",
+   "Rent",
+   "Interest",
+   "Raw material payment"
+  ],
+  "recovered": true,
+  "why": "Labor – Wages; Building – Rent; Capital – Interest; Inputs – Raw material payment."
+ },
+ "118": {
+  "stem": "Match the following concepts:",
+  "L": [
+   "Cost",
+   "Revenue",
+   "Profit",
+   "Cost Analysis"
+  ],
+  "R": [
+   "Total expenses incurred",
+   "Realized at sale of goods",
+   "Objective of a firm",
+   "Study of cost behaviour"
+  ],
+  "recovered": true,
+  "why": "Cost – Total expenses incurred; Revenue – Realized at sale of goods; Profit – Objective of a firm; Cost Analysis – Study of cost behaviour."
+ },
  "174": "retire",
  "175": "retire",
- "176": "retire",
+ "176": {
+  "stem": "Match the reward to the agent:",
+  "L": [
+   "Landlord",
+   "Labourer",
+   "Capitalist"
+  ],
+  "R": [
+   "Rent",
+   "Wage",
+   "Interest"
+  ],
+  "recovered": true,
+  "why": "Landlord – Rent; Labourer – Wage; Capitalist – Interest."
+ },
  "177": "retire",
  "178": "retire",
  "206": "retire",

@@ -1,5 +1,8 @@
 {
- "retire": [],
+ "retire": [
+  78,
+  86
+ ],
  "fix": {
   "38": {
    "question": "Match List I with List II: List I (Organ) A. Judiciary B. Legislature C. Executive List II (Function) 1. Makes Laws 2. Interprets Laws 3. Implements Laws",

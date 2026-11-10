@@ -10,6 +10,12 @@
   118,
   119,
   120,
+  161,
+  162,
+  163,
+  164,
+  165,
+  166,
   212,
   213,
   214,
@@ -23,6 +29,8 @@
   315,
   316,
   343,
+  394,
+  452,
   453,
   454,
   455,
@@ -167,6 +175,569 @@
    ],
    "answer_index": 0,
    "explanation": "Ethanol is blended into petrol; methanol is widely used as an industrial solvent."
+  },
+  "15": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "17": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "22": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "26": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "30": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "39": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "41": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "53": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "54": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "67": {
+   "question": "Which of these is NOT mentioned as a constituent of nitrogen compounds?"
+  },
+  "68": {
+   "question": "What is the application of diazonium salts?"
+  },
+  "81": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "82": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "83": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "84": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "85": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "106": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "107": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "108": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "109": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "110": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "122": {
+   "question": "What is the primary function of biomolecules?"
+  },
+  "137": {
+   "question": "A medicine is a drug that interacts with which macromolecular targets to produce a therapeutic response?"
+  },
+  "138": {
+   "question": "Which of these is a purpose of using a drug?"
+  },
+  "142": {
+   "question": "Life itself is described as:"
+  },
+  "152": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "153": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "154": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "155": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "156": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "168": {
+   "question": "Who is the Swiss Chemist?"
+  },
+  "192": {
+   "question": "Which elements have more varied properties than metals in the p-block?"
+  },
+  "202": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "203": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "204": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "205": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "206": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "251": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "252": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "253": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "254": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "255": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "278": {
+   "question": "Who is the Scottish chemist?"
+  },
+  "290": {
+   "question": "Which metals play an important role (mentioned at the end of the snippet)?"
+  },
+  "303": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "304": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "305": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "306": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "307": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "325": {
+   "question": "Transition metals are located between which two blocks?"
+  },
+  "351": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "362": {
+   "question": "What did Arrhenius propose regarding crystalline salts when dissolved in water?"
+  },
+  "363": {
+   "question": "Which of the following is an example of an extremely fast chemical reaction?"
+  },
+  "364": {
+   "question": "Which of the following is an example of an extremely slow chemical reaction?"
+  },
+  "367": {
+   "question": "What is the time scale of the fastest reactions?"
+  },
+  "370": {
+   "question": "What happens during the period between the initial and final stage of a reaction?"
+  },
+  "381": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "382": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "383": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "384": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "385": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "399": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "421": {
+   "question": "How does the bonding of atoms at the surface of a solid compare to the bulk portion?"
+  },
+  "441": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "442": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "443": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "444": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "445": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "462": {
+   "question": "Which of the following is a key role of surfaces?"
+  },
+  "463": {
+   "question": "Which of the following is NOT an interface?"
+  },
+  "516": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "519": {
+   "question": "Which of the following is NOT a common combined state of metals in nature?"
+  },
+  "523": {
+   "question": "How do most metals occur in nature?"
+  },
+  "537": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "538": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "539": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "540": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "541": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "552": {
+   "question": "Which of the following is NOT an example of an interface?"
+  },
+  "554": {
+   "question": "Where is hydrogen in interstellar space formed?"
+  },
+  "555": {
+   "question": "Which of the following is a key role played by surfaces?"
+  },
+  "568": {
+   "question": "Which of these are interfaces? I. Solid-Liquid II. Solid-Gas III. Liquid-Liquid IV. Gas-Gas"
+  },
+  "573": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "574": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "575": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "576": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
   }
  }
 }

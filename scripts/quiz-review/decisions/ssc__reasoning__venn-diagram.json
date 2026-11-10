@@ -1,0 +1,254 @@
+{
+ "retire": [
+  10,
+  12,
+  14,
+  16,
+  20,
+  22,
+  26,
+  30
+ ],
+ "fix": {
+  "0": {
+   "options": [
+    "Three concentric circles, with 'Males' as the outermost, 'Fathers' in the middle, and 'Doctors' as the innermost.",
+    "Three overlapping circles, where 'Fathers' is completely inside 'Males', and 'Doctors' overlaps with both 'Males' and 'Fathers'.",
+    "Three separate circles, indicating no relationship between them.",
+    "Two overlapping circles, with a third circle completely inside one of the overlapping regions."
+   ]
+  },
+  "1": {
+   "options": [
+    "Three separate circles.",
+    "'Tigers' completely inside 'Carnivores', and 'Carnivores' completely inside 'Animals'.",
+    "'Tigers' completely inside 'Animals', and 'Carnivores' overlapping with 'Animals' but also containing 'Tigers'.",
+    "'Tigers' completely inside 'Carnivores', and 'Carnivores' overlapping with 'Animals'."
+   ]
+  },
+  "2": {
+   "options": [
+    "Three circles, where 'Mothers' is completely inside 'Women', and 'Engineers' overlaps with both 'Women' and 'Mothers'.",
+    "Three concentric circles, with 'Women' as the largest, 'Mothers' in the middle, and 'Engineers' as the smallest.",
+    "Three separate circles, indicating no common elements.",
+    "Two overlapping circles, with 'Mothers' completely outside both."
+   ]
+  },
+  "3": {
+   "options": [
+    "Three separate circles.",
+    "Three circles, each partially overlapping with the other two.",
+    "Two concentric circles, with a third circle completely outside.",
+    "One circle completely inside another, with a third circle overlapping the inner one."
+   ]
+  },
+  "4": {
+   "options": [
+    "12",
+    "10",
+    "8",
+    "5"
+   ]
+  },
+  "5": {
+   "options": [
+    "4",
+    "3",
+    "2",
+    "1"
+   ]
+  },
+  "6": {
+   "options": [
+    "1",
+    "2",
+    "3",
+    "4"
+   ]
+  },
+  "7": {
+   "options": [
+    "10",
+    "11",
+    "12",
+    "13"
+   ]
+  },
+  "8": {
+   "options": [
+    "Three separate circles.",
+    "Two concentric circles, with a third circle overlapping the outermost one.",
+    "Three concentric circles, with 'Animals' as the outermost, 'Carnivores' as the middle, and 'Tigers' as the innermost.",
+    "'Tigers' completely inside 'Carnivores', and 'Carnivores' completely inside 'Animals'."
+   ]
+  },
+  "9": {
+   "options": [
+    "Three separate circles.",
+    "Three concentric circles.",
+    "Three circles that partially overlap with each other.",
+    "Two circles completely overlapping, with a third circle separate."
+   ]
+  },
+  "11": {
+   "options": [
+    "'Mothers' completely inside 'Women', and 'Engineers' overlapping with both 'Women' and 'Mothers'.",
+    "Three concentric circles, with 'Women' as the outermost, 'Mothers' as the middle, and 'Engineers' as the innermost.",
+    "Three separate circles.",
+    "'Engineers' completely inside 'Women', and 'Mothers' overlapping with 'Engineers'."
+   ]
+  },
+  "13": {
+   "options": [
+    "Two separate circles, with a third circle completely inside one of them.",
+    "'Novels' completely inside 'Books', and 'Dictionaries' completely inside 'Books', but 'Novels' and 'Dictionaries' are separate from each other.",
+    "Three overlapping circles.",
+    "Three concentric circles."
+   ]
+  },
+  "15": {
+   "options": [
+    "Three concentric circles.",
+    "'Mothers' completely inside 'Women', and 'Engineers' overlapping with both 'Women' and 'Mothers'.",
+    "'Women' and 'Mothers' as separate circles, with 'Engineers' overlapping both.",
+    "'Mothers' completely inside 'Engineers', and 'Engineers' completely inside 'Women'."
+   ]
+  },
+  "17": {
+   "options": [
+    "Two separate circles ('Novels' and 'Dictionaries') completely inside a larger circle ('Books').",
+    "Three overlapping circles.",
+    "'Novels' completely inside 'Books', and 'Dictionaries' completely inside 'Books', with 'Novels' and 'Dictionaries' overlapping.",
+    "'Novels' completely inside 'Books', and 'Dictionaries' completely inside 'Books', with 'Novels' and 'Dictionaries' separate from each other."
+   ]
+  },
+  "18": {
+   "options": [
+    "12",
+    "18",
+    "25",
+    "7"
+   ]
+  },
+  "19": {
+   "options": [
+    "'Potatoes' completely inside 'Vegetables', and 'Fruits' as a separate circle.",
+    "'Potatoes' completely inside 'Vegetables', and 'Fruits' overlapping with 'Vegetables'.",
+    "Three concentric circles.",
+    "Three separate circles."
+   ]
+  },
+  "21": {
+   "options": [
+    "'Mothers' completely inside 'Women', and 'Engineers' partially overlapping both 'Women' and 'Mothers'.",
+    "'Women' completely inside 'Mothers', and 'Engineers' partially overlapping 'Women'.",
+    "Three separate circles.",
+    "'Mothers' completely inside 'Engineers', and 'Engineers' completely inside 'Women'."
+   ]
+  },
+  "23": {
+   "options": [
+    "'Novels' completely inside 'Books', and 'Dictionaries' completely inside 'Books', with 'Novels' and 'Dictionaries' being separate.",
+    "'Novels' completely inside 'Dictionaries', and 'Dictionaries' completely inside 'Books'.",
+    "Three overlapping circles.",
+    "Two separate circles, with a third circle completely outside them."
+   ]
+  },
+  "24": {
+   "options": [
+    "12",
+    "15",
+    "9",
+    "6"
+   ]
+  },
+  "25": {
+   "options": [
+    "Three separate circles.",
+    "'Teachers' and 'Scholars' partially overlapping, and 'Students' completely separate.",
+    "'Teachers' and 'Scholars' partially overlapping, and 'Students' partially overlapping 'Teachers' but not 'Scholars'.",
+    "All three circles partially overlapping each other."
+   ]
+  },
+  "27": {
+   "options": [
+    "'Mothers' completely inside 'Women', and 'Engineers' overlapping with both 'Women' and 'Mothers'.",
+    "Three separate circles.",
+    "'Mothers' completely inside 'Engineers', and 'Engineers' completely inside 'Women'.",
+    "'Women' completely inside 'Mothers', and 'Engineers' overlapping with 'Women'."
+   ]
+  },
+  "28": {
+   "options": [
+    "15",
+    "20",
+    "10",
+    "5"
+   ]
+  },
+  "29": {
+   "options": [
+    "'Novels' completely inside 'Books', and 'Libraries' containing both 'Books' and 'Novels'.",
+    "'Novels' completely inside 'Books', and 'Libraries' overlapping with 'Books' but not containing 'Novels'.",
+    "'Books' completely inside 'Novels', and 'Libraries' overlapping with 'Books'.",
+    "Three separate circles."
+   ]
+  },
+  "31": {
+   "options": [
+    "'Boys' completely inside 'Students', and 'Athletes' overlapping with both 'Students' and 'Boys'.",
+    "'Students' completely inside 'Boys', and 'Athletes' overlapping with 'Students'.",
+    "'Boys' completely inside 'Athletes', and 'Athletes' completely inside 'Students'.",
+    "Three separate circles."
+   ]
+  },
+  "32": {
+   "options": [
+    "Three concentric circles, with 'Females' as the outermost, 'Mothers' in the middle, and 'Doctors' as the innermost.",
+    "Three overlapping circles, where 'Mothers' is completely inside 'Females', and 'Doctors' overlaps with both 'Females' and 'Mothers'.",
+    "Three separate circles, indicating no relationship between them.",
+    "Two overlapping circles ('Females' and 'Doctors'), with 'Mothers' completely inside the 'Females' circle and partially overlapping with 'Doctors'."
+   ]
+  },
+  "33": {
+   "options": [
+    "Three separate circles.",
+    "Two concentric circles ('Animals' outermost, 'Tigers' innermost) with a third circle ('Carnivores') completely overlapping 'Tigers' and partially overlapping 'Animals'.",
+    "'Tigers' completely inside 'Carnivores', and 'Carnivores' completely inside 'Animals'.",
+    "'Animals' completely inside 'Carnivores', and 'Tigers' completely inside 'Animals'."
+   ]
+  },
+  "34": {
+   "options": [
+    "12",
+    "8",
+    "10",
+    "5"
+   ]
+  },
+  "35": {
+   "options": [
+    "'Fathers' completely inside 'Males', and 'Children' overlapping with 'Males' but separate from 'Fathers'.",
+    "'Fathers' completely inside 'Males', and 'Children' completely separate from both 'Males' and 'Fathers'.",
+    "'Males' completely inside 'Fathers', and 'Children' overlapping with 'Males'.",
+    "Three concentric circles, with 'Males' as the outermost, 'Fathers' in the middle, and 'Children' as the innermost."
+   ]
+  },
+  "36": {
+   "options": [
+    "6",
+    "10",
+    "4",
+    "12"
+   ]
+  },
+  "37": {
+   "options": [
+    "Three separate circles.",
+    "'Teachers' completely inside 'Graduates', and 'Employees' overlapping with both 'Teachers' and 'Graduates'.",
+    "'Graduates' completely inside 'Employees', and 'Teachers' completely inside 'Graduates'.",
+    "Three overlapping circles, where all three categories share some common members, but none are fully contained within another."
+   ]
+  }
+ }
+}

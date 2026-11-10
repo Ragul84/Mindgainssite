@@ -1,6 +1,70 @@
 {
- "385": "retire",
- "386": "retire",
- "387": "retire",
- "388": "retire"
+ "385": {
+  "stem": "Match the identities:",
+  "L": [
+   "Difference of Squares",
+   "Square of Sum",
+   "Sum of Cubes",
+   "Difference of Cubes"
+  ],
+  "R": [
+   "a² - b²",
+   "a² + 2ab + b²",
+   "a³ + b³",
+   "a³ - b³"
+  ],
+  "recovered": true,
+  "why": "Difference of squares: a² - b²; square of a sum: a² + 2ab + b²; sum of cubes: a³ + b³; difference of cubes: a³ - b³."
+ },
+ "386": {
+  "stem": "Match the expanded forms:",
+  "L": [
+   "(x+1)²",
+   "(x-1)²",
+   "(x+2)²",
+   "(x-2)²"
+  ],
+  "R": [
+   "x²+2x+1",
+   "x²-2x+1",
+   "x²+4x+4",
+   "x²-4x+4"
+  ],
+  "recovered": true,
+  "why": "(x+1)² – x²+2x+1; (x-1)² – x²-2x+1; (x+2)² – x²+4x+4; (x-2)² – x²-4x+4."
+ },
+ "387": {
+  "stem": "Match the values:",
+  "L": [
+   "2³",
+   "3³",
+   "4³",
+   "5³"
+  ],
+  "R": [
+   "8",
+   "27",
+   "64",
+   "125"
+  ],
+  "recovered": true,
+  "why": "2³ – 8; 3³ – 27; 4³ – 64; 5³ – 125."
+ },
+ "388": {
+  "stem": "Match the terms:",
+  "L": [
+   "Monomial",
+   "Binomial",
+   "Trinomial",
+   "Polynomial"
+  ],
+  "R": [
+   "One term",
+   "Two terms",
+   "Three terms",
+   "Many terms"
+  ],
+  "recovered": true,
+  "why": "Monomial – One term; Binomial – Two terms; Trinomial – Three terms; Polynomial – Many terms."
+ }
 }

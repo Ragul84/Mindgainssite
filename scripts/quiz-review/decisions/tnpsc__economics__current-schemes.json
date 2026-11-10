@@ -1,0 +1,269 @@
+{
+ "retire": [],
+ "fix": {
+  "129": {
+   "options": [
+    "Preparation of the budget by the Ministry of Finance",
+    "Approval of the budget by the Parliament",
+    "Implementation of the budget by the state governments",
+    "All of the above"
+   ]
+  },
+  "130": {
+   "options": [
+    "Make in India",
+    "Digital India",
+    "Start-up India",
+    "Pradhan Mantri Jan Dhan Yojana"
+   ]
+  },
+  "131": {
+   "options": [
+    "National income",
+    "Per capita income",
+    "Gross Domestic Product (GDP)",
+    "All of the above"
+   ]
+  },
+  "218": {
+   "options": [
+    "To achieve rapid industrialization",
+    "To promote cooperative federalism",
+    "To enhance foreign trade",
+    "To reduce national debt"
+   ]
+  },
+  "219": {
+   "options": [
+    "Pradhan Mantri Fasal Bima Yojana",
+    "Pradhan Mantri Krishi Sinchayee Yojana",
+    "Tamil Nadu Agricultural Renewal Mission",
+    "National Food Security Mission"
+   ]
+  },
+  "220": {
+   "options": [
+    "It measures the state's foreign exchange reserves",
+    "It measures the state's economic growth",
+    "It measures the state's fiscal deficit",
+    "It measures the state's trade balance"
+   ]
+  },
+  "221": {
+   "options": [
+    "It provides financial assistance to unemployed youth",
+    "It provides vocational training to unemployed youth",
+    "It provides subsidies to entrepreneurs",
+    "It provides tax exemptions to startups"
+   ]
+  },
+  "222": {
+   "options": [
+    "To increase foreign investment",
+    "To promote domestic manufacturing",
+    "To enhance export competitiveness",
+    "To reduce trade deficit"
+   ]
+  },
+  "223": {
+   "options": [
+    "Pradhan Mantri Jan-Dhan Yojana",
+    "Pradhan Mantri MUDRA Yojana",
+    "Tamil Nadu State Rural Livelihood Mission",
+    "Deendayal Antyodaya Yojana"
+   ]
+  },
+  "224": {
+   "options": [
+    "It measures the country's foreign exchange reserves",
+    "It measures the country's economic growth",
+    "It measures the country's fiscal deficit",
+    "It measures the country's trade balance"
+   ]
+  },
+  "225": {
+   "options": [
+    "Corruption and leakage",
+    "Inefficient supply chain management",
+    "Lack of awareness among beneficiaries",
+    "Insufficient funding"
+   ]
+  },
+  "226": {
+   "options": [
+    "To reduce the state's fiscal deficit",
+    "To increase the state's revenue",
+    "To allocate resources efficiently",
+    "To promote foreign investment"
+   ]
+  },
+  "227": {
+   "options": [
+    "Tamil Nadu Export Promotion Strategy",
+    "Tamil Nadu Industrial Policy",
+    "Tamil Nadu Investment Promotion Scheme",
+    "Tamil Nadu Tourism Promotion Scheme"
+   ]
+  },
+  "251": {
+   "options": [
+    "To achieve rapid industrialization",
+    "To promote cooperative federalism and economic growth",
+    "To increase foreign investment only",
+    "To reduce government expenditure"
+   ]
+  },
+  "252": {
+   "options": [
+    "It provides a minimum wage to rural laborers",
+    "It guarantees 100 days of employment per year",
+    "It focuses on urban employment only",
+    "It provides old-age pension"
+   ]
+  },
+  "253": {
+   "options": [
+    "To reduce fiscal deficit",
+    "To allocate resources efficiently and achieve economic growth",
+    "To increase taxes only",
+    "To reduce government revenue"
+   ]
+  },
+  "254": {
+   "options": [
+    "To provide employment only",
+    "To provide food security only",
+    "To improve the standard of living of the poor",
+    "To reduce government expenditure"
+   ]
+  },
+  "255": {
+   "options": [
+    "Make in India",
+    "Start-up India",
+    "Tamil Nadu Industrial Policy 2020",
+    "Digital India"
+   ]
+  },
+  "256": {
+   "options": [
+    "National Accounting",
+    "Economic Planning",
+    "GDP Calculation",
+    "All of the above"
+   ]
+  },
+  "257": {
+   "options": [
+    "National Agricultural Market (eNAM)",
+    "Farmers' Producer Organizations",
+    "Agricultural Marketing Information Network",
+    "All of the above"
+   ]
+  },
+  "280": {
+   "options": [
+    "Soil Health Card Scheme",
+    "Pradhan Mantri Fasal Bima Yojana",
+    "National Food Security Mission",
+    "All of the above"
+   ]
+  },
+  "281": {
+   "options": [
+    "Zero-based budgeting",
+    "Performance budgeting",
+    "Outcome budgeting",
+    "All of the above"
+   ]
+  },
+  "283": {
+   "options": [
+    "To increase agricultural production",
+    "To promote port-led development",
+    "To reduce national debt",
+    "To increase foreign investment in IT sector"
+   ]
+  },
+  "284": {
+   "options": [
+    "Kisan Credit Card",
+    "Uzhavan",
+    "National Rural Employment Guarantee Act",
+    "Deen Dayal Upadhyaya Antyodaya Yojana"
+   ]
+  },
+  "285": {
+   "options": [
+    "Dr. MGR Nobility Scheme",
+    "Dr. Ambedkar Scheme",
+    "Kalaignar Insurance Scheme for Life Saving Treatments",
+    "Unemployment Allowance Scheme"
+   ]
+  },
+  "286": {
+   "options": [
+    "National Mission for Sustainable Agriculture",
+    "Rashtriya Krishi Vikas Yojana",
+    "Pradhan Mantri Fasal Bima Yojana",
+    "Soil Health Card Scheme"
+   ]
+  },
+  "287": {
+   "options": [
+    "To increase foreign investment",
+    "To promote digital literacy",
+    "To reduce national debt",
+    "To increase agricultural production"
+   ]
+  },
+  "288": {
+   "options": [
+    "Pradhan Mantri Jan Dhan Yojana",
+    "Atal Pension Yojana",
+    "Pradhan Mantri Suraksha Bima Yojana",
+    "Pradhan Mantri Jeevan Jyoti Bima Yojana"
+   ]
+  },
+  "289": {
+   "options": [
+    "Allocation for education sector",
+    "Allocation for healthcare sector",
+    "Allocation for infrastructure development",
+    "All of the above"
+   ]
+  },
+  "290": {
+   "options": [
+    "Make in India",
+    "Start-Up India",
+    "Stand-Up India",
+    "Digital India"
+   ]
+  },
+  "291": {
+   "options": [
+    "Balance of trade",
+    "Balance of payments",
+    "Current account deficit",
+    "Fiscal deficit"
+   ]
+  },
+  "292": {
+   "options": [
+    "Make in India",
+    "Digital India",
+    "Foreign Trade Policy",
+    "Start-up India"
+   ]
+  },
+  "293": {
+   "options": [
+    "Make in India",
+    "Digital India",
+    "Start-up India",
+    "Ease of Doing Business Index"
+   ]
+  }
+ }
+}

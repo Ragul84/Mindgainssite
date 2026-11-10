@@ -1,0 +1,1197 @@
+{
+ "retire": [],
+ "fix": {
+  "15": {
+   "options": [
+    "Demand-pull factors",
+    "Cost-push factors",
+    "Supply-side constraints in agriculture",
+    "External sector shocks"
+   ]
+  },
+  "16": {
+   "options": [
+    "To regulate the exchange rate",
+    "To control liquidity in the banking system",
+    "To directly finance government deficits",
+    "To manage public sector undertakings"
+   ]
+  },
+  "17": {
+   "options": [
+    "Reduces inflation by making exports cheaper",
+    "Increases inflation due to higher import costs",
+    "Has no direct impact on inflation",
+    "Only affects capital inflows"
+   ]
+  },
+  "18": {
+   "options": [
+    "Raises the repo rate",
+    "Sells government bonds to absorb excess liquidity",
+    "Reduces the cash reserve ratio",
+    "Increases lending rates"
+   ]
+  },
+  "19": {
+   "options": [
+    "Fiscal deficit",
+    "Current account deficit",
+    "Revenue deficit",
+    "Budget deficit"
+   ]
+  },
+  "20": {
+   "options": [
+    "Improves current account balance",
+    "Worsens current account due to reduced export competitiveness",
+    "Strengthens the rupee",
+    "Reduces import dependence"
+   ]
+  },
+  "21": {
+   "options": [
+    "Increase in Minimum Support Price (MSP)",
+    "Reduction in procurement by the government",
+    "Liberalization of agricultural markets",
+    "Subsidizing fertilizers"
+   ]
+  },
+  "22": {
+   "options": [
+    "CPI reflects producer prices",
+    "CPI measures retail prices affecting households directly",
+    "WPI is more volatile",
+    "CPI is easier to calculate"
+   ]
+  },
+  "23": {
+   "options": [
+    "Directly controls money supply",
+    "Influences borrowing costs and aggregate demand",
+    "Regulates foreign exchange reserves",
+    "Adjusts fiscal spending"
+   ]
+  },
+  "24": {
+   "options": [
+    "Reduces fiscal deficit",
+    "Increases unemployment in the formal sector",
+    "Worsens income inequality and erodes purchasing power",
+    "Improves rural infrastructure"
+   ]
+  },
+  "54": {
+   "options": [
+    "Decrease the Repo Rate",
+    "Purchase government securities from the open market",
+    "Increase the Statutory Liquidity Ratio (SLR)",
+    "Lower the Reverse Repo Rate"
+   ]
+  },
+  "55": {
+   "options": [
+    "Core inflation includes food and fuel prices to show total inflation",
+    "Headline inflation excludes volatile components like food and energy",
+    "Core inflation is a better indicator of long-term inflation trends",
+    "Headline inflation is always lower than core inflation"
+   ]
+  },
+  "56": {
+   "options": [
+    "It leads to deflation due to increased exports",
+    "It causes 'imported inflation' by increasing the cost of imports",
+    "It has no impact as inflation is purely a domestic phenomenon",
+    "It decreases inflation by making domestic goods cheaper"
+   ]
+  },
+  "57": {
+   "options": [
+    "To maintain a zero-inflation environment",
+    "To prioritize GDP growth over price stability",
+    "To maintain price stability while keeping in mind the objective of growth",
+    "To fix the exchange rate of the Rupee against the Dollar"
+   ]
+  },
+  "58": {
+   "options": [
+    "It increases the money supply to stimulate growth",
+    "It neutralizes the effect of foreign exchange inflows on the domestic money supply",
+    "It leads to a rapid depreciation of the domestic currency",
+    "It forces the government to increase fiscal deficits"
+   ]
+  },
+  "59": {
+   "options": [
+    "Wholesale Price Index (WPI)",
+    "Consumer Price Index (Combined) (CPI)",
+    "GDP Deflator",
+    "Producer Price Index (PPI)"
+   ]
+  },
+  "60": {
+   "options": [
+    "The real interest rate increases",
+    "The real interest rate decreases",
+    "The real interest rate remains unchanged",
+    "The nominal interest rate automatically adjusts to compensate"
+   ]
+  },
+  "61": {
+   "options": [
+    "An increase in the minimum support price (MSP) for crops",
+    "A sudden increase in consumer spending due to a tax cut",
+    "A disruption in the supply chain due to a pandemic",
+    "An increase in the corporate tax rate"
+   ]
+  },
+  "152": {
+   "options": [
+    "It increases money supply, thereby raising inflation.",
+    "It reduces money supply, thereby putting downward pressure on inflation.",
+    "It has no effect on money supply but strengthens the rupee, which directly raises inflation.",
+    "It raises fiscal deficit, leading to higher inflation."
+   ]
+  },
+  "251": {
+   "options": [
+    "Open Market Operations and Liquidity Adjustment Facility",
+    "Public Private Partnerships and Foreign Direct Investment",
+    "Trade Balance and Balance of Payments",
+    "Fiscal Deficit and Revenue Deficit"
+   ]
+  },
+  "252": {
+   "options": [
+    "Increase in purchasing power and reduction in poverty",
+    "Decrease in savings and investment, and increase in inequality",
+    "Increase in economic growth and reduction in unemployment",
+    "Decrease in trade deficit and increase in foreign exchange reserves"
+   ]
+  },
+  "253": {
+   "options": [
+    "To increase money supply and reduce interest rates",
+    "To decrease money supply and increase interest rates",
+    "To reduce inflation by selling government securities",
+    "To increase economic growth by increasing foreign exchange reserves"
+   ]
+  },
+  "254": {
+   "options": [
+    "Decrease in aggregate demand and reduction in inflation",
+    "Increase in aggregate demand and rise in inflation",
+    "No impact on aggregate demand and inflation",
+    "Decrease in economic growth and increase in unemployment"
+   ]
+  },
+  "255": {
+   "options": [
+    "Trade surplus leads to higher inflation",
+    "Trade deficit leads to lower inflation",
+    "Trade surplus leads to lower inflation",
+    "Trade deficit has no impact on inflation"
+   ]
+  },
+  "256": {
+   "options": [
+    "Human Development Index and GDP growth rate",
+    "Poverty rate and income inequality",
+    "Unemployment rate and economic growth rate",
+    "Foreign exchange reserves and trade balance"
+   ]
+  },
+  "257": {
+   "options": [
+    "Increase in agricultural production and reduction in food prices",
+    "Decrease in agricultural production and increase in food prices",
+    "No impact on agricultural production and food prices",
+    "Increase in agricultural exports and decrease in trade deficit"
+   ]
+  },
+  "258": {
+   "options": [
+    "Capital account and financial account",
+    "Current account and trade balance",
+    "Fiscal deficit and revenue deficit",
+    "Monetary policy and interest rates"
+   ]
+  },
+  "259": {
+   "options": [
+    "Decrease in import prices leading to lower inflation",
+    "Increase in import prices leading to higher inflation",
+    "No impact on inflation as it depends on domestic factors",
+    "Reduction in export prices making Indian goods less competitive"
+   ]
+  },
+  "260": {
+   "options": [
+    "Open Market Operations",
+    "Public Private Partnerships",
+    "Fiscal Policy",
+    "Trade Policy"
+   ]
+  },
+  "261": {
+   "options": [
+    "Decrease in food prices due to increased supply",
+    "Increase in food prices due to higher production costs",
+    "No impact on food prices as MSP is not binding",
+    "Reduction in farmers' income leading to lower demand for goods"
+   ]
+  },
+  "262": {
+   "options": [
+    "Increase in exports due to competitive pricing",
+    "Decrease in imports due to high domestic prices",
+    "Deterioration in trade balance due to high import prices",
+    "Appreciation of the rupee due to high interest rates"
+   ]
+  },
+  "263": {
+   "options": [
+    "To reduce money supply and control inflation",
+    "To increase money supply and boost economic growth",
+    "To manage exchange rates without affecting money supply",
+    "To reduce fiscal deficit and improve public finances"
+   ]
+  },
+  "264": {
+   "options": [
+    "Through a decrease in aggregate demand",
+    "Through an increase in the weighted average of CPI components",
+    "Through a reduction in money supply",
+    "Through an appreciation of the rupee"
+   ]
+  },
+  "265": {
+   "options": [
+    "Fiscal Deficit",
+    "Revenue Deficit",
+    "Primary Deficit",
+    "Trade Deficit"
+   ]
+  },
+  "266": {
+   "options": [
+    "Decrease in import prices leading to lower inflation",
+    "Increase in import prices leading to higher inflation",
+    "No impact on inflation as India is self-sufficient",
+    "Reduction in export prices making Indian goods less competitive"
+   ]
+  },
+  "267": {
+   "options": [
+    "Increase in poverty due to reduced purchasing power",
+    "Decrease in inequality due to progressive taxation",
+    "Improvement in human development index due to higher government spending",
+    "Reduction in unemployment due to increased economic activity"
+   ]
+  },
+  "268": {
+   "options": [
+    "Improvement in trade balance due to higher export prices",
+    "Deterioration in trade balance due to higher import prices",
+    "No impact on trade balance as export and import elasticities are equal",
+    "Reduction in trade deficit due to lower import demand"
+   ]
+  },
+  "293": {
+   "options": [
+    "Open Market Operations",
+    "Public Private Partnership",
+    "Fiscal Policy",
+    "Trade Policy"
+   ]
+  },
+  "294": {
+   "options": [
+    "To reduce the money supply and control inflation",
+    "To increase the money supply and boost economic growth",
+    "To stabilize the exchange rate without affecting the money supply",
+    "To reduce the fiscal deficit and promote economic growth"
+   ]
+  },
+  "295": {
+   "options": [
+    "Decrease in overall inflation rate due to lower weightage of food prices",
+    "Increase in overall inflation rate due to higher weightage of food prices",
+    "No impact on overall inflation rate as food prices are not a major component",
+    "Stagflation, which is a combination of inflation and stagnant economic growth"
+   ]
+  },
+  "296": {
+   "options": [
+    "Human Development Index",
+    "Poverty Ratio",
+    "Unemployment Rate",
+    "All of the above"
+   ]
+  },
+  "297": {
+   "options": [
+    "Decrease in inflation rate due to lower import prices",
+    "Increase in inflation rate due to higher import prices",
+    "No impact on inflation rate as trade deficit is not a major factor",
+    "Stagflation, which is a combination of inflation and stagnant economic growth"
+   ]
+  },
+  "298": {
+   "options": [
+    "Minimum Support Price",
+    "Agricultural Marketing Reforms",
+    "Land Reforms",
+    "Irrigation Reforms"
+   ]
+  },
+  "299": {
+   "options": [
+    "Decrease in import prices",
+    "Increase in export prices",
+    "Increase in import prices",
+    "No impact on prices"
+   ]
+  },
+  "300": {
+   "options": [
+    "Decrease in inflation",
+    "No impact on inflation",
+    "Increase in inflation",
+    "Stagflation"
+   ]
+  },
+  "301": {
+   "options": [
+    "Trade balance",
+    "Fiscal deficit",
+    "Balance of payments",
+    "Current account deficit"
+   ]
+  },
+  "302": {
+   "options": [
+    "Increase in food prices",
+    "Decrease in food prices",
+    "No impact on food prices",
+    "Increase in non-food prices"
+   ]
+  },
+  "303": {
+   "options": [
+    "Capital account",
+    "Current account",
+    "Trade account",
+    "Foreign exchange reserves"
+   ]
+  },
+  "304": {
+   "options": [
+    "Increase in inflation",
+    "No impact on inflation",
+    "Decrease in inflation",
+    "Increase in economic growth"
+   ]
+  },
+  "305": {
+   "options": [
+    "Poverty rate",
+    "Unemployment rate",
+    "Human Development Index",
+    "All of the above"
+   ]
+  },
+  "306": {
+   "options": [
+    "Decrease in inflation",
+    "Increase in inflation",
+    "No impact on inflation",
+    "Increase in economic growth"
+   ]
+  },
+  "307": {
+   "options": [
+    "Increase in productivity",
+    "Increase in money supply",
+    "Decrease in aggregate demand",
+    "Improvement in trade balance"
+   ]
+  },
+  "308": {
+   "options": [
+    "Decrease in inflation due to reduced import costs",
+    "Increase in inflation due to higher import costs",
+    "No impact on inflation as exports increase",
+    "Stabilization of inflation rates"
+   ]
+  },
+  "309": {
+   "options": [
+    "Open Market Operations",
+    "Bank Rate",
+    "Cash Reserve Ratio",
+    "Liquidity Adjustment Facility"
+   ]
+  },
+  "310": {
+   "options": [
+    "Decrease in inflation due to higher agricultural production",
+    "Increase in inflation due to higher production costs",
+    "No impact on inflation as MSP is not a market factor",
+    "Stabilization of inflation rates due to balanced supply and demand"
+   ]
+  },
+  "311": {
+   "options": [
+    "Fiscal Deficit",
+    "Revenue Deficit",
+    "Primary Deficit",
+    "Trade Deficit"
+   ]
+  },
+  "312": {
+   "options": [
+    "Current Account",
+    "Capital Account",
+    "Financial Account",
+    "Official Reserve Account"
+   ]
+  },
+  "313": {
+   "options": [
+    "Poverty Rate",
+    "Unemployment Rate",
+    "Human Development Index",
+    "Gini Coefficient"
+   ]
+  },
+  "314": {
+   "options": [
+    "Increase in inflation due to higher production costs",
+    "Decrease in inflation due to higher supply",
+    "No impact on inflation as agricultural productivity is not a factor",
+    "Stabilization of inflation rates due to balanced supply and demand"
+   ]
+  },
+  "315": {
+   "options": [
+    "Demand-pull inflation due to high economic growth",
+    "Cost-push inflation due to supply-side factors",
+    "Built-in inflation due to past inflation rates",
+    "All of the above"
+   ]
+  },
+  "322": {
+   "options": [
+    "Decrease in food prices",
+    "No impact on food prices",
+    "Increase in food prices",
+    "Decrease in non-food prices"
+   ]
+  },
+  "323": {
+   "options": [
+    "Fiscal Surplus",
+    "Revenue Deficit",
+    "Primary Deficit",
+    "Trade Surplus"
+   ]
+  },
+  "324": {
+   "options": [
+    "Increase in subsidies",
+    "Reduction in MSP",
+    "Improvement in supply chains",
+    "Increase in import duties"
+   ]
+  },
+  "325": {
+   "options": [
+    "Trade deficit leads to lower inflation",
+    "Trade surplus leads to higher inflation",
+    "Trade deficit leads to higher inflation",
+    "No relationship between trade balance and inflation"
+   ]
+  },
+  "326": {
+   "options": [
+    "Poverty rate",
+    "Unemployment rate",
+    "Human Development Index",
+    "All of the above"
+   ]
+  },
+  "327": {
+   "options": [
+    "Decrease in food prices",
+    "No impact on food prices",
+    "Increase in food prices",
+    "Decrease in non-food prices"
+   ]
+  },
+  "328": {
+   "options": [
+    "Improvement in trade balance",
+    "Deterioration in trade balance",
+    "Increase in foreign investment",
+    "Decrease in foreign debt"
+   ]
+  },
+  "329": {
+   "options": [
+    "Fiscal Deficit",
+    "Revenue Deficit",
+    "Primary Deficit",
+    "Trade Deficit"
+   ]
+  },
+  "330": {
+   "options": [
+    "Increase in food prices",
+    "No impact on food prices",
+    "Decrease in food prices",
+    "Increase in non-food prices"
+   ]
+  },
+  "331": {
+   "options": [
+    "Decrease in import prices",
+    "Increase in export prices",
+    "Increase in import prices",
+    "No impact on prices"
+   ]
+  },
+  "332": {
+   "options": [
+    "Repo Rate",
+    "Reverse Repo Rate",
+    "Bank Rate",
+    "Cash Reserve Ratio"
+   ]
+  },
+  "342": {
+   "options": [
+    "Decrease in food prices",
+    "Increase in food prices",
+    "No impact on food prices",
+    "Decrease in agricultural production"
+   ]
+  },
+  "343": {
+   "options": [
+    "To increase money supply",
+    "To decrease money supply",
+    "To stabilize the rupee",
+    "To increase foreign exchange reserves"
+   ]
+  },
+  "344": {
+   "options": [
+    "Increase in money supply",
+    "Decrease in money supply",
+    "No impact on money supply",
+    "Increase in lending rates"
+   ]
+  },
+  "345": {
+   "options": [
+    "Decrease in inflation",
+    "Increase in inflation",
+    "No impact on inflation",
+    "Decrease in economic growth"
+   ]
+  },
+  "346": {
+   "options": [
+    "Capital account",
+    "Current account",
+    "Trade balance",
+    "Foreign exchange reserves"
+   ]
+  },
+  "357": {
+   "options": [
+    "To increase money supply",
+    "To decrease money supply",
+    "To reduce interest rates",
+    "To increase foreign exchange reserves"
+   ]
+  },
+  "358": {
+   "options": [
+    "Fiscal Deficit",
+    "Revenue Deficit",
+    "Primary Deficit",
+    "Trade Deficit"
+   ]
+  },
+  "359": {
+   "options": [
+    "Increase in subsidies",
+    "Reduction in MSP",
+    "Improvement in supply chains",
+    "Increase in import duties"
+   ]
+  },
+  "360": {
+   "options": [
+    "Increase in money supply",
+    "Decrease in money supply",
+    "No impact on money supply",
+    "Increase in interest rates"
+   ]
+  },
+  "361": {
+   "options": [
+    "Poverty ratio",
+    "Unemployment rate",
+    "Gini coefficient",
+    "Human Development Index"
+   ]
+  },
+  "367": {
+   "options": [
+    "Decrease in inflation due to reduced imports",
+    "Increase in inflation due to higher import costs",
+    "No impact on inflation as exports increase",
+    "Stabilization of inflation due to balanced trade"
+   ]
+  },
+  "368": {
+   "options": [
+    "Open Market Operations",
+    "Public Private Partnerships",
+    "Trade Deficit Management",
+    "Fiscal Policy Adjustments"
+   ]
+  },
+  "369": {
+   "options": [
+    "Fiscal Deficit",
+    "Revenue Deficit",
+    "Primary Deficit",
+    "Trade Surplus"
+   ]
+  },
+  "370": {
+   "options": [
+    "Decrease in inflation due to reduced oil imports",
+    "Increase in inflation due to higher oil import costs",
+    "No impact on inflation as India is self-sufficient in oil",
+    "Stabilization of inflation due to oil price subsidies"
+   ]
+  },
+  "371": {
+   "options": [
+    "High inflation improves the trade balance",
+    "High inflation deteriorates the trade balance",
+    "Inflation has no impact on the trade balance",
+    "Low inflation worsens the trade balance"
+   ]
+  },
+  "372": {
+   "options": [
+    "Agricultural subsidies",
+    "Trade restrictions",
+    "Buffer stock management",
+    "All of the above"
+   ]
+  },
+  "373": {
+   "options": [
+    "Capital account",
+    "Current account",
+    "Financial account",
+    "Official reserves account"
+   ]
+  },
+  "374": {
+   "options": [
+    "Fiscal deficit",
+    "Revenue deficit",
+    "Primary deficit",
+    "Trade deficit"
+   ]
+  },
+  "375": {
+   "options": [
+    "Higher inflation leads to a trade surplus",
+    "Higher inflation leads to a trade deficit",
+    "Lower inflation leads to a trade surplus",
+    "No relationship between inflation and trade balance"
+   ]
+  },
+  "376": {
+   "options": [
+    "Increase in money supply",
+    "Decrease in money supply",
+    "No impact on money supply",
+    "Increase in bank lending"
+   ]
+  },
+  "377": {
+   "options": [
+    "Poverty rate",
+    "Unemployment rate",
+    "Human Development Index",
+    "All of the above"
+   ]
+  },
+  "378": {
+   "options": [
+    "Capital Account",
+    "Current Account",
+    "Financial Account",
+    "Official Reserve Account"
+   ]
+  },
+  "379": {
+   "options": [
+    "Increase in prices due to higher imports",
+    "Decrease in prices due to higher imports",
+    "No impact on prices",
+    "Increase in exports"
+   ]
+  },
+  "380": {
+   "options": [
+    "Increase in money supply",
+    "Decrease in money supply",
+    "No impact on money supply",
+    "Increase in lending rates"
+   ]
+  },
+  "388": {
+   "options": [
+    "Decrease in food prices",
+    "Increase in food production",
+    "Increase in food prices",
+    "No impact on food prices"
+   ]
+  },
+  "389": {
+   "options": [
+    "Current Account Deficit",
+    "Capital Account Surplus",
+    "Trade Surplus",
+    "Foreign Exchange Reserves"
+   ]
+  },
+  "390": {
+   "options": [
+    "Increase in money supply",
+    "Decrease in money supply",
+    "No impact on money supply",
+    "Increase in bank lending"
+   ]
+  },
+  "391": {
+   "options": [
+    "Drought",
+    "Flood",
+    "Agricultural subsidies",
+    "All of the above"
+   ]
+  },
+  "392": {
+   "options": [
+    "Decrease in import prices leading to lower inflation",
+    "Increase in export prices leading to higher economic growth",
+    "Increase in import prices leading to higher inflation",
+    "No impact on inflation"
+   ]
+  },
+  "393": {
+   "options": [
+    "Decrease in food prices leading to lower inflation",
+    "Increase in food prices leading to higher inflation",
+    "No impact on food prices and inflation",
+    "Decrease in overall inflation rate"
+   ]
+  },
+  "394": {
+   "options": [
+    "Fiscal deficit",
+    "Trade deficit",
+    "Foreign exchange reserves and inflation",
+    "Revenue deficit"
+   ]
+  },
+  "395": {
+   "options": [
+    "Capital account",
+    "Current account",
+    "Financial account",
+    "Official reserve account"
+   ]
+  },
+  "396": {
+   "options": [
+    "Decrease in food prices leading to lower inflation",
+    "Increase in food prices leading to higher inflation",
+    "No impact on food prices and inflation",
+    "Decrease in overall inflation rate"
+   ]
+  },
+  "397": {
+   "options": [
+    "High trade deficit leads to lower inflation",
+    "High trade deficit has no impact on inflation",
+    "High trade deficit leads to higher inflation",
+    "High trade deficit leads to lower economic growth"
+   ]
+  },
+  "398": {
+   "options": [
+    "Decrease in revenue deficit leads to higher inflation",
+    "Increase in revenue deficit leads to lower inflation",
+    "Increase in revenue deficit leads to higher inflation",
+    "No impact on inflation"
+   ]
+  },
+  "399": {
+   "options": [
+    "Poverty rate",
+    "Unemployment rate",
+    "Gini coefficient",
+    "Human Development Index"
+   ]
+  },
+  "400": {
+   "options": [
+    "Increase in foreign investment leads to lower inflation",
+    "Increase in foreign investment leads to higher inflation",
+    "No impact on inflation",
+    "Increase in foreign investment leads to lower economic growth"
+   ]
+  },
+  "401": {
+   "options": [
+    "Fiscal Deficit",
+    "Revenue Deficit",
+    "Primary Deficit",
+    "Trade Surplus"
+   ]
+  },
+  "402": {
+   "options": [
+    "Repo rate reduction",
+    "Reverse repo rate increase",
+    "Cash Reserve Ratio increase",
+    "Statutory Liquidity Ratio decrease"
+   ]
+  },
+  "403": {
+   "options": [
+    "Decrease in inflation due to higher farmer incomes",
+    "Increase in inflation due to higher production costs",
+    "No impact on inflation as MSP is not linked to market prices",
+    "Stabilization of inflation due to balanced agricultural trade"
+   ]
+  },
+  "404": {
+   "options": [
+    "Fiscal Deficit",
+    "Revenue Deficit",
+    "Primary Deficit",
+    "Trade Surplus"
+   ]
+  },
+  "405": {
+   "options": [
+    "Trade deficit",
+    "Trade surplus",
+    "Current account deficit",
+    "Capital account surplus"
+   ]
+  },
+  "406": {
+   "options": [
+    "Sterilized interventions increase inflation by injecting more liquidity",
+    "Sterilized interventions decrease inflation by absorbing excess liquidity",
+    "Sterilized interventions have no impact on inflation",
+    "Sterilized interventions lead to higher economic growth without affecting inflation"
+   ]
+  },
+  "407": {
+   "options": [
+    "Capital Account",
+    "Current Account",
+    "Financial Account",
+    "Official Reserve Account"
+   ]
+  },
+  "408": {
+   "options": [
+    "Increase in food prices due to higher demand",
+    "Decrease in food prices due to higher supply",
+    "No impact on food prices as they are determined by global markets",
+    "Increase in overall economic growth without affecting inflation"
+   ]
+  },
+  "409": {
+   "options": [
+    "Trade deficit leads to lower import prices and thus lower inflation",
+    "Trade deficit leads to higher import prices and thus higher inflation",
+    "Trade deficit has no impact on inflation as it is a monetary phenomenon",
+    "Trade deficit leads to higher economic growth without affecting inflation"
+   ]
+  },
+  "410": {
+   "options": [
+    "Fiscal policy has no role in controlling inflation as it is a monetary phenomenon",
+    "Fiscal policy can control inflation by reducing government expenditure",
+    "Fiscal policy can increase inflation by increasing government expenditure",
+    "Fiscal policy can only control inflation through taxation"
+   ]
+  },
+  "411": {
+   "options": [
+    "Increase in M3 leads to lower inflation due to higher savings",
+    "Increase in M3 leads to higher inflation due to excess liquidity",
+    "Increase in M3 has no impact on inflation as it is determined by real factors",
+    "Increase in M3 leads to higher economic growth without affecting inflation"
+   ]
+  },
+  "412": {
+   "options": [
+    "Higher non-food credit growth leads to lower inflation due to increased productivity",
+    "Higher non-food credit growth leads to higher inflation due to increased money supply",
+    "Higher non-food credit growth has no impact on inflation as it is determined by monetary policy",
+    "Higher non-food credit growth leads to higher economic growth without affecting inflation"
+   ]
+  },
+  "413": {
+   "options": [
+    "Poverty rate",
+    "Unemployment rate",
+    "Gini coefficient",
+    "Human Development Index"
+   ]
+  },
+  "424": {
+   "options": [
+    "Reduction in inflation due to lower government spending",
+    "Increase in inflation due to higher government borrowing and money supply",
+    "No impact on inflation as fiscal deficit is a supply-side factor",
+    "Stabilization of inflation rates due to increased government revenue"
+   ]
+  },
+  "425": {
+   "options": [
+    "By injecting liquidity to reduce interest rates and stimulate growth",
+    "By absorbing liquidity to increase interest rates and reduce demand",
+    "By maintaining a neutral liquidity stance to stabilize the economy",
+    "By reducing the repo rate to increase borrowing and spending"
+   ]
+  },
+  "426": {
+   "options": [
+    "High inflation improves the trade balance by increasing exports",
+    "High inflation deteriorates the trade balance by reducing competitiveness of exports",
+    "Inflation has no impact on the trade balance as it is a domestic factor",
+    "High inflation stabilizes the trade balance by reducing imports"
+   ]
+  },
+  "427": {
+   "options": [
+    "Decrease in food prices leading to lower inflation",
+    "Increase in food prices leading to higher inflation",
+    "No impact on food prices",
+    "Increase in agricultural production leading to lower inflation"
+   ]
+  },
+  "428": {
+   "options": [
+    "Increase in productivity",
+    "Decrease in aggregate demand",
+    "Increase in money supply",
+    "Decrease in government expenditure"
+   ]
+  },
+  "429": {
+   "options": [
+    "Increase in exports and improvement in trade balance",
+    "Decrease in imports and improvement in trade balance",
+    "Decrease in exports and deterioration in trade balance",
+    "No impact on trade balance"
+   ]
+  },
+  "430": {
+   "options": [
+    "To increase government expenditure and reduce inflation",
+    "To decrease government expenditure and control inflation",
+    "To increase taxes and reduce inflation",
+    "To reduce interest rates and increase economic growth"
+   ]
+  },
+  "431": {
+   "options": [
+    "Increase in poverty rates",
+    "Decrease in unemployment rates",
+    "Increase in human development index",
+    "No impact on poverty rates"
+   ]
+  },
+  "439": {
+   "options": [
+    "Open Market Operations",
+    "Cash Reserve Ratio",
+    "Statutory Liquidity Ratio",
+    "Bank Rate"
+   ]
+  },
+  "440": {
+   "options": [
+    "High fiscal deficit leads to lower inflation",
+    "High fiscal deficit has no impact on inflation",
+    "High fiscal deficit leads to higher inflation",
+    "High fiscal deficit leads to lower economic growth but no impact on inflation"
+   ]
+  },
+  "441": {
+   "options": [
+    "Decrease in food prices leading to lower inflation",
+    "No impact on food prices and inflation",
+    "Increase in food prices leading to higher inflation",
+    "Decrease in overall inflation due to higher farmer incomes"
+   ]
+  },
+  "442": {
+   "options": [
+    "Increase in money supply leading to higher inflation",
+    "No impact on inflation as it is a neutral operation",
+    "Decrease in money supply leading to lower inflation",
+    "Increase in foreign exchange reserves without impacting inflation"
+   ]
+  },
+  "443": {
+   "options": [
+    "Capital Account",
+    "Current Account",
+    "Financial Account",
+    "Errors and Omissions"
+   ]
+  },
+  "444": {
+   "options": [
+    "Leads to lower import prices and lower inflation",
+    "Has no significant impact on inflation in India",
+    "Leads to higher import prices and higher inflation",
+    "Leads to higher economic growth without impacting inflation"
+   ]
+  },
+  "445": {
+   "options": [
+    "Setting fiscal policy and government spending",
+    "Regulating foreign exchange rates",
+    "Setting interest rates to control inflation",
+    "Controlling food prices through administrative measures"
+   ]
+  },
+  "446": {
+   "options": [
+    "Leads to higher food prices and higher inflation",
+    "Has no impact on food prices and inflation",
+    "Leads to lower food prices and lower inflation",
+    "Leads to higher economic growth without impacting inflation"
+   ]
+  },
+  "447": {
+   "options": [
+    "Leads to appreciation of the rupee and lower inflation",
+    "Has no impact on the exchange rate and inflation",
+    "Leads to depreciation of the rupee and higher inflation",
+    "Leads to depreciation of the rupee but lower inflation"
+   ]
+  },
+  "462": {
+   "options": [
+    "Current Account",
+    "Capital Account",
+    "Financial Account",
+    "Official Reserve Account"
+   ]
+  },
+  "463": {
+   "options": [
+    "WPI measures consumer prices",
+    "WPI measures wholesale prices",
+    "WPI is not related to inflation",
+    "WPI measures economic growth"
+   ]
+  },
+  "464": {
+   "options": [
+    "Poverty rate",
+    "Unemployment rate",
+    "Human Development Index",
+    "Gini coefficient"
+   ]
+  },
+  "465": {
+   "options": [
+    "Land reforms",
+    "Irrigation reforms",
+    "Minimum Support Price",
+    "Agricultural marketing reforms"
+   ]
+  },
+  "476": {
+   "options": [
+    "Decrease in food prices",
+    "No impact on food prices",
+    "Increase in food prices",
+    "Decrease in non-food prices"
+   ]
+  },
+  "477": {
+   "options": [
+    "Open Market Operations",
+    "Public Private Partnership",
+    "Fiscal Policy",
+    "Trade Policy"
+   ]
+  },
+  "478": {
+   "options": [
+    "Fiscal Deficit",
+    "Trade Balance",
+    "Balance of Payments",
+    "Foreign Exchange Reserves"
+   ]
+  },
+  "479": {
+   "options": [
+    "Capital Account",
+    "Current Account",
+    "Foreign Exchange Reserves",
+    "Fiscal Account"
+   ]
+  },
+  "500": {
+   "options": [
+    "Increase in food prices",
+    "Decrease in food prices",
+    "No impact on food prices",
+    "Increase in non-food prices"
+   ]
+  },
+  "501": {
+   "options": [
+    "Decrease in food prices",
+    "No impact on food prices",
+    "Increase in food prices",
+    "Decrease in non-food prices"
+   ]
+  },
+  "502": {
+   "options": [
+    "Increase in productivity",
+    "Decrease in money supply",
+    "Increase in aggregate demand",
+    "Decrease in government spending"
+   ]
+  }
+ }
+}

@@ -1,0 +1,42 @@
+{
+ "retire": [
+  30
+ ],
+ "fix": {
+  "26": {
+   "question": "Which of the following is a primary deterrent to the widespread adoption of advanced Assisted Reproductive Technologies (ARTs) in India,?"
+  },
+  "100": {
+   "options": [
+    "To provide structure to the cell",
+    "To control the movement of materials in and out of the cell",
+    "To produce energy for the cell",
+    "To synthesize proteins"
+   ]
+  },
+  "101": {
+   "options": [
+    "Mutation",
+    "Genetic drift",
+    "Gene expression",
+    "Heredity"
+   ]
+  },
+  "102": {
+   "options": [
+    "To synthesize proteins",
+    "To store genetic information",
+    "To generate energy for the cell",
+    "To regulate cell growth and division"
+   ]
+  },
+  "171": {
+   "options": [
+    "The change in frequency of a gene due to natural selection",
+    "The change in frequency of a gene due to random events",
+    "The change in frequency of a gene due to genetic mutation",
+    "The change in frequency of a gene due to gene flow"
+   ]
+  }
+ }
+}

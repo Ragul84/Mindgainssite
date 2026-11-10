@@ -1,0 +1,224 @@
+{
+ "retire": [],
+ "fix": {
+  "38": {
+   "question": "E-NAM (electronic National Agriculture Market) is a pan-India online trading platform launched in:"
+  },
+  "66": {
+   "options": [
+    "Increase due to higher competitiveness",
+    "Decrease due to higher input costs",
+    "No change as exports are inelastic",
+    "Volatile due to exchange rate fluctuations"
+   ]
+  },
+  "67": {
+   "options": [
+    "Reduce credit availability by tightening liquidity",
+    "Increase crop insurance uptake",
+    "Lower interest rates for farm loans",
+    "Stabilize MSP prices"
+   ]
+  },
+  "68": {
+   "options": [
+    "Ensure farmer income stability",
+    "Encourage export-oriented production",
+    "Reduce government subsidy burden",
+    "Promote organic farming"
+   ]
+  },
+  "69": {
+   "options": [
+    "Current account deficit",
+    "Food grain reserves",
+    "Subsidy outlay as % of GDP",
+    "Balance of payments surplus"
+   ]
+  },
+  "70": {
+   "options": [
+    "Surplus production from monsoon",
+    "Export ban on pulses",
+    "Increased use of fertilizers",
+    "Lower import tariffs on grains"
+   ]
+  },
+  "71": {
+   "options": [
+    "Worsen deficit by raising import dependency",
+    "Improve surplus through higher export earnings",
+    "Neutralize impact via currency adjustments",
+    "Create volatility in commodity prices"
+   ]
+  },
+  "72": {
+   "options": [
+    "Rural employment ratio",
+    "Agricultural credit growth",
+    "Food security index",
+    "Urbanization rate"
+   ]
+  },
+  "73": {
+   "options": [
+    "Reserve requirements for banks",
+    "Open market operations on government bonds",
+    "Direct subsidies to cooperatives",
+    "Import duty on machinery"
+   ]
+  },
+  "74": {
+   "options": [
+    "Higher crop yields due to farmer adaptation",
+    "Increased vulnerability to drought",
+    "Lower food prices from private sector efficiency",
+    "Improved groundwater recharge"
+   ]
+  },
+  "75": {
+   "options": [
+    "By consolidating small holdings into large farms",
+    "By redistributing land to marginal farmers",
+    "By abolishing cooperative farming",
+    "By introducing genetically modified crops"
+   ]
+  },
+  "76": {
+   "options": [
+    "Reduces labor demand but increases output",
+    "Increases input costs without yield gains",
+    "Is irrelevant to smallholder farmers",
+    "Guarantees food security"
+   ]
+  },
+  "159": {
+   "options": [
+    "It decreases export earnings as domestic produce becomes expensive for foreign buyers",
+    "It increases export earnings as domestic produce becomes cheaper for foreign buyers",
+    "It has no impact on export earnings",
+    "It first decreases then increases export earnings depending on elasticities"
+   ]
+  },
+  "160": {
+   "options": [
+    "Revenue deficit",
+    "Fiscal deficit",
+    "Primary deficit",
+    "Budget deficit"
+   ]
+  },
+  "161": {
+   "options": [
+    "It directly increases credit flow to farmers by reducing repo rate",
+    "It absorbs surplus liquidity without changing monetary transmission to agriculture",
+    "It reduces CRR to encourage bank lending to agriculture",
+    "It increases food grain procurement by public agencies"
+   ]
+  },
+  "162": {
+   "options": [
+    "Food grain inflation always exceeds overall CPI inflation",
+    "Food grain inflation is a component of CPI and significantly influences overall inflation",
+    "Food grain inflation is completely independent of CPI inflation",
+    "Food grain inflation is calculated separately and not included in CPI"
+   ]
+  },
+  "163": {
+   "options": [
+    "Current account deficit",
+    "Capital account surplus",
+    "Financial account deficit",
+    "Reserve balance"
+   ]
+  },
+  "164": {
+   "options": [
+    "It increases information asymmetry among traders",
+    "It creates uniform price structure across markets through technology integration",
+    "It reduces government intervention in price determination",
+    "It eliminates the need for agricultural reforms"
+   ]
+  },
+  "165": {
+   "options": [
+    "It improves government's fiscal health by increasing revenue",
+    "It creates fiscal stress but provides relief to farmer distress",
+    "It reduces government spending on agricultural subsidies",
+    "It has no fiscal implications as it is a monetary measure"
+   ]
+  },
+  "166": {
+   "options": [
+    "It increases rural inflation by raising food prices",
+    "It reduces rural inflation by improving food security and supply",
+    "It has no impact on inflation as agriculture is sector specific",
+    "It increases rural inflation by attracting more investment"
+   ]
+  },
+  "167": {
+   "options": [
+    "It solely focuses on profit maximization for farmers",
+    "It ensures equitable access to resources and food security through policy implementation",
+    "It eliminates all forms of agricultural subsidies",
+    "It promotes urban migration of farmers"
+   ]
+  },
+  "168": {
+   "options": [
+    "They deteriorate the current account by increasing import bills",
+    "They improve the current account by earning foreign exchange through exports",
+    "They have no impact on balance of payments as trade is neutral",
+    "They increase capital flight through repatriation of profits"
+   ]
+  },
+  "656": {
+   "options": [
+    "Increased imports",
+    "Decreased exports",
+    "Balanced trade",
+    "Reduced foreign investment"
+   ]
+  },
+  "657": {
+   "options": [
+    "Tax cuts",
+    "Subsidies",
+    "Open market operations",
+    "Deregulation"
+   ]
+  },
+  "685": {
+   "options": [
+    "Increases export competitiveness",
+    "Decreases export competitiveness",
+    "No significant impact",
+    "Only affects food imports"
+   ]
+  },
+  "686": {
+   "options": [
+    "Improve current account surplus",
+    "Increase current account deficit",
+    "Have no impact",
+    "Stabilize exchange rates"
+   ]
+  },
+  "687": {
+   "options": [
+    "Expansionary monetary policy",
+    "Contractionary monetary policy",
+    "Increase money supply",
+    "Reduce interest rates"
+   ]
+  },
+  "688": {
+   "options": [
+    "Reduces reliance on imports",
+    "Encourages self-sufficiency",
+    "Increases import bill",
+    "Has no relevance"
+   ]
+  }
+ }
+}

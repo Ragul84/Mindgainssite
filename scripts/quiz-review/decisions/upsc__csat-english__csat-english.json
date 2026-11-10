@@ -1,0 +1,100 @@
+{
+ "retire": [
+  366,
+  1262,
+  1407,
+  1414,
+  1437
+ ],
+ "fix": {
+  "509": {
+   "question": "Passage: The concept of 'universal basic income' (UBI) is proposed as a hedge against job losses caused by automation. Critics argue it may disincentivize work; however, proponents suggest it provides the security needed for individuals to pursue creative or entrepreneurial ventures. The debate centers on whether human motivation is driven by survival fear or by a desire for self-actualization.\n\nWhich of the following best describes the central conflict?"
+  },
+  "675": {
+   "question": "Passage: Governance is often mistaken for the mere administration of laws. However, authentic governance involves the synthesis of legal mandates with ethical deliberation. When laws are applied mechanically without considering the socio-ethical context, the result is a sterile bureaucracy that may maintain order but fails to deliver justice. Justice, therefore, is not the byproduct of legality, but the result of legality tempered by equity. \n\nWhich of the following is an assumption implicit?"
+  },
+  "702": {
+   "question": "Passage: Cultural relativism suggests that no culture's values are superior to another's. While this promotes tolerance, it creates a moral vacuum when faced with universal human rights violations. If every practice is justified by its cultural context, then the concept of 'universal rights' becomes a colonial imposition. The challenge, therefore, is to find a global ethical minimum that respects diversity without condoning cruelty.\n\nWhich of the following best describes the central conflict presented?"
+  },
+  "1256": {
+   "options": [
+    "Half the money",
+    "Equal amount",
+    "Equal to half",
+    "No info"
+   ]
+  },
+  "1257": {
+   "options": [
+    "Mammals are birds",
+    "All mammals are reptiles",
+    "Mammals are not animals",
+    "Birds are dogs"
+   ]
+  },
+  "1258": {
+   "options": [
+    "Y is a bird",
+    "X is a mammal",
+    "Z is a bird",
+    "All are pets"
+   ]
+  },
+  "1259": {
+   "options": [
+    "B and C are true",
+    "A is true",
+    "D is true",
+    "All true"
+   ]
+  },
+  "1260": {
+   "options": [
+    "True",
+    "False",
+    "D",
+    "Both A and B exist"
+   ]
+  },
+  "1261": {
+   "options": [
+    "Yes",
+    "No",
+    "Both",
+    "Uncertain"
+   ]
+  },
+  "1262": {
+   "options": [
+    "2 is composite",
+    "2 is prime",
+    "2 is prime",
+    "All even numbers are prime"
+   ]
+  },
+  "1263": {
+   "options": [
+    "Human",
+    "Bird",
+    "Mammal",
+    "All"
+   ]
+  },
+  "1264": {
+   "options": [
+    "Premise false",
+    "Conclusions true",
+    "Both true",
+    "Premise and conclusion true"
+   ]
+  },
+  "1265": {
+   "options": [
+    "4x5",
+    "5x4",
+    "2x10",
+    "1x20"
+   ]
+  }
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "retire": [],
+ "fix": {
+  "11": {
+   "question": "What is a tsunami defined as?"
+  },
+  "33": {
+   "question": "How are undesirable changes categorized?"
+  },
+  "44": {
+   "question": "What is the primary characteristic of a disaster?"
+  },
+  "50": {
+   "question": "Which of the following is NOT a natural disaster?"
+  },
+  "97": {
+   "question": "What are natural hazards defined as?"
+  },
+  "114": {
+   "question": "Ocean currents are categorized as:"
+  },
+  "156": {
+   "question": "Which of these is NOT listed as an example of a natural hazard?"
+  },
+  "239": {
+   "question": "Why are developing countries more vulnerable to disasters?"
+  }
+ }
+}

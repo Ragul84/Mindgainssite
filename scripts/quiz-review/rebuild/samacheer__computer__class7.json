@@ -1,10 +1,90 @@
 {
- "136": "retire",
- "137": "retire",
- "175": "retire",
- "176": "retire",
+ "136": {
+  "stem": "Match the identity theft risk to the action:",
+  "L": [
+   "Public Wi-Fi",
+   "Weak Password",
+   "Phishing Link",
+   "Social Media"
+  ],
+  "R": [
+   "Packet sniffing",
+   "Brute force attack",
+   "Credential theft",
+   "Over-sharing info"
+  ],
+  "recovered": true,
+  "why": "Public Wi-Fi – Packet sniffing; Weak Password – Brute force attack; Phishing Link – Credential theft; Social Media – Over-sharing info."
+ },
+ "137": {
+  "stem": "Match the user action to the security outcome:",
+  "L": [
+   "Updating OS",
+   "Using 2FA",
+   "Using HTTPS",
+   "Backing up"
+  ],
+  "R": [
+   "Patching bugs",
+   "Extra security",
+   "Encrypted traffic",
+   "Data recovery"
+  ],
+  "recovered": true,
+  "why": "Updating OS – Patching bugs; Using 2FA – Extra security; Using HTTPS – Encrypted traffic; Backing up – Data recovery."
+ },
+ "175": {
+  "stem": "Match the feature to the generation:",
+  "L": [
+   "Machine Language",
+   "Assembly Language",
+   "High Level Language",
+   "AI/Natural Language"
+  ],
+  "R": [
+   "1st Gen",
+   "2nd Gen",
+   "3rd Gen",
+   "5th Gen"
+  ],
+  "recovered": true,
+  "why": "Machine Language – 1st Gen; Assembly Language – 2nd Gen; High Level Language – 3rd Gen; AI/Natural Language – 5th Gen."
+ },
+ "176": {
+  "stem": "Match the storage device to the era:",
+  "L": [
+   "Magnetic Drum",
+   "Magnetic Core",
+   "Magnetic Disk",
+   "SSD/Flash"
+  ],
+  "R": [
+   "1st Gen",
+   "2nd Gen",
+   "3rd Gen",
+   "4th/5th Gen"
+  ],
+  "recovered": true,
+  "why": "Magnetic Drum – 1st Gen; Magnetic Core – 2nd Gen; Magnetic Disk – 3rd Gen; SSD/Flash – 4th/5th Gen."
+ },
  "177": "retire",
- "178": "retire",
+ "178": {
+  "stem": "Match the component to the generation:",
+  "L": [
+   "Vacuum Tube",
+   "Transistor",
+   "IC",
+   "VLSI"
+  ],
+  "R": [
+   "1st Gen",
+   "2nd Gen",
+   "3rd Gen",
+   "4th Gen"
+  ],
+  "recovered": true,
+  "why": "Vacuum Tube – 1st Gen; Transistor – 2nd Gen; IC – 3rd Gen; VLSI – 4th Gen."
+ },
  "179": "retire",
  "20": {
   "lh": "Term",

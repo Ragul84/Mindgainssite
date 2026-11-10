@@ -1,0 +1,29 @@
+{
+ "retire": [],
+ "fix": {
+  "30": {
+   "options": [
+    "RENOUNCE",
+    "ADOPT",
+    "ELEVATE",
+    "ENDORSE"
+   ]
+  },
+  "31": {
+   "options": [
+    "2250",
+    "3375",
+    "3600",
+    "3000"
+   ]
+  },
+  "32": {
+   "options": [
+    "Humidity",
+    "Temperature",
+    "Earthquake",
+    "Wind Speed"
+   ]
+  }
+ }
+}

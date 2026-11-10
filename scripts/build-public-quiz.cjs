@@ -124,6 +124,40 @@ function cleanSubject(key) {
   return SUBJECT_NAMES[normalized] || titleize(key);
 }
 
+
+// Match-the-following questions keep their left column in `pairs`; the options alone are just the right column.
+// Build a real "List I / List II" question with code options (one correct order, three near-miss orders),
+// or return null when the pairs cannot be scored cleanly (repeated answers, fewer than 2 or more than 5 pairs).
+function matchToQuestion(parsed) {
+  const P = (Array.isArray(parsed.pairs) ? parsed.pairs : []).filter((p) => p && p.left && p.right)
+    .map((p) => [String(p.left).trim(), String(p.right).trim().replace(/\.$/, '')]);
+  if (!/\bmatch|\bpair/i.test(String(parsed.question || parsed.question_text || ''))) return null; // pairs that belong to some other question
+  if (/pairs\s*:|\[\s*\{|options\s*:\s*\[/i.test(String(parsed.question || parsed.question_text || ''))) return null; // raw data pasted into the question
+  const n = P.length, low = (a) => a.map((x) => x.toLowerCase());
+  if (n < 2 || n > 5 || new Set(low(P.map((p) => p[0]))).size !== n || new Set(low(P.map((p) => p[1]))).size !== n) return null;
+  if (P.some(([a, b]) => a.length > 80 || b.length > 80)) return null;
+  // text the game would read as a list marker ("e.g.", "Inc.", "(a)", "2.5") cannot be shown safely
+  const MARK = /(^|[\s\/(;,:|])([A-Fa-f]|[1-6])[.)]/;
+  if (P.some(([a, b]) => MARK.test(a) || MARK.test(b))) return null;
+  let h = 2166136261; for (const ch of String(parsed.question || parsed.question_text || '')) { h ^= ch.charCodeAt(0); h = Math.imul(h, 16777619) >>> 0; }
+  const rnd = () => ((h = Math.imul(h ^ (h >>> 15), 2246822507) >>> 0) / 4294967296);
+  const order = [...Array(n).keys()].sort(() => rnd() - 0.5);            // order[j] = pair shown at List II position j
+  const key = P.map((_, i) => order.indexOf(i));
+  const perms = (a) => (a.length <= 1 ? [a] : a.flatMap((x, i) => perms([...a.slice(0, i), ...a.slice(i + 1)]).map((r) => [x, ...r])));
+  const diff = (p) => p.filter((v, i) => v !== key[i]).length;
+  const wrong = perms([...Array(n).keys()]).filter((p) => diff(p) > 0).sort((a, b) => diff(a) - diff(b) || rnd() - 0.5).slice(0, n > 2 ? 3 : 1);
+  const at = h % (wrong.length + 1), choices = [...wrong.slice(0, at), key, ...wrong.slice(at)];
+  const L = 'ABCDE', code = (perm) => perm.map((v, i) => `${L[i]}-${v + 1}`).join(', ');
+  // keep only the instruction: anything from an embedded list onwards ("1. Metallurgy …", "Column I …") is rebuilt below
+  const stem = (String(parsed.question || parsed.question_text || '').split(/\s(?:\(?[1-6A-Fa-f][.)]|\((?:i{1,3}|iv|v)\)|list\s*-?\s*i\b|column\s*-?\s*(?:i|[a-f])\b)/i)[0].trim().replace(/[\s.:,;|-]+$/, '') || 'Match List I with List II') + ':';
+  return {
+    question: `${stem} List I ${P.map((p, i) => `${L[i]}. ${p[0]}`).join(' ')} List II ${order.map((k, j) => `${j + 1}. ${P[k][1]}`).join(' ')}`,
+    options: choices.map(code), answer_index: at,
+    explanation: P.map(([a, b]) => `${a} – ${b}`).join('; ') + '.',
+    difficulty: String(parsed.difficulty || '').trim(),
+  };
+}
+
 function normalizeQuestion(raw) {
   let parsed = raw;
   try {
@@ -131,6 +165,7 @@ function normalizeQuestion(raw) {
   } catch {
     return null;
   }
+  if (String(parsed.question_type || '').toLowerCase() === 'match') return matchToQuestion(parsed);
   const question = parsed.question_text || parsed.question || parsed.prompt || parsed.passage;
   const options = Array.isArray(parsed.options) ? parsed.options : [];
   const answerIndex = Number.isInteger(parsed.answer_index) ? parsed.answer_index : Number.isInteger(parsed.correctIndex) ? parsed.correctIndex : -1;
@@ -302,6 +337,8 @@ function cards(items) {
 function writeQuizData(examId, subjectId, topicSlug, topic, questions) {
   const rel = `/assets/quiz-data/${examId}/${subjectId}/${topicSlug}.json`;
   const out = path.join(ROOT, rel.replace(/^\//, ''));
+  const reviewed = (() => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts/quiz-review/progress.json'), 'utf8')); } catch { return {}; } })();
+  if (reviewed[`${examId}/${subjectId}/${topicSlug}`] && fs.existsSync(out)) { console.log('keep reviewed set', rel); return rel; }
   fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, JSON.stringify({
     title: `${topic.topicName} Quiz`,

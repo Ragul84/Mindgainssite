@@ -1,0 +1,357 @@
+{
+ "retire": [],
+ "fix": {
+  "178": {
+   "options": [
+    "Increase in money supply",
+    "Decrease in nominal interest rates",
+    "Neutral impact on money supply",
+    "Immediate appreciation of the rupee"
+   ]
+  },
+  "179": {
+   "options": [
+    "Current account deficit",
+    "Capital account surplus",
+    "Financial account deficit",
+    "Official reserves account"
+   ]
+  },
+  "180": {
+   "options": [
+    "Increasing government expenditure",
+    "Reducing corporate tax rates",
+    "Implementing export subsidies",
+    "Raising import tariffs"
+   ]
+  },
+  "181": {
+   "options": [
+    "Increasing subsidies on fertilizers",
+    "Raising direct tax rates on high-income earners",
+    "Expanding government capital expenditure",
+    "Liberalizing import tariffs on industrial goods"
+   ]
+  },
+  "182": {
+   "options": [
+    "Fiscal deficit",
+    "Current account deficit",
+    "Budget deficit",
+    "Government revenue deficit"
+   ]
+  },
+  "183": {
+   "options": [
+    "Doubling MSP for all crops",
+    "Introducing crop insurance mandates",
+    "Privatizing public storage facilities",
+    "Increasing PDS food grain allocations"
+   ]
+  },
+  "184": {
+   "options": [
+    "Reducing income tax rates",
+    "Increasing export subsidies",
+    "Devaluing the rupee",
+    "Cutting non-plan expenditures"
+   ]
+  },
+  "185": {
+   "options": [
+    "Revenue deficit",
+    "Fiscal deficit",
+    "Primary deficit",
+    "Budget deficit"
+   ]
+  },
+  "186": {
+   "options": [
+    "High savings rate absorbs excess liquidity",
+    "Excessive money supply growth",
+    "Overutilization of capacity",
+    "High fiscal multiplier"
+   ]
+  },
+  "187": {
+   "options": [
+    "Subsidies for luxury goods",
+    "Investment in rural irrigation",
+    "Salary hikes for bureaucrats",
+    "Ad-hoc disaster relief"
+   ]
+  },
+  "188": {
+   "options": [
+    "Capital expenditure",
+    "Subsidies and transfers",
+    "Interest payments on debt",
+    "Revenue receipts"
+   ]
+  },
+  "189": {
+   "options": [
+    "Open market operations to sell government bonds",
+    "Increasing reserve requirements for banks",
+    "Raising the cash reserve ratio",
+    "Direct lending to the government"
+   ]
+  },
+  "190": {
+   "options": [
+    "Revenue deficit",
+    "Fiscal deficit",
+    "Primary deficit",
+    "Current account deficit"
+   ]
+  },
+  "443": {
+   "options": [
+    "Reduction in public debt",
+    "Increase in primary deficit",
+    "Decrease in money supply",
+    "Improvement in current account balance"
+   ]
+  },
+  "444": {
+   "options": [
+    "To increase the fiscal deficit",
+    "To prevent appreciation of the rupee",
+    "To manage liquidity without affecting exchange rates",
+    "To directly finance government expenditure"
+   ]
+  },
+  "445": {
+   "options": [
+    "Decrease in export competitiveness",
+    "Increase in import costs leading to inflationary pressure",
+    "Reduction in foreign exchange reserves",
+    "Immediate improvement in trade balance"
+   ]
+  },
+  "446": {
+   "options": [
+    "3%",
+    "3.5%",
+    "4%",
+    "5%"
+   ]
+  },
+  "447": {
+   "options": [
+    "It is chaired by the Prime Minister",
+    "It recommends tax rates to the Finance Commission",
+    "It resolves disputes between states over GST implementation",
+    "It directly collects taxes from taxpayers"
+   ]
+  },
+  "448": {
+   "options": [
+    "To measure the total expenditure on defense",
+    "To assess the fiscal impact before interest payments",
+    "To calculate the revenue deficit",
+    "To evaluate the performance of public sector undertakings"
+   ]
+  },
+  "449": {
+   "options": [
+    "Capital expenditure on infrastructure",
+    "Interest payments on government loans",
+    "Subsidies and defense expenditure",
+    "Loans raised for long-term projects"
+   ]
+  },
+  "450": {
+   "options": [
+    "To finance fiscal deficit",
+    "To fund environmentally sustainable projects",
+    "To replace existing government securities",
+    "To reduce public sector undertakings' debt"
+   ]
+  },
+  "451": {
+   "options": [
+    "Increased private investment",
+    "Reduced government borrowing",
+    "Crowding out of private sector investment",
+    "Immediate reduction in inflation"
+   ]
+  },
+  "452": {
+   "options": [
+    "It mandates the RBI to print currency notes",
+    "It sets targets for fiscal consolidation and transparency",
+    "It regulates the functioning of cooperative banks",
+    "It determines the policy repo rate"
+   ]
+  },
+  "453": {
+   "options": [
+    "Fiscal deficit always reduces inflation",
+    "Fiscal deficit has no impact on inflation",
+    "Fiscal deficit can lead to demand-pull inflation",
+    "Fiscal deficit only affects agricultural prices"
+   ]
+  },
+  "622": {
+   "options": [
+    "To reduce the money supply and control inflation",
+    "To increase the money supply and stimulate economic growth",
+    "To manage the exchange rate and prevent rupee appreciation",
+    "To reduce the fiscal deficit and promote fiscal discipline"
+   ]
+  },
+  "623": {
+   "options": [
+    "Revenue deficit",
+    "Fiscal deficit",
+    "Primary deficit",
+    "Trade deficit"
+   ]
+  },
+  "624": {
+   "options": [
+    "Increased government intervention in agricultural markets",
+    "Reduced government support for farmers",
+    "Increased private investment in agricultural infrastructure",
+    "Improved agricultural productivity through technological advancements"
+   ]
+  },
+  "625": {
+   "options": [
+    "Improvement in the trade balance due to increased exports",
+    "Deterioration in the trade balance due to increased imports",
+    "No significant impact on the trade balance",
+    "Reduction in both exports and imports"
+   ]
+  },
+  "626": {
+   "options": [
+    "Current account",
+    "Capital account",
+    "Financial account",
+    "Official reserve account"
+   ]
+  },
+  "627": {
+   "options": [
+    "Increase in global food prices",
+    "Supply chain disruptions and transportation costs",
+    "Increase in agricultural wages and input costs",
+    "Monetary policy and excess money supply"
+   ]
+  },
+  "628": {
+   "options": [
+    "Reduction in food inflation and increase in farmers' income",
+    "Increase in food inflation and reduction in farmers' income",
+    "No significant impact on food inflation or farmers' income",
+    "Increase in farmers' income but no impact on food inflation"
+   ]
+  },
+  "629": {
+   "options": [
+    "Human Development Index (HDI)",
+    "Gross Domestic Product (GDP) per capita",
+    "Life expectancy at birth",
+    "Literacy rate"
+   ]
+  },
+  "630": {
+   "options": [
+    "Increase in tax revenues and reduction in tax evasion",
+    "Reduction in tax revenues and increase in tax evasion",
+    "No significant impact on tax revenues or tax evasion",
+    "Increase in tax revenues but no impact on tax evasion"
+   ]
+  },
+  "631": {
+   "options": [
+    "To reduce the fiscal deficit and promote fiscal discipline",
+    "To increase government expenditures and stimulate economic growth",
+    "To reduce taxes and increase private sector investment",
+    "To increase the money supply and control inflation"
+   ]
+  },
+  "669": {
+   "options": [
+    "To reduce the money supply in the economy",
+    "To increase the foreign exchange reserves",
+    "To stabilize the exchange rate and control inflation",
+    "To promote economic growth by increasing liquidity"
+   ]
+  },
+  "670": {
+   "options": [
+    "Fiscal Deficit",
+    "Primary Deficit",
+    "Debt-to-GDP Ratio",
+    "Revenue Deficit"
+   ]
+  },
+  "671": {
+   "options": [
+    "Improvement in trade balance due to increased exports",
+    "Deterioration in trade balance due to decreased imports",
+    "No impact on trade balance",
+    "Increase in imports and decrease in exports"
+   ]
+  },
+  "672": {
+   "options": [
+    "Minimum Support Price",
+    "Agricultural Marketing Reforms",
+    "Farm Loan Waivers",
+    "Crop Insurance Schemes"
+   ]
+  },
+  "673": {
+   "options": [
+    "Capital Account",
+    "Current Account",
+    "Financial Account",
+    "Official Reserve Account"
+   ]
+  },
+  "674": {
+   "options": [
+    "Cost-Push Inflation",
+    "Demand-Pull Inflation",
+    "Built-In Inflation",
+    "Relative Price Inflation"
+   ]
+  },
+  "675": {
+   "options": [
+    "Poverty Line",
+    "Unemployment Rate",
+    "Human Development Index",
+    "Gini Coefficient"
+   ]
+  },
+  "676": {
+   "options": [
+    "Higher economic growth and lower inflation",
+    "Lower interest rates and increased investment",
+    "Higher interest rates and increased debt burden",
+    "Reduced government spending and lower taxes"
+   ]
+  },
+  "677": {
+   "options": [
+    "Open Market Operations",
+    "Cash Reserve Ratio",
+    "Statutory Liquidity Ratio",
+    "All of the above"
+   ]
+  },
+  "678": {
+   "options": [
+    "Trade Surplus",
+    "Trade Deficit",
+    "Balanced Trade",
+    "Neutral Trade"
+   ]
+  }
+ }
+}

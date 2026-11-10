@@ -1,7 +1,8 @@
 {
  "retire": [
+  33,
+  39,
   132,
-  175,
   177,
   215
  ],
@@ -335,6 +336,18 @@
    ],
    "answer_index": 1,
    "explanation": "Wind shapes mushroom rocks in deserts, glaciers leave moraines and rivers form ox-bow lakes on their plains."
+  },
+  "175": {
+   "question": "Match the components of the biosphere: List I A. Biotic B. Abiotic C. Producer D. Consumer List II 1. Green plants 2. Non-living things 3. Animals 4. Living things",
+   "options": [
+    "A-1, B-2, C-4, D-3",
+    "A-4, B-1, C-2, D-3",
+    "A-2, B-4, C-1, D-3",
+    "A-4, B-2, C-1, D-3"
+   ],
+   "answer_index": 3,
+   "explanation": "Biotic – Living things; Abiotic – Non-living things; Producer – Green plants; Consumer – Animals.",
+   "retired": false
   }
  }
 }

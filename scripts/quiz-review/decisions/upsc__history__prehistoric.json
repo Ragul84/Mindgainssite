@@ -1,0 +1,125 @@
+{
+ "retire": [],
+ "fix": {
+  "74": {
+   "options": [
+    "Pastoralism",
+    "Agriculture",
+    "Hunting",
+    "Gathering"
+   ]
+  },
+  "75": {
+   "options": [
+    "Axe",
+    "Sword",
+    "Handaxe",
+    "Plow"
+   ]
+  },
+  "76": {
+   "options": [
+    "Development of agriculture",
+    "Emergence of urban centers",
+    "Growth of trade",
+    "Both B and C"
+   ]
+  },
+  "77": {
+   "options": [
+    "Amil",
+    "Muqaddam",
+    "Granary",
+    "Citadel"
+   ]
+  },
+  "78": {
+   "options": [
+    "Wood",
+    "Stone",
+    "Brick",
+    "Mud"
+   ]
+  },
+  "79": {
+   "options": [
+    "Jainism",
+    "Buddhism",
+    "Animism",
+    "Shamanism"
+   ]
+  },
+  "80": {
+   "options": [
+    "Emergence of Hinduism",
+    "Development of the caste system",
+    "Composition of the Vedas",
+    "Both A and C"
+   ]
+  },
+  "81": {
+   "options": [
+    "Stupa",
+    "Temple",
+    "Megalith",
+    "Mosque"
+   ]
+  },
+  "262": {
+   "options": [
+    "Axe",
+    "Adze",
+    "Chopper",
+    "Scraper"
+   ]
+  },
+  "263": {
+   "options": [
+    "Agriculture",
+    "Animal husbandry",
+    "Settlements",
+    "All of the above"
+   ]
+  },
+  "264": {
+   "options": [
+    "Bhimbetka",
+    "Ajanta",
+    "Ellora",
+    "Mahabalipuram"
+   ]
+  },
+  "265": {
+   "options": [
+    "Urban planning",
+    "Agriculture",
+    "Trade",
+    "All of the above"
+   ]
+  },
+  "266": {
+   "options": [
+    "Nomadism",
+    "Sedentary",
+    "Hunting",
+    "Gathering"
+   ]
+  },
+  "267": {
+   "options": [
+    "10,000-5,000 BCE",
+    "5,000-3,000 BCE",
+    "3,000-1,500 BCE",
+    "1,500-500 BCE"
+   ]
+  },
+  "268": {
+   "options": [
+    "Lower, Middle, Upper",
+    "Early, Late",
+    "Old, New",
+    "Ancient, Modern"
+   ]
+  }
+ }
+}

@@ -1,5 +1,21 @@
 {
- "44": "retire",
+ "44": {
+  "stem": "Match the following:",
+  "L": [
+   "Father of Computer",
+   "First Generation",
+   "First Calculating Device",
+   "Analytical Engine Year"
+  ],
+  "R": [
+   "Charles Babbage",
+   "Vacuum Tubes",
+   "Abacus",
+   "1837"
+  ],
+  "recovered": true,
+  "why": "Father of Computer – Charles Babbage; First Generation – Vacuum Tubes; First Calculating Device – Abacus; Analytical Engine Year – 1837."
+ },
  "93": "retire",
  "95": "retire",
  "118": "retire",
@@ -10,7 +26,19 @@
  "145": "retire",
  "177": "retire",
  "178": "retire",
- "180": "retire",
+ "180": {
+  "stem": "Match the component to its location:",
+  "L": [
+   "Class Body",
+   "Class Name"
+  ],
+  "R": [
+   "Inside curly brackets",
+   "After keyword class"
+  ],
+  "recovered": true,
+  "why": "Class Body – Inside curly brackets; Class Name – After keyword class."
+ },
  "203": "retire",
  "204": "retire",
  "251": "retire",

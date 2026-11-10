@@ -10,7 +10,25 @@
  "146": "retire",
  "147": "retire",
  "148": "retire",
- "160": "retire",
+ "160": {
+  "stem": "Match the following terms with their definitions:",
+  "L": [
+   "System",
+   "Surroundings",
+   "Enthalpy",
+   "Spontaneous process",
+   "Work"
+  ],
+  "R": [
+   "Part of the universe under study",
+   "Everything outside the system",
+   "Heat content at constant pressure",
+   "Process that occurs without external influence",
+   "Energy transfer due to force applied"
+  ],
+  "recovered": true,
+  "why": "System – Part of the universe under study; Surroundings – Everything outside the system; Enthalpy – Heat content at constant pressure; Spontaneous process – Process that occurs without external influence; Work – Energy transfer due to force applied."
+ },
  "196": "retire",
  "200": "retire",
  "217": "retire",

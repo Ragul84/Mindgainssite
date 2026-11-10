@@ -1,0 +1,69 @@
+{
+ "retire": [],
+ "fix": {
+  "127": {
+   "options": [
+    "Godavari",
+    "Krishna",
+    "Kaveri",
+    "Mahanadi"
+   ]
+  },
+  "128": {
+   "options": [
+    "Deforestation",
+    "Monsoon rainfall",
+    "Tectonic activity",
+    "Human settlement"
+   ]
+  },
+  "129": {
+   "options": [
+    "Avulsion",
+    "Meandering",
+    "Delta formation",
+    "Erosion"
+   ]
+  },
+  "130": {
+   "options": [
+    "Indus",
+    "Ganga",
+    "Brahmaputra",
+    "Narmada"
+   ]
+  },
+  "131": {
+   "options": [
+    "Majuli",
+    "Bhavani",
+    "Marajuli",
+    "Dibru Saikhowa"
+   ]
+  },
+  "132": {
+   "options": [
+    "Yamuna",
+    "Brahmaputra",
+    "Narmada",
+    "Tapi"
+   ]
+  },
+  "133": {
+   "options": [
+    "Ganga",
+    "Brahmaputra",
+    "Padma",
+    "Sundarbans"
+   ]
+  },
+  "134": {
+   "options": [
+    "Delta formation",
+    "Meandering",
+    "Erosion",
+    "Deposition"
+   ]
+  }
+ }
+}

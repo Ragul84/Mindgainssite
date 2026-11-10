@@ -1,6 +1,20 @@
 {
  "153": "retire",
- "156": "retire",
+ "156": {
+  "stem": "Match the device to its symbol characteristic:",
+  "L": [
+   "Diode",
+   "Transistor",
+   "Resistor"
+  ],
+  "R": [
+   "Arrowhead",
+   "Three terminals",
+   "Zig-zag line"
+  ],
+  "recovered": true,
+  "why": "Diode – Arrowhead; Transistor – Three terminals; Resistor – Zig-zag line."
+ },
  "223": "retire",
  "251": "retire",
  "64": {

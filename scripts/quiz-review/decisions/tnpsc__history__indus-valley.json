@@ -1,0 +1,63 @@
+{
+ "retire": [
+  295
+ ],
+ "fix": {
+  "66": {
+   "options": [
+    "Planned cities with grid iron layout",
+    "Use of iron tools",
+    "Vedic rituals",
+    "Ashramas system"
+   ]
+  },
+  "67": {
+   "options": [
+    "Copper",
+    "Terracotta",
+    "Steatite",
+    "Gold"
+   ]
+  },
+  "68": {
+   "options": [
+    "Alphabetic",
+    "Syllabic",
+    "Pictographic",
+    "Hieroglyphic"
+   ]
+  },
+  "69": {
+   "options": [
+    "Harappa",
+    "Dholavira",
+    "Kalibangan",
+    "Rakhigarhi"
+   ]
+  },
+  "70": {
+   "options": [
+    "Aryan invasion",
+    "Floods and climate change",
+    "Volcanic eruption",
+    "Epidemic diseases"
+   ]
+  },
+  "71": {
+   "options": [
+    "Wheat and barley",
+    "Rice only",
+    "Maize",
+    "Millets exclusively"
+   ]
+  },
+  "72": {
+   "options": [
+    "Cotton cloth",
+    "Iron tools",
+    "Spices",
+    "Precious stones"
+   ]
+  }
+ }
+}

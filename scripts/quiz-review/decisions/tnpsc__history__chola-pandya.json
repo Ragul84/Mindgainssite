@@ -1,0 +1,149 @@
+{
+ "retire": [],
+ "fix": {
+  "147": {
+   "options": [
+    "Parantaka I",
+    "Rajaraja I",
+    "Vijayalaya",
+    "Aditya I"
+   ]
+  },
+  "148": {
+   "options": [
+    "Kanchipuram",
+    "Madurai",
+    "Thanjavur",
+    "Uraiyur"
+   ]
+  },
+  "149": {
+   "options": [
+    "Mandalams",
+    "Kurrams",
+    "Nadus",
+    "Ur"
+   ]
+  },
+  "150": {
+   "options": [
+    "Pallava period",
+    "Pandya period",
+    "Chola period",
+    "Vijayanagara period"
+   ]
+  },
+  "151": {
+   "options": [
+    "Mudukudumi Peruvazhuti",
+    "Nedunchezhiyan I",
+    "Maravarman Sundara Pandya",
+    "Jatavarman Sundara Pandya"
+   ]
+  },
+  "152": {
+   "options": [
+    "Rajaraja I",
+    "Rajendra I",
+    "Kulottunga I",
+    "Vikrama Chola"
+   ]
+  },
+  "153": {
+   "options": [
+    "Kadamai",
+    "Vari",
+    "Kudimai",
+    "Sistam"
+   ]
+  },
+  "154": {
+   "options": [
+    "Karikala",
+    "Rajaraja I",
+    "Sembiyan Mahadevi",
+    "Aditya I"
+   ]
+  },
+  "155": {
+   "options": [
+    "Maravarman Sundara Pandya",
+    "Jatavarman Vira Pandya",
+    "Jatavarman Kulasekhara Pandya",
+    "Maravarman Srimara Srivallabha"
+   ]
+  },
+  "185": {
+   "options": [
+    "Rajaraja I",
+    "Rajendra I",
+    "Kulothunga I",
+    "Vijayalaya"
+   ]
+  },
+  "186": {
+   "options": [
+    "Chera emblem",
+    "Chola emblem",
+    "Pandya emblem",
+    "Pallava emblem"
+   ]
+  },
+  "187": {
+   "options": [
+    "Chola",
+    "Pandya",
+    "Chera",
+    "Pallava"
+   ]
+  },
+  "188": {
+   "options": [
+    "Raja Raja I",
+    "Rajendra I",
+    "Parantaka I",
+    "Kulothunga I"
+   ]
+  },
+  "189": {
+   "options": [
+    "Nedunchezhiyan I",
+    "Mudukudumi Peruvazhuthi",
+    "Arikesari Parankusa Maravarman",
+    "Srimara Srivallabha"
+   ]
+  },
+  "190": {
+   "options": [
+    "Raja Raja I",
+    "Rajendra I",
+    "Aditya I",
+    "Parantaka I"
+   ]
+  },
+  "191": {
+   "options": [
+    "Rajaraja I",
+    "Rajendra I",
+    "Kulothunga Chola I",
+    "Vikrama Chola"
+   ]
+  },
+  "192": {
+   "options": [
+    "Vira Pandya",
+    "Maravarman Rajasimha II",
+    "Sundara Pandya",
+    "Jatavarman Sundara Pandya"
+   ]
+  },
+  "193": {
+   "options": [
+    "Sangam",
+    "Bhakti movement",
+    "Nayanars",
+    "Alwars"
+   ]
+  }
+ }
+}

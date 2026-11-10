@@ -1,0 +1,53 @@
+{
+ "retire": [],
+ "fix": {
+  "294": {
+   "options": [
+    "Lakdawala → Tendulkar → Rangarajan",
+    "Tendulkar → Lakdawala → Rangarajan",
+    "Rangarajan → Tendulkar → Lakdawala",
+    "Lakdawala → Rangarajan → Tendulkar"
+   ]
+  },
+  "295": {
+   "options": [
+    "3 kg",
+    "5 kg",
+    "7 kg",
+    "10 kg"
+   ]
+  },
+  "296": {
+   "options": [
+    "Kalaignar Magalir Urimai Thittam",
+    "Pudhumai Penn Scheme",
+    "Moovalur Ramamirtham Ammaiyar Scheme",
+    "Tamil Nadu Women Empowerment Scheme"
+   ]
+  },
+  "297": {
+   "options": [
+    "Bihar",
+    "Uttar Pradesh",
+    "Jharkhand",
+    "Madhya Pradesh"
+   ]
+  },
+  "298": {
+   "options": [
+    "2008 Global Financial Crisis",
+    "2015 Drought",
+    "2020 COVID-19 Pandemic",
+    "2022 Russia-Ukraine War"
+   ]
+  },
+  "299": {
+   "options": [
+    "Women farmers",
+    "Girl children from poor families",
+    "Widows above 60 years",
+    "Transgender persons"
+   ]
+  }
+ }
+}

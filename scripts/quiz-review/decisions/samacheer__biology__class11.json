@@ -12,6 +12,9 @@
   132,
   133,
   134,
+  139,
+  188,
+  196,
   243,
   244,
   245,
@@ -22,8 +25,13 @@
   313,
   315,
   316,
+  386,
   387,
   388,
+  422,
+  423,
+  425,
+  426,
   462,
   463,
   465,
@@ -34,12 +42,18 @@
   581,
   634,
   635,
+  639,
+  642,
+  649,
   684,
   685,
   686,
   687,
   688,
   689,
+  724,
+  726,
+  728,
   754,
   765,
   796,
@@ -384,6 +398,944 @@
    ],
    "answer_index": 2,
    "explanation": "Magnesium is part of chlorophyll, potassium regulates stomata, phosphorus (in ATP) transfers energy and nitrogen is needed for proteins."
+  },
+  "13": {
+   "question": "What is the approximate measurement of a built FTW structure?"
+  },
+  "19": {
+   "question": "Which of the following is a symptom of unhealthy plant growth?"
+  },
+  "31": {
+   "question": "Which of these are Outline? 1. Nitrogen Cycle 2. Hydroponics 3. Aeroponics 4. Mineral Nutrition"
+  },
+  "32": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "33": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "34": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "35": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "36": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "75": {
+   "question": "What is the relationship between plants and animals in the biosphere?"
+  },
+  "80": {
+   "question": "Which of the following are Outline? I. Respiratory Quotient. II. Pentose Phosphate Pathway. III. Structure of ATP."
+  },
+  "85": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "86": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "87": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "88": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "89": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "96": {
+   "question": "What is the definition of growth?"
+  },
+  "119": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "120": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "121": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "122": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "123": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "224": {
+   "question": "Which of the following is a primary feature of living cells?"
+  },
+  "233": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "234": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "235": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "236": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "237": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "263": {
+   "question": "What is the role of meiosis?"
+  },
+  "291": {
+   "question": "Which of these is NOT a tissue system outline?"
+  },
+  "301": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "302": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "303": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "304": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "305": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "325": {
+   "question": "Which of the following is a role model for women in science?"
+  },
+  "373": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "374": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "375": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "376": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "377": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "411": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "412": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "413": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "414": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "415": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "433": {
+   "question": "Which of the following is NOT listed as a potential workplace for a zoologist?"
+  },
+  "435": {
+   "question": "What must an aspiring entrepreneur learn to succeed in animal farming?"
+  },
+  "439": {
+   "question": "Which of these is a culture method outline?"
+  },
+  "450": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "451": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "452": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "453": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "454": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "486": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "487": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "488": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "489": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "490": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "506": {
+   "question": "Which of these is an example of an organ?"
+  },
+  "519": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "520": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "521": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "522": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "523": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "543": {
+   "question": "Which of the following is NOT an organ?"
+  },
+  "550": {
+   "question": "What is the scientific name of the earthworm?"
+  },
+  "562": {
+   "question": "Which of these are invertebrates? 1. Lampito mauritii. 2. Periplaneta americana. 3. Rana hexadactyla."
+  },
+  "568": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "569": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "570": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "571": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "572": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "583": {
+   "question": "What is the scientific name of the cockroach?"
+  },
+  "588": {
+   "question": "Which of these is NOT an invertebrate?"
+  },
+  "598": {
+   "question": "Which of the following is NOT a component of our food?"
+  },
+  "604": {
+   "question": "What is the role of Pre molars (PM)?"
+  },
+  "607": {
+   "question": "Which of the following is a source of food?"
+  },
+  "619": {
+   "question": "Which of the following are? 1. Alimentary canal. 2. Digestive glands. 3. Respiratory tract."
+  },
+  "620": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "621": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "622": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "623": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "624": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "656": {
+   "question": "What is required to coordinate activities by sending nerve impulses?"
+  },
+  "662": {
+   "question": "Which of the following is an energy-consuming process?"
+  },
+  "663": {
+   "question": "What is the relationship between stroke volume and venous return snippet?"
+  },
+  "664": {
+   "question": "Which of the following is NOT listed as a physiological process?"
+  },
+  "674": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "675": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "676": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "677": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "678": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "703": {
+   "question": "Which of the following is a primary function of the kidneys?"
+  },
+  "713": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "714": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "715": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "716": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "717": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "731": {
+   "question": "What is the primary risk of land habitation?"
+  },
+  "767": {
+   "question": "Which of the following is an example of a living organism's response to sunlight?"
+  },
+  "771": {
+   "question": "Which of the following is an example of a non-living landform?"
+  },
+  "776": {
+   "question": "What makes our planet unique?"
+  },
+  "781": {
+   "question": "Which of the following are components of DNA?"
+  },
+  "786": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "787": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "788": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "789": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "790": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "809": {
+   "question": "Which of the following is a dicot example?"
+  },
+  "820": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "821": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "822": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "823": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "824": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "836": {
+   "question": "Which plants show secondary growth?"
+  },
+  "842": {
+   "question": "Which of the following is a characteristic of dicot stems?"
+  },
+  "876": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "877": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "878": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "879": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "880": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "890": {
+   "question": "Which of the following is a physical process?"
+  },
+  "892": {
+   "question": "What is the ending point of water movement in plants?"
+  },
+  "917": {
+   "question": "Plants are the main source of all kinds of which compounds on this planet?"
+  },
+  "918": {
+   "question": "Which of the following is NOT listed as an organic compound produced by plants?"
+  },
+  "920": {
+   "question": "Which of the following is a learning objective related to photosynthetic experiments?"
+  },
+  "929": {
+   "question": "Which of the following are outline? I. Absorption spectrum. II. Action spectrum. III. Modern concept of photosynthesis."
+  },
+  "930": {
+   "question": "Which of the following are outline? I. Photo-oxidation phase. II. Photochemical phase. III. Photophosphorylation."
+  },
+  "932": {
+   "question": "Which of the following are outline? I. Photosynthesis in bacteria. II. Factors affecting photosynthesis. III. Photorespiration."
+  },
+  "936": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "937": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "938": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "939": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "940": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "989": {
+   "question": "Which of the following is an example of a response to sunlight?"
+  },
+  "997": {
+   "question": "What makes our planet unique?"
+  },
+  "1002": {
+   "question": "Which of the following are mentioned as landforms?"
+  },
+  "1003": {
+   "question": "Which of the following are examples of 'wonders'?"
+  },
+  "1004": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "1005": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "1006": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "1007": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "1019": {
+   "question": "Which of the following is a wonder of the living world?"
+  },
+  "1021": {
+   "question": "What is the primary function of the DNA molecule?"
+  },
+  "1028": {
+   "question": "Which of the following is Outline?"
+  },
+  "1029": {
+   "question": "Which of the following is a characteristic of the living world?"
+  },
+  "1048": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "1049": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "1050": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "1060": {
+   "question": "Which of the following is an example of a gymnosperm?"
+  },
+  "1061": {
+   "question": "Which of the following is an example of a living organism's response to its environment?"
   }
  }
 }

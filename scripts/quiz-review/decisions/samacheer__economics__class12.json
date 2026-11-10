@@ -1,10 +1,17 @@
 {
  "retire": [
-  15,
   30,
   78,
   80,
+  108,
+  109,
+  110,
+  111,
+  112,
+  113,
+  116,
   120,
+  121,
   181,
   182,
   183,
@@ -12,7 +19,6 @@
   185,
   264,
   265,
-  266,
   267,
   296,
   297,
@@ -21,7 +27,6 @@
   300,
   301,
   369,
-  370,
   429,
   430
  ],
@@ -80,6 +85,90 @@
    ],
    "answer_index": 0,
    "explanation": "The Bank of England (1694) shaped modern banking, the Bank of Venice (1157) is counted as the first lending bank and Sweden's Riksbank is the oldest central bank."
+  },
+  "15": {
+   "question": "Match the term with its definition?: List I A. Inflation B. Deflation C. Demonetization D. Fiscal deficit List II 1. Excess of government expenditure over revenue 2. Withdrawal of a currency's legal tender status 3. Increase in general price levels 4. Decrease in general price levels",
+   "options": [
+    "A-1, B-4, C-2, D-3",
+    "A-4, B-3, C-2, D-1",
+    "A-2, B-4, C-3, D-1",
+    "A-3, B-4, C-2, D-1"
+   ],
+   "answer_index": 3,
+   "explanation": "Inflation – Increase in general price levels; Deflation – Decrease in general price levels; Demonetization – Withdrawal of a currency's legal tender status; Fiscal deficit – Excess of government expenditure over revenue.",
+   "retired": false
+  },
+  "266": {
+   "question": "Match the formula components: List I A. M B. C C. I D. G List II 1. Imports 2. Investment 3. Government 4. Consumption",
+   "options": [
+    "A-4, B-1, C-2, D-3",
+    "A-3, B-4, C-2, D-1",
+    "A-1, B-4, C-2, D-3",
+    "A-1, B-4, C-3, D-2"
+   ],
+   "answer_index": 2,
+   "explanation": "M – Imports; C – Consumption; I – Investment; G – Government.",
+   "retired": false
+  },
+  "370": {
+   "question": "Match the following historical banking events: List I A. The Bank of Venice established B. The Bank of England founded C. The Ricks Banks of Sweden acquired note issue right List II 1. 1694 2. 1157 3. 1897",
+   "options": [
+    "A-3, B-1, C-2",
+    "A-1, B-2, C-3",
+    "A-2, B-1, C-3",
+    "A-2, B-3, C-1"
+   ],
+   "answer_index": 2,
+   "explanation": "The Bank of Venice established – 1157; The Bank of England founded – 1694; The Ricks Banks of Sweden acquired note issue right – 1897.",
+   "retired": false
+  },
+  "131": {
+   "question": "Economics is classified into how many branches?"
+  },
+  "132": {
+   "question": "Which of the following is a benefit of Macro Economics?"
+  },
+  "156": {
+   "question": "What provides both a direct value and raw material for economic activity?"
+  },
+  "159": {
+   "question": "Why are public policies most effective only when they achieve maximum benefit in the most efficient way?"
+  },
+  "160": {
+   "question": "What constitutes an ecosystem?"
+  },
+  "165": {
+   "question": "Which of the following are components of the non-living environment? I. Sun II. Soil III. Atmosphere IV. Animals"
+  },
+  "168": {
+   "question": "Which of the following are listed as finite resources? I. Human resources II. Natural resources III. Monetary resources"
+  },
+  "194": {
+   "question": "Which of the following is NOT a main approach to the concept of development?"
+  },
+  "249": {
+   "question": "Which of the following are basic concepts of national income? 1. GDP 2. NDP 3. GDP deflator 4. Per capita income"
+  },
+  "269": {
+   "question": "Which problem is described as the most 'vexing' among economic problems?"
+  },
+  "302": {
+   "question": "Who is J.B. Say and what was his contribution?"
+  },
+  "318": {
+   "question": "National income comprises of which two components?"
+  },
+  "322": {
+   "question": "What is the primary macroeconomic objective?"
+  },
+  "343": {
+   "question": "What is the primary function of money?"
+  },
+  "346": {
+   "question": "Which invention is considered one of the greatest in human history?"
+  },
+  "357": {
+   "question": "What is considered the 'life blood of all economic activities'?"
   }
  }
 }

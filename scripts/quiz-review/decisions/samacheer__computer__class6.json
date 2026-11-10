@@ -1,6 +1,5 @@
 {
  "retire": [
-  31,
   99,
   108,
   120,
@@ -150,6 +149,34 @@
    ],
    "answer_index": 3,
    "explanation": "Speakers output sound, printers print documents, monitors display output, keyboards input data and scanners turn physical images into digital ones."
+  },
+  "31": {
+   "question": "Match the computer component with its function: List I A. Keyboard B. Monitor C. CPU List II 1. Input device 2. Output device 3. Processing unit",
+   "options": [
+    "A-2, B-1, C-3",
+    "A-1, B-3, C-2",
+    "A-3, B-2, C-1",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 3,
+   "explanation": "Keyboard – Input device; Monitor – Output device; CPU – Processing unit.",
+   "retired": false
+  },
+  "20": {
+   "options": [
+    "Keyboard and Mouse",
+    "Operating System and Application Software",
+    "CPU and RAM",
+    "None of the above"
+   ]
+  },
+  "21": {
+   "options": [
+    "Only 1",
+    "Only 2",
+    "Both 1 and 2",
+    "Neither 1 nor 2"
+   ]
   }
  }
 }

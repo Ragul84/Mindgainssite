@@ -1,0 +1,261 @@
+{
+ "retire": [],
+ "fix": {
+  "81": {
+   "options": [
+    "Allahabad",
+    "Velore",
+    "Srirangapatna",
+    "Amritsar"
+   ]
+  },
+  "82": {
+   "options": [
+    "Land Revenue",
+    "Law Enforcement",
+    "Tax Collection",
+    "Military Administration"
+   ]
+  },
+  "109": {
+   "options": [
+    "1784",
+    "1814",
+    "1834",
+    "1854"
+   ]
+  },
+  "110": {
+   "options": [
+    "Charles Napier",
+    "Robert Clive",
+    "Warren Hastings",
+    "Dalhousie"
+   ]
+  },
+  "111": {
+   "options": [
+    "Keshab Chandra Sen",
+    "Rammohan Roy",
+    "Ishwar Chandra Vidyasagar",
+    "Debendranath Tagore"
+   ]
+  },
+  "135": {
+   "options": [
+    "Enfield Rifle",
+    "Brown Bess",
+    "Lee-Metford",
+    "Martini-Henry"
+   ]
+  },
+  "136": {
+   "options": [
+    "Increase Indian representation",
+    "Decrease Indian representation",
+    "Maintain Indian representation",
+    "Abolish Indian representation"
+   ]
+  },
+  "137": {
+   "options": [
+    "Partition of Bengal",
+    "Partition of Punjab",
+    "Partition of Bombay",
+    "Partition of Madras"
+   ]
+  },
+  "145": {
+   "options": [
+    "Restricted civil liberties",
+    "Promoted social reform",
+    "Encouraged economic growth",
+    "Fostered communal harmony"
+   ]
+  },
+  "146": {
+   "options": [
+    "Established British parliamentary control over India",
+    "Ended the East India Company's trade monopoly",
+    "Introduced the concept of dyarchy",
+    "Promoted Indian self-rule"
+   ]
+  },
+  "147": {
+   "options": [
+    "Land tenure system",
+    "Revenue collection system",
+    "Administrative structure",
+    "Social hierarchy"
+   ]
+  },
+  "148": {
+   "options": [
+    "Introduced the concept of communal representation",
+    "Expanded the legislative councils",
+    "Established the office of the Governor-General",
+    "Abolished the East India Company"
+   ]
+  },
+  "158": {
+   "options": [
+    "Spread Christianity",
+    "Establish trade monopolies",
+    "Promote social reform",
+    "Impose political control"
+   ]
+  },
+  "159": {
+   "options": [
+    "Lord Dalhousie",
+    "Lord Canning",
+    "Lord Curzon",
+    "Lord Lytton"
+   ]
+  },
+  "160": {
+   "options": [
+    "Establish British control over India",
+    "Regulate the British East India Company's affairs",
+    "Promote social reform",
+    "Impose taxation on Indians"
+   ]
+  },
+  "174": {
+   "options": [
+    "Natural resources",
+    "Human resources",
+    "Market opportunities",
+    "All of the above"
+   ]
+  },
+  "199": {
+   "options": [
+    "Sepoy Mutiny",
+    "Indian War of Independence",
+    "Rebellion of 1857",
+    "All of the above"
+   ]
+  },
+  "200": {
+   "options": [
+    "Increase Indian Representation",
+    "Reduce British Control",
+    "Promote Local Self-Government",
+    "Establish Federal Structure"
+   ]
+  },
+  "212": {
+   "options": [
+    "Rammohan Roy",
+    "Ishwar Chandra Vidyasagar",
+    "William Jones",
+    "Max Mueller"
+   ]
+  },
+  "213": {
+   "options": [
+    "Plassey",
+    "Buxar",
+    "Panipat",
+    "Srirangapatna"
+   ]
+  },
+  "214": {
+   "options": [
+    "Mughal rule",
+    "East India Company rule",
+    "British conquest",
+    "Indian Rebellion"
+   ]
+  },
+  "215": {
+   "options": [
+    "Landlord",
+    "Revenue officer",
+    "Village headman",
+    "Military commander"
+   ]
+  },
+  "220": {
+   "options": [
+    "1830",
+    "1848",
+    "1850",
+    "1757"
+   ]
+  },
+  "221": {
+   "options": [
+    "1765",
+    "1793",
+    "1830",
+    "1857"
+   ]
+  },
+  "222": {
+   "options": [
+    "1820",
+    "1828",
+    "1830",
+    "1857"
+   ]
+  },
+  "223": {
+   "options": [
+    "1900",
+    "1905",
+    "1910",
+    "1915"
+   ]
+  },
+  "256": {
+   "options": [
+    "1765",
+    "1793",
+    "1813",
+    "1857"
+   ]
+  },
+  "257": {
+   "options": [
+    "1770",
+    "1773",
+    "1781",
+    "1784"
+   ]
+  },
+  "258": {
+   "options": [
+    "1770",
+    "1784",
+    "1793",
+    "1813"
+   ]
+  },
+  "259": {
+   "options": [
+    "English education",
+    "Western education",
+    "Missionary activities",
+    "All of the above"
+   ]
+  },
+  "260": {
+   "options": [
+    "Landlord-based revenue",
+    "Village-based revenue",
+    "Peasant-based revenue",
+    "Revenue farming"
+   ]
+  },
+  "337": {
+   "options": [
+    "Mysore",
+    "Hyderabad",
+    "Bengal",
+    "Awadh"
+   ]
+  }
+ }
+}

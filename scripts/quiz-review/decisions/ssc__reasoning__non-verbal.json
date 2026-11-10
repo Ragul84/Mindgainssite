@@ -1,0 +1,56 @@
+{
+ "retire": [
+  12,
+  13,
+  14,
+  15,
+  16,
+  21,
+  22,
+  23,
+  28,
+  32,
+  98,
+  105,
+  126,
+  144,
+  171,
+  177,
+  178,
+  181,
+  196,
+  221,
+  242,
+  301,
+  305,
+  310,
+  363,
+  474
+ ],
+ "fix": {
+  "10": {
+   "options": [
+    "[Circle with a horizontal line]",
+    "[Square with a vertical line]",
+    "[Triangle with a diagonal line]",
+    "[Pentagon with a horizontal line]"
+   ]
+  },
+  "11": {
+   "options": [
+    "[Pentagon]",
+    "[Hexagon]",
+    "[Rectangle]",
+    "[Star]"
+   ]
+  },
+  "20": {
+   "options": [
+    "[Square with a diagonal line from top-left to bottom-right]",
+    "[Square with a diagonal line from top-right to bottom-left]",
+    "[Square with a horizontal line in the middle]",
+    "[Square with a vertical line in the middle]"
+   ]
+  }
+ }
+}

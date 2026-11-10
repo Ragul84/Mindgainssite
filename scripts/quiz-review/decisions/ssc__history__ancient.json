@@ -1,0 +1,29 @@
+{
+ "retire": [],
+ "fix": {
+  "96": {
+   "options": [
+    "Roman Civilization",
+    "Egyptian Civilization",
+    "Greek Civilization",
+    "Indus Valley Civilization"
+   ]
+  },
+  "97": {
+   "options": [
+    "Gupta Dynasty",
+    "Maurya Dynasty",
+    "Chola Dynasty",
+    "Mughal Dynasty"
+   ]
+  },
+  "106": {
+   "options": [
+    "3000-2000 BCE",
+    "1500-500 BCE",
+    "500 BCE - 500 CE",
+    "1000 CE - 1500 CE"
+   ]
+  }
+ }
+}

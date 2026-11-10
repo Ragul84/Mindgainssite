@@ -1,6 +1,8 @@
 {
  "retire": [
   14,
+  21,
+  22,
   53,
   54,
   55,
@@ -9,11 +11,8 @@
   87,
   88,
   89,
-  117,
-  118,
   174,
   175,
-  176,
   177,
   178,
   206,
@@ -22,7 +21,14 @@
   209,
   210,
   211,
+  240,
+  241,
+  242,
+  243,
+  244,
+  245,
   255,
+  258,
   265,
   297,
   298,
@@ -33,9 +39,13 @@
   358,
   359,
   412,
+  417,
+  418,
+  419,
   463,
   464,
-  465
+  465,
+  472
  ],
  "fix": {
   "23": {
@@ -119,6 +129,96 @@
    ],
    "answer_index": 0,
    "explanation": "Choosing idly, dosa or chappathi shows wants have alternatives; drinking tea every morning shows wants become habits."
+  },
+  "117": {
+   "question": "Match the following explicit cost examples: List I A. Labor B. Building C. Capital D. Inputs List II 1. Raw material payment 2. Wages 3. Rent 4. Interest",
+   "options": [
+    "A-1, B-3, C-4, D-2",
+    "A-2, B-3, C-4, D-1",
+    "A-3, B-2, C-4, D-1",
+    "A-2, B-4, C-3, D-1"
+   ],
+   "answer_index": 1,
+   "explanation": "Labor – Wages; Building – Rent; Capital – Interest; Inputs – Raw material payment.",
+   "retired": false
+  },
+  "118": {
+   "question": "Match the following concepts: List I A. Cost B. Revenue C. Profit D. Cost Analysis List II 1. Total expenses incurred 2. Objective of a firm 3. Study of cost behaviour 4. Realized at sale of goods",
+   "options": [
+    "A-3, B-4, C-2, D-1",
+    "A-1, B-4, C-3, D-2",
+    "A-1, B-4, C-2, D-3",
+    "A-1, B-3, C-2, D-4"
+   ],
+   "answer_index": 2,
+   "explanation": "Cost – Total expenses incurred; Revenue – Realized at sale of goods; Profit – Objective of a firm; Cost Analysis – Study of cost behaviour.",
+   "retired": false
+  },
+  "176": {
+   "question": "Match the reward to the agent: List I A. Landlord B. Labourer C. Capitalist List II 1. Rent 2. Interest 3. Wage",
+   "options": [
+    "A-1, B-3, C-2",
+    "A-2, B-3, C-1",
+    "A-3, B-1, C-2",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 0,
+   "explanation": "Landlord – Rent; Labourer – Wage; Capitalist – Interest.",
+   "retired": false
+  },
+  "27": {
+   "question": "What is the definition of consumption?"
+  },
+  "61": {
+   "question": "Which of these is NOT listed as one of the four factors of production?"
+  },
+  "62": {
+   "question": "What is the primary purpose of the production process?"
+  },
+  "90": {
+   "question": "What is the primary objective of a firm?"
+  },
+  "97": {
+   "question": "Which of the following is NOT listed as an explicit cost?"
+  },
+  "119": {
+   "question": "What does the supply side of a commodity exchange contain information about?"
+  },
+  "122": {
+   "question": "Which of the following is an example of an International market?"
+  },
+  "142": {
+   "question": "A market must always be a physical place."
+  },
+  "149": {
+   "question": "Which of the following is NOT listed as a factor of production?"
+  },
+  "160": {
+   "question": "Which of the following are factors of production? 1. Land 2. Labour 3. Capital 4. Entrepreneur"
+  },
+  "185": {
+   "question": "What characterizes underdeveloped economies?"
+  },
+  "186": {
+   "question": "Economic development is indicated by GDP and:"
+  },
+  "217": {
+   "question": "What did the East India Company consider India to be?"
+  },
+  "306": {
+   "question": "What is the primary purpose of economic analysis?"
+  },
+  "384": {
+   "question": "What does the 'barter system' mean?"
+  },
+  "438": {
+   "question": "What is the primary purpose of a subject's name or title?"
+  },
+  "440": {
+   "question": "Books with titles like 'Basic Economics' and 'Elementary Economics' generally have:"
+  },
+  "448": {
+   "question": "Which of the following are components of a good introduction? 1. Relationship with other subjects. 2. Methodologies of law derivation. 3. Significance of all branches."
   }
  }
 }

@@ -1,9 +1,89 @@
 {
- "108": "retire",
- "145": "retire",
- "149": "retire",
- "150": "retire",
- "183": "retire",
+ "108": {
+  "stem": "Match the following number system bases with their names:",
+  "L": [
+   "Base 2",
+   "Base 10",
+   "Base 8",
+   "Base 16"
+  ],
+  "R": [
+   "Binary",
+   "Decimal",
+   "Octal",
+   "Hexadecimal"
+  ],
+  "recovered": true,
+  "why": "Base 2 – Binary; Base 10 – Decimal; Base 8 – Octal; Base 16 – Hexadecimal."
+ },
+ "145": {
+  "stem": "Match the DBMS with its type:",
+  "L": [
+   "MySQL",
+   "MS Access",
+   "SQLite",
+   "Oracle"
+  ],
+  "R": [
+   "Open Source",
+   "Proprietary",
+   "Embedded",
+   "Enterprise"
+  ],
+  "recovered": true,
+  "why": "MySQL – Open Source; MS Access – Proprietary; SQLite – Embedded; Oracle – Enterprise."
+ },
+ "149": {
+  "stem": "Match the concept with its definition:",
+  "L": [
+   "Redundancy",
+   "Integrity",
+   "Normalization",
+   "Indexing"
+  ],
+  "R": [
+   "Duplication",
+   "Accuracy",
+   "Organization",
+   "Speedup"
+  ],
+  "recovered": true,
+  "why": "Redundancy – Duplication; Integrity – Accuracy; Normalization – Organization; Indexing – Speedup."
+ },
+ "150": {
+  "stem": "Match the view with its function:",
+  "L": [
+   "Design View",
+   "Datasheet View",
+   "Form View",
+   "Print Preview"
+  ],
+  "R": [
+   "Structure",
+   "Data entry",
+   "User interface",
+   "Final look"
+  ],
+  "recovered": true,
+  "why": "Design View – Structure; Datasheet View – Data entry; Form View – User interface; Print Preview – Final look."
+ },
+ "183": {
+  "stem": "Match the number to its system:",
+  "L": [
+   "1011",
+   "777",
+   "999",
+   "A1B2"
+  ],
+  "R": [
+   "Binary",
+   "Octal",
+   "Decimal",
+   "Hexadecimal"
+  ],
+  "recovered": true,
+  "why": "1011 – Binary; 777 – Octal; 999 – Decimal; A1B2 – Hexadecimal."
+ },
  "63": {
   "lh": "Term",
   "rh": "Definition",

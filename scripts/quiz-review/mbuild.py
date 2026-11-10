@@ -53,6 +53,9 @@ if __name__ == '__main__':
                 if i not in dec['retire']: dec['retire'].append(i)
                 retired += 1; continue
             dec['fix'][str(i)] = build(qs[i], spec, i); built += 1
+            if spec.get('recovered'):
+                dec['fix'][str(i)]['retired'] = False
+                if i in dec['retire']: dec['retire'].remove(i)
         dec['retire'].sort()
         json.dump(dec, open(dp, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print('rebuilt', built, 'retired', retired)

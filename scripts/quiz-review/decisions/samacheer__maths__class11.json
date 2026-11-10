@@ -1,9 +1,62 @@
 {
  "retire": [
-  385,
-  386,
-  387,
-  388
+  112,
+  168,
+  230,
+  244,
+  262,
+  354,
+  358,
+  360
  ],
- "fix": {}
+ "fix": {
+  "385": {
+   "question": "Match the identities: List I A. Difference of Squares B. Square of Sum C. Sum of Cubes D. Difference of Cubes List II 1. a² + 2ab + b² 2. a³ - b³ 3. a² - b² 4. a³ + b³",
+   "options": [
+    "A-1, B-3, C-4, D-2",
+    "A-3, B-1, C-4, D-2",
+    "A-3, B-4, C-1, D-2",
+    "A-2, B-1, C-4, D-3"
+   ],
+   "answer_index": 1,
+   "explanation": "Difference of squares: a² - b²; square of a sum: a² + 2ab + b²; sum of cubes: a³ + b³; difference of cubes: a³ - b³.",
+   "retired": false
+  },
+  "386": {
+   "question": "Match the expanded forms: List I A. (x+1)² B. (x-1)² C. (x+2)² D. (x-2)² List II 1. x²-4x+4 2. x²+2x+1 3. x²+4x+4 4. x²-2x+1",
+   "options": [
+    "A-4, B-2, C-3, D-1",
+    "A-2, B-4, C-1, D-3",
+    "A-2, B-4, C-3, D-1",
+    "A-1, B-4, C-3, D-2"
+   ],
+   "answer_index": 2,
+   "explanation": "(x+1)² – x²+2x+1; (x-1)² – x²-2x+1; (x+2)² – x²+4x+4; (x-2)² – x²-4x+4.",
+   "retired": false
+  },
+  "387": {
+   "question": "Match the values: List I A. 2³ B. 3³ C. 4³ D. 5³ List II 1. 8 2. 27 3. 125 4. 64",
+   "options": [
+    "A-4, B-2, C-1, D-3",
+    "A-1, B-3, C-4, D-2",
+    "A-1, B-2, C-3, D-4",
+    "A-1, B-2, C-4, D-3"
+   ],
+   "answer_index": 3,
+   "explanation": "2³ – 8; 3³ – 27; 4³ – 64; 5³ – 125.",
+   "retired": false
+  },
+  "388": {
+   "question": "Match the terms: List I A. Monomial B. Binomial C. Trinomial D. Polynomial List II 1. Many terms 2. One term 3. Three terms 4. Two terms",
+   "options": [
+    "A-2, B-4, C-3, D-1",
+    "A-1, B-4, C-3, D-2",
+    "A-2, B-3, C-4, D-1",
+    "A-4, B-2, C-3, D-1"
+   ],
+   "answer_index": 0,
+   "explanation": "Monomial – One term; Binomial – Two terms; Trinomial – Three terms; Polynomial – Many terms.",
+   "retired": false
+  }
+ }
 }

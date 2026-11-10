@@ -50,14 +50,70 @@
  },
  "376": "retire",
  "401": "retire",
- "402": "retire",
+ "402": {
+  "stem": "Match the components of the biosphere:",
+  "L": [
+   "Lithosphere",
+   "Hydrosphere",
+   "Atmosphere",
+   "Biosphere"
+  ],
+  "R": [
+   "Land/Soil",
+   "Water",
+   "Air",
+   "Life"
+  ],
+  "recovered": true,
+  "why": "Lithosphere – Land/Soil; Hydrosphere – Water; Atmosphere – Air; Biosphere – Life."
+ },
  "403": "retire",
  "404": "retire",
- "428": "retire",
+ "428": {
+  "stem": "Match the Latin root to its meaning:",
+  "L": [
+   "Colonus",
+   "Imperium"
+  ],
+  "R": [
+   "Farmer",
+   "To command"
+  ],
+  "recovered": true,
+  "why": "Colonus – Farmer; Imperium – To command."
+ },
  "429": "retire",
- "430": "retire",
+ "430": {
+  "stem": "Match the term to its characteristic:",
+  "L": [
+   "Colonialism",
+   "Imperialism"
+  ],
+  "R": [
+   "Transfer of population",
+   "Exercise of power"
+  ],
+  "recovered": true,
+  "why": "Colonialism – Transfer of population; Imperialism – Exercise of power."
+ },
  "431": "retire",
- "485": "retire",
+ "485": {
+  "stem": "Match the following sources:",
+  "L": [
+   "Classical Literature",
+   "Epigraphy",
+   "Material Culture",
+   "Foreign Literature"
+  ],
+  "R": [
+   "Sangam corpus",
+   "Inscriptions",
+   "Archaeological excavations",
+   "Non-Tamil texts"
+  ],
+  "recovered": true,
+  "why": "Classical Literature – Sangam corpus; Epigraphy – Inscriptions; Material Culture – Archaeological excavations; Foreign Literature – Non-Tamil texts."
+ },
  "486": "retire",
  "499": {
   "lh": "Term",

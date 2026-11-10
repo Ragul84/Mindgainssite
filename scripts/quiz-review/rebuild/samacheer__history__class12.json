@@ -18,7 +18,23 @@
    "1871"
   ]
  },
- "73": "retire",
+ "73": {
+  "stem": "Match the following events with their significance:",
+  "L": [
+   "Napoleon's defeat at Waterloo",
+   "French Revolution",
+   "Long Depression",
+   "Unification of Germany"
+  ],
+  "R": [
+   "End of Napoleonic Wars",
+   "Rise of liberalism",
+   "Economic hardship",
+   "Rise of nationalism"
+  ],
+  "recovered": true,
+  "why": "Napoleon's defeat at Waterloo – End of Napoleonic Wars; French Revolution – Rise of liberalism; Long Depression – Economic hardship; Unification of Germany – Rise of nationalism."
+ },
  "103": {
   "lh": "Item",
   "rh": "Linked with",
@@ -70,7 +86,23 @@
    "Mentor"
   ]
  },
- "106": "retire",
+ "106": {
+  "stem": "Match the following concepts:",
+  "L": [
+   "Precept",
+   "Practice",
+   "Faith",
+   "Ahimsa"
+  ],
+  "R": [
+   "Rule/Instruction",
+   "Action",
+   "Belief",
+   "Non-violence"
+  ],
+  "recovered": true,
+  "why": "Precept – Rule/Instruction; Practice – Action; Faith – Belief; Ahimsa – Non-violence."
+ },
  "115": {
   "lh": "Term",
   "rh": "Description",
@@ -198,7 +230,21 @@
  },
  "337": "retire",
  "426": "retire",
- "431": "retire",
+ "431": {
+  "stem": "Match the conspiracy cases with their years:",
+  "L": [
+   "Peshawar Conspiracy Case",
+   "Kanpur Conspiracy Case",
+   "Meerut Conspiracy Case"
+  ],
+  "R": [
+   "1922",
+   "1924",
+   "1929"
+  ],
+  "recovered": true,
+  "why": "Peshawar Conspiracy Case – 1922; Kanpur Conspiracy Case – 1924; Meerut Conspiracy Case – 1929."
+ },
  "441": "retire",
  "539": {
   "lh": "Place / event",

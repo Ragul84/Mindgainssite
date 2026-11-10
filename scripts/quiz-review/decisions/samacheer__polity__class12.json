@@ -1,11 +1,6 @@
 {
  "retire": [
-  43,
-  77,
-  78,
   79,
-  217,
-  250,
   251,
   252,
   253,
@@ -218,6 +213,66 @@
    ],
    "answer_index": 0,
    "explanation": "The 86th Amendment made education a fundamental right, the 42nd added 'secular' to the Preamble and the 44th removed the right to property from Fundamental Rights."
+  },
+  "43": {
+   "question": "Match the following: List I A. FPTP B. PR C. Article 324 D. 61st Amendment E. VVPAT List II 1. Voting Age 18 2. Paper Audit Trail 3. Proportional Representation 4. Plurality System 5. Election Commission",
+   "options": [
+    "A-2, B-3, C-5, D-1, E-4",
+    "A-4, B-3, C-2, D-1, E-5",
+    "A-4, B-3, C-1, D-5, E-2",
+    "A-4, B-3, C-5, D-1, E-2"
+   ],
+   "answer_index": 3,
+   "explanation": "FPTP – Plurality System; PR – Proportional Representation; Article 324 – Election Commission; 61st Amendment – Voting Age 18; VVPAT – Paper Audit Trail.",
+   "retired": false
+  },
+  "77": {
+   "question": "Match the following powers with the authority: List I A. Pardon B. Portfolio Allocation C. State Administration D. Presiding over Rajya Sabha E. Legal Advice to Govt List II 1. President 2. Attorney General 3. Vice President 4. Governor 5. Prime Minister",
+   "options": [
+    "A-5, B-1, C-4, D-3, E-2",
+    "A-1, B-5, C-4, D-3, E-2",
+    "A-2, B-5, C-4, D-3, E-1",
+    "A-1, B-3, C-4, D-5, E-2"
+   ],
+   "answer_index": 1,
+   "explanation": "Pardon – President; Portfolio Allocation – Prime Minister; State Administration – Governor; Presiding over Rajya Sabha – Vice President; Legal Advice to Govt – Attorney General.",
+   "retired": false
+  },
+  "78": {
+   "question": "Match the following terms with their meanings: List I A. Nominal Head B. Real Head C. Collective Responsibility D. Individual Responsibility E. Pocket Veto List II 1. De Jure 2. Indefinite delay 3. Accountable to President 4. De Facto 5. Joint accountability",
+   "options": [
+    "A-1, B-3, C-5, D-4, E-2",
+    "A-2, B-4, C-5, D-3, E-1",
+    "A-1, B-4, C-5, D-3, E-2",
+    "A-1, B-4, C-2, D-3, E-5"
+   ],
+   "answer_index": 2,
+   "explanation": "Nominal Head – De Jure; Real Head – De Facto; Collective Responsibility – Joint accountability; Individual Responsibility – Accountable to President; Pocket Veto – Indefinite delay.",
+   "retired": false
+  },
+  "217": {
+   "question": "Match the term with the description: List I A. PIL B. CJI C. Judicial Review D. Appellate List II 1. Checking Law Validity 2. Chief Justice of India 3. Public Interest Litigation 4. Hearing Appeals",
+   "options": [
+    "A-2, B-3, C-1, D-4",
+    "A-3, B-2, C-1, D-4",
+    "A-4, B-2, C-1, D-3",
+    "A-3, B-2, C-4, D-1"
+   ],
+   "answer_index": 1,
+   "explanation": "PIL – Public Interest Litigation; CJI – Chief Justice of India; Judicial Review – Checking Law Validity; Appellate – Hearing Appeals.",
+   "retired": false
+  },
+  "250": {
+   "question": "Match the following roles with the respective officers: List I A. Presides over Lok Sabha B. Presides over Rajya Sabha C. Head of State D. Head of Government List II 1. Speaker 2. President 3. Prime Minister 4. Vice-President",
+   "options": [
+    "A-2, B-4, C-1, D-3",
+    "A-1, B-2, C-4, D-3",
+    "A-1, B-4, C-2, D-3",
+    "A-4, B-1, C-2, D-3"
+   ],
+   "answer_index": 2,
+   "explanation": "Presides over Lok Sabha – Speaker; Presides over Rajya Sabha – Vice-President; Head of State – President; Head of Government – Prime Minister.",
+   "retired": false
   }
  }
 }

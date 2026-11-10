@@ -16,9 +16,57 @@
    "Acquired when a new territory becomes part of India"
   ]
  },
- "35": "retire",
- "36": "retire",
- "37": "retire",
+ "35": {
+  "stem": "Match the terms with their meanings:",
+  "L": [
+   "Renunciation",
+   "Termination",
+   "Deprivation",
+   "OCI"
+  ],
+  "R": [
+   "Voluntary giving up of citizenship",
+   "Automatic loss upon acquiring another citizenship",
+   "Compulsory loss due to fraud or disloyalty",
+   "Overseas Citizen of India"
+  ],
+  "recovered": true,
+  "why": "Renunciation – Voluntary giving up of citizenship; Termination – Automatic loss upon acquiring another citizenship; Deprivation – Compulsory loss due to fraud or disloyalty; OCI – Overseas Citizen of India."
+ },
+ "36": {
+  "stem": "Match the legal basis:",
+  "L": [
+   "Part II",
+   "1955 Act",
+   "Article 11",
+   "OCI Scheme"
+  ],
+  "R": [
+   "Constitutional provisions",
+   "Statutory law for citizenship",
+   "Parliament's power to legislate",
+   "Benefits for Indian diaspora"
+  ],
+  "recovered": true,
+  "why": "Part II – Constitutional provisions; 1955 Act – Statutory law for citizenship; Article 11 – Parliament's power to legislate; OCI Scheme – Benefits for Indian diaspora."
+ },
+ "37": {
+  "stem": "Match the requirement with the method:",
+  "L": [
+   "12 years residence",
+   "Application to Govt",
+   "Born in India",
+   "Territory Annexation"
+  ],
+  "R": [
+   "Naturalisation",
+   "Registration",
+   "Birth",
+   "Incorporation"
+  ],
+  "recovered": true,
+  "why": "12 years residence – Naturalisation; Application to Govt – Registration; Born in India – Birth; Territory Annexation – Incorporation."
+ },
  "40": {
   "lh": "Position / body (State)",
   "rh": "Role",
@@ -169,7 +217,23 @@
    "Speaker"
   ]
  },
- "199": "retire",
+ "199": {
+  "stem": "Match the terms with their descriptions:",
+  "L": [
+   "MLA",
+   "MLC",
+   "Vidhan Sabha",
+   "Vidhan Parishad"
+  ],
+  "R": [
+   "Member of Legislative Assembly",
+   "Member of Legislative Council",
+   "Lower House",
+   "Upper House"
+  ],
+  "recovered": true,
+  "why": "MLA – Member of Legislative Assembly; MLC – Member of Legislative Council; Vidhan Sabha – Lower House; Vidhan Parishad – Upper House."
+ },
  "200": "retire",
  "201": {
   "lh": "Position",

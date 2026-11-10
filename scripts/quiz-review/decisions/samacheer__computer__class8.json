@@ -1,11 +1,5 @@
 {
- "retire": [
-  108,
-  145,
-  149,
-  150,
-  183
- ],
+ "retire": [],
  "fix": {
   "63": {
    "question": "Match List I with List II: List I (Term) A. Field B. Table C. Record List II (Definition) 1. A collection of related records 2. A single entry in a table 3. A column in a table",
@@ -149,6 +143,66 @@
    ],
    "answer_index": 0,
    "explanation": "Octal uses base eight, decimal ten, binary two and hexadecimal sixteen."
+  },
+  "108": {
+   "question": "Match the following number system bases with their names: List I A. Base 2 B. Base 10 C. Base 8 D. Base 16 List II 1. Decimal 2. Binary 3. Hexadecimal 4. Octal",
+   "options": [
+    "A-2, B-1, C-4, D-3",
+    "A-4, B-1, C-2, D-3",
+    "A-2, B-4, C-1, D-3",
+    "A-2, B-3, C-4, D-1"
+   ],
+   "answer_index": 0,
+   "explanation": "Base 2 – Binary; Base 10 – Decimal; Base 8 – Octal; Base 16 – Hexadecimal.",
+   "retired": false
+  },
+  "145": {
+   "question": "Match the DBMS with its type: List I A. MySQL B. MS Access C. SQLite D. Oracle List II 1. Embedded 2. Enterprise 3. Open Source 4. Proprietary",
+   "options": [
+    "A-4, B-3, C-1, D-2",
+    "A-3, B-4, C-1, D-2",
+    "A-3, B-1, C-4, D-2",
+    "A-3, B-2, C-1, D-4"
+   ],
+   "answer_index": 1,
+   "explanation": "MySQL – Open Source; MS Access – Proprietary; SQLite – Embedded; Oracle – Enterprise.",
+   "retired": false
+  },
+  "149": {
+   "question": "Match the concept with its definition: List I A. Redundancy B. Integrity C. Normalization D. Indexing List II 1. Accuracy 2. Duplication 3. Speedup 4. Organization",
+   "options": [
+    "A-1, B-2, C-4, D-3",
+    "A-2, B-1, C-4, D-3",
+    "A-2, B-4, C-1, D-3",
+    "A-2, B-3, C-4, D-1"
+   ],
+   "answer_index": 1,
+   "explanation": "Redundancy – Duplication; Integrity – Accuracy; Normalization – Organization; Indexing – Speedup.",
+   "retired": false
+  },
+  "150": {
+   "question": "Match the view with its function: List I A. Design View B. Datasheet View C. Form View D. Print Preview List II 1. Final look 2. Structure 3. User interface 4. Data entry",
+   "options": [
+    "A-2, B-3, C-4, D-1",
+    "A-2, B-4, C-1, D-3",
+    "A-2, B-4, C-3, D-1",
+    "A-1, B-4, C-3, D-2"
+   ],
+   "answer_index": 2,
+   "explanation": "Design View – Structure; Datasheet View – Data entry; Form View – User interface; Print Preview – Final look.",
+   "retired": false
+  },
+  "183": {
+   "question": "Match the number to its system: List I A. 1011 B. 777 C. 999 D. A1B2 List II 1. Binary 2. Decimal 3. Octal 4. Hexadecimal",
+   "options": [
+    "A-1, B-4, C-2, D-3",
+    "A-2, B-3, C-1, D-4",
+    "A-4, B-3, C-2, D-1",
+    "A-1, B-3, C-2, D-4"
+   ],
+   "answer_index": 3,
+   "explanation": "1011 – Binary; 777 – Octal; 999 – Decimal; A1B2 – Hexadecimal.",
+   "retired": false
   }
  }
 }

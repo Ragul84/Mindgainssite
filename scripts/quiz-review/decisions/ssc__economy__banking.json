@@ -1,0 +1,45 @@
+{
+ "retire": [],
+ "fix": {
+  "70": {
+   "options": [
+    "To curb inflation by reducing liquidity in the banking system.",
+    "To stimulate economic growth by encouraging banks to lend more.",
+    "To stabilize the Rupee's exchange rate during a period of appreciation.",
+    "To increase the profitability of commercial banks."
+   ]
+  },
+  "71": {
+   "options": [
+    "The customer's credit score with the bank.",
+    "The distance between the paying and collecting bank branches.",
+    "The type of savings account held by the customer.",
+    "The clearing house rules and the efficiency of the interbank settlement system."
+   ]
+  },
+  "72": {
+   "options": [
+    "Increasing the Repo Rate.",
+    "Conducting Open Market Operations (OMO) by selling government securities.",
+    "Conducting Open Market Operations (OMO) by purchasing government securities.",
+    "Decreasing the Cash Reserve Ratio (CRR)."
+   ]
+  },
+  "73": {
+   "options": [
+    "Accepting deposits from the public.",
+    "Providing loans and advances.",
+    "Issuing currency notes and coins.",
+    "Facilitating fund transfers and payments."
+   ]
+  },
+  "74": {
+   "options": [
+    "An increase in their interest income from government securities.",
+    "A decrease in their ability to create credit.",
+    "An increase in their lendable funds.",
+    "A rise in the cost of borrowing from the central bank."
+   ]
+  }
+ }
+}

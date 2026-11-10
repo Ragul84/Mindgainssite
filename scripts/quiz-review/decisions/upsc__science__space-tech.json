@@ -1,0 +1,61 @@
+{
+ "retire": [],
+ "fix": {
+  "348": {
+   "options": [
+    "NASA",
+    "ESA",
+    "Roscosmos",
+    "ISRO"
+   ]
+  },
+  "349": {
+   "options": [
+    "PSLV",
+    "GSLV",
+    "ASLV",
+    "SLV"
+   ]
+  },
+  "350": {
+   "options": [
+    "De-orbiting",
+    "Space junk removal",
+    "Active debris removal",
+    "Orbital cleaning"
+   ]
+  },
+  "351": {
+   "options": [
+    "Vulcain",
+    "Vinci",
+    "RD-180",
+    "F-1"
+   ]
+  },
+  "352": {
+   "options": [
+    "NASA",
+    "ESA",
+    "Roscosmos",
+    "CNSA"
+   ]
+  },
+  "353": {
+   "options": [
+    "Gravity assist",
+    "Gravitational slingshot",
+    "Orbital boost",
+    "Interplanetary transfer"
+   ]
+  },
+  "354": {
+   "options": [
+    "Cartosat-3",
+    "Landsat 8",
+    "Sentinel-2",
+    "Gaofen-4"
+   ]
+  }
+ }
+}

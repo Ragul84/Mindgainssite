@@ -1,0 +1,53 @@
+{
+ "retire": [],
+ "fix": {
+  "688": {
+   "question": "What is the meaning of the phrase 'to be on the same page' as used 'His First Flight'?"
+  },
+  "692": {
+   "question": "What is the meaning of the word 'ennui' as used 'The Snake and The Mirror'?"
+  },
+  "694": {
+   "question": "What is the meaning of the phrase 'to take something for granted' as used 'The Story of An Hour'?"
+  },
+  "696": {
+   "question": "What is the meaning of the word 'soliloquy' as used 'Romeo and Juliet'?"
+  },
+  "698": {
+   "question": "What is the meaning of the phrase 'to cry over spilt milk' as used 'The Last Lesson'?"
+  },
+  "895": {
+   "question": "What is the meaning of the word 'narrate' as used 'The Snake Trying'?"
+  },
+  "897": {
+   "question": "Which of the following words is a synonym for 'vibrant' as used 'I am Every Woman'?"
+  },
+  "898": {
+   "question": "What is the meaning of the word 'solitude' as used 'The Snake Trying'?"
+  },
+  "900": {
+   "question": "Which of the following words is an antonym for 'strong' as used 'I am Every Woman'?"
+  },
+  "901": {
+   "question": "What is the meaning of the word 'rustic' as used 'The Snake Trying'?"
+  },
+  "903": {
+   "question": "What is the meaning of the phrase 'to be in a quandary' as seen 'The New Colossus'?"
+  },
+  "904": {
+   "question": "What is the meaning of the word 'perspicacious' as seen 'The Story of An Hour'?"
+  },
+  "906": {
+   "question": "What is the meaning of the phrase 'to take something with a grain of salt' as seen 'The Story of An Hour'?"
+  },
+  "908": {
+   "question": "What is the meaning of the word 'ebullient' as seen 'I am Every Woman'?"
+  },
+  "909": {
+   "question": "What is the meaning of the word 'enfranchise' as seen 'The New Colossus'?"
+  },
+  "911": {
+   "question": "What is the meaning of the phrase 'to be on the same page' as seen 'The New Colossus'?"
+  }
+ }
+}

@@ -1,0 +1,39 @@
+{
+ "retire": [
+  31,
+  214,
+  281,
+  1386,
+  1436,
+  1587
+ ],
+ "fix": {
+  "14": {
+   "question": "Sin30° + cos60° + tan45° = ?"
+  },
+  "88": {
+   "question": "Log₂(64) = ?"
+  },
+  "89": {
+   "question": "Log(a×b) = ?"
+  },
+  "116": {
+   "question": "Cosec 30° = ?"
+  },
+  "118": {
+   "question": "SinA/cosA = ?"
+  },
+  "217": {
+   "question": "Cube root of 2197:"
+  },
+  "246": {
+   "question": "Tan(90°−θ) = ?"
+  },
+  "247": {
+   "question": "Sin²θ + cos²θ = ?"
+  },
+  "250": {
+   "question": "Sec²θ − tan²θ = ?"
+  }
+ }
+}

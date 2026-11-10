@@ -1,5 +1,6 @@
 {
  "retire": [
+  120,
   208,
   315,
   372
@@ -334,6 +335,286 @@
    ],
    "answer_index": 0,
    "explanation": "Gamma decay emits high-energy photons, alpha decay a helium nucleus and beta decay an electron or positron."
+  },
+  "36": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "37": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "38": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "39": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "40": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "73": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "74": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "75": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "76": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "77": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "144": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "145": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "146": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "147": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "148": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "196": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "197": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "198": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "199": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "200": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "233": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "234": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "235": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "236": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "237": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "306": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "307": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "308": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "309": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "310": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "363": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "364": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "365": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "366": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "386": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
   }
  }
 }

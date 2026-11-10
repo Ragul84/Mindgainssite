@@ -1,5 +1,21 @@
 {
- "15": "retire",
+ "15": {
+  "stem": "Match the term with its definition?:",
+  "L": [
+   "Inflation",
+   "Deflation",
+   "Demonetization",
+   "Fiscal deficit"
+  ],
+  "R": [
+   "Increase in general price levels",
+   "Decrease in general price levels",
+   "Withdrawal of a currency's legal tender status",
+   "Excess of government expenditure over revenue"
+  ],
+  "recovered": true,
+  "why": "Inflation – Increase in general price levels; Deflation – Decrease in general price levels; Demonetization – Withdrawal of a currency's legal tender status; Fiscal deficit – Excess of government expenditure over revenue."
+ },
  "30": "retire",
  "78": "retire",
  "80": "retire",
@@ -11,7 +27,23 @@
  "185": "retire",
  "264": "retire",
  "265": "retire",
- "266": "retire",
+ "266": {
+  "stem": "Match the formula components:",
+  "L": [
+   "M",
+   "C",
+   "I",
+   "G"
+  ],
+  "R": [
+   "Imports",
+   "Consumption",
+   "Investment",
+   "Government"
+  ],
+  "recovered": true,
+  "why": "M – Imports; C – Consumption; I – Investment; G – Government."
+ },
  "267": "retire",
  "296": "retire",
  "297": "retire",
@@ -20,7 +52,21 @@
  "300": "retire",
  "301": "retire",
  "369": "retire",
- "370": "retire",
+ "370": {
+  "stem": "Match the following historical banking events:",
+  "L": [
+   "The Bank of Venice established",
+   "The Bank of England founded",
+   "The Ricks Banks of Sweden acquired note issue right"
+  ],
+  "R": [
+   "1157",
+   "1694",
+   "1897"
+  ],
+  "recovered": true,
+  "why": "The Bank of Venice established – 1157; The Bank of England founded – 1694; The Ricks Banks of Sweden acquired note issue right – 1897."
+ },
  "429": "retire",
  "430": "retire",
  "16": {

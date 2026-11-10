@@ -1,0 +1,17 @@
+{
+ "retire": [
+  266,
+  312
+ ],
+ "fix": {
+  "262": {
+   "question": "Sin 60° ="
+  },
+  "272": {
+   "question": "Sin 60° is equal to"
+  },
+  "342": {
+   "question": "Tan 45° × cos 45° is equal to"
+  }
+ }
+}

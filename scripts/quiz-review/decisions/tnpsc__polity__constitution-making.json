@@ -1,0 +1,269 @@
+{
+ "retire": [],
+ "fix": {
+  "45": {
+   "options": [
+    "Ireland",
+    "USA",
+    "Canada",
+    "Australia"
+   ]
+  },
+  "46": {
+   "options": [
+    "Jawaharlal Nehru",
+    "Sardar Patel",
+    "B. R. Ambedkar",
+    "Rajendra Prasad"
+   ]
+  },
+  "47": {
+   "options": [
+    "15 August 1947",
+    "26 January 1950",
+    "26 November 1949",
+    "9 December 1946"
+   ]
+  },
+  "48": {
+   "options": [
+    "Federal system",
+    "Unitary bias",
+    "Presidential system",
+    "Parliamentary system"
+   ]
+  },
+  "49": {
+   "options": [
+    "42nd Amendment",
+    "44th Amendment",
+    "73rd Amendment",
+    "86th Amendment"
+   ]
+  },
+  "50": {
+   "options": [
+    "Article 12 to 35",
+    "Article 36 to 51",
+    "Article 14 to 32",
+    "Article 19 to 22"
+   ]
+  },
+  "51": {
+   "options": [
+    "Municipalities",
+    "Panchayati Raj",
+    "Cooperative Societies",
+    "Right to Education"
+   ]
+  },
+  "52": {
+   "options": [
+    "Parliament",
+    "Executive",
+    "Judiciary",
+    "Election Commission"
+   ]
+  },
+  "53": {
+   "options": [
+    "USA",
+    "Canada",
+    "Australia",
+    "Ireland"
+   ]
+  },
+  "54": {
+   "options": [
+    "Part IX",
+    "Part IXA",
+    "Part X",
+    "Part VIII"
+   ]
+  },
+  "62": {
+   "options": [
+    "42nd Amendment",
+    "44th Amendment",
+    "73rd Amendment",
+    "86th Amendment"
+   ]
+  },
+  "63": {
+   "options": [
+    "Election Commission of India",
+    "State Election Commission",
+    "Parliament",
+    "State Legislature"
+   ]
+  },
+  "64": {
+   "options": [
+    "Article 214",
+    "Article 124",
+    "Article 226",
+    "Article 32"
+   ]
+  },
+  "65": {
+   "options": [
+    "Part IX",
+    "Part IX-A",
+    "Part X",
+    "Part VIII"
+   ]
+  },
+  "66": {
+   "options": [
+    "73rd Amendment",
+    "74th Amendment",
+    "86th Amendment",
+    "91st Amendment"
+   ]
+  },
+  "176": {
+   "options": [
+    "42nd Amendment",
+    "44th Amendment",
+    "24th Amendment",
+    "73rd Amendment"
+   ]
+  },
+  "177": {
+   "options": [
+    "Three-tier system",
+    "Reservation for women",
+    "Direct election of all members",
+    "Fixed five-year term"
+   ]
+  },
+  "178": {
+   "options": [
+    "Election Commission of India",
+    "Tamil Nadu State Election Commission",
+    "Tamil Nadu Legislative Assembly",
+    "District Collector"
+   ]
+  },
+  "179": {
+   "options": [
+    "Right to Equality (Article 14)",
+    "Right to Freedom of Religion (Article 25)",
+    "Right against Exploitation (Article 23)",
+    "Right to Freedom of Speech (Article 19)"
+   ]
+  },
+  "180": {
+   "options": [
+    "United Kingdom",
+    "United States of America",
+    "Australia",
+    "Ireland"
+   ]
+  },
+  "181": {
+   "options": [
+    "Article 124",
+    "Article 131",
+    "Article 136",
+    "Article 143"
+   ]
+  },
+  "182": {
+   "options": [
+    "Direct election of District Collectors",
+    "Reservation for OBCs in Panchayats",
+    "Single-tier Panchayati Raj system",
+    "Abolition of Village Panchayats"
+   ]
+  },
+  "183": {
+   "options": [
+    "The Parliament",
+    "The Supreme Court",
+    "The People of India",
+    "The President of India"
+   ]
+  },
+  "222": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "223": {
+   "options": [
+    "Cripps Mission, 1942",
+    "Wavell Plan, 1945",
+    "Cabinet Mission Plan, 1946",
+    "Mountbatten Plan, 1947"
+   ]
+  },
+  "224": {
+   "options": [
+    "Union Powers Committee",
+    "Drafting Committee",
+    "Provincial Constitution Committee",
+    "Advisory Committee on Fundamental Rights"
+   ]
+  },
+  "225": {
+   "options": [
+    "Adult suffrage",
+    "Parliamentary system",
+    "Fundamental Rights",
+    "Panchayati Raj as a constitutional body"
+   ]
+  },
+  "226": {
+   "options": [
+    "1 only",
+    "2 only",
+    "2 and 3",
+    "1 and 3"
+   ]
+  },
+  "227": {
+   "options": [
+    "Article 15(4)",
+    "Article 16(4)",
+    "Article 46",
+    "Article 31C"
+   ]
+  },
+  "228": {
+   "options": [
+    "24th Amendment, 1971",
+    "42nd Amendment, 1976",
+    "44th Amendment, 1978",
+    "73rd Amendment, 1992"
+   ]
+  },
+  "229": {
+   "options": [
+    "Article 13",
+    "Article 32",
+    "Article 226",
+    "Both A and B"
+   ]
+  },
+  "230": {
+   "options": [
+    "Universal adult suffrage",
+    "Federal system with unitary bias",
+    "Single citizenship",
+    "Directive Principles of State Policy"
+   ]
+  },
+  "231": {
+   "options": [
+    "Golak Nath v. State of Punjab (1967)",
+    "Kesavananda Bharati v. State of Kerala (1973)",
+    "Minerva Mills v. Union of India (1980)",
+    "S.R. Bommai v. Union of India (1994)"
+   ]
+  }
+ }
+}

@@ -1,0 +1,85 @@
+{
+ "retire": [],
+ "fix": {
+  "180": {
+   "options": [
+    "Harihara and Bukka Raya",
+    "Krishnadevaraya and Achyutaraya",
+    "Devaraya I and Devaraya II",
+    "Sriranga and Venkata"
+   ]
+  },
+  "181": {
+   "options": [
+    "Nicolo Conti",
+    "Abdur Razzak",
+    "Domingo Paes",
+    "Ibn Battuta"
+   ]
+  },
+  "182": {
+   "options": [
+    "Royal treasury",
+    "Military barracks",
+    "Celebrating the Navaratri festival",
+    "Audience hall for ambassadors"
+   ]
+  },
+  "183": {
+   "options": [
+    "Krishnadevaraya",
+    "Devaraya II",
+    "Bukka Raya I",
+    "Achyutaraya"
+   ]
+  },
+  "184": {
+   "options": [
+    "Venkata II",
+    "Ramaraya",
+    "Tirumala Deva Raya",
+    "Sadasiva Raya"
+   ]
+  },
+  "185": {
+   "options": [
+    "Sangama, Tuluva, Saluva, Aravidu",
+    "Tuluva, Sangama, Saluva, Aravidu",
+    "Sangama, Saluva, Tuluva, Aravidu",
+    "Saluva, Sangama, Aravidu, Tuluva"
+   ]
+  },
+  "186": {
+   "options": [
+    "Hampi Bazaar",
+    "Durga Bazaar",
+    "Virupaksha Bazaar",
+    "Lotus Bazaar"
+   ]
+  },
+  "187": {
+   "options": [
+    "Devaraya II",
+    "Krishnadevaraya",
+    "Achyutaraya",
+    "Harihara II"
+   ]
+  },
+  "188": {
+   "options": [
+    "A village headman",
+    "A military governor of a province",
+    "A revenue accountant",
+    "A temple priest"
+   ]
+  },
+  "189": {
+   "options": [
+    "Dravida style",
+    "Vesara style",
+    "Nagara style",
+    "Vijayanagara style"
+   ]
+  }
+ }
+}

@@ -1,0 +1,87 @@
+{
+ "retire": [
+  387,
+  658,
+  699
+ ],
+ "fix": {
+  "501": {
+   "options": [
+    "IS DISCUSSING",
+    "WERE DISCUSSING",
+    "HAVE DISCUSSED",
+    "No improvement"
+   ]
+  },
+  "502": {
+   "options": [
+    "WERE ABLE",
+    "IS ABLE",
+    "ARE ABLE",
+    "No improvement"
+   ]
+  },
+  "503": {
+   "options": [
+    "IT WAS FILED BY THE MANAGER",
+    "THE REPORT WAS FILED BY THE MANAGER",
+    "THE CABINET CONTAINED THE FILED REPORT",
+    "No improvement"
+   ]
+  },
+  "504": {
+   "options": [
+    "BUT ALSO EXCELS IN SPORTS",
+    "BUT ALSO IN SPORTS SHE EXCELS",
+    "BUT ALSO SPORTS",
+    "No improvement"
+   ]
+  },
+  "505": {
+   "options": [
+    "WHOSE EYESIGHT FAILED",
+    "HIS EYESIGHT WAS FAILING",
+    "WITH FAILING EYESIGHT",
+    "No improvement"
+   ]
+  },
+  "506": {
+   "options": [
+    "AM",
+    "WERE",
+    "HAD BEEN",
+    "No improvement"
+   ]
+  },
+  "507": {
+   "options": [
+    "LOOKING FORWARD AT",
+    "LOOKING FORWARD WITH",
+    "LOOKING FORWARD OF",
+    "No improvement"
+   ]
+  },
+  "508": {
+   "options": [
+    "HAD NOT HEARD",
+    "HAS NOT HEARD",
+    "WOULD NOT HEAR",
+    "No improvement"
+   ]
+  },
+  "639": {
+   "question": "The students in the class was very interested."
+  },
+  "761": {
+   "question": "The students in the class was very interested on history."
+  },
+  "1281": {
+   "options": [
+    "mitigate",
+    "exacerbate",
+    "obviate",
+    "intensify"
+   ]
+  }
+ }
+}

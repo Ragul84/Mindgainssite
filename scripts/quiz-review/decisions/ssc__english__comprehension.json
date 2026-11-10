@@ -1,0 +1,14 @@
+{
+ "retire": [],
+ "fix": {
+  "128": {
+   "question": "The recent surge in global temperatures has led to an increase in extreme weather events, prompting calls for urgent action to mitigate the effects of climate change. Rising sea levels pose a significant threat to coastal communities, with many facing displacement and loss of livelihood. The international community has acknowledged the need for collective action, with several countries committing to reduce their carbon emissions. However, the pace of progress remains slow, and more needs to be done to address this pressing issue. What is the primary concern highlighted?"
+  },
+  "238": {
+   "question": "The recent surge in global temperatures has led to an increase in extreme weather events, prompting concerns about the long-term sustainability of our planet. Climate change, if left unchecked, could have devastating consequences, including rising sea levels and loss of biodiversity. The onus is on governments and individuals to take immediate action to reduce carbon emissions and transition to renewable energy sources. This shift is crucial for mitigating the effects of climate change. What is the primary concern highlighted?"
+  },
+  "383": {
+   "question": "The recent surge in global temperatures has led to an increase in extreme weather events, prompting concerns about the long-term viability of coastal cities. Rising sea levels pose a significant threat to these urban centers, with some estimates suggesting that millions of people could be displaced in the coming decades. Despite these warnings, many governments have been slow to respond, citing economic concerns and lack of international cooperation. The consequences of inaction will be severe, with potential losses running into trillions of dollars. What is the primary concern highlighted?"
+  }
+ }
+}

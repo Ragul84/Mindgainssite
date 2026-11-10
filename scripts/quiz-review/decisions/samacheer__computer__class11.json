@@ -1,6 +1,5 @@
 {
  "retire": [
-  44,
   93,
   95,
   118,
@@ -11,7 +10,6 @@
   145,
   177,
   178,
-  180,
   203,
   204,
   251,
@@ -154,6 +152,112 @@
    ],
    "answer_index": 1,
    "explanation": "Memory management looks after RAM, device management I/O devices, file management directories and process management CPU tasks."
+  },
+  "44": {
+   "question": "Match the following: List I A. Father of Computer B. First Generation C. First Calculating Device D. Analytical Engine Year List II 1. Abacus 2. Vacuum Tubes 3. Charles Babbage 4. 1837",
+   "options": [
+    "A-3, B-2, C-1, D-4",
+    "A-1, B-2, C-3, D-4",
+    "A-2, B-3, C-1, D-4",
+    "A-3, B-2, C-4, D-1"
+   ],
+   "answer_index": 0,
+   "explanation": "Father of Computer – Charles Babbage; First Generation – Vacuum Tubes; First Calculating Device – Abacus; Analytical Engine Year – 1837.",
+   "retired": false
+  },
+  "180": {
+   "question": "Match the component to its location: List I A. Class Body B. Class Name List II 1. Inside curly brackets 2. After keyword class",
+   "options": [
+    "A-1, B-2",
+    "A-2, B-1"
+   ],
+   "answer_index": 0,
+   "explanation": "Class Body – Inside curly brackets; Class Name – After keyword class.",
+   "retired": false
+  },
+  "31": {
+   "question": "What are the two remarkable characteristics of computers?"
+  },
+  "52": {
+   "question": "Which of the following is a merit of computers?"
+  },
+  "81": {
+   "question": "What is the primary purpose of using functions?"
+  },
+  "103": {
+   "question": "Which of these is NOT a type of array?"
+  },
+  "208": {
+   "question": "What is the primary purpose of overloading?"
+  },
+  "209": {
+   "question": "Which of the following is NOT a way to achieve polymorphism in C++?"
+  },
+  "235": {
+   "question": "Computer systems in general are ___________."
+  },
+  "236": {
+   "question": "What is the primary cause of cyber-crime?"
+  },
+  "243": {
+   "question": "Which of these is a growing threat to society?"
+  },
+  "255": {
+   "question": "What is the role of computers in daily lives?"
+  },
+  "260": {
+   "question": "What is the relationship between morals and ethics?"
+  },
+  "263": {
+   "question": "What is the nature of computer systems?"
+  },
+  "264": {
+   "question": "When did human civilization develop with the innovation of the computer?"
+  },
+  "271": {
+   "question": "What happens to a language that does not have the ability to adapt to changing technologies?"
+  },
+  "272": {
+   "question": "Which language is described as a living language for thousands of years?"
+  },
+  "275": {
+   "question": "What is the primary purpose of the statistical data?"
+  },
+  "291": {
+   "question": "Which of these is NOT mentioned as a characteristic of Tamil?"
+  },
+  "295": {
+   "question": "What is the consequence of a language failing to adapt to technology?"
+  },
+  "311": {
+   "question": "Which of the following is NOT part of computer organisation?"
+  },
+  "377": {
+   "question": "Which of the following is NOT a function of an Operating System?"
+  },
+  "384": {
+   "question": "What does the OS control overall?"
+  },
+  "387": {
+   "question": "Which of the following is considered 'System Software'?"
+  },
+  "407": {
+   "question": "What is an algorithm?"
+  },
+  "434": {
+   "question": "Which of the following is an example of a process?"
+  },
+  "437": {
+   "question": "What is the sequence of instructions in daily life called?"
+  },
+  "445": {
+   "question": "Which of these is NOT an example of a programming language?"
+  },
+  "496": {
+   "question": "What is the relationship between recursion and iteration?"
+  },
+  "501": {
+   "question": "Which of the following is NOT a design technique?"
   }
  }
 }

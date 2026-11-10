@@ -1,0 +1,1741 @@
+{
+ "retire": [],
+ "fix": {
+  "23": {
+   "options": [
+    "Price stability and economic growth",
+    "Fiscal deficit reduction",
+    "Balance of trade improvement",
+    "Exchange rate management"
+   ]
+  },
+  "24": {
+   "options": [
+    "Fiscal deficit as a percentage of GDP",
+    "Revenue deficit",
+    "Capital expenditure on social sectors",
+    "Total government expenditure"
+   ]
+  },
+  "25": {
+   "options": [
+    "Increases their purchasing power",
+    "Reduces their purchasing power",
+    "Has no impact on their purchasing power",
+    "Leads to higher employment opportunities"
+   ]
+  },
+  "26": {
+   "options": [
+    "Reduces poverty by increasing money supply",
+    "Increases poverty by reducing money supply",
+    "Has no direct impact on poverty",
+    "Leads to higher economic growth"
+   ]
+  },
+  "27": {
+   "options": [
+    "Current account",
+    "Capital account",
+    "Financial account",
+    "Official reserve account"
+   ]
+  },
+  "28": {
+   "options": [
+    "Increases their real income",
+    "Reduces their real income",
+    "Has no impact on their real income",
+    "Leads to higher savings"
+   ]
+  },
+  "29": {
+   "options": [
+    "Increase agricultural exports",
+    "Reduce agricultural imports",
+    "Improve farmers' income and reduce poverty",
+    "Promote organic farming"
+   ]
+  },
+  "30": {
+   "options": [
+    "Literacy rate",
+    "Infant mortality rate",
+    "Human Development Index",
+    "All of the above"
+   ]
+  },
+  "31": {
+   "options": [
+    "Increases their employment opportunities",
+    "Reduces their employment opportunities",
+    "Has no impact on their employment opportunities",
+    "Leads to higher economic growth"
+   ]
+  },
+  "32": {
+   "options": [
+    "Always reduces poverty",
+    "Always increases poverty",
+    "Can reduce poverty if targeted correctly",
+    "Has no impact on poverty"
+   ]
+  },
+  "33": {
+   "options": [
+    "Controlling inflation",
+    "Promoting economic growth",
+    "Reducing unemployment",
+    "Increasing foreign exchange reserves"
+   ]
+  },
+  "34": {
+   "options": [
+    "Fiscal deficit",
+    "Revenue deficit",
+    "Primary deficit",
+    "Social sector expenditure"
+   ]
+  },
+  "35": {
+   "options": [
+    "Increasing farm subsidies",
+    "Enhancing market access for farmers",
+    "Implementing price controls",
+    "Reducing agricultural imports"
+   ]
+  },
+  "36": {
+   "options": [
+    "Increases the purchasing power of the poor",
+    "Reduces the cost of living",
+    "Decreases the value of savings",
+    "Erodes the real income of the poor"
+   ]
+  },
+  "37": {
+   "options": [
+    "Increasing foreign exchange reserves",
+    "Enhancing domestic production",
+    "Reducing imports of essential goods",
+    "Decreasing the value of the rupee"
+   ]
+  },
+  "38": {
+   "options": [
+    "Increase money supply",
+    "Reduce inflation",
+    "Manage exchange rates",
+    "Absorb excess liquidity"
+   ]
+  },
+  "39": {
+   "options": [
+    "Foreign investment in poverty alleviation programs",
+    "The value of the rupee and thus import prices",
+    "The government's ability to fund social welfare schemes",
+    "The level of foreign aid received"
+   ]
+  },
+  "40": {
+   "options": [
+    "Increasing the cost of imports",
+    "Reducing the cost of exports",
+    "Enhancing foreign investment",
+    "Decreasing inflation"
+   ]
+  },
+  "41": {
+   "options": [
+    "Measure economic growth",
+    "Reflect the standard of living",
+    "Capture multidimensional aspects of well-being",
+    "Focus solely on income poverty"
+   ]
+  },
+  "42": {
+   "options": [
+    "Taxation reforms",
+    "Public expenditure on social sectors",
+    "Monetary policy adjustments",
+    "Trade policy reforms"
+   ]
+  },
+  "51": {
+   "options": [
+    "To reduce budget deficits",
+    "To increase economic growth and create jobs",
+    "To stabilize prices and control inflation",
+    "To reduce trade deficits"
+   ]
+  },
+  "52": {
+   "options": [
+    "Open Market Operations",
+    "Bank Rate",
+    "Cash Reserve Ratio",
+    "All of the above"
+   ]
+  },
+  "53": {
+   "options": [
+    "It improves the trade balance by increasing exports",
+    "It worsens the trade balance by increasing imports",
+    "It has no impact on the trade balance",
+    "It reduces economic growth"
+   ]
+  },
+  "54": {
+   "options": [
+    "Per capita income",
+    "Human Development Index",
+    "Gini Coefficient",
+    "All of the above"
+   ]
+  },
+  "55": {
+   "options": [
+    "To reduce foreign exchange reserves",
+    "To stabilize the exchange rate",
+    "To increase money supply",
+    "To reduce economic growth"
+   ]
+  },
+  "56": {
+   "options": [
+    "Current Account",
+    "Capital Account",
+    "Financial Account",
+    "All of the above"
+   ]
+  },
+  "57": {
+   "options": [
+    "It increases poverty by reducing agricultural subsidies",
+    "It reduces poverty by increasing agricultural productivity",
+    "It has no impact on poverty",
+    "It increases economic inequality"
+   ]
+  },
+  "58": {
+   "options": [
+    "Demand and supply imbalance",
+    "Increase in money supply",
+    "Rise in international commodity prices",
+    "All of the above"
+   ]
+  },
+  "59": {
+   "options": [
+    "To reduce imports and increase exports",
+    "To increase imports and reduce exports",
+    "To stabilize the exchange rate",
+    "To reduce economic growth"
+   ]
+  },
+  "60": {
+   "options": [
+    "Fiscal Deficit",
+    "Revenue Deficit",
+    "Primary Deficit",
+    "All of the above"
+   ]
+  },
+  "61": {
+   "options": [
+    "Controlling inflation",
+    "Promoting economic growth",
+    "Regulating financial markets",
+    "Both A and B"
+   ]
+  },
+  "62": {
+   "options": [
+    "Minimum Support Price (MSP)",
+    "Crop insurance",
+    "Soil health cards",
+    "E-NAM platform"
+   ]
+  },
+  "63": {
+   "options": [
+    "Trade surplus leads to poverty reduction",
+    "Trade deficit leads to poverty reduction",
+    "Trade balance has no impact on poverty",
+    "Trade surplus can lead to job creation and poverty reduction"
+   ]
+  },
+  "64": {
+   "options": [
+    "Current account",
+    "Capital account",
+    "Financial account",
+    "Official reserves"
+   ]
+  },
+  "65": {
+   "options": [
+    "High inflation leads to poverty reduction",
+    "Low inflation leads to poverty reduction",
+    "Inflation has no impact on poverty",
+    "High inflation can lead to increased poverty"
+   ]
+  },
+  "66": {
+   "options": [
+    "Progressive taxation",
+    "Regressive taxation",
+    "Subsidies and transfers",
+    "Both A and C"
+   ]
+  },
+  "74": {
+   "options": [
+    "Fiscal deficit",
+    "Open market operations",
+    "Trade balance",
+    "Foreign exchange reserves"
+   ]
+  },
+  "75": {
+   "options": [
+    "Per capita income",
+    "Human Development Index",
+    "Foreign exchange reserves",
+    "Trade balance"
+   ]
+  },
+  "76": {
+   "options": [
+    "Increase in money supply",
+    "Decrease in money supply",
+    "No impact on money supply",
+    "Increase in foreign investment"
+   ]
+  },
+  "77": {
+   "options": [
+    "Minimum Support Price",
+    "Agricultural subsidy",
+    "Crop insurance",
+    "All of the above"
+   ]
+  },
+  "78": {
+   "options": [
+    "Increase in purchasing power",
+    "Decrease in purchasing power",
+    "No impact on purchasing power",
+    "Increase in savings"
+   ]
+  },
+  "79": {
+   "options": [
+    "Fiscal deficit",
+    "Trade balance",
+    "Foreign exchange reserves",
+    "Human Development Index"
+   ]
+  },
+  "80": {
+   "options": [
+    "Increase in poverty",
+    "Decrease in poverty",
+    "No impact on poverty",
+    "Increase in unemployment"
+   ]
+  },
+  "81": {
+   "options": [
+    "Fiscal deficit",
+    "Revenue deficit",
+    "Primary deficit",
+    "Social sector expenditure"
+   ]
+  },
+  "82": {
+   "options": [
+    "Fiscal deficit as a percentage of GDP",
+    "Revenue deficit as a percentage of GDP",
+    "Primary deficit as a percentage of GDP",
+    "Social sector expenditure as a percentage of total expenditure"
+   ]
+  },
+  "83": {
+   "options": [
+    "Introduction of new crop insurance schemes",
+    "Implementation of minimum support prices for farmers",
+    "Promotion of organic farming and sustainable agriculture",
+    "Liberalization of agricultural trade and reduction of subsidies"
+   ]
+  },
+  "84": {
+   "options": [
+    "Increase in economic growth and reduction in poverty",
+    "Decrease in economic growth and increase in poverty",
+    "No impact on economic growth and poverty",
+    "Increase in income inequality and exacerbation of poverty"
+   ]
+  },
+  "85": {
+   "options": [
+    "To control inflation and stabilize prices",
+    "To promote economic growth and reduce unemployment",
+    "To increase foreign investment and improve trade balance",
+    "To reduce fiscal deficit and improve government revenue"
+   ]
+  },
+  "86": {
+   "options": [
+    "Increased rural poverty due to reduced government support",
+    "Reduced rural poverty due to increased agricultural productivity",
+    "No impact on rural poverty as agricultural reforms are irrelevant",
+    "Increased urban poverty due to migration of rural labor"
+   ]
+  },
+  "87": {
+   "options": [
+    "Increase in money supply due to fiscal stimulus",
+    "Decrease in agricultural production due to weather conditions",
+    "Increase in foreign investment leading to higher demand",
+    "Decrease in global oil prices reducing production costs"
+   ]
+  },
+  "88": {
+   "options": [
+    "A trade surplus leads to increased poverty due to reduced imports",
+    "A trade deficit leads to reduced poverty due to increased exports",
+    "A trade surplus leads to reduced poverty due to increased foreign exchange reserves",
+    "A trade deficit has no impact on poverty-inclusion"
+   ]
+  },
+  "89": {
+   "options": [
+    "Human Development Index (HDI)",
+    "Gini coefficient",
+    "Poverty headcount ratio",
+    "Literacy rate"
+   ]
+  },
+  "90": {
+   "options": [
+    "Increased poverty due to higher import prices and inflation",
+    "Reduced poverty due to increased export competitiveness",
+    "No impact on poverty as rupee depreciation is irrelevant",
+    "Increased poverty due to reduced foreign investment"
+   ]
+  },
+  "91": {
+   "options": [
+    "Reduced money supply and higher interest rates",
+    "Increased money supply and lower interest rates",
+    "No impact on money supply or interest rates",
+    "Increased foreign exchange reserves and reduced inflation"
+   ]
+  },
+  "92": {
+   "options": [
+    "A current account deficit leads to increased poverty due to reduced foreign exchange reserves",
+    "A capital account surplus leads to reduced poverty due to increased foreign investment",
+    "A current account surplus leads to reduced poverty due to increased foreign exchange reserves",
+    "A capital account deficit has no impact on poverty-inclusion"
+   ]
+  },
+  "93": {
+   "options": [
+    "Inadequate funding and lack of political will",
+    "Inefficient targeting and leakage of benefits",
+    "Insufficient data and lack of monitoring",
+    "All of the above"
+   ]
+  },
+  "102": {
+   "options": [
+    "Increased poverty due to reduced government support",
+    "Decreased poverty due to increased agricultural productivity",
+    "No impact on poverty as agricultural reforms are neutral",
+    "Increased poverty due to increased agricultural prices"
+   ]
+  },
+  "103": {
+   "options": [
+    "Increase in agricultural production",
+    "Decrease in money supply",
+    "Increase in food prices due to supply chain disruptions",
+    "Decrease in global oil prices"
+   ]
+  },
+  "104": {
+   "options": [
+    "Trade deficit with a high current account deficit",
+    "Trade surplus with a high current account surplus",
+    "Trade balance with a low current account deficit",
+    "Trade deficit with a low current account deficit"
+   ]
+  },
+  "105": {
+   "options": [
+    "To reduce liquidity and control inflation",
+    "To increase liquidity and stimulate economic growth",
+    "To stabilize the exchange rate and prevent rupee appreciation",
+    "To reduce the fiscal deficit and improve balance of payments"
+   ]
+  },
+  "106": {
+   "options": [
+    "Human Development Index (HDI)",
+    "Gini coefficient",
+    "Poverty headcount ratio",
+    "All of the above"
+   ]
+  },
+  "107": {
+   "options": [
+    "Increased poverty due to higher food prices",
+    "Decreased poverty due to higher incomes for farmers",
+    "No impact on poverty as MSP is neutral",
+    "Increased poverty due to reduced agricultural production"
+   ]
+  },
+  "108": {
+   "options": [
+    "Current account balance",
+    "Capital account balance",
+    "Financial account balance",
+    "Official reserve balance"
+   ]
+  },
+  "109": {
+   "options": [
+    "Increased rural unemployment and poverty",
+    "Reduced agricultural productivity and lower incomes",
+    "Improved agricultural productivity and higher incomes",
+    "No significant impact on rural poverty"
+   ]
+  },
+  "110": {
+   "options": [
+    "Reduced inflation and higher economic growth",
+    "Higher inflation and lower economic growth",
+    "No impact on inflation and economic growth",
+    "Increased foreign investment and higher economic growth"
+   ]
+  },
+  "111": {
+   "options": [
+    "Current account deficit",
+    "Capital account surplus",
+    "Increase in foreign exchange reserves",
+    "All of the above"
+   ]
+  },
+  "112": {
+   "options": [
+    "Rupee depreciation leads to lower poverty",
+    "Rupee depreciation has no impact on poverty",
+    "Rupee depreciation leads to higher poverty",
+    "Rupee appreciation leads to lower poverty"
+   ]
+  },
+  "113": {
+   "options": [
+    "Reduction in social sector expenditure",
+    "Increase in subsidies and welfare programs",
+    "Higher taxes and lower government spending",
+    "Reduction in public investment and infrastructure development"
+   ]
+  },
+  "114": {
+   "options": [
+    "Minimum Support Price (MSP) policy",
+    "Agricultural export subsidies",
+    "Farm loan waivers",
+    "Land consolidation and farm mechanization"
+   ]
+  },
+  "115": {
+   "options": [
+    "Increase in poverty due to higher import prices",
+    "Decrease in poverty due to increased exports",
+    "No impact on poverty as it affects only trade",
+    "Increase in poverty due to higher cost of living"
+   ]
+  },
+  "116": {
+   "options": [
+    "Increase in minimum support price for crops",
+    "Reduction in subsidies for fertilizers and pesticides",
+    "Implementation of crop insurance schemes",
+    "Promotion of organic farming practices"
+   ]
+  },
+  "117": {
+   "options": [
+    "Current account deficit",
+    "Capital account surplus",
+    "Trade deficit",
+    "Balance of payments surplus"
+   ]
+  },
+  "118": {
+   "options": [
+    "Reduction in poverty due to increased liquidity",
+    "Increase in poverty due to higher interest rates",
+    "No impact on poverty as it affects only monetary policy",
+    "Reduction in poverty due to stable exchange rates"
+   ]
+  },
+  "119": {
+   "options": [
+    "Increase in poverty due to job displacement",
+    "Decrease in poverty due to increased economic activity",
+    "No impact on poverty as it affects only trade",
+    "Increase in poverty due to exploitation of resources"
+   ]
+  },
+  "120": {
+   "options": [
+    "Reduction in corporate tax rates",
+    "Increase in personal income tax rates",
+    "Increase in social sector expenditure",
+    "Reduction in subsidies for the poor"
+   ]
+  },
+  "121": {
+   "options": [
+    "Fiscal deficit as a percentage of GDP",
+    "Revenue deficit as a percentage of GDP",
+    "Primary deficit as a percentage of GDP",
+    "Debt-to-GDP ratio"
+   ]
+  },
+  "122": {
+   "options": [
+    "Increase in exports and reduction in poverty",
+    "Decrease in imports and increase in poverty",
+    "Increase in inflation and worsening of poverty",
+    "No significant impact on poverty and inclusion"
+   ]
+  },
+  "123": {
+   "options": [
+    "High inflation reduces poverty by increasing economic activity",
+    "Low inflation has no impact on poverty",
+    "High inflation exacerbates poverty by reducing purchasing power",
+    "Inflation is not related to poverty"
+   ]
+  },
+  "124": {
+   "options": [
+    "Trade surplus with a large deficit in services",
+    "Trade deficit with a large surplus in services",
+    "Trade balance with a surplus in both goods and services",
+    "Trade deficit with a large deficit in services"
+   ]
+  },
+  "125": {
+   "options": [
+    "Human Development Index (HDI)",
+    "Gini coefficient",
+    "Poverty headcount ratio",
+    "Labour force participation rate"
+   ]
+  },
+  "126": {
+   "options": [
+    "Increase in foreign investment and reduction in poverty",
+    "Decrease in imports and increase in poverty",
+    "Increase in inflation and worsening of poverty",
+    "No significant impact on poverty and inclusion"
+   ]
+  },
+  "127": {
+   "options": [
+    "Lack of access to education and skill development",
+    "Inadequate healthcare and social security",
+    "Limited access to credit and financial services",
+    "All of the above"
+   ]
+  },
+  "128": {
+   "options": [
+    "Increase in poverty due to higher import prices",
+    "Decrease in poverty due to increased exports",
+    "No impact on poverty as it affects only trade",
+    "Increase in poverty due to reduced foreign investment"
+   ]
+  },
+  "129": {
+   "options": [
+    "Current account",
+    "Capital account",
+    "Financial account",
+    "Official reserve account"
+   ]
+  },
+  "130": {
+   "options": [
+    "To increase agricultural subsidies and support farmers",
+    "To promote agricultural exports and earn foreign exchange",
+    "To improve agricultural productivity and increase farmers' incomes",
+    "To reduce agricultural imports and achieve self-sufficiency"
+   ]
+  },
+  "131": {
+   "options": [
+    "Demand-pull inflation",
+    "Cost-push inflation",
+    "Built-in inflation",
+    "Food price inflation"
+   ]
+  },
+  "132": {
+   "options": [
+    "Reduction in poverty due to increased liquidity",
+    "Increase in poverty due to higher interest rates",
+    "No impact on poverty as it only affects money supply",
+    "Reduction in poverty due to stable exchange rates"
+   ]
+  },
+  "133": {
+   "options": [
+    "To promote exports and earn foreign exchange",
+    "To reduce imports and achieve self-sufficiency",
+    "To stabilize exchange rates and promote economic growth",
+    "To increase employment and reduce poverty through trade"
+   ]
+  },
+  "134": {
+   "options": [
+    "Limited fiscal space due to high revenue deficit",
+    "Inefficient allocation of resources due to corruption",
+    "Lack of political will to implement poverty reduction programs",
+    "Insufficient data on poverty levels and trends"
+   ]
+  },
+  "141": {
+   "options": [
+    "Increase in exports and reduction in poverty",
+    "Decrease in imports and increase in poverty",
+    "Increase in foreign investment and reduction in poverty",
+    "Increase in inflation and exacerbation of poverty"
+   ]
+  },
+  "142": {
+   "options": [
+    "Implementation of MSP",
+    "Promotion of organic farming",
+    "Investment in irrigation infrastructure",
+    "Liberalization of agricultural trade"
+   ]
+  },
+  "143": {
+   "options": [
+    "Literacy rate",
+    "Life expectancy",
+    "Infant mortality rate",
+    "All of the above"
+   ]
+  },
+  "144": {
+   "options": [
+    "By influencing interest rates",
+    "By regulating money supply",
+    "By managing foreign exchange reserves",
+    "By controlling inflation expectations"
+   ]
+  },
+  "145": {
+   "options": [
+    "Current account",
+    "Capital account",
+    "Financial account",
+    "Errors and omissions"
+   ]
+  },
+  "146": {
+   "options": [
+    "Inflation reduces poverty by increasing economic activity",
+    "Inflation has no impact on poverty levels",
+    "Inflation exacerbates poverty by reducing purchasing power",
+    "Inflation leads to higher economic growth and lower poverty"
+   ]
+  },
+  "147": {
+   "options": [
+    "Monsoon patterns",
+    "Global commodity prices",
+    "Government subsidies",
+    "All of the above"
+   ]
+  },
+  "148": {
+   "options": [
+    "Revenue deficit",
+    "Fiscal deficit",
+    "Primary deficit",
+    "Social sector expenditure"
+   ]
+  },
+  "149": {
+   "options": [
+    "Increase in exports and reduction in poverty",
+    "Decrease in imports and increase in poverty",
+    "Increase in foreign investment and reduction in poverty",
+    "Increase in cost of imports and potential increase in poverty"
+   ]
+  },
+  "150": {
+   "options": [
+    "Increase in minimum support price",
+    "Reduction in agricultural subsidies",
+    "Implementation of crop insurance schemes",
+    "All of the above"
+   ]
+  },
+  "151": {
+   "options": [
+    "Current account deficit",
+    "Capital account surplus",
+    "Trade deficit",
+    "Balance of payments surplus"
+   ]
+  },
+  "152": {
+   "options": [
+    "Reduction in money supply and increase in poverty",
+    "Increase in money supply and reduction in poverty",
+    "No impact on poverty",
+    "Increase in foreign exchange reserves and reduction in poverty"
+   ]
+  },
+  "153": {
+   "options": [
+    "Open market operations",
+    "Public-private partnerships",
+    "Agricultural subsidies",
+    "Trade agreements"
+   ]
+  },
+  "154": {
+   "options": [
+    "Increased poverty due to higher import prices",
+    "Decreased poverty due to increased exports",
+    "No impact on poverty levels",
+    "Increased poverty due to reduced government revenue"
+   ]
+  },
+  "155": {
+   "options": [
+    "To reduce fiscal deficit",
+    "To promote economic growth and reduce poverty",
+    "To increase foreign investment",
+    "To reduce trade deficit"
+   ]
+  },
+  "157": {
+   "options": [
+    "To control inflation and promote economic growth",
+    "To reduce fiscal deficit and increase trade balance",
+    "To increase agricultural production and reduce rural poverty",
+    "To promote foreign investment and reduce current account deficit"
+   ]
+  },
+  "158": {
+   "options": [
+    "Fiscal deficit as a percentage of GDP",
+    "Revenue deficit as a percentage of GDP",
+    "Primary deficit as a percentage of GDP",
+    "Capital expenditure as a percentage of GDP"
+   ]
+  },
+  "159": {
+   "options": [
+    "Increase in exports and reduction in poverty",
+    "Decrease in imports and increase in poverty",
+    "Increase in foreign investment and reduction in poverty",
+    "Increase in inflation and increase in poverty"
+   ]
+  },
+  "160": {
+   "options": [
+    "Minimum Support Price (MSP) for crops",
+    "Crop insurance schemes for farmers",
+    "Soil health card scheme for farmers",
+    "E-National Agricultural Market (e-NAM) for farmers"
+   ]
+  },
+  "161": {
+   "options": [
+    "High inflation reduces poverty",
+    "Low inflation increases poverty",
+    "High inflation increases poverty",
+    "Inflation has no impact on poverty"
+   ]
+  },
+  "162": {
+   "options": [
+    "Current account balance",
+    "Capital account balance",
+    "Trade balance",
+    "Balance of payments"
+   ]
+  },
+  "163": {
+   "options": [
+    "Reduction in inflation and increase in economic growth",
+    "Increase in inflation and decrease in economic growth",
+    "No impact on inflation and economic growth",
+    "Increase in foreign investment and reduction in poverty"
+   ]
+  },
+  "164": {
+   "options": [
+    "Human Development Index (HDI)",
+    "Gini coefficient",
+    "Poverty headcount ratio",
+    "All of the above"
+   ]
+  },
+  "165": {
+   "options": [
+    "Increase in poverty due to reduced government spending",
+    "Decrease in poverty due to increased economic growth",
+    "No impact on poverty",
+    "Increase in foreign investment and reduction in poverty"
+   ]
+  },
+  "166": {
+   "options": [
+    "Repo rate",
+    "Reverse repo rate",
+    "Cash Reserve Ratio (CRR)",
+    "Open Market Operations (OMO)"
+   ]
+  },
+  "177": {
+   "options": [
+    "To control inflation and promote economic growth",
+    "To reduce fiscal deficit and increase trade balance",
+    "To promote agricultural reforms and increase rural employment",
+    "To decrease interest rates and increase money supply"
+   ]
+  },
+  "178": {
+   "options": [
+    "Food inflation",
+    "Fuel inflation",
+    "Core inflation",
+    "All of the above"
+   ]
+  },
+  "179": {
+   "options": [
+    "Increased farmers' income and reduced poverty",
+    "Decreased farmers' income and increased poverty",
+    "No impact on farmers' income and poverty",
+    "Increased agricultural productivity but no impact on poverty"
+   ]
+  },
+  "180": {
+   "options": [
+    "Demand-pull inflation",
+    "Cost-push inflation",
+    "Built-in inflation",
+    "Food inflation"
+   ]
+  },
+  "181": {
+   "options": [
+    "A trade surplus leads to increased poverty",
+    "A trade deficit leads to decreased poverty",
+    "A trade surplus leads to decreased poverty",
+    "Trade balances have no impact on poverty"
+   ]
+  },
+  "182": {
+   "options": [
+    "Increased poverty due to higher import prices",
+    "Decreased poverty due to increased export competitiveness",
+    "No impact on poverty",
+    "Increased poverty due to reduced foreign investment"
+   ]
+  },
+  "183": {
+   "options": [
+    "Open market operations",
+    "Repo rate",
+    "Reverse repo rate",
+    "Cash reserve ratio"
+   ]
+  },
+  "184": {
+   "options": [
+    "Increased poverty due to reduced capital inflows",
+    "Decreased poverty due to increased capital inflows",
+    "No impact on poverty",
+    "Increased poverty due to increased capital outflows"
+   ]
+  },
+  "185": {
+   "options": [
+    "Taxation",
+    "Government spending",
+    "Subsidies",
+    "All of the above"
+   ]
+  },
+  "196": {
+   "options": [
+    "To reduce fiscal deficits and promote economic growth",
+    "To control inflation and stabilize prices",
+    "To increase money supply and boost aggregate demand",
+    "To reduce interest rates and promote foreign investment"
+   ]
+  },
+  "197": {
+   "options": [
+    "Revenue deficit",
+    "Fiscal deficit",
+    "Primary deficit",
+    "Gini coefficient"
+   ]
+  },
+  "198": {
+   "options": [
+    "Increasing minimum support prices for crops",
+    "Implementing trade tariffs on agricultural imports",
+    "Promoting organic farming and reducing subsidies",
+    "Investing in rural infrastructure and irrigation systems"
+   ]
+  },
+  "199": {
+   "options": [
+    "Reduced inflation due to increased exports",
+    "Increased inflation due to higher import costs",
+    "No impact on inflation as it is driven by domestic factors",
+    "Reduced poverty due to increased foreign investment"
+   ]
+  },
+  "200": {
+   "options": [
+    "Inflation, by reducing money supply and increasing interest rates",
+    "Exchange rates, by selling or buying foreign exchange reserves",
+    "Fiscal deficits, by providing loans to the government",
+    "Balance of payments, by influencing capital flows"
+   ]
+  },
+  "201": {
+   "options": [
+    "Current account",
+    "Capital account",
+    "Financial account",
+    "Errors and omissions"
+   ]
+  },
+  "202": {
+   "options": [
+    "Trade deficits lead to higher employment and reduced poverty",
+    "Trade surpluses lead to higher employment and reduced poverty",
+    "Trade balances have no impact on employment and poverty",
+    "Trade deficits lead to lower employment and increased poverty"
+   ]
+  },
+  "203": {
+   "options": [
+    "Human Development Index (HDI)",
+    "Gini coefficient",
+    "Poverty headcount ratio",
+    "Unemployment rate"
+   ]
+  },
+  "204": {
+   "options": [
+    "Food price inflation reduces poverty by increasing agricultural incomes",
+    "Food price inflation has no impact on poverty",
+    "Food price inflation increases poverty by reducing purchasing power",
+    "Food price inflation leads to higher economic growth and reduced poverty"
+   ]
+  },
+  "205": {
+   "options": [
+    "Subsidies are an effective tool for targeting the poor and reducing poverty",
+    "Subsidies are ineffective and lead to higher fiscal deficits",
+    "Subsidies benefit the rich more than the poor, exacerbating inequality",
+    "Subsidies have no impact on poverty or inequality"
+   ]
+  },
+  "206": {
+   "options": [
+    "Minimum Support Price",
+    "Agricultural subsidies",
+    "Land reforms",
+    "All of the above"
+   ]
+  },
+  "207": {
+   "options": [
+    "High inflation reduces poverty",
+    "Low inflation increases poverty",
+    "High inflation increases poverty",
+    "Inflation has no impact on poverty"
+   ]
+  },
+  "208": {
+   "options": [
+    "Trade surplus",
+    "Trade deficit",
+    "Balanced trade",
+    "None of the above"
+   ]
+  },
+  "209": {
+   "options": [
+    "Reduction in money supply and increase in poverty",
+    "Increase in money supply and reduction in poverty",
+    "No impact on poverty",
+    "Increase in economic growth and reduction in poverty"
+   ]
+  },
+  "210": {
+   "options": [
+    "Increase in current account deficit and increase in poverty",
+    "Increase in capital account surplus and reduction in poverty",
+    "Increase in current account surplus and reduction in poverty",
+    "No impact on poverty"
+   ]
+  },
+  "211": {
+   "options": [
+    "Reduction in taxes",
+    "Increase in government expenditure",
+    "Reduction in subsidies",
+    "Increase in social sector expenditure"
+   ]
+  },
+  "212": {
+   "options": [
+    "Increase in exports and reduction in poverty",
+    "Decrease in imports and increase in poverty",
+    "Increase in inflation and worsening of poverty-inclusion",
+    "No significant impact on poverty-inclusion"
+   ]
+  },
+  "213": {
+   "options": [
+    "High food prices lead to increase in poverty",
+    "Low food prices lead to decrease in poverty",
+    "High food prices have no impact on poverty-inclusion",
+    "Low food prices lead to increase in poverty"
+   ]
+  },
+  "214": {
+   "options": [
+    "Increase in foreign investment leads to reduction in poverty",
+    "Decrease in foreign investment leads to increase in poverty",
+    "No significant impact of foreign investment on poverty-inclusion",
+    "Increase in foreign investment leads to increase in poverty"
+   ]
+  },
+  "215": {
+   "options": [
+    "Reduction in taxes and increase in subsidies",
+    "Increase in taxes and reduction in subsidies",
+    "Increase in public expenditure on social sectors",
+    "Reduction in public expenditure on social sectors"
+   ]
+  },
+  "216": {
+   "options": [
+    "Increased agricultural productivity and reduced poverty",
+    "Decreased agricultural productivity and increased poverty",
+    "No impact on agricultural productivity or poverty",
+    "Increased agricultural productivity but increased poverty"
+   ]
+  },
+  "217": {
+   "options": [
+    "Increase in money supply and demand-pull inflation",
+    "Decrease in money supply and cost-push inflation",
+    "Increase in food prices and supply-side inflation",
+    "Decrease in food prices and demand-pull inflation"
+   ]
+  },
+  "218": {
+   "options": [
+    "Human Development Index (HDI)",
+    "Gender Inequality Index (GII)",
+    "Multidimensional Poverty Index (MPI)",
+    "Gini coefficient"
+   ]
+  },
+  "219": {
+   "options": [
+    "Current account deficit",
+    "Capital account surplus",
+    "Financial account deficit",
+    "Official reserves"
+   ]
+  },
+  "220": {
+   "options": [
+    "To reduce inflation and stabilize prices",
+    "To increase economic growth and reduce poverty",
+    "To manage exchange rates and reduce trade deficit",
+    "To reduce fiscal deficit and increase government expenditure"
+   ]
+  },
+  "221": {
+   "options": [
+    "Increased purchasing power of the poor",
+    "Reduced poverty and increased economic growth",
+    "Reduced purchasing power of the poor",
+    "No impact on poverty"
+   ]
+  },
+  "222": {
+   "options": [
+    "To control inflation and stabilize the currency",
+    "To promote economic growth and employment",
+    "To regulate the banking sector and manage foreign exchange",
+    "To implement fiscal policy and manage government debt"
+   ]
+  },
+  "223": {
+   "options": [
+    "Increase in exports and decrease in imports",
+    "Decrease in exports and increase in imports",
+    "Increase in foreign investment and decrease in inflation",
+    "Decrease in foreign investment and increase in inflation"
+   ]
+  },
+  "224": {
+   "options": [
+    "To increase the money supply and stimulate economic growth",
+    "To decrease the money supply and control inflation",
+    "To manage the exchange rate and stabilize the currency",
+    "To regulate the banking sector and manage foreign exchange"
+   ]
+  },
+  "225": {
+   "options": [
+    "It increases their purchasing power and improves their standard of living",
+    "It decreases their purchasing power and worsens their standard of living",
+    "It has no impact on their purchasing power and standard of living",
+    "It leads to an increase in their savings and investment"
+   ]
+  },
+  "226": {
+   "options": [
+    "To measure the level of government revenue and expenditure",
+    "To evaluate the impact of government policies on the economy",
+    "To assess the sustainability of government debt",
+    "To determine the level of foreign investment in the country"
+   ]
+  },
+  "227": {
+   "options": [
+    "Increase in tariffs and decrease in trade",
+    "Decrease in tariffs and increase in trade",
+    "Increase in government revenue and decrease in inflation",
+    "Decrease in government revenue and increase in inflation"
+   ]
+  },
+  "228": {
+   "options": [
+    "It increases rural poverty and decreases agricultural productivity",
+    "It decreases rural poverty and increases agricultural productivity",
+    "It has no impact on rural poverty and agricultural productivity",
+    "It leads to an increase in rural-urban migration"
+   ]
+  },
+  "229": {
+   "options": [
+    "Fiscal deficit",
+    "Government expenditure",
+    "Repo rate",
+    "Taxation policy"
+   ]
+  },
+  "230": {
+   "options": [
+    "Increase government procurement prices",
+    "Promote private investment in agriculture",
+    "Reduce agricultural subsidies",
+    "Implement price controls"
+   ]
+  },
+  "231": {
+   "options": [
+    "Increasing exports and creating jobs",
+    "Reducing imports and increasing domestic production",
+    "Increasing cost of imports, including essential goods",
+    "Attracting foreign investment"
+   ]
+  },
+  "232": {
+   "options": [
+    "Capital account",
+    "Current account",
+    "Foreign exchange reserves",
+    "Net errors and omissions"
+   ]
+  },
+  "233": {
+   "options": [
+    "Increase in money supply",
+    "Demand-pull inflation",
+    "Food price inflation",
+    "Asset price inflation"
+   ]
+  },
+  "234": {
+   "options": [
+    "Increasing exports and creating jobs",
+    "Reducing imports and increasing domestic production",
+    "Affecting prices of essential goods",
+    "Attracting foreign investment"
+   ]
+  },
+  "235": {
+   "options": [
+    "Economic growth and development",
+    "Poverty-inclusion and social welfare",
+    "Environmental sustainability",
+    "Political stability"
+   ]
+  },
+  "236": {
+   "options": [
+    "Reducing government revenue",
+    "Increasing government expenditure",
+    "Supporting low-income groups",
+    "Promoting economic growth"
+   ]
+  },
+  "237": {
+   "options": [
+    "Increases exports and reduces poverty",
+    "Decreases imports and increases poverty",
+    "Increases cost of imports and exacerbates poverty",
+    "Has no impact on poverty levels"
+   ]
+  },
+  "238": {
+   "options": [
+    "Fiscal Deficit",
+    "Revenue Deficit",
+    "Gini Coefficient",
+    "Balance of Payments"
+   ]
+  },
+  "239": {
+   "options": [
+    "Increases money supply and reduces poverty",
+    "Decreases money supply and increases poverty",
+    "Has no impact on poverty levels",
+    "Increases foreign exchange reserves and reduces poverty"
+   ]
+  },
+  "240": {
+   "options": [
+    "Current Account",
+    "Capital Account",
+    "Financial Account",
+    "Official Reserve Account"
+   ]
+  },
+  "241": {
+   "options": [
+    "Increases purchasing power and reduces poverty",
+    "Decreases purchasing power and increases poverty",
+    "Has no impact on poverty levels",
+    "Increases economic growth and reduces poverty"
+   ]
+  },
+  "242": {
+   "options": [
+    "Minimum Support Price",
+    "Agricultural Subsidies",
+    "Land Reforms",
+    "Trade Liberalization"
+   ]
+  },
+  "243": {
+   "options": [
+    "Trade surplus reduces poverty",
+    "Trade deficit increases poverty",
+    "Trade balances have no impact on poverty",
+    "Trade liberalization reduces poverty"
+   ]
+  },
+  "244": {
+   "options": [
+    "Human Development Index",
+    "Gini Coefficient",
+    "Poverty Headcount Ratio",
+    "All of the above"
+   ]
+  },
+  "245": {
+   "options": [
+    "Expansionary monetary policy reduces poverty",
+    "Contractionary monetary policy increases poverty",
+    "Monetary policy has no impact on poverty",
+    "Both A and B"
+   ]
+  },
+  "246": {
+   "options": [
+    "Inflation",
+    "Unemployment",
+    "Income inequality",
+    "All of the above"
+   ]
+  },
+  "257": {
+   "options": [
+    "Increased farmers' income and reduced poverty",
+    "Decreased farmers' income and increased poverty",
+    "No impact on farmers' income and poverty",
+    "Increased agricultural productivity but no impact on poverty"
+   ]
+  },
+  "258": {
+   "options": [
+    "To reduce inflation and stabilize prices",
+    "To promote economic growth and employment",
+    "To manage exchange rates and control capital flows",
+    "To increase foreign exchange reserves"
+   ]
+  },
+  "259": {
+   "options": [
+    "Current account deficit",
+    "Capital account surplus",
+    "Financial account deficit",
+    "Official reserves"
+   ]
+  },
+  "260": {
+   "options": [
+    "Expansionary fiscal policy leads to increased poverty",
+    "Contractionary fiscal policy leads to decreased poverty",
+    "Expansionary fiscal policy leads to decreased poverty",
+    "Fiscal policy has no impact on poverty"
+   ]
+  },
+  "261": {
+   "options": [
+    "High inflation reduces poverty",
+    "Low inflation increases poverty",
+    "High inflation increases poverty",
+    "Inflation has no impact on poverty"
+   ]
+  },
+  "262": {
+   "options": [
+    "Increase in exports and reduction in poverty",
+    "Increase in imports and reduction in poverty",
+    "Increase in foreign investment and reduction in poverty",
+    "Increase in trade deficit and increase in poverty"
+   ]
+  },
+  "272": {
+   "options": [
+    "Fiscal deficit as a percentage of GDP",
+    "Revenue deficit as a percentage of GDP",
+    "Primary deficit as a percentage of GDP",
+    "Debt-to-GDP ratio"
+   ]
+  },
+  "273": {
+   "options": [
+    "Implementation of the Minimum Support Price scheme",
+    "Promotion of organic farming and sustainable agriculture",
+    "Investment in irrigation and rural infrastructure",
+    "All of the above"
+   ]
+  },
+  "274": {
+   "options": [
+    "Higher inflation leads to lower poverty levels",
+    "Higher inflation leads to higher poverty levels",
+    "Inflation has no impact on poverty levels",
+    "The relationship between inflation and poverty is uncertain"
+   ]
+  },
+  "275": {
+   "options": [
+    "Human Development Index",
+    "Gini coefficient",
+    "Poverty headcount ratio",
+    "All of the above"
+   ]
+  },
+  "276": {
+   "options": [
+    "Increase in money supply",
+    "Decrease in money supply",
+    "No impact on money supply",
+    "Uncertain impact on money supply"
+   ]
+  },
+  "277": {
+   "options": [
+    "Trade surplus",
+    "Trade deficit",
+    "Balanced trade",
+    "All of the above"
+   ]
+  },
+  "278": {
+   "options": [
+    "Increase in poverty levels due to higher inflation",
+    "Decrease in poverty levels due to higher government spending",
+    "No impact on poverty levels as it is a monetary phenomenon",
+    "Uncertain impact on poverty levels"
+   ]
+  },
+  "279": {
+   "options": [
+    "Current account surplus",
+    "Capital account surplus",
+    "Financial account surplus",
+    "All of the above"
+   ]
+  },
+  "280": {
+   "options": [
+    "High food inflation reduces poverty",
+    "High food inflation has no impact on poverty",
+    "High food inflation worsens poverty-inclusion",
+    "Low food inflation worsens poverty-inclusion"
+   ]
+  },
+  "281": {
+   "options": [
+    "Increase in foreign direct investment reduces poverty",
+    "Increase in foreign direct investment has no impact on poverty",
+    "Increase in foreign direct investment worsens poverty-inclusion",
+    "Decrease in foreign direct investment reduces poverty"
+   ]
+  },
+  "282": {
+   "options": [
+    "To control inflation and promote economic growth",
+    "To reduce fiscal deficit and increase tax revenue",
+    "To increase foreign investment and promote trade",
+    "To reduce agricultural subsidies and promote industrial growth"
+   ]
+  },
+  "283": {
+   "options": [
+    "Fiscal deficit as a percentage of GDP",
+    "Revenue deficit as a percentage of GDP",
+    "Primary deficit as a percentage of GDP",
+    "Human Development Index (HDI)"
+   ]
+  },
+  "284": {
+   "options": [
+    "Increase in exports and reduction in poverty",
+    "Decrease in imports and increase in poverty",
+    "Increase in foreign investment and reduction in poverty",
+    "Increase in inflation and increase in poverty"
+   ]
+  },
+  "285": {
+   "options": [
+    "Implementation of Minimum Support Price (MSP) for crops",
+    "Promotion of organic farming and reduction of subsidies",
+    "Increase in agricultural credit and insurance",
+    "Reduction of trade barriers and increase in exports"
+   ]
+  },
+  "286": {
+   "options": [
+    "Current account deficit",
+    "Capital account surplus",
+    "Trade deficit",
+    "Balance of payments surplus"
+   ]
+  },
+  "287": {
+   "options": [
+    "Reduction in money supply and increase in poverty",
+    "Increase in money supply and reduction in poverty",
+    "No impact on money supply and poverty",
+    "Increase in foreign investment and reduction in poverty"
+   ]
+  },
+  "288": {
+   "options": [
+    "Gini coefficient",
+    "Human Development Index (HDI)",
+    "Poverty headcount ratio",
+    "All of the above"
+   ]
+  },
+  "289": {
+   "options": [
+    "Increase in foreign exchange reserves and reduction in poverty",
+    "Decrease in foreign exchange reserves and increase in poverty",
+    "No impact on foreign exchange reserves and poverty",
+    "Increase in imports and increase in poverty"
+   ]
+  },
+  "290": {
+   "options": [
+    "Fiscal deficit as a percentage of GDP",
+    "Revenue deficit as a percentage of GDP",
+    "Primary deficit as a percentage of GDP",
+    "Social sector expenditure as a percentage of GDP"
+   ]
+  },
+  "291": {
+   "options": [
+    "To control inflation and promote economic growth, thereby reducing poverty",
+    "To reduce fiscal deficit and promote foreign investment, thereby increasing poverty",
+    "To increase money supply and reduce interest rates, thereby increasing inequality",
+    "To reduce trade deficit and promote exports, thereby decreasing inclusion"
+   ]
+  },
+  "292": {
+   "options": [
+    "Increase in exports and reduction in poverty",
+    "Decrease in imports and increase in inequality",
+    "Increase in foreign investment and reduction in poverty",
+    "Increase in cost of imports and reduction in inclusion"
+   ]
+  },
+  "293": {
+   "options": [
+    "Current account deficit",
+    "Capital account surplus",
+    "Financial account deficit",
+    "All of the above"
+   ]
+  },
+  "294": {
+   "options": [
+    "Increase in agricultural productivity and reduction in poverty",
+    "Decrease in agricultural productivity and increase in poverty",
+    "Increase in agricultural exports and reduction in inclusion",
+    "Decrease in agricultural imports and increase in inequality"
+   ]
+  },
+  "295": {
+   "options": [
+    "Fiscal deficit",
+    "Revenue deficit",
+    "Primary deficit",
+    "All of the above"
+   ]
+  },
+  "296": {
+   "options": [
+    "Increase in purchasing power and reduction in poverty",
+    "Decrease in purchasing power and increase in poverty",
+    "Increase in savings and reduction in inequality",
+    "Decrease in investments and increase in inclusion"
+   ]
+  },
+  "297": {
+   "options": [
+    "Export-oriented growth",
+    "Import-substitution growth",
+    "Trade liberalization",
+    "All of the above"
+   ]
+  },
+  "298": {
+   "options": [
+    "Increase in human development index and reduction in poverty",
+    "Decrease in human development index and increase in poverty",
+    "Increase in gender inequality and reduction in poverty",
+    "Decrease in education and increase in inclusion"
+   ]
+  },
+  "299": {
+   "options": [
+    "Repo rate",
+    "Reverse repo rate",
+    "Cash reserve ratio",
+    "All of the above"
+   ]
+  },
+  "300": {
+   "options": [
+    "To control inflation by reducing money supply",
+    "To stabilize the exchange rate by absorbing excess liquidity",
+    "To promote economic growth by increasing credit flow",
+    "To reduce fiscal deficit by increasing taxes"
+   ]
+  },
+  "301": {
+   "options": [
+    "Fiscal deficit as a percentage of GDP",
+    "Revenue deficit as a percentage of GDP",
+    "Gini coefficient",
+    "Debt-to-GDP ratio"
+   ]
+  },
+  "302": {
+   "options": [
+    "Increase in exports leading to more employment opportunities",
+    "Decrease in imports leading to reduction in prices",
+    "Increase in prices of essential goods due to higher import costs",
+    "No significant impact on poverty-inclusion"
+   ]
+  },
+  "303": {
+   "options": [
+    "Implementation of minimum support price for crops",
+    "Promotion of organic farming practices",
+    "Increase in farm credit through Kisan Credit Card scheme",
+    "All of the above"
+   ]
+  },
+  "304": {
+   "options": [
+    "Current account deficit",
+    "Capital account surplus",
+    "Trade deficit in essential goods",
+    "Overall balance of payments surplus"
+   ]
+  },
+  "305": {
+   "options": [
+    "Increase in life expectancy and literacy rate leads to higher poverty",
+    "Increase in life expectancy and literacy rate has no impact on poverty",
+    "Increase in life expectancy and literacy rate leads to lower poverty",
+    "Increase in life expectancy and literacy rate leads to higher income inequality"
+   ]
+  },
+  "306": {
+   "options": [
+    "Repo rate reduction",
+    "Reverse repo rate reduction",
+    "Cash reserve ratio reduction",
+    "Open market operations"
+   ]
+  },
+  "307": {
+   "options": [
+    "Increase in foreign exchange reserves leads to higher poverty",
+    "Increase in foreign exchange reserves has no impact on poverty",
+    "Increase in foreign exchange reserves leads to lower poverty",
+    "Increase in foreign exchange reserves leads to higher income inequality"
+   ]
+  },
+  "308": {
+   "options": [
+    "Revenue expenditure as a percentage of GDP",
+    "Capital expenditure as a percentage of GDP",
+    "Fiscal deficit as a percentage of revenue expenditure",
+    "Primary deficit as a percentage of fiscal deficit"
+   ]
+  }
+ }
+}

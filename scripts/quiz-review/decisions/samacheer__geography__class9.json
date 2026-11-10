@@ -5,9 +5,7 @@
   134,
   174,
   177,
-  180,
-  255,
-  257
+  255
  ],
  "fix": {
   "29": {
@@ -322,6 +320,30 @@
    ],
    "answer_index": 1,
    "explanation": "The Puerto Rico Trench is the deepest point of the Atlantic; the Mariana Trench, in the Pacific, is the deepest on Earth."
+  },
+  "180": {
+   "question": "Match the region with its feature: List I A. Tropopause B. Stratopause C. Mesopause D. Exosphere List II 1. Boundary Troposphere-Stratosphere 2. Boundary Stratosphere-Mesosphere 3. Boundary Mesosphere-Thermosphere 4. Outer space boundary",
+   "options": [
+    "A-1, B-2, C-3, D-4",
+    "A-1, B-2, C-4, D-3",
+    "A-1, B-3, C-2, D-4",
+    "A-2, B-1, C-3, D-4"
+   ],
+   "answer_index": 0,
+   "explanation": "Tropopause – Boundary Troposphere-Stratosphere; Stratopause – Boundary Stratosphere-Mesosphere; Mesopause – Boundary Mesosphere-Thermosphere; Exosphere – Outer space boundary.",
+   "retired": false
+  },
+  "257": {
+   "question": "Match the Current with its Ocean: List I A. Kuroshio B. Gulf Stream C. Agulhas D. East Greenland List II 1. Pacific 2. Indian 3. Arctic 4. Atlantic",
+   "options": [
+    "A-2, B-4, C-1, D-3",
+    "A-1, B-4, C-2, D-3",
+    "A-3, B-4, C-2, D-1",
+    "A-1, B-3, C-2, D-4"
+   ],
+   "answer_index": 1,
+   "explanation": "Kuroshio – Pacific; Gulf Stream – Atlantic; Agulhas – Indian; East Greenland – Arctic.",
+   "retired": false
   }
  }
 }

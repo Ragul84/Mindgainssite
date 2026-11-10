@@ -1,0 +1,73 @@
+{
+ "retire": [
+  62,
+  255,
+  394
+ ],
+ "fix": {
+  "226": {
+   "options": [
+    "1 only",
+    "2 only",
+    "Both 1 and 2",
+    "Neither 1 nor 2"
+   ]
+  },
+  "227": {
+   "options": [
+    "1 only",
+    "2 only",
+    "Both 1 and 2",
+    "Neither 1 nor 2"
+   ]
+  },
+  "228": {
+   "options": [
+    "Q",
+    "R",
+    "S",
+    "T"
+   ]
+  },
+  "229": {
+   "options": [
+    "1 only",
+    "2 only",
+    "Both 1 and 2",
+    "Neither 1 nor 2"
+   ]
+  },
+  "230": {
+   "options": [
+    "1 only",
+    "2 only",
+    "Both 1 and 2",
+    "Neither 1 nor 2"
+   ]
+  },
+  "231": {
+   "options": [
+    "NJML",
+    "NJLM",
+    "N K L J",
+    "N J M L"
+   ]
+  },
+  "232": {
+   "options": [
+    "40",
+    "42",
+    "44",
+    "36"
+   ]
+  },
+  "233": {
+   "options": [
+    "C",
+    "E",
+    "D",
+    "Cannot be determined"
+   ]
+  }
+ }
+}

@@ -1,0 +1,541 @@
+{
+ "retire": [],
+ "fix": {
+  "10": {
+   "options": [
+    "1 only",
+    "2 only",
+    "Both 1 and 2",
+    "Neither 1 nor 2"
+   ]
+  },
+  "11": {
+   "options": [
+    "Methane",
+    "Nitrous oxide",
+    "Oxygen",
+    "Water vapor"
+   ]
+  },
+  "12": {
+   "options": [
+    "1 only",
+    "2 only",
+    "Both 1 and 2",
+    "Neither 1 nor 2"
+   ]
+  },
+  "13": {
+   "options": [
+    "Increase in pH of ocean water",
+    "Decrease in pH due to absorption of CO2",
+    "Reduction in salinity",
+    "Increase in temperature"
+   ]
+  },
+  "14": {
+   "options": [
+    "Coal-fired power plants",
+    "Diesel engines",
+    "Biomass burning",
+    "All of the above"
+   ]
+  },
+  "15": {
+   "options": [
+    "1 only",
+    "2 only",
+    "Both 1 and 2",
+    "Neither 1 nor 2"
+   ]
+  },
+  "16": {
+   "options": [
+    "1.5°C above pre-industrial levels",
+    "2°C",
+    "Both (A) and (B) with emphasis on 1.5°C",
+    "3°C"
+   ]
+  },
+  "17": {
+   "options": [
+    "Sulfate aerosols",
+    "Black carbon",
+    "Volcanic ash",
+    "Cloud condensation nuclei"
+   ]
+  },
+  "18": {
+   "options": [
+    "1 only",
+    "2 only",
+    "Both 1 and 2",
+    "Neither 1 nor 2"
+   ]
+  },
+  "19": {
+   "options": [
+    "Montreal Protocol",
+    "Kyoto Protocol",
+    "Convention on Biological Diversity",
+    "Basel Convention"
+   ]
+  },
+  "109": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "110": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "111": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "112": {
+   "options": [
+    "1 and 2 only",
+    "1 and 3 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "113": {
+   "options": [
+    "Increased uptake of methane from melting hydrates",
+    "Increased absorption of carbon dioxide from the atmosphere",
+    "Decreased alkalinity due to river runoff",
+    "Thermal expansion of seawater"
+   ]
+  },
+  "114": {
+   "options": [
+    "1 and 2 only",
+    "1 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "115": {
+   "options": [
+    "Carbon dioxide",
+    "Nitrous oxide",
+    "Black carbon",
+    "Sulfur hexafluoride"
+   ]
+  },
+  "116": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "117": {
+   "options": [
+    "Montreal Protocol",
+    "IPCC Special Report on Global Warming of 1.5°C",
+    "Convention on Biological Diversity",
+    "Sendai Framework for Disaster Risk Reduction"
+   ]
+  },
+  "192": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "193": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "194": {
+   "options": [
+    "The maximum amount of carbon dioxide that can be emitted while limiting global warming to a specified level.",
+    "The annual allocation of carbon credits to countries under the Clean Development Mechanism.",
+    "The total carbon stored in forests and oceans as part of the global carbon cycle.",
+    "The financial resources allocated for climate change mitigation projects."
+   ]
+  },
+  "195": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "196": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "197": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "198": {
+   "options": [
+    "The process of capturing and storing atmospheric carbon dioxide in geological formations or biomass.",
+    "The reduction of carbon emissions through energy efficiency measures.",
+    "The trading of carbon credits between countries under the Kyoto Protocol.",
+    "The natural decay of organic matter releasing carbon back into the atmosphere."
+   ]
+  },
+  "199": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "200": {
+   "options": [
+    "The Paris Agreement only",
+    "The UNFCCC and its Kyoto Protocol",
+    "The Montreal Protocol",
+    "The Convention on Biological Diversity"
+   ]
+  },
+  "201": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "202": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "203": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "204": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "205": {
+   "options": [
+    "Only one",
+    "Only two",
+    "All three",
+    "None"
+   ]
+  },
+  "206": {
+   "options": [
+    "It is caused by increased concentration of dissolved oxygen in seawater.",
+    "It reduces the availability of carbonate ions, affecting calcifying organisms.",
+    "It is primarily a result of methane hydrate destabilization.",
+    "It leads to increased pH of ocean water."
+   ]
+  },
+  "207": {
+   "options": [
+    "1 and 2 only",
+    "1 and 3 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "208": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "209": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "210": {
+   "options": [
+    "The total amount of carbon stored in forests and oceans.",
+    "The maximum amount of cumulative net CO2 emissions allowed to limit warming to a given temperature.",
+    "The annual global emission reduction target under the Paris Agreement.",
+    "The amount of carbon credits available in the carbon market."
+   ]
+  },
+  "211": {
+   "options": [
+    "1 and 2 only",
+    "1 and 3 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "222": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "223": {
+   "options": [
+    "1 only",
+    "2 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "224": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "225": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "226": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "227": {
+   "options": [
+    "1 only",
+    "1 and 3 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "228": {
+   "options": [
+    "1 only",
+    "2 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "229": {
+   "options": [
+    "1 only",
+    "2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "230": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "231": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "252": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "253": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "254": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "255": {
+   "options": [
+    "The cumulative emissions of developing countries",
+    "The responsibility of industrialized nations for historical emissions",
+    "The amount of carbon budget remaining",
+    "The cost of adaptation measures"
+   ]
+  },
+  "256": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "257": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "258": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "259": {
+   "options": [
+    "Volcanic eruptions",
+    "Changes in solar radiation",
+    "Deforestation",
+    "Orbital variations (Milankovitch cycles)"
+   ]
+  },
+  "260": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "261": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "262": {
+   "options": [
+    "1 and 2 only",
+    "2 only",
+    "1 and 3 only",
+    "2 and 3 only"
+   ]
+  },
+  "263": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "264": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "265": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "266": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "267": {
+   "options": [
+    "1 only",
+    "1 and 3 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "268": {
+   "options": [
+    "1 and 2 only",
+    "2 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "269": {
+   "options": [
+    "1 and 2 only",
+    "1, 2 and 4 only",
+    "3 and 4 only",
+    "1, 2, 3 and 4"
+   ]
+  }
+ }
+}

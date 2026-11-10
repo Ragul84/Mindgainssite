@@ -1,0 +1,541 @@
+{
+ "retire": [],
+ "fix": {
+  "44": {
+   "options": [
+    "Portugal",
+    "England",
+    "France",
+    "Netherlands"
+   ]
+  },
+  "45": {
+   "options": [
+    "Aurangzeb",
+    "Akbar",
+    "Bahadur Shah Zafar",
+    "Shah Jahan"
+   ]
+  },
+  "71": {
+   "options": [
+    "1945",
+    "1947",
+    "1949",
+    "1950"
+   ]
+  },
+  "72": {
+   "options": [
+    "1940",
+    "1942",
+    "1944",
+    "1946"
+   ]
+  },
+  "73": {
+   "options": [
+    "Lord Cornwallis",
+    "Lord Curzon",
+    "Warren Hastings",
+    "Lord Dalhousie"
+   ]
+  },
+  "74": {
+   "options": [
+    "1905",
+    "1906",
+    "1907",
+    "1908"
+   ]
+  },
+  "97": {
+   "options": [
+    "Sarojini Naidu",
+    "Annie Besant",
+    "Kamaladevi Chattopadhyay",
+    "Vijayalakshmi Pandit"
+   ]
+  },
+  "98": {
+   "options": [
+    "Lord Linlithgow",
+    "Lord Wavell",
+    "Lord Mountbatten",
+    "Lord Irwin"
+   ]
+  },
+  "99": {
+   "options": [
+    "Sir Pethick-Lawrence",
+    "Sir Stafford Cripps",
+    "Lord Mountbatten",
+    "Sir Claude Auchinleck"
+   ]
+  },
+  "100": {
+   "options": [
+    "August 14, 1947",
+    "August 15, 1947",
+    "August 16, 1947",
+    "August 17, 1947"
+   ]
+  },
+  "105": {
+   "options": [
+    "1940",
+    "1942",
+    "1945",
+    "1947"
+   ]
+  },
+  "106": {
+   "options": [
+    "1918",
+    "1920",
+    "1922",
+    "1925"
+   ]
+  },
+  "107": {
+   "options": [
+    "1917",
+    "1918",
+    "1919",
+    "1920"
+   ]
+  },
+  "108": {
+   "options": [
+    "1918",
+    "1919",
+    "1920",
+    "1921"
+   ]
+  },
+  "109": {
+   "options": [
+    "1925",
+    "1927",
+    "1928",
+    "1930"
+   ]
+  },
+  "110": {
+   "options": [
+    "1930",
+    "1931",
+    "1935",
+    "1937"
+   ]
+  },
+  "111": {
+   "options": [
+    "1945",
+    "1946",
+    "1947",
+    "1948"
+   ]
+  },
+  "118": {
+   "options": [
+    "Indian Councils Act",
+    "Government of India Act",
+    "Partition of Bengal Act",
+    "Curzon Act"
+   ]
+  },
+  "119": {
+   "options": [
+    "Dadabhai Naoroji",
+    "Lala Lajpat Rai",
+    "Bal Gangadhar Tilak",
+    "Gopal Krishna Gokhale"
+   ]
+  },
+  "120": {
+   "options": [
+    "Mahatma Gandhi",
+    "Jawaharlal Nehru",
+    "Subhas Chandra Bose",
+    "Bhagat Singh"
+   ]
+  },
+  "121": {
+   "options": [
+    "1940",
+    "1942",
+    "1944",
+    "1945"
+   ]
+  },
+  "122": {
+   "options": [
+    "Lord Linlithgow",
+    "Lord Wavell",
+    "Lord Mountbatten",
+    "Lord Irwin"
+   ]
+  },
+  "135": {
+   "options": [
+    "Womesh Chandra Bonnerjee",
+    "Lala Lajpat Rai",
+    "Bal Gangadhar Tilak",
+    "Mahatma Gandhi"
+   ]
+  },
+  "136": {
+   "options": [
+    "1927",
+    "1928",
+    "1930",
+    "1935"
+   ]
+  },
+  "137": {
+   "options": [
+    "1925-1927",
+    "1927-1929",
+    "1930-1932",
+    "1930-1932 and 1932-1934"
+   ]
+  },
+  "138": {
+   "options": [
+    "1930",
+    "1931",
+    "1932",
+    "1935"
+   ]
+  },
+  "139": {
+   "options": [
+    "Mahatma Gandhi and B.R. Ambedkar",
+    "Jawaharlal Nehru and Subhas Chandra Bose",
+    "Sardar Patel and Maulana Azad",
+    "Bhagat Singh and Chandrashekhar Azad"
+   ]
+  },
+  "159": {
+   "options": [
+    "Jawaharlal Nehru",
+    "Subhas Chandra Bose",
+    "Mahatma Gandhi",
+    "Sardar Vallabhbhai Patel"
+   ]
+  },
+  "160": {
+   "options": [
+    "Lala Lajpat Rai",
+    "Bhagat Singh",
+    "Chandrashekhar Azad",
+    "Jawaharlal Nehru"
+   ]
+  },
+  "168": {
+   "options": [
+    "1917",
+    "1918",
+    "1919",
+    "1920"
+   ]
+  },
+  "169": {
+   "options": [
+    "1918",
+    "1919",
+    "1920",
+    "1921"
+   ]
+  },
+  "170": {
+   "options": [
+    "1926",
+    "1927",
+    "1928",
+    "1929"
+   ]
+  },
+  "171": {
+   "options": [
+    "Womesh Chandra Bonnerjee",
+    "Lala Lajpat Rai",
+    "Bal Gangadhar Tilak",
+    "Gopal Krishna Gokhale"
+   ]
+  },
+  "172": {
+   "options": [
+    "1903",
+    "1904",
+    "1905",
+    "1907"
+   ]
+  },
+  "173": {
+   "options": [
+    "Bal Gangadhar Tilak",
+    "Lala Lajpat Rai",
+    "Bipin Chandra Pal",
+    "Aurobindo Ghosh"
+   ]
+  },
+  "174": {
+   "options": [
+    "1918",
+    "1920",
+    "1921",
+    "1922"
+   ]
+  },
+  "175": {
+   "options": [
+    "Jawaharlal Nehru",
+    "Subhas Chandra Bose",
+    "Mahatma Gandhi",
+    "Sardar Patel"
+   ]
+  },
+  "176": {
+   "options": [
+    "14 August 1947",
+    "15 August 1947",
+    "16 August 1947",
+    "17 August 1947"
+   ]
+  },
+  "189": {
+   "options": [
+    "Lord Ripon",
+    "Lord Dufferin",
+    "Lord Curzon",
+    "Lord Lansdowne"
+   ]
+  },
+  "190": {
+   "options": [
+    "Lord Cornwallis",
+    "Lord Wellesley",
+    "Lord Hastings",
+    "Lord Bentinck"
+   ]
+  },
+  "191": {
+   "options": [
+    "Lord Cornwallis",
+    "Thomas Munro",
+    "Lord Wellesley",
+    "Lord Bentinck"
+   ]
+  },
+  "221": {
+   "options": [
+    "Lala Lajpat Rai",
+    "Bal Gangadhar Tilak",
+    "Bipin Chandra Pal",
+    "Aurobindo Ghosh"
+   ]
+  },
+  "225": {
+   "options": [
+    "1918",
+    "1920",
+    "1922",
+    "1925"
+   ]
+  },
+  "227": {
+   "options": [
+    "Bombay",
+    "Calcutta",
+    "Delhi",
+    "Madras"
+   ]
+  },
+  "228": {
+   "options": [
+    "1918",
+    "1919",
+    "1920",
+    "1921"
+   ]
+  },
+  "229": {
+   "options": [
+    "1945",
+    "1946",
+    "1947",
+    "1948"
+   ]
+  },
+  "230": {
+   "options": [
+    "1945",
+    "1946",
+    "1947",
+    "1948"
+   ]
+  },
+  "233": {
+   "options": [
+    "Mahatma Gandhi",
+    "Jawaharlal Nehru",
+    "Subhas Chandra Bose",
+    "Bhagat Singh"
+   ]
+  },
+  "249": {
+   "options": [
+    "1944",
+    "1945",
+    "1946",
+    "1947"
+   ]
+  },
+  "250": {
+   "options": [
+    "1770",
+    "1772",
+    "1773",
+    "1784"
+   ]
+  },
+  "251": {
+   "options": [
+    "1905",
+    "1906",
+    "1907",
+    "1908"
+   ]
+  },
+  "252": {
+   "options": [
+    "Rowlatt Act",
+    "Government of India Act",
+    "Indian Councils Act",
+    "Quit India Act"
+   ]
+  },
+  "253": {
+   "options": [
+    "Mahatma Gandhi",
+    "Jawaharlal Nehru",
+    "Subhas Chandra Bose",
+    "Sardar Patel"
+   ]
+  },
+  "254": {
+   "options": [
+    "1903",
+    "1904",
+    "1905",
+    "1906"
+   ]
+  },
+  "265": {
+   "options": [
+    "William Bentinck",
+    "Charles Cornwallis",
+    "Warren Hastings",
+    "Lord Wellesley"
+   ]
+  },
+  "266": {
+   "options": [
+    "1884",
+    "1885",
+    "1886",
+    "1887"
+   ]
+  },
+  "267": {
+   "options": [
+    "1920",
+    "1921",
+    "1922",
+    "1925"
+   ]
+  },
+  "268": {
+   "options": [
+    "1918",
+    "1919",
+    "1920",
+    "1921"
+   ]
+  },
+  "269": {
+   "options": [
+    "Lord Curzon",
+    "Lord Minto",
+    "Lord Hardinge",
+    "Lord Chelmsford"
+   ]
+  },
+  "270": {
+   "options": [
+    "1918",
+    "1919",
+    "1920",
+    "1921"
+   ]
+  },
+  "272": {
+   "options": [
+    "Quit India Movement",
+    "Non-Cooperation Movement",
+    "Indian National Army",
+    "Civil Disobedience Movement"
+   ]
+  },
+  "273": {
+   "options": [
+    "Partition of Bengal",
+    "Divide and Rule",
+    "Non-Cooperation",
+    "Civil Disobedience"
+   ]
+  },
+  "274": {
+   "options": [
+    "Pitt's India Act",
+    "Regulating Act",
+    "Charter Act",
+    "Government of India Act"
+   ]
+  },
+  "275": {
+   "options": [
+    "Non-Cooperation Movement",
+    "Civil Disobedience Movement",
+    "Quit India Movement",
+    "Swadeshi Movement"
+   ]
+  },
+  "276": {
+   "options": [
+    "Lord Mountbatten",
+    "Lord Wavell",
+    "Lord Linlithgow",
+    "Lord Irwin"
+   ]
+  },
+  "277": {
+   "options": [
+    "Government of India Act 1919",
+    "Government of India Act 1935",
+    "Indian Councils Act",
+    "Pitt's India Act"
+   ]
+  },
+  "281": {
+   "options": [
+    "1903",
+    "1904",
+    "1905",
+    "1907"
+   ]
+  }
+ }
+}

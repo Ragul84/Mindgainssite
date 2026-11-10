@@ -1,0 +1,245 @@
+{
+ "retire": [],
+ "fix": {
+  "40": {
+   "options": [
+    "1 only",
+    "2 only",
+    "Both 1 and 2",
+    "Neither 1 nor 2"
+   ]
+  },
+  "41": {
+   "options": [
+    "1 only",
+    "2 only",
+    "Both 1 and 2",
+    "Neither 1 nor 2"
+   ]
+  },
+  "42": {
+   "options": [
+    "1 only",
+    "2 only",
+    "Both 1 and 2",
+    "Neither 1 nor 2"
+   ]
+  },
+  "43": {
+   "options": [
+    "1 only",
+    "2 only",
+    "Both 1 and 2",
+    "Neither 1 nor 2"
+   ]
+  },
+  "44": {
+   "options": [
+    "1 only",
+    "2 only",
+    "Both 1 and 2",
+    "Neither 1 nor 2"
+   ]
+  },
+  "45": {
+   "options": [
+    "Coastal Regulation Zone Notification, 2019",
+    "Wetlands Conservation Rules",
+    "Solid Waste Management Rules",
+    "E-Waste Management Rules"
+   ]
+  },
+  "46": {
+   "options": [
+    "1 only",
+    "2 only",
+    "Both 1 and 2",
+    "Neither 1 nor 2"
+   ]
+  },
+  "47": {
+   "options": [
+    "M.C. Mehta v. Kamal Nath",
+    "Vishaka v. State of Rajasthan",
+    "Olga Tellis v. Bombay Municipal Corporation",
+    "Kesavananda Bharati v. State of Kerala"
+   ]
+  },
+  "48": {
+   "options": [
+    "1 only",
+    "2 only",
+    "Both 1 and 2",
+    "Neither 1 nor 2"
+   ]
+  },
+  "49": {
+   "options": [
+    "Wildlife Protection Act, 1972",
+    "Forest Conservation Act, 1980",
+    "Environment Protection Act, 1986",
+    "Biological Diversity Act, 2002"
+   ]
+  },
+  "50": {
+   "options": [
+    "1 only",
+    "2 only",
+    "Both 1 and 2",
+    "Neither 1 nor 2"
+   ]
+  },
+  "51": {
+   "options": [
+    "Adjudicating disputes relating to environmental protection",
+    "Awarding compensation for environmental damage",
+    "Enacting environmental laws",
+    "Reviewing decisions of appellate authorities"
+   ]
+  },
+  "52": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "All three"
+   ]
+  },
+  "53": {
+   "options": [
+    "National Biodiversity Authority",
+    "State Biodiversity Board",
+    "Biodiversity Management Committee",
+    "Ministry of Environment, Forest and Climate Change"
+   ]
+  },
+  "54": {
+   "options": [
+    "1 and 2 only",
+    "1 and 3 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "55": {
+   "options": [
+    "Environment Protection Act, 1986",
+    "National Green Tribunal Act, 2010",
+    "Water (Prevention and Control of Pollution) Act, 1974",
+    "Wildlife Protection Act, 1972"
+   ]
+  },
+  "56": {
+   "options": [
+    "Reserved forests",
+    "Protected forests",
+    "Unclassed forests",
+    "Private plantations"
+   ]
+  },
+  "57": {
+   "options": [
+    "1 and 2 only",
+    "1 and 3 only",
+    "2 and 3 only",
+    "All three"
+   ]
+  },
+  "58": {
+   "options": [
+    "It establishes a National Compensatory Afforestation Fund",
+    "It allows diversion of forest land without compensatory afforestation",
+    "It applies only to private forests",
+    "It mandates all compensatory afforestation within the same state"
+   ]
+  },
+  "59": {
+   "options": [
+    "1 and 2 only",
+    "1 and 3 only",
+    "2 and 3 only",
+    "All three"
+   ]
+  },
+  "340": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "341": {
+   "options": [
+    "1, 2 and 4 only",
+    "1, 3 and 4 only",
+    "2 and 4 only",
+    "1, 2, 3 and 4"
+   ]
+  },
+  "342": {
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ]
+  },
+  "343": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "344": {
+   "options": [
+    "1 and 3 only",
+    "2 only",
+    "1 and 2 only",
+    "1, 2 and 3"
+   ]
+  },
+  "345": {
+   "options": [
+    "1 and 3 only",
+    "2 only",
+    "1 and 2 only",
+    "1, 2 and 3"
+   ]
+  },
+  "346": {
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ]
+  },
+  "347": {
+   "options": [
+    "1 and 3 only",
+    "2 and 3 only",
+    "1 only",
+    "1, 2 and 3"
+   ]
+  },
+  "348": {
+   "options": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ]
+  },
+  "349": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  }
+ }
+}

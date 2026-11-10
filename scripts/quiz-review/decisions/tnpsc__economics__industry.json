@@ -1,0 +1,61 @@
+{
+ "retire": [],
+ "fix": {
+  "232": {
+   "options": [
+    "To achieve rapid economic growth",
+    "To reduce poverty and income inequality",
+    "To promote foreign trade and investment",
+    "To increase government revenue"
+   ]
+  },
+  "233": {
+   "options": [
+    "Mudra Yojana",
+    "Make in India",
+    "Tamil Nadu Industrial Policy",
+    "Digital India"
+   ]
+  },
+  "234": {
+   "options": [
+    "Personal income",
+    "Disposable income",
+    "Gross Domestic Product (GDP)",
+    "Per capita income"
+   ]
+  },
+  "235": {
+   "options": [
+    "To reduce fiscal deficit",
+    "To increase government revenue",
+    "To allocate resources efficiently",
+    "To promote foreign investment"
+   ]
+  },
+  "236": {
+   "options": [
+    "To promote export-led growth",
+    "To reduce trade deficit",
+    "To increase foreign investment",
+    "To protect domestic industries"
+   ]
+  },
+  "237": {
+   "options": [
+    "Pradhan Mantri Fasal Bima Yojana",
+    "Pradhan Mantri Krishi Sinchayee Yojana",
+    "Tamil Nadu Agricultural Development Scheme",
+    "National Food Security Mission"
+   ]
+  },
+  "238": {
+   "options": [
+    "Decreasing",
+    "Stable",
+    "Increasing",
+    "Fluctuating"
+   ]
+  }
+ }
+}

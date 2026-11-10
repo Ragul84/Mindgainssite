@@ -4,8 +4,6 @@
   98,
   139,
   140,
-  222,
-  223,
   243,
   244,
   264,
@@ -162,6 +160,57 @@
    ],
    "answer_index": 0,
    "explanation": "Insertion adds an item, searching finds one and sorting arranges items in order."
+  },
+  "222": {
+   "question": "Match the tools with their characteristics: List I A. SQLite B. MySQL C. sqlite3 List II 1. Separate database server 2. Python native library 3. Embedded in applications",
+   "options": [
+    "A-1, B-3, C-2",
+    "A-3, B-2, C-1",
+    "A-3, B-1, C-2",
+    "A-2, B-1, C-3"
+   ],
+   "answer_index": 2,
+   "explanation": "SQLite – Embedded in applications; MySQL – Separate database server; sqlite3 – Python native library.",
+   "retired": false
+  },
+  "223": {
+   "question": "Match the Python step with its action: List I A. Step 1 B. Step 2 C. Step 3 List II 1. import sqlite3 2. create a connection using connect() 3. Set the cursor object",
+   "options": [
+    "A-1, B-3, C-2",
+    "A-2, B-1, C-3",
+    "A-3, B-2, C-1",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 3,
+   "explanation": "Step 1 – import sqlite3; Step 2 – create a connection using connect(); Step 3 – Set the cursor object.",
+   "retired": false
+  },
+  "25": {
+   "question": "Which of the following is NOT one of the three important control structures?"
+  },
+  "53": {
+   "question": "Which of these is NOT a type of function?"
+  },
+  "107": {
+   "question": "Which of the following is NOT a characteristic of a function?"
+  },
+  "110": {
+   "question": "Which of the following is a key concept in understanding computer programs,?"
+  },
+  "111": {
+   "question": "What is the relationship between definitions and expressions?"
+  },
+  "114": {
+   "question": "Which of the following is a key characteristic of a function's computation time?"
+  },
+  "117": {
+   "question": "What is the distinction between a definition and an expression in programming,?"
+  },
+  "214": {
+   "question": "Which of the following is a characteristic of SQLite?"
+  },
+  "290": {
+   "question": "Which of these is NOT mentioned as a learning objective?"
   }
  }
 }

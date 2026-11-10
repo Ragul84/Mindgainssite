@@ -359,7 +359,23 @@
    "Plant growth"
   ]
  },
- "180": "retire",
+ "180": {
+  "stem": "Match the region with its feature:",
+  "L": [
+   "Tropopause",
+   "Stratopause",
+   "Mesopause",
+   "Exosphere"
+  ],
+  "R": [
+   "Boundary Troposphere-Stratosphere",
+   "Boundary Stratosphere-Mesosphere",
+   "Boundary Mesosphere-Thermosphere",
+   "Outer space boundary"
+  ],
+  "recovered": true,
+  "why": "Tropopause – Boundary Troposphere-Stratosphere; Stratopause – Boundary Stratosphere-Mesosphere; Mesopause – Boundary Mesosphere-Thermosphere; Exosphere – Outer space boundary."
+ },
  "219": {
   "lh": "Adaptation",
   "rh": "Biome",
@@ -459,7 +475,23 @@
    "Full Moon"
   ]
  },
- "257": "retire",
+ "257": {
+  "stem": "Match the Current with its Ocean:",
+  "L": [
+   "Kuroshio",
+   "Gulf Stream",
+   "Agulhas",
+   "East Greenland"
+  ],
+  "R": [
+   "Pacific",
+   "Atlantic",
+   "Indian",
+   "Arctic"
+  ],
+  "recovered": true,
+  "why": "Kuroshio – Pacific; Gulf Stream – Atlantic; Agulhas – Indian; East Greenland – Arctic."
+ },
  "258": {
   "lh": "Factor",
   "rh": "Effect on salinity",

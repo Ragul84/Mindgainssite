@@ -1,0 +1,85 @@
+{
+ "retire": [],
+ "fix": {
+  "176": {
+   "options": [
+    "1 only",
+    "2 only",
+    "3 only",
+    "4 only"
+   ]
+  },
+  "177": {
+   "options": [
+    "1 only",
+    "2 only",
+    "Both",
+    "None"
+   ]
+  },
+  "178": {
+   "options": [
+    "x ends with 4 or 6",
+    "x ends with 2 or 8",
+    "x ends with 4",
+    "x ends with 6"
+   ]
+  },
+  "179": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "2 and 3 only",
+    "1,2,3"
+   ]
+  },
+  "180": {
+   "options": [
+    "36",
+    "72",
+    "24",
+    "54"
+   ]
+  },
+  "181": {
+   "options": [
+    "1 only",
+    "2 only",
+    "Both",
+    "None"
+   ]
+  },
+  "182": {
+   "options": [
+    "20",
+    "24",
+    "30",
+    "36"
+   ]
+  },
+  "183": {
+   "options": [
+    "1 only",
+    "1 and 2",
+    "2 and 3",
+    "1,2,3"
+   ]
+  },
+  "184": {
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ]
+  },
+  "185": {
+   "options": [
+    "1 and 2 only",
+    "1 and 3 only",
+    "2 and 3 only",
+    "1,2,3"
+   ]
+  }
+ }
+}

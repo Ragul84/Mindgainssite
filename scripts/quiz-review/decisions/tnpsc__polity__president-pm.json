@@ -1,0 +1,85 @@
+{
+ "retire": [],
+ "fix": {
+  "219": {
+   "options": [
+    "Never, as Ordinance-making power is limited to Union List",
+    "Only during President's Rule under Article 356",
+    "Only with prior consent of the Governor",
+    "Always, if the Bill would have been valid for Parliament"
+   ]
+  },
+  "220": {
+   "options": [
+    "No discretion; must appoint the leader of the largest party",
+    "Discretion only when no party has a clear majority",
+    "Absolute discretion to appoint any Lok Sabha member",
+    "Discretion only to appoint a Rajya Sabha member"
+   ]
+  },
+  "221": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "222": {
+   "options": [
+    "Right to equality before law (Article 14)",
+    "Right to protection of life and personal liberty (Article 21)",
+    "Right to freedom of speech and expression (Article 19)",
+    "Right to constitutional remedies (Article 32)"
+   ]
+  },
+  "223": {
+   "options": [
+    "Article 39A (Equal justice and free legal aid)",
+    "Article 46 (Promotion of educational and economic interests)",
+    "Article 43 (Living wage, etc., for workers)",
+    "Article 47 (Duty of State to raise nutrition level)"
+   ]
+  },
+  "224": {
+   "options": [
+    "Village Panchayat → Panchayat Union → District Panchayat",
+    "Panchayat Union → Village Panchayat → District Panchayat",
+    "District Panchayat → Panchayat Union → Village Panchayat",
+    "Village Panchayat → District Panchayat → Panchayat Union"
+   ]
+  },
+  "225": {
+   "options": [
+    "Has been a Judge of a High Court for at least five years",
+    "Has been an advocate of a High Court for at least ten years",
+    "Is, in the opinion of the President, a distinguished jurist",
+    "Has been a Chief Justice of a High Court for at least three years"
+   ]
+  },
+  "226": {
+   "options": [
+    "Parliament and State Legislatures only",
+    "Parliament, State Legislatures, and Local Bodies",
+    "Parliament, State Legislatures, and Offices of President and Vice-President",
+    "Parliament and Offices of President and Vice-President only"
+   ]
+  },
+  "227": {
+   "options": [
+    "Tamil Nadu e-Governance Policy 2020",
+    "Tamil Nadu Solar Energy Policy 2019",
+    "Tamil Nadu Free Breakfast Scheme for School Children",
+    "Tamil Nadu Industrial Policy 2021"
+   ]
+  },
+  "228": {
+   "options": [
+    "Must give assent to the Bill",
+    "May again return the Bill for reconsideration",
+    "May withhold assent indefinitely",
+    "Must consult the Supreme Court before giving assent"
+   ]
+  }
+ }
+}

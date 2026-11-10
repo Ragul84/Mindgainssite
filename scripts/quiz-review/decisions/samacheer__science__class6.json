@@ -1,0 +1,27 @@
+{
+ "retire": [
+  16
+ ],
+ "fix": {
+  "21": {
+   "question": "Is the one what a clock reads."
+  },
+  "22": {
+   "question": "Is the amount of substance present in an object."
+  },
+  "23": {
+   "question": "Can be taken to get the final reading of the recordings of different students for a single measurement."
+  },
+  "24": {
+   "question": "Is a fundamental quantity."
+  },
+  "382": {
+   "options": [
+    "Elements are made up of two or more types of atoms.",
+    "Elements are pure substances that cannot be broken down into simpler substances by chemical means.",
+    "Elements are mixtures of compounds.",
+    "Elements are always found in liquid state at room temperature."
+   ]
+  }
+ }
+}

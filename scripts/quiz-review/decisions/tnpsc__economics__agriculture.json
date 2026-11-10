@@ -1,0 +1,1376 @@
+{
+ "retire": [],
+ "fix": {
+  "28": {
+   "question": "E-NAM (electronic National Agriculture Market) is a pan-India online trading platform launched in:"
+  },
+  "46": {
+   "options": [
+    "To increase industrial production",
+    "To achieve self-sufficiency in food production",
+    "To reduce foreign investment",
+    "To decrease agricultural exports"
+   ]
+  },
+  "47": {
+   "options": [
+    "To promote organic farming",
+    "To increase the use of technology",
+    "To improve agricultural productivity and efficiency",
+    "To reduce agricultural subsidies"
+   ]
+  },
+  "48": {
+   "options": [
+    "Intensive farming",
+    "Extensive farming",
+    "Organic farming",
+    "Mixed farming"
+   ]
+  },
+  "49": {
+   "options": [
+    "Less than 10%",
+    "Around 15%",
+    "Approximately 20%",
+    "More than 25%"
+   ]
+  },
+  "50": {
+   "options": [
+    "Pradhan Mantri Fasal Bima Yojana",
+    "Pradhan Mantri Krishi Sinchayee Yojana",
+    "National Food Security Mission",
+    "Uzhavan Scheme"
+   ]
+  },
+  "51": {
+   "options": [
+    "To increase agricultural exports",
+    "To reduce food inflation",
+    "To enhance food production and availability",
+    "To promote organic farming"
+   ]
+  },
+  "52": {
+   "options": [
+    "It has a negligible impact",
+    "It contributes significantly to national income",
+    "It reduces national income",
+    "It has no impact on national income"
+   ]
+  },
+  "53": {
+   "options": [
+    "High tariffs on agricultural exports",
+    "Low tariffs on agricultural imports",
+    "Competition from subsidized foreign products",
+    "Lack of agricultural infrastructure"
+   ]
+  },
+  "54": {
+   "options": [
+    "To reduce government expenditure on agriculture",
+    "To allocate funds for agricultural development",
+    "To promote private investment in agriculture",
+    "To decrease agricultural subsidies"
+   ]
+  },
+  "55": {
+   "options": [
+    "It has no impact on agricultural productivity",
+    "It increases agricultural productivity",
+    "It reduces agricultural productivity",
+    "It has a mixed impact on agricultural productivity"
+   ]
+  },
+  "70": {
+   "options": [
+    "To increase national income",
+    "To reduce poverty",
+    "To achieve food security",
+    "To promote international trade"
+   ]
+  },
+  "71": {
+   "options": [
+    "Pradhan Mantri Fasal Bima Yojana",
+    "Pradhan Mantri Krishi Sinchayee Yojana",
+    "Tamil Nadu Agricultural Mission",
+    "National Food Security Mission"
+   ]
+  },
+  "72": {
+   "options": [
+    "Limited market access",
+    "Inadequate irrigation facilities",
+    "Soil degradation",
+    "All of the above"
+   ]
+  },
+  "73": {
+   "options": [
+    "It provides employment opportunities",
+    "It contributes to national income",
+    "It ensures food security",
+    "All of the above"
+   ]
+  },
+  "74": {
+   "options": [
+    "Increased allocation for irrigation schemes",
+    "Reduced allocation for agricultural subsidies",
+    "Introduction of new agricultural taxes",
+    "Allocation for agricultural research and development"
+   ]
+  },
+  "75": {
+   "options": [
+    "It increases agricultural exports",
+    "It reduces agricultural imports",
+    "It promotes agricultural growth",
+    "It has both positive and negative effects"
+   ]
+  },
+  "76": {
+   "options": [
+    "To increase agricultural production",
+    "To improve agricultural productivity",
+    "To enhance food security",
+    "To promote agricultural exports"
+   ]
+  },
+  "86": {
+   "options": [
+    "To increase agricultural exports",
+    "To reduce agricultural subsidies",
+    "To increase food production and availability",
+    "To decrease agricultural imports"
+   ]
+  },
+  "87": {
+   "options": [
+    "Focus on organic farming",
+    "Emphasis on crop diversification",
+    "Provision of subsidies for farmers",
+    "All of the above"
+   ]
+  },
+  "88": {
+   "options": [
+    "Pradhan Mantri Kisan Samman Nidhi",
+    "Pradhan Mantri Fasal Bima Yojana",
+    "Soil Health Card Scheme",
+    "National Food Security Mission"
+   ]
+  },
+  "89": {
+   "options": [
+    "It led to a decrease in food production",
+    "It resulted in a shift from subsistence to commercial farming",
+    "It increased food production and made India self-sufficient",
+    "It had no impact on Indian agriculture"
+   ]
+  },
+  "90": {
+   "options": [
+    "Soil degradation",
+    "Water scarcity",
+    "Climate change",
+    "All of the above"
+   ]
+  },
+  "91": {
+   "options": [
+    "To regulate agricultural markets",
+    "To provide subsidies to farmers",
+    "To conduct agricultural research",
+    "To promote agricultural exports"
+   ]
+  },
+  "92": {
+   "options": [
+    "Model Agricultural Land Leasing Act",
+    "Pradhan Mantri Kisan Samman Nidhi",
+    "Soil Health Card Scheme",
+    "National Food Security Mission"
+   ]
+  },
+  "93": {
+   "options": [
+    "10-15%",
+    "20-25%",
+    "15-20%",
+    "25-30%"
+   ]
+  },
+  "94": {
+   "options": [
+    "Pradhan Mantri Kisan Samman Nidhi",
+    "Tamil Nadu Farmers Support Scheme",
+    "National Rural Employment Guarantee Act",
+    "Mahatma Gandhi National Rural Employment Guarantee Act"
+   ]
+  },
+  "95": {
+   "options": [
+    "Increased subsidies",
+    "Reduced government support",
+    "Improved agricultural infrastructure",
+    "Increased agricultural production"
+   ]
+  },
+  "96": {
+   "options": [
+    "Increased export opportunities",
+    "Reduced import competition",
+    "Improved agricultural infrastructure",
+    "Decreased agricultural production"
+   ]
+  },
+  "97": {
+   "options": [
+    "High GDP growth rate",
+    "Low poverty rate",
+    "Significant agricultural sector",
+    "Dominant service sector"
+   ]
+  },
+  "98": {
+   "options": [
+    "Increased agricultural production",
+    "Improved agricultural infrastructure",
+    "Reduced agricultural growth",
+    "Increased farmer migration"
+   ]
+  },
+  "99": {
+   "options": [
+    "Increased agricultural investment",
+    "Reduced agricultural growth",
+    "Improved agricultural infrastructure",
+    "Increased agricultural subsidies"
+   ]
+  },
+  "100": {
+   "options": [
+    "Pradhan Mantri Fasal Bima Yojana",
+    "Pradhan Mantri Krishi Sinchayee Yojana",
+    "Pradhan Mantri Kaushal Vikas Yojana",
+    "Pradhan Mantri Jan Dhan Yojana"
+   ]
+  },
+  "101": {
+   "options": [
+    "Water scarcity and drought",
+    "Soil degradation and pollution",
+    "Lack of agricultural infrastructure",
+    "All of the above"
+   ]
+  },
+  "102": {
+   "options": [
+    "To increase agricultural exports",
+    "To reduce poverty and hunger",
+    "To enhance water efficiency and productivity",
+    "To promote organic farming"
+   ]
+  },
+  "103": {
+   "options": [
+    "Increased allocation for industrial development",
+    "Emphasis on agricultural research and development",
+    "Focus on social welfare schemes",
+    "Reduction of agricultural subsidies"
+   ]
+  },
+  "104": {
+   "options": [
+    "To regulate agricultural markets",
+    "To provide agricultural credit",
+    "To formulate national agricultural policies",
+    "To promote agricultural research"
+   ]
+  },
+  "114": {
+   "options": [
+    "National Rural Employment Guarantee Act",
+    "Pradhan Mantri Fasal Bima Yojana",
+    "Soil Health Card Scheme",
+    "National Food Security Mission"
+   ]
+  },
+  "115": {
+   "options": [
+    "To determine the minimum support price for farmers",
+    "To regulate the market price of agricultural products",
+    "To promote export of agricultural products",
+    "To reduce the import of agricultural products"
+   ]
+  },
+  "116": {
+   "options": [
+    "Tamil Nadu Agricultural Mission",
+    "Tamil Nadu Farmers Welfare Scheme",
+    "Uzhavan Scheme",
+    "Amma Scheme"
+   ]
+  },
+  "117": {
+   "options": [
+    "Allocation for irrigation projects",
+    "Allocation for agricultural research and development",
+    "Allocation for farmer welfare schemes",
+    "All of the above"
+   ]
+  },
+  "118": {
+   "options": [
+    "Pradhan Mantri Kisan Samman Nidhi",
+    "Pradhan Mantri Fasal Bima Yojana",
+    "Soil Health Card Scheme",
+    "National Food Security Mission"
+   ]
+  },
+  "119": {
+   "options": [
+    "To increase agricultural production",
+    "To promote sustainable agricultural practices",
+    "To reduce agricultural subsidies",
+    "To increase agricultural exports"
+   ]
+  },
+  "120": {
+   "options": [
+    "Water scarcity",
+    "Soil degradation",
+    "Lack of agricultural credit",
+    "All of the above"
+   ]
+  },
+  "125": {
+   "options": [
+    "To increase national income",
+    "To reduce poverty",
+    "To achieve food security",
+    "To promote international trade"
+   ]
+  },
+  "126": {
+   "options": [
+    "To reduce poverty",
+    "To increase agricultural productivity",
+    "To promote international trade",
+    "To achieve food security"
+   ]
+  },
+  "127": {
+   "options": [
+    "High dependence on rainfall",
+    "Low crop diversity",
+    "Significant contribution to national food production",
+    "Limited agricultural infrastructure"
+   ]
+  },
+  "128": {
+   "options": [
+    "Mahatma Gandhi National Rural Employment Guarantee Act",
+    "Deen Dayal Upadhyaya Antyodaya Yojana",
+    "Pradhan Mantri Kaushal Vikas Yojana",
+    "Tamil Nadu Irrigated Agriculture Modernization Project"
+   ]
+  },
+  "129": {
+   "options": [
+    "To reduce agricultural production",
+    "To promote sustainable agriculture practices",
+    "To increase industrial growth",
+    "To decrease national income"
+   ]
+  },
+  "130": {
+   "options": [
+    "Mahatma Gandhi National Rural Employment Guarantee Act",
+    "National Rural Health Mission",
+    "Sarva Shiksha Abhiyan",
+    "Jawaharlal Nehru National Urban Renewal Mission"
+   ]
+  },
+  "131": {
+   "options": [
+    "Low crop yields",
+    "Limited irrigation facilities",
+    "Diversified crop production",
+    "High dependence on rainfed agriculture"
+   ]
+  },
+  "146": {
+   "options": [
+    "Through service sector growth",
+    "Through industrial production",
+    "Through agricultural exports",
+    "Through domestic food production"
+   ]
+  },
+  "147": {
+   "options": [
+    "Increases productivity",
+    "Decreases productivity",
+    "Has no impact",
+    "Leads to industrialization"
+   ]
+  },
+  "148": {
+   "options": [
+    "Through reduced allocations",
+    "Through increased allocations",
+    "Through decreased subsidies",
+    "Through increased taxes"
+   ]
+  },
+  "149": {
+   "options": [
+    "Through reduced subsidies",
+    "Through increased taxes",
+    "Through export promotion schemes",
+    "Through reduced allocations"
+   ]
+  },
+  "150": {
+   "options": [
+    "To increase the production of pulses and oilseeds",
+    "To reduce the import of food grains",
+    "To increase the production of wheat, rice, and pulses",
+    "To reduce the poverty rate"
+   ]
+  },
+  "151": {
+   "options": [
+    "To allocate funds for agricultural projects",
+    "To provide technical assistance to farmers",
+    "To formulate national policies for agriculture development",
+    "To regulate agricultural markets"
+   ]
+  },
+  "152": {
+   "options": [
+    "Pradhan Mantri Kisan Samman Nidhi",
+    "Tamil Nadu Agricultural Development Scheme",
+    "National Rural Employment Guarantee Act",
+    "Crop Loan Waiver Scheme"
+   ]
+  },
+  "153": {
+   "options": [
+    "Dominance of small and marginal farmers",
+    "High use of technology and machinery",
+    "Dependence on rainfall for irrigation",
+    "Large-scale farming practices"
+   ]
+  },
+  "154": {
+   "options": [
+    "To fix the minimum support price for crops",
+    "To regulate the market price of agricultural products",
+    "To provide subsidies to farmers",
+    "To promote export of agricultural products"
+   ]
+  },
+  "155": {
+   "options": [
+    "Limited use of technology",
+    "Dependence on monsoon rains",
+    "Lack of infrastructure",
+    "All of the above"
+   ]
+  },
+  "156": {
+   "options": [
+    "Soil Health Card Scheme",
+    "Pradhan Mantri Fasal Bima Yojana",
+    "National Rural Employment Guarantee Act",
+    "Both A and B"
+   ]
+  },
+  "157": {
+   "options": [
+    "Less than 10%",
+    "Around 15%",
+    "Around 20%",
+    "More than 25%"
+   ]
+  },
+  "158": {
+   "options": [
+    "Organic farming",
+    "Intensive farming",
+    "Extensive farming",
+    "Mixed farming"
+   ]
+  },
+  "159": {
+   "options": [
+    "To reduce agricultural subsidies",
+    "To increase agricultural production",
+    "To promote industrial growth",
+    "To reduce rural poverty"
+   ]
+  },
+  "160": {
+   "options": [
+    "Tariff barriers",
+    "Non-tariff barriers",
+    "Agricultural subsidies",
+    "All of the above"
+   ]
+  },
+  "161": {
+   "options": [
+    "It increases agricultural productivity",
+    "It has no impact on agricultural productivity",
+    "It reduces agricultural productivity",
+    "It leads to agricultural subsidies"
+   ]
+  },
+  "162": {
+   "options": [
+    "Pradhan Mantri Fasal Bima Yojana",
+    "Tamil Nadu Farmers' Welfare Scheme",
+    "National Rural Livelihood Mission",
+    "Deen Dayal Upadhyaya Antyodaya Yojana"
+   ]
+  },
+  "163": {
+   "options": [
+    "It measures the total value of agricultural production",
+    "It calculates the growth rate of the agricultural sector",
+    "It determines the allocation of resources to agriculture",
+    "It assesses the impact of agriculture on the environment"
+   ]
+  },
+  "164": {
+   "options": [
+    "To increase agricultural production and productivity",
+    "To reduce poverty and unemployment",
+    "To promote rural development and growth",
+    "To enhance food security and nutrition"
+   ]
+  },
+  "165": {
+   "options": [
+    "Tamil Nadu Agricultural University scheme",
+    "Farmers Training Programme",
+    "Agricultural Technology Management Agency",
+    "Uzhavan Scheme"
+   ]
+  },
+  "171": {
+   "options": [
+    "To increase the production of pulses and oilseeds",
+    "To reduce the import of food grains",
+    "To promote organic farming",
+    "To increase the production of commercial crops"
+   ]
+  },
+  "172": {
+   "options": [
+    "Tamil Nadu Agricultural Assistance Scheme",
+    "Farmers Financial Assistance Scheme",
+    "Uzhavar Sandhai Scheme",
+    "National Farmers Financial Assistance Scheme"
+   ]
+  },
+  "173": {
+   "options": [
+    "Doubling Farmers Income Initiative",
+    "Farmers Income Enhancement Scheme",
+    "National Farmers Welfare Scheme",
+    "Pradhan Mantri Fasal Bima Yojana"
+   ]
+  },
+  "174": {
+   "options": [
+    "Increased water usage",
+    "Increased fertilizer usage",
+    "Increased crop yield with reduced water usage",
+    "Reduced crop yield with increased water usage"
+   ]
+  },
+  "175": {
+   "options": [
+    "To increase agricultural production and farmers' income",
+    "To reduce agricultural subsidies",
+    "To promote organic farming",
+    "To increase agricultural exports"
+   ]
+  },
+  "176": {
+   "options": [
+    "WTO Agreement on Agriculture",
+    "SAFTA Agreement",
+    "ASEAN-India Free Trade Agreement",
+    "EU-India Free Trade Agreement"
+   ]
+  },
+  "178": {
+   "options": [
+    "10-15%",
+    "15-20%",
+    "20-25%",
+    "25-30%"
+   ]
+  },
+  "179": {
+   "options": [
+    "Pradhan Mantri Fasal Bima Yojana",
+    "Pradhan Mantri Krishi Sinchayee Yojana",
+    "Tamil Nadu Agricultural Development Scheme",
+    "National Food Security Mission"
+   ]
+  },
+  "180": {
+   "options": [
+    "Increasing agricultural exports",
+    "Reducing agricultural subsidies",
+    "Doubling farmers' income",
+    "Promoting organic farming"
+   ]
+  },
+  "181": {
+   "options": [
+    "Increasing agricultural production",
+    "Improving irrigation facilities",
+    "Providing subsidies to farmers",
+    "Promoting agricultural research and development"
+   ]
+  },
+  "182": {
+   "options": [
+    "10-15%",
+    "20-25%",
+    "15-20%",
+    "30-35%"
+   ]
+  },
+  "183": {
+   "options": [
+    "NITI Aayog",
+    "National Development Council",
+    "Ministry of Agriculture",
+    "Reserve Bank of India"
+   ]
+  },
+  "184": {
+   "options": [
+    "Allocation for irrigation projects",
+    "Subsidy for fertilizers and pesticides",
+    "Investment in agricultural research and development",
+    "All of the above"
+   ]
+  },
+  "185": {
+   "options": [
+    "Mahatma Gandhi National Rural Employment Guarantee Act",
+    "Deen Dayal Upadhyaya Antyodaya Yojana",
+    "Pradhan Mantri Awas Yojana",
+    "National Rural Livelihood Mission"
+   ]
+  },
+  "186": {
+   "options": [
+    "Focus on increasing agricultural productivity",
+    "Emphasis on sustainable agricultural practices",
+    "Promotion of farmers' producer organizations",
+    "All of the above"
+   ]
+  },
+  "187": {
+   "options": [
+    "Less than 10%",
+    "Around 15-20%",
+    "Around 20-25%",
+    "More than 30%"
+   ]
+  },
+  "188": {
+   "options": [
+    "NITI Aayog",
+    "National Development Council",
+    "Ministry of Finance",
+    "Reserve Bank of India"
+   ]
+  },
+  "189": {
+   "options": [
+    "High dependence on agriculture",
+    "Significant contribution from the service sector",
+    "Low per capita income",
+    "High unemployment rate"
+   ]
+  },
+  "190": {
+   "options": [
+    "WTO Agreement on Agriculture",
+    "SAFTA",
+    "ASEAN-India Free Trade Agreement",
+    "EU-India Free Trade Agreement"
+   ]
+  },
+  "191": {
+   "options": [
+    "To increase agricultural production and productivity",
+    "To promote rural development and employment",
+    "To improve agricultural marketing and infrastructure",
+    "To reduce agricultural subsidies and support"
+   ]
+  },
+  "192": {
+   "options": [
+    "WTO Agreement on Agriculture",
+    "ASEAN-India Free Trade Agreement",
+    "EU-India Free Trade Agreement",
+    "SAFTA Agreement"
+   ]
+  },
+  "193": {
+   "options": [
+    "Increased allocation for irrigation and water management",
+    "Reduced allocation for agricultural subsidies and support",
+    "Focus on organic farming and sustainable agriculture",
+    "Emphasis on agricultural research and development"
+   ]
+  },
+  "196": {
+   "options": [
+    "To increase the production of pulses and oilseeds",
+    "To reduce the import of agricultural products",
+    "To provide food security to the poor",
+    "To increase the export of agricultural products"
+   ]
+  },
+  "197": {
+   "options": [
+    "NITI Aayog",
+    "National Development Council",
+    "Planning Commission",
+    "Finance Commission"
+   ]
+  },
+  "198": {
+   "options": [
+    "Climate change",
+    "Soil degradation",
+    "Water scarcity",
+    "All of the above"
+   ]
+  },
+  "199": {
+   "options": [
+    "National Mission for Sustainable Agriculture",
+    "National Mission for Agricultural Extension and Technology",
+    "National Food Security Mission",
+    "Rashtriya Krishi Vikas Yojana"
+   ]
+  },
+  "200": {
+   "options": [
+    "Increased agricultural productivity",
+    "Reduced cost of farming",
+    "Improved quality of crops",
+    "Increased farmers' income"
+   ]
+  },
+  "201": {
+   "options": [
+    "To improve irrigation systems",
+    "To increase the production of crops",
+    "To reduce the cost of farming",
+    "To improve the quality of crops"
+   ]
+  },
+  "202": {
+   "options": [
+    "15-20%",
+    "20-25%",
+    "25-30%",
+    "30-35%"
+   ]
+  },
+  "203": {
+   "options": [
+    "To formulate national policies for agriculture",
+    "To allocate funds for agricultural development",
+    "To monitor and evaluate agricultural programs",
+    "To provide technical assistance to farmers"
+   ]
+  },
+  "204": {
+   "options": [
+    "WTO Agreement on Agriculture",
+    "ASEAN-India Free Trade Agreement",
+    "India-EU Free Trade Agreement",
+    "SAFTA Agreement"
+   ]
+  },
+  "205": {
+   "options": [
+    "To provide employment opportunities to rural youth",
+    "To improve access to education and healthcare",
+    "To promote self-employment among rural women",
+    "To provide financial assistance to below poverty line families"
+   ]
+  },
+  "206": {
+   "options": [
+    "High allocation for irrigation projects",
+    "Low allocation for agricultural research",
+    "High emphasis on organic farming",
+    "Low allocation for farmer subsidies"
+   ]
+  },
+  "207": {
+   "options": [
+    "Around 10-15%",
+    "Around 20-25%",
+    "Around 15-20%",
+    "Around 30-35%"
+   ]
+  },
+  "208": {
+   "options": [
+    "Pradhan Mantri Kisan Samman Nidhi",
+    "Tamil Nadu Farmers Assistance Scheme",
+    "National Rural Employment Guarantee Scheme",
+    "Mahatma Gandhi National Rural Employment Guarantee Act"
+   ]
+  },
+  "209": {
+   "options": [
+    "High growth rate and high productivity",
+    "Low growth rate and low productivity",
+    "High growth rate and low productivity",
+    "Low growth rate and high productivity"
+   ]
+  },
+  "210": {
+   "options": [
+    "Increase industrial production",
+    "Achieve self-sufficiency in food production",
+    "Promote international trade",
+    "Reduce national income"
+   ]
+  },
+  "211": {
+   "options": [
+    "Increasing pulses production",
+    "Enhancing agricultural exports",
+    "Improving livestock productivity",
+    "Promoting organic farming"
+   ]
+  },
+  "212": {
+   "options": [
+    "Pradhan Mantri Fasal Bima Yojana",
+    "Tamil Nadu Farmers Support Scheme",
+    "National Mission for Sustainable Agriculture",
+    "Rashtriya Krishi Vikas Yojana"
+   ]
+  },
+  "213": {
+   "options": [
+    "Regulating industrial production",
+    "Promoting international trade",
+    "Regulating agricultural markets",
+    "Enhancing national income"
+   ]
+  },
+  "214": {
+   "options": [
+    "Pradhan Mantri Jan-Dhan Yojana",
+    "Pradhan Mantri Fasal Bima Yojana",
+    "National Mission for Sustainable Agriculture",
+    "Deen Dayal Upadhyaya Antyodaya Yojana"
+   ]
+  },
+  "215": {
+   "options": [
+    "Decrease in national income",
+    "No impact on national income",
+    "Increase in national income",
+    "Fluctuation in national income"
+   ]
+  },
+  "216": {
+   "options": [
+    "To provide insurance coverage to farmers against crop failures",
+    "To promote the use of modern agricultural technologies",
+    "To enhance the productivity of crops",
+    "To reduce the cost of agricultural inputs"
+   ]
+  },
+  "217": {
+   "options": [
+    "By providing subsidies on agricultural inputs",
+    "By allocating funds for irrigation and water management",
+    "By supporting crop insurance schemes and agricultural research",
+    "All of the above"
+   ]
+  },
+  "218": {
+   "options": [
+    "Dominance of small and marginal farmers",
+    "High dependence on rainfed agriculture",
+    "Significant contribution of agriculture to the state's GDP",
+    "All of the above"
+   ]
+  },
+  "219": {
+   "options": [
+    "To allocate funds for agricultural research",
+    "To formulate national policies for agricultural growth",
+    "To implement agricultural schemes at the state level",
+    "To monitor agricultural production and prices"
+   ]
+  },
+  "220": {
+   "options": [
+    "It has a negligible impact on national income",
+    "It contributes significantly to national income",
+    "It reduces national income due to resource allocation",
+    "It has no direct relation to national income"
+   ]
+  },
+  "221": {
+   "options": [
+    "It has no impact on Indian agriculture",
+    "It increases competition and reduces prices for Indian farmers",
+    "It provides new market opportunities and increases prices for Indian farmers",
+    "It leads to a decline in agricultural production"
+   ]
+  },
+  "222": {
+   "options": [
+    "It has no impact on agricultural development",
+    "It leads to increased agricultural productivity and income",
+    "It reduces agricultural productivity and income due to limited resources",
+    "It has a mixed impact on agricultural development"
+   ]
+  },
+  "223": {
+   "options": [
+    "High growth rate and high share in national GDP",
+    "Low growth rate and low share in national GDP",
+    "Moderate growth rate and significant share in national GDP",
+    "Unstable growth rate and negligible share in national GDP"
+   ]
+  },
+  "224": {
+   "options": [
+    "Less than 10%",
+    "Around 15%",
+    "Around 18%",
+    "More than 20%"
+   ]
+  },
+  "225": {
+   "options": [
+    "Less than 5%",
+    "Around 8%",
+    "Around 10%",
+    "More than 15%"
+   ]
+  },
+  "226": {
+   "options": [
+    "WTO Agreement on Agriculture",
+    "SAFTA",
+    "ASEAN-India FTA",
+    "EU-India FTA"
+   ]
+  },
+  "227": {
+   "options": [
+    "Pradhan Mantri Fasal Bima Yojana",
+    "Tamil Nadu Crop Insurance Scheme",
+    "National Crop Insurance Programme",
+    "Farmers Insurance Scheme"
+   ]
+  },
+  "228": {
+   "options": [
+    "Less than 2%",
+    "Around 3%",
+    "Around 4%",
+    "More than 5%"
+   ]
+  },
+  "229": {
+   "options": [
+    "By providing subsidies on fertilizers and seeds",
+    "By offering crop insurance",
+    "By creating a market for agricultural products",
+    "By providing training on modern farming techniques"
+   ]
+  },
+  "230": {
+   "options": [
+    "Limited access to credit",
+    "Inadequate irrigation facilities",
+    "Lack of market opportunities",
+    "All of the above"
+   ]
+  },
+  "231": {
+   "options": [
+    "By imposing tariffs on imported agricultural products",
+    "By providing subsidies to farmers",
+    "By creating export-oriented infrastructure",
+    "By reducing the GST on agricultural products"
+   ]
+  },
+  "232": {
+   "options": [
+    "It provides subsidies to farmers",
+    "It offers crop insurance to farmers",
+    "It promotes organic farming practices",
+    "It creates a market for agricultural products"
+   ]
+  },
+  "233": {
+   "options": [
+    "By prioritizing irrigation projects",
+    "By focusing on agricultural research and development",
+    "By supporting farmers through subsidies and incentives",
+    "By allocating funds for rural infrastructure development"
+   ]
+  },
+  "234": {
+   "options": [
+    "Allocation of funds for irrigation projects",
+    "Subsidy for fertilizers and pesticides",
+    "Investment in agricultural research and development",
+    "All of the above"
+   ]
+  },
+  "235": {
+   "options": [
+    "WTO",
+    "ASEAN",
+    "SAFTA",
+    "EU"
+   ]
+  },
+  "236": {
+   "options": [
+    "National Rural Employment Guarantee Act",
+    "Pradhan Mantri Jan-Dhan Yojana",
+    "Deen Dayal Upadhyaya Antyodaya Yojana",
+    "Mahatma Gandhi National Rural Employment Guarantee Act"
+   ]
+  },
+  "237": {
+   "options": [
+    "Rashtriya Krishi Vikas Yojana",
+    "National Food Security Mission",
+    "Pradhan Mantri Fasal Bima Yojana",
+    "Soil Health Card Scheme"
+   ]
+  },
+  "238": {
+   "options": [
+    "High dependence on agriculture",
+    "Diversified industrial sector",
+    "Service sector dominance",
+    "High per capita income"
+   ]
+  },
+  "239": {
+   "options": [
+    "To increase agricultural exports",
+    "To reduce agricultural subsidies",
+    "To double farmers' income",
+    "To promote organic farming"
+   ]
+  },
+  "240": {
+   "options": [
+    "Around 5-10% of the total budget",
+    "Around 10-15% of the total budget",
+    "Around 15-20% of the total budget",
+    "Around 20-25% of the total budget"
+   ]
+  },
+  "241": {
+   "options": [
+    "WTO Agreement on Agriculture",
+    "SAFTA Agreement",
+    "ASEAN-India Free Trade Agreement",
+    "EU-India Free Trade Agreement"
+   ]
+  },
+  "242": {
+   "options": [
+    "Around 2-3%",
+    "Around 3-4%",
+    "Around 4-5%",
+    "Around 5-6%"
+   ]
+  },
+  "243": {
+   "options": [
+    "Mahatma Gandhi National Rural Employment Guarantee Act",
+    "Deen Dayal Upadhyaya Antyodaya Yojana",
+    "Tamil Nadu Rural Livelihood Mission",
+    "Pradhan Mantri Jan-Dhan Yojana"
+   ]
+  },
+  "244": {
+   "options": [
+    "Increasing water usage",
+    "Enhancing crop diversity",
+    "Improving rice yields with less water",
+    "Reducing labor costs"
+   ]
+  },
+  "245": {
+   "options": [
+    "Kisan Credit Card Scheme",
+    "Rural Employment Guarantee Scheme",
+    "National Food Security Mission",
+    "Uzhavar Pathukappu Scheme"
+   ]
+  },
+  "246": {
+   "options": [
+    "10-15%",
+    "20-25%",
+    "15-20%",
+    "5-10%"
+   ]
+  },
+  "247": {
+   "options": [
+    "Value Added Method",
+    "Income Method",
+    "Expenditure Method",
+    "All of the above"
+   ]
+  },
+  "248": {
+   "options": [
+    "Subsidies for farmers",
+    "Investment in agricultural infrastructure",
+    "Crop insurance schemes",
+    "All of the above"
+   ]
+  },
+  "249": {
+   "options": [
+    "To increase agricultural exports",
+    "To promote organic farming practices",
+    "To achieve sustainable agricultural development",
+    "To reduce agricultural subsidies"
+   ]
+  },
+  "250": {
+   "options": [
+    "Tamil Nadu Agricultural Productivity Programme",
+    "Tamil Nadu Farmers' Welfare Scheme",
+    "Tamil Nadu Irrigation Development Programme",
+    "Tamil Nadu Crop Insurance Scheme"
+   ]
+  },
+  "251": {
+   "options": [
+    "To increase agricultural production",
+    "To promote rural development",
+    "To provide employment opportunities",
+    "To reduce poverty"
+   ]
+  },
+  "252": {
+   "options": [
+    "To provide financial assistance to farmers",
+    "To promote rural development and livelihoods",
+    "To increase agricultural production",
+    "To reduce poverty"
+   ]
+  },
+  "253": {
+   "options": [
+    "Focus on organic farming",
+    "Emphasis on crop diversification",
+    "Provision of subsidies to farmers",
+    "All of the above"
+   ]
+  },
+  "260": {
+   "options": [
+    "Swaminathan Committee",
+    "Rangarajan Committee",
+    "Narasimham Committee",
+    "Kelkar Committee"
+   ]
+  },
+  "261": {
+   "options": [
+    "Doubling Farmers' Income Initiative",
+    "Farmers' Income Enhancement Scheme",
+    "Agricultural Transformation Initiative",
+    "Rashtriya Krishi Vikas Yojana"
+   ]
+  },
+  "262": {
+   "options": [
+    "To regulate agricultural markets",
+    "To promote agricultural exports",
+    "To increase agricultural production",
+    "To reduce agricultural subsidies"
+   ]
+  },
+  "263": {
+   "options": [
+    "Pradhan Mantri Fasal Bima Yojana",
+    "National Crop Insurance Programme",
+    "Agricultural Insurance Scheme",
+    "Farmers' Income Protection Scheme"
+   ]
+  },
+  "264": {
+   "options": [
+    "Tamil Nadu Agricultural Plan",
+    "Agricultural Development Plan",
+    "Farmers' Welfare Plan",
+    "Crop Productivity Enhancement Plan"
+   ]
+  },
+  "265": {
+   "options": [
+    "Agricultural Export Policy",
+    "National Agricultural Policy",
+    "Trade and Investment Policy",
+    "Export-Import Policy"
+   ]
+  },
+  "266": {
+   "options": [
+    "Increased allocation for irrigation projects",
+    "Reduced allocation for fertilizer subsidies",
+    "Introduction of new taxes on agricultural income",
+    "Reduction in agricultural loan interest rates"
+   ]
+  },
+  "267": {
+   "options": [
+    "Mahatma Gandhi National Rural Employment Guarantee Act",
+    "National Rural Livelihood Mission",
+    "Deen Dayal Upadhyaya Antyodaya Yojana",
+    "Pradhan Mantri Awas Yojana"
+   ]
+  },
+  "268": {
+   "options": [
+    "Service sector",
+    "Manufacturing sector",
+    "Agricultural sector",
+    "Construction sector"
+   ]
+  },
+  "269": {
+   "options": [
+    "To stabilize agricultural prices",
+    "To increase agricultural production",
+    "To reduce agricultural subsidies",
+    "To promote agricultural exports"
+   ]
+  },
+  "270": {
+   "options": [
+    "To increase agricultural exports",
+    "To enhance farmers' income",
+    "To improve crop yields and food security",
+    "To reduce agricultural subsidies"
+   ]
+  },
+  "271": {
+   "options": [
+    "Only the income from the agricultural sector",
+    "Only the income from the industrial sector",
+    "Income from all sectors including agriculture, industry, and services",
+    "Income from foreign trade only"
+   ]
+  },
+  "272": {
+   "options": [
+    "Mahatma Gandhi National Rural Employment Guarantee Act",
+    "National Rural Health Mission",
+    "Sarva Shiksha Abhiyan",
+    "Jawaharlal Nehru National Urban Renewal Mission"
+   ]
+  },
+  "273": {
+   "options": [
+    "To increase agricultural production",
+    "To reduce farmers' debt",
+    "To improve farmers' income through various initiatives",
+    "To promote organic farming"
+   ]
+  },
+  "274": {
+   "options": [
+    "To provide subsidies for farmers",
+    "To invest in agricultural infrastructure",
+    "To promote agricultural research and development",
+    "To support all of the above"
+   ]
+  },
+  "275": {
+   "options": [
+    "Tamil Nadu Agricultural Mission",
+    "Farmers' Welfare Scheme",
+    "Agricultural Development Scheme",
+    "Uzhavan Scheme"
+   ]
+  },
+  "276": {
+   "options": [
+    "Increasing steadily",
+    "Decreasing steadily",
+    "Fluctuating",
+    "Remaining constant"
+   ]
+  },
+  "277": {
+   "options": [
+    "High growth rate in the service sector",
+    "Low growth rate in the industrial sector",
+    "High growth rate in the agricultural sector",
+    "Low growth rate in the service sector"
+   ]
+  },
+  "278": {
+   "options": [
+    "Increasing crop yields through technology",
+    "Improving irrigation facilities",
+    "Promoting organic farming practices",
+    "Enhancing farmer welfare through subsidies"
+   ]
+  },
+  "279": {
+   "options": [
+    "To provide crop insurance to farmers",
+    "To provide financial assistance to farmers",
+    "To promote agricultural mechanization",
+    "To improve agricultural marketing facilities"
+   ]
+  },
+  "280": {
+   "options": [
+    "Water scarcity and drought",
+    "Soil degradation and erosion",
+    "Lack of agricultural credit facilities",
+    "Inadequate agricultural marketing facilities"
+   ]
+  }
+ }
+}

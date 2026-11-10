@@ -1,0 +1,157 @@
+{
+ "retire": [],
+ "fix": {
+  "201": {
+   "options": [
+    "Harappa",
+    "Mohenjo-Daro",
+    "Lothal",
+    "Kalibangan"
+   ]
+  },
+  "202": {
+   "options": [
+    "Mauryan",
+    "Gupta",
+    "Kushan",
+    "Sunga"
+   ]
+  },
+  "203": {
+   "options": [
+    "Rajaraja Chola I",
+    "Rajendra Chola I",
+    "Kulothunga Chola I",
+    "Vijayalaya Chola"
+   ]
+  },
+  "204": {
+   "options": [
+    "Pallava",
+    "Chola",
+    "Pandya",
+    "Vijayanagara"
+   ]
+  },
+  "205": {
+   "options": [
+    "Mughal miniature",
+    "Tanjore painting",
+    "Madhubani",
+    "Warli"
+   ]
+  },
+  "206": {
+   "options": [
+    "Narasimhavarman I",
+    "Mahendravarman I",
+    "Rajasimha",
+    "Nandivarman II"
+   ]
+  },
+  "207": {
+   "options": [
+    "Nataraja",
+    "Buddha",
+    "Mahavira",
+    "Vishnu"
+   ]
+  },
+  "208": {
+   "options": [
+    "Swadeshi Movement",
+    "Non-cooperation Movement",
+    "Quit India Movement",
+    "Civil Disobedience Movement"
+   ]
+  },
+  "209": {
+   "options": [
+    "Gupta",
+    "Post-Gupta",
+    "Chola",
+    "Pallava"
+   ]
+  },
+  "240": {
+   "options": [
+    "(i) only",
+    "(ii) only",
+    "(i) and (ii)",
+    "(i), (ii) and (iii)"
+   ]
+  },
+  "241": {
+   "options": [
+    "Shift from rock-cut to structural temples with vimana",
+    "Introduction of gopuram as the dominant feature",
+    "Replacement of brick by granite in all structures",
+    "Adoption of Dravida style from the Chalukyas"
+   ]
+  },
+  "242": {
+   "options": [
+    "(i) only",
+    "(ii) only",
+    "(i) and (ii)",
+    "(i), (ii) and (iii)"
+   ]
+  },
+  "243": {
+   "options": [
+    "Tanjore painting with gold foil and gem setting",
+    "Nayaka-style gopuram construction",
+    "Carnatic music sangeetam tradition",
+    "Bronze casting of Nataraja"
+   ]
+  },
+  "244": {
+   "options": [
+    "Terracotta and bronze",
+    "Sandstone and marble",
+    "Steatite and bronze",
+    "Limestone and copper"
+   ]
+  },
+  "245": {
+   "options": [
+    "(i) only",
+    "(i) and (ii)",
+    "(ii) and (iii)",
+    "(i), (ii) and (iii)"
+   ]
+  },
+  "246": {
+   "options": [
+    "It was a revival of Mughal miniature traditions",
+    "It combined Indian themes with European stylistic elements for colonial patrons",
+    "It originated exclusively in Bengal under the British East India Company",
+    "It used oil-on-canvas techniques like Raja Ravi Varma"
+   ]
+  },
+  "247": {
+   "options": [
+    "Abanindranath Tagore's 'Bharat Mata' as a nationalist icon",
+    "Raja Ravi Varma's mythological oils in realistic style",
+    "The Bengal School's revival of Mughal frescoes",
+    "Jamini Roy's adoption of Kalighat patua folk art"
+   ]
+  },
+  "248": {
+   "options": [
+    "A free-standing temple tower",
+    "A rock-cut pillared hall",
+    "A monolithic chariot",
+    "A sculpted panel of royal portraits"
+   ]
+  },
+  "249": {
+   "options": [
+    "The seven-tiered gopuram",
+    "The massive vimana with upward curvature",
+    "The enclosed prakara with multiple sub-shrines",
+    "The kalyana mandapa with ornate pillars"
+   ]
+  }
+ }
+}

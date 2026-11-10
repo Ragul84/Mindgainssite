@@ -3,8 +3,36 @@
  "98": "retire",
  "139": "retire",
  "140": "retire",
- "222": "retire",
- "223": "retire",
+ "222": {
+  "stem": "Match the tools with their characteristics:",
+  "L": [
+   "SQLite",
+   "MySQL",
+   "sqlite3"
+  ],
+  "R": [
+   "Embedded in applications",
+   "Separate database server",
+   "Python native library"
+  ],
+  "recovered": true,
+  "why": "SQLite – Embedded in applications; MySQL – Separate database server; sqlite3 – Python native library."
+ },
+ "223": {
+  "stem": "Match the Python step with its action:",
+  "L": [
+   "Step 1",
+   "Step 2",
+   "Step 3"
+  ],
+  "R": [
+   "import sqlite3",
+   "create a connection using connect()",
+   "Set the cursor object"
+  ],
+  "recovered": true,
+  "why": "Step 1 – import sqlite3; Step 2 – create a connection using connect(); Step 3 – Set the cursor object."
+ },
  "243": "retire",
  "244": "retire",
  "264": "retire",

@@ -1,0 +1,357 @@
+{
+ "retire": [],
+ "fix": {
+  "633": {
+   "options": [
+    "A temporary rise in domestic credit supply, boosting investment",
+    "A contraction in money supply, leading to higher short‑term interest rates",
+    "An appreciation of the rupee due to higher foreign capital inflows",
+    "An increase in the current account deficit through higher imports"
+   ]
+  },
+  "634": {
+   "options": [
+    "To increase the domestic money supply and stimulate growth",
+    "To reduce the balance of payments surplus by buying foreign exchange",
+    "To neutralise the impact of the intervention on the domestic money supply",
+    "To strengthen the fiscal deficit by issuing more government bonds"
+   ]
+  },
+  "635": {
+   "options": [
+    "Liberalising the procurement system and allowing private players to purchase surplus produce",
+    "Increasing Minimum Support Prices (MSP) across all crops indiscriminately",
+    "Expanding the National Food Security Mission to all states",
+    "Implementing a nationwide ban on food grain exports"
+   ]
+  },
+  "636": {
+   "options": [
+    "It forces the RBI to increase the cash reserve ratio to attract foreign capital",
+    "It encourages the government to print money to meet debt payments, expanding the money supply",
+    "It necessitates higher import duties to reduce the trade deficit",
+    "It automatically increases the fiscal deficit, leading to a fiscal stimulus package"
+   ]
+  },
+  "637": {
+   "options": [
+    "A sharp decline in export earnings due to weaker global demand",
+    "An increase in foreign direct investment inflows",
+    "A rise in domestic savings exceeding investment opportunities",
+    "A substantial growth in portfolio investment inflows"
+   ]
+  },
+  "638": {
+   "options": [
+    "Growth rate of the Gross National Saving",
+    "Change in the Net Foreign Asset Position (NFAP)",
+    "Increase in the proportion of rural households with bank accounts",
+    "Variation in the fiscal deficit as a percentage of GDP"
+   ]
+  },
+  "639": {
+   "options": [
+    "Reserves will rise as the government sells its own currency to defend the peg",
+    "Reserves will fall as the government buys foreign currency to support exports",
+    "Reserves will remain unchanged due to sterilised interventions",
+    "Reserves will increase due to higher domestic savings flowing into reserves"
+   ]
+  },
+  "640": {
+   "options": [
+    "Reduction in the portfolio risk for banks by providing collateral to guarantee loans",
+    "Increase in the Reserve Bank’s liquidity requirement for banks",
+    "A shift from short‑term to long‑term credit availability in the economy",
+    "A mandatory reduction in the interest rates for all micro‑enterprise loans"
+   ]
+  },
+  "641": {
+   "options": [
+    "Increasing the Cash Reserve Ratio (CRR)",
+    "Conducting Open Market Operations (OMO) to buy government securities",
+    "Reducing the Repo Rate to stimulate borrowing",
+    "Implementing a currency exchange control"
+   ]
+  },
+  "642": {
+   "options": [
+    "It will reduce domestic production, leading to lower supply and higher prices",
+    "It will increase the cost of production for food processors, raising final consumer prices",
+    "It will attract foreign investment into the edible oil sector, boosting supply",
+    "It will cause a depreciation of the rupee, thereby lowering import prices"
+   ]
+  },
+  "643": {
+   "options": [
+    "To sterilize the impact on domestic money supply while preventing rupee appreciation",
+    "To increase domestic liquidity and promote export competitiveness",
+    "To raise interest rates and curb capital inflows",
+    "To devalue the rupee and boost foreign debt servicing capacity"
+   ]
+  },
+  "644": {
+   "options": [
+    "Increase, because private players will hedge aggressively",
+    "Decrease, as risk sharing reduces farmers' exposure to market swings",
+    "No change, since price formation remains market‑driven",
+    "Increase, due to removal of Minimum Support Price (MSP) for all crops"
+   ]
+  },
+  "645": {
+   "options": [
+    "Short‑term yields rise, long‑term yields fall, and inflation expectations decline",
+    "Both short‑ and long‑term yields fall, and inflation expectations rise moderately",
+    "Short‑term yields fall, long‑term yields rise, and inflation expectations remain unchanged",
+    "Yield curve steepens sharply and inflation expectations fall sharply"
+   ]
+  },
+  "646": {
+   "options": [
+    "Primary income – increase due to higher foreign interest receipts",
+    "Current account – improvement because export values rise in rupee terms",
+    "Capital account – outflow as foreign investors withdraw capital",
+    "Financial account – increase in foreign portfolio investment inflows"
+   ]
+  },
+  "647": {
+   "options": [
+    "Increasing MSP for all crops",
+    "Providing tax incentives for private cold‑storage infrastructure",
+    "Expanding food subsidy coverage",
+    "Raising import duties on agricultural inputs"
+   ]
+  },
+  "648": {
+   "options": [
+    "Reduce tax compliance costs and increase informal sector size",
+    "Increase tax base and compliance, potentially raising short‑run output",
+    "Lower overall GST revenue due to higher exemptions",
+    "Shift tax burden from manufacturers to retailers"
+   ]
+  },
+  "649": {
+   "options": [
+    "The multiplier rises because higher taxes boost public savings",
+    "The multiplier falls as the tax hike outweighs the spending boost",
+    "The multiplier remains unchanged as both effects offset each other",
+    "The multiplier becomes indeterminate without knowing the marginal propensity to consume"
+   ]
+  },
+  "650": {
+   "options": [
+    "Exchange rate channel through expected rupee depreciation",
+    "Credit channel via reduced risk premium on bank lending",
+    "Expectations channel influencing wage‑price setting",
+    "Asset price channel through higher equity market valuations"
+   ]
+  },
+  "651": {
+   "options": [
+    "Immediate improvement in the trade balance",
+    "Long‑run increase in productive capacity and potential GDP",
+    "Reduction in inflation by lowering consumer goods prices",
+    "Increase in fiscal surplus through higher customs revenue"
+   ]
+  },
+  "652": {
+   "options": [
+    "Credit availability contracts as banks view leaseholds as high‑risk collateral",
+    "Credit expands because leaseholds provide enforceable security for loans",
+    "No impact because credit is determined solely by farmer income",
+    "Credit shrinks due to increased transaction costs in lease registration"
+   ]
+  },
+  "663": {
+   "options": [
+    "To reduce the money supply and control inflation",
+    "To increase the money supply and stimulate economic growth",
+    "To stabilize the exchange rate and prevent excessive volatility",
+    "To reduce the fiscal deficit and improve the trade balance"
+   ]
+  },
+  "664": {
+   "options": [
+    "Increase in exports and decrease in imports",
+    "Decrease in exports and increase in imports",
+    "Increase in foreign investment and decrease in inflation",
+    "Decrease in foreign investment and increase in inflation"
+   ]
+  },
+  "665": {
+   "options": [
+    "To regulate the fiscal policy and control the government's borrowing",
+    "To supervise the banking sector and ensure financial stability",
+    "To set the interest rates and control inflation",
+    "To manage the foreign exchange reserves and stabilize the exchange rate"
+   ]
+  },
+  "666": {
+   "options": [
+    "Fiscal deficit and government borrowing",
+    "Trade balance and foreign investment",
+    "Monetary policy and interest rates",
+    "Inflation rate and economic growth"
+   ]
+  },
+  "667": {
+   "options": [
+    "Increase in agricultural production and decrease in farmer's income",
+    "Decrease in agricultural production and increase in farmer's income",
+    "Increase in agricultural production and increase in farmer's income",
+    "Decrease in agricultural production and decrease in farmer's income"
+   ]
+  },
+  "668": {
+   "options": [
+    "Increase in economic growth and decrease in inflation",
+    "Decrease in economic growth and increase in inflation",
+    "Increase in foreign investment and decrease in trade deficit",
+    "Decrease in foreign investment and increase in trade deficit"
+   ]
+  },
+  "669": {
+   "options": [
+    "To control the money supply and regulate the banking sector",
+    "To stabilize the exchange rate and manage the foreign exchange reserves",
+    "To set a target for inflation and use monetary policy to achieve it",
+    "To reduce the fiscal deficit and improve the trade balance"
+   ]
+  },
+  "670": {
+   "options": [
+    "Human Development Index and per capita income",
+    "Poverty rate and unemployment rate",
+    "Literacy rate and life expectancy",
+    "All of the above"
+   ]
+  },
+  "671": {
+   "options": [
+    "Increase in economic growth and decrease in trade deficit",
+    "Decrease in economic growth and increase in trade deficit",
+    "Increase in inflation and decrease in foreign exchange reserves",
+    "Decrease in inflation and increase in foreign exchange reserves"
+   ]
+  },
+  "672": {
+   "options": [
+    "Increase in exports and decrease in imports",
+    "Decrease in exports and increase in imports",
+    "Increase in economic growth and decrease in inflation",
+    "Decrease in economic growth and increase in inflation"
+   ]
+  },
+  "683": {
+   "options": [
+    "Increase in exports and decrease in imports",
+    "Decrease in exports and increase in imports",
+    "Increase in both exports and imports",
+    "Decrease in both exports and imports"
+   ]
+  },
+  "684": {
+   "options": [
+    "Increase in money supply",
+    "Decrease in money supply",
+    "No impact on money supply",
+    "Increase in credit creation"
+   ]
+  },
+  "685": {
+   "options": [
+    "Government revenue and expenditure",
+    "Capital account and current account",
+    "Fiscal deficit and trade deficit",
+    "Inflation rate and unemployment rate"
+   ]
+  },
+  "686": {
+   "options": [
+    "To regulate the money supply and control inflation",
+    "To stabilize the exchange rate and promote exports",
+    "To increase government revenue and reduce fiscal deficit",
+    "To reduce unemployment and increase economic growth"
+   ]
+  },
+  "687": {
+   "options": [
+    "Increase in productivity and decrease in money supply",
+    "Decrease in demand and increase in supply",
+    "Increase in money supply and decrease in productivity",
+    "Decrease in government expenditure and increase in taxes"
+   ]
+  },
+  "688": {
+   "options": [
+    "Increase in borrowing costs and decrease in investment",
+    "Decrease in borrowing costs and increase in investment",
+    "No impact on borrowing costs and investment",
+    "Increase in borrowing costs and increase in investment"
+   ]
+  },
+  "689": {
+   "options": [
+    "GDP growth rate and inflation rate",
+    "Human Development Index and poverty rate",
+    "Unemployment rate and fiscal deficit",
+    "Trade balance and exchange rate"
+   ]
+  },
+  "690": {
+   "options": [
+    "To regulate the money supply and control inflation",
+    "To stabilize the exchange rate and promote exports",
+    "To allocate resources and redistribute income",
+    "To increase economic growth and reduce unemployment"
+   ]
+  },
+  "691": {
+   "options": [
+    "Increase in trade barriers and decrease in competition",
+    "Decrease in trade barriers and increase in competition",
+    "No impact on trade barriers and competition",
+    "Increase in trade barriers and increase in competition"
+   ]
+  },
+  "692": {
+   "options": [
+    "To formulate fiscal policies and manage government expenditure",
+    "To regulate foreign trade and manage balance of payments",
+    "To set interest rates and control inflation",
+    "To manage agricultural production and ensure food security"
+   ]
+  },
+  "693": {
+   "options": [
+    "Revenue deficit",
+    "Fiscal deficit",
+    "Primary deficit",
+    "Trade deficit"
+   ]
+  },
+  "694": {
+   "options": [
+    "Increase in production and reduction in inflation",
+    "Decrease in production and increase in inflation",
+    "Increase in production and increase in inflation",
+    "Decrease in production and reduction in inflation"
+   ]
+  },
+  "695": {
+   "options": [
+    "Government revenue and expenditure",
+    "Private income and expenditure",
+    "Foreign direct investment and portfolio investment",
+    "Agricultural production and industrial production"
+   ]
+  },
+  "696": {
+   "options": [
+    "Higher inflation leads to appreciation of the rupee",
+    "Higher inflation leads to depreciation of the rupee",
+    "Lower inflation leads to appreciation of the rupee",
+    "Lower inflation leads to depreciation of the rupee"
+   ]
+  }
+ }
+}

@@ -1,0 +1,309 @@
+{
+ "retire": [],
+ "fix": {
+  "140": {
+   "options": [
+    "Allan Octavian Hume",
+    "Lala Lajpat Rai",
+    "Bal Gangadhar Tilak",
+    "Mahatma Gandhi"
+   ]
+  },
+  "141": {
+   "options": [
+    "1917",
+    "1919",
+    "1920",
+    "1918"
+   ]
+  },
+  "142": {
+   "options": [
+    "Swaraj",
+    "Home Rule",
+    "Civil Disobedience",
+    "Independence"
+   ]
+  },
+  "143": {
+   "options": [
+    "1940",
+    "1942",
+    "1945",
+    "1947"
+   ]
+  },
+  "144": {
+   "options": [
+    "Mahatma Gandhi",
+    "Ali Brothers",
+    "Jawaharlal Nehru",
+    "Subhas Chandra Bose"
+   ]
+  },
+  "145": {
+   "options": [
+    "1909",
+    "1919",
+    "1935",
+    "1947"
+   ]
+  },
+  "146": {
+   "options": [
+    "1929",
+    "1930",
+    "1931",
+    "1932"
+   ]
+  },
+  "147": {
+   "options": [
+    "1927",
+    "1928",
+    "1929",
+    "1930"
+   ]
+  },
+  "148": {
+   "options": [
+    "1929",
+    "1930",
+    "1931",
+    "1932"
+   ]
+  },
+  "149": {
+   "options": [
+    "1931",
+    "1932",
+    "1933",
+    "1934"
+   ]
+  },
+  "170": {
+   "options": [
+    "AO Hume",
+    "Lala Lajpat Rai",
+    "Bal Gangadhar Tilak",
+    "Mahatma Gandhi"
+   ]
+  },
+  "171": {
+   "options": [
+    "1918",
+    "1920",
+    "1922",
+    "1925"
+   ]
+  },
+  "172": {
+   "options": [
+    "1940",
+    "1942",
+    "1945",
+    "1947"
+   ]
+  },
+  "173": {
+   "options": [
+    "1916",
+    "1917",
+    "1918",
+    "1919"
+   ]
+  },
+  "174": {
+   "options": [
+    "1918",
+    "1919",
+    "1920",
+    "1921"
+   ]
+  },
+  "175": {
+   "options": [
+    "Mahatma Gandhi",
+    "Ali Brothers",
+    "Jawaharlal Nehru",
+    "Subhas Chandra Bose"
+   ]
+  },
+  "176": {
+   "options": [
+    "1925",
+    "1927",
+    "1928",
+    "1930"
+   ]
+  },
+  "177": {
+   "options": [
+    "1909",
+    "1919",
+    "1935",
+    "1947"
+   ]
+  },
+  "178": {
+   "options": [
+    "1945",
+    "1946",
+    "1947",
+    "1948"
+   ]
+  },
+  "179": {
+   "options": [
+    "1946",
+    "1947",
+    "1948",
+    "1949"
+   ]
+  },
+  "180": {
+   "options": [
+    "Mahatma Gandhi",
+    "Jawaharlal Nehru",
+    "Lord Mountbatten",
+    "Cyril Radcliffe"
+   ]
+  },
+  "217": {
+   "options": [
+    "1920",
+    "1921",
+    "1922",
+    "1925"
+   ]
+  },
+  "218": {
+   "options": [
+    "MG Ranade and BR Ambedkar",
+    "MK Gandhi and BR Ambedkar",
+    "MG Ranade and MK Gandhi",
+    "BR Ambedkar and JC Kumarappa"
+   ]
+  },
+  "230": {
+   "options": [
+    "World War I",
+    "World War II",
+    "Indian Rebellion of 1857",
+    "Mughal Empire"
+   ]
+  },
+  "231": {
+   "options": [
+    "Partition of Bengal",
+    "Indian Rebellion of 1857",
+    "Mughal Empire",
+    "British East India Company"
+   ]
+  },
+  "232": {
+   "options": [
+    "Bal Gangadhar Tilak",
+    "Annie Besant",
+    "Mahatma Gandhi",
+    "Jawaharlal Nehru"
+   ]
+  },
+  "243": {
+   "options": [
+    "1903",
+    "1905",
+    "1907",
+    "1911"
+   ]
+  },
+  "254": {
+   "options": [
+    "1903",
+    "1905",
+    "1907",
+    "1911"
+   ]
+  },
+  "255": {
+   "options": [
+    "Bal Gangadhar Tilak",
+    "Annie Besant",
+    "Mahatma Gandhi",
+    "Both A and B"
+   ]
+  },
+  "280": {
+   "options": [
+    "Liberalism",
+    "Socialism",
+    "Marxism",
+    "All of the above"
+   ]
+  },
+  "281": {
+   "options": [
+    "1918",
+    "1919",
+    "1920",
+    "1921"
+   ]
+  },
+  "286": {
+   "options": [
+    "1929",
+    "1930",
+    "1931",
+    "1935"
+   ]
+  },
+  "287": {
+   "options": [
+    "1904",
+    "1905",
+    "1906",
+    "1907"
+   ]
+  },
+  "297": {
+   "options": [
+    "1945",
+    "1946",
+    "1947",
+    "1948"
+   ]
+  },
+  "351": {
+   "options": [
+    "Anarchical and Revolutionary Crimes Act",
+    "Indian Independence Act",
+    "Government of India Act",
+    "Jallianwala Bagh Act"
+   ]
+  },
+  "352": {
+   "options": [
+    "Mahatma Gandhi",
+    "Muhammad Ali",
+    "Shaukat Ali",
+    "Both B and C"
+   ]
+  },
+  "353": {
+   "options": [
+    "Dominion Status",
+    "Complete Independence",
+    "Partition of India",
+    "Both A and C"
+   ]
+  },
+  "354": {
+   "options": [
+    "Federal Structure",
+    "Provincial Autonomy",
+    "Partition of India",
+    "All of the above"
+   ]
+  }
+ }
+}

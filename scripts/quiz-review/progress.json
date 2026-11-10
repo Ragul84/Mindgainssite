@@ -7,7 +7,7 @@
  "samacheer/geography/class10": {
   "reviewed_to": null,
   "total": 215,
-  "retired": 10
+  "retired": 13
  },
  "samacheer/geography/class11": {
   "reviewed_to": null,
@@ -17,17 +17,17 @@
  "samacheer/geography/class12": {
   "reviewed_to": null,
   "total": 459,
-  "retired": 5
+  "retired": 9
  },
  "samacheer/geography/class6": {
   "reviewed_to": null,
   "total": 157,
-  "retired": 2
+  "retired": 1
  },
  "samacheer/geography/class7": {
   "reviewed_to": null,
   "total": 218,
-  "retired": 4
+  "retired": 5
  },
  "samacheer/geography/class8": {
   "reviewed_to": null,
@@ -37,57 +37,57 @@
  "samacheer/geography/class9": {
   "reviewed_to": null,
   "total": 260,
-  "retired": 8
+  "retired": 6
  },
  "samacheer/history/class10": {
   "reviewed_to": null,
   "total": 523,
-  "retired": 31
+  "retired": 30
  },
  "samacheer/history/class11": {
   "reviewed_to": null,
   "total": 361,
-  "retired": 17
+  "retired": 10
  },
  "samacheer/history/class12": {
   "reviewed_to": null,
   "total": 540,
-  "retired": 16
+  "retired": 21
  },
  "samacheer/history/class9": {
   "reviewed_to": null,
   "total": 561,
-  "retired": 15
+  "retired": 11
  },
  "samacheer/maths/class11": {
   "reviewed_to": null,
   "total": 407,
-  "retired": 4
+  "retired": 8
  },
  "samacheer/polity/class10": {
   "reviewed_to": null,
   "total": 204,
-  "retired": 9
+  "retired": 5
  },
  "samacheer/polity/class11": {
   "reviewed_to": null,
   "total": 222,
-  "retired": 10
+  "retired": 17
  },
  "samacheer/polity/class12": {
   "reviewed_to": null,
   "total": 341,
-  "retired": 10
+  "retired": 5
  },
  "samacheer/polity/class6": {
   "reviewed_to": null,
   "total": 89,
-  "retired": 0
+  "retired": 2
  },
  "samacheer/polity/class7": {
   "reviewed_to": null,
   "total": 109,
-  "retired": 0
+  "retired": 1
  },
  "samacheer/polity/class8": {
   "reviewed_to": null,
@@ -97,17 +97,17 @@
  "samacheer/polity/class9": {
   "reviewed_to": null,
   "total": 140,
-  "retired": 1
+  "retired": 3
  },
  "samacheer/economics/class11": {
   "reviewed_to": null,
   "total": 473,
-  "retired": 36
+  "retired": 46
  },
  "samacheer/economics/class12": {
   "reviewed_to": null,
   "total": 431,
-  "retired": 24
+  "retired": 29
  },
  "samacheer/maths/class12": {
   "reviewed_to": null,
@@ -117,12 +117,12 @@
  "samacheer/physics/class11": {
   "reviewed_to": null,
   "total": 359,
-  "retired": 4
+  "retired": 3
  },
  "samacheer/physics/class12": {
   "reviewed_to": null,
   "total": 392,
-  "retired": 3
+  "retired": 4
  },
  "samacheer/chemistry/class11": {
   "reviewed_to": null,
@@ -132,12 +132,12 @@
  "samacheer/chemistry/class12": {
   "reviewed_to": null,
   "total": 604,
-  "retired": 36
+  "retired": 44
  },
  "samacheer/biology/class11": {
   "reviewed_to": null,
   "total": 1063,
-  "retired": 58
+  "retired": 72
  },
  "samacheer/biology/class12": {
   "reviewed_to": null,
@@ -147,17 +147,17 @@
  "samacheer/computer/class6": {
   "reviewed_to": null,
   "total": 134,
-  "retired": 8
+  "retired": 7
  },
  "samacheer/computer/class7": {
   "reviewed_to": null,
   "total": 193,
-  "retired": 7
+  "retired": 3
  },
  "samacheer/computer/class8": {
   "reviewed_to": null,
   "total": 194,
-  "retired": 5
+  "retired": 0
  },
  "samacheer/computer/class9": {
   "reviewed_to": null,
@@ -172,11 +172,746 @@
  "samacheer/computer/class11": {
   "reviewed_to": null,
   "total": 506,
-  "retired": 29
+  "retired": 27
  },
  "samacheer/computer/class12": {
   "reviewed_to": null,
   "total": 332,
+  "retired": 9
+ },
+ "ncert/biology/class12": {
+  "reviewed_to": null,
+  "total": 380,
+  "retired": 1
+ },
+ "ncert/chemistry/class12": {
+  "reviewed_to": null,
+  "total": 1084,
+  "retired": 1
+ },
+ "ncert/geography/class11": {
+  "reviewed_to": null,
+  "total": 392,
+  "retired": 0
+ },
+ "ncert/geography/class12": {
+  "reviewed_to": null,
+  "total": 400,
+  "retired": 0
+ },
+ "ncert/history/class11": {
+  "reviewed_to": null,
+  "total": 455,
+  "retired": 0
+ },
+ "ncert/history/class12": {
+  "reviewed_to": null,
+  "total": 466,
+  "retired": 0
+ },
+ "ncert/maths/class10": {
+  "reviewed_to": null,
+  "total": 1197,
   "retired": 11
+ },
+ "ncert/maths/class8": {
+  "reviewed_to": null,
+  "total": 1069,
+  "retired": 6
+ },
+ "ncert/maths/class9": {
+  "reviewed_to": null,
+  "total": 1064,
+  "retired": 3
+ },
+ "ncert/polity/class12": {
+  "reviewed_to": null,
+  "total": 390,
+  "retired": 0
+ },
+ "ncert/polity/class7": {
+  "reviewed_to": null,
+  "total": 299,
+  "retired": 0
+ },
+ "rrb/maths/algebra": {
+  "reviewed_to": null,
+  "total": 2039,
+  "retired": 2
+ },
+ "rrb/maths/arithmetic": {
+  "reviewed_to": null,
+  "total": 1645,
+  "retired": 6
+ },
+ "rrb/maths/geometry": {
+  "reviewed_to": null,
+  "total": 1864,
+  "retired": 11
+ },
+ "rrb/maths/number-system": {
+  "reviewed_to": null,
+  "total": 3093,
+  "retired": 25
+ },
+ "rrb/maths/time-work": {
+  "reviewed_to": null,
+  "total": 1893,
+  "retired": 9
+ },
+ "rrb/reasoning/coding": {
+  "reviewed_to": null,
+  "total": 109,
+  "retired": 21
+ },
+ "samacheer/english/class10": {
+  "reviewed_to": null,
+  "total": 913,
+  "retired": 0
+ },
+ "samacheer/english/class12": {
+  "reviewed_to": null,
+  "total": 823,
+  "retired": 3
+ },
+ "samacheer/english/class6": {
+  "reviewed_to": null,
+  "total": 878,
+  "retired": 0
+ },
+ "samacheer/english/class8": {
+  "reviewed_to": null,
+  "total": 835,
+  "retired": 0
+ },
+ "samacheer/english/class9": {
+  "reviewed_to": null,
+  "total": 837,
+  "retired": 0
+ },
+ "samacheer/history/class6": {
+  "reviewed_to": null,
+  "total": 365,
+  "retired": 0
+ },
+ "samacheer/history/class7": {
+  "reviewed_to": null,
+  "total": 375,
+  "retired": 1
+ },
+ "samacheer/history/class8": {
+  "reviewed_to": null,
+  "total": 429,
+  "retired": 1
+ },
+ "samacheer/maths/class10": {
+  "reviewed_to": null,
+  "total": 300,
+  "retired": 2
+ },
+ "samacheer/maths/class7": {
+  "reviewed_to": null,
+  "total": 517,
+  "retired": 1
+ },
+ "samacheer/maths/class8": {
+  "reviewed_to": null,
+  "total": 504,
+  "retired": 2
+ },
+ "samacheer/maths/class9": {
+  "reviewed_to": null,
+  "total": 368,
+  "retired": 2
+ },
+ "samacheer/science/class10": {
+  "reviewed_to": null,
+  "total": 520,
+  "retired": 2
+ },
+ "samacheer/science/class6": {
+  "reviewed_to": null,
+  "total": 452,
+  "retired": 1
+ },
+ "samacheer/science/class7": {
+  "reviewed_to": null,
+  "total": 589,
+  "retired": 0
+ },
+ "samacheer/science/class8": {
+  "reviewed_to": null,
+  "total": 531,
+  "retired": 1
+ },
+ "samacheer/science/class9": {
+  "reviewed_to": null,
+  "total": 595,
+  "retired": 3
+ },
+ "samacheer/social-science/class10": {
+  "reviewed_to": null,
+  "total": 89,
+  "retired": 2
+ },
+ "samacheer/social-science/class6": {
+  "reviewed_to": null,
+  "total": 138,
+  "retired": 5
+ },
+ "samacheer/social-science/class7": {
+  "reviewed_to": null,
+  "total": 131,
+  "retired": 1
+ },
+ "samacheer/social-science/class8": {
+  "reviewed_to": null,
+  "total": 174,
+  "retired": 5
+ },
+ "samacheer/social-science/class9": {
+  "reviewed_to": null,
+  "total": 7,
+  "retired": 1
+ },
+ "samacheer/tamil/class10": {
+  "reviewed_to": null,
+  "total": 492,
+  "retired": 5
+ },
+ "samacheer/tamil/class11": {
+  "reviewed_to": null,
+  "total": 161,
+  "retired": 9
+ },
+ "samacheer/tamil/class12": {
+  "reviewed_to": null,
+  "total": 189,
+  "retired": 3
+ },
+ "samacheer/tamil/class6": {
+  "reviewed_to": null,
+  "total": 652,
+  "retired": 2
+ },
+ "samacheer/tamil/class7": {
+  "reviewed_to": null,
+  "total": 618,
+  "retired": 3
+ },
+ "samacheer/tamil/class8": {
+  "reviewed_to": null,
+  "total": 615,
+  "retired": 2
+ },
+ "samacheer/tamil/class9": {
+  "reviewed_to": null,
+  "total": 620,
+  "retired": 4
+ },
+ "ssc/economy/banking": {
+  "reviewed_to": null,
+  "total": 400,
+  "retired": 0
+ },
+ "ssc/economy/economy": {
+  "reviewed_to": null,
+  "total": 410,
+  "retired": 0
+ },
+ "ssc/english/comprehension": {
+  "reviewed_to": null,
+  "total": 400,
+  "retired": 0
+ },
+ "ssc/english/grammar": {
+  "reviewed_to": null,
+  "total": 1679,
+  "retired": 3
+ },
+ "ssc/english/vocabulary": {
+  "reviewed_to": null,
+  "total": 923,
+  "retired": 2
+ },
+ "ssc/history/ancient": {
+  "reviewed_to": null,
+  "total": 400,
+  "retired": 0
+ },
+ "ssc/history/modern": {
+  "reviewed_to": null,
+  "total": 400,
+  "retired": 0
+ },
+ "ssc/history/world": {
+  "reviewed_to": null,
+  "total": 400,
+  "retired": 0
+ },
+ "ssc/polity/constitution": {
+  "reviewed_to": null,
+  "total": 701,
+  "retired": 0
+ },
+ "ssc/quant/algebra": {
+  "reviewed_to": null,
+  "total": 1502,
+  "retired": 1
+ },
+ "ssc/quant/geometry": {
+  "reviewed_to": null,
+  "total": 1243,
+  "retired": 4
+ },
+ "ssc/quant/number-system": {
+  "reviewed_to": null,
+  "total": 2787,
+  "retired": 8
+ },
+ "ssc/quant/percentage": {
+  "reviewed_to": null,
+  "total": 3415,
+  "retired": 0
+ },
+ "ssc/quant/profit-loss": {
+  "reviewed_to": null,
+  "total": 3493,
+  "retired": 11
+ },
+ "ssc/quant/ratio-proportion": {
+  "reviewed_to": null,
+  "total": 3402,
+  "retired": 8
+ },
+ "ssc/quant/si-ci": {
+  "reviewed_to": null,
+  "total": 3210,
+  "retired": 25
+ },
+ "ssc/quant/simplification": {
+  "reviewed_to": null,
+  "total": 267,
+  "retired": 3
+ },
+ "ssc/quant/statistics": {
+  "reviewed_to": null,
+  "total": 1302,
+  "retired": 3
+ },
+ "ssc/quant/trigonometry": {
+  "reviewed_to": null,
+  "total": 1319,
+  "retired": 7
+ },
+ "ssc/reasoning/analogy": {
+  "reviewed_to": null,
+  "total": 539,
+  "retired": 0
+ },
+ "ssc/reasoning/coding-decoding": {
+  "reviewed_to": null,
+  "total": 640,
+  "retired": 25
+ },
+ "ssc/reasoning/direction-sense": {
+  "reviewed_to": null,
+  "total": 500,
+  "retired": 7
+ },
+ "ssc/reasoning/matrix-puzzle": {
+  "reviewed_to": null,
+  "total": 500,
+  "retired": 4
+ },
+ "ssc/reasoning/non-verbal": {
+  "reviewed_to": null,
+  "total": 500,
+  "retired": 26
+ },
+ "ssc/reasoning/series": {
+  "reviewed_to": null,
+  "total": 540,
+  "retired": 17
+ },
+ "ssc/reasoning/syllogism": {
+  "reviewed_to": null,
+  "total": 500,
+  "retired": 1
+ },
+ "ssc/reasoning/venn-diagram": {
+  "reviewed_to": null,
+  "total": 500,
+  "retired": 8
+ },
+ "ssc/science/physics": {
+  "reviewed_to": null,
+  "total": 1118,
+  "retired": 1
+ },
+ "tnpsc/economics/agriculture": {
+  "reviewed_to": null,
+  "total": 581,
+  "retired": 0
+ },
+ "tnpsc/economics/current-schemes": {
+  "reviewed_to": null,
+  "total": 580,
+  "retired": 0
+ },
+ "tnpsc/economics/industry": {
+  "reviewed_to": null,
+  "total": 700,
+  "retired": 1
+ },
+ "tnpsc/economics/poverty-welfare": {
+  "reviewed_to": null,
+  "total": 300,
+  "retired": 0
+ },
+ "tnpsc/geography/india-rivers": {
+  "reviewed_to": null,
+  "total": 300,
+  "retired": 0
+ },
+ "tnpsc/geography/world-geography": {
+  "reviewed_to": null,
+  "total": 300,
+  "retired": 0
+ },
+ "tnpsc/history/art-culture": {
+  "reviewed_to": null,
+  "total": 300,
+  "retired": 0
+ },
+ "tnpsc/history/british-rule": {
+  "reviewed_to": null,
+  "total": 300,
+  "retired": 0
+ },
+ "tnpsc/history/chola-pandya": {
+  "reviewed_to": null,
+  "total": 300,
+  "retired": 0
+ },
+ "tnpsc/history/freedom-struggle": {
+  "reviewed_to": null,
+  "total": 300,
+  "retired": 0
+ },
+ "tnpsc/history/gupta-post-gupta": {
+  "reviewed_to": null,
+  "total": 300,
+  "retired": 0
+ },
+ "tnpsc/history/indus-valley": {
+  "reviewed_to": null,
+  "total": 300,
+  "retired": 1
+ },
+ "tnpsc/history/jainism-buddhism": {
+  "reviewed_to": null,
+  "total": 300,
+  "retired": 1
+ },
+ "tnpsc/history/maratha": {
+  "reviewed_to": null,
+  "total": 300,
+  "retired": 0
+ },
+ "tnpsc/history/mauryan": {
+  "reviewed_to": null,
+  "total": 307,
+  "retired": 0
+ },
+ "tnpsc/history/medieval-india": {
+  "reviewed_to": null,
+  "total": 314,
+  "retired": 0
+ },
+ "tnpsc/history/vijayanagara": {
+  "reviewed_to": null,
+  "total": 300,
+  "retired": 0
+ },
+ "tnpsc/maths/algebra": {
+  "reviewed_to": null,
+  "total": 1963,
+  "retired": 5
+ },
+ "tnpsc/maths/data-interpretation": {
+  "reviewed_to": null,
+  "total": 1962,
+  "retired": 9
+ },
+ "tnpsc/maths/geometry": {
+  "reviewed_to": null,
+  "total": 1773,
+  "retired": 1
+ },
+ "tnpsc/maths/hcf-lcm": {
+  "reviewed_to": null,
+  "total": 1828,
+  "retired": 6
+ },
+ "tnpsc/maths/number-system": {
+  "reviewed_to": null,
+  "total": 1939,
+  "retired": 3
+ },
+ "tnpsc/maths/percentage": {
+  "reviewed_to": null,
+  "total": 1919,
+  "retired": 12
+ },
+ "tnpsc/maths/profit-loss": {
+  "reviewed_to": null,
+  "total": 1940,
+  "retired": 6
+ },
+ "tnpsc/maths/ratio-proportion": {
+  "reviewed_to": null,
+  "total": 1393,
+  "retired": 5
+ },
+ "tnpsc/maths/series": {
+  "reviewed_to": null,
+  "total": 1642,
+  "retired": 4
+ },
+ "tnpsc/maths/simple-interest": {
+  "reviewed_to": null,
+  "total": 1677,
+  "retired": 2
+ },
+ "tnpsc/maths/simplification": {
+  "reviewed_to": null,
+  "total": 1110,
+  "retired": 4
+ },
+ "tnpsc/polity/constitution-making": {
+  "reviewed_to": null,
+  "total": 300,
+  "retired": 0
+ },
+ "tnpsc/polity/dpsp": {
+  "reviewed_to": null,
+  "total": 300,
+  "retired": 0
+ },
+ "tnpsc/polity/parliament": {
+  "reviewed_to": null,
+  "total": 300,
+  "retired": 2
+ },
+ "tnpsc/polity/president-pm": {
+  "reviewed_to": null,
+  "total": 269,
+  "retired": 1
+ },
+ "tnpsc/science/biology-cells": {
+  "reviewed_to": null,
+  "total": 70,
+  "retired": 0
+ },
+ "tnpsc/science/chemistry-acids": {
+  "reviewed_to": null,
+  "total": 109,
+  "retired": 0
+ },
+ "tnpsc/science/chemistry-reactions": {
+  "reviewed_to": null,
+  "total": 60,
+  "retired": 1
+ },
+ "tnpsc/science/physics-electricity": {
+  "reviewed_to": null,
+  "total": 78,
+  "retired": 1
+ },
+ "tnpsc/tamil/ezhuthu-ilakkanam": {
+  "reviewed_to": null,
+  "total": 90,
+  "retired": 2
+ },
+ "tnpsc/tamil/modern-tamil": {
+  "reviewed_to": null,
+  "total": 67,
+  "retired": 1
+ },
+ "upsc/csat-english/csat-english": {
+  "reviewed_to": null,
+  "total": 1456,
+  "retired": 5
+ },
+ "upsc/csat-quant/data-sufficiency": {
+  "reviewed_to": null,
+  "total": 400,
+  "retired": 0
+ },
+ "upsc/csat-quant/logical-reasoning": {
+  "reviewed_to": null,
+  "total": 400,
+  "retired": 3
+ },
+ "upsc/csat-quant/number-system": {
+  "reviewed_to": null,
+  "total": 400,
+  "retired": 0
+ },
+ "upsc/csat-quant/percentage": {
+  "reviewed_to": null,
+  "total": 400,
+  "retired": 2
+ },
+ "upsc/csat-quant/speed-distance": {
+  "reviewed_to": null,
+  "total": 400,
+  "retired": 0
+ },
+ "upsc/csat-quant/time-work": {
+  "reviewed_to": null,
+  "total": 400,
+  "retired": 6
+ },
+ "upsc/economics/agriculture-eco": {
+  "reviewed_to": null,
+  "total": 689,
+  "retired": 0
+ },
+ "upsc/economics/budget-fiscal": {
+  "reviewed_to": null,
+  "total": 700,
+  "retired": 0
+ },
+ "upsc/economics/economic-reforms": {
+  "reviewed_to": null,
+  "total": 699,
+  "retired": 0
+ },
+ "upsc/economics/industry-msme": {
+  "reviewed_to": null,
+  "total": 688,
+  "retired": 0
+ },
+ "upsc/economics/inflation": {
+  "reviewed_to": null,
+  "total": 700,
+  "retired": 0
+ },
+ "upsc/economics/money-banking": {
+  "reviewed_to": null,
+  "total": 700,
+  "retired": 0
+ },
+ "upsc/economics/national-income": {
+  "reviewed_to": null,
+  "total": 654,
+  "retired": 0
+ },
+ "upsc/economics/poverty-inclusion": {
+  "reviewed_to": null,
+  "total": 692,
+  "retired": 0
+ },
+ "upsc/economics/trade-balance": {
+  "reviewed_to": null,
+  "total": 553,
+  "retired": 0
+ },
+ "upsc/environment/biodiversity": {
+  "reviewed_to": null,
+  "total": 400,
+  "retired": 0
+ },
+ "upsc/environment/climate-change": {
+  "reviewed_to": null,
+  "total": 400,
+  "retired": 0
+ },
+ "upsc/environment/ecology-basics": {
+  "reviewed_to": null,
+  "total": 400,
+  "retired": 0
+ },
+ "upsc/environment/env-laws": {
+  "reviewed_to": null,
+  "total": 400,
+  "retired": 0
+ },
+ "upsc/environment/pollution": {
+  "reviewed_to": null,
+  "total": 400,
+  "retired": 0
+ },
+ "upsc/environment/protected-areas": {
+  "reviewed_to": null,
+  "total": 400,
+  "retired": 0
+ },
+ "upsc/geography/rivers-drainage": {
+  "reviewed_to": null,
+  "total": 400,
+  "retired": 0
+ },
+ "upsc/history/1857-revolt": {
+  "reviewed_to": null,
+  "total": 400,
+  "retired": 0
+ },
+ "upsc/history/british-conquest": {
+  "reviewed_to": null,
+  "total": 400,
+  "retired": 0
+ },
+ "upsc/history/gandhi-era": {
+  "reviewed_to": null,
+  "total": 400,
+  "retired": 0
+ },
+ "upsc/history/indus-valley": {
+  "reviewed_to": null,
+  "total": 400,
+  "retired": 0
+ },
+ "upsc/history/national-movement": {
+  "reviewed_to": null,
+  "total": 400,
+  "retired": 0
+ },
+ "upsc/history/post-1947": {
+  "reviewed_to": null,
+  "total": 400,
+  "retired": 1
+ },
+ "upsc/history/prehistoric": {
+  "reviewed_to": null,
+  "total": 400,
+  "retired": 0
+ },
+ "upsc/polity/constitutional-bodies": {
+  "reviewed_to": null,
+  "total": 400,
+  "retired": 0
+ },
+ "upsc/polity/dpsp": {
+  "reviewed_to": null,
+  "total": 400,
+  "retired": 1
+ },
+ "upsc/polity/federalism": {
+  "reviewed_to": null,
+  "total": 401,
+  "retired": 0
+ },
+ "upsc/science/chemistry": {
+  "reviewed_to": null,
+  "total": 400,
+  "retired": 0
+ },
+ "upsc/science/space-tech": {
+  "reviewed_to": null,
+  "total": 400,
+  "retired": 0
  }
 }

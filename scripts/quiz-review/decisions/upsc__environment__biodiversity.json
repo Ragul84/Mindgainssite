@@ -1,0 +1,357 @@
+{
+ "retire": [],
+ "fix": {
+  "79": {
+   "options": [
+    "1 only",
+    "2 only",
+    "Both 1 and 2",
+    "Neither 1 nor 2"
+   ]
+  },
+  "199": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "200": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "201": {
+   "options": [
+    "1 only",
+    "2 only",
+    "3 only",
+    "2 and 3 only"
+   ]
+  },
+  "202": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "203": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "204": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "205": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "206": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "207": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "208": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "218": {
+   "options": [
+    "1 only",
+    "2 only",
+    "Both 1 and 2",
+    "Neither 1 nor 2"
+   ]
+  },
+  "219": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "220": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 only",
+    "1, 2 and 3"
+   ]
+  },
+  "221": {
+   "options": [
+    "indirectly protects many other species sharing its habitat",
+    "indicates the health of an ecosystem through its population trends",
+    "is required for the survival of a keystone predator",
+    "has the highest genetic diversity among its taxonomic group"
+   ]
+  },
+  "222": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "223": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "224": {
+   "options": [
+    "1 and 2 only",
+    "1 and 3 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "225": {
+   "options": [
+    "increased species richness at habitat boundaries due to mixing of two communities",
+    "reduction in genetic diversity at the edges of a species' distribution range",
+    "loss of species from the outermost layers of a forest due to human disturbance",
+    "changes in microclimate caused by fragmentation that alter species composition"
+   ]
+  },
+  "226": {
+   "options": [
+    "1 and 2 only",
+    "1 and 3 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "227": {
+   "options": [
+    "1 and 3 only",
+    "1, 3 and 4 only",
+    "2, 3 and 4 only",
+    "1, 2, 3 and 4"
+   ]
+  },
+  "238": {
+   "options": [
+    "1 only",
+    "2 only",
+    "Both 1 and 2",
+    "Neither 1 nor 2"
+   ]
+  },
+  "239": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3",
+    "1 only"
+   ]
+  },
+  "240": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3",
+    "1 only"
+   ]
+  },
+  "241": {
+   "options": [
+    "1 only",
+    "1 and 3 only",
+    "2 and 3 only",
+    "1, 2 and 3"
+   ]
+  },
+  "242": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3",
+    "1 only"
+   ]
+  },
+  "243": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3",
+    "1 only"
+   ]
+  },
+  "244": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3",
+    "1 only"
+   ]
+  },
+  "245": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3",
+    "1 only"
+   ]
+  },
+  "246": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3",
+    "1 only"
+   ]
+  },
+  "247": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1, 2 and 3",
+    "1 only"
+   ]
+  },
+  "278": {
+   "options": [
+    "1 only",
+    "2 only",
+    "Both 1 and 2",
+    "Neither 1 nor 2"
+   ]
+  },
+  "279": {
+   "options": [
+    "1 only",
+    "2 only",
+    "Both 1 and 2",
+    "Neither 1 nor 2"
+   ]
+  },
+  "298": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1,2 and 3"
+   ]
+  },
+  "299": {
+   "options": [
+    "1 only",
+    "1 and 3 only",
+    "2 and 3 only",
+    "1,2 and 3"
+   ]
+  },
+  "300": {
+   "options": [
+    "Species that create, modify or maintain habitats for other species",
+    "Species that have the largest biomass in an ecosystem",
+    "Species that are at the top of the food chain",
+    "Species that are introduced and become invasive"
+   ]
+  },
+  "301": {
+   "options": [
+    "1 only",
+    "1 and 2 only",
+    "1,2 and 3",
+    "2 and 3 only"
+   ]
+  },
+  "302": {
+   "options": [
+    "Species richness is the number of individuals per species",
+    "Species evenness refers to the relative abundance of each species",
+    "A community with high evenness always has high species richness",
+    "Both A and B are correct"
+   ]
+  },
+  "303": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1,2 and 3"
+   ]
+  },
+  "304": {
+   "options": [
+    "To contain superlative natural phenomena or areas of exceptional natural beauty",
+    "To be an outstanding example representing major stages of earth's history",
+    "To be the largest contiguous forest in the world",
+    "To contain the most important and significant natural habitats for in-situ conservation of biological diversity"
+   ]
+  },
+  "305": {
+   "options": [
+    "1 only",
+    "1 and 3 only",
+    "2 and 3 only",
+    "1,2 and 3"
+   ]
+  },
+  "306": {
+   "options": [
+    "Pollination of crops by bees",
+    "Timber production from forests",
+    "Nutrient cycling in soil",
+    "Recreation and ecotourism"
+   ]
+  },
+  "307": {
+   "options": [
+    "1 and 2 only",
+    "2 and 3 only",
+    "1 and 3 only",
+    "1,2 and 3"
+   ]
+  },
+  "399": {
+   "options": [
+    "1 and 3 only",
+    "2 and 3 only",
+    "1 and 2 only",
+    "1, 2 and 3"
+   ]
+  }
+ }
+}

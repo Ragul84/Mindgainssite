@@ -1,12 +1,8 @@
 {
  "retire": [
-  136,
-  137,
-  175,
-  176,
   177,
-  178,
-  179
+  179,
+  185
  ],
  "fix": {
   "20": {
@@ -217,6 +213,66 @@
    ],
    "answer_index": 2,
    "explanation": "Pascal made the Pascaline, Babbage designed the Analytical Engine, Hollerith the tabulating machine and Napier invented Napier's bones."
+  },
+  "136": {
+   "question": "Match the identity theft risk to the action: List I A. Public Wi-Fi B. Weak Password C. Phishing Link D. Social Media List II 1. Packet sniffing 2. Credential theft 3. Over-sharing info 4. Brute force attack",
+   "options": [
+    "A-1, B-4, C-2, D-3",
+    "A-1, B-4, C-3, D-2",
+    "A-1, B-3, C-2, D-4",
+    "A-1, B-2, C-4, D-3"
+   ],
+   "answer_index": 0,
+   "explanation": "Public Wi-Fi – Packet sniffing; Weak Password – Brute force attack; Phishing Link – Credential theft; Social Media – Over-sharing info.",
+   "retired": false
+  },
+  "137": {
+   "question": "Match the user action to the security outcome: List I A. Updating OS B. Using 2FA C. Using HTTPS D. Backing up List II 1. Patching bugs 2. Extra security 3. Encrypted traffic 4. Data recovery",
+   "options": [
+    "A-1, B-4, C-3, D-2",
+    "A-1, B-2, C-3, D-4",
+    "A-4, B-2, C-3, D-1",
+    "A-1, B-2, C-4, D-3"
+   ],
+   "answer_index": 1,
+   "explanation": "Updating OS – Patching bugs; Using 2FA – Extra security; Using HTTPS – Encrypted traffic; Backing up – Data recovery.",
+   "retired": false
+  },
+  "175": {
+   "question": "Match the feature to the generation: List I A. Machine Language B. Assembly Language C. High Level Language D. AI/Natural Language List II 1. 3rd Gen 2. 2nd Gen 3. 5th Gen 4. 1st Gen",
+   "options": [
+    "A-1, B-2, C-4, D-3",
+    "A-4, B-1, C-2, D-3",
+    "A-2, B-4, C-1, D-3",
+    "A-4, B-2, C-1, D-3"
+   ],
+   "answer_index": 3,
+   "explanation": "Machine Language – 1st Gen; Assembly Language – 2nd Gen; High Level Language – 3rd Gen; AI/Natural Language – 5th Gen.",
+   "retired": false
+  },
+  "176": {
+   "question": "Match the storage device to the era: List I A. Magnetic Drum B. Magnetic Core C. Magnetic Disk D. SSD/Flash List II 1. 1st Gen 2. 3rd Gen 3. 2nd Gen 4. 4th/5th Gen",
+   "options": [
+    "A-1, B-3, C-2, D-4",
+    "A-1, B-2, C-3, D-4",
+    "A-2, B-3, C-1, D-4",
+    "A-1, B-3, C-4, D-2"
+   ],
+   "answer_index": 0,
+   "explanation": "Magnetic Drum – 1st Gen; Magnetic Core – 2nd Gen; Magnetic Disk – 3rd Gen; SSD/Flash – 4th/5th Gen.",
+   "retired": false
+  },
+  "178": {
+   "question": "Match the component to the generation: List I A. Vacuum Tube B. Transistor C. IC D. VLSI List II 1. 1st Gen 2. 3rd Gen 3. 2nd Gen 4. 4th Gen",
+   "options": [
+    "A-3, B-1, C-2, D-4",
+    "A-1, B-3, C-4, D-2",
+    "A-1, B-3, C-2, D-4",
+    "A-4, B-3, C-2, D-1"
+   ],
+   "answer_index": 2,
+   "explanation": "Vacuum Tube – 1st Gen; Transistor – 2nd Gen; IC – 3rd Gen; VLSI – 4th Gen.",
+   "retired": false
   }
  }
 }

@@ -172,7 +172,23 @@
    "An overflow of a large amount of water beyond its normal confines."
   ]
  },
- "95": "retire",
+ "95": {
+  "stem": "Match the following types of hazards with their examples:",
+  "L": [
+   "Geological Hazard",
+   "Hydrological Hazard",
+   "Meteorological Hazard",
+   "Climatological Hazard"
+  ],
+  "R": [
+   "Volcanic Eruption",
+   "Flood",
+   "Cyclone",
+   "Drought"
+  ],
+  "recovered": true,
+  "why": "Geological Hazard – Volcanic Eruption; Hydrological Hazard – Flood; Meteorological Hazard – Cyclone; Climatological Hazard – Drought."
+ },
  "102": {
   "lh": "Phase",
   "rh": "Description",

@@ -1,5 +1,6 @@
 {
  "retire": [
+  49,
   112,
   113,
   114,
@@ -11,7 +12,6 @@
   146,
   147,
   148,
-  160,
   196,
   200,
   217,
@@ -149,6 +149,510 @@
    ],
    "answer_index": 1,
    "explanation": "Pauling's method estimates ionic radii; Slater's rules estimate effective nuclear charge."
+  },
+  "160": {
+   "question": "Match the following terms with their definitions: List I A. System B. Surroundings C. Enthalpy D. Spontaneous process E. Work List II 1. Everything outside the system 2. Energy transfer due to force applied 3. Process that occurs without external influence 4. Heat content at constant pressure 5. Part of the universe under study",
+   "options": [
+    "A-5, B-1, C-4, D-3, E-2",
+    "A-5, B-2, C-4, D-3, E-1",
+    "A-2, B-1, C-4, D-3, E-5",
+    "A-5, B-1, C-4, D-2, E-3"
+   ],
+   "answer_index": 0,
+   "explanation": "System – Part of the universe under study; Surroundings – Everything outside the system; Enthalpy – Heat content at constant pressure; Spontaneous process – Process that occurs without external influence; Work – Energy transfer due to force applied.",
+   "retired": false
+  },
+  "24": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true, R false",
+    "A false, R true"
+   ]
+  },
+  "38": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "39": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "40": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "41": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "42": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "61": {
+   "question": "What is the chemical formula for hydrogen peroxide?"
+  },
+  "69": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "70": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "71": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "72": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "73": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "95": {
+   "question": "Which of the following is the correct sequence of alkali metals?"
+  },
+  "101": {
+   "question": "Which of the following are mentioned as sources/minerals? 1. Rock salt 2. Sylvite 3. Spodumene"
+  },
+  "102": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "103": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "104": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "105": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "106": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "117": {
+   "question": "What are the general physical properties of alkali metals?"
+  },
+  "125": {
+   "question": "What is the definition of a gas?"
+  },
+  "126": {
+   "question": "What is the definition of a vapour?"
+  },
+  "127": {
+   "question": "What is the simplest of the states of matter?"
+  },
+  "134": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "135": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "136": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "137": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "138": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "208": {
+   "question": "Most chemicals in our daily life are:"
+  },
+  "210": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "211": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "212": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "222": {
+   "question": "Which of the following is a gaseous solution?"
+  },
+  "225": {
+   "question": "Which of the following is a synthetic fibre?"
+  },
+  "226": {
+   "question": "Which of these is a pharmaceutical example?"
+  },
+  "230": {
+   "question": "Which of the following is a natural fibre?"
+  },
+  "238": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "239": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "240": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "241": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "242": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "251": {
+   "question": "Which of these is a soft allotrope of carbon?"
+  },
+  "263": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "264": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "265": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "266": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "267": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "282": {
+   "question": "Which of the following is NOT a diatomic gas?"
+  },
+  "342": {
+   "question": "What is the primary use of hydrocarbons?"
+  },
+  "350": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "351": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "352": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "353": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "354": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "387": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "388": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "389": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "390": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "391": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "406": {
+   "question": "Which of the following is NOT a halogen?"
+  },
+  "421": {
+   "question": "What does the term 'environment' include?"
+  },
+  "430": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "431": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "432": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "433": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "434": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "467": {
+   "question": "Actinide elements are analogues to which series?"
+  },
+  "471": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "476": {
+   "question": "Which of the following is listed as a pharmaceutical example?"
+  },
+  "485": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "486": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "487": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "488": {
+   "options": [
+    "Both A and R true, R explains A",
+    "Both true, R doesn't explain A",
+    "A true R false",
+    "A false R true"
+   ]
+  },
+  "494": {
+   "question": "Which of the following is an example of a synthetic fiber?"
   }
  }
 }

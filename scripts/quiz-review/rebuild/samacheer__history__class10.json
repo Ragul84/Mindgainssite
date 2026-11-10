@@ -141,7 +141,23 @@
   ]
  },
  "200": "retire",
- "201": "retire",
+ "201": {
+  "stem": "Match the regions with their positions:",
+  "L": [
+   "Arunachal Pradesh",
+   "Gujarat",
+   "Jammu and Kashmir",
+   "Kanniyakumari"
+  ],
+  "R": [
+   "East",
+   "West",
+   "North",
+   "South"
+  ],
+  "recovered": true,
+  "why": "Arunachal Pradesh – East; Gujarat – West; Jammu and Kashmir – North; Kanniyakumari – South."
+ },
  "202": "retire",
  "230": "retire",
  "231": "retire",
@@ -167,7 +183,23 @@
  "233": "retire",
  "234": "retire",
  "262": "retire",
- "263": "retire",
+ "263": {
+  "stem": "Match the district to the state:",
+  "L": [
+   "Singhbhum",
+   "Sundargarh",
+   "Bilaspur",
+   "Shimoga"
+  ],
+  "R": [
+   "Jharkhand",
+   "Odisha",
+   "Chhattisgarh",
+   "Karnataka"
+  ],
+  "recovered": true,
+  "why": "Singhbhum – Jharkhand; Sundargarh – Odisha; Bilaspur – Chhattisgarh; Shimoga – Karnataka."
+ },
  "264": "retire",
  "265": "retire",
  "266": "retire",
