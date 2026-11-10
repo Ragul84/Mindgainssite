@@ -2286,13 +2286,41 @@ function loop(now){let dt=Math.min(.04,(now-last)/1000);last=now;if(S&&S.slowmo>
 requestAnimationFrame(loop);
 </script>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
-<script>/* 3D world test: ?r3d=1 turns it on (remembered), ?r3d=0 turns it off. Read here, before social.js clears the query. */
-{const q=location.search;if(/[?&]r3d=1/.test(q))localStorage.setItem('cor_r3d','1');if(/[?&]r3d=0/.test(q))localStorage.setItem('cor_r3d','0')}</script>
-<script type="module">/* 3D is the default. Stays 2D when the player chose 2D (?r3d=0 or Settings), when this device fell back for speed,
-   when the game's quality is set to low, or when WebGL is missing. */
+<style>
+/* 3D loading screen: shown only when this device will run the 3D world */
+#boot{position:absolute;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+  background:linear-gradient(#41b7ff,#bfeaff 62%,#8fd36a 62%,#6fbf4f);transition:opacity .45s ease}
+#boot.out{opacity:0;pointer-events:none}
+#boot .miga{width:150px}
+#boot h1{margin:0;font-family:var(--display);font-weight:400;font-size:44px;color:#fff;text-shadow:0 4px 0 rgba(20,33,61,.35)}
+#boot .bt{width:min(260px,70%);height:14px;border-radius:7px;background:rgba(255,255,255,.55);overflow:hidden}
+#boot .bt i{display:block;height:100%;width:4%;border-radius:7px;background:#58cc02;transition:width .3s ease}
+#boot p{margin:0;font-weight:900;font-size:14px;color:#14532d}
+</style>
+<script>/* 3D world switches: ?r3d=1 forces it on, ?r3d=0 off (remembered). Read here, before social.js clears the query. */
+{const q=location.search;if(/[?&]r3d=1/.test(q))localStorage.setItem('cor_r3d','1');if(/[?&]r3d=0/.test(q))localStorage.setItem('cor_r3d','0')}
+/* 3D is the default. Stays 2D when the player chose 2D (?r3d=0 or Settings), when this device fell back for speed,
+   when the game's quality is set to low, or when WebGL2 is missing. */
 {const v=localStorage.getItem('cor_r3d'),gl=(()=>{try{return !!document.createElement('canvas').getContext('webgl2')}catch(e){return false}})();
  let low=false;try{low=(JSON.parse(localStorage.getItem('cor_p')||'{}').settings||{}).quality==='low'}catch(e){}
- if(v==='1'||(v!=='0'&&v!=='fail'&&gl&&!low))import('./r3d.js?v=5').catch(e=>console.error(e))}</script>
+ window.__want3d=v==='1'||(v!=='0'&&v!=='fail'&&gl&&!low)}
+/* Loading screen: the game opens straight into 3D, never swapping style mid-race. The bar creeps while the
+   engine downloads, fills when the first 3D frame is drawn, then fades out. After 15 s we give up for this
+   visit and open in 2D, so a slow connection never leaves a player staring at a bar. */
+if(window.__want3d){
+  const b=document.createElement('div');b.id='boot';
+  b.innerHTML=(typeof miga==='function'?miga('cheer'):'')+'<h1>Cut-Off Run</h1><div class="bt"><i></i></div><p>Loading the 3D world…</p>';
+  document.getElementById('wrap').appendChild(b);
+  const bar=b.querySelector('i');let pct=4,done=false;
+  const tick=setInterval(()=>{if(done)return;pct+=(90-pct)*.08;bar.style.width=pct+'%'},200);
+  const finish=(ok)=>{if(done)return;done=true;clearInterval(tick);bar.style.width='100%';
+    if(!ok){window.__r3on=false;window.R3D=null;const c3=document.getElementById('c3');if(c3)c3.style.display='none'}
+    setTimeout(()=>{b.classList.add('out');setTimeout(()=>b.remove(),500)},ok?250:0)};
+  addEventListener('r3d-ready',()=>finish(true),{once:true});
+  window.__bootFail=()=>finish(false);
+  setTimeout(()=>finish(false),15000);
+}</script>
+<script type="module">if(window.__want3d)import('./r3d.js?v=6').catch(e=>{console.error(e);window.__bootFail&&__bootFail()});</script>
 <script src="story.js"></script>
 <script src="social.js"></script>
 <script src="replay.js"></script>

@@ -272,8 +272,10 @@ function frame(o) {
   const fz = S ? S.dist : cz + 6;
   sun.target.position.set(S ? S.x : 0, 0, -fz - 4); sun.position.copy(sun.target.position).addScaledVector(SUN, 30);
   renderer.render(scene, cam);
+  if (!readySent) { readySent = true; dispatchEvent(new Event('r3d-ready')); }
   perf();
 }
+let readySent = false;
 
 // ---------------------------------------------------------------- speed: three quality tiers, then 2D
 // Every 2 s of play we look at the average frame time. Too slow steps down a tier (sharpness, shadows,
