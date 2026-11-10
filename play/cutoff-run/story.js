@@ -591,7 +591,7 @@ window.openMap=function(){hideAll();const ov=$('mapov');ov.hidden=false;$('mshee
 window.mapNode=function(l){const m=$('msheet'),boss=ST.isBossLevel(l),ch=ST.chOf(l),ci=ST.chIdx(l),subs=subjFor(l),D=boss?ST.DEF[ch.boss]:null,st=PL.stars[l]||0,lock=l>level,SP=ST.SP();
   m.innerHTML=`<div class="mh"><h3>${l>OPENL()?esc(lvName(l)):`Chapter ${ci+1}, level ${(l-1)%3+1}`}${levelTier(l)?', '+TIER_NAME[levelTier(l)].toLowerCase():''}</h3><button class="x" id="msx">Close</button></div>
     <div class="mrow2"><span class="chip theme">${esc(ch.n)}</span>${subs.map(x=>`<span class="chip">${esc(x)}</span>`).join('')}</div>
-    <div class="foe"><i style="background:${boss?D.c:'#8be36b'}"></i>${boss?'Boss: '+esc(D.n)+', answers in '+esc(D.sub==='MIX'?'all subjects':D.w):'Run, choose your road, grow as '+esc(STAGES[ch.base].n)}</div>
+    ${boss?`<div class="foe"><i style="background:${D.c}"></i>Boss: ${esc(D.n)}, answers in ${esc(D.sub==='MIX'?'all subjects':D.w)}</div>`:''}
     <div><span class="mchip"><img src="${img('it_scroll',()=>ST.itemSprite('scroll'))}">Golden PYQ scroll, 3x marks</span><span class="mchip"><img src="${img('it_chai',()=>ST.itemSprite('chai'))}">Chai cup, free revive</span></div>
     ${SP.letters[ci]?`<div class="mlet">Letter found: ${esc(ST.LETTERS[ci])}</div>`:`<div class="mlet">A letter from home is hidden in this chapter.</div>`}
     ${lock?`<p class="note">Clear level ${l-1} to open this level.</p>`:starRow(st)}

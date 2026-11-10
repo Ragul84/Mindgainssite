@@ -536,6 +536,27 @@ body{background:#0f1c33}
 .r2flame{background:linear-gradient(90deg,#ff8a1f,#ffb347);color:#fff;border-radius:16px;padding:12px 16px;align-items:center}
 .r2flame small{color:#fff;font-weight:800}
 .r2body .more{display:block;width:100%;margin-top:10px;background:#f3f6fc;border-radius:14px;padding:12px;color:#2563eb;font-size:16px}
+/* result v3: one stat strip, one row of two buttons, a slim tab bar */
+.r2stat{display:flex;grid-template-columns:none;align-items:center;gap:0;width:100%;margin:14px 0 0;padding:4px;background:#14213d;border-radius:18px;box-shadow:0 4px 0 #0a1124}
+.r2stat>span{flex:1;display:flex;flex-direction:column;align-items:center;padding:8px 0}
+.r2stat>span+span{border-left:2px solid rgba(255,255,255,.12)}
+.r2stat>span b{font-family:var(--display);font-weight:400;font-size:26px;line-height:1.05;color:#fff}
+.r2stat>span.mk b{color:#5ee89a}
+.r2stat>span small{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#9fb0d4}
+.r2stat>i{font-style:normal;font-family:var(--display);font-size:26px;color:#ffd23f;padding:0 14px 0 8px;background:none;box-shadow:none}
+.r2acts{display:grid;grid-template-columns:1fr 1.35fr;gap:10px;width:100%;margin-top:16px}
+.r2acts.one{grid-template-columns:1fr}
+.r2acts>*{height:60px;white-space:nowrap;box-sizing:border-box}
+.r2acts .btn.r2main{margin:0;width:100%;padding:15px 8px;font-size:21px;border-radius:18px}
+.r2acts .r2sec{margin:0;width:100%;padding:15px 8px;border-radius:18px;font-size:17px;color:#fff;background:#2563eb;border:0;box-shadow:0 5px 0 #1d4ed8;display:flex;align-items:center;justify-content:center;gap:6px}
+.r2acts .r2sec em{font-style:normal;background:#ffd23f;color:#14213d;border-radius:99px;min-width:22px;height:22px;line-height:22px;font-size:14px;padding:0 6px}
+.r2more{margin-top:8px}
+.r2more .r2sec{background:none;border:0;box-shadow:none;color:#2563eb;padding:6px;font-size:15px}
+.r2dock{display:flex;gap:0;margin-top:16px;padding:4px;background:#f3f6fc;border-radius:18px;border:0}
+.r2ic{flex:1;background:none;border:0;box-shadow:none;border-radius:14px;padding:8px 0 6px;gap:3px;font-size:12px;color:#5a6b8c}
+.r2ic svg{width:22px;height:22px;color:#14213d}
+.r2ic.on{background:#fff;box-shadow:0 2px 0 #e3e9f5;color:#14213d}
+.r2ic em{top:2px;right:auto;left:calc(50% + 6px)}
 </style>
 
 <div id="wrap">
@@ -1985,7 +2006,8 @@ function revItem(l){if(!l.ok)return`<li class="w mk">${l.skipped?'<span class="t
   return`<li class="${l.ok?'':'w'}">${l.skipped?'<span class="tag">Skipped</span>':l.locked&&!l.ok?'<span class="tag sure">Sure but wrong</span>':''}<em>${esc(l.q)}</em> Answer: ${esc(l.a)}${l.ok||l.skipped?'':`, you: <s>${esc(l.chose)}</s>`}${l.why?`<div class="rw">${esc(l.why)}${l.src?` <i>(${esc(l.src)})</i>`:''}</div>`:''}</li>`}
 function renderResult(line,tab){const r=lastRes;
   const I=p=>`<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
-  const IC={mis:I('<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.7M12 17h.01"/>'),tgt:I('<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>'),cup:I('<path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 20h8"/>'),shr:I('<circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="m8.2 10.8 7.6-4.4M8.2 13.2l7.6 4.4"/>')};
+  const IC0={mis:I('<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.7M12 17h.01"/>'),tgt:I('<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>'),cup:I('<path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 20h8"/>'),shr:I('<circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="m8.2 10.8 7.6-4.4M8.2 13.2l7.6 4.4"/>')};
+  const IC={mis:I('<path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h11"/><path d="m10 7 4 4M14 7l-4 4"/>'),tgt:I('<path d="M5 21V4"/><path d="M5 4h12l-2.5 4L17 12H5"/>'),cup:IC0.cup,shr:I('<path d="M14 5l6 6-6 6"/><path d="M20 11H11a7 7 0 0 0-7 7v1"/>')};
   ensureMissions();const ML=PL.missions.list,stk=PL.streak.n||0,claim=ML.filter(m=>m.done&&!m.claimed).length;
   const sh=r.sheet||'';
   const rhead2=`<div class="r2top"><span class="r2chip${r.newDay?' up':''}" title="Day streak">🔥 ${stk}</span><button class="r2link" id="goMenu">Menu</button></div>
@@ -1994,11 +2016,12 @@ function renderResult(line,tab){const r=lastRes;
   <h2 class="r2h">${r.quick?`${r.right}/${r.n} correct`:r.win?'Cleared':r.near?'So close!':r.fail==='cutoff'?'Below cut-off':'Batch lost'}</h2>
   ${r.win&&!r.quick?`<div class="r2sub">AIR ${r.air.toLocaleString('en-IN')}</div>`:r.near?`<div class="r2sub">${r.left} more aspirants needed</div>`:''}
   ${(r.mode==='level'||r.mode==='challenge')?starRow(r.stars):''}
-  <button class="r2stat" id="goDet"><div><b>${r.right}/${r.n}</b><small>correct</small></div><div class="mk"><b>+${r.win||r.quick?r.earned:r.notes}</b><small>marks</small></div><i>Details ›</i></button>`;
+  <button class="r2stat" id="goDet"><span><b>${r.right}/${r.n}</b><small>correct</small></span><span class="mk"><b>+${r.win||r.quick?r.earned:r.notes}</b><small>marks</small></span><i aria-label="Details">›</i></button>`;
   const cmp=r.target!=null?`<div class="r2note">${r.score>=r.target?'You beat':'You missed'} your friend's ${r.target.toLocaleString('en-IN')}</div>`:'';
   const unl=r.unlocked.length?`<div class="r2note">New style unlocked: ${esc(r.unlocked.join(', '))}</div>`:'';
   const again=r.quick?'Play again':!r.win?'Retry':r.mode==='level'?'Next level':'Play level '+level;
-  const acts=`<div class="r2acts"><button class="btn r2main" id="again">${again}</button>${r.pack.length&&!r.packOpened?`<button class="r2sec" id="openPack">Open card pack, ${r.pack.length} cards</button>`:''}</div>`;
+  const rp=window.replayBlock?replayBlock(r):'',pk=r.pack.length&&!r.packOpened?`<button class="r2sec" id="openPack">🎁 Pack <em>${r.pack.length}</em></button>`:'',sec=pk||rp;
+  const acts=`<div class="r2acts${sec?'':' one'}">${sec}<button class="btn r2main" id="again">${again} ›</button></div>${pk&&rp?`<div class="r2more">${rp}</div>`:''}`;
   const dk=(id,ic,lb,bd)=>`<button class="r2ic${sh===id?' on':''}" data-sh="${id}">${ic}${bd?`<em>${bd}</em>`:''}<span>${lb}</span></button>`;
   const dock=`<div class="r2dock">${dk('rev',IC.mis,'Mistakes',r.wrongs.length||'')}${dk('mis',IC.tgt,'Missions',claim||'')}${dk('lg',IC.cup,'League','')}${r.code||(r.win&&!r.quick)?dk('share',IC.shr,r.win?'Share':'Dare','') :dk('mast',IC.tgt.replace('r="9"','r="9" stroke-dasharray="3 3"'),'Mastery','')}</div>`;
   let body='',tt='';
@@ -2010,7 +2033,7 @@ function renderResult(line,tab){const r=lastRes;
   else if(sh==='lg'){tt='League';body=(r.league?`<p class="note ctr"><b>+${r.league.points} league points</b>${r.league.capped?' (daily cap reached)':''}. Week total ${r.league.week_total}</p>`:'')+leagueHTML()}
   else if(sh==='det'){tt='Run details';body=`<div class="r2det"><div><span>Correct</span><b>${r.right}/${r.n}</b></div>${r.quick?'':`<div><span>${r.win?'Rank power':'Cut-off'}</span><b>${r.win?'×'+r.total.toFixed(1):r.cutoff}</b></div>`}<div><span>Marks earned</span><b>+${r.win||r.quick?r.earned:r.notes}</b></div><div><span>UPSC marking</span><b>${examMarks(r.exam)}</b></div><div><span>Right, wrong, skipped</span><b>${r.exam.c}, ${r.exam.w}, ${r.exam.s}</b></div>${r.win&&!r.quick?`<div><span>Service</span><b>${service(r.total)}</b></div>`:''}</div>${r.doubled||!hasAds()||!r.pack.length||r.packOpened?'':'<button class="more" id="dblPack">Watch an ad to double the pack</button>'}`}
   const sheet=sh?`<div class="r2shade" id="r2shade"></div><div class="r2sheet"><div class="r2grab"></div><div class="r2sh"><h3>${tt}</h3><button class="r2link" id="r2x">Close</button></div><div class="r2body">${body}</div></div>`:'';
-  $('rcard').innerHTML=`<div class="r2">${rhead2}${cmp}${unl}${window.paperBlock?paperBlock(r):''}${window.replayBlock?replayBlock(r):''}${acts}${dock}</div>${sheet}`;
+  $('rcard').innerHTML=`<div class="r2">${rhead2}${cmp}${unl}${window.paperBlock?paperBlock(r):''}${acts}${dock}</div>${sheet}`;
   $('rcard').classList.add('r2card');
   $('result').hidden=false;
   const go=v=>{r.sheet=v;renderResult(line,tab)};

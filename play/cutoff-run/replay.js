@@ -45,7 +45,7 @@ window.replayStop=()=>{if(!recs.length)return;halt();const keep=recs[0],drop=rec
   keep.mr.onstop=()=>{const blob=new Blob(keep.chunks,{type:MIME.split(';')[0]}),run=lastRes;if(blob.size<20000||!run)return;
     clip={blob,ext:MIME.includes('mp4')?'mp4':'webm',run};if(!$('result').hidden&&window.renderResult)renderResult('',run.sheet||'')};
   try{keep.mr.stop()}catch(e){}};
-window.replayBlock=r=>clip&&clip.run===r?`<button class="r2sec" id="rpShare">🎬 Share my replay (${Math.round(clip.blob.size/1024/1024*10)/10||0.1} MB)</button>`:'';
+window.replayBlock=r=>clip&&clip.run===r?`<button class="r2sec" id="rpShare">🎬 Share replay</button>`:'';
 window.replayBind=r=>{const b=$('rpShare');if(!b||!clip)return;
   b.onclick=async()=>{track('replay_share',{ext:clip.ext});const file=new File([clip.blob],'cutoff-run.'+clip.ext,{type:clip.blob.type});
     const text=r.win&&!r.quick?`I cleared it in Cut-Off Run 🔥 Can you? ${location.origin}/play/cutoff-run/`:`Cut-Off Run, ${location.origin}/play/cutoff-run/`;
