@@ -1172,7 +1172,8 @@ function inHole(x,z){for(const it of S.items)if(it.type==='hole'&&z>it.z&&z<it.z
 function splash(x,z){for(let i=0;i<10;i++)S.parts.push({x,y:0,z,vx:rnd(-1.5,1.5),vy:rnd(2,5),vz:rnd(-1,1),life:.6,col:i%2?'#ffffff':'#7fd8ff',sz:.08});if(Math.random()<.4)sfx.splash()}
 function confetti(z,x){const c=['#ffd23f','#3ddc84','#2ec4ff','#ff8a1f','#ff4d5e','#fff'];for(let i=0;i<28;i++)S.parts.push({x:(x??S.x)+rnd(-1.5,1.5),y:rnd(1,2.5),z,vx:rnd(-2,2),vy:rnd(1,5),vz:rnd(0,2),life:1.2,col:c[i%6],sz:.09})}
 function poof(x,y,z,col){for(let i=0;i<16;i++)S.parts.push({glow:1,x,y,z,vx:rnd(-2.5,2.5),vy:rnd(0,4),vz:rnd(-1.5,1.5),life:.7,col:i%3?col:'#ffffff',sz:.12})}
-function ftext(t,col,z,x){S.texts.push({t,col,x:x??S.x,z:z??S.dist+1.5,y:1.8,life:1.2})}
+/* one feedback plate at a time: messages from the same moment merge ("✗ WRONG −36"), a new moment replaces the old plate */
+function ftext(t,col,z,x){t=String(t);if(/ ✓$/.test(t)&&col==='#ffffff')return;const L=S.texts[S.texts.length-1];if(L&&L.at===S.t){const word=/[A-Za-z]/.test(t);L.t=word?t+'  '+L.t:L.t+'  '+t;if(word)L.col=col;return}S.texts=[{t,col,x:x??S.x,z:z??S.dist+1.5,y:1.8,life:1.2,at:S.t}]}
 let bannerT=0;function banner(t,sub,dur=1.8){const b=$('banner');b.innerHTML=esc(t)+(sub?`<small>${esc(sub)}</small>`:'');b.classList.add('show');bannerT=dur}
 
 // ===================================================== INPUT =====================================================
