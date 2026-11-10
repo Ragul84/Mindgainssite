@@ -402,7 +402,7 @@ ST.bossHud=function(){const B=S.boss;if(!B||!B.kind||S.phase!=='boss')return;con
   ctx.textAlign='right';ctx.fillStyle='#ffd23f';ctx.fillText('HP '+Math.max(0,B.hp)+'/'+B.max,x+bw-12,y+13);
   const gx=x+12,gw=bw-24,seg=gw/B.max;for(let i=0;i<B.max;i++){ctx.fillStyle='rgba(255,255,255,.15)';rrp(ctx,gx+i*seg+2,y+26,seg-4,10,4);ctx.fill();if(i<B.hp){ctx.fillStyle=B.flash>0?'#fff':'#ff4d5e';rrp(ctx,gx+i*seg+2,y+26,seg-4,10,4);ctx.fill()}}
   ctx.textAlign='center';
-  if(B.st==='intro'||(B.st==='tele'&&B.asked===0&&B.t<.3)){const a=B.st==='intro'?Math.min(1,B.t*4,(1.6-B.t)*3+.3):.3;ctx.globalAlpha=Math.max(0,Math.min(1,a));
+  if(false){/* boss intro card removed: the HP bar and a short pill already name the boss */const a=B.st==='intro'?Math.min(1,B.t*4,(1.6-B.t)*3+.3):.3;ctx.globalAlpha=Math.max(0,Math.min(1,a));
     const cw=Math.min(W*.86,340),ch=150,cx=(W-cw)/2,cy=H*.3;ctx.fillStyle='#fff';rrp(ctx,cx,cy,cw,ch,18);ctx.fill();ctx.lineWidth=4;ctx.strokeStyle=INK;ctx.stroke();
     ctx.fillStyle=d.c;rrp(ctx,cx,cy,cw,34,18);ctx.fill();ctx.fillStyle=d.c;ctx.fillRect(cx,cy+18,cw,16);
     txt('BOSS FIGHT',W/2,cy+18,16,'#fff');txt(d.n,W/2,cy+62,26,INK,null);

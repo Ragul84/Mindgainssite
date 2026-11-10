@@ -557,6 +557,8 @@ body{background:#0f1c33}
 .r2ic svg{width:22px;height:22px;color:#14213d}
 .r2ic.on{background:#fff;box-shadow:0 2px 0 #e3e9f5;color:#14213d}
 .r2ic em{top:2px;right:auto;left:calc(50% + 6px)}
+.banner{top:40%!important;padding:7px 16px 8px!important;border-radius:99px!important;font-size:19px!important;line-height:1.1!important;background:rgba(20,33,61,.82)!important;box-shadow:none!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.banner small{display:inline!important;font-size:13px!important;margin:0 0 0 8px!important;font-family:Nunito,system-ui,sans-serif;font-weight:800}
 </style>
 
 <div id="wrap">
@@ -1174,7 +1176,8 @@ function confetti(z,x){const c=['#ffd23f','#3ddc84','#2ec4ff','#ff8a1f','#ff4d5e
 function poof(x,y,z,col){for(let i=0;i<16;i++)S.parts.push({glow:1,x,y,z,vx:rnd(-2.5,2.5),vy:rnd(0,4),vz:rnd(-1.5,1.5),life:.7,col:i%3?col:'#ffffff',sz:.12})}
 /* one feedback plate at a time: messages from the same moment merge ("✗ WRONG −36"), a new moment replaces the old plate */
 function ftext(t,col,z,x){t=String(t);if(/ ✓$/.test(t)&&col==='#ffffff')return;const L=S.texts[S.texts.length-1];if(L&&L.at===S.t){const word=/[A-Za-z]/.test(t);L.t=word?t+'  '+L.t:L.t+'  '+t;if(word)L.col=col;return}S.texts=[{t,col,x:x??S.x,z:z??S.dist+1.5,y:1.8,life:1.2,at:S.t}]}
-let bannerT=0;function banner(t,sub,dur=1.8){const b=$('banner');b.innerHTML=esc(t)+(sub?`<small>${esc(sub)}</small>`:'');b.classList.add('show');bannerT=dur}
+let bannerT=0;/* banners are a small one-line pill that never holds the screen for long */
+function banner(t,sub,dur=1.8){const b=$('banner');b.innerHTML=esc(t)+(sub?`<small>${esc(sub)}</small>`:'');b.classList.add('show');bannerT=Math.min(1.1,dur*.6)}
 
 // ===================================================== INPUT =====================================================
 let drag=null;
