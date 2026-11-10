@@ -1,0 +1,331 @@
+{
+ "43": "retire",
+ "75": {
+  "lh": "Office / body",
+  "rh": "Description",
+  "L": [
+   "Prime Minister",
+   "President",
+   "Governor",
+   "Cabinet",
+   "Attorney General"
+  ],
+  "why": "The Prime Minister is the real executive, the President the nominal executive, the Governor the state's executive head, the Cabinet the core decision-making body and the Attorney General the chief legal adviser.",
+  "R": [
+   "Real Executive",
+   "Nominal Executive",
+   "State Executive Head",
+   "Core Decision Body",
+   "Chief Legal Advisor"
+  ]
+ },
+ "76": {
+  "lh": "Article",
+  "rh": "Subject",
+  "L": [
+   "Article 75",
+   "Article 52",
+   "Article 74",
+   "Article 63",
+   "Article 78"
+  ],
+  "why": "Art. 52 – the President, Art. 63 – the Vice-President, Art. 74 – Council of Ministers to aid the President, Art. 75 – appointment of the PM, Art. 78 – the PM's duty to furnish information.",
+  "R": [
+   "Appointment of PM",
+   "The President of India",
+   "Council of Ministers to aid President",
+   "The Vice President of India",
+   "Duties of PM to furnish info"
+  ]
+ },
+ "77": "retire",
+ "78": "retire",
+ "79": "retire",
+ "111": {
+  "lh": "Subject",
+  "rh": "List",
+  "L": [
+   "State List",
+   "Residuary powers",
+   "Union List",
+   "Concurrent List"
+  ],
+  "R": [
+   "Police",
+   "Cyber law",
+   "Banking",
+   "Education"
+  ],
+  "why": "Police is on the State List, banking on the Union List, education on the Concurrent List, and cyber law falls under residuary powers."
+ },
+ "112": {
+  "lh": "Type",
+  "rh": "Example",
+  "L": [
+   "Holding-together federation",
+   "Confederation",
+   "Coming-together federation",
+   "Unitary state"
+  ],
+  "why": "India is a holding-together federation, the EU a confederation, the USA a coming-together federation and the UK a unitary state.",
+  "R": [
+   "India",
+   "EU",
+   "USA",
+   "UK"
+  ]
+ },
+ "113": {
+  "lh": "Body",
+  "rh": "Function",
+  "L": [
+   "Parliament",
+   "Supreme Court",
+   "Finance Commission",
+   "Election Commission"
+  ],
+  "why": "Parliament makes laws, the Supreme Court exercises judicial review, the Finance Commission recommends tax sharing and the Election Commission conducts polls.",
+  "R": [
+   "Law Making",
+   "Judicial Review",
+   "Tax Distribution",
+   "Conducting Polls"
+  ]
+ },
+ "114": {
+  "lh": "Amendment",
+  "rh": "Subject",
+  "L": [
+   "74th Amendment",
+   "101st Amendment",
+   "73rd Amendment",
+   "42nd Amendment"
+  ],
+  "why": "73rd – Panchayati Raj, 74th – municipalities, 101st – GST, 42nd – the 'mini-Constitution'.",
+  "R": [
+   "Municipalities",
+   "GST",
+   "Panchayati Raj",
+   "Mini Constitution"
+  ]
+ },
+ "115": {
+  "lh": "Subject",
+  "rh": "List",
+  "L": [
+   "Defence",
+   "Cyber laws",
+   "Agriculture",
+   "Forests"
+  ],
+  "why": "Defence is on the Union List, agriculture on the State List and forests on the Concurrent List; cyber law falls under residuary powers.",
+  "R": [
+   "Union List",
+   "Residuary",
+   "State List",
+   "Concurrent List"
+  ]
+ },
+ "178": {
+  "lh": "Policy",
+  "rh": "Focus",
+  "L": [
+   "Neighbourhood First policy",
+   "Act East policy",
+   null,
+   "Gujral Doctrine"
+  ],
+  "why": "Neighbourhood First focuses on South Asia, Act East on ASEAN and the Gujral Doctrine on non-reciprocity towards neighbours.",
+  "R": [
+   "South Asia",
+   "ASEAN",
+   "Strategic Partnership",
+   "Non-reciprocity"
+  ]
+ },
+ "179": {
+  "lh": "Agreement",
+  "rh": "Year",
+  "L": [
+   "Tashkent Agreement",
+   "Indo-Soviet Treaty of Friendship",
+   "Panchsheel Agreement",
+   "Simla Agreement"
+  ],
+  "why": "Panchsheel 1954, Tashkent 1966, Indo-Soviet Treaty 1971, Simla 1972.",
+  "R": [
+   "1966",
+   "1971",
+   "1954",
+   "1972"
+  ]
+ },
+ "180": {
+  "lh": "Organisation",
+  "rh": "Headquarters",
+  "L": [
+   "ASEAN",
+   "SAARC",
+   null,
+   "United Nations"
+  ],
+  "why": "ASEAN is headquartered in Jakarta, SAARC in Kathmandu and the UN in New York.",
+  "R": [
+   "Jakarta",
+   "Kathmandu",
+   "Shanghai",
+   "New York"
+  ]
+ },
+ "181": {
+  "lh": "Leader",
+  "rh": "Associated with",
+  "L": [
+   "Indira Gandhi",
+   "Narendra Modi",
+   "Jawaharlal Nehru",
+   "I.K. Gujral"
+  ],
+  "why": "Indira Gandhi signed the Simla Agreement, Modi launched Act East, Nehru co-founded NAM and Gujral's doctrine stressed non-reciprocity.",
+  "R": [
+   "Simla Agreement",
+   "Act East",
+   "NAM",
+   "Non-reciprocity"
+  ]
+ },
+ "182": {
+  "lh": "Term",
+  "rh": "Meaning",
+  "L": [
+   "Unipolarity",
+   "Non-alignment",
+   "Bipolarity",
+   "Multipolarity"
+  ],
+  "why": "Unipolarity has one superpower, bipolarity two and multipolarity many power centres; non-alignment means staying neutral between blocs.",
+  "R": [
+   "One superpower",
+   "Neutrality",
+   "Two superpowers",
+   "Many power centers"
+  ]
+ },
+ "214": {
+  "lh": "Writ",
+  "rh": "Meaning",
+  "L": [
+   "Habeas corpus",
+   "Mandamus",
+   "Quo warranto",
+   "Certiorari"
+  ],
+  "why": "Habeas corpus – 'to have the body', mandamus – 'we command', quo warranto – 'by what authority', certiorari – 'to be certified'.",
+  "R": [
+   "To have the body",
+   "We command",
+   "By what authority",
+   "To be certified"
+  ]
+ },
+ "215": {
+  "lh": "Court",
+  "rh": "Level",
+  "L": [
+   "Supreme Court",
+   "High Court",
+   "District Court",
+   "Lok Adalat"
+  ],
+  "why": "The Supreme Court is the apex court, the High Court works at state level, the District Court at district level and the Lok Adalat is the people's court.",
+  "R": [
+   "Apex Court",
+   "State Level",
+   "District Level",
+   "People's Court"
+  ]
+ },
+ "216": {
+  "lh": "Article",
+  "rh": "Provision",
+  "L": [
+   "Article 32",
+   "Article 143",
+   "Article 226",
+   "Article 124"
+  ],
+  "why": "Art. 32 – constitutional remedies, Art. 143 – advisory jurisdiction, Art. 226 – High Court writ power, Art. 124 – establishment of the Supreme Court.",
+  "R": [
+   "Constitutional Remedies",
+   "Advisory Jurisdiction",
+   "HC Writ Power",
+   "Establishment of SC"
+  ]
+ },
+ "217": "retire",
+ "218": {
+  "lh": "Judge of the",
+  "rh": "Retires at",
+  "L": [
+   "Supreme Court",
+   "High Court"
+  ],
+  "why": "Supreme Court judges retire at 65 and High Court judges at 62.",
+  "R": [
+   "65 years",
+   "62 years"
+  ]
+ },
+ "250": "retire",
+ "251": "retire",
+ "252": "retire",
+ "253": "retire",
+ "286": "retire",
+ "293": {
+  "lh": "Party",
+  "rh": "State",
+  "L": [
+   "DMK",
+   "Shiv Sena",
+   "Samajwadi Party",
+   "Telugu Desam Party"
+  ],
+  "why": "The DMK is based in Tamil Nadu, the Shiv Sena in Maharashtra, the Samajwadi Party in Uttar Pradesh and the TDP in Andhra Pradesh.",
+  "R": [
+   "Tamil Nadu",
+   "Maharashtra",
+   "Uttar Pradesh",
+   "Andhra Pradesh"
+  ]
+ },
+ "319": {
+  "lh": "Feature",
+  "rh": "Borrowed from",
+  "L": [
+   "Parliamentary system",
+   "Judicial review",
+   "Directive Principles"
+  ],
+  "why": "India took the parliamentary system from Britain, judicial review from the USA and the Directive Principles from Ireland.",
+  "R": [
+   "Britain",
+   "USA",
+   "Ireland"
+  ]
+ },
+ "320": {
+  "lh": "Amendment",
+  "rh": "Purpose",
+  "L": [
+   "86th Amendment",
+   "42nd Amendment",
+   "44th Amendment"
+  ],
+  "why": "The 86th Amendment made education a fundamental right, the 42nd added 'secular' to the Preamble and the 44th removed the right to property from Fundamental Rights.",
+  "R": [
+   "Right to Education",
+   "Added 'Secular' to Preamble",
+   "Removed Right to Property"
+  ]
+ }
+}

@@ -58,5 +58,45 @@
   "reviewed_to": null,
   "total": 561,
   "retired": 15
+ },
+ "samacheer/maths/class11": {
+  "reviewed_to": null,
+  "total": 407,
+  "retired": 4
+ },
+ "samacheer/polity/class10": {
+  "reviewed_to": null,
+  "total": 204,
+  "retired": 9
+ },
+ "samacheer/polity/class11": {
+  "reviewed_to": null,
+  "total": 222,
+  "retired": 10
+ },
+ "samacheer/polity/class12": {
+  "reviewed_to": null,
+  "total": 341,
+  "retired": 10
+ },
+ "samacheer/polity/class6": {
+  "reviewed_to": null,
+  "total": 89,
+  "retired": 0
+ },
+ "samacheer/polity/class7": {
+  "reviewed_to": null,
+  "total": 109,
+  "retired": 0
+ },
+ "samacheer/polity/class8": {
+  "reviewed_to": null,
+  "total": 178,
+  "retired": 4
+ },
+ "samacheer/polity/class9": {
+  "reviewed_to": null,
+  "total": 140,
+  "retired": 1
  }
 }

@@ -1,0 +1,147 @@
+{
+ "retire": [
+  35,
+  36,
+  37,
+  103,
+  157,
+  158,
+  199,
+  200,
+  203
+ ],
+ "fix": {
+  "34": {
+   "question": "Match List I with List II: List I (Method) A. Birth B. Registration C. Naturalisation D. Incorporation of territory List II (Description) 1. Applied by PIO or spouse of a citizen 2. Acquired by a foreigner after residing for 12 years 3. Born within the territory of India 4. Acquired when a new territory becomes part of India",
+   "options": [
+    "A-2, B-1, C-3, D-4",
+    "A-3, B-2, C-1, D-4",
+    "A-3, B-1, C-2, D-4",
+    "A-3, B-4, C-2, D-1"
+   ],
+   "answer_index": 2,
+   "explanation": "Citizenship comes by birth in India, by registration for PIOs or spouses of citizens, by naturalisation after long residence and by incorporation when new territory joins India."
+  },
+  "40": {
+   "question": "Match List I with List II: List I (Position / body (State)) A. High Court B. Chief Minister C. State Legislature D. Governor List II (Role) 1. Makes laws 2. Heads the State Government 3. Interprets laws 4. Represents the President",
+   "options": [
+    "A-3, B-2, C-1, D-4",
+    "A-4, B-2, C-1, D-3",
+    "A-3, B-4, C-1, D-2",
+    "A-2, B-3, C-1, D-4"
+   ],
+   "answer_index": 0,
+   "explanation": "The High Court interprets laws, the Chief Minister heads the state government, the legislature makes laws and the Governor represents the President."
+  },
+  "45": {
+   "question": "Match List I with List II: List I (Body) A. Human Rights Commission B. Election Commission C. Finance Commission D. Public Service Commission List II (Function) 1. Recruitment of government employees 2. Distribution of financial resources 3. Protects human rights 4. Conducts free and fair elections",
+   "options": [
+    "A-1, B-4, C-2, D-3",
+    "A-3, B-4, C-2, D-1",
+    "A-4, B-3, C-2, D-1",
+    "A-3, B-4, C-1, D-2"
+   ],
+   "answer_index": 1,
+   "explanation": "The Human Rights Commission protects human rights, the Election Commission conducts elections, the Finance Commission recommends distribution of finances and the Public Service Commission recruits government employees."
+  },
+  "54": {
+   "question": "Match List I with List II: List I (Official) A. Chief Secretary B. Chief Minister C. Speaker D. Deputy Speaker List II (Role) 1. Presides over Assembly sessions 2. Assists the Speaker 3. Heads the Council of Ministers 4. Coordinates administrative functions",
+   "options": [
+    "A-4, B-1, C-3, D-2",
+    "A-2, B-3, C-1, D-4",
+    "A-4, B-3, C-1, D-2",
+    "A-3, B-4, C-1, D-2"
+   ],
+   "answer_index": 2,
+   "explanation": "The Chief Secretary coordinates administration, the Chief Minister heads the Council of Ministers, the Speaker presides over the Assembly and the Deputy Speaker assists the Speaker."
+  },
+  "102": {
+   "question": "Match List I with List II: List I (Level) A. Block level B. District level C. Village level List II (Rural local body) 1. Gram Panchayat 2. Panchayat Union 3. District Panchayat",
+   "options": [
+    "A-3, B-2, C-1",
+    "A-2, B-1, C-3",
+    "A-2, B-3, C-1",
+    "A-1, B-3, C-2"
+   ],
+   "answer_index": 2,
+   "explanation": "The Gram Panchayat works at village level, the Panchayat Union at block level and the District Panchayat at district level."
+  },
+  "104": {
+   "question": "Match List I with List II: List I (Amendment) A. 74th Amendment B. 42nd Amendment C. 73rd Amendment List II (Focus) 1. Urban Local Government 2. Mini Constitution 3. Rural Local Government",
+   "options": [
+    "A-1, B-2, C-3",
+    "A-1, B-3, C-2",
+    "A-2, B-1, C-3",
+    "A-3, B-2, C-1"
+   ],
+   "answer_index": 0,
+   "explanation": "The 73rd Amendment covers rural local government, the 74th urban local government and the 42nd is called the mini-Constitution."
+  },
+  "109": {
+   "question": "Match List I with List II: List I (Term) A. Naturalisation B. Renunciation C. Deprivation List II (Definition) 1. Compulsory termination of citizenship by the government 2. Voluntarily giving up one's citizenship 3. Acquisition of citizenship by a foreigner through a prescribed procedure",
+   "options": [
+    "A-1, B-2, C-3",
+    "A-3, B-2, C-1",
+    "A-3, B-1, C-2",
+    "A-2, B-3, C-1"
+   ],
+   "answer_index": 1,
+   "explanation": "Naturalisation is how a foreigner acquires citizenship, renunciation is giving it up voluntarily and deprivation is compulsory termination by the government."
+  },
+  "155": {
+   "question": "Match List I with List II: List I (Method) A. Registration B. Incorporation of territory C. Birth D. Naturalisation List II (Case) 1. Foreigner residing in India 2. PIO applying for citizenship 3. Born in India 4. Territory becomes part of India",
+   "options": [
+    "A-4, B-2, C-3, D-1",
+    "A-2, B-1, C-3, D-4",
+    "A-3, B-4, C-2, D-1",
+    "A-2, B-4, C-3, D-1"
+   ],
+   "answer_index": 3,
+   "explanation": "A PIO applies by registration, people in new territory become citizens by incorporation, those born in India by birth and resident foreigners by naturalisation."
+  },
+  "156": {
+   "question": "Match List I with List II: List I (Way of losing citizenship) A. Termination B. Deprivation C. Renunciation List II (Nature) 1. Automatic 2. Fraudulent 3. Voluntary",
+   "options": [
+    "A-1, B-2, C-3",
+    "A-3, B-2, C-1",
+    "A-2, B-1, C-3",
+    "A-1, B-3, C-2"
+   ],
+   "answer_index": 0,
+   "explanation": "Termination is automatic, deprivation follows fraud and renunciation is voluntary."
+  },
+  "198": {
+   "question": "Match List I with List II: List I (Role (State)) A. Constitutional head of the State B. Head of the State government C. Chief legal adviser D. Presiding officer of the Assembly List II (Position) 1. Governor 2. Advocate General 3. Speaker 4. Chief Minister",
+   "options": [
+    "A-4, B-1, C-2, D-3",
+    "A-1, B-3, C-2, D-4",
+    "A-1, B-4, C-2, D-3",
+    "A-2, B-4, C-1, D-3"
+   ],
+   "answer_index": 2,
+   "explanation": "The Governor is the constitutional head, the Chief Minister heads the government, the Advocate General is the chief legal adviser and the Speaker presides over the Assembly."
+  },
+  "201": {
+   "question": "Match List I with List II: List I (Position) A. Member of Legislative Assembly B. Member of Legislative Council C. Voter D. Governor List II (Minimum age) 1. 18 years 2. 30 years 3. 35 years 4. 25 years",
+   "options": [
+    "A-1, B-2, C-4, D-3",
+    "A-4, B-2, C-1, D-3",
+    "A-4, B-2, C-3, D-1",
+    "A-4, B-3, C-1, D-2"
+   ],
+   "answer_index": 1,
+   "explanation": "An MLA must be 25, an MLC 30, a voter 18 and a Governor 35."
+  },
+  "202": {
+   "question": "Match List I with List II: List I (Power) A. Governor B. Chief Minister C. Speaker D. Advocate General List II (Held by) 1. Maintains order in the House 2. Allocates portfolios 3. Summons the Assembly 4. Gives legal advice",
+   "options": [
+    "A-2, B-3, C-1, D-4",
+    "A-3, B-2, C-4, D-1",
+    "A-3, B-2, C-1, D-4",
+    "A-4, B-2, C-1, D-3"
+   ],
+   "answer_index": 2,
+   "explanation": "The Governor summons the Assembly, the Chief Minister allocates portfolios, the Speaker keeps order and the Advocate General gives legal advice."
+  }
+ }
+}

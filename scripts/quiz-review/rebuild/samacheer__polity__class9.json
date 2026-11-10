@@ -1,0 +1,114 @@
+{
+ "37": {
+  "lh": "Form of government",
+  "rh": "Feature",
+  "L": [
+   "Parliamentary",
+   "Unitary",
+   "Presidential"
+  ],
+  "why": "Parliamentary government rests on collective responsibility, unitary government on centralised authority and presidential government on separation of powers.",
+  "R": [
+   "Collective Responsibility",
+   "Centralized Authority",
+   "Separation of Powers"
+  ]
+ },
+ "38": {
+  "lh": "Country",
+  "rh": "System",
+  "L": [
+   "India",
+   "France",
+   "USA"
+  ],
+  "why": "India has a parliamentary system, France a semi-presidential one and the USA a presidential system.",
+  "R": [
+   "Parliamentary",
+   "Semi-Presidential",
+   "Presidential"
+  ]
+ },
+ "39": {
+  "lh": "Term",
+  "rh": "Meaning",
+  "L": [
+   "Monarchy",
+   "Oligarchy",
+   "Republic"
+  ],
+  "why": "A monarchy has a hereditary head of state, an oligarchy is rule by a few and a republic has an elected head of state.",
+  "R": [
+   "Hereditary Head of State",
+   "Rule by a few",
+   "Elected Head of State"
+  ]
+ },
+ "63": {
+  "lh": "Fundamental Right",
+  "rh": "Includes",
+  "L": [
+   "Right to Equality",
+   "Right to Freedom",
+   "Right against Exploitation",
+   "Right to Constitutional Remedies"
+  ],
+  "why": "Abolition of untouchability is under the Right to Equality, free speech under the Right to Freedom, the ban on child labour under the Right against Exploitation and writs under the Right to Constitutional Remedies.",
+  "R": [
+   "Abolition of Untouchability",
+   "Freedom of Speech",
+   "Prohibition of Child Labour",
+   "Writs"
+  ]
+ },
+ "64": {
+  "lh": "Article",
+  "rh": "Right",
+  "L": [
+   "Article 14",
+   "Article 17",
+   "Article 21",
+   "Article 32"
+  ],
+  "why": "Article 14 – equality before law, Article 17 – abolition of untouchability, Article 21 – right to life, Article 32 – constitutional remedies.",
+  "R": [
+   "Equality before Law",
+   "Abolition of Untouchability",
+   "Right to Life",
+   "Constitutional Remedies"
+  ]
+ },
+ "65": {
+  "lh": "Writ",
+  "rh": "Meaning",
+  "L": [
+   "Habeas corpus",
+   "Mandamus",
+   "Quo warranto",
+   "Certiorari"
+  ],
+  "why": "Habeas corpus means 'to have the body', mandamus 'we command', quo warranto 'by what authority' and certiorari 'to be certified'.",
+  "R": [
+   "To have the body",
+   "We command",
+   "By what authority",
+   "To be certified"
+  ]
+ },
+ "90": "retire",
+ "139": {
+  "lh": "Right",
+  "rh": "Articles",
+  "L": [
+   "Right to Freedom",
+   "Right to Equality",
+   "Right against Exploitation"
+  ],
+  "why": "Right to Equality: Articles 14-18; Right to Freedom: Articles 19-22; Right against Exploitation: Articles 23-24.",
+  "R": [
+   "Articles 19-22",
+   "Articles 14-18",
+   "Articles 23-24"
+  ]
+ }
+}

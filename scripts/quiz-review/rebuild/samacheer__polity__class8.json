@@ -1,0 +1,153 @@
+{
+ "25": {
+  "lh": "Method",
+  "rh": "Description",
+  "L": [
+   "Naturalisation",
+   "Birth",
+   "Registration"
+  ],
+  "why": "Citizenship by birth comes from being born in India, naturalisation after residing for the required period and registration through a set legal application.",
+  "R": [
+   "Applying after residing for a period",
+   "Born within the territory",
+   "Applying through a specific legal process"
+  ]
+ },
+ "26": {
+  "lh": "Term",
+  "rh": "Meaning",
+  "L": [
+   "Deprivation",
+   "Renunciation",
+   "Termination"
+  ],
+  "why": "Renunciation is giving up citizenship voluntarily, termination is automatic on taking another citizenship and deprivation is forced loss, for example for fraud.",
+  "R": [
+   "Forced loss due to fraud",
+   "Giving up citizenship voluntarily",
+   "Loss due to acquiring another citizenship"
+  ]
+ },
+ "27": "retire",
+ "63": "retire",
+ "120": {
+  "lh": "Method",
+  "rh": "Description",
+  "L": [
+   "By birth",
+   "By descent",
+   "By naturalisation",
+   "By registration"
+  ],
+  "why": "Citizenship comes by birth in India, by descent from Indian parents, by naturalisation for a foreigner meeting residence rules and by registration for persons of Indian origin.",
+  "R": [
+   "Born within the territory",
+   "Born to Indian parents",
+   "Foreigner meeting residency criteria",
+   "Application by person of Indian origin"
+  ]
+ },
+ "121": {
+  "lh": "Term",
+  "rh": "Meaning",
+  "L": [
+   "Renunciation",
+   "Deprivation",
+   "Termination",
+   "Incorporation of territory"
+  ],
+  "why": "Renunciation is voluntary, deprivation is forced removal, termination is automatic loss, and incorporation of territory adds citizens when a new area joins India.",
+  "R": [
+   "Voluntary giving up",
+   "Forced removal",
+   "Automatic loss",
+   "Territory addition"
+  ]
+ },
+ "122": "retire",
+ "123": {
+  "lh": "Provision",
+  "rh": "Role",
+  "L": [
+   "Part II (Articles 5-11)",
+   "Article 11",
+   "Citizenship Act, 1955",
+   "Article 5"
+  ],
+  "why": "Part II of the Constitution deals with citizenship, Article 11 empowers Parliament to regulate it, the Citizenship Act 1955 contains the detailed law and Article 5 covers citizenship at the commencement of the Constitution.",
+  "R": [
+   "Constitution's citizenship section",
+   "Parliament's power",
+   "Detailed citizenship laws",
+   "Citizenship at commencement"
+  ]
+ },
+ "124": "retire",
+ "125": {
+  "lh": "Status",
+  "rh": "Description",
+  "L": [
+   "Citizen",
+   "Alien",
+   "Overseas Citizen of India",
+   "Non-Resident Indian"
+  ],
+  "why": "A citizen has full rights and duties, an alien is a foreign national, an OCI card holder has limited privileges and an NRI is a citizen living abroad.",
+  "R": [
+   "Full rights and duties",
+   "Foreign national",
+   "Limited privileges",
+   "Citizen living abroad"
+  ]
+ },
+ "126": {
+  "lh": "Way of losing citizenship",
+  "rh": "Cause",
+  "L": [
+   "Renunciation",
+   "Deprivation",
+   "Termination",
+   null
+  ],
+  "why": "Renunciation is a personal choice, deprivation follows fraud in the application and termination follows acquiring another country's citizenship.",
+  "R": [
+   "Personal choice",
+   "Fraud in application",
+   "Acquiring other citizenship",
+   "General term"
+  ]
+ },
+ "176": {
+  "lh": "Term",
+  "rh": "Description",
+  "L": [
+   "Criminal case",
+   "Writ",
+   "Civil case",
+   "Public Interest Litigation"
+  ],
+  "why": "Criminal cases involve theft or murder, a writ is a formal written court order, civil cases are disputes over property or contracts and a PIL is filed in the public interest.",
+  "R": [
+   "Theft or murder cases",
+   "Formal written order by a court",
+   "Disputes over property or contracts",
+   "Litigation for public interest"
+  ]
+ },
+ "177": {
+  "lh": "Court",
+  "rh": "Level",
+  "L": [
+   "High Court",
+   "District Court",
+   "Supreme Court"
+  ],
+  "why": "The High Court heads the state judiciary, the District Court the district judiciary and the Supreme Court is India's apex court.",
+  "R": [
+   "State level head",
+   "District level head",
+   "Apex Court of India"
+  ]
+ }
+}

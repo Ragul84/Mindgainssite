@@ -1,0 +1,38 @@
+{
+ "retire": [],
+ "fix": {
+  "44": {
+   "question": "Match List I with List II: List I (Term) A. Dictatorship B. Democracy C. Monarchy D. Universal adult franchise List II (Definition) 1. Rule by a king or queen 2. Government by the people 3. Rule by a single person with absolute power 4. Right to vote for all adults",
+   "options": [
+    "A-3, B-2, C-1, D-4",
+    "A-1, B-2, C-3, D-4",
+    "A-2, B-3, C-1, D-4",
+    "A-3, B-2, C-4, D-1"
+   ],
+   "answer_index": 0,
+   "explanation": "A dictatorship is rule by one person with absolute power, democracy government by the people, monarchy rule by a king or queen and universal adult franchise the right of every adult to vote."
+  },
+  "45": {
+   "question": "Match List I with List II: List I (Concept) A. Sovereignty B. Justice C. Equality D. Accountability List II (Meaning) 1. Being responsible for one's actions 2. All individuals are treated the same 3. Supreme power or authority 4. Fairness and impartiality",
+   "options": [
+    "A-1, B-4, C-2, D-3",
+    "A-3, B-4, C-2, D-1",
+    "A-4, B-3, C-2, D-1",
+    "A-3, B-4, C-1, D-2"
+   ],
+   "answer_index": 1,
+   "explanation": "Sovereignty is supreme authority, justice fairness, equality equal treatment of all and accountability being answerable for one's actions."
+  },
+  "46": {
+   "question": "Match List I with List II: List I (Government) A. Oligarchy B. Theocracy C. Dictatorship D. Representative democracy List II (Characteristic) 1. Religious leader 2. Absolute ruler 3. Rule by a small group 4. Elected representatives",
+   "options": [
+    "A-4, B-1, C-2, D-3",
+    "A-3, B-2, C-1, D-4",
+    "A-3, B-1, C-2, D-4",
+    "A-3, B-4, C-2, D-1"
+   ],
+   "answer_index": 2,
+   "explanation": "An oligarchy is rule by a small group, a theocracy rule by religious leaders, a dictatorship rule by one absolute ruler and a representative democracy rule through elected representatives."
+  }
+ }
+}

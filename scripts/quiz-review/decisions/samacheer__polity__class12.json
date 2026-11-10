@@ -1,0 +1,223 @@
+{
+ "retire": [
+  43,
+  77,
+  78,
+  79,
+  217,
+  250,
+  251,
+  252,
+  253,
+  286
+ ],
+ "fix": {
+  "75": {
+   "question": "Match List I with List II: List I (Office / body) A. Prime Minister B. President C. Governor D. Cabinet E. Attorney General List II (Description) 1. Chief Legal Advisor 2. Nominal Executive 3. Core Decision Body 4. State Executive Head 5. Real Executive",
+   "options": [
+    "A-5, B-1, C-4, D-3, E-2",
+    "A-5, B-2, C-1, D-3, E-4",
+    "A-5, B-3, C-4, D-2, E-1",
+    "A-5, B-2, C-4, D-3, E-1"
+   ],
+   "answer_index": 3,
+   "explanation": "The Prime Minister is the real executive, the President the nominal executive, the Governor the state's executive head, the Cabinet the core decision-making body and the Attorney General the chief legal adviser."
+  },
+  "76": {
+   "question": "Match List I with List II: List I (Article) A. Article 75 B. Article 52 C. Article 74 D. Article 63 E. Article 78 List II (Subject) 1. Council of Ministers to aid President 2. The Vice President of India 3. Appointment of PM 4. The President of India 5. Duties of PM to furnish info",
+   "options": [
+    "A-3, B-4, C-1, D-2, E-5",
+    "A-3, B-5, C-1, D-2, E-4",
+    "A-3, B-4, C-2, D-1, E-5",
+    "A-3, B-2, C-1, D-4, E-5"
+   ],
+   "answer_index": 0,
+   "explanation": "Art. 52 – the President, Art. 63 – the Vice-President, Art. 74 – Council of Ministers to aid the President, Art. 75 – appointment of the PM, Art. 78 – the PM's duty to furnish information."
+  },
+  "111": {
+   "question": "Match List I with List II: List I (Subject) A. State List B. Residuary powers C. Union List D. Concurrent List List II (List) 1. Cyber law 2. Police 3. Banking 4. Education",
+   "options": [
+    "A-2, B-4, C-3, D-1",
+    "A-2, B-3, C-1, D-4",
+    "A-2, B-1, C-4, D-3",
+    "A-2, B-1, C-3, D-4"
+   ],
+   "answer_index": 3,
+   "explanation": "Police is on the State List, banking on the Union List, education on the Concurrent List, and cyber law falls under residuary powers."
+  },
+  "112": {
+   "question": "Match List I with List II: List I (Type) A. Holding-together federation B. Confederation C. Coming-together federation D. Unitary state List II (Example) 1. UK 2. India 3. USA 4. EU",
+   "options": [
+    "A-2, B-4, C-3, D-1",
+    "A-1, B-4, C-3, D-2",
+    "A-2, B-4, C-1, D-3",
+    "A-3, B-4, C-2, D-1"
+   ],
+   "answer_index": 0,
+   "explanation": "India is a holding-together federation, the EU a confederation, the USA a coming-together federation and the UK a unitary state."
+  },
+  "113": {
+   "question": "Match List I with List II: List I (Body) A. Parliament B. Supreme Court C. Finance Commission D. Election Commission List II (Function) 1. Tax Distribution 2. Conducting Polls 3. Law Making 4. Judicial Review",
+   "options": [
+    "A-1, B-4, C-3, D-2",
+    "A-3, B-4, C-1, D-2",
+    "A-3, B-2, C-1, D-4",
+    "A-3, B-1, C-4, D-2"
+   ],
+   "answer_index": 1,
+   "explanation": "Parliament makes laws, the Supreme Court exercises judicial review, the Finance Commission recommends tax sharing and the Election Commission conducts polls."
+  },
+  "114": {
+   "question": "Match List I with List II: List I (Amendment) A. 74th Amendment B. 101st Amendment C. 73rd Amendment D. 42nd Amendment List II (Subject) 1. Mini Constitution 2. Municipalities 3. GST 4. Panchayati Raj",
+   "options": [
+    "A-2, B-4, C-3, D-1",
+    "A-4, B-3, C-2, D-1",
+    "A-2, B-3, C-4, D-1",
+    "A-1, B-3, C-4, D-2"
+   ],
+   "answer_index": 2,
+   "explanation": "73rd – Panchayati Raj, 74th – municipalities, 101st – GST, 42nd – the 'mini-Constitution'."
+  },
+  "115": {
+   "question": "Match List I with List II: List I (Subject) A. Defence B. Cyber laws C. Agriculture D. Forests List II (List) 1. Union List 2. Concurrent List 3. Residuary 4. State List",
+   "options": [
+    "A-1, B-3, C-2, D-4",
+    "A-1, B-2, C-4, D-3",
+    "A-4, B-3, C-1, D-2",
+    "A-1, B-3, C-4, D-2"
+   ],
+   "answer_index": 3,
+   "explanation": "Defence is on the Union List, agriculture on the State List and forests on the Concurrent List; cyber law falls under residuary powers."
+  },
+  "178": {
+   "question": "Match List I with List II: List I (Policy) A. Neighbourhood First policy B. Act East policy C. Gujral Doctrine List II (Focus) 1. Non-reciprocity 2. ASEAN 3. South Asia",
+   "options": [
+    "A-3, B-1, C-2",
+    "A-2, B-3, C-1",
+    "A-3, B-2, C-1",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 2,
+   "explanation": "Neighbourhood First focuses on South Asia, Act East on ASEAN and the Gujral Doctrine on non-reciprocity towards neighbours."
+  },
+  "179": {
+   "question": "Match List I with List II: List I (Agreement) A. Tashkent Agreement B. Indo-Soviet Treaty of Friendship C. Panchsheel Agreement D. Simla Agreement List II (Year) 1. 1971 2. 1966 3. 1972 4. 1954",
+   "options": [
+    "A-2, B-1, C-3, D-4",
+    "A-2, B-4, C-1, D-3",
+    "A-4, B-1, C-2, D-3",
+    "A-2, B-1, C-4, D-3"
+   ],
+   "answer_index": 3,
+   "explanation": "Panchsheel 1954, Tashkent 1966, Indo-Soviet Treaty 1971, Simla 1972."
+  },
+  "180": {
+   "question": "Match List I with List II: List I (Organisation) A. ASEAN B. SAARC C. United Nations List II (Headquarters) 1. New York 2. Kathmandu 3. Jakarta",
+   "options": [
+    "A-3, B-2, C-1",
+    "A-2, B-3, C-1",
+    "A-3, B-1, C-2",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 0,
+   "explanation": "ASEAN is headquartered in Jakarta, SAARC in Kathmandu and the UN in New York."
+  },
+  "181": {
+   "question": "Match List I with List II: List I (Leader) A. Indira Gandhi B. Narendra Modi C. Jawaharlal Nehru D. I.K. Gujral List II (Associated with) 1. Simla Agreement 2. NAM 3. Act East 4. Non-reciprocity",
+   "options": [
+    "A-2, B-3, C-1, D-4",
+    "A-1, B-3, C-2, D-4",
+    "A-3, B-1, C-2, D-4",
+    "A-1, B-4, C-2, D-3"
+   ],
+   "answer_index": 1,
+   "explanation": "Indira Gandhi signed the Simla Agreement, Modi launched Act East, Nehru co-founded NAM and Gujral's doctrine stressed non-reciprocity."
+  },
+  "182": {
+   "question": "Match List I with List II: List I (Term) A. Unipolarity B. Non-alignment C. Bipolarity D. Multipolarity List II (Meaning) 1. One superpower 2. Neutrality 3. Many power centers 4. Two superpowers",
+   "options": [
+    "A-3, B-2, C-4, D-1",
+    "A-4, B-2, C-1, D-3",
+    "A-1, B-2, C-4, D-3",
+    "A-1, B-2, C-3, D-4"
+   ],
+   "answer_index": 2,
+   "explanation": "Unipolarity has one superpower, bipolarity two and multipolarity many power centres; non-alignment means staying neutral between blocs."
+  },
+  "214": {
+   "question": "Match List I with List II: List I (Writ) A. Habeas corpus B. Mandamus C. Quo warranto D. Certiorari List II (Meaning) 1. We command 2. To be certified 3. By what authority 4. To have the body",
+   "options": [
+    "A-4, B-2, C-3, D-1",
+    "A-1, B-4, C-3, D-2",
+    "A-4, B-1, C-3, D-2",
+    "A-4, B-3, C-1, D-2"
+   ],
+   "answer_index": 2,
+   "explanation": "Habeas corpus – 'to have the body', mandamus – 'we command', quo warranto – 'by what authority', certiorari – 'to be certified'."
+  },
+  "215": {
+   "question": "Match List I with List II: List I (Court) A. Supreme Court B. High Court C. District Court D. Lok Adalat List II (Level) 1. District Level 2. Apex Court 3. State Level 4. People's Court",
+   "options": [
+    "A-2, B-3, C-4, D-1",
+    "A-4, B-3, C-1, D-2",
+    "A-3, B-2, C-1, D-4",
+    "A-2, B-3, C-1, D-4"
+   ],
+   "answer_index": 3,
+   "explanation": "The Supreme Court is the apex court, the High Court works at state level, the District Court at district level and the Lok Adalat is the people's court."
+  },
+  "216": {
+   "question": "Match List I with List II: List I (Article) A. Article 32 B. Article 143 C. Article 226 D. Article 124 List II (Provision) 1. Constitutional Remedies 2. Establishment of SC 3. Advisory Jurisdiction 4. HC Writ Power",
+   "options": [
+    "A-1, B-3, C-4, D-2",
+    "A-1, B-3, C-2, D-4",
+    "A-4, B-3, C-1, D-2",
+    "A-3, B-1, C-4, D-2"
+   ],
+   "answer_index": 0,
+   "explanation": "Art. 32 – constitutional remedies, Art. 143 – advisory jurisdiction, Art. 226 – High Court writ power, Art. 124 – establishment of the Supreme Court."
+  },
+  "218": {
+   "question": "Match List I with List II: List I (Judge of the) A. Supreme Court B. High Court List II (Retires at) 1. 62 years 2. 65 years",
+   "options": [
+    "A-2, B-1",
+    "A-1, B-2"
+   ],
+   "answer_index": 0,
+   "explanation": "Supreme Court judges retire at 65 and High Court judges at 62."
+  },
+  "293": {
+   "question": "Match List I with List II: List I (Party) A. DMK B. Shiv Sena C. Samajwadi Party D. Telugu Desam Party List II (State) 1. Tamil Nadu 2. Andhra Pradesh 3. Maharashtra 4. Uttar Pradesh",
+   "options": [
+    "A-1, B-2, C-4, D-3",
+    "A-1, B-3, C-4, D-2",
+    "A-1, B-4, C-3, D-2",
+    "A-3, B-1, C-4, D-2"
+   ],
+   "answer_index": 1,
+   "explanation": "The DMK is based in Tamil Nadu, the Shiv Sena in Maharashtra, the Samajwadi Party in Uttar Pradesh and the TDP in Andhra Pradesh."
+  },
+  "319": {
+   "question": "Match List I with List II: List I (Feature) A. Parliamentary system B. Judicial review C. Directive Principles List II (Borrowed from) 1. Britain 2. USA 3. Ireland",
+   "options": [
+    "A-1, B-3, C-2",
+    "A-3, B-2, C-1",
+    "A-2, B-1, C-3",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 3,
+   "explanation": "India took the parliamentary system from Britain, judicial review from the USA and the Directive Principles from Ireland."
+  },
+  "320": {
+   "question": "Match List I with List II: List I (Amendment) A. 86th Amendment B. 42nd Amendment C. 44th Amendment List II (Purpose) 1. Right to Education 2. Added 'Secular' to Preamble 3. Removed Right to Property",
+   "options": [
+    "A-1, B-2, C-3",
+    "A-2, B-1, C-3",
+    "A-3, B-2, C-1",
+    "A-1, B-3, C-2"
+   ],
+   "answer_index": 0,
+   "explanation": "The 86th Amendment made education a fundamental right, the 42nd added 'secular' to the Preamble and the 44th removed the right to property from Fundamental Rights."
+  }
+ }
+}

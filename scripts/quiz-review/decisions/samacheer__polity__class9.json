@@ -1,0 +1,84 @@
+{
+ "retire": [
+  90
+ ],
+ "fix": {
+  "37": {
+   "question": "Match List I with List II: List I (Form of government) A. Parliamentary B. Unitary C. Presidential List II (Feature) 1. Collective Responsibility 2. Centralized Authority 3. Separation of Powers",
+   "options": [
+    "A-1, B-3, C-2",
+    "A-1, B-2, C-3",
+    "A-2, B-1, C-3",
+    "A-3, B-2, C-1"
+   ],
+   "answer_index": 1,
+   "explanation": "Parliamentary government rests on collective responsibility, unitary government on centralised authority and presidential government on separation of powers."
+  },
+  "38": {
+   "question": "Match List I with List II: List I (Country) A. India B. France C. USA List II (System) 1. Semi-Presidential 2. Parliamentary 3. Presidential",
+   "options": [
+    "A-2, B-3, C-1",
+    "A-1, B-2, C-3",
+    "A-2, B-1, C-3",
+    "A-3, B-1, C-2"
+   ],
+   "answer_index": 2,
+   "explanation": "India has a parliamentary system, France a semi-presidential one and the USA a presidential system."
+  },
+  "39": {
+   "question": "Match List I with List II: List I (Term) A. Monarchy B. Oligarchy C. Republic List II (Meaning) 1. Hereditary Head of State 2. Rule by a few 3. Elected Head of State",
+   "options": [
+    "A-3, B-2, C-1",
+    "A-2, B-1, C-3",
+    "A-1, B-3, C-2",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 3,
+   "explanation": "A monarchy has a hereditary head of state, an oligarchy is rule by a few and a republic has an elected head of state."
+  },
+  "63": {
+   "question": "Match List I with List II: List I (Fundamental Right) A. Right to Equality B. Right to Freedom C. Right against Exploitation D. Right to Constitutional Remedies List II (Includes) 1. Abolition of Untouchability 2. Freedom of Speech 3. Prohibition of Child Labour 4. Writs",
+   "options": [
+    "A-1, B-2, C-4, D-3",
+    "A-2, B-1, C-3, D-4",
+    "A-4, B-2, C-3, D-1",
+    "A-1, B-2, C-3, D-4"
+   ],
+   "answer_index": 3,
+   "explanation": "Abolition of untouchability is under the Right to Equality, free speech under the Right to Freedom, the ban on child labour under the Right against Exploitation and writs under the Right to Constitutional Remedies."
+  },
+  "64": {
+   "question": "Match List I with List II: List I (Article) A. Article 14 B. Article 17 C. Article 21 D. Article 32 List II (Right) 1. Constitutional Remedies 2. Equality before Law 3. Abolition of Untouchability 4. Right to Life",
+   "options": [
+    "A-2, B-3, C-4, D-1",
+    "A-4, B-3, C-2, D-1",
+    "A-1, B-3, C-4, D-2",
+    "A-2, B-3, C-1, D-4"
+   ],
+   "answer_index": 0,
+   "explanation": "Article 14 – equality before law, Article 17 – abolition of untouchability, Article 21 – right to life, Article 32 – constitutional remedies."
+  },
+  "65": {
+   "question": "Match List I with List II: List I (Writ) A. Habeas corpus B. Mandamus C. Quo warranto D. Certiorari List II (Meaning) 1. By what authority 2. To be certified 3. To have the body 4. We command",
+   "options": [
+    "A-3, B-1, C-4, D-2",
+    "A-3, B-4, C-1, D-2",
+    "A-2, B-4, C-1, D-3",
+    "A-4, B-3, C-1, D-2"
+   ],
+   "answer_index": 1,
+   "explanation": "Habeas corpus means 'to have the body', mandamus 'we command', quo warranto 'by what authority' and certiorari 'to be certified'."
+  },
+  "139": {
+   "question": "Match List I with List II: List I (Right) A. Right to Freedom B. Right to Equality C. Right against Exploitation List II (Articles) 1. Articles 23-24 2. Articles 19-22 3. Articles 14-18",
+   "options": [
+    "A-2, B-1, C-3",
+    "A-1, B-3, C-2",
+    "A-3, B-2, C-1",
+    "A-2, B-3, C-1"
+   ],
+   "answer_index": 3,
+   "explanation": "Right to Equality: Articles 14-18; Right to Freedom: Articles 19-22; Right against Exploitation: Articles 23-24."
+  }
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "38": {
+  "lh": "Organ",
+  "rh": "Function",
+  "L": [
+   "Judiciary",
+   "Legislature",
+   "Executive"
+  ],
+  "why": "The legislature makes laws, the executive implements them and the judiciary interprets them.",
+  "R": [
+   "Interprets Laws",
+   "Makes Laws",
+   "Implements Laws"
+  ]
+ },
+ "39": {
+  "lh": "Level of government",
+  "rh": "Scope",
+  "L": [
+   "Local government",
+   "Central (Union) government",
+   "State government"
+  ],
+  "why": "Local government serves a village or town, the Union government the whole country and the state government one state.",
+  "R": [
+   "Village/Town",
+   "Whole Country",
+   "Specific State"
+  ]
+ },
+ "55": {
+  "lh": "Level of government",
+  "rh": "Function",
+  "L": [
+   "Local government",
+   "Union government",
+   "State government"
+  ],
+  "why": "Local bodies provide local services, the Union government handles national issues and the state government manages state affairs.",
+  "R": [
+   "Provides local services",
+   "Handles national issues",
+   "Manages state affairs"
+  ]
+ },
+ "61": {
+  "lh": "Official",
+  "rh": "Role",
+  "L": [
+   "Mayor",
+   "Prime Minister",
+   "President"
+  ],
+  "why": "The Mayor leads the municipal corporation, the Prime Minister heads the Union government and the President is head of state.",
+  "R": [
+   "Leads the municipal corporation",
+   "Head of the government",
+   "Head of state"
+  ]
+ },
+ "65": {
+  "lh": "Official",
+  "rh": "Leads",
+  "L": [
+   "Mayor",
+   "Chief Minister",
+   "Prime Minister"
+  ],
+  "why": "The Mayor leads the municipal corporation, the Chief Minister the state government and the Prime Minister the Union government.",
+  "R": [
+   "Leads the municipal corporation",
+   "Leads the state government",
+   "Leads the central government"
+  ]
+ }
+}

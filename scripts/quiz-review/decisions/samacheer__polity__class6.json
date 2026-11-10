@@ -1,0 +1,60 @@
+{
+ "retire": [],
+ "fix": {
+  "38": {
+   "question": "Match List I with List II: List I (Organ) A. Judiciary B. Legislature C. Executive List II (Function) 1. Makes Laws 2. Interprets Laws 3. Implements Laws",
+   "options": [
+    "A-2, B-3, C-1",
+    "A-1, B-2, C-3",
+    "A-2, B-1, C-3",
+    "A-3, B-1, C-2"
+   ],
+   "answer_index": 2,
+   "explanation": "The legislature makes laws, the executive implements them and the judiciary interprets them."
+  },
+  "39": {
+   "question": "Match List I with List II: List I (Level of government) A. Local government B. Central (Union) government C. State government List II (Scope) 1. Village/Town 2. Whole Country 3. Specific State",
+   "options": [
+    "A-3, B-2, C-1",
+    "A-2, B-1, C-3",
+    "A-1, B-3, C-2",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 3,
+   "explanation": "Local government serves a village or town, the Union government the whole country and the state government one state."
+  },
+  "55": {
+   "question": "Match List I with List II: List I (Level of government) A. Local government B. Union government C. State government List II (Function) 1. Provides local services 2. Handles national issues 3. Manages state affairs",
+   "options": [
+    "A-3, B-2, C-1",
+    "A-2, B-1, C-3",
+    "A-1, B-3, C-2",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 3,
+   "explanation": "Local bodies provide local services, the Union government handles national issues and the state government manages state affairs."
+  },
+  "61": {
+   "question": "Match List I with List II: List I (Official) A. Mayor B. Prime Minister C. President List II (Role) 1. Head of state 2. Leads the municipal corporation 3. Head of the government",
+   "options": [
+    "A-1, B-3, C-2",
+    "A-2, B-3, C-1",
+    "A-3, B-2, C-1",
+    "A-2, B-1, C-3"
+   ],
+   "answer_index": 1,
+   "explanation": "The Mayor leads the municipal corporation, the Prime Minister heads the Union government and the President is head of state."
+  },
+  "65": {
+   "question": "Match List I with List II: List I (Official) A. Mayor B. Chief Minister C. Prime Minister List II (Leads) 1. Leads the municipal corporation 2. Leads the state government 3. Leads the central government",
+   "options": [
+    "A-3, B-2, C-1",
+    "A-1, B-2, C-3",
+    "A-1, B-3, C-2",
+    "A-2, B-1, C-3"
+   ],
+   "answer_index": 1,
+   "explanation": "The Mayor leads the municipal corporation, the Chief Minister the state government and the Prime Minister the Union government."
+  }
+ }
+}

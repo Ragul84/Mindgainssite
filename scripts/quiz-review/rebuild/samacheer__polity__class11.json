@@ -1,0 +1,65 @@
+{
+ "12": "retire",
+ "27": "retire",
+ "70": {
+  "lh": "Varna",
+  "rh": "Traditional occupation",
+  "L": [
+   "Shudras",
+   "Brahmins",
+   "Kshatriyas",
+   "Vaishyas"
+  ],
+  "why": "In the varna scheme Brahmins were priests and scholars, Kshatriyas warriors and rulers, Vaishyas merchants and farmers and Shudras labourers and service providers.",
+  "R": [
+   "Laborers and service providers",
+   "Priests and scholars",
+   "Warriors and rulers",
+   "Merchants and farmers"
+  ]
+ },
+ "143": {
+  "stem": "Match the term or person with the theme:",
+  "lh": "Term / person",
+  "rh": "Theme",
+  "L": [
+   "Puram",
+   "Bharathiyar",
+   "Akam",
+   "Singaravelar"
+  ],
+  "why": "Sangam akam poetry is about love and puram poetry about war; Bharathiyar is known for nationalism and Singaravelar for communism.",
+  "R": [
+   "War",
+   "Nationalism",
+   "Love",
+   "Communism"
+  ]
+ },
+ "144": {
+  "stem": "Match the person with what they are known for:",
+  "lh": "Person",
+  "rh": "Known for",
+  "L": [
+   "Periyar",
+   "Singaravelar",
+   "Strabo",
+   "Thiruvalluvar"
+  ],
+  "why": "Periyar championed social justice, Singaravelar communism, Strabo was a Greek geographer and Thiruvalluvar set out political ideas in the Thirukkural.",
+  "R": [
+   "Social Justice",
+   "Communism",
+   "Greek Geographer",
+   "Political Ideas"
+  ]
+ },
+ "145": "retire",
+ "146": "retire",
+ "153": "retire",
+ "177": "retire",
+ "178": "retire",
+ "179": "retire",
+ "198": "retire",
+ "210": "retire"
+}

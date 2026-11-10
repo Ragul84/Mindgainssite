@@ -1,0 +1,209 @@
+{
+ "34": {
+  "lh": "Method",
+  "rh": "Description",
+  "L": [
+   "Birth",
+   "Registration",
+   "Naturalisation",
+   "Incorporation of territory"
+  ],
+  "why": "Citizenship comes by birth in India, by registration for PIOs or spouses of citizens, by naturalisation after long residence and by incorporation when new territory joins India.",
+  "R": [
+   "Born within the territory of India",
+   "Applied by PIO or spouse of a citizen",
+   "Acquired by a foreigner after residing for 12 years",
+   "Acquired when a new territory becomes part of India"
+  ]
+ },
+ "35": "retire",
+ "36": "retire",
+ "37": "retire",
+ "40": {
+  "lh": "Position / body (State)",
+  "rh": "Role",
+  "L": [
+   "High Court",
+   "Chief Minister",
+   "State Legislature",
+   "Governor"
+  ],
+  "why": "The High Court interprets laws, the Chief Minister heads the state government, the legislature makes laws and the Governor represents the President.",
+  "R": [
+   "Interprets laws",
+   "Heads the State Government",
+   "Makes laws",
+   "Represents the President"
+  ]
+ },
+ "45": {
+  "lh": "Body",
+  "rh": "Function",
+  "L": [
+   "Human Rights Commission",
+   "Election Commission",
+   "Finance Commission",
+   "Public Service Commission"
+  ],
+  "why": "The Human Rights Commission protects human rights, the Election Commission conducts elections, the Finance Commission recommends distribution of finances and the Public Service Commission recruits government employees.",
+  "R": [
+   "Protects human rights",
+   "Conducts free and fair elections",
+   "Distribution of financial resources",
+   "Recruitment of government employees"
+  ]
+ },
+ "54": {
+  "lh": "Official",
+  "rh": "Role",
+  "L": [
+   "Chief Secretary",
+   "Chief Minister",
+   "Speaker",
+   "Deputy Speaker"
+  ],
+  "why": "The Chief Secretary coordinates administration, the Chief Minister heads the Council of Ministers, the Speaker presides over the Assembly and the Deputy Speaker assists the Speaker.",
+  "R": [
+   "Coordinates administrative functions",
+   "Heads the Council of Ministers",
+   "Presides over Assembly sessions",
+   "Assists the Speaker"
+  ]
+ },
+ "102": {
+  "lh": "Level",
+  "rh": "Rural local body",
+  "L": [
+   "Block level",
+   "District level",
+   "Village level"
+  ],
+  "why": "The Gram Panchayat works at village level, the Panchayat Union at block level and the District Panchayat at district level.",
+  "R": [
+   "Panchayat Union",
+   "District Panchayat",
+   "Gram Panchayat"
+  ]
+ },
+ "103": "retire",
+ "104": {
+  "lh": "Amendment",
+  "rh": "Focus",
+  "L": [
+   "74th Amendment",
+   "42nd Amendment",
+   "73rd Amendment"
+  ],
+  "why": "The 73rd Amendment covers rural local government, the 74th urban local government and the 42nd is called the mini-Constitution.",
+  "R": [
+   "Urban Local Government",
+   "Mini Constitution",
+   "Rural Local Government"
+  ]
+ },
+ "109": {
+  "lh": "Term",
+  "rh": "Definition",
+  "L": [
+   "Naturalisation",
+   "Renunciation",
+   "Deprivation"
+  ],
+  "why": "Naturalisation is how a foreigner acquires citizenship, renunciation is giving it up voluntarily and deprivation is compulsory termination by the government.",
+  "R": [
+   "Acquisition of citizenship by a foreigner through a prescribed procedure.",
+   "Voluntarily giving up one's citizenship.",
+   "Compulsory termination of citizenship by the government."
+  ]
+ },
+ "155": {
+  "lh": "Method",
+  "rh": "Case",
+  "L": [
+   "Registration",
+   "Incorporation of territory",
+   "Birth",
+   "Naturalisation"
+  ],
+  "why": "A PIO applies by registration, people in new territory become citizens by incorporation, those born in India by birth and resident foreigners by naturalisation.",
+  "R": [
+   "PIO applying for citizenship",
+   "Territory becomes part of India",
+   "Born in India",
+   "Foreigner residing in India"
+  ]
+ },
+ "156": {
+  "lh": "Way of losing citizenship",
+  "rh": "Nature",
+  "L": [
+   "Termination",
+   "Deprivation",
+   "Renunciation",
+   null
+  ],
+  "why": "Termination is automatic, deprivation follows fraud and renunciation is voluntary.",
+  "R": [
+   "Automatic",
+   "Fraudulent",
+   "Voluntary",
+   "Legal removal"
+  ]
+ },
+ "157": "retire",
+ "158": "retire",
+ "198": {
+  "lh": "Role (State)",
+  "rh": "Position",
+  "L": [
+   "Constitutional head of the State",
+   "Head of the State government",
+   "Chief legal adviser",
+   "Presiding officer of the Assembly"
+  ],
+  "why": "The Governor is the constitutional head, the Chief Minister heads the government, the Advocate General is the chief legal adviser and the Speaker presides over the Assembly.",
+  "R": [
+   "Governor",
+   "Chief Minister",
+   "Advocate General",
+   "Speaker"
+  ]
+ },
+ "199": "retire",
+ "200": "retire",
+ "201": {
+  "lh": "Position",
+  "rh": "Minimum age",
+  "L": [
+   "Member of Legislative Assembly",
+   "Member of Legislative Council",
+   "Voter",
+   "Governor"
+  ],
+  "why": "An MLA must be 25, an MLC 30, a voter 18 and a Governor 35.",
+  "R": [
+   "25 years",
+   "30 years",
+   "18 years",
+   "35 years"
+  ]
+ },
+ "202": {
+  "lh": "Power",
+  "rh": "Held by",
+  "L": [
+   "Governor",
+   "Chief Minister",
+   "Speaker",
+   "Advocate General"
+  ],
+  "R": [
+   "Summons the Assembly",
+   "Allocates portfolios",
+   "Maintains order in the House",
+   "Gives legal advice"
+  ],
+  "why": "The Governor summons the Assembly, the Chief Minister allocates portfolios, the Speaker keeps order and the Advocate General gives legal advice."
+ },
+ "203": "retire"
+}

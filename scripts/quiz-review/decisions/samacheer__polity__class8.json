@@ -1,0 +1,109 @@
+{
+ "retire": [
+  27,
+  63,
+  122,
+  124
+ ],
+ "fix": {
+  "25": {
+   "question": "Match List I with List II: List I (Method) A. Naturalisation B. Birth C. Registration List II (Description) 1. Applying after residing for a period 2. Born within the territory 3. Applying through a specific legal process",
+   "options": [
+    "A-1, B-3, C-2",
+    "A-1, B-2, C-3",
+    "A-3, B-2, C-1",
+    "A-2, B-1, C-3"
+   ],
+   "answer_index": 1,
+   "explanation": "Citizenship by birth comes from being born in India, naturalisation after residing for the required period and registration through a set legal application."
+  },
+  "26": {
+   "question": "Match List I with List II: List I (Term) A. Deprivation B. Renunciation C. Termination List II (Meaning) 1. Forced loss due to fraud 2. Loss due to acquiring another citizenship 3. Giving up citizenship voluntarily",
+   "options": [
+    "A-1, B-2, C-3",
+    "A-2, B-3, C-1",
+    "A-1, B-3, C-2",
+    "A-3, B-1, C-2"
+   ],
+   "answer_index": 2,
+   "explanation": "Renunciation is giving up citizenship voluntarily, termination is automatic on taking another citizenship and deprivation is forced loss, for example for fraud."
+  },
+  "120": {
+   "question": "Match List I with List II: List I (Method) A. By birth B. By descent C. By naturalisation D. By registration List II (Description) 1. Foreigner meeting residency criteria 2. Born within the territory 3. Born to Indian parents 4. Application by person of Indian origin",
+   "options": [
+    "A-2, B-3, C-1, D-4",
+    "A-2, B-1, C-3, D-4",
+    "A-3, B-2, C-1, D-4",
+    "A-2, B-3, C-4, D-1"
+   ],
+   "answer_index": 0,
+   "explanation": "Citizenship comes by birth in India, by descent from Indian parents, by naturalisation for a foreigner meeting residence rules and by registration for persons of Indian origin."
+  },
+  "121": {
+   "question": "Match List I with List II: List I (Term) A. Renunciation B. Deprivation C. Termination D. Incorporation of territory List II (Meaning) 1. Voluntary giving up 2. Forced removal 3. Automatic loss 4. Territory addition",
+   "options": [
+    "A-2, B-1, C-3, D-4",
+    "A-1, B-2, C-3, D-4",
+    "A-4, B-2, C-3, D-1",
+    "A-1, B-3, C-2, D-4"
+   ],
+   "answer_index": 1,
+   "explanation": "Renunciation is voluntary, deprivation is forced removal, termination is automatic loss, and incorporation of territory adds citizens when a new area joins India."
+  },
+  "123": {
+   "question": "Match List I with List II: List I (Provision) A. Part II (Articles 5-11) B. Article 11 C. Citizenship Act, 1955 D. Article 5 List II (Role) 1. Detailed citizenship laws 2. Citizenship at commencement 3. Parliament's power 4. Constitution's citizenship section",
+   "options": [
+    "A-3, B-4, C-1, D-2",
+    "A-4, B-1, C-3, D-2",
+    "A-1, B-3, C-4, D-2",
+    "A-4, B-3, C-1, D-2"
+   ],
+   "answer_index": 3,
+   "explanation": "Part II of the Constitution deals with citizenship, Article 11 empowers Parliament to regulate it, the Citizenship Act 1955 contains the detailed law and Article 5 covers citizenship at the commencement of the Constitution."
+  },
+  "125": {
+   "question": "Match List I with List II: List I (Status) A. Citizen B. Alien C. Overseas Citizen of India D. Non-Resident Indian List II (Description) 1. Foreign national 2. Limited privileges 3. Full rights and duties 4. Citizen living abroad",
+   "options": [
+    "A-4, B-1, C-2, D-3",
+    "A-3, B-1, C-2, D-4",
+    "A-3, B-4, C-2, D-1",
+    "A-1, B-3, C-2, D-4"
+   ],
+   "answer_index": 1,
+   "explanation": "A citizen has full rights and duties, an alien is a foreign national, an OCI card holder has limited privileges and an NRI is a citizen living abroad."
+  },
+  "126": {
+   "question": "Match List I with List II: List I (Way of losing citizenship) A. Renunciation B. Deprivation C. Termination List II (Cause) 1. Personal choice 2. Acquiring other citizenship 3. Fraud in application",
+   "options": [
+    "A-2, B-3, C-1",
+    "A-3, B-1, C-2",
+    "A-1, B-3, C-2",
+    "A-1, B-2, C-3"
+   ],
+   "answer_index": 2,
+   "explanation": "Renunciation is a personal choice, deprivation follows fraud in the application and termination follows acquiring another country's citizenship."
+  },
+  "176": {
+   "question": "Match List I with List II: List I (Term) A. Criminal case B. Writ C. Civil case D. Public Interest Litigation List II (Description) 1. Theft or murder cases 2. Disputes over property or contracts 3. Formal written order by a court 4. Litigation for public interest",
+   "options": [
+    "A-1, B-3, C-2, D-4",
+    "A-1, B-2, C-3, D-4",
+    "A-2, B-3, C-1, D-4",
+    "A-1, B-3, C-4, D-2"
+   ],
+   "answer_index": 0,
+   "explanation": "Criminal cases involve theft or murder, a writ is a formal written court order, civil cases are disputes over property or contracts and a PIL is filed in the public interest."
+  },
+  "177": {
+   "question": "Match List I with List II: List I (Court) A. High Court B. District Court C. Supreme Court List II (Level) 1. District level head 2. Apex Court of India 3. State level head",
+   "options": [
+    "A-1, B-3, C-2",
+    "A-3, B-1, C-2",
+    "A-2, B-1, C-3",
+    "A-3, B-2, C-1"
+   ],
+   "answer_index": 1,
+   "explanation": "The High Court heads the state judiciary, the District Court the district judiciary and the Supreme Court is India's apex court."
+  }
+ }
+}

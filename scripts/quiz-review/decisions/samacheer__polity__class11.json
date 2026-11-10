@@ -1,0 +1,49 @@
+{
+ "retire": [
+  12,
+  27,
+  145,
+  146,
+  153,
+  177,
+  178,
+  179,
+  198,
+  210
+ ],
+ "fix": {
+  "70": {
+   "question": "Match List I with List II: List I (Varna) A. Shudras B. Brahmins C. Kshatriyas D. Vaishyas List II (Traditional occupation) 1. Warriors and rulers 2. Merchants and farmers 3. Priests and scholars 4. Laborers and service providers",
+   "options": [
+    "A-4, B-3, C-2, D-1",
+    "A-2, B-3, C-1, D-4",
+    "A-4, B-3, C-1, D-2",
+    "A-3, B-4, C-1, D-2"
+   ],
+   "answer_index": 2,
+   "explanation": "In the varna scheme Brahmins were priests and scholars, Kshatriyas warriors and rulers, Vaishyas merchants and farmers and Shudras labourers and service providers."
+  },
+  "143": {
+   "question": "Match the term or person with the theme: List I (Term / person) A. Puram B. Bharathiyar C. Akam D. Singaravelar List II (Theme) 1. Communism 2. Love 3. Nationalism 4. War",
+   "options": [
+    "A-2, B-3, C-4, D-1",
+    "A-1, B-3, C-2, D-4",
+    "A-4, B-2, C-3, D-1",
+    "A-4, B-3, C-2, D-1"
+   ],
+   "answer_index": 3,
+   "explanation": "Sangam akam poetry is about love and puram poetry about war; Bharathiyar is known for nationalism and Singaravelar for communism."
+  },
+  "144": {
+   "question": "Match the person with what they are known for: List I (Person) A. Periyar B. Singaravelar C. Strabo D. Thiruvalluvar List II (Known for) 1. Communism 2. Social Justice 3. Greek Geographer 4. Political Ideas",
+   "options": [
+    "A-2, B-1, C-3, D-4",
+    "A-2, B-4, C-3, D-1",
+    "A-4, B-1, C-3, D-2",
+    "A-3, B-1, C-2, D-4"
+   ],
+   "answer_index": 0,
+   "explanation": "Periyar championed social justice, Singaravelar communism, Strabo was a Greek geographer and Thiruvalluvar set out political ideas in the Thirukkural."
+  }
+ }
+}
