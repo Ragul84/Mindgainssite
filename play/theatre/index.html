@@ -60,6 +60,16 @@ body{font-family:Inter,system-ui,sans-serif}
 .stub{width:92px;border:0;border-radius:0 12px 12px 0;background:var(--g);color:#1a1408;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;cursor:pointer;padding:0;box-shadow:none;text-shadow:none}
 .stub b{font:400 32px/1 'Bebas Neue'}.stub span{font:700 8.5px Inter;letter-spacing:.18em}
 .seatcard{bottom:236px!important;background:var(--g)!important;color:#1a1408!important;border-radius:2px!important;font:700 11px Inter!important;letter-spacing:.12em;text-transform:uppercase}
+.quizc{position:fixed;left:14px;right:14px;top:150px;z-index:8;background:linear-gradient(135deg,rgba(28,22,14,.96),rgba(12,10,8,.96));border:1px solid rgba(243,212,138,.6);border-radius:12px;padding:12px 14px;box-shadow:0 20px 50px rgba(0,0,0,.6)}
+.qk{font:700 10px Inter;letter-spacing:.2em;color:var(--g)}.qq{font:italic 700 18px/1.2 'Playfair Display',serif;margin:6px 0 10px}
+.qo{display:grid;grid-template-columns:1fr 1fr;gap:6px}.qo button{background:rgba(255,255,255,.06);border:1px solid rgba(243,212,138,.35);color:#fff;border-radius:6px;padding:9px 6px;font:600 12.5px Inter;text-align:center}
+.qo button.sel{background:rgba(243,212,138,.25);border-color:var(--g)}.qo button.ok{background:#1f7a46;border-color:#3ddc84}.qo button.no{background:#7a1f2c;border-color:#ff5a6e}
+.qb{height:3px;background:rgba(255,255,255,.12);margin-top:10px}.qb i{display:block;height:100%;width:100%;background:var(--g);transition:width .25s linear}
+.qn{font:600 11px Inter;color:#c9bda2;margin-top:6px}
+.top5{position:fixed;right:14px;top:96px;z-index:6;background:rgba(0,0,0,.6);border:1px solid rgba(243,212,138,.4);padding:6px 9px;font:600 10.5px/1.5 Inter;color:#e9dcbd;min-width:120px}
+.top5 b{display:block;font:400 13px 'Bebas Neue';letter-spacing:.14em;color:var(--g)}
+.reacts{position:fixed;right:14px;bottom:264px;z-index:6;display:flex;flex-direction:column;gap:6px}.reacts button{width:38px;height:38px;border-radius:50%;border:1px solid rgba(243,212,138,.5);background:rgba(0,0,0,.55);font-size:17px}
+.fly{position:fixed;z-index:7;font-size:24px;pointer-events:none;animation:fly 2.2s ease-out forwards}@keyframes fly{to{transform:translateY(-140px);opacity:0}}
 </style>
 <script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
 </head>
@@ -71,6 +81,9 @@ body{font-family:Inter,system-ui,sans-serif}
 <div class="halls" id="halls"></div>
 <div class="tip" id="tip">SWIPE TO LOOK AROUND · TAP A SEAT</div>
 <div class="seatcard" id="seatcard"></div>
+<div class="quizc" id="quizc" hidden><div class="qk" id="qk">MIGA ASKS · 15 S</div><div class="qq" id="qq"></div><div class="qo" id="qo"></div><div class="qb"><i id="qbar"></i></div><div class="qn" id="qn"></div></div>
+<div class="top5" id="top5" hidden></div>
+<div class="reacts" id="reacts"><button>🔥</button><button>👏</button><button>🤯</button><button>💡</button></div>
 <div class="angles"><button data-v="wide" class="on">HALL</button><button data-v="seat">MY SEAT</button><button data-v="stage">STAGE</button><button data-v="balcony">BALCONY</button></div>
 <div class="sheet"><div class="tt" id="tt"></div>
   <div class="ticket"><div class="main"><div class="k" id="nowK">NOW SHOWING · SCREEN 1</div><div class="t" id="nowT">Loading…</div><div class="m" id="nowS"></div></div>
@@ -174,7 +187,7 @@ function renderTT() {
   document.getElementById('nowS').textContent = `${c.H.name} · ${c.subject} day` + (c.vid ? '' : '') + (next ? ` · next in ${left >= 60 ? Math.floor(left / 60) + 'h ' : ''}${left % 60}m` : '');
   document.getElementById('tt').innerHTML = c.list.map((x) => `<div class="slot${x === c.b ? ' on' : ''}"><b>${x === c.b ? 'NOW' : x.from}</b><div>${x.premiere ? '⭐ ' : ''}${x.block}</div></div>`).join('');
   document.getElementById('halls').innerHTML = Object.entries(TT.halls).map(([k, h]) => `<button data-h="${k}" class="${k === hall ? 'on' : ''}">${k === 'main' ? 'ENGLISH' : 'தமிழ் TNPSC'}</button>`).join('');
-  document.querySelectorAll('#halls button').forEach((bt) => bt.onclick = () => { hall = bt.dataset.h; ytNow = ''; renderTT(); });
+  document.querySelectorAll('#halls button').forEach((bt) => bt.onclick = () => { hall = bt.dataset.h; ytNow = ''; renderTT(); live.connect(); });
   const on = document.querySelector('#tt .slot.on'); if (on && !renderTT.scrolled) { on.scrollIntoView({ inline: 'start', block: 'nearest' }); renderTT.scrolled = 1; }
   // until the timetable has videos, everyone watches the same filler video, in sync (10-minute loop)
   const FILL = 'jRkBF3HUlgI', nowS = Math.floor(Date.now() / 1000);
@@ -201,7 +214,7 @@ ROWS.forEach((row, r) => {
     const aisle = i >= 4 ? (i >= 14 ? 2 : 1) : 0, a = ((i - (PER - 1) / 2) * .95 + (aisle - 1) * 1.1) / radius;
     const x = Math.sin(a) * radius, zz = z + (radius - Math.cos(a) * radius);
     const vip = r < 4;
-    let st = rnd() < .5 ? 'taken' : 'free'; if (r === 6 && (i === 8 || i === 11)) st = 'friend'; if (r === 6 && (i === 9 || i === 10)) st = 'free';
+    let st = 'free';
     const g = new THREE.Group(); g.position.set(x, y, zz); g.rotation.y = -a;
     const c = st === 'taken' ? COL.taken : st === 'friend' ? COL.friend : vip ? COL.freeB : COL.free;
     const m = mat(c, .55, 0, { emissive: st === 'taken' ? 0 : c, emissiveIntensity: st === 'taken' ? 0 : .35 });
@@ -236,7 +249,8 @@ addEventListener('pointermove', (e) => { if (down) dragged = Math.max(dragged, M
 addEventListener('pointerup', (e) => { if (e.target.closest('.sheet,.angles,.top,.halls')) return; down = false; if (dragged > 8) return; ptr.set(e.clientX / W() * 2 - 1, -(e.clientY / H()) * 2 + 1); ray.setFromCamera(ptr, cam);
   const hit = ray.intersectObjects(pick)[0]; if (!hit) return; const s = hit.object.userData.seat;
   const card = document.getElementById('seatcard'); card.style.display = 'block';
-  if (s.st === 'taken') { card.textContent = `Row ${s.row} · Seat ${s.n} is taken`; return; }
+  if (s.st === 'taken') { card.textContent = `Row ${s.row} · Seat ${s.n} · ${s.who || 'taken'}`; return; }
+  live.sit(s.row + s.n);
   markMine(s); card.textContent = `Row ${s.row} · Seat ${s.n} · ${s.row < 'E' ? 'Front rows' : 'Centre'} — here's your view`; document.getElementById('tip').style.display = 'none'; fly('seat'); });
 document.getElementById('go').onclick = () => fly('seat');
 if (new URLSearchParams(location.search).get('view')) fly(new URLSearchParams(location.search).get('view'));
@@ -251,6 +265,49 @@ function setLook() { orbit.enabled = mode !== 'seat'; yaw = 0; pitch = 0; if (mo
 addEventListener('pointerdown', (e) => { if (mode !== 'seat' || e.target.closest('.sheet,.angles,.top,.halls')) return; flying = false; look = true; lx = e.clientX; ly = e.clientY; });
 addEventListener('pointermove', (e) => { if (!look) return; yaw -= (e.clientX - lx) * .006; pitch = Math.max(-.6, Math.min(.5, pitch - (e.clientY - ly) * .004)); yaw = Math.max(-1.9, Math.min(1.9, yaw)); lx = e.clientX; ly = e.clientY; });
 addEventListener('pointerup', () => { look = false; });
+// ---- live room: real seats, viewer count, MIGA quiz, top 5, reactions
+const seatByKey = new Map(seats.map((s) => [s.row + s.n, s]));
+const myName = (() => { try { const p = JSON.parse(localStorage.getItem('tkr_player_profile') || '{}'); return p.name || ''; } catch { return ''; } })() || 'Guest ' + Math.floor(Math.random() * 900 + 100);
+const live = { ws: null, hall: null, n: 0, quiz: null, picked: -1,
+  connect() { if (this.hall === hall && this.ws && this.ws.readyState < 2) return; try { this.ws && this.ws.close(); } catch {} this.hall = hall;
+    const ws = new WebSocket((location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/api/theatre/' + hall + '/ws'); this.ws = ws;
+    ws.onopen = () => { ws.send(JSON.stringify({ t: 'hello', name: myName })); if (mine) this.sit(mine.row + mine.n); };
+    ws.onmessage = (e) => this.on(JSON.parse(e.data));
+    ws.onclose = () => { if (this.ws === ws) setTimeout(() => this.connect(), 3000); }; },
+  send(m) { if (this.ws && this.ws.readyState === 1) this.ws.send(JSON.stringify(m)); },
+  sit(k) { this.send({ t: 'sit', seat: k }); },
+  on(m) {
+    if (m.t === 'state' || m.t === 'seats') { this.n = m.count; paintSeats(m.seats); if (m.top) paintTop(m.top); if (m.quiz) showQuiz(m.quiz); renderCount(); }
+    else if (m.t === 'taken') { const c = document.getElementById('seatcard'); c.style.display = 'block'; c.textContent = 'Someone just took ' + m.seat; }
+    else if (m.t === 'quiz') showQuiz(m);
+    else if (m.t === 'answered') { if (this.quiz && m.qid === this.quiz.qid) document.getElementById('qn').textContent = `${m.n} of ${this.n} answered`; }
+    else if (m.t === 'reveal') reveal(m);
+    else if (m.t === 'react') { const s = seatByKey.get(m.seat); if (s) floatAt(s.g.position, m.e); }
+  } };
+function paintSeats(map) {
+  for (const s of seats) { const k = s.row + s.n, who = map[k], isMe = mine === s;
+    if (isMe) continue;
+    const st = who ? 'taken' : 'free'; if (s.st === st && s.who === who) continue; s.st = st; s.who = who;
+    const c = st === 'taken' ? COL.taken : s.row < 'E' ? COL.freeB : COL.free; s.m.color.set(c); s.m.emissive.set(st === 'taken' ? 0x000000 : c); s.m.emissiveIntensity = st === 'taken' ? 0 : .35; } }
+function renderCount() { const el = document.getElementById('nowS'); if (el && !el.dataset.c) { el.dataset.c = 1; } const k = document.getElementById('nowK'); if (k) k.textContent = `NOW SHOWING · ${live.n} IN THE HALL`; }
+function paintTop(top) { const el = document.getElementById('top5'); if (!top.length) { el.hidden = true; return; } el.hidden = false;
+  el.innerHTML = '<b>TOP 5 TONIGHT</b>' + top.map((t, i) => `${i + 1}. ${t.name.replace(/[<>&]/g, '')}${t.seat ? ' · ' + t.seat : ''} — ${t.pts}`).join('<br>'); }
+let qTimer = null;
+function showQuiz(q) { live.quiz = q; live.picked = -1; const c = document.getElementById('quizc'); c.hidden = false;
+  document.getElementById('qq').textContent = q.q;
+  document.getElementById('qo').innerHTML = q.opts.map((o, i) => `<button data-i="${i}">${String(o).replace(/[<>&]/g, '')}</button>`).join('');
+  document.getElementById('qn').textContent = 'Answer before the timer runs out';
+  document.querySelectorAll('#qo button').forEach((b) => b.onclick = () => { if (live.picked >= 0) return; live.picked = +b.dataset.i; b.classList.add('sel'); live.send({ t: 'ans', qid: q.qid, i: live.picked }); });
+  clearInterval(qTimer); qTimer = setInterval(() => { const left = Math.max(0, q.ends - Date.now()); document.getElementById('qbar').style.width = (left / 150) + '%'; document.getElementById('qk').textContent = `MIGA ASKS · ${Math.ceil(left / 1000)} S`; if (!left) clearInterval(qTimer); }, 250); }
+function reveal(m) { if (!live.quiz || m.qid !== live.quiz.qid) return; clearInterval(qTimer);
+  document.querySelectorAll('#qo button').forEach((b, i) => { if (i === m.correct) b.classList.add('ok'); else if (i === live.picked) b.classList.add('no'); });
+  document.getElementById('qk').textContent = live.picked === m.correct ? 'CORRECT ✦' : live.picked < 0 ? 'TIME UP' : 'NOT QUITE';
+  document.getElementById('qn').textContent = `${m.pct}% of ${m.n} got it right`; paintTop(m.top);
+  setTimeout(() => { document.getElementById('quizc').hidden = true; }, 6000); }
+function floatAt(pos, e) { const v = pos.clone().add(new THREE.Vector3(0, 1.4, 0)).project(cam); if (v.z > 1) return;
+  const d = document.createElement('div'); d.className = 'fly'; d.textContent = e; d.style.left = ((v.x + 1) / 2 * W() - 12) + 'px'; d.style.top = ((1 - v.y) / 2 * H() - 12) + 'px'; document.body.appendChild(d); setTimeout(() => d.remove(), 2300); }
+document.querySelectorAll('#reacts button').forEach((b) => b.onclick = () => live.send({ t: 'react', e: b.textContent }));
+setTimeout(() => live.connect(), 300);
 addEventListener('resize', () => { cam.aspect = W() / H(); cam.updateProjectionMatrix(); renderer.setSize(W(), H()); css.setSize(W(), H()); });
 cam.aspect = W() / H(); cam.updateProjectionMatrix();
 let t0 = performance.now();

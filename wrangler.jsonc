@@ -22,5 +22,7 @@
   "d1_databases": [
     { "binding": "GAME_DB", "database_name": "mindgains-game", "database_id": "434ed192-05f8-4308-bd2b-727fb85a69de" }
   ],
+  "durable_objects": { "bindings": [ { "name": "THEATRE", "class_name": "TheatreHall" } ] },
+  "migrations": [ { "tag": "theatre-v1", "new_sqlite_classes": ["TheatreHall"] } ],
   "vars": { "ALLOW_GUEST_LEAGUE": "1" }
 }
