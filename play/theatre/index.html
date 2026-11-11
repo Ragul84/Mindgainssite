@@ -80,6 +80,32 @@ body.cinema .top,body.cinema .marq,body.cinema .halls,body.cinema .tip,body.cine
 #snd.pulse{animation:pulse 1.4s ease-in-out infinite;background:var(--g);color:#1a1408}@keyframes pulse{50%{box-shadow:0 0 0 6px rgba(243,212,138,.25)}}
 .seatcard{top:194px!important;bottom:auto!important;left:14px!important;transform:none!important;padding:4px 8px!important;font:700 9.5px Inter!important;letter-spacing:.14em;border-radius:2px!important;background:rgba(0,0,0,.65)!important;color:var(--g)!important;border:1px solid rgba(243,212,138,.5);box-shadow:none!important}
 .mq{will-change:transform;transform:translate3d(0,0,0);backface-visibility:hidden;font-size:16px!important}
+
+/* ---- decluttered layout: one slim header, small centred controls, ticket at the bottom; max 520px on wide screens */
+.top{left:50%!important;right:auto!important;transform:translateX(-50%);width:min(520px,calc(100% - 24px))!important;top:12px!important;gap:8px!important}
+.brand{font-size:17px!important}
+.live{padding:5px 8px!important;font-size:9.5px!important}
+.ib{width:34px;height:34px;border:1px solid rgba(243,212,138,.5);background:rgba(0,0,0,.5);color:var(--g);font-size:15px;border-radius:2px;padding:0;cursor:pointer}
+.ib.pulse{animation:pulse 1.4s ease-in-out infinite}
+.soundhint{position:fixed;top:54px;right:max(12px,calc(50% - 260px));z-index:6;font:700 9.5px Inter;letter-spacing:.16em;color:#1a1408;background:var(--g);padding:4px 8px;border-radius:2px}
+.soundhint::before{content:"";position:absolute;top:-5px;right:46px;border:5px solid transparent;border-top:0;border-bottom-color:var(--g)}
+.halls{top:auto!important;bottom:162px!important;left:50%!important;transform:translateX(-50%);gap:4px!important}
+.halls button{padding:4px 8px!important;font-size:9px!important}
+.tip{top:56px!important;left:50%!important;transform:translateX(-50%)!important;font-size:9.5px!important;white-space:nowrap}
+.angles{left:50%!important;right:auto!important;transform:translateX(-50%);width:min(360px,calc(100% - 24px));bottom:122px!important;gap:0!important;border:1px solid rgba(243,212,138,.45);background:rgba(0,0,0,.55)}
+.angles button{border:0!important;padding:7px 0!important;font-size:9.5px!important;background:transparent!important}
+.angles button.on{background:var(--g)!important}
+.sheet{left:50%!important;right:auto!important;transform:translateX(-50%);width:min(520px,calc(100% - 24px));bottom:12px!important}
+.ticket .main{padding:10px 12px!important}.ticket .t{font-size:18px!important;margin:3px 0 2px!important}.ticket .m{font-size:11px!important}
+.stub{width:76px!important}.stub b{font-size:26px!important}
+.ttbtn{margin-top:6px;background:none;border:0;padding:0;color:var(--g);font:700 9.5px Inter;letter-spacing:.18em;cursor:pointer}
+.tt{flex-direction:column;gap:4px!important;max-height:42vh;overflow-y:auto;margin-bottom:6px!important;background:rgba(10,8,6,.92);border:1px solid rgba(243,212,138,.35);padding:8px}
+.tt[hidden]{display:none!important}
+.reacts{right:max(12px,calc(50% - 260px))!important;bottom:178px!important;gap:5px!important}.reacts button{width:32px!important;height:32px!important;font-size:14px!important}
+.top5{top:auto!important;bottom:178px!important;right:auto!important;left:max(12px,calc(50% - 260px));font-size:10px!important}
+.quizc{left:50%!important;right:auto!important;transform:translateX(-50%);width:min(440px,calc(100% - 24px));top:64px!important;padding:10px 12px!important}
+.qq{font-size:15px!important;margin:4px 0 8px!important}.qo button{padding:7px 6px!important;font-size:11.5px!important}
+.seatcard{top:56px!important;left:50%!important;transform:translateX(-50%)!important}
 </style>
 <script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
 </head>
@@ -87,9 +113,9 @@ body.cinema .top,body.cinema .marq,body.cinema .halls,body.cinema .tip,body.cine
 <canvas id="gl"></canvas><div id="css"></div>
 <div class="loader" id="loader"><div class="lg">MINDGAINS · THEATRE</div><div class="ring"></div><div class="ls" id="ls">SETTING UP THE HALL…</div></div>
 <div class="vig"></div>
-<div class="ctl"><button id="snd">🔇 TAP FOR SOUND</button><button id="fs">⛶ FULL SCREEN</button></div>
-<div class="top"><a class="back" href="/nationlap/" aria-label="Back">‹</a><div class="brand">MINDGAINS · THEATRE</div><span class="live" id="live">● NOW SHOWING</span></div>
-<div class="marq"><div class="mq" id="mq">THEATRE ✦</div></div>
+<div class="soundhint" id="soundhint">TAP 🔇 FOR SOUND</div>
+<div class="top"><a class="back" href="/nationlap/" aria-label="Back">‹</a><div class="brand">MINDGAINS · THEATRE</div><span class="live" id="live">● LIVE</span><button class="ib" id="snd" title="Sound">🔇</button><button class="ib" id="fs" title="Full screen">⛶</button></div>
+<div class="marq" hidden><div class="mq" id="mq"></div></div>
 <div class="halls" id="halls"></div>
 <div class="tip" id="tip">SWIPE TO LOOK AROUND · TAP A SEAT</div>
 <div class="seatcard" id="seatcard"></div>
@@ -97,8 +123,8 @@ body.cinema .top,body.cinema .marq,body.cinema .halls,body.cinema .tip,body.cine
 <div class="top5" id="top5" hidden></div>
 <div class="reacts" id="reacts"><button>🔥</button><button>👏</button><button>🤯</button><button>💡</button></div>
 <div class="angles"><button data-v="wide" class="on">HALL</button><button data-v="seat">MY SEAT</button><button data-v="stage">STAGE</button><button data-v="balcony">BALCONY</button></div>
-<div class="sheet"><div class="tt" id="tt"></div>
-  <div class="ticket"><div class="main"><div class="k" id="nowK">NOW SHOWING · SCREEN 1</div><div class="t" id="nowT">Loading…</div><div class="m" id="nowS"></div></div>
+<div class="sheet"><div class="tt" id="tt" hidden></div>
+  <div class="ticket"><div class="main"><div class="k" id="nowK">NOW SHOWING · SCREEN 1</div><div class="t" id="nowT">Loading…</div><div class="m" id="nowS"></div><button class="ttbtn" id="ttbtn">TIMETABLE ▾</button></div>
   <button class="stub go" id="go"><span>ROW</span><b id="stubRow">G7</b><span>ADMIT ONE</span></button></div>
 </div>
 <script type="module">
@@ -194,7 +220,7 @@ function current() {
 }
 function renderTT() {
   if (!TT) return; const c = current();
-  document.getElementById('live').textContent = '● NOW SHOWING';
+  document.getElementById('live').textContent = '● LIVE';
   const next = c.list.find((x) => mins(x.from) > c.m); const left = next ? mins(next.from) - c.m : null;
   document.getElementById('nowT').textContent = c.b ? c.b.block : 'Off air';
   const mqt = `${c.subject.toUpperCase()} DAY ✦ ${c.H.name.toUpperCase()} ✦ ${next ? 'NEXT · ' + next.block.toUpperCase() + ' AT ' + next.from + ' ✦ ' : ''}6 PM PREMIERE · MIGA: YESTERDAY'S CURRENT AFFAIRS ✦ `;
@@ -325,7 +351,10 @@ document.querySelectorAll('#reacts button').forEach((b) => b.onclick = () => liv
 setTimeout(() => live.connect(), 300);
 // sound: browsers only allow sound after a tap, so ask once with a pulsing button
 const snd = document.getElementById('snd'); snd.classList.add('pulse');
-snd.onclick = () => { soundOn = !soundOn; yCmd(soundOn ? 'unMute' : 'mute'); if (soundOn) yCmd('setVolume', [100]); snd.textContent = soundOn ? '🔊 SOUND ON' : '🔇 TAP FOR SOUND'; snd.classList.toggle('pulse', !soundOn); };
+snd.onclick = () => { soundOn = !soundOn; yCmd(soundOn ? 'unMute' : 'mute'); if (soundOn) yCmd('setVolume', [100]); snd.textContent = soundOn ? '🔊' : '🔇'; snd.classList.toggle('pulse', !soundOn); document.getElementById('soundhint').hidden = true; };
+document.getElementById('ttbtn').onclick = () => { const t = document.getElementById('tt'); t.hidden = !t.hidden; document.getElementById('ttbtn').textContent = t.hidden ? 'TIMETABLE ▾' : 'TIMETABLE ▴'; };
+setTimeout(() => { const t = document.getElementById('tip'); if (t) t.style.display = 'none'; }, 5000);
+setTimeout(() => { const h = document.getElementById('soundhint'); if (h) h.hidden = true; }, 9000);
 // full screen: the whole theatre (the video stays on the 3D screen); falls back to a screen-filling view on iPhone
 document.getElementById('fs').onclick = async () => { const d = document.documentElement;
   try { if (document.fullscreenElement) await document.exitFullscreen(); else if (d.requestFullscreen) await d.requestFullscreen(); else if (d.webkitRequestFullscreen) d.webkitRequestFullscreen(); else throw 0; }
