@@ -47,6 +47,7 @@ html,body{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}#
 .slot{background:rgba(16,20,48,.85)!important;border:2px solid rgba(255,255,255,.25)!important}.slot.on{border-color:var(--gold)!important;background:rgba(255,210,63,.14)!important}
 .slot b{color:var(--gold)!important}
 .tip{font-family:'Lilita One';font-weight:400;letter-spacing:.4px}
+body.clean .top,body.clean .angles,body.clean .halls,body.clean .tip,body.clean .sheet,body.clean .seatcard{display:none!important}
 </style>
 <script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
 </head>
@@ -126,6 +127,7 @@ function playOnScreen(id, start) {
   ytObj = new CSS3DObject(el); ytObj.scale.setScalar(SW / YT_W); ytObj.position.copy(screen.position); cssScene.add(ytObj);
   screen.material.transparent = true; screen.material.opacity = 0;
 }
+if (location.search.includes('clean')) document.body.classList.add('clean');
 const DAYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 const ist = () => { const d = new Date(Date.now() + (5.5 * 60 + new Date().getTimezoneOffset()) * 60000); return d; };
 const mins = (hm) => { const [h, m] = hm.split(':').map(Number); return h * 60 + m; };
@@ -154,12 +156,14 @@ function renderTT() {
   document.getElementById('live').textContent = `● LIVE · ${c.subject}`;
   document.getElementById('nowT').textContent = c.b ? c.b.block : 'Off air';
   const next = c.list.find((x) => mins(x.from) > c.m); const left = next ? mins(next.from) - c.m : null;
-  document.getElementById('nowS').textContent = `${c.H.name} · ${c.subject} day` + (c.vid ? '' : ' · videos coming soon') + (next ? ` · next in ${left >= 60 ? Math.floor(left / 60) + 'h ' : ''}${left % 60}m` : '');
+  document.getElementById('nowS').textContent = `${c.H.name} · ${c.subject} day` + (c.vid ? '' : '') + (next ? ` · next in ${left >= 60 ? Math.floor(left / 60) + 'h ' : ''}${left % 60}m` : '');
   document.getElementById('tt').innerHTML = c.list.map((x) => `<div class="slot${x === c.b ? ' on' : ''}"><b>${x === c.b ? 'NOW' : x.from}</b><div>${x.premiere ? '⭐ ' : ''}${x.block}</div></div>`).join('');
   document.getElementById('halls').innerHTML = Object.entries(TT.halls).map(([k, h]) => `<button data-h="${k}" class="${k === hall ? 'on' : ''}">${k === 'main' ? 'English' : 'தமிழ் TNPSC'}</button>`).join('');
   document.querySelectorAll('#halls button').forEach((bt) => bt.onclick = () => { hall = bt.dataset.h; ytNow = ''; renderTT(); });
   const on = document.querySelector('#tt .slot.on'); if (on && !renderTT.scrolled) { on.scrollIntoView({ inline: 'start', block: 'nearest' }); renderTT.scrolled = 1; }
-  playOnScreen(new URLSearchParams(location.search).get('yt') || c.vid, c.at);
+  // until the timetable has videos, everyone watches the same filler video, in sync (10-minute loop)
+  const FILL = 'jRkBF3HUlgI', nowS = Math.floor(Date.now() / 1000);
+  playOnScreen(new URLSearchParams(location.search).get('yt') || c.vid || FILL, c.vid ? c.at : nowS % 600);
 }
 fetch('timetable.json?v=' + Math.floor(Date.now() / 6e5)).then((r) => r.json()).then((j) => { TT = j; renderTT(); setInterval(renderTT, 15000); }).catch(() => { document.getElementById('nowT').textContent = 'Timetable unavailable'; });
 
