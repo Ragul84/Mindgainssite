@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@1,700&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box}html,body{margin:0;height:100%;background:#07040a;overflow:hidden;font-family:Nunito,system-ui,sans-serif;color:#fff}
-#gl,#css{position:fixed;inset:0}#css,#css>div{pointer-events:none}#css .yt{pointer-events:none}
+#gl,#css{position:fixed;inset:0}#css{z-index:0}#gl{z-index:1;background:transparent}#css,#css>div{pointer-events:none}#css .yt{pointer-events:none}
 .top{position:fixed;left:14px;right:14px;top:12px;display:flex;justify-content:space-between;align-items:center;z-index:5}
 .brand{font-family:'Lilita One';font-size:19px;text-shadow:0 2px 8px #000}.brand b{color:#ffcf3f;font-weight:400}
 .live{background:#ff2d55;border-radius:7px;padding:3px 8px;font:900 11px Nunito;letter-spacing:.06em}
@@ -103,9 +103,15 @@ body.cinema .top,body.cinema .marq,body.cinema .halls,body.cinema .tip,body.cine
 .tt[hidden]{display:none!important}
 .reacts{right:max(12px,calc(50% - 260px))!important;bottom:178px!important;gap:5px!important}.reacts button{width:32px!important;height:32px!important;font-size:14px!important}
 .top5{top:auto!important;bottom:178px!important;right:auto!important;left:max(12px,calc(50% - 260px));font-size:10px!important}
-.quizc{left:50%!important;right:auto!important;transform:translateX(-50%);width:min(440px,calc(100% - 24px));top:64px!important;padding:10px 12px!important}
+.quizc{left:50%!important;right:auto!important;transform:translateX(-50%);width:min(520px,calc(100% - 24px));top:auto!important;bottom:12px!important;padding:10px 12px!important}
+body.quizon .sheet,body.quizon .angles,body.quizon .halls{visibility:hidden}
 .qq{font-size:15px!important;margin:4px 0 8px!important}.qo button{padding:7px 6px!important;font-size:11.5px!important}
 .seatcard{top:56px!important;left:50%!important;transform:translateX(-50%)!important}
+.reacts{display:none!important}body.seatmode .reacts{display:flex!important}
+.halls{position:fixed!important;bottom:auto!important;top:56px!important;left:50%!important;transform:translateX(-50%)}
+.halls button{background:none!important;border:0!important;color:rgba(243,212,138,.55)!important;padding:2px 6px!important}.halls button.on{color:var(--g)!important;text-decoration:underline;text-underline-offset:4px;background:none!important}
+.tip{top:84px!important}
+.angles{bottom:118px!important}
 </style>
 <script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
 </head>
@@ -113,7 +119,7 @@ body.cinema .top,body.cinema .marq,body.cinema .halls,body.cinema .tip,body.cine
 <canvas id="gl"></canvas><div id="css"></div>
 <div class="loader" id="loader"><div class="lg">MINDGAINS · THEATRE</div><div class="ring"></div><div class="ls" id="ls">SETTING UP THE HALL…</div></div>
 <div class="vig"></div>
-<div class="soundhint" id="soundhint">TAP 🔇 FOR SOUND</div>
+
 <div class="top"><a class="back" href="/nationlap/" aria-label="Back">‹</a><div class="brand">MINDGAINS · THEATRE</div><span class="live" id="live">● LIVE</span><button class="ib" id="snd" title="Sound">🔇</button><button class="ib" id="fs" title="Full screen">⛶</button></div>
 <div class="marq" hidden><div class="mq" id="mq"></div></div>
 <div class="halls" id="halls"></div>
@@ -134,7 +140,7 @@ import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.j
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 const W = () => innerWidth, H = () => innerHeight;
-const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('gl'), antialias: true });
+const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('gl'), antialias: true, alpha: true, premultipliedAlpha: false });
 renderer.setPixelRatio(Math.min(2, devicePixelRatio)); renderer.setSize(W(), H());
 renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.5;
 renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
@@ -180,19 +186,21 @@ const screen = new THREE.Mesh(new THREE.PlaneGeometry(SW, SH), new THREE.MeshBas
 const screenLight = new THREE.RectAreaLight ? null : null;
 const spill = new THREE.PointLight(0x9bb6ff, 25, 26, 1.6); spill.position.set(0, 7, -12); scene.add(spill);
 // ---- synced broadcast: timetable.json decides what plays; everyone computes the same position from the clock
+const posterMat = screen.material, holeMat = new THREE.MeshBasicMaterial({ color: 0x000000, transparent: false, blending: THREE.NoBlending, opacity: 0 });
+holeMat.onBeforeCompile = (sh) => { sh.fragmentShader = sh.fragmentShader.replace(/}\s*$/, 'gl_FragColor = vec4(0.0,0.0,0.0,0.0);\n}'); };
 const YT_W = 1600, YT_H = 900; let ytObj = null, ytNow = '', ytEl = null, ytReady = false, soundOn = false;
 function yCmd(func, args = []) { try { ytEl && ytEl.contentWindow.postMessage(JSON.stringify({ event: 'command', func, args }), '*'); } catch (e) {} }
 function playOnScreen(id, start) {
   const key = id + '@' + Math.floor(start / 30); if (key === ytNow) return; ytNow = key;
   if (ytObj) { cssScene.remove(ytObj); ytObj = null; }
-  if (!id) { screen.visible = true; screen.material.opacity = 1; return; }
+  if (!id) { screen.visible = true; screen.material = posterMat; return; }
   const el = document.createElement('iframe'); el.className = 'yt'; el.width = YT_W; el.height = YT_H; el.style.border = '0';
   el.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
   el.src = `https://www.youtube.com/embed/${encodeURIComponent(id)}?autoplay=1&mute=${soundOn ? 0 : 1}&start=${Math.floor(start)}&controls=0&disablekb=1&modestbranding=1&rel=0&playsinline=1&enablejsapi=1&origin=${encodeURIComponent(location.origin)}`;
   el.addEventListener('load', () => { ytReady = true; setTimeout(() => { yCmd(soundOn ? 'unMute' : 'mute'); if (soundOn) yCmd('setVolume', [100]); hideLoader(); }, 600); });
   ytEl = el;
   ytObj = new CSS3DObject(el); ytObj.scale.setScalar(SW / YT_W); ytObj.position.copy(screen.position); cssScene.add(ytObj);
-  screen.material.transparent = true; screen.material.opacity = 0; screen.visible = false;
+  screen.visible = true; screen.material = holeMat;
 }
 if (location.search.includes('clean')) document.body.classList.add('clean');
 const DAYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
@@ -279,7 +287,7 @@ const VIEWS = { wide: [new THREE.Vector3(6, 26, 25), new THREE.Vector3(0, 1, -5)
 const camPos = new THREE.Vector3(14, 16, 30), camLook = new THREE.Vector3(0, 4, -6), tgtPos = new THREE.Vector3(), tgtLook = new THREE.Vector3();
 let flying = true, dragged = 0;
 let mode = 'wide';
-function fly(v) { flying = true; mode = v; try { orbit.enabled = false; } catch (e) {} if (v === 'seat') { tgtPos.copy(mine.eye); tgtLook.set(0, 7, -16); } else { tgtPos.copy(VIEWS[v][0]); tgtLook.copy(VIEWS[v][1]); }
+function fly(v) { flying = true; mode = v; document.body.classList.toggle('seatmode', v === 'seat'); try { orbit.enabled = false; } catch (e) {} if (v === 'seat') { tgtPos.copy(mine.eye); tgtLook.set(0, 7, -16); } else { tgtPos.copy(VIEWS[v][0]); tgtLook.copy(VIEWS[v][1]); }
   document.querySelectorAll('.angles button').forEach((b) => b.classList.toggle('on', b.dataset.v === v)); }
 fly('wide');
 document.querySelectorAll('.angles button').forEach((b) => b.onclick = () => fly(b.dataset.v));
@@ -334,7 +342,7 @@ function renderCount() { const el = document.getElementById('nowS'); if (el && !
 function paintTop(top) { const el = document.getElementById('top5'); if (!top.length) { el.hidden = true; return; } el.hidden = false;
   el.innerHTML = '<b>TOP 5 TONIGHT</b>' + top.map((t, i) => `${i + 1}. ${t.name.replace(/[<>&]/g, '')}${t.seat ? ' · ' + t.seat : ''} — ${t.pts}`).join('<br>'); }
 let qTimer = null;
-function showQuiz(q) { live.quiz = q; live.picked = -1; const c = document.getElementById('quizc'); c.hidden = false;
+function showQuiz(q) { if (q.ends < Date.now()) return; live.quiz = q; live.picked = -1; const c = document.getElementById('quizc'); c.hidden = false; document.body.classList.add('quizon'); clearTimeout(window.__qh); window.__qh = setTimeout(hideQuiz, q.ends - Date.now() + 5000);
   document.getElementById('qq').textContent = q.q;
   document.getElementById('qo').innerHTML = q.opts.map((o, i) => `<button data-i="${i}">${String(o).replace(/[<>&]/g, '')}</button>`).join('');
   document.getElementById('qn').textContent = 'Answer before the timer runs out';
@@ -344,17 +352,18 @@ function reveal(m) { if (!live.quiz || m.qid !== live.quiz.qid) return; clearInt
   document.querySelectorAll('#qo button').forEach((b, i) => { if (i === m.correct) b.classList.add('ok'); else if (i === live.picked) b.classList.add('no'); });
   document.getElementById('qk').textContent = live.picked === m.correct ? 'CORRECT ✦' : live.picked < 0 ? 'TIME UP' : 'NOT QUITE';
   document.getElementById('qn').textContent = `${m.pct}% of ${m.n} got it right`; paintTop(m.top);
-  setTimeout(() => { document.getElementById('quizc').hidden = true; }, 6000); }
+  clearTimeout(window.__qh); window.__qh = setTimeout(hideQuiz, 5000); }
+function hideQuiz() { document.getElementById('quizc').hidden = true; document.body.classList.remove('quizon'); }
 function floatAt(pos, e) { const v = pos.clone().add(new THREE.Vector3(0, 1.4, 0)).project(cam); if (v.z > 1) return;
   const d = document.createElement('div'); d.className = 'fly'; d.textContent = e; d.style.left = ((v.x + 1) / 2 * W() - 12) + 'px'; d.style.top = ((1 - v.y) / 2 * H() - 12) + 'px'; document.body.appendChild(d); setTimeout(() => d.remove(), 2300); }
 document.querySelectorAll('#reacts button').forEach((b) => b.onclick = () => live.send({ t: 'react', e: b.textContent }));
 setTimeout(() => live.connect(), 300);
 // sound: browsers only allow sound after a tap, so ask once with a pulsing button
 const snd = document.getElementById('snd'); snd.classList.add('pulse');
-snd.onclick = () => { soundOn = !soundOn; yCmd(soundOn ? 'unMute' : 'mute'); if (soundOn) yCmd('setVolume', [100]); snd.textContent = soundOn ? '🔊' : '🔇'; snd.classList.toggle('pulse', !soundOn); document.getElementById('soundhint').hidden = true; };
+snd.onclick = () => { soundOn = !soundOn; yCmd(soundOn ? 'unMute' : 'mute'); if (soundOn) yCmd('setVolume', [100]); snd.textContent = soundOn ? '🔊' : '🔇'; snd.classList.toggle('pulse', !soundOn); };
 document.getElementById('ttbtn').onclick = () => { const t = document.getElementById('tt'); t.hidden = !t.hidden; document.getElementById('ttbtn').textContent = t.hidden ? 'TIMETABLE ▾' : 'TIMETABLE ▴'; };
 setTimeout(() => { const t = document.getElementById('tip'); if (t) t.style.display = 'none'; }, 5000);
-setTimeout(() => { const h = document.getElementById('soundhint'); if (h) h.hidden = true; }, 9000);
+
 // full screen: the whole theatre (the video stays on the 3D screen); falls back to a screen-filling view on iPhone
 document.getElementById('fs').onclick = async () => { const d = document.documentElement;
   try { if (document.fullscreenElement) await document.exitFullscreen(); else if (d.requestFullscreen) await d.requestFullscreen(); else if (d.webkitRequestFullscreen) d.webkitRequestFullscreen(); else throw 0; }
@@ -375,7 +384,7 @@ let t0 = performance.now();
   else if (mode === 'seat') { const base = tgtLook.clone().sub(tgtPos).normalize(), d = base.applyAxisAngle(new THREE.Vector3(0, 1, 0), yaw); d.y += pitch; cam.position.copy(tgtPos); cam.lookAt(tgtPos.clone().add(d)); }
   else { orbit.update(); camPos.copy(cam.position); camLook.copy(orbit.target); }
   if (mine) mine.m.emissiveIntensity = .7 + .3 * Math.sin(now / 250);
-  renderer.render(scene, cam); css.render(cssScene, cam); if (!frame.n) { frame.n = 1; document.getElementById('ls').textContent = 'TAKING YOU TO YOUR SEAT…'; } requestAnimationFrame(frame); })(t0);
+  if (ytObj) ytObj.visible = cam.position.z > screen.position.z + .1; renderer.render(scene, cam); css.render(cssScene, cam); if (!frame.n) { frame.n = 1; document.getElementById('ls').textContent = 'TAKING YOU TO YOUR SEAT…'; } requestAnimationFrame(frame); })(t0);
 </script>
 </body>
 </html>
