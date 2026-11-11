@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@1,700&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box}html,body{margin:0;height:100%;background:#07040a;overflow:hidden;font-family:Nunito,system-ui,sans-serif;color:#fff}
-#gl,#css{position:fixed;inset:0}#css,#css>div{pointer-events:none}#css .yt{pointer-events:auto}
+#gl,#css{position:fixed;inset:0}#css,#css>div{pointer-events:none}#css .yt{pointer-events:none}
 .top{position:fixed;left:14px;right:14px;top:12px;display:flex;justify-content:space-between;align-items:center;z-index:5}
 .brand{font-family:'Lilita One';font-size:19px;text-shadow:0 2px 8px #000}.brand b{color:#ffcf3f;font-weight:400}
 .live{background:#ff2d55;border-radius:7px;padding:3px 8px;font:900 11px Nunito;letter-spacing:.06em}
@@ -38,7 +38,7 @@ body{font-family:Inter,system-ui,sans-serif}
 .brand{flex:1;font:400 20px 'Bebas Neue';letter-spacing:.14em;color:var(--g);white-space:nowrap;text-shadow:none}
 .live{background:none;border:1px solid rgba(243,212,138,.6);color:var(--g);font:700 10px Inter;letter-spacing:.2em;padding:6px 9px;border-radius:2px;white-space:nowrap;box-shadow:none}
 .marq{position:fixed;left:0;right:0;top:58px;z-index:5;overflow:hidden;white-space:nowrap;border-top:1px solid rgba(243,212,138,.35);border-bottom:1px solid rgba(243,212,138,.35);background:rgba(0,0,0,.5)}
-.mq{display:inline-block;padding:5px 0 4px;font:400 15px 'Bebas Neue';letter-spacing:.2em;color:var(--g);animation:mq 28s linear infinite;padding-left:100%}
+.mq{display:inline-block;padding:5px 0 4px;font:400 15px 'Bebas Neue';letter-spacing:.2em;color:var(--g);white-space:nowrap}
 @keyframes mq{to{transform:translateX(-100%)}}
 .halls{position:fixed;left:14px;top:96px;z-index:5;display:flex;gap:6px}
 .halls button{background:rgba(0,0,0,.5);color:var(--g);border:1px solid rgba(243,212,138,.45);border-radius:2px;padding:5px 10px;font:700 10px Inter;letter-spacing:.16em}
@@ -70,12 +70,24 @@ body{font-family:Inter,system-ui,sans-serif}
 .top5 b{display:block;font:400 13px 'Bebas Neue';letter-spacing:.14em;color:var(--g)}
 .reacts{position:fixed;right:14px;bottom:264px;z-index:6;display:flex;flex-direction:column;gap:6px}.reacts button{width:38px;height:38px;border-radius:50%;border:1px solid rgba(243,212,138,.5);background:rgba(0,0,0,.55);font-size:17px}
 .fly{position:fixed;z-index:7;font-size:24px;pointer-events:none;animation:fly 2.2s ease-out forwards}@keyframes fly{to{transform:translateY(-140px);opacity:0}}
+body.cinema .top,body.cinema .marq,body.cinema .halls,body.cinema .tip,body.cinema .angles,body.cinema .sheet,body.cinema .reacts,body.cinema .top5{display:none!important}body.cinema .ctl{top:12px}
+.loader{position:fixed;inset:0;z-index:50;background:radial-gradient(80% 60% at 50% 40%,#1c1408,#050403);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;transition:opacity .6s,visibility 0s .6s}
+.loader.out{opacity:0;visibility:hidden;pointer-events:none}.lg{font:400 24px 'Bebas Neue';letter-spacing:.2em;color:var(--g)}
+.ring{width:54px;height:54px;border-radius:50%;border:2px solid rgba(243,212,138,.2);border-top-color:var(--g);animation:spin 1s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.ls{font:700 10px Inter;letter-spacing:.24em;color:var(--g2)}
+.ctl{position:fixed;left:14px;right:14px;top:162px;z-index:5;display:flex;gap:6px}
+.ctl button{flex:1;background:rgba(0,0,0,.6);color:var(--g);border:1px solid rgba(243,212,138,.55);border-radius:2px;padding:8px 0;font:700 10.5px Inter;letter-spacing:.16em}
+#snd.pulse{animation:pulse 1.4s ease-in-out infinite;background:var(--g);color:#1a1408}@keyframes pulse{50%{box-shadow:0 0 0 6px rgba(243,212,138,.25)}}
+.seatcard{top:194px!important;bottom:auto!important;left:14px!important;transform:none!important;padding:4px 8px!important;font:700 9.5px Inter!important;letter-spacing:.14em;border-radius:2px!important;background:rgba(0,0,0,.65)!important;color:var(--g)!important;border:1px solid rgba(243,212,138,.5);box-shadow:none!important}
+.mq{will-change:transform;transform:translate3d(0,0,0);backface-visibility:hidden;font-size:16px!important}
 </style>
 <script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
 </head>
 <body>
 <canvas id="gl"></canvas><div id="css"></div>
+<div class="loader" id="loader"><div class="lg">MINDGAINS · THEATRE</div><div class="ring"></div><div class="ls" id="ls">SETTING UP THE HALL…</div></div>
 <div class="vig"></div>
+<div class="ctl"><button id="snd">🔇 TAP FOR SOUND</button><button id="fs">⛶ FULL SCREEN</button></div>
 <div class="top"><a class="back" href="/nationlap/" aria-label="Back">‹</a><div class="brand">MINDGAINS · THEATRE</div><span class="live" id="live">● NOW SHOWING</span></div>
 <div class="marq"><div class="mq" id="mq">THEATRE ✦</div></div>
 <div class="halls" id="halls"></div>
@@ -142,16 +154,19 @@ const screen = new THREE.Mesh(new THREE.PlaneGeometry(SW, SH), new THREE.MeshBas
 const screenLight = new THREE.RectAreaLight ? null : null;
 const spill = new THREE.PointLight(0x9bb6ff, 25, 26, 1.6); spill.position.set(0, 7, -12); scene.add(spill);
 // ---- synced broadcast: timetable.json decides what plays; everyone computes the same position from the clock
-const YT_W = 1600, YT_H = 900; let ytObj = null, ytNow = '';
+const YT_W = 1600, YT_H = 900; let ytObj = null, ytNow = '', ytEl = null, ytReady = false, soundOn = false;
+function yCmd(func, args = []) { try { ytEl && ytEl.contentWindow.postMessage(JSON.stringify({ event: 'command', func, args }), '*'); } catch (e) {} }
 function playOnScreen(id, start) {
   const key = id + '@' + Math.floor(start / 30); if (key === ytNow) return; ytNow = key;
   if (ytObj) { cssScene.remove(ytObj); ytObj = null; }
-  if (!id) { screen.material.opacity = 1; return; }
+  if (!id) { screen.visible = true; screen.material.opacity = 1; return; }
   const el = document.createElement('iframe'); el.className = 'yt'; el.width = YT_W; el.height = YT_H; el.style.border = '0';
   el.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
-  el.src = `https://www.youtube.com/embed/${encodeURIComponent(id)}?autoplay=1&mute=1&start=${Math.floor(start)}&controls=1&modestbranding=1&rel=0&playsinline=1`;
+  el.src = `https://www.youtube.com/embed/${encodeURIComponent(id)}?autoplay=1&mute=${soundOn ? 0 : 1}&start=${Math.floor(start)}&controls=0&disablekb=1&modestbranding=1&rel=0&playsinline=1&enablejsapi=1&origin=${encodeURIComponent(location.origin)}`;
+  el.addEventListener('load', () => { ytReady = true; setTimeout(() => { yCmd(soundOn ? 'unMute' : 'mute'); if (soundOn) yCmd('setVolume', [100]); hideLoader(); }, 600); });
+  ytEl = el;
   ytObj = new CSS3DObject(el); ytObj.scale.setScalar(SW / YT_W); ytObj.position.copy(screen.position); cssScene.add(ytObj);
-  screen.material.transparent = true; screen.material.opacity = 0;
+  screen.material.transparent = true; screen.material.opacity = 0; screen.visible = false;
 }
 if (location.search.includes('clean')) document.body.classList.add('clean');
 const DAYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
@@ -183,7 +198,7 @@ function renderTT() {
   const next = c.list.find((x) => mins(x.from) > c.m); const left = next ? mins(next.from) - c.m : null;
   document.getElementById('nowT').textContent = c.b ? c.b.block : 'Off air';
   const mqt = `${c.subject.toUpperCase()} DAY ✦ ${c.H.name.toUpperCase()} ✦ ${next ? 'NEXT · ' + next.block.toUpperCase() + ' AT ' + next.from + ' ✦ ' : ''}6 PM PREMIERE · MIGA: YESTERDAY'S CURRENT AFFAIRS ✦ `;
-  const mq = document.getElementById('mq'); if (mq.dataset.t !== mqt) { mq.dataset.t = mqt; mq.textContent = mqt + mqt; }
+  const mq = document.getElementById('mq'); if (mq.dataset.t !== mqt) { mq.dataset.t = mqt; mq.textContent = mqt + mqt + mqt; }
   document.getElementById('nowS').textContent = `${c.H.name} · ${c.subject} day` + (c.vid ? '' : '') + (next ? ` · next in ${left >= 60 ? Math.floor(left / 60) + 'h ' : ''}${left % 60}m` : '');
   document.getElementById('tt').innerHTML = c.list.map((x) => `<div class="slot${x === c.b ? ' on' : ''}"><b>${x === c.b ? 'NOW' : x.from}</b><div>${x.premiere ? '⭐ ' : ''}${x.block}</div></div>`).join('');
   document.getElementById('halls').innerHTML = Object.entries(TT.halls).map(([k, h]) => `<button data-h="${k}" class="${k === hall ? 'on' : ''}">${k === 'main' ? 'ENGLISH' : 'தமிழ் TNPSC'}</button>`).join('');
@@ -251,7 +266,7 @@ addEventListener('pointerup', (e) => { if (e.target.closest('.sheet,.angles,.top
   const card = document.getElementById('seatcard'); card.style.display = 'block';
   if (s.st === 'taken') { card.textContent = `Row ${s.row} · Seat ${s.n} · ${s.who || 'taken'}`; return; }
   live.sit(s.row + s.n);
-  markMine(s); card.textContent = `Row ${s.row} · Seat ${s.n} · ${s.row < 'E' ? 'Front rows' : 'Centre'} — here's your view`; document.getElementById('tip').style.display = 'none'; fly('seat'); });
+  markMine(s); card.textContent = `ROW ${s.row} · SEAT ${s.n}`; clearTimeout(window.__sc); window.__sc = setTimeout(() => card.style.display = 'none', 2500); document.getElementById('tip').style.display = 'none'; fly('seat'); });
 document.getElementById('go').onclick = () => fly('seat');
 if (new URLSearchParams(location.search).get('view')) fly(new URLSearchParams(location.search).get('view'));
 
@@ -308,6 +323,20 @@ function floatAt(pos, e) { const v = pos.clone().add(new THREE.Vector3(0, 1.4, 0
   const d = document.createElement('div'); d.className = 'fly'; d.textContent = e; d.style.left = ((v.x + 1) / 2 * W() - 12) + 'px'; d.style.top = ((1 - v.y) / 2 * H() - 12) + 'px'; document.body.appendChild(d); setTimeout(() => d.remove(), 2300); }
 document.querySelectorAll('#reacts button').forEach((b) => b.onclick = () => live.send({ t: 'react', e: b.textContent }));
 setTimeout(() => live.connect(), 300);
+// sound: browsers only allow sound after a tap, so ask once with a pulsing button
+const snd = document.getElementById('snd'); snd.classList.add('pulse');
+snd.onclick = () => { soundOn = !soundOn; yCmd(soundOn ? 'unMute' : 'mute'); if (soundOn) yCmd('setVolume', [100]); snd.textContent = soundOn ? '🔊 SOUND ON' : '🔇 TAP FOR SOUND'; snd.classList.toggle('pulse', !soundOn); };
+// full screen: the whole theatre (the video stays on the 3D screen); falls back to a screen-filling view on iPhone
+document.getElementById('fs').onclick = async () => { const d = document.documentElement;
+  try { if (document.fullscreenElement) await document.exitFullscreen(); else if (d.requestFullscreen) await d.requestFullscreen(); else if (d.webkitRequestFullscreen) d.webkitRequestFullscreen(); else throw 0; }
+  catch (e) { document.body.classList.toggle('cinema'); }
+  try { screen.orientation && screen.orientation.lock && await screen.orientation.lock('landscape'); } catch (e) {} };
+// marquee: steady JS scroll (the CSS animation stuttered while the 3D scene rendered)
+let mqX = 0, mqLast = performance.now();
+(function mqTick(now) { const el = document.getElementById('mq'); const w = el.scrollWidth / 3; mqX -= (now - mqLast) * .045; if (w && -mqX > w) mqX += w; el.style.transform = `translate3d(${mqX.toFixed(1)}px,0,0)`; mqLast = now; requestAnimationFrame(mqTick); })(mqLast);
+// loader: stays until the hall has rendered and the timetable + video are ready (max 8 s)
+let loaded = false; function hideLoader() { if (loaded) return; loaded = true; document.getElementById('loader').classList.add('out'); }
+setTimeout(hideLoader, 8000);
 addEventListener('resize', () => { cam.aspect = W() / H(); cam.updateProjectionMatrix(); renderer.setSize(W(), H()); css.setSize(W(), H()); });
 cam.aspect = W() / H(); cam.updateProjectionMatrix();
 let t0 = performance.now();
@@ -317,7 +346,7 @@ let t0 = performance.now();
   else if (mode === 'seat') { const base = tgtLook.clone().sub(tgtPos).normalize(), d = base.applyAxisAngle(new THREE.Vector3(0, 1, 0), yaw); d.y += pitch; cam.position.copy(tgtPos); cam.lookAt(tgtPos.clone().add(d)); }
   else { orbit.update(); camPos.copy(cam.position); camLook.copy(orbit.target); }
   if (mine) mine.m.emissiveIntensity = .7 + .3 * Math.sin(now / 250);
-  renderer.render(scene, cam); css.render(cssScene, cam); requestAnimationFrame(frame); })(t0);
+  renderer.render(scene, cam); css.render(cssScene, cam); if (!frame.n) { frame.n = 1; document.getElementById('ls').textContent = 'TAKING YOU TO YOUR SEAT…'; } requestAnimationFrame(frame); })(t0);
 </script>
 </body>
 </html>
