@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MindGains Theatre (prototype)</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}html,body{margin:0;height:100%;background:#07040a;overflow:hidden;font-family:Nunito,system-ui,sans-serif;color:#fff}
+#gl,#css{position:fixed;inset:0}#css{pointer-events:none}#css .yt{pointer-events:auto}
+.top{position:fixed;left:14px;right:14px;top:12px;display:flex;justify-content:space-between;align-items:center;z-index:5}
+.brand{font-family:'Lilita One';font-size:19px;text-shadow:0 2px 8px #000}.brand b{color:#ffcf3f;font-weight:400}
+.live{background:#ff2d55;border-radius:7px;padding:3px 8px;font:900 11px Nunito;letter-spacing:.06em}
+.angles{position:fixed;left:12px;right:12px;top:50px;display:flex;gap:6px;z-index:5}
+.angles button{flex:1;border:1px solid rgba(255,255,255,.18);background:rgba(10,8,16,.6);backdrop-filter:blur(6px);color:#fff;border-radius:11px;padding:7px 0;font:900 12px Nunito}
+.angles button.on{background:#ffcf3f;color:#1a1206;border-color:#ffcf3f}
+.tip{position:fixed;left:50%;transform:translateX(-50%);top:92px;background:rgba(10,8,16,.75);border-radius:99px;padding:6px 12px;font:800 12px Nunito;z-index:5;white-space:nowrap}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:6;background:linear-gradient(rgba(14,10,22,.0),rgba(14,10,22,.92) 18%);padding:26px 14px 14px}
+.now{display:flex;align-items:center;gap:10px}
+.now .t{flex:1}.now .t b{font-family:'Lilita One';font-weight:400;font-size:19px;display:block;line-height:1.1}
+.now .t span{font:800 12px Nunito;color:#c9b8e6}
+.go{background:#ffcf3f;color:#1a1206;font-family:'Lilita One';font-size:17px;border:0;border-radius:14px;padding:11px 16px;box-shadow:0 4px 0 #a87b00}
+.legend{display:flex;gap:10px;margin:10px 0 8px;font:800 11px Nunito;color:#d6c8ee}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:4px;vertical-align:-1px}
+.tt{display:flex;gap:8px;overflow-x:auto;padding-bottom:2px}
+.slot{flex:none;width:132px;border-radius:12px;padding:8px 10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12)}
+.slot b{font-family:'Lilita One';font-weight:400;color:#ffcf3f;font-size:15px}.slot div{font:800 11.5px/1.25 Nunito}
+.slot.on{border-color:#ff2d55;background:rgba(255,45,85,.14)}
+.seatcard{position:fixed;left:50%;transform:translateX(-50%);bottom:206px;z-index:6;background:#fff;color:#1a1206;border-radius:14px;padding:8px 14px;font:900 13px Nunito;box-shadow:0 8px 30px rgba(0,0,0,.5);display:none}
+</style>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body>
+<canvas id="gl"></canvas><div id="css"></div>
+<div class="top"><div class="brand">MindGains <b>Theatre</b></div><span class="live">● LIVE · Polity day</span></div>
+<div class="angles"><button data-v="wide" class="on">🎬 Wide</button><button data-v="balcony">🏛 Balcony</button><button data-v="stage">🎭 Stage</button><button data-v="seat">💺 My seat</button></div>
+<div class="tip" id="tip">Tap any seat to see its view</div>
+<div class="seatcard" id="seatcard"></div>
+<div class="sheet">
+  <div class="now"><div class="t"><b>The Preamble, line by line</b><span>Polity Hall · 1,284 watching · MIGA quiz in 2:10</span></div><button class="go" id="go">Take this seat</button></div>
+  <div class="legend"><span><i style="background:#2fbf71"></i>Free</span><span><i style="background:#3a3446"></i>Taken</span><span><i style="background:#2cb7ec"></i>Friends</span><span><i style="background:#ffcf3f"></i>You</span></div>
+  <div class="tt">
+    <div class="slot on"><b>NOW</b><div>The Preamble, line by line</div></div>
+    <div class="slot"><b>10:30</b><div>Fundamental Rights</div></div>
+    <div class="slot"><b>11:15</b><div>DPSP in 15 minutes</div></div>
+    <div class="slot"><b>20:00</b><div>MIGA: Yesterday's current affairs</div></div>
+  </div>
+</div>
+<script type="module">
+import * as THREE from 'three';
+import { CSS3DRenderer, CSS3DObject } from 'three/addons/renderers/CSS3DRenderer.js';
+import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+
+const W = () => innerWidth, H = () => innerHeight;
+const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('gl'), antialias: true });
+renderer.setPixelRatio(Math.min(2, devicePixelRatio)); renderer.setSize(W(), H());
+renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.5;
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+const scene = new THREE.Scene(); scene.background = new THREE.Color(0x07040a); scene.fog = new THREE.Fog(0x07040a, 45, 95);
+const cam = new THREE.PerspectiveCamera(62, W() / H(), 0.1, 200);
+const css = new CSS3DRenderer(); css.setSize(W(), H()); document.getElementById('css').appendChild(css.domElement);
+const cssScene = new THREE.Scene();
+const mat = (c, r = .7, m = 0, x = {}) => new THREE.MeshStandardMaterial({ color: c, roughness: r, metalness: m, ...x });
+
+// ---- textures drawn in code
+function canvasTex(w, h, draw, rep) { const c = document.createElement('canvas'); c.width = w; c.height = h; draw(c.getContext('2d'), w, h); const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; if (rep) { t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(...rep); } return t; }
+const woodSlats = canvasTex(512, 512, (g, w, h) => { for (let x = 0; x < w; x += 32) { const l = 38 + Math.random() * 10; g.fillStyle = `hsl(24,52%,${l}%)`; g.fillRect(x, 0, 28, h); g.fillStyle = 'rgba(0,0,0,.55)'; g.fillRect(x + 28, 0, 4, h); for (let k = 0; k < 18; k++) { g.strokeStyle = `rgba(70,30,10,${.08 + Math.random() * .1})`; g.beginPath(); const yy = Math.random() * h; g.moveTo(x, yy); g.bezierCurveTo(x + 9, yy + 20, x + 19, yy - 20, x + 28, yy + 6); g.stroke(); } } }, [6, 1]);
+const carpet = canvasTex(256, 256, (g, w, h) => { g.fillStyle = '#4a0f1c'; g.fillRect(0, 0, w, h); for (let i = 0; i < 2600; i++) { g.fillStyle = `rgba(${120 + Math.random() * 60},20,40,.25)`; g.fillRect(Math.random() * w, Math.random() * h, 2, 2); } g.strokeStyle = 'rgba(255,190,90,.18)'; g.lineWidth = 3; for (let i = 0; i < w; i += 64) { g.beginPath(); g.moveTo(i, 0); g.lineTo(i + 32, h); g.stroke(); } }, [10, 10]);
+const velvet = canvasTex(256, 32, (g, w, h) => { const gr = g.createLinearGradient(0, 0, w, 0); for (let i = 0; i <= 16; i++) gr.addColorStop(i / 16, i % 2 ? '#8e0d1c' : '#c4182b'); g.fillStyle = gr; g.fillRect(0, 0, w, h); }, [3, 1]);
+
+// ---- hall: floor, walls, ceiling
+const HALL_W = 26, HALL_D = 40;
+const floor = new THREE.Mesh(new THREE.PlaneGeometry(HALL_W, HALL_D), mat(0xffffff, .95, 0, { map: carpet }));
+floor.rotation.x = -Math.PI / 2; floor.position.z = 4; floor.receiveShadow = true; scene.add(floor);
+for (const s of [-1, 1]) {
+  const wall = new THREE.Mesh(new THREE.PlaneGeometry(HALL_D, 14), mat(0xffffff, .6, 0, { map: woodSlats }));
+  wall.position.set(s * HALL_W / 2, 7, 4); wall.rotation.y = -s * Math.PI / 2; wall.receiveShadow = true; scene.add(wall);
+  // warm wall sconces
+  for (let k = 0; k < 6; k++) { const z = -10 + k * 5.5; const lamp = new THREE.Mesh(new THREE.SphereGeometry(.18, 12, 8), new THREE.MeshBasicMaterial({ color: 0xffc36b })); lamp.position.set(s * (HALL_W / 2 - .15), 4.2, z); scene.add(lamp);
+    const glow = new THREE.PointLight(0xffa64d, 4, 7, 2); glow.position.set(s * (HALL_W / 2 - .6), 4.2, z); scene.add(glow); }
+}
+const back = new THREE.Mesh(new THREE.PlaneGeometry(HALL_W, 14), mat(0x2a1a14, .8)); back.position.set(0, 7, 24); back.rotation.y = Math.PI; scene.add(back);
+const ceil = new THREE.Mesh(new THREE.PlaneGeometry(HALL_W, HALL_D), mat(0x120a10, .9)); ceil.rotation.x = Math.PI / 2; ceil.position.set(0, 14, 4); scene.add(ceil);
+for (let i = 0; i < 70; i++) { const d = new THREE.Mesh(new THREE.SphereGeometry(.05, 6, 4), new THREE.MeshBasicMaterial({ color: 0xfff1c9 })); d.position.set((Math.random() - .5) * (HALL_W - 2), 13.9, -12 + Math.random() * 34); scene.add(d); }
+
+// ---- stage, proscenium, curtains, screen
+const stage = new THREE.Mesh(new RoundedBoxGeometry(HALL_W - 2, 1.2, 4, 2, .1), mat(0x3b2216, .5)); stage.position.set(0, .6, -15); stage.receiveShadow = true; scene.add(stage);
+const lip = new THREE.Mesh(new THREE.BoxGeometry(HALL_W - 2, .12, .2), new THREE.MeshBasicMaterial({ color: 0xffc36b })); lip.position.set(0, 1.21, -13.05); scene.add(lip);
+const prosc = new THREE.Mesh(new THREE.BoxGeometry(HALL_W, 2.2, .8), mat(0x2b1209, .6)); prosc.position.set(0, 12.6, -16.4); scene.add(prosc);
+function curtain(w, h, folds) { const g = new THREE.PlaneGeometry(w, h, folds * 6, 1); const p = g.attributes.position; for (let i = 0; i < p.count; i++) p.setZ(i, Math.sin(p.getX(i) / w * folds * Math.PI * 2) * .35); g.computeVertexNormals(); return new THREE.Mesh(g, mat(0xffffff, .55, 0, { map: velvet, side: THREE.DoubleSide })); }
+for (const s of [-1, 1]) { const c = curtain(4.2, 11.2, 5); c.position.set(s * 10.6, 6.8, -16.1); scene.add(c); }
+const valance = curtain(HALL_W - 1, 1.6, 22); valance.position.set(0, 11.6, -16); scene.add(valance);
+// the screen (16:9) – the YouTube player is laid exactly over it with CSS3D
+const SW = 16, SH = 9;
+const screenFrame = new THREE.Mesh(new THREE.BoxGeometry(SW + .4, SH + .4, .2), mat(0x0a0a0a, .4)); screenFrame.position.set(0, 7, -16.5); scene.add(screenFrame);
+const poster = new THREE.TextureLoader().load('../../assets/miga/miga-companion-scene.png', (t) => { t.colorSpace = THREE.SRGBColorSpace; });
+const screen = new THREE.Mesh(new THREE.PlaneGeometry(SW, SH), new THREE.MeshBasicMaterial({ map: poster, toneMapped: false })); screen.position.set(0, 7, -16.38); scene.add(screen);
+const screenLight = new THREE.RectAreaLight ? null : null;
+const spill = new THREE.PointLight(0x9bb6ff, 25, 26, 1.6); spill.position.set(0, 7, -12); scene.add(spill);
+// YouTube iframe on the screen (shown when ?yt=<videoId>)
+const yt = new URLSearchParams(location.search).get('yt');
+if (yt) { const el = document.createElement('iframe'); el.className = 'yt'; el.width = 1600; el.height = 900; el.style.border = '0';
+  el.allow = 'autoplay; encrypted-media; picture-in-picture'; el.src = `https://www.youtube.com/embed/${encodeURIComponent(yt)}?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&playsinline=1`;
+  const o = new CSS3DObject(el); o.scale.setScalar(SW / 1600); o.position.copy(screen.position); cssScene.add(o); screen.material.opacity = 0; screen.material.transparent = true; }
+
+// ---- lights
+scene.add(new THREE.HemisphereLight(0x8d7cb5, 0x3a1a14, 1.3));
+for (const z of [-2, 8, 18]) { const f = new THREE.PointLight(0xffd9a0, 18, 22, 1.6); f.position.set(0, 12.5, z); scene.add(f); }
+const key = new THREE.SpotLight(0xffe2b0, 60, 60, .55, .6, 1.2); key.position.set(0, 13, 6); key.target.position.set(0, 0, 4); key.castShadow = true; key.shadow.mapSize.set(1024, 1024); scene.add(key, key.target);
+const stageSpot = new THREE.SpotLight(0xffd08a, 40, 30, .5, .5, 1.2); stageSpot.position.set(0, 12, -8); stageSpot.target.position.set(0, 1, -15); scene.add(stageSpot, stageSpot.target);
+
+// ---- seats: curved tiered rows, coloured by status
+const ROWS = 'ABCDEFGHIJKL'.split(''), PER = 18;
+const seatGeo = (() => { const g = new THREE.Group(); return null; })();
+const base = new RoundedBoxGeometry(.78, .5, .7, 2, .1), backG = new RoundedBoxGeometry(.78, .85, .16, 2, .07), armG = new RoundedBoxGeometry(.1, .35, .6, 1, .04);
+const COL = { free: 0x2fbf71, freeB: 0x3d7bea, taken: 0x3a3446, friend: 0x2cb7ec, me: 0xffcf3f };
+let seed = 11; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+const seats = []; const pick = [];
+ROWS.forEach((row, r) => {
+  const y = 1.0 + r * .55, z = -8 + r * 1.55, radius = 34 + r * 1.55;
+  for (let i = 0; i < PER; i++) {
+    const aisle = i >= 4 ? (i >= 14 ? 2 : 1) : 0, a = ((i - (PER - 1) / 2) * .95 + (aisle - 1) * 1.1) / radius;
+    const x = Math.sin(a) * radius, zz = z + (radius - Math.cos(a) * radius);
+    const vip = r < 4;
+    let st = rnd() < .5 ? 'taken' : 'free'; if (r === 6 && (i === 8 || i === 11)) st = 'friend'; if (r === 6 && (i === 9 || i === 10)) st = 'free';
+    const g = new THREE.Group(); g.position.set(x, y, zz); g.rotation.y = -a;
+    const c = st === 'taken' ? COL.taken : st === 'friend' ? COL.friend : vip ? COL.freeB : COL.free;
+    const m = mat(c, .55, 0, { emissive: st === 'taken' ? 0 : c, emissiveIntensity: st === 'taken' ? 0 : .35 });
+    const b = new THREE.Mesh(base, m); b.position.y = .25; b.castShadow = true; g.add(b);
+    const bk = new THREE.Mesh(backG, m); bk.position.set(0, .7, .32); bk.rotation.x = -.12; bk.castShadow = true; g.add(bk);
+    for (const s of [-1, 1]) { const ar = new THREE.Mesh(armG, mat(0x1c1622, .6)); ar.position.set(s * .44, .45, 0); g.add(ar); }
+    // riser step under each row
+    scene.add(g); const seat = { row, n: i + 1, st, g, m, eye: new THREE.Vector3(x, y + 1.25, zz - .1) }; seats.push(seat); pick.push(b, bk); b.userData.seat = bk.userData.seat = seat;
+  }
+  const riser = new THREE.Mesh(new THREE.BoxGeometry(HALL_W - 2, y, 1.55), mat(0x2a0c14, .9, 0, { map: carpet })); riser.position.set(0, y / 2 - .02, z + .2); riser.receiveShadow = true; scene.add(riser);
+  const strip = new THREE.Mesh(new THREE.BoxGeometry(HALL_W - 2, .04, .06), new THREE.MeshBasicMaterial({ color: 0xffb347 })); strip.position.set(0, y + .01, z - .55); scene.add(strip);
+});
+let mine = seats.find((s) => s.row === 'G' && s.n === 10);
+function markMine(s) { if (mine && mine !== s) { const c = mine.row < 'E' ? COL.freeB : COL.free; mine.m.color.set(c); mine.m.emissive.set(c); mine.m.emissiveIntensity = .18; }
+  mine = s; s.m.color.set(COL.me); s.m.emissive.set(COL.me); s.m.emissiveIntensity = .9; }
+markMine(mine);
+
+// ---- camera views with smooth flights
+const VIEWS = { wide: [new THREE.Vector3(6, 26, 25), new THREE.Vector3(0, 1, -5)], balcony: [new THREE.Vector3(-11, 16, 21), new THREE.Vector3(1, 3, -9)],
+  stage: [new THREE.Vector3(7, 4.2, -12.5), new THREE.Vector3(-3, 3.2, 6)] };
+const camPos = new THREE.Vector3(14, 16, 30), camLook = new THREE.Vector3(0, 4, -6), tgtPos = new THREE.Vector3(), tgtLook = new THREE.Vector3();
+function fly(v) { if (v === 'seat') { tgtPos.copy(mine.eye); tgtLook.set(0, 7, -16); } else { tgtPos.copy(VIEWS[v][0]); tgtLook.copy(VIEWS[v][1]); }
+  document.querySelectorAll('.angles button').forEach((b) => b.classList.toggle('on', b.dataset.v === v)); }
+fly('wide');
+document.querySelectorAll('.angles button').forEach((b) => b.onclick = () => fly(b.dataset.v));
+const ray = new THREE.Raycaster(), ptr = new THREE.Vector2();
+addEventListener('pointerup', (e) => { if (e.target.closest('.sheet,.angles,.top')) return; ptr.set(e.clientX / W() * 2 - 1, -(e.clientY / H()) * 2 + 1); ray.setFromCamera(ptr, cam);
+  const hit = ray.intersectObjects(pick)[0]; if (!hit) return; const s = hit.object.userData.seat;
+  const card = document.getElementById('seatcard'); card.style.display = 'block';
+  if (s.st === 'taken') { card.textContent = `Row ${s.row} · Seat ${s.n} is taken`; return; }
+  markMine(s); card.textContent = `Row ${s.row} · Seat ${s.n} · ${s.row < 'E' ? 'Front rows' : 'Centre'} — here's your view`; document.getElementById('tip').style.display = 'none'; fly('seat'); });
+document.getElementById('go').onclick = () => fly('seat');
+if (new URLSearchParams(location.search).get('view')) fly(new URLSearchParams(location.search).get('view'));
+
+addEventListener('resize', () => { cam.aspect = W() / H(); cam.updateProjectionMatrix(); renderer.setSize(W(), H()); css.setSize(W(), H()); });
+cam.aspect = W() / H(); cam.updateProjectionMatrix();
+let t0 = performance.now();
+(function frame(now) { const dt = Math.min(.05, (now - t0) / 1000); t0 = now; const k = 1 - Math.pow(.02, dt);
+  camPos.lerp(tgtPos, k); camLook.lerp(tgtLook, k); cam.position.copy(camPos); cam.lookAt(camLook);
+  if (mine) mine.m.emissiveIntensity = .7 + .3 * Math.sin(now / 250);
+  renderer.render(scene, cam); css.render(cssScene, cam); requestAnimationFrame(frame); })(t0);
+</script>
+</body>
+</html>
