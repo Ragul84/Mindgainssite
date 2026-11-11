@@ -1,0 +1,137 @@
+{
+ "_note": "MindGains Theatre weekly timetable (IST). Each block plays its playlist on loop from its start time. Fill 'videos' with YouTube IDs; everyone is synced from the start time. Video entries: {\"id\": \"YouTubeID\", \"secs\": length in seconds, \"title\": \"optional\"}.",
+ "timezone": "Asia/Kolkata",
+ "halls": {
+  "main": {
+   "name": "Main Hall (English)",
+   "week": {
+    "mon": {
+     "subject": "Polity"
+    },
+    "tue": {
+     "subject": "History (Ancient + Medieval)"
+    },
+    "wed": {
+     "subject": "Geography"
+    },
+    "thu": {
+     "subject": "Economy"
+    },
+    "fri": {
+     "subject": "Science & Technology + Environment"
+    },
+    "sat": {
+     "subject": "Modern History + Art & Culture"
+    },
+    "sun": {
+     "subject": "Weekly revision + PYQ solving"
+    }
+   },
+   "daily": [
+    {
+     "from": "06:00",
+     "to": "07:00",
+     "block": "Morning newspaper analysis",
+     "videos": []
+    },
+    {
+     "from": "07:00",
+     "to": "13:00",
+     "block": "Day subject: core lectures",
+     "videos": []
+    },
+    {
+     "from": "13:00",
+     "to": "14:00",
+     "block": "Break: MIGA quiz replay of the morning",
+     "videos": []
+    },
+    {
+     "from": "14:00",
+     "to": "18:00",
+     "block": "Day subject: practice + PYQ walkthroughs",
+     "videos": []
+    },
+    {
+     "from": "18:00",
+     "to": "18:30",
+     "block": "MIGA: yesterday's current affairs (our AI video)",
+     "videos": [],
+     "premiere": true
+    },
+    {
+     "from": "18:30",
+     "to": "22:00",
+     "block": "Day subject: revision lectures",
+     "videos": []
+    },
+    {
+     "from": "22:00",
+     "to": "06:00",
+     "block": "Night loop: replay of today",
+     "videos": []
+    }
+   ],
+   "sunday_extra": {
+    "from": "18:00",
+    "to": "19:00",
+    "block": "MIGA: the week in current affairs + live quiz showdown",
+    "premiere": true
+   }
+  },
+  "tnpsc": {
+   "name": "TNPSC Hall (தமிழ்)",
+   "week": {
+    "mon": {
+     "subject": "இந்திய அரசியலமைப்பு (Polity)"
+    },
+    "tue": {
+     "subject": "வரலாறு + தமிழ்நாடு வரலாறு"
+    },
+    "wed": {
+     "subject": "புவியியல் (Geography)"
+    },
+    "thu": {
+     "subject": "பொருளாதாரம் + TN development"
+    },
+    "fri": {
+     "subject": "அறிவியல் (Science)"
+    },
+    "sat": {
+     "subject": "திறனறிவு (Aptitude) + பொதுத்தமிழ்"
+    },
+    "sun": {
+     "subject": "Unit 8–9: Tamil society, culture + revision"
+    }
+   },
+   "daily": [
+    {
+     "from": "06:00",
+     "to": "07:00",
+     "block": "செய்தித்தாள் (Tamil newspaper analysis)",
+     "videos": []
+    },
+    {
+     "from": "07:00",
+     "to": "18:00",
+     "block": "Day subject in Tamil",
+     "videos": []
+    },
+    {
+     "from": "18:00",
+     "to": "18:30",
+     "block": "MIGA current affairs (English, with Tamil subtitles later)",
+     "videos": [],
+     "premiere": true,
+     "sharedWith": "main"
+    },
+    {
+     "from": "18:30",
+     "to": "06:00",
+     "block": "Day subject revision + Samacheer book chapters",
+     "videos": []
+    }
+   ]
+  }
+ }
+}

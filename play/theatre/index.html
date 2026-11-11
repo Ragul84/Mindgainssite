@@ -28,25 +28,23 @@
 .slot{flex:none;width:132px;border-radius:12px;padding:8px 10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12)}
 .slot b{font-family:'Lilita One';font-weight:400;color:#ffcf3f;font-size:15px}.slot div{font:800 11.5px/1.25 Nunito}
 .slot.on{border-color:#ff2d55;background:rgba(255,45,85,.14)}
+.halls{position:fixed;right:14px;top:92px;z-index:5;display:flex;gap:6px}.halls button{border:1px solid rgba(255,255,255,.2);background:rgba(10,8,16,.6);color:#fff;border-radius:99px;padding:5px 10px;font:900 11.5px Nunito}.halls button.on{background:#fff;color:#14101c}
+.tip{left:14px!important;transform:none!important}
 .seatcard{position:fixed;left:50%;transform:translateX(-50%);bottom:206px;z-index:6;background:#fff;color:#1a1206;border-radius:14px;padding:8px 14px;font:900 13px Nunito;box-shadow:0 8px 30px rgba(0,0,0,.5);display:none}
 </style>
 <script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
 </head>
 <body>
 <canvas id="gl"></canvas><div id="css"></div>
-<div class="top"><div class="brand">MindGains <b>Theatre</b></div><span class="live">● LIVE · Polity day</span></div>
+<div class="top"><div class="brand">MindGains <b>Theatre</b></div><span class="live" id="live">● LIVE</span></div>
+<div class="halls" id="halls"></div>
 <div class="angles"><button data-v="wide" class="on">🎬 Wide</button><button data-v="balcony">🏛 Balcony</button><button data-v="stage">🎭 Stage</button><button data-v="seat">💺 My seat</button></div>
 <div class="tip" id="tip">Tap any seat to see its view</div>
 <div class="seatcard" id="seatcard"></div>
 <div class="sheet">
-  <div class="now"><div class="t"><b>The Preamble, line by line</b><span>Polity Hall · 1,284 watching · MIGA quiz in 2:10</span></div><button class="go" id="go">Take this seat</button></div>
+  <div class="now"><div class="t"><b id="nowT">Loading the timetable…</b><span id="nowS"></span></div><button class="go" id="go">Take this seat</button></div>
   <div class="legend"><span><i style="background:#2fbf71"></i>Free</span><span><i style="background:#3a3446"></i>Taken</span><span><i style="background:#2cb7ec"></i>Friends</span><span><i style="background:#ffcf3f"></i>You</span></div>
-  <div class="tt">
-    <div class="slot on"><b>NOW</b><div>The Preamble, line by line</div></div>
-    <div class="slot"><b>10:30</b><div>Fundamental Rights</div></div>
-    <div class="slot"><b>11:15</b><div>DPSP in 15 minutes</div></div>
-    <div class="slot"><b>20:00</b><div>MIGA: Yesterday's current affairs</div></div>
-  </div>
+  <div class="tt" id="tt"></div>
 </div>
 <script type="module">
 import * as THREE from 'three';
@@ -99,11 +97,54 @@ const poster = new THREE.TextureLoader().load('../../assets/miga/miga-companion-
 const screen = new THREE.Mesh(new THREE.PlaneGeometry(SW, SH), new THREE.MeshBasicMaterial({ map: poster, toneMapped: false })); screen.position.set(0, 7, -16.38); scene.add(screen);
 const screenLight = new THREE.RectAreaLight ? null : null;
 const spill = new THREE.PointLight(0x9bb6ff, 25, 26, 1.6); spill.position.set(0, 7, -12); scene.add(spill);
-// YouTube iframe on the screen (shown when ?yt=<videoId>)
-const yt = new URLSearchParams(location.search).get('yt');
-if (yt) { const el = document.createElement('iframe'); el.className = 'yt'; el.width = 1600; el.height = 900; el.style.border = '0';
-  el.allow = 'autoplay; encrypted-media; picture-in-picture'; el.src = `https://www.youtube.com/embed/${encodeURIComponent(yt)}?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&playsinline=1`;
-  const o = new CSS3DObject(el); o.scale.setScalar(SW / 1600); o.position.copy(screen.position); cssScene.add(o); screen.material.opacity = 0; screen.material.transparent = true; }
+// ---- synced broadcast: timetable.json decides what plays; everyone computes the same position from the clock
+const YT_W = 1600, YT_H = 900; let ytObj = null, ytNow = '';
+function playOnScreen(id, start) {
+  const key = id + '@' + Math.floor(start / 30); if (key === ytNow) return; ytNow = key;
+  if (ytObj) { cssScene.remove(ytObj); ytObj = null; }
+  if (!id) { screen.material.opacity = 1; return; }
+  const el = document.createElement('iframe'); el.className = 'yt'; el.width = YT_W; el.height = YT_H; el.style.border = '0';
+  el.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+  el.src = `https://www.youtube.com/embed/${encodeURIComponent(id)}?autoplay=1&mute=1&start=${Math.floor(start)}&controls=1&modestbranding=1&rel=0&playsinline=1`;
+  ytObj = new CSS3DObject(el); ytObj.scale.setScalar(SW / YT_W); ytObj.position.copy(screen.position); cssScene.add(ytObj);
+  screen.material.transparent = true; screen.material.opacity = 0;
+}
+const DAYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+const ist = () => { const d = new Date(Date.now() + (5.5 * 60 + new Date().getTimezoneOffset()) * 60000); return d; };
+const mins = (hm) => { const [h, m] = hm.split(':').map(Number); return h * 60 + m; };
+const fmt = (m) => `${String(Math.floor(m / 60) % 24).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`;
+let TT = null, hall = new URLSearchParams(location.search).get('hall') || 'main';
+function blocksFor(h, day) {
+  const H = TT.halls[h], list = H.daily.map((b) => ({ ...b }));
+  if (day === 'sun' && H.sunday_extra) { const x = H.sunday_extra; for (const b of list) if (mins(b.from) < mins(x.to) && mins(b.from) >= mins(x.from)) b.from = x.to; list.push({ ...x }); }
+  if (H.daily.some((b) => b.sharedWith)) for (const b of list) if (b.sharedWith) { const src = TT.halls[b.sharedWith].daily.find((x) => x.from === b.from); if (src && !b.videos.length) b.videos = src.videos; }
+  return list.sort((a, b) => mins(a.from) - mins(b.from));
+}
+function current() {
+  const now = ist(), day = DAYS[now.getDay()], m = now.getHours() * 60 + now.getMinutes(), s = m * 60 + now.getSeconds();
+  const H = TT.halls[hall], list = blocksFor(hall, day);
+  let b = null; for (const x of list) { const f = mins(x.from), t = mins(x.to); if (t > f ? (m >= f && m < t) : (m >= f || m < t)) b = x; }
+  let vid = null, at = 0;
+  if (b && b.videos && b.videos.length) {           // loop the block's playlist from its start time
+    const total = b.videos.reduce((a, v) => a + (v.secs || 1800), 0);
+    let into = ((s - mins(b.from) * 60) % 86400 + 86400) % 86400 % total;
+    for (const v of b.videos) { const d = v.secs || 1800; if (into < d) { vid = v.id; at = into; break; } into -= d; }
+  }
+  return { day, m, b, list, subject: H.week[day].subject, H, vid, at };
+}
+function renderTT() {
+  if (!TT) return; const c = current();
+  document.getElementById('live').textContent = `● LIVE · ${c.subject}`;
+  document.getElementById('nowT').textContent = c.b ? c.b.block : 'Off air';
+  const next = c.list.find((x) => mins(x.from) > c.m); const left = next ? mins(next.from) - c.m : null;
+  document.getElementById('nowS').textContent = `${c.H.name} · ${c.subject} day` + (c.vid ? '' : ' · videos coming soon') + (next ? ` · next in ${left >= 60 ? Math.floor(left / 60) + 'h ' : ''}${left % 60}m` : '');
+  document.getElementById('tt').innerHTML = c.list.map((x) => `<div class="slot${x === c.b ? ' on' : ''}"><b>${x === c.b ? 'NOW' : x.from}</b><div>${x.premiere ? '⭐ ' : ''}${x.block}</div></div>`).join('');
+  document.getElementById('halls').innerHTML = Object.entries(TT.halls).map(([k, h]) => `<button data-h="${k}" class="${k === hall ? 'on' : ''}">${k === 'main' ? 'English' : 'தமிழ் TNPSC'}</button>`).join('');
+  document.querySelectorAll('#halls button').forEach((bt) => bt.onclick = () => { hall = bt.dataset.h; ytNow = ''; renderTT(); });
+  const on = document.querySelector('#tt .slot.on'); if (on && !renderTT.scrolled) { on.scrollIntoView({ inline: 'start', block: 'nearest' }); renderTT.scrolled = 1; }
+  playOnScreen(new URLSearchParams(location.search).get('yt') || c.vid, c.at);
+}
+fetch('timetable.json?v=' + Math.floor(Date.now() / 6e5)).then((r) => r.json()).then((j) => { TT = j; renderTT(); setInterval(renderTT, 15000); }).catch(() => { document.getElementById('nowT').textContent = 'Timetable unavailable'; });
 
 // ---- lights
 scene.add(new THREE.HemisphereLight(0x8d7cb5, 0x3a1a14, 1.3));
