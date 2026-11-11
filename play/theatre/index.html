@@ -6,7 +6,7 @@
 <title>Theatre · NationLap</title>
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@1,700&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box}html,body{margin:0;height:100%;background:#07040a;overflow:hidden;font-family:Nunito,system-ui,sans-serif;color:#fff}
 #gl,#css{position:fixed;inset:0}#css,#css>div{pointer-events:none}#css .yt{pointer-events:auto}
@@ -25,43 +25,56 @@
 .legend{display:flex;gap:10px;margin:10px 0 8px;font:800 11px Nunito;color:#d6c8ee}
 .legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:4px;vertical-align:-1px}
 .tt{display:flex;gap:8px;overflow-x:auto;padding-bottom:2px}
-.slot{flex:none;width:132px;border-radius:12px;padding:8px 10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12)}
-.slot b{font-family:'Lilita One';font-weight:400;color:#ffcf3f;font-size:15px}.slot div{font:800 11.5px/1.25 Nunito}
-.slot.on{border-color:#ff2d55;background:rgba(255,45,85,.14)}
-.halls{position:fixed;right:14px;top:92px;z-index:5;display:flex;gap:6px}.halls button{border:1px solid rgba(255,255,255,.2);background:rgba(10,8,16,.6);color:#fff;border-radius:99px;padding:5px 10px;font:900 11.5px Nunito}.halls button.on{background:#fff;color:#14101c}
 .tip{left:14px!important;transform:none!important}
 .seatcard{position:fixed;left:50%;transform:translateX(-50%);bottom:206px;z-index:6;background:#fff;color:#1a1206;border-radius:14px;padding:8px 14px;font:900 13px Nunito;box-shadow:0 8px 30px rgba(0,0,0,.5);display:none}
 
 html,body{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}#gl{touch-action:none}
-.halls{top:94px!important;left:14px!important;right:auto!important}.tip{top:142px!important}
-/* NationLap look: chunky outlined Lilita, blue tile buttons, orange primary, navy panels */
-:root{--ink:#14122b;--gold:#ffd23f;--outline:0 3px 0 #14122b,0 -2px 0 #14122b,3px 0 0 #14122b,-3px 0 0 #14122b,2px 2px 0 #14122b,-2px 2px 0 #14122b}
-.brand{font-family:'Lilita One';font-size:24px;letter-spacing:1px;text-shadow:var(--outline)}.brand b{color:var(--gold)}
-.back{font-family:'Lilita One';font-size:14px;color:#fff;background:linear-gradient(180deg,#4a5bd8,#2c35a0);border:3px solid rgba(255,255,255,.9);border-radius:12px;padding:4px 10px;box-shadow:0 4px 0 #161b5c;text-decoration:none;margin-right:8px}
-.live{font-family:'Lilita One';font-weight:400;font-size:13px;letter-spacing:.5px;border:2px solid #fff;box-shadow:0 3px 0 #8a0f22}
-.angles button,.halls button{font-family:'Lilita One'!important;font-weight:400!important;font-size:13px!important;letter-spacing:.4px;color:#fff;background:linear-gradient(180deg,#4a5bd8,#2c35a0)!important;border:3px solid rgba(255,255,255,.9)!important;border-radius:12px!important;box-shadow:0 4px 0 #161b5c;text-shadow:0 2px 0 rgba(0,0,0,.35)}
-.angles button.on,.halls button.on{background:linear-gradient(180deg,#ffcf3a,#ff8a1f)!important;color:#fff!important;box-shadow:0 4px 0 #b24a00}
-.go{font-family:'Lilita One'!important;color:#fff!important;background:linear-gradient(180deg,#ffcf3a,#ff8a1f)!important;border:3px solid rgba(255,255,255,.9)!important;box-shadow:0 5px 0 #b24a00!important;text-shadow:0 2px 0 rgba(0,0,0,.3)}
-.sheet{background:linear-gradient(rgba(16,20,48,0),rgba(16,20,48,.94) 18%)!important}
-.now .t b{text-shadow:var(--outline);letter-spacing:.5px}
-.slot{background:rgba(16,20,48,.85)!important;border:2px solid rgba(255,255,255,.25)!important}.slot.on{border-color:var(--gold)!important;background:rgba(255,210,63,.14)!important}
-.slot b{color:var(--gold)!important}
-.tip{font-family:'Lilita One';font-weight:400;letter-spacing:.4px}
-body.clean .top,body.clean .angles,body.clean .halls,body.clean .tip,body.clean .sheet,body.clean .seatcard{display:none!important}
+/* ---- style C: cinematic gold */
+:root{--g:#f3d48a;--g2:#bfa66a}
+body{font-family:Inter,system-ui,sans-serif}
+.vig{position:fixed;inset:0;pointer-events:none;background:radial-gradient(120% 70% at 50% 45%,transparent 50%,rgba(0,0,0,.7));z-index:1}
+.top{position:fixed;left:14px;right:14px;top:14px;display:flex;align-items:center;gap:10px;z-index:5}
+.back{width:34px;height:34px;display:grid;place-items:center;border:1px solid rgba(243,212,138,.6);color:var(--g);text-decoration:none;font:400 26px/1 'Bebas Neue';background:rgba(0,0,0,.45)}
+.brand{flex:1;font:400 20px 'Bebas Neue';letter-spacing:.14em;color:var(--g);white-space:nowrap;text-shadow:none}
+.live{background:none;border:1px solid rgba(243,212,138,.6);color:var(--g);font:700 10px Inter;letter-spacing:.2em;padding:6px 9px;border-radius:2px;white-space:nowrap;box-shadow:none}
+.marq{position:fixed;left:0;right:0;top:58px;z-index:5;overflow:hidden;white-space:nowrap;border-top:1px solid rgba(243,212,138,.35);border-bottom:1px solid rgba(243,212,138,.35);background:rgba(0,0,0,.5)}
+.mq{display:inline-block;padding:5px 0 4px;font:400 15px 'Bebas Neue';letter-spacing:.2em;color:var(--g);animation:mq 28s linear infinite;padding-left:100%}
+@keyframes mq{to{transform:translateX(-100%)}}
+.halls{position:fixed;left:14px;top:96px;z-index:5;display:flex;gap:6px}
+.halls button{background:rgba(0,0,0,.5);color:var(--g);border:1px solid rgba(243,212,138,.45);border-radius:2px;padding:5px 10px;font:700 10px Inter;letter-spacing:.16em}
+.halls button.on{background:var(--g);color:#1a1408}
+.tip{position:fixed;transform:none;left:14px;top:128px;z-index:5;font:700 10px Inter;letter-spacing:.18em;color:rgba(243,212,138,.8);background:none;padding:0}
+.angles{position:fixed;left:14px;right:14px;top:auto;bottom:206px;z-index:5;display:flex;gap:6px}
+.angles button{flex:1;background:rgba(0,0,0,.55);color:var(--g);border:1px solid rgba(243,212,138,.5);border-radius:2px;padding:9px 0;font:700 11px Inter;letter-spacing:.14em}
+.angles button.on{background:var(--g);color:#1a1408}
+.sheet{position:fixed;left:14px;right:14px;bottom:16px;z-index:6;background:none;padding:0}
+.tt{display:flex;gap:6px;overflow-x:auto;margin-bottom:8px;scrollbar-width:none}.tt::-webkit-scrollbar{display:none}
+.slot{flex:none;width:auto!important;padding:5px 9px;border:1px solid rgba(243,212,138,.3);background:rgba(0,0,0,.55);font:600 11px Inter;color:#e9dcbd;white-space:nowrap;border-radius:2px}
+.slot b{font:400 13px 'Bebas Neue';letter-spacing:.12em;color:var(--g);margin-right:6px}.slot div{display:inline}
+.slot.on{border-color:var(--g);background:rgba(243,212,138,.16)}
+.ticket{display:flex;border-radius:12px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.6)}
+.ticket .main{flex:1;min-width:0;padding:13px 14px;background:linear-gradient(135deg,rgba(28,22,14,.94),rgba(12,10,8,.94));border:1px solid rgba(243,212,138,.35);border-right:2px dashed rgba(243,212,138,.55);border-radius:12px 0 0 12px}
+.ticket .k{font:700 9.5px Inter;letter-spacing:.22em;color:var(--g2)}
+.ticket .t{font:italic 700 22px/1.12 'Playfair Display',serif;margin:5px 0 4px;color:#fff;text-shadow:none;letter-spacing:0}
+.ticket .m{font:500 11.5px Inter;color:#c9bda2}
+.stub{width:92px;border:0;border-radius:0 12px 12px 0;background:var(--g);color:#1a1408;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;cursor:pointer;padding:0;box-shadow:none;text-shadow:none}
+.stub b{font:400 32px/1 'Bebas Neue'}.stub span{font:700 8.5px Inter;letter-spacing:.18em}
+.seatcard{bottom:236px!important;background:var(--g)!important;color:#1a1408!important;border-radius:2px!important;font:700 11px Inter!important;letter-spacing:.12em;text-transform:uppercase}
 </style>
 <script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
 </head>
 <body>
 <canvas id="gl"></canvas><div id="css"></div>
-<div class="top"><div style="display:flex;align-items:center"><a class="back" href="/nationlap/">◀ BACK</a><div class="brand">THEA<b>TRE</b></div></div><span class="live" id="live">● LIVE</span></div>
+<div class="vig"></div>
+<div class="top"><a class="back" href="/nationlap/" aria-label="Back">‹</a><div class="brand">MINDGAINS · THEATRE</div><span class="live" id="live">● NOW SHOWING</span></div>
+<div class="marq"><div class="mq" id="mq">THEATRE ✦</div></div>
 <div class="halls" id="halls"></div>
-<div class="angles"><button data-v="wide" class="on">🎬 Wide</button><button data-v="balcony">🏛 Balcony</button><button data-v="stage">🎭 Stage</button><button data-v="seat">💺 My seat</button></div>
-<div class="tip" id="tip">Swipe to look around · tap a seat</div>
+<div class="tip" id="tip">SWIPE TO LOOK AROUND · TAP A SEAT</div>
 <div class="seatcard" id="seatcard"></div>
-<div class="sheet">
-  <div class="now"><div class="t"><b id="nowT">Loading the timetable…</b><span id="nowS"></span></div><button class="go" id="go">Take this seat</button></div>
-  <div class="legend"><span><i style="background:#2fbf71"></i>Free</span><span><i style="background:#3a3446"></i>Taken</span><span><i style="background:#2cb7ec"></i>Friends</span><span><i style="background:#ffcf3f"></i>You</span></div>
-  <div class="tt" id="tt"></div>
+<div class="angles"><button data-v="wide" class="on">HALL</button><button data-v="seat">MY SEAT</button><button data-v="stage">STAGE</button><button data-v="balcony">BALCONY</button></div>
+<div class="sheet"><div class="tt" id="tt"></div>
+  <div class="ticket"><div class="main"><div class="k" id="nowK">NOW SHOWING · SCREEN 1</div><div class="t" id="nowT">Loading…</div><div class="m" id="nowS"></div></div>
+  <button class="stub go" id="go"><span>ROW</span><b id="stubRow">G7</b><span>ADMIT ONE</span></button></div>
 </div>
 <script type="module">
 import * as THREE from 'three';
@@ -153,12 +166,14 @@ function current() {
 }
 function renderTT() {
   if (!TT) return; const c = current();
-  document.getElementById('live').textContent = `● LIVE · ${c.subject}`;
-  document.getElementById('nowT').textContent = c.b ? c.b.block : 'Off air';
+  document.getElementById('live').textContent = '● NOW SHOWING';
   const next = c.list.find((x) => mins(x.from) > c.m); const left = next ? mins(next.from) - c.m : null;
+  document.getElementById('nowT').textContent = c.b ? c.b.block : 'Off air';
+  const mqt = `${c.subject.toUpperCase()} DAY ✦ ${c.H.name.toUpperCase()} ✦ ${next ? 'NEXT · ' + next.block.toUpperCase() + ' AT ' + next.from + ' ✦ ' : ''}6 PM PREMIERE · MIGA: YESTERDAY'S CURRENT AFFAIRS ✦ `;
+  const mq = document.getElementById('mq'); if (mq.dataset.t !== mqt) { mq.dataset.t = mqt; mq.textContent = mqt + mqt; }
   document.getElementById('nowS').textContent = `${c.H.name} · ${c.subject} day` + (c.vid ? '' : '') + (next ? ` · next in ${left >= 60 ? Math.floor(left / 60) + 'h ' : ''}${left % 60}m` : '');
   document.getElementById('tt').innerHTML = c.list.map((x) => `<div class="slot${x === c.b ? ' on' : ''}"><b>${x === c.b ? 'NOW' : x.from}</b><div>${x.premiere ? '⭐ ' : ''}${x.block}</div></div>`).join('');
-  document.getElementById('halls').innerHTML = Object.entries(TT.halls).map(([k, h]) => `<button data-h="${k}" class="${k === hall ? 'on' : ''}">${k === 'main' ? 'English' : 'தமிழ் TNPSC'}</button>`).join('');
+  document.getElementById('halls').innerHTML = Object.entries(TT.halls).map(([k, h]) => `<button data-h="${k}" class="${k === hall ? 'on' : ''}">${k === 'main' ? 'ENGLISH' : 'தமிழ் TNPSC'}</button>`).join('');
   document.querySelectorAll('#halls button').forEach((bt) => bt.onclick = () => { hall = bt.dataset.h; ytNow = ''; renderTT(); });
   const on = document.querySelector('#tt .slot.on'); if (on && !renderTT.scrolled) { on.scrollIntoView({ inline: 'start', block: 'nearest' }); renderTT.scrolled = 1; }
   // until the timetable has videos, everyone watches the same filler video, in sync (10-minute loop)
@@ -201,7 +216,7 @@ ROWS.forEach((row, r) => {
 });
 let mine = seats.find((s) => s.row === 'G' && s.n === 10);
 function markMine(s) { if (mine && mine !== s) { const c = mine.row < 'E' ? COL.freeB : COL.free; mine.m.color.set(c); mine.m.emissive.set(c); mine.m.emissiveIntensity = .18; }
-  mine = s; s.m.color.set(COL.me); s.m.emissive.set(COL.me); s.m.emissiveIntensity = .9; }
+  mine = s; const sr = document.getElementById('stubRow'); if (sr) sr.textContent = s.row + s.n; s.m.color.set(COL.me); s.m.emissive.set(COL.me); s.m.emissiveIntensity = .9; }
 markMine(mine);
 
 // ---- camera views with smooth flights
