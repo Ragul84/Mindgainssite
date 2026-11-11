@@ -98,6 +98,7 @@ export class Menu {
           <button type="button" class="btn affairs-btn">BHARAT YATRA</button>
           <button type="button" class="btn quick-btn">QUICK RACE</button>
           <button type="button" class="btn board-btn">INDIA BOARD</button>
+          <button type="button" class="btn theatre-btn">THEATRE</button>
         </div>
         <div class="title-tagline">Know your India, every day.</div>
       </div>
@@ -129,6 +130,7 @@ export class Menu {
     });
     this.newsSub = t.querySelector('.news-sub');
 
+    t.querySelector('.theatre-btn').addEventListener('click', (e) => { e.stopPropagation(); location.href = '/play/theatre/'; });
     t.querySelector('.board-btn').addEventListener('click', (e) => {
       e.stopPropagation();
       bus.emit('ui:confirm');
