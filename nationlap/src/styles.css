@@ -2486,3 +2486,17 @@ body.touch-mode[data-state="title"] .hof-strip { width: auto !important; }
 }
 .title-screen .title-row{display:flex!important;grid-template-columns:none!important;flex-direction:column!important;flex-wrap:nowrap!important}
 @media (max-width:760px){.title-screen .title-row{flex-direction:row!important}.title-screen .title-row .dock{flex:1 1 0!important;min-width:0}}
+/* right-side stack: event card sits above Resume/Play and never overlaps them */
+@media (min-width:761px){
+  .title-screen .live-event{top:auto!important;bottom:calc(28px + 104px);transform:none!important}
+  .title-screen .resume-btn:not(.hidden) ~ .live-event{bottom:calc(28px + 104px + 62px)}
+  .title-screen .live-event:hover{transform:scale(1.02)!important}
+  .title-screen .live-event .le-thumb{max-height:calc(100vh - 470px);min-height:0}
+  .title-screen .resume-btn{bottom:calc(28px + 104px)!important}
+}
+@media (min-width:761px) and (max-height:760px){
+  .title-screen .live-event{flex-direction:row!important;align-items:center;width:min(420px,38vw)!important}
+  .title-screen .live-event .le-thumb{width:110px!important;height:62px!important;aspect-ratio:auto!important;max-height:none}
+  .title-screen .live-event .le-go{align-self:center!important}
+  .title-screen .live-event .le-t{font-size:18px!important}
+}
