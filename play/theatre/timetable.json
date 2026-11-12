@@ -24,7 +24,7 @@
      "subject": "Modern History + Art & Culture"
     },
     "sun": {
-     "subject": "Weekly revision + PYQ solving"
+     "subject": "Weekly recap + quiz showdown"
     }
    },
    "daily": [
@@ -38,23 +38,23 @@
     {
      "from": "07:00",
      "to": "13:00",
-     "block": "Day subject: core lectures",
+     "block": "Today's new episode",
      "videos": [],
-     "use": "day"
+     "use": "ep"
     },
     {
      "from": "13:00",
      "to": "14:00",
      "block": "Break: MIGA quiz replay of the morning",
      "videos": [],
-     "use": "day"
+     "use": "ep"
     },
     {
      "from": "14:00",
      "to": "18:00",
-     "block": "Day subject: practice + PYQ walkthroughs",
+     "block": "Catch-up: last week's episode",
      "videos": [],
-     "use": "day"
+     "use": "ep_prev"
     },
     {
      "from": "18:00",
@@ -67,14 +67,14 @@
     {
      "from": "18:30",
      "to": "22:00",
-     "block": "Day subject: revision lectures",
+     "block": "Today's episode (replay)",
      "videos": [],
-     "use": "day"
+     "use": "ep"
     },
     {
      "from": "22:00",
      "to": "06:00",
-     "block": "Night loop: replay of today",
+     "block": "Night marathon: full one-shot",
      "videos": [],
      "use": "day"
     }
@@ -326,9 +326,9 @@
     {
      "from": "07:00",
      "to": "18:00",
-     "block": "Day subject in Tamil",
+     "block": "இன்றைய புதிய வகுப்பு · new episode",
      "videos": [],
-     "use": "day"
+     "use": "ep"
     },
     {
      "from": "18:00",
@@ -342,9 +342,9 @@
     {
      "from": "18:30",
      "to": "06:00",
-     "block": "Day subject revision + Samacheer book chapters",
+     "block": "Catch-up: last week's class",
      "videos": [],
-     "use": "day"
+     "use": "ep_prev"
     }
    ],
    "days": {
@@ -552,5 +552,6 @@
     }
    ]
   }
- }
+ },
+ "season_start": "2026-11-16"
 }

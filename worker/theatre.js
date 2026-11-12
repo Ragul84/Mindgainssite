@@ -108,7 +108,29 @@ export class TheatreHall extends DurableObject {
   }
 }
 
+let newsCache = null;
+async function latestNews() {
+  if (newsCache && Date.now() - newsCache.at < 3 * 3600e3) return newsCache.data;
+  const UA = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120 Safari/537.36', 'Accept-Language': 'en-IN,en;q=0.9' };
+  const pick = async (q, okChannel) => {
+    try {
+      const h = await (await fetch('https://www.youtube.com/results?search_query=' + encodeURIComponent(q) + '&sp=CAISBAgCEAE%253D', { headers: UA })).text();
+      const out = [];
+      for (const m of h.matchAll(/"videoRenderer":\{"videoId":"([\w-]{11})".{0,1500}?"title":\{"runs":\[\{"text":"([^"]+)".{0,3000}?"ownerText":\{"runs":\[\{"text":"([^"]+)".{0,800}?"lengthText":\{[^}]*?"simpleText":"([\d:]+)"/gs)) {
+        if (!okChannel.test(m[3]) || /[\u0900-\u097F]|hindi/i.test(m[2])) continue;
+        const secs = m[4].split(':').reduce((a, x) => a * 60 + +x, 0);
+        if (secs > 900) out.push({ id: m[1], secs, title: m[2].slice(0, 100), channel: m[3] });
+        if (out.length >= 2) break;
+      }
+      return out;
+    } catch { return []; }
+  };
+  const data = { main: await pick('The Hindu newspaper analysis today UPSC English', /English/i), tnpsc: await pick('The Hindu editorial analysis in Tamil TNPSC', /Tamil|TNPSC/i) };
+  if (data.main.length || data.tnpsc.length) newsCache = { at: Date.now(), data };
+  return data;
+}
 export function theatreRoute(request, env, pathname) {
+  if (pathname === '/api/theatre/news') return latestNews().then((d) => new Response(JSON.stringify(d), { headers: { 'content-type': 'application/json', 'cache-control': 'public, max-age=1800' } }));
   const m = pathname.match(/^\/api\/theatre\/(main|tnpsc)\/ws$/);
   if (!m) return new Response('not found', { status: 404 });
   const stub = env.THEATRE.get(env.THEATRE.idFromName(m[1]));

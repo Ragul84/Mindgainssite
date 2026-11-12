@@ -286,14 +286,23 @@ function current() {
   const H = TT.halls[hall], list = blocksFor(hall, day);
   let b = null; for (const x of list) { const f = mins(x.from), t = mins(x.to); if (t > f ? (m >= f && m < t) : (m >= f || m < t)) b = x; }
   let vid = null, at = 0;
-  const vids = b && (b.use === 'day' ? (H.days || {})[day] : b.use === 'news' ? H.news : b.videos);
+  // season: week k of the course; each weekday shows its subject's k-th episode block (about 2.5 h)
+  const wk = Math.max(0, Math.floor((now - new Date(TT.season_start + 'T00:00:00')) / 6048e5));
+  const S = SEASON && SEASON[hall] || {}, chunks = S[day] || [];
+  const epAt = (k) => chunks.length ? chunks[Math.min(k, chunks.length - 1) % chunks.length] : null;
+  const recap = day === 'sun' && hall === 'main' ? ['mon', 'tue', 'wed', 'thu', 'fri', 'sat'].map((d) => (S[d] || [])[Math.max(0, wk - 1)]).filter(Boolean).map((c) => c[0]) : null;
+  const vids = b && (b.use === 'ep' ? (recap && recap.length ? recap : epAt(wk)) || (H.days || {})[day]
+    : b.use === 'ep_prev' ? epAt(Math.max(0, wk - 1)) || (H.days || {})[day]
+    : b.use === 'day' ? (H.days || {})[day]
+    : b.use === 'news' ? (NEWS && NEWS[hall] && NEWS[hall].length ? NEWS[hall] : H.news) : b.videos);
+  const epNo = b && (b.use === 'ep' || b.use === 'ep_prev') && chunks.length && !recap ? (b.use === 'ep' ? wk : Math.max(0, wk - 1)) + 1 : null;
   if (b && vids && vids.length) {           // loop the block's playlist from its start time
     const total = vids.reduce((a, v) => a + (v.secs || 1800), 0);
     let into = ((s - mins(b.from) * 60) % 86400 + 86400) % 86400 % total;
     for (const v of vids) { const d = v.secs || 1800; if (into < d) { vid = v.id; at = into; break; } into -= d; }
   }
   const cur = vids && vid ? vids.find((v) => v.id === vid) : null;
-  return { day, m, b, list, subject: H.week[day].subject, H, vid, at, cur };
+  return { day, m, b, list, subject: H.week[day].subject, H, vid, at, cur, epNo, epOf: chunks.length };
 }
 function renderTT() {
   if (!TT) return; const c = current();
@@ -302,7 +311,7 @@ function renderTT() {
   document.getElementById('nowT').textContent = c.cur && c.cur.title ? c.cur.title.split('|')[0].trim() : c.b ? c.b.block : 'Off air';
   const mqt = `${c.subject.toUpperCase()} DAY ✦ ${c.H.name.toUpperCase()} ✦ ${next ? 'NEXT · ' + next.block.toUpperCase() + ' AT ' + next.from + ' ✦ ' : ''}6 PM PREMIERE · MIGA: YESTERDAY'S CURRENT AFFAIRS ✦ `;
   const mq = document.getElementById('mq'); if (mq.dataset.t !== mqt) { mq.dataset.t = mqt; mq.textContent = mqt + mqt + mqt; }
-  document.getElementById('nowS').textContent = `${c.H.name} · ${c.subject} day` + (c.vid ? '' : '') + (next ? ` · next in ${left >= 60 ? Math.floor(left / 60) + 'h ' : ''}${left % 60}m` : '');
+  document.getElementById('nowS').textContent = (c.epNo ? `EPISODE ${c.epNo} OF ${c.epOf} · ` : '') + `${c.H.name} · ${c.subject} day` + (c.vid ? '' : '') + (next ? ` · next in ${left >= 60 ? Math.floor(left / 60) + 'h ' : ''}${left % 60}m` : '');
   document.getElementById('tt').innerHTML = c.list.map((x) => `<div class="slot${x === c.b ? ' on' : ''}"><b>${x === c.b ? 'NOW' : x.from}</b><div>${x.premiere ? '⭐ ' : ''}${x.block}</div></div>`).join('');
   document.getElementById('halls').innerHTML = Object.entries(TT.halls).map(([k, h]) => `<button data-h="${k}" class="${k === hall ? 'on' : ''}">${k === 'main' ? 'ENGLISH' : 'தமிழ் TNPSC'}</button>`).join('');
   document.querySelectorAll('#halls button').forEach((bt) => bt.onclick = () => { hall = bt.dataset.h; ytNow = ''; renderTT(); live.connect(); });
@@ -311,6 +320,9 @@ function renderTT() {
   const FILL = 'jRkBF3HUlgI', nowS = Math.floor(Date.now() / 1000);
   playOnScreen(new URLSearchParams(location.search).get('yt') || c.vid || FILL, c.vid ? c.at : nowS % 600);
 }
+let SEASON = null, NEWS = null;
+fetch('season.json?v=' + Math.floor(Date.now() / 36e5)).then((r) => r.json()).then((j) => { SEASON = j; if (TT) renderTT(); }).catch(() => {});
+fetch('/api/theatre/news').then((r) => r.json()).then((j) => { NEWS = j; if (TT) renderTT(); }).catch(() => {});
 fetch('timetable.json?v=' + Math.floor(Date.now() / 6e5)).then((r) => r.json()).then((j) => { TT = j; renderTT(); setInterval(renderTT, 15000); }).catch(() => { document.getElementById('nowT').textContent = 'Timetable unavailable'; });
 
 // ---- lights
