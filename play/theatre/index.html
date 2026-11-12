@@ -134,7 +134,7 @@ body.intro .skip{display:block}
 <div class="reacts" id="reacts"><button>🔥</button><button>👏</button><button>🤯</button><button>💡</button></div>
 <div class="angles"><button data-v="wide" class="on">HALL</button><button data-v="seat">MY SEAT</button><button data-v="stage">STAGE</button><button data-v="balcony">BALCONY</button></div>
 <div class="sheet"><div class="tt" id="tt" hidden></div>
-  <div class="ticket"><div class="main"><div class="k" id="nowK">NOW SHOWING · SCREEN 1</div><div class="t" id="nowT">Loading…</div><div class="m" id="nowS"></div><button class="ttbtn" id="ttbtn">TIMETABLE ▾</button></div>
+  <div class="ticket"><div class="main"><div class="k" id="nowK">NOW SHOWING · SCREEN 1</div><div class="t" id="nowT">Loading…</div><div class="m" id="nowS"></div><button class="ttbtn" id="ttbtn">TIMETABLE ▾</button> <a class="ttbtn" href="/nationlap/?learn=1" style="margin-left:14px;text-decoration:none">RACE TODAY'S SUBJECT ›</a></div>
   <button class="stub go" id="go"><span>ROW</span><b id="stubRow">G7</b><span>ADMIT ONE</span></button></div>
 </div>
 <script type="module">
@@ -144,6 +144,9 @@ import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.j
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { createKartModel } from '/nationlap/src/models.js';
 import { playerCharacter } from '/nationlap/src/player.js';
+import { createLeaderboard } from '/nationlap/src/lb.js';
+const LB = createLeaderboard();
+function awardXp(n) { let xp = 0; try { xp = (parseInt(localStorage.getItem('tkr_xp') || '0', 10) || 0) + n; localStorage.setItem('tkr_xp', String(xp)); } catch (e) {} LB.submitScore(xp); }
 
 const W = () => innerWidth, H = () => innerHeight;
 const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('gl'), antialias: true, alpha: true, premultipliedAlpha: false });
@@ -414,7 +417,8 @@ function showQuiz(q) { if (q.ends < Date.now()) return; live.quiz = q; live.pick
   clearInterval(qTimer); qTimer = setInterval(() => { const left = Math.max(0, q.ends - Date.now()); document.getElementById('qbar').style.width = (left / 150) + '%'; document.getElementById('qk').textContent = `MIGA ASKS · ${Math.ceil(left / 1000)} S`; if (!left) clearInterval(qTimer); }, 250); }
 function reveal(m) { if (!live.quiz || m.qid !== live.quiz.qid) return; clearInterval(qTimer);
   document.querySelectorAll('#qo button').forEach((b, i) => { if (i === m.correct) b.classList.add('ok'); else if (i === live.picked) b.classList.add('no'); });
-  document.getElementById('qk').textContent = live.picked === m.correct ? 'CORRECT ✦' : live.picked < 0 ? 'TIME UP' : 'NOT QUITE';
+  if (live.picked === m.correct) awardXp(20);
+  document.getElementById('qk').textContent = live.picked === m.correct ? 'CORRECT ✦ +20 XP · INDIA BOARD' : live.picked < 0 ? 'TIME UP' : 'NOT QUITE';
   document.getElementById('qn').textContent = `${m.pct}% of ${m.n} got it right`; paintTop(m.top);
   clearTimeout(window.__qh); window.__qh = setTimeout(hideQuiz, 5000); }
 function hideQuiz() { document.getElementById('quizc').hidden = true; document.body.classList.remove('quizon'); }

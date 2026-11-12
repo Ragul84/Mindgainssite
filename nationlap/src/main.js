@@ -1601,6 +1601,7 @@ async function boot() {
   }
   if (!hasProfile()) menu.showAvatar({ first: true });
   else if (pendingAffairs) { pendingAffairs = false; startAffairsRace(); }
+  else if (qs.has('learn')) setTimeout(() => document.querySelector('.play-btn')?.click(), 400);
 
   // Account last, and never awaited by anything above it: the game has to be playable whether
   // or not the player is signed in, or online at all. When a session does exist, the saved

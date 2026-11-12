@@ -98,7 +98,7 @@ export class Menu {
           <button type="button" class="btn affairs-btn">BHARAT YATRA</button>
           <button type="button" class="btn quick-btn">QUICK RACE</button>
           <button type="button" class="btn board-btn">INDIA BOARD</button>
-          <button type="button" class="btn theatre-btn">THEATRE</button>
+          <button type="button" class="btn theatre-btn">THEATRE<small class="play-sub theatre-sub">Live classes</small></button>
         </div>
         <div class="title-tagline">Know your India, every day.</div>
       </div>
@@ -130,6 +130,15 @@ export class Menu {
     });
     this.newsSub = t.querySelector('.news-sub');
 
+    (async () => { try {
+      const tt = await (await fetch('/play/theatre/timetable.json')).json(), H = tt.halls.main;
+      const d = new Date(Date.now() + (330 + new Date().getTimezoneOffset()) * 60000), m = d.getHours() * 60 + d.getMinutes();
+      const day = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'][d.getDay()], subj = H.week[day].subject.split(/[ (+]/)[0];
+      const pm = 18 * 60, sub = t.querySelector('.theatre-sub');
+      if (m < pm) { const l = pm - m; sub.textContent = `🎬 LIVE · ${subj} · 6 PM premiere in ${l >= 60 ? Math.floor(l / 60) + 'h ' : ''}${l % 60}m`; }
+      else if (m < pm + 30) sub.textContent = '⭐ 6 PM PREMIERE · LIVE NOW';
+      else sub.textContent = `🎬 LIVE NOW · ${subj}`;
+    } catch (e) {} })();
     t.querySelector('.theatre-btn').addEventListener('click', (e) => { e.stopPropagation(); location.href = '/play/theatre/?from=nationlap'; });
     t.querySelector('.board-btn').addEventListener('click', (e) => {
       e.stopPropagation();
