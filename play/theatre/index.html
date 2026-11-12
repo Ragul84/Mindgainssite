@@ -217,14 +217,20 @@ const KART = new THREE.Group(), NK = createKartModel(playerCharacter());
 NK.root.scale.setScalar(1.25); KART.add(NK.root); KART.rotation.y = -Math.PI / 2; scene.add(KART);
 NK.root.traverse((o) => { if (o.isMesh) o.castShadow = true; });
 const DRIVER = NK.parts.driver, DRIVER_HOME = { pos: DRIVER.position.clone(), rot: DRIVER.rotation.clone(), parent: DRIVER.parent };
-// walking legs: the racer's own trouser colour, hung from the hips; shown only once out of the kart
-const LEGS = [], WALKER = new THREE.Group();
-{ const pc = new THREE.Color(playerCharacter().color).multiplyScalar(.55), pm = new THREE.MeshStandardMaterial({ color: pc, roughness: .65 }), sm = new THREE.MeshStandardMaterial({ color: 0x5a3a22, roughness: .6 });
-  for (const sx of [-1, 1]) { const g = new THREE.Group(); g.position.set(sx * .13, .08, .02);
-    const th = new THREE.Mesh(new THREE.CapsuleGeometry(.095, .2, 4, 10), pm); th.position.y = -.17; g.add(th);
-    const sh = new THREE.Mesh(new THREE.CapsuleGeometry(.082, .2, 4, 10), pm); sh.position.y = -.42; g.add(sh);
-    const ft = new THREE.Mesh(new THREE.SphereGeometry(.09, 12, 8), sm); ft.scale.set(1, .8, 1.4); ft.position.set(0, -.6, .05); g.add(ft);
-    WALKER.add(g); LEGS.push(g); }
+// walking legs + arms: same suit colours as the racer (paint for sleeves, the darker 'pants' shade NationLap uses), chibi proportions
+const LEGS = [], ARMS = [], WALKER = new THREE.Group();
+{ const ch = playerCharacter(), hsl = {}; new THREE.Color(ch.color).getHSL(hsl);
+  const pm = new THREE.MeshStandardMaterial({ color: new THREE.Color().setHSL(hsl.h, hsl.s * .9, hsl.l * .55), roughness: .65 });
+  const am = new THREE.MeshPhysicalMaterial({ color: ch.color, roughness: .32, clearcoat: 1 });
+  const sm = new THREE.MeshStandardMaterial({ color: 0x5a3a22, roughness: .6 }), hm = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: .5 });
+  for (const sx of [-1, 1]) { const g = new THREE.Group(); g.position.set(sx * .13, .1, 0);
+    const lg = new THREE.Mesh(new THREE.CapsuleGeometry(.12, .16, 4, 12), pm); lg.position.y = -.17; g.add(lg);
+    const ft = new THREE.Mesh(new THREE.SphereGeometry(.12, 14, 10), sm); ft.scale.set(1, .7, 1.45); ft.position.set(0, -.36, .06); g.add(ft);
+    WALKER.add(g); LEGS.push(g);
+    const a = new THREE.Group(); a.position.set(sx * .29, .44, .02);
+    const sl = new THREE.Mesh(new THREE.CapsuleGeometry(.075, .2, 4, 10), am); sl.position.y = -.14; a.add(sl);
+    const hd = new THREE.Mesh(new THREE.SphereGeometry(.075, 12, 10), hm); hd.position.y = -.3; a.add(hd);
+    a.rotation.z = sx * .18; WALKER.add(a); ARMS.push(a); }
   WALKER.visible = false; DRIVER.add(WALKER); }
 const ceil = new THREE.Mesh(new THREE.PlaneGeometry(HALL_W, HALL_D), mat(0x120a10, .9)); ceil.rotation.x = Math.PI / 2; ceil.position.set(0, 14, 4); scene.add(ceil);
 for (let i = 0; i < 70; i++) { const d = new THREE.Mesh(new THREE.SphereGeometry(.05, 6, 4), new THREE.MeshBasicMaterial({ color: 0xfff1c9 })); d.position.set((Math.random() - .5) * (HALL_W - 2), 13.9, -12 + Math.random() * 34); scene.add(d); }
@@ -446,8 +452,8 @@ function introStep(now) {
   // 2.8–3.6: driver hops out; 3.6–6: walks the carpet to the doors
   if (t > 2.8 && DRIVER.parent !== scene) { scene.attach(DRIVER); DRIVER.scale.setScalar(1.25); }
   if (t > 2.8) { DRIVER.visible = true; const hop = ease((t - 2.8) / .8); const walk = ease((t - 3.6) / 2.4);
-    DRIVER.position.set(-1 + 1 * hop, .85 + .7 * Math.sin(hop * Math.PI) + (walk > 0 && walk < 1 ? Math.abs(Math.sin(t * 9)) * .18 : 0), 33.5 - .4 * hop - 7.6 * walk);
-    DRIVER.rotation.set(0, Math.PI, walk > 0 && walk < 1 ? Math.sin(t * 9) * .08 : 0); const ph = t * 9, mv = walk > 0 && walk < 1; WALKER.visible = true; LEGS[0].rotation.x = mv ? Math.sin(ph) * .7 : 0; LEGS[1].rotation.x = -LEGS[0].rotation.x;
+    DRIVER.position.set(-1 + 1 * hop, .6 + .7 * Math.sin(hop * Math.PI) + (walk > 0 && walk < 1 ? Math.abs(Math.sin(t * 9)) * .06 : 0), 33.5 - .4 * hop - 7.6 * walk);
+    DRIVER.rotation.set(0, Math.PI, walk > 0 && walk < 1 ? Math.sin(t * 9) * .08 : 0); const ph = t * 9, mv = walk > 0 && walk < 1; WALKER.visible = true; LEGS[0].rotation.x = mv ? Math.sin(ph) * .6 : 0; LEGS[1].rotation.x = -LEGS[0].rotation.x; ARMS[0].rotation.x = -LEGS[0].rotation.x * .9; ARMS[1].rotation.x = LEGS[0].rotation.x * .9;
     if (t > 6.2) DRIVER.visible = false; }
   // doors open as the driver arrives
   const open = ease((t - 4.9) / 1.2); window.__doors.forEach((d) => d.position.x = d.userData.sx * (DOOR_W / 4 + open * DOOR_W / 2)); window.__doorGlow.intensity = 25 * open;
