@@ -115,11 +115,15 @@ async function latestNews() {
   const pick = async (q, okChannel) => {
     try {
       const h = await (await fetch('https://www.youtube.com/results?search_query=' + encodeURIComponent(q) + '&sp=CAISBAgCEAE%253D', { headers: UA })).text();
+      const k = h.indexOf('var ytInitialData = '); if (k < 0) return [];
+      const d = JSON.parse(h.slice(k + 20, h.indexOf(';</script>', k)));
+      const vr = []; (function walk(o) { if (o && typeof o === 'object') { if (o.videoRenderer) vr.push(o.videoRenderer); for (const x of Object.values(o)) walk(x); } })(d);
       const out = [];
-      for (const m of h.matchAll(/"videoRenderer":\{"videoId":"([\w-]{11})".{0,1500}?"title":\{"runs":\[\{"text":"([^"]+)".{0,3000}?"ownerText":\{"runs":\[\{"text":"([^"]+)".{0,800}?"lengthText":\{[^}]*?"simpleText":"([\d:]+)"/gs)) {
-        if (!okChannel.test(m[3]) || /[\u0900-\u097F]|hindi/i.test(m[2])) continue;
-        const secs = m[4].split(':').reduce((a, x) => a * 60 + +x, 0);
-        if (secs > 900) out.push({ id: m[1], secs, title: m[2].slice(0, 100), channel: m[3] });
+      for (const v of vr) {
+        const title = (v.title?.runs || []).map((r) => r.text).join(''), ch = (v.ownerText?.runs || []).map((r) => r.text).join(''), len = v.lengthText?.simpleText || '';
+        if (!len || !okChannel.test(ch) || /[ऀ-ॿ]|hindi/i.test(title)) continue;
+        const secs = len.split(':').reduce((a, x) => a * 60 + +x, 0);
+        if (secs > 900) out.push({ id: v.videoId, secs, title: title.slice(0, 100), channel: ch });
         if (out.length >= 2) break;
       }
       return out;
