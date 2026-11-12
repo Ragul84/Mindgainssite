@@ -70,7 +70,20 @@ body{font-family:Inter,system-ui,sans-serif}
 .top5{position:fixed;right:14px;top:96px;z-index:6;background:rgba(0,0,0,.6);border:1px solid rgba(243,212,138,.4);padding:6px 9px;font:600 10.5px/1.5 Inter;color:#e9dcbd;min-width:120px}
 .top5 b{display:block;font:400 13px 'Bebas Neue';letter-spacing:.14em;color:var(--g)}
 .reacts{position:fixed;right:14px;bottom:264px;z-index:6;display:flex;flex-direction:column;gap:6px}.reacts button{width:38px;height:38px;border-radius:50%;border:1px solid rgba(243,212,138,.5);background:rgba(0,0,0,.55);font-size:17px}
-.fly{position:fixed;z-index:7;font-size:24px;pointer-events:none;animation:fly 2.2s ease-out forwards}@keyframes fly{to{transform:translateY(-140px);opacity:0}}
+.fly{position:fixed;z-index:7;font-size:24px;pointer-events:none;animation:fly 2.2s ease-out forwards}@keyframes fly{to{transform:translateY(-140px);opacity:0}}.fly img{width:44px;height:44px}
+.chat{position:fixed;right:14px;top:96px;bottom:200px;width:300px;z-index:6;display:flex;flex-direction:column;background:rgba(12,9,6,.78);backdrop-filter:blur(6px);border:1px solid rgba(243,212,138,.35);border-radius:14px;overflow:hidden;font:500 12.5px Inter,system-ui}
+.chat-h{flex:none;display:flex;align-items:center;gap:6px;padding:9px 12px;background:none;border:0;border-bottom:1px solid rgba(243,212,138,.2);color:var(--g);font:800 11px Inter;letter-spacing:.14em;cursor:pointer;text-align:left}.chat-h i{margin-left:auto;font-style:normal}
+.chat-h span:not(:empty){background:#ff2d55;color:#fff;border-radius:9px;padding:0 6px;letter-spacing:0}
+.chat-l{flex:1;overflow-y:auto;padding:8px 12px;display:flex;flex-direction:column;gap:6px;color:#f4ead6;scrollbar-width:thin}
+.cm{line-height:1.35;word-wrap:break-word}.cm b{color:#f3d48a;font-weight:800}.cm small{color:rgba(243,212,138,.55);font-weight:600}.cm.me b{color:#7fe3a5}
+.emo{flex:none;display:grid;grid-template-columns:repeat(6,1fr);gap:2px;padding:6px 8px;border-top:1px solid rgba(243,212,138,.2)}
+.emo button{background:none;border:0;padding:3px;cursor:pointer;border-radius:10px;transition:transform .12s}.emo button:hover{transform:scale(1.25);background:rgba(255,255,255,.08)}.emo img{width:100%;max-width:34px;aspect-ratio:1;display:block;margin:auto}
+.emo button.pop{animation:epop .35s}@keyframes epop{50%{transform:scale(1.5)}}
+.chat-f{flex:none;display:flex;gap:6px;padding:8px;border-top:1px solid rgba(243,212,138,.2)}.chat-f input{flex:1;min-width:0;background:rgba(255,255,255,.08);border:1px solid rgba(243,212,138,.3);border-radius:18px;padding:7px 12px;color:#fff;font:500 13px Inter;outline:0}
+.chat-f button{flex:none;min-width:58px;border:0;border-radius:18px;background:var(--g);color:#1a1206;font:800 11px Inter;letter-spacing:.1em;cursor:pointer}.chat-f button:disabled{opacity:.5}
+.chat.min{bottom:auto}.chat.min .chat-l,.chat.min .chat-f{display:none}.chat.min .chat-h i{transform:rotate(-90deg)}
+body.intro .chat,body.cinema .chat{display:none}@media (max-width:760px){body.quizon .chat{visibility:hidden}}
+@media (max-width:760px){.chat{left:12px;right:12px;width:auto;top:auto;bottom:178px;max-height:46vh}.chat.min{bottom:178px}.chat:not(.min){height:46vh}.emo{grid-template-columns:repeat(12,1fr)}.emo img{max-width:26px}}
 body.cinema .top,body.cinema .marq,body.cinema .halls,body.cinema .tip,body.cinema .angles,body.cinema .sheet,body.cinema .reacts,body.cinema .top5{display:none!important}body.cinema .ctl{top:12px}
 .loader{position:fixed;inset:0;z-index:50;background:radial-gradient(80% 60% at 50% 40%,#1c1408,#050403);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;transition:opacity .6s,visibility 0s .6s}
 .loader.out{opacity:0;visibility:hidden;pointer-events:none}.lg{font:400 24px 'Bebas Neue';letter-spacing:.2em;color:var(--g)}
@@ -132,7 +145,10 @@ body.intro .skip{display:block}
 <div class="seatcard" id="seatcard"></div>
 <div class="quizc" id="quizc" hidden><div class="qk" id="qk">MIGA ASKS · 15 S</div><div class="qq" id="qq"></div><div class="qo" id="qo"></div><div class="qb"><i id="qbar"></i></div><div class="qn" id="qn"></div></div>
 <div class="top5" id="top5" hidden></div>
-<div class="reacts" id="reacts"><button>🔥</button><button>👏</button><button>🤯</button><button>💡</button></div>
+<div class="chat" id="chat"><button class="chat-h" id="chatH">💬 LIVE CHAT <span id="chatN"></span><i>▾</i></button>
+  <div class="chat-l" id="chatL"></div>
+  <div class="emo" id="reacts"><button data-e="1f525"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f525/512.webp" alt="" loading="lazy"></button><button data-e="1f602"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f602/512.webp" alt="" loading="lazy"></button><button data-e="1f92f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f92f/512.webp" alt="" loading="lazy"></button><button data-e="1f44f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44f/512.webp" alt="" loading="lazy"></button><button data-e="2764_fe0f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/2764_fe0f/512.webp" alt="" loading="lazy"></button><button data-e="1f4af"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f4af/512.webp" alt="" loading="lazy"></button><button data-e="1f389"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f389/512.webp" alt="" loading="lazy"></button><button data-e="1f9e0"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f9e0/512.webp" alt="" loading="lazy"></button><button data-e="1f64f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f64f/512.webp" alt="" loading="lazy"></button><button data-e="1f62e"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f62e/512.webp" alt="" loading="lazy"></button><button data-e="1f680"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f680/512.webp" alt="" loading="lazy"></button><button data-e="1f4a1"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f4a1/512.webp" alt="" loading="lazy"></button></div>
+  <form class="chat-f" id="chatF"><input id="chatI" maxlength="140" placeholder="Say something…" autocomplete="off"><button id="chatS">SEND</button></form></div>
 <div class="angles"><button data-v="wide" class="on">HALL</button><button data-v="seat">MY SEAT</button><button data-v="stage">STAGE</button><button data-v="balcony">BALCONY</button></div>
 <div class="sheet"><div class="tt" id="tt" hidden></div>
   <div class="ticket"><div class="main"><div class="k" id="nowK">NOW SHOWING · SCREEN 1</div><div class="t" id="nowT">Loading…</div><div class="m" id="nowS"></div><button class="ttbtn" id="ttbtn">TIMETABLE ▾</button> <a class="ttbtn" href="/nationlap/?learn=1" style="margin-left:14px;text-decoration:none">RACE TODAY'S SUBJECT ›</a></div>
@@ -259,7 +275,11 @@ const posterMat = screen.material, holeMat = new THREE.MeshBasicMaterial({ color
 holeMat.onBeforeCompile = (sh) => { sh.fragmentShader = sh.fragmentShader.replace(/}\s*$/, 'gl_FragColor = vec4(0.0,0.0,0.0,0.0);\n}'); };
 const YT_W = 1600, YT_H = 900; let ytObj = null, ytNow = '', ytEl = null, ytReady = false, soundOn = false, ytStart = 0, ytT0 = 0;
 const ytPos = () => ytStart + (performance.now() - ytT0) / 1000;
-function yCmd(func, args = []) { try { ytEl && ytEl.contentWindow.postMessage(JSON.stringify({ event: 'command', func, args }), '*'); } catch (e) {} }
+let ytP = null;
+{ const t = document.createElement('script'); t.src = 'https://www.youtube.com/iframe_api'; document.head.appendChild(t); }
+function bindYT(el) { ytP = null; const go = () => { try { ytP = new YT.Player(el, { events: { onReady: () => { if (soundOn) { ytP.unMute(); ytP.setVolume(100); ytP.playVideo(); } else ytP.mute(); } } }); } catch (e) {} };
+  if (window.YT && YT.Player) go(); else { const prev = window.onYouTubeIframeAPIReady; window.onYouTubeIframeAPIReady = () => { prev && prev(); if (ytEl === el) go(); }; } }
+function yCmd(func, args = []) { try { if (ytP && ytP[func]) return ytP[func](...args); ytEl && ytEl.contentWindow.postMessage(JSON.stringify({ event: 'command', func, args }), '*'); } catch (e) {} }
 function playOnScreen(id, start) {
   const key = id; if (key === ytNow) return; if (INTRO.on && !window.__yt_ok) { window.__ytWait = [id, start]; return; } ytNow = key;
   if (ytObj) { cssScene.remove(ytObj); ytObj = null; }
@@ -268,7 +288,7 @@ function playOnScreen(id, start) {
   el.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
   el.src = `https://www.youtube.com/embed/${encodeURIComponent(id)}?autoplay=1&mute=${soundOn ? 0 : 1}&start=${Math.floor(start)}&controls=0&disablekb=1&modestbranding=1&rel=0&playsinline=1&enablejsapi=1&origin=${encodeURIComponent(location.origin)}`;
   el.addEventListener('load', () => { ytReady = true; setTimeout(() => { yCmd(soundOn ? 'unMute' : 'mute'); if (soundOn) yCmd('setVolume', [100]); hideLoader(); }, 600); });
-  ytEl = el; ytStart = start; ytT0 = performance.now();
+  ytEl = el; ytStart = start; ytT0 = performance.now(); bindYT(el);
   ytObj = new CSS3DObject(el); ytObj.scale.setScalar(SW / YT_W); ytObj.position.copy(screen.position); cssScene.add(ytObj);
   screen.visible = true; screen.material = holeMat;
 }
@@ -357,7 +377,7 @@ ROWS.forEach((row, r) => {
     // riser step under each row
     scene.add(g); const seat = { row, n: i + 1, st, g, m, eye: new THREE.Vector3(x, y + 1.5, zz + .6) }; seats.push(seat); pick.push(b, bk); b.userData.seat = bk.userData.seat = seat;
   }
-  const riser = new THREE.Mesh(new THREE.BoxGeometry(HALL_W - 2, y, 1.55), mat(0x2a0c14, .9, 0, { map: carpet })); riser.position.set(0, y / 2 - .02, z + .2); riser.receiveShadow = true; scene.add(riser);
+  const riser = new THREE.Mesh(new THREE.BoxGeometry(HALL_W - 2, y, 1.55), mat(0x7a2434, .85, 0, { map: carpet })); riser.position.set(0, y / 2 - .02, z + .2); riser.receiveShadow = true; scene.add(riser);
   const strip = new THREE.Mesh(new THREE.BoxGeometry(HALL_W - 2, .04, .06), new THREE.MeshBasicMaterial({ color: 0xffb347 })); strip.position.set(0, y + .01, z - .55); scene.add(strip);
 });
 let mine = seats.find((s) => s.row === 'G' && s.n === 10);
@@ -406,13 +426,13 @@ if (new URLSearchParams(location.search).get('view')) fly(new URLSearchParams(lo
 
 const orbit = new OrbitControls(cam, renderer.domElement);
 orbit.enableDamping = true; orbit.dampingFactor = .08; orbit.enablePan = false; orbit.rotateSpeed = .55; orbit.zoomSpeed = .8;
-orbit.minDistance = .5; orbit.maxDistance = 42; orbit.maxPolarAngle = 2.4; orbit.minPolarAngle = .05;
+orbit.minDistance = .5; orbit.maxDistance = 42; orbit.maxPolarAngle = 1.38; orbit.minPolarAngle = .08;
 orbit.addEventListener('start', () => { flying = false; document.getElementById('tip').style.display = 'none'; });
 // seat view: the seat stays put; a drag turns the head (yaw / pitch around the eye)
 let yaw = 0, pitch = 0, lx = 0, ly = 0, look = false;
 function setLook() { orbit.enabled = !(mode === 'seat' || mode === 'spot'); yaw = 0; pitch = 0; if (mode !== 'seat') { orbit.target.copy(camLook); } }
 addEventListener('pointerdown', (e) => { if (!(mode === 'seat' || mode === 'spot') || e.target.closest('.sheet,.angles,.top,.halls')) return; flying = false; look = true; lx = e.clientX; ly = e.clientY; });
-addEventListener('pointermove', (e) => { if (!look) return; if (pts.size > 1) return; yaw -= (e.clientX - lx) * .006 * zoomF; pitch = Math.max(-1.25, Math.min(1.25, pitch - (e.clientY - ly) * .005 * zoomF)); lx = e.clientX; ly = e.clientY; });
+addEventListener('pointermove', (e) => { if (!look) return; if (pts.size > 1) return; yaw -= (e.clientX - lx) * .006 * zoomF; pitch = Math.max(-.55, Math.min(1.05, pitch - (e.clientY - ly) * .005 * zoomF)); lx = e.clientX; ly = e.clientY; });
 addEventListener('pointerup', () => { look = false; });
 // zoom from the seat: mouse wheel or pinch
 const pts = new Map(); let pinch0 = 0;
@@ -432,12 +452,15 @@ const live = { ws: null, hall: null, n: 0, quiz: null, picked: -1,
   send(m) { if (this.ws && this.ws.readyState === 1) this.ws.send(JSON.stringify(m)); },
   sit(k) { this.send({ t: 'sit', seat: k }); },
   on(m) {
+    if (m.t === 'state' && m.chat) { chatL.innerHTML = ''; m.chat.forEach(addChat); document.getElementById('chatN').textContent = ''; }
     if (m.t === 'state' || m.t === 'seats') { this.n = m.count; paintSeats(m.seats); if (m.top) paintTop(m.top); if (m.quiz) showQuiz(m.quiz); renderCount(); }
     else if (m.t === 'taken') { const c = document.getElementById('seatcard'); c.style.display = 'block'; c.textContent = 'Someone just took ' + m.seat; }
     else if (m.t === 'quiz') showQuiz(m);
     else if (m.t === 'answered') { if (this.quiz && m.qid === this.quiz.qid) document.getElementById('qn').textContent = `${m.n} of ${this.n} answered`; }
     else if (m.t === 'reveal') reveal(m);
-    else if (m.t === 'react') { const s = seatByKey.get(m.seat); if (s) floatAt(s.g.position, m.e); }
+    else if (m.t === 'react') { const s = m.seat && seatByKey.get(m.seat); floatAt(s ? s.g.position : new THREE.Vector3((Math.random() - .5) * 14, 2, 4 + Math.random() * 10), m.e); }
+    else if (m.t === 'chat') addChat(m.m);
+    else if (m.t === 'slow') { if (m.wait) cool(m.wait); if (m.why) addChat({ name: 'MindGains', text: m.why }); }
   } };
 function paintSeats(map) {
   for (const s of seats) { const k = s.row + s.n, who = map[k], isMe = mine === s;
@@ -462,12 +485,24 @@ function reveal(m) { if (!live.quiz || m.qid !== live.quiz.qid) return; clearInt
   clearTimeout(window.__qh); window.__qh = setTimeout(hideQuiz, 5000); }
 function hideQuiz() { document.getElementById('quizc').hidden = true; document.body.classList.remove('quizon'); }
 function floatAt(pos, e) { const v = pos.clone().add(new THREE.Vector3(0, 1.4, 0)).project(cam); if (v.z > 1) return;
-  const d = document.createElement('div'); d.className = 'fly'; d.textContent = e; d.style.left = ((v.x + 1) / 2 * W() - 12) + 'px'; d.style.top = ((1 - v.y) / 2 * H() - 12) + 'px'; document.body.appendChild(d); setTimeout(() => d.remove(), 2300); }
-document.querySelectorAll('#reacts button').forEach((b) => b.onclick = () => live.send({ t: 'react', e: b.textContent }));
+  const d = document.createElement('div'); d.className = 'fly'; if (/^[0-9a-f_]+$/.test(e)) d.innerHTML = `<img src="https://fonts.gstatic.com/s/e/notoemoji/latest/${e}/512.webp" alt="">`; else d.textContent = e; d.style.left = ((v.x + 1) / 2 * W() - 12) + 'px'; d.style.top = ((1 - v.y) / 2 * H() - 12) + 'px'; document.body.appendChild(d); setTimeout(() => d.remove(), 2300); }
+document.querySelectorAll('#reacts button').forEach((b) => b.onclick = () => { live.send({ t: 'react', e: b.dataset.e }); b.classList.remove('pop'); void b.offsetWidth; b.classList.add('pop'); });
+const chatL = document.getElementById('chatL'), chatI = document.getElementById('chatI'), chatS = document.getElementById('chatS'), chatBox = document.getElementById('chat');
+const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+function addChat(m) { const d = document.createElement('div'); d.className = 'cm' + (m.name === myName ? ' me' : '');
+  d.innerHTML = `<b>${esc(m.name)}${m.seat ? ' <small>' + esc(m.seat) + '</small>' : ''}</b> ${esc(m.text)}`; chatL.appendChild(d);
+  while (chatL.children.length > 60) chatL.firstChild.remove(); chatL.scrollTop = chatL.scrollHeight;
+  if (chatBox.classList.contains('min')) { const n = document.getElementById('chatN'); n.textContent = (+n.textContent || 0) + 1; } }
+let coolT = 0;
+function cool(ms) { clearInterval(coolT); chatS.disabled = true; const end = Date.now() + ms; const tick = () => { const l = Math.ceil((end - Date.now()) / 1000); if (l <= 0) { clearInterval(coolT); chatS.disabled = false; chatS.textContent = 'SEND'; } else chatS.textContent = l + 's'; }; tick(); coolT = setInterval(tick, 250); }
+document.getElementById('chatF').onsubmit = (e) => { e.preventDefault(); const t = chatI.value.trim(); if (!t || chatS.disabled) return; live.send({ t: 'chat', text: t }); chatI.value = ''; cool(5000); };
+document.getElementById('chatH').onclick = () => { chatBox.classList.toggle('min'); document.getElementById('chatN').textContent = ''; chatL.scrollTop = chatL.scrollHeight; };
+if (innerWidth < 760) chatBox.classList.add('min');
+chatBox.addEventListener('pointerdown', (e) => e.stopPropagation()); chatBox.addEventListener('pointerup', (e) => e.stopPropagation());
 setTimeout(() => live.connect(), 300);
 // sound: browsers only allow sound after a tap, so ask once with a pulsing button
 const snd = document.getElementById('snd'); snd.classList.add('pulse');
-snd.onclick = () => { soundOn = !soundOn; if (soundOn && ytNow) { const id = ytNow, p = ytPos(); ytNow = ''; playOnScreen(id, p); } else yCmd('mute'); snd.textContent = soundOn ? '🔊' : '🔇'; snd.classList.toggle('pulse', !soundOn); };
+snd.onclick = () => { soundOn = !soundOn; if (soundOn) { if (ytP && ytP.unMute) { ytP.unMute(); ytP.setVolume(100); ytP.playVideo(); } else if (ytNow) { const id = ytNow, p = ytPos(); ytNow = ''; playOnScreen(id, p); } } else yCmd('mute'); snd.textContent = soundOn ? '🔊' : '🔇'; snd.classList.toggle('pulse', !soundOn); };
 document.getElementById('ttbtn').onclick = () => { const t = document.getElementById('tt'); t.hidden = !t.hidden; document.getElementById('ttbtn').textContent = t.hidden ? 'TIMETABLE ▾' : 'TIMETABLE ▴'; };
 setTimeout(() => { const t = document.getElementById('tip'); if (t) t.style.display = 'none'; }, 5000);
 
@@ -519,7 +554,7 @@ let t0 = performance.now();
   if (INTRO.on) { introStep(now); renderer.render(scene, cam); css.render(cssScene, cam); requestAnimationFrame(frame); return; }
   if (flying) { camPos.lerp(tgtPos, k); camLook.lerp(tgtLook, k); cam.position.copy(camPos); orbit.target.copy(camLook); cam.lookAt(camLook); if (camPos.distanceTo(tgtPos) < .05) { flying = false; setLook(); } }
   else if (mode === 'seat' || mode === 'spot') { const b = tgtLook.clone().sub(tgtPos), by = Math.atan2(b.x, b.z) + yaw, bp = Math.atan2(b.y, Math.hypot(b.x, b.z)) + pitch, cp = Math.max(-1.45, Math.min(1.45, bp)), d = new THREE.Vector3(Math.sin(by) * Math.cos(cp), Math.sin(cp), Math.cos(by) * Math.cos(cp)); cam.position.copy(tgtPos); cam.lookAt(tgtPos.clone().add(d)); }
-  else { orbit.update(); camPos.copy(cam.position); camLook.copy(orbit.target); }
+  else { orbit.update(); if (cam.position.y < 3) { cam.position.y = 3; } camPos.copy(cam.position); camLook.copy(orbit.target); }
   if (mine) mine.m.emissiveIntensity = .7 + .3 * Math.sin(now / 250);
   if (ytObj) ytObj.visible = cam.position.z > screen.position.z + .1; renderer.render(scene, cam); css.render(cssScene, cam); if (!frame.n) { frame.n = 1; document.getElementById('ls').textContent = 'TAKING YOU TO YOUR SEAT…'; const q = new URLSearchParams(location.search); let seen = ''; try { seen = localStorage.getItem('mgt_intro'); } catch (e) {} if (!q.has('view') && !q.has('clean') && (q.has('intro') || q.get('from') === 'nationlap' || seen !== new Date().toDateString())) { startIntro(); setTimeout(hideLoader, 300); } } requestAnimationFrame(frame); })(t0);
 </script>
