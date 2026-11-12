@@ -239,7 +239,7 @@ const OUT = new THREE.Group(); scene.add(OUT);
 }
 // ---- the player's own NationLap kart and racer (same model, colours and face as in the race)
 const KART = new THREE.Group(), NK = createKartModel(playerCharacter());
-NK.root.scale.setScalar(1.25); KART.add(NK.root); KART.rotation.y = Math.PI / 2; scene.add(KART);
+NK.root.scale.setScalar(1.25); KART.add(NK.root); window.__KART = KART; window.__B3 = THREE.Box3; KART.rotation.y = Math.PI / 2; scene.add(KART);
 NK.root.traverse((o) => { if (o.isMesh) o.castShadow = true; });
 const DRIVER = NK.parts.driver, DRIVER_HOME = { pos: DRIVER.position.clone(), rot: DRIVER.rotation.clone(), parent: DRIVER.parent };
 // walking legs + arms: same suit colours as the racer (paint for sleeves, the darker 'pants' shade NationLap uses), chibi proportions
@@ -257,6 +257,9 @@ const LEGS = [], ARMS = [], WALKER = new THREE.Group();
     const hd = new THREE.Mesh(new THREE.SphereGeometry(.075, 12, 10), hm); hd.position.y = -.3; a.add(hd);
     a.rotation.z = sx * .18; WALKER.add(a); ARMS.push(a); }
   WALKER.visible = false; DRIVER.add(WALKER); }
+// NationLap's driver arms reach for the wheel in race space and stretch across the street here; hide them and show the walking arms instead
+const NK_ARMS = []; NK.root.traverse((o) => { if (o.isMesh && o.geometry.type === 'CapsuleGeometry' && !WALKER.getObjectById(o.id)) NK_ARMS.push(o); });
+window.__NKARMS = NK_ARMS;
 const ceil = new THREE.Mesh(new THREE.PlaneGeometry(HALL_W, HALL_D), mat(0x120a10, .9)); ceil.rotation.x = Math.PI / 2; ceil.position.set(0, 14, 4); scene.add(ceil);
 for (let i = 0; i < 70; i++) { const d = new THREE.Mesh(new THREE.SphereGeometry(.05, 6, 4), new THREE.MeshBasicMaterial({ color: 0xfff1c9 })); d.position.set((Math.random() - .5) * (HALL_W - 2), 13.9, -12 + Math.random() * 34); scene.add(d); }
 
@@ -279,7 +282,7 @@ const posterMat = screen.material, holeMat = new THREE.MeshBasicMaterial({ color
 holeMat.onBeforeCompile = (sh) => { sh.fragmentShader = sh.fragmentShader.replace(/}\s*$/, 'gl_FragColor = vec4(0.0,0.0,0.0,0.0);\n}'); };
 const YT_W = 1600, YT_H = 900; let ytObj = null, ytNow = '', ytEl = null, ytReady = false, soundOn = false, ytStart = 0, ytT0 = 0;
 const ytPos = () => ytStart + (performance.now() - ytT0) / 1000;
-let ytP = null;
+let ytP = null; window.__ytP = () => ytP;
 { const t = document.createElement('script'); t.src = 'https://www.youtube.com/iframe_api'; document.head.appendChild(t); }
 function bindYT(el) { ytP = null; const go = () => { try { ytP = new YT.Player(el, { events: { onReady: () => { if (soundOn) { ytP.unMute(); ytP.setVolume(100); ytP.playVideo(); } else ytP.mute(); } } }); } catch (e) {} };
   if (window.YT && YT.Player) go(); else { const prev = window.onYouTubeIframeAPIReady; window.onYouTubeIframeAPIReady = () => { prev && prev(); if (ytEl === el) go(); }; } }
@@ -381,7 +384,7 @@ ROWS.forEach((row, r) => {
     // riser step under each row
     scene.add(g); const seat = { row, n: i + 1, st, g, m, eye: new THREE.Vector3(x, y + 1.5, zz + .6) }; seats.push(seat); pick.push(b, bk); b.userData.seat = bk.userData.seat = seat;
   }
-  const riser = new THREE.Mesh(new THREE.BoxGeometry(HALL_W - 2, y, 1.55), mat(0x7a2434, .85, 0, { map: carpet })); riser.position.set(0, y / 2 - .02, z + .2); riser.receiveShadow = true; scene.add(riser);
+  const riser = new THREE.Mesh(new THREE.BoxGeometry(HALL_W - 2, y, 1.55), mat(0x7a2434, .85, 0, { map: carpet, emissive: 0x4a1420, emissiveIntensity: .7 })); riser.position.set(0, y / 2 - .02, z + .2); riser.receiveShadow = true; scene.add(riser);
   const strip = new THREE.Mesh(new THREE.BoxGeometry(HALL_W - 2, .04, .06), new THREE.MeshBasicMaterial({ color: 0xffb347 })); strip.position.set(0, y + .01, z - .55); scene.add(strip);
 });
 let mine = seats.find((s) => s.row === 'G' && s.n === 10);
@@ -532,6 +535,7 @@ function introStep(now) {
   window.__bulbs.forEach((b, i) => b.material.color.setHex(((i + Math.floor(t * 10)) % 4 === 0) ? 0xffffff : 0xb88a3a));
   // 0–2.8 s: kart drives in and brakes at the red carpet
   const kx = -30 + 29 * ease(t / 2.8); KART.position.x = kx; try { NK.animate({ dt: 1 / 60, speed: t < 2.8 ? 26 * (1 - ease(t / 2.8)) + 2 : 0, time: t }); } catch (e) {}
+  for (const o of NK_ARMS) { o.updateWorldMatrix(true, false); const b = new THREE.Box3().setFromObject(o), z = b.max.clone().sub(b.min); if (Math.max(z.x, z.y, z.z) > 1.2) o.visible = false; }
   KART.position.y = t < 2.8 ? Math.abs(Math.sin(t * 22)) * .03 : 0;
   // 2.8–3.6: driver hops out; 3.6–6: walks the carpet to the doors
   if (t > 2.8 && DRIVER.parent !== scene) { scene.attach(DRIVER); DRIVER.scale.setScalar(1.25); }

@@ -2515,3 +2515,10 @@ body.touch-mode[data-state="title"] .hof-strip { width: auto !important; }
 .le-k{display:inline-flex;align-items:center;gap:6px}.le-k::before{content:'';width:7px;height:7px;border-radius:50%;background:#ff2d55;box-shadow:0 0 8px #ff2d55;animation:lePulse 1s infinite}
 .title-screen .live-event .le-pill{display:none}
 @media (max-width:760px){.title-screen .live-event .le-t{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
+/* game-style scrollbars (racer setup, state picker, lists) */
+*{scrollbar-width:thin;scrollbar-color:#ffb21f rgba(20,18,50,.35)}
+::-webkit-scrollbar{width:8px;height:8px}
+::-webkit-scrollbar-track{background:rgba(20,18,50,.35);border-radius:8px}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#ffe066,#ffb21f);border-radius:8px;border:2px solid rgba(20,18,50,.35)}
+::-webkit-scrollbar-thumb:hover{background:#ffd23f}
+::-webkit-scrollbar-corner{background:transparent}
