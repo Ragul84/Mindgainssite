@@ -130,7 +130,7 @@ export class Menu {
     });
     this.newsSub = t.querySelector('.news-sub');
 
-    t.querySelector('.theatre-btn').addEventListener('click', (e) => { e.stopPropagation(); location.href = '/play/theatre/'; });
+    t.querySelector('.theatre-btn').addEventListener('click', (e) => { e.stopPropagation(); location.href = '/play/theatre/?from=nationlap'; });
     t.querySelector('.board-btn').addEventListener('click', (e) => {
       e.stopPropagation();
       bus.emit('ui:confirm');

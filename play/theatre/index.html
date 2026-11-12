@@ -112,6 +112,9 @@ body.quizon .sheet,body.quizon .angles,body.quizon .halls{visibility:hidden}
 .halls button{background:none!important;border:0!important;color:rgba(243,212,138,.55)!important;padding:2px 6px!important}.halls button.on{color:var(--g)!important;text-decoration:underline;text-underline-offset:4px;background:none!important}
 .tip{top:84px!important}
 .angles{bottom:118px!important}
+body.intro .top,body.intro .halls,body.intro .tip,body.intro .angles,body.intro .sheet,body.intro .reacts,body.intro .top5,body.intro .quizc,body.intro .seatcard{display:none!important}
+.skip{display:none;position:fixed;right:16px;bottom:24px;z-index:9;background:rgba(0,0,0,.55);color:var(--g);border:1px solid rgba(243,212,138,.6);border-radius:2px;padding:8px 14px;font:700 11px Inter;letter-spacing:.2em}
+body.intro .skip{display:block}
 </style>
 <script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
 </head>
@@ -119,6 +122,7 @@ body.quizon .sheet,body.quizon .angles,body.quizon .halls{visibility:hidden}
 <canvas id="gl"></canvas><div id="css"></div>
 <div class="loader" id="loader"><div class="lg">MINDGAINS · THEATRE</div><div class="ring"></div><div class="ls" id="ls">SETTING UP THE HALL…</div></div>
 <div class="vig"></div>
+<button class="skip" id="skip">SKIP ›</button>
 
 <div class="top"><a class="back" href="/nationlap/" aria-label="Back">‹</a><div class="brand">MINDGAINS · THEATRE</div><span class="live" id="live">● LIVE</span><button class="ib" id="snd" title="Sound">🔇</button><button class="ib" id="fs" title="Full screen">⛶</button></div>
 <div class="marq" hidden><div class="mq" id="mq"></div></div>
@@ -167,7 +171,61 @@ for (const s of [-1, 1]) {
   for (let k = 0; k < 6; k++) { const z = -10 + k * 5.5; const lamp = new THREE.Mesh(new THREE.SphereGeometry(.18, 12, 8), new THREE.MeshBasicMaterial({ color: 0xffc36b })); lamp.position.set(s * (HALL_W / 2 - .15), 4.2, z); scene.add(lamp);
     const glow = new THREE.PointLight(0xffa64d, 4, 7, 2); glow.position.set(s * (HALL_W / 2 - .6), 4.2, z); scene.add(glow); }
 }
-const back = new THREE.Mesh(new THREE.PlaneGeometry(HALL_W, 14), mat(0x2a1a14, .8)); back.position.set(0, 7, 24); back.rotation.y = Math.PI; scene.add(back);
+const DOOR_W = 3.4, DOOR_H = 4.4;
+{ const bm = mat(0x2a1a14, .8, 0, { side: THREE.DoubleSide }), side = (HALL_W - DOOR_W) / 2;
+  for (const sx of [-1, 1]) { const w = new THREE.Mesh(new THREE.PlaneGeometry(side, 14), bm); w.position.set(sx * (DOOR_W / 2 + side / 2), 7, 24); scene.add(w); }
+  const tw = new THREE.Mesh(new THREE.PlaneGeometry(DOOR_W, 14 - DOOR_H), bm); tw.position.set(0, DOOR_H + (14 - DOOR_H) / 2, 24); scene.add(tw); }
+// ---- outside: night plaza in front of the theatre
+const OUT = new THREE.Group(); scene.add(OUT);
+{ const plaza = new THREE.Mesh(new THREE.PlaneGeometry(90, 50), mat(0x1c1a22, .95)); plaza.rotation.x = -Math.PI / 2; plaza.position.set(0, .001, 49.4); OUT.add(plaza);
+  const road = new THREE.Mesh(new THREE.PlaneGeometry(90, 7), mat(0x2b2b33, .9)); road.rotation.x = -Math.PI / 2; road.position.set(0, .01, 34); OUT.add(road);
+  for (let x = -40; x < 40; x += 5) { const d = new THREE.Mesh(new THREE.PlaneGeometry(2.4, .18), new THREE.MeshBasicMaterial({ color: 0xf3d48a })); d.rotation.x = -Math.PI / 2; d.position.set(x, .02, 34); OUT.add(d); }
+  const carpet = new THREE.Mesh(new THREE.PlaneGeometry(3, 6.2), mat(0x8e0d1c, .8)); carpet.rotation.x = -Math.PI / 2; carpet.position.set(0, .02, 27.6); OUT.add(carpet);
+  // facade: stone front, gold trim, columns
+  const fac = mat(0x3a2a22, .7);
+  const side = (HALL_W + 6 - DOOR_W) / 2;
+  for (const sx of [-1, 1]) { const f = new THREE.Mesh(new THREE.BoxGeometry(side, 15, .6), fac); f.position.set(sx * (DOOR_W / 2 + side / 2), 7.5, 24.5); OUT.add(f);
+    for (const cx of [3.4, 7.4, 11.4]) { const c = new THREE.Mesh(new THREE.CylinderGeometry(.35, .4, 9, 16), mat(0xd8c49a, .5)); c.position.set(sx * cx, 4.5, 25.2); OUT.add(c); }
+    const lamp = new THREE.PointLight(0xffc36b, 30, 14, 1.6); lamp.position.set(sx * 2.6, 4.6, 26.4); OUT.add(lamp);
+    const bulb = new THREE.Mesh(new THREE.SphereGeometry(.22, 12, 8), new THREE.MeshBasicMaterial({ color: 0xffe2a0 })); bulb.position.copy(lamp.position); OUT.add(bulb); }
+  const top = new THREE.Mesh(new THREE.BoxGeometry(DOOR_W, 15 - DOOR_H, .6), fac); top.position.set(0, DOOR_H + (15 - DOOR_H) / 2, 24.5); OUT.add(top);
+  const trim = new THREE.Mesh(new THREE.BoxGeometry(HALL_W + 6, .3, .9), new THREE.MeshBasicMaterial({ color: 0xf3d48a })); trim.position.set(0, 9.2, 24.6); OUT.add(trim);
+  // marquee sign with chasing bulbs
+  const c = document.createElement('canvas'); c.width = 1024; c.height = 256; const g = c.getContext('2d');
+  g.fillStyle = '#120c06'; g.fillRect(0, 0, 1024, 256); g.strokeStyle = '#f3d48a'; g.lineWidth = 10; g.strokeRect(14, 14, 996, 228);
+  g.fillStyle = '#f3d48a'; g.font = '400 112px "Bebas Neue", Impact, sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('NATIONLAP · LIVE', 512, 108);
+  g.font = '700 34px Inter, Arial'; g.fillText('THEATRE  ✦  DAILY CLASSES  ✦  6 PM PREMIERE', 512, 192);
+  const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace;
+  const sign = new THREE.Mesh(new THREE.PlaneGeometry(12, 3), new THREE.MeshBasicMaterial({ map: tex, toneMapped: false })); sign.position.set(0, 11.6, 24.95); OUT.add(sign);
+  window.__bulbs = [];
+  for (let i = 0; i < 40; i++) { const t = i / 40, per = 2 * (12 + 3), d = t * per; let x, y;
+    if (d < 12) { x = -6 + d; y = 13.2; } else if (d < 15) { x = 6; y = 13.2 - (d - 12); } else if (d < 27) { x = 6 - (d - 15); y = 10.2; } else { x = -6; y = 10.2 + (d - 27); }
+    const b = new THREE.Mesh(new THREE.SphereGeometry(.11, 8, 6), new THREE.MeshBasicMaterial({ color: 0xffd98a })); b.position.set(x, y, 25.05); OUT.add(b); window.__bulbs.push(b); }
+  // doors (slide apart)
+  window.__doors = [-1, 1].map((sx) => { const d = new THREE.Mesh(new THREE.BoxGeometry(DOOR_W / 2, DOOR_H, .15), mat(0x5a1414, .4, .2)); d.position.set(sx * DOOR_W / 4, DOOR_H / 2, 24.85);
+    const k = new THREE.Mesh(new THREE.BoxGeometry(.08, 1, .08), new THREE.MeshBasicMaterial({ color: 0xf3d48a })); k.position.set(-sx * DOOR_W / 4 + sx * .25, 0, .12); d.add(k); OUT.add(d); d.userData.sx = sx; return d; });
+  { const bl = new THREE.PointLight(0xffb36b, 30, 16, 1.4); bl.position.set(0, 9, 19); scene.add(bl); const rail = new THREE.Mesh(new THREE.BoxGeometry(HALL_W - 2, .08, .08), new THREE.MeshBasicMaterial({ color: 0xf3d48a })); rail.position.set(0, 8.2, 17.6); scene.add(rail); }
+  const glow = new THREE.PointLight(0xffb060, 0, 10, 1.5); glow.position.set(0, 2.5, 23); scene.add(glow); window.__doorGlow = glow;
+  // street lamps
+  for (const x of [-16, 16]) { const pole = new THREE.Mesh(new THREE.CylinderGeometry(.12, .15, 6, 8), mat(0x222222, .5)); pole.position.set(x, 3, 30.5); OUT.add(pole);
+    const l = new THREE.PointLight(0xffd9a0, 22, 16, 1.6); l.position.set(x, 6.2, 30.5); OUT.add(l); const h = new THREE.Mesh(new THREE.SphereGeometry(.3, 10, 8), new THREE.MeshBasicMaterial({ color: 0xfff1c9 })); h.position.copy(l.position); OUT.add(h); }
+}
+// ---- the player's kart and driver
+const KART = new THREE.Group(), WHEELS = [];
+{ const red = mat(0xe8322f, .35, .2), dark = mat(0x1b1b22, .6);
+  const body = new THREE.Mesh(new RoundedBoxGeometry(1.5, .45, 2.6, 3, .18), red); body.position.y = .5; KART.add(body);
+  const nose = new THREE.Mesh(new RoundedBoxGeometry(1.1, .3, .8, 3, .12), red); nose.position.set(0, .45, -1.4); KART.add(nose);
+  const seat = new THREE.Mesh(new RoundedBoxGeometry(.8, .7, .5, 2, .12), dark); seat.position.set(0, .9, .55); KART.add(seat);
+  const wing = new THREE.Mesh(new RoundedBoxGeometry(1.7, .12, .4, 2, .05), mat(0xffd23f, .4)); wing.position.set(0, 1.05, 1.35); KART.add(wing);
+  for (const [x, z] of [[-.85, -.9], [.85, -.9], [-.85, .95], [.85, .95]]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(.34, .34, .3, 16), dark); w.rotation.z = Math.PI / 2; w.position.set(x, .34, z); KART.add(w); WHEELS.push(w); }
+  KART.rotation.y = -Math.PI / 2; scene.add(KART); }
+const DRIVER = new THREE.Group(), LEGS = [];
+{ const skin = mat(0xe3ad85, .6), suit = mat(0xff8a1f, .5), helm = mat(0xffffff, .3);
+  for (const sx of [-1, 1]) { const g = new THREE.Group(); g.position.set(sx * .13, .5, 0); const l = new THREE.Mesh(new THREE.CapsuleGeometry(.1, .3, 3, 8), mat(0x2b3a67, .7)); l.position.y = -.22; g.add(l); DRIVER.add(g); LEGS.push(g); }
+  const body = new THREE.Mesh(new RoundedBoxGeometry(.5, .55, .34, 3, .14), suit); body.position.y = .8; DRIVER.add(body);
+  const head = new THREE.Mesh(new THREE.SphereGeometry(.3, 20, 14), skin); head.position.y = 1.32; DRIVER.add(head);
+  const hm = new THREE.Mesh(new THREE.SphereGeometry(.33, 20, 12, 0, Math.PI * 2, 0, Math.PI * .55), helm); hm.position.y = 1.36; DRIVER.add(hm);
+  scene.add(DRIVER); DRIVER.visible = false; }
 const ceil = new THREE.Mesh(new THREE.PlaneGeometry(HALL_W, HALL_D), mat(0x120a10, .9)); ceil.rotation.x = Math.PI / 2; ceil.position.set(0, 14, 4); scene.add(ceil);
 for (let i = 0; i < 70; i++) { const d = new THREE.Mesh(new THREE.SphereGeometry(.05, 6, 4), new THREE.MeshBasicMaterial({ color: 0xfff1c9 })); d.position.set((Math.random() - .5) * (HALL_W - 2), 13.9, -12 + Math.random() * 34); scene.add(d); }
 
@@ -373,6 +431,34 @@ document.getElementById('fs').onclick = async () => { const d = document.documen
 let mqX = 0, mqLast = performance.now();
 (function mqTick(now) { const el = document.getElementById('mq'); const w = el.scrollWidth / 3; mqX -= (now - mqLast) * .045; if (w && -mqX > w) mqX += w; el.style.transform = `translate3d(${mqX.toFixed(1)}px,0,0)`; mqLast = now; requestAnimationFrame(mqTick); })(mqLast);
 // loader: stays until the hall has rendered and the timetable + video are ready (max 8 s)
+// ---- arrival cinematic: kart pulls up, driver walks in through the doors, camera follows to the seat
+const INTRO = { on: false, t0: 0 }; window.INTRO = INTRO; window.startIntro = () => startIntro();
+const ease = (x) => x < 0 ? 0 : x > 1 ? 1 : x * x * (3 - 2 * x);
+const lerpV = (a, b, t) => a.clone().lerp(b, t);
+function startIntro() { INTRO.on = true; INTRO.t0 = performance.now(); document.body.classList.add('intro'); try { orbit.enabled = false; } catch (e) {} KART.position.set(-30, 0, 33.5); DRIVER.visible = false; window.__doors.forEach((d) => d.position.x = d.userData.sx * DOOR_W / 4); }
+function endIntro() { if (!INTRO.on) return; INTRO.on = false; document.body.classList.remove('intro'); DRIVER.visible = false; camPos.copy(cam.position); camLook.set(0, 4, 10); fly('seat'); try { localStorage.setItem('mgt_intro', new Date().toDateString()); } catch (e) {} }
+function introStep(now) {
+  const t = window.__T != null ? window.__T : (now - INTRO.t0) / 1000;
+  window.__bulbs.forEach((b, i) => b.material.color.setHex(((i + Math.floor(t * 10)) % 4 === 0) ? 0xffffff : 0xb88a3a));
+  // 0–2.8 s: kart drives in and brakes at the red carpet
+  const kx = -30 + 29 * ease(t / 2.8); KART.position.x = kx; WHEELS.forEach((w) => w.rotation.x -= (t < 2.8 ? (1 - t / 2.8) * .5 + .05 : 0));
+  KART.position.y = t < 2.8 ? Math.abs(Math.sin(t * 22)) * .03 : 0;
+  // 2.8–3.6: driver hops out; 3.6–6: walks the carpet to the doors
+  if (t > 2.8) { DRIVER.visible = true; const hop = ease((t - 2.8) / .8); const walk = ease((t - 3.6) / 2.4);
+    DRIVER.position.set(-1 + 1 * hop, .55 * Math.sin(hop * Math.PI) + 0, 33.5 - .4 * hop - 7.6 * walk);
+    DRIVER.rotation.y = Math.PI; const ph = t * 9; LEGS[0].rotation.x = walk > 0 && walk < 1 ? Math.sin(ph) * .7 : 0; LEGS[1].rotation.x = -LEGS[0].rotation.x;
+    if (t > 6.2) DRIVER.visible = false; }
+  // doors open as the driver arrives
+  const open = ease((t - 4.9) / 1.2); window.__doors.forEach((d) => d.position.x = d.userData.sx * (DOOR_W / 4 + open * DOOR_W / 2)); window.__doorGlow.intensity = 25 * open;
+  // camera: wide street shot -> follows the driver -> through the doorway into the hall
+  let p, l;
+  if (t < 2.8) { p = lerpV(new THREE.Vector3(14, 3.2, 47), new THREE.Vector3(8, 3.6, 44), ease(t / 2.8)); l = new THREE.Vector3(kx * .6, 4, 27); }
+  else if (t < 6) { const d = DRIVER.position; p = lerpV(new THREE.Vector3(8, 3.6, 44), new THREE.Vector3(d.x + .2, 2.6, d.z + 5.5), ease((t - 2.8) / 1.4)); l = new THREE.Vector3(0, 2.6, 22); }
+  else { const u = ease((t - 6) / 2.2); p = lerpV(new THREE.Vector3(0, 2.6, 30.2), new THREE.Vector3(0, 3.2, 25.4), ease((t - 6) / .6)).lerp(new THREE.Vector3(0, 15.5, 22), ease((t - 6.5) / 1.5)); l = lerpV(new THREE.Vector3(0, 2.4, 20), new THREE.Vector3(0, 5, -16), u); }
+  cam.position.copy(p); cam.lookAt(l); if (cam.fov !== 62) { cam.fov = 62; cam.updateProjectionMatrix(); }
+  if (t > 8.6) endIntro();
+}
+document.getElementById('skip').onclick = endIntro;
 let loaded = false; function hideLoader() { if (loaded) return; loaded = true; document.getElementById('loader').classList.add('out'); }
 setTimeout(hideLoader, 8000);
 addEventListener('resize', () => { cam.aspect = W() / H(); cam.updateProjectionMatrix(); renderer.setSize(W(), H()); css.setSize(W(), H()); });
@@ -380,11 +466,12 @@ cam.aspect = W() / H(); cam.updateProjectionMatrix();
 let t0 = performance.now();
 (function frame(now) { const dt = Math.min(.05, (now - t0) / 1000); t0 = now; const k = 1 - Math.pow(.02, dt);
   { const f = mode === 'seat' ? 92 : 62; if (Math.abs(cam.fov - f) > .1) { cam.fov += (f - cam.fov) * k; cam.updateProjectionMatrix(); } }
+  if (INTRO.on) { introStep(now); renderer.render(scene, cam); css.render(cssScene, cam); requestAnimationFrame(frame); return; }
   if (flying) { camPos.lerp(tgtPos, k); camLook.lerp(tgtLook, k); cam.position.copy(camPos); orbit.target.copy(camLook); cam.lookAt(camLook); if (camPos.distanceTo(tgtPos) < .05) { flying = false; setLook(); } }
   else if (mode === 'seat') { const base = tgtLook.clone().sub(tgtPos).normalize(), d = base.applyAxisAngle(new THREE.Vector3(0, 1, 0), yaw); d.y += pitch; cam.position.copy(tgtPos); cam.lookAt(tgtPos.clone().add(d)); }
   else { orbit.update(); camPos.copy(cam.position); camLook.copy(orbit.target); }
   if (mine) mine.m.emissiveIntensity = .7 + .3 * Math.sin(now / 250);
-  if (ytObj) ytObj.visible = cam.position.z > screen.position.z + .1; renderer.render(scene, cam); css.render(cssScene, cam); if (!frame.n) { frame.n = 1; document.getElementById('ls').textContent = 'TAKING YOU TO YOUR SEAT…'; } requestAnimationFrame(frame); })(t0);
+  if (ytObj) ytObj.visible = cam.position.z > screen.position.z + .1; renderer.render(scene, cam); css.render(cssScene, cam); if (!frame.n) { frame.n = 1; document.getElementById('ls').textContent = 'TAKING YOU TO YOUR SEAT…'; const q = new URLSearchParams(location.search); let seen = ''; try { seen = localStorage.getItem('mgt_intro'); } catch (e) {} if (!q.has('view') && !q.has('clean') && (q.has('intro') || q.get('from') === 'nationlap' || seen !== new Date().toDateString())) { startIntro(); setTimeout(hideLoader, 300); } } requestAnimationFrame(frame); })(t0);
 </script>
 </body>
 </html>
