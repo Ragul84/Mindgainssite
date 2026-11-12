@@ -412,14 +412,15 @@ function openVideo() {
 }
 const ray = new THREE.Raycaster(), ptr = new THREE.Vector2();
 let px0 = 0, py0 = 0, down = false;
-addEventListener('pointerdown', (e) => { down = true; px0 = e.clientX; py0 = e.clientY; dragged = 0; });
+const onView = (e) => e.target === renderer.domElement;
+addEventListener('pointerdown', (e) => { if (!onView(e)) { down = false; return; } down = true; px0 = e.clientX; py0 = e.clientY; dragged = 0; });
 addEventListener('pointermove', (e) => { if (down) dragged = Math.max(dragged, Math.hypot(e.clientX - px0, e.clientY - py0)); });
-addEventListener('pointerup', (e) => { if (e.target.closest('.sheet,.angles,.top,.halls')) return; down = false; if (dragged > 8) return; ptr.set(e.clientX / W() * 2 - 1, -(e.clientY / H()) * 2 + 1); ray.setFromCamera(ptr, cam);
+addEventListener('pointerup', (e) => { if (!down || !onView(e) || document.getElementById('vfs')) { down = false; return; } down = false; if (dragged > 8) return; ptr.set(e.clientX / W() * 2 - 1, -(e.clientY / H()) * 2 + 1); ray.setFromCamera(ptr, cam);
   const tnow = performance.now(); if (tnow - lastTap < 320) { lastTap = 0; fly('seat'); return; } lastTap = tnow;
   if (ytNow && ray.intersectObject(screen)[0] && !(ray.intersectObjects(pick)[0])) { openVideo(); return; }
   const hit = ray.intersectObjects(pick)[0];
   if (!hit) { const g = ray.intersectObjects(scene.children, true).find((h) => h.object !== screen && h.object.visible && h.face && h.face.normal.clone().transformDirection(h.object.matrixWorld).y > .7);
-    if (g && g.point.z > screen.position.z + 2 && Math.abs(g.point.x) < 24) { const e = g.point.clone(); e.y += 1.7; spot = [e, new THREE.Vector3(0, 7, -16)]; fly('spot'); } return; }
+    if (g && g.point.z > screen.position.z + 2 && g.point.z < 23 && Math.abs(g.point.x) < 11.5) { const e = g.point.clone(); e.y += 1.7; spot = [e, new THREE.Vector3(0, 7, -16)]; fly('spot'); } return; }
   const s = hit.object.userData.seat;
   const card = document.getElementById('seatcard'); card.style.display = 'block';
   if (s.st === 'taken') { card.textContent = `Row ${s.row} · Seat ${s.n} · ${s.who || 'taken'}`; return; }
@@ -430,19 +431,20 @@ if (new URLSearchParams(location.search).get('view')) fly(new URLSearchParams(lo
 
 const orbit = new OrbitControls(cam, renderer.domElement);
 orbit.enableDamping = true; orbit.dampingFactor = .08; orbit.enablePan = false; orbit.rotateSpeed = .55; orbit.zoomSpeed = .8;
-orbit.minDistance = .5; orbit.maxDistance = 42; orbit.maxPolarAngle = 1.38; orbit.minPolarAngle = .08;
+orbit.minDistance = .5; orbit.maxDistance = 42; orbit.maxPolarAngle = 1.38; orbit.minPolarAngle = .08; orbit.minAzimuthAngle = -1.2; orbit.maxAzimuthAngle = 1.2; orbit.maxDistance = 34; orbit.minDistance = 3;
 orbit.addEventListener('start', () => { flying = false; document.getElementById('tip').style.display = 'none'; });
 // seat view: the seat stays put; a drag turns the head (yaw / pitch around the eye)
 let yaw = 0, pitch = 0, lx = 0, ly = 0, look = false;
 function setLook() { orbit.enabled = !(mode === 'seat' || mode === 'spot'); yaw = 0; pitch = 0; if (mode !== 'seat') { orbit.target.copy(camLook); } }
-addEventListener('pointerdown', (e) => { if (!(mode === 'seat' || mode === 'spot') || e.target.closest('.sheet,.angles,.top,.halls')) return; flying = false; look = true; lx = e.clientX; ly = e.clientY; });
+addEventListener('pointerdown', (e) => { if (!(mode === 'seat' || mode === 'spot') || !onView(e)) return; flying = false; look = true; lx = e.clientX; ly = e.clientY; });
 addEventListener('pointermove', (e) => { if (!look) return; if (pts.size > 1) return; yaw -= (e.clientX - lx) * .006 * zoomF; pitch = Math.max(-.55, Math.min(1.05, pitch - (e.clientY - ly) * .005 * zoomF)); lx = e.clientX; ly = e.clientY; });
 addEventListener('pointerup', () => { look = false; });
 // zoom from the seat: mouse wheel or pinch
 const pts = new Map(); let pinch0 = 0;
-addEventListener('wheel', (e) => { if (mode === 'seat' || mode === 'spot') zoomF = Math.max(.35, Math.min(1.15, zoomF * (e.deltaY > 0 ? 1.08 : .92))); }, { passive: true });
-addEventListener('pointerdown', (e) => pts.set(e.pointerId, [e.clientX, e.clientY]));
-addEventListener('pointermove', (e) => { if (!pts.has(e.pointerId)) return; pts.set(e.pointerId, [e.clientX, e.clientY]); if (pts.size === 2 && (mode === 'seat' || mode === 'spot')) { const [a, b] = [...pts.values()], d = Math.hypot(a[0] - b[0], a[1] - b[1]); if (pinch0) zoomF = Math.max(.35, Math.min(1.15, zoomF * pinch0 / d)); pinch0 = d; } });
+const setZoom = (z) => { if (z > 1.12) { zoomF = 1; fly('wide'); } else zoomF = Math.max(.35, Math.min(1.12, z)); };
+addEventListener('wheel', (e) => { if ((mode === 'seat' || mode === 'spot') && onView(e) && !flying) setZoom(zoomF * (e.deltaY > 0 ? 1.08 : .92)); }, { passive: true });
+addEventListener('pointerdown', (e) => onView(e) && pts.set(e.pointerId, [e.clientX, e.clientY]));
+addEventListener('pointermove', (e) => { if (!pts.has(e.pointerId)) return; pts.set(e.pointerId, [e.clientX, e.clientY]); if (pts.size === 2 && (mode === 'seat' || mode === 'spot')) { const [a, b] = [...pts.values()], d = Math.hypot(a[0] - b[0], a[1] - b[1]); if (pinch0 && !flying) setZoom(zoomF * pinch0 / d); pinch0 = d; } });
 const ptUp = (e) => { pts.delete(e.pointerId); if (pts.size < 2) pinch0 = 0; }; addEventListener('pointerup', ptUp); addEventListener('pointercancel', ptUp);
 // ---- live room: real seats, viewer count, MIGA quiz, top 5, reactions
 const seatByKey = new Map(seats.map((s) => [s.row + s.n, s]));
@@ -558,7 +560,7 @@ let t0 = performance.now();
   if (INTRO.on) { introStep(now); renderer.render(scene, cam); css.render(cssScene, cam); requestAnimationFrame(frame); return; }
   if (flying) { camPos.lerp(tgtPos, k); camLook.lerp(tgtLook, k); cam.position.copy(camPos); orbit.target.copy(camLook); cam.lookAt(camLook); if (camPos.distanceTo(tgtPos) < .05) { flying = false; setLook(); } }
   else if (mode === 'seat' || mode === 'spot') { const b = tgtLook.clone().sub(tgtPos), by = Math.atan2(b.x, b.z) + yaw, bp = Math.atan2(b.y, Math.hypot(b.x, b.z)) + pitch, cp = Math.max(-1.45, Math.min(1.45, bp)), d = new THREE.Vector3(Math.sin(by) * Math.cos(cp), Math.sin(cp), Math.cos(by) * Math.cos(cp)); cam.position.copy(tgtPos); cam.lookAt(tgtPos.clone().add(d)); }
-  else { orbit.update(); if (cam.position.y < 3) { cam.position.y = 3; } camPos.copy(cam.position); camLook.copy(orbit.target); }
+  else { orbit.update(); cam.position.set(Math.max(-11.5, Math.min(11.5, cam.position.x)), Math.max(3, Math.min(26, cam.position.y)), Math.max(-11, Math.min(26, cam.position.z))); camPos.copy(cam.position); camLook.copy(orbit.target); }
   if (mine) mine.m.emissiveIntensity = .7 + .3 * Math.sin(now / 250);
   if (ytObj) ytObj.visible = cam.position.z > screen.position.z + .1; renderer.render(scene, cam); css.render(cssScene, cam); if (!frame.n) { frame.n = 1; document.getElementById('ls').textContent = 'TAKING YOU TO YOUR SEAT…'; const q = new URLSearchParams(location.search); let seen = ''; try { seen = localStorage.getItem('mgt_intro'); } catch (e) {} if (!q.has('view') && !q.has('clean') && (q.has('intro') || q.get('from') === 'nationlap' || seen !== new Date().toDateString())) { startIntro(); setTimeout(hideLoader, 300); } } requestAnimationFrame(frame); })(t0);
 </script>
