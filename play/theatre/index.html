@@ -71,18 +71,22 @@ body{font-family:Inter,system-ui,sans-serif}
 .top5 b{display:block;font:400 13px 'Bebas Neue';letter-spacing:.14em;color:var(--g)}
 .reacts{position:fixed;right:14px;bottom:264px;z-index:6;display:flex;flex-direction:column;gap:6px}.reacts button{width:38px;height:38px;border-radius:50%;border:1px solid rgba(243,212,138,.5);background:rgba(0,0,0,.55);font-size:17px}
 .fly{position:fixed;z-index:7;font-size:24px;pointer-events:none;animation:fly 2.2s ease-out forwards}@keyframes fly{to{transform:translateY(-140px);opacity:0}}.fly img{width:44px;height:44px}
-.chat{position:fixed;right:14px;top:96px;bottom:200px;width:300px;z-index:6;display:flex;flex-direction:column;background:rgba(12,9,6,.78);backdrop-filter:blur(6px);border:1px solid rgba(243,212,138,.35);border-radius:14px;overflow:hidden;font:500 12.5px Inter,system-ui}
-.chat-h{flex:none;display:flex;align-items:center;gap:6px;padding:9px 12px;background:none;border:0;border-bottom:1px solid rgba(243,212,138,.2);color:var(--g);font:800 11px Inter;letter-spacing:.14em;cursor:pointer;text-align:left}.chat-h i{margin-left:auto;font-style:normal}
+.chat{position:fixed;left:14px;top:96px;bottom:150px;width:300px;z-index:6;display:flex;flex-direction:column;background:rgba(12,9,6,.82);backdrop-filter:blur(8px);border:1px solid rgba(243,212,138,.35);border-radius:14px;overflow:hidden;font:500 12.5px Inter,system-ui;transition:width .2s}
+.chat-h{flex:none;display:flex;align-items:center;gap:6px;padding:10px 12px;background:none;border:0;border-bottom:1px solid rgba(243,212,138,.2);color:var(--g);font:800 11px Inter;letter-spacing:.14em;cursor:pointer;text-align:left;white-space:nowrap}.chat-h em{font-style:normal}.chat-h i{margin-left:auto;font-style:normal;font-size:16px}
 .chat-h span:not(:empty){background:#ff2d55;color:#fff;border-radius:9px;padding:0 6px;letter-spacing:0}
 .chat-l{flex:1;overflow-y:auto;padding:8px 12px;display:flex;flex-direction:column;gap:6px;color:#f4ead6;scrollbar-width:thin}
 .cm{line-height:1.35;word-wrap:break-word}.cm b{color:#f3d48a;font-weight:800}.cm small{color:rgba(243,212,138,.55);font-weight:600}.cm.me b{color:#7fe3a5}
-.emo{flex:none;display:grid;grid-template-columns:repeat(6,1fr);gap:2px;padding:6px 8px;border-top:1px solid rgba(243,212,138,.2)}
-.emo button{background:none;border:0;padding:3px;cursor:pointer;border-radius:10px;transition:transform .12s}.emo button:hover{transform:scale(1.25);background:rgba(255,255,255,.08)}.emo img{width:100%;max-width:34px;aspect-ratio:1;display:block;margin:auto}
+.emo{flex:none;display:flex;justify-content:space-around;padding:6px 8px;border-top:1px solid rgba(243,212,138,.2)}
+.emo button{background:none;border:0;padding:3px;cursor:pointer;border-radius:10px;transition:transform .12s}.emo button:hover{transform:scale(1.25);background:rgba(255,255,255,.08)}.emo img{width:34px;height:34px;display:block}
 .emo button.pop{animation:epop .35s}@keyframes epop{50%{transform:scale(1.5)}}
-.chat-f{flex:none;display:flex;gap:6px;padding:8px;border-top:1px solid rgba(243,212,138,.2)}.chat-f input{flex:1;min-width:0;background:rgba(255,255,255,.08);border:1px solid rgba(243,212,138,.3);border-radius:18px;padding:7px 12px;color:#fff;font:500 13px Inter;outline:0}
+.chat-f{flex:none;display:flex;gap:6px;padding:8px;border-top:1px solid rgba(243,212,138,.2)}.chat-f input{flex:1;min-width:0;background:rgba(255,255,255,.08);border:1px solid rgba(243,212,138,.3);border-radius:18px;padding:8px 12px;color:#fff;font:500 13px Inter;outline:0}
 .chat-f button{flex:none;min-width:58px;border:0;border-radius:18px;background:var(--g);color:#1a1206;font:800 11px Inter;letter-spacing:.1em;cursor:pointer}.chat-f button:disabled{opacity:.5}
-.chat.min{bottom:auto}.chat.min .chat-l,.chat.min .chat-f{display:none}.chat.min .chat-h i{transform:rotate(-90deg)}
-body.intro .chat,body.cinema .chat{display:none}@media (max-width:760px){body.quizon .chat{visibility:hidden}}
+.chat.min{bottom:auto;width:auto;border-radius:24px}.chat.min .chat-l,.chat.min .chat-f,.chat.min .emo{display:none}.chat.min .chat-h{border:0;padding:9px 14px}.chat.min .chat-h i{display:none}
+#vfs{display:flex}#vfs iframe{flex:1;min-width:0}#vfs .chat{position:relative;left:auto;top:auto;bottom:auto;order:-1;height:100%;border-radius:0;border-width:0 1px 0 0;flex:none}
+#vfs .chat.min{position:absolute;left:12px;top:auto;bottom:16px;height:auto;border-radius:24px;border-width:1px}#vfs>button{left:auto!important;right:12px}
+@media (max-width:760px){.chat{top:96px;bottom:178px;width:min(300px,82vw)}.chat.min{top:auto;bottom:178px}
+  #vfs .chat{width:min(280px,42vw)}}
+body.intro .chat,body.cinema .chat{display:none}body.quizon .chat:not(.min){visibility:hidden}
 @media (max-width:760px){.chat{left:12px;right:12px;width:auto;top:auto;bottom:178px;max-height:46vh}.chat.min{bottom:178px}.chat:not(.min){height:46vh}.emo{grid-template-columns:repeat(12,1fr)}.emo img{max-width:26px}}
 body.cinema .top,body.cinema .marq,body.cinema .halls,body.cinema .tip,body.cinema .angles,body.cinema .sheet,body.cinema .reacts,body.cinema .top5{display:none!important}body.cinema .ctl{top:12px}
 .loader{position:fixed;inset:0;z-index:50;background:radial-gradient(80% 60% at 50% 40%,#1c1408,#050403);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;transition:opacity .6s,visibility 0s .6s}
@@ -116,7 +120,7 @@ body.cinema .top,body.cinema .marq,body.cinema .halls,body.cinema .tip,body.cine
 .tt{flex-direction:column;gap:4px!important;max-height:42vh;overflow-y:auto;margin-bottom:6px!important;background:rgba(10,8,6,.92);border:1px solid rgba(243,212,138,.35);padding:8px}
 .tt[hidden]{display:none!important}
 .reacts{right:max(12px,calc(50% - 260px))!important;bottom:178px!important;gap:5px!important}.reacts button{width:32px!important;height:32px!important;font-size:14px!important}
-.top5{top:auto!important;bottom:178px!important;right:auto!important;left:max(12px,calc(50% - 260px));font-size:10px!important}
+.top5{top:auto!important;bottom:178px!important;left:auto!important;right:max(12px,calc(50% - 260px))!important;font-size:10px!important}
 .quizc{left:50%!important;right:auto!important;transform:translateX(-50%);width:min(520px,calc(100% - 24px));top:auto!important;bottom:12px!important;padding:10px 12px!important}
 body.quizon .sheet,body.quizon .angles,body.quizon .halls{visibility:hidden}
 .qq{font-size:15px!important;margin:4px 0 8px!important}.qo button{padding:7px 6px!important;font-size:11.5px!important}
@@ -145,9 +149,9 @@ body.intro .skip{display:block}
 <div class="seatcard" id="seatcard"></div>
 <div class="quizc" id="quizc" hidden><div class="qk" id="qk">MIGA ASKS · 15 S</div><div class="qq" id="qq"></div><div class="qo" id="qo"></div><div class="qb"><i id="qbar"></i></div><div class="qn" id="qn"></div></div>
 <div class="top5" id="top5" hidden></div>
-<div class="chat" id="chat"><button class="chat-h" id="chatH">💬 LIVE CHAT <span id="chatN"></span><i>▾</i></button>
+<div class="chat" id="chat"><button class="chat-h" id="chatH">💬 <em>LIVE CHAT</em> <span id="chatN"></span><i>‹</i></button>
   <div class="chat-l" id="chatL"></div>
-  <div class="emo" id="reacts"><button data-e="1f525"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f525/512.webp" alt="" loading="lazy"></button><button data-e="1f602"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f602/512.webp" alt="" loading="lazy"></button><button data-e="1f92f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f92f/512.webp" alt="" loading="lazy"></button><button data-e="1f44f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44f/512.webp" alt="" loading="lazy"></button><button data-e="2764_fe0f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/2764_fe0f/512.webp" alt="" loading="lazy"></button><button data-e="1f4af"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f4af/512.webp" alt="" loading="lazy"></button><button data-e="1f389"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f389/512.webp" alt="" loading="lazy"></button><button data-e="1f9e0"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f9e0/512.webp" alt="" loading="lazy"></button><button data-e="1f64f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f64f/512.webp" alt="" loading="lazy"></button><button data-e="1f62e"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f62e/512.webp" alt="" loading="lazy"></button><button data-e="1f680"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f680/512.webp" alt="" loading="lazy"></button><button data-e="1f4a1"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f4a1/512.webp" alt="" loading="lazy"></button></div>
+  <div class="emo" id="reacts"><button data-e="1f525"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f525/512.webp" alt="" loading="lazy"></button><button data-e="1f602"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f602/512.webp" alt="" loading="lazy"></button><button data-e="1f92f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f92f/512.webp" alt="" loading="lazy"></button><button data-e="1f44f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44f/512.webp" alt="" loading="lazy"></button><button data-e="2764_fe0f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/2764_fe0f/512.webp" alt="" loading="lazy"></button></div>
   <form class="chat-f" id="chatF"><input id="chatI" maxlength="140" placeholder="Say something…" autocomplete="off"><button id="chatS">SEND</button></form></div>
 <div class="angles"><button data-v="wide" class="on">HALL</button><button data-v="seat">MY SEAT</button><button data-v="stage">STAGE</button><button data-v="balcony">BALCONY</button></div>
 <div class="sheet"><div class="tt" id="tt" hidden></div>
@@ -400,8 +404,8 @@ function openVideo() {
   if (ytEl) yCmd('mute');
   const o = document.createElement('div'); o.id = 'vfs';
   o.innerHTML = `<iframe allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen src="https://www.youtube.com/embed/${encodeURIComponent(id)}?autoplay=1&start=${p}&controls=1&rel=0&playsinline=1&modestbranding=1"></iframe><button aria-label="Back to the hall">✕ BACK TO HALL</button>`;
-  document.body.appendChild(o);
-  const close = () => { if (document.fullscreenElement) document.exitFullscreen().catch(() => {}); o.remove(); if (soundOn) { const i = ytNow, q = ytPos(); ytNow = ''; playOnScreen(i, q); } };
+  document.body.appendChild(o); o.appendChild(chatBox);
+  const close = () => { document.body.appendChild(chatBox); if (document.fullscreenElement) document.exitFullscreen().catch(() => {}); o.remove(); if (soundOn) { const i = ytNow, q = ytPos(); ytNow = ''; playOnScreen(i, q); } };
   o.querySelector('button').onclick = close;
   try { (o.requestFullscreen || o.webkitRequestFullscreen).call(o); } catch (e) {}
   try { window.screen.orientation && window.screen.orientation.lock && window.screen.orientation.lock('landscape').catch(() => {}); } catch (e) {}
