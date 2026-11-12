@@ -10,6 +10,7 @@
 <style>
 *{box-sizing:border-box}html,body{margin:0;height:100%;background:#07040a;overflow:hidden;font-family:Nunito,system-ui,sans-serif;color:#fff}
 #gl,#css{position:fixed;inset:0}#css{z-index:0}#gl{z-index:1;background:transparent}#css,#css>div{pointer-events:none}#css .yt{pointer-events:none}
+#vfs{position:fixed;inset:0;z-index:50;background:#000}#vfs iframe{width:100%;height:100%;border:0}#vfs button{position:absolute;top:12px;left:12px;font:700 13px system-ui;letter-spacing:.08em;color:#ffd23f;background:rgba(0,0,0,.65);border:1px solid #ffd23f;border-radius:20px;padding:7px 14px;cursor:pointer}
 .top{position:fixed;left:14px;right:14px;top:12px;display:flex;justify-content:space-between;align-items:center;z-index:5}
 .brand{font-family:'Lilita One';font-size:19px;text-shadow:0 2px 8px #000}.brand b{color:#ffcf3f;font-weight:400}
 .live{background:#ff2d55;border-radius:7px;padding:3px 8px;font:900 11px Nunito;letter-spacing:.06em}
@@ -256,7 +257,8 @@ const spill = new THREE.PointLight(0x9bb6ff, 25, 26, 1.6); spill.position.set(0,
 // ---- synced broadcast: timetable.json decides what plays; everyone computes the same position from the clock
 const posterMat = screen.material, holeMat = new THREE.MeshBasicMaterial({ color: 0x000000, transparent: false, blending: THREE.NoBlending, opacity: 0 });
 holeMat.onBeforeCompile = (sh) => { sh.fragmentShader = sh.fragmentShader.replace(/}\s*$/, 'gl_FragColor = vec4(0.0,0.0,0.0,0.0);\n}'); };
-const YT_W = 1600, YT_H = 900; let ytObj = null, ytNow = '', ytEl = null, ytReady = false, soundOn = false;
+const YT_W = 1600, YT_H = 900; let ytObj = null, ytNow = '', ytEl = null, ytReady = false, soundOn = false, ytStart = 0, ytT0 = 0;
+const ytPos = () => ytStart + (performance.now() - ytT0) / 1000;
 function yCmd(func, args = []) { try { ytEl && ytEl.contentWindow.postMessage(JSON.stringify({ event: 'command', func, args }), '*'); } catch (e) {} }
 function playOnScreen(id, start) {
   const key = id; if (key === ytNow) return; if (INTRO.on && !window.__yt_ok) { window.__ytWait = [id, start]; return; } ytNow = key;
@@ -266,7 +268,7 @@ function playOnScreen(id, start) {
   el.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
   el.src = `https://www.youtube.com/embed/${encodeURIComponent(id)}?autoplay=1&mute=${soundOn ? 0 : 1}&start=${Math.floor(start)}&controls=0&disablekb=1&modestbranding=1&rel=0&playsinline=1&enablejsapi=1&origin=${encodeURIComponent(location.origin)}`;
   el.addEventListener('load', () => { ytReady = true; setTimeout(() => { yCmd(soundOn ? 'unMute' : 'mute'); if (soundOn) yCmd('setVolume', [100]); hideLoader(); }, 600); });
-  ytEl = el;
+  ytEl = el; ytStart = start; ytT0 = performance.now();
   ytObj = new CSS3DObject(el); ytObj.scale.setScalar(SW / YT_W); ytObj.position.copy(screen.position); cssScene.add(ytObj);
   screen.visible = true; screen.material = holeMat;
 }
@@ -373,11 +375,23 @@ function fly(v) { flying = true; mode = v; document.body.classList.toggle('seatm
   document.querySelectorAll('.angles button').forEach((b) => b.classList.toggle('on', b.dataset.v === v)); }
 fly('wide');
 document.querySelectorAll('.angles button').forEach((b) => b.onclick = () => fly(b.dataset.v));
+function openVideo() {
+  const id = ytNow, p = Math.floor(ytPos()); if (!id) return;
+  if (ytEl) yCmd('mute');
+  const o = document.createElement('div'); o.id = 'vfs';
+  o.innerHTML = `<iframe allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen src="https://www.youtube.com/embed/${encodeURIComponent(id)}?autoplay=1&start=${p}&controls=1&rel=0&playsinline=1&modestbranding=1"></iframe><button aria-label="Back to the hall">✕ BACK TO HALL</button>`;
+  document.body.appendChild(o);
+  const close = () => { if (document.fullscreenElement) document.exitFullscreen().catch(() => {}); o.remove(); if (soundOn) { const i = ytNow, q = ytPos(); ytNow = ''; playOnScreen(i, q); } };
+  o.querySelector('button').onclick = close;
+  try { (o.requestFullscreen || o.webkitRequestFullscreen).call(o); } catch (e) {}
+  try { window.screen.orientation && window.screen.orientation.lock && window.screen.orientation.lock('landscape').catch(() => {}); } catch (e) {}
+}
 const ray = new THREE.Raycaster(), ptr = new THREE.Vector2();
 let px0 = 0, py0 = 0, down = false;
 addEventListener('pointerdown', (e) => { down = true; px0 = e.clientX; py0 = e.clientY; dragged = 0; });
 addEventListener('pointermove', (e) => { if (down) dragged = Math.max(dragged, Math.hypot(e.clientX - px0, e.clientY - py0)); });
 addEventListener('pointerup', (e) => { if (e.target.closest('.sheet,.angles,.top,.halls')) return; down = false; if (dragged > 8) return; ptr.set(e.clientX / W() * 2 - 1, -(e.clientY / H()) * 2 + 1); ray.setFromCamera(ptr, cam);
+  if (ytNow && ray.intersectObject(screen)[0] && !(ray.intersectObjects(pick)[0])) { openVideo(); return; }
   const hit = ray.intersectObjects(pick)[0]; if (!hit) return; const s = hit.object.userData.seat;
   const card = document.getElementById('seatcard'); card.style.display = 'block';
   if (s.st === 'taken') { card.textContent = `Row ${s.row} · Seat ${s.n} · ${s.who || 'taken'}`; return; }
@@ -443,7 +457,7 @@ document.querySelectorAll('#reacts button').forEach((b) => b.onclick = () => liv
 setTimeout(() => live.connect(), 300);
 // sound: browsers only allow sound after a tap, so ask once with a pulsing button
 const snd = document.getElementById('snd'); snd.classList.add('pulse');
-snd.onclick = () => { soundOn = !soundOn; yCmd(soundOn ? 'unMute' : 'mute'); if (soundOn) yCmd('setVolume', [100]); snd.textContent = soundOn ? '🔊' : '🔇'; snd.classList.toggle('pulse', !soundOn); };
+snd.onclick = () => { soundOn = !soundOn; if (soundOn && ytNow) { const id = ytNow, p = ytPos(); ytNow = ''; playOnScreen(id, p); } else yCmd('mute'); snd.textContent = soundOn ? '🔊' : '🔇'; snd.classList.toggle('pulse', !soundOn); };
 document.getElementById('ttbtn').onclick = () => { const t = document.getElementById('tt'); t.hidden = !t.hidden; document.getElementById('ttbtn').textContent = t.hidden ? 'TIMETABLE ▾' : 'TIMETABLE ▴'; };
 setTimeout(() => { const t = document.getElementById('tip'); if (t) t.style.display = 'none'; }, 5000);
 
@@ -451,7 +465,7 @@ setTimeout(() => { const t = document.getElementById('tip'); if (t) t.style.disp
 document.getElementById('fs').onclick = async () => { const d = document.documentElement;
   try { if (document.fullscreenElement) await document.exitFullscreen(); else if (d.requestFullscreen) await d.requestFullscreen(); else if (d.webkitRequestFullscreen) d.webkitRequestFullscreen(); else throw 0; }
   catch (e) { document.body.classList.toggle('cinema'); }
-  try { screen.orientation && screen.orientation.lock && await screen.orientation.lock('landscape'); } catch (e) {} };
+  try { window.screen.orientation && window.screen.orientation.lock && await window.screen.orientation.lock('landscape'); } catch (e) {} };
 // marquee: steady JS scroll (the CSS animation stuttered while the 3D scene rendered)
 let mqX = 0, mqLast = performance.now();
 (function mqTick(now) { const el = document.getElementById('mq'); const w = el.scrollWidth / 3; mqX -= (now - mqLast) * .045; if (w && -mqX > w) mqX += w; el.style.transform = `translate3d(${mqX.toFixed(1)}px,0,0)`; mqLast = now; requestAnimationFrame(mqTick); })(mqLast);
