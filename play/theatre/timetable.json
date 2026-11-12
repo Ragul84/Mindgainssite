@@ -1,5 +1,5 @@
 {
- "_note": "MindGains Theatre weekly timetable (IST). Each block plays its playlist on loop from its start time. Fill 'videos' with YouTube IDs; everyone is synced from the start time. Video entries: {\"id\": \"YouTubeID\", \"secs\": length in seconds, \"title\": \"optional\"}.",
+ "_note": "Blocks use: \"day\" = that weekday's subject list in halls.X.days, \"news\" = halls.X.news (refresh daily), \"miga\" = the 6 PM MIGA video (videos list). Lists loop from the block start time.",
  "timezone": "Asia/Kolkata",
  "halls": {
   "main": {
@@ -32,44 +32,51 @@
      "from": "06:00",
      "to": "07:00",
      "block": "Morning newspaper analysis",
-     "videos": []
+     "videos": [],
+     "use": "news"
     },
     {
      "from": "07:00",
      "to": "13:00",
      "block": "Day subject: core lectures",
-     "videos": []
+     "videos": [],
+     "use": "day"
     },
     {
      "from": "13:00",
      "to": "14:00",
      "block": "Break: MIGA quiz replay of the morning",
-     "videos": []
+     "videos": [],
+     "use": "day"
     },
     {
      "from": "14:00",
      "to": "18:00",
      "block": "Day subject: practice + PYQ walkthroughs",
-     "videos": []
+     "videos": [],
+     "use": "day"
     },
     {
      "from": "18:00",
      "to": "18:30",
      "block": "MIGA: yesterday's current affairs (our AI video)",
      "videos": [],
-     "premiere": true
+     "premiere": true,
+     "use": "miga"
     },
     {
      "from": "18:30",
      "to": "22:00",
      "block": "Day subject: revision lectures",
-     "videos": []
+     "videos": [],
+     "use": "day"
     },
     {
      "from": "22:00",
      "to": "06:00",
      "block": "Night loop: replay of today",
-     "videos": []
+     "videos": [],
+     "use": "day"
     }
    ],
    "sunday_extra": {
@@ -77,7 +84,211 @@
     "to": "19:00",
     "block": "MIGA: the week in current affairs + live quiz showdown",
     "premiere": true
-   }
+   },
+   "days": {
+    "mon": [
+     {
+      "id": "2W7q3ibhJ84",
+      "secs": 30807,
+      "title": "Complete Indian Polity in 1 Shot | Indian Polity One Shot | Complete UPSC NCERT | PW OnlyI",
+      "channel": "PW OnlyIAS English"
+     },
+     {
+      "id": "K3kPdX7rnAM",
+      "secs": 40323,
+      "title": "Indian Polity: Full Syllabus Marathon | UPSC Prelims Polity | Sarmad Mehraj | Unacademy IA",
+      "channel": "Unacademy IAS: English"
+     },
+     {
+      "id": "iSc23xf52U4",
+      "secs": 7639,
+      "title": "Complete Indian Polity through Animation in one Video for UPSC CSE | OnlyIAS",
+      "channel": "UPSC Wallah"
+     },
+     {
+      "id": "KWgnspCYj-8",
+      "secs": 32294,
+      "title": "Indian Polity for UPSC Prelims 2026 | UPSC Preparation | UDAAN 2026 | UPSC Wallah",
+      "channel": "UPSC Wallah"
+     },
+     {
+      "id": "rSZ69uc6qjw",
+      "secs": 2464,
+      "title": "Complete Indian Polity for UPSC CSE 2025-26 | Lec-1 | Introduction in English by Shashank ",
+      "channel": "StudyIQ IAS: English"
+     }
+    ],
+    "tue": [
+     {
+      "id": "6EnOgTXmWDw",
+      "secs": 24293,
+      "title": "Complete Ancient and Medieval India History for UPSC Prelims | One Shot Marathon | Abhishe",
+      "channel": "Unacademy IAS: English"
+     },
+     {
+      "id": "d7uZgZD8_c4",
+      "secs": 29443,
+      "title": "Complete Ancient History for UPSC CSE 2026 | History Marathon | By Alok Ojha | StudyIQ IAS",
+      "channel": "StudyIQ IAS: English"
+     },
+     {
+      "id": "Wtq0St-O6sE",
+      "secs": 5424,
+      "title": "Complete Ancient History in One Shot | Ancient History in One Video | UPSC Prelims 2026 🎯",
+      "channel": "PW OnlyIAS English"
+     },
+     {
+      "id": "FH9GVCoVEPM",
+      "secs": 5675,
+      "title": "Complete Medieval History in One Shot | Medieval History in One Video | UPSC Prelims 2026 ",
+      "channel": "PW OnlyIAS English"
+     },
+     {
+      "id": "2q8J0oA-ra8",
+      "secs": 2606,
+      "title": "Complete Ancient Indian History || Lecture 1 Pre Historic India || UPSC CSE 2025 || Alok O",
+      "channel": "StudyIQ IAS: English"
+     }
+    ],
+    "wed": [
+     {
+      "id": "pJYv2WsCHPs",
+      "secs": 40587,
+      "title": "Complete Indian Geography in One Video | Indian Geography in One Shot | UDAAN 2026 in Engl",
+      "channel": "PW OnlyIAS English"
+     },
+     {
+      "id": "MnfkpwRTnP4",
+      "secs": 30319,
+      "title": "Complete Indian Geography in 1 Shot | Indian Geography One Shot | Complete UPSC NCERT | PW",
+      "channel": "PW OnlyIAS English"
+     },
+     {
+      "id": "GDPsyhSLq94",
+      "secs": 3458,
+      "title": "India - Location | Indian Geography | Lecture 1 - NCERT Free Series | UPSC",
+      "channel": "PW OnlyIAS English"
+     },
+     {
+      "id": "d-w_PgrqMDc",
+      "secs": 6843,
+      "title": "Drainage System | Indian Geography | Lecture 3 - NCERT Free Series | UPSC",
+      "channel": "PW OnlyIAS English"
+     },
+     {
+      "id": "B6OWs3w23Z4",
+      "secs": 4639,
+      "title": "Ep 1: Himalayas | Indian Geography | NCERT for UPSC Beginners | Mukesh Jha | Unacademy IAS",
+      "channel": "Unacademy IAS: English"
+     }
+    ],
+    "thu": [
+     {
+      "id": "BMORCGp_83A",
+      "secs": 25374,
+      "title": "Complete Indian Economy in One Shot | Indian Economy in One Video | UPSC NCERT 🎯",
+      "channel": "PW OnlyIAS English"
+     },
+     {
+      "id": "0PUk0oRfR_w",
+      "secs": 23540,
+      "title": "Indian Economy for UPSC 2026: Most Important Topics- Macroeconomics  | One Shot Marathon |",
+      "channel": "Unacademy IAS: English"
+     },
+     {
+      "id": "ML5m__k2QOs",
+      "secs": 23583,
+      "title": "Indian Economy for UPSC 2026: Most Important Topics- Growth & Development | One Shot Marat",
+      "channel": "Unacademy IAS: English"
+     },
+     {
+      "id": "nvS1Lpxx6wc",
+      "secs": 16235,
+      "title": "Complete Indian Economy | Final Revision | UPSC Prelims 2026 | Shyam Sir",
+      "channel": "Unacademy IAS: English"
+     },
+     {
+      "id": "1KApSgqVG_A",
+      "secs": 3929,
+      "title": "Introduction to Economy | Indian Economy - Lecture 1 | UPSC NCERT Free Series",
+      "channel": "PW OnlyIAS English"
+     }
+    ],
+    "fri": [
+     {
+      "id": "BF2Eg5PZFZ0",
+      "secs": 27434,
+      "title": "Complete Science & Technology in One Video| Science & Technology in One Shot | UDAAN 2026 ",
+      "channel": "PW OnlyIAS English"
+     }
+    ],
+    "sat": [
+     {
+      "id": "fwhJggzICL8",
+      "secs": 25374,
+      "title": "Complete Modern Indian History (1498–1947) | One Shot Revision for UPSC Prelims 2026 | Abh",
+      "channel": "Unacademy IAS: English"
+     },
+     {
+      "id": "qpBO0uZWGZ8",
+      "secs": 7192,
+      "title": "Complete Modern History in One Shot | Modern History in One Video | UPSC Prelims 2026 🎯",
+      "channel": "PW OnlyIAS English"
+     },
+     {
+      "id": "o62mJpzHKng",
+      "secs": 23466,
+      "title": "UPSC 2025-26 | Modern History Marathon | Abhishek Singh Rathore | StudyIQ IAS English",
+      "channel": "StudyIQ IAS: English"
+     },
+     {
+      "id": "mD6ywrXmC8Y",
+      "secs": 3603,
+      "title": "Complete Modern History | Advent of Europeans | Lec-1 | UPSC CSE 2025 | Indian History",
+      "channel": "StudyIQ IAS: English"
+     }
+    ],
+    "sun": [
+     {
+      "id": "iSc23xf52U4",
+      "secs": 7639,
+      "title": "Complete Indian Polity through Animation in one Video for UPSC CSE | OnlyIAS",
+      "channel": "UPSC Wallah"
+     },
+     {
+      "id": "Wtq0St-O6sE",
+      "secs": 5424,
+      "title": "Complete Ancient History in One Shot | Ancient History in One Video | UPSC Prelims 2026 🎯",
+      "channel": "PW OnlyIAS English"
+     },
+     {
+      "id": "qpBO0uZWGZ8",
+      "secs": 7192,
+      "title": "Complete Modern History in One Shot | Modern History in One Video | UPSC Prelims 2026 🎯",
+      "channel": "PW OnlyIAS English"
+     },
+     {
+      "id": "nvS1Lpxx6wc",
+      "secs": 16235,
+      "title": "Complete Indian Economy | Final Revision | UPSC Prelims 2026 | Shyam Sir",
+      "channel": "Unacademy IAS: English"
+     },
+     {
+      "id": "GDPsyhSLq94",
+      "secs": 3458,
+      "title": "India - Location | Indian Geography | Lecture 1 - NCERT Free Series | UPSC",
+      "channel": "PW OnlyIAS English"
+     }
+    ]
+   },
+   "news": [
+    {
+     "id": "_vyFLnlf6gk",
+     "secs": 4191,
+     "title": "The Hindu Newspaper Analysis Today | 12 Nov 2026 | PIB Coverage | UPSC Current Affairs | M",
+     "channel": "Unacademy IAS: English"
+    }
+   ]
   },
   "tnpsc": {
    "name": "TNPSC Hall (தமிழ்)",
@@ -109,13 +320,15 @@
      "from": "06:00",
      "to": "07:00",
      "block": "செய்தித்தாள் (Tamil newspaper analysis)",
-     "videos": []
+     "videos": [],
+     "use": "news"
     },
     {
      "from": "07:00",
      "to": "18:00",
      "block": "Day subject in Tamil",
-     "videos": []
+     "videos": [],
+     "use": "day"
     },
     {
      "from": "18:00",
@@ -123,13 +336,219 @@
      "block": "MIGA current affairs (English, with Tamil subtitles later)",
      "videos": [],
      "premiere": true,
-     "sharedWith": "main"
+     "sharedWith": "main",
+     "use": "miga"
     },
     {
      "from": "18:30",
      "to": "06:00",
      "block": "Day subject revision + Samacheer book chapters",
-     "videos": []
+     "videos": [],
+     "use": "day"
+    }
+   ],
+   "days": {
+    "mon": [
+     {
+      "id": "HVSVPJ47qlA",
+      "secs": 13391,
+      "title": "🔥🎉ஒரே வீடியோவில் POLITY(6 to 12) முடிந்தது | மொத்தமும் தூக்கியாச்சு |10/10 Confirm| Sathis",
+      "channel": "GURUNATH IAS ACADEMY"
+     },
+     {
+      "id": "1wXenzOB6ss",
+      "secs": 35686,
+      "title": "INDIAN POLITY | 6-10TH SCHOOL BOOK | LIVE 9.00 AM | JT NOTES | 17.03.2024 | TNPSC | RAJESH",
+      "channel": "Jeshwar Teaching "
+     },
+     {
+      "id": "AzF_vHK79WM",
+      "secs": 9035,
+      "title": "Polity Revision - 01 || Tnpsc Group - IV - 2026 || By Er. Thangamuthu Sir #polity #group4",
+      "channel": "Math's by Er.Thangamuthu"
+     },
+     {
+      "id": "9iK-wsz-pVY",
+      "secs": 3640,
+      "title": "TNPSC Group 4 2027 | Polity PYQ LIVE | DAY 01 | ஒரு மார்க்கும் விடக்கூடாது! | GK Shankar S",
+      "channel": "GK SHANKAR Sir"
+     }
+    ],
+    "tue": [
+     {
+      "id": "NQ_Elm6zqM8",
+      "secs": 36078,
+      "title": "TNPSC Unit 3- History  🔥 One Shot (10 Hours ) | Group 1,2/2A and 4 ",
+      "channel": "GK SHANKAR Sir"
+     },
+     {
+      "id": "X7QBhbH5Oys",
+      "secs": 37569,
+      "title": "ஒரே வீடியோவில் முழு HISTORY | UNIT 5 | TNPSC GROUP 1, 2 & 4 #tnpsc",
+      "channel": "Online Tnpsc Coaching"
+     },
+     {
+      "id": "tEZvfUYXvPA",
+      "secs": 9482,
+      "title": "ஒரே வீடியோவில் HISTORY முடிந்தது | 8/8 Confirm |அடிச்சு தூக்கு | தி GOAT Revision | Sathis",
+      "channel": "GURUNATH IAS ACADEMY"
+     },
+     {
+      "id": "ub1c0YAKFjE",
+      "secs": 16217,
+      "title": "🤯ஒரு வீடியோ ஒட்டு மொத்த வரலாறும் முடிந்தது | PART-1 | Indian History Full Revision By Arun",
+      "channel": "Adda247 Tamil"
+     }
+    ],
+    "wed": [
+     {
+      "id": "rduiK1aIPKo",
+      "secs": 44309,
+      "title": "ஒரே வீடியோவில் முழு புவியியல் | TNPSC GEOGRAPHY CLASSES IN TAMIL AND ENGLISH | TNPSC GROUP",
+      "channel": "Online Tnpsc Coaching"
+     },
+     {
+      "id": "xFFeqhitQuo",
+      "secs": 14437,
+      "title": "😳ஒரே வீடியோவில் Geography முடிந்தது | 🔥மொத்தமா தூக்கியாச்சு| 😠வெறித்தனம் ராஜா| Sathish Gur",
+      "channel": "GURUNATH IAS ACADEMY"
+     },
+     {
+      "id": "z6qQh1N9HDc",
+      "secs": 22665,
+      "title": "TNPSC Group 1 Prelims 2026 Geography Full Revision | GK SHANKAR Sir",
+      "channel": "GK SHANKAR Sir"
+     },
+     {
+      "id": "qxx1twJl1Fs",
+      "secs": 17256,
+      "title": "GEOGRAPHY | புவியியல் | 10TH | 28-04-2024 | LIVE -11:00 AM | TNPSC | RAJESHWARAN.S",
+      "channel": "Jeshwar Teaching "
+     }
+    ],
+    "thu": [
+     {
+      "id": "RLwA36K0R9k",
+      "secs": 41778,
+      "title": "ஒரே வீடியோவில் முழு பொருளாதாரம் | INDIAN ECONOMICS FOR TNPSC | GROUP 1, 2 & 4",
+      "channel": "Online Tnpsc Coaching"
+     },
+     {
+      "id": "FZBhyKl5OXo",
+      "secs": 21203,
+      "title": "TNPSC Economics in Tamil | Part 1 | 6th–12th ONE SHOT | பொருளாதாரம் | GK Shankar",
+      "channel": "GK SHANKAR Sir"
+     },
+     {
+      "id": "ZZWkWMFfrSQ",
+      "secs": 7122,
+      "title": "🤩 Economics Full Revision | 6th - 12th Economics முழுவதும் முடிந்தது | தொடர் வகுப்பு | இது",
+      "channel": "Time to ready TNPSC"
+     },
+     {
+      "id": "qvpyAeB76mA",
+      "secs": 14422,
+      "title": "TNPSC UNIT 5 FULL REVISION in Tamil & English 🔥 Economy & TN Administration • UNIT 5 PDF N",
+      "channel": "WIN & SHINE IAS"
+     }
+    ],
+    "fri": [
+     {
+      "id": "FP2O2-8-TtA",
+      "secs": 15159,
+      "title": "🛑LIVE CLASS | SCIENCE SUPER FAST REVISION | FULL SYLLABUS COVERED | TNPSC DHRONA ACADEMY",
+      "channel": "DHRONA ACADEMY"
+     },
+     {
+      "id": "07NJGNanUz4",
+      "secs": 17188,
+      "title": "TNPSC PHYSICS FREE CLASS || இயற்பியல்|அளவீடுகள் ( 6 - 10 ) @MathsbyEr.Thangamuthu",
+      "channel": "Math's by Er.Thangamuthu"
+     },
+     {
+      "id": "PuVI7Qbj11I",
+      "secs": 14189,
+      "title": "கடைசி கட்ட SCIENCE ரிவிசன் I தி GOAT I ஒரே வீடியோவில் I தட்டி தூக்கு I Sathish Gurunath.",
+      "channel": "GURUNATH IAS ACADEMY"
+     },
+     {
+      "id": "vjeCf9qUHXk",
+      "secs": 5904,
+      "title": "10TH BOOK | SCIENCE | மரபியல் | JT NOTES | LIVE - 10:00AM | 17-06- 2024 | TNPSC |  |  RAJE",
+      "channel": "Jeshwar Teaching "
+     }
+    ],
+    "sat": [
+     {
+      "id": "L0--FGN-W7k",
+      "secs": 6156,
+      "title": "Top 100 Aptitude Shortcut Tricks | TNPSC Group 4, 2, 2A, 1 | Tamil",
+      "channel": "Quick Learning 4 TNPSC , IBPS, SSC"
+     },
+     {
+      "id": "010qzjfMvng",
+      "secs": 4466,
+      "title": "TNPSC Aptitude Top 50 Shortcut Tricks | Group 4 2 2A 1 & All | Option Elimination Method i",
+      "channel": "Quick Learning 4 TNPSC , IBPS, SSC"
+     },
+     {
+      "id": "pwKmwJPGP4U",
+      "secs": 15075,
+      "title": "ஒட்டுமொத்த தமிழ் புத்தகமும் ஒரே வீடியோவில் I 6 TO 12TH TAMIL FULL BOOK I SUBBA LEARNINGS I",
+      "channel": "Subba Learnings"
+     },
+     {
+      "id": "HIc8gRjNGMM",
+      "secs": 16006,
+      "title": "😳 ஒரே வீடியோவில் தமிழ் முடிந்தது | 😠 மொத்தமா தூக்கியாச்சு ராஜா| 🤨 100/100 நிச்சயம்| Sathis",
+      "channel": "GURUNATH IAS ACADEMY"
+     },
+     {
+      "id": "s8mo5M-wDfU",
+      "secs": 8121,
+      "title": "TNPSC 2026 | Group 2&2A | பொதுத்தமிழ் | 6 - 10 புதிய புத்தகம்  நூல்வெளி |  மொத்தமும் முடிஞ",
+      "channel": "Adda247 Tamil"
+     }
+    ],
+    "sun": [
+     {
+      "id": "ub1c0YAKFjE",
+      "secs": 16217,
+      "title": "🤯ஒரு வீடியோ ஒட்டு மொத்த வரலாறும் முடிந்தது | PART-1 | Indian History Full Revision By Arun",
+      "channel": "Adda247 Tamil"
+     },
+     {
+      "id": "HVSVPJ47qlA",
+      "secs": 13391,
+      "title": "🔥🎉ஒரே வீடியோவில் POLITY(6 to 12) முடிந்தது | மொத்தமும் தூக்கியாச்சு |10/10 Confirm| Sathis",
+      "channel": "GURUNATH IAS ACADEMY"
+     },
+     {
+      "id": "ZZWkWMFfrSQ",
+      "secs": 7122,
+      "title": "🤩 Economics Full Revision | 6th - 12th Economics முழுவதும் முடிந்தது | தொடர் வகுப்பு | இது",
+      "channel": "Time to ready TNPSC"
+     },
+     {
+      "id": "tEZvfUYXvPA",
+      "secs": 9482,
+      "title": "ஒரே வீடியோவில் HISTORY முடிந்தது | 8/8 Confirm |அடிச்சு தூக்கு | தி GOAT Revision | Sathis",
+      "channel": "GURUNATH IAS ACADEMY"
+     }
+    ]
+   },
+   "news": [
+    {
+     "id": "ZwWTO0ok91Q",
+     "secs": 2255,
+     "title": "Editorial Analysis | The Hindu newspaper | In Tamil | By Pranawa Mam | 12 Nov 2026",
+     "channel": "Testbook Tamil"
+    },
+    {
+     "id": "iS7kVcGEFKw",
+     "secs": 3070,
+     "title": "Editorial Analysis | The Hindu newspaper | In Tamil | By Pranawa Mam | 11 Nov 2026",
+     "channel": "Testbook Tamil"
     }
    ]
   }

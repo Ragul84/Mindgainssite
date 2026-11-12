@@ -286,18 +286,20 @@ function current() {
   const H = TT.halls[hall], list = blocksFor(hall, day);
   let b = null; for (const x of list) { const f = mins(x.from), t = mins(x.to); if (t > f ? (m >= f && m < t) : (m >= f || m < t)) b = x; }
   let vid = null, at = 0;
-  if (b && b.videos && b.videos.length) {           // loop the block's playlist from its start time
-    const total = b.videos.reduce((a, v) => a + (v.secs || 1800), 0);
+  const vids = b && (b.use === 'day' ? (H.days || {})[day] : b.use === 'news' ? H.news : b.videos);
+  if (b && vids && vids.length) {           // loop the block's playlist from its start time
+    const total = vids.reduce((a, v) => a + (v.secs || 1800), 0);
     let into = ((s - mins(b.from) * 60) % 86400 + 86400) % 86400 % total;
-    for (const v of b.videos) { const d = v.secs || 1800; if (into < d) { vid = v.id; at = into; break; } into -= d; }
+    for (const v of vids) { const d = v.secs || 1800; if (into < d) { vid = v.id; at = into; break; } into -= d; }
   }
-  return { day, m, b, list, subject: H.week[day].subject, H, vid, at };
+  const cur = vids && vid ? vids.find((v) => v.id === vid) : null;
+  return { day, m, b, list, subject: H.week[day].subject, H, vid, at, cur };
 }
 function renderTT() {
   if (!TT) return; const c = current();
   document.getElementById('live').textContent = '● LIVE';
   const next = c.list.find((x) => mins(x.from) > c.m); const left = next ? mins(next.from) - c.m : null;
-  document.getElementById('nowT').textContent = c.b ? c.b.block : 'Off air';
+  document.getElementById('nowT').textContent = c.cur && c.cur.title ? c.cur.title.split('|')[0].trim() : c.b ? c.b.block : 'Off air';
   const mqt = `${c.subject.toUpperCase()} DAY ✦ ${c.H.name.toUpperCase()} ✦ ${next ? 'NEXT · ' + next.block.toUpperCase() + ' AT ' + next.from + ' ✦ ' : ''}6 PM PREMIERE · MIGA: YESTERDAY'S CURRENT AFFAIRS ✦ `;
   const mq = document.getElementById('mq'); if (mq.dataset.t !== mqt) { mq.dataset.t = mqt; mq.textContent = mqt + mqt + mqt; }
   document.getElementById('nowS').textContent = `${c.H.name} · ${c.subject} day` + (c.vid ? '' : '') + (next ? ` · next in ${left >= 60 ? Math.floor(left / 60) + 'h ' : ''}${left % 60}m` : '');
