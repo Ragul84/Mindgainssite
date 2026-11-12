@@ -66,6 +66,7 @@
     <a class="brand" href="/"><img src="/assets/icons/mindgains-logo-192.png" alt="" width="28" height="28">MindGains</a>
     <div class="hnav">
       <a class="lnk" href="/nationlap/">NationLap</a>
+      <a class="lnk" href="/play/theatre/">Live classes</a>
       <a class="lnk" href="/quiz/">Quiz Hub</a>
       <a class="lnk" href="/editorial/">Editorial</a>
       <a class="lnk" href="/nationlap/?affairs=1">Current affairs</a>
@@ -158,6 +159,34 @@
   </div>
 </section>
 <!-- nl-showcase:end -->
+<section class="wrap sec" aria-labelledby="nlt-h">
+  <a class="nlt" href="/play/theatre/">
+    <div class="nlt-copy">
+      <span class="nlt-k"><i></i>NationLap Live · free</span>
+      <h2 id="nlt-h">A 24×7 classroom you walk into.</h2>
+      <p>Drive up in your NationLap kart and take a seat in a 3D theatre. Every day a new lesson plays live for everyone: Polity on Monday, History Tuesday, Geography Wednesday, through to a Sunday recap. Tamil TNPSC classes run in their own hall.</p>
+      <ul>
+        <li><b>6 AM</b> newspaper analysis</li>
+        <li><b>6 PM</b> MIGA: yesterday's current affairs</li>
+        <li><b>Live quiz</b> every few minutes, top 5 on screen</li>
+      </ul>
+      <span class="nlt-btn">Enter the theatre <span class="nlt-live" id="nltLive"></span> →</span>
+    </div>
+    <img src="/assets/nationlap-shots/theatre.jpg" alt="NationLap Live theatre: a 3D cinema hall with a lecture on screen" loading="lazy" decoding="async">
+  </a>
+</section>
+<style>
+.nlt{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:center;padding:28px;border-radius:24px;background:radial-gradient(120% 120% at 0% 0%,#2a1d0c,#0d0907 60%);color:#f6ecd6;text-decoration:none;border:1px solid rgba(243,212,138,.3)}
+.nlt img{width:100%;border-radius:16px;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.nlt-k{font:700 12px/1 Inter,system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#f3d48a}.nlt-k i{display:inline-block;width:8px;height:8px;border-radius:50%;background:#ff3b5c;margin-right:8px;box-shadow:0 0 10px #ff3b5c}
+.nlt h2{font-size:clamp(24px,3.4vw,36px);margin:12px 0 10px;color:#fff}.nlt p{color:#d9cbb0;line-height:1.55;margin:0 0 14px}
+.nlt ul{list-style:none;padding:0;margin:0 0 18px;display:grid;gap:6px;color:#e9dcbd}.nlt li b{color:#f3d48a;margin-right:6px}
+.nlt-btn{display:inline-block;background:#f3d48a;color:#1a1408;font-weight:800;padding:12px 18px;border-radius:12px}.nlt-live{font-weight:700;font-size:.85em;opacity:.8}
+@media(max-width:760px){.nlt{grid-template-columns:1fr;padding:20px}.nlt img{order:-1}}
+</style>
+<script>
+fetch('/play/theatre/timetable.json').then(r=>r.json()).then(t=>{const d=new Date(),day=['sun','mon','tue','wed','thu','fri','sat'][d.getDay()];const s=t.halls.main.week[day].subject.split(/[ (+]/)[0];const e=document.getElementById('nltLive');if(e)e.textContent='· live now: '+s;}).catch(()=>{});
+</script>
 
   <section class="wrap sec">
     <div class="bento">
