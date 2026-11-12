@@ -150,9 +150,9 @@ function awardXp(n) { let xp = 0; try { xp = (parseInt(localStorage.getItem('tkr
 
 const W = () => innerWidth, H = () => innerHeight;
 const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('gl'), antialias: true, alpha: true, premultipliedAlpha: false });
-renderer.setPixelRatio(Math.min(2, devicePixelRatio)); renderer.setSize(W(), H());
+renderer.setPixelRatio(Math.min(innerWidth < 700 ? 1.25 : 1.5, devicePixelRatio)); renderer.setSize(W(), H());
 renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.5;
-renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.shadowMap.enabled = false; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 const scene = new THREE.Scene(); scene.background = new THREE.Color(0x07040a); scene.fog = new THREE.Fog(0x07040a, 45, 95);
 const cam = new THREE.PerspectiveCamera(62, W() / H(), 0.1, 200);
 const css = new CSS3DRenderer(); css.setSize(W(), H()); document.getElementById('css').appendChild(css.domElement);
@@ -174,7 +174,7 @@ for (const s of [-1, 1]) {
   wall.position.set(s * HALL_W / 2, 7, 4); wall.rotation.y = -s * Math.PI / 2; wall.receiveShadow = true; scene.add(wall);
   // warm wall sconces
   for (let k = 0; k < 6; k++) { const z = -10 + k * 5.5; const lamp = new THREE.Mesh(new THREE.SphereGeometry(.18, 12, 8), new THREE.MeshBasicMaterial({ color: 0xffc36b })); lamp.position.set(s * (HALL_W / 2 - .15), 4.2, z); scene.add(lamp);
-    const glow = new THREE.PointLight(0xffa64d, 4, 7, 2); glow.position.set(s * (HALL_W / 2 - .6), 4.2, z); scene.add(glow); }
+  }
 }
 const DOOR_W = 3.4, DOOR_H = 4.4;
 { const bm = mat(0x2a1a14, .8, 0, { side: THREE.DoubleSide }), side = (HALL_W - DOOR_W) / 2;
@@ -182,6 +182,7 @@ const DOOR_W = 3.4, DOOR_H = 4.4;
   const tw = new THREE.Mesh(new THREE.PlaneGeometry(DOOR_W, 14 - DOOR_H), bm); tw.position.set(0, DOOR_H + (14 - DOOR_H) / 2, 24); scene.add(tw); }
 // ---- outside: night plaza in front of the theatre
 const OUT = new THREE.Group(); scene.add(OUT);
+{ const sl = new THREE.SpotLight(0xffc98a, 120, 40, .9, .6, 1.2); sl.position.set(0, 9, 36); sl.target.position.set(0, 0, 28); OUT.add(sl, sl.target); }
 { const plaza = new THREE.Mesh(new THREE.PlaneGeometry(90, 50), mat(0x1c1a22, .95)); plaza.rotation.x = -Math.PI / 2; plaza.position.set(0, .001, 49.4); OUT.add(plaza);
   const road = new THREE.Mesh(new THREE.PlaneGeometry(90, 7), mat(0x2b2b33, .9)); road.rotation.x = -Math.PI / 2; road.position.set(0, .01, 34); OUT.add(road);
   for (let x = -40; x < 40; x += 5) { const d = new THREE.Mesh(new THREE.PlaneGeometry(2.4, .18), new THREE.MeshBasicMaterial({ color: 0xf3d48a })); d.rotation.x = -Math.PI / 2; d.position.set(x, .02, 34); OUT.add(d); }
@@ -191,7 +192,7 @@ const OUT = new THREE.Group(); scene.add(OUT);
   const side = (HALL_W + 6 - DOOR_W) / 2;
   for (const sx of [-1, 1]) { const f = new THREE.Mesh(new THREE.BoxGeometry(side, 15, .6), fac); f.position.set(sx * (DOOR_W / 2 + side / 2), 7.5, 24.5); OUT.add(f);
     for (const cx of [3.4, 7.4, 11.4]) { const c = new THREE.Mesh(new THREE.CylinderGeometry(.35, .4, 9, 16), mat(0xd8c49a, .5)); c.position.set(sx * cx, 4.5, 25.2); OUT.add(c); }
-    const lamp = new THREE.PointLight(0xffc36b, 30, 14, 1.6); lamp.position.set(sx * 2.6, 4.6, 26.4); OUT.add(lamp);
+    const lamp = { position: new THREE.Vector3(sx * 2.6, 4.6, 26.4) };
     const bulb = new THREE.Mesh(new THREE.SphereGeometry(.22, 12, 8), new THREE.MeshBasicMaterial({ color: 0xffe2a0 })); bulb.position.copy(lamp.position); OUT.add(bulb); }
   const top = new THREE.Mesh(new THREE.BoxGeometry(DOOR_W, 15 - DOOR_H, .6), fac); top.position.set(0, DOOR_H + (15 - DOOR_H) / 2, 24.5); OUT.add(top);
   const trim = new THREE.Mesh(new THREE.BoxGeometry(HALL_W + 6, .3, .9), new THREE.MeshBasicMaterial({ color: 0xf3d48a })); trim.position.set(0, 9.2, 24.6); OUT.add(trim);
@@ -213,11 +214,11 @@ const OUT = new THREE.Group(); scene.add(OUT);
   const glow = new THREE.PointLight(0xffb060, 0, 10, 1.5); glow.position.set(0, 2.5, 23); scene.add(glow); window.__doorGlow = glow;
   // street lamps
   for (const x of [-16, 16]) { const pole = new THREE.Mesh(new THREE.CylinderGeometry(.12, .15, 6, 8), mat(0x222222, .5)); pole.position.set(x, 3, 30.5); OUT.add(pole);
-    const l = new THREE.PointLight(0xffd9a0, 22, 16, 1.6); l.position.set(x, 6.2, 30.5); OUT.add(l); const h = new THREE.Mesh(new THREE.SphereGeometry(.3, 10, 8), new THREE.MeshBasicMaterial({ color: 0xfff1c9 })); h.position.copy(l.position); OUT.add(h); }
+    const l = { position: new THREE.Vector3(x, 6.2, 30.5) }; const h = new THREE.Mesh(new THREE.SphereGeometry(.3, 10, 8), new THREE.MeshBasicMaterial({ color: 0xfff1c9 })); h.position.copy(l.position); OUT.add(h); }
 }
 // ---- the player's own NationLap kart and racer (same model, colours and face as in the race)
 const KART = new THREE.Group(), NK = createKartModel(playerCharacter());
-NK.root.scale.setScalar(1.25); KART.add(NK.root); KART.rotation.y = -Math.PI / 2; scene.add(KART);
+NK.root.scale.setScalar(1.25); KART.add(NK.root); KART.rotation.y = Math.PI / 2; scene.add(KART);
 NK.root.traverse((o) => { if (o.isMesh) o.castShadow = true; });
 const DRIVER = NK.parts.driver, DRIVER_HOME = { pos: DRIVER.position.clone(), rot: DRIVER.rotation.clone(), parent: DRIVER.parent };
 // walking legs + arms: same suit colours as the racer (paint for sleeves, the darker 'pants' shade NationLap uses), chibi proportions
@@ -258,7 +259,7 @@ holeMat.onBeforeCompile = (sh) => { sh.fragmentShader = sh.fragmentShader.replac
 const YT_W = 1600, YT_H = 900; let ytObj = null, ytNow = '', ytEl = null, ytReady = false, soundOn = false;
 function yCmd(func, args = []) { try { ytEl && ytEl.contentWindow.postMessage(JSON.stringify({ event: 'command', func, args }), '*'); } catch (e) {} }
 function playOnScreen(id, start) {
-  const key = id + '@' + Math.floor(start / 30); if (key === ytNow) return; ytNow = key;
+  const key = id; if (key === ytNow) return; if (INTRO.on && !window.__yt_ok) { window.__ytWait = [id, start]; return; } ytNow = key;
   if (ytObj) { cssScene.remove(ytObj); ytObj = null; }
   if (!id) { screen.visible = true; screen.material = posterMat; return; }
   const el = document.createElement('iframe'); el.className = 'yt'; el.width = YT_W; el.height = YT_H; el.style.border = '0';
@@ -327,7 +328,7 @@ fetch('timetable.json?v=' + Math.floor(Date.now() / 6e5)).then((r) => r.json()).
 
 // ---- lights
 scene.add(new THREE.HemisphereLight(0x8d7cb5, 0x3a1a14, 1.3));
-for (const z of [-2, 8, 18]) { const f = new THREE.PointLight(0xffd9a0, 18, 22, 1.6); f.position.set(0, 12.5, z); scene.add(f); }
+{ const f = new THREE.PointLight(0xffd9a0, 40, 40, 1.4); f.position.set(0, 12.5, 6); scene.add(f); }
 const key = new THREE.SpotLight(0xffe2b0, 60, 60, .55, .6, 1.2); key.position.set(0, 13, 6); key.target.position.set(0, 0, 4); key.castShadow = true; key.shadow.mapSize.set(1024, 1024); scene.add(key, key.target);
 const stageSpot = new THREE.SpotLight(0xffd08a, 40, 30, .5, .5, 1.2); stageSpot.position.set(0, 12, -8); stageSpot.target.position.set(0, 1, -15); scene.add(stageSpot, stageSpot.target);
 
@@ -460,7 +461,7 @@ const INTRO = { on: false, t0: 0 }; window.INTRO = INTRO; window.startIntro = ()
 const ease = (x) => x < 0 ? 0 : x > 1 ? 1 : x * x * (3 - 2 * x);
 const lerpV = (a, b, t) => a.clone().lerp(b, t);
 function startIntro() { if (DRIVER.parent !== DRIVER_HOME.parent) { DRIVER_HOME.parent.add(DRIVER); DRIVER.position.copy(DRIVER_HOME.pos); DRIVER.rotation.copy(DRIVER_HOME.rot); DRIVER.scale.setScalar(1); } DRIVER.visible = true; WALKER.visible = false; INTRO.on = true; INTRO.t0 = performance.now(); document.body.classList.add('intro'); try { orbit.enabled = false; } catch (e) {} KART.position.set(-30, 0, 33.5); window.__doors.forEach((d) => d.position.x = d.userData.sx * DOOR_W / 4); }
-function endIntro() { if (!INTRO.on) return; INTRO.on = false; document.body.classList.remove('intro'); DRIVER.visible = false; camPos.copy(cam.position); camLook.set(0, 4, 10); fly('seat'); try { localStorage.setItem('mgt_intro', new Date().toDateString()); } catch (e) {} }
+function endIntro() { if (!INTRO.on) return; INTRO.on = false; window.__yt_ok = 1; if (window.__ytWait) { const [i, st] = window.__ytWait; playOnScreen(i, st + (performance.now() - INTRO.t0) / 1000); } document.body.classList.remove('intro'); DRIVER.visible = false; camPos.copy(cam.position); camLook.set(0, 4, 10); fly('seat'); try { localStorage.setItem('mgt_intro', new Date().toDateString()); } catch (e) {} }
 function introStep(now) {
   const t = window.__T != null ? window.__T : (now - INTRO.t0) / 1000;
   window.__bulbs.forEach((b, i) => b.material.color.setHex(((i + Math.floor(t * 10)) % 4 === 0) ? 0xffffff : 0xb88a3a));
