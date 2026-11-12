@@ -102,7 +102,7 @@ export class Menu {
         <button type="button" class="live-event theatre-btn" aria-label="Enter NationLap Live theatre">
           <span class="le-shine"></span>
           <span class="le-thumb"><img src="/assets/nationlap-shots/theatre.jpg" alt=""><span class="le-pill"><i></i>LIVE</span></span>
-          <span class="le-txt"><span class="le-k">NATIONLAP LIVE · THEATRE</span><span class="le-t theatre-title">Today's class</span><span class="le-s theatre-sub">Walk in, take a seat, quiz live</span></span>
+          <span class="le-txt"><span class="le-k">LIVE THEATRE</span><span class="le-t theatre-title">Today's class</span><span class="le-s theatre-sub">Walk in, take a seat, quiz live</span></span>
           <span class="le-go">ENTER ›</span>
         </button>
         <div class="title-tagline">Know your India, every day.</div>
