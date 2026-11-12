@@ -91,6 +91,12 @@ export class Menu {
         <div class="logo-swoosh"></div>
       </div>
       <div class="title-actions">
+        <button type="button" class="live-event theatre-btn" aria-label="Enter NationLap Live theatre">
+          <span class="le-shine"></span>
+          <span class="le-thumb"><img src="/assets/nationlap-shots/theatre.jpg" alt=""><span class="le-pill"><i></i>LIVE</span></span>
+          <span class="le-txt"><span class="le-k">NATIONLAP LIVE · THEATRE</span><span class="le-t theatre-title">Today's class</span><span class="le-s theatre-sub">Walk in, take a seat, quiz live</span></span>
+          <span class="le-go">ENTER ›</span>
+        </button>
         <button type="button" class="btn primary play-btn">LEARN &amp; RACE<small class="play-sub">Read a lesson, then race it</small></button>
         <button type="button" class="btn resume-btn hidden">RESUME CUP</button>
         <div class="title-row">
@@ -98,7 +104,6 @@ export class Menu {
           <button type="button" class="btn affairs-btn">BHARAT YATRA</button>
           <button type="button" class="btn quick-btn">QUICK RACE</button>
           <button type="button" class="btn board-btn">INDIA BOARD</button>
-          <button type="button" class="btn theatre-btn">THEATRE<small class="play-sub theatre-sub">Live classes</small></button>
         </div>
         <div class="title-tagline">Know your India, every day.</div>
       </div>
@@ -135,9 +140,10 @@ export class Menu {
       const d = new Date(Date.now() + (330 + new Date().getTimezoneOffset()) * 60000), m = d.getHours() * 60 + d.getMinutes();
       const day = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'][d.getDay()], subj = H.week[day].subject.split(/[ (+]/)[0];
       const pm = 18 * 60, sub = t.querySelector('.theatre-sub');
-      if (m < pm) { const l = pm - m; sub.textContent = `🎬 LIVE · ${subj} · 6 PM premiere in ${l >= 60 ? Math.floor(l / 60) + 'h ' : ''}${l % 60}m`; }
-      else if (m < pm + 30) sub.textContent = '⭐ 6 PM PREMIERE · LIVE NOW';
-      else sub.textContent = `🎬 LIVE NOW · ${subj}`;
+      t.querySelector('.theatre-title').textContent = `${subj} Day · now showing`;
+      if (m < pm) { const l = pm - m; sub.textContent = `⭐ 6 PM MIGA premiere in ${l >= 60 ? Math.floor(l / 60) + 'h ' : ''}${l % 60}m`; }
+      else if (m < pm + 30) sub.textContent = '⭐ MIGA PREMIERE · ON NOW';
+      else sub.textContent = 'Live quiz every 4 min · top 5 on screen';
     } catch (e) {} })();
     t.querySelector('.theatre-btn').addEventListener('click', (e) => { e.stopPropagation(); location.href = '/play/theatre/?from=nationlap'; });
     t.querySelector('.board-btn').addEventListener('click', (e) => {

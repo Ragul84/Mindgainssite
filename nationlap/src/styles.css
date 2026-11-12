@@ -2431,3 +2431,23 @@ body.touch-mode[data-state="title"] .hof-strip { width: auto !important; }
   .ym-svg { max-height: none; }
   .ym-side { position: static; }
 }
+
+/* ---- live event banner (title screen): the theatre, highlighted like a game's live event */
+.live-event{pointer-events:auto;cursor:pointer;position:relative;overflow:hidden;display:flex;align-items:center;gap:14px;width:min(560px,92vw);margin:0 auto 14px;padding:10px 14px 10px 10px;
+  border:3px solid #ffd23f;border-radius:20px;background:linear-gradient(110deg,#2b0f3f 0%,#4a1240 45%,#7a1a2e 100%);color:#fff;text-align:left;
+  box-shadow:0 6px 0 #6b3a00,0 0 0 4px rgba(255,210,63,.25),0 0 34px rgba(255,170,40,.55);animation:leGlow 2.2s ease-in-out infinite;transition:transform .12s}
+.live-event:hover{transform:translateY(-3px) scale(1.02)}.live-event:active{transform:translateY(3px)}
+@keyframes leGlow{50%{box-shadow:0 6px 0 #6b3a00,0 0 0 6px rgba(255,210,63,.4),0 0 52px rgba(255,170,40,.85)}}
+.le-shine{position:absolute;inset:-40% auto -40% -30%;width:30%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);animation:leShine 3.4s ease-in-out infinite}
+@keyframes leShine{0%,55%{left:-40%}100%{left:130%}}
+.le-thumb{position:relative;flex:none;width:118px;height:70px;border-radius:12px;overflow:hidden;border:2px solid rgba(255,255,255,.8)}
+.le-thumb img{width:100%;height:100%;object-fit:cover}
+.le-pill{position:absolute;left:5px;top:5px;background:#ff2d55;border:2px solid #fff;border-radius:7px;padding:1px 6px;font:900 10px var(--body);letter-spacing:.08em}
+.le-pill i{display:inline-block;width:6px;height:6px;border-radius:50%;background:#fff;margin-right:4px;vertical-align:1px;animation:lePulse 1s ease-in-out infinite}
+@keyframes lePulse{50%{opacity:.2}}
+.le-txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.le-k{font:900 11px var(--body);letter-spacing:.14em;color:#ffd23f}
+.le-t{font-family:var(--display);font-size:24px;line-height:1.05;text-shadow:var(--outline)}
+.le-s{font:800 12.5px var(--body);color:#ffe6b0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.le-go{flex:none;font-family:var(--display);font-size:18px;color:#3a1d00;background:linear-gradient(180deg,#ffe066,#ffb21f);border:3px solid #fff;border-radius:12px;padding:8px 12px;box-shadow:0 4px 0 #a86a00}
+@media (max-width:520px){.le-thumb{width:84px;height:56px}.le-t{font-size:19px}.le-go{font-size:15px;padding:6px 9px}}
