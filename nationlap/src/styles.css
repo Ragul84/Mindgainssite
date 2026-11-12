@@ -2451,3 +2451,38 @@ body.touch-mode[data-state="title"] .hof-strip { width: auto !important; }
 .le-s{font:800 12.5px var(--body);color:#ffe6b0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .le-go{flex:none;font-family:var(--display);font-size:18px;color:#3a1d00;background:linear-gradient(180deg,#ffe066,#ffb21f);border:3px solid #fff;border-radius:12px;padding:8px 12px;box-shadow:0 4px 0 #a86a00}
 @media (max-width:520px){.le-thumb{width:84px;height:56px}.le-t{font-size:19px}.le-go{font-size:15px;padding:6px 9px}}
+
+/* ===== lobby layout (game style): mode dock left, live event card right, one big PLAY bottom-right ===== */
+.title-screen .title-actions{position:fixed;inset:0;transform:none!important;width:auto!important;max-width:none!important;z-index:5;pointer-events:none;display:block;margin:0;padding:0}
+.title-screen .title-actions > *{pointer-events:auto}
+.title-screen .title-tagline{display:none}
+.title-screen .play-btn{position:absolute;right:28px;bottom:28px;width:min(360px,38vw);font-size:clamp(28px,3.2vw,40px);padding:18px 26px 14px;border-radius:22px}
+.title-screen .resume-btn{position:absolute;right:28px;bottom:calc(28px + 108px);width:min(360px,38vw);font-size:17px;padding:8px 14px;border-radius:14px}
+.title-screen .title-row{position:absolute;left:24px;top:50%;transform:translateY(-50%);width:auto!important;flex-direction:column;flex-wrap:nowrap;gap:12px;margin:0}
+.title-screen .title-row .dock{flex:none}
+.dock{pointer-events:auto;cursor:pointer;position:relative;width:78px;height:78px;border-radius:20px;border:3px solid rgba(255,255,255,.9);background:linear-gradient(180deg,#4a5bd8,#2c35a0);
+  box-shadow:0 5px 0 #161b5c,0 8px 16px rgba(0,0,0,.35);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;transition:transform .12s}
+.dock:hover{transform:translateY(-3px) scale(1.05)}.dock:active{transform:translateY(3px)}
+.dock svg{width:30px;height:30px}.dock span{font-family:var(--display);font-size:13px;letter-spacing:1px;text-shadow:0 2px 0 rgba(0,0,0,.35)}
+.dock small{position:absolute;top:-8px;right:-10px;background:#ff2d55;border:2px solid #fff;border-radius:10px;padding:0 5px;font:900 9px var(--body);white-space:nowrap}
+.dock small:empty{display:none}
+.title-screen .live-event{position:absolute;right:28px;top:50%;transform:translateY(-62%);width:min(320px,30vw);margin:0;flex-direction:column;align-items:stretch;gap:8px;padding:10px;text-align:left}
+.title-screen .live-event:hover{transform:translateY(-62%) scale(1.03)}
+.title-screen .live-event .le-thumb{width:100%;height:auto;aspect-ratio:16/9}
+.title-screen .live-event .le-go{align-self:stretch;text-align:center}
+.title-screen .live-event .le-t{font-size:22px}
+@media (max-width:760px){
+  .title-screen .play-btn{left:16px;right:16px;bottom:18px;width:auto;font-size:30px;padding:16px 18px 12px}
+  .title-screen .resume-btn{left:16px;right:16px;bottom:118px;width:auto}
+  .title-screen .title-row{left:16px;right:16px;top:auto;bottom:118px;transform:none;flex-direction:row;justify-content:space-between}
+  .title-screen .resume-btn:not(.hidden) ~ .title-row{bottom:168px}
+  .title-screen .title-row .dock{flex:1 1 0}.dock{width:auto;height:66px;border-radius:16px}.dock svg{width:24px;height:24px}.dock span{font-size:11px}
+  .title-screen .live-event{left:16px;right:16px;top:auto;bottom:206px;transform:none;width:auto;flex-direction:row;align-items:center;padding:8px 10px}
+  .title-screen .resume-btn:not(.hidden) ~ .live-event{bottom:256px}
+  .title-screen .live-event:hover{transform:scale(1.02)}
+  .title-screen .live-event .le-thumb{width:84px;height:56px;aspect-ratio:auto}
+  .title-screen .live-event .le-go{align-self:center}
+  .title-screen .live-event .le-t{font-size:18px}
+}
+.title-screen .title-row{display:flex!important;grid-template-columns:none!important;flex-direction:column!important;flex-wrap:nowrap!important}
+@media (max-width:760px){.title-screen .title-row{flex-direction:row!important}.title-screen .title-row .dock{flex:1 1 0!important;min-width:0}}

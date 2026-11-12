@@ -91,20 +91,20 @@ export class Menu {
         <div class="logo-swoosh"></div>
       </div>
       <div class="title-actions">
+        <button type="button" class="btn primary play-btn">LEARN &amp; RACE<small class="play-sub">Read a lesson, then race it</small></button>
+        <button type="button" class="btn resume-btn hidden">RESUME CUP</button>
+        <div class="title-row">
+          <button type="button" class="dock news-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="13.5" height="14" rx="1.5"/><path d="M16.5 9H20v8.5a1.5 1.5 0 0 1-3 0V9M6.5 9h6M6.5 12.5h6M6.5 16h4"/></svg><span>NEWS</span><small class="news-sub"></small></button>
+          <button type="button" class="dock affairs-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3.5 6v14L9 18l6 2 5.5-2V4L15 6 9 4zM9 4v14M15 6v14"/></svg><span>YATRA</span></button>
+          <button type="button" class="dock quick-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg><span>QUICK</span></button>
+          <button type="button" class="dock board-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 0 1-10 0V4zM7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4M12 14v4M8 21h8"/></svg><span>BOARD</span></button>
+        </div>
         <button type="button" class="live-event theatre-btn" aria-label="Enter NationLap Live theatre">
           <span class="le-shine"></span>
           <span class="le-thumb"><img src="/assets/nationlap-shots/theatre.jpg" alt=""><span class="le-pill"><i></i>LIVE</span></span>
           <span class="le-txt"><span class="le-k">NATIONLAP LIVE · THEATRE</span><span class="le-t theatre-title">Today's class</span><span class="le-s theatre-sub">Walk in, take a seat, quiz live</span></span>
           <span class="le-go">ENTER ›</span>
         </button>
-        <button type="button" class="btn primary play-btn">LEARN &amp; RACE<small class="play-sub">Read a lesson, then race it</small></button>
-        <button type="button" class="btn resume-btn hidden">RESUME CUP</button>
-        <div class="title-row">
-          <button type="button" class="btn news-btn">TODAY'S NEWS<small class="news-sub"></small></button>
-          <button type="button" class="btn affairs-btn">BHARAT YATRA</button>
-          <button type="button" class="btn quick-btn">QUICK RACE</button>
-          <button type="button" class="btn board-btn">INDIA BOARD</button>
-        </div>
         <div class="title-tagline">Know your India, every day.</div>
       </div>
       <div class="title-foot">
