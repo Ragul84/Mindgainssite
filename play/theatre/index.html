@@ -128,7 +128,7 @@ body.intro .skip{display:block}
 <div class="top"><a class="back" href="/nationlap/" aria-label="Back">‹</a><div class="brand">MINDGAINS · THEATRE</div><span class="live" id="live">● LIVE</span><button class="ib" id="snd" title="Sound">🔇</button><button class="ib" id="fs" title="Full screen">⛶</button></div>
 <div class="marq" hidden><div class="mq" id="mq"></div></div>
 <div class="halls" id="halls"></div>
-<div class="tip" id="tip">SWIPE TO LOOK AROUND · TAP A SEAT</div>
+<div class="tip" id="tip">DRAG TO LOOK · PINCH TO ZOOM · TAP THE FLOOR TO MOVE · DOUBLE-TAP FOR YOUR SEAT</div>
 <div class="seatcard" id="seatcard"></div>
 <div class="quizc" id="quizc" hidden><div class="qk" id="qk">MIGA ASKS · 15 S</div><div class="qq" id="qq"></div><div class="qo" id="qo"></div><div class="qb"><i id="qbar"></i></div><div class="qn" id="qn"></div></div>
 <div class="top5" id="top5" hidden></div>
@@ -369,9 +369,9 @@ markMine(mine);
 const VIEWS = { wide: [new THREE.Vector3(6, 26, 25), new THREE.Vector3(0, 1, -5)], balcony: [new THREE.Vector3(-11, 16, 21), new THREE.Vector3(1, 3, -9)],
   stage: [new THREE.Vector3(7, 4.2, -12.5), new THREE.Vector3(-3, 3.2, 6)] };
 const camPos = new THREE.Vector3(14, 16, 30), camLook = new THREE.Vector3(0, 4, -6), tgtPos = new THREE.Vector3(), tgtLook = new THREE.Vector3();
-let flying = true, dragged = 0;
+let flying = true, dragged = 0, zoomF = 1, spot = null, lastTap = 0;
 let mode = 'wide';
-function fly(v) { flying = true; mode = v; document.body.classList.toggle('seatmode', v === 'seat'); try { orbit.enabled = false; } catch (e) {} if (v === 'seat') { tgtPos.copy(mine.eye); tgtLook.set(0, 7, -16); } else { tgtPos.copy(VIEWS[v][0]); tgtLook.copy(VIEWS[v][1]); }
+function fly(v) { flying = true; mode = v; zoomF = 1; document.body.classList.toggle('seatmode', v === 'seat'); try { orbit.enabled = false; } catch (e) {} if (v === 'seat') { tgtPos.copy(mine.eye); tgtLook.set(0, 7, -16); } else if (v === 'spot') { tgtPos.copy(spot[0]); tgtLook.copy(spot[1]); } else { tgtPos.copy(VIEWS[v][0]); tgtLook.copy(VIEWS[v][1]); }
   document.querySelectorAll('.angles button').forEach((b) => b.classList.toggle('on', b.dataset.v === v)); }
 fly('wide');
 document.querySelectorAll('.angles button').forEach((b) => b.onclick = () => fly(b.dataset.v));
@@ -391,8 +391,12 @@ let px0 = 0, py0 = 0, down = false;
 addEventListener('pointerdown', (e) => { down = true; px0 = e.clientX; py0 = e.clientY; dragged = 0; });
 addEventListener('pointermove', (e) => { if (down) dragged = Math.max(dragged, Math.hypot(e.clientX - px0, e.clientY - py0)); });
 addEventListener('pointerup', (e) => { if (e.target.closest('.sheet,.angles,.top,.halls')) return; down = false; if (dragged > 8) return; ptr.set(e.clientX / W() * 2 - 1, -(e.clientY / H()) * 2 + 1); ray.setFromCamera(ptr, cam);
+  const tnow = performance.now(); if (tnow - lastTap < 320) { lastTap = 0; fly('seat'); return; } lastTap = tnow;
   if (ytNow && ray.intersectObject(screen)[0] && !(ray.intersectObjects(pick)[0])) { openVideo(); return; }
-  const hit = ray.intersectObjects(pick)[0]; if (!hit) return; const s = hit.object.userData.seat;
+  const hit = ray.intersectObjects(pick)[0];
+  if (!hit) { const g = ray.intersectObjects(scene.children, true).find((h) => h.object !== screen && h.object.visible && h.face && h.face.normal.clone().transformDirection(h.object.matrixWorld).y > .7);
+    if (g && g.point.z > screen.position.z + 2 && Math.abs(g.point.x) < 24) { const e = g.point.clone(); e.y += 1.7; spot = [e, new THREE.Vector3(0, 7, -16)]; fly('spot'); } return; }
+  const s = hit.object.userData.seat;
   const card = document.getElementById('seatcard'); card.style.display = 'block';
   if (s.st === 'taken') { card.textContent = `Row ${s.row} · Seat ${s.n} · ${s.who || 'taken'}`; return; }
   live.sit(s.row + s.n);
@@ -402,14 +406,20 @@ if (new URLSearchParams(location.search).get('view')) fly(new URLSearchParams(lo
 
 const orbit = new OrbitControls(cam, renderer.domElement);
 orbit.enableDamping = true; orbit.dampingFactor = .08; orbit.enablePan = false; orbit.rotateSpeed = .55; orbit.zoomSpeed = .8;
-orbit.minDistance = .5; orbit.maxDistance = 42; orbit.maxPolarAngle = 1.7;
+orbit.minDistance = .5; orbit.maxDistance = 42; orbit.maxPolarAngle = 2.4; orbit.minPolarAngle = .05;
 orbit.addEventListener('start', () => { flying = false; document.getElementById('tip').style.display = 'none'; });
 // seat view: the seat stays put; a drag turns the head (yaw / pitch around the eye)
 let yaw = 0, pitch = 0, lx = 0, ly = 0, look = false;
-function setLook() { orbit.enabled = mode !== 'seat'; yaw = 0; pitch = 0; if (mode !== 'seat') { orbit.target.copy(camLook); } }
-addEventListener('pointerdown', (e) => { if (mode !== 'seat' || e.target.closest('.sheet,.angles,.top,.halls')) return; flying = false; look = true; lx = e.clientX; ly = e.clientY; });
-addEventListener('pointermove', (e) => { if (!look) return; yaw -= (e.clientX - lx) * .006; pitch = Math.max(-.6, Math.min(.5, pitch - (e.clientY - ly) * .004)); yaw = Math.max(-1.9, Math.min(1.9, yaw)); lx = e.clientX; ly = e.clientY; });
+function setLook() { orbit.enabled = !(mode === 'seat' || mode === 'spot'); yaw = 0; pitch = 0; if (mode !== 'seat') { orbit.target.copy(camLook); } }
+addEventListener('pointerdown', (e) => { if (!(mode === 'seat' || mode === 'spot') || e.target.closest('.sheet,.angles,.top,.halls')) return; flying = false; look = true; lx = e.clientX; ly = e.clientY; });
+addEventListener('pointermove', (e) => { if (!look) return; if (pts.size > 1) return; yaw -= (e.clientX - lx) * .006 * zoomF; pitch = Math.max(-1.25, Math.min(1.25, pitch - (e.clientY - ly) * .005 * zoomF)); lx = e.clientX; ly = e.clientY; });
 addEventListener('pointerup', () => { look = false; });
+// zoom from the seat: mouse wheel or pinch
+const pts = new Map(); let pinch0 = 0;
+addEventListener('wheel', (e) => { if (mode === 'seat' || mode === 'spot') zoomF = Math.max(.35, Math.min(1.15, zoomF * (e.deltaY > 0 ? 1.08 : .92))); }, { passive: true });
+addEventListener('pointerdown', (e) => pts.set(e.pointerId, [e.clientX, e.clientY]));
+addEventListener('pointermove', (e) => { if (!pts.has(e.pointerId)) return; pts.set(e.pointerId, [e.clientX, e.clientY]); if (pts.size === 2 && (mode === 'seat' || mode === 'spot')) { const [a, b] = [...pts.values()], d = Math.hypot(a[0] - b[0], a[1] - b[1]); if (pinch0) zoomF = Math.max(.35, Math.min(1.15, zoomF * pinch0 / d)); pinch0 = d; } });
+const ptUp = (e) => { pts.delete(e.pointerId); if (pts.size < 2) pinch0 = 0; }; addEventListener('pointerup', ptUp); addEventListener('pointercancel', ptUp);
 // ---- live room: real seats, viewer count, MIGA quiz, top 5, reactions
 const seatByKey = new Map(seats.map((s) => [s.row + s.n, s]));
 const myName = (() => { try { const p = JSON.parse(localStorage.getItem('tkr_player_profile') || '{}'); return p.name || ''; } catch { return ''; } })() || 'Guest ' + Math.floor(Math.random() * 900 + 100);
@@ -505,10 +515,10 @@ addEventListener('resize', () => { cam.aspect = W() / H(); cam.updateProjectionM
 cam.aspect = W() / H(); cam.updateProjectionMatrix();
 let t0 = performance.now();
 (function frame(now) { const dt = Math.min(.05, (now - t0) / 1000); t0 = now; const k = 1 - Math.pow(.02, dt);
-  { const f = mode === 'seat' ? 92 : 62; if (Math.abs(cam.fov - f) > .1) { cam.fov += (f - cam.fov) * k; cam.updateProjectionMatrix(); } }
+  { const f = mode === 'seat' || mode === 'spot' ? 92 * zoomF : 62; if (Math.abs(cam.fov - f) > .1) { cam.fov += (f - cam.fov) * k; cam.updateProjectionMatrix(); } }
   if (INTRO.on) { introStep(now); renderer.render(scene, cam); css.render(cssScene, cam); requestAnimationFrame(frame); return; }
   if (flying) { camPos.lerp(tgtPos, k); camLook.lerp(tgtLook, k); cam.position.copy(camPos); orbit.target.copy(camLook); cam.lookAt(camLook); if (camPos.distanceTo(tgtPos) < .05) { flying = false; setLook(); } }
-  else if (mode === 'seat') { const base = tgtLook.clone().sub(tgtPos).normalize(), d = base.applyAxisAngle(new THREE.Vector3(0, 1, 0), yaw); d.y += pitch; cam.position.copy(tgtPos); cam.lookAt(tgtPos.clone().add(d)); }
+  else if (mode === 'seat' || mode === 'spot') { const b = tgtLook.clone().sub(tgtPos), by = Math.atan2(b.x, b.z) + yaw, bp = Math.atan2(b.y, Math.hypot(b.x, b.z)) + pitch, cp = Math.max(-1.45, Math.min(1.45, bp)), d = new THREE.Vector3(Math.sin(by) * Math.cos(cp), Math.sin(cp), Math.cos(by) * Math.cos(cp)); cam.position.copy(tgtPos); cam.lookAt(tgtPos.clone().add(d)); }
   else { orbit.update(); camPos.copy(cam.position); camLook.copy(orbit.target); }
   if (mine) mine.m.emissiveIntensity = .7 + .3 * Math.sin(now / 250);
   if (ytObj) ytObj.visible = cam.position.z > screen.position.z + .1; renderer.render(scene, cam); css.render(cssScene, cam); if (!frame.n) { frame.n = 1; document.getElementById('ls').textContent = 'TAKING YOU TO YOUR SEAT…'; const q = new URLSearchParams(location.search); let seen = ''; try { seen = localStorage.getItem('mgt_intro'); } catch (e) {} if (!q.has('view') && !q.has('clean') && (q.has('intro') || q.get('from') === 'nationlap' || seen !== new Date().toDateString())) { startIntro(); setTimeout(hideLoader, 300); } } requestAnimationFrame(frame); })(t0);
