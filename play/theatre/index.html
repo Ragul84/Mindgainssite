@@ -520,7 +520,7 @@ document.getElementById('chatRx').onclick = () => setReply(null);
 function addChat(m) { const d = document.createElement('div'); const t = m.host ? null : TIER[m.rank];
   d.className = 'cm' + (m.name === myName ? ' me' : '') + (m.host ? ' host' : '') + (t ? ' ' + t[0] : '');
   d.innerHTML = (m.re ? `<div class="cm-re">↩ <b>${esc(m.re.name)}</b> ${esc(m.re.text)}</div>` : '') +
-    (m.host ? '<i class="tag">MINDGAINS HOST</i>' : t ? `<i class="tag">${t[1]}</i>` : '') +
+    (m.host ? '<i class="tag">HOST</i>' : t ? `<i class="tag">${t[1]}</i>` : '') +
     `<b class="nm">${esc(m.name)}${m.seat ? ' <small>' + esc(m.seat) + '</small>' : ''}</b> <span class="tx">${esc(m.text)}</span>` +
     (m.at ? '<button class="rp" aria-label="Reply">↩</button>' : '');
   if (m.at) { const rb = d.querySelector('.rp'); rb.onclick = () => setReply(m);
