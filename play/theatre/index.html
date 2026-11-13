@@ -408,14 +408,14 @@ function markMine(s) { if (mine && mine !== s) { const c = mine.row < 'E' ? COL.
 markMine(mine);
 
 // ---- camera views with smooth flights
-const VIEWS = { wide: [new THREE.Vector3(6, 26, 25), new THREE.Vector3(0, 1, -5)], balcony: [new THREE.Vector3(-11, 16, 21), new THREE.Vector3(1, 3, -9)],
+const VIEWS = { wide: [new THREE.Vector3(4, 12.5, 22.5), new THREE.Vector3(0, 3, -6)], balcony: [new THREE.Vector3(-10, 12.5, 21), new THREE.Vector3(1, 3, -9)],
   stage: [new THREE.Vector3(7, 4.2, -12.5), new THREE.Vector3(-3, 3.2, 6)] };
-const camPos = new THREE.Vector3(14, 16, 30), camLook = new THREE.Vector3(0, 4, -6), tgtPos = new THREE.Vector3(), tgtLook = new THREE.Vector3();
+const camPos = new THREE.Vector3(4, 12.5, 22.5), camLook = new THREE.Vector3(0, 3, -6), tgtPos = new THREE.Vector3(), tgtLook = new THREE.Vector3();
 let flying = true, dragged = 0, zoomF = 1, spot = null, lastTap = 0;
 let mode = 'wide';
 function fly(v) { flying = true; mode = v; zoomF = 1; document.body.classList.toggle('seatmode', v === 'seat'); try { orbit.enabled = false; } catch (e) {} if (v === 'seat') { tgtPos.copy(mine.eye); tgtLook.set(0, 7, -16); } else if (v === 'spot') { tgtPos.copy(spot[0]); tgtLook.copy(spot[1]); } else { tgtPos.copy(VIEWS[v][0]); tgtLook.copy(VIEWS[v][1]); }
   document.querySelectorAll('.angles button').forEach((b) => b.classList.toggle('on', b.dataset.v === v)); }
-fly('wide');
+fly('wide'); window.__dbg = () => ({ p: cam.position.toArray().map((v) => +v.toFixed(1)), mode, flying, t: tgtPos.toArray() });
 document.querySelectorAll('.angles button').forEach((b) => b.onclick = () => fly(b.dataset.v));
 function openVideo() {
   const id = ytNow, p = Math.floor(ytPos()); if (!id) return;
@@ -451,7 +451,7 @@ if (new URLSearchParams(location.search).get('view')) fly(new URLSearchParams(lo
 
 const orbit = new OrbitControls(cam, renderer.domElement);
 orbit.enableDamping = true; orbit.dampingFactor = .08; orbit.enablePan = false; orbit.rotateSpeed = .55; orbit.zoomSpeed = .8;
-orbit.minDistance = .5; orbit.maxDistance = 42; orbit.maxPolarAngle = 1.38; orbit.minPolarAngle = .08; orbit.minAzimuthAngle = -1.2; orbit.maxAzimuthAngle = 1.2; orbit.maxDistance = 34; orbit.minDistance = 3;
+orbit.minDistance = .5; orbit.maxDistance = 42; orbit.maxPolarAngle = 1.38; orbit.minPolarAngle = .08; orbit.minAzimuthAngle = -1.2; orbit.maxAzimuthAngle = 1.2; orbit.maxDistance = 30; orbit.minDistance = 3;
 orbit.addEventListener('start', () => { flying = false; document.getElementById('tip').style.display = 'none'; });
 // seat view: the seat stays put; a drag turns the head (yaw / pitch around the eye)
 let yaw = 0, pitch = 0, lx = 0, ly = 0, look = false;
@@ -595,7 +595,7 @@ let t0 = performance.now();
   if (INTRO.on) { introStep(now); renderer.render(scene, cam); css.render(cssScene, cam); requestAnimationFrame(frame); return; }
   if (flying) { camPos.lerp(tgtPos, k); camLook.lerp(tgtLook, k); cam.position.copy(camPos); orbit.target.copy(camLook); cam.lookAt(camLook); if (camPos.distanceTo(tgtPos) < .05) { flying = false; setLook(); } }
   else if (mode === 'seat' || mode === 'spot') { const b = tgtLook.clone().sub(tgtPos), by = Math.atan2(b.x, b.z) + yaw, bp = Math.atan2(b.y, Math.hypot(b.x, b.z)) + pitch, cp = Math.max(-1.45, Math.min(1.45, bp)), d = new THREE.Vector3(Math.sin(by) * Math.cos(cp), Math.sin(cp), Math.cos(by) * Math.cos(cp)); cam.position.copy(tgtPos); cam.lookAt(tgtPos.clone().add(d)); }
-  else { orbit.update(); cam.position.set(Math.max(-11.5, Math.min(11.5, cam.position.x)), Math.max(3, Math.min(26, cam.position.y)), Math.max(-11, Math.min(26, cam.position.z))); camPos.copy(cam.position); camLook.copy(orbit.target); }
+  else { orbit.update(); cam.position.set(Math.max(-11.5, Math.min(11.5, cam.position.x)), Math.max(5, Math.min(13.2, cam.position.y)), Math.max(-11, Math.min(23, cam.position.z))); camPos.copy(cam.position); camLook.copy(orbit.target); }
   if (mine) mine.m.emissiveIntensity = .7 + .3 * Math.sin(now / 250);
   if (ytObj) ytObj.visible = cam.position.z > screen.position.z + .1; renderer.render(scene, cam); css.render(cssScene, cam); if (!frame.n) { frame.n = 1; document.getElementById('ls').textContent = 'TAKING YOU TO YOUR SEAT…'; const q = new URLSearchParams(location.search); let seen = ''; try { seen = localStorage.getItem('mgt_intro'); } catch (e) {} if (!q.has('view') && !q.has('clean') && (q.has('intro') || q.get('from') === 'nationlap' || seen !== new Date().toDateString())) { startIntro(); setTimeout(hideLoader, 300); } } requestAnimationFrame(frame); })(t0);
 </script>
