@@ -292,6 +292,15 @@ const SW = 21, SH = 11.8125;
 const screenFrame = new THREE.Mesh(new THREE.BoxGeometry(.01, .01, .01), mat(0x050505, .9)); screenFrame.visible = false; screenFrame.position.set(0, 7.3, -16.5); scene.add(screenFrame);
 const poster = new THREE.TextureLoader().load('../../assets/miga/miga-companion-scene.png', (t) => { t.colorSpace = THREE.SRGBColorSpace; });
 const screen = new THREE.Mesh(new THREE.PlaneGeometry(SW, SH), new THREE.MeshBasicMaterial({ map: poster, toneMapped: false })); screen.position.set(0, 7.3, -16.38); scene.add(screen);
+// premium "curved screen" read: LED arcs that bow toward the audience above and below the picture, edge wings angled in, soft halo behind
+{ const arc = (y) => { const pts = []; for (let i = 0; i <= 40; i++) { const u = i / 20 - 1, x = u * (SW / 2 + 1.1); pts.push(new THREE.Vector3(x, y, -16.3 + 1.25 * u * u)); } return new THREE.CatmullRomCurve3(pts); };
+  for (const y of [7.3 + SH / 2 + .45, 7.3 - SH / 2 - .45]) { const t = new THREE.Mesh(new THREE.TubeGeometry(arc(y), 80, .035, 6), new THREE.MeshBasicMaterial({ color: 0xf6dfa4, toneMapped: false })); scene.add(t); }
+  const wingM = new THREE.MeshStandardMaterial({ color: 0x15151b, roughness: .35, metalness: .2, emissive: 0x1a1a24, emissiveIntensity: .6, side: THREE.DoubleSide });
+  for (const sx of [-1, 1]) { const w = new THREE.Mesh(new THREE.PlaneGeometry(1.15, SH + .9), wingM); w.position.set(sx * (SW / 2 + .55), 7.3, -16.3 + .62); w.rotation.y = -sx * .5; scene.add(w); }
+  const hc = document.createElement('canvas'); hc.width = hc.height = 256; const hg = hc.getContext('2d'); const gr = hg.createRadialGradient(128, 128, 20, 128, 128, 128);
+  gr.addColorStop(0, 'rgba(150,170,255,.35)'); gr.addColorStop(1, 'rgba(150,170,255,0)'); hg.fillStyle = gr; hg.fillRect(0, 0, 256, 256);
+  const halo = new THREE.Mesh(new THREE.PlaneGeometry(SW * 1.5, SH * 1.6), new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(hc), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending }));
+  halo.position.set(0, 7.3, -16.6); scene.add(halo); }
 const screenLight = new THREE.RectAreaLight ? null : null;
 const spill = new THREE.PointLight(0x9bb6ff, 25, 26, 1.6); spill.position.set(0, 7, -12); scene.add(spill);
 // ---- synced broadcast: timetable.json decides what plays; everyone computes the same position from the clock
@@ -411,7 +420,7 @@ markMine(mine);
 
 // ---- camera views with smooth flights
 const VIEWS = { wide: [new THREE.Vector3(0, 11.8, 11.5), new THREE.Vector3(0, 6, -16)], balcony: [new THREE.Vector3(-9.5, 12.2, 10.5), new THREE.Vector3(2, 6.5, -16)],
-  stage: [new THREE.Vector3(0, 3.6, -5), new THREE.Vector3(0, 7.4, -16.4)] };
+  stage: [new THREE.Vector3(0, 4.6, 0), new THREE.Vector3(0, 7.3, -16.4)] };
 const camPos = new THREE.Vector3(0, 11.8, 11.5), camLook = new THREE.Vector3(0, 6, -16), tgtPos = new THREE.Vector3(), tgtLook = new THREE.Vector3();
 let flying = true, dragged = 0, zoomF = 1, spot = null, lastTap = 0;
 let mode = 'wide';
