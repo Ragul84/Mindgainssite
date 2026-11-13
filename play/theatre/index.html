@@ -158,7 +158,7 @@ body.intro .skip{display:block}
 <div class="top"><a class="back" href="/nationlap/" aria-label="Back">‹</a><div class="brand">MINDGAINS · THEATRE</div><span class="live" id="live">● LIVE</span><button class="ib" id="snd" title="Sound">🔇</button><button class="ib" id="fs" title="Full screen">⛶</button></div>
 <div class="marq" hidden><div class="mq" id="mq"></div></div>
 <div class="halls" id="halls"></div>
-<div class="tip" id="tip">DRAG TO LOOK · PINCH TO ZOOM · TAP THE FLOOR TO MOVE · DOUBLE-TAP FOR YOUR SEAT</div>
+<div class="tip" id="tip">SWIPE TO LOOK · PINCH TO ZOOM · TAP THE FLOOR TO MOVE · DOUBLE-TAP FOR YOUR SEAT</div>
 <div class="seatcard" id="seatcard"></div>
 <div class="quizc" id="quizc" hidden><div class="qk" id="qk">MIGA ASKS · 15 S</div><div class="qq" id="qq"></div><div class="qo" id="qo"></div><div class="qb"><i id="qbar"></i></div><div class="qn" id="qn"></div></div>
 <div class="top5" id="top5" hidden></div>
@@ -455,16 +455,16 @@ orbit.minDistance = .5; orbit.maxDistance = 42; orbit.maxPolarAngle = 1.38; orbi
 orbit.addEventListener('start', () => { flying = false; document.getElementById('tip').style.display = 'none'; });
 // seat view: the seat stays put; a drag turns the head (yaw / pitch around the eye)
 let yaw = 0, pitch = 0, lx = 0, ly = 0, look = false;
-function setLook() { orbit.enabled = !(mode === 'seat' || mode === 'spot'); yaw = 0; pitch = 0; if (mode !== 'seat') { orbit.target.copy(camLook); } }
-addEventListener('pointerdown', (e) => { if (!(mode === 'seat' || mode === 'spot') || !onView(e)) return; flying = false; look = true; lx = e.clientX; ly = e.clientY; });
+function setLook() { orbit.enabled = false; yaw = 0; pitch = 0; if (mode !== 'seat') { orbit.target.copy(camLook); } }
+addEventListener('pointerdown', (e) => { if (!onView(e)) return; flying = false; look = true; lx = e.clientX; ly = e.clientY; });
 addEventListener('pointermove', (e) => { if (!look) return; if (pts.size > 1) return; yaw -= (e.clientX - lx) * .006 * zoomF; pitch = Math.max(-.55, Math.min(1.05, pitch - (e.clientY - ly) * .005 * zoomF)); lx = e.clientX; ly = e.clientY; });
 addEventListener('pointerup', () => { look = false; });
 // zoom from the seat: mouse wheel or pinch
 const pts = new Map(); let pinch0 = 0;
-const setZoom = (z) => { if (z > 1.12) { zoomF = 1; fly('wide'); } else zoomF = Math.max(.35, Math.min(1.12, z)); };
-addEventListener('wheel', (e) => { if ((mode === 'seat' || mode === 'spot') && onView(e) && !flying) setZoom(zoomF * (e.deltaY > 0 ? 1.08 : .92)); }, { passive: true });
+const setZoom = (z) => { if (z > 1.12 && mode !== 'wide') { zoomF = 1; fly('wide'); } else zoomF = Math.max(.35, Math.min(1.12, z)); };
+addEventListener('wheel', (e) => { if (onView(e) && !flying) setZoom(zoomF * (e.deltaY > 0 ? 1.08 : .92)); }, { passive: true });
 addEventListener('pointerdown', (e) => onView(e) && pts.set(e.pointerId, [e.clientX, e.clientY]));
-addEventListener('pointermove', (e) => { if (!pts.has(e.pointerId)) return; pts.set(e.pointerId, [e.clientX, e.clientY]); if (pts.size === 2 && (mode === 'seat' || mode === 'spot')) { const [a, b] = [...pts.values()], d = Math.hypot(a[0] - b[0], a[1] - b[1]); if (pinch0 && !flying) setZoom(zoomF * pinch0 / d); pinch0 = d; } });
+addEventListener('pointermove', (e) => { if (!pts.has(e.pointerId)) return; pts.set(e.pointerId, [e.clientX, e.clientY]); if (pts.size === 2) { const [a, b] = [...pts.values()], d = Math.hypot(a[0] - b[0], a[1] - b[1]); if (pinch0 && !flying) setZoom(zoomF * pinch0 / d); pinch0 = d; } });
 const ptUp = (e) => { pts.delete(e.pointerId); if (pts.size < 2) pinch0 = 0; }; addEventListener('pointerup', ptUp); addEventListener('pointercancel', ptUp);
 // ---- live room: real seats, viewer count, MIGA quiz, top 5, reactions
 const seatByKey = new Map(seats.map((s) => [s.row + s.n, s]));
@@ -591,11 +591,10 @@ addEventListener('resize', () => { cam.aspect = W() / H(); cam.updateProjectionM
 cam.aspect = W() / H(); cam.updateProjectionMatrix();
 let t0 = performance.now();
 (function frame(now) { const dt = Math.min(.05, (now - t0) / 1000); t0 = now; const k = 1 - Math.pow(.02, dt);
-  { const f = mode === 'seat' || mode === 'spot' ? 92 * zoomF : 62; if (Math.abs(cam.fov - f) > .1) { cam.fov += (f - cam.fov) * k; cam.updateProjectionMatrix(); } }
+  { const f = (mode === 'seat' || mode === 'spot' ? 92 : 66) * zoomF; if (Math.abs(cam.fov - f) > .1) { cam.fov += (f - cam.fov) * k; cam.updateProjectionMatrix(); } }
   if (INTRO.on) { introStep(now); renderer.render(scene, cam); css.render(cssScene, cam); requestAnimationFrame(frame); return; }
   if (flying) { camPos.lerp(tgtPos, k); camLook.lerp(tgtLook, k); cam.position.copy(camPos); orbit.target.copy(camLook); cam.lookAt(camLook); if (camPos.distanceTo(tgtPos) < .05) { flying = false; setLook(); } }
-  else if (mode === 'seat' || mode === 'spot') { const b = tgtLook.clone().sub(tgtPos), by = Math.atan2(b.x, b.z) + yaw, bp = Math.atan2(b.y, Math.hypot(b.x, b.z)) + pitch, cp = Math.max(-1.45, Math.min(1.45, bp)), d = new THREE.Vector3(Math.sin(by) * Math.cos(cp), Math.sin(cp), Math.cos(by) * Math.cos(cp)); cam.position.copy(tgtPos); cam.lookAt(tgtPos.clone().add(d)); }
-  else { orbit.update(); cam.position.set(Math.max(-11.5, Math.min(11.5, cam.position.x)), Math.max(5, Math.min(13.2, cam.position.y)), Math.max(-11, Math.min(23, cam.position.z))); camPos.copy(cam.position); camLook.copy(orbit.target); }
+  else { const b = tgtLook.clone().sub(tgtPos), by = Math.atan2(b.x, b.z) + yaw, bp = Math.atan2(b.y, Math.hypot(b.x, b.z)) + pitch, cp = Math.max(-1.45, Math.min(1.45, bp)), d = new THREE.Vector3(Math.sin(by) * Math.cos(cp), Math.sin(cp), Math.cos(by) * Math.cos(cp)); cam.position.copy(tgtPos); cam.lookAt(tgtPos.clone().add(d)); }
   if (mine) mine.m.emissiveIntensity = .7 + .3 * Math.sin(now / 250);
   if (ytObj) ytObj.visible = cam.position.z > screen.position.z + .1; renderer.render(scene, cam); css.render(cssScene, cam); if (!frame.n) { frame.n = 1; document.getElementById('ls').textContent = 'TAKING YOU TO YOUR SEAT…'; const q = new URLSearchParams(location.search); let seen = ''; try { seen = localStorage.getItem('mgt_intro'); } catch (e) {} if (!q.has('view') && !q.has('clean') && (q.has('intro') || q.get('from') === 'nationlap' || seen !== new Date().toDateString())) { startIntro(); setTimeout(hideLoader, 300); } } requestAnimationFrame(frame); })(t0);
 </script>
