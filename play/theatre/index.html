@@ -419,7 +419,7 @@ function markMine(s) { if (mine && mine !== s) { const c = mine.row < 'E' ? COL.
 markMine(mine);
 
 // ---- camera views with smooth flights
-const VIEWS = { wide: [new THREE.Vector3(0, 11.8, 11.5), new THREE.Vector3(0, 6, -16)], balcony: [new THREE.Vector3(-9.5, 12.2, 10.5), new THREE.Vector3(2, 6.5, -16)],
+const VIEWS = { wide: [new THREE.Vector3(0, 9.8, 4), new THREE.Vector3(0, 6.5, -16)], balcony: [new THREE.Vector3(0, 13.2, 11), new THREE.Vector3(0, 5.5, -16)],
   stage: [new THREE.Vector3(0, 4.6, 0), new THREE.Vector3(0, 7.3, -16.4)] };
 const camPos = new THREE.Vector3(0, 11.8, 11.5), camLook = new THREE.Vector3(0, 6, -16), tgtPos = new THREE.Vector3(), tgtLook = new THREE.Vector3();
 let flying = true, dragged = 0, zoomF = 1, spot = null, lastTap = 0;
