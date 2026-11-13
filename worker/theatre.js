@@ -11,6 +11,16 @@ const DAY_SETS = {"main": {"mon": ["upsc/polity/constitution-features", "upsc/po
 const QUIZ_EVERY_MS = 4 * 60 * 1000, ANSWER_MS = 15000;
 const SEAT_RE = /^[A-L]([1-9]|1[0-8])$/;
 const BAD = /\b(fuck\w*|shit\w*|bitch\w*|bastard|asshole|dick|madarchod|bhenchod|chutiya|punda|sunni|otha|thevdiya)\b/gi;
+const LB = 'https://yuntwerxahgmaoduxvqc.supabase.co/rest/v1/nationlap_scores', LBK = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl1bnR3ZXJ4YWhnbWFvZHV4dnFjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU3OTk4OTMsImV4cCI6MjA3MTM3NTg5M30.1mFUH9yp55uxN8n9tyRHLFbve36_kpaJs41nPU85S74';
+let topCache = { at: 0, ids: [] };
+async function todayTop() {   // today's NationLap top 3 (best score per player), refreshed every 5 min
+  if (Date.now() - topCache.at < 3e5) return topCache.ids;
+  try { const d = new Date().toISOString().slice(0, 10);
+    const r = await (await fetch(LB + '?heat_id=eq.turbo-kart-rally&date_key=eq.' + d + '&order=score.desc&limit=60&select=player_id', { headers: { apikey: LBK, Authorization: 'Bearer ' + LBK } })).json();
+    const ids = []; for (const x of r) if (x.player_id && !ids.includes(x.player_id)) { ids.push(x.player_id); if (ids.length === 3) break; }
+    topCache = { at: Date.now(), ids }; } catch { topCache.at = Date.now() - 24e4; }
+  return topCache.ids;
+}
 const clean = (s, n) => String(s || '').replace(/[<>]/g, '').trim().slice(0, n);
 
 export class TheatreHall extends DurableObject {
@@ -41,7 +51,8 @@ export class TheatreHall extends DurableObject {
     let m; try { m = JSON.parse(raw); } catch { return; }
     const a = ws.deserializeAttachment() || {};
     if (m.t === 'hello') {
-      a.name = clean(m.name, 20) || 'Guest';
+      a.name = clean(m.name, 20) || 'Guest'; a.pid = clean(m.pid, 64);
+      a.host = !!(this.env.THEATRE_ADMIN && m.admin && m.admin === this.env.THEATRE_ADMIN);
       ws.serializeAttachment(a);
       this.send(ws, { t: 'state', me: a.id, count: this.ctx.getWebSockets().length, seats: this.seatMap(), top: this.top(), chat: this.chat.slice(-40), quiz: this.quiz && { qid: this.quiz.qid, q: this.quiz.q, opts: this.quiz.opts, ends: this.quiz.ends } });
       this.broadcastSeats();
@@ -61,12 +72,19 @@ export class TheatreHall extends DurableObject {
       const e = ['1f525', '1f602', '1f92f', '1f44f', '2764_fe0f', '1f4af', '1f389', '1f9e0', '1f64f', '1f62e', '1f680', '1f4a1'].includes(m.e) ? m.e : null;
       if (e) this.all({ t: 'react', e, seat: a.seat || null });
     } else if (m.t === 'chat') {
-      const now = Date.now(); if (now - (a.lc || 0) < 5000) return this.send(ws, { t: 'slow', wait: 5000 - (now - (a.lc || 0)) });
+      const now = Date.now(); if (!a.host && now < (a.mute || 0)) return this.send(ws, { t: 'slow', wait: a.mute - now, why: 'Slow down — chat paused for you for a minute' });
+      if (!a.host && now - (a.lc || 0) < 10000) { a.hits = (a.hits || 0) + 1; if (a.hits >= 4) { a.mute = now + 60000; a.hits = 0; } ws.serializeAttachment(a); return this.send(ws, { t: 'slow', wait: Math.max(10000 - (now - (a.lc || 0)), (a.mute || 0) - now) }); }
       let text = clean(m.text, 140).replace(/\s+/g, ' '); if (!text) return;
       if (/https?:|www\.|\.com\b/i.test(text)) return this.send(ws, { t: 'slow', why: 'No links in chat' });
-      text = text.replace(BAD, (w) => '*'.repeat(w.length));
+      text = text.replace(BAD, (w) => '*'.repeat(w.length)).replace(/(.){5,}/g, '$1$1$1');
+      const norm = text.toLowerCase().replace(/[^a-z0-9஀-௿]/g, '');
+      if (!a.host && (norm === a.lastNorm || this.chat.slice(-6).some((c) => c.text.toLowerCase().replace(/[^a-z0-9஀-௿]/g, '') === norm && norm.length > 3))) return this.send(ws, { t: 'slow', why: 'Same message was just sent' });
+      if (!a.host && text.length > 12 && text === text.toUpperCase() && /[A-Z]{8}/.test(text)) text = text.toLowerCase();
+      a.lastNorm = norm; a.hits = 0;
       a.lc = now; ws.serializeAttachment(a);
-      const msg = { name: a.name, seat: a.seat, text, at: now };
+      const re = m.re && m.re.name ? { name: clean(m.re.name, 20), text: clean(m.re.text, 60) } : null;
+      const rank = a.pid ? (await todayTop()).indexOf(a.pid) + 1 : 0;
+      const msg = { name: a.host ? 'MindGains' : a.name, seat: a.seat, text, at: now, ...(re ? { re } : {}), ...(a.host ? { host: 1 } : rank ? { rank } : {}) };
       this.chat.push(msg); if (this.chat.length > 60) this.chat = this.chat.slice(-60);
       this.all({ t: 'chat', m: msg }); await this.ctx.storage.put('chat', this.chat);
     }
