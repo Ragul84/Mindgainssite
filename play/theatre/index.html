@@ -428,6 +428,8 @@ function openVideo() {
   try { (o.requestFullscreen || o.webkitRequestFullscreen).call(o); } catch (e) {}
   try { window.screen.orientation && window.screen.orientation.lock && window.screen.orientation.lock('landscape').catch(() => {}); } catch (e) {}
 }
+function flashCard(t) { const c = document.getElementById('seatcard'); c.textContent = t; c.style.display = 'block'; c.style.transition = 'none'; c.style.opacity = 1; clearTimeout(window.__sc); clearTimeout(window.__sc2);
+  window.__sc = setTimeout(() => { c.style.transition = 'opacity .8s'; c.style.opacity = 0; window.__sc2 = setTimeout(() => c.style.display = 'none', 800); }, 4000); }
 const ray = new THREE.Raycaster(), ptr = new THREE.Vector2();
 let px0 = 0, py0 = 0, down = false;
 const onView = (e) => e.target === renderer.domElement;
@@ -440,10 +442,10 @@ addEventListener('pointerup', (e) => { if (!down || !onView(e) || document.getEl
   if (!hit) { const g = ray.intersectObjects(scene.children, true).find((h) => h.object !== screen && h.object.visible && h.face && h.face.normal.clone().transformDirection(h.object.matrixWorld).y > .7);
     if (g && g.point.z > screen.position.z + 2 && g.point.z < 23 && Math.abs(g.point.x) < 11.5) { const e = g.point.clone(); e.y += 1.7; spot = [e, new THREE.Vector3(0, 7, -16)]; fly('spot'); } return; }
   const s = hit.object.userData.seat;
-  const card = document.getElementById('seatcard'); card.style.display = 'block';
-  if (s.st === 'taken') { card.textContent = `Row ${s.row} · Seat ${s.n} · ${s.who || 'taken'}`; return; }
+  const card = document.getElementById('seatcard');
+  if (s.st === 'taken') { flashCard(`Row ${s.row} · Seat ${s.n} · ${s.who || 'taken'}`); return; }
   live.sit(s.row + s.n);
-  markMine(s); card.textContent = `ROW ${s.row} · SEAT ${s.n}`; clearTimeout(window.__sc); window.__sc = setTimeout(() => card.style.display = 'none', 2500); document.getElementById('tip').style.display = 'none'; fly('seat'); });
+  markMine(s); flashCard(`ROW ${s.row} · SEAT ${s.n}`); document.getElementById('tip').style.display = 'none'; fly('seat'); });
 document.getElementById('go').onclick = () => fly('seat');
 if (new URLSearchParams(location.search).get('view')) fly(new URLSearchParams(location.search).get('view'));
 
@@ -478,7 +480,7 @@ const live = { ws: null, hall: null, n: 0, quiz: null, picked: -1,
   on(m) {
     if (m.t === 'state' && m.chat) { chatL.innerHTML = ''; m.chat.forEach(addChat); document.getElementById('chatN').textContent = ''; }
     if (m.t === 'state' || m.t === 'seats') { this.n = m.count; paintSeats(m.seats); if (m.top) paintTop(m.top); if (m.quiz) showQuiz(m.quiz); renderCount(); }
-    else if (m.t === 'taken') { const c = document.getElementById('seatcard'); c.style.display = 'block'; c.textContent = 'Someone just took ' + m.seat; }
+    else if (m.t === 'taken') { const c = document.getElementById('seatcard'); flashCard('Someone just took ' + m.seat); }
     else if (m.t === 'quiz') showQuiz(m);
     else if (m.t === 'answered') { if (this.quiz && m.qid === this.quiz.qid) document.getElementById('qn').textContent = `${m.n} of ${this.n} answered`; }
     else if (m.t === 'reveal') reveal(m);
