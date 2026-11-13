@@ -203,14 +203,19 @@ const velvet = canvasTex(256, 32, (g, w, h) => { const gr = g.createLinearGradie
 
 // ---- hall: floor, walls, ceiling
 const HALL_W = 26, HALL_D = 40;
+const acoustic = (() => { const c = document.createElement('canvas'); c.width = 512; c.height = 256; const g = c.getContext('2d');
+  g.fillStyle = '#16151b'; g.fillRect(0, 0, 512, 256);
+  for (let x = 0; x < 512; x += 64) { g.fillStyle = '#1d1c24'; g.fillRect(x + 2, 0, 60, 256); g.fillStyle = '#0c0b10'; g.fillRect(x, 0, 2, 256); }
+  const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(5, 1); t.colorSpace = THREE.SRGBColorSpace; return t; })();
+const LED = new THREE.MeshBasicMaterial({ color: 0xf3c86b }), LED_DIM = new THREE.MeshBasicMaterial({ color: 0x6b5424 });
 const floor = new THREE.Mesh(new THREE.PlaneGeometry(HALL_W, HALL_D), mat(0xffffff, .95, 0, { map: carpet }));
 floor.rotation.x = -Math.PI / 2; floor.position.z = 4; floor.receiveShadow = true; scene.add(floor);
 for (const s of [-1, 1]) {
-  const wall = new THREE.Mesh(new THREE.PlaneGeometry(HALL_D, 14), mat(0xffffff, .6, 0, { map: woodSlats }));
+  const wall = new THREE.Mesh(new THREE.PlaneGeometry(HALL_D, 14), mat(0xffffff, .92, 0, { map: acoustic }));
   wall.position.set(s * HALL_W / 2, 7, 4); wall.rotation.y = -s * Math.PI / 2; wall.receiveShadow = true; scene.add(wall);
-  // warm wall sconces
-  for (let k = 0; k < 6; k++) { const z = -10 + k * 5.5; const lamp = new THREE.Mesh(new THREE.SphereGeometry(.18, 12, 8), new THREE.MeshBasicMaterial({ color: 0xffc36b })); lamp.position.set(s * (HALL_W / 2 - .15), 4.2, z); scene.add(lamp);
-  }
+  // LED cove lines: one low, one high, and slanted fins between them
+  for (const y of [1.6, 12.4]) { const l = new THREE.Mesh(new THREE.BoxGeometry(.05, .05, HALL_D - 6), LED); l.position.set(s * (HALL_W / 2 - .06), y, 5); scene.add(l); }
+  for (let k = 0; k < 6; k++) { const f = new THREE.Mesh(new THREE.BoxGeometry(.04, 7.2, .04), LED_DIM); f.position.set(s * (HALL_W / 2 - .06), 7, -9 + k * 6); f.rotation.x = .35; scene.add(f); }
 }
 const DOOR_W = 3.4, DOOR_H = 4.4;
 { const bm = mat(0x2a1a14, .8, 0, { side: THREE.DoubleSide }), side = (HALL_W - DOOR_W) / 2;
@@ -275,21 +280,18 @@ const LEGS = [], ARMS = [], WALKER = new THREE.Group();
 // NationLap's driver arms reach for the wheel in race space and stretch across the street here; hide them and show the walking arms instead
 const NK_ARMS = []; NK.root.traverse((o) => { if (o.isMesh && o.geometry.type === 'CapsuleGeometry' && !WALKER.getObjectById(o.id)) NK_ARMS.push(o); });
 window.__NKARMS = NK_ARMS;
-const ceil = new THREE.Mesh(new THREE.PlaneGeometry(HALL_W, HALL_D), mat(0x120a10, .9)); ceil.rotation.x = Math.PI / 2; ceil.position.set(0, 14, 4); scene.add(ceil);
-for (let i = 0; i < 70; i++) { const d = new THREE.Mesh(new THREE.SphereGeometry(.05, 6, 4), new THREE.MeshBasicMaterial({ color: 0xfff1c9 })); d.position.set((Math.random() - .5) * (HALL_W - 2), 13.9, -12 + Math.random() * 34); scene.add(d); }
+const ceil = new THREE.Mesh(new THREE.PlaneGeometry(HALL_W, HALL_D), mat(0x0b0b0f, .95)); ceil.rotation.x = Math.PI / 2; ceil.position.set(0, 14, 4); scene.add(ceil);
+for (let i = 0; i < 4; i++) for (let j = 0; j < 6; j++) { const d = new THREE.Mesh(new THREE.CircleGeometry(.12, 12), new THREE.MeshBasicMaterial({ color: 0x8a7650 })); d.rotation.x = Math.PI / 2; d.position.set(-7.5 + i * 5, 13.98, -6 + j * 5); scene.add(d); }
 
 // ---- stage, proscenium, curtains, screen
-const stage = new THREE.Mesh(new RoundedBoxGeometry(HALL_W - 2, 1.2, 4, 2, .1), mat(0x3b2216, .5)); stage.position.set(0, .6, -15); stage.receiveShadow = true; scene.add(stage);
-const lip = new THREE.Mesh(new THREE.BoxGeometry(HALL_W - 2, .12, .2), new THREE.MeshBasicMaterial({ color: 0xffc36b })); lip.position.set(0, 1.21, -13.05); scene.add(lip);
-const prosc = new THREE.Mesh(new THREE.BoxGeometry(HALL_W, .9, .8), mat(0x2b1209, .6)); prosc.position.set(0, 14.2, -16.4); scene.add(prosc);
-function curtain(w, h, folds) { const g = new THREE.PlaneGeometry(w, h, folds * 6, 1); const p = g.attributes.position; for (let i = 0; i < p.count; i++) p.setZ(i, Math.sin(p.getX(i) / w * folds * Math.PI * 2) * .35); g.computeVertexNormals(); return new THREE.Mesh(g, mat(0xffffff, .55, 0, { map: velvet, side: THREE.DoubleSide })); }
-for (const s of [-1, 1]) { const c = curtain(3.2, 13, 4); c.position.set(s * 11.2, 7.1, -16.1); scene.add(c); }
-const valance = curtain(HALL_W - 1, 1.6, 22); valance.position.set(0, 13.4, -16); valance.scale.y = .9; scene.add(valance);
+const stage = new THREE.Mesh(new THREE.BoxGeometry(HALL_W, .5, 3.2), mat(0x0d0d11, .9)); stage.position.set(0, .25, -14.8); scene.add(stage);
+const lip = new THREE.Mesh(new THREE.BoxGeometry(HALL_W, .04, .04), LED); lip.position.set(0, .5, -13.2); scene.add(lip);
+const frontWall = new THREE.Mesh(new THREE.PlaneGeometry(HALL_W, 14), mat(0x060608, 1)); frontWall.position.set(0, 7, -16.7); scene.add(frontWall);
 // the screen (16:9) – the YouTube player is laid exactly over it with CSS3D
-const SW = 18, SH = 10.125;
-const screenFrame = new THREE.Mesh(new THREE.BoxGeometry(SW + .7, SH + .7, .2), mat(0x050505, .9)); screenFrame.position.set(0, 7.4, -16.5); scene.add(screenFrame);
+const SW = 21, SH = 11.8125;
+const screenFrame = new THREE.Mesh(new THREE.BoxGeometry(.01, .01, .01), mat(0x050505, .9)); screenFrame.visible = false; screenFrame.position.set(0, 7.3, -16.5); scene.add(screenFrame);
 const poster = new THREE.TextureLoader().load('../../assets/miga/miga-companion-scene.png', (t) => { t.colorSpace = THREE.SRGBColorSpace; });
-const screen = new THREE.Mesh(new THREE.PlaneGeometry(SW, SH), new THREE.MeshBasicMaterial({ map: poster, toneMapped: false })); screen.position.set(0, 7.4, -16.38); scene.add(screen);
+const screen = new THREE.Mesh(new THREE.PlaneGeometry(SW, SH), new THREE.MeshBasicMaterial({ map: poster, toneMapped: false })); screen.position.set(0, 7.3, -16.38); scene.add(screen);
 const screenLight = new THREE.RectAreaLight ? null : null;
 const spill = new THREE.PointLight(0x9bb6ff, 25, 26, 1.6); spill.position.set(0, 7, -12); scene.add(spill);
 // ---- synced broadcast: timetable.json decides what plays; everyone computes the same position from the clock
@@ -380,7 +382,7 @@ const stageSpot = new THREE.SpotLight(0xffd08a, 40, 30, .5, .5, 1.2); stageSpot.
 const ROWS = 'ABCDEFGHIJKL'.split(''), PER = 18;
 const seatGeo = (() => { const g = new THREE.Group(); return null; })();
 const base = new RoundedBoxGeometry(.78, .5, .7, 2, .1), backG = new RoundedBoxGeometry(.78, .85, .16, 2, .07), armG = new RoundedBoxGeometry(.1, .35, .6, 1, .04);
-const COL = { free: 0x2fbf71, freeB: 0x3d7bea, taken: 0x3a3446, friend: 0x2cb7ec, me: 0xffcf3f };
+const COL = { free: 0x9a1f33, freeB: 0x3a3f73, taken: 0x5a5566, friend: 0x2cb7ec, me: 0xffcf3f };
 let seed = 11; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
 const seats = []; const pick = [];
 ROWS.forEach((row, r) => {
@@ -392,7 +394,7 @@ ROWS.forEach((row, r) => {
     let st = 'free';
     const g = new THREE.Group(); g.position.set(x, y, zz); g.rotation.y = -a;
     const c = st === 'taken' ? COL.taken : st === 'friend' ? COL.friend : vip ? COL.freeB : COL.free;
-    const m = mat(c, .55, 0, { emissive: st === 'taken' ? 0 : c, emissiveIntensity: st === 'taken' ? 0 : .35 });
+    const m = mat(c, .55, 0, { emissive: st === 'taken' ? 0 : c, emissiveIntensity: st === 'taken' ? 0 : .22 });
     const b = new THREE.Mesh(base, m); b.position.y = .25; b.castShadow = true; g.add(b);
     const bk = new THREE.Mesh(backG, m); bk.position.set(0, .7, .32); bk.rotation.x = -.12; bk.castShadow = true; g.add(bk);
     for (const s of [-1, 1]) { const ar = new THREE.Mesh(armG, mat(0x1c1622, .6)); ar.position.set(s * .44, .45, 0); g.add(ar); }
