@@ -283,13 +283,13 @@ const stage = new THREE.Mesh(new RoundedBoxGeometry(HALL_W - 2, 1.2, 4, 2, .1), 
 const lip = new THREE.Mesh(new THREE.BoxGeometry(HALL_W - 2, .12, .2), new THREE.MeshBasicMaterial({ color: 0xffc36b })); lip.position.set(0, 1.21, -13.05); scene.add(lip);
 const prosc = new THREE.Mesh(new THREE.BoxGeometry(HALL_W, .9, .8), mat(0x2b1209, .6)); prosc.position.set(0, 14.2, -16.4); scene.add(prosc);
 function curtain(w, h, folds) { const g = new THREE.PlaneGeometry(w, h, folds * 6, 1); const p = g.attributes.position; for (let i = 0; i < p.count; i++) p.setZ(i, Math.sin(p.getX(i) / w * folds * Math.PI * 2) * .35); g.computeVertexNormals(); return new THREE.Mesh(g, mat(0xffffff, .55, 0, { map: velvet, side: THREE.DoubleSide })); }
-for (const s of [-1, 1]) { const c = curtain(2.2, 13, 3); c.position.set(s * 12.1, 7.4, -16.1); scene.add(c); }
-const valance = curtain(HALL_W - 1, 1.6, 22); valance.position.set(0, 14.05, -16); valance.scale.y = .5; scene.add(valance);
+for (const s of [-1, 1]) { const c = curtain(3.2, 13, 4); c.position.set(s * 11.2, 7.1, -16.1); scene.add(c); }
+const valance = curtain(HALL_W - 1, 1.6, 22); valance.position.set(0, 13.4, -16); valance.scale.y = .9; scene.add(valance);
 // the screen (16:9) – the YouTube player is laid exactly over it with CSS3D
-const SW = 22, SH = 12.375;
-const screenFrame = new THREE.Mesh(new THREE.BoxGeometry(SW + .4, SH + .4, .2), mat(0x0a0a0a, .4)); screenFrame.position.set(0, 7.6, -16.5); scene.add(screenFrame);
+const SW = 18, SH = 10.125;
+const screenFrame = new THREE.Mesh(new THREE.BoxGeometry(SW + .7, SH + .7, .2), mat(0x050505, .9)); screenFrame.position.set(0, 7.4, -16.5); scene.add(screenFrame);
 const poster = new THREE.TextureLoader().load('../../assets/miga/miga-companion-scene.png', (t) => { t.colorSpace = THREE.SRGBColorSpace; });
-const screen = new THREE.Mesh(new THREE.PlaneGeometry(SW, SH), new THREE.MeshBasicMaterial({ map: poster, toneMapped: false })); screen.position.set(0, 7.6, -16.38); scene.add(screen);
+const screen = new THREE.Mesh(new THREE.PlaneGeometry(SW, SH), new THREE.MeshBasicMaterial({ map: poster, toneMapped: false })); screen.position.set(0, 7.4, -16.38); scene.add(screen);
 const screenLight = new THREE.RectAreaLight ? null : null;
 const spill = new THREE.PointLight(0x9bb6ff, 25, 26, 1.6); spill.position.set(0, 7, -12); scene.add(spill);
 // ---- synced broadcast: timetable.json decides what plays; everyone computes the same position from the clock
@@ -408,9 +408,9 @@ function markMine(s) { if (mine && mine !== s) { const c = mine.row < 'E' ? COL.
 markMine(mine);
 
 // ---- camera views with smooth flights
-const VIEWS = { wide: [new THREE.Vector3(0, 11.5, 22.5), new THREE.Vector3(0, 5.5, -16)], balcony: [new THREE.Vector3(-10, 12.5, 21), new THREE.Vector3(2, 6, -16)],
+const VIEWS = { wide: [new THREE.Vector3(0, 11.8, 11.5), new THREE.Vector3(0, 6, -16)], balcony: [new THREE.Vector3(-9.5, 12.2, 10.5), new THREE.Vector3(2, 6.5, -16)],
   stage: [new THREE.Vector3(0, 3.6, -5), new THREE.Vector3(0, 7.4, -16.4)] };
-const camPos = new THREE.Vector3(4, 12.5, 22.5), camLook = new THREE.Vector3(0, 3, -6), tgtPos = new THREE.Vector3(), tgtLook = new THREE.Vector3();
+const camPos = new THREE.Vector3(0, 11.8, 11.5), camLook = new THREE.Vector3(0, 6, -16), tgtPos = new THREE.Vector3(), tgtLook = new THREE.Vector3();
 let flying = true, dragged = 0, zoomF = 1, spot = null, lastTap = 0;
 let mode = 'wide';
 function fly(v) { flying = true; mode = v; zoomF = 1; document.body.classList.toggle('seatmode', v === 'seat'); try { orbit.enabled = false; } catch (e) {} if (v === 'seat') { tgtPos.copy(mine.eye); tgtLook.set(0, 7, -16); } else if (v === 'spot') { tgtPos.copy(spot[0]); tgtLook.copy(spot[1]); } else { tgtPos.copy(VIEWS[v][0]); tgtLook.copy(VIEWS[v][1]); }
@@ -440,7 +440,7 @@ addEventListener('pointerup', (e) => { if (!down || !onView(e) || document.getEl
   if (ytNow && ray.intersectObject(screen)[0] && !(ray.intersectObjects(pick)[0])) { openVideo(); return; }
   const hit = ray.intersectObjects(pick)[0];
   if (!hit) { const g = ray.intersectObjects(scene.children, true).find((h) => h.object !== screen && h.object.visible && h.face && h.face.normal.clone().transformDirection(h.object.matrixWorld).y > .7);
-    if (g && g.point.z > screen.position.z + 2 && g.point.z < 23 && Math.abs(g.point.x) < 11.5) { const e = g.point.clone(); e.y += 1.7; spot = [e, new THREE.Vector3(0, 7, -16)]; fly('spot'); } return; }
+    if (g && g.point.z > screen.position.z + 2 && g.point.z < 9.5 && Math.abs(g.point.x) < 11.5) { const e = g.point.clone(); e.y += 1.7; spot = [e, new THREE.Vector3(0, 7, -16)]; fly('spot'); } return; }
   const s = hit.object.userData.seat;
   const card = document.getElementById('seatcard');
   if (s.st === 'taken') { flashCard(`Row ${s.row} · Seat ${s.n} · ${s.who || 'taken'}`); return; }
