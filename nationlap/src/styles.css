@@ -2533,3 +2533,6 @@ body.touch-mode[data-state="title"] .hof-strip { width: auto !important; }
   .title-screen .live-event .le-t{font-size:14px!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .title-screen .live-event::after{content:'›';font-family:var(--display);font-size:20px;color:#ffd23f;margin-left:2px}
 }
+.tr-signin{position:absolute;z-index:5;top:calc(84px + env(safe-area-inset-top,0px));left:34px;display:flex;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;border:2px solid #fff;background:#fff;color:#1a1d3a;font:900 11px var(--body,system-ui);letter-spacing:.04em;cursor:pointer;box-shadow:0 4px 0 rgba(0,0,0,.25)}
+.tr-signin[hidden]{display:none}
+@media (max-width:760px){.tr-signin{top:calc(24px + env(safe-area-inset-top,0px));left:auto;right:14px;padding:9px 12px}.tr-signin span{font-size:0}.tr-signin span::before{content:'SIGN IN';font-size:11px}}

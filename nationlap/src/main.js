@@ -1606,6 +1606,7 @@ async function boot() {
   // Account last, and never awaited by anything above it: the game has to be playable whether
   // or not the player is signed in, or online at all. When a session does exist, the saved
   // progress is merged into this device's and kept in sync from then on.
+  window.addEventListener('nl-signin', () => account.signIn());
   account.init().then((u) => {
     const bind = (next) => {
       const name = account.accountName();
