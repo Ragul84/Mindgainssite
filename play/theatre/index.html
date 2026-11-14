@@ -71,6 +71,9 @@ body{font-family:Inter,system-ui,sans-serif}
 .top5 b{display:block;font:400 13px 'Bebas Neue';letter-spacing:.14em;color:var(--g)}
 .reacts{position:fixed;right:14px;bottom:264px;z-index:6;display:flex;flex-direction:column;gap:6px}.reacts button{width:38px;height:38px;border-radius:50%;border:1px solid rgba(243,212,138,.5);background:rgba(0,0,0,.55);font-size:17px}
 .fly{position:fixed;z-index:7;font-size:24px;pointer-events:none;animation:fly 2.2s ease-out forwards}@keyframes fly{to{transform:translateY(-140px);opacity:0}}.fly img{width:44px;height:44px}
+.rs{position:fixed;bottom:200px;z-index:7;pointer-events:none;animation:rsUp 3.2s cubic-bezier(.2,.6,.4,1) forwards}.rs img{width:40px;height:40px;display:block}
+@keyframes rsUp{0%{transform:translate(0,0) scale(.4);opacity:0}12%{transform:translate(0,-30px) scale(1.1);opacity:1}100%{transform:translate(var(--dx),-46vh) scale(.9);opacity:0}}
+@media (max-width:760px){.rs{bottom:240px}.rs img{width:34px;height:34px}}
 .chat{position:fixed;left:14px;top:96px;bottom:150px;width:300px;z-index:6;display:flex;flex-direction:column;background:rgba(12,9,6,.82);backdrop-filter:blur(8px);border:1px solid rgba(243,212,138,.35);border-radius:14px;overflow:hidden;font:500 12.5px Inter,system-ui;transition:width .2s}
 .chat-h{flex:none;display:flex;align-items:center;gap:6px;padding:10px 12px;background:none;border:0;border-bottom:1px solid rgba(243,212,138,.2);color:var(--g);font:800 11px Inter;letter-spacing:.14em;cursor:pointer;text-align:left;white-space:nowrap}.chat-h em{font-style:normal}.chat-h i{margin-left:auto;font-style:normal;font-size:16px}
 .chat-h span:not(:empty){background:#ff2d55;color:#fff;border-radius:9px;padding:0 6px;letter-spacing:0}
@@ -164,7 +167,7 @@ body.intro .skip{display:block}
 <div class="top5" id="top5" hidden></div>
 <div class="chat" id="chat"><button class="chat-h" id="chatH">💬 <em>LIVE CHAT</em> <span id="chatN"></span><i>‹</i></button>
   <div class="chat-l" id="chatL"></div>
-  <div class="emo" id="reacts"><button data-e="1f525"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f525/512.webp" alt="" loading="lazy"></button><button data-e="1f602"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f602/512.webp" alt="" loading="lazy"></button><button data-e="1f92f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f92f/512.webp" alt="" loading="lazy"></button><button data-e="1f44f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44f/512.webp" alt="" loading="lazy"></button><button data-e="2764_fe0f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/2764_fe0f/512.webp" alt="" loading="lazy"></button></div>
+  <div class="emo" id="reacts"><button data-e="1f525"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f525/emoji.svg" alt="" loading="lazy"></button><button data-e="1f602"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f602/emoji.svg" alt="" loading="lazy"></button><button data-e="1f92f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f92f/emoji.svg" alt="" loading="lazy"></button><button data-e="1f44f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44f/emoji.svg" alt="" loading="lazy"></button><button data-e="2764_fe0f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/2764_fe0f/emoji.svg" alt="" loading="lazy"></button></div>
   <div class="chat-r" id="chatR" hidden><span id="chatRt"></span><button type="button" id="chatRx" aria-label="Cancel reply">✕</button></div>
   <form class="chat-f" id="chatF"><input id="chatI" maxlength="140" placeholder="Say something…" autocomplete="off"><button id="chatS">SEND</button></form></div>
 <div class="angles"><button data-v="wide" class="on">HALL</button><button data-v="seat">MY SEAT</button><button data-v="stage">FRONT ROW</button><button data-v="balcony">BALCONY</button></div>
@@ -495,7 +498,7 @@ const live = { ws: null, hall: null, n: 0, quiz: null, picked: -1,
     else if (m.t === 'quiz') showQuiz(m);
     else if (m.t === 'answered') { if (this.quiz && m.qid === this.quiz.qid) document.getElementById('qn').textContent = `${m.n} of ${this.n} answered`; }
     else if (m.t === 'reveal') reveal(m);
-    else if (m.t === 'react') { const s = m.seat && seatByKey.get(m.seat); floatAt(s ? s.g.position : new THREE.Vector3((Math.random() - .5) * 14, 2, 4 + Math.random() * 10), m.e); }
+    else if (m.t === 'react') reactStream(m.e);
     else if (m.t === 'chat') addChat(m.m);
     else if (m.t === 'slow') { if (m.wait) cool(m.wait); if (m.why) addChat({ name: 'MindGains', text: m.why }); }
   } };
@@ -521,6 +524,11 @@ function reveal(m) { if (!live.quiz || m.qid !== live.quiz.qid) return; clearInt
   document.getElementById('qn').textContent = `${m.pct}% of ${m.n} got it right`; paintTop(m.top);
   clearTimeout(window.__qh); window.__qh = setTimeout(hideQuiz, 5000); }
 function hideQuiz() { document.getElementById('quizc').hidden = true; document.body.classList.remove('quizon'); }
+// reactions rise in a stream on the right edge (off the picture); animated only while they fly
+let rsN = 0;
+function reactStream(e) { if (rsN > 14 || !/^[0-9a-f_]+$/.test(e)) return; rsN++;
+  const d = document.createElement('div'); d.className = 'rs'; d.style.right = (10 + Math.random() * 26) + 'px'; d.style.setProperty('--dx', ((Math.random() - .5) * 40).toFixed(0) + 'px');
+  d.innerHTML = `<img src="https://fonts.gstatic.com/s/e/notoemoji/latest/${e}/512.webp" alt="">`; document.body.appendChild(d); setTimeout(() => { d.remove(); rsN--; }, 3200); }
 function floatAt(pos, e) { const v = pos.clone().add(new THREE.Vector3(0, 1.4, 0)).project(cam); if (v.z > 1) return;
   const d = document.createElement('div'); d.className = 'fly'; if (/^[0-9a-f_]+$/.test(e)) d.innerHTML = `<img src="https://fonts.gstatic.com/s/e/notoemoji/latest/${e}/512.webp" alt="">`; else d.textContent = e; d.style.left = ((v.x + 1) / 2 * W() - 12) + 'px'; d.style.top = ((1 - v.y) / 2 * H() - 12) + 'px'; document.body.appendChild(d); setTimeout(() => d.remove(), 2300); }
 document.querySelectorAll('#reacts button').forEach((b) => b.onclick = () => { live.send({ t: 'react', e: b.dataset.e }); b.classList.remove('pop'); void b.offsetWidth; b.classList.add('pop'); });
