@@ -62,7 +62,7 @@ export class TheatreHall extends DurableObject {
       a.name = clean(m.name, 20) || 'Guest'; a.pid = clean(m.pid, 64); if (a.pid) a.id = 'p:' + a.pid.slice(0, 40);
       a.host = !!(this.env.THEATRE_ADMIN && m.admin && m.admin === this.env.THEATRE_ADMIN);
       ws.serializeAttachment(a);
-      this.send(ws, { t: 'state', me: a.id, count: this.ctx.getWebSockets().length, seats: this.seatMap(), top: this.top(), chat: this.chat.slice(-40), quiz: this.quiz && { qid: this.quiz.qid, from: this.quiz.from, q: this.quiz.q, opts: this.quiz.opts, ends: this.quiz.ends } });
+      this.send(ws, { t: 'state', me: a.id, count: this.ctx.getWebSockets().length, seats: this.seatMap(), top: this.top(), chat: this.chat.slice(-40), next: await this.ctx.storage.getAlarm(), quiz: this.quiz && { qid: this.quiz.qid, from: this.quiz.from, q: this.quiz.q, opts: this.quiz.opts, ends: this.quiz.ends } });
       this.broadcastSeats();
       // invite links: the friend who joins earns the inviter 150 points on tonight's board (once per friend per day)
       const ref = clean(m.ref, 64), uid = m.token ? await verifyUser(String(m.token)) : null;
@@ -119,7 +119,7 @@ export class TheatreHall extends DurableObject {
   // alarm drives the quiz: start a round, then reveal it ANSWER_MS later
   async alarm() {
     if (!this.ctx.getWebSockets().length) { this.quiz = null; this.board = {}; await this.save(); return; }   // nobody here: sleep and reset the show
-    if (this.quiz && !this.quiz.revealed) { this.reveal(); await this.save(); await this.ctx.storage.setAlarm(Date.now() + QUIZ_EVERY_MS); return; }
+    if (this.quiz && !this.quiz.revealed) { this.reveal(); await this.save(); const at = Date.now() + QUIZ_EVERY_MS; await this.ctx.storage.setAlarm(at); this.all({ t: 'next', at }); return; }
     const q = await this.pickQuestion();
     if (q) {
       const now = Date.now();

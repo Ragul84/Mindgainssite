@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@1,700&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box}html,body{margin:0;height:100%;background:#07040a;overflow:hidden;font-family:Nunito,system-ui,sans-serif;color:#fff}
-#gl,#css{position:fixed;inset:0}#css{z-index:0}#gl{z-index:1;background:transparent}#css,#css>div{pointer-events:none}#css .yt{pointer-events:none}
+#gl,#css{position:fixed;inset:0}#gl{touch-action:none}#css{z-index:0}#gl{z-index:1;background:transparent}#css,#css>div{pointer-events:none}#css .yt{pointer-events:none}
 #vfs{position:fixed;inset:0;z-index:50;background:#000}#vfs iframe{width:100%;height:100%;border:0}#vfs .vback{position:absolute;top:64px;right:12px;z-index:2;font:700 13px system-ui;letter-spacing:.08em;color:#ffd23f;background:rgba(0,0,0,.65);border:1px solid #ffd23f;border-radius:20px;padding:7px 14px;cursor:pointer}
 .top{position:fixed;left:14px;right:14px;top:12px;display:flex;justify-content:space-between;align-items:center;z-index:5}
 .brand{font-family:'Lilita One';font-size:19px;text-shadow:0 2px 8px #000}.brand b{color:#ffcf3f;font-weight:400}
@@ -154,6 +154,38 @@ body.quizon .sheet,body.quizon .angles,body.quizon .halls{visibility:hidden}
 body.intro .top,body.intro .halls,body.intro .tip,body.intro .angles,body.intro .sheet,body.intro .reacts,body.intro .top5,body.intro .quizc,body.intro .seatcard{display:none!important}
 .skip{display:none;position:fixed;right:16px;bottom:24px;z-index:9;background:rgba(0,0,0,.55);color:var(--g);border:1px solid rgba(243,212,138,.6);border-radius:2px;padding:8px 14px;font:700 11px Inter;letter-spacing:.2em}
 body.intro .skip{display:block}
+
+/* ===================== phones: video first, everything else on demand ===================== */
+.mob{display:none}
+.qsoon{position:fixed;left:50%;top:38%;transform:translate(-50%,-50%);z-index:30;pointer-events:none;font:900 15px Inter;letter-spacing:.06em;color:#1a1206;background:var(--g);padding:10px 16px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.5);white-space:nowrap}
+.qsoon.go{animation:qs 1s ease-out}@keyframes qs{0%{opacity:0;transform:translate(-50%,-30%) scale(.8)}100%{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+body.quizon .chat{visibility:hidden!important}
+@media (max-width:760px){
+  .top .brand,.top .live,.halls,.tip,.angles,.sheet,.marq,.reacts{display:none!important}
+  .top{padding:8px 10px!important;background:linear-gradient(180deg,rgba(0,0,0,.65),transparent)!important;border:0!important}
+  .mob{display:block}
+  .mhall,.mview{position:fixed;top:10px;z-index:9;height:38px;min-width:38px;padding:0 10px;border-radius:12px;border:1px solid rgba(243,212,138,.45);background:rgba(10,10,12,.7);color:var(--g);font:800 12px Inter}
+  .mhall,.mview{position:static!important}.mview{font-size:16px}
+  .top{display:flex!important;align-items:center;gap:8px;height:58px;box-sizing:border-box}.top .back,.top .ib{width:38px!important;height:38px!important;min-width:0!important;padding:0!important;display:grid;place-items:center;border-radius:12px!important;font-size:16px!important}.top #snd{margin-left:auto!important}
+  .mcap{position:fixed;left:14px;right:14px;top:66px;z-index:8;display:flex;align-items:center;gap:7px;color:#eee6d6;font:700 12px Inter;white-space:nowrap;overflow:hidden;text-shadow:0 1px 4px #000}
+  .mcap span{overflow:hidden;text-overflow:ellipsis}.mcap i{flex:none;width:7px;height:7px;border-radius:50%;background:#ff3b5c;box-shadow:0 0 8px #ff3b5c;animation:lePulse 1.2s infinite}
+  .mfab{position:fixed;right:12px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:9;display:flex;flex-direction:column;gap:10px}
+  .mfab button{position:relative;width:52px;height:52px;border-radius:50%;border:1px solid rgba(243,212,138,.5);background:rgba(10,10,12,.78);backdrop-filter:blur(6px);font-size:22px;color:#fff}
+  .mfab b{position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);background:var(--g);color:#1a1206;font:900 9px Inter;padding:1px 5px;border-radius:7px}
+  .mfab span:not(:empty){position:absolute;top:-3px;right:-3px;min-width:18px;height:18px;border-radius:9px;background:#ff2d55;color:#fff;font:800 10px/18px Inter;padding:0 4px}
+  /* chat = bottom sheet; while it is open nothing else floats */
+  .chat.min{display:none!important}
+  .chat:not(.min){left:0!important;right:0!important;bottom:0!important;top:auto!important;width:auto!important;height:52vh!important;max-height:none!important;border-radius:18px 18px 0 0!important;border-width:1px 0 0!important;padding-bottom:env(safe-area-inset-bottom)}
+  .chat-h i{transform:rotate(-90deg)}
+  body.chaton .mfab,body.chaton .mcap,body.chaton .top5,body.chaton .seatcard{display:none!important}
+  .top5{top:96px!important;bottom:auto!important;right:12px!important;left:auto!important;transform:scale(.85);transform-origin:top right}
+  body:not(.showtop) .top5{display:none!important}
+  /* quiz: the only thing on screen */
+  body.quizon .mfab,body.quizon .mcap,body.quizon .top5,body.quizon .mhall,body.quizon .mview{display:none!important}
+  .quizc{bottom:0!important;left:0!important;right:0!important;transform:none!important;width:auto!important;border-radius:18px 18px 0 0!important;padding:14px 14px calc(16px + env(safe-area-inset-bottom))!important}
+  .qq{font-size:17px!important}.qo button{padding:12px 8px!important;font-size:13.5px!important}
+  .seatcard{top:84px!important}
+}
 </style>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
 </head>
@@ -164,6 +196,10 @@ body.intro .skip{display:block}
 <button class="skip" id="skip">SKIP ›</button>
 
 <div class="top"><a class="back" href="/nationlap/" aria-label="Back">‹</a><div class="brand">MINDGAINS · THEATRE</div><span class="live" id="live">● LIVE</span><button class="ib" id="snd" title="Sound">🔇</button><button class="ib" id="fs" title="Full screen">⛶</button></div>
+<button class="mob mhall" id="mHall">EN</button><button class="mob mview" id="mView" aria-label="Change view">🎥</button>
+<div class="mob mcap" id="mCap"><i></i><span id="mCapT">LIVE</span></div>
+<div class="mob mfab"><button id="mChat" aria-label="Chat">💬<span id="mChatN"></span></button><button id="mInv" aria-label="Invite a friend">🎟️<b>+150</b></button></div>
+<div class="qsoon" id="qSoon" hidden></div>
 <div class="marq" hidden><div class="mq" id="mq"></div></div>
 <div class="halls" id="halls"></div>
 <div class="tip" id="tip">SWIPE TO LOOK · PINCH TO ZOOM · TAP THE FLOOR TO MOVE · DOUBLE-TAP FOR YOUR SEAT</div>
@@ -375,6 +411,7 @@ function renderTT() {
   document.getElementById('live').textContent = '● LIVE';
   const next = c.list.find((x) => mins(x.from) > c.m); const left = next ? mins(next.from) - c.m : null;
   document.getElementById('nowT').textContent = c.cur && c.cur.title ? c.cur.title.split('|')[0].trim() : c.b ? c.b.block : 'Off air';
+  document.getElementById('mCapT').textContent = document.getElementById('nowT').textContent; document.getElementById('mHall').textContent = hall === 'main' ? 'EN' : 'தமிழ்';
   const mqt = `${c.subject.toUpperCase()} DAY ✦ ${c.H.name.toUpperCase()} ✦ ${next ? 'NEXT · ' + next.block.toUpperCase() + ' AT ' + next.from + ' ✦ ' : ''}6 PM PREMIERE · MIGA: YESTERDAY'S CURRENT AFFAIRS ✦ `;
   const mq = document.getElementById('mq'); if (mq.dataset.t !== mqt) { mq.dataset.t = mqt; mq.textContent = mqt + mqt + mqt; }
   document.getElementById('nowS').textContent = (c.epNo ? `EPISODE ${c.epNo} OF ${c.epOf} · ` : '') + `${c.H.name} · ${c.subject} day` + (c.vid ? '' : '') + (next ? ` · next in ${left >= 60 ? Math.floor(left / 60) + 'h ' : ''}${left % 60}m` : '');
@@ -450,7 +487,7 @@ const VIEWS = { wide: [new THREE.Vector3(0, 9.8, 4), new THREE.Vector3(0, 6.5, -
 const camPos = new THREE.Vector3(0, 11.8, 11.5), camLook = new THREE.Vector3(0, 6, -16), tgtPos = new THREE.Vector3(), tgtLook = new THREE.Vector3();
 let flying = true, dragged = 0, zoomF = 1, spot = null, lastTap = 0;
 let mode = 'wide';
-function fly(v) { flying = true; mode = v; zoomF = 1; document.body.classList.toggle('seatmode', v === 'seat'); try { orbit.enabled = false; } catch (e) {} if (v === 'seat') { tgtPos.copy(mine.eye); tgtLook.set(0, 7, -16); } else if (v === 'spot') { tgtPos.copy(spot[0]); tgtLook.copy(spot[1]); } else { tgtPos.copy(VIEWS[v][0]); tgtLook.copy(VIEWS[v][1]); }
+function fly(v) { flying = true; mode = v; zoomF = 1; document.body.classList.toggle('seatmode', v === 'seat'); try { orbit.enabled = false; } catch (e) {} if (v === 'seat') { tgtPos.copy(mine.eye); if (W() < H()) tgtPos.y += .9; tgtLook.set(0, 7, -16); } else if (v === 'spot') { tgtPos.copy(spot[0]); tgtLook.copy(spot[1]); } else { tgtPos.copy(VIEWS[v][0]); tgtLook.copy(VIEWS[v][1]); }
   document.querySelectorAll('.angles button').forEach((b) => b.classList.toggle('on', b.dataset.v === v)); }
 fly('wide'); window.__dbg = () => ({ p: cam.position.toArray().map((v) => +v.toFixed(1)), mode, flying, t: tgtPos.toArray() });
 document.querySelectorAll('.angles button').forEach((b) => b.onclick = () => fly(b.dataset.v));
@@ -515,6 +552,7 @@ const live = { ws: null, hall: null, n: 0, quiz: null, picked: -1,
   send(m) { if (this.ws && this.ws.readyState === 1) this.ws.send(JSON.stringify(m)); },
   sit(k) { this.send({ t: 'sit', seat: k }); },
   on(m) {
+    if (m.next || m.t === 'next') quizSoon(m.at || m.next);
     if (m.t === 'state' && m.chat) { chatL.innerHTML = ''; m.chat.forEach(addChat); document.getElementById('chatN').textContent = ''; }
     if (m.t === 'state' || m.t === 'seats') { this.n = m.count; paintSeats(m.seats); if (m.top) paintTop(m.top); if (m.quiz) showQuiz(m.quiz); renderCount(); }
     else if (m.t === 'taken') { const t = seatByKey.get(m.seat); if (t) { t.st = 'taken'; const n = nearestFree(t); if (n) { markMine(n); this.sit(n.row + n.n); flashCard(`${m.seat} was taken · you're in ${n.row}${n.n}`); } } }
@@ -542,7 +580,14 @@ function showQuiz(q) { if (q.ends < Date.now()) return; live.quiz = q; live.pick
   document.getElementById('qn').textContent = 'Answer before the timer runs out';
   document.querySelectorAll('#qo button').forEach((b) => b.onclick = () => { if (live.picked >= 0) return; live.picked = +b.dataset.i; b.classList.add('sel'); live.send({ t: 'ans', qid: q.qid, i: live.picked }); });
   clearInterval(qTimer); qTimer = setInterval(() => { const left = Math.max(0, q.ends - Date.now()); document.getElementById('qbar').style.width = (left / 150) + '%'; document.getElementById('qk').textContent = (q.from ? `FROM TODAY'S EPISODE · ${q.from.toUpperCase()} · ` : 'MIGA ASKS · ') + `${Math.ceil(left / 1000)} S`; if (!left) clearInterval(qTimer); }, 250); }
-function reveal(m) { if (!live.quiz || m.qid !== live.quiz.qid) return; clearInterval(qTimer);
+let soonT = [];
+function quizSoon(at) { soonT.forEach(clearTimeout); soonT = []; if (!at) return; const el = document.getElementById('qSoon');
+  const say = (t, ms) => { el.textContent = t; el.hidden = false; el.classList.remove('go'); void el.offsetWidth; el.classList.add('go'); setTimeout(() => { el.hidden = true; }, ms); };
+  const in_ = at - Date.now();
+  if (in_ > 61000) soonT.push(setTimeout(() => say('🧠 MIGA quiz in 1 minute · stay in your seat', 3500), in_ - 60000));
+  if (in_ > 11000) soonT.push(setTimeout(() => say('⏱ Quiz in 10 seconds', 2600), in_ - 10000));
+  for (const n of [3, 2, 1]) if (in_ > n * 1000) soonT.push(setTimeout(() => say(String(n), 900), in_ - n * 1000)); }
+function reveal(m) { if (!live.quiz || m.qid !== live.quiz.qid) return; document.body.classList.add('showtop'); clearTimeout(window.__st); window.__st = setTimeout(() => document.body.classList.remove('showtop'), 9000); clearInterval(qTimer);
   document.querySelectorAll('#qo button').forEach((b, i) => { if (i === m.correct) b.classList.add('ok'); else if (i === live.picked) b.classList.add('no'); });
   if (live.picked === m.correct) awardXp(20);
   document.getElementById('qk').textContent = live.picked === m.correct ? 'CORRECT ✦ +20 XP · INDIA BOARD' : live.picked < 0 ? 'TIME UP' : 'NOT QUITE';
@@ -563,6 +608,15 @@ const TIER = { 1: ['legend', '👑 #1 TODAY'], 2: ['epic', '⚡ #2 TODAY'], 3: [
 let replyTo = null;
 function setReply(m) { replyTo = m; const r = document.getElementById('chatR'); r.hidden = !m; if (m) { document.getElementById('chatRt').innerHTML = `↩ Replying to <b>${esc(m.name)}</b>: ${esc(m.text.slice(0, 50))}`; chatBox.classList.remove('min'); chatI.focus(); } }
 document.getElementById('chatRx').onclick = () => setReply(null);
+const setChat = (open) => { chatBox.classList.toggle('min', !open); document.body.classList.toggle('chaton', open); document.getElementById('mChatN').textContent = ''; if (open) chatL.scrollTop = chatL.scrollHeight; };
+document.getElementById('mChat').onclick = () => setChat(true);
+document.getElementById('chatH').addEventListener('click', () => document.body.classList.toggle('chaton', !chatBox.classList.contains('min')));
+document.getElementById('mInv').onclick = () => document.getElementById('inv').click();
+document.getElementById('mHall').onclick = () => { const b = [...document.querySelectorAll('#halls button')].find((x) => !x.classList.contains('on')); if (b) b.click(); };
+{ const t = document.querySelector('.top'), b = t.querySelector('.back'); b.after(document.getElementById('mHall'), document.getElementById('mView')); }
+document.getElementById('mCap').onclick = () => document.getElementById('ttbtn').click();
+{ const order = ['seat', 'wide', 'stage', 'balcony'], name = { seat: 'MY SEAT', wide: 'HALL', stage: 'FRONT ROW', balcony: 'BALCONY' };
+  document.getElementById('mView').onclick = () => { const v = order[(order.indexOf(mode) + 1) % order.length]; fly(v); flashCard(name[v]); }; }
 // invite: share the live topic + your seat; every friend who joins puts you 150 points up tonight's board
 document.getElementById('inv').onclick = async () => { if (!signedIn) return askSignIn('invite');
   const topic = (document.getElementById('nowT') || {}).textContent || 'today\'s class', seat = mine ? mine.row + mine.n : '';
@@ -585,7 +639,7 @@ function addChat(m) { const d = document.createElement('div'); const t = m.host 
     const end = () => { clearTimeout(lp); sw = false; d.style.transform = ''; }; d.addEventListener('pointerup', end); d.addEventListener('pointercancel', end); d.addEventListener('pointerleave', end); }
   chatL.appendChild(d);
   while (chatL.children.length > 60) chatL.firstChild.remove(); chatL.scrollTop = chatL.scrollHeight;
-  if (chatBox.classList.contains('min')) { const n = document.getElementById('chatN'); n.textContent = (+n.textContent || 0) + 1; } }
+  if (chatBox.classList.contains('min')) { for (const id of ['chatN', 'mChatN']) { const n = document.getElementById(id); n.textContent = (+n.textContent || 0) + 1; } } }
 let coolT = 0;
 function cool(ms) { clearInterval(coolT); chatS.disabled = true; const end = Date.now() + ms; const tick = () => { const l = Math.ceil((end - Date.now()) / 1000); if (l <= 0) { clearInterval(coolT); chatS.disabled = false; chatS.textContent = 'SEND'; } else chatS.textContent = l + 's'; }; tick(); coolT = setInterval(tick, 250); }
 document.getElementById('chatF').onsubmit = (e) => { e.preventDefault(); const t = chatI.value.trim(); if (!t || chatS.disabled) return; live.send({ t: 'chat', text: t, re: replyTo ? { name: replyTo.name, text: replyTo.text.slice(0, 60) } : null }); chatI.value = ''; setReply(null); cool(10000); };
@@ -647,7 +701,8 @@ addEventListener('resize', () => { cam.aspect = W() / H(); cam.updateProjectionM
 cam.aspect = W() / H(); cam.updateProjectionMatrix();
 let t0 = performance.now();
 (function frame(now) { const dt = Math.min(.05, (now - t0) / 1000); t0 = now; const k = 1 - Math.pow(.02, dt);
-  { const f = (mode === 'seat' || mode === 'spot' ? 92 : 66) * zoomF; if (Math.abs(cam.fov - f) > .1) { cam.fov += (f - cam.fov) * k; cam.updateProjectionMatrix(); } }
+  { const asp = W() / H(), base = mode === 'seat' || mode === 'spot' ? 92 : 66, h = mode === 'seat' || mode === 'spot' ? 74 : 62;
+    const f = (asp < 1 ? Math.min(118, 2 * Math.atan(Math.tan(h * Math.PI / 360) / asp) * 180 / Math.PI) : base) * zoomF; if (Math.abs(cam.fov - f) > .1) { cam.fov += (f - cam.fov) * k; cam.updateProjectionMatrix(); } }
   if (INTRO.on) { introStep(now); renderer.render(scene, cam); css.render(cssScene, cam); requestAnimationFrame(frame); return; }
   if (flying) { camPos.lerp(tgtPos, k); camLook.lerp(tgtLook, k); cam.position.copy(camPos); orbit.target.copy(camLook); cam.lookAt(camLook); if (camPos.distanceTo(tgtPos) < .05) { flying = false; setLook(); } }
   else { const b = tgtLook.clone().sub(tgtPos), by = Math.atan2(b.x, b.z) + yaw, bp = Math.atan2(b.y, Math.hypot(b.x, b.z)) + pitch, cp = Math.max(-1.45, Math.min(1.45, bp)), d = new THREE.Vector3(Math.sin(by) * Math.cos(cp), Math.sin(cp), Math.cos(by) * Math.cos(cp)); cam.position.copy(tgtPos); cam.lookAt(tgtPos.clone().add(d)); }
