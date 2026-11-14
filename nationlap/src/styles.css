@@ -2522,3 +2522,14 @@ body.touch-mode[data-state="title"] .hof-strip { width: auto !important; }
 ::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#ffe066,#ffb21f);border-radius:8px;border:2px solid rgba(20,18,50,.35)}
 ::-webkit-scrollbar-thumb:hover{background:#ffd23f}
 ::-webkit-scrollbar-corner{background:transparent}
+/* ---- phones: let the world show; slim live strip, Resume as a small tag on the play button ---- */
+@media (max-width:760px){
+  .title-screen .title-row,.title-screen .resume-btn:not(.hidden) ~ .title-row{bottom:118px!important}
+  .title-screen .resume-btn{left:auto!important;right:26px!important;bottom:104px!important;width:auto!important;z-index:3;font-size:11px!important;padding:4px 10px!important;border-radius:999px!important;border:2px solid #fff!important;background:#2fbf71!important;color:#fff!important;box-shadow:0 3px 0 #17733f!important;letter-spacing:.04em}
+  .title-screen .live-event,.title-screen .resume-btn:not(.hidden) ~ .live-event{bottom:196px!important;left:16px!important;right:auto!important;width:auto!important;max-width:calc(100% - 32px);padding:7px 14px 7px 8px!important;gap:8px!important;border-width:2px!important;border-radius:999px!important;animation:none!important;box-shadow:0 4px 0 #6b3a00!important;background:rgba(43,15,63,.88)!important}
+  .title-screen .live-event .le-thumb,.title-screen .live-event .le-s,.title-screen .live-event .le-go,.title-screen .live-event .le-shine{display:none!important}
+  .title-screen .live-event .le-txt{flex-direction:row!important;align-items:center;gap:8px}
+  .title-screen .live-event .le-k{font-size:10px!important}
+  .title-screen .live-event .le-t{font-size:14px!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .title-screen .live-event::after{content:'›';font-family:var(--display);font-size:20px;color:#ffd23f;margin-left:2px}
+}
