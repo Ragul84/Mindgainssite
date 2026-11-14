@@ -182,7 +182,8 @@ import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.j
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { createKartModel } from '/nationlap/src/models.js';
 import { playerCharacter } from '/nationlap/src/player.js';
-import { createLeaderboard, getPlayerId } from '/nationlap/src/lb.js';
+import { createLeaderboard, getPlayerId, setAccountIdentity } from '/nationlap/src/lb.js';
+import * as account from '/nationlap/src/account.js';
 { const k = new URLSearchParams(location.search).get('admin'); if (k) { try { localStorage.setItem('mgt_admin', k); } catch (e) {} history.replaceState(null, '', location.pathname); } }
 const LB = createLeaderboard();
 function awardXp(n) { let xp = 0; try { xp = (parseInt(localStorage.getItem('tkr_xp') || '0', 10) || 0) + n; localStorage.setItem('tkr_xp', String(xp)); } catch (e) {} LB.submitScore(xp); }
@@ -482,7 +483,7 @@ addEventListener('pointermove', (e) => { if (!pts.has(e.pointerId)) return; pts.
 const ptUp = (e) => { pts.delete(e.pointerId); if (pts.size < 2) pinch0 = 0; }; addEventListener('pointerup', ptUp); addEventListener('pointercancel', ptUp);
 // ---- live room: real seats, viewer count, MIGA quiz, top 5, reactions
 const seatByKey = new Map(seats.map((s) => [s.row + s.n, s]));
-const myName = (() => { try { const p = JSON.parse(localStorage.getItem('tkr_player_profile') || '{}'); return p.name || ''; } catch { return ''; } })() || 'Guest ' + Math.floor(Math.random() * 900 + 100);
+let myName = (() => { try { const p = JSON.parse(localStorage.getItem('tkr_player_profile') || '{}'); return p.name || ''; } catch { return ''; } })() || 'Guest ' + Math.floor(Math.random() * 900 + 100);
 const live = { ws: null, hall: null, n: 0, quiz: null, picked: -1,
   connect() { if (this.hall === hall && this.ws && this.ws.readyState < 2) return; try { this.ws && this.ws.close(); } catch {} this.hall = hall;
     const ws = new WebSocket((location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/api/theatre/' + hall + '/ws'); this.ws = ws;
@@ -559,6 +560,9 @@ document.getElementById('chatH').onclick = () => { chatBox.classList.toggle('min
 if (innerWidth < 760) chatBox.classList.add('min');
 chatBox.addEventListener('pointerdown', (e) => e.stopPropagation()); chatBox.addEventListener('pointerup', (e) => e.stopPropagation());
 setTimeout(() => live.connect(), 300);
+// signed in on mindgains.ai -> same account here: real name in chat, same player id as the NationLap board (for top-3 frames)
+account.init().then(() => { const bind = (u) => { if (!u) return; const name = account.accountName(); setAccountIdentity({ id: u.id, name }); if (name) myName = name.slice(0, 20);
+  live.send({ t: 'hello', name: myName, pid: u.id, admin: (() => { try { return localStorage.getItem('mgt_admin') || ''; } catch (e) { return ''; } })() }); }; bind(account.currentUser()); account.onChange(bind); }).catch(() => {});
 // sound: browsers only allow sound after a tap, so ask once with a pulsing button
 const snd = document.getElementById('snd'); snd.classList.add('pulse');
 snd.onclick = () => { soundOn = !soundOn; if (soundOn) { if (ytP && ytP.unMute) { ytP.unMute(); ytP.setVolume(100); ytP.playVideo(); } else if (ytNow) { const id = ytNow, p = ytPos(); ytNow = ''; playOnScreen(id, p); } } else yCmd('mute'); snd.textContent = soundOn ? '🔊' : '🔇'; snd.classList.toggle('pulse', !soundOn); };
