@@ -157,7 +157,7 @@ body.intro .skip{display:block}
 
 /* ===================== phones: video first, everything else on demand ===================== */
 .mob{display:none}
-.qsoon{position:fixed;left:50%;top:38%;transform:translate(-50%,-50%);z-index:30;pointer-events:none;font:900 15px Inter;letter-spacing:.06em;color:#1a1206;background:var(--g);padding:10px 16px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.5);white-space:nowrap}
+.qsoon{position:fixed;left:50%;top:27%;transform:translate(-50%,-50%);z-index:30;pointer-events:none;font:900 15px Inter;letter-spacing:.06em;color:#1a1206;background:var(--g);padding:10px 16px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.5);white-space:nowrap}
 .qsoon.go{animation:qs 1s ease-out}@keyframes qs{0%{opacity:0;transform:translate(-50%,-30%) scale(.8)}100%{opacity:1;transform:translate(-50%,-50%) scale(1)}}
 body.quizon .chat{visibility:hidden!important}
 @media (max-width:760px){
@@ -166,8 +166,8 @@ body.quizon .chat{visibility:hidden!important}
   .mob{display:block}
   .mhall,.mview{position:fixed;top:10px;z-index:9;height:38px;min-width:38px;padding:0 10px;border-radius:12px;border:1px solid rgba(243,212,138,.45);background:rgba(10,10,12,.7);color:var(--g);font:800 12px Inter}
   .mhall,.mview{position:static!important}.mview{font-size:16px}
-  .top{display:flex!important;align-items:center;gap:8px;height:58px;box-sizing:border-box}.top .back,.top .ib{width:38px!important;height:38px!important;min-width:0!important;padding:0!important;display:grid;place-items:center;border-radius:12px!important;font-size:16px!important}.top #snd{margin-left:auto!important}
-  .mcap{position:fixed;left:14px;right:14px;top:66px;z-index:8;display:flex;align-items:center;gap:7px;color:#eee6d6;font:700 12px Inter;white-space:nowrap;overflow:hidden;text-shadow:0 1px 4px #000}
+  .top{display:flex!important;align-items:center;gap:8px;height:58px;box-sizing:border-box}.top{top:0!important;margin:0!important}.top .back,.top .ib,.top .mob{width:40px!important;height:40px!important;min-width:0!important;padding:0!important;display:grid;place-items:center;border-radius:12px!important;font-size:16px!important}.top #snd{margin-left:auto!important}
+  .mcap{position:fixed;left:14px;right:14px;top:calc(var(--topb,70px) + 10px);z-index:8;display:flex;align-items:center;gap:7px;color:#eee6d6;font:700 12px Inter;white-space:nowrap;overflow:hidden;text-shadow:0 1px 4px #000}
   .mcap span{overflow:hidden;text-overflow:ellipsis}.mcap i{flex:none;width:7px;height:7px;border-radius:50%;background:#ff3b5c;box-shadow:0 0 8px #ff3b5c;animation:lePulse 1.2s infinite}
   .mfab{position:fixed;right:12px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:9;display:flex;flex-direction:column;gap:10px}
   .mfab button{position:relative;width:52px;height:52px;border-radius:50%;border:1px solid rgba(243,212,138,.5);background:rgba(10,10,12,.78);backdrop-filter:blur(6px);font-size:22px;color:#fff}
@@ -195,7 +195,7 @@ body.quizon .chat{visibility:hidden!important}
 <div class="vig"></div>
 <button class="skip" id="skip">SKIP ›</button>
 
-<div class="top"><a class="back" href="/nationlap/" aria-label="Back">‹</a><div class="brand">MINDGAINS · THEATRE</div><span class="live" id="live">● LIVE</span><button class="ib" id="snd" title="Sound">🔇</button><button class="ib" id="fs" title="Full screen">⛶</button></div>
+<div class="top"><a class="back" href="/nationlap/" aria-label="Back"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></a><div class="brand">MINDGAINS · THEATRE</div><span class="live" id="live">● LIVE</span><button class="ib" id="snd" title="Sound">🔇</button><button class="ib" id="fs" title="Full screen">⛶</button></div>
 <button class="mob mhall" id="mHall">EN</button><button class="mob mview" id="mView" aria-label="Change view">🎥</button>
 <div class="mob mcap" id="mCap"><i></i><span id="mCapT">LIVE</span></div>
 <div class="mob mfab"><button id="mChat" aria-label="Chat">💬<span id="mChatN"></span></button><button id="mInv" aria-label="Invite a friend">🎟️<b>+150</b></button></div>
@@ -614,6 +614,7 @@ document.getElementById('chatH').addEventListener('click', () => document.body.c
 document.getElementById('mInv').onclick = () => document.getElementById('inv').click();
 document.getElementById('mHall').onclick = () => { const b = [...document.querySelectorAll('#halls button')].find((x) => !x.classList.contains('on')); if (b) b.click(); };
 { const t = document.querySelector('.top'), b = t.querySelector('.back'); b.after(document.getElementById('mHall'), document.getElementById('mView')); }
+{ const fit = () => document.documentElement.style.setProperty('--topb', document.querySelector('.top').getBoundingClientRect().bottom + 'px'); fit(); addEventListener('resize', fit); }
 document.getElementById('mCap').onclick = () => document.getElementById('ttbtn').click();
 { const order = ['seat', 'wide', 'stage', 'balcony'], name = { seat: 'MY SEAT', wide: 'HALL', stage: 'FRONT ROW', balcony: 'BALCONY' };
   document.getElementById('mView').onclick = () => { const v = order[(order.indexOf(mode) + 1) % order.length]; fly(v); flashCard(name[v]); }; }
