@@ -53,11 +53,25 @@ export class TheatreHall extends DurableObject {
     let m; try { m = JSON.parse(raw); } catch { return; }
     const a = ws.deserializeAttachment() || {};
     if (m.t === 'hello') {
-      a.name = clean(m.name, 20) || 'Guest'; a.pid = clean(m.pid, 64);
+      a.name = clean(m.name, 20) || 'Guest'; a.pid = clean(m.pid, 64); if (a.pid) a.id = 'p:' + a.pid.slice(0, 40);
       a.host = !!(this.env.THEATRE_ADMIN && m.admin && m.admin === this.env.THEATRE_ADMIN);
       ws.serializeAttachment(a);
       this.send(ws, { t: 'state', me: a.id, count: this.ctx.getWebSockets().length, seats: this.seatMap(), top: this.top(), chat: this.chat.slice(-40), quiz: this.quiz && { qid: this.quiz.qid, from: this.quiz.from, q: this.quiz.q, opts: this.quiz.opts, ends: this.quiz.ends } });
       this.broadcastSeats();
+      // invite links: the friend who joins earns the inviter 150 points on tonight's board (once per friend per day)
+      const ref = clean(m.ref, 64);
+      if (ref && a.pid && ref !== a.pid) {
+        const day = new Date(Date.now() + 5.5 * 3600e3).toISOString().slice(0, 10), k = 'ref:' + day + ':' + a.pid;
+        if (!(await this.ctx.storage.get(k))) {
+          await this.ctx.storage.put(k, ref);
+          const rid = 'p:' + ref.slice(0, 40), host = this.peers().find((p) => p.a.id === rid);
+          const b = this.board[rid] || (this.board[rid] = { name: host ? host.a.name : 'Friend', seat: host ? host.a.seat : null, pts: 0, ms: 0 });
+          b.pts += 150; await this.save();
+          if (host) this.send(host.ws, { t: 'refok', name: a.name, pts: 150 });
+          const msg = { name: 'NationLap', sys: 1, text: `🎉 ${a.name} joined on ${b.name}'s invite · ${b.name} +150 pts`, at: 0 };
+          this.chat.push(msg); this.all({ t: 'chat', m: msg }); this.all({ t: 'board', top: this.top() });
+        }
+      }
     } else if (m.t === 'sit') {
       const seat = String(m.seat || '');
       if (!SEAT_RE.test(seat)) return;

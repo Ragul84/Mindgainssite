@@ -98,6 +98,8 @@ body{font-family:Inter,system-ui,sans-serif}
 .cm.epic .tag{background:linear-gradient(90deg,#b388ff,#40c4ff);color:#140a2a}.cm.epic .nm{color:#d6c2ff}
 .cm.elite{border:1.5px solid #e08a4a;background:rgba(40,18,8,.85);box-shadow:0 0 8px rgba(224,138,74,.35)}.cm.elite .tag{background:#e08a4a;color:#2a1000}.cm.elite .nm{color:#ffbf8f}
 @keyframes tierFlow{to{background-position:0 0,300% 0}}
+.inv{flex:none;margin:8px 8px 0;padding:9px 10px;border:1px dashed rgba(243,212,138,.7);border-radius:12px;background:linear-gradient(90deg,rgba(243,212,138,.16),rgba(243,212,138,.04));color:#ffe7a6;font:800 11px Inter;letter-spacing:.08em;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:6px;animation:invG 2.4s ease-in-out infinite}.inv b{background:var(--g);color:#1a1206;border-radius:8px;padding:2px 7px;font-size:10px;letter-spacing:.04em}.chat.min .inv{display:none}@keyframes invG{50%{box-shadow:0 0 14px rgba(243,212,138,.45)}}
+.cm.sys{background:linear-gradient(90deg,rgba(94,232,154,.18),rgba(94,232,154,.04));border:1px solid rgba(94,232,154,.5);color:#c8ffdd;font-weight:700}
 .chat-r{flex:none;display:flex;align-items:center;gap:6px;padding:6px 10px;border-top:1px solid rgba(243,212,138,.2);font-size:11px;color:rgba(244,234,214,.75)}.chat-r[hidden]{display:none}.chat-r span{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.chat-r b{color:var(--g)}
 .chat-r button{background:none;border:0;color:var(--g);cursor:pointer;font-size:13px}.chat.min .chat-r{display:none}
 @media (max-width:760px){.chat{top:96px;bottom:178px;width:min(300px,82vw)}.chat.min{top:auto;bottom:178px}
@@ -168,6 +170,7 @@ body.intro .skip{display:block}
 <div class="chat" id="chat"><button class="chat-h" id="chatH">💬 <em>LIVE CHAT</em> <span id="chatN"></span><i>‹</i></button>
   <div class="chat-l" id="chatL"></div>
   <div class="emo" id="reacts"><button data-e="1f525"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f525/emoji.svg" alt="" loading="lazy"></button><button data-e="1f602"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f602/emoji.svg" alt="" loading="lazy"></button><button data-e="1f92f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f92f/emoji.svg" alt="" loading="lazy"></button><button data-e="1f44f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44f/emoji.svg" alt="" loading="lazy"></button><button data-e="2764_fe0f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/2764_fe0f/emoji.svg" alt="" loading="lazy"></button></div>
+  <button class="inv" id="inv" type="button">🎟️ INVITE A FRIEND <b>+150 PTS each</b></button>
   <div class="chat-r" id="chatR" hidden><span id="chatRt"></span><button type="button" id="chatRx" aria-label="Cancel reply">✕</button></div>
   <form class="chat-f" id="chatF"><input id="chatI" maxlength="140" placeholder="Say something…" autocomplete="off"><button id="chatS">SEND</button></form></div>
 <div class="angles"><button data-v="wide" class="on">HALL</button><button data-v="seat">MY SEAT</button><button data-v="stage">FRONT ROW</button><button data-v="balcony">BALCONY</button></div>
@@ -418,7 +421,10 @@ ROWS.forEach((row, r) => {
   const riser = new THREE.Mesh(new THREE.BoxGeometry(HALL_W - 2, y, 1.55), mat(0x7a2434, .85, 0, { map: carpet, emissive: 0x4a1420, emissiveIntensity: .7 })); riser.position.set(0, y / 2 - .02, z + .2); riser.receiveShadow = true; scene.add(riser);
   const strip = new THREE.Mesh(new THREE.BoxGeometry(HALL_W - 2, .04, .06), new THREE.MeshBasicMaterial({ color: 0xffb347 })); strip.position.set(0, y + .01, z - .55); scene.add(strip);
 });
-let mine = seats.find((s) => s.row === 'G' && s.n === 10);
+const QS = new URLSearchParams(location.search);
+function nearestFree(to) { let best = null, bd = 1e9; for (const s of seats) { if (s.st === 'taken' || s === to) continue; const d = s.g.position.distanceTo(to.g.position); if (d < bd) { bd = d; best = s; } } return best; }
+const nearSeat = (() => { const m = /^([A-L])(\d{1,2})$/.exec(QS.get('near') || ''); return m && seats.find((s) => s.row === m[1] && s.n === +m[2]); })();
+let mine = nearSeat ? nearestFree(nearSeat) : seats.find((s) => s.row === 'G' && s.n === 10);
 function markMine(s) { if (mine && mine !== s) { const c = mine.row < 'E' ? COL.freeB : COL.free; mine.m.color.set(c); mine.m.emissive.set(c); mine.m.emissiveIntensity = .18; }
   mine = s; const sr = document.getElementById('stubRow'); if (sr) sr.textContent = s.row + s.n; s.m.color.set(COL.me); s.m.emissive.set(COL.me); s.m.emissiveIntensity = .9; }
 markMine(mine);
@@ -488,7 +494,7 @@ let myName = (() => { try { const p = JSON.parse(localStorage.getItem('tkr_playe
 const live = { ws: null, hall: null, n: 0, quiz: null, picked: -1,
   connect() { if (this.hall === hall && this.ws && this.ws.readyState < 2) return; try { this.ws && this.ws.close(); } catch {} this.hall = hall;
     const ws = new WebSocket((location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/api/theatre/' + hall + '/ws'); this.ws = ws;
-    ws.onopen = () => { ws.send(JSON.stringify({ t: 'hello', name: myName, pid: (() => { try { return getPlayerId(); } catch (e) { return ''; } })(), admin: (() => { try { return localStorage.getItem('mgt_admin') || ''; } catch (e) { return ''; } })() })); if (mine) this.sit(mine.row + mine.n); };
+    ws.onopen = () => { ws.send(JSON.stringify({ t: 'hello', name: myName, ref: QS.get('ref') || '', pid: (() => { try { return getPlayerId(); } catch (e) { return ''; } })(), admin: (() => { try { return localStorage.getItem('mgt_admin') || ''; } catch (e) { return ''; } })() })); if (mine) this.sit(mine.row + mine.n); };
     ws.onmessage = (e) => this.on(JSON.parse(e.data));
     ws.onclose = () => { if (this.ws === ws) setTimeout(() => this.connect(), 3000); }; },
   send(m) { if (this.ws && this.ws.readyState === 1) this.ws.send(JSON.stringify(m)); },
@@ -496,7 +502,9 @@ const live = { ws: null, hall: null, n: 0, quiz: null, picked: -1,
   on(m) {
     if (m.t === 'state' && m.chat) { chatL.innerHTML = ''; m.chat.forEach(addChat); document.getElementById('chatN').textContent = ''; }
     if (m.t === 'state' || m.t === 'seats') { this.n = m.count; paintSeats(m.seats); if (m.top) paintTop(m.top); if (m.quiz) showQuiz(m.quiz); renderCount(); }
-    else if (m.t === 'taken') { const c = document.getElementById('seatcard'); flashCard('Someone just took ' + m.seat); }
+    else if (m.t === 'taken') { const t = seatByKey.get(m.seat); if (t) { t.st = 'taken'; const n = nearestFree(t); if (n) { markMine(n); this.sit(n.row + n.n); flashCard(`${m.seat} was taken · you're in ${n.row}${n.n}`); } } }
+    else if (m.t === 'refok') { awardXp(50); flashCard(`🎉 ${m.name} joined on your invite · +${m.pts} pts · +50 XP`); }
+    else if (m.t === 'board') { if (m.top) paintTop(m.top); }
     else if (m.t === 'quiz') showQuiz(m);
     else if (m.t === 'answered') { if (this.quiz && m.qid === this.quiz.qid) document.getElementById('qn').textContent = `${m.n} of ${this.n} answered`; }
     else if (m.t === 'reveal') reveal(m);
@@ -540,12 +548,21 @@ const TIER = { 1: ['legend', '👑 #1 TODAY'], 2: ['epic', '⚡ #2 TODAY'], 3: [
 let replyTo = null;
 function setReply(m) { replyTo = m; const r = document.getElementById('chatR'); r.hidden = !m; if (m) { document.getElementById('chatRt').innerHTML = `↩ Replying to <b>${esc(m.name)}</b>: ${esc(m.text.slice(0, 50))}`; chatBox.classList.remove('min'); chatI.focus(); } }
 document.getElementById('chatRx').onclick = () => setReply(null);
+// invite: share the live topic + your seat; every friend who joins puts you 150 points up tonight's board
+document.getElementById('inv').onclick = async () => {
+  const topic = (document.getElementById('nowT') || {}).textContent || 'today\'s class', seat = mine ? mine.row + mine.n : '';
+  let pid = ''; try { pid = getPlayerId(); } catch (e) {}
+  const url = `${location.origin}/play/theatre/?hall=${hall}&near=${seat}&ref=${encodeURIComponent(pid)}`;
+  const text = `🎬 I'm watching "${topic.trim()}" LIVE in the NationLap Theatre (seat ${seat}). Come sit next to me 🍿 Live quiz every 4 min: let's top tonight's board together! Free:`;
+  try { if (navigator.share) { await navigator.share({ title: 'NationLap Live', text, url }); return; } } catch (e) { if (e && e.name === 'AbortError') return; }
+  try { await navigator.clipboard.writeText(text + ' ' + url); flashCard('Invite link copied · +150 pts for every friend who joins'); }
+  catch (e) { window.open('https://wa.me/?text=' + encodeURIComponent(text + ' ' + url), '_blank'); } };
 function addChat(m) { const d = document.createElement('div'); const t = m.host ? null : TIER[m.rank];
-  d.className = 'cm' + (m.name === myName ? ' me' : '') + (m.host ? ' host' : '') + (t ? ' ' + t[0] : '');
+  d.className = 'cm' + (m.sys ? ' sys' : '') + (m.name === myName ? ' me' : '') + (m.host ? ' host' : '') + (t ? ' ' + t[0] : '');
   d.innerHTML = (m.re ? `<div class="cm-re">↩ <b>${esc(m.re.name)}</b> ${esc(m.re.text)}</div>` : '') +
     (m.host ? '<i class="tag">HOST</i>' : t ? `<i class="tag">${t[1]}</i>` : '') +
     `<b class="nm">${esc(m.name)}${m.seat ? ' <small>' + esc(m.seat) + '</small>' : ''}</b> <span class="tx">${esc(m.text)}</span>` +
-    (m.at ? '<button class="rp" aria-label="Reply">↩</button>' : '');
+    (m.at ? '<button class="rp" aria-label="Reply">↩</button>' : ''); if (m.sys) d.innerHTML = esc(m.text);
   if (m.at) { const rb = d.querySelector('.rp'); rb.onclick = () => setReply(m);
     let lp = 0, sx = 0, sy = 0, sw = false;
     d.addEventListener('pointerdown', (e) => { sx = e.clientX; sy = e.clientY; sw = true; lp = setTimeout(() => { sw = false; navigator.vibrate && navigator.vibrate(15); setReply(m); }, 480); });
@@ -563,7 +580,7 @@ chatBox.addEventListener('pointerdown', (e) => e.stopPropagation()); chatBox.add
 setTimeout(() => live.connect(), 300);
 // signed in on mindgains.ai -> same account here: real name in chat, same player id as the NationLap board (for top-3 frames)
 account.init().then(() => { const bind = (u) => { if (!u) return; const name = account.accountName(); setAccountIdentity({ id: u.id, name }); if (name) myName = name.slice(0, 20);
-  live.send({ t: 'hello', name: myName, pid: u.id, admin: (() => { try { return localStorage.getItem('mgt_admin') || ''; } catch (e) { return ''; } })() }); }; bind(account.currentUser()); account.onChange(bind); }).catch(() => {});
+  live.send({ t: 'hello', name: myName, ref: QS.get('ref') || '', pid: u.id, admin: (() => { try { return localStorage.getItem('mgt_admin') || ''; } catch (e) { return ''; } })() }); }; bind(account.currentUser()); account.onChange(bind); }).catch(() => {});
 // sound: browsers only allow sound after a tap, so ask once with a pulsing button
 const snd = document.getElementById('snd'); snd.classList.add('pulse');
 snd.onclick = () => { soundOn = !soundOn; if (soundOn) { if (ytP && ytP.unMute) { ytP.unMute(); ytP.setVolume(100); ytP.playVideo(); } else if (ytNow) { const id = ytNow, p = ytPos(); ytNow = ''; playOnScreen(id, p); } } else yCmd('mute'); snd.textContent = soundOn ? '🔊' : '🔇'; snd.classList.toggle('pulse', !soundOn); };
