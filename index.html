@@ -161,28 +161,34 @@
 <!-- nl-showcase:end -->
 <section class="wrap sec" aria-labelledby="nlt-h">
   <a class="nlt" href="/play/theatre/">
+    <div class="nlt-media"><img src="/assets/nationlap-shots/theatre.jpg?v=2" alt="NationLap Live theatre: a modern 3D cinema hall with a big curved screen and red seats" loading="lazy" decoding="async"><span class="nlt-pill"><i></i>LIVE NOW</span></div>
     <div class="nlt-copy">
-      <span class="nlt-k"><i></i>NationLap Live · free</span>
-      <h2 id="nlt-h">A 24×7 classroom you walk into.</h2>
-      <p>Drive up in your NationLap kart and take a seat in a 3D theatre. Every day a new lesson plays live for everyone: Polity on Monday, History Tuesday, Geography Wednesday, through to a Sunday recap. Tamil TNPSC classes run in their own hall.</p>
-      <ul>
-        <li><b>6 AM</b> newspaper analysis</li>
-        <li><b>6 PM</b> MIGA: yesterday's current affairs</li>
-        <li><b>Live quiz</b> every few minutes, top 5 on screen</li>
-      </ul>
+      <span class="nlt-k">NationLap Live · free · 24×7</span>
+      <h2 id="nlt-h">A cinema hall where class never stops.</h2>
+      <p>Take your seat in a 3D theatre and watch the day's lesson live with everyone else: Polity Monday, History Tuesday, Geography Wednesday, through to a Sunday recap. Tamil TNPSC classes run in their own hall.</p>
+      <div class="nlt-day">
+        <span><b>6 AM</b>Newspaper</span><span><b>7 AM</b>New episode</span><span><b>6 PM</b>MIGA premiere</span><span><b>10 PM</b>One-shot marathon</span>
+      </div>
+      <p class="nlt-sub">Live chat, a quiz every 4 minutes and a top 5 on screen. XP counts towards NationLap.</p>
       <span class="nlt-btn">Enter the theatre <span class="nlt-live" id="nltLive"></span> →</span>
     </div>
-    <img src="/assets/nationlap-shots/theatre.jpg" alt="NationLap Live theatre: a 3D cinema hall with a lecture on screen" loading="lazy" decoding="async">
   </a>
 </section>
 <style>
-.nlt{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:center;padding:28px;border-radius:24px;background:radial-gradient(120% 120% at 0% 0%,#2a1d0c,#0d0907 60%);color:#f6ecd6;text-decoration:none;border:1px solid rgba(243,212,138,.3)}
-.nlt img{width:100%;border-radius:16px;box-shadow:0 20px 50px rgba(0,0,0,.5)}
-.nlt-k{font:700 12px/1 Inter,system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#f3d48a}.nlt-k i{display:inline-block;width:8px;height:8px;border-radius:50%;background:#ff3b5c;margin-right:8px;box-shadow:0 0 10px #ff3b5c}
-.nlt h2{font-size:clamp(24px,3.4vw,36px);margin:12px 0 10px;color:#fff}.nlt p{color:#d9cbb0;line-height:1.55;margin:0 0 14px}
-.nlt ul{list-style:none;padding:0;margin:0 0 18px;display:grid;gap:6px;color:#e9dcbd}.nlt li b{color:#f3d48a;margin-right:6px}
-.nlt-btn{display:inline-block;background:#f3d48a;color:#1a1408;font-weight:800;padding:12px 18px;border-radius:12px}.nlt-live{font-weight:700;font-size:.85em;opacity:.8}
-@media(max-width:760px){.nlt{grid-template-columns:1fr;padding:20px}.nlt img{order:-1}}
+.nlt{display:grid;grid-template-columns:1.15fr 1fr;gap:0;align-items:stretch;border-radius:24px;overflow:hidden;background:#0a0a0d;color:#eee6d6;text-decoration:none;border:1px solid rgba(243,200,107,.28);box-shadow:0 30px 70px rgba(0,0,0,.35);position:relative;transition:transform .2s,box-shadow .2s}
+.nlt:hover{transform:translateY(-3px);box-shadow:0 36px 80px rgba(0,0,0,.45),0 0 0 1px rgba(243,200,107,.5)}
+.nlt::after{content:'';position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,transparent,#f3c86b,transparent)}
+.nlt-media{position:relative;min-height:260px}.nlt-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.nlt-media::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 60%,#0a0a0d)}
+.nlt-pill{position:absolute;left:16px;top:16px;z-index:1;font:800 11px/1 Inter,system-ui,sans-serif;letter-spacing:.14em;color:#fff;background:#e5294a;padding:7px 10px;border-radius:999px}.nlt-pill i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#fff;margin-right:6px;animation:nltp 1.2s infinite}
+@keyframes nltp{50%{opacity:.25}}
+.nlt-copy{padding:30px 32px}
+.nlt-k{font:700 11.5px/1 Inter,system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#f3c86b}
+.nlt h2{font-size:clamp(24px,3.2vw,34px);line-height:1.15;margin:12px 0 10px;color:#fff}.nlt p{color:#b9b2a4;line-height:1.55;margin:0 0 16px}
+.nlt-day{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0 0 14px}.nlt-day span{background:#14141a;border:1px solid rgba(243,200,107,.18);border-radius:12px;padding:9px 8px;font-size:12px;color:#cfc7b6;text-align:center;line-height:1.3}.nlt-day b{display:block;color:#f3c86b;font-size:14px}
+.nlt .nlt-sub{font-size:13.5px;color:#9a9385;margin-bottom:18px}
+.nlt-btn{display:inline-block;background:linear-gradient(180deg,#f6d688,#e9b94f);color:#1a1206;font-weight:800;padding:12px 20px;border-radius:12px}.nlt-live{font-weight:700;font-size:.85em;opacity:.75}
+@media(max-width:760px){.nlt{grid-template-columns:1fr}.nlt-media{min-height:200px;aspect-ratio:16/9}.nlt-media::after{background:linear-gradient(180deg,transparent 55%,#0a0a0d)}.nlt-copy{padding:20px}.nlt-day{grid-template-columns:repeat(2,1fr)}}
 </style>
 <script>
 fetch('/play/theatre/timetable.json').then(r=>r.json()).then(t=>{const d=new Date(),day=['sun','mon','tue','wed','thu','fri','sat'][d.getDay()];const s=t.halls.main.week[day].subject.split(/[ (+]/)[0];const e=document.getElementById('nltLive');if(e)e.textContent='· live now: '+s;}).catch(()=>{});

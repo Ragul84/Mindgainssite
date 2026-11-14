@@ -378,6 +378,7 @@ function renderTT() {
   const on = document.querySelector('#tt .slot.on'); if (on && !renderTT.scrolled) { on.scrollIntoView({ inline: 'start', block: 'nearest' }); renderTT.scrolled = 1; }
   // until the timetable has videos, everyone watches the same filler video, in sync (10-minute loop)
   const FILL = 'jRkBF3HUlgI', nowS = Math.floor(Date.now() / 1000);
+  if (new URLSearchParams(location.search).has('poster')) return playOnScreen(null, 0);
   playOnScreen(new URLSearchParams(location.search).get('yt') || c.vid || FILL, c.vid ? c.at : nowS % 600);
 }
 let SEASON = null, NEWS = null;
