@@ -518,7 +518,7 @@ function showQuiz(q) { if (q.ends < Date.now()) return; live.quiz = q; live.pick
   document.getElementById('qo').innerHTML = q.opts.map((o, i) => `<button data-i="${i}">${String(o).replace(/[<>&]/g, '')}</button>`).join('');
   document.getElementById('qn').textContent = 'Answer before the timer runs out';
   document.querySelectorAll('#qo button').forEach((b) => b.onclick = () => { if (live.picked >= 0) return; live.picked = +b.dataset.i; b.classList.add('sel'); live.send({ t: 'ans', qid: q.qid, i: live.picked }); });
-  clearInterval(qTimer); qTimer = setInterval(() => { const left = Math.max(0, q.ends - Date.now()); document.getElementById('qbar').style.width = (left / 150) + '%'; document.getElementById('qk').textContent = `MIGA ASKS · ${Math.ceil(left / 1000)} S`; if (!left) clearInterval(qTimer); }, 250); }
+  clearInterval(qTimer); qTimer = setInterval(() => { const left = Math.max(0, q.ends - Date.now()); document.getElementById('qbar').style.width = (left / 150) + '%'; document.getElementById('qk').textContent = (q.from ? `FROM TODAY'S EPISODE · ${q.from.toUpperCase()} · ` : 'MIGA ASKS · ') + `${Math.ceil(left / 1000)} S`; if (!left) clearInterval(qTimer); }, 250); }
 function reveal(m) { if (!live.quiz || m.qid !== live.quiz.qid) return; clearInterval(qTimer);
   document.querySelectorAll('#qo button').forEach((b, i) => { if (i === m.correct) b.classList.add('ok'); else if (i === live.picked) b.classList.add('no'); });
   if (live.picked === m.correct) awardXp(20);

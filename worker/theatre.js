@@ -6,6 +6,8 @@
 //   server -> {t:'state', count, seats:{seat:name}, top, quiz?}   {t:'seats', ...}   {t:'quiz', q}
 //             {t:'reveal', qid, correct, pct, top}   {t:'react', e, seat}
 import { DurableObject } from 'cloudflare:workers';
+import TT from '../play/theatre/timetable.json';
+import CH from '../play/theatre/chapters.json';
 
 const DAY_SETS = {"main": {"mon": ["upsc/polity/constitution-features", "upsc/polity/constitutional-bodies", "upsc/polity/dpsp", "upsc/polity/executive", "upsc/polity/federalism", "upsc/polity/fundamental-rights", "upsc/polity/int-relations", "upsc/polity/judiciary", "upsc/polity/local-govt", "upsc/polity/parliament"], "tue": ["upsc/history/ancient-kingdoms", "upsc/history/indus-valley", "upsc/history/medieval-india", "upsc/history/prehistoric"], "wed": ["upsc/geography/agriculture-geo", "upsc/geography/climate", "upsc/geography/environment-eco", "upsc/geography/map-based", "upsc/geography/natural-resources", "upsc/geography/physical-india", "upsc/geography/physical-world", "upsc/geography/population", "upsc/geography/rivers-drainage", "upsc/geography/transport-infra"], "thu": ["upsc/economics/agriculture-eco", "upsc/economics/budget-fiscal", "upsc/economics/economic-reforms", "upsc/economics/industry-msme", "upsc/economics/inflation", "upsc/economics/money-banking", "upsc/economics/national-income", "upsc/economics/poverty-inclusion", "upsc/economics/trade-balance"], "fri": ["upsc/science/biology", "upsc/science/biotech", "upsc/science/chemistry", "upsc/science/defence-tech", "upsc/science/disease-health", "upsc/science/energy", "upsc/science/physics", "upsc/science/space-tech", "upsc/environment/biodiversity", "upsc/environment/climate-change", "upsc/environment/ecology-basics", "upsc/environment/env-laws", "upsc/environment/pollution", "upsc/environment/protected-areas"], "sat": ["upsc/history/1857-revolt", "upsc/history/art-culture", "upsc/history/british-conquest", "upsc/history/gandhi-era", "upsc/history/national-movement", "upsc/history/post-1947"], "sun": ["upsc/polity/constitution-features", "upsc/polity/constitutional-bodies", "upsc/polity/dpsp", "upsc/geography/agriculture-geo", "upsc/geography/climate", "upsc/geography/environment-eco", "upsc/economics/agriculture-eco", "upsc/economics/budget-fiscal", "upsc/economics/economic-reforms"]}, "tnpsc": {"mon": ["tnpsc/polity/constitution-making", "tnpsc/polity/dpsp", "tnpsc/polity/elections", "tnpsc/polity/fundamental-rights", "tnpsc/polity/governance", "tnpsc/polity/judiciary", "tnpsc/polity/local-bodies", "tnpsc/polity/parliament", "tnpsc/polity/preamble", "tnpsc/polity/president-pm", "tnpsc/polity/state-govt", "tnpsc/polity/tn-polity"], "tue": ["tnpsc/history/art-culture", "tnpsc/history/british-rule", "tnpsc/history/chola-pandya", "tnpsc/history/freedom-struggle", "tnpsc/history/gupta-post-gupta", "tnpsc/history/indus-valley", "tnpsc/history/jainism-buddhism", "tnpsc/history/maratha", "tnpsc/history/mauryan", "tnpsc/history/medieval-india", "tnpsc/history/mughal", "tnpsc/history/post-independence", "tnpsc/history/social-reform", "tnpsc/history/tamil-history", "tnpsc/history/unit-viii-tamil-nadu-history-culture", "tnpsc/history/vedic-age", "tnpsc/history/vijayanagara"], "wed": ["tnpsc/geography/earth-universe", "tnpsc/geography/india-climate", "tnpsc/geography/india-physical", "tnpsc/geography/india-resources", "tnpsc/geography/india-rivers", "tnpsc/geography/india-soils", "tnpsc/geography/tn-districts", "tnpsc/geography/tn-geography", "tnpsc/geography/transport-trade", "tnpsc/geography/world-geography", "tnpsc/geography/world-oceans"], "thu": ["tnpsc/economics/agriculture", "tnpsc/economics/banking-finance", "tnpsc/economics/budget-taxation", "tnpsc/economics/current-schemes", "tnpsc/economics/industry", "tnpsc/economics/international-trade", "tnpsc/economics/national-income", "tnpsc/economics/planning", "tnpsc/economics/poverty-welfare", "tnpsc/economics/tn-economy", "tnpsc/economics/unit-ix-development-administration"], "fri": ["tnpsc/science/biology-cells", "tnpsc/science/biology-human", "tnpsc/science/biology-plants", "tnpsc/science/chemistry-acids", "tnpsc/science/chemistry-matter", "tnpsc/science/chemistry-reactions", "tnpsc/science/computer-basics", "tnpsc/science/environment", "tnpsc/science/physics-electricity", "tnpsc/science/physics-motion", "tnpsc/science/physics-optics", "tnpsc/science/science-tech"], "sat": ["tnpsc/tamil/bhakti-literature", "tnpsc/tamil/epic-literature", "tnpsc/tamil/ezhuthu-ilakkanam", "tnpsc/tamil/modern-tamil", "tnpsc/tamil/porul-ilakkanam", "tnpsc/tamil/post-sangam", "tnpsc/tamil/sangam", "tnpsc/tamil/sol-ilakkanam", "tnpsc/tamil/thirukkural", "tnpsc/tamil/tolkappiyam"], "sun": ["tnpsc/history/art-culture", "tnpsc/history/british-rule", "tnpsc/history/chola-pandya", "tnpsc/history/freedom-struggle", "tnpsc/polity/constitution-making", "tnpsc/polity/dpsp", "tnpsc/polity/elections", "tnpsc/polity/fundamental-rights"]}};
 const QUIZ_EVERY_MS = 4 * 60 * 1000, ANSWER_MS = 15000;
@@ -54,7 +56,7 @@ export class TheatreHall extends DurableObject {
       a.name = clean(m.name, 20) || 'Guest'; a.pid = clean(m.pid, 64);
       a.host = !!(this.env.THEATRE_ADMIN && m.admin && m.admin === this.env.THEATRE_ADMIN);
       ws.serializeAttachment(a);
-      this.send(ws, { t: 'state', me: a.id, count: this.ctx.getWebSockets().length, seats: this.seatMap(), top: this.top(), chat: this.chat.slice(-40), quiz: this.quiz && { qid: this.quiz.qid, q: this.quiz.q, opts: this.quiz.opts, ends: this.quiz.ends } });
+      this.send(ws, { t: 'state', me: a.id, count: this.ctx.getWebSockets().length, seats: this.seatMap(), top: this.top(), chat: this.chat.slice(-40), quiz: this.quiz && { qid: this.quiz.qid, from: this.quiz.from, q: this.quiz.q, opts: this.quiz.opts, ends: this.quiz.ends } });
       this.broadcastSeats();
     } else if (m.t === 'sit') {
       const seat = String(m.seat || '');
@@ -99,9 +101,9 @@ export class TheatreHall extends DurableObject {
     const q = await this.pickQuestion();
     if (q) {
       const now = Date.now();
-      this.quiz = { qid: 'q' + now, q: q.question, opts: q.options, correct: q.answer_index, start: now, ends: now + ANSWER_MS, answers: {}, revealed: false };
+      this.quiz = { qid: 'q' + now, from: q.from || '', q: q.question, opts: q.options, correct: q.answer_index, start: now, ends: now + ANSWER_MS, answers: {}, revealed: false };
       await this.save();
-      this.all({ t: 'quiz', qid: this.quiz.qid, q: q.question, opts: q.options, ends: this.quiz.ends });
+      this.all({ t: 'quiz', qid: this.quiz.qid, from: this.quiz.from, q: q.question, opts: q.options, ends: this.quiz.ends });
       await this.ctx.storage.setAlarm(now + ANSWER_MS + 500);
     } else await this.ctx.storage.setAlarm(Date.now() + QUIZ_EVERY_MS);
   }
@@ -120,7 +122,16 @@ export class TheatreHall extends DurableObject {
   async pickQuestion() {
     const hall = (await this.ctx.storage.get('hall')) || 'main';
     const d = new Date(Date.now() + 5.5 * 3600e3), day = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'][d.getUTCDay()];
-    const sets = DAY_SETS[hall][day] || DAY_SETS.main.mon;
+    // the chapter the hall is watching right now (same week/block maths as the page), else the day's subject
+    let sets = null;
+    try {
+      const m = d.getUTCHours() * 60 + d.getUTCMinutes(), mins = (hm) => { const [h, x] = hm.split(':').map(Number); return h * 60 + x; };
+      const b = TT.halls[hall].daily.find((x) => { const f = mins(x.from), t = mins(x.to); return t > f ? m >= f && m < t : m >= f || m < t; });
+      const wk = Math.max(0, Math.floor((Date.now() + 5.5 * 3600e3 - Date.parse(TT.season_start + 'T00:00:00Z')) / 6048e5));
+      const list = (CH.chapters[hall] || {})[day] || [], k = b && b.use === 'ep' ? wk : b && b.use === 'ep_prev' ? wk - 1 : -1;
+      if (k >= 0 && list.length) { const c = list[Math.min(k, list.length - 1)]; if (c && c.length) sets = c; }
+    } catch {}
+    const chapter = !!sets; sets = sets || DAY_SETS[hall][day] || DAY_SETS.main.mon;
     for (let tries = 0; tries < 5; tries++) {
       const set = sets[(Math.random() * sets.length) | 0];
       try {
@@ -130,7 +141,7 @@ export class TheatreHall extends DurableObject {
         const qs = (await r.json()).questions.filter((q) => !q.retired && Array.isArray(q.options) && q.options.length === 4 && q.question.length < 160 && Number.isInteger(q.answer_index)
           && q.options.map(strip).every((o) => o.length > 2 && o.length < 60 && !/\b(above|both|neither|none of)\b/i.test(o)) && new Set(q.options.map((o) => strip(o).toLowerCase())).size === 4)
           .map((q) => ({ ...q, options: q.options.map(strip) }));
-        if (qs.length) return qs[(Math.random() * qs.length) | 0];
+        if (qs.length) return { ...qs[(Math.random() * qs.length) | 0], from: chapter ? String(CH.titles[set] || '').replace(/ Quiz$/, '') : '' };
       } catch {}
     }
     return null;
