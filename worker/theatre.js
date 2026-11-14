@@ -23,6 +23,12 @@ async function todayTop() {   // today's NationLap top 3 (best score per player)
     topCache = { at: Date.now(), ids }; } catch { topCache.at = Date.now() - 24e4; }
   return topCache.ids;
 }
+// a signed-in mindgains.ai user: check the Supabase access token, return the account id
+async function verifyUser(token) {
+  if (!token || token.length > 4000) return null;
+  try { const r = await fetch('https://yuntwerxahgmaoduxvqc.supabase.co/auth/v1/user', { headers: { apikey: LBK, Authorization: 'Bearer ' + token } });
+    if (!r.ok) return null; const u = await r.json(); return u && u.id || null; } catch { return null; }
+}
 const clean = (s, n) => String(s || '').replace(/[<>]/g, '').trim().slice(0, n);
 
 export class TheatreHall extends DurableObject {
@@ -59,9 +65,11 @@ export class TheatreHall extends DurableObject {
       this.send(ws, { t: 'state', me: a.id, count: this.ctx.getWebSockets().length, seats: this.seatMap(), top: this.top(), chat: this.chat.slice(-40), quiz: this.quiz && { qid: this.quiz.qid, from: this.quiz.from, q: this.quiz.q, opts: this.quiz.opts, ends: this.quiz.ends } });
       this.broadcastSeats();
       // invite links: the friend who joins earns the inviter 150 points on tonight's board (once per friend per day)
-      const ref = clean(m.ref, 64);
-      if (ref && a.pid && ref !== a.pid) {
-        const day = new Date(Date.now() + 5.5 * 3600e3).toISOString().slice(0, 10), k = 'ref:' + day + ':' + a.pid;
+      const ref = clean(m.ref, 64), uid = m.token ? await verifyUser(String(m.token)) : null;
+      if (uid) { a.uid = uid; a.pid = uid; a.id = 'p:' + uid.slice(0, 40); ws.serializeAttachment(a); }
+      // only signed-in friends count, and only invites from signed-in accounts (uuid ids)
+      if (ref && uid && /^[0-9a-f-]{36}$/i.test(ref) && ref !== uid) {
+        const day = new Date(Date.now() + 5.5 * 3600e3).toISOString().slice(0, 10), k = 'ref:' + day + ':' + uid;
         if (!(await this.ctx.storage.get(k))) {
           await this.ctx.storage.put(k, ref);
           const rid = 'p:' + ref.slice(0, 40), host = this.peers().find((p) => p.a.id === rid);
