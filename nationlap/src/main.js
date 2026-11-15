@@ -1351,6 +1351,12 @@ bus.on('race:end', (d) => {
   resultsShown = true;
   const results = (d && d.results) || world.race.computeResults();
   if (state === 'paused') resume();
+  // 1st place: the Shades Flip celebration over the results (tap to skip). The first win unlocks it.
+  { const me = results.find((r) => r.isPlayer);
+    if (me && me.place === 1) setTimeout(() => import('./shades.js').then(({ playShadesFlip }) => {
+      let first = false; try { first = !localStorage.getItem('nl_shades'); localStorage.setItem('nl_shades', '1'); } catch (e) {}
+      return playShadesFlip(world?.player?.character || playerCharacter(), { title: first ? 'UNLOCKED!' : 'STYLE!', sub: first ? '😎 Shades Flip · your 1st-place celebration' : '1st place 😎' });
+    }).catch((e) => report('shades', e)), 900); }
   setTimeout(() => {
     if (!world || !resultsShown) return;
     audio.playMusic('menu');
