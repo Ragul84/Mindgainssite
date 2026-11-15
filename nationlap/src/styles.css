@@ -2543,3 +2543,5 @@ body.touch-mode[data-state="title"] .hof-strip { width: auto !important; }
 .nl-gate-card p{margin:0 0 16px;font:700 14px/1.45 var(--body,system-ui);color:#dfe4ff}.nl-gate-card em{font-style:normal;color:#ffd23f}
 .nl-gate-go{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;padding:14px;border:0;border-radius:16px;background:#fff;color:#1a1d3a;font:900 16px var(--body,system-ui);cursor:pointer;box-shadow:0 5px 0 #b9c0f0}
 .nl-gate-guest{margin-top:10px;background:none;border:0;color:#c9d0ff;font:800 13px var(--body,system-ui);cursor:pointer;text-decoration:underline}
+.hud-item.item-empty{opacity:0;transform:scale(.6);pointer-events:none}
+.hud-item{transition:opacity .2s,transform .2s}

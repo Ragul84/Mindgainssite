@@ -837,7 +837,18 @@ const menu = new Menu(uiRoot, {
     hud.setItemNames?.(null); hud.setWrongWayLine?.(null); hud.setGateMarks?.(null);
     focusedZone = null; focusedCards = null; focusedLesson = null;
     cupRun = null;
-    startRace({ difficulty: isFamily() ? 'easy' : 'normal', laps: RACE.laps });
+    const go = () => startRace({ difficulty: isFamily() ? 'easy' : 'normal', laps: RACE.laps });
+    // first few times: say what this mode is before the grid
+    let n = 0; try { n = +localStorage.getItem('nl_quick_intro') || 0; } catch (e) {}
+    if (n >= 3) return go();
+    try { localStorage.setItem('nl_quick_intro', String(n + 1)); } catch (e) {}
+    const c = document.createElement('div'); c.className = 'nl-gate';
+    c.innerHTML = `<div class="nl-gate-card"><div class="nl-gate-ic">⚡</div><b>Quick Race</b>
+      <p>No lesson, just race. ${RACE.laps} lap${RACE.laps > 1 ? "s" : ""} against 7 rivals with questions from <em>every subject</em>. Drive through a <em>?</em> box, answer before the next corner, and a right answer fires a speed boost.</p>
+      <button class="nl-gate-go">START RACE</button><button class="nl-gate-guest">Back</button></div>`;
+    document.body.appendChild(c);
+    c.querySelector('.nl-gate-go').onclick = () => { c.remove(); go(); };
+    c.querySelector('.nl-gate-guest').onclick = () => c.remove();
   },
   // Today's affairs: one race whose content is the day's cards rather than a syllabus topic.
   onAffairs: () => startAffairsRace(),

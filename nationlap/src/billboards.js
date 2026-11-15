@@ -266,7 +266,9 @@ export function createLearnBillboards({ scene, track, focusZone, recallCards, af
     zones.push({ id: zone.id, subject: zone.subject, topic: zone.topic, pool: zone.pool, tStart, tEnd });
 
     // spread this topic's facts evenly across its whole share of the lap
-    const facts = factsForZone(zone, focusZone && zone.id === focusZone.id, recallCards, activeZones.length === 1);
+    // quick race (no topic picked): the trackside used to carry ~190 boards; keep one board for
+    // every fourth topic so the road is a road, and the boards that remain are worth reading
+    const facts = (() => { const f = factsForZone(zone, focusZone && zone.id === focusZone.id, recallCards, activeZones.length === 1); return focusZone ? f : zi % 4 === 0 ? f.slice(0, 1) : []; })();
     const n = facts.length;
     facts.forEach((factDef, k) => {
       const t = tStart + ((k + 0.5) / n) * slice;

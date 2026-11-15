@@ -568,6 +568,8 @@ export class HUD {
       this.itemSlot.classList.toggle('filled', has && !spinning);
       if (!player.item || spinning) this.itemCount.textContent = '';
       this.itemHint.style.opacity = has && !spinning ? 1 : 0;
+      // the slot only appears while you have (or are rolling) an item
+      this.itemWrap.classList.toggle('item-empty', !has && !spinning);
     }
 
     // speedometer (km/h-ish: units/s * 3.6)
