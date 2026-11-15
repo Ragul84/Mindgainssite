@@ -81,12 +81,14 @@ export function playShadesFlip(character, opts = {}) {
     const sparkMat = new THREE.MeshBasicMaterial({ color: 0xfff1a8, transparent: true });
     const headRot = head.rotation.x;
 
-    let t0 = performance.now(), done = false, landed = false, raf = 0;
+    // time = sum of frame steps (each capped), so a stalled or background tab never skips the show
+    let t = 0, last = performance.now(), done = false, landed = false, raf = 0;
     const T = 3.0;
     const end = () => { if (done) return; done = true; wrap.classList.add('out'); setTimeout(() => { cancelAnimationFrame(raf); renderer.dispose(); wrap.remove(); resolve(); }, 340); };
     wrap.addEventListener('click', end);
-    (function loop(now) {
-      const t = (now - t0) / 1000;
+    // opts.manual: a recorder steps the show itself via window.__shfTick(dt)
+    const frame = (dt) => {
+      t += Math.min(.05, Math.max(0, dt));
       stage.rotation.y = Math.sin(t * 1.3) * .12;
       if (t < .35) { const k = ease(t / .35); shades.position.copy(hand); shades.scale.setScalar(sc * k); shades.rotation.set(0, 0, -.6); }
       else if (t < 1.3) { // flick up, spin three times, drop onto the face
@@ -103,8 +105,9 @@ export function playShadesFlip(character, opts = {}) {
         for (const m of sparks) { m.position.addScaledVector(m.userData.v, 1 / 60); m.userData.v.y -= hs.x * .05; m.rotation.x += .2; m.material.opacity = Math.max(0, 1 - n / 1.2); }
       }
       renderer.render(scene, cam);
-      if (t > T) return end();
-      raf = requestAnimationFrame(loop);
-    })(t0);
+      if (t > T) { end(); return false; } return true;
+    };
+    if (opts.manual) window.__shfTick = (dt) => frame(dt);
+    else (function loop(now) { const ok = frame((now - last) / 1000); last = now; if (ok) raf = requestAnimationFrame(loop); })(last);
   });
 }

@@ -107,7 +107,7 @@ body{font-family:Inter,system-ui,sans-serif}
 .chat-r button{background:none;border:0;color:var(--g);cursor:pointer;font-size:13px}.chat.min .chat-r{display:none}
 @media (max-width:760px){.chat{top:96px;bottom:178px;width:min(300px,82vw)}.chat.min{top:auto;bottom:178px}
   #vfs .chat{width:min(280px,42vw)}}
-body.intro .chat,body.cinema .chat{display:none}body.quizon .chat:not(.min){visibility:hidden}
+body.intro .chat,body.cinema .chat,body.intro .mob,body.intro .qsoon{display:none!important}body.quizon .chat:not(.min){visibility:hidden}
 @media (max-width:760px){.chat{left:12px;right:12px;width:auto;top:auto;bottom:178px;max-height:46vh}.chat.min{bottom:178px}.chat:not(.min){height:46vh}.emo{grid-template-columns:repeat(12,1fr)}.emo img{max-width:26px}}
 body.cinema .top,body.cinema .marq,body.cinema .halls,body.cinema .tip,body.cinema .angles,body.cinema .sheet,body.cinema .reacts,body.cinema .top5{display:none!important}body.cinema .ctl{top:12px}
 .loader{position:fixed;inset:0;z-index:50;background:radial-gradient(80% 60% at 50% 40%,#1c1408,#050403);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;transition:opacity .6s,visibility 0s .6s}
@@ -618,6 +618,7 @@ document.getElementById('mInv').onclick = () => document.getElementById('inv').c
 document.getElementById('mHall').onclick = () => { const b = [...document.querySelectorAll('#halls button')].find((x) => !x.classList.contains('on')); if (b) b.click(); };
 { const t = document.querySelector('.top'), b = t.querySelector('.back'); b.after(document.getElementById('mHall'), document.getElementById('mView')); }
 { const fit = () => document.documentElement.style.setProperty('--topb', document.querySelector('.top').getBoundingClientRect().bottom + 'px'); fit(); addEventListener('resize', fit); }
+window.__th = { showQuiz: (q) => showQuiz(q), addChat: (m) => addChat(m), react: (e) => reactStream(e), soon: (at) => quizSoon(at), setChat: (o) => setChat(o), fly: (v) => fly(v), reveal: (m) => reveal(m), live };
 document.getElementById('mCap').onclick = () => document.getElementById('ttbtn').click();
 { const order = ['seat', 'wide', 'stage', 'balcony'], name = { seat: 'MY SEAT', wide: 'HALL', stage: 'FRONT ROW', balcony: 'BALCONY' };
   document.getElementById('mView').onclick = () => { const v = order[(order.indexOf(mode) + 1) % order.length]; fly(v); flashCard(name[v]); }; }
