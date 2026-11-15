@@ -75,6 +75,8 @@
         if (done) return;
         done = true;
         if (!user) return fail('No session was created.');
+        // opened as a sign-in popup from a game: say so and close, the game tab carries on by itself
+        if (window.name === 'mg-signin') { document.getElementById('t').textContent = 'Signed in ✓'; document.getElementById('s').textContent = 'Going back to your race…'; document.getElementById('spin').style.display = 'none'; try { window.close(); } catch (e) {} setTimeout(function () { location.replace(backTo()); }, 1500); return; }
         location.replace(backTo());
       }
 

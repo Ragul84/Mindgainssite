@@ -35,6 +35,9 @@ export function init() {
       const { data } = await client.auth.getSession();
       user = data?.session?.user || null;
       emit();
+      // a sign-in finished in another tab/popup: pick the session up when this tab is looked at again
+      const recheck = async () => { const { data: d } = await client.auth.getSession(); const u = d?.session?.user || null; if ((u && u.id) !== (user && user.id)) { user = u; emit(); } };
+      addEventListener('focus', recheck); addEventListener('storage', (e) => { if (e.key && e.key.startsWith('sb-')) recheck(); });
     } catch (e) {
       console.warn('[account] auth unavailable, staying local', e);
       client = null; user = null;
@@ -61,6 +64,18 @@ export function accountName() {
 }
 
 /** Send the player to the site's sign-in, returning here afterwards. */
+/** Sign in without leaving the page: Google opens in a popup (a new tab on phones) and closes
+    itself when done; this page picks the session up and carries on. Falls back to a redirect. */
+export async function signInPopup() {
+  if (!client) return false;
+  try {
+    const { data } = await client.auth.signInWithOAuth({ provider: 'google',
+      options: { redirectTo: location.origin + '/auth/', skipBrowserRedirect: true, queryParams: { prompt: 'select_account' } } });
+    const w = data?.url && window.open(data.url, 'mg-signin', 'width=480,height=660');
+    if (w) return true;
+  } catch (e) { console.warn('[account] popup signIn', e); }
+  signIn(); return false;
+}
 export function signIn() {
   if (!client) return;
   try { sessionStorage.setItem('mg_return_to', location.pathname); } catch (e) {}
