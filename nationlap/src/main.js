@@ -1591,6 +1591,7 @@ function frame() {
     safe('audio.update', () => audio.update(dt, { camera }));
   }
 
+  if (window.__camRig) { try { window.__camRig(camera, world, dt); } catch (e) {} }
   try { composer.render(dt); } catch (e) { report('render', e); }
 }
 

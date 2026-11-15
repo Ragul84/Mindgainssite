@@ -52,3 +52,9 @@ home-legacy.html
 worker/
 wrangler.jsonc
 .dev.vars
+
+# local design/test artefacts (screenshots, trailers, pasted images) - never served
+art/
+art/**
+.cp-images/
+.cp-images/**
