@@ -98,7 +98,7 @@ body{font-family:Inter,system-ui,sans-serif}
 .cm.epic .tag{background:linear-gradient(90deg,#b388ff,#40c4ff);color:#140a2a}.cm.epic .nm{color:#d6c2ff}
 .cm.elite{border:1.5px solid #e08a4a;background:rgba(40,18,8,.85);box-shadow:0 0 8px rgba(224,138,74,.35)}.cm.elite .tag{background:#e08a4a;color:#2a1000}.cm.elite .nm{color:#ffbf8f}
 @keyframes tierFlow{to{background-position:0 0,300% 0}}
-.inv{flex:none;margin:8px 8px 0;padding:9px 10px;border:1px dashed rgba(243,212,138,.7);border-radius:12px;background:linear-gradient(90deg,rgba(243,212,138,.16),rgba(243,212,138,.04));color:#ffe7a6;font:800 11px Inter;letter-spacing:.08em;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:6px;animation:invG 2.4s ease-in-out infinite}.inv b{background:var(--g);color:#1a1206;border-radius:8px;padding:2px 7px;font-size:10px;letter-spacing:.04em}.chat.min .inv{display:none}@keyframes invG{50%{box-shadow:0 0 14px rgba(243,212,138,.45)}}
+.inv{flex:none;margin:8px 8px 0;padding:9px 10px;border:1px dashed rgba(243,212,138,.7);border-radius:12px;background:linear-gradient(90deg,rgba(243,212,138,.16),rgba(243,212,138,.04));color:#ffe7a6;font:800 11px Inter;letter-spacing:.08em;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:6px;animation:invG 2.4s ease-in-out infinite}.inv b{background:var(--g);color:#1a1206;border-radius:8px;padding:2px 7px;font-size:10px;letter-spacing:.04em}.chat.min .inv{display:none}.inv.rcb{animation:none;border-style:solid;border-color:rgba(243,212,138,.35);background:rgba(243,212,138,.06)}@keyframes invG{50%{box-shadow:0 0 14px rgba(243,212,138,.45)}}
 .sgn{position:fixed;inset:0;z-index:60;display:grid;place-items:center;background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}.sgn-c{width:min(360px,calc(100% - 32px));background:#121216;border:1px solid rgba(243,212,138,.5);border-radius:18px;padding:22px;text-align:center;color:#eee6d6;font:500 14px/1.5 Inter,system-ui;box-shadow:0 30px 80px rgba(0,0,0,.6)}
 .sgn-t{display:block;font:800 19px Inter;color:#fff;margin-bottom:8px}.sgn-c p{margin:0 0 16px;color:#b9b2a4}.sgn-c p b{color:#f3d48a}
 .sgn-go{width:100%;padding:12px;border:0;border-radius:12px;background:linear-gradient(180deg,#f6d688,#e9b94f);color:#1a1206;font:800 14px Inter;cursor:pointer}.sgn-x{margin-top:8px;background:none;border:0;color:#9a9385;font:600 13px Inter;cursor:pointer}
@@ -195,10 +195,10 @@ body.quizon .chat{visibility:hidden!important}
 <div class="vig"></div>
 <button class="skip" id="skip">SKIP ›</button>
 
-<div class="top"><a class="back" href="/nationlap/" aria-label="Back"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></a><div class="brand">MINDGAINS · THEATRE</div><span class="live" id="live">● LIVE</span><button class="ib" id="snd" title="Sound">🔇</button><button class="ib" id="fs" title="Full screen">⛶</button></div>
+<div class="top"><a class="back" href="/nationlap/" aria-label="Back" onclick="if(window.__receipt&&window.__receipt.RC.secs>=600&&!sessionStorage.getItem('mgt_rc_offer')){sessionStorage.setItem('mgt_rc_offer','1');if(confirm('Before you go: grab your study receipt to share? 🧾')){event.preventDefault();window.__receipt.share();}}"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></a><div class="brand">MINDGAINS · THEATRE</div><span class="live" id="live">● LIVE</span><button class="ib" id="snd" title="Sound">🔇</button><button class="ib" id="fs" title="Full screen">⛶</button></div>
 <button class="mob mhall" id="mHall">EN</button><button class="mob mview" id="mView" aria-label="Change view">🎥</button>
 <div class="mob mcap" id="mCap"><i></i><span id="mCapT">LIVE</span></div>
-<div class="mob mfab"><button id="mChat" aria-label="Chat">💬<span id="mChatN"></span></button><button id="mInv" aria-label="Invite a friend">🎟️<b>+150</b></button></div>
+<div class="mob mfab"><button id="mChat" aria-label="Chat">💬<span id="mChatN"></span></button><button id="mInv" aria-label="Invite a friend">🎟️<b>+150</b></button><button id="mRc" aria-label="My study receipt">🧾</button></div>
 <div class="qsoon" id="qSoon" hidden></div>
 <div class="marq" hidden><div class="mq" id="mq"></div></div>
 <div class="halls" id="halls"></div>
@@ -209,6 +209,7 @@ body.quizon .chat{visibility:hidden!important}
 <div class="chat" id="chat"><button class="chat-h" id="chatH">💬 <em>LIVE CHAT</em> <span id="chatN"></span><i>‹</i></button>
   <div class="chat-l" id="chatL"></div>
   <div class="emo" id="reacts"><button data-e="1f525"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f525/emoji.svg" alt="" loading="lazy"></button><button data-e="1f602"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f602/emoji.svg" alt="" loading="lazy"></button><button data-e="1f92f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f92f/emoji.svg" alt="" loading="lazy"></button><button data-e="1f44f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44f/emoji.svg" alt="" loading="lazy"></button><button data-e="2764_fe0f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/2764_fe0f/emoji.svg" alt="" loading="lazy"></button></div>
+  <button class="inv rcb" id="rcb" type="button">🧾 MY STUDY RECEIPT <b>share</b></button>
   <button class="inv" id="inv" type="button">🎟️ INVITE A FRIEND <b>+150 PTS per friend</b></button>
   <div class="chat-r" id="chatR" hidden><span id="chatRt"></span><button type="button" id="chatRx" aria-label="Cancel reply">✕</button></div>
   <form class="chat-f" id="chatF"><input id="chatI" maxlength="140" placeholder="Say something…" autocomplete="off"><button id="chatS">SEND</button></form></div>
@@ -561,6 +562,7 @@ const live = { ws: null, hall: null, n: 0, quiz: null, picked: -1,
     else if (m.t === 'taken') { const t = seatByKey.get(m.seat); if (t) { t.st = 'taken'; const n = nearestFree(t); if (n) { markMine(n); this.sit(n.row + n.n); flashCard(`${m.seat} was taken · you're in ${n.row}${n.n}`); } } }
     else if (m.t === 'refok') { awardXp(50); flashCard(`🎉 ${m.name} joined on your invite · +${m.pts} pts · +50 XP`); }
     else if (m.t === 'board') { if (m.top) paintTop(m.top); }
+    else if (m.t === 'me') { RC.rank = m.rank; RC.of = m.of; saveRC(); }
     else if (m.t === 'quiz') showQuiz(m);
     else if (m.t === 'answered') { if (this.quiz && m.qid === this.quiz.qid) document.getElementById('qn').textContent = `${m.n} of ${this.n} answered`; }
     else if (m.t === 'reveal') reveal(m);
@@ -583,6 +585,61 @@ function showQuiz(q) { if (q.ends < Date.now()) return; live.quiz = q; live.pick
   document.getElementById('qn').textContent = 'Answer before the timer runs out';
   document.querySelectorAll('#qo button').forEach((b) => b.onclick = () => { if (live.picked >= 0) return; live.picked = +b.dataset.i; b.classList.add('sel'); live.send({ t: 'ans', qid: q.qid, i: live.picked }); });
   clearInterval(qTimer); qTimer = setInterval(() => { const left = Math.max(0, q.ends - Date.now()); document.getElementById('qbar').style.width = (left / 150) + '%'; document.getElementById('qk').textContent = (q.from ? `FROM TODAY'S EPISODE · ${q.from.toUpperCase()} · ` : 'MIGA ASKS · ') + `${Math.ceil(left / 1000)} S`; if (!left) clearInterval(qTimer); }, 250); }
+// ---- study receipt: watch time (tab visible, hall open), quiz record, rank, daily streak
+const RK = 'mgt_rcpt_' + new Date().toISOString().slice(0, 10);
+const RC = (() => { try { return JSON.parse(localStorage.getItem(RK) || '{}'); } catch (e) { return {}; } })();
+RC.secs = RC.secs || 0; RC.q = RC.q || 0; RC.right = RC.right || 0; RC.best = RC.best || 0;
+const saveRC = () => { try { localStorage.setItem(RK, JSON.stringify(RC)); } catch (e) {} };
+const streak = (() => { let days = []; try { days = JSON.parse(localStorage.getItem('mgt_days') || '[]'); } catch (e) {}
+  const today = new Date().toISOString().slice(0, 10); if (!days.includes(today)) { days.push(today); days = days.slice(-60); try { localStorage.setItem('mgt_days', JSON.stringify(days)); } catch (e) {} }
+  let n = 0; for (let d = new Date(); days.includes(d.toISOString().slice(0, 10)); d.setDate(d.getDate() - 1)) n++; return n; })();
+setInterval(() => { if (document.visibilityState === 'visible' && !document.body.classList.contains('intro')) { RC.secs += 5; RC.topic = (document.getElementById('nowT') || {}).textContent || RC.topic; if (RC.secs % 30 === 0) saveRC(); } }, 5000);
+addEventListener('pagehide', saveRC);
+const fmtDur = (s) => s >= 3600 ? `${Math.floor(s / 3600)}h ${Math.floor(s % 3600 / 60)}m` : `${Math.max(1, Math.floor(s / 60))} min`;
+async function makeReceipt() {
+  const c = document.createElement('canvas'); c.width = 1080; c.height = 1920; const g = c.getContext('2d');
+  await document.fonts.load('400 40px "Bebas Neue"').catch(() => {});
+  const bg = g.createLinearGradient(0, 0, 0, 1920); bg.addColorStop(0, '#0b0b10'); bg.addColorStop(1, '#17120a'); g.fillStyle = bg; g.fillRect(0, 0, 1080, 1920);
+  const glow = g.createRadialGradient(540, 420, 40, 540, 420, 700); glow.addColorStop(0, 'rgba(243,200,107,.28)'); glow.addColorStop(1, 'rgba(243,200,107,0)'); g.fillStyle = glow; g.fillRect(0, 0, 1080, 1920);
+  // the paper
+  const X = 110, Y = 190, PW = 860, PH = 1440;
+  g.save(); g.shadowColor = 'rgba(0,0,0,.6)'; g.shadowBlur = 60; g.fillStyle = '#f4ecd9'; g.beginPath();
+  g.moveTo(X, Y); for (let x = X; x <= X + PW; x += 20) g.lineTo(x, Y + (((x - X) / 20) % 2 ? 12 : 0)); g.lineTo(X + PW, Y + PH);
+  for (let x = X + PW; x >= X; x -= 20) g.lineTo(x, Y + PH - (((x - X) / 20) % 2 ? 12 : 0)); g.closePath(); g.fill(); g.restore();
+  const ink = '#1d1a14', mute = '#7a7060', gold = '#b8862b';
+  const T = (s, x, y, f, col = ink, al = 'left') => { g.font = f; g.fillStyle = col; g.textAlign = al; g.fillText(s, x, y); };
+  const line = (y) => { g.strokeStyle = 'rgba(29,26,20,.35)'; g.setLineDash([10, 9]); g.lineWidth = 3; g.beginPath(); g.moveTo(X + 50, y); g.lineTo(X + PW - 50, y); g.stroke(); g.setLineDash([]); };
+  T('NATIONLAP LIVE', 540, Y + 140, '400 92px "Bebas Neue", Impact, sans-serif', ink, 'center');
+  T('STUDY RECEIPT', 540, Y + 200, '800 30px Inter, system-ui', gold, 'center');
+  T(new Date().toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' }).toUpperCase() + '  ·  SEAT ' + (mine ? mine.row + mine.n : '—'), 540, Y + 252, '600 26px Inter, system-ui', mute, 'center');
+  line(Y + 300);
+  const topic = (RC.topic || 'Today\'s class').slice(0, 44);
+  const rows = [['WATCHED', fmtDur(RC.secs)], ['CLASS', topic], ['LIVE QUIZ', `${RC.right} / ${RC.q} correct`],
+    ['TONIGHT', RC.of ? (RC.rank ? `#${RC.rank} of ${RC.of}  ·  TOP ${Math.max(1, Math.round(RC.rank / RC.of * 100))}%` : `on the board soon`) : 'quiz starts every 4 min'],
+    ['STREAK', `🔥 ${streak} day${streak > 1 ? 's' : ''}`], ['HALL', hall === 'main' ? 'English' : 'தமிழ் TNPSC']];
+  let y = Y + 380;
+  for (const [k, v] of rows) { T(k, X + 60, y, '800 28px Inter, system-ui', mute); g.font = '800 38px Inter, system-ui'; let vv = v; while (g.measureText(vv).width > 520 && vv.length > 4) vv = vv.slice(0, -2); if (vv !== v) vv = vv.trim() + '…'; T(vv, X + PW - 60, y, '800 38px Inter, system-ui', ink, 'right'); y += 92; }
+  line(y - 30);
+  T('TOTAL FOCUS', X + 60, y + 50, '800 30px Inter, system-ui', ink); T(fmtDur(RC.secs), X + PW - 60, y + 58, '400 84px "Bebas Neue", Impact, sans-serif', gold, 'right');
+  // barcode
+  let bx = X + 120; const by = Y + PH - 300; let seed = (RC.secs * 7 + streak * 13 + RC.q) || 7; g.fillStyle = ink;
+  while (bx < X + PW - 120) { seed = (seed * 16807) % 2147483647; const w = 3 + (seed % 9); g.fillRect(bx, by, w, 120); bx += w + 3 + (seed % 5); }
+  T('watched it live with the whole country', 540, by + 170, 'italic 600 28px Inter, system-ui', mute, 'center');
+  T('Study with me →  mindgains.ai/play/theatre', 540, Y + PH + 120, '800 40px Inter, system-ui', '#f3c86b', 'center');
+  T('free · on your phone · seats every night', 540, Y + PH + 172, '600 28px Inter, system-ui', 'rgba(255,255,255,.6)', 'center');
+  return c;
+}
+async function shareReceipt() {
+  saveRC(); const c = await makeReceipt();
+  let pid = ''; try { pid = getPlayerId(); } catch (e) {}
+  const url = `${location.origin}/play/theatre/?hall=${hall}${mine ? '&near=' + mine.row + mine.n : ''}${pid ? '&ref=' + encodeURIComponent(pid) : ''}`;
+  const text = `Studied ${fmtDur(RC.secs)} live in the NationLap Theatre tonight 🎬 ${RC.q ? `${RC.right}/${RC.q} in the live quiz` : ''} 🔥 ${streak}-day streak. Come sit next to me:`;
+  const blob = await new Promise((r) => c.toBlob(r, 'image/png')); const file = new File([blob], 'study-receipt.png', { type: 'image/png' });
+  try { if (navigator.canShare && navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], text: text + ' ' + url }); return; } } catch (e) { if (e && e.name === 'AbortError') return; }
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'study-receipt.png'; a.click();
+  try { await navigator.clipboard.writeText(text + ' ' + url); flashCard('Receipt saved · invite link copied'); } catch (e) { flashCard('Receipt saved'); }
+}
+window.__receipt = { make: makeReceipt, share: shareReceipt, RC };
 let soonT = [];
 function quizSoon(at) { soonT.forEach(clearTimeout); soonT = []; if (!at) return; const el = document.getElementById('qSoon');
   const say = (t, ms) => { el.textContent = t; el.hidden = false; el.classList.remove('go'); void el.offsetWidth; el.classList.add('go'); setTimeout(() => { el.hidden = true; }, ms); };
@@ -593,8 +650,9 @@ function quizSoon(at) { soonT.forEach(clearTimeout); soonT = []; if (!at) return
 function reveal(m) { if (!live.quiz || m.qid !== live.quiz.qid) return; document.body.classList.add('showtop'); clearTimeout(window.__st); window.__st = setTimeout(() => document.body.classList.remove('showtop'), 9000); clearInterval(qTimer);
   document.querySelectorAll('#qo button').forEach((b, i) => { if (i === m.correct) b.classList.add('ok'); else if (i === live.picked) b.classList.add('no'); });
   if (live.picked === m.correct) awardXp(20);
+  if (live.picked >= 0) { RC.q++; if (live.picked === m.correct) RC.right++; saveRC(); }
   document.getElementById('qk').textContent = live.picked === m.correct ? 'CORRECT ✦ +20 XP · INDIA BOARD' : live.picked < 0 ? 'TIME UP' : 'NOT QUITE';
-  document.getElementById('qn').textContent = `${m.pct}% of ${m.n} got it right`; paintTop(m.top);
+  document.getElementById('qn').textContent = `${m.pct}% of ${m.n} got it right` + (m.fastest ? ` · ⚡ fastest: ${m.fastest.name} (${m.fastest.s}s)` : ''); paintTop(m.top);
   clearTimeout(window.__qh); window.__qh = setTimeout(hideQuiz, 5000); }
 function hideQuiz() { document.getElementById('quizc').hidden = true; document.body.classList.remove('quizon'); }
 // reactions rise in a stream on the right edge (off the picture); animated only while they fly
@@ -614,6 +672,7 @@ document.getElementById('chatRx').onclick = () => setReply(null);
 const setChat = (open) => { chatBox.classList.toggle('min', !open); document.body.classList.toggle('chaton', open); document.getElementById('mChatN').textContent = ''; if (open) chatL.scrollTop = chatL.scrollHeight; };
 document.getElementById('mChat').onclick = () => setChat(true);
 document.getElementById('chatH').addEventListener('click', () => document.body.classList.toggle('chaton', !chatBox.classList.contains('min')));
+document.getElementById('mRc').onclick = () => shareReceipt(); document.getElementById('rcb').onclick = () => shareReceipt();
 document.getElementById('mInv').onclick = () => document.getElementById('inv').click();
 document.getElementById('mHall').onclick = () => { const b = [...document.querySelectorAll('#halls button')].find((x) => !x.classList.contains('on')); if (b) b.click(); };
 { const t = document.querySelector('.top'), b = t.querySelector('.back'); b.after(document.getElementById('mHall'), document.getElementById('mView')); }

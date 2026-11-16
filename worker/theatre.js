@@ -138,7 +138,11 @@ export class TheatreHall extends DurableObject {
       if (x.i === Q.correct) { right++; b.pts += 100 + Math.max(0, Math.round((ANSWER_MS - x.ms) / 150)); b.ms += x.ms; }
     }
     const n = Object.keys(Q.answers).length, pct = n ? Math.round(right / n * 100) : 0;
-    this.all({ t: 'reveal', qid: Q.qid, correct: Q.correct, pct, n, top: this.top() });
+    const fast = Object.values(Q.answers).filter((x) => x.i === Q.correct).sort((a, b) => a.ms - b.ms)[0];
+    this.all({ t: 'reveal', qid: Q.qid, correct: Q.correct, pct, n, top: this.top(), fastest: fast ? { name: fast.name, s: +(fast.ms / 1000).toFixed(1) } : null });
+    // everyone's own place tonight (for the study receipt): rank among players with points
+    const order = Object.entries(this.board).filter(([, v]) => v.pts > 0).sort((x, y) => y[1].pts - x[1].pts || x[1].ms - y[1].ms).map(([id]) => id);
+    for (const { ws, a } of this.peers()) { const r = order.indexOf(a.id); this.send(ws, { t: 'me', rank: r >= 0 ? r + 1 : 0, of: order.length, pts: r >= 0 ? this.board[a.id].pts : 0 }); }
   }
   // the hall's quiz bank: the day's subject from the site's quiz data (set by the client on connect)
   async pickQuestion() {
