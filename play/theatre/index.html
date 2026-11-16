@@ -224,7 +224,7 @@ import { CSS3DRenderer, CSS3DObject } from 'three/addons/renderers/CSS3DRenderer
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { createKartModel } from '/nationlap/src/models.js';
-import { playerCharacter } from '/nationlap/src/player.js';
+import { playerCharacter, loadProfile } from '/nationlap/src/player.js';
 import { createLeaderboard, getPlayerId, setAccountIdentity } from '/nationlap/src/lb.js';
 import * as account from '/nationlap/src/account.js';
 { const k = new URLSearchParams(location.search).get('admin'); if (k) { try { localStorage.setItem('mgt_admin', k); } catch (e) {} history.replaceState(null, '', location.pathname); } }
@@ -412,7 +412,7 @@ function renderTT() {
   document.getElementById('live').textContent = '● LIVE';
   const next = c.list.find((x) => mins(x.from) > c.m); const left = next ? mins(next.from) - c.m : null;
   document.getElementById('nowT').textContent = c.cur && c.cur.title ? c.cur.title.split('|')[0].trim() : c.b ? c.b.block : 'Off air';
-  document.getElementById('mCapT').textContent = document.getElementById('nowT').textContent; document.getElementById('mHall').textContent = hall === 'main' ? 'EN' : 'தமிழ்';
+  document.getElementById('mCapT').textContent = document.getElementById('nowT').textContent; document.getElementById('mHall').textContent = hall === 'main' ? 'EN' : 'த';
   const mqt = `${c.subject.toUpperCase()} DAY ✦ ${c.H.name.toUpperCase()} ✦ ${next ? 'NEXT · ' + next.block.toUpperCase() + ' AT ' + next.from + ' ✦ ' : ''}6 PM PREMIERE · MIGA: YESTERDAY'S CURRENT AFFAIRS ✦ `;
   const mq = document.getElementById('mq'); if (mq.dataset.t !== mqt) { mq.dataset.t = mqt; mq.textContent = mqt + mqt + mqt; }
   document.getElementById('nowS').textContent = (c.epNo ? `EPISODE ${c.epNo} OF ${c.epOf} · ` : '') + `${c.H.name} · ${c.subject} day` + (c.vid ? '' : '') + (next ? ` · next in ${left >= 60 ? Math.floor(left / 60) + 'h ' : ''}${left % 60}m` : '');
@@ -484,7 +484,7 @@ markMine(mine);
 
 // ---- camera views with smooth flights
 const VIEWS = { wide: [new THREE.Vector3(0, 9.8, 4), new THREE.Vector3(0, 6.5, -16)], balcony: [new THREE.Vector3(0, 13.2, 11), new THREE.Vector3(0, 5.5, -16)],
-  stage: [new THREE.Vector3(0, 4.6, 0), new THREE.Vector3(0, 7.3, -16.4)] };
+  stage: [new THREE.Vector3(0, 3.2, -10.6), new THREE.Vector3(0, 7.3, -16.4)] };
 const camPos = new THREE.Vector3(0, 11.8, 11.5), camLook = new THREE.Vector3(0, 6, -16), tgtPos = new THREE.Vector3(), tgtLook = new THREE.Vector3();
 let flying = true, dragged = 0, zoomF = 1, spot = null, lastTap = 0;
 let mode = 'wide';
@@ -522,8 +522,8 @@ addEventListener('pointerup', (e) => { if (!down || !onView(e) || document.getEl
   const s = hit.object.userData.seat;
   const card = document.getElementById('seatcard');
   if (s.st === 'taken') { flashCard(`Row ${s.row} · Seat ${s.n} · ${s.who || 'taken'}`); return; }
-  live.sit(s.row + s.n);
-  markMine(s); flashCard(`ROW ${s.row} · SEAT ${s.n}`); document.getElementById('tip').style.display = 'none'; fly('seat'); });
+  userSeat = true; live.sit(s.row + s.n);
+  markMine(s); seatRacer(s, MYLOOK); flashCard(`ROW ${s.row} · SEAT ${s.n}`); document.getElementById('tip').style.display = 'none'; fly('seat'); });
 document.getElementById('go').onclick = () => fly('seat');
 if (new URLSearchParams(location.search).get('view')) fly(new URLSearchParams(location.search).get('view'));
 
@@ -550,7 +550,7 @@ let myName = (() => { try { const p = JSON.parse(localStorage.getItem('tkr_playe
 const live = { ws: null, hall: null, n: 0, quiz: null, picked: -1,
   connect() { if (this.hall === hall && this.ws && this.ws.readyState < 2) return; try { this.ws && this.ws.close(); } catch {} this.hall = hall;
     const ws = new WebSocket((location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/api/theatre/' + hall + '/ws'); this.ws = ws;
-    ws.onopen = () => { ws.send(JSON.stringify({ t: 'hello', name: myName, token: myToken, ref: QS.get('ref') || '', pid: (() => { try { return getPlayerId(); } catch (e) { return ''; } })(), admin: (() => { try { return localStorage.getItem('mgt_admin') || ''; } catch (e) { return ''; } })() })); if (mine) this.sit(mine.row + mine.n); };
+    ws.onopen = () => { ws.send(JSON.stringify({ t: 'hello', look: MYLOOK, name: myName, token: myToken, ref: QS.get('ref') || '', pid: (() => { try { return getPlayerId(); } catch (e) { return ''; } })(), admin: (() => { try { return localStorage.getItem('mgt_admin') || ''; } catch (e) { return ''; } })() })); if (mine) this.sit(mine.row + mine.n); };
     ws.onmessage = (e) => this.on(JSON.parse(e.data));
     ws.onclose = () => { if (this.ws === ws) setTimeout(() => this.connect(), 3000); }; },
   send(m) { if (this.ws && this.ws.readyState === 1) this.ws.send(JSON.stringify(m)); },
@@ -558,7 +558,7 @@ const live = { ws: null, hall: null, n: 0, quiz: null, picked: -1,
   on(m) {
     if (m.next || m.t === 'next') quizSoon(m.at || m.next);
     if (m.t === 'state' && m.chat) { chatL.innerHTML = ''; m.chat.forEach(addChat); document.getElementById('chatN').textContent = ''; }
-    if (m.t === 'state' || m.t === 'seats') { this.n = m.count; paintSeats(m.seats); if (m.top) paintTop(m.top); if (m.quiz) showQuiz(m.quiz); renderCount(); }
+    if (m.t === 'state' || m.t === 'seats') { this.n = m.count; paintSeats(m.seats, m.looks || {}); if (m.top) paintTop(m.top); if (m.quiz) showQuiz(m.quiz); renderCount(); }
     else if (m.t === 'taken') { const t = seatByKey.get(m.seat); if (t) { t.st = 'taken'; const n = nearestFree(t); if (n) { markMine(n); this.sit(n.row + n.n); flashCard(`${m.seat} was taken · you're in ${n.row}${n.n}`); } } }
     else if (m.t === 'refok') { awardXp(50); flashCard(`🎉 ${m.name} joined on your invite · +${m.pts} pts · +50 XP`); }
     else if (m.t === 'board') { if (m.top) paintTop(m.top); }
@@ -570,7 +570,53 @@ const live = { ws: null, hall: null, n: 0, quiz: null, picked: -1,
     else if (m.t === 'chat') addChat(m.m);
     else if (m.t === 'slow') { if (m.wait) cool(m.wait); if (m.why) addChat({ name: 'MindGains', text: m.why }); }
   } };
-function paintSeats(map) {
+const MYLOOK = (() => { try { const p = loadProfile(); return [p.avatar | 0, p.color | 0]; } catch (e) { return [0, 5]; } })();
+const lookCache = new Map(), occ = new Map();   // seat key -> seated racer
+function seatedRacer(look) {
+  const key = look.join('-');
+  if (!lookCache.has(key)) {
+    let d = null;
+    try { const ch = playerCharacter({ ...loadProfile(), avatar: look[0], color: look[1] }); const m = createKartModel(ch);
+      m.parts.head.name = '__head'; d = m.parts.driver; d.parent && d.parent.remove(d); d.position.set(0, 0, 0); d.rotation.set(0, 0, 0); d.scale.setScalar(1); d.updateMatrixWorld(true);
+      const b = new THREE.Box3().setFromObject(d), s = 1.15 / Math.max(.01, b.max.y - b.min.y); d.scale.setScalar(s); d.userData.lift = -b.min.y * s;
+      d.traverse((o) => { if (o.isMesh) { o.castShadow = false; o.receiveShadow = false; } }); } catch (e) {}
+    lookCache.set(key, d);
+  }
+  const base = lookCache.get(key); if (!base) return null;
+  const c = base.clone(); c.position.set(0, .34 + base.userData.lift, -.02); c.rotation.y = Math.PI; c.userData.head = c.getObjectByName('__head'); c.userData.hy = 0; c.userData.hx = 0; return c;
+}
+function seatRacer(s, look) {   // put (or replace / remove) the racer in seat s
+  const k = s.row + s.n, cur = occ.get(k);
+  if (cur && (!look || cur.userData.look !== look.join('-'))) { s.g.remove(cur); occ.delete(k); }
+  if (look && !occ.get(k)) { const r = seatedRacer(look); if (r) { r.userData.look = look.join('-'); s.g.add(r); occ.set(k, r); } }
+}
+const _hv = new THREE.Vector3(), _cd = new THREE.Vector3(), _hl = new THREE.Vector3();
+function lookAtCamera(dt) {   // racers you are looking at turn their heads to you
+  cam.getWorldDirection(_cd); let n = 0;
+  for (const [k, r] of occ) {
+    const h = r.userData.head; if (!h) continue;
+    r.visible = !(mine && k === mine.row + mine.n && (mode === 'seat'));   // never see your own head from your own seat
+    h.getWorldPosition(_hv); const dist = _hv.distanceTo(cam.position);
+    _hl.copy(_hv).sub(cam.position).normalize(); const inView = _hl.dot(_cd) > .82 && dist < 18 && n < 60;
+    let ty = 0, tx = 0;
+    if (inView) { n++; const p = h.parent.worldToLocal(cam.position.clone()); const hp = h.position;
+      ty = Math.max(-1.05, Math.min(1.05, Math.atan2(p.x - hp.x, p.z - hp.z))); tx = Math.max(-.35, Math.min(.35, -Math.atan2(p.y - hp.y - .1, Math.hypot(p.x - hp.x, p.z - hp.z)) * .6)); }
+    const k2 = 1 - Math.pow(.004, dt); r.userData.hy += (ty - r.userData.hy) * k2; r.userData.hx += (tx - r.userData.hx) * k2;
+    h.rotation.y = r.userData.hy; h.rotation.x = r.userData.hx;
+  }
+}
+// arriving: take the best free seat (middle rows, centre, next to people), unless a friend's link or a tap chose one
+let autoSeated = false, userSeat = false;
+function bestSeat(map) {
+  let best = null, bs = 1e9; const rows = 'ABCDEFGHIJKL';
+  for (const s of seats) { const k = s.row + s.n; if (map[k]) continue;
+    const ri = rows.indexOf(s.row), nb = [s.n - 1, s.n + 1].some((x) => map[s.row + x]) ? 1 : 0;
+    const sc = Math.abs(ri - 6.5) * 1.2 + Math.abs(s.n - 9.5) * .55 - nb * 2.2 + Math.random() * .3; if (sc < bs) { bs = sc; best = s; } }
+  return best;
+}
+function paintSeats(map, looks = {}) {
+  if (!autoSeated && !userSeat && !QS.get('near')) { autoSeated = true; const b = bestSeat(map); if (b && b !== mine) { markMine(b); live.sit(b.row + b.n); } }
+  for (const s of seats) { const k = s.row + s.n; seatRacer(s, map[k] ? (looks[k] || [((k.charCodeAt(0) + s.n) % 6), (s.n * 3) % 8]) : (s === mine ? MYLOOK : null)); }
   for (const s of seats) { const k = s.row + s.n, who = map[k], isMe = mine === s;
     if (isMe) continue;
     const st = who ? 'taken' : 'free'; if (s.st === st && s.who === who) continue; s.st = st; s.who = who;
@@ -713,7 +759,7 @@ chatBox.addEventListener('pointerdown', (e) => e.stopPropagation()); chatBox.add
 setTimeout(() => live.connect(), 300);
 // signed in on mindgains.ai -> same account here: real name in chat, same player id as the NationLap board (for top-3 frames)
 account.init().then(() => { const bind = async (u) => { signedIn = !!u; if (!u) { if (QS.get('ref')) askSignIn('ref'); return; } const name = account.accountName(); setAccountIdentity({ id: u.id, name }); if (name) myName = name.slice(0, 20);
-  const token = await account.accessToken(); myToken = token; live.send({ t: 'hello', name: myName, token, ref: QS.get('ref') || '', pid: u.id, admin: (() => { try { return localStorage.getItem('mgt_admin') || ''; } catch (e) { return ''; } })() }); }; bind(account.currentUser()); account.onChange(bind); }).catch(() => {});
+  const token = await account.accessToken(); myToken = token; live.send({ t: 'hello', look: MYLOOK, name: myName, token, ref: QS.get('ref') || '', pid: u.id, admin: (() => { try { return localStorage.getItem('mgt_admin') || ''; } catch (e) { return ''; } })() }); }; bind(account.currentUser()); account.onChange(bind); }).catch(() => {});
 // sound: browsers only allow sound after a tap, so ask once with a pulsing button
 const snd = document.getElementById('snd'); snd.classList.add('pulse');
 snd.onclick = () => { soundOn = !soundOn; if (soundOn) { if (ytP && ytP.unMute) { ytP.unMute(); ytP.setVolume(100); ytP.playVideo(); } else if (ytNow) { const id = ytNow, p = ytPos(); ytNow = ''; playOnScreen(id, p); } } else yCmd('mute'); snd.textContent = soundOn ? '🔊' : '🔇'; snd.classList.toggle('pulse', !soundOn); };
@@ -771,6 +817,7 @@ let t0 = performance.now();
   if (flying) { camPos.lerp(tgtPos, k); camLook.lerp(tgtLook, k); cam.position.copy(camPos); orbit.target.copy(camLook); cam.lookAt(camLook); if (camPos.distanceTo(tgtPos) < .05) { flying = false; setLook(); } }
   else { const b = tgtLook.clone().sub(tgtPos), by = Math.atan2(b.x, b.z) + yaw, bp = Math.atan2(b.y, Math.hypot(b.x, b.z)) + pitch, cp = Math.max(-1.45, Math.min(1.45, bp)), d = new THREE.Vector3(Math.sin(by) * Math.cos(cp), Math.sin(cp), Math.cos(by) * Math.cos(cp)); cam.position.copy(tgtPos); cam.lookAt(tgtPos.clone().add(d)); }
   if (mine) mine.m.emissiveIntensity = .7 + .3 * Math.sin(now / 250);
+  lookAtCamera(dt);
   if (ytObj) ytObj.visible = cam.position.z > screen.position.z + .1; renderer.render(scene, cam); css.render(cssScene, cam); if (!frame.n) { frame.n = 1; document.getElementById('ls').textContent = 'TAKING YOU TO YOUR SEAT…'; const q = new URLSearchParams(location.search); let seen = ''; try { seen = localStorage.getItem('mgt_intro'); } catch (e) {} if (!q.has('view') && !q.has('clean') && (q.has('intro') || q.get('from') === 'nationlap' || seen !== new Date().toDateString())) { startIntro(); setTimeout(hideLoader, 300); } } requestAnimationFrame(frame); })(t0);
 </script>
 </body>

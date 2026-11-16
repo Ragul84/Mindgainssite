@@ -40,10 +40,11 @@ export class TheatreHall extends DurableObject {
   async save() { await this.ctx.storage.put({ quiz: this.quiz, board: this.board }); }
   peers() { return this.ctx.getWebSockets().map((ws) => ({ ws, a: ws.deserializeAttachment() || {} })); }
   seatMap() { const m = {}; for (const { a } of this.peers()) if (a.seat) m[a.seat] = a.name; return m; }
+  seatLooks() { const m = {}; for (const { a } of this.peers()) if (a.seat && a.look) m[a.seat] = a.look; return m; }
   top() { return Object.entries(this.board).filter(([, v]) => v.pts > 0).sort((x, y) => y[1].pts - x[1].pts || x[1].ms - y[1].ms).slice(0, 5).map(([id, v]) => ({ name: v.name, seat: v.seat, pts: v.pts })); }
   send(ws, m) { try { ws.send(JSON.stringify(m)); } catch {} }
   all(m) { const s = JSON.stringify(m); for (const ws of this.ctx.getWebSockets()) { try { ws.send(s); } catch {} } }
-  broadcastSeats() { this.all({ t: 'seats', count: this.ctx.getWebSockets().length, seats: this.seatMap() }); }
+  broadcastSeats() { this.all({ t: 'seats', count: this.ctx.getWebSockets().length, seats: this.seatMap(), looks: this.seatLooks() }); }
 
   async fetch(request) {
     if (request.headers.get('Upgrade') !== 'websocket') return new Response('websocket only', { status: 426 });
@@ -59,10 +60,11 @@ export class TheatreHall extends DurableObject {
     let m; try { m = JSON.parse(raw); } catch { return; }
     const a = ws.deserializeAttachment() || {};
     if (m.t === 'hello') {
+      if (Array.isArray(m.look)) a.look = [Math.max(0, Math.min(9, m.look[0] | 0)), Math.max(0, Math.min(9, m.look[1] | 0))];
       a.name = clean(m.name, 20) || 'Guest'; a.pid = clean(m.pid, 64); if (a.pid) a.id = 'p:' + a.pid.slice(0, 40);
       a.host = !!(this.env.THEATRE_ADMIN && m.admin && m.admin === this.env.THEATRE_ADMIN);
       ws.serializeAttachment(a);
-      this.send(ws, { t: 'state', me: a.id, count: this.ctx.getWebSockets().length, seats: this.seatMap(), top: this.top(), chat: this.chat.slice(-40), next: await this.ctx.storage.getAlarm(), quiz: this.quiz && { qid: this.quiz.qid, from: this.quiz.from, q: this.quiz.q, opts: this.quiz.opts, ends: this.quiz.ends } });
+      this.send(ws, { t: 'state', me: a.id, count: this.ctx.getWebSockets().length, seats: this.seatMap(), looks: this.seatLooks(), top: this.top(), chat: this.chat.slice(-40), next: await this.ctx.storage.getAlarm(), quiz: this.quiz && { qid: this.quiz.qid, from: this.quiz.from, q: this.quiz.q, opts: this.quiz.opts, ends: this.quiz.ends } });
       this.broadcastSeats();
       // invite links: the friend who joins earns the inviter 150 points on tonight's board (once per friend per day)
       const ref = clean(m.ref, 64), uid = m.token ? await verifyUser(String(m.token)) : null;
