@@ -241,7 +241,7 @@ body.quizon .chat{visibility:hidden!important}
 <div class="top"><a class="back" href="/nationlap/" aria-label="Back" onclick="if(window.__receipt&&window.__receipt.RC.secs>=600&&!sessionStorage.getItem('mgt_rc_offer')){sessionStorage.setItem('mgt_rc_offer','1');if(confirm('Before you go: grab your study receipt to share? 🧾')){event.preventDefault();window.__receipt.share();}}"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></a><div class="brand">MINDGAINS · THEATRE</div><span class="live" id="live">● LIVE</span><a class="fpill" id="fpill" href="/pro/?back=/play/theatre/">⏳ <span id="fpillT">30 MIN FREE</span></a><button class="ib" id="snd" title="Sound">🔇</button><button class="ib" id="fs" title="Full screen">⛶</button></div>
 <button class="mob mhall" id="mHall">EN</button><button class="mob mview" id="mView" aria-label="Change view">🎥</button>
 <div class="mob mcap" id="mCap"><i></i><span id="mCapT">LIVE</span></div>
-<div class="mob mfab"><button id="mChat" aria-label="Chat">💬<span id="mChatN"></span></button><button id="mInv" aria-label="Invite a friend">🎟️<b>+150</b></button><button id="mRc" aria-label="My study receipt">🧾</button><button id="mRp" aria-label="My weak chapters">📊</button></div>
+<div class="mob mfab"><button id="mChat" aria-label="Chat">💬<span id="mChatN"></span></button><button id="mInv" aria-label="Invite a friend">🎟️<b>+150</b></button><button id="mRc" aria-label="My study receipt" hidden>🧾</button><button id="mRp" aria-label="My progress">📊</button></div>
 <div class="qsoon" id="qSoon" hidden></div>
 <div class="marq" hidden><div class="mq" id="mq"></div></div>
 <div class="halls" id="halls"></div>
@@ -828,8 +828,9 @@ async function openReport() {
   const d = document.createElement('div'); d.className = 'rpt';
   d.innerHTML = '<div class="rc"><div class="rh"><b>📊 My weak chapters</b><button aria-label="Close">✕</button></div><div class="empty">Loading…</div></div>';
   document.body.appendChild(d);
-  d.onclick = (e) => { if (e.target === d || e.target.closest('.rh button')) d.remove(); };
-  const box = d.querySelector('.rc'), body = (h) => { box.innerHTML = '<div class="rh"><b>📊 My weak chapters</b><button aria-label="Close">✕</button></div>' + h; };
+  d.onclick = (e) => { if (e.target === d || e.target.closest('.rh button')) d.remove(); if (e.target.closest('.rpRc')) { d.remove(); shareReceipt(); } };
+  const RCB = `<button class="go rpRc" style="margin-top:16px;background:#25212c;color:#fff;box-shadow:none">🧾 Share tonight's study receipt</button>`;
+  const box = d.querySelector('.rc'), body = (h) => { box.innerHTML = '<div class="rh"><b>📊 My weak chapters</b><button aria-label="Close">✕</button></div>' + h + RCB; };
   if (!signedIn) { body('<div class="empty">Sign in and every live-quiz answer you give is tracked by chapter, so you know exactly what to revise.</div><button class="go" id="rpS">Continue with Google</button>'); d.querySelector('#rpS').onclick = () => account.signInPopup(); return; }
   let r = null; try { r = await (await fetch('/api/pro/report', { headers: { Authorization: 'Bearer ' + (await account.accessToken()) } })).json(); } catch (e) {}
   if (!r || r.error) { body('<div class="empty">Couldn\'t load your report. Try again in a moment.</div>'); return; }
