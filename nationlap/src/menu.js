@@ -3,7 +3,8 @@
 // races as themselves, and the 8 themed characters are the subject mentors / rival aspirants.
 import { STATES, myState, setMyState, isFamily, setFamily } from './prefs.js';
 import { bus } from './events.js';
-import { AVATARS, KART_COLORS, NAME_MAX, loadProfile, saveProfile, playerCharacter } from './player.js';
+import { AVATARS, KART_COLORS, GOLD_COLOR, NAME_MAX, loadProfile, saveProfile, playerCharacter } from './player.js';
+import { isProCached } from './pro.js';
 
 const hex = (c) => '#' + (c >>> 0).toString(16).padStart(6, '0').slice(-6);
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
@@ -286,7 +287,8 @@ export class Menu {
     KART_COLORS.forEach((c, i) => {
       const b = el('button', 'av-color', this.avColors);
       b.type = 'button'; b.style.background = hex(c); b.title = 'Kart colour'; b.setAttribute('aria-label', `Kart colour ${i + 1}`);
-      b.addEventListener('click', () => { this.draft.color = i; bus.emit('ui:move'); this._refreshAvatar(); });
+      if (i === GOLD_COLOR) { b.classList.add('av-gold'); b.title = 'Gold kart · MindGains Pro'; b.innerHTML = '<i>👑</i>'; }
+      b.addEventListener('click', () => { if (i === GOLD_COLOR && !isProCached()) { location.href = '/pro/?back=/nationlap/'; return; } this.draft.color = i; bus.emit('ui:move'); this._refreshAvatar(); });
     });
     this._refreshAvatar();
   }

@@ -12,6 +12,10 @@ export const LAUNCH = { paise: 4900, seats: 500 };   // first month ₹49 for th
 export const FREE_SECS = 30 * 60;
 const DAY = 864e5;
 export const istDay = (t = Date.now()) => new Date(t + 5.5 * 3600e3).toISOString().slice(0, 10);
+// the Night Race week rolls over every Sunday 20:00 IST
+const NIGHT0 = Date.parse('2026-11-15T14:30:00Z');   // a Sunday, 20:00 IST
+const nightWeek = () => Math.floor((Date.now() - NIGHT0) / (7 * DAY));
+const nightEnds = () => NIGHT0 + (nightWeek() + 1) * 7 * DAY;
 const J = (d, s = 200) => new Response(JSON.stringify(d), { status: s, headers: { 'content-type': 'application/json', 'cache-control': 'no-store' } });
 
 export async function proUntil(env, uid) {
@@ -128,6 +132,31 @@ export async function proRoute(request, env, pathname) {
     const own = await env.GAME_DB.prepare('SELECT uid FROM pro_pay WHERE order_id = ?1').bind(oid).first();
     if (!own || own.uid !== uid) return J({ error: 'Not your order' }, 403);
     return J({ pro: true, until: await activate(env, oid, pid) });
+  }
+  // Pro Night Race: one weekly race (IST week, fresh every Sunday 8 PM) with an all-India and per-state board.
+  if (pathname === '/api/pro/night') {
+    const wk = nightWeek(), ev = 'pro:' + wk;
+    if (request.method === 'POST') {
+      if (!(await proUntil(env, uid))) return J({ error: 'Pro only' }, 403);
+      let b = {}; try { b = await request.json(); } catch {}
+      const place = Math.max(1, Math.min(12, b.place | 0)), ms = Math.max(20000, Math.min(3600000, b.ms | 0));
+      const pts = (13 - place) * 1000 + Math.max(0, 600 - Math.round(ms / 1000));   // place first, then pace
+      const name = String(b.name || 'Racer').replace(/[<>]/g, '').slice(0, 20), state = String(b.state || '').replace(/[^A-Z]/g, '').slice(0, 3);
+      await env.GAME_DB.prepare(`INSERT INTO game_event (ev, uid, name, state, pts, ms, correct, wrong, skipped, grid, at) VALUES (?1, ?2, ?3, ?4, ?5, ?6, 0, 0, 0, '', ?7)
+        ON CONFLICT(ev, uid) DO UPDATE SET pts = excluded.pts, ms = excluded.ms, name = excluded.name, state = excluded.state, at = excluded.at WHERE excluded.pts > game_event.pts`).bind(ev, uid, name, state, pts, ms, Date.now()).run();
+    }
+    const top = (await env.GAME_DB.prepare('SELECT name, state, pts, ms FROM game_event WHERE ev = ?1 ORDER BY pts DESC, ms ASC LIMIT 10').bind(ev).all()).results || [];
+    let me = null;
+    if (uid) {
+      const r = await env.GAME_DB.prepare('SELECT pts, state FROM game_event WHERE ev = ?1 AND uid = ?2').bind(ev, uid).first();
+      if (r) {
+        const all = await env.GAME_DB.prepare('SELECT COUNT(*) AS n FROM game_event WHERE ev = ?1 AND pts > ?2').bind(ev, r.pts).first();
+        const st = r.state ? await env.GAME_DB.prepare('SELECT COUNT(*) AS n FROM game_event WHERE ev = ?1 AND state = ?2 AND pts > ?3').bind(ev, r.state, r.pts).first() : null;
+        me = { pts: r.pts, rank: all.n + 1, state: r.state, stateRank: st ? st.n + 1 : null };
+      }
+    }
+    const n = await env.GAME_DB.prepare('SELECT COUNT(*) AS n FROM game_event WHERE ev = ?1').bind(ev).first();
+    return J({ week: wk, ends: nightEnds(), racers: n ? n.n : 0, top, me });
   }
   if (pathname === '/api/pro/report') {
     const pro = !!(await proUntil(env, uid));

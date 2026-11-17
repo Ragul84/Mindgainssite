@@ -16,7 +16,9 @@ export const AVATARS = [
   { skin: 0xffe0bd, hat: 'bow' },
   { skin: 0xc68a5a, hat: 'bow' },
 ];
-export const KART_COLORS = [0xe53935, 0xff8a1f, 0xfdd835, 0x43a047, 0x00acc1, 0x1e88e5, 0x8e24aa, 0xf06292];
+export const KART_COLORS = [0xe53935, 0xff8a1f, 0xfdd835, 0x43a047, 0x00acc1, 0x1e88e5, 0x8e24aa, 0xf06292, 0xe0ac3c];
+export const GOLD_COLOR = 8;   // MindGains Pro
+const proActive = () => { try { return (+localStorage.getItem('mg_pro_until') || 0) > Date.now(); } catch (e) { return false; } };
 export const NAME_MAX = 12;
 const DEFAULT = { name: 'You', avatar: 0, color: 5 };
 
@@ -47,15 +49,16 @@ export function saveProfile(p) {
 /** A character-shaped object for the player's kart, HUD chip and results row. */
 export function playerCharacter(p = loadProfile()) {
   const face = AVATARS[p.avatar] || AVATARS[0];
-  const color = KART_COLORS[p.color] ?? KART_COLORS[0];
+  const ci = p.color === GOLD_COLOR && !proActive() ? 0 : p.color;
+  const color = KART_COLORS[ci] ?? KART_COLORS[0];
   return {
     // id carries face + colour so every portrait cache (models, HUD, menu) redraws after an edit
-    id: `you-${p.avatar}-${p.color}`,
+    id: `you-${p.avatar}-${ci}`,
     name: cleanName(p.name),
     subject: null,
     isYou: true,
     color,
-    accent: color === 0xfdd835 ? 0x1e88e5 : 0xffffff,
+    accent: color === 0xfdd835 ? 0x1e88e5 : ci === GOLD_COLOR ? 0x1a1206 : 0xffffff,
     skin: face.skin,
     hat: face.hat,
     stats: { speed: 3, accel: 3, handling: 3, weight: 3 },
