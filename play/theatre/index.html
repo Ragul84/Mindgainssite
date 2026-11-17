@@ -146,6 +146,30 @@ body{font-family:Inter,system-ui,sans-serif}
 .rqz .qn{display:block;width:100%;padding:14px;border-radius:14px;border:0;font:800 14px Inter;background:linear-gradient(90deg,#f3c86b,#ffe2a0);color:#1a1206;cursor:pointer}
 .rqz .qs{text-align:center}.rqz .qs b{display:block;font:400 64px/1 'Bebas Neue';color:#f3c86b}.rqz .qs p{color:#d6cfc4;font:500 15px/1.5 Inter;margin:6px 0 18px}
 .rpl{position:fixed}
+.room .halls,.room .marq,.room .qsoon,.room .top5,.room #ttbtn,.room #ttbtn+a,.room #fpill.go{display:none!important}
+.rbar{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.rbar button{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 11px;border-radius:10px;border:1px solid rgba(243,212,138,.35);background:rgba(243,212,138,.08);color:#ffe7a6;font:800 10.5px Inter;letter-spacing:.08em;cursor:pointer}
+.rbar button:hover{background:rgba(243,212,138,.18)}.rbar button.pri{background:linear-gradient(90deg,#f3c86b,#ffe2a0);color:#1a1206;border-color:transparent}
+.rpause{position:fixed;left:50%;top:84px;transform:translateX(-50%);z-index:8;display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:99px;background:rgba(10,8,6,.85);border:1px solid rgba(243,212,138,.4);color:#ffe7a6;font:800 11px Inter;letter-spacing:.1em;backdrop-filter:blur(8px)}
+.rpause[hidden]{display:none}
+.rpt .fld{display:block;width:100%;box-sizing:border-box;margin:0 0 10px;padding:13px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:#1d1a22;color:#fff;font:500 15px Inter;outline:none}
+.rpt .fld:focus{border-color:#f3c86b}
+.rpt .opt{display:flex;gap:8px;align-items:center}.rpt .opt .fld{margin:0}.rpt .opt{margin-bottom:8px}
+.rpt .opt button{flex:none;width:44px;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:#1d1a22;color:#8a8496;display:grid;place-items:center;cursor:pointer}
+.rpt .opt button.on{background:rgba(74,222,128,.18);border-color:#4ade80;color:#4ade80}
+.rpt .pbtn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px;border-radius:14px;border:0;font:800 14px Inter;background:linear-gradient(90deg,#f3c86b,#ffe2a0);color:#1a1206;cursor:pointer;margin-top:6px}
+.rpt .sbtn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:#1d1a22;color:#fff;font:700 14px Inter;cursor:pointer;margin-top:8px}
+.rpt .hint{color:#9a93a6;font:500 13px/1.5 Inter;margin:-2px 0 14px}.rpt .err{color:#ff8a8a;font:600 13px Inter;margin:0 0 10px}
+.rpt .li{display:flex;align-items:center;gap:12px;padding:12px;border-radius:14px;background:#1a1720;margin-bottom:8px;cursor:pointer;border:1px solid transparent}.rpt .li:hover{border-color:rgba(243,212,138,.4)}
+.rpt .li .av{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:rgba(243,200,107,.12);color:#f3c86b;flex:none}
+.rpt .li div{flex:1;min-width:0}.rpt .li b{display:block;font:700 15px Inter;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.rpt .li small{color:#9a93a6;font:500 12px Inter}
+.rpt .li em{font-style:normal;font:800 10px Inter;letter-spacing:.1em;color:#1a1206;background:#f3c86b;border-radius:6px;padding:3px 7px}
+.rpt .li .x{flex:none;width:34px;height:34px;border-radius:10px;border:0;background:#25212c;color:#cfc8da;display:grid;place-items:center;cursor:pointer}
+.rpt .dot{width:8px;height:8px;border-radius:50%;background:#4b4654;display:inline-block;margin-right:6px}.rpt .dot.on{background:#4ade80}
+.rpt .sec{font:800 11px Inter;letter-spacing:.14em;color:#f3c86b;margin:18px 0 10px}
+.rpt .row2{display:flex;gap:8px}.rpt .row2 .fld{margin:0;text-transform:uppercase;letter-spacing:.2em;font-weight:800}.rpt .row2 button{flex:none;padding:0 18px;border-radius:14px;border:0;background:#f3c86b;color:#1a1206;font:800 13px Inter;cursor:pointer}
+.cm .tag.tch{background:#7c5cff;color:#fff}.cm .tag.own{background:#f3c86b;color:#1a1206}
+#mRoom{display:grid;place-items:center}
 .cm .tag{display:inline-block;font:900 8.5px Inter;letter-spacing:.12em;font-style:normal;padding:1px 6px;border-radius:6px;margin-right:5px;vertical-align:1px}
 .cm.host{background:linear-gradient(135deg,rgba(243,212,138,.22),rgba(243,212,138,.06));border:1px solid rgba(243,212,138,.7);box-shadow:0 0 14px rgba(243,212,138,.25)}.cm.host .tag{background:var(--g);color:#1a1206}.cm.host .nm{color:#ffe7a6}
 .cm.legend{border:1.5px solid transparent;background:linear-gradient(rgba(30,20,6,.92),rgba(30,20,6,.92)) padding-box,linear-gradient(90deg,#ffe066,#ff9f1c,#fff6c2,#ffb21f,#ffe066) border-box;background-size:100% 100%,300% 100%;animation:tierFlow 3s linear infinite;box-shadow:0 0 12px rgba(255,190,40,.45)}
@@ -261,10 +285,11 @@ body.quizon .chat{visibility:hidden!important}
 <div class="top"><a class="back" href="/nationlap/" aria-label="Back" onclick="if(window.__receipt&&window.__receipt.RC.secs>=600&&!sessionStorage.getItem('mgt_rc_offer')){sessionStorage.setItem('mgt_rc_offer','1');if(confirm('Before you go: grab your study receipt to share?')){event.preventDefault();window.__receipt.share();}}"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></a><div class="brand">MINDGAINS · THEATRE</div><span class="live" id="live">● LIVE</span><a class="fpill" id="fpill" href="/pro/?back=/play/theatre/"><span id="fpillI"><svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.6 3.3a.5.5 0 0 1 .9 0l2.9 5.5a1 1 0 0 0 1.5.3l4.3-3.7a.5.5 0 0 1 .8.5l-2.8 10.3a1 1 0 0 1-1 .7H5.8a1 1 0 0 1-1-.7L2 5.9a.5.5 0 0 1 .8-.5l4.3 3.7a1 1 0 0 0 1.5-.3z"/><path d="M5 21h14"/></svg></span><span id="fpillT">GO PRO</span></a><button class="ib" id="snd" title="Sound"><svg class="ico" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5Z"/><path d="m22 9-6 6M16 9l6 6"/></svg></button><button class="ib" id="fs" title="Full screen"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></svg></button></div>
 <button class="mob mhall" id="mHall">EN</button><button class="mob mview" id="mView" aria-label="Change view"><svg class="ico" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 13 5.2 3.1a.5.5 0 0 0 .8-.4V8.3a.5.5 0 0 0-.8-.4L16 11"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg></button>
 <div class="mob mcap" id="mCap"><i></i><span id="mCapT">LIVE</span></div>
-<div class="mob mfab"><button id="mChat" aria-label="Chat"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg><span id="mChatN"></span></button><button id="mInv" aria-label="Invite a friend"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><b>+150</b></button><button id="mRc" aria-label="My study receipt" hidden><svg class="ico" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8M12 17.5v-11"/></svg></button><button id="mRp" aria-label="My progress"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg></button></div>
+<div class="mob mfab"><button id="mChat" aria-label="Chat"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg><span id="mChatN"></span></button><button id="mInv" aria-label="Invite a friend"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><b>+150</b></button><button id="mRc" aria-label="My study receipt" hidden><svg class="ico" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8M12 17.5v-11"/></svg></button><button id="mRoom" aria-label="Batch rooms"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></button><button id="mRp" aria-label="My progress"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg></button></div>
 <div class="qsoon" id="qSoon" hidden></div>
 <div class="marq" hidden><div class="mq" id="mq"></div></div>
 <div class="halls" id="halls"></div>
+<div class="rpause" id="rpause" hidden></div>
 <div class="tip" id="tip">SWIPE TO LOOK · PINCH TO ZOOM · TAP THE FLOOR TO MOVE · DOUBLE-TAP FOR YOUR SEAT</div>
 <div class="seatcard" id="seatcard"></div>
 <div class="quizc" id="quizc" hidden><div class="qk" id="qk">MIGA ASKS · 15 S</div><div class="qq" id="qq"></div><div class="qo" id="qo"></div><div class="qb"><i id="qbar"></i></div><div class="qn" id="qn"></div></div>
@@ -272,6 +297,7 @@ body.quizon .chat{visibility:hidden!important}
 <div class="chat" id="chat"><button class="chat-h" id="chatH"><svg class="ico" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg> <em>LIVE CHAT</em> <span id="chatN"></span><i class="chx" aria-label="Close chat"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></i></button>
   <div class="chat-l" id="chatL"></div>
   <div class="emo" id="reacts"><button data-e="1f525"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f525/emoji.svg" alt="" loading="lazy"></button><button data-e="1f602"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f602/emoji.svg" alt="" loading="lazy"></button><button data-e="1f92f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f92f/emoji.svg" alt="" loading="lazy"></button><button data-e="1f44f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44f/emoji.svg" alt="" loading="lazy"></button><button data-e="2764_fe0f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/2764_fe0f/emoji.svg" alt="" loading="lazy"></button></div>
+  <button class="inv rcb" id="rmb" type="button"><span class="il"><svg class="ico" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg> BATCH ROOMS</span> <b>new</b></button>
   <button class="inv rcb" id="rpb" type="button"><span class="il"><svg class="ico" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg> MY WEAK CHAPTERS</span> <b>report</b></button>
   <button class="inv rcb" id="rcb" type="button"><span class="il"><svg class="ico" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8M12 17.5v-11"/></svg> MY STUDY RECEIPT</span> <b>share</b></button>
   <button class="inv" id="inv" type="button"><span class="il"><svg class="ico" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg> INVITE A FRIEND</span> <b>+150 PTS per friend</b></button>
@@ -473,7 +499,7 @@ function current() {
   return { day, m, b, list, subject: H.week[day].subject, H, vid, at, cur, epNo, epOf: chunks.length };
 }
 function renderTT() {
-  if (!TT) return; const c = current();
+  if (!TT || ROOM) return; const c = current();
   document.getElementById('live').textContent = '● LIVE';
   const next = c.list.find((x) => mins(x.from) > c.m); const left = next ? mins(next.from) - c.m : null;
   document.getElementById('nowT').textContent = c.cur && c.cur.title ? c.cur.title.split('|')[0].trim() : c.b ? c.b.block : 'Off air';
@@ -531,6 +557,8 @@ ROWS.forEach((row, r) => {
   const strip = new THREE.Mesh(new THREE.BoxGeometry(HALL_W - 2, .04, .06), new THREE.MeshBasicMaterial({ color: 0xffb347 })); strip.position.set(0, y + .01, z - .55); scene.add(strip);
 });
 const QS = new URLSearchParams(location.search);
+const ROOM = /^[A-Z0-9]{6}$/.test((QS.get('room') || '').toUpperCase()) ? QS.get('room').toUpperCase() : null;   // Batch room mode
+if (ROOM) document.body.classList.add('room');
 let signedIn = false, myToken = null;
 // sign in with the same mindgains.ai account (Google); comes back to this exact link
 function askSignIn(why) {
@@ -618,13 +646,14 @@ const seatByKey = new Map(seats.map((s) => [s.row + s.n, s]));
 let myName = (() => { try { const p = JSON.parse(localStorage.getItem('tkr_player_profile') || '{}'); return p.name || ''; } catch { return ''; } })() || 'Guest ' + Math.floor(Math.random() * 900 + 100);
 const live = { ws: null, hall: null, n: 0, quiz: null, picked: -1,
   connect() { if (this.hall === hall && this.ws && this.ws.readyState < 2) return; try { this.ws && this.ws.close(); } catch {} this.hall = hall;
-    const ws = new WebSocket((location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/api/theatre/' + hall + '/ws'); this.ws = ws;
-    ws.onopen = () => { ws.send(JSON.stringify({ t: 'hello', look: MYLOOK, name: myName, token: myToken, ref: QS.get('ref') || '', pid: (() => { try { return getPlayerId(); } catch (e) { return ''; } })(), admin: (() => { try { return localStorage.getItem('mgt_admin') || ''; } catch (e) { return ''; } })() })); if (mine) this.sit(mine.row + mine.n); };
+    const ws = new WebSocket((location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + (ROOM ? '/api/room/' + ROOM + '/ws' : '/api/theatre/' + hall + '/ws')); this.ws = ws;
+    ws.onopen = () => { ws.send(JSON.stringify({ t: 'hello', tk: QS.get('tk') || '', look: MYLOOK, name: myName, token: myToken, ref: QS.get('ref') || '', pid: (() => { try { return getPlayerId(); } catch (e) { return ''; } })(), admin: (() => { try { return localStorage.getItem('mgt_admin') || ''; } catch (e) { return ''; } })() })); if (mine) this.sit(mine.row + mine.n); };
     ws.onmessage = (e) => this.on(JSON.parse(e.data));
     ws.onclose = () => { if (this.ws === ws) setTimeout(() => this.connect(), 3000); }; },
   send(m) { if (this.ws && this.ws.readyState === 1) this.ws.send(JSON.stringify(m)); },
   sit(k) { this.send({ t: 'sit', seat: k }); },
   on(m) {
+    if (ROOM && roomOn(m)) return;
     if (m.next || m.t === 'next') quizSoon(m.at || m.next);
     if (m.t === 'state' && m.chat) { chatL.innerHTML = ''; m.chat.forEach(addChat); document.getElementById('chatN').textContent = ''; }
     if (m.t === 'state' || m.t === 'seats') { this.n = m.count; paintSeats(m.seats, m.looks || {}, m.pros || []); if (m.top) paintTop(m.top); if (m.quiz) showQuiz(m.quiz); renderCount(); }
@@ -646,7 +675,7 @@ const live = { ws: null, hall: null, n: 0, quiz: null, picked: -1,
 let PRO = false; window.__walled = true;   // closed until we know who's watching (a signed-in account is required)
 const PRO_SEATS = new Set(); for (const r of 'EFG') for (let n = 7; n <= 12; n++) PRO_SEATS.add(r + n);
 let prosNow = new Set();
-const proOK = (s) => PRO || !PRO_SEATS.has(s.row + s.n);
+const proOK = (s) => ROOM || PRO || !PRO_SEATS.has(s.row + s.n);
 function freePill(left) {
   const p = document.getElementById('fpill'); if (!p) return;
   if (PRO) { p.classList.remove('on', 'go', 'low'); return; }
@@ -689,8 +718,8 @@ function showWall(kind) {
   fetch('/api/pro/me').then((r) => r.json()).then((x) => { if (x.launch) { const a = document.getElementById('wallM'); if (a) a.textContent = 'Pro Monthly · ₹49 first month'; } }).catch(() => {});
   const sb = document.getElementById('wallS'); if (sb) sb.onclick = () => account.signInPopup();
 }
-function hideWall() { window.__walled = false; const w = document.getElementById('wall'); if (w) w.remove(); }
-setInterval(() => { if (!PRO && !window.__walled && document.visibilityState === 'visible' && !document.body.classList.contains('intro')) live.send({ t: 'tick' }); }, 30000);
+function hideWall() { window.__walled = false; const w = document.getElementById('wall'); if (w) w.remove(); if (ROOM && RM.play) applyPlay(RM.play, true); }
+setInterval(() => { if ((ROOM || !PRO) && !window.__walled && document.visibilityState === 'visible' && !document.body.classList.contains('intro')) live.send({ t: 'tick' }); }, 30000);
 const MYLOOK = (() => { try { const p = loadProfile(); return [p.avatar | 0, p.color | 0]; } catch (e) { return [0, 5]; } })();
 const lookCache = new Map(), occ = new Map();   // seat key -> seated racer
 const GOLD = new THREE.MeshStandardMaterial({ color: 0xe8b84a, metalness: .55, roughness: .3, emissive: 0x3a2600, emissiveIntensity: .5 });
@@ -756,7 +785,7 @@ function bestSeat(map) {
   return best;
 }
 // ambient audience: a stable ~40% of ordinary seats hold a racer (never reserved seats, never next to you)
-const AMB = (s) => { const k = s.row + s.n; if (PRO_SEATS.has(k)) return null; let h = 0; for (const c of k) h = (h * 31 + c.charCodeAt(0)) >>> 0; h = (h ^ (h >>> 13)) * 2654435761 >>> 0;
+const AMB = (s) => { const k = s.row + s.n; if (ROOM || PRO_SEATS.has(k)) return null; let h = 0; for (const c of k) h = (h * 31 + c.charCodeAt(0)) >>> 0; h = (h ^ (h >>> 13)) * 2654435761 >>> 0;
   if (h % 100 >= 30) return null; if (mine && mine.row === s.row && Math.abs(mine.n - s.n) <= 1) return null; return [h % 6, (h >>> 8) % 8]; };
 function paintSeats(map, looks = {}, pros) {
   if (pros) prosNow = new Set(pros);
@@ -767,7 +796,7 @@ function paintSeats(map, looks = {}, pros) {
     const st = who ? 'taken' : 'free', pk = prosNow.has(k) ? 1 : 0; if (s.st === st && s.who === who && s.pk === pk && s.painted) continue; s.st = st; s.who = who; s.pk = pk; s.painted = 1;
     const gold = prosNow.has(k), res = PRO_SEATS.has(k);
     const c = gold ? COL.pro : st === 'taken' ? COL.taken : s.row < 'E' ? COL.freeB : COL.free; s.m.color.set(c); s.m.emissive.set(gold ? 0x6a4300 : st === 'taken' ? 0x000000 : c); s.m.emissiveIntensity = gold ? .6 : st === 'taken' ? 0 : .35; } }
-function renderCount() { const el = document.getElementById('nowS'); if (el && !el.dataset.c) { el.dataset.c = 1; } const k = document.getElementById('nowK'); if (k) k.textContent = `NOW SHOWING · ${live.n} IN THE HALL`; }
+function renderCount() { if (ROOM) return roomHeader(); const el = document.getElementById('nowS'); if (el && !el.dataset.c) { el.dataset.c = 1; } const k = document.getElementById('nowK'); if (k) k.textContent = `NOW SHOWING · ${live.n} IN THE HALL`; }
 function paintTop(top) { const el = document.getElementById('top5'); if (!top.length) { el.hidden = true; return; } el.hidden = false;
   el.innerHTML = '<b>TOP 5 TONIGHT</b>' + top.map((t, i) => `${i + 1}. ${t.name.replace(/[<>&]/g, '')}${t.seat ? ' · ' + t.seat : ''} — ${t.pts}`).join('<br>'); }
 let qTimer = null;
@@ -917,7 +946,7 @@ document.getElementById('inv').onclick = async () => { if (!signedIn) return ask
 function addChat(m) { const d = document.createElement('div'); const t = m.host ? null : TIER[m.rank];
   d.className = 'cm' + (m.sys ? ' sys' : '') + (m.name === myName ? ' me' : '') + (m.host ? ' host' : '') + (t ? ' ' + t[0] : m.pro ? ' pro' : '');
   d.innerHTML = (m.re ? `<div class="cm-re">↩ <b>${esc(m.re.name)}</b> ${esc(m.re.text)}</div>` : '') +
-    (m.host ? '<i class="tag">HOST</i>' : t ? `<i class="tag">${t[1]}</i>` : m.pro ? '<i class="tag"><svg class="ico" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M11.6 3.3a.5.5 0 0 1 .9 0l2.9 5.5a1 1 0 0 0 1.5.3l4.3-3.7a.5.5 0 0 1 .8.5l-2.8 10.3a1 1 0 0 1-1 .7H5.8a1 1 0 0 1-1-.7L2 5.9a.5.5 0 0 1 .8-.5l4.3 3.7a1 1 0 0 0 1.5-.3z"/><path d="M5 21h14"/></svg>PRO</i>' : '') +
+    (m.teacher ? '<i class="tag tch">TEACHER</i>' : m.owner ? '<i class="tag own">HOST</i>' : m.host ? '<i class="tag">HOST</i>' : t ? `<i class="tag">${t[1]}</i>` : m.pro ? '<i class="tag"><svg class="ico" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M11.6 3.3a.5.5 0 0 1 .9 0l2.9 5.5a1 1 0 0 0 1.5.3l4.3-3.7a.5.5 0 0 1 .8.5l-2.8 10.3a1 1 0 0 1-1 .7H5.8a1 1 0 0 1-1-.7L2 5.9a.5.5 0 0 1 .8-.5l4.3 3.7a1 1 0 0 0 1.5-.3z"/><path d="M5 21h14"/></svg>PRO</i>' : '') +
     `<b class="nm">${esc(m.name)}${m.seat ? ' <small>' + esc(m.seat) + '</small>' : ''}</b> <span class="tx">${esc(m.text)}</span>` +
     (m.at ? '<button class="rp" aria-label="Reply">↩</button>' : ''); if (m.sys) d.innerHTML = esc(m.text);
   if (m.at) { const rb = d.querySelector('.rp'); rb.onclick = () => setReply(m);
@@ -937,7 +966,7 @@ chatBox.addEventListener('pointerdown', (e) => e.stopPropagation()); chatBox.add
 setTimeout(() => live.connect(), 300);
 // signed in on mindgains.ai -> same account here: real name in chat, same player id as the NationLap board (for top-3 frames)
 account.init().then(() => { const bind = async (u) => { signedIn = !!u; if (!u) { showGate(); return; } const name = account.accountName(); setAccountIdentity({ id: u.id, name }); if (name) myName = name.slice(0, 20);
-  const token = await account.accessToken(); myToken = token; syncPro(); live.send({ t: 'hello', look: MYLOOK, name: myName, token, ref: QS.get('ref') || '', pid: u.id, admin: (() => { try { return localStorage.getItem('mgt_admin') || ''; } catch (e) { return ''; } })() }); }; bind(account.currentUser()); account.onChange(bind); }).catch(() => showGate());
+  const token = await account.accessToken(); myToken = token; syncPro(); live.send({ t: 'hello', tk: QS.get('tk') || '', look: MYLOOK, name: myName, token, ref: QS.get('ref') || '', pid: u.id, admin: (() => { try { return localStorage.getItem('mgt_admin') || ''; } catch (e) { return ''; } })() }); }; bind(account.currentUser()); account.onChange(bind); }).catch(() => showGate());
 // sound: browsers only allow sound after a tap, so ask once with a pulsing button
 const snd = document.getElementById('snd'); snd.classList.add('pulse');
 snd.onclick = () => { soundOn = !soundOn; if (soundOn) { if (ytP && ytP.unMute) { ytP.unMute(); ytP.setVolume(100); ytP.playVideo(); } else if (ytNow) { const id = ytNow, p = ytPos(); ytNow = ''; playOnScreen(id, p); } } else yCmd('mute'); snd.innerHTML = soundOn ? '<svg class="ico" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5Z"/><path d="M16 9a5 5 0 0 1 0 6M19.4 18.4a9 9 0 0 0 0-12.7"/></svg>' : '<svg class="ico" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5Z"/><path d="m22 9-6 6M16 9l6 6"/></svg>'; snd.classList.toggle('pulse', !soundOn); };
@@ -1050,6 +1079,175 @@ let t0 = performance.now();
   if (mine) mine.m.emissiveIntensity = .7 + .3 * Math.sin(now / 250);
   lookAtCamera(dt);
   if (ytObj) ytObj.visible = cam.position.z > screen.position.z + .1; renderer.render(scene, cam); css.render(cssScene, cam); if (!frame.n) { frame.n = 1; document.getElementById('ls').textContent = 'TAKING YOU TO YOUR SEAT…'; const q = new URLSearchParams(location.search); let seen = ''; try { seen = localStorage.getItem('mgt_intro'); } catch (e) {} if (!q.has('view') && !q.has('clean') && (q.has('intro') || q.get('from') === 'nationlap' || seen !== new Date().toDateString())) { startIntro(); setTimeout(hideLoader, 300); } } requestAnimationFrame(frame); })(t0);
+// ================= Batch rooms =================
+const RI = {
+  users: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/>',
+  plus: '<path d="M12 5v14M5 12h14"/>', play: '<path d="M6 3l14 9-14 9z"/>', pause: '<rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/>',
+  list: '<path d="M3 6h.01M3 12h.01M3 18h.01M8 6h13M8 12h13M8 18h13"/>', quiz: '<circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/>',
+  link: '<path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.8 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/>',
+  check: '<path d="M20 6 9 17l-5-5"/>', x: '<path d="M18 6 6 18M6 6l12 12"/>', cap: '<path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>',
+  flame: '<path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.1-.2-4 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.4-2.3 1-3.2.3 1.1 1.5 2.2 2.5 2.7z"/>',
+  crown: '<path d="M11.6 3.3a.5.5 0 0 1 .9 0l2.9 5.5a1 1 0 0 0 1.5.3l4.3-3.7a.5.5 0 0 1 .8.5l-2.8 10.3a1 1 0 0 1-1 .7H5.8a1 1 0 0 1-1-.7L2 5.9a.5.5 0 0 1 .8-.5l4.3 3.7a1 1 0 0 0 1.5-.3z"/><path d="M5 21h14"/>',
+  trash: '<path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>', video: '<path d="m16 13 5.2 3.1a.5.5 0 0 0 .8-.4V8.3a.5.5 0 0 0-.8-.4L16 11"/><rect x="2" y="6" width="14" height="12" rx="2"/>',
+};
+const ri = (n, z = 16, w = 2) => `<svg class="ico" viewBox="0 0 24 24" width="${z}" height="${z}" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round">${RI[n]}</svg>`;
+const RM = { role: 'member', room: null, play: null, list: [], locked: false, quiz: null, streak: 0, week: null, prog: null };
+const boss = () => RM.role === 'owner' || RM.role === 'teacher';
+function rsheet(title, icon, html) {   // the theatre's bottom sheet, reused for every room panel
+  document.querySelectorAll('.rpt.rs').forEach((x) => x.remove());
+  const d = document.createElement('div'); d.className = 'rpt rs';
+  d.innerHTML = `<div class="rc"><div class="rh"><b style="display:inline-flex;align-items:center;gap:10px">${ri(icon, 22)}${title}</b><button aria-label="Close">${ri('x', 16, 2.4)}</button></div>${html}</div>`;
+  document.body.appendChild(d); const close = () => d.remove();
+  d.addEventListener('click', (e) => { if (e.target === d || e.target.closest('.rh button')) close(); });
+  return { d, close };
+}
+// screen sync: the room server says which video, where and whether it's playing; we follow within 2 s
+function applyPlay(p, force) {
+  RM.play = p; const pz = document.getElementById('rpause');
+  document.getElementById('nowT').textContent = p.v ? (p.title || 'Video') : (boss() ? 'Add a YouTube video to start' : 'Waiting for the host to start a video');
+  document.getElementById('mCapT').textContent = document.getElementById('nowT').textContent;
+  pz.hidden = !(p.v && !p.playing); pz.innerHTML = ri('pause', 14, 2.4) + (p.by ? `PAUSED BY ${esc(p.by).toUpperCase()}` : 'PAUSED');
+  paintRoomBar();
+  if (window.__walled) return;
+  if (!p.v) { playOnScreen('', 0); return; }
+  if (force || ytNow !== p.v) { ytNow = ''; playOnScreen(p.v, p.pos); const want = p.playing; setTimeout(() => { if (!want) yCmd('pauseVideo'); }, 1800); return; }
+  let cur = null; try { cur = ytP && ytP.getCurrentTime ? ytP.getCurrentTime() : null; } catch (e) {}
+  if (cur == null || Math.abs(cur - p.pos) > 2) yCmd('seekTo', [p.pos, true]);
+  yCmd(p.playing ? 'playVideo' : 'pauseVideo');
+}
+setInterval(() => { if (!ROOM || !RM.play || !RM.play.playing || window.__walled) return;   // drift check
+  const exp = RM.play.pos + (Date.now() - RM.play.got) / 1000; let cur = null; try { cur = ytP && ytP.getCurrentTime ? ytP.getCurrentTime() : null; } catch (e) {}
+  if (cur != null && Math.abs(cur - exp) > 2.5) yCmd('seekTo', [exp, true]); }, 5000);
+function paintRoomBar() {
+  if (!ROOM || !RM.room) return;
+  const card = document.querySelector('.ticket .main'); let bar = document.getElementById('rbar');
+  if (!bar) { bar = document.createElement('div'); bar.className = 'rbar'; bar.id = 'rbar'; card.appendChild(bar); }
+  const p = RM.play || {};
+  bar.innerHTML = (boss() ? `<button class="pri" data-a="add">${ri('plus', 14, 2.6)}VIDEO</button>
+    ${p.v ? `<button data-a="${p.playing ? 'pause' : 'play'}">${ri(p.playing ? 'pause' : 'play', 13, 2.4)}${p.playing ? 'PAUSE' : 'PLAY'}</button>` : ''}
+    <button data-a="quiz">${ri('quiz', 14)}ASK QUIZ</button>${RM.list.length ? `<button data-a="pl">${ri('list', 14)}PLAYLIST</button>` : ''}` : '')
+    + `<button data-a="mem">${ri('users', 14)}MEMBERS</button><button data-a="inv">${ri('link', 14)}INVITE</button>`;
+  bar.querySelectorAll('button').forEach((b) => b.onclick = () => ({ add: addVideo, pause: () => live.send({ t: 'pause', pos: ytP && ytP.getCurrentTime ? ytP.getCurrentTime() : undefined }), play: () => live.send({ t: 'play' }), quiz: askQuiz, pl: playlist, mem: members, inv: invite })[b.dataset.a]());
+}
+function roomHeader() {
+  if (!RM.room) return; const w = RM.week;
+  document.getElementById('nowK').innerHTML = `<span style="display:inline-flex;align-items:center;gap:6px">${ri('users', 12, 2.4)}BATCH · ${esc(RM.room.name).toUpperCase()}</span>`;
+  document.getElementById('nowS').innerHTML = `${live.n} here now · code ${RM.room.code}` + (RM.streak ? ` · <span style="display:inline-flex;align-items:center;gap:3px;color:#ffb35c">${ri('flame', 12, 2.4)}${RM.streak}-day batch streak</span>` : '') + (w && w.rank ? ` · #${w.rank} of ${w.of} batches this week` : '');
+  document.getElementById('nowT').textContent = RM.play && RM.play.v ? (RM.play.title || 'Video') : (boss() ? 'Add a YouTube video to start' : 'Waiting for the host to start a video');
+}
+function lockChat(on) {
+  RM.locked = on; if (boss()) return;
+  chatI.disabled = on; chatS.disabled = on; chatI.placeholder = on ? 'Chat is paused for the quiz' : 'Say something…';
+}
+function roomQuiz(q) {   // teacher's quiz: no timer, stays on top until everyone answers or the teacher resumes
+  RM.quiz = q; showQuiz({ ...q, ends: Date.now() + 864e5 }); clearInterval(qTimer); clearTimeout(window.__qh);
+  document.getElementById('qk').innerHTML = `<span style="display:inline-flex;align-items:center;gap:6px">${ri('cap', 13, 2.4)}${esc(q.by || 'TEACHER').toUpperCase()} ASKS</span>`;
+  qProg(q.n || 0, q.of || 0);
+  if (boss()) { document.querySelectorAll('#qo button').forEach((b) => { b.disabled = true; b.style.opacity = .75; });
+    const r = document.createElement('button'); r.className = 'rqres'; r.style.cssText = 'margin-top:10px;width:100%;padding:12px;border-radius:12px;border:0;background:linear-gradient(90deg,#f3c86b,#ffe2a0);color:#1a1206;font:800 13px Inter;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px';
+    r.innerHTML = ri('check', 15, 2.6) + 'REVEAL ANSWER &amp; UNLOCK CHAT'; r.onclick = () => live.send({ t: 'resume' });
+    document.querySelectorAll('#quizc .rqres').forEach((x) => x.remove()); document.getElementById('quizc').appendChild(r); }
+}
+function qProg(n, of) { RM.prog = [n, of]; document.getElementById('qbar').style.width = (of ? Math.min(100, n / of * 100) : 0) + '%'; document.getElementById('qn').textContent = of ? `${n} of ${of} answered · chat resumes when everyone answers` : 'Waiting for answers'; }
+function roomOn(m) {
+  if (m.t === 'state') {
+    RM.role = m.role; RM.room = m.room; RM.streak = m.streak || 0; RM.week = m.week; document.title = m.room.name + ' · MindGains Batch';
+    if (m.quiz) { RM.pendingQuiz = m.quiz; } m.quiz = null; lockChat(!!m.locked);
+    setTimeout(() => { roomHeader(); paintRoomBar(); if (RM.pendingQuiz) { roomQuiz(RM.pendingQuiz); RM.pendingQuiz = null; } }, 0);
+    return false;   // seats + chat handled by the hall code
+  }
+  if (m.t === 'seats') { setTimeout(roomHeader, 0); return false; }
+  if (m.t === 'play') { RM.list = m.list || []; applyPlay({ ...m, got: Date.now() }); return true; }
+  if (m.t === 'quiz') { roomQuiz(m); return true; }
+  if (m.t === 'qprog') { if (RM.quiz && m.qid === RM.quiz.qid) qProg(m.n, m.of); return true; }
+  if (m.t === 'lock') { lockChat(m.on); return true; }
+  if (m.t === 'reveal') { document.querySelectorAll('#quizc .rqres').forEach((x) => x.remove()); reveal({ ...m, top: [] });
+    document.getElementById('qk').textContent = boss() ? 'ANSWER REVEALED' : live.picked === m.correct ? 'CORRECT ✦ +20 XP' : live.picked < 0 ? 'NO ANSWER' : 'NOT QUITE';
+    RM.quiz = null; return true; }
+  if (m.t === 'role') { RM.role = m.role; paintRoomBar(); roomHeader(); flashCard(m.role === 'teacher' ? 'You are now a teacher in this batch' : 'You are a member of this batch'); return true; }
+  if (m.t === 'members') { if (RM.memSheet) RM.memSheet(m.list); return true; }
+  if (m.t === 'err') {
+    if (m.why === 'signin') { showGate(); return true; }
+    if (m.why === 'link') { flashCard('That is not a YouTube link'); return true; }
+    if (m.why === 'quiz') { flashCard('Add a question, 2-4 options and mark the right one'); return true; }
+    const t = { full: 'This batch is full (30 members)', removed: 'You were removed from this batch' }[m.why] || 'This batch room is unavailable';
+    live.ws && (live.ws.onclose = null); rsheet('Batch room', 'users', `<p class="hint">${t}.</p><a class="pbtn" href="/play/theatre/" style="text-decoration:none">Go to the main hall</a>`); return true;
+  }
+  return false;
+}
+async function addVideo() {
+  const { d, close } = rsheet('Add a video', 'video', `<p class="hint">Paste any YouTube link. It plays for everyone in the batch, in sync.</p>
+    <input class="fld" id="rvU" placeholder="https://youtube.com/watch?v=…" autocomplete="off"><div class="err" id="rvE" hidden></div>
+    <button class="pbtn" id="rvGo">${ri('play', 15, 2.4)}Play for everyone</button>`);
+  const u = d.querySelector('#rvU'); u.focus();
+  d.querySelector('#rvGo').onclick = async () => {
+    const m = u.value.trim().match(/(?:youtu\.be\/|[?&]v=|\/shorts\/|\/embed\/|\/live\/)([\w-]{11})/) || (/^[\w-]{11}$/.test(u.value.trim()) ? [0, u.value.trim()] : null);
+    const e = d.querySelector('#rvE'); if (!m) { e.hidden = false; e.textContent = 'That doesn\'t look like a YouTube link'; return; }
+    let title = ''; try { title = (await (await fetch('https://www.youtube.com/oembed?format=json&url=' + encodeURIComponent('https://www.youtube.com/watch?v=' + m[1]))).json()).title || ''; } catch (x) {}
+    live.send({ t: 'video', v: m[1], title }); close();
+  };
+}
+function playlist() {
+  const { d, close } = rsheet('Playlist', 'list', RM.list.map((x) => `<div class="li" data-v="${esc(x.v)}"><span class="av">${ri(RM.play && RM.play.v === x.v ? 'play' : 'video', 18)}</span><div><b>${esc(x.title)}</b><small>${RM.play && RM.play.v === x.v ? 'Now playing' : 'Tap to play for everyone'}</small></div><button class="x" data-del="${esc(x.v)}" aria-label="Remove">${ri('trash', 15)}</button></div>`).join(''));
+  d.querySelectorAll('.li').forEach((r) => r.onclick = (e) => { const del = e.target.closest('[data-del]'); if (del) { live.send({ t: 'unlist', v: del.dataset.del }); r.remove(); return; } const x = RM.list.find((y) => y.v === r.dataset.v); live.send({ t: 'video', v: x.v, title: x.title }); close(); });
+}
+function askQuiz() {
+  let correct = 0;
+  const { d, close } = rsheet('Ask the batch', 'quiz', `<p class="hint">The video pauses and chat locks for students until everyone answers or you reveal.</p>
+    <textarea class="fld" id="rqQ" rows="2" placeholder="Your question"></textarea>
+    ${[0, 1, 2, 3].map((i) => `<div class="opt"><input class="fld" data-o="${i}" placeholder="Option ${'ABCD'[i]}${i > 1 ? ' (optional)' : ''}"><button data-c="${i}" class="${i ? '' : 'on'}" aria-label="Mark correct">${ri('check', 18, 2.6)}</button></div>`).join('')}
+    <div class="err" id="rqE" hidden></div><button class="pbtn" id="rqGo">${ri('quiz', 15)}Ask now</button>`);
+  d.querySelectorAll('[data-c]').forEach((b) => b.onclick = () => { correct = +b.dataset.c; d.querySelectorAll('[data-c]').forEach((x) => x.classList.toggle('on', x === b)); });
+  d.querySelector('#rqQ').focus();
+  d.querySelector('#rqGo').onclick = () => {
+    const q = d.querySelector('#rqQ').value.trim(), raw = [...d.querySelectorAll('[data-o]')].map((x) => x.value.trim());
+    const opts = [], map = {}; raw.forEach((o, i) => { if (o) { map[i] = opts.length; opts.push(o); } });
+    const e = d.querySelector('#rqE');
+    if (!q || opts.length < 2) { e.hidden = false; e.textContent = 'Write a question and at least two options'; return; }
+    if (map[correct] == null) { e.hidden = false; e.textContent = 'The option marked correct is empty'; return; }
+    live.send({ t: 'quiz', q, opts, correct: map[correct] }); close();
+  };
+}
+function members() {
+  const { d } = rsheet('Members', 'users', '<p class="hint">Loading…</p>');
+  RM.memSheet = (list) => { if (!document.body.contains(d)) { RM.memSheet = null; return; }
+    d.querySelector('.rc').innerHTML = d.querySelector('.rh').outerHTML + list.map((x) => `<div class="li" style="cursor:default"><span class="av">${ri(x.role === 'teacher' ? 'cap' : x.role === 'owner' ? 'crown' : 'users', 18)}</span><div><b><span class="dot${x.on ? ' on' : ''}"></span>${esc(x.name || 'Member')}</b><small>${x.role === 'owner' ? 'Host' : x.role === 'teacher' ? 'Teacher' : 'Member'}</small></div>
+      ${RM.role === 'owner' && x.role !== 'owner' ? `<button class="x" data-t="${esc(x.uid)}" data-off="${x.role === 'teacher' ? 1 : ''}" title="${x.role === 'teacher' ? 'Remove teacher' : 'Make teacher'}" style="${x.role === 'teacher' ? 'color:#a78bfa' : ''}">${ri('cap', 16)}</button><button class="x" data-k="${esc(x.uid)}" title="Remove from batch">${ri('x', 15, 2.4)}</button>` : ''}</div>`).join('');
+    d.querySelector('.rh button').onclick = () => d.remove();
+    d.querySelectorAll('[data-t]').forEach((b) => b.onclick = () => live.send({ t: 'teacher', uid: b.dataset.t, off: !!b.dataset.off }));
+    d.querySelectorAll('[data-k]').forEach((b) => b.onclick = () => { if (confirm('Remove this member from the batch?')) { live.send({ t: 'kick', uid: b.dataset.k }); b.closest('.li').remove(); } }); };
+  live.send({ t: 'members' });
+}
+function invite() {
+  const base = location.origin + '/play/theatre/?room=' + RM.room.code, tl = RM.room.tkey ? base + '&tk=' + RM.room.tkey : '';
+  const { d } = rsheet('Invite to ' + esc(RM.room.name), 'link', `<p class="hint">Friends and classmates join free with this link (up to 30).${RM.room.ownerPro ? ' Your Pro covers their watch time in this room.' : ''}</p>
+    <input class="fld" readonly value="${esc(base)}"><button class="pbtn" data-c="${esc(base)}">${ri('link', 15)}Copy invite link</button>
+    <a class="sbtn" style="text-decoration:none" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(`Join our study batch "${RM.room.name}" on MindGains. We watch classes together, chat and quiz each other: ${base}`)}">Share on WhatsApp</a>
+    ${tl ? `<div class="sec">TEACHER LINK</div><p class="hint">Anyone who opens this becomes a teacher: they can play, pause and ask quizzes. Share it only with your teacher.</p><button class="sbtn" data-c="${esc(tl)}">${ri('cap', 15)}Copy teacher link</button>` : ''}`);
+  d.querySelectorAll('[data-c]').forEach((b) => b.onclick = async () => { try { await navigator.clipboard.writeText(b.dataset.c); } catch (e) {} const t = b.innerHTML; b.innerHTML = ri('check', 15, 2.6) + 'Copied'; setTimeout(() => b.innerHTML = t, 1600); });
+}
+// the Batch rooms hub (from the hall or a room): my batches, create (Pro), join by code
+async function batchHub() {
+  const { d, close } = rsheet('Batch rooms', 'users', '<p class="hint">Loading your batches…</p>');
+  if (!signedIn) { d.querySelector('.hint').outerHTML = '<p class="hint">Your own private theatre for friends, classmates or a tuition class. Sign in to create or join one.</p><button class="pbtn" id="bhS">Continue with Google</button>'; d.querySelector('#bhS').onclick = () => { close(); account.signInPopup(); }; return; }
+  let r = null; try { r = await (await fetch('/api/room/mine', { headers: { Authorization: 'Bearer ' + (await account.accessToken()) } })).json(); } catch (e) {}
+  const rooms = (r && r.rooms) || [], pro = !!(r && r.pro);
+  const body = `<p class="hint">Your own private theatre for friends, classmates or a tuition class. Play any YouTube class in sync, chat, ask doubts, and let a teacher pause and quiz everyone.</p>
+    ${rooms.length ? '<div class="sec">MY BATCHES</div>' + rooms.map((x) => `<div class="li" data-go="${x.code}"><span class="av">${ri('users', 18)}</span><div><b>${esc(x.name)}</b><small>${x.members} member${x.members > 1 ? 's' : ''}${x.streak ? ` · ${x.streak}-day streak` : ''}${x.week && x.week.rank ? ` · #${x.week.rank} this week` : ''}</small></div>${x.mine ? '<em>HOST</em>' : ''}</div>`).join('') : ''}
+    <div class="sec">JOIN A BATCH</div><div class="row2"><input class="fld" id="bjC" maxlength="6" placeholder="CODE"><button id="bjGo">JOIN</button></div>
+    <div class="sec">CREATE A BATCH</div>
+    ${pro ? `<input class="fld" id="bcN" maxlength="40" placeholder="Batch name, e.g. Madurai TNPSC Gang"><div class="err" id="bcE" hidden></div><button class="pbtn" id="bcGo">${ri('plus', 15, 2.6)}Create batch room</button>`
+      : `<a class="pbtn" style="text-decoration:none" href="/pro/?plan=exam&back=${encodeURIComponent(location.pathname + location.search)}">${ri('crown', 15)}Create with Pro · friends join free</a>`}`;
+  d.querySelector('.rc').innerHTML = d.querySelector('.rh').outerHTML + body; d.querySelector('.rh button').onclick = close;
+  d.querySelectorAll('[data-go]').forEach((x) => x.onclick = () => { location.href = '/play/theatre/?room=' + x.dataset.go; });
+  d.querySelector('#bjGo').onclick = () => { const c = d.querySelector('#bjC').value.trim().toUpperCase(); if (/^[A-Z0-9]{6}$/.test(c)) location.href = '/play/theatre/?room=' + c; };
+  const cg = d.querySelector('#bcGo'); if (cg) cg.onclick = async () => {
+    cg.disabled = true; let x = null; try { x = await (await fetch('/api/room/create', { method: 'POST', headers: { 'content-type': 'application/json', Authorization: 'Bearer ' + (await account.accessToken()) }, body: JSON.stringify({ name: d.querySelector('#bcN').value }) })).json(); } catch (e) {}
+    if (x && x.code) location.href = '/play/theatre/?room=' + x.code; else { cg.disabled = false; const e = d.querySelector('#bcE'); e.hidden = false; e.textContent = (x && x.why) || 'Could not create the room'; } };
+}
+document.getElementById('mRoom').onclick = batchHub; document.getElementById('rmb').onclick = batchHub;
+if (ROOM) { document.getElementById('nowT').textContent = 'Joining batch…'; document.getElementById('nowK').textContent = 'BATCH ROOM'; document.getElementById('nowS').textContent = ''; }
+window.__room = { RM, roomOn, applyPlay, batchHub, addVideo, askQuiz, invite, members, roomQuiz };
 </script>
 </body>
 </html>
