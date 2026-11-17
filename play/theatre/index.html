@@ -105,6 +105,25 @@ body{font-family:Inter,system-ui,sans-serif}
 .wall .wb1{background:linear-gradient(90deg,#f3c86b,#ffe2a0);color:#1a1206;box-shadow:0 8px 24px -8px rgba(243,200,107,.6)}.wall .wb1 small{display:block;font:600 12px Inter;opacity:.75;margin-top:2px}
 .wall .wb2{background:#25212c;color:#fff}
 .wall .wt{font:600 13px Inter;color:#8d8697;margin-top:12px}.wall .wt a{color:#cfc7d8}
+.rpt{position:fixed;inset:0;z-index:70;display:flex;align-items:flex-end;justify-content:center;background:rgba(5,4,8,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);animation:wf .3s}
+@media (min-width:760px){.rpt{align-items:center}}
+.rpt .rc{width:min(460px,100%);max-height:88vh;overflow:auto;background:#121017;border:1px solid rgba(255,255,255,.08);border-radius:26px 26px 0 0;padding:22px 20px calc(20px + env(safe-area-inset-bottom));animation:ru .4s cubic-bezier(.2,1,.3,1)}
+@media (min-width:760px){.rpt .rc{border-radius:26px}}
+@keyframes ru{from{transform:translateY(40px);opacity:0}}
+.rpt .rh{display:flex;align-items:center;gap:10px;margin-bottom:16px}.rpt .rh b{font:400 30px/1 'Bebas Neue';letter-spacing:.03em;flex:1}.rpt .rh button{width:36px;height:36px;border-radius:50%;border:0;background:#25212c;color:#fff;font-size:16px}
+.rpt .sum{display:flex;gap:16px;align-items:center;padding:16px;border-radius:18px;background:linear-gradient(135deg,rgba(243,200,107,.12),rgba(243,200,107,.03));border:1px solid rgba(243,200,107,.25);margin-bottom:18px}
+.rpt .rring{--p:0;width:74px;height:74px;border-radius:50%;flex:none;display:grid;place-items:center;background:conic-gradient(#f3c86b calc(var(--p)*1%),rgba(255,255,255,.08) 0);position:relative}
+.rpt .rring:before{content:"";position:absolute;inset:7px;border-radius:50%;background:#16131b}.rpt .rring span{position:relative;font:400 26px 'Bebas Neue'}
+.rpt .sum p{margin:0;color:#d6cfc4;font:500 14px/1.45 Inter}.rpt .sum p b{color:#fff;display:block;font-size:16px;margin-bottom:2px}
+.rpt h4{margin:0 0 10px;font:800 11px Inter;letter-spacing:.14em;color:#a49d92}
+.rpt .row{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)}.rpt .row:last-child{border:0}
+.rpt .rt{display:flex;justify-content:space-between;gap:10px;font:700 14px Inter;margin-bottom:8px}.rpt .rt span{color:#a49d92;font-weight:600;white-space:nowrap}
+.rpt .bar{height:8px;border-radius:8px;background:rgba(255,255,255,.07);overflow:hidden}.rpt .bar i{display:block;height:100%;border-radius:8px}
+.rpt .lock{position:relative;margin-top:4px}.rpt .lock .ghost{filter:blur(6px);opacity:.6;pointer-events:none}
+.rpt .lock .cta{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
+.rpt .go{display:block;width:100%;padding:14px;border-radius:14px;border:0;font:800 14px Inter;text-decoration:none;text-align:center;background:linear-gradient(90deg,#f3c86b,#ffe2a0);color:#1a1206;box-shadow:0 8px 24px -8px rgba(243,200,107,.6)}
+.rpt .empty{color:#a49d92;font:500 14px/1.5 Inter;text-align:center;padding:18px 8px}
+.rpt .rev{display:inline-block;margin-top:8px;font:700 12px Inter;color:#ffe2a0;text-decoration:none}
 .cm .tag{display:inline-block;font:900 8.5px Inter;letter-spacing:.12em;font-style:normal;padding:1px 6px;border-radius:6px;margin-right:5px;vertical-align:1px}
 .cm.host{background:linear-gradient(135deg,rgba(243,212,138,.22),rgba(243,212,138,.06));border:1px solid rgba(243,212,138,.7);box-shadow:0 0 14px rgba(243,212,138,.25)}.cm.host .tag{background:var(--g);color:#1a1206}.cm.host .nm{color:#ffe7a6}
 .cm.legend{border:1.5px solid transparent;background:linear-gradient(rgba(30,20,6,.92),rgba(30,20,6,.92)) padding-box,linear-gradient(90deg,#ffe066,#ff9f1c,#fff6c2,#ffb21f,#ffe066) border-box;background-size:100% 100%,300% 100%;animation:tierFlow 3s linear infinite;box-shadow:0 0 12px rgba(255,190,40,.45)}
@@ -213,7 +232,7 @@ body.quizon .chat{visibility:hidden!important}
 <div class="top"><a class="back" href="/nationlap/" aria-label="Back" onclick="if(window.__receipt&&window.__receipt.RC.secs>=600&&!sessionStorage.getItem('mgt_rc_offer')){sessionStorage.setItem('mgt_rc_offer','1');if(confirm('Before you go: grab your study receipt to share? 🧾')){event.preventDefault();window.__receipt.share();}}"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></a><div class="brand">MINDGAINS · THEATRE</div><span class="live" id="live">● LIVE</span><a class="fpill" id="fpill" href="/pro/?back=/play/theatre/">⏳ <span id="fpillT">30 MIN FREE</span></a><button class="ib" id="snd" title="Sound">🔇</button><button class="ib" id="fs" title="Full screen">⛶</button></div>
 <button class="mob mhall" id="mHall">EN</button><button class="mob mview" id="mView" aria-label="Change view">🎥</button>
 <div class="mob mcap" id="mCap"><i></i><span id="mCapT">LIVE</span></div>
-<div class="mob mfab"><button id="mChat" aria-label="Chat">💬<span id="mChatN"></span></button><button id="mInv" aria-label="Invite a friend">🎟️<b>+150</b></button><button id="mRc" aria-label="My study receipt">🧾</button></div>
+<div class="mob mfab"><button id="mChat" aria-label="Chat">💬<span id="mChatN"></span></button><button id="mInv" aria-label="Invite a friend">🎟️<b>+150</b></button><button id="mRc" aria-label="My study receipt">🧾</button><button id="mRp" aria-label="My weak chapters">📊</button></div>
 <div class="qsoon" id="qSoon" hidden></div>
 <div class="marq" hidden><div class="mq" id="mq"></div></div>
 <div class="halls" id="halls"></div>
@@ -224,6 +243,7 @@ body.quizon .chat{visibility:hidden!important}
 <div class="chat" id="chat"><button class="chat-h" id="chatH">💬 <em>LIVE CHAT</em> <span id="chatN"></span><i>‹</i></button>
   <div class="chat-l" id="chatL"></div>
   <div class="emo" id="reacts"><button data-e="1f525"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f525/emoji.svg" alt="" loading="lazy"></button><button data-e="1f602"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f602/emoji.svg" alt="" loading="lazy"></button><button data-e="1f92f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f92f/emoji.svg" alt="" loading="lazy"></button><button data-e="1f44f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44f/emoji.svg" alt="" loading="lazy"></button><button data-e="2764_fe0f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/2764_fe0f/emoji.svg" alt="" loading="lazy"></button></div>
+  <button class="inv rcb" id="rpb" type="button">📊 MY WEAK CHAPTERS <b>report</b></button>
   <button class="inv rcb" id="rcb" type="button">🧾 MY STUDY RECEIPT <b>share</b></button>
   <button class="inv" id="inv" type="button">🎟️ INVITE A FRIEND <b>+150 PTS per friend</b></button>
   <div class="chat-r" id="chatR" hidden><span id="chatRt"></span><button type="button" id="chatRx" aria-label="Cancel reply">✕</button></div>
@@ -708,7 +728,7 @@ const RK = 'mgt_rcpt_' + new Date().toISOString().slice(0, 10);
 const RC = (() => { try { return JSON.parse(localStorage.getItem(RK) || '{}'); } catch (e) { return {}; } })();
 RC.secs = RC.secs || 0; RC.q = RC.q || 0; RC.right = RC.right || 0; RC.best = RC.best || 0;
 const saveRC = () => { try { localStorage.setItem(RK, JSON.stringify(RC)); } catch (e) {} };
-const streak = (() => { let days = []; try { days = JSON.parse(localStorage.getItem('mgt_days') || '[]'); } catch (e) {}
+let streak = (() => { let days = []; try { days = JSON.parse(localStorage.getItem('mgt_days') || '[]'); } catch (e) {}
   const today = new Date().toISOString().slice(0, 10); if (!days.includes(today)) { days.push(today); days = days.slice(-60); try { localStorage.setItem('mgt_days', JSON.stringify(days)); } catch (e) {} }
   let n = 0; for (let d = new Date(); days.includes(d.toISOString().slice(0, 10)); d.setDate(d.getDate() - 1)) n++; return n; })();
 setInterval(() => { if (document.visibilityState === 'visible' && !document.body.classList.contains('intro')) { RC.secs += 5; RC.topic = (document.getElementById('nowT') || {}).textContent || RC.topic; if (RC.secs % 30 === 0) saveRC(); } }, 5000);
@@ -728,6 +748,7 @@ async function makeReceipt() {
   const T = (s, x, y, f, col = ink, al = 'left') => { g.font = f; g.fillStyle = col; g.textAlign = al; g.fillText(s, x, y); };
   const line = (y) => { g.strokeStyle = 'rgba(29,26,20,.35)'; g.setLineDash([10, 9]); g.lineWidth = 3; g.beginPath(); g.moveTo(X + 50, y); g.lineTo(X + PW - 50, y); g.stroke(); g.setLineDash([]); };
   T('NATIONLAP LIVE', 540, Y + 140, '400 92px "Bebas Neue", Impact, sans-serif', ink, 'center');
+  if (PRO) { g.save(); g.translate(X + PW - 120, Y + 90); g.rotate(-.18); g.strokeStyle = gold; g.lineWidth = 5; g.strokeRect(-80, -34, 160, 68); T('PRO 👑', 0, 18, '400 52px "Bebas Neue", Impact, sans-serif', gold, 'center'); g.restore(); }
   T('STUDY RECEIPT', 540, Y + 200, '800 30px Inter, system-ui', gold, 'center');
   T(new Date().toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' }).toUpperCase() + '  ·  SEAT ' + (mine ? mine.row + mine.n : '—'), 540, Y + 252, '600 26px Inter, system-ui', mute, 'center');
   line(Y + 300);
@@ -790,12 +811,42 @@ document.getElementById('chatRx').onclick = () => setReply(null);
 const setChat = (open) => { chatBox.classList.toggle('min', !open); document.body.classList.toggle('chaton', open); document.getElementById('mChatN').textContent = ''; if (open) chatL.scrollTop = chatL.scrollHeight; };
 document.getElementById('mChat').onclick = () => setChat(true);
 document.getElementById('chatH').addEventListener('click', () => document.body.classList.toggle('chaton', !chatBox.classList.contains('min')));
+// ---- Weak Chapters report (every live-quiz answer, per chapter, last 90 days)
+const barCol = (p) => p < 40 ? '#ff6b6b' : p < 65 ? '#f3a73b' : '#4ade80';
+async function openReport() {
+  const d = document.createElement('div'); d.className = 'rpt';
+  d.innerHTML = '<div class="rc"><div class="rh"><b>📊 My weak chapters</b><button aria-label="Close">✕</button></div><div class="empty">Loading…</div></div>';
+  document.body.appendChild(d);
+  d.onclick = (e) => { if (e.target === d || e.target.closest('.rh button')) d.remove(); };
+  const box = d.querySelector('.rc'), body = (h) => { box.innerHTML = '<div class="rh"><b>📊 My weak chapters</b><button aria-label="Close">✕</button></div>' + h; };
+  if (!signedIn) { body('<div class="empty">Sign in and every live-quiz answer you give is tracked by chapter, so you know exactly what to revise.</div><button class="go" id="rpS">Continue with Google</button>'); d.querySelector('#rpS').onclick = () => account.signInPopup(); return; }
+  let r = null; try { r = await (await fetch('/api/pro/report', { headers: { Authorization: 'Bearer ' + (await account.accessToken()) } })).json(); } catch (e) {}
+  if (!r || r.error) { body('<div class="empty">Couldn\'t load your report. Try again in a moment.</div>'); return; }
+  if (!r.total) { body('<div class="empty">No answers yet. Answer tonight\'s live quizzes and your report fills in chapter by chapter.</div>'); return; }
+  const row = (c) => `<div class="row"><div class="rt">${esc(c.chapter)}<span>${c.pct}% · ${c.n} Qs</span></div><div class="bar"><i style="width:${Math.max(4, c.pct)}%;background:${barCol(c.pct)}"></i></div></div>`;
+  const sum = `<div class="sum"><div class="rring" style="--p:${r.pct}"><span>${r.pct}%</span></div><p><b>${r.total} live answers tracked</b>${r.weak[0] ? `Revise <b style="display:inline;color:#ffe2a0">${esc(r.weak[0].chapter)}</b> first. It's costing you the most marks.` : 'Keep answering to find your weak spots.'}</p></div>`;
+  if (r.pro) {
+    body(sum + (r.weak.length ? '<h4>REVISE THESE FIRST</h4>' + r.weak.map(row).join('') : '') + (r.chapters.length > r.weak.length ? '<h4 style="margin-top:18px">EVERYTHING ELSE</h4>' + r.chapters.filter((c) => !r.weak.some((w) => w.chapter === c.chapter)).sort((a, b) => a.pct - b.pct).map(row).join('') : '') + '<a class="rev" href="/nationlap/">🏁 Race these chapters in NationLap ›</a>');
+  } else {
+    const ghost = ['Mauryan administration', 'Harappan town planning', 'Vijayanagara empire', 'Bhakti movement'].map((t, i) => row({ chapter: t, pct: [34, 52, 61, 78][i], n: 6 + i })).join('');
+    body(sum + '<h4>YOUR WEAKEST CHAPTER</h4>' + r.weak.map(row).join('') + `<div class="lock"><div class="ghost">${ghost}</div><div class="cta"><div><p style="margin:0 0 12px;font:700 15px Inter">${r.locked ? r.locked + ' more chapters' : 'Your full breakdown'} in your report</p><a class="go" href="/pro/?back=${encodeURIComponent(location.pathname + location.search)}">Unlock with Pro · from ₹99</a></div></div></div>`);
+  }
+}
+document.getElementById('mRp').onclick = openReport; document.getElementById('rpb').onclick = openReport;
+// ---- signed-in: synced streak (Pro keeps it across devices, with freezes) and a renewal nudge
+async function syncPro() {
+  try {
+    const t = await account.accessToken(); const x = await (await fetch('/api/pro/me', { headers: t ? { Authorization: 'Bearer ' + t } : {} })).json();
+    if (x.pro && x.streak) { streak = Math.max(streak, x.streak); if (x.frozen) flashCard(`🧊 A streak freeze saved your ${x.streak}-day streak`); }
+    if (x.pro && x.until - Date.now() < 4 * 864e5) { const dd = Math.max(1, Math.ceil((x.until - Date.now()) / 864e5)); setTimeout(() => flashCard(`👑 Pro ends in ${dd} day${dd > 1 ? 's' : ''} · renew at mindgains.ai/pro`), 6000); }
+  } catch (e) {}
+}
 document.getElementById('mRc').onclick = () => shareReceipt(); document.getElementById('rcb').onclick = () => shareReceipt();
 document.getElementById('mInv').onclick = () => document.getElementById('inv').click();
 document.getElementById('mHall').onclick = () => { const b = [...document.querySelectorAll('#halls button')].find((x) => !x.classList.contains('on')); if (b) b.click(); };
 { const t = document.querySelector('.top'), b = t.querySelector('.back'); b.after(document.getElementById('mHall'), document.getElementById('mView')); }
 { const fit = () => document.documentElement.style.setProperty('--topb', document.querySelector('.top').getBoundingClientRect().bottom + 'px'); fit(); addEventListener('resize', fit); }
-window.__th = { showQuiz: (q) => showQuiz(q), addChat: (m) => addChat(m), react: (e) => reactStream(e), soon: (at) => quizSoon(at), setChat: (o) => setChat(o), fly: (v) => fly(v), reveal: (m) => reveal(m), live, occ, cam, seatRacer, seats, wall: showWall, pill: freePill, setPro: (v) => { PRO = v; }, paintSeats, go: (p, l) => { spot = [new THREE.Vector3(...p), new THREE.Vector3(...l)]; fly('spot'); } };
+window.__th = { showQuiz: (q) => showQuiz(q), addChat: (m) => addChat(m), react: (e) => reactStream(e), soon: (at) => quizSoon(at), setChat: (o) => setChat(o), fly: (v) => fly(v), reveal: (m) => reveal(m), live, occ, cam, seatRacer, seats, wall: showWall, pill: freePill, setPro: (v) => { PRO = v; }, paintSeats, signed: (v) => { signedIn = v; }, go: (p, l) => { spot = [new THREE.Vector3(...p), new THREE.Vector3(...l)]; fly('spot'); } };
 document.getElementById('mCap').onclick = () => document.getElementById('ttbtn').click();
 { const order = ['seat', 'wide', 'stage', 'balcony'], name = { seat: 'MY SEAT', wide: 'HALL', stage: 'FRONT ROW', balcony: 'BALCONY' };
   document.getElementById('mView').onclick = () => { const v = order[(order.indexOf(mode) + 1) % order.length]; fly(v); flashCard(name[v]); }; }
@@ -831,7 +882,7 @@ chatBox.addEventListener('pointerdown', (e) => e.stopPropagation()); chatBox.add
 setTimeout(() => live.connect(), 300);
 // signed in on mindgains.ai -> same account here: real name in chat, same player id as the NationLap board (for top-3 frames)
 account.init().then(() => { const bind = async (u) => { signedIn = !!u; if (!u) { if (QS.get('ref')) askSignIn('ref'); return; } const name = account.accountName(); setAccountIdentity({ id: u.id, name }); if (name) myName = name.slice(0, 20);
-  const token = await account.accessToken(); myToken = token; live.send({ t: 'hello', look: MYLOOK, name: myName, token, ref: QS.get('ref') || '', pid: u.id, admin: (() => { try { return localStorage.getItem('mgt_admin') || ''; } catch (e) { return ''; } })() }); }; bind(account.currentUser()); account.onChange(bind); }).catch(() => {});
+  const token = await account.accessToken(); myToken = token; syncPro(); live.send({ t: 'hello', look: MYLOOK, name: myName, token, ref: QS.get('ref') || '', pid: u.id, admin: (() => { try { return localStorage.getItem('mgt_admin') || ''; } catch (e) { return ''; } })() }); }; bind(account.currentUser()); account.onChange(bind); }).catch(() => {});
 // sound: browsers only allow sound after a tap, so ask once with a pulsing button
 const snd = document.getElementById('snd'); snd.classList.add('pulse');
 snd.onclick = () => { soundOn = !soundOn; if (soundOn) { if (ytP && ytP.unMute) { ytP.unMute(); ytP.setVolume(100); ytP.playVideo(); } else if (ytNow) { const id = ytNow, p = ytPos(); ytNow = ''; playOnScreen(id, p); } } else yCmd('mute'); snd.textContent = soundOn ? '🔊' : '🔇'; snd.classList.toggle('pulse', !soundOn); };
