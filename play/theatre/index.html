@@ -124,6 +124,15 @@ body{font-family:Inter,system-ui,sans-serif}
 .rpt .go{display:block;width:100%;padding:14px;border-radius:14px;border:0;font:800 14px Inter;text-decoration:none;text-align:center;background:linear-gradient(90deg,#f3c86b,#ffe2a0);color:#1a1206;box-shadow:0 8px 24px -8px rgba(243,200,107,.6)}
 .rpt .empty{color:#a49d92;font:500 14px/1.5 Inter;text-align:center;padding:18px 8px}
 .rpt .rev{display:inline-block;margin-top:8px;font:700 12px Inter;color:#ffe2a0;text-decoration:none}
+.slot.past{cursor:pointer}.slot.past .rp{display:inline-block;margin-top:4px;font:800 9.5px Inter;letter-spacing:.1em;color:#1a1206;background:linear-gradient(90deg,#f3c86b,#ffe2a0);border-radius:6px;padding:2px 6px}
+.rpl{position:fixed;inset:0;z-index:75;background:rgba(5,4,8,.94);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;gap:14px;animation:wf .3s}
+.rpl .rv{width:min(1100px,100%);aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.6)}.rpl iframe{width:100%;height:100%;border:0}
+.rpl .rhd{width:min(1100px,100%);display:flex;align-items:center;gap:12px}.rpl .rhd b{flex:1;font:400 26px/1.05 'Bebas Neue';letter-spacing:.03em}.rpl .rhd small{display:block;font:800 10px Inter;letter-spacing:.14em;color:#f3c86b}
+.rpl .rx{flex:none;height:40px;padding:0 14px;border-radius:12px;border:1px solid rgba(255,255,255,.2);background:#1d1a22;color:#fff;font:800 12px Inter;letter-spacing:.08em;cursor:pointer}
+.rpl .rch{width:min(1100px,100%);display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+.rpl .rch button{flex:none;max-width:260px;padding:9px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:#16131b;color:#d6cfc4;font:600 12px Inter;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}
+.rpl .rch button.on{border-color:#f3c86b;color:#fff;background:rgba(243,200,107,.1)}
+.rpl .rq{display:inline-block;padding:13px 20px;border-radius:14px;font:800 14px Inter;text-decoration:none;background:linear-gradient(90deg,#f3c86b,#ffe2a0);color:#1a1206}
 .cm .tag{display:inline-block;font:900 8.5px Inter;letter-spacing:.12em;font-style:normal;padding:1px 6px;border-radius:6px;margin-right:5px;vertical-align:1px}
 .cm.host{background:linear-gradient(135deg,rgba(243,212,138,.22),rgba(243,212,138,.06));border:1px solid rgba(243,212,138,.7);box-shadow:0 0 14px rgba(243,212,138,.25)}.cm.host .tag{background:var(--g);color:#1a1206}.cm.host .nm{color:#ffe7a6}
 .cm.legend{border:1.5px solid transparent;background:linear-gradient(rgba(30,20,6,.92),rgba(30,20,6,.92)) padding-box,linear-gradient(90deg,#ffe066,#ff9f1c,#fff6c2,#ffb21f,#ffe066) border-box;background-size:100% 100%,300% 100%;animation:tierFlow 3s linear infinite;box-shadow:0 0 12px rgba(255,190,40,.45)}
@@ -452,7 +461,9 @@ function renderTT() {
   const mqt = `${c.subject.toUpperCase()} DAY ✦ ${c.H.name.toUpperCase()} ✦ ${next ? 'NEXT · ' + next.block.toUpperCase() + ' AT ' + next.from + ' ✦ ' : ''}6 PM PREMIERE · MIGA: YESTERDAY'S CURRENT AFFAIRS ✦ `;
   const mq = document.getElementById('mq'); if (mq.dataset.t !== mqt) { mq.dataset.t = mqt; mq.textContent = mqt + mqt + mqt; }
   document.getElementById('nowS').textContent = (c.epNo ? `EPISODE ${c.epNo} OF ${c.epOf} · ` : '') + `${c.H.name} · ${c.subject} day` + (c.vid ? '' : '') + (next ? ` · next in ${left >= 60 ? Math.floor(left / 60) + 'h ' : ''}${left % 60}m` : '');
-  document.getElementById('tt').innerHTML = c.list.map((x) => `<div class="slot${x === c.b ? ' on' : ''}"><b>${x === c.b ? 'NOW' : x.from}</b><div>${x.premiere ? '⭐ ' : ''}${x.block}</div></div>`).join('');
+  const past = (x) => x !== c.b && mins(x.from) < c.m && ['ep', 'ep_prev', 'day'].includes(x.use);
+  document.getElementById('tt').innerHTML = c.list.map((x, i) => `<div class="slot${x === c.b ? ' on' : ''}${past(x) ? ' past' : ''}" data-i="${i}"><b>${x === c.b ? 'NOW' : x.from}</b><div>${x.premiere ? '⭐ ' : ''}${x.block}</div>${past(x) ? `<span class="rp">${PRO ? '▶ REPLAY' : '👑 REPLAY'}</span>` : ''}</div>`).join('');
+  renderTT.c = c;
   document.getElementById('halls').innerHTML = Object.entries(TT.halls).map(([k, h]) => `<button data-h="${k}" class="${k === hall ? 'on' : ''}">${k === 'main' ? 'ENGLISH' : 'தமிழ் TNPSC'}</button>`).join('');
   document.querySelectorAll('#halls button').forEach((bt) => bt.onclick = () => { hall = bt.dataset.h; ytNow = ''; renderTT(); live.connect(); });
   const on = document.querySelector('#tt .slot.on'); if (on && !renderTT.scrolled) { on.scrollIntoView({ inline: 'start', block: 'nearest' }); renderTT.scrolled = 1; }
@@ -886,6 +897,30 @@ account.init().then(() => { const bind = async (u) => { signedIn = !!u; if (!u) 
 // sound: browsers only allow sound after a tap, so ask once with a pulsing button
 const snd = document.getElementById('snd'); snd.classList.add('pulse');
 snd.onclick = () => { soundOn = !soundOn; if (soundOn) { if (ytP && ytP.unMute) { ytP.unMute(); ytP.setVolume(100); ytP.playVideo(); } else if (ytNow) { const id = ytNow, p = ytPos(); ytNow = ''; playOnScreen(id, p); } } else yCmd('mute'); snd.textContent = soundOn ? '🔊' : '🔇'; snd.classList.toggle('pulse', !soundOn); };
+// ---- Replay (Pro): any of today's earlier episode blocks, with controls, then a quiz on its chapter
+let CHJ = null;
+document.getElementById('tt').addEventListener('click', async (e) => {
+  const el = e.target.closest('.slot.past'); if (!el || !renderTT.c) return;
+  e.stopPropagation();
+  if (!PRO) { location.href = '/pro/?plan=exam&back=' + encodeURIComponent(location.pathname + location.search); return; }
+  const c = renderTT.c, b = c.list[+el.dataset.i]; if (!b) return;
+  const wk = Math.max(0, Math.floor((ist() - new Date(TT.season_start + 'T00:00:00')) / 6048e5));
+  const S = SEASON && SEASON[hall] || {}, chunks = S[c.day] || [], k = b.use === 'ep_prev' ? Math.max(0, wk - 1) : wk;
+  const vids = (b.use === 'day' ? (c.H.days || {})[c.day] : chunks.length ? chunks[Math.min(k, chunks.length - 1)] : (c.H.days || {})[c.day]) || [];
+  if (!vids.length) { flashCard('Nothing to replay in this block yet'); return; }
+  try { CHJ = CHJ || await (await fetch('/play/theatre/chapters.json')).json(); } catch (x) {}
+  const sets = CHJ && ((CHJ.chapters[hall] || {})[c.day] || [])[Math.min(k, 99)] || null, set = sets && sets[0];
+  try { yCmd('mute'); } catch (x) {}
+  const d = document.createElement('div'); d.className = 'rpl';
+  const src = (id) => `https://www.youtube.com/embed/${encodeURIComponent(id)}?autoplay=1&controls=1&rel=0&modestbranding=1&playsinline=1`;
+  d.innerHTML = `<div class="rhd"><b><small>👑 PRO REPLAY · ${esc(b.from)}</small>${esc(b.block)}</b><button class="rx">✕ BACK TO HALL</button></div>
+    <div class="rv"><iframe allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen src="${src(vids[0].id)}"></iframe></div>
+    ${vids.length > 1 ? `<div class="rch">${vids.map((v, i) => `<button data-v="${esc(v.id)}" class="${i ? '' : 'on'}">${i + 1}. ${esc(((v.title || '').split('||')[1] || (v.title || 'Part ' + (i + 1)).split('|')[0]).trim())}</button>`).join('')}</div>` : ''}
+    ${set ? `<a class="rq" href="/quiz/${set}/" target="_blank" rel="noopener">📝 Quiz yourself on this chapter</a>` : ''}`;
+  document.body.appendChild(d);
+  d.querySelector('.rx').onclick = () => { d.remove(); if (soundOn) yCmd('unMute'); };
+  d.querySelectorAll('.rch button').forEach((bt) => bt.onclick = () => { d.querySelector('iframe').src = src(bt.dataset.v); d.querySelectorAll('.rch button').forEach((x) => x.classList.toggle('on', x === bt)); });
+});
 document.getElementById('ttbtn').onclick = () => { const t = document.getElementById('tt'); t.hidden = !t.hidden; document.getElementById('ttbtn').textContent = t.hidden ? 'TIMETABLE ▾' : 'TIMETABLE ▴'; };
 setTimeout(() => { const t = document.getElementById('tip'); if (t) t.style.display = 'none'; }, 5000);
 
