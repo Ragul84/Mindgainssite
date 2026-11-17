@@ -71,6 +71,6 @@ export async function submitNight(run, rec, toast) {
       body: JSON.stringify({ run, rec, name: account.accountName() || getPlayerName(), state: myState() }) });
     const r = await res.json();
     if (!res.ok) { toast && toast('Night Race run not counted: ' + (r.why === 'incomplete' ? 'lap not finished' : 'it couldn\'t be verified')); return; }
-    if (r && r.me && toast) toast(`👑 ${fmtLap(rec.ms)} · #${r.me.rank} all-India${r.me.stateRank ? ` · #${r.me.stateRank} in ${r.me.state}` : ''}`);
+    if (r && r.me && toast) toast(`PRO · ${fmtLap(rec.ms)} · #${r.me.rank} all-India${r.me.stateRank ? ` · #${r.me.stateRank} in ${r.me.state}` : ''}`);
   } catch (e) {}
 }

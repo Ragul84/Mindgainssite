@@ -90,9 +90,10 @@ body{font-family:Inter,system-ui,sans-serif}
 .chat-l{overflow-x:hidden}.cm{position:relative;padding:5px 26px 5px 8px;border-radius:10px;transition:transform .15s;touch-action:pan-y;user-select:none;-webkit-user-select:none}
 .cm .rp{position:absolute;right:2px;top:4px;opacity:0;background:none;border:0;color:var(--g);font-size:14px;cursor:pointer;padding:0 4px}.cm:hover .rp{opacity:1}
 .cm-re{font-size:11px;color:rgba(244,234,214,.6);border-left:2px solid rgba(243,212,138,.5);padding-left:6px;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.cm-re b{color:rgba(243,212,138,.8)}
-.cm.pro .tag{background:linear-gradient(90deg,#f3c86b,#ffe2a0);color:#1a1206}.cm.pro .nm{color:#ffe2a0}
+.cm.pro .tag svg{display:inline-block;vertical-align:-1px;margin-right:3px}.tag{background:linear-gradient(90deg,#f3c86b,#ffe2a0);color:#1a1206}.cm.pro .nm{color:#ffe2a0}
 .fpill{display:none;align-items:center;gap:6px;height:32px;padding:0 12px;border-radius:99px;border:1px solid rgba(243,200,107,.5);background:rgba(20,14,4,.7);color:#ffe2a0;font:800 11px Inter;letter-spacing:.1em;text-decoration:none;white-space:nowrap;backdrop-filter:blur(8px)}
-.fpill.on{display:inline-flex}.fpill.low{border-color:#ff6b6b;color:#ffd0d0;animation:fp 1.6s ease-in-out infinite}@keyframes fp{0%{box-shadow:0 0 0 0 rgba(255,107,107,.45)}60%{box-shadow:0 0 0 7px rgba(255,107,107,0)}}
+.ico{display:block;flex:none}.il{display:inline-flex;align-items:center;gap:8px}.ib{display:inline-grid;place-items:center}.mfab button{display:grid;place-items:center}.mview{display:grid!important;place-items:center}.fpill #fpillI{display:inline-flex}
+.fpill.go{display:inline-flex;background:linear-gradient(90deg,#f3c86b,#ffe2a0);color:#1a1206;border-color:transparent}.fpill.on{display:inline-flex}.fpill.low{border-color:#ff6b6b;color:#ffd0d0;animation:fp 1.6s ease-in-out infinite}@keyframes fp{0%{box-shadow:0 0 0 0 rgba(255,107,107,.45)}60%{box-shadow:0 0 0 7px rgba(255,107,107,0)}}
 .wall{position:fixed;inset:0;z-index:80;display:grid;place-items:center;padding:20px;background:rgba(6,4,10,.55);backdrop-filter:blur(16px) saturate(.8);-webkit-backdrop-filter:blur(16px) saturate(.8);animation:wf .5s ease}
 @keyframes wf{from{opacity:0}}
 .wall .wc{width:min(420px,100%);text-align:center;background:linear-gradient(180deg,rgba(32,25,14,.96),rgba(16,13,20,.96));border:1.5px solid #f3c86b;border-radius:26px;padding:30px 22px 22px;box-shadow:0 30px 80px -20px rgba(243,200,107,.35);animation:wp .55s cubic-bezier(.2,1.3,.4,1)}
@@ -250,10 +251,10 @@ body.quizon .chat{visibility:hidden!important}
 <div class="vig"></div>
 <button class="skip" id="skip">SKIP ›</button>
 
-<div class="top"><a class="back" href="/nationlap/" aria-label="Back" onclick="if(window.__receipt&&window.__receipt.RC.secs>=600&&!sessionStorage.getItem('mgt_rc_offer')){sessionStorage.setItem('mgt_rc_offer','1');if(confirm('Before you go: grab your study receipt to share? 🧾')){event.preventDefault();window.__receipt.share();}}"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></a><div class="brand">MINDGAINS · THEATRE</div><span class="live" id="live">● LIVE</span><a class="fpill" id="fpill" href="/pro/?back=/play/theatre/">⏳ <span id="fpillT">30 MIN FREE</span></a><button class="ib" id="snd" title="Sound">🔇</button><button class="ib" id="fs" title="Full screen">⛶</button></div>
-<button class="mob mhall" id="mHall">EN</button><button class="mob mview" id="mView" aria-label="Change view">🎥</button>
+<div class="top"><a class="back" href="/nationlap/" aria-label="Back" onclick="if(window.__receipt&&window.__receipt.RC.secs>=600&&!sessionStorage.getItem('mgt_rc_offer')){sessionStorage.setItem('mgt_rc_offer','1');if(confirm('Before you go: grab your study receipt to share?')){event.preventDefault();window.__receipt.share();}}"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></a><div class="brand">MINDGAINS · THEATRE</div><span class="live" id="live">● LIVE</span><a class="fpill" id="fpill" href="/pro/?back=/play/theatre/"><span id="fpillI"><svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.6 3.3a.5.5 0 0 1 .9 0l2.9 5.5a1 1 0 0 0 1.5.3l4.3-3.7a.5.5 0 0 1 .8.5l-2.8 10.3a1 1 0 0 1-1 .7H5.8a1 1 0 0 1-1-.7L2 5.9a.5.5 0 0 1 .8-.5l4.3 3.7a1 1 0 0 0 1.5-.3z"/><path d="M5 21h14"/></svg></span><span id="fpillT">GO PRO</span></a><button class="ib" id="snd" title="Sound"><svg class="ico" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5Z"/><path d="m22 9-6 6M16 9l6 6"/></svg></button><button class="ib" id="fs" title="Full screen"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></svg></button></div>
+<button class="mob mhall" id="mHall">EN</button><button class="mob mview" id="mView" aria-label="Change view"><svg class="ico" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 13 5.2 3.1a.5.5 0 0 0 .8-.4V8.3a.5.5 0 0 0-.8-.4L16 11"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg></button>
 <div class="mob mcap" id="mCap"><i></i><span id="mCapT">LIVE</span></div>
-<div class="mob mfab"><button id="mChat" aria-label="Chat">💬<span id="mChatN"></span></button><button id="mInv" aria-label="Invite a friend">🎟️<b>+150</b></button><button id="mRc" aria-label="My study receipt" hidden>🧾</button><button id="mRp" aria-label="My progress">📊</button></div>
+<div class="mob mfab"><button id="mChat" aria-label="Chat"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg><span id="mChatN"></span></button><button id="mInv" aria-label="Invite a friend"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><b>+150</b></button><button id="mRc" aria-label="My study receipt" hidden><svg class="ico" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8M12 17.5v-11"/></svg></button><button id="mRp" aria-label="My progress"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg></button></div>
 <div class="qsoon" id="qSoon" hidden></div>
 <div class="marq" hidden><div class="mq" id="mq"></div></div>
 <div class="halls" id="halls"></div>
@@ -261,12 +262,12 @@ body.quizon .chat{visibility:hidden!important}
 <div class="seatcard" id="seatcard"></div>
 <div class="quizc" id="quizc" hidden><div class="qk" id="qk">MIGA ASKS · 15 S</div><div class="qq" id="qq"></div><div class="qo" id="qo"></div><div class="qb"><i id="qbar"></i></div><div class="qn" id="qn"></div></div>
 <div class="top5" id="top5" hidden></div>
-<div class="chat" id="chat"><button class="chat-h" id="chatH">💬 <em>LIVE CHAT</em> <span id="chatN"></span><i>‹</i></button>
+<div class="chat" id="chat"><button class="chat-h" id="chatH"><svg class="ico" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg> <em>LIVE CHAT</em> <span id="chatN"></span><i>‹</i></button>
   <div class="chat-l" id="chatL"></div>
   <div class="emo" id="reacts"><button data-e="1f525"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f525/emoji.svg" alt="" loading="lazy"></button><button data-e="1f602"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f602/emoji.svg" alt="" loading="lazy"></button><button data-e="1f92f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f92f/emoji.svg" alt="" loading="lazy"></button><button data-e="1f44f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44f/emoji.svg" alt="" loading="lazy"></button><button data-e="2764_fe0f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/2764_fe0f/emoji.svg" alt="" loading="lazy"></button></div>
-  <button class="inv rcb" id="rpb" type="button">📊 MY WEAK CHAPTERS <b>report</b></button>
-  <button class="inv rcb" id="rcb" type="button">🧾 MY STUDY RECEIPT <b>share</b></button>
-  <button class="inv" id="inv" type="button">🎟️ INVITE A FRIEND <b>+150 PTS per friend</b></button>
+  <button class="inv rcb" id="rpb" type="button"><span class="il"><svg class="ico" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg> MY WEAK CHAPTERS</span> <b>report</b></button>
+  <button class="inv rcb" id="rcb" type="button"><span class="il"><svg class="ico" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8M12 17.5v-11"/></svg> MY STUDY RECEIPT</span> <b>share</b></button>
+  <button class="inv" id="inv" type="button"><span class="il"><svg class="ico" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg> INVITE A FRIEND</span> <b>+150 PTS per friend</b></button>
   <div class="chat-r" id="chatR" hidden><span id="chatRt"></span><button type="button" id="chatRx" aria-label="Cancel reply">✕</button></div>
   <form class="chat-f" id="chatF"><input id="chatI" maxlength="140" placeholder="Say something…" autocomplete="off"><button id="chatS">SEND</button></form></div>
 <div class="angles"><button data-v="wide" class="on">HALL</button><button data-v="seat">MY SEAT</button><button data-v="stage">FRONT ROW</button><button data-v="balcony">BALCONY</button></div>
@@ -474,7 +475,7 @@ function renderTT() {
   const mq = document.getElementById('mq'); if (mq.dataset.t !== mqt) { mq.dataset.t = mqt; mq.textContent = mqt + mqt + mqt; }
   document.getElementById('nowS').textContent = (c.epNo ? `EPISODE ${c.epNo} OF ${c.epOf} · ` : '') + `${c.H.name} · ${c.subject} day` + (c.vid ? '' : '') + (next ? ` · next in ${left >= 60 ? Math.floor(left / 60) + 'h ' : ''}${left % 60}m` : '');
   const past = (x) => x !== c.b && mins(x.from) < c.m && ['ep', 'ep_prev', 'day'].includes(x.use);
-  document.getElementById('tt').innerHTML = c.list.map((x, i) => `<div class="slot${x === c.b ? ' on' : ''}${past(x) ? ' past' : ''}" data-i="${i}"><b>${x === c.b ? 'NOW' : x.from}</b><div>${x.premiere ? '⭐ ' : ''}${x.block}</div>${past(x) ? `<span class="rp">${PRO ? '▶ REPLAY' : '👑 REPLAY'}</span>` : ''}</div>`).join('');
+  document.getElementById('tt').innerHTML = c.list.map((x, i) => `<div class="slot${x === c.b ? ' on' : ''}${past(x) ? ' past' : ''}" data-i="${i}"><b>${x === c.b ? 'NOW' : x.from}</b><div>${x.premiere ? '⭐ ' : ''}${x.block}</div>${past(x) ? `<span class="rp">${PRO ? '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:4px"><path d="M6 3l14 9-14 9z"/></svg>REPLAY' : '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:4px"><path d="M11.6 3.3a.5.5 0 0 1 .9 0l2.9 5.5a1 1 0 0 0 1.5.3l4.3-3.7a.5.5 0 0 1 .8.5l-2.8 10.3a1 1 0 0 1-1 .7H5.8a1 1 0 0 1-1-.7L2 5.9a.5.5 0 0 1 .8-.5l4.3 3.7a1 1 0 0 0 1.5-.3z"/><path d="M5 21h14"/></svg>REPLAY'}</span>` : ''}</div>`).join('');
   renderTT.c = c;
   document.getElementById('halls').innerHTML = Object.entries(TT.halls).map(([k, h]) => `<button data-h="${k}" class="${k === hall ? 'on' : ''}">${k === 'main' ? 'ENGLISH' : 'தமிழ் TNPSC'}</button>`).join('');
   document.querySelectorAll('#halls button').forEach((bt) => bt.onclick = () => { hall = bt.dataset.h; ytNow = ''; renderTT(); live.connect(); });
@@ -528,7 +529,7 @@ let signedIn = false, myToken = null;
 function askSignIn(why) {
   if (document.getElementById('sgn')) return;
   const d = document.createElement('div'); d.id = 'sgn'; d.className = 'sgn';
-  const T = { ref: ['Your friend saved you a seat 🍿', 'Sign in (free, one tap with Google) so they get <b>+150 pts</b> for bringing you, and your quiz XP is saved to NationLap.'],
+  const T = { ref: ['Your friend saved you a seat', 'Sign in (free, one tap with Google) so they get <b>+150 pts</b> for bringing you, and your quiz XP is saved to NationLap.'],
     invite: ['Sign in to invite friends', 'Every signed-in friend who joins from your link puts you <b>+150 pts</b> up tonight\'s board and gives you <b>+50 XP</b>. Same account as mindgains.ai.'] }[why];
   d.innerHTML = `<div class="sgn-c"><b class="sgn-t">${T[0]}</b><p>${T[1]}</p><button class="sgn-go">Continue with Google</button><button class="sgn-x">Maybe later</button></div>`;
   document.body.appendChild(d);
@@ -582,7 +583,7 @@ addEventListener('pointerup', (e) => { if (!down || !onView(e) || document.getEl
   const s = hit.object.userData.seat;
   const card = document.getElementById('seatcard');
   if (s.st === 'taken') { flashCard(`Row ${s.row} · Seat ${s.n} · ${s.who || 'taken'}`); return; }
-  if (!proOK(s)) { flashCard('👑 Centre seats in rows E–G are for Pro members'); return; }
+  if (!proOK(s)) { flashCard('Centre seats in rows E–G are for Pro members'); return; }
   userSeat = true; live.sit(s.row + s.n);
   markMine(s); seatRacer(s, MYLOOK); flashCard(`ROW ${s.row} · SEAT ${s.n}`); document.getElementById('tip').style.display = 'none'; fly('seat'); });
 document.getElementById('go').onclick = () => fly('seat');
@@ -620,11 +621,11 @@ const live = { ws: null, hall: null, n: 0, quiz: null, picked: -1,
     if (m.next || m.t === 'next') quizSoon(m.at || m.next);
     if (m.t === 'state' && m.chat) { chatL.innerHTML = ''; m.chat.forEach(addChat); document.getElementById('chatN').textContent = ''; }
     if (m.t === 'state' || m.t === 'seats') { this.n = m.count; paintSeats(m.seats, m.looks || {}, m.pros || []); if (m.top) paintTop(m.top); if (m.quiz) showQuiz(m.quiz); renderCount(); }
-    else if (m.t === 'taken') { const t = seatByKey.get(m.seat); if (m.pro && t) flashCard('👑 That seat is reserved for Pro members'); if (t) { t.st = 'taken'; const n = nearestFree(t); if (n) { markMine(n); this.sit(n.row + n.n); flashCard(`${m.seat} was taken · you're in ${n.row}${n.n}`); } } }
+    else if (m.t === 'taken') { const t = seatByKey.get(m.seat); if (m.pro && t) flashCard('That seat is reserved for Pro members'); if (t) { t.st = 'taken'; const n = nearestFree(t); if (n) { markMine(n); this.sit(n.row + n.n); flashCard(`${m.seat} was taken · you're in ${n.row}${n.n}`); } } }
     else if (m.t === 'pro') { PRO = !!m.pro; document.body.classList.toggle('ispro', PRO); if (m.signedIn && (PRO || m.freeLeft > 0)) hideWall(); freePill(m.freeLeft); if (mine) { seatRacer(mine, null); seatRacer(mine, MYLOOK); } }
     else if (m.t === 'free') freePill(m.left);
     else if (m.t === 'wall') showWall(m.why);
-    else if (m.t === 'refok') { awardXp(50); flashCard(`🎉 ${m.name} joined on your invite · +${m.pts} pts · +50 XP`); }
+    else if (m.t === 'refok') { awardXp(50); flashCard(`${m.name} joined on your invite · +${m.pts} pts · +50 XP`); }
     else if (m.t === 'board') { if (m.top) paintTop(m.top); }
     else if (m.t === 'me') { RC.rank = m.rank; RC.of = m.of; saveRC(); }
     else if (m.t === 'quiz') showQuiz(m);
@@ -641,9 +642,11 @@ let prosNow = new Set();
 const proOK = (s) => PRO || !PRO_SEATS.has(s.row + s.n);
 function freePill(left) {
   const p = document.getElementById('fpill'); if (!p) return;
-  if (PRO || left == null || left > 600) { p.classList.remove('on'); return; }
-  const m = Math.max(0, Math.ceil(left / 60)); document.getElementById('fpillT').textContent = m ? `${m} MIN FREE LEFT` : 'FREE TIME UP';
-  p.classList.add('on'); p.classList.toggle('low', m <= 3);
+  if (PRO) { p.classList.remove('on', 'go', 'low'); return; }
+  const ic = document.getElementById('fpillI');
+  if (left == null || left > 600) { p.classList.add('go'); p.classList.remove('on', 'low'); document.getElementById('fpillT').textContent = 'GO PRO'; ic.innerHTML = '<svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.6 3.3a.5.5 0 0 1 .9 0l2.9 5.5a1 1 0 0 0 1.5.3l4.3-3.7a.5.5 0 0 1 .8.5l-2.8 10.3a1 1 0 0 1-1 .7H5.8a1 1 0 0 1-1-.7L2 5.9a.5.5 0 0 1 .8-.5l4.3 3.7a1 1 0 0 0 1.5-.3z"/><path d="M5 21h14"/></svg>'; return; }
+  const m = Math.max(0, Math.ceil(left / 60)); document.getElementById('fpillT').textContent = m ? `${m} MIN FREE LEFT` : 'FREE TIME UP'; ic.innerHTML = '<svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M10 2h4"/></svg>';
+  p.classList.remove('go'); p.classList.add('on'); p.classList.toggle('low', m <= 3);
 }
 function untilMidnightIST() { const n = Date.now() + 5.5 * 3600e3, m = 864e5 - (n % 864e5); const h = Math.floor(m / 3600e3), mi = Math.floor(m % 3600e3 / 60e3); return h ? `${h}h ${mi}m` : `${mi} min`; }
 const GSVG = '<svg viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 38.6 44 33 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>';
@@ -743,10 +746,13 @@ function bestSeat(map) {
     const sc = Math.abs(ri - 6.5) * 1.2 + Math.abs(s.n - 9.5) * .55 - nb * 2.2 + Math.random() * .3; if (sc < bs) { bs = sc; best = s; } }
   return best;
 }
+// ambient audience: a stable ~40% of ordinary seats hold a racer (never reserved seats, never next to you)
+const AMB = (s) => { const k = s.row + s.n; if (PRO_SEATS.has(k)) return null; let h = 0; for (const c of k) h = (h * 31 + c.charCodeAt(0)) >>> 0; h = (h ^ (h >>> 13)) * 2654435761 >>> 0;
+  if (h % 100 >= 42) return null; if (mine && mine.row === s.row && Math.abs(mine.n - s.n) <= 1) return null; return [h % 6, (h >>> 8) % 8]; };
 function paintSeats(map, looks = {}, pros) {
   if (pros) prosNow = new Set(pros);
   if (!autoSeated && !userSeat && !QS.get('near')) { autoSeated = true; const b = bestSeat(map); if (b && b !== mine) { markMine(b); live.sit(b.row + b.n); } }
-  for (const s of seats) { const k = s.row + s.n; seatRacer(s, map[k] ? (looks[k] || [((k.charCodeAt(0) + s.n) % 6), (s.n * 3) % 8]) : (s === mine ? MYLOOK : null)); }
+  for (const s of seats) { const k = s.row + s.n; seatRacer(s, map[k] ? (looks[k] || [((k.charCodeAt(0) + s.n) % 6), (s.n * 3) % 8]) : (s === mine ? MYLOOK : AMB(s))); }
   for (const s of seats) { const k = s.row + s.n, who = map[k], isMe = mine === s;
     if (isMe) continue;
     const st = who ? 'taken' : 'free', pk = prosNow.has(k) ? 1 : 0; if (s.st === st && s.who === who && s.pk === pk && s.painted) continue; s.st = st; s.who = who; s.pk = pk; s.painted = 1;
@@ -787,14 +793,14 @@ async function makeReceipt() {
   const T = (s, x, y, f, col = ink, al = 'left') => { g.font = f; g.fillStyle = col; g.textAlign = al; g.fillText(s, x, y); };
   const line = (y) => { g.strokeStyle = 'rgba(29,26,20,.35)'; g.setLineDash([10, 9]); g.lineWidth = 3; g.beginPath(); g.moveTo(X + 50, y); g.lineTo(X + PW - 50, y); g.stroke(); g.setLineDash([]); };
   T('NATIONLAP LIVE', 540, Y + 140, '400 92px "Bebas Neue", Impact, sans-serif', ink, 'center');
-  if (PRO) { g.save(); g.translate(X + PW - 120, Y + 90); g.rotate(-.18); g.strokeStyle = gold; g.lineWidth = 5; g.strokeRect(-80, -34, 160, 68); T('PRO 👑', 0, 18, '400 52px "Bebas Neue", Impact, sans-serif', gold, 'center'); g.restore(); }
+  if (PRO) { g.save(); g.translate(X + PW - 120, Y + 90); g.rotate(-.18); g.strokeStyle = gold; g.lineWidth = 5; g.strokeRect(-80, -34, 160, 68); T('PRO', 0, 18, '400 52px "Bebas Neue", Impact, sans-serif', gold, 'center'); g.restore(); }
   T('STUDY RECEIPT', 540, Y + 200, '800 30px Inter, system-ui', gold, 'center');
   T(new Date().toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' }).toUpperCase() + '  ·  SEAT ' + (mine ? mine.row + mine.n : '—'), 540, Y + 252, '600 26px Inter, system-ui', mute, 'center');
   line(Y + 300);
   const topic = (RC.topic || 'Today\'s class').slice(0, 44);
   const rows = [['WATCHED', fmtDur(RC.secs)], ['CLASS', topic], ['LIVE QUIZ', `${RC.right} / ${RC.q} correct`],
     ['TONIGHT', RC.of ? (RC.rank ? `#${RC.rank} of ${RC.of}  ·  TOP ${Math.max(1, Math.round(RC.rank / RC.of * 100))}%` : `on the board soon`) : 'quiz starts every 4 min'],
-    ['STREAK', `🔥 ${streak} day${streak > 1 ? 's' : ''}`], ['HALL', hall === 'main' ? 'English' : 'தமிழ் TNPSC']];
+    ['STREAK', `${streak} day${streak > 1 ? 's' : ''}`], ['HALL', hall === 'main' ? 'English' : 'தமிழ் TNPSC']];
   let y = Y + 380;
   for (const [k, v] of rows) { T(k, X + 60, y, '800 28px Inter, system-ui', mute); g.font = '800 38px Inter, system-ui'; let vv = v; while (g.measureText(vv).width > 520 && vv.length > 4) vv = vv.slice(0, -2); if (vv !== v) vv = vv.trim() + '…'; T(vv, X + PW - 60, y, '800 38px Inter, system-ui', ink, 'right'); y += 92; }
   line(y - 30);
@@ -822,15 +828,15 @@ let soonT = [];
 function quizSoon(at) { soonT.forEach(clearTimeout); soonT = []; if (!at) return; const el = document.getElementById('qSoon');
   const say = (t, ms) => { el.textContent = t; el.hidden = false; el.classList.remove('go'); void el.offsetWidth; el.classList.add('go'); setTimeout(() => { el.hidden = true; }, ms); };
   const in_ = at - Date.now();
-  if (in_ > 61000) soonT.push(setTimeout(() => say('🧠 MIGA quiz in 1 minute · stay in your seat', 3500), in_ - 60000));
-  if (in_ > 11000) soonT.push(setTimeout(() => say('⏱ Quiz in 10 seconds', 2600), in_ - 10000));
+  if (in_ > 61000) soonT.push(setTimeout(() => say('MIGA quiz in 1 minute · stay in your seat', 3500), in_ - 60000));
+  if (in_ > 11000) soonT.push(setTimeout(() => say('Quiz in 10 seconds', 2600), in_ - 10000));
   for (const n of [3, 2, 1]) if (in_ > n * 1000) soonT.push(setTimeout(() => say(String(n), 900), in_ - n * 1000)); }
 function reveal(m) { if (!live.quiz || m.qid !== live.quiz.qid) return; document.body.classList.add('showtop'); clearTimeout(window.__st); window.__st = setTimeout(() => document.body.classList.remove('showtop'), 9000); clearInterval(qTimer);
   document.querySelectorAll('#qo button').forEach((b, i) => { if (i === m.correct) b.classList.add('ok'); else if (i === live.picked) b.classList.add('no'); });
   if (live.picked === m.correct) awardXp(20);
   if (live.picked >= 0) { RC.q++; if (live.picked === m.correct) RC.right++; saveRC(); }
   document.getElementById('qk').textContent = live.picked === m.correct ? 'CORRECT ✦ +20 XP · INDIA BOARD' : live.picked < 0 ? 'TIME UP' : 'NOT QUITE';
-  document.getElementById('qn').textContent = `${m.pct}% of ${m.n} got it right` + (m.fastest ? ` · ⚡ fastest: ${m.fastest.name} (${m.fastest.s}s)` : ''); paintTop(m.top);
+  document.getElementById('qn').textContent = `${m.pct}% of ${m.n} got it right` + (m.fastest ? ` · fastest: ${m.fastest.name} (${m.fastest.s}s)` : ''); paintTop(m.top);
   clearTimeout(window.__qh); window.__qh = setTimeout(hideQuiz, 5000); }
 function hideQuiz() { document.getElementById('quizc').hidden = true; document.body.classList.remove('quizon'); }
 // reactions rise in a stream on the right edge (off the picture); animated only while they fly
@@ -843,7 +849,7 @@ function floatAt(pos, e) { const v = pos.clone().add(new THREE.Vector3(0, 1.4, 0
 document.querySelectorAll('#reacts button').forEach((b) => b.onclick = () => { live.send({ t: 'react', e: b.dataset.e }); b.classList.remove('pop'); void b.offsetWidth; b.classList.add('pop'); });
 const chatL = document.getElementById('chatL'), chatI = document.getElementById('chatI'), chatS = document.getElementById('chatS'), chatBox = document.getElementById('chat');
 const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-const TIER = { 1: ['legend', '👑 #1 TODAY'], 2: ['epic', '⚡ #2 TODAY'], 3: ['elite', '🔥 #3 TODAY'] };
+const TIER = { 1: ['legend', '<svg class="ico" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M11.6 3.3a.5.5 0 0 1 .9 0l2.9 5.5a1 1 0 0 0 1.5.3l4.3-3.7a.5.5 0 0 1 .8.5l-2.8 10.3a1 1 0 0 1-1 .7H5.8a1 1 0 0 1-1-.7L2 5.9a.5.5 0 0 1 .8-.5l4.3 3.7a1 1 0 0 0 1.5-.3z"/><path d="M5 21h14"/></svg>#1 TODAY'], 2: ['epic', '<svg class="ico" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.8-1.6l9.9-10.2a.5.5 0 0 1 .9.5l-1.9 6A1 1 0 0 0 13 10h7a1 1 0 0 1 .8 1.6l-9.9 10.2a.5.5 0 0 1-.9-.5l1.9-6A1 1 0 0 0 11 14z"/></svg>#2 TODAY'], 3: ['elite', '<svg class="ico" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.1-.2-4 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.4-2.3 1-3.2.3 1.1 1.5 2.2 2.5 2.7z"/></svg>#3 TODAY'] };
 let replyTo = null;
 function setReply(m) { replyTo = m; const r = document.getElementById('chatR'); r.hidden = !m; if (m) { document.getElementById('chatRt').innerHTML = `↩ Replying to <b>${esc(m.name)}</b>: ${esc(m.text.slice(0, 50))}`; chatBox.classList.remove('min'); chatI.focus(); } }
 document.getElementById('chatRx').onclick = () => setReply(null);
@@ -854,11 +860,11 @@ document.getElementById('chatH').addEventListener('click', () => document.body.c
 const barCol = (p) => p < 40 ? '#ff6b6b' : p < 65 ? '#f3a73b' : '#4ade80';
 async function openReport() {
   const d = document.createElement('div'); d.className = 'rpt';
-  d.innerHTML = '<div class="rc"><div class="rh"><b>📊 My weak chapters</b><button aria-label="Close">✕</button></div><div class="empty">Loading…</div></div>';
+  d.innerHTML = '<div class="rc"><div class="rh"><b style="display:inline-flex;align-items:center;gap:8px"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg> My weak chapters</b><button aria-label="Close">✕</button></div><div class="empty">Loading…</div></div>';
   document.body.appendChild(d);
   d.onclick = (e) => { if (e.target === d || e.target.closest('.rh button')) d.remove(); if (e.target.closest('.rpRc')) { d.remove(); shareReceipt(); } };
-  const RCB = `<button class="go rpRc" style="margin-top:16px;background:#25212c;color:#fff;box-shadow:none">🧾 Share tonight's study receipt</button>`;
-  const box = d.querySelector('.rc'), body = (h) => { box.innerHTML = '<div class="rh"><b>📊 My weak chapters</b><button aria-label="Close">✕</button></div>' + h + RCB; };
+  const RCB = `<button class="go rpRc" style="margin-top:16px;background:#25212c;color:#fff;box-shadow:none;display:flex;align-items:center;justify-content:center;gap:8px"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8M12 17.5v-11"/></svg> Share tonight's study receipt</button>`;
+  const box = d.querySelector('.rc'), body = (h) => { box.innerHTML = '<div class="rh"><b style="display:inline-flex;align-items:center;gap:8px"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg> My weak chapters</b><button aria-label="Close">✕</button></div>' + h + RCB; };
   if (!signedIn) { body('<div class="empty">Sign in and every live-quiz answer you give is tracked by chapter, so you know exactly what to revise.</div><button class="go" id="rpS">Continue with Google</button>'); d.querySelector('#rpS').onclick = () => account.signInPopup(); return; }
   let r = null; try { r = await (await fetch('/api/pro/report', { headers: { Authorization: 'Bearer ' + (await account.accessToken()) } })).json(); } catch (e) {}
   if (!r || r.error) { body('<div class="empty">Couldn\'t load your report. Try again in a moment.</div>'); return; }
@@ -866,7 +872,7 @@ async function openReport() {
   const row = (c) => `<div class="row"><div class="rt">${esc(c.chapter)}<span>${c.pct}% · ${c.n} Qs</span></div><div class="bar"><i style="width:${Math.max(4, c.pct)}%;background:${barCol(c.pct)}"></i></div></div>`;
   const sum = `<div class="sum"><div class="rring" style="--p:${r.pct}"><span>${r.pct}%</span></div><p><b>${r.total} live answers tracked</b>${r.weak[0] ? `Revise <b style="display:inline;color:#ffe2a0">${esc(r.weak[0].chapter)}</b> first. It's costing you the most marks.` : 'Keep answering to find your weak spots.'}</p></div>`;
   if (r.pro) {
-    body(sum + (r.weak.length ? '<h4>REVISE THESE FIRST</h4>' + r.weak.map(row).join('') : '') + (r.chapters.length > r.weak.length ? '<h4 style="margin-top:18px">EVERYTHING ELSE</h4>' + r.chapters.filter((c) => !r.weak.some((w) => w.chapter === c.chapter)).sort((a, b) => a.pct - b.pct).map(row).join('') : '') + '<a class="rev" href="/nationlap/">🏁 Race these chapters in NationLap ›</a>');
+    body(sum + (r.weak.length ? '<h4>REVISE THESE FIRST</h4>' + r.weak.map(row).join('') : '') + (r.chapters.length > r.weak.length ? '<h4 style="margin-top:18px">EVERYTHING ELSE</h4>' + r.chapters.filter((c) => !r.weak.some((w) => w.chapter === c.chapter)).sort((a, b) => a.pct - b.pct).map(row).join('') : '') + '<a class="rev" href="/nationlap/" style="display:inline-flex;align-items:center;gap:4px"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:4px"><path d="M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.3 2.7A7 7 0 0 0 20 4v11a7 7 0 0 1-4.7.7C13 15 11 13 8 13a6 6 0 0 0-4 1"/></svg>Race these chapters in NationLap ›</a>');
   } else {
     const ghost = ['Mauryan administration', 'Harappan town planning', 'Vijayanagara empire', 'Bhakti movement'].map((t, i) => row({ chapter: t, pct: [34, 52, 61, 78][i], n: 6 + i })).join('');
     body(sum + '<h4>YOUR WEAKEST CHAPTER</h4>' + r.weak.map(row).join('') + `<div class="lock"><div class="ghost">${ghost}</div><div class="cta"><div><p style="margin:0 0 12px;font:700 15px Inter">${r.locked ? r.locked + ' more chapters' : 'Your full breakdown'} in your report</p><a class="go" href="/pro/?back=${encodeURIComponent(location.pathname + location.search)}">Unlock with Pro · from ₹99</a></div></div></div>`);
@@ -877,8 +883,8 @@ document.getElementById('mRp').onclick = openReport; document.getElementById('rp
 async function syncPro() {
   try {
     const t = await account.accessToken(); const x = await (await fetch('/api/pro/me', { headers: t ? { Authorization: 'Bearer ' + t } : {} })).json();
-    if (x.pro && x.streak) { streak = Math.max(streak, x.streak); if (x.frozen) flashCard(`🧊 A streak freeze saved your ${x.streak}-day streak`); }
-    if (x.pro && x.until - Date.now() < 4 * 864e5) { const dd = Math.max(1, Math.ceil((x.until - Date.now()) / 864e5)); setTimeout(() => flashCard(`👑 Pro ends in ${dd} day${dd > 1 ? 's' : ''} · renew at mindgains.ai/pro`), 6000); }
+    if (x.pro && x.streak) { streak = Math.max(streak, x.streak); if (x.frozen) flashCard(`A streak freeze saved your ${x.streak}-day streak`); }
+    if (x.pro && x.until - Date.now() < 4 * 864e5) { const dd = Math.max(1, Math.ceil((x.until - Date.now()) / 864e5)); setTimeout(() => flashCard(`Pro ends in ${dd} day${dd > 1 ? 's' : ''} · renew at mindgains.ai/pro`), 6000); }
   } catch (e) {}
 }
 document.getElementById('mRc').onclick = () => shareReceipt(); document.getElementById('rcb').onclick = () => shareReceipt();
@@ -902,7 +908,7 @@ document.getElementById('inv').onclick = async () => { if (!signedIn) return ask
 function addChat(m) { const d = document.createElement('div'); const t = m.host ? null : TIER[m.rank];
   d.className = 'cm' + (m.sys ? ' sys' : '') + (m.name === myName ? ' me' : '') + (m.host ? ' host' : '') + (t ? ' ' + t[0] : m.pro ? ' pro' : '');
   d.innerHTML = (m.re ? `<div class="cm-re">↩ <b>${esc(m.re.name)}</b> ${esc(m.re.text)}</div>` : '') +
-    (m.host ? '<i class="tag">HOST</i>' : t ? `<i class="tag">${t[1]}</i>` : m.pro ? '<i class="tag">👑 PRO</i>' : '') +
+    (m.host ? '<i class="tag">HOST</i>' : t ? `<i class="tag">${t[1]}</i>` : m.pro ? '<i class="tag"><svg class="ico" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M11.6 3.3a.5.5 0 0 1 .9 0l2.9 5.5a1 1 0 0 0 1.5.3l4.3-3.7a.5.5 0 0 1 .8.5l-2.8 10.3a1 1 0 0 1-1 .7H5.8a1 1 0 0 1-1-.7L2 5.9a.5.5 0 0 1 .8-.5l4.3 3.7a1 1 0 0 0 1.5-.3z"/><path d="M5 21h14"/></svg>PRO</i>' : '') +
     `<b class="nm">${esc(m.name)}${m.seat ? ' <small>' + esc(m.seat) + '</small>' : ''}</b> <span class="tx">${esc(m.text)}</span>` +
     (m.at ? '<button class="rp" aria-label="Reply">↩</button>' : ''); if (m.sys) d.innerHTML = esc(m.text);
   if (m.at) { const rb = d.querySelector('.rp'); rb.onclick = () => setReply(m);
@@ -925,7 +931,7 @@ account.init().then(() => { const bind = async (u) => { signedIn = !!u; if (!u) 
   const token = await account.accessToken(); myToken = token; syncPro(); live.send({ t: 'hello', look: MYLOOK, name: myName, token, ref: QS.get('ref') || '', pid: u.id, admin: (() => { try { return localStorage.getItem('mgt_admin') || ''; } catch (e) { return ''; } })() }); }; bind(account.currentUser()); account.onChange(bind); }).catch(() => showGate());
 // sound: browsers only allow sound after a tap, so ask once with a pulsing button
 const snd = document.getElementById('snd'); snd.classList.add('pulse');
-snd.onclick = () => { soundOn = !soundOn; if (soundOn) { if (ytP && ytP.unMute) { ytP.unMute(); ytP.setVolume(100); ytP.playVideo(); } else if (ytNow) { const id = ytNow, p = ytPos(); ytNow = ''; playOnScreen(id, p); } } else yCmd('mute'); snd.textContent = soundOn ? '🔊' : '🔇'; snd.classList.toggle('pulse', !soundOn); };
+snd.onclick = () => { soundOn = !soundOn; if (soundOn) { if (ytP && ytP.unMute) { ytP.unMute(); ytP.setVolume(100); ytP.playVideo(); } else if (ytNow) { const id = ytNow, p = ytPos(); ytNow = ''; playOnScreen(id, p); } } else yCmd('mute'); snd.innerHTML = soundOn ? '<svg class="ico" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5Z"/><path d="M16 9a5 5 0 0 1 0 6M19.4 18.4a9 9 0 0 0 0-12.7"/></svg>' : '<svg class="ico" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5Z"/><path d="m22 9-6 6M16 9l6 6"/></svg>'; snd.classList.toggle('pulse', !soundOn); };
 // replay quiz: questions come from the server without answers; each pick is checked there and lands in the report
 async function replayQuiz(host, set) {
   const tok = await account.accessToken();
@@ -970,10 +976,10 @@ document.getElementById('tt').addEventListener('click', async (e) => {
   try { yCmd('mute'); } catch (x) {}
   const d = document.createElement('div'); d.className = 'rpl'; d.dataset.v0 = vids[0].id;
   const src = (id) => `https://www.youtube.com/embed/${encodeURIComponent(id)}?autoplay=1&controls=1&rel=0&modestbranding=1&playsinline=1`;
-  d.innerHTML = `<div class="rhd"><b><small>👑 PRO REPLAY · ${esc(b.from)}</small>${esc(b.block)}</b><button class="rx">✕ BACK TO HALL</button></div>
+  d.innerHTML = `<div class="rhd"><b><small><svg class="ico" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M11.6 3.3a.5.5 0 0 1 .9 0l2.9 5.5a1 1 0 0 0 1.5.3l4.3-3.7a.5.5 0 0 1 .8.5l-2.8 10.3a1 1 0 0 1-1 .7H5.8a1 1 0 0 1-1-.7L2 5.9a.5.5 0 0 1 .8-.5l4.3 3.7a1 1 0 0 0 1.5-.3z"/><path d="M5 21h14"/></svg> PRO REPLAY · ${esc(b.from)}</small>${esc(b.block)}</b><button class="rx">✕ BACK TO HALL</button></div>
     <div class="rv"><iframe allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen src="${src(vids[0].id)}"></iframe></div>
     ${vids.length > 1 ? `<div class="rch">${vids.map((v, i) => `<button data-v="${esc(v.id)}" class="${i ? '' : 'on'}">${i + 1}. ${esc(((v.title || '').split('||')[1] || (v.title || 'Part ' + (i + 1)).split('|')[0]).trim())}</button>`).join('')}</div>` : ''}
-    ${set ? `<button class="rq" id="rqGo" style="border:0;cursor:pointer">📝 Quiz yourself on this chapter · 5 Qs</button>` : ''}`;
+    ${set ? `<button class="rq" id="rqGo" style="border:0;cursor:pointer;display:inline-flex;align-items:center;gap:8px"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 2 2 4-4M3 7l2 2 4-4M13 6h8M13 12h8M13 18h8"/></svg> Quiz yourself on this chapter · 5 Qs</button>` : ''}`;
   document.body.appendChild(d);
   d.querySelector('.rx').onclick = () => { d.remove(); if (soundOn) yCmd('unMute'); };
   const qb = d.querySelector('#rqGo'); if (qb) qb.onclick = () => replayQuiz(d, set);
