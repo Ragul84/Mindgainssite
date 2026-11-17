@@ -90,6 +90,21 @@ body{font-family:Inter,system-ui,sans-serif}
 .chat-l{overflow-x:hidden}.cm{position:relative;padding:5px 26px 5px 8px;border-radius:10px;transition:transform .15s;touch-action:pan-y;user-select:none;-webkit-user-select:none}
 .cm .rp{position:absolute;right:2px;top:4px;opacity:0;background:none;border:0;color:var(--g);font-size:14px;cursor:pointer;padding:0 4px}.cm:hover .rp{opacity:1}
 .cm-re{font-size:11px;color:rgba(244,234,214,.6);border-left:2px solid rgba(243,212,138,.5);padding-left:6px;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.cm-re b{color:rgba(243,212,138,.8)}
+.cm.pro .tag{background:linear-gradient(90deg,#f3c86b,#ffe2a0);color:#1a1206}.cm.pro .nm{color:#ffe2a0}
+.fpill{display:none;align-items:center;gap:6px;height:32px;padding:0 12px;border-radius:99px;border:1px solid rgba(243,200,107,.5);background:rgba(20,14,4,.7);color:#ffe2a0;font:800 11px Inter;letter-spacing:.1em;text-decoration:none;white-space:nowrap;backdrop-filter:blur(8px)}
+.fpill.on{display:inline-flex}.fpill.low{border-color:#ff6b6b;color:#ffd0d0;animation:fp 1.6s ease-in-out infinite}@keyframes fp{0%{box-shadow:0 0 0 0 rgba(255,107,107,.45)}60%{box-shadow:0 0 0 7px rgba(255,107,107,0)}}
+.wall{position:fixed;inset:0;z-index:80;display:grid;place-items:center;padding:20px;background:rgba(6,4,10,.55);backdrop-filter:blur(16px) saturate(.8);-webkit-backdrop-filter:blur(16px) saturate(.8);animation:wf .5s ease}
+@keyframes wf{from{opacity:0}}
+.wall .wc{width:min(420px,100%);text-align:center;background:linear-gradient(180deg,rgba(32,25,14,.96),rgba(16,13,20,.96));border:1.5px solid #f3c86b;border-radius:26px;padding:30px 22px 22px;box-shadow:0 30px 80px -20px rgba(243,200,107,.35);animation:wp .55s cubic-bezier(.2,1.3,.4,1)}
+@keyframes wp{from{transform:translateY(30px) scale(.94);opacity:0}}
+.wall .wk{display:inline-flex;align-items:center;gap:8px;font:800 11px Inter;letter-spacing:.14em;color:#ffe2a0;padding:6px 12px;border-radius:99px;background:rgba(243,200,107,.1);border:1px solid rgba(243,200,107,.3)}
+.wall .wk i{width:7px;height:7px;border-radius:50%;background:#ff4d5e}
+.wall h2{font:400 44px/.95 'Bebas Neue';margin:16px 0 8px;letter-spacing:.01em}.wall h2 em{display:block;font:italic 700 26px/1.2 'Playfair Display';color:#f3c86b;margin-top:4px}
+.wall p{color:#d6cfc4;font:500 15px/1.5 Inter;margin:0 0 20px}.wall p b{color:#fff}
+.wall .wb{display:block;width:100%;padding:15px;border-radius:14px;font:800 15px Inter;text-decoration:none;margin-bottom:10px;border:0;cursor:pointer}
+.wall .wb1{background:linear-gradient(90deg,#f3c86b,#ffe2a0);color:#1a1206;box-shadow:0 8px 24px -8px rgba(243,200,107,.6)}.wall .wb1 small{display:block;font:600 12px Inter;opacity:.75;margin-top:2px}
+.wall .wb2{background:#25212c;color:#fff}
+.wall .wt{font:600 13px Inter;color:#8d8697;margin-top:12px}.wall .wt a{color:#cfc7d8}
 .cm .tag{display:inline-block;font:900 8.5px Inter;letter-spacing:.12em;font-style:normal;padding:1px 6px;border-radius:6px;margin-right:5px;vertical-align:1px}
 .cm.host{background:linear-gradient(135deg,rgba(243,212,138,.22),rgba(243,212,138,.06));border:1px solid rgba(243,212,138,.7);box-shadow:0 0 14px rgba(243,212,138,.25)}.cm.host .tag{background:var(--g);color:#1a1206}.cm.host .nm{color:#ffe7a6}
 .cm.legend{border:1.5px solid transparent;background:linear-gradient(rgba(30,20,6,.92),rgba(30,20,6,.92)) padding-box,linear-gradient(90deg,#ffe066,#ff9f1c,#fff6c2,#ffb21f,#ffe066) border-box;background-size:100% 100%,300% 100%;animation:tierFlow 3s linear infinite;box-shadow:0 0 12px rgba(255,190,40,.45)}
@@ -195,7 +210,7 @@ body.quizon .chat{visibility:hidden!important}
 <div class="vig"></div>
 <button class="skip" id="skip">SKIP ›</button>
 
-<div class="top"><a class="back" href="/nationlap/" aria-label="Back" onclick="if(window.__receipt&&window.__receipt.RC.secs>=600&&!sessionStorage.getItem('mgt_rc_offer')){sessionStorage.setItem('mgt_rc_offer','1');if(confirm('Before you go: grab your study receipt to share? 🧾')){event.preventDefault();window.__receipt.share();}}"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></a><div class="brand">MINDGAINS · THEATRE</div><span class="live" id="live">● LIVE</span><button class="ib" id="snd" title="Sound">🔇</button><button class="ib" id="fs" title="Full screen">⛶</button></div>
+<div class="top"><a class="back" href="/nationlap/" aria-label="Back" onclick="if(window.__receipt&&window.__receipt.RC.secs>=600&&!sessionStorage.getItem('mgt_rc_offer')){sessionStorage.setItem('mgt_rc_offer','1');if(confirm('Before you go: grab your study receipt to share? 🧾')){event.preventDefault();window.__receipt.share();}}"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></a><div class="brand">MINDGAINS · THEATRE</div><span class="live" id="live">● LIVE</span><a class="fpill" id="fpill" href="/pro/?back=/play/theatre/">⏳ <span id="fpillT">30 MIN FREE</span></a><button class="ib" id="snd" title="Sound">🔇</button><button class="ib" id="fs" title="Full screen">⛶</button></div>
 <button class="mob mhall" id="mHall">EN</button><button class="mob mview" id="mView" aria-label="Change view">🎥</button>
 <div class="mob mcap" id="mCap"><i></i><span id="mCapT">LIVE</span></div>
 <div class="mob mfab"><button id="mChat" aria-label="Chat">💬<span id="mChatN"></span></button><button id="mInv" aria-label="Invite a friend">🎟️<b>+150</b></button><button id="mRc" aria-label="My study receipt">🧾</button></div>
@@ -361,6 +376,7 @@ function bindYT(el) { ytP = null; const go = () => { try { ytP = new YT.Player(e
   if (window.YT && YT.Player) go(); else { const prev = window.onYouTubeIframeAPIReady; window.onYouTubeIframeAPIReady = () => { prev && prev(); if (ytEl === el) go(); }; } }
 function yCmd(func, args = []) { try { if (ytP && ytP[func]) return ytP[func](...args); ytEl && ytEl.contentWindow.postMessage(JSON.stringify({ event: 'command', func, args }), '*'); } catch (e) {} }
 function playOnScreen(id, start) {
+  if (window.__walled) id = '';
   const key = id; if (key === ytNow) return; if (INTRO.on && !window.__yt_ok) { window.__ytWait = [id, start]; return; } ytNow = key;
   if (ytObj) { cssScene.remove(ytObj); ytObj = null; }
   if (!id) { screen.visible = true; screen.material = posterMat; return; }
@@ -440,7 +456,7 @@ const stageSpot = new THREE.SpotLight(0xffd08a, 40, 30, .5, .5, 1.2); stageSpot.
 const ROWS = 'ABCDEFGHIJKL'.split(''), PER = 18;
 const seatGeo = (() => { const g = new THREE.Group(); return null; })();
 const base = new RoundedBoxGeometry(.78, .5, .7, 2, .1), backG = new RoundedBoxGeometry(.78, .85, .16, 2, .07), armG = new RoundedBoxGeometry(.1, .35, .6, 1, .04);
-const COL = { free: 0x9a1f33, freeB: 0x3a3f73, taken: 0x5a5566, friend: 0x2cb7ec, me: 0xffcf3f };
+const COL = { pro: 0xe0ac3c, proFree: 0x5c4720, free: 0x9a1f33, freeB: 0x3a3f73, taken: 0x5a5566, friend: 0x2cb7ec, me: 0xffcf3f };
 let seed = 11; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
 const seats = []; const pick = [];
 ROWS.forEach((row, r) => {
@@ -456,6 +472,7 @@ ROWS.forEach((row, r) => {
     const b = new THREE.Mesh(base, m); b.position.y = .25; b.castShadow = true; g.add(b);
     const bk = new THREE.Mesh(backG, m); bk.position.set(0, .7, .32); bk.rotation.x = -.12; bk.castShadow = true; g.add(bk);
     for (const s of [-1, 1]) { const ar = new THREE.Mesh(armG, mat(0x1c1622, .6)); ar.position.set(s * .44, .45, 0); g.add(ar); }
+    if ('EFG'.includes(row) && i >= 6 && i <= 11) { const led = new THREE.Mesh(new THREE.BoxGeometry(.66, .035, .05), new THREE.MeshBasicMaterial({ color: 0xffcf6b })); led.position.set(0, 1.12, .27); led.rotation.x = -.12; g.add(led); }
     // riser step under each row
     scene.add(g); const seat = { row, n: i + 1, st, g, m, eye: new THREE.Vector3(x, y + 1.5, zz + .6) }; seats.push(seat); pick.push(b, bk); b.userData.seat = bk.userData.seat = seat;
   }
@@ -475,7 +492,7 @@ function askSignIn(why) {
   d.querySelector('.sgn-go').onclick = () => { account.signIn(); try { sessionStorage.setItem('mg_return_to', location.pathname + location.search); } catch (e) {} };
   d.querySelector('.sgn-x').onclick = () => d.remove();
 }
-function nearestFree(to) { let best = null, bd = 1e9; for (const s of seats) { if (s.st === 'taken' || s === to) continue; const d = s.g.position.distanceTo(to.g.position); if (d < bd) { bd = d; best = s; } } return best; }
+function nearestFree(to) { let best = null, bd = 1e9; for (const s of seats) { if (s.st === 'taken' || s === to || !proOK(s)) continue; const d = s.g.position.distanceTo(to.g.position); if (d < bd) { bd = d; best = s; } } return best; }
 const nearSeat = (() => { const m = /^([A-L])(\d{1,2})$/.exec(QS.get('near') || ''); return m && seats.find((s) => s.row === m[1] && s.n === +m[2]); })();
 let mine = nearSeat ? nearestFree(nearSeat) : seats.find((s) => s.row === 'G' && s.n === 10);
 function markMine(s) { if (mine && mine !== s) { const c = mine.row < 'E' ? COL.freeB : COL.free; mine.m.color.set(c); mine.m.emissive.set(c); mine.m.emissiveIntensity = .18; }
@@ -522,6 +539,7 @@ addEventListener('pointerup', (e) => { if (!down || !onView(e) || document.getEl
   const s = hit.object.userData.seat;
   const card = document.getElementById('seatcard');
   if (s.st === 'taken') { flashCard(`Row ${s.row} · Seat ${s.n} · ${s.who || 'taken'}`); return; }
+  if (!proOK(s)) { flashCard('👑 Centre seats in rows E–G are for Pro members'); return; }
   userSeat = true; live.sit(s.row + s.n);
   markMine(s); seatRacer(s, MYLOOK); flashCard(`ROW ${s.row} · SEAT ${s.n}`); document.getElementById('tip').style.display = 'none'; fly('seat'); });
 document.getElementById('go').onclick = () => fly('seat');
@@ -558,8 +576,11 @@ const live = { ws: null, hall: null, n: 0, quiz: null, picked: -1,
   on(m) {
     if (m.next || m.t === 'next') quizSoon(m.at || m.next);
     if (m.t === 'state' && m.chat) { chatL.innerHTML = ''; m.chat.forEach(addChat); document.getElementById('chatN').textContent = ''; }
-    if (m.t === 'state' || m.t === 'seats') { this.n = m.count; paintSeats(m.seats, m.looks || {}); if (m.top) paintTop(m.top); if (m.quiz) showQuiz(m.quiz); renderCount(); }
-    else if (m.t === 'taken') { const t = seatByKey.get(m.seat); if (t) { t.st = 'taken'; const n = nearestFree(t); if (n) { markMine(n); this.sit(n.row + n.n); flashCard(`${m.seat} was taken · you're in ${n.row}${n.n}`); } } }
+    if (m.t === 'state' || m.t === 'seats') { this.n = m.count; paintSeats(m.seats, m.looks || {}, m.pros || []); if (m.top) paintTop(m.top); if (m.quiz) showQuiz(m.quiz); renderCount(); }
+    else if (m.t === 'taken') { const t = seatByKey.get(m.seat); if (m.pro && t) flashCard('👑 That seat is reserved for Pro members'); if (t) { t.st = 'taken'; const n = nearestFree(t); if (n) { markMine(n); this.sit(n.row + n.n); flashCard(`${m.seat} was taken · you're in ${n.row}${n.n}`); } } }
+    else if (m.t === 'pro') { PRO = !!m.pro; document.body.classList.toggle('ispro', PRO); if (PRO) hideWall(); freePill(m.freeLeft); if (mine) { seatRacer(mine, null); seatRacer(mine, MYLOOK); } }
+    else if (m.t === 'free') freePill(m.left);
+    else if (m.t === 'wall') showWall();
     else if (m.t === 'refok') { awardXp(50); flashCard(`🎉 ${m.name} joined on your invite · +${m.pts} pts · +50 XP`); }
     else if (m.t === 'board') { if (m.top) paintTop(m.top); }
     else if (m.t === 'me') { RC.rank = m.rank; RC.of = m.of; saveRC(); }
@@ -570,9 +591,41 @@ const live = { ws: null, hall: null, n: 0, quiz: null, picked: -1,
     else if (m.t === 'chat') addChat(m.m);
     else if (m.t === 'slow') { if (m.wait) cool(m.wait); if (m.why) addChat({ name: 'MindGains', text: m.why }); }
   } };
+// ---- MindGains Pro: free 30 min/day (metered by the hall server), reserved centre seats, gold seats/racers/badges
+let PRO = false; window.__walled = false;
+const PRO_SEATS = new Set(); for (const r of 'EFG') for (let n = 7; n <= 12; n++) PRO_SEATS.add(r + n);
+let prosNow = new Set();
+const proOK = (s) => PRO || !PRO_SEATS.has(s.row + s.n);
+function freePill(left) {
+  const p = document.getElementById('fpill'); if (!p) return;
+  if (PRO || left == null || left > 600) { p.classList.remove('on'); return; }
+  const m = Math.max(0, Math.ceil(left / 60)); document.getElementById('fpillT').textContent = m ? `${m} MIN FREE LEFT` : 'FREE TIME UP';
+  p.classList.add('on'); p.classList.toggle('low', m <= 3);
+}
+function untilMidnightIST() { const n = Date.now() + 5.5 * 3600e3, m = 864e5 - (n % 864e5); const h = Math.floor(m / 3600e3), mi = Math.floor(m % 3600e3 / 60e3); return h ? `${h}h ${mi}m` : `${mi} min`; }
+function showWall() {
+  if (window.__walled || PRO) return; window.__walled = true;
+  try { const vb = document.querySelector('.vback'); if (vb && vb.offsetParent) vb.click(); } catch (e) {}
+  try { playOnScreen('', 0); } catch (e) {}
+  const back = encodeURIComponent(location.pathname + location.search), n = Math.max(1, (live.n || 1) - 1);
+  const d = document.createElement('div'); d.className = 'wall'; d.id = 'wall';
+  d.innerHTML = `<div class="wc"><span class="wk"><i></i>${n} STILL IN THE HALL</span>
+    <h2>Your free 30 minutes are up<em>keep your seat all night.</em></h2>
+    <p>The class is still running. Pro gives you <b>unlimited</b> theatre, your <b>weak chapters</b>, and a streak that never dies.</p>
+    <a class="wb wb1" href="/pro/?plan=exam&back=${back}">Get the Exam Pass · ₹399<small>6 months · just ₹66 a month</small></a>
+    <a class="wb wb2" href="/pro/?plan=month&back=${back}" id="wallM">Pro Monthly · ₹99</a>
+    ${signedIn ? '' : '<button class="wb wb2" id="wallS">Already Pro? Sign in</button>'}
+    <div class="wt">Free time comes back in ${untilMidnightIST()} · <a href="/nationlap/">Race instead</a></div></div>`;
+  document.body.appendChild(d);
+  fetch('/api/pro/me').then((r) => r.json()).then((x) => { if (x.launch) { const a = document.getElementById('wallM'); if (a) a.textContent = 'Pro Monthly · ₹49 first month'; } }).catch(() => {});
+  const sb = document.getElementById('wallS'); if (sb) sb.onclick = () => account.signInPopup();
+}
+function hideWall() { window.__walled = false; const w = document.getElementById('wall'); if (w) w.remove(); }
+setInterval(() => { if (!PRO && !window.__walled && document.visibilityState === 'visible' && !document.body.classList.contains('intro')) live.send({ t: 'tick' }); }, 30000);
 const MYLOOK = (() => { try { const p = loadProfile(); return [p.avatar | 0, p.color | 0]; } catch (e) { return [0, 5]; } })();
 const lookCache = new Map(), occ = new Map();   // seat key -> seated racer
-function seatedRacer(look) {
+const GOLD = new THREE.MeshStandardMaterial({ color: 0xe8b84a, metalness: .55, roughness: .3, emissive: 0x3a2600, emissiveIntensity: .5 });
+function seatedRacer(look, pro) {
   const key = look.join('-');
   if (!lookCache.has(key)) {
     let d = null;
@@ -595,16 +648,17 @@ function seatedRacer(look) {
       }
       d.updateMatrixWorld(true);
       const b = new THREE.Box3().setFromObject(d), s = 1.15 / Math.max(.01, b.max.y - b.min.y); d.scale.setScalar(s); d.userData.lift = -b.min.y * s;
-      d.traverse((o) => { if (o.isMesh) { o.castShadow = false; o.receiveShadow = false; } }); } catch (e) {}
+      d.userData.paint = paint; d.traverse((o) => { if (o.isMesh) { o.castShadow = false; o.receiveShadow = false; } }); } catch (e) {}
     lookCache.set(key, d);
   }
   const base = lookCache.get(key); if (!base) return null;
-  const c = base.clone(); c.position.set(0, .34 + base.userData.lift, -.02); c.rotation.y = Math.PI; c.userData.head = c.getObjectByName('__head'); c.userData.hy = 0; c.userData.hx = 0; return c;
+  const c = base.clone(); if (pro && base.userData.paint) c.traverse((o) => { if (o.isMesh && o.material === base.userData.paint) o.material = GOLD; });
+  c.position.set(0, .34 + base.userData.lift, -.02); c.rotation.y = Math.PI; c.userData.head = c.getObjectByName('__head'); c.userData.hy = 0; c.userData.hx = 0; return c;
 }
 function seatRacer(s, look) {   // put (or replace / remove) the racer in seat s
-  const k = s.row + s.n, cur = occ.get(k);
-  if (cur && (!look || cur.userData.look !== look.join('-'))) { s.g.remove(cur); occ.delete(k); }
-  if (look && !occ.get(k)) { const r = seatedRacer(look); if (r) { r.userData.look = look.join('-'); s.g.add(r); occ.set(k, r); } }
+  const k = s.row + s.n, cur = occ.get(k), pro = prosNow.has(k) || (s === mine && PRO), lk = look && look.join('-') + (pro ? '-p' : '');
+  if (cur && (!look || cur.userData.look !== lk)) { s.g.remove(cur); occ.delete(k); }
+  if (look && !occ.get(k)) { const r = seatedRacer(look, pro); if (r) { r.userData.look = lk; s.g.add(r); occ.set(k, r); } }
 }
 const _hv = new THREE.Vector3(), _cd = new THREE.Vector3(), _hl = new THREE.Vector3();
 function lookAtCamera(dt) {   // racers you are looking at turn their heads to you
@@ -625,18 +679,20 @@ function lookAtCamera(dt) {   // racers you are looking at turn their heads to y
 let autoSeated = false, userSeat = false;
 function bestSeat(map) {
   let best = null, bs = 1e9; const rows = 'ABCDEFGHIJKL';
-  for (const s of seats) { const k = s.row + s.n; if (map[k]) continue;
+  for (const s of seats) { const k = s.row + s.n; if (map[k] || !proOK(s)) continue;
     const ri = rows.indexOf(s.row), nb = [s.n - 1, s.n + 1].some((x) => map[s.row + x]) ? 1 : 0;
     const sc = Math.abs(ri - 6.5) * 1.2 + Math.abs(s.n - 9.5) * .55 - nb * 2.2 + Math.random() * .3; if (sc < bs) { bs = sc; best = s; } }
   return best;
 }
-function paintSeats(map, looks = {}) {
+function paintSeats(map, looks = {}, pros) {
+  if (pros) prosNow = new Set(pros);
   if (!autoSeated && !userSeat && !QS.get('near')) { autoSeated = true; const b = bestSeat(map); if (b && b !== mine) { markMine(b); live.sit(b.row + b.n); } }
   for (const s of seats) { const k = s.row + s.n; seatRacer(s, map[k] ? (looks[k] || [((k.charCodeAt(0) + s.n) % 6), (s.n * 3) % 8]) : (s === mine ? MYLOOK : null)); }
   for (const s of seats) { const k = s.row + s.n, who = map[k], isMe = mine === s;
     if (isMe) continue;
-    const st = who ? 'taken' : 'free'; if (s.st === st && s.who === who) continue; s.st = st; s.who = who;
-    const c = st === 'taken' ? COL.taken : s.row < 'E' ? COL.freeB : COL.free; s.m.color.set(c); s.m.emissive.set(st === 'taken' ? 0x000000 : c); s.m.emissiveIntensity = st === 'taken' ? 0 : .35; } }
+    const st = who ? 'taken' : 'free', pk = prosNow.has(k) ? 1 : 0; if (s.st === st && s.who === who && s.pk === pk && s.painted) continue; s.st = st; s.who = who; s.pk = pk; s.painted = 1;
+    const gold = prosNow.has(k), res = PRO_SEATS.has(k);
+    const c = gold ? COL.pro : st === 'taken' ? COL.taken : s.row < 'E' ? COL.freeB : COL.free; s.m.color.set(c); s.m.emissive.set(gold ? 0x6a4300 : st === 'taken' ? 0x000000 : c); s.m.emissiveIntensity = gold ? .6 : st === 'taken' ? 0 : .35; } }
 function renderCount() { const el = document.getElementById('nowS'); if (el && !el.dataset.c) { el.dataset.c = 1; } const k = document.getElementById('nowK'); if (k) k.textContent = `NOW SHOWING · ${live.n} IN THE HALL`; }
 function paintTop(top) { const el = document.getElementById('top5'); if (!top.length) { el.hidden = true; return; } el.hidden = false;
   el.innerHTML = '<b>TOP 5 TONIGHT</b>' + top.map((t, i) => `${i + 1}. ${t.name.replace(/[<>&]/g, '')}${t.seat ? ' · ' + t.seat : ''} — ${t.pts}`).join('<br>'); }
@@ -739,7 +795,7 @@ document.getElementById('mInv').onclick = () => document.getElementById('inv').c
 document.getElementById('mHall').onclick = () => { const b = [...document.querySelectorAll('#halls button')].find((x) => !x.classList.contains('on')); if (b) b.click(); };
 { const t = document.querySelector('.top'), b = t.querySelector('.back'); b.after(document.getElementById('mHall'), document.getElementById('mView')); }
 { const fit = () => document.documentElement.style.setProperty('--topb', document.querySelector('.top').getBoundingClientRect().bottom + 'px'); fit(); addEventListener('resize', fit); }
-window.__th = { showQuiz: (q) => showQuiz(q), addChat: (m) => addChat(m), react: (e) => reactStream(e), soon: (at) => quizSoon(at), setChat: (o) => setChat(o), fly: (v) => fly(v), reveal: (m) => reveal(m), live, occ, cam, seatRacer, seats, go: (p, l) => { spot = [new THREE.Vector3(...p), new THREE.Vector3(...l)]; fly('spot'); } };
+window.__th = { showQuiz: (q) => showQuiz(q), addChat: (m) => addChat(m), react: (e) => reactStream(e), soon: (at) => quizSoon(at), setChat: (o) => setChat(o), fly: (v) => fly(v), reveal: (m) => reveal(m), live, occ, cam, seatRacer, seats, wall: showWall, pill: freePill, setPro: (v) => { PRO = v; }, paintSeats, go: (p, l) => { spot = [new THREE.Vector3(...p), new THREE.Vector3(...l)]; fly('spot'); } };
 document.getElementById('mCap').onclick = () => document.getElementById('ttbtn').click();
 { const order = ['seat', 'wide', 'stage', 'balcony'], name = { seat: 'MY SEAT', wide: 'HALL', stage: 'FRONT ROW', balcony: 'BALCONY' };
   document.getElementById('mView').onclick = () => { const v = order[(order.indexOf(mode) + 1) % order.length]; fly(v); flashCard(name[v]); }; }
@@ -753,9 +809,9 @@ document.getElementById('inv').onclick = async () => { if (!signedIn) return ask
   try { await navigator.clipboard.writeText(text + ' ' + url); flashCard('Invite link copied · +150 pts for every friend who joins'); }
   catch (e) { window.open('https://wa.me/?text=' + encodeURIComponent(text + ' ' + url), '_blank'); } };
 function addChat(m) { const d = document.createElement('div'); const t = m.host ? null : TIER[m.rank];
-  d.className = 'cm' + (m.sys ? ' sys' : '') + (m.name === myName ? ' me' : '') + (m.host ? ' host' : '') + (t ? ' ' + t[0] : '');
+  d.className = 'cm' + (m.sys ? ' sys' : '') + (m.name === myName ? ' me' : '') + (m.host ? ' host' : '') + (t ? ' ' + t[0] : m.pro ? ' pro' : '');
   d.innerHTML = (m.re ? `<div class="cm-re">↩ <b>${esc(m.re.name)}</b> ${esc(m.re.text)}</div>` : '') +
-    (m.host ? '<i class="tag">HOST</i>' : t ? `<i class="tag">${t[1]}</i>` : '') +
+    (m.host ? '<i class="tag">HOST</i>' : t ? `<i class="tag">${t[1]}</i>` : m.pro ? '<i class="tag">👑 PRO</i>' : '') +
     `<b class="nm">${esc(m.name)}${m.seat ? ' <small>' + esc(m.seat) + '</small>' : ''}</b> <span class="tx">${esc(m.text)}</span>` +
     (m.at ? '<button class="rp" aria-label="Reply">↩</button>' : ''); if (m.sys) d.innerHTML = esc(m.text);
   if (m.at) { const rb = d.querySelector('.rp'); rb.onclick = () => setReply(m);
