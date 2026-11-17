@@ -386,10 +386,10 @@ const FOOTER = `<footer class="mg-foot">
     </ul></nav>
     <nav aria-label="Company"><h4>Company</h4><ul>
       <li><a href="/about/">About MindGains</a></li><li><a href="/get/">Get the app</a></li><li><a href="/blog/">Blog</a></li>
-      <li><a href="/privacy/">Privacy</a></li><li><a href="/data-deletion/">Delete my data</a></li>
+      <li><a href="/pro/">Pricing</a></li><li><a href="/contact/">Contact us</a></li>
     </ul></nav>
   </div>
-  <div class="mg-foot-legal"><span>© ${new Date().getFullYear()} MindGains Labs Private Limited</span><a href="/privacy/">Privacy</a><a href="/data-deletion/">Data deletion</a><a href="/sitemap.xml">Sitemap</a><a href="https://www.instagram.com/mindgains_ai/" rel="me noopener" target="_blank">Instagram</a><a href="https://www.linkedin.com/company/mindgains-ai" rel="me noopener" target="_blank">LinkedIn</a><a href="https://x.com/MindgainsIndia" rel="me noopener" target="_blank">X</a></div>
+  <div class="mg-foot-legal"><span>© ${new Date().getFullYear()} MindGains Labs Private Limited</span><a href="/terms/">Terms</a><a href="/privacy/">Privacy</a><a href="/refunds/">Refunds</a><a href="/data-deletion/">Data deletion</a><a href="/contact/">Contact</a><a href="/sitemap.xml">Sitemap</a><a href="https://www.instagram.com/mindgains_ai/" rel="me noopener" target="_blank">Instagram</a><a href="https://www.linkedin.com/company/mindgains-ai" rel="me noopener" target="_blank">LinkedIn</a><a href="https://x.com/MindgainsIndia" rel="me noopener" target="_blank">X</a></div>
 </footer>`;
 
 const TAGLINE = {

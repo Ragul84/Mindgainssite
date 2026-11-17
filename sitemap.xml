@@ -487,6 +487,30 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://mindgains.ai/pro/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mindgains.ai/terms/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://mindgains.ai/refunds/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://mindgains.ai/contact/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://mindgains.ai/privacy/</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
