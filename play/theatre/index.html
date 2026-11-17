@@ -163,6 +163,13 @@ body{font-family:Inter,system-ui,sans-serif}
 .chat-r button{background:none;border:0;color:var(--g);cursor:pointer;font-size:13px}.chat.min .chat-r{display:none}
 @media (max-width:760px){.chat{top:96px;bottom:178px;width:min(300px,82vw)}.chat.min{top:auto;bottom:178px}
   #vfs .chat{width:min(280px,42vw)}}
+@media (min-width:761px){   /* desktop: chat is a full-height column on the left, closes to a pill */
+  .chat:not(.min){left:0;top:0;bottom:0;width:340px;border-radius:0;border-width:0 1px 0 0;background:rgba(10,8,6,.92)}
+  .chat:not(.min) .chat-h{padding:16px 14px;font-size:12px}.chat:not(.min) .chat-l{flex:1}
+  .chat .chx{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;color:#f4ead6}.chat .chx:hover{background:rgba(255,255,255,.08)}
+  .chat.min{top:auto;bottom:20px;left:16px}
+  body:has(.chat:not(.min)) .top5{right:14px!important}
+}
 body.intro .chat,body.cinema .chat,body.intro .mob,body.intro .qsoon{display:none!important}body.quizon .chat:not(.min){visibility:hidden}
 @media (max-width:760px){.chat{left:12px;right:12px;width:auto;top:auto;bottom:178px;max-height:46vh}.chat.min{bottom:178px}.chat:not(.min){height:46vh}.emo{grid-template-columns:repeat(12,1fr)}.emo img{max-width:26px}}
 body.cinema .top,body.cinema .marq,body.cinema .halls,body.cinema .tip,body.cinema .angles,body.cinema .sheet,body.cinema .reacts,body.cinema .top5{display:none!important}body.cinema .ctl{top:12px}
@@ -262,7 +269,7 @@ body.quizon .chat{visibility:hidden!important}
 <div class="seatcard" id="seatcard"></div>
 <div class="quizc" id="quizc" hidden><div class="qk" id="qk">MIGA ASKS · 15 S</div><div class="qq" id="qq"></div><div class="qo" id="qo"></div><div class="qb"><i id="qbar"></i></div><div class="qn" id="qn"></div></div>
 <div class="top5" id="top5" hidden></div>
-<div class="chat" id="chat"><button class="chat-h" id="chatH"><svg class="ico" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg> <em>LIVE CHAT</em> <span id="chatN"></span><i>‹</i></button>
+<div class="chat" id="chat"><button class="chat-h" id="chatH"><svg class="ico" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg> <em>LIVE CHAT</em> <span id="chatN"></span><i class="chx" aria-label="Close chat"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></i></button>
   <div class="chat-l" id="chatL"></div>
   <div class="emo" id="reacts"><button data-e="1f525"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f525/emoji.svg" alt="" loading="lazy"></button><button data-e="1f602"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f602/emoji.svg" alt="" loading="lazy"></button><button data-e="1f92f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f92f/emoji.svg" alt="" loading="lazy"></button><button data-e="1f44f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44f/emoji.svg" alt="" loading="lazy"></button><button data-e="2764_fe0f"><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/2764_fe0f/emoji.svg" alt="" loading="lazy"></button></div>
   <button class="inv rcb" id="rpb" type="button"><span class="il"><svg class="ico" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg> MY WEAK CHAPTERS</span> <b>report</b></button>
