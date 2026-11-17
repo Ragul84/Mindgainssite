@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>Theatre · NationLap</title>
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,7 +29,7 @@
 .tip{left:14px!important;transform:none!important}
 .seatcard{position:fixed;left:50%;transform:translateX(-50%);bottom:206px;z-index:6;background:#fff;color:#1a1206;border-radius:14px;padding:8px 14px;font:900 13px Nunito;box-shadow:0 8px 30px rgba(0,0,0,.5);display:none}
 
-html,body{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}#gl{touch-action:none}
+html,body{touch-action:manipulation;overscroll-behavior:none;-webkit-text-size-adjust:100%;}html,body{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}#gl{touch-action:none}
 /* ---- style C: cinematic gold */
 :root{--g:#f3d48a;--g2:#bfa66a}
 body{font-family:Inter,system-ui,sans-serif}
@@ -111,6 +111,8 @@ body{font-family:Inter,system-ui,sans-serif}
 @keyframes gcGlow{0%,100%{box-shadow:inset 0 1px 0 rgba(255,255,255,.65),inset 0 -1px 0 rgba(120,72,10,.35),0 6px 22px -6px rgba(243,190,90,.75),0 0 0 1px rgba(255,214,130,.55)}50%{box-shadow:inset 0 1px 0 rgba(255,255,255,.65),inset 0 -1px 0 rgba(120,72,10,.35),0 8px 30px -4px rgba(255,205,110,.95),0 0 0 1px rgba(255,230,160,.8)}}
 @keyframes gcTwinkle{0%,58%,100%{transform:rotate(0) scale(1)}66%{transform:rotate(-12deg) scale(1.18)}74%{transform:rotate(8deg) scale(1.05)}}
 @media (prefers-reduced-motion:reduce){.gold-cta,.gold-cta::before,.gold-cta::after,.gold-cta svg{animation:none}}
+@media (min-width:761px){#fpill{position:fixed;top:14px;right:18px;z-index:9;height:36px;padding:0 16px}}   /* desktop: Go Pro sits in the page's top-right corner */
+#vfs .chat.min{display:flex!important;position:absolute;left:12px;bottom:16px;top:auto;z-index:3}
 .fpill{display:none;align-items:center;gap:6px;height:32px;padding:0 12px;border-radius:99px;border:1px solid rgba(243,200,107,.5);background:rgba(20,14,4,.7);color:#ffe2a0;font:800 11px Inter;letter-spacing:.1em;text-decoration:none;white-space:nowrap;backdrop-filter:blur(8px)}
 .ico{display:block;flex:none}.il{display:inline-flex;align-items:center;gap:8px}.ib{display:inline-grid;place-items:center}.mfab button{display:grid;place-items:center}.mview{display:grid!important;place-items:center}.fpill #fpillI{display:inline-flex}
 .fpill.go{display:inline-flex;padding:0 14px;letter-spacing:.12em}.fpill.on{display:inline-flex}.fpill.low{border-color:#ff6b6b;color:#ffd0d0;animation:fp 1.6s ease-in-out infinite}@keyframes fp{0%{box-shadow:0 0 0 0 rgba(255,107,107,.45)}60%{box-shadow:0 0 0 7px rgba(255,107,107,0)}}
@@ -620,7 +622,7 @@ function openVideo() {
   if (ytEl) yCmd('mute');
   const o = document.createElement('div'); o.id = 'vfs';
   o.innerHTML = `<iframe allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen src="https://www.youtube.com/embed/${encodeURIComponent(id)}?autoplay=1&start=${p}&controls=1&rel=0&playsinline=1&modestbranding=1"></iframe><button class="vback" aria-label="Back to the hall">✕ BACK TO HALL</button>`;
-  document.body.appendChild(o); o.appendChild(chatBox);
+  document.body.appendChild(o); chatBox.classList.add('min'); document.body.classList.remove('chaton'); o.appendChild(chatBox);   // full screen: chat closed, pill in the corner opens it
   const close = () => { document.body.appendChild(chatBox); if (document.fullscreenElement) document.exitFullscreen().catch(() => {}); o.remove(); if (soundOn) { const i = ytNow, q = ytPos(); ytNow = ''; playOnScreen(i, q); } };
   o.querySelector('.vback').onclick = close;
   try { (o.requestFullscreen || o.webkitRequestFullscreen).call(o); } catch (e) {}
@@ -661,7 +663,13 @@ addEventListener('pointerup', () => { look = false; });
 // zoom from the seat: mouse wheel or pinch
 const pts = new Map(); let pinch0 = 0;
 const setZoom = (z) => { if (z > 1.12 && mode !== 'wide') { zoomF = 1; fly('wide'); } else zoomF = Math.max(.35, Math.min(1.12, z)); };
-addEventListener('wheel', (e) => { if (onView(e) && !flying) setZoom(zoomF * (e.deltaY > 0 ? 1.08 : .92)); }, { passive: true });
+addEventListener('wheel', (e) => { if (e.ctrlKey) e.preventDefault();   // trackpad pinch / ctrl+wheel: zoom the hall, never the page
+  if ((onView(e) || e.ctrlKey) && !flying) setZoom(zoomF * (e.deltaY > 0 ? (e.ctrlKey ? 1.03 : 1.08) : (e.ctrlKey ? .97 : .92))); }, { passive: false });
+// phones: two-finger pinch and double-tap move the camera only; the page itself never zooms
+document.addEventListener('touchmove', (e) => { if (e.touches.length > 1) e.preventDefault(); }, { passive: false });
+for (const g of ['gesturestart', 'gesturechange', 'gestureend']) document.addEventListener(g, (e) => e.preventDefault(), { passive: false });
+addEventListener('keydown', (e) => { if ((e.ctrlKey || e.metaKey) && ['+', '=', '-', '0'].includes(e.key)) e.preventDefault(); });
+let dblT = 0; document.addEventListener('touchend', (e) => { const n = Date.now(); if (n - dblT < 300 && !e.target.closest('input,textarea,button,a,canvas')) e.preventDefault(); dblT = n; }, { passive: false });
 addEventListener('pointerdown', (e) => onView(e) && pts.set(e.pointerId, [e.clientX, e.clientY]));
 addEventListener('pointermove', (e) => { if (!pts.has(e.pointerId)) return; pts.set(e.pointerId, [e.clientX, e.clientY]); if (pts.size === 2) { const [a, b] = [...pts.values()], d = Math.hypot(a[0] - b[0], a[1] - b[1]); if (pinch0 && !flying) setZoom(zoomF * pinch0 / d); pinch0 = d; } });
 const ptUp = (e) => { pts.delete(e.pointerId); if (pts.size < 2) pinch0 = 0; }; addEventListener('pointerup', ptUp); addEventListener('pointercancel', ptUp);
@@ -986,7 +994,8 @@ let coolT = 0;
 function cool(ms) { clearInterval(coolT); chatS.disabled = true; const end = Date.now() + ms; const tick = () => { const l = Math.ceil((end - Date.now()) / 1000); if (l <= 0) { clearInterval(coolT); chatS.disabled = false; chatS.textContent = 'SEND'; } else chatS.textContent = l + 's'; }; tick(); coolT = setInterval(tick, 250); }
 document.getElementById('chatF').onsubmit = (e) => { e.preventDefault(); const t = chatI.value.trim(); if (!t || chatS.disabled) return; live.send({ t: 'chat', text: t, re: replyTo ? { name: replyTo.name, text: replyTo.text.slice(0, 60) } : null }); chatI.value = ''; setReply(null); cool(10000); };
 document.getElementById('chatH').onclick = () => { chatBox.classList.toggle('min'); document.getElementById('chatN').textContent = ''; chatL.scrollTop = chatL.scrollHeight; };
-if (innerWidth < 760) chatBox.classList.add('min');
+{ const fp = document.getElementById('fpill'), top = document.querySelector('.top'), put = () => { const d = matchMedia('(min-width:761px)').matches; if (d && fp.parentNode !== document.body) document.body.appendChild(fp); else if (!d && fp.parentNode !== top) top.appendChild(fp); }; put(); addEventListener('resize', put); }
+chatBox.classList.add('min');   // chat starts closed everywhere; the pill / chat button opens it
 chatBox.addEventListener('pointerdown', (e) => e.stopPropagation()); chatBox.addEventListener('pointerup', (e) => e.stopPropagation());
 setTimeout(() => live.connect(), 300);
 // signed in on mindgains.ai -> same account here: real name in chat, same player id as the NationLap board (for top-3 frames)
