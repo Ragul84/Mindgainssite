@@ -151,7 +151,7 @@
   <!-- hof:end -->
 
 <div class="duo" id="duo" aria-roledescription="carousel">
-  <div class="duo-tabs wrap" role="tablist"><button role="tab" class="on" data-i="0">🏁 Race the syllabus</button><button role="tab" data-i="1"><i></i>🎬 Live theatre</button></div>
+  <div class="duo-head wrap"><div class="duo-tabs" role="tablist"><span class="duo-pill" aria-hidden="true"></span><button role="tab" class="on" data-i="0" aria-selected="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.3 2.7A7 7 0 0 0 20 4v11a7 7 0 0 1-4.7.7C13 15 11 13 8 13a6 6 0 0 0-4 1"/></svg><span>Race the syllabus</span><b class="duo-bar"><em></em></b></button><button role="tab" data-i="1" aria-selected="false"><i></i><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="m17 2-5 5-5-5"/></svg><span>Live theatre</span><b class="duo-bar"><em></em></b></button></div></div>
   <div class="duo-track" id="duoT">
   <!-- nl-showcase:start -->
 <div class="duo-slide"><section class="wrap sec nls" aria-labelledby="nls-h">
@@ -188,13 +188,13 @@
   <a class="nlt" href="/play/theatre/">
     <div class="nlt-media"><img src="/assets/nationlap-shots/theatre.jpg?v=2" alt="NationLap Live theatre: a modern 3D cinema hall with a big curved screen and red seats" loading="lazy" decoding="async"><span class="nlt-pill"><i></i>LIVE NOW</span></div>
     <div class="nlt-copy">
-      <span class="nlt-k">NationLap Live · free · 24×7</span>
+      <span class="nlt-k">NationLap Live · 30 min free daily</span>
       <h2 id="nlt-h">Study alone? Not anymore.</h2>
       <p>Every night, lakhs of aspirants study the same chapter in separate rooms. NationLap Live puts you in one hall. Pick a seat, watch today's class with the whole country, ask your doubt in the chat, and answer MIGA's question before anyone else does.</p>
       <div class="nlt-day">
         <span><b>6 AM</b>Newspaper</span><span><b>7 AM</b>New episode</span><span><b>6 PM</b>MIGA premiere</span><span><b>10 PM</b>One-shot marathon</span>
       </div>
-      <p class="nlt-sub">Bring your study partner. Sit side by side, react together, and see who tops tonight's board. English and Tamil TNPSC halls, free, open all night.</p>
+      <p class="nlt-sub">Bring your study partner. Sit side by side, react together, and see who tops tonight's board. English and Tamil TNPSC halls, open all night: 30 minutes a day free, unlimited with Pro.</p>
       <span class="nlt-btn">Find your seat <span class="nlt-live" id="nltLive"></span> →</span>
     </div>
   </a>
@@ -203,24 +203,32 @@
   <div class="duo-dots"><i class="on"></i><i></i></div>
 </div>
 <style>
-.duo{position:relative;overflow:hidden}
-.duo-track{display:flex;align-items:center;transition:transform .7s cubic-bezier(.65,0,.35,1);touch-action:pan-y}
+.duo{position:relative;overflow:hidden;padding-top:56px}
+.duo-track{display:flex;align-items:center;transition:transform .8s cubic-bezier(.7,0,.2,1);touch-action:pan-y}.duo-slide{transition:opacity .8s,transform .8s cubic-bezier(.7,0,.2,1)}.duo-slide:not(.on){opacity:.35;transform:scale(.96)}
 .duo-slide{flex:0 0 100%;min-width:0;padding-bottom:28px}
-.duo-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:4px}
-.duo-tabs button{border:1px solid rgba(20,20,40,.15);background:#fff;color:#333;font:700 13px Inter,system-ui,sans-serif;padding:8px 14px;border-radius:999px;cursor:pointer;display:flex;align-items:center;gap:6px}
-.duo-tabs button.on{background:#14121f;color:#ffd23f;border-color:#14121f}
+.duo-head{display:flex;justify-content:center;margin-bottom:6px}.duo-tabs{position:relative;display:inline-flex;padding:5px;border-radius:999px;background:rgba(20,18,31,.06);border:1px solid rgba(20,18,31,.08);box-shadow:inset 0 1px 2px rgba(20,18,31,.06)}
+.duo-tabs button{position:relative;z-index:1;border:0;background:none;color:#4a4858;font:700 14px Inter,system-ui,sans-serif;padding:11px 20px 13px;border-radius:999px;cursor:pointer;display:flex;align-items:center;gap:8px;transition:color .4s;white-space:nowrap}.duo-tabs button:hover{color:#14121f}
+.duo-tabs button.on{color:#ffd23f}.duo-pill{position:absolute;z-index:0;top:5px;bottom:5px;left:5px;border-radius:999px;background:linear-gradient(180deg,#25212f,#14121f);box-shadow:0 8px 20px -8px rgba(20,18,31,.6),inset 0 1px 0 rgba(255,255,255,.08);transition:transform .55s cubic-bezier(.6,0,.2,1.15),width .55s cubic-bezier(.6,0,.2,1.15)}
+.duo-bar{position:absolute;left:20px;right:20px;bottom:6px;height:2px;border-radius:2px;background:rgba(255,210,63,.18);overflow:hidden;opacity:0;transition:opacity .3s}.duo-tabs button.on .duo-bar{opacity:1}.duo-bar em{display:block;height:100%;width:0;background:#ffd23f;border-radius:2px}.duo.run .duo-tabs button.on .duo-bar em{animation:duoFill var(--dur,7s) linear forwards}.duo.hold .duo-tabs button.on .duo-bar em{animation-play-state:paused}@keyframes duoFill{to{width:100%}}
+@media (max-width:520px){.duo{padding-top:40px}.duo-tabs button{font-size:13px;padding:10px 14px 12px}.duo-bar{left:14px;right:14px}}@media (prefers-reduced-motion:reduce){.duo-slide,.duo-track,.duo-pill{transition:none}}
 .duo-tabs i{width:7px;height:7px;border-radius:50%;background:#ff3b5c;animation:nltp 1.2s infinite}
 .duo-dots{display:flex;justify-content:center;gap:6px;margin:0 0 24px}.duo-dots i{width:8px;height:8px;border-radius:4px;background:rgba(20,20,40,.2);transition:width .3s}.duo-dots i.on{width:24px;background:#14121f}
 </style>
 <script>
-(function(){var d=document.getElementById('duo'),t=document.getElementById('duoT'),tabs=d.querySelectorAll('.duo-tabs button'),dots=d.querySelectorAll('.duo-dots i'),i=0,timer,x0=null;
-function go(n){i=(n+2)%2;t.style.transform='translateX('+(-100*i)+'%)';tabs.forEach(function(b,k){b.classList.toggle('on',k===i)});dots.forEach(function(b,k){b.classList.toggle('on',k===i)});}
-function auto(){clearInterval(timer);timer=setInterval(function(){if(!document.hidden)go(i+1)},7000);}
-tabs.forEach(function(b){b.onclick=function(){go(+b.dataset.i);auto();}});
-d.addEventListener('mouseenter',function(){clearInterval(timer)});d.addEventListener('mouseleave',auto);
-t.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;clearInterval(timer)},{passive:true});
-t.addEventListener('touchend',function(e){if(x0!==null){var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)go(i+(dx<0?1:-1));x0=null;auto();}},{passive:true});
-auto();})();
+(function(){var d=document.getElementById('duo'),t=document.getElementById('duoT'),tabs=d.querySelectorAll('.duo-tabs button'),dots=d.querySelectorAll('.duo-dots i'),sl=t.querySelectorAll('.duo-slide'),pill=d.querySelector('.duo-pill'),i=0,timer,x0=null,DUR=7000,left=DUR,t0=0;
+d.style.setProperty('--dur',DUR+'ms');
+function place(){var b=tabs[i];pill.style.width=b.offsetWidth+'px';pill.style.transform='translateX('+(b.offsetLeft-5)+'px)';}
+function go(n){i=(n+tabs.length)%tabs.length;t.style.transform='translateX('+(-100*i)+'%)';
+  tabs.forEach(function(b,k){b.classList.toggle('on',k===i);b.setAttribute('aria-selected',k===i)});dots.forEach(function(b,k){b.classList.toggle('on',k===i)});sl.forEach(function(b,k){b.classList.toggle('on',k===i)});
+  place();d.classList.remove('run');void d.offsetWidth;left=DUR;run();}
+function run(){clearTimeout(timer);if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;d.classList.add('run');d.classList.remove('hold');t0=Date.now();timer=setTimeout(function(){if(!document.hidden)go(i+1);else run();},left);}
+function hold(){clearTimeout(timer);left=Math.max(400,left-(Date.now()-t0));d.classList.add('hold');}
+tabs.forEach(function(b){b.onclick=function(){go(+b.dataset.i);}});
+t.addEventListener('mouseenter',hold);t.addEventListener('mouseleave',run);
+t.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;hold()},{passive:true});
+t.addEventListener('touchend',function(e){if(x0!==null){var dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)>40)go(i+(dx<0?1:-1));else run();}},{passive:true});
+addEventListener('resize',place);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(place);
+go(0);})();
 </script>
 <style>
 .nlt{display:grid;grid-template-columns:1.15fr 1fr;gap:0;align-items:stretch;border-radius:24px;overflow:hidden;background:#0a0a0d;color:#eee6d6;text-decoration:none;border:1px solid rgba(243,200,107,.28);box-shadow:0 30px 70px rgba(0,0,0,.35);position:relative;transition:transform .2s,box-shadow .2s}
