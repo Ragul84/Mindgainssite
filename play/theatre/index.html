@@ -197,7 +197,7 @@ body.cinema .top,body.cinema .marq,body.cinema .halls,body.cinema .tip,body.cine
 .tt{flex-direction:column;gap:4px!important;max-height:42vh;overflow-y:auto;margin-bottom:6px!important;background:rgba(10,8,6,.92);border:1px solid rgba(243,212,138,.35);padding:8px}
 .tt[hidden]{display:none!important}
 .reacts{right:max(12px,calc(50% - 260px))!important;bottom:178px!important;gap:5px!important}.reacts button{width:32px!important;height:32px!important;font-size:14px!important}
-.top5{top:auto!important;bottom:178px!important;left:auto!important;right:max(12px,calc(50% - 260px))!important;font-size:10px!important}
+.top5{top:70px!important;bottom:auto!important;left:auto!important;right:14px!important;font-size:10px!important;border-radius:12px;backdrop-filter:blur(8px)}
 .quizc{left:50%!important;right:auto!important;transform:translateX(-50%);width:min(520px,calc(100% - 24px));top:auto!important;bottom:12px!important;padding:10px 12px!important}
 body.quizon .sheet,body.quizon .angles,body.quizon .halls{visibility:hidden}
 .qq{font-size:15px!important;margin:4px 0 8px!important}.qo button{padding:7px 6px!important;font-size:11.5px!important}
@@ -731,8 +731,9 @@ function lookAtCamera(dt) {   // racers you are looking at turn their heads to y
     h.getWorldPosition(_hv); const dist = _hv.distanceTo(cam.position);
     _hl.copy(_hv).sub(cam.position).normalize(); const inView = _hl.dot(_cd) > .82 && dist < 18 && n < 60;
     let ty = 0, tx = 0;
-    if (inView) { n++; const p = h.parent.worldToLocal(cam.position.clone()); const hp = h.position;
-      ty = Math.max(-1.05, Math.min(1.05, Math.atan2(p.x - hp.x, p.z - hp.z))); tx = Math.max(-.35, Math.min(.35, -Math.atan2(p.y - hp.y - .1, Math.hypot(p.x - hp.x, p.z - hp.z)) * .6)); }
+    if (inView && dist > 1.8) { const p = h.parent.worldToLocal(cam.position.clone()); const hp = h.position, a = Math.atan2(p.x - hp.x, p.z - hp.z);
+      if (Math.abs(a) < .75) { n++;   // only racers who could actually see you (you're in front of them) look over
+      ty = a * .8; tx = Math.max(-.35, Math.min(.35, -Math.atan2(p.y - hp.y - .1, Math.hypot(p.x - hp.x, p.z - hp.z)) * .6)); } }
     const k2 = 1 - Math.pow(.004, dt); r.userData.hy += (ty - r.userData.hy) * k2; r.userData.hx += (tx - r.userData.hx) * k2;
     h.rotation.y = r.userData.hy; h.rotation.x = r.userData.hx;
   }
@@ -748,7 +749,7 @@ function bestSeat(map) {
 }
 // ambient audience: a stable ~40% of ordinary seats hold a racer (never reserved seats, never next to you)
 const AMB = (s) => { const k = s.row + s.n; if (PRO_SEATS.has(k)) return null; let h = 0; for (const c of k) h = (h * 31 + c.charCodeAt(0)) >>> 0; h = (h ^ (h >>> 13)) * 2654435761 >>> 0;
-  if (h % 100 >= 42) return null; if (mine && mine.row === s.row && Math.abs(mine.n - s.n) <= 1) return null; return [h % 6, (h >>> 8) % 8]; };
+  if (h % 100 >= 30) return null; if (mine && mine.row === s.row && Math.abs(mine.n - s.n) <= 1) return null; return [h % 6, (h >>> 8) % 8]; };
 function paintSeats(map, looks = {}, pros) {
   if (pros) prosNow = new Set(pros);
   if (!autoSeated && !userSeat && !QS.get('near')) { autoSeated = true; const b = bestSeat(map); if (b && b !== mine) { markMine(b); live.sit(b.row + b.n); } }
