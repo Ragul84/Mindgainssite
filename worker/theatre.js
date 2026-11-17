@@ -8,6 +8,9 @@
 import { DurableObject } from 'cloudflare:workers';
 import TT from '../play/theatre/timetable.json';
 import CH from '../play/theatre/chapters.json';
+import { verifyUser } from './auth.js';
+import { proUntil, addWatch, watchedToday, recordAnswers, FREE_SECS } from './pro.js';
+const PRO_SEATS = new Set(); for (const r of 'EFG') for (let n = 7; n <= 12; n++) PRO_SEATS.add(r + n);
 
 const DAY_SETS = {"main": {"mon": ["upsc/polity/constitution-features", "upsc/polity/constitutional-bodies", "upsc/polity/dpsp", "upsc/polity/executive", "upsc/polity/federalism", "upsc/polity/fundamental-rights", "upsc/polity/int-relations", "upsc/polity/judiciary", "upsc/polity/local-govt", "upsc/polity/parliament"], "tue": ["upsc/history/ancient-kingdoms", "upsc/history/indus-valley", "upsc/history/medieval-india", "upsc/history/prehistoric"], "wed": ["upsc/geography/agriculture-geo", "upsc/geography/climate", "upsc/geography/environment-eco", "upsc/geography/map-based", "upsc/geography/natural-resources", "upsc/geography/physical-india", "upsc/geography/physical-world", "upsc/geography/population", "upsc/geography/rivers-drainage", "upsc/geography/transport-infra"], "thu": ["upsc/economics/agriculture-eco", "upsc/economics/budget-fiscal", "upsc/economics/economic-reforms", "upsc/economics/industry-msme", "upsc/economics/inflation", "upsc/economics/money-banking", "upsc/economics/national-income", "upsc/economics/poverty-inclusion", "upsc/economics/trade-balance"], "fri": ["upsc/science/biology", "upsc/science/biotech", "upsc/science/chemistry", "upsc/science/defence-tech", "upsc/science/disease-health", "upsc/science/energy", "upsc/science/physics", "upsc/science/space-tech", "upsc/environment/biodiversity", "upsc/environment/climate-change", "upsc/environment/ecology-basics", "upsc/environment/env-laws", "upsc/environment/pollution", "upsc/environment/protected-areas"], "sat": ["upsc/history/1857-revolt", "upsc/history/art-culture", "upsc/history/british-conquest", "upsc/history/gandhi-era", "upsc/history/national-movement", "upsc/history/post-1947"], "sun": ["upsc/polity/constitution-features", "upsc/polity/constitutional-bodies", "upsc/polity/dpsp", "upsc/geography/agriculture-geo", "upsc/geography/climate", "upsc/geography/environment-eco", "upsc/economics/agriculture-eco", "upsc/economics/budget-fiscal", "upsc/economics/economic-reforms"]}, "tnpsc": {"mon": ["tnpsc/polity/constitution-making", "tnpsc/polity/dpsp", "tnpsc/polity/elections", "tnpsc/polity/fundamental-rights", "tnpsc/polity/governance", "tnpsc/polity/judiciary", "tnpsc/polity/local-bodies", "tnpsc/polity/parliament", "tnpsc/polity/preamble", "tnpsc/polity/president-pm", "tnpsc/polity/state-govt", "tnpsc/polity/tn-polity"], "tue": ["tnpsc/history/art-culture", "tnpsc/history/british-rule", "tnpsc/history/chola-pandya", "tnpsc/history/freedom-struggle", "tnpsc/history/gupta-post-gupta", "tnpsc/history/indus-valley", "tnpsc/history/jainism-buddhism", "tnpsc/history/maratha", "tnpsc/history/mauryan", "tnpsc/history/medieval-india", "tnpsc/history/mughal", "tnpsc/history/post-independence", "tnpsc/history/social-reform", "tnpsc/history/tamil-history", "tnpsc/history/unit-viii-tamil-nadu-history-culture", "tnpsc/history/vedic-age", "tnpsc/history/vijayanagara"], "wed": ["tnpsc/geography/earth-universe", "tnpsc/geography/india-climate", "tnpsc/geography/india-physical", "tnpsc/geography/india-resources", "tnpsc/geography/india-rivers", "tnpsc/geography/india-soils", "tnpsc/geography/tn-districts", "tnpsc/geography/tn-geography", "tnpsc/geography/transport-trade", "tnpsc/geography/world-geography", "tnpsc/geography/world-oceans"], "thu": ["tnpsc/economics/agriculture", "tnpsc/economics/banking-finance", "tnpsc/economics/budget-taxation", "tnpsc/economics/current-schemes", "tnpsc/economics/industry", "tnpsc/economics/international-trade", "tnpsc/economics/national-income", "tnpsc/economics/planning", "tnpsc/economics/poverty-welfare", "tnpsc/economics/tn-economy", "tnpsc/economics/unit-ix-development-administration"], "fri": ["tnpsc/science/biology-cells", "tnpsc/science/biology-human", "tnpsc/science/biology-plants", "tnpsc/science/chemistry-acids", "tnpsc/science/chemistry-matter", "tnpsc/science/chemistry-reactions", "tnpsc/science/computer-basics", "tnpsc/science/environment", "tnpsc/science/physics-electricity", "tnpsc/science/physics-motion", "tnpsc/science/physics-optics", "tnpsc/science/science-tech"], "sat": ["tnpsc/tamil/bhakti-literature", "tnpsc/tamil/epic-literature", "tnpsc/tamil/ezhuthu-ilakkanam", "tnpsc/tamil/modern-tamil", "tnpsc/tamil/porul-ilakkanam", "tnpsc/tamil/post-sangam", "tnpsc/tamil/sangam", "tnpsc/tamil/sol-ilakkanam", "tnpsc/tamil/thirukkural", "tnpsc/tamil/tolkappiyam"], "sun": ["tnpsc/history/art-culture", "tnpsc/history/british-rule", "tnpsc/history/chola-pandya", "tnpsc/history/freedom-struggle", "tnpsc/polity/constitution-making", "tnpsc/polity/dpsp", "tnpsc/polity/elections", "tnpsc/polity/fundamental-rights"]}};
 const QUIZ_EVERY_MS = 4 * 60 * 1000, ANSWER_MS = 15000;
@@ -23,12 +26,6 @@ async function todayTop() {   // today's NationLap top 3 (best score per player)
     topCache = { at: Date.now(), ids }; } catch { topCache.at = Date.now() - 24e4; }
   return topCache.ids;
 }
-// a signed-in mindgains.ai user: check the Supabase access token, return the account id
-async function verifyUser(token) {
-  if (!token || token.length > 4000) return null;
-  try { const r = await fetch('https://yuntwerxahgmaoduxvqc.supabase.co/auth/v1/user', { headers: { apikey: LBK, Authorization: 'Bearer ' + token } });
-    if (!r.ok) return null; const u = await r.json(); return u && u.id || null; } catch { return null; }
-}
 const clean = (s, n) => String(s || '').replace(/[<>]/g, '').trim().slice(0, n);
 
 export class TheatreHall extends DurableObject {
@@ -40,11 +37,12 @@ export class TheatreHall extends DurableObject {
   async save() { await this.ctx.storage.put({ quiz: this.quiz, board: this.board }); }
   peers() { return this.ctx.getWebSockets().map((ws) => ({ ws, a: ws.deserializeAttachment() || {} })); }
   seatMap() { const m = {}; for (const { a } of this.peers()) if (a.seat) m[a.seat] = a.name; return m; }
+  seatPros() { const m = []; for (const { a } of this.peers()) if (a.seat && a.pro) m.push(a.seat); return m; }
   seatLooks() { const m = {}; for (const { a } of this.peers()) if (a.seat && a.look) m[a.seat] = a.look; return m; }
   top() { return Object.entries(this.board).filter(([, v]) => v.pts > 0).sort((x, y) => y[1].pts - x[1].pts || x[1].ms - y[1].ms).slice(0, 5).map(([id, v]) => ({ name: v.name, seat: v.seat, pts: v.pts })); }
   send(ws, m) { try { ws.send(JSON.stringify(m)); } catch {} }
   all(m) { const s = JSON.stringify(m); for (const ws of this.ctx.getWebSockets()) { try { ws.send(s); } catch {} } }
-  broadcastSeats() { this.all({ t: 'seats', count: this.ctx.getWebSockets().length, seats: this.seatMap(), looks: this.seatLooks() }); }
+  broadcastSeats() { this.all({ t: 'seats', count: this.ctx.getWebSockets().length, seats: this.seatMap(), looks: this.seatLooks(), pros: this.seatPros() }); }
 
   async fetch(request) {
     if (request.headers.get('Upgrade') !== 'websocket') return new Response('websocket only', { status: 426 });
@@ -64,11 +62,18 @@ export class TheatreHall extends DurableObject {
       a.name = clean(m.name, 20) || 'Guest'; a.pid = clean(m.pid, 64); if (a.pid) a.id = 'p:' + a.pid.slice(0, 40);
       a.host = !!(this.env.THEATRE_ADMIN && m.admin && m.admin === this.env.THEATRE_ADMIN);
       ws.serializeAttachment(a);
-      this.send(ws, { t: 'state', me: a.id, count: this.ctx.getWebSockets().length, seats: this.seatMap(), looks: this.seatLooks(), top: this.top(), chat: this.chat.slice(-40), next: await this.ctx.storage.getAlarm(), quiz: this.quiz && { qid: this.quiz.qid, from: this.quiz.from, q: this.quiz.q, opts: this.quiz.opts, ends: this.quiz.ends } });
+      this.send(ws, { t: 'state', me: a.id, count: this.ctx.getWebSockets().length, seats: this.seatMap(), looks: this.seatLooks(), pros: this.seatPros(), top: this.top(), chat: this.chat.slice(-40), next: await this.ctx.storage.getAlarm(), quiz: this.quiz && { qid: this.quiz.qid, from: this.quiz.from, q: this.quiz.q, opts: this.quiz.opts, ends: this.quiz.ends } });
       this.broadcastSeats();
       // invite links: the friend who joins earns the inviter 150 points on tonight's board (once per friend per day)
       const ref = clean(m.ref, 64), uid = m.token ? await verifyUser(String(m.token)) : null;
-      if (uid) { a.uid = uid; a.pid = uid; a.id = 'p:' + uid.slice(0, 40); ws.serializeAttachment(a); }
+      if (uid) { a.uid = uid; a.pid = uid; a.id = 'p:' + uid.slice(0, 40); a.pro = !!(await proUntil(this.env, uid)); }
+      // free allowance: signed-in accounts by account, guests by their player id
+      a.who = uid ? 'u:' + uid : a.pid ? 'p:' + a.pid.slice(0, 40) : 'g:' + a.id;
+      ws.serializeAttachment(a);
+      const w = a.pro ? 0 : await watchedToday(this.env, a.who);
+      this.send(ws, { t: 'pro', pro: !!a.pro, signedIn: !!uid, freeLeft: a.pro ? null : Math.max(0, FREE_SECS - w) });
+      if (!a.pro && w >= FREE_SECS) this.send(ws, { t: 'wall' });
+      if (a.pro) this.broadcastSeats();
       // only signed-in friends count, and only invites from signed-in accounts (uuid ids)
       if (ref && uid && /^[0-9a-f-]{36}$/i.test(ref) && ref !== uid) {
         const day = new Date(Date.now() + 5.5 * 3600e3).toISOString().slice(0, 10), k = 'ref:' + day + ':' + uid;
@@ -82,15 +87,20 @@ export class TheatreHall extends DurableObject {
           this.chat.push(msg); this.all({ t: 'chat', m: msg }); this.all({ t: 'board', top: this.top() });
         }
       }
+    } else if (m.t === 'tick') {   // the page is open and visible: count 30 s toward today's free allowance
+      const now = Date.now(); if (a.pro || now - (a.lt || 0) < 25000) return; a.lt = now; ws.serializeAttachment(a);
+      const w = await addWatch(this.env, a.who, 30), left = Math.max(0, FREE_SECS - w);
+      this.send(ws, { t: 'free', left }); if (!left) this.send(ws, { t: 'wall' });
     } else if (m.t === 'sit') {
       const seat = String(m.seat || '');
       if (!SEAT_RE.test(seat)) return;
+      if (PRO_SEATS.has(seat) && !a.pro) return this.send(ws, { t: 'taken', seat, pro: 1 });
       if (this.peers().some((p) => p.ws !== ws && p.a.seat === seat)) return this.send(ws, { t: 'taken', seat });
       a.seat = seat; ws.serializeAttachment(a); this.broadcastSeats();
     } else if (m.t === 'ans') {
       const Q = this.quiz; if (!Q || m.qid !== Q.qid || Date.now() > Q.ends || Q.answers[a.id]) return;
       const i = Number(m.i); if (!Number.isInteger(i) || i < 0 || i >= Q.opts.length) return;
-      Q.answers[a.id] = { i, ms: Date.now() - Q.start, name: a.name, seat: a.seat };
+      Q.answers[a.id] = { i, ms: Date.now() - Q.start, name: a.name, seat: a.seat, uid: a.uid || null };
       await this.save();
       this.all({ t: 'answered', qid: Q.qid, n: Object.keys(Q.answers).length });
     } else if (m.t === 'react') {
@@ -110,7 +120,7 @@ export class TheatreHall extends DurableObject {
       a.lc = now; ws.serializeAttachment(a);
       const re = m.re && m.re.name ? { name: clean(m.re.name, 20), text: clean(m.re.text, 60) } : null;
       const rank = a.pid ? (await todayTop()).indexOf(a.pid) + 1 : 0;
-      const msg = { name: a.host ? 'MindGains' : a.name, seat: a.seat, text, at: now, ...(re ? { re } : {}), ...(a.host ? { host: 1 } : rank ? { rank } : {}) };
+      const msg = { ...(a.pro && !a.host ? { pro: 1 } : {}), name: a.host ? 'MindGains' : a.name, seat: a.seat, text, at: now, ...(re ? { re } : {}), ...(a.host ? { host: 1 } : rank ? { rank } : {}) };
       this.chat.push(msg); if (this.chat.length > 60) this.chat = this.chat.slice(-60);
       this.all({ t: 'chat', m: msg }); await this.ctx.storage.put('chat', this.chat);
     }
@@ -140,6 +150,7 @@ export class TheatreHall extends DurableObject {
       if (x.i === Q.correct) { right++; b.pts += 100 + Math.max(0, Math.round((ANSWER_MS - x.ms) / 150)); b.ms += x.ms; }
     }
     const n = Object.keys(Q.answers).length, pct = n ? Math.round(right / n * 100) : 0;
+    this.ctx.waitUntil(recordAnswers(this.env, Object.entries(Q.answers).filter(([, x]) => x.uid).map(([, x]) => [x.uid, Q.qid, Q.from || 'General', x.i === Q.correct, x.ms])));
     const fast = Object.values(Q.answers).filter((x) => x.i === Q.correct).sort((a, b) => a.ms - b.ms)[0];
     this.all({ t: 'reveal', qid: Q.qid, correct: Q.correct, pct, n, top: this.top(), fastest: fast ? { name: fast.name, s: +(fast.ms / 1000).toFixed(1) } : null });
     // everyone's own place tonight (for the study receipt): rank among players with points

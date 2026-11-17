@@ -146,6 +146,7 @@ async function check(request, env) {
 const game = makeGame({ json, hmac, loadBank, limited, usable });
 
 import { TheatreHall, theatreRoute } from './theatre.js';
+import { proRoute } from './pro.js';
 export { TheatreHall };
 
 export default {
@@ -154,6 +155,7 @@ export default {
     if (pathname === '/api/quiz/round') return round(request, env);
     if (pathname === '/api/quiz/check') return check(request, env);
     if (pathname.startsWith('/api/game/')) return game(request, env, pathname);
+    if (pathname.startsWith('/api/pro/')) return proRoute(request, env, pathname);
     if (pathname.startsWith('/api/theatre/')) return theatreRoute(request, env, pathname);
     // The raw bank is for this Worker only.
     if (pathname.startsWith('/assets/quiz-data/')) return new Response('Not found', { status: 404 });
