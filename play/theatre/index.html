@@ -731,9 +731,10 @@ function lookAtCamera(dt) {   // racers you are looking at turn their heads to y
     h.getWorldPosition(_hv); const dist = _hv.distanceTo(cam.position);
     _hl.copy(_hv).sub(cam.position).normalize(); const inView = _hl.dot(_cd) > .82 && dist < 18 && n < 60;
     let ty = 0, tx = 0;
-    if (inView && dist > 1.8) { const p = h.parent.worldToLocal(cam.position.clone()); const hp = h.position, a = Math.atan2(p.x - hp.x, p.z - hp.z);
-      if (Math.abs(a) < .75) { n++;   // only racers who could actually see you (you're in front of them) look over
-      ty = a * .8; tx = Math.max(-.35, Math.min(.35, -Math.atan2(p.y - hp.y - .1, Math.hypot(p.x - hp.x, p.z - hp.z)) * .6)); } }
+    if (inView && dist > .9) { const p = h.parent.worldToLocal(cam.position.clone()); const hp = h.position, a = Math.atan2(p.x - hp.x, p.z - hp.z);
+      // far racers only notice you if you're in front of them; the ones around you (your row, the rows beside) turn to you, even over the shoulder
+      if (Math.abs(a) < .75 || dist < 7) { n++;
+      ty = Math.max(-1.7, Math.min(1.7, a)); tx = Math.max(-.35, Math.min(.35, -Math.atan2(p.y - hp.y - .1, Math.hypot(p.x - hp.x, p.z - hp.z)) * .6)); } }
     const k2 = 1 - Math.pow(.004, dt); r.userData.hy += (ty - r.userData.hy) * k2; r.userData.hx += (tx - r.userData.hx) * k2;
     h.rotation.y = r.userData.hy; h.rotation.x = r.userData.hx;
   }
