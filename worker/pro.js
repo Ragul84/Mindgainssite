@@ -8,7 +8,15 @@ export const PLANS = {
   month: { name: 'Pro Monthly', paise: 9900, days: 30 },
   exam: { name: 'Exam Pass · 6 months', paise: 39900, days: 182 },
   year: { name: 'Pro Yearly', paise: 59900, days: 365 },
+  // Teacher: Pro + big batch rooms for a tuition class (60 students per room, 10 rooms); students' watch time covered
+  tmonth: { name: 'Teacher Monthly', paise: 49900, days: 30, teacher: true },
+  tyear: { name: 'Teacher Yearly', paise: 499900, days: 365, teacher: true },
 };
+export const ROOM_LIMITS = { pro: { rooms: 2, members: 8 }, teacher: { rooms: 10, members: 60 } };
+export async function teacherUntil(env, uid) {
+  if (!uid || !env.GAME_DB) return 0;
+  try { const r = await env.GAME_DB.prepare('SELECT teacher_until FROM pro_sub WHERE uid = ?1').bind(uid).first(); return r && r.teacher_until > Date.now() ? r.teacher_until : 0; } catch { return 0; }
+}
 export const LAUNCH = { paise: 4900, seats: 500 };   // first month ₹49 for the first 500 Pro members
 export const FREE_SECS = 30 * 60;
 const DAY = 864e5;
@@ -94,10 +102,12 @@ async function activate(env, orderId, paymentId) {
   const o = await env.GAME_DB.prepare('SELECT uid, plan, status FROM pro_pay WHERE order_id = ?1').bind(orderId).first();
   if (!o) return null;
   if (o.status === 'paid') return proUntil(env, o.uid);   // verify + webhook both arrive: extend only once
-  const cur = await proUntil(env, o.uid), until = Math.max(Date.now(), cur) + PLANS[o.plan].days * DAY;
+  const P = PLANS[o.plan], add = P.days * DAY, cur = await proUntil(env, o.uid), curT = await teacherUntil(env, o.uid);
+  // Teacher includes Pro; buying Pro on top of Teacher never shortens the teacher time
+  const tUntil = P.teacher ? Math.max(Date.now(), curT) + add : curT, until = Math.max(Math.max(Date.now(), cur) + add, tUntil);
   await env.GAME_DB.batch([
     env.GAME_DB.prepare("UPDATE pro_pay SET status = 'paid', payment_id = ?2 WHERE order_id = ?1").bind(orderId, paymentId),
-    env.GAME_DB.prepare('INSERT OR REPLACE INTO pro_sub (uid, plan, until, rzp_order, rzp_payment, at) VALUES (?1, ?2, ?3, ?4, ?5, ?6)').bind(o.uid, o.plan, until, orderId, paymentId, Date.now()),
+    env.GAME_DB.prepare('INSERT INTO pro_sub (uid, plan, until, rzp_order, rzp_payment, at, teacher_until) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7) ON CONFLICT(uid) DO UPDATE SET plan = excluded.plan, until = excluded.until, rzp_order = excluded.rzp_order, rzp_payment = excluded.rzp_payment, at = excluded.at, teacher_until = excluded.teacher_until').bind(o.uid, o.plan, until, orderId, paymentId, Date.now(), tUntil || 0),
   ]);
   return until;
 }
@@ -128,7 +138,8 @@ export async function proRoute(request, env, pathname) {
     const pid = String(new URL(request.url).searchParams.get('pid') || '').slice(0, 40);
     const until = await proUntil(env, uid), w = await watchedToday(env, uid ? 'u:' + uid : pid ? 'p:' + pid : '');
     let st = {}; if (uid) { try { st = await touchStreak(env, uid, !!until); } catch {} }
-    return J({ signedIn: !!uid, pro: !!until, until, freeLeft: until ? null : Math.max(0, FREE_SECS - w), freeMins: FREE_SECS / 60,
+    const tUntil = await teacherUntil(env, uid);
+    return J({ signedIn: !!uid, pro: !!until, until, teacher: !!tUntil, teacherUntil: tUntil, freeLeft: until ? null : Math.max(0, FREE_SECS - w), freeMins: FREE_SECS / 60,
       launch: await launchPrice(env, uid), ready, plans: PLANS, launchPaise: LAUNCH.paise, ...st });
   }
   if (!uid) return J({ error: 'sign in' }, 401);

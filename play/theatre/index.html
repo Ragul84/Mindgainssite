@@ -149,6 +149,8 @@ body{font-family:Inter,system-ui,sans-serif}
 .room .halls,.room .marq,.room .qsoon,.room .top5,.room #ttbtn,.room #ttbtn+a,.room #fpill.go{display:none!important}
 .rbar{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .rbar button{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 11px;border-radius:10px;border:1px solid rgba(243,212,138,.35);background:rgba(243,212,138,.08);color:#ffe7a6;font:800 10.5px Inter;letter-spacing:.08em;cursor:pointer}
+@media (max-width:760px){.room .mhall{display:none!important}.rbar.mrbar{position:fixed;left:12px;right:76px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:9;margin:0;padding:10px;border-radius:18px;background:rgba(10,8,6,.86);border:1px solid rgba(243,212,138,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}.rbar.mrbar button{height:34px;padding:0 10px}body.quizon .rbar.mrbar,body.chaton .rbar.mrbar{display:none}}
+.rseek{flex-basis:100%;display:flex;align-items:center;gap:10px;font:700 11px Inter;color:#d6cfc4;font-variant-numeric:tabular-nums;margin-bottom:2px}.rseek input{flex:1;accent-color:#f3c86b;height:4px;cursor:pointer}
 .rbar button:hover{background:rgba(243,212,138,.18)}.rbar button.pri{background:linear-gradient(90deg,#f3c86b,#ffe2a0);color:#1a1206;border-color:transparent}
 .rpause{position:fixed;left:50%;top:84px;transform:translateX(-50%);z-index:8;display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:99px;background:rgba(10,8,6,.85);border:1px solid rgba(243,212,138,.4);color:#ffe7a6;font:800 11px Inter;letter-spacing:.1em;backdrop-filter:blur(8px)}
 .rpause[hidden]{display:none}
@@ -1124,15 +1126,26 @@ function applyPlay(p, force) {
 setInterval(() => { if (!ROOM || !RM.play || !RM.play.playing || window.__walled) return;   // drift check
   const exp = expPos(RM.play); let cur = null; try { cur = ytP && ytP.getCurrentTime ? ytP.getCurrentTime() : null; } catch (e) {}
   if (cur != null && Math.abs(cur - exp) > 2.5) yCmd('seekTo', [exp, true]); }, 5000);
+const mmss = (x) => { x = Math.max(0, Math.floor(x)); const h = Math.floor(x / 3600), m = Math.floor(x % 3600 / 60), s2 = String(x % 60).padStart(2, '0'); return h ? `${h}:${String(m).padStart(2, '0')}:${s2}` : `${m}:${s2}`; };
+setInterval(() => { const rr = document.getElementById('rsR'); if (!rr || RM.seeking || !RM.play || !RM.play.v) return;   // seek bar follows the video
+  let d = 0; try { d = ytP && ytP.getDuration ? ytP.getDuration() : 0; } catch (e) {} const cur = expPos(RM.play);
+  if (d > 0) { rr.max = Math.floor(d); document.getElementById('rsD').textContent = mmss(d); } else { rr.max = Math.max(+rr.max, Math.floor(cur) + 600); document.getElementById('rsD').textContent = '--:--'; }
+  rr.value = Math.floor(cur); document.getElementById('rsT').textContent = mmss(cur); }, 500);
 function paintRoomBar() {
   if (!ROOM || !RM.room) return;
   const card = document.querySelector('.ticket .main'); let bar = document.getElementById('rbar');
-  if (!bar) { bar = document.createElement('div'); bar.className = 'rbar'; bar.id = 'rbar'; card.appendChild(bar); }
+  if (!bar) { bar = document.createElement('div'); bar.className = 'rbar'; bar.id = 'rbar'; }
+  addEventListener('resize', () => { clearTimeout(window.__rbr); window.__rbr = setTimeout(paintRoomBar, 300); }, { once: false });
+  const phone = matchMedia('(max-width:760px)').matches; (phone ? document.body : card).appendChild(bar); bar.classList.toggle('mrbar', phone);
   const p = RM.play || {};
   bar.innerHTML = (boss() ? `<button class="pri" data-a="add">${ri('plus', 14, 2.6)}VIDEO</button>
     ${p.v ? `<button data-a="${p.playing ? 'pause' : 'play'}">${ri(p.playing ? 'pause' : 'play', 13, 2.4)}${p.playing ? 'PAUSE' : 'PLAY'}</button>` : ''}
     <button data-a="quiz">${ri('quiz', 14)}ASK QUIZ</button>${RM.list.length ? `<button data-a="pl">${ri('list', 14)}PLAYLIST</button>` : ''}` : '')
+    + (boss() && p.v ? `<div class="rseek"><span id="rsT">0:00</span><input type="range" id="rsR" min="0" max="100" step="1" value="0" aria-label="Seek"><span id="rsD">0:00</span></div>` : '')
     + `<button data-a="mem">${ri('users', 14)}MEMBERS</button><button data-a="inv">${ri('link', 14)}INVITE</button>`;
+  const rr = bar.querySelector('#rsR');
+  if (rr) { rr.oninput = () => { RM.seeking = true; document.getElementById('rsT').textContent = mmss(+rr.value); };
+    rr.onchange = () => { live.send({ t: 'seek', pos: +rr.value }); setTimeout(() => RM.seeking = false, 800); }; }
   bar.querySelectorAll('button').forEach((b) => b.onclick = () => ({ add: addVideo, pause: () => live.send({ t: 'pause', pos: ytP && ytP.getCurrentTime ? ytP.getCurrentTime() : undefined }), play: () => live.send({ t: 'play' }), quiz: askQuiz, pl: playlist, mem: members, inv: invite })[b.dataset.a]());
 }
 function roomHeader() {
@@ -1181,7 +1194,7 @@ function roomOn(m) {
     if (m.why === 'signin') { showGate(); return true; }
     if (m.why === 'link') { flashCard('That is not a YouTube link'); return true; }
     if (m.why === 'quiz') { flashCard('Add a question, 2-4 options and mark the right one'); return true; }
-    const t = { full: 'This batch is full (30 members)', removed: 'You were removed from this batch' }[m.why] || 'This batch room is unavailable';
+    const t = { full: `This batch is full (${m.cap || 8} people)`, removed: 'You were removed from this batch' }[m.why] || 'This batch room is unavailable';
     live.ws && (live.ws.onclose = null); rsheet('Batch room', 'users', `<p class="hint">${t}.</p><a class="pbtn" href="/play/theatre/" style="text-decoration:none">Go to the main hall</a>`); return true;
   }
   return false;
@@ -1248,7 +1261,7 @@ async function teacherLink(rotate) {
 }
 async function invite() {
   const base = location.origin + '/play/theatre/?room=' + RM.room.code, tl = RM.role === 'owner' ? await teacherLink(false) : '';
-  const { d } = rsheet('Invite to ' + esc(RM.room.name), 'link', `<p class="hint">Friends and classmates join free with this link (up to 30).${RM.room.ownerPro ? ' Your Pro covers their watch time in this room.' : ''}</p>
+  const { d } = rsheet('Invite to ' + esc(RM.room.name), 'link', `<p class="hint">Friends and classmates join free with this link (up to ${RM.room.cap || 8} people).${RM.room.ownerPro ? ' Your Pro covers their watch time in this room.' : ''}</p>
     <input class="fld" readonly value="${esc(base)}"><button class="pbtn" data-c="${esc(base)}">${ri('link', 15)}Copy invite link</button>
     <a class="sbtn" style="text-decoration:none" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(`Join our study batch "${RM.room.name}" on MindGains. We watch classes together, chat and quiz each other: ${base}`)}">Share on WhatsApp</a>
     ${tl ? `<div class="sec">TEACHER LINK</div><p class="hint">Anyone who opens this becomes a teacher: they can play, pause and ask quizzes. Share it only with your teacher.</p><button class="sbtn" data-c="${esc(tl)}" id="tlC">${ri('cap', 15)}Copy teacher link</button><button class="sbtn" id="tlR" style="background:none">${ri('rot', 15)}Make a new teacher link (old one stops working)</button>` : ''}`);
@@ -1267,7 +1280,9 @@ async function batchHub() {
     <div class="sec">JOIN A BATCH</div><div class="row2"><input class="fld" id="bjC" maxlength="6" placeholder="CODE"><button id="bjGo">JOIN</button></div>
     <div class="sec">CREATE A BATCH</div>
     ${pro ? `<input class="fld" id="bcN" maxlength="40" placeholder="Batch name, e.g. Madurai TNPSC Gang"><div class="err" id="bcE" hidden></div><button class="pbtn" id="bcGo">${ri('plus', 15, 2.6)}Create batch room</button>`
-      : `<a class="pbtn" style="text-decoration:none" href="/pro/?plan=exam&back=${encodeURIComponent(location.pathname + location.search)}">${ri('crown', 15)}Create with Pro · friends join free</a>`}`;
+      : `<a class="pbtn" style="text-decoration:none" href="/pro/?plan=exam&back=${encodeURIComponent(location.pathname + location.search)}">${ri('crown', 15)}Create with Pro · friends join free</a>`}
+    ${pro ? `<p class="hint" style="margin-top:10px">${r.teacher ? `Teacher plan: ${r.limits.rooms} rooms, up to ${r.limits.members} students each.` : `Pro: ${r.limits ? r.limits.rooms : 2} rooms, up to ${r.limits ? r.limits.members : 8} people each.`}</p>` : ''}
+    ${!(r && r.teacher) ? `<a class="sbtn" style="text-decoration:none" href="/pro/?plan=tyear#teachers">${ri('cap', 15)}Teaching a class? Teacher plan · 60 students per room</a>` : ''}`;
   d.querySelector('.rc').innerHTML = d.querySelector('.rh').outerHTML + body; d.querySelector('.rh button').onclick = close;
   d.querySelectorAll('[data-go]').forEach((x) => x.onclick = () => { location.href = '/play/theatre/?room=' + x.dataset.go; });
   d.querySelector('#bjGo').onclick = () => { const c = d.querySelector('#bjC').value.trim().toUpperCase(); if (/^[A-Z0-9]{6}$/.test(c)) location.href = '/play/theatre/?room=' + c; };

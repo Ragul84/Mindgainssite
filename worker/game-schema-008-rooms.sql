@@ -13,3 +13,4 @@ CREATE INDEX IF NOT EXISTS room_report_uid ON room_report(code, uid, created);
 -- failed joins per IP (unknown room codes) to stop code guessing
 CREATE TABLE IF NOT EXISTS room_fail (ip TEXT NOT NULL, at INTEGER NOT NULL);
 CREATE INDEX IF NOT EXISTS room_fail_ip ON room_fail(ip, at);
+ALTER TABLE pro_sub ADD COLUMN teacher_until INTEGER NOT NULL DEFAULT 0;

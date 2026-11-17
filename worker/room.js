@@ -13,9 +13,9 @@
 // WS out  state, play/sync (with serverNow), seats, chat, quiz, qprog{answered,total}, reveal{correct,pctRight}, lock, unlock, kicked, role, members, slow, err
 import { DurableObject } from 'cloudflare:workers';
 import { verifyUser, bearer } from './auth.js';
-import { proUntil, addWatch, watchedToday, recordAnswers, FREE_SECS, istDay } from './pro.js';
+import { proUntil, teacherUntil, ROOM_LIMITS, addWatch, watchedToday, recordAnswers, FREE_SECS, istDay } from './pro.js';
 
-const MAX_MEMBERS = 30, SYNC_MS = 30000;
+const SYNC_MS = 30000;
 const SEAT_RE = /^[A-L]([1-9]|1[0-8])$/;
 const BAD = /\b(fuck\w*|shit\w*|bitch\w*|bastard|asshole|dick|madarchod|bhenchod|chutiya|punda|sunni|otha|thevdiya)\b/gi;
 const ALPHA = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';   // no I, O, 0, 1
@@ -109,7 +109,8 @@ export class StudyRoom extends DurableObject {
       const mem = await db.prepare('SELECT role, banned FROM room_member WHERE code=? AND uid=?').bind(M.code, uid).first();
       if (mem && mem.banned) { this.send(ws, { t: 'kicked', why: 'banned' }); try { ws.close(4003, 'banned'); } catch {} return; }
       if (!mem && uid !== M.owner) {
-        if ((await memberCount(db, M.code)) >= MAX_MEMBERS) return this.send(ws, { t: 'err', why: 'full' });
+        const cap = (await teacherUntil(this.env, M.owner)) ? ROOM_LIMITS.teacher.members : ROOM_LIMITS.pro.members;
+        if ((await memberCount(db, M.code)) >= cap) return this.send(ws, { t: 'err', why: 'full', cap });
         await db.prepare('INSERT OR IGNORE INTO room_member (code, uid, name, role, joined, banned) VALUES (?,?,?,?,?,0)').bind(M.code, uid, a.name, 'member', Date.now()).run();
       } else if (mem) await db.prepare('UPDATE room_member SET name=? WHERE code=? AND uid=?').bind(a.name, M.code, uid).run();
       const tk = clean(m.t2 || m.tk, 40);
@@ -120,7 +121,8 @@ export class StudyRoom extends DurableObject {
       a.role = this.role(a); ws.serializeAttachment(a);
       const op = await this.ownerPro(), free = a.pro || op;
       const w = free ? 0 : await watchedToday(this.env, 'u:' + uid);
-      this.send(ws, { t: 'state', role: a.role, me: uid, serverNow: Date.now(), room: { code: M.code, name: M.name, ownerPro: op },
+      const cap = (await teacherUntil(this.env, M.owner)) ? ROOM_LIMITS.teacher.members : ROOM_LIMITS.pro.members;
+      this.send(ws, { t: 'state', role: a.role, me: uid, serverNow: Date.now(), room: { code: M.code, name: M.name, ownerPro: op, cap },
         count: this.online(), ...this.seats(), chat: this.chat.slice(-50), quiz: this.quizPublic(), locked: !!this.quizPublic(), streak: await streakOf(this.env, M.code) });
       this.send(ws, this.playMsg());
       this.send(ws, { t: 'pro', pro: a.pro, signedIn: true, freeLeft: free ? null : Math.max(0, FREE_SECS - w) });
@@ -256,8 +258,9 @@ export async function roomRoute(request, env, pathname) {
   const uid = await verifyUser(bearer(request)); if (!uid) return json({ error: 'signin' }, 401);
   if (pathname === '/api/room/create' && request.method === 'POST') {
     if (!(await proUntil(env, uid))) return json({ error: 'pro' }, 403);
+    const L = (await teacherUntil(env, uid)) ? ROOM_LIMITS.teacher : ROOM_LIMITS.pro;
     const owned = (await db.prepare('SELECT COUNT(*) c FROM room WHERE owner=?').bind(uid).first())?.c || 0;
-    if (owned >= 5) return json({ error: 'limit', why: 'You can own up to 5 batch rooms' }, 400);
+    if (owned >= L.rooms) return json({ error: 'limit', why: L === ROOM_LIMITS.pro ? `Pro includes ${L.rooms} batch rooms. Teacher plan: ${ROOM_LIMITS.teacher.rooms} rooms, ${ROOM_LIMITS.teacher.members} students each` : `You can own up to ${L.rooms} batch rooms` }, 400);
     let body = {}; try { body = await request.json(); } catch {}
     const name = clean(body.name, 40) || 'My Batch';
     let code = ''; for (let i = 0; i < 8 && !code; i++) { const c = rand(6); if (!(await db.prepare('SELECT 1 FROM room WHERE code=?').bind(c).first())) code = c; }
@@ -279,7 +282,8 @@ export async function roomRoute(request, env, pathname) {
     for (const x of r) { x.members = await memberCount(db, x.code); x.streak = await streakOf(env, x.code); x.rank = rank.get(x.code) || 0; x.mine = !!x.mine; }
     const names = new Map(); for (const b of board.slice(0, 10)) names.set(b.code, (await db.prepare('SELECT name FROM room WHERE code=?').bind(b.code).first())?.name || 'Batch');
     const mineC = new Set(r.map((x) => x.code));
-    return json({ rooms: r, pro: !!(await proUntil(env, uid)), of: board.length, board: board.slice(0, 10).map((b) => ({ name: names.get(b.code), score: b.score, mine: mineC.has(b.code) })) });
+    const tch = !!(await teacherUntil(env, uid)), L = tch ? ROOM_LIMITS.teacher : ROOM_LIMITS.pro;
+    return json({ rooms: r, pro: !!(await proUntil(env, uid)), teacher: tch, limits: L, of: board.length, board: board.slice(0, 10).map((b) => ({ name: names.get(b.code), score: b.score, mine: mineC.has(b.code) })) });
   }
   return json({ error: 'not found' }, 404);
 }
