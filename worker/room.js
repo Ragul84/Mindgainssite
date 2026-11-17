@@ -19,11 +19,10 @@ const weekKey = (t = Date.now()) => { const d = new Date(t + 5.5 * 3600e3); d.se
 export const ytId = (u) => { u = String(u || '').trim(); if (/^[\w-]{11}$/.test(u)) return u;
   const m = u.match(/(?:youtu\.be\/|[?&]v=|\/shorts\/|\/embed\/|\/live\/)([\w-]{11})/); return m ? m[1] : null; };
 
-async function streakOf(env, code) {   // consecutive days (ending today or yesterday) on which at least half the batch studied 10+ min
+async function streakOf(env, code) {   // consecutive days on which every member who came to the room studied 10+ min there
   const db = env.GAME_DB; if (!db) return 0;
-  const n = (await db.prepare('SELECT COUNT(*) c FROM room_member WHERE code=?').bind(code).first())?.c || 1, need = Math.max(1, Math.ceil(n / 2));
-  const rows = (await db.prepare('SELECT day, COUNT(*) c FROM room_day WHERE code=? GROUP BY day ORDER BY day DESC LIMIT 400').bind(code).all()).results || [];
-  const ok = new Set(rows.filter((r) => r.c >= need).map((r) => r.day));
+  const rows = (await db.prepare('SELECT s.day, COUNT(*) seen, SUM(CASE WHEN d.uid IS NOT NULL THEN 1 ELSE 0 END) done FROM room_seen s LEFT JOIN room_day d ON d.code = s.code AND d.day = s.day AND d.uid = s.uid WHERE s.code=? GROUP BY s.day ORDER BY s.day DESC LIMIT 400').bind(code).all()).results || [];
+  const ok = new Set(rows.filter((r) => r.seen > 0 && r.done >= r.seen).map((r) => r.day));
   let s = 0, t = Date.now(); if (!ok.has(istDay(t))) t -= 864e5;
   while (ok.has(istDay(t))) { s++; t -= 864e5; }
   return s;
@@ -93,6 +92,7 @@ export class StudyRoom extends DurableObject {
       else await db.prepare('UPDATE room_member SET name=? WHERE code=? AND uid=?').bind(a.name, M.code, uid).run();
       if (m.tk && m.tk === M.tkey && !this.teachers.includes(uid) && uid !== M.owner) { this.teachers.push(uid); await this.ctx.storage.put('teachers', this.teachers); await db.prepare('UPDATE room_member SET role=? WHERE code=? AND uid=?').bind('teacher', M.code, uid).run(); }
       a.role = this.role(a); ws.serializeAttachment(a);
+      this.ctx.waitUntil(db.prepare('INSERT OR IGNORE INTO room_seen (code, day, uid) VALUES (?,?,?)').bind(M.code, istDay(), uid).run());
       const op = await this.ownerPro();
       const w = a.pro || op ? 0 : await watchedToday(this.env, 'u:' + uid);
       this.send(ws, { t: 'state', me: a.id, role: a.role, room: { code: M.code, name: M.name, ownerPro: op, ...(a.role === 'owner' ? { tkey: M.tkey } : {}) },
@@ -217,7 +217,9 @@ export async function roomRoute(request, env, pathname) {
     const r = (await db.prepare(`SELECT r.code, r.name, r.owner = ? AS mine, (SELECT COUNT(*) FROM room_member m2 WHERE m2.code = r.code AND m2.role != 'kicked') + 1 AS members
       FROM room r WHERE r.owner = ? OR r.code IN (SELECT code FROM room_member WHERE uid = ? AND role != 'kicked') ORDER BY r.created DESC LIMIT 20`).bind(uid, uid, uid).all()).results || [];
     for (const x of r) { x.streak = await streakOf(env, x.code); x.week = await weekRank(env, x.code); x.mine = !!x.mine; }
-    return json({ rooms: r, pro: !!(await proUntil(env, uid)) });
+    const board = (await db.prepare('SELECT r.name, w.pts, w.code FROM room_week w JOIN room r ON r.code = w.code WHERE w.wk=? AND w.pts>0 ORDER BY w.pts DESC LIMIT 10').bind(weekKey()).all()).results || [];
+    const mineC = new Set(r.map((x) => x.code));
+    return json({ rooms: r, pro: !!(await proUntil(env, uid)), board: board.map((b) => ({ name: b.name, pts: b.pts, mine: mineC.has(b.code) })) });
   }
   if (pathname === '/api/room/info') {
     const code = String(new URL(request.url).searchParams.get('code') || '').toUpperCase();
