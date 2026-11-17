@@ -58,6 +58,27 @@
   <link rel="stylesheet" href="/assets/exam-hub-v2.css?v=20261017d">
   <link rel="stylesheet" href="/assets/site-footer.css?v=3">
   <link rel="stylesheet" href="/assets/hof.css?v=4">
+<style>@property --pa{syntax:'<angle>';inherits:false;initial-value:0deg}
+.gold-cta{position:relative;isolation:isolate;overflow:hidden;border:0!important;color:#2a1a04!important;
+  background:linear-gradient(115deg,#a8742a 0%,#e9b956 22%,#fbe3a1 38%,#fff6da 50%,#fbe3a1 62%,#e9b956 78%,#a8742a 100%)!important;background-size:300% 100%!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.65),inset 0 -1px 0 rgba(120,72,10,.35),0 6px 22px -6px rgba(243,190,90,.75),0 0 0 1px rgba(255,214,130,.55);
+  animation:gcFlow 7s ease-in-out infinite,gcGlow 3.2s ease-in-out infinite;transition:transform .25s cubic-bezier(.2,1.4,.4,1),filter .25s}
+.gold-cta::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;z-index:-1;pointer-events:none;
+  background:conic-gradient(from var(--pa),transparent 0 62%,rgba(255,255,255,.95) 72%,#ffe7a8 76%,transparent 86%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:gcSpin 3.6s linear infinite}
+.gold-cta::after{content:"";position:absolute;top:-40%;bottom:-40%;width:38%;left:-60%;z-index:1;pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.85) 45%,rgba(255,255,255,.95) 50%,transparent 60%);transform:skewX(-20deg);mix-blend-mode:overlay;animation:gcSweep 4.2s cubic-bezier(.6,0,.2,1) infinite}
+.gold-cta>*{position:relative;z-index:2}
+.gold-cta svg{filter:drop-shadow(0 0 4px rgba(255,255,255,.8));animation:gcTwinkle 4.2s ease-in-out infinite;transform-origin:50% 60%}
+.gold-cta:hover{transform:translateY(-1px) scale(1.04);filter:saturate(1.15) brightness(1.05)}
+.gold-cta:active{transform:scale(.97)}
+@keyframes gcFlow{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@keyframes gcSpin{to{--pa:360deg}}
+@keyframes gcSweep{0%,55%{left:-60%}85%,100%{left:130%}}
+@keyframes gcGlow{0%,100%{box-shadow:inset 0 1px 0 rgba(255,255,255,.65),inset 0 -1px 0 rgba(120,72,10,.35),0 6px 22px -6px rgba(243,190,90,.75),0 0 0 1px rgba(255,214,130,.55)}50%{box-shadow:inset 0 1px 0 rgba(255,255,255,.65),inset 0 -1px 0 rgba(120,72,10,.35),0 8px 30px -4px rgba(255,205,110,.95),0 0 0 1px rgba(255,230,160,.8)}}
+@keyframes gcTwinkle{0%,58%,100%{transform:rotate(0) scale(1)}66%{transform:rotate(-12deg) scale(1.18)}74%{transform:rotate(8deg) scale(1.05)}}
+@media (prefers-reduced-motion:reduce){.gold-cta,.gold-cta::before,.gold-cta::after,.gold-cta svg{animation:none}}
+</style>
 </head>
 <body class="hub-v2 home">
 
@@ -70,7 +91,7 @@
       <a class="lnk" href="/quiz/">Quiz Hub</a>
       <a class="lnk" href="/editorial/">Editorial</a>
       <a class="lnk" href="/nationlap/?affairs=1">Current affairs</a>
-      <a class="btn sm" href="/pro/" style="background:linear-gradient(90deg,#f3c86b,#ffe2a0);color:#1a1206;border:0;display:inline-flex;align-items:center;gap:6px"><svg class="ico" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.6 3.3a.5.5 0 0 1 .9 0l2.9 5.5a1 1 0 0 0 1.5.3l4.3-3.7a.5.5 0 0 1 .8.5l-2.8 10.3a1 1 0 0 1-1 .7H5.8a1 1 0 0 1-1-.7L2 5.9a.5.5 0 0 1 .8-.5l4.3 3.7a1 1 0 0 0 1.5-.3z"/><path d="M5 21h14"/></svg>Pro</a>
+      <a class="btn sm gold-cta" href="/pro/" style="display:inline-flex;align-items:center;gap:6px;font-weight:800"><svg class="ico" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.6 3.3a.5.5 0 0 1 .9 0l2.9 5.5a1 1 0 0 0 1.5.3l4.3-3.7a.5.5 0 0 1 .8.5l-2.8 10.3a1 1 0 0 1-1 .7H5.8a1 1 0 0 1-1-.7L2 5.9a.5.5 0 0 1 .8-.5l4.3 3.7a1 1 0 0 0 1.5-.3z"/><path d="M5 21h14"/></svg>Pro</a>
       <span class="mg-auth-slot"></span>
       <a class="btn sm" href="/get/">Get the app</a>
     </div>
