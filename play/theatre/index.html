@@ -133,6 +133,18 @@ body{font-family:Inter,system-ui,sans-serif}
 .rpl .rch button{flex:none;max-width:260px;padding:9px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:#16131b;color:#d6cfc4;font:600 12px Inter;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}
 .rpl .rch button.on{border-color:#f3c86b;color:#fff;background:rgba(243,200,107,.1)}
 .rpl .rq{display:inline-block;padding:13px 20px;border-radius:14px;font:800 14px Inter;text-decoration:none;background:linear-gradient(90deg,#f3c86b,#ffe2a0);color:#1a1206}
+.wall .wg{display:flex;align-items:center;justify-content:center;gap:10px;background:#fff;color:#1f1f1f}.wall .wg svg{width:20px;height:20px}
+.rqz{position:absolute;inset:0;z-index:2;display:grid;place-items:center;padding:16px;background:rgba(5,4,8,.88);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.rqz .qc{width:min(560px,100%);background:linear-gradient(180deg,#1d1710,#121017);border:1.5px solid #f3c86b;border-radius:24px;padding:22px 20px;animation:wp .45s cubic-bezier(.2,1.3,.4,1)}
+.rqz .qh{display:flex;justify-content:space-between;align-items:center;font:800 11px Inter;letter-spacing:.14em;color:#f3c86b;margin-bottom:12px}
+.rqz .qh i{flex:1;height:4px;margin:0 12px;border-radius:4px;background:rgba(255,255,255,.1);overflow:hidden;font-style:normal}.rqz .qh i b{display:block;height:100%;background:#f3c86b;transition:width .3s}
+.rqz .qt{font:700 19px/1.4 Inter;margin:0 0 16px}
+.rqz .qopt{display:block;width:100%;text-align:left;padding:13px 14px;margin-bottom:9px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:#1d1a22;color:#fff;font:600 15px Inter;cursor:pointer;transition:background .2s,border-color .2s}
+.rqz .qopt:hover:not([disabled]){border-color:#f3c86b}.rqz .qopt.ok{background:rgba(74,222,128,.18);border-color:#4ade80}.rqz .qopt.no{background:rgba(255,107,107,.16);border-color:#ff6b6b}
+.rqz .qx{font:500 14px/1.5 Inter;color:#d6cfc4;margin:6px 0 12px}
+.rqz .qn{display:block;width:100%;padding:14px;border-radius:14px;border:0;font:800 14px Inter;background:linear-gradient(90deg,#f3c86b,#ffe2a0);color:#1a1206;cursor:pointer}
+.rqz .qs{text-align:center}.rqz .qs b{display:block;font:400 64px/1 'Bebas Neue';color:#f3c86b}.rqz .qs p{color:#d6cfc4;font:500 15px/1.5 Inter;margin:6px 0 18px}
+.rpl{position:fixed}
 .cm .tag{display:inline-block;font:900 8.5px Inter;letter-spacing:.12em;font-style:normal;padding:1px 6px;border-radius:6px;margin-right:5px;vertical-align:1px}
 .cm.host{background:linear-gradient(135deg,rgba(243,212,138,.22),rgba(243,212,138,.06));border:1px solid rgba(243,212,138,.7);box-shadow:0 0 14px rgba(243,212,138,.25)}.cm.host .tag{background:var(--g);color:#1a1206}.cm.host .nm{color:#ffe7a6}
 .cm.legend{border:1.5px solid transparent;background:linear-gradient(rgba(30,20,6,.92),rgba(30,20,6,.92)) padding-box,linear-gradient(90deg,#ffe066,#ff9f1c,#fff6c2,#ffb21f,#ffe066) border-box;background-size:100% 100%,300% 100%;animation:tierFlow 3s linear infinite;box-shadow:0 0 12px rgba(255,190,40,.45)}
@@ -609,9 +621,9 @@ const live = { ws: null, hall: null, n: 0, quiz: null, picked: -1,
     if (m.t === 'state' && m.chat) { chatL.innerHTML = ''; m.chat.forEach(addChat); document.getElementById('chatN').textContent = ''; }
     if (m.t === 'state' || m.t === 'seats') { this.n = m.count; paintSeats(m.seats, m.looks || {}, m.pros || []); if (m.top) paintTop(m.top); if (m.quiz) showQuiz(m.quiz); renderCount(); }
     else if (m.t === 'taken') { const t = seatByKey.get(m.seat); if (m.pro && t) flashCard('👑 That seat is reserved for Pro members'); if (t) { t.st = 'taken'; const n = nearestFree(t); if (n) { markMine(n); this.sit(n.row + n.n); flashCard(`${m.seat} was taken · you're in ${n.row}${n.n}`); } } }
-    else if (m.t === 'pro') { PRO = !!m.pro; document.body.classList.toggle('ispro', PRO); if (PRO) hideWall(); freePill(m.freeLeft); if (mine) { seatRacer(mine, null); seatRacer(mine, MYLOOK); } }
+    else if (m.t === 'pro') { PRO = !!m.pro; document.body.classList.toggle('ispro', PRO); if (m.signedIn && (PRO || m.freeLeft > 0)) hideWall(); freePill(m.freeLeft); if (mine) { seatRacer(mine, null); seatRacer(mine, MYLOOK); } }
     else if (m.t === 'free') freePill(m.left);
-    else if (m.t === 'wall') showWall();
+    else if (m.t === 'wall') showWall(m.why);
     else if (m.t === 'refok') { awardXp(50); flashCard(`🎉 ${m.name} joined on your invite · +${m.pts} pts · +50 XP`); }
     else if (m.t === 'board') { if (m.top) paintTop(m.top); }
     else if (m.t === 'me') { RC.rank = m.rank; RC.of = m.of; saveRC(); }
@@ -623,7 +635,7 @@ const live = { ws: null, hall: null, n: 0, quiz: null, picked: -1,
     else if (m.t === 'slow') { if (m.wait) cool(m.wait); if (m.why) addChat({ name: 'MindGains', text: m.why }); }
   } };
 // ---- MindGains Pro: free 30 min/day (metered by the hall server), reserved centre seats, gold seats/racers/badges
-let PRO = false; window.__walled = false;
+let PRO = false; window.__walled = true;   // closed until we know who's watching (a signed-in account is required)
 const PRO_SEATS = new Set(); for (const r of 'EFG') for (let n = 7; n <= 12; n++) PRO_SEATS.add(r + n);
 let prosNow = new Set();
 const proOK = (s) => PRO || !PRO_SEATS.has(s.row + s.n);
@@ -634,8 +646,24 @@ function freePill(left) {
   p.classList.add('on'); p.classList.toggle('low', m <= 3);
 }
 function untilMidnightIST() { const n = Date.now() + 5.5 * 3600e3, m = 864e5 - (n % 864e5); const h = Math.floor(m / 3600e3), mi = Math.floor(m % 3600e3 / 60e3); return h ? `${h}h ${mi}m` : `${mi} min`; }
-function showWall() {
-  if (window.__walled || PRO) return; window.__walled = true;
+const GSVG = '<svg viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3 0 5.8 1.1 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 38.6 44 33 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>';
+function showGate() {   // signed out: the hall stays blurred behind a sign-in card
+  window.__walled = true; if (document.getElementById('wall')) return;
+  try { playOnScreen('', 0); } catch (e) {}
+  const ref = QS.get('ref'), n = Math.max(1, live.n || 1);
+  const d = document.createElement('div'); d.className = 'wall'; d.id = 'wall'; d.dataset.kind = 'signin';
+  d.innerHTML = `<div class="wc"><span class="wk"><i></i>${n} STUDYING LIVE NOW</span>
+    <h2>${ref ? 'Your friend saved you a seat' : 'Take your seat'}<em>sign in to walk in.</em></h2>
+    <p>Free with your Google account: <b>30 minutes</b> of live class every day, the live quiz, your own seat and racer${ref ? ', and your friend gets <b>+150 pts</b>' : ''}.</p>
+    <button class="wb wg" id="gateG">${GSVG}Continue with Google</button>
+    <div class="wt">One tap. Same account as mindgains.ai and NationLap.</div></div>`;
+  document.body.appendChild(d);
+  d.querySelector('#gateG').onclick = () => account.signInPopup();
+}
+function showWall(kind) {
+  if (kind === 'signin') return showGate();
+  const g = document.getElementById('wall'); if (g && g.dataset.kind === 'signin') g.remove();
+  if ((window.__walled && document.getElementById('wall')) || PRO) return; window.__walled = true;
   try { const vb = document.querySelector('.vback'); if (vb && vb.offsetParent) vb.click(); } catch (e) {}
   try { playOnScreen('', 0); } catch (e) {}
   const back = encodeURIComponent(location.pathname + location.search), n = Math.max(1, (live.n || 1) - 1);
@@ -893,11 +921,39 @@ if (innerWidth < 760) chatBox.classList.add('min');
 chatBox.addEventListener('pointerdown', (e) => e.stopPropagation()); chatBox.addEventListener('pointerup', (e) => e.stopPropagation());
 setTimeout(() => live.connect(), 300);
 // signed in on mindgains.ai -> same account here: real name in chat, same player id as the NationLap board (for top-3 frames)
-account.init().then(() => { const bind = async (u) => { signedIn = !!u; if (!u) { if (QS.get('ref')) askSignIn('ref'); return; } const name = account.accountName(); setAccountIdentity({ id: u.id, name }); if (name) myName = name.slice(0, 20);
-  const token = await account.accessToken(); myToken = token; syncPro(); live.send({ t: 'hello', look: MYLOOK, name: myName, token, ref: QS.get('ref') || '', pid: u.id, admin: (() => { try { return localStorage.getItem('mgt_admin') || ''; } catch (e) { return ''; } })() }); }; bind(account.currentUser()); account.onChange(bind); }).catch(() => {});
+account.init().then(() => { const bind = async (u) => { signedIn = !!u; if (!u) { showGate(); return; } const name = account.accountName(); setAccountIdentity({ id: u.id, name }); if (name) myName = name.slice(0, 20);
+  const token = await account.accessToken(); myToken = token; syncPro(); live.send({ t: 'hello', look: MYLOOK, name: myName, token, ref: QS.get('ref') || '', pid: u.id, admin: (() => { try { return localStorage.getItem('mgt_admin') || ''; } catch (e) { return ''; } })() }); }; bind(account.currentUser()); account.onChange(bind); }).catch(() => showGate());
 // sound: browsers only allow sound after a tap, so ask once with a pulsing button
 const snd = document.getElementById('snd'); snd.classList.add('pulse');
 snd.onclick = () => { soundOn = !soundOn; if (soundOn) { if (ytP && ytP.unMute) { ytP.unMute(); ytP.setVolume(100); ytP.playVideo(); } else if (ytNow) { const id = ytNow, p = ytPos(); ytNow = ''; playOnScreen(id, p); } } else yCmd('mute'); snd.textContent = soundOn ? '🔊' : '🔇'; snd.classList.toggle('pulse', !soundOn); };
+// replay quiz: questions come from the server without answers; each pick is checked there and lands in the report
+async function replayQuiz(host, set) {
+  const tok = await account.accessToken();
+  let Q = null; try { Q = await (await fetch('/api/pro/quiz?set=' + encodeURIComponent(set), { headers: { Authorization: 'Bearer ' + tok } })).json(); } catch (e) {}
+  if (!Q || !Q.questions || !Q.questions.length) { flashCard('Quiz not available for this chapter yet'); return; }
+  try { host.querySelector('iframe').src = 'about:blank'; } catch (e) {}
+  const o = document.createElement('div'); o.className = 'rqz'; host.appendChild(o);
+  let i = 0, right = 0;
+  const show = () => {
+    const q = Q.questions[i], t0 = performance.now();
+    o.innerHTML = `<div class="qc"><div class="qh"><span>${esc(Q.chapter).toUpperCase()}</span><i><b style="width:${i / Q.questions.length * 100}%"></b></i><span>${i + 1}/${Q.questions.length}</span></div>
+      <p class="qt">${esc(q.q)}</p>${q.opts.map((x, k) => `<button class="qopt" data-k="${k}">${esc(x)}</button>`).join('')}<div class="qx" hidden></div><button class="qn" hidden>${i + 1 < Q.questions.length ? 'NEXT' : 'SEE MY SCORE'}</button></div>`;
+    o.querySelectorAll('.qopt').forEach((b) => b.onclick = async () => {
+      o.querySelectorAll('.qopt').forEach((x) => x.disabled = true);
+      let r = null; try { r = await (await fetch('/api/pro/quiz/check', { method: 'POST', headers: { 'content-type': 'application/json', Authorization: 'Bearer ' + tok }, body: JSON.stringify({ set, ids: Q.ids, token: Q.token, id: q.id, i: +b.dataset.k, ms: Math.round(performance.now() - t0) }) })).json(); } catch (e) {}
+      if (!r || r.correct == null) { flashCard('Could not check that answer'); return; }
+      if (r.ok) right++;
+      o.querySelectorAll('.qopt').forEach((x) => { if (+x.dataset.k === r.correct) x.classList.add('ok'); else if (x === b) x.classList.add('no'); });
+      const ex = o.querySelector('.qx'); if (r.explanation) { ex.hidden = false; ex.textContent = r.explanation; }
+      const n = o.querySelector('.qn'); n.hidden = false; n.onclick = () => { i++; if (i < Q.questions.length) show(); else done(); };
+    });
+  };
+  const done = () => {
+    o.innerHTML = `<div class="qc qs"><b>${right}/${Q.questions.length}</b><p>${right === Q.questions.length ? 'Perfect. You own this chapter.' : right >= 3 ? 'Solid. A quick revise and it\'s yours.' : 'This one needs another look.'}<br>Added to your <b style="display:inline;font:inherit;color:#ffe2a0">weak chapters report</b>.</p><button class="qn">BACK TO THE REPLAY</button></div>`;
+    o.querySelector('.qn').onclick = () => { o.remove(); const f = host.querySelector('.rch button.on') || null; host.querySelector('iframe').src = `https://www.youtube.com/embed/${encodeURIComponent(f ? f.dataset.v : host.dataset.v0 || '')}?autoplay=1&controls=1&rel=0&modestbranding=1&playsinline=1`; };
+  };
+  show();
+}
 // ---- Replay (Pro): any of today's earlier episode blocks, with controls, then a quiz on its chapter
 let CHJ = null;
 document.getElementById('tt').addEventListener('click', async (e) => {
@@ -912,14 +968,15 @@ document.getElementById('tt').addEventListener('click', async (e) => {
   try { CHJ = CHJ || await (await fetch('/play/theatre/chapters.json')).json(); } catch (x) {}
   const sets = CHJ && ((CHJ.chapters[hall] || {})[c.day] || [])[Math.min(k, 99)] || null, set = sets && sets[0];
   try { yCmd('mute'); } catch (x) {}
-  const d = document.createElement('div'); d.className = 'rpl';
+  const d = document.createElement('div'); d.className = 'rpl'; d.dataset.v0 = vids[0].id;
   const src = (id) => `https://www.youtube.com/embed/${encodeURIComponent(id)}?autoplay=1&controls=1&rel=0&modestbranding=1&playsinline=1`;
   d.innerHTML = `<div class="rhd"><b><small>👑 PRO REPLAY · ${esc(b.from)}</small>${esc(b.block)}</b><button class="rx">✕ BACK TO HALL</button></div>
     <div class="rv"><iframe allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen src="${src(vids[0].id)}"></iframe></div>
     ${vids.length > 1 ? `<div class="rch">${vids.map((v, i) => `<button data-v="${esc(v.id)}" class="${i ? '' : 'on'}">${i + 1}. ${esc(((v.title || '').split('||')[1] || (v.title || 'Part ' + (i + 1)).split('|')[0]).trim())}</button>`).join('')}</div>` : ''}
-    ${set ? `<a class="rq" href="/quiz/${set}/" target="_blank" rel="noopener">📝 Quiz yourself on this chapter</a>` : ''}`;
+    ${set ? `<button class="rq" id="rqGo" style="border:0;cursor:pointer">📝 Quiz yourself on this chapter · 5 Qs</button>` : ''}`;
   document.body.appendChild(d);
   d.querySelector('.rx').onclick = () => { d.remove(); if (soundOn) yCmd('unMute'); };
+  const qb = d.querySelector('#rqGo'); if (qb) qb.onclick = () => replayQuiz(d, set);
   d.querySelectorAll('.rch button').forEach((bt) => bt.onclick = () => { d.querySelector('iframe').src = src(bt.dataset.v); d.querySelectorAll('.rch button').forEach((x) => x.classList.toggle('on', x === bt)); });
 });
 document.getElementById('ttbtn').onclick = () => { const t = document.getElementById('tt'); t.hidden = !t.hidden; document.getElementById('ttbtn').textContent = t.hidden ? 'TIMETABLE ▾' : 'TIMETABLE ▴'; };

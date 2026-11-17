@@ -31,7 +31,8 @@ import { createHallOfFame, fetchToppers } from './hall-of-fame.js';
 import { createTouchControls, isTouchDevice } from './touch-controls.js';
 import { recordCorrect, recordWrong, getJourney, COMPLETE_THRESHOLD, rawZones, replaceZones, recordSection, sectionState, SECTION_THRESHOLD } from './progress.js';
 import * as account from './account.js';
-import { refreshPro, mountProDock, submitNight } from './pro.js';
+import { refreshPro, mountProDock, submitNight, startNight } from './pro.js';
+let nightRun = null;
 import { createRecorder, createGhost, loadPersonalBest, savePersonalBest } from './ghost.js';
 
 // ---------------------------------------------------------------------------------------------
@@ -816,7 +817,7 @@ const menu = new Menu(uiRoot, {
     if (pendingAffairs) { pendingAffairs = false; startAffairsRace(); }
   },
   onResume: () => resume(),
-  onRestart: () => { menu.hideAll(); startRace(lastSettings); },
+  onRestart: () => { menu.hideAll(); if (lastSettings.proNight) startNight().then((run) => { nightRun = run; startRace(lastSettings); }); else startRace(lastSettings); },
   onQuit: () => {
     // Leaving mid-lesson keeps every point: say so, and where to pick up.
     const z = focusedZone, sec = focusedSection, n = focusedSectionCount;
@@ -1338,6 +1339,7 @@ bus.on('race:finish', (d) => {
   const rec = recorder?.finish(raceElapsedMs);
   recorder = null;
   if (rec && affairsRun && !affairsRun.monthKey && !affairsRun.state) lastLap = rec;
+  if (lastSettings.proNight) { const run = nightRun; nightRun = null; if (rec && run) submitNight(run, rec, (t) => hud.toast?.(t)); else hud.toast?.('Night Race run not counted'); }
   if (rec) {
     const zoneId = focusedZone?.id || null;
     if (savePersonalBest(zoneId, rec)) hud.toast?.('New best lap saved');
@@ -1354,7 +1356,6 @@ bus.on('race:end', (d) => {
   if (state === 'paused') resume();
   // 1st place: the Shades Flip celebration over the results (tap to skip). The first win unlocks it.
   { const me = results.find((r) => r.isPlayer);
-    if (me && lastSettings.proNight) submitNight(me.place, raceElapsedMs, (t) => hud.toast?.(t));
     if (me && me.place === 1) setTimeout(() => import('./shades.js').then(({ playShadesFlip }) => {
       let first = false; try { first = !localStorage.getItem('nl_shades'); localStorage.setItem('nl_shades', '1'); } catch (e) {}
       return playShadesFlip(world?.player?.character || playerCharacter(), { title: first ? 'UNLOCKED!' : 'STYLE!', sub: first ? '😎 Shades Flip · your 1st-place celebration' : '1st place 😎' });
@@ -1649,7 +1650,7 @@ async function boot() {
   const proNight = () => {
     affairsRun = null; cupRun = null; focusedZone = null; focusedCards = null; focusedLesson = null;
     hud.setItemNames?.(null); hud.setWrongWayLine?.(null); hud.setGateMarks?.(null);
-    startRace({ difficulty: 'hard', laps: RACE.laps, proNight: true });
+    startNight().then((run) => { if (!run) { hud.toast?.('Night Race needs Pro and a connection'); return; } nightRun = run; startRace({ difficulty: 'hard', laps: 1, proNight: true }); });
   };
   mountProDock(document.querySelector('.title-row'), proNight);
   account.onChange(() => refreshPro());

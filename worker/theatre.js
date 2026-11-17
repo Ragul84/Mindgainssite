@@ -88,6 +88,7 @@ export class TheatreHall extends DurableObject {
         }
       }
     } else if (m.t === 'tick') {   // the page is open and visible: count 30 s toward today's free allowance
+      if (!a.uid) return this.send(ws, { t: 'wall', why: 'signin' });   // watching needs an account
       const now = Date.now(); if (a.pro || now - (a.lt || 0) < 25000) return; a.lt = now; ws.serializeAttachment(a);
       const w = await addWatch(this.env, a.who, 30), left = Math.max(0, FREE_SECS - w);
       this.send(ws, { t: 'free', left }); if (!left) this.send(ws, { t: 'wall' });

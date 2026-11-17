@@ -2,6 +2,7 @@
 // synced streak with freezes, and the weak-chapters report. Storage: D1 GAME_DB (game-schema-007-pro.sql).
 // Secrets: RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET, RAZORPAY_WEBHOOK_SECRET.
 import { verifyUser, bearer } from './auth.js';
+import CH from '../play/theatre/chapters.json';
 
 export const PLANS = {
   month: { name: 'Pro Monthly', paise: 9900, days: 30 },
@@ -16,6 +17,27 @@ export const istDay = (t = Date.now()) => new Date(t + 5.5 * 3600e3).toISOString
 const NIGHT0 = Date.parse('2026-11-15T14:30:00Z');   // a Sunday, 20:00 IST
 const nightWeek = () => Math.floor((Date.now() - NIGHT0) / (7 * DAY));
 const nightEnds = () => NIGHT0 + (nightWeek() + 1) * 7 * DAY;
+// ---- lap verification (NationLap track: length 9568 units, 1 lap; recorder samples every 200 ms)
+const TRACK_LEN = 9568, STEP = 200, VMAX = 75, VAVG = 52;   // units/s: peak (top speed + boost + star, generous) and best sustained lap average
+export function checkLap(rec, wallMs) {
+  if (!rec || rec.v !== 1 || rec.step !== STEP || !Array.isArray(rec.t) || !Array.isArray(rec.lat) || rec.t.length !== rec.lat.length) return { ok: false, why: 'format' };
+  const n = rec.t.length, ms = rec.ms | 0;
+  if (n < 50 || n > 3000) return { ok: false, why: 'length' };
+  if (n * STEP > ms * 1.05 + 1500 || n * STEP < ms * .72 - 1500) return { ok: false, why: 'time' };   // samples must cover the claimed time (slow phones sample a bit less often)
+  if (wallMs + 5000 < ms) return { ok: false, why: 'clock' };                                   // can't finish faster than real time
+  const maxStep = (VMAX * STEP / 1000) / TRACK_LEN * 1.6;                                          // fraction of a lap per sample
+  let prog = 0;
+  for (let i = 1; i < n; i++) {
+    const a = +rec.t[i - 1], c = +rec.t[i], la = +rec.lat[i];
+    if (!(a >= 0 && a <= 1 && c >= 0 && c <= 1) || !isFinite(la) || Math.abs(la) > 60) return { ok: false, why: 'sample' };
+    let d = c - a; if (d > .5) d -= 1; if (d < -.5) d += 1;
+    if (d > maxStep) return { ok: false, why: 'speed' };
+    prog += d;
+  }
+  if (prog < .97) return { ok: false, why: 'incomplete' };
+  if (ms < TRACK_LEN / VMAX * 1000 || prog * TRACK_LEN / (ms / 1000) > VAVG) return { ok: false, why: 'too fast' };
+  return { ok: true, ms };
+}
 const J = (d, s = 200) => new Response(JSON.stringify(d), { status: s, headers: { 'content-type': 'application/json', 'cache-control': 'no-store' } });
 
 export async function proUntil(env, uid) {
@@ -134,13 +156,26 @@ export async function proRoute(request, env, pathname) {
     return J({ pro: true, until: await activate(env, oid, pid) });
   }
   // Pro Night Race: one weekly race (IST week, fresh every Sunday 8 PM) with an all-India and per-state board.
+  // Score = verified lap time. The server hands out a one-use ticket when the race starts; the finish
+  // must arrive with the lap recording, which is checked against the track: no sample may move faster
+  // than a kart can physically go, the lap must be complete, and real time since the ticket must cover it.
+  if (pathname === '/api/pro/night/start' && request.method === 'POST') {
+    if (!(await proUntil(env, uid))) return J({ error: 'Pro only' }, 403);
+    const run = crypto.randomUUID();
+    await env.GAME_DB.prepare('INSERT INTO night_run (run, uid, wk, at, used) VALUES (?1, ?2, ?3, ?4, 0)').bind(run, uid, nightWeek(), Date.now()).run();
+    return J({ run });
+  }
   if (pathname === '/api/pro/night') {
     const wk = nightWeek(), ev = 'pro:' + wk;
     if (request.method === 'POST') {
       if (!(await proUntil(env, uid))) return J({ error: 'Pro only' }, 403);
       let b = {}; try { b = await request.json(); } catch {}
-      const place = Math.max(1, Math.min(12, b.place | 0)), ms = Math.max(20000, Math.min(3600000, b.ms | 0));
-      const pts = (13 - place) * 1000 + Math.max(0, 600 - Math.round(ms / 1000));   // place first, then pace
+      const t = await env.GAME_DB.prepare('SELECT uid, wk, at, used FROM night_run WHERE run = ?1').bind(String(b.run || '')).first();
+      if (!t || t.uid !== uid || t.used || t.wk !== wk) return J({ error: 'This run is not valid' }, 403);
+      await env.GAME_DB.prepare('UPDATE night_run SET used = 1 WHERE run = ?1').bind(String(b.run)).run();
+      const v = checkLap(b.rec, Date.now() - t.at);
+      if (!v.ok) return J({ error: 'Run not verified', why: v.why }, 422);
+      const ms = v.ms, pts = 10000000 - ms;   // faster = higher
       const name = String(b.name || 'Racer').replace(/[<>]/g, '').slice(0, 20), state = String(b.state || '').replace(/[^A-Z]/g, '').slice(0, 3);
       await env.GAME_DB.prepare(`INSERT INTO game_event (ev, uid, name, state, pts, ms, correct, wrong, skipped, grid, at) VALUES (?1, ?2, ?3, ?4, ?5, ?6, 0, 0, 0, '', ?7)
         ON CONFLICT(ev, uid) DO UPDATE SET pts = excluded.pts, ms = excluded.ms, name = excluded.name, state = excluded.state, at = excluded.at WHERE excluded.pts > game_event.pts`).bind(ev, uid, name, state, pts, ms, Date.now()).run();
@@ -157,6 +192,29 @@ export async function proRoute(request, env, pathname) {
     }
     const n = await env.GAME_DB.prepare('SELECT COUNT(*) AS n FROM game_event WHERE ev = ?1').bind(ev).first();
     return J({ week: wk, ends: nightEnds(), racers: n ? n.n : 0, top, me });
+  }
+  // Replay quiz (Pro): 5 questions from the episode's chapter, answers checked here and added to the report.
+  if (pathname === '/api/pro/quiz' || pathname === '/api/pro/quiz/check') {
+    if (!(await proUntil(env, uid))) return J({ error: 'Pro only' }, 403);
+    const b = request.method === 'POST' ? await request.json().catch(() => ({})) : {};
+    const set = String(b.set || new URL(request.url).searchParams.get('set') || '');
+    if (!/^[a-z0-9-]+(\/[a-z0-9-]+){1,4}$/.test(set)) return J({ error: 'bad set' }, 400);
+    const r = await env.ASSETS.fetch(new Request('https://assets.local/assets/quiz-data/' + set + '.json'));
+    if (!r.ok) return J({ error: 'not found' }, 404);
+    const qs = (await r.json()).questions || [];
+    const chapter = String(CH.titles[set] || set.split('/').pop()).replace(/ Quiz$/, '');
+    if (pathname === '/api/pro/quiz') {
+      const pool = qs.map((q, i) => [q, i]).filter(([q]) => !q.retired && Array.isArray(q.options) && q.options.length === 4 && Number.isInteger(q.answer_index));
+      for (let i = pool.length - 1; i > 0; i--) { const j = (Math.random() * (i + 1)) | 0; [pool[i], pool[j]] = [pool[j], pool[i]]; }
+      const ids = pool.slice(0, 5).map(([, i]) => i), exp = Date.now() + 2 * 3600e3;
+      const token = exp + '.' + await hmacHex(env.QUIZ_SECRET || 'mg', `rq|${uid}|${set}|${ids.join(',')}|${exp}`);
+      return J({ set, chapter, token, ids, questions: ids.map((i) => ({ id: i, q: qs[i].question, opts: qs[i].options })) });
+    }
+    const ids = Array.isArray(b.ids) ? b.ids.map(Number) : [], [exp, sig] = String(b.token || '').split('.');
+    if (!(+exp > Date.now()) || !same(sig, await hmacHex(env.QUIZ_SECRET || 'mg', `rq|${uid}|${set}|${ids.join(',')}|${exp}`)) || !ids.includes(+b.id)) return J({ error: 'bad token' }, 403);
+    const q = qs[+b.id], ok = +b.i === q.answer_index;
+    await recordAnswers(env, [[uid, `rq:${set}:${b.id}:${istDay()}`, chapter, ok, Math.min(120000, Math.max(0, b.ms | 0))]]);
+    return J({ correct: q.answer_index, ok, explanation: String(q.explanation || '').slice(0, 400) });
   }
   if (pathname === '/api/pro/report') {
     const pro = !!(await proUntil(env, uid));
