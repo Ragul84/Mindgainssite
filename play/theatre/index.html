@@ -168,6 +168,7 @@ body{font-family:Inter,system-ui,sans-serif}
 .rpt .dot{width:8px;height:8px;border-radius:50%;background:#4b4654;display:inline-block;margin-right:6px}.rpt .dot.on{background:#4ade80}
 .rpt .sec{font:800 11px Inter;letter-spacing:.14em;color:#f3c86b;margin:18px 0 10px}
 .rpt .row2{display:flex;gap:8px}.rpt .row2 .fld{margin:0;text-transform:uppercase;letter-spacing:.2em;font-weight:800}.rpt .row2 button{flex:none;padding:0 18px;border-radius:14px;border:0;background:#f3c86b;color:#1a1206;font:800 13px Inter;cursor:pointer}
+.cm .rpt-f{position:absolute;right:26px;top:4px;width:22px;height:22px;border:0;border-radius:6px;background:none;color:#8a8496;display:none;place-items:center;cursor:pointer}.cm:hover .rpt-f{display:grid}@media (hover:none){.cm .rpt-f{display:grid}}.cm .rpt-f:hover{color:#ff8a8a}
 .cm .tag.tch{background:#7c5cff;color:#fff}.cm .tag.own{background:#f3c86b;color:#1a1206}
 #mRoom{display:grid;place-items:center}
 .cm .tag{display:inline-block;font:900 8.5px Inter;letter-spacing:.12em;font-style:normal;padding:1px 6px;border-radius:6px;margin-right:5px;vertical-align:1px}
@@ -194,7 +195,7 @@ body{font-family:Inter,system-ui,sans-serif}
   .chat.min{top:auto;bottom:20px;left:16px}
   body:has(.chat:not(.min)) .top5{right:14px!important}
 }
-body.intro .chat,body.cinema .chat,body.intro .mob,body.intro .qsoon{display:none!important}body.quizon .chat:not(.min){visibility:hidden}
+body.intro .chat,body.cinema .chat,body.intro .mob,body.intro .qsoon{display:none!important}body.quizon .chat:not(.min){visibility:hidden}body.room.quizon .chat:not(.min){visibility:visible}@media (max-width:760px){body.room.quizon .chat:not(.min){visibility:hidden}}
 @media (max-width:760px){.chat{left:12px;right:12px;width:auto;top:auto;bottom:178px;max-height:46vh}.chat.min{bottom:178px}.chat:not(.min){height:46vh}.emo{grid-template-columns:repeat(12,1fr)}.emo img{max-width:26px}}
 body.cinema .top,body.cinema .marq,body.cinema .halls,body.cinema .tip,body.cinema .angles,body.cinema .sheet,body.cinema .reacts,body.cinema .top5{display:none!important}body.cinema .ctl{top:12px}
 .loader{position:fixed;inset:0;z-index:50;background:radial-gradient(80% 60% at 50% 40%,#1c1408,#050403);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;transition:opacity .6s,visibility 0s .6s}
@@ -246,7 +247,7 @@ body.intro .skip{display:block}
 .mob{display:none}
 .qsoon{position:fixed;left:50%;top:27%;transform:translate(-50%,-50%);z-index:30;pointer-events:none;font:900 15px Inter;letter-spacing:.06em;color:#1a1206;background:var(--g);padding:10px 16px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.5);white-space:nowrap}
 .qsoon.go{animation:qs 1s ease-out}@keyframes qs{0%{opacity:0;transform:translate(-50%,-30%) scale(.8)}100%{opacity:1;transform:translate(-50%,-50%) scale(1)}}
-body.quizon .chat{visibility:hidden!important}
+body.quizon:not(.room) .chat{visibility:hidden!important}@media (max-width:760px){body.room.quizon .chat{visibility:hidden!important}}
 @media (max-width:760px){
   .top .brand,.top .live,.halls,.tip,.angles,.sheet,.marq,.reacts{display:none!important}
   .top{padding:8px 10px!important;background:linear-gradient(180deg,rgba(0,0,0,.65),transparent)!important;border:0!important}
@@ -584,7 +585,8 @@ const VIEWS = { wide: [new THREE.Vector3(0, 9.8, 4), new THREE.Vector3(0, 6.5, -
 const camPos = new THREE.Vector3(0, 11.8, 11.5), camLook = new THREE.Vector3(0, 6, -16), tgtPos = new THREE.Vector3(), tgtLook = new THREE.Vector3();
 let flying = true, dragged = 0, zoomF = 1, spot = null, lastTap = 0;
 let mode = 'wide';
-function fly(v) { flying = true; mode = v; zoomF = 1; document.body.classList.toggle('seatmode', v === 'seat'); try { orbit.enabled = false; } catch (e) {} if (v === 'seat') { tgtPos.copy(mine.eye); if (W() < H()) tgtPos.y += .9; tgtLook.set(0, 7, -16); } else if (v === 'spot') { tgtPos.copy(spot[0]); tgtLook.copy(spot[1]); }
+function fly(v) { flying = true; mode = v; zoomF = 1; document.body.classList.toggle('seatmode', v === 'seat'); try { orbit.enabled = false; } catch (e) {} if (v === 'seat') { tgtPos.copy(mine.eye); tgtPos.y += W() < H() ? .9 : .7;   // sit tall enough to see over the row in front
+ tgtLook.set(0, 7, -16); } else if (v === 'spot') { tgtPos.copy(spot[0]); tgtLook.copy(spot[1]); }
   // tall phones: aim below the screen so it sits near the top, seats fill the rest (no empty ceiling)
   else { tgtPos.copy(VIEWS[v][0]); tgtLook.copy(VIEWS[v][1]); }
   if ((v === 'seat' || v === 'spot') && W() < H()) { const d = tgtPos.distanceTo(tgtLook); tgtLook.y -= d * .42; }
@@ -647,7 +649,7 @@ let myName = (() => { try { const p = JSON.parse(localStorage.getItem('tkr_playe
 const live = { ws: null, hall: null, n: 0, quiz: null, picked: -1,
   connect() { if (this.hall === hall && this.ws && this.ws.readyState < 2) return; try { this.ws && this.ws.close(); } catch {} this.hall = hall;
     const ws = new WebSocket((location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + (ROOM ? '/api/room/' + ROOM + '/ws' : '/api/theatre/' + hall + '/ws')); this.ws = ws;
-    ws.onopen = () => { ws.send(JSON.stringify({ t: 'hello', tk: QS.get('tk') || '', look: MYLOOK, name: myName, token: myToken, ref: QS.get('ref') || '', pid: (() => { try { return getPlayerId(); } catch (e) { return ''; } })(), admin: (() => { try { return localStorage.getItem('mgt_admin') || ''; } catch (e) { return ''; } })() })); if (mine) this.sit(mine.row + mine.n); };
+    ws.onopen = () => { ws.send(JSON.stringify({ t: 'hello', tk: QS.get('t') || QS.get('tk') || '', look: MYLOOK, name: myName, token: myToken, ref: QS.get('ref') || '', pid: (() => { try { return getPlayerId(); } catch (e) { return ''; } })(), admin: (() => { try { return localStorage.getItem('mgt_admin') || ''; } catch (e) { return ''; } })() })); if (mine) this.sit(mine.row + mine.n); };
     ws.onmessage = (e) => this.on(JSON.parse(e.data));
     ws.onclose = () => { if (this.ws === ws) setTimeout(() => this.connect(), 3000); }; },
   send(m) { if (this.ws && this.ws.readyState === 1) this.ws.send(JSON.stringify(m)); },
@@ -948,7 +950,8 @@ function addChat(m) { const d = document.createElement('div'); const t = m.host 
   d.innerHTML = (m.re ? `<div class="cm-re">↩ <b>${esc(m.re.name)}</b> ${esc(m.re.text)}</div>` : '') +
     (m.teacher ? '<i class="tag tch">TEACHER</i>' : m.owner ? '<i class="tag own">HOST</i>' : m.host ? '<i class="tag">HOST</i>' : t ? `<i class="tag">${t[1]}</i>` : m.pro ? '<i class="tag"><svg class="ico" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M11.6 3.3a.5.5 0 0 1 .9 0l2.9 5.5a1 1 0 0 0 1.5.3l4.3-3.7a.5.5 0 0 1 .8.5l-2.8 10.3a1 1 0 0 1-1 .7H5.8a1 1 0 0 1-1-.7L2 5.9a.5.5 0 0 1 .8-.5l4.3 3.7a1 1 0 0 0 1.5-.3z"/><path d="M5 21h14"/></svg>PRO</i>' : '') +
     `<b class="nm">${esc(m.name)}${m.seat ? ' <small>' + esc(m.seat) + '</small>' : ''}</b> <span class="tx">${esc(m.text)}</span>` +
-    (m.at ? '<button class="rp" aria-label="Reply">↩</button>' : ''); if (m.sys) d.innerHTML = esc(m.text);
+    (m.at ? '<button class="rp" aria-label="Reply">↩</button>' : '') + (ROOM && m.id && m.uid && m.uid !== RM.me ? `<button class="rpt-f" aria-label="Report" title="Report">${ri('flag', 12)}</button>` : ''); if (m.sys) d.innerHTML = esc(m.text);
+  const rf = d.querySelector('.rpt-f'); if (rf) rf.onclick = (e) => { e.stopPropagation(); if (confirm('Report this message to the batch host?')) { live.send({ t: 'report', uid: m.uid, msgId: m.id }); rf.remove(); } };
   if (m.at) { const rb = d.querySelector('.rp'); rb.onclick = () => setReply(m);
     let lp = 0, sx = 0, sy = 0, sw = false;
     d.addEventListener('pointerdown', (e) => { sx = e.clientX; sy = e.clientY; sw = true; lp = setTimeout(() => { sw = false; navigator.vibrate && navigator.vibrate(15); setReply(m); }, 480); });
@@ -966,7 +969,7 @@ chatBox.addEventListener('pointerdown', (e) => e.stopPropagation()); chatBox.add
 setTimeout(() => live.connect(), 300);
 // signed in on mindgains.ai -> same account here: real name in chat, same player id as the NationLap board (for top-3 frames)
 account.init().then(() => { const bind = async (u) => { signedIn = !!u; if (!u) { showGate(); return; } const name = account.accountName(); setAccountIdentity({ id: u.id, name }); if (name) myName = name.slice(0, 20);
-  const token = await account.accessToken(); myToken = token; syncPro(); live.send({ t: 'hello', tk: QS.get('tk') || '', look: MYLOOK, name: myName, token, ref: QS.get('ref') || '', pid: u.id, admin: (() => { try { return localStorage.getItem('mgt_admin') || ''; } catch (e) { return ''; } })() }); }; bind(account.currentUser()); account.onChange(bind); }).catch(() => showGate());
+  const token = await account.accessToken(); myToken = token; syncPro(); live.send({ t: 'hello', tk: QS.get('t') || QS.get('tk') || '', look: MYLOOK, name: myName, token, ref: QS.get('ref') || '', pid: u.id, admin: (() => { try { return localStorage.getItem('mgt_admin') || ''; } catch (e) { return ''; } })() }); }; bind(account.currentUser()); account.onChange(bind); }).catch(() => showGate());
 // sound: browsers only allow sound after a tap, so ask once with a pulsing button
 const snd = document.getElementById('snd'); snd.classList.add('pulse');
 snd.onclick = () => { soundOn = !soundOn; if (soundOn) { if (ytP && ytP.unMute) { ytP.unMute(); ytP.setVolume(100); ytP.playVideo(); } else if (ytNow) { const id = ytNow, p = ytPos(); ytNow = ''; playOnScreen(id, p); } } else yCmd('mute'); snd.innerHTML = soundOn ? '<svg class="ico" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5Z"/><path d="M16 9a5 5 0 0 1 0 6M19.4 18.4a9 9 0 0 0 0-12.7"/></svg>' : '<svg class="ico" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5Z"/><path d="m22 9-6 6M16 9l6 6"/></svg>'; snd.classList.toggle('pulse', !soundOn); };
@@ -1088,10 +1091,13 @@ const RI = {
   check: '<path d="M20 6 9 17l-5-5"/>', x: '<path d="M18 6 6 18M6 6l12 12"/>', cap: '<path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>',
   flame: '<path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.1-.2-4 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.4-2.3 1-3.2.3 1.1 1.5 2.2 2.5 2.7z"/>',
   crown: '<path d="M11.6 3.3a.5.5 0 0 1 .9 0l2.9 5.5a1 1 0 0 0 1.5.3l4.3-3.7a.5.5 0 0 1 .8.5l-2.8 10.3a1 1 0 0 1-1 .7H5.8a1 1 0 0 1-1-.7L2 5.9a.5.5 0 0 1 .8-.5l4.3 3.7a1 1 0 0 0 1.5-.3z"/><path d="M5 21h14"/>',
+  ban: '<circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/>', flag: '<path d="M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.3 2.7A7 7 0 0 0 20 4v11a7 7 0 0 1-4.7.7C13 15 11 13 8 13a6 6 0 0 0-4 1"/>', rot: '<path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/>',
   trash: '<path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>', video: '<path d="m16 13 5.2 3.1a.5.5 0 0 0 .8-.4V8.3a.5.5 0 0 0-.8-.4L16 11"/><rect x="2" y="6" width="14" height="12" rx="2"/>',
 };
 const ri = (n, z = 16, w = 2) => `<svg class="ico" viewBox="0 0 24 24" width="${z}" height="${z}" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round">${RI[n]}</svg>`;
-const RM = { role: 'member', room: null, play: null, list: [], locked: false, quiz: null, streak: 0, week: null, prog: null };
+const RM = { role: 'member', room: null, play: null, list: [], locked: false, quiz: null, streak: 0, prog: null, off: 0, me: '' };
+const rNow = () => Date.now() + RM.off;   // server clock
+const expPos = (p) => p.pos + (p.playing ? (rNow() - p.serverNow) / 1000 : 0);
 const boss = () => RM.role === 'owner' || RM.role === 'teacher';
 function rsheet(title, icon, html) {   // the theatre's bottom sheet, reused for every room panel
   document.querySelectorAll('.rpt.rs').forEach((x) => x.remove());
@@ -1110,13 +1116,13 @@ function applyPlay(p, force) {
   paintRoomBar();
   if (window.__walled) return;
   if (!p.v) { playOnScreen('', 0); return; }
-  if (force || ytNow !== p.v) { ytNow = ''; playOnScreen(p.v, p.pos); const want = p.playing; setTimeout(() => { if (!want) yCmd('pauseVideo'); }, 1800); return; }
+  if (force || ytNow !== p.v) { ytNow = ''; playOnScreen(p.v, expPos(p)); const want = p.playing; setTimeout(() => { if (!want) yCmd('pauseVideo'); }, 1800); return; }
   let cur = null; try { cur = ytP && ytP.getCurrentTime ? ytP.getCurrentTime() : null; } catch (e) {}
-  if (cur == null || Math.abs(cur - p.pos) > 2) yCmd('seekTo', [p.pos, true]);
+  if (cur == null || Math.abs(cur - expPos(p)) > 2) yCmd('seekTo', [expPos(p), true]);
   yCmd(p.playing ? 'playVideo' : 'pauseVideo');
 }
 setInterval(() => { if (!ROOM || !RM.play || !RM.play.playing || window.__walled) return;   // drift check
-  const exp = RM.play.pos + (Date.now() - RM.play.got) / 1000; let cur = null; try { cur = ytP && ytP.getCurrentTime ? ytP.getCurrentTime() : null; } catch (e) {}
+  const exp = expPos(RM.play); let cur = null; try { cur = ytP && ytP.getCurrentTime ? ytP.getCurrentTime() : null; } catch (e) {}
   if (cur != null && Math.abs(cur - exp) > 2.5) yCmd('seekTo', [exp, true]); }, 5000);
 function paintRoomBar() {
   if (!ROOM || !RM.room) return;
@@ -1130,19 +1136,22 @@ function paintRoomBar() {
   bar.querySelectorAll('button').forEach((b) => b.onclick = () => ({ add: addVideo, pause: () => live.send({ t: 'pause', pos: ytP && ytP.getCurrentTime ? ytP.getCurrentTime() : undefined }), play: () => live.send({ t: 'play' }), quiz: askQuiz, pl: playlist, mem: members, inv: invite })[b.dataset.a]());
 }
 function roomHeader() {
-  if (!RM.room) return; const w = RM.week;
+  if (!RM.room) return; document.getElementById('live').textContent = 'BATCH';
   document.getElementById('nowK').innerHTML = `<span style="display:inline-flex;align-items:center;gap:6px">${ri('users', 12, 2.4)}BATCH · ${esc(RM.room.name).toUpperCase()}</span>`;
-  document.getElementById('nowS').innerHTML = `${live.n} here now · code ${RM.room.code}` + (RM.streak ? ` · <span style="display:inline-flex;align-items:center;gap:3px;color:#ffb35c">${ri('flame', 12, 2.4)}${RM.streak}-day batch streak</span>` : '') + (w && w.rank ? ` · #${w.rank} of ${w.of} batches this week` : '');
+  document.getElementById('nowS').innerHTML = `${live.n} here now · code ${RM.room.code}` + (RM.streak ? ` · <span style="display:inline-flex;align-items:center;gap:3px;color:#ffb35c">${ri('flame', 12, 2.4)}${RM.streak}-day batch streak</span>` : '');
   document.getElementById('nowT').textContent = RM.play && RM.play.v ? (RM.play.title || 'Video') : (boss() ? 'Add a YouTube video to start' : 'Waiting for the host to start a video');
 }
 function lockChat(on) {
   RM.locked = on; if (boss()) return;
   chatI.disabled = on; chatS.disabled = on; chatI.placeholder = on ? 'Chat is paused for the quiz' : 'Say something…';
 }
-function roomQuiz(q) {   // teacher's quiz: no timer, stays on top until everyone answers or the teacher resumes
+function roomQuiz(q) {   // teacher's quiz: stays on top with a countdown until everyone answers, the teacher reveals, or time runs out
+  if (q.serverNow) RM.off = q.serverNow - Date.now();
   RM.quiz = q; showQuiz({ ...q, ends: Date.now() + 864e5 }); clearInterval(qTimer); clearTimeout(window.__qh);
-  document.getElementById('qk').innerHTML = `<span style="display:inline-flex;align-items:center;gap:6px">${ri('cap', 13, 2.4)}${esc(q.by || 'TEACHER').toUpperCase()} ASKS</span>`;
-  qProg(q.n || 0, q.of || 0);
+  const tag = `${ri('cap', 13, 2.4)}${esc(q.by || 'TEACHER').toUpperCase()} ASKS${q.chapter && q.chapter !== 'General' ? ' · ' + esc(q.chapter).toUpperCase() : ''}`;
+  const tickQ = () => { const left = Math.max(0, Math.ceil((q.deadline - rNow()) / 1000)); document.getElementById('qk').innerHTML = `<span style="display:inline-flex;align-items:center;gap:6px">${tag} · ${left} S</span>`; if (!left) clearInterval(qTimer); };
+  tickQ(); qTimer = setInterval(tickQ, 500);
+  qProg(q.answered || 0, q.total || 0);
   if (boss()) { document.querySelectorAll('#qo button').forEach((b) => { b.disabled = true; b.style.opacity = .75; });
     const r = document.createElement('button'); r.className = 'rqres'; r.style.cssText = 'margin-top:10px;width:100%;padding:12px;border-radius:12px;border:0;background:linear-gradient(90deg,#f3c86b,#ffe2a0);color:#1a1206;font:800 13px Inter;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px';
     r.innerHTML = ri('check', 15, 2.6) + 'REVEAL ANSWER &amp; UNLOCK CHAT'; r.onclick = () => live.send({ t: 'resume' });
@@ -1151,17 +1160,19 @@ function roomQuiz(q) {   // teacher's quiz: no timer, stays on top until everyon
 function qProg(n, of) { RM.prog = [n, of]; document.getElementById('qbar').style.width = (of ? Math.min(100, n / of * 100) : 0) + '%'; document.getElementById('qn').textContent = of ? `${n} of ${of} answered · chat resumes when everyone answers` : 'Waiting for answers'; }
 function roomOn(m) {
   if (m.t === 'state') {
-    RM.role = m.role; RM.room = m.room; RM.streak = m.streak || 0; RM.week = m.week; document.title = m.room.name + ' · MindGains Batch';
+    RM.role = m.role; RM.room = m.room; RM.streak = m.streak || 0; RM.me = m.me || ''; if (m.serverNow) RM.off = m.serverNow - Date.now(); document.title = m.room.name + ' · MindGains Batch';
     if (m.quiz) { RM.pendingQuiz = m.quiz; } m.quiz = null; lockChat(!!m.locked);
     setTimeout(() => { roomHeader(); paintRoomBar(); if (RM.pendingQuiz) { roomQuiz(RM.pendingQuiz); RM.pendingQuiz = null; } }, 0);
     return false;   // seats + chat handled by the hall code
   }
   if (m.t === 'seats') { setTimeout(roomHeader, 0); return false; }
-  if (m.t === 'play') { RM.list = m.list || []; applyPlay({ ...m, got: Date.now() }); return true; }
+  if (m.t === 'play' || m.t === 'sync') { if (m.list) RM.list = m.list; if (m.serverNow) RM.off = m.serverNow - Date.now(); applyPlay(m, false); return true; }
   if (m.t === 'quiz') { roomQuiz(m); return true; }
-  if (m.t === 'qprog') { if (RM.quiz && m.qid === RM.quiz.qid) qProg(m.n, m.of); return true; }
-  if (m.t === 'lock') { lockChat(m.on); return true; }
-  if (m.t === 'reveal') { document.querySelectorAll('#quizc .rqres').forEach((x) => x.remove()); reveal({ ...m, top: [] });
+  if (m.t === 'qprog') { if (RM.quiz && m.qid === RM.quiz.qid) qProg(m.answered, m.total); return true; }
+  if (m.t === 'lock') { lockChat(true); return true; }
+  if (m.t === 'unlock') { lockChat(false); return true; }
+  if (m.t === 'kicked') { live.ws && (live.ws.onclose = null); rsheet('Batch room', 'users', `<p class="hint">${m.why === 'banned' ? 'You were removed from this batch and can\'t rejoin.' : 'The host removed you from the room. You can open the invite link again to rejoin.'}</p><a class="pbtn" href="/play/theatre/" style="text-decoration:none">Go to the main hall</a>`); return true; }
+  if (m.t === 'reveal') { document.querySelectorAll('#quizc .rqres').forEach((x) => x.remove()); clearInterval(qTimer); reveal({ ...m, pct: m.pctRight, top: [] });
     document.getElementById('qk').textContent = boss() ? 'ANSWER REVEALED' : live.picked === m.correct ? 'CORRECT ✦ +20 XP' : live.picked < 0 ? 'NO ANSWER' : 'NOT QUITE';
     RM.quiz = null; return true; }
   if (m.t === 'role') { RM.role = m.role; paintRoomBar(); roomHeader(); flashCard(m.role === 'teacher' ? 'You are now a teacher in this batch' : 'You are a member of this batch'); return true; }
@@ -1198,37 +1209,50 @@ function playlist() {
 }
 function askQuiz() {
   let correct = 0;
-  const { d, close } = rsheet('Ask the batch', 'quiz', `<p class="hint">The video pauses and chat locks for students until everyone answers or you reveal.</p>
+  const { d, close } = rsheet('Ask the batch', 'quiz', `<p class="hint">The video pauses and chat locks for students until everyone answers, you reveal, or time runs out.</p>
+    <div class="row2" style="margin-bottom:10px"><select class="fld" id="rqS" style="text-transform:none;letter-spacing:0;font-weight:500"><option value="">Subject</option></select><select class="fld" id="rqT" style="flex:none;width:96px;text-transform:none;letter-spacing:0;font-weight:500"><option value="30">30 s</option><option value="60" selected>60 s</option><option value="120">2 min</option><option value="300">5 min</option></select></div>
+    <select class="fld" id="rqC"><option value="">Chapter (for everyone's weak-chapters report)</option></select>
     <textarea class="fld" id="rqQ" rows="2" placeholder="Your question"></textarea>
     ${[0, 1, 2, 3].map((i) => `<div class="opt"><input class="fld" data-o="${i}" placeholder="Option ${'ABCD'[i]}${i > 1 ? ' (optional)' : ''}"><button data-c="${i}" class="${i ? '' : 'on'}" aria-label="Mark correct">${ri('check', 18, 2.6)}</button></div>`).join('')}
     <div class="err" id="rqE" hidden></div><button class="pbtn" id="rqGo">${ri('quiz', 15)}Ask now</button>`);
   d.querySelectorAll('[data-c]').forEach((b) => b.onclick = () => { correct = +b.dataset.c; d.querySelectorAll('[data-c]').forEach((x) => x.classList.toggle('on', x === b)); });
   d.querySelector('#rqQ').focus();
+  const nice = (t) => String(t).replace(/\s*Quiz$/i, '').trim(), cap = (x) => x.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+  fetch('chapters.json').then((r) => r.json()).then((j) => { const by = {}; for (const [k, t] of Object.entries(j.titles || {})) { const sub = cap(k.split('/')[1] || 'general'); (by[sub] = by[sub] || []).push(nice(t)); }
+    const sS = d.querySelector('#rqS'), sC = d.querySelector('#rqC');
+    sS.innerHTML = '<option value="">Subject</option>' + Object.keys(by).sort().map((x) => `<option>${esc(x)}</option>`).join('');
+    sS.onchange = () => { sC.innerHTML = '<option value="">Chapter (for everyone\'s weak-chapters report)</option>' + [...new Set(by[sS.value] || [])].sort().map((x) => `<option>${esc(x)}</option>`).join(''); }; }).catch(() => {});
   d.querySelector('#rqGo').onclick = () => {
     const q = d.querySelector('#rqQ').value.trim(), raw = [...d.querySelectorAll('[data-o]')].map((x) => x.value.trim());
     const opts = [], map = {}; raw.forEach((o, i) => { if (o) { map[i] = opts.length; opts.push(o); } });
     const e = d.querySelector('#rqE');
     if (!q || opts.length < 2) { e.hidden = false; e.textContent = 'Write a question and at least two options'; return; }
     if (map[correct] == null) { e.hidden = false; e.textContent = 'The option marked correct is empty'; return; }
-    live.send({ t: 'quiz', q, opts, correct: map[correct] }); close();
+    live.send({ t: 'quiz', q, opts, correct: map[correct], subject: d.querySelector('#rqS').value, chapter: d.querySelector('#rqC').value, seconds: +d.querySelector('#rqT').value }); close();
   };
 }
 function members() {
   const { d } = rsheet('Members', 'users', '<p class="hint">Loading…</p>');
   RM.memSheet = (list) => { if (!document.body.contains(d)) { RM.memSheet = null; return; }
     d.querySelector('.rc').innerHTML = d.querySelector('.rh').outerHTML + list.map((x) => `<div class="li" style="cursor:default"><span class="av">${ri(x.role === 'teacher' ? 'cap' : x.role === 'owner' ? 'crown' : 'users', 18)}</span><div><b><span class="dot${x.on ? ' on' : ''}"></span>${esc(x.name || 'Member')}</b><small>${x.role === 'owner' ? 'Host' : x.role === 'teacher' ? 'Teacher' : 'Member'}</small></div>
-      ${RM.role === 'owner' && x.role !== 'owner' ? `<button class="x" data-t="${esc(x.uid)}" data-off="${x.role === 'teacher' ? 1 : ''}" title="${x.role === 'teacher' ? 'Remove teacher' : 'Make teacher'}" style="${x.role === 'teacher' ? 'color:#a78bfa' : ''}">${ri('cap', 16)}</button><button class="x" data-k="${esc(x.uid)}" title="Remove from batch">${ri('x', 15, 2.4)}</button>` : ''}</div>`).join('');
+      ${RM.role === 'owner' && x.role !== 'owner' ? `<button class="x" data-t="${esc(x.uid)}" data-off="${x.role === 'teacher' ? 1 : ''}" title="${x.role === 'teacher' ? 'Remove teacher' : 'Make teacher'}" style="${x.role === 'teacher' ? 'color:#a78bfa' : ''}">${ri('cap', 16)}</button>` : ''}
+      ${boss() && x.role !== 'owner' && x.uid !== RM.me && (RM.role === 'owner' || x.role === 'member') ? `<button class="x" data-k="${esc(x.uid)}" title="Remove from the room (can rejoin)">${ri('x', 15, 2.4)}</button><button class="x" data-b="${esc(x.uid)}" title="Ban from the batch" style="color:#ff8a8a">${ri('ban', 15)}</button>` : ''}</div>`).join('');
     d.querySelector('.rh button').onclick = () => d.remove();
-    d.querySelectorAll('[data-t]').forEach((b) => b.onclick = () => live.send({ t: 'teacher', uid: b.dataset.t, off: !!b.dataset.off }));
-    d.querySelectorAll('[data-k]').forEach((b) => b.onclick = () => { if (confirm('Remove this member from the batch?')) { live.send({ t: 'kick', uid: b.dataset.k }); b.closest('.li').remove(); } }); };
+    d.querySelectorAll('[data-t]').forEach((b) => b.onclick = () => live.send({ t: b.dataset.off ? 'untteacher' : 'teacher', uid: b.dataset.t }));
+    d.querySelectorAll('[data-k]').forEach((b) => b.onclick = () => { if (confirm('Remove them from the room? They can rejoin with the link.')) live.send({ t: 'kick', uid: b.dataset.k }); });
+    d.querySelectorAll('[data-b]').forEach((b) => b.onclick = () => { if (confirm('Ban them from this batch? They won\'t be able to rejoin.')) live.send({ t: 'ban', uid: b.dataset.b }); }); };
   live.send({ t: 'members' });
 }
-function invite() {
-  const base = location.origin + '/play/theatre/?room=' + RM.room.code, tl = RM.room.tkey ? base + '&tk=' + RM.room.tkey : '';
+async function teacherLink(rotate) {
+  try { const r = await (await fetch('/api/room/' + RM.room.code + '/teacher-link', { method: 'POST', headers: { 'content-type': 'application/json', Authorization: 'Bearer ' + (await account.accessToken()) }, body: JSON.stringify({ rotate: !!rotate }) })).json(); return r.link ? location.origin + r.link : ''; } catch (e) { return ''; }
+}
+async function invite() {
+  const base = location.origin + '/play/theatre/?room=' + RM.room.code, tl = RM.role === 'owner' ? await teacherLink(false) : '';
   const { d } = rsheet('Invite to ' + esc(RM.room.name), 'link', `<p class="hint">Friends and classmates join free with this link (up to 30).${RM.room.ownerPro ? ' Your Pro covers their watch time in this room.' : ''}</p>
     <input class="fld" readonly value="${esc(base)}"><button class="pbtn" data-c="${esc(base)}">${ri('link', 15)}Copy invite link</button>
     <a class="sbtn" style="text-decoration:none" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(`Join our study batch "${RM.room.name}" on MindGains. We watch classes together, chat and quiz each other: ${base}`)}">Share on WhatsApp</a>
-    ${tl ? `<div class="sec">TEACHER LINK</div><p class="hint">Anyone who opens this becomes a teacher: they can play, pause and ask quizzes. Share it only with your teacher.</p><button class="sbtn" data-c="${esc(tl)}">${ri('cap', 15)}Copy teacher link</button>` : ''}`);
+    ${tl ? `<div class="sec">TEACHER LINK</div><p class="hint">Anyone who opens this becomes a teacher: they can play, pause and ask quizzes. Share it only with your teacher.</p><button class="sbtn" data-c="${esc(tl)}" id="tlC">${ri('cap', 15)}Copy teacher link</button><button class="sbtn" id="tlR" style="background:none">${ri('rot', 15)}Make a new teacher link (old one stops working)</button>` : ''}`);
+  const rot = d.querySelector('#tlR'); if (rot) rot.onclick = async () => { if (!confirm('Make a new teacher link? The old one will stop working.')) return; const n = await teacherLink(true); if (n) { d.querySelector('#tlC').dataset.c = n; rot.innerHTML = ri('check', 15, 2.6) + 'New link ready, copy it above'; } };
   d.querySelectorAll('[data-c]').forEach((b) => b.onclick = async () => { try { await navigator.clipboard.writeText(b.dataset.c); } catch (e) {} const t = b.innerHTML; b.innerHTML = ri('check', 15, 2.6) + 'Copied'; setTimeout(() => b.innerHTML = t, 1600); });
 }
 // the Batch rooms hub (from the hall or a room): my batches, create (Pro), join by code
@@ -1238,8 +1262,8 @@ async function batchHub() {
   let r = null; try { r = await (await fetch('/api/room/mine', { headers: { Authorization: 'Bearer ' + (await account.accessToken()) } })).json(); } catch (e) {}
   const rooms = (r && r.rooms) || [], pro = !!(r && r.pro), board = (r && r.board) || [];
   const body = `<p class="hint">Your own private theatre for friends, classmates or a tuition class. Play any YouTube class in sync, chat, ask doubts, and let a teacher pause and quiz everyone.</p>
-    ${rooms.length ? '<div class="sec">MY BATCHES</div>' + rooms.map((x) => `<div class="li" data-go="${x.code}"><span class="av">${ri('users', 18)}</span><div><b>${esc(x.name)}</b><small>${x.members} member${x.members > 1 ? 's' : ''}${x.streak ? ` · ${x.streak}-day streak` : ''}${x.week && x.week.rank ? ` · #${x.week.rank} this week` : ''}</small></div>${x.mine ? '<em>HOST</em>' : ''}</div>`).join('') : ''}
-    ${board.length ? '<div class="sec">TOP BATCHES IN INDIA THIS WEEK</div>' + board.map((b, i) => `<div class="li" style="cursor:default${b.mine ? ';border-color:rgba(243,212,138,.6)' : ''}"><span class="av" style="font:400 20px Bebas Neue">${i + 1}</span><div><b>${esc(b.name)}</b><small>${b.pts.toLocaleString('en-IN')} quiz points</small></div>${b.mine ? '<em>YOURS</em>' : ''}</div>`).join('') : ''}
+    ${rooms.length ? '<div class="sec">MY BATCHES</div>' + rooms.map((x) => `<div class="li" data-go="${x.code}"><span class="av">${ri('users', 18)}</span><div><b>${esc(x.name)}</b><small>${x.members} member${x.members > 1 ? 's' : ''}${x.streak ? ` · ${x.streak}-day streak` : ''}${x.rank ? ` · #${x.rank} this week` : ''}</small></div>${x.mine ? '<em>HOST</em>' : ''}</div>`).join('') : ''}
+    ${board.length ? '<div class="sec">TOP BATCHES IN INDIA THIS WEEK</div><p class="hint" style="margin-top:-4px">Study minutes + correct answers × 2, per member. Batches with 3+ active members.</p>' + board.map((b, i) => `<div class="li" style="cursor:default${b.mine ? ';border-color:rgba(243,212,138,.6)' : ''}"><span class="av" style="font:400 20px Bebas Neue">${i + 1}</span><div><b>${esc(b.name)}</b><small>${b.score.toLocaleString('en-IN')} pts per member</small></div>${b.mine ? '<em>YOURS</em>' : ''}</div>`).join('') : ''}
     <div class="sec">JOIN A BATCH</div><div class="row2"><input class="fld" id="bjC" maxlength="6" placeholder="CODE"><button id="bjGo">JOIN</button></div>
     <div class="sec">CREATE A BATCH</div>
     ${pro ? `<input class="fld" id="bcN" maxlength="40" placeholder="Batch name, e.g. Madurai TNPSC Gang"><div class="err" id="bcE" hidden></div><button class="pbtn" id="bcGo">${ri('plus', 15, 2.6)}Create batch room</button>`
