@@ -578,6 +578,22 @@ function seatedRacer(look) {
     let d = null;
     try { const ch = playerCharacter({ ...loadProfile(), avatar: look[0], color: look[1] }); const m = createKartModel(ch);
       m.parts.head.name = '__head'; d = m.parts.driver; d.parent && d.parent.remove(d); d.position.set(0, 0, 0); d.rotation.set(0, 0, 0); d.scale.setScalar(1); d.updateMatrixWorld(true);
+      // seated pose: the kart's arms reach for a steering wheel that isn't here, so give each racer
+      // relaxed arms (shoulder -> elbow on the armrest -> hand resting forward) and real hands
+      const armM = m.parts.body.children.find((o) => o.isMesh && o.geometry && o.geometry.type === 'CapsuleGeometry');
+      const paint = armM ? armM.material : new THREE.MeshStandardMaterial({ color: ch.color || 0xcc3333, roughness: .6 });
+      const skin = new THREE.MeshStandardMaterial({ color: ch.skin || 0xe0ac7a, roughness: .6 });
+      const limb = (p, q, r, mat) => { const dv = new THREE.Vector3().subVectors(q, p), L = dv.length();
+        const g = new THREE.Mesh(new THREE.CapsuleGeometry(r, Math.max(.01, L - 2 * r * .4), 4, 10), mat);
+        g.position.addVectors(p, q).multiplyScalar(.5); g.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dv.normalize()); d.add(g); };
+      const V = (x, y, z) => new THREE.Vector3(x, y, z);
+      for (const sx of [1, -1]) {
+        const sh = V(sx * .25, .44, .02), el = V(sx * .33, .17, .06), hd = V(sx * .27, .13, .3);
+        limb(sh, el, .068, paint); limb(el, hd, .062, paint);
+        const h = new THREE.Mesh(new THREE.SphereGeometry(.07, 14, 10), skin); h.position.copy(hd).add(V(0, 0, .05)); h.scale.set(.9, .75, 1.1); d.add(h);
+        const t = new THREE.Mesh(new THREE.SphereGeometry(.03, 8, 6), skin); t.position.copy(hd).add(V(-sx * .05, .035, .07)); d.add(t);
+      }
+      d.updateMatrixWorld(true);
       const b = new THREE.Box3().setFromObject(d), s = 1.15 / Math.max(.01, b.max.y - b.min.y); d.scale.setScalar(s); d.userData.lift = -b.min.y * s;
       d.traverse((o) => { if (o.isMesh) { o.castShadow = false; o.receiveShadow = false; } }); } catch (e) {}
     lookCache.set(key, d);
@@ -723,7 +739,7 @@ document.getElementById('mInv').onclick = () => document.getElementById('inv').c
 document.getElementById('mHall').onclick = () => { const b = [...document.querySelectorAll('#halls button')].find((x) => !x.classList.contains('on')); if (b) b.click(); };
 { const t = document.querySelector('.top'), b = t.querySelector('.back'); b.after(document.getElementById('mHall'), document.getElementById('mView')); }
 { const fit = () => document.documentElement.style.setProperty('--topb', document.querySelector('.top').getBoundingClientRect().bottom + 'px'); fit(); addEventListener('resize', fit); }
-window.__th = { showQuiz: (q) => showQuiz(q), addChat: (m) => addChat(m), react: (e) => reactStream(e), soon: (at) => quizSoon(at), setChat: (o) => setChat(o), fly: (v) => fly(v), reveal: (m) => reveal(m), live };
+window.__th = { showQuiz: (q) => showQuiz(q), addChat: (m) => addChat(m), react: (e) => reactStream(e), soon: (at) => quizSoon(at), setChat: (o) => setChat(o), fly: (v) => fly(v), reveal: (m) => reveal(m), live, occ, cam, seatRacer, seats, go: (p, l) => { spot = [new THREE.Vector3(...p), new THREE.Vector3(...l)]; fly('spot'); } };
 document.getElementById('mCap').onclick = () => document.getElementById('ttbtn').click();
 { const order = ['seat', 'wide', 'stage', 'balcony'], name = { seat: 'MY SEAT', wide: 'HALL', stage: 'FRONT ROW', balcony: 'BALCONY' };
   document.getElementById('mView').onclick = () => { const v = order[(order.indexOf(mode) + 1) % order.length]; fly(v); flashCard(name[v]); }; }
