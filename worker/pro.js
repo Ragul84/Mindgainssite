@@ -9,8 +9,8 @@ export const PLANS = {
   exam: { name: 'Exam Pass · 6 months', paise: 39900, days: 182 },
   year: { name: 'Pro Yearly', paise: 59900, days: 365 },
   // Teacher: Pro + big batch rooms for a tuition class (60 students per room, 10 rooms); students' watch time covered
-  tmonth: { name: 'Teacher Monthly', paise: 49900, days: 30, teacher: true },
-  tyear: { name: 'Teacher Yearly', paise: 499900, days: 365, teacher: true },
+  tmonth: { name: 'Teacher Monthly', paise: 29900, days: 30, teacher: true },
+  tyear: { name: 'Teacher Yearly', paise: 299900, days: 365, teacher: true },
 };
 export const ROOM_LIMITS = { pro: { rooms: 2, members: 8 }, teacher: { rooms: 10, members: 60 } };
 export async function teacherUntil(env, uid) {
