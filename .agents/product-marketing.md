@@ -1,10 +1,10 @@
 # Product Marketing Context
 
-**Document version:** v2
+**Document version:** v3
 **Last updated:** 2026-11-18
 
 ## Product Overview
-**Web focus (decision 2026-11-18):** The website markets ONLY the Live Theatre (major hook) and NationLap. Textbook-grounded AI, the question bank, PYQs and current affairs belong to the Android app; mention them only as "also in the app", never as the web headline.
+**Scope (decision 2026-11-18):** mindgains.ai (home page) is the umbrella for ALL MindGains products (Android app with textbook-grounded AI and question bank, NationLap, Live Theatre). Never reposition the home page around one product. Current marketing push = Live Theatre (hook) + NationLap, done on their own pages, ads and social, not by changing the home page.
 **One-liner:** Study with all of India, live: watch classes in a 3D theatre with aspirants across India, then race tonight's NationLap.
 **What it does:** MindGains answers exam questions from the actual textbooks (NCERT, Samacheer Kalvi), gives 160,000+ practice questions with real PYQs and daily current affairs, and turns study into a live, social experience: NationLap (a live quiz race against aspirants across India) and the Live Theatre (a 3D hall where students watch classes together, chat and answer live quizzes). Pro adds Batch rooms, private theatres for friends, classmates or a tuition batch with their own YouTube videos and a teacher who can pause and quiz.
 **Product category:** Government exam preparation app (UPSC / TNPSC / SSC / RRB), "online study room", "study with me".
@@ -103,9 +103,10 @@
 ## Learnings
 | Date | Learning | Evidence | Applies to | Status |
 |------|----------|----------|------------|--------|
-| 2026-11-18 | Web marketing leads with the Live Theatre, then NationLap; AI/question bank is app-only messaging | Founder decision | All web copy, ads, social, SEO | active |
+| 2026-11-18 | Home page stays the umbrella for all products; theatre/NationLap campaigns live on their own pages and channels | Founder correction | Home page, SEO, campaigns | active |
 | 2026-11 | ~90% of users on mobile; design mobile-first | Founder | All | active |
 
 ## Changelog
+- v3 (2026-11-18) — Reverted v2: home page stays umbrella for all products; Theatre + NationLap push happens on their own pages and channels.
 - v2 (2026-11-18) — Repositioned web marketing around Live Theatre (hook) + NationLap; AI answers and question bank moved to app-only messaging.
 - v1 (2026-11-18) — Initial context, auto-drafted from the site, pricing and product.
