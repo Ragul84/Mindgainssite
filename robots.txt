@@ -16,11 +16,20 @@ User-agent: Google-Extended
 Disallow: /
 User-agent: Bytespider
 Disallow: /
-User-agent: PerplexityBot
-Disallow: /
 User-agent: Amazonbot
 Disallow: /
 User-agent: meta-externalagent
 Disallow: /
+
+# AI search and answer engines (cite and link MindGains, no training): allowed, except the banks and API
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+Allow: /
+Disallow: /api/
+Disallow: /assets/quiz-data/
 
 Sitemap: https://mindgains.ai/sitemap.xml

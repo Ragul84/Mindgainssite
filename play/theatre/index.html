@@ -741,10 +741,11 @@ function showWall(kind) {
   const d = document.createElement('div'); d.className = 'wall'; d.id = 'wall';
   d.innerHTML = `<div class="wc"><span class="wk"><i></i>${n} STILL IN THE HALL</span>
     <h2>Your free 30 minutes are up<em>keep your seat all night.</em></h2>
-    <p>The class is still running. Pro gives you <b>unlimited</b> theatre, your <b>weak chapters</b>, and a streak that never dies.</p>
+    <p>You studied 30 minutes today. The class is still running, and Pro gives you <b>unlimited</b> theatre, your <b>weak chapters</b>, and a streak that never dies.</p>
     <a class="wb wb1" href="/pro/?plan=exam&back=${back}">Get the Exam Pass · ₹399<small>6 months · just ₹66 a month</small></a>
     <a class="wb wb2" href="/pro/?plan=month&back=${back}" id="wallM">Pro Monthly · ₹99</a>
     ${signedIn ? '' : '<button class="wb wb2" id="wallS">Already Pro? Sign in</button>'}
+    <div class="wt" style="margin-top:4px;color:#b9b1a4">One-time payment · no auto-debit · 7-day refund</div>
     <div class="wt">Free time comes back in ${untilMidnightIST()} · <a href="/nationlap/">Race instead</a></div></div>`;
   document.body.appendChild(d);
   fetch('/api/pro/me').then((r) => r.json()).then((x) => { if (x.launch) { const a = document.getElementById('wallM'); if (a) a.textContent = 'Pro Monthly · ₹49 first month'; } }).catch(() => {});
