@@ -1,10 +1,11 @@
 # Product Marketing Context
 
-**Document version:** v1
+**Document version:** v2
 **Last updated:** 2026-11-18
 
 ## Product Overview
-**One-liner:** Study with all of India, live: textbook-grounded AI, 160,000+ questions and a 3D study hall for UPSC, TNPSC and SSC.
+**Web focus (decision 2026-11-18):** The website markets ONLY the Live Theatre (major hook) and NationLap. Textbook-grounded AI, the question bank, PYQs and current affairs belong to the Android app; mention them only as "also in the app", never as the web headline.
+**One-liner:** Study with all of India, live: watch classes in a 3D theatre with aspirants across India, then race tonight's NationLap.
 **What it does:** MindGains answers exam questions from the actual textbooks (NCERT, Samacheer Kalvi), gives 160,000+ practice questions with real PYQs and daily current affairs, and turns study into a live, social experience: NationLap (a live quiz race against aspirants across India) and the Live Theatre (a 3D hall where students watch classes together, chat and answer live quizzes). Pro adds Batch rooms, private theatres for friends, classmates or a tuition batch with their own YouTube videos and a teacher who can pause and quiz.
 **Product category:** Government exam preparation app (UPSC / TNPSC / SSC / RRB), "online study room", "study with me".
 **Product type:** B2C web app + Android app (freemium).
@@ -102,7 +103,9 @@
 ## Learnings
 | Date | Learning | Evidence | Applies to | Status |
 |------|----------|----------|------------|--------|
+| 2026-11-18 | Web marketing leads with the Live Theatre, then NationLap; AI/question bank is app-only messaging | Founder decision | All web copy, ads, social, SEO | active |
 | 2026-11 | ~90% of users on mobile; design mobile-first | Founder | All | active |
 
 ## Changelog
+- v2 (2026-11-18) — Repositioned web marketing around Live Theatre (hook) + NationLap; AI answers and question bank moved to app-only messaging.
 - v1 (2026-11-18) — Initial context, auto-drafted from the site, pricing and product.
