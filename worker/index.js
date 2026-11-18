@@ -150,8 +150,25 @@ import { proRoute } from './pro.js';
 import { StudyRoom, roomRoute } from './room.js';
 export { TheatreHall, StudyRoom };
 
+const SEC = {
+  'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
+  'X-Content-Type-Options': 'nosniff',
+  'X-Frame-Options': 'SAMEORIGIN',
+  'Content-Security-Policy': "frame-ancestors 'self'",
+  'Referrer-Policy': 'strict-origin-when-cross-origin',
+  'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), usb=()',
+};
 export default {
   async fetch(request, env) {
+    const res = await route(request, env);
+    if (res.status === 101 || res.webSocket) return res;
+    const out = new Response(res.body, res);
+    for (const [k, v] of Object.entries(SEC)) if (!out.headers.has(k)) out.headers.set(k, v);
+    return out;
+  },
+};
+async function route(request, env) {
+  {
     const { pathname } = new URL(request.url);
     if (pathname === '/api/quiz/round') return round(request, env);
     if (pathname === '/api/quiz/check') return check(request, env);
@@ -162,5 +179,5 @@ export default {
     // The raw bank is for this Worker only.
     if (pathname.startsWith('/assets/quiz-data/')) return new Response('Not found', { status: 404 });
     return env.ASSETS.fetch(request);
-  },
-};
+  }
+}
