@@ -10,6 +10,9 @@ const HEADER = tpl.slice(tpl.indexOf('<header class="hh">'), tpl.indexOf('</head
 const FOOTER = tpl.slice(tpl.indexOf('<footer class="mg-foot">'), tpl.indexOf('</footer>') + 9);
 const SITE = 'https://mindgains.ai';
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const PORUL = {};
+for (const f of fs.readdirSync(path.join(__dirname, 'data')).filter((f) => /^tk-porul-\d+\.txt$/.test(f)))
+  for (const line of fs.readFileSync(path.join(__dirname, 'data', f), 'utf8').split(/\r?\n/)) { const m = line.match(/^(\d+)\|(.+)$/); if (m) PORUL[+m[1]] = m[2].trim(); }
 const K = (n) => kurals[n - 1];
 const chOf = (n) => chapters[Math.ceil(n / 10) - 1];
 // deterministic PRNG so rebuilds produce identical pages
@@ -35,6 +38,10 @@ function qMeaning(k) {
   const opts = shuffle([k, ...pick(sib, 3, [])]);
   return { q: `Which kural does this English translation (G.U. Pope) belong to? <span class="kq en">"${esc(k.pope)}"</span>`, opts: opts.map((x) => x.l1), a: k.l1 };
 }
+function qPorul(k) {
+  const c = chOf(k.n); const sib = kurals.slice(c.s - 1, c.e).filter((x) => x.n !== k.n && PORUL[x.n]);
+  return { q: `இந்தக் குறளின் பொருள் எது? <span class="kq">${esc(k.l1)} / ${esc(k.l2)}</span>`, opts: shuffle([PORUL[k.n], ...pick(sib, 3, []).map((x) => PORUL[x.n])]), a: PORUL[k.n] };
+}
 function quizHTML(qs, title) {
   return `<section class="tkq" aria-label="${esc(title)}"><h2>${esc(title)}</h2><p class="tkq-s"><b class="tkq-sc">0</b> / ${qs.length} சரி</p>
 ${qs.map((x, i) => `<div class="tkq-i"><p class="tkq-q"><b>${i + 1}.</b> ${x.q}</p><div class="tkq-o">${x.opts.map((o) => `<button type="button"${o === x.a ? ' data-c="1"' : ''}>${esc(o)}</button>`).join('')}</div></div>`).join('\n')}
@@ -51,6 +58,7 @@ const CSS = `<style>
 a.kc:hover{border-color:rgba(55,224,255,.5)}
 .kc .kn{font:700 12px Inter;letter-spacing:.08em;color:#37e0ff}.kc .ta{font:600 19px/1.7 'Noto Sans Tamil',Inter,sans-serif;margin:6px 0}
 .kc .tr{font:italic 400 14px/1.5 Inter;color:rgba(255,255,255,.55);margin:0 0 6px}.kc .en{font:400 15px/1.55 Inter;color:rgba(255,255,255,.82)}
+.kc .po{font:500 15.5px/1.7 'Noto Sans Tamil',Inter;color:#fff;margin:4px 0 8px}.kc .po b{color:#f3c86b}
 .kbig .ta{font-size:clamp(22px,4.6vw,28px)}
 .tk h2{font:600 20px Inter;margin:28px 0 12px}
 .chg{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
@@ -103,7 +111,7 @@ ${HEADER}
 <div class="tk">
 ${body}
 <div class="cta"><p><b>Race your friends on Thirukkural.</b> Answer live against aspirants across India in NationLap.</p><a href="/nationlap/">Play NationLap</a></div>
-<p class="src">குறள் மூலம்: பொதுக் களம் (public domain). English translation: Rev. G.U. Pope (1886), public domain.</p>
+<p class="src">குறள் மூலம்: பொதுக் களம் (public domain). தமிழ்ப் பொருள்: MindGains. English translation: Rev. G.U. Pope (1886), public domain.</p>
 </div>
 </main>
 ${FOOTER}
@@ -115,7 +123,7 @@ ${QJS}
 `;
 }
 const out = (rel, html) => { const p = path.join(ROOT, rel, 'index.html'); fs.mkdirSync(path.dirname(p), { recursive: true }); fs.writeFileSync(p, html); };
-const kcard = (k, link, big) => `<${link ? `a href="/thirukkural/kural/${k.n}/"` : 'div'} class="kc${big ? ' kbig' : ''}"><div class="kn">குறள் ${k.n}</div><div class="ta">${esc(k.l1)}<br>${esc(k.l2)}</div><p class="tr">${esc(k.t1)} / ${esc(k.t2)}</p><div class="en">${esc(k.pope)}</div></${link ? 'a' : 'div'}>`;
+const kcard = (k, link, big) => `<${link ? `a href="/thirukkural/kural/${k.n}/"` : 'div'} class="kc${big ? ' kbig' : ''}"><div class="kn">குறள் ${k.n}</div><div class="ta">${esc(k.l1)}<br>${esc(k.l2)}</div><p class="tr">${esc(k.t1)} / ${esc(k.t2)}</p>${PORUL[k.n] ? `<div class="po"><b>பொருள்:</b> ${esc(PORUL[k.n])}</div>` : ''}<div class="en">${esc(k.pope)}</div></${link ? 'a' : 'div'}>`;
 const HUB = ['Home', '/'], TKH = ['திருக்குறள்', '/thirukkural/'];
 const urls = ['/thirukkural/'];
 
@@ -140,7 +148,7 @@ for (const c of chapters) {
   seed = 1000 + c.n;
   const ks = kurals.slice(c.s - 1, c.e);
   const makers = [qBlank, qChapter, qMeaning];
-  const qs = ks.map((k, i) => (i % 3 === 1 ? qMeaning : i % 3 === 2 ? qBlank : (c.n % 2 ? qBlank : qMeaning))(k));
+  const qs = ks.map((k, i) => (i % 3 === 1 ? (PORUL[k.n] ? qPorul : qMeaning) : i % 3 === 2 ? qBlank : (c.n % 2 ? qBlank : qMeaning))(k));
   const prev = chapters[c.n - 2], next = chapters[c.n];
   const url = `/thirukkural/${c.n}/`; urls.push(url);
   out(`thirukkural/${c.n}`, page({ url,
@@ -158,12 +166,12 @@ ${quizHTML(qs, `அதிகாரம் ${c.n} Quiz · ${c.ta}`)}
 for (const k of kurals) {
   seed = 5000 + k.n;
   const c = chOf(k.n);
-  const qs = [qBlank(k), qChapter(k), qMeaning(k)];
+  const qs = PORUL[k.n] ? [qPorul(k), qBlank(k), qChapter(k), qMeaning(k)] : [qBlank(k), qChapter(k), qMeaning(k)];
   const url = `/thirukkural/kural/${k.n}/`; urls.push(url);
   const sib = kurals.slice(c.s - 1, c.e).filter((x) => x.n !== k.n);
   out(`thirukkural/kural/${k.n}`, page({ url,
     title: `திருக்குறள் ${k.n}: ${k.l1.replace(/[.,]$/, '')} – பொருள் & Quiz | Kural ${k.n} Meaning`,
-    desc: `Thirukkural ${k.n} (${c.ta}, adhikaram ${c.n}): ${k.l1} ${k.l2} Meaning in English by G.U. Pope, transliteration and a quick quiz.`,
+    desc: PORUL[k.n] ? `திருக்குறள் ${k.n} பொருள்: ${PORUL[k.n]} ${c.ta} அதிகாரம். English meaning, transliteration & quiz.` : `Thirukkural ${k.n} (${c.ta}, adhikaram ${c.n}): ${k.l1} ${k.l2} Meaning in English by G.U. Pope, transliteration and a quick quiz.`,
     crumbs: [HUB, TKH, [`அதிகாரம் ${c.n}`, `/thirukkural/${c.n}/`], [`குறள் ${k.n}`, url]],
     body: `<h1>திருக்குறள் ${k.n}</h1><p class="sub">அதிகாரம் ${c.n}: <a href="/thirukkural/${c.n}/" style="color:#37e0ff">${esc(c.ta)}</a> (${esc(c.en)}) · ${esc(c.paal.ta)} · ${esc(c.iyal.ta)}</p>
 ${kcard(k, false, true)}
