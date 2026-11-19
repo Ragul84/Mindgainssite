@@ -1,0 +1,34 @@
+<!doctype html><meta charset=utf-8><link rel=stylesheet href=t.css><style>
+.screen{position:absolute;left:30px;right:30px;top:78px;height:44px;border-radius:50% 50% 0 0/100% 100% 0 0;background:linear-gradient(#fff,#cfd8ff);box-shadow:0 18px 60px rgba(160,180,255,.55)}
+.sl{position:absolute;top:128px;width:100%;text-align:center;font:900 11px Nunito;letter-spacing:.3em;color:#b7a7d6}
+.map{position:absolute;left:14px;right:14px;top:156px}
+.r{display:flex;justify-content:center;gap:5px;margin-bottom:7px;align-items:center}
+.r i{font-style:normal;width:18px;font:900 11px Nunito;color:#7d6ba0;text-align:center}
+.s{width:24px;height:22px;border-radius:7px 7px 4px 4px;background:#3b2a5c;border-bottom:3px solid #2a1d43}
+.s.t{background:#6e5aa0;opacity:.55}.s.gap{background:none;border:0;width:10px}
+.s.f{background:url(../../assets/miga/miga-face.png) center/120% #2cb7ec;border-color:#1b7fa8}
+.s.me{background:#ffcf3f;border-color:#b88a00;box-shadow:0 0 0 3px rgba(255,207,63,.35),0 0 18px #ffcf3f}
+.legend{position:absolute;left:16px;right:16px;top:520px;display:flex;gap:12px;justify-content:center;font:800 11.5px Nunito;color:#cbbbe8}
+.legend span::before{content:"";display:inline-block;width:12px;height:11px;border-radius:3px;margin-right:5px;vertical-align:-1px;background:var(--c)}
+.card{position:absolute;left:16px;right:16px;top:560px;border-radius:18px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:12px 14px}
+.card .h{font-size:20px}
+.fr{display:flex;gap:6px;margin-top:8px;align-items:center;font:800 12px Nunito;color:#cbbbe8}
+.fr img{width:26px;height:26px;border-radius:50%;background:#2cb7ec;border:2px solid #1a0b2e}
+.go{position:absolute;left:16px;right:16px;top:690px;background:#ffcf3f;color:#1a0b2e;font-family:'Lilita One';font-size:20px;border-radius:16px;padding:13px;text-align:center;box-shadow:0 5px 0 #b88a00}
+</style><div class=bg></div>
+<div class=top><div class=logo>Polity Hall</div><span class=live>● LIVE 06:12</span></div>
+<div class=screen></div><div class=sl>SCREEN</div>
+<div class=map id=m></div>
+<div class=legend><span style="--c:#3b2a5c">Free</span><span style="--c:#6e5aa0">Taken</span><span style="--c:#2cb7ec">Friends</span><span style="--c:#ffcf3f">You</span></div>
+<div class=card><div class=h>Row C · Seat 7</div><div class=dim style="font:800 12px Nunito">Centre view · near 2 friends · quiz scores show above your seat</div>
+<div class=fr><img src="../../assets/miga/miga-face.png"><img src="../../assets/miga/miga-face.png"> Arun and Priya are in row C</div></div>
+<div class=go>Sit here and enter</div>
+<div class=cap><b>2 · Pick a real seat</b>Live seat map: taken seats fill in as people join. Sit next to friends; front rows unlock with your streak.</div>
+<script>
+const m=document.getElementById('m');const rows='ABCDEFGHIJ';let seed=7;const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
+for(let r=0;r<10;r++){const d=document.createElement('div');d.className='r';d.innerHTML='<i>'+rows[r]+'</i>';
+ for(let c=1;c<=12;c++){if(c===7&&0){}const s=document.createElement('div');s.className='s';
+  if(c===4||c===10){const g=document.createElement('div');g.className='s gap';d.appendChild(g)}
+  if(r===2&&c===7)s.className='s me';else if(r===2&&(c===5||c===9))s.className='s f';else if(rnd()<.55)s.className='s t';
+  d.appendChild(s)}m.appendChild(d)}
+</script>

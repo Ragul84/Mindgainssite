@@ -1,0 +1,47 @@
+<!doctype html><meta charset=utf-8><link rel=stylesheet href=t.css><style>
+.hall{position:absolute;inset:0;background:radial-gradient(90% 40% at 50% 22%,#2a2560 0%,#120a26 55%,#07040f 100%)}
+.scr{position:absolute;left:18px;right:18px;top:58px;height:200px;border-radius:10px;background:url(../../assets/miga/miga-companion-scene.png) center/cover;box-shadow:0 0 0 3px #1c1638,0 0 70px rgba(130,150,255,.55)}
+.scr::after{content:"";position:absolute;inset:0;border-radius:10px;background:linear-gradient(transparent 60%,rgba(0,0,0,.7))}
+.sub{position:absolute;left:30px;right:30px;top:226px;text-align:center;font:900 13px Nunito;z-index:2;text-shadow:0 2px 4px #000}
+.beam{position:absolute;left:150px;top:250px;width:90px;height:120px;background:linear-gradient(rgba(150,170,255,.18),transparent);clip-path:polygon(40% 0,60% 0,100% 100%,0 100%)}
+.angles{position:absolute;left:18px;right:18px;top:266px;display:flex;gap:6px}
+.angles span{flex:1;text-align:center;border-radius:10px;padding:6px 0;background:rgba(255,255,255,.08);font:900 11px Nunito;border:1px solid rgba(255,255,255,.12)}
+.angles span.on{background:#ffcf3f;color:#1a0b2e}
+.aud{position:absolute;left:0;right:0;top:304px;height:120px}
+.head{position:absolute;width:30px;height:30px;border-radius:50% 50% 40% 40%;background:#251b40;box-shadow:0 8px 0 4px #1b1330}
+.head.me{background:#ffcf3f}
+.tag{position:absolute;font:900 10px Nunito;background:#3ddc84;color:#06240f;border-radius:6px;padding:1px 5px}
+.emo{position:absolute;font-size:20px}
+.quiz{position:absolute;left:14px;right:14px;top:420px;border-radius:20px;background:#fff;color:#1a0b2e;padding:12px 14px 14px;box-shadow:0 10px 40px rgba(0,0,0,.5)}
+.quiz .q{display:flex;gap:10px;align-items:center}.quiz img{width:48px;height:48px;border-radius:50%;background:#e8f7ff}
+.quiz .h{font-size:17px;line-height:1.15}.quiz small{font:900 11px Nunito;color:#8b5cf6;letter-spacing:.06em}
+.ops{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:10px}.ops div{border:2px solid #e6e0f2;border-radius:12px;padding:8px;font:900 13px Nunito;text-align:center}
+.ops div.sel{border-color:#8b5cf6;background:#f3edff}
+.bar{height:6px;border-radius:3px;background:#eee;margin-top:10px;overflow:hidden}.bar i{display:block;width:62%;height:100%;background:linear-gradient(90deg,#ff2d55,#ffcf3f)}
+.cnt{display:flex;justify-content:space-between;font:800 11px Nunito;color:#6b5b8a;margin-top:5px}
+.lb{position:absolute;left:14px;right:14px;top:640px;border-radius:16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,207,63,.4);padding:8px 12px}
+.lb .h{font-size:14px;color:#ffcf3f}
+.lr{display:flex;justify-content:space-between;font:900 12.5px Nunito;padding:2px 0}.lr span:last-child{color:#7ef0a8}
+.chat{position:absolute;left:14px;right:14px;top:762px;display:flex;gap:6px;font:800 11.5px Nunito;color:#cbbbe8;white-space:nowrap;overflow:hidden}
+.chat span{background:rgba(255,255,255,.08);border-radius:99px;padding:4px 9px}
+</style><div class=hall></div>
+<div class=top><div class=logo style="font-size:17px">The Preamble, line by line</div><span class=pill>⛶ Full screen</span></div>
+<div class=scr></div><div class=sub>"We, the people of India…" — sovereignty rests with the people</div>
+<div class=beam></div>
+<div class=angles><span class=on>🎬 Screen</span><span>💺 My seat</span><span>🎭 Stage</span><span>👥 Crowd</span></div>
+<div class=aud id=a></div>
+<div class=quiz><div class=q><img src="../../assets/miga/miga-face.png"><div><small>MIGA POP QUIZ · FROM THIS SCENE</small><div class=h>Where does sovereignty rest, as the Preamble begins?</div></div></div>
+<div class=ops><div>Parliament</div><div class=sel>The people</div><div>The President</div><div>The Constitution</div></div>
+<div class=bar><i></i></div><div class=cnt><span>⏱ 6 s left</span><span>812 of 1,284 answered</span></div></div>
+<div class=lb><div class=h>🏆 This show's top 5</div>
+<div class=lr><span>1. Kavya · Row A</span><span>9/9 · 41 s</span></div>
+<div class=lr><span>2. Arun · Row C</span><span>9/9 · 47 s</span></div>
+<div class=lr><span>3. You · Row C</span><span>8/9</span></div></div>
+<div class=chat><span>Priya: 🔥 got it</span><span>Ravi: Preamble ≠ enforceable?</span><span>🎉 312 answered right</span></div>
+<script>
+const a=document.getElementById('a');const pos=[[20,14],[60,10],[100,16],[140,8],[180,14],[220,9],[260,15],[300,10],[340,14],[40,58],[85,52],[130,60],[175,54],[220,58],[265,52],[310,58],[355,54]];
+pos.forEach(([x,y],i)=>{const h=document.createElement('div');h.className='head'+(i===12?' me':'');h.style.left=x+'px';h.style.top=y+'px';a.appendChild(h)});
+[['✔ 9/9',96,0],['✔',212,2],['A 1st',58,44]].forEach(([t,x,y])=>{const g=document.createElement('div');g.className='tag';g.textContent=t;g.style.left=x+'px';g.style.top=y+'px';a.appendChild(g)});
+[['🔥',150,-18],['👏',250,-22],['🤯',40,30],['💡',330,26]].forEach(([e,x,y])=>{const g=document.createElement('div');g.className='emo';g.textContent=e;g.style.left=x+'px';g.style.top=y+'px';a.appendChild(g)});
+</script>
+<div class=cap style="bottom:auto;top:800px;padding:6px 12px"><b style="font-size:13px">3 · Watch together, MIGA quizzes the scene, top 5 for everyone</b></div>
