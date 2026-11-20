@@ -62,7 +62,7 @@ const CSS = `<style>
 a.kc:hover{transform:translateY(-2px);border-color:rgba(16,185,129,.35);box-shadow:0 2px 4px rgba(13,27,42,.05),0 18px 36px -18px rgba(13,27,42,.22)}
 .kc .kn{grid-row:1/span 5;align-self:start;display:flex;flex-direction:column;align-items:center;justify-content:center;width:64px;height:64px;border-radius:18px;background:linear-gradient(160deg,#ecfdf5,#d1fae5);color:#047857;font:800 22px/1 'Inter Tight',Inter;letter-spacing:-.02em}
 .kc .kn small{font:700 11px "Noto Sans Tamil",Inter;letter-spacing:0;color:#059669;margin-bottom:4px}
-.kc .ta{font:600 21px/1.75 'Noto Serif Tamil','Noto Sans Tamil',serif;color:#0b1320;margin:0 0 6px;letter-spacing:.005em}
+.kc .ta{font:600 21px/1.75 'Noto Serif Tamil','Noto Sans Tamil',serif;color:#0b1320;margin:4px 0 20px;text-align:center;letter-spacing:.005em}
 .kc .tr{font:400 13px/1.55 Inter;color:#94a3b8;margin:0 0 18px;letter-spacing:.01em}
 .kc .po{margin:0 0 14px;padding:0 0 0 16px;border-left:3px solid #10b981;font:500 16.5px/1.85 'Noto Sans Tamil',Inter;color:#1e293b}
 .kc .lbl{display:block;font:700 10.5px Inter;letter-spacing:.14em;text-transform:uppercase;color:#059669;margin:0 0 4px}.kc .po .lbl{font:700 13px "Noto Sans Tamil",Inter;letter-spacing:0;text-transform:none}
@@ -143,7 +143,7 @@ ${QJS}
 const out = (rel, html) => { const p = path.join(ROOT, rel, 'index.html'); fs.mkdirSync(path.dirname(p), { recursive: true }); fs.writeFileSync(p, html); };
 const pope = (t) => esc(t).replace(/([a-z,;:!?])(?=[A-Z])/g, '$1<br>').replace(/-(?=[A-Z])/g, ' – ');
 const ARROW = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
-const kcard = (k, link, big) => `<${link ? `a href="/thirukkural/kural/${k.n}/"` : 'article'} class="kc${big ? ' kbig' : ''}"><div class="kn"><small>குறள்</small>${k.n}</div><div class="ta">${esc(k.l1)}<br>${esc(k.l2)}</div><div class="tr">${esc(k.t1)} · ${esc(k.t2)}</div>${PORUL[k.n] ? `<div class="po"><span class="lbl">பொருள்</span>${esc(PORUL[k.n])}</div>` : ''}<div class="en"><span class="lbl">English · G.U. Pope</span>${pope(k.pope)}</div>${link ? `<span class="go">${ARROW}</span>` : ''}</${link ? 'a' : 'article'}>`;
+const kcard = (k, link, big) => `<${link ? `a href="/thirukkural/kural/${k.n}/"` : 'article'} class="kc${big ? ' kbig' : ''}"><div class="kn"><small>குறள்</small>${k.n}</div><div class="ta">“${esc(k.l1)}<br>${esc(k.l2)}”</div>${PORUL[k.n] ? `<div class="po"><span class="lbl">பொருள்</span>${esc(PORUL[k.n])}</div>` : ''}<div class="en"><span class="lbl">English · G.U. Pope</span>${pope(k.pope)}</div>${link ? `<span class="go">${ARROW}</span>` : ''}</${link ? 'a' : 'article'}>`;
 const HUB = ['Home', '/'], TKH = ['திருக்குறள்', '/thirukkural/'];
 const urls = ['/thirukkural/'];
 

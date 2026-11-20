@@ -134,8 +134,10 @@
     if (!btn) {
       btn = document.createElement('button');
       btn.innerHTML = '<span></span><span></span><span></span>';
-      var cta = header.querySelector('.nav-cta, .button.primary, .btn.sm');
-      if (cta && cta.parentNode) cta.parentNode.insertBefore(btn, cta);
+      // Menu icon goes last, after the "Get the app" button.
+      var ctas = header.querySelectorAll('.nav-cta, .button.primary, .btn.sm');
+      var cta = ctas[ctas.length - 1];
+      if (cta && cta.parentNode) cta.parentNode.insertBefore(btn, cta.nextSibling);
       else header.appendChild(btn);
     }
     btn.classList.add('mg-navtoggle');
@@ -153,6 +155,9 @@
       c.textContent = (a.textContent || '').trim();
       if (c.textContent) panel.appendChild(c);
     });
+    // The gold Pro button is hidden in the bar on phones; offer it inside the menu instead.
+    var pro = header.querySelector('a.gold-cta[href^="/pro"]');
+    if (pro) { var pc = document.createElement('a'); pc.href = pro.getAttribute('href'); pc.textContent = 'Go Pro'; pc.style.fontWeight = '800'; pc.style.color = '#b7791f'; panel.appendChild(pc); }
     btn.setAttribute('aria-controls', panel.id);
     // Appended to the header, not beside the button: the header is the element carrying
     // position:relative, so the panel's top/left/right resolve against the bar itself even on
