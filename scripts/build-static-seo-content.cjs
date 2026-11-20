@@ -41,21 +41,23 @@ function replaceBlock(html, start, end, content, anchor) {
   if (position < 0) throw new Error(`Anchor not found: ${anchor}`);
   return html.slice(0, position) + content + html.slice(position);
 }
-function previewMarkup(item) {
-  const preview = item.questions.slice(0, 5);
+// 25 questions on the topic page; the /mcq-questions/ page shows the next 25 so the two pages are not duplicates.
+const PREVIEW_N = 25;
+function previewMarkup(item, from = 0) {
+  const preview = item.questions.slice(from, from + PREVIEW_N);
   return `<!-- MG_STATIC_PREVIEW_START -->
 <section class="mg-seo-study" aria-labelledby="mg-study-title">
   <p class="mg-seo-kicker">${esc(item.examName)} ${esc(item.subjectName)} practice</p>
   <h2 id="mg-study-title">${esc(item.topic)} MCQs with answers</h2>
   <p>Use these ${preview.length} worked ${esc(item.topic)} questions to revise the ${esc(item.examName)} ${esc(item.subjectName)} syllabus. Each answer includes an explanation; the full practice set contains ${item.questions.length.toLocaleString('en-IN')} questions.</p>
-  <div class="mg-seo-questions">${preview.map((q, index) => `<article class="mg-seo-question"><h3>${index + 1}. ${esc(q.question)}</h3><ol type="A">${(q.options || []).map((option) => `<li>${esc(option)}</li>`).join('')}</ol><p><strong>Answer:</strong> ${esc((q.options || [])[q.answer_index] || 'See explanation')}</p>${q.explanation ? `<p><strong>Explanation:</strong> ${escLines(q.explanation)}</p>` : ''}</article>`).join('')}</div>
+  <div class="mg-seo-questions">${preview.map((q, index) => `<article class="mg-seo-question"><h3>${from + index + 1}. ${esc(q.question)}</h3><ol type="A">${(q.options || []).map((option) => `<li>${esc(option)}</li>`).join('')}</ol><p><strong>Answer:</strong> ${esc((q.options || [])[q.answer_index] || 'See explanation')}</p>${q.explanation ? `<p><strong>Explanation:</strong> ${escLines(q.explanation)}</p>` : ''}</article>`).join('')}</div>
   <p class="mg-seo-note">Start the interactive quiz below to practise every question in a shuffled order.</p>
 </section>
 <!-- MG_STATIC_PREVIEW_END -->
 `;
 }
 function schemaMarkup(item) {
-  const questions = item.questions.slice(0, 5).map((q) => ({
+  const questions = item.questions.slice(0, 10).map((q) => ({
     '@type': 'Question', name: q.question,
     acceptedAnswer: { '@type': 'Answer', text: (q.options || [])[q.answer_index] || q.explanation || '' },
   }));
@@ -77,7 +79,7 @@ function mcqPage(item) {
   const url = `${SITE}/${item.exam}/${item.subject}/${item.topicSlug}/mcq-questions/`;
   const title = `${item.topic} MCQ Questions for ${item.examName} with Answers | MindGains`;
   const description = `Practice ${item.questions.length.toLocaleString('en-IN')} ${item.topic} MCQ questions for ${item.examName} ${item.subjectName}, with answers and explanations.`;
-  const body = previewMarkup(item).replace('<!-- MG_STATIC_PREVIEW_START -->', '').replace('<!-- MG_STATIC_PREVIEW_END -->', '');
+  const body = previewMarkup(item, item.questions.length > PREVIEW_N ? PREVIEW_N : 0).replace('<!-- MG_STATIC_PREVIEW_START -->', '').replace('<!-- MG_STATIC_PREVIEW_END -->', '');
   const schema = schemaMarkup(item).replace('<!-- MG_LEARNING_SCHEMA_START -->', '').replace('<!-- MG_LEARNING_SCHEMA_END -->', '');
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="${url}"><meta property="og:type" content="website"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${url}"><meta name="twitter:card" content="summary_large_image"><link rel="stylesheet" href="/assets/quiz-hub.css">${styleMarkup()}${schema}</head><body><header class="site-nav"><a class="brand" href="/">MindGains</a><nav><a href="/quiz/">Quiz Hub</a><a href="/${item.exam}/${item.subject}/${item.topicSlug}/">Interactive quiz</a></nav></header><main><section class="topic-hero"><p class="eyebrow">${esc(item.examName)} · ${esc(item.subjectName)}</p><h1>${esc(item.topic)} MCQ Questions</h1><p>${esc(description)}</p></section>${body}<section class="app-bridge"><h2>Practise the complete set</h2><p>Take the full ${item.questions.length.toLocaleString('en-IN')}-question ${esc(item.topic)} quiz in a shuffled, interactive format.</p><a class="start" href="/${item.exam}/${item.subject}/${item.topicSlug}/">Start ${esc(item.topic)} quiz</a></section></main></body></html>`;
 }
@@ -181,5 +183,5 @@ for (const dataFile of readJsonFiles(DATA_ROOT)) {
   mcqCreated++;
 }
 for (const cluster of CLUSTER_BANKS) addClusterLink(cluster);
-updateSitemap(sitemapUrls);
+if (process.env.MG_SITEMAP === '1') updateSitemap(sitemapUrls);   // off by default: other builders own marked sitemap blocks
 console.log(JSON.stringify({ canonicalUpdated, mcqCreated, skipped, sitemapUrls: sitemapUrls.length, pyqPages: 0, note: 'PYQ pages skipped because current local banks have no verified year/source metadata.' }, null, 2));
