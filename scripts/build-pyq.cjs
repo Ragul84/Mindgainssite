@@ -101,7 +101,7 @@ for (const y of years) {
   const up = Q.filter((q) => q.exam === 'upsc'), uy = [...new Set(up.map((q) => q.year))].sort((a, b) => b - a), url = '/pyq/upsc/'; urls.push(url);
   let i = 0;
   const body = hero('UPSC Prelims', 'UPSC Prelims Previous Year Questions (GS Paper I)', `${up.length} UPSC prelims General Studies questions from ${uy[uy.length - 1]}–${uy[0]}, by year. Tap an option to check your answer.`, [`${up.length} questions`, `${uy[uy.length - 1]}–${uy[0]}`, 'GS Paper I']) +
-    uy.map((y) => { const ys = up.filter((q) => q.year === y); return `<h2>UPSC ${y}</h2><p class="sec-n">${ys.length} questions</p>` + ys.map((q) => qcard(q, ++i)).join(''); }).join('') + NOTE +
+    uy.map((y) => { const ys = up.filter((q) => q.year === y); return `<h2>UPSC ${y}</h2><p class="sec-n">${ys.length} questions${ys.some((q) => /MindGains/.test(q.paper)) ? ' · answers by MindGains (UPSC no longer publishes this key)' : ys.every((q) => /official/.test(q.paper)) ? ' · official UPSC answer key' : ''}</p>` + ys.map((q) => qcard(q, ++i)).join(''); }).join('') + NOTE +
     `<h2>TNPSC by year</h2><div class="yr">${years.map((x) => `<a href="/pyq/tnpsc/${x}/"><b>${x}</b><small>TNPSC · ${tn.filter((q) => q.year === x).length} questions</small></a>`).join('')}</div>`;
   out('pyq/upsc', page({ url, title: `UPSC Prelims Previous Year Questions ${uy[uy.length - 1]}–${uy[0]} with Answers | MindGains`,
     desc: `UPSC prelims GS Paper I previous year questions ${uy[uy.length - 1]}–${uy[0]} with answers, year by year. Free, tap to check each answer.`,
