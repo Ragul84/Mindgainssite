@@ -49,8 +49,8 @@ function qPorul(k) {
 }
 function quizHTML(qs, title) {
   return `<section class="tkq mg-seo-study" aria-label="${esc(title)}"><p class="mg-seo-kicker">Quiz</p><h2>${esc(title)}</h2><p class="tkq-s"><b class="tkq-sc">0</b> / ${qs.length} சரி</p><div class="mg-seo-questions">
-${qs.map((x, i) => `<article class="tkq-i mg-seo-question"><h3><b>${i + 1}.</b> ${x.q}</h3><div class="tkq-o">${x.opts.map((o) => `<button type="button"${o === x.a ? ' data-c="1"' : ''}>${esc(o)}</button>`).join('')}</div></div>`).join('\n')}
-</section>`;
+${qs.map((x, i) => `<article class="tkq-i mg-seo-question"><h3><b>${i + 1}.</b> ${x.q}</h3><div class="tkq-o">${x.opts.map((o) => `<button type="button"${o === x.a ? ' data-c="1"' : ''}>${esc(o)}</button>`).join('')}</div></article>`).join('\n')}
+</div></section>`;
 }
 const QJS = `<script>document.querySelectorAll('.tkq').forEach(function(s){var sc=s.querySelector('.tkq-sc'),n=0;s.querySelectorAll('.tkq-i').forEach(function(it){it.querySelectorAll('button').forEach(function(b){b.onclick=function(){if(it.dataset.d)return;it.dataset.d=1;var ok=b.dataset.c;b.classList.add(ok?'ok':'no');if(!ok){var c=it.querySelector('[data-c]');c&&c.classList.add('ok')}else{sc.textContent=++n}}})})})</script>`;
 
@@ -66,6 +66,9 @@ a.kc:hover{border-color:rgba(13,27,42,.25)!important}
 .kc .en{font:400 14.5px/1.55 Inter;color:#475569}
 .kbig .ta{font-size:clamp(21px,4.4vw,26px)}
 .tk h2{font:700 22px/1.3 'Inter Tight',Inter;color:#0d1b2a;margin:30px 0 12px}
+.paal{margin:40px 0 0!important;padding-top:28px!important;border-top:1px solid rgba(13,27,42,.1)}
+.paal:first-of-type{border-top:0;padding-top:0!important}
+.tk .paal-h{margin:4px 0 16px!important;font:800 clamp(26px,4vw,34px)/1.2 'Inter Tight',Inter!important;color:#0d1b2a}.paal-h span{color:#64748b;font-weight:600}
 .chg{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
 .chg a{display:block;padding:13px 15px;border-radius:14px;border:1px solid rgba(13,27,42,.08);background:#fff;color:#0d1b2a;text-decoration:none;font:500 13px/1.45 Inter}
 .chg a:hover{border-color:rgba(13,27,42,.25)}
@@ -131,15 +134,14 @@ const urls = ['/thirukkural/'];
 // ---- hub
 {
   const groups = [1, 2, 3].map((p) => { const cs = chapters.filter((c) => c.paal.n === p); const pp = cs[0].paal;
-    return `<h2>${esc(pp.ta)} · ${esc(pp.en)} <small style="font-weight:400;color:rgba(255,255,255,.5)">(அதிகாரம் ${cs[0].n}–${cs[cs.length - 1].n})</small></h2><div class="chg">${cs.map((c) => `<a href="/thirukkural/${c.n}/"><small>அதிகாரம் ${c.n}</small><b>${esc(c.ta)}</b><small>${esc(c.en)}</small></a>`).join('')}</div>`; }).join('\n');
+    return `<section class="paal"><p class="mg-seo-kicker">பால் ${p} · அதிகாரம் ${cs[0].n}–${cs[cs.length - 1].n} · குறள் ${cs[0].s}–${cs[cs.length - 1].e}</p><h2 class="paal-h">${esc(pp.ta)} <span>${esc(pp.en)}</span></h2><div class="chg">${cs.map((c) => `<a href="/thirukkural/${c.n}/"><small>அதிகாரம் ${c.n}</small><b>${esc(c.ta)}</b><small>${esc(c.en)}</small></a>`).join('')}</div>`; }).join('\n');
   seed = 7;
   const qs = [1, 100, 391, 423, 1].slice(0, 4).map((n, i) => [qChapter, qMeaning, qBlank, qChapter][i](K(n)));
   out('thirukkural', page({ url: '/thirukkural/', title: 'திருக்குறள் 1330 குறள்கள் பொருளுடன் & Quiz | Thirukkural All Kurals with Meaning | MindGains',
     desc: 'All 1330 Thirukkural kurals in 133 adhikarams with English meaning (G.U. Pope), transliteration and a free quiz for every chapter. Practice for TNPSC Tamil.',
     crumbs: [HUB, TKH],
     body: `<h1>திருக்குறள் · Thirukkural</h1><p class="sub">திருவள்ளுவர் இயற்றிய 1330 குறள்கள், 133 அதிகாரங்கள், மூன்று பால்கள். Every kural with transliteration and English translation, and a quiz for every adhikaram. Useful for TNPSC Group 1, 2 and 4 Tamil.</p>
-<div class="meta"><span>1330 குறள்கள்</span><span>133 அதிகாரங்கள்</span><span>அறம் · பொருள் · இன்பம்</span><span>Free quiz</span></div>
-${quizHTML(qs, 'Quick Thirukkural quiz')}
+<div class="meta"><span>1330 குறள்கள்</span><span>133 அதிகாரங்கள்</span><span>அறம் · பொருள் · இன்பம்</span><span>ஒவ்வொரு அதிகாரத்திற்கும் quiz</span></div>
 ${groups}`,
     extraLd: [{ '@context': 'https://schema.org', '@type': 'Book', name: 'திருக்குறள் (Thirukkural)', author: { '@type': 'Person', name: 'திருவள்ளுவர் (Thiruvalluvar)' }, inLanguage: 'ta', url: SITE + '/thirukkural/' }] }));
 }
