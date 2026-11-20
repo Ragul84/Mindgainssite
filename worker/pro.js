@@ -114,9 +114,66 @@ async function activate(env, orderId, paymentId) {
 async function launchPrice(env, uid) {
   try {
     if (uid && await env.GAME_DB.prepare("SELECT 1 FROM pro_pay WHERE uid = ?1 AND status = 'paid' LIMIT 1").bind(uid).first()) return false;
-    const n = await env.GAME_DB.prepare('SELECT COUNT(*) AS n FROM pro_sub').first();
+    const n = await env.GAME_DB.prepare("SELECT COUNT(*) AS n FROM pro_sub WHERE plan != 'ref'").first();
     return (n ? n.n : 0) < LAUNCH.seats;
   } catch { return false; }
+}
+
+
+// ---- refer-a-friend: every 5 brand-new friends who sign in through your link = 3 days of Pro
+export const REF = { need: 5, days: 3, maxPer30d: 6 };
+const RCH = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+async function refCode(env, uid) {
+  const r = await env.GAME_DB.prepare('SELECT code FROM ref_code WHERE uid = ?1').bind(uid).first();
+  if (r) return r.code;
+  for (let i = 0; i < 5; i++) {
+    const b = crypto.getRandomValues(new Uint8Array(6)); const code = [...b].map((x) => RCH[x % RCH.length]).join('');
+    try { await env.GAME_DB.prepare('INSERT INTO ref_code (uid, code, at) VALUES (?1, ?2, ?3)').bind(uid, code, Date.now()).run(); return code; } catch {}
+  }
+  return '';
+}
+async function refStatus(env, uid) {
+  const code = await refCode(env, uid);
+  const p = await env.GAME_DB.prepare('SELECT COUNT(*) AS n FROM ref_join WHERE referrer = ?1 AND rewarded = 0').bind(uid).first();
+  const t = await env.GAME_DB.prepare('SELECT COUNT(*) AS n FROM ref_join WHERE referrer = ?1').bind(uid).first();
+  const w = await env.GAME_DB.prepare('SELECT COUNT(*) AS n, COALESCE(SUM(days),0) AS d FROM ref_reward WHERE uid = ?1').bind(uid).first();
+  return { code, link: 'https://mindgains.ai/play/theatre/?ref=' + code, pending: p ? p.n : 0, total: t ? t.n : 0, rewards: w ? w.n : 0, daysEarned: w ? w.d : 0, need: REF.need, days: REF.days };
+}
+async function isNewUser(env, uid) {
+  const today = istDay();
+  const q = [
+    env.GAME_DB.prepare('SELECT 1 FROM watch_day WHERE who = ?1 AND day < ?2 LIMIT 1').bind('u:' + uid, today),
+    env.GAME_DB.prepare('SELECT 1 FROM quiz_hist WHERE uid = ?1 AND at < ?2 LIMIT 1').bind(uid, Date.now() - 864e5),
+    env.GAME_DB.prepare('SELECT 1 FROM pro_sub WHERE uid = ?1 LIMIT 1').bind(uid),
+    env.GAME_DB.prepare('SELECT 1 FROM ref_code WHERE uid = ?1 AND at < ?2 LIMIT 1').bind(uid, Date.now() - 864e5),
+  ];
+  for (const s of q) { try { if (await s.first()) return false; } catch {} }
+  return true;
+}
+async function refClaim(env, uid, code) {
+  code = String(code || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 8);
+  if (!code) return { ok: false, why: 'code' };
+  const r = await env.GAME_DB.prepare('SELECT uid FROM ref_code WHERE code = ?1').bind(code).first();
+  if (!r || r.uid === uid) return { ok: false, why: 'self' };
+  if (await env.GAME_DB.prepare('SELECT 1 FROM ref_join WHERE invitee = ?1').bind(uid).first()) return { ok: false, why: 'used' };
+  if (!(await isNewUser(env, uid))) return { ok: false, why: 'not-new' };
+  const now = Date.now(), ref = r.uid;
+  await env.GAME_DB.prepare('INSERT OR IGNORE INTO ref_join (invitee, referrer, at) VALUES (?1, ?2, ?3)').bind(uid, ref, now).run();
+  const p = await env.GAME_DB.prepare('SELECT COUNT(*) AS n FROM ref_join WHERE referrer = ?1 AND rewarded = 0').bind(ref).first();
+  if (p && p.n >= REF.need) {
+    const recent = await env.GAME_DB.prepare('SELECT COUNT(*) AS n FROM ref_reward WHERE uid = ?1 AND at > ?2').bind(ref, now - 30 * 864e5).first();
+    if (!recent || recent.n < REF.maxPer30d) {
+      const ids = (await env.GAME_DB.prepare('SELECT invitee FROM ref_join WHERE referrer = ?1 AND rewarded = 0 ORDER BY at LIMIT ?2').bind(ref, REF.need).all()).results.map((x) => x.invitee);
+      const cur = await env.GAME_DB.prepare('SELECT until FROM pro_sub WHERE uid = ?1').bind(ref).first();
+      const until = Math.max(now, cur ? cur.until : 0) + REF.days * 864e5;
+      await env.GAME_DB.batch([
+        ...ids.map((i) => env.GAME_DB.prepare('UPDATE ref_join SET rewarded = 1 WHERE invitee = ?1').bind(i)),
+        env.GAME_DB.prepare("INSERT INTO pro_sub (uid, plan, until, at) VALUES (?1, 'ref', ?2, ?3) ON CONFLICT(uid) DO UPDATE SET until = MAX(pro_sub.until, ?3) + ?4").bind(ref, until, now, REF.days * 864e5),
+        env.GAME_DB.prepare('INSERT INTO ref_reward (uid, at, days) VALUES (?1, ?2, ?3)').bind(ref, now, REF.days),
+      ]);
+    }
+  }
+  return { ok: true };
 }
 
 export async function proRoute(request, env, pathname) {
@@ -134,6 +191,12 @@ export async function proRoute(request, env, pathname) {
   }
 
   const uid = await verifyUser(bearer(request));
+  if (pathname === '/api/pro/ref') { if (!uid) return J({ error: 'signin' }, 401); return J(await refStatus(env, uid)); }
+  if (pathname === '/api/pro/ref/claim' && request.method === 'POST') {
+    if (!uid) return J({ error: 'signin' }, 401);
+    let b = {}; try { b = await request.json(); } catch {}
+    try { return J(await refClaim(env, uid, b.code)); } catch (e) { return J({ ok: false, why: 'err' }); }
+  }
   if (pathname === '/api/pro/me') {
     const pid = String(new URL(request.url).searchParams.get('pid') || '').slice(0, 40);
     const until = await proUntil(env, uid), w = await watchedToday(env, uid ? 'u:' + uid : pid ? 'p:' + pid : '');

@@ -341,7 +341,7 @@ body.quizon:not(.room) .chat{visibility:hidden!important}@media (max-width:760px
   <button class="inv rcb" id="rmb" type="button"><span class="il"><svg class="ico" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg> BATCH ROOMS</span> <b>new</b></button>
   <button class="inv rcb" id="rpb" type="button"><span class="il"><svg class="ico" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg> MY WEAK CHAPTERS</span> <b>report</b></button>
   <button class="inv rcb" id="rcb" type="button"><span class="il"><svg class="ico" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8M12 17.5v-11"/></svg> MY STUDY RECEIPT</span> <b>share</b></button>
-  <button class="inv" id="inv" type="button"><span class="il"><svg class="ico" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg> INVITE A FRIEND</span> <b>+150 PTS per friend</b></button>
+  <button class="inv" id="inv" type="button"><span class="il"><svg class="ico" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg> INVITE FRIENDS</span> <b id="invB">5 friends = 3 days Pro</b></button>
   <div class="chat-r" id="chatR" hidden><span id="chatRt"></span><button type="button" id="chatRx" aria-label="Cancel reply">✕</button></div>
   <form class="chat-f" id="chatF"><input id="chatI" maxlength="140" placeholder="Say something…" autocomplete="off"><button id="chatS">SEND</button></form></div>
 <div class="angles"><button data-v="wide" class="on">HALL</button><button data-v="seat">MY SEAT</button><button data-v="stage">FRONT ROW</button><button data-v="balcony">BALCONY</button></div>
@@ -967,7 +967,14 @@ async function openReport() {
 }
 document.getElementById('mRp').onclick = openReport; document.getElementById('rpb').onclick = openReport;
 // ---- signed-in: synced streak (Pro keeps it across devices, with freezes) and a renewal nudge
+try { const iv = QS.get('inv'); if (iv) localStorage.setItem('mg_inv', iv.slice(0, 12)); } catch (e) {}
+function refPaint(R) { const b = document.getElementById('invB'); if (b && R) b.textContent = R.pending + '/' + R.need + ' friends · 3 days Pro'; }
+async function refSync(t) {
+  try { const iv = localStorage.getItem('mg_inv'); if (iv) { const x = await (await fetch('/api/pro/ref/claim', { method: 'POST', headers: { 'content-type': 'application/json', Authorization: 'Bearer ' + t }, body: JSON.stringify({ code: iv }) })).json(); localStorage.removeItem('mg_inv'); if (x && x.ok) setTimeout(() => flashCard('You joined through a friend2019s invite · invite 5 friends yourself for 3 days of Pro'), 4000); } } catch (e) {}
+  try { const R = await (await fetch('/api/pro/ref', { headers: { Authorization: 'Bearer ' + t } })).json(); refPaint(R); } catch (e) {}
+}
 async function syncPro() {
+  try { const t0 = await account.accessToken(); if (t0) refSync(t0); } catch (e) {}
   try {
     const t = await account.accessToken(); const x = await (await fetch('/api/pro/me', { headers: t ? { Authorization: 'Bearer ' + t } : {} })).json();
     if (x.pro && x.streak) { streak = Math.max(streak, x.streak); if (x.frozen) flashCard(`A streak freeze saved your ${x.streak}-day streak`); }
@@ -987,10 +994,12 @@ document.getElementById('mCap').onclick = () => document.getElementById('ttbtn')
 document.getElementById('inv').onclick = async () => { if (!signedIn) return askSignIn('invite');
   const topic = (document.getElementById('nowT') || {}).textContent || 'today\'s class', seat = mine ? mine.row + mine.n : '';
   let pid = ''; try { pid = getPlayerId(); } catch (e) {}
-  const url = `${location.origin}/play/theatre/?hall=${hall}&near=${seat}&ref=${encodeURIComponent(pid)}`;
+  let R = null; try { R = await (await fetch('/api/pro/ref', { headers: { Authorization: 'Bearer ' + (await account.accessToken()) } })).json(); } catch (e) {}
+  const url = `${location.origin}/play/theatre/?hall=${hall}&near=${seat}&ref=${encodeURIComponent(pid)}${R && R.code ? '&inv=' + R.code : ''}`;
   const text = `🎬 I'm watching "${topic.trim()}" LIVE in the NationLap Theatre (seat ${seat}). Come sit next to me 🍿 Live quiz every 4 min: let's top tonight's board together! Free:`;
+  if (R && R.code) refPaint(R);
   try { if (navigator.share) { await navigator.share({ title: 'NationLap Live', text, url }); return; } } catch (e) { if (e && e.name === 'AbortError') return; }
-  try { await navigator.clipboard.writeText(text + ' ' + url); flashCard('Invite link copied · +150 pts for every friend who joins'); }
+  try { await navigator.clipboard.writeText(text + ' ' + url); flashCard(R && R.code ? `Invite link copied · ${R.pending}/${R.need} friends joined · 5 new friends = 3 days Pro` : 'Invite link copied'); }
   catch (e) { window.open('https://wa.me/?text=' + encodeURIComponent(text + ' ' + url), '_blank'); } };
 function addChat(m) { const d = document.createElement('div'); const t = m.host ? null : TIER[m.rank];
   d.className = 'cm' + (m.sys ? ' sys' : '') + (m.name === myName ? ' me' : '') + (m.host ? ' host' : '') + (t ? ' ' + t[0] : m.pro ? ' pro' : '');
