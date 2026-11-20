@@ -3,6 +3,7 @@
 // Secrets: RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET, RAZORPAY_WEBHOOK_SECRET.
 import { verifyUser, bearer } from './auth.js';
 import CH from '../play/theatre/chapters.json';
+import { teachOnPaid, teachOnRefund, teachCookie, teachAttach } from './teach.js';
 
 export const PLANS = {
   month: { name: 'Pro Monthly', paise: 9900, days: 30 },
@@ -69,6 +70,8 @@ export async function recordAnswers(env, rows) {   // rows: [uid, qid, chapter, 
     const st = env.GAME_DB.prepare('INSERT OR IGNORE INTO quiz_hist (uid, qid, chapter, ok, ms, at) VALUES (?1, ?2, ?3, ?4, ?5, ?6)'), now = Date.now();
     await env.GAME_DB.batch(rows.map((r) => st.bind(r[0], r[1], r[2] || 'General', r[3] ? 1 : 0, r[4] | 0, now)));
   } catch {}
+  // invites pay out once the invited friend has answered REF.quizzes live quizzes
+  try { await refSettle(env, rows.map((r) => r[0])); } catch {}
 }
 
 // ---- streak: one row per account; Pro members get 2 freezes a month that each cover one missed day
@@ -98,17 +101,29 @@ async function hmacHex(secret, msg) {
 const same = (a, b) => { if (!a || !b || a.length !== b.length) return false; let d = 0; for (let i = 0; i < a.length; i++) d |= a.charCodeAt(i) ^ b.charCodeAt(i); return d === 0; };
 export const _test = { hmacHex, same, streakOf };
 
+// growth-fixes-20261121: the Exam Pass never runs out just before UPSC Prelims (23 May 2027).
+// Only plan "exam"; every other plan keeps its fixed length.
+const UPSC_PRELIMS = Date.parse('2027-05-23T00:00:00+05:30');
+const PRELIMS_COVER = Date.parse('2027-05-26T23:59:59+05:30');
+const PRELIMS_WINDOW = 45 * DAY;
+function passEnd(plan, base) {
+  const end = base + PLANS[plan].days * DAY;
+  if (plan === 'exam' && end < PRELIMS_COVER && end >= UPSC_PRELIMS - PRELIMS_WINDOW) return PRELIMS_COVER;
+  return end;
+}
 async function activate(env, orderId, paymentId) {
   const o = await env.GAME_DB.prepare('SELECT uid, plan, status FROM pro_pay WHERE order_id = ?1').bind(orderId).first();
   if (!o) return null;
   if (o.status === 'paid') return proUntil(env, o.uid);   // verify + webhook both arrive: extend only once
   const P = PLANS[o.plan], add = P.days * DAY, cur = await proUntil(env, o.uid), curT = await teacherUntil(env, o.uid);
   // Teacher includes Pro; buying Pro on top of Teacher never shortens the teacher time
-  const tUntil = P.teacher ? Math.max(Date.now(), curT) + add : curT, until = Math.max(Math.max(Date.now(), cur) + add, tUntil);
+  const tUntil = P.teacher ? Math.max(Date.now(), curT) + add : curT, until = Math.max(passEnd(o.plan, Math.max(Date.now(), cur)), tUntil);
   await env.GAME_DB.batch([
     env.GAME_DB.prepare("UPDATE pro_pay SET status = 'paid', payment_id = ?2 WHERE order_id = ?1").bind(orderId, paymentId),
     env.GAME_DB.prepare('INSERT INTO pro_sub (uid, plan, until, rzp_order, rzp_payment, at, teacher_until) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7) ON CONFLICT(uid) DO UPDATE SET plan = excluded.plan, until = excluded.until, rzp_order = excluded.rzp_order, rzp_payment = excluded.rzp_payment, at = excluded.at, teacher_until = excluded.teacher_until').bind(o.uid, o.plan, until, orderId, paymentId, Date.now(), tUntil || 0),
   ]);
+  // Teach on MindGains: 30% commission for the teacher who brought this student (idempotent per order)
+  try { await teachOnPaid(env, orderId); } catch (e) { console.error('teach commission', e && e.message); }
   return until;
 }
 async function launchPrice(env, uid) {
@@ -120,8 +135,36 @@ async function launchPrice(env, uid) {
 }
 
 
-// ---- refer-a-friend: every 5 brand-new friends who sign in through your link = 3 days of Pro
-export const REF = { need: 5, days: 3, maxPer30d: 6, bonusSecs: 30 * 60 };
+// ---- refer-a-friend: 1 brand-new friend who signs in through your link and answers 3 live quizzes = 3 days of Pro
+export const REF = { need: 1, quizzes: 3, days: 3, maxPer30d: 6, bonusSecs: 30 * 60 };
+// growth-fixes-20261121: an invite pays out once the invited (new, signed-in) friend has answered REF.quizzes live quizzes
+async function refSettle(env, uids) {
+  if (!env.GAME_DB || !uids || !uids.length) return 0;
+  let paid = 0;
+  try {
+    const ids = [...new Set(uids.filter(Boolean))].slice(0, 50);
+    if (!ids.length) return 0;
+    const q = await env.GAME_DB.prepare('SELECT invitee, referrer FROM ref_join WHERE rewarded = 0 AND invitee IN (' + ids.map((_, i) => '?' + (i + 1)).join(',') + ')').bind(...ids).all();
+    for (const j of q.results || []) {
+      const c = await env.GAME_DB.prepare('SELECT COUNT(DISTINCT qid) AS n FROM quiz_hist WHERE uid = ?1').bind(j.invitee).first();
+      if (!c || c.n < REF.quizzes) continue;
+      const now = Date.now();
+      const recent = await env.GAME_DB.prepare('SELECT COUNT(*) AS n FROM ref_reward WHERE uid = ?1 AND at > ?2').bind(j.referrer, now - 30 * 864e5).first();
+      if (recent && recent.n >= REF.maxPer30d) continue;
+      // atomic: only the call that flips rewarded 0 -> 1 pays out
+      const u = await env.GAME_DB.prepare('UPDATE ref_join SET rewarded = 1 WHERE invitee = ?1 AND rewarded = 0').bind(j.invitee).run();
+      if (!u || !u.meta || u.meta.changes !== 1) continue;
+      const cur = await env.GAME_DB.prepare('SELECT until FROM pro_sub WHERE uid = ?1').bind(j.referrer).first();
+      const until = Math.max(now, cur ? cur.until : 0) + REF.days * 864e5;
+      await env.GAME_DB.batch([
+        env.GAME_DB.prepare("INSERT INTO pro_sub (uid, plan, until, at) VALUES (?1, 'ref', ?2, ?3) ON CONFLICT(uid) DO UPDATE SET until = MAX(pro_sub.until, ?3) + ?4").bind(j.referrer, until, now, REF.days * 864e5),
+        env.GAME_DB.prepare('INSERT INTO ref_reward (uid, at, days) VALUES (?1, ?2, ?3)').bind(j.referrer, now, REF.days),
+      ]);
+      paid++;
+    }
+  } catch {}
+  return paid;
+}
 const RCH = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
 async function refCode(env, uid) {
   const r = await env.GAME_DB.prepare('SELECT code FROM ref_code WHERE uid = ?1').bind(uid).first();
@@ -134,10 +177,14 @@ async function refCode(env, uid) {
 }
 async function refStatus(env, uid) {
   const code = await refCode(env, uid);
+  try {
+    const pend = await env.GAME_DB.prepare('SELECT invitee FROM ref_join WHERE referrer = ?1 AND rewarded = 0 LIMIT 20').bind(uid).all();
+    if (pend.results && pend.results.length) await refSettle(env, pend.results.map((x) => x.invitee));
+  } catch {}
   const p = await env.GAME_DB.prepare('SELECT COUNT(*) AS n FROM ref_join WHERE referrer = ?1 AND rewarded = 0').bind(uid).first();
   const t = await env.GAME_DB.prepare('SELECT COUNT(*) AS n FROM ref_join WHERE referrer = ?1').bind(uid).first();
   const w = await env.GAME_DB.prepare('SELECT COUNT(*) AS n, COALESCE(SUM(days),0) AS d FROM ref_reward WHERE uid = ?1').bind(uid).first();
-  return { code, link: 'https://mindgains.ai/play/theatre/?ref=' + code, pending: p ? p.n : 0, total: t ? t.n : 0, rewards: w ? w.n : 0, daysEarned: w ? w.d : 0, need: REF.need, days: REF.days };
+  return { code, link: 'https://mindgains.ai/play/theatre/?ref=' + code, pending: p ? p.n : 0, total: t ? t.n : 0, rewards: w ? w.n : 0, daysEarned: w ? w.d : 0, need: REF.need, quizzes: REF.quizzes, days: REF.days };
 }
 async function isNewUser(env, uid) {
   const today = istDay();
@@ -160,20 +207,7 @@ async function refClaim(env, uid, code) {
   const now = Date.now(), ref = r.uid;
   await env.GAME_DB.prepare('INSERT OR IGNORE INTO ref_join (invitee, referrer, at) VALUES (?1, ?2, ?3)').bind(uid, ref, now).run();
   await addWatch(env, 'u:' + uid, -REF.bonusSecs);   // double-sided: the friend gets extra free theatre today
-  const p = await env.GAME_DB.prepare('SELECT COUNT(*) AS n FROM ref_join WHERE referrer = ?1 AND rewarded = 0').bind(ref).first();
-  if (p && p.n >= REF.need) {
-    const recent = await env.GAME_DB.prepare('SELECT COUNT(*) AS n FROM ref_reward WHERE uid = ?1 AND at > ?2').bind(ref, now - 30 * 864e5).first();
-    if (!recent || recent.n < REF.maxPer30d) {
-      const ids = (await env.GAME_DB.prepare('SELECT invitee FROM ref_join WHERE referrer = ?1 AND rewarded = 0 ORDER BY at LIMIT ?2').bind(ref, REF.need).all()).results.map((x) => x.invitee);
-      const cur = await env.GAME_DB.prepare('SELECT until FROM pro_sub WHERE uid = ?1').bind(ref).first();
-      const until = Math.max(now, cur ? cur.until : 0) + REF.days * 864e5;
-      await env.GAME_DB.batch([
-        ...ids.map((i) => env.GAME_DB.prepare('UPDATE ref_join SET rewarded = 1 WHERE invitee = ?1').bind(i)),
-        env.GAME_DB.prepare("INSERT INTO pro_sub (uid, plan, until, at) VALUES (?1, 'ref', ?2, ?3) ON CONFLICT(uid) DO UPDATE SET until = MAX(pro_sub.until, ?3) + ?4").bind(ref, until, now, REF.days * 864e5),
-        env.GAME_DB.prepare('INSERT INTO ref_reward (uid, at, days) VALUES (?1, ?2, ?3)').bind(ref, now, REF.days),
-      ]);
-    }
-  }
+  await refSettle(env, [uid]);
   return { ok: true };
 }
 
@@ -187,11 +221,15 @@ export async function proRoute(request, env, pathname) {
     try {
       const ev = JSON.parse(raw), p = ev.payload && ev.payload.payment && ev.payload.payment.entity;
       if ((ev.event === 'payment.captured' || ev.event === 'order.paid') && p && p.order_id) await activate(env, p.order_id, p.id);
+      // refunds void the pending teacher commission (enable refund events on the Razorpay webhook)
+      if ((ev.event === 'refund.processed' || ev.event === 'refund.created' || ev.event === 'payment.refunded') && p && p.order_id) await teachOnRefund(env, p.order_id);
     } catch {}
     return J({ ok: true });
   }
 
   const uid = await verifyUser(bearer(request));
+  // a student who arrived through a teacher link (/t/<code>) is attributed on their first signed-in call
+  if (uid && teachCookie(request)) { try { await teachAttach(env, uid, request); } catch {} }
   if (pathname === '/api/pro/ref') { if (!uid) return J({ error: 'signin' }, 401); return J(await refStatus(env, uid)); }
   if (pathname === '/api/pro/ref/claim' && request.method === 'POST') {
     if (!uid) return J({ error: 'signin' }, 401);
