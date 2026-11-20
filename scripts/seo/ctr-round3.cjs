@@ -4,6 +4,8 @@
 const fs = require('fs'), path = require('path');
 const ROOT = path.join(__dirname, '..', '..');
 const T = {
+  '/tnpsc/tamil/thirukkural/': ['Thirukkural Quiz in Tamil with Answers: Online Test', 'திருக்குறள் quiz in Tamil with answers: a free online test for TNPSC Group 4 & 2. 80 questions, plus all 1330 kurals with meaning.'],
+  '/tnpsc/polity/preamble/': ['Preamble Quiz for TNPSC with Answers', 'Preamble of the Indian Constitution quiz for TNPSC and UPSC, with answers and explanations. Free.'],
   '/ssc/reasoning/syllogism/': ['Syllogism Questions for SSC CGL: {n} MCQs with Answers', 'Syllogism questions with answers for SSC CGL, CHSL & MTS. Statement and conclusion MCQs ("All roses are flowers…") with explanations. {n} free questions.'],
   '/ssc/reasoning/venn-diagram/': ['Venn Diagram Questions for SSC CGL with Answers ({n} MCQs)', 'Venn diagram reasoning questions for SSC CGL & CHSL, with answers and explanations. {n} free MCQs, instant result after every question.'],
   '/ssc/reasoning/coding-decoding/': ['Coding Decoding Quiz: {n} Questions with Answers for SSC', 'Coding decoding quiz for SSC CGL, CHSL & bank exams. Letter, number and word coding ("MANGO is coded as…") with answers explained. {n} free questions.'],
