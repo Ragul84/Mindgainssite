@@ -526,7 +526,7 @@ body.quizon:not(.room) .chat{visibility:hidden!important}@media (max-width:760px
       go.disabled = true; go.classList.add('ok'); go.innerHTML = '<svg class="ck" viewBox="0 0 24 24" fill="none" stroke="#1a1206" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' + (opts.first ? 'Seat ready' : 'Saved');
       const b = document.createElement('div'); b.className = 'mgp-burst'; b.innerHTML = Array.from({ length: 10 }, (_, i) => { const a = i / 10 * Math.PI * 2, r = 60 + (i % 3) * 14; return `<i style="--x:${Math.cos(a) * r}px;--y:${Math.sin(a) * r}px;background:${i % 2 ? '#ffe2a0' : COLORS[d.color]}"></i>`; }).join(''); go.appendChild(b);
       await save(d);
-      setTimeout(() => close(), 650);
+      setTimeout(() => close(opts.first ? () => { try { dispatchEvent(new CustomEvent('mgp:first-done')); } catch (e) {} } : null), 650);
     });
     if (opts.first) setTimeout(() => { try { if (!inp.value) inp.focus(); } catch (e) {} }, 420);
   }
@@ -602,6 +602,20 @@ body.quizon:not(.room) .chat{visibility:hidden!important}@media (max-width:760px
 })();
 </script>
 <meta name="mg-hooks" content="theatre-hooks-20261121">
+<style id="th-tour">/* theatre-cinematic-20261121: first-entry hall tour. Letterbox + one small skip hint; transform/opacity only */
+body.tour .top,body.tour .halls,body.tour .tip,body.tour .angles,body.tour .sheet,body.tour .top5,body.tour .seatcard,body.tour .chat,body.tour .mob,body.tour .qsoon,body.tour .marq,body.tour .rpause,body.tour .skip,body.tour .fpill{display:none!important}
+body.tour-out .top,body.tour-out .halls,body.tour-out .angles,body.tour-out .sheet,body.tour-out .chat,body.tour-out .mob,body.tour-out .fpill{animation:tourIn .6s cubic-bezier(.2,.7,.2,1) both}
+@keyframes tourIn{from{opacity:0}to{opacity:1}}
+.tour{position:fixed;inset:0;z-index:8;pointer-events:none}
+.tour .tb{position:absolute;left:0;right:0;height:7vh;max-height:64px;background:#000;transition:transform .7s cubic-bezier(.65,0,.35,1)}
+.tour .tb.t{top:0;transform:translateY(-101%)}.tour .tb.b{bottom:0;transform:translateY(101%)}
+.tour.on .tb{transform:none}
+.tour .tk{position:absolute;left:50%;bottom:calc(min(7vh,64px) + 14px);transform:translate(-50%,6px);opacity:0;font:600 11px/1 Inter,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(243,212,138,.78);transition:opacity .5s .9s,transform .5s .9s}
+.tour.on .tk{opacity:1;transform:translate(-50%,0)}
+.tour-fade{position:fixed;inset:0;z-index:9;background:#07040a;opacity:0;pointer-events:none;transition:opacity .25s}
+.tour-fade.in{opacity:1}
+@media (prefers-reduced-motion:reduce){.tour .tb,.tour .tk{transition:none}}
+</style>
 </head>
 <body>
 <canvas id="gl"></canvas><div id="css"></div>
@@ -1158,15 +1172,15 @@ const SEATED = (() => {
       // then a ponytail or a bun with a tie in the accent colour
       const tie = pro ? 0x1a1206 : (ch.accent === 0xffffff ? shade(ch.color, .9) : ch.accent);
       H.push(part(new THREE.SphereGeometry(.177, 18, 12, 0, Math.PI * 2, 0, Math.PI * .55), hair, M4([0, .148, -.01], [-.24, 0, 0], [1.03, 1.02, 1.02])));
-      H.push(part(new THREE.SphereGeometry(.165, 14, 10), hair, M4([0, .1, -.05], [0, 0, 0], [1.04, 1.08, .9])));
+      H.push(part(new THREE.SphereGeometry(.165, 14, 10), hair, M4([0, .1, -.04], [0, 0, 0], [1.04, 1.08, .8])));
       for (const s of [-1, 1]) H.push(part(new THREE.SphereGeometry(.05, 10, 8), hair, M4([s * .148, .075, .025], [0, 0, s * .08], [.55, 1.85, .95])));
       H.push(part(new THREE.SphereGeometry(.1, 12, 8), hair, M4([.045, .252, .088], [.42, 0, -.3], [1.42, .4, .5])));
       if (h % 2 === 0) {
-        H.push(part(new THREE.TorusGeometry(.03, .012, 6, 12), tie, M4([0, .2, -.175], [.5, 0, 0])));
-        H.push(limb([0, .19, -.19], [0, .06, -.225], .045, hair), limb([0, .06, -.225], [0, -.05, -.215], .036, hair), part(new THREE.SphereGeometry(.036, 10, 8), hair, M4([0, -.055, -.214], [0, 0, 0], [1, 1.3, 1])));
+        H.push(part(new THREE.TorusGeometry(.032, .012, 6, 12), tie, M4([0, .262, -.142], [1.05, 0, 0])));
+        H.push(limb([0, .262, -.15], [0, .2, -.186], .041, hair), limb([0, .2, -.186], [0, .125, -.178], .033, hair), part(new THREE.SphereGeometry(.031, 10, 8), hair, M4([0, .113, -.174], [0, 0, 0], [1, 1.3, 1])));   // high ponytail: stays above the seat back
       } else {
-        H.push(part(new THREE.SphereGeometry(.078, 14, 10), hair, M4([0, .29, -.115])));
-        H.push(part(new THREE.TorusGeometry(.055, .012, 6, 14), tie, M4([0, .265, -.1], [Math.PI / 2 + .5, 0, 0])));
+        H.push(part(new THREE.SphereGeometry(.074, 14, 10), hair, M4([0, .305, -.085])));
+        H.push(part(new THREE.TorusGeometry(.052, .012, 6, 14), tie, M4([0, .278, -.075], [Math.PI / 2 + .6, 0, 0])));
       }
     } else if (v === 'n') {
       // prefer not to say: short neat hair with a soft fringe and over-ear study headphones (no cap, no bow)
@@ -1196,7 +1210,7 @@ const SEATED = (() => {
     G.lowerL = merge([...hand, limb([.03 * aw, -.22, .0], [.047 * aw, -.255, -.014], .0135 * aw, skin)]);
     cache.set(key, G); return G;
   }
-  const POSE = { sh: [-.32, 0, -.07], el: [-1.02, 0, 0], tx: -.06 };
+  const POSE = { sh: [-.36, 0, -.07], el: [-.98, 0, 0], tx: .06 };   // sits up, leaning a touch towards the screen (keeps the head off the seat back)
   function build(ch, look, pro) {
     const G = geos(ch, look, pro), m = mat(pro), mesh = (g, n) => { const o = new THREE.Mesh(g, m); o.name = n; o.castShadow = false; o.receiveShadow = false; return o; };
     const root = new THREE.Group(); root.add(mesh(G.legs, 'sc_legs'));
@@ -1218,7 +1232,7 @@ function seatedRacer(look, pro) {
   const key = look.join('-') + (pro ? '-p' : '');
   if (!lookCache.has(key)) { let d = null; try { d = SEATED.build(playerCharacter({ ...loadProfile(), avatar: look[0], color: look[1] }), look, pro); } catch (e) {} lookCache.set(key, d); }
   const base = lookCache.get(key); if (!base) return null;
-  const c = base.clone(); c.position.set(0, .5, .07); c.rotation.y = Math.PI;
+  const c = base.clone(); c.position.set(0, .5, -.04); c.rotation.y = Math.PI;   // hips forward on the cushion: head + hair clear the seat back
   c.userData.rig = SEATED.rig(c); c.userData.head = c.userData.rig.head; c.userData.hy = 0; c.userData.hx = 0; return c;
 }
 function seatRacer(s, look) {   // put (or replace / remove) the racer in seat s
@@ -1238,7 +1252,7 @@ function lookAtCamera(dt) {   // racers you are looking at turn their heads to y
     if (inView && dist > .9) { const p = h.parent.worldToLocal(cam.position.clone()); const hp = h.position, a = Math.atan2(p.x - hp.x, p.z - hp.z);
       // far racers only notice you if you're in front of them; the ones around you (your row, the rows beside) turn to you, even over the shoulder
       if (Math.abs(a) < .75 || dist < 7) { n++;
-      ty = Math.max(-1.7, Math.min(1.7, a)); tx = Math.max(-.35, Math.min(.35, -Math.atan2(p.y - hp.y - .1, Math.hypot(p.x - hp.x, p.z - hp.z)) * .6)); } }
+      ty = Math.max(-1.7, Math.min(1.7, a)); tx = Math.max(-.25, Math.min(.35, -Math.atan2(p.y - hp.y - .1, Math.hypot(p.x - hp.x, p.z - hp.z)) * .6)); } }
     const k2 = 1 - Math.pow(.004, dt); r.userData.hy += (ty - r.userData.hy) * k2; r.userData.hx += (tx - r.userData.hx) * k2;
     h.rotation.y = r.userData.hy; h.rotation.x = r.userData.hx;
   }
@@ -1902,11 +1916,83 @@ let t0 = performance.now();
   { const asp = W() / H(), base = mode === 'seat' || mode === 'spot' ? 92 : 66, h = mode === 'seat' || mode === 'spot' ? 74 : 62;
     const f = (asp < 1 ? Math.min(118, 2 * Math.atan(Math.tan(h * Math.PI / 360) / asp) * 180 / Math.PI) : base) * zoomF; if (Math.abs(cam.fov - f) > .1) { cam.fov += (f - cam.fov) * k; cam.updateProjectionMatrix(); } }
   if (INTRO.on) { introStep(now); renderer.render(scene, cam); css.render(cssScene, cam); requestAnimationFrame(frame); return; }
+  if (window.__tour && window.__tour.on) { window.__tour.step(now, dt); if (ytObj) ytObj.visible = cam.position.z > screen.position.z + .1; renderer.render(scene, cam); css.render(cssScene, cam); requestAnimationFrame(frame); return; }
   if (flying) { camPos.lerp(tgtPos, k); camLook.lerp(tgtLook, k); cam.position.copy(camPos); orbit.target.copy(camLook); cam.lookAt(camLook); if (camPos.distanceTo(tgtPos) < .05) { flying = false; setLook(); } }
   else { const b = tgtLook.clone().sub(tgtPos), by = Math.atan2(b.x, b.z) + yaw, bp = Math.atan2(b.y, Math.hypot(b.x, b.z)) + pitch, cp = Math.max(-1.45, Math.min(1.45, bp)), d = new THREE.Vector3(Math.sin(by) * Math.cos(cp), Math.sin(cp), Math.cos(by) * Math.cos(cp)); cam.position.copy(tgtPos); cam.lookAt(tgtPos.clone().add(d)); }
   if (mine) mine.m.emissiveIntensity = .7 + .3 * Math.sin(now / 250);
   lookAtCamera(dt);
   if (ytObj) ytObj.visible = cam.position.z > screen.position.z + .1; renderer.render(scene, cam); css.render(cssScene, cam); if (!frame.n) { frame.n = 1; document.getElementById('ls').textContent = 'TAKING YOU TO YOUR SEAT…'; const q = new URLSearchParams(location.search); let seen = ''; try { seen = localStorage.getItem('mgt_intro'); } catch (e) {} if (!q.has('view') && !q.has('clean') && (q.has('intro') || q.get('from') === 'nationlap' || seen !== new Date().toDateString())) { startIntro(); setTimeout(hideLoader, 300); } } requestAnimationFrame(frame); })(t0);
+// ---- first-entry hall tour (theatre-cinematic-20261121): right after the one-time profile step, once per device (also ?tour=1).
+// An eased 360° sweep of the hall (screen, gold decor, the audience turning to look), then a glide down into your own seat.
+// ~6.6 s, tap / click / any key skips, reduced motion gets a short fade instead, the HUD hides and comes back after.
+const TOUR = (() => {
+  const K = 'mgt_tour_v1', RMQ = matchMedia('(prefers-reduced-motion: reduce)');
+  const T = { on: false, t0: 0, ORBIT: 4.9, D: 6.7, pending: false };
+  const seen = () => { try { return !!localStorage.getItem(K); } catch (e) { return false; } };
+  const mark = () => { try { localStorage.setItem(K, String(Date.now())); } catch (e) {} };
+  const eio = (x) => x <= 0 ? 0 : x >= 1 ? 1 : x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+  const es = (x) => x <= 0 ? 0 : x >= 1 ? 1 : (1 - Math.cos(Math.PI * x)) / 2;
+  const SCREEN = new THREE.Vector3(0, 5.8, -16), CROWD = new THREE.Vector3(0, 3.6, 3);
+  const P = new THREE.Vector3(), L = new THREE.Vector3(), Q = new THREE.Vector3(), M = new THREE.Vector3();
+  const from = { p: new THREE.Vector3(), l: new THREE.Vector3() }, seatP = new THREE.Vector3(), seatL = new THREE.Vector3(), endP = new THREE.Vector3(), endL = new THREE.Vector3();
+  // the path: an ellipse inside the walls (x ±10.4 of ±13), high at the back, low by the screen looking back at the faces
+  function path(phi, p, l) { const c = Math.cos(phi); p.set(Math.sin(phi) * 10.4, 7.4 + 2.8 * c, 1.2 + 13 * c); l.copy(SCREEN).lerp(CROWD, (1 - c) / 2); }
+  function seatView() { seatP.copy(mine.eye); seatP.y += W() < H() ? .9 : .7; seatL.set(0, 7, -16); if (W() < H()) seatL.y -= seatP.distanceTo(seatL) * .42; }
+  let ui = null;
+  function chrome(on) {
+    if (!ui) { ui = document.createElement('div'); ui.className = 'tour'; ui.setAttribute('aria-hidden', 'true'); ui.innerHTML = '<i class="tb t"></i><i class="tb b"></i><span class="tk">Tap to skip</span>'; document.body.appendChild(ui); }
+    ui.classList.toggle('on', on);
+  }
+  function fade(cb) { const f = document.createElement('div'); f.className = 'tour-fade'; document.body.appendChild(f); requestAnimationFrame(() => f.classList.add('in'));
+    setTimeout(() => { cb(); f.classList.remove('in'); setTimeout(() => f.remove(), 420); }, 260); }
+  function start(force) {
+    if (T.on || ROOM || !mine) return false;
+    if (!force && seen()) return false;
+    if (INTRO.on || document.querySelector('.mgp') || document.body.classList.contains('quizon')) { if (!T.pending) { T.pending = true; const w = setInterval(() => { if (INTRO.on || document.querySelector('.mgp')) return; clearInterval(w); T.pending = false; start(force); }, 400); } return false; }
+    mark(); seatView();
+    if (RMQ.matches) { fade(() => { fly('seat'); camPos.copy(tgtPos); camLook.copy(tgtLook); cam.position.copy(tgtPos); cam.lookAt(tgtLook); }); return true; }
+    from.p.copy(cam.position); cam.getWorldDirection(Q); from.l.copy(cam.position).addScaledVector(Q, 12);
+    T.on = true; T.t0 = performance.now(); window.__tour = T; flying = false; mode = 'tour'; zoomF = 1;
+    try { orbit.enabled = false; } catch (e) {}
+    document.body.classList.add('tour'); chrome(true);
+    return true;
+  }
+  function step(now, dt) {
+    const t = window.__T != null ? window.__T : (now - T.t0) / 1000;
+    if (document.body.classList.contains('quizon')) return end(true);   // a quiz never waits for the tour
+    if (t < T.ORBIT) {
+      const u = es(t / T.ORBIT), phi = u * Math.PI * 2;   // one full turn, slow in, slow out
+      path(phi, P, L);
+      const k = eio(Math.min(1, t / 1.1)); if (k < 1) { P.lerpVectors(from.p, P, k); L.lerpVectors(from.l, L, k); }   // ease off wherever the camera was
+      endP.copy(P); endL.copy(L);
+    } else {
+      const g = eio((t - T.ORBIT) / (T.D - T.ORBIT));
+      // glide: a soft arc (a little above the straight line) from the back of the hall down into your seat
+      P.lerpVectors(endP, seatP, g); P.y += Math.sin(g * Math.PI) * .9; L.lerpVectors(endL, seatL, g);
+    }
+    cam.position.copy(P); cam.lookAt(L);
+    lookAtCamera(dt);
+    const me = mine && occ.get(mine.row + mine.n); if (me) me.visible = P.distanceTo(seatP) > 2.6;   // your own student, until the camera sits down
+    if (t >= T.D) end(false);
+  }
+  function end(skipped) {
+    if (!T.on) return; T.on = false;
+    camPos.copy(cam.position); cam.getWorldDirection(Q); camLook.copy(cam.position).addScaledVector(Q, 12);
+    fly('seat'); if (!skipped) { camPos.copy(tgtPos); camLook.copy(tgtLook); }
+    document.body.classList.remove('tour'); document.body.classList.add('tour-out'); setTimeout(() => document.body.classList.remove('tour-out'), 700);
+    chrome(false);
+  }
+  // skip: the first tap / click / key during the tour only skips (it never picks a seat or a button underneath)
+  let swallow = 0;
+  const skip = (e) => { if (!T.on) return; e.preventDefault(); e.stopPropagation(); swallow = performance.now(); end(true); };
+  addEventListener('pointerdown', skip, true); addEventListener('keydown', skip, true); addEventListener('wheel', (e) => { if (T.on) skip(e); }, { capture: true, passive: false });
+  for (const ev of ['click', 'pointerup', 'touchend', 'dblclick']) addEventListener(ev, (e) => { if (T.on || performance.now() - swallow < 500) { e.preventDefault(); e.stopPropagation(); } }, true);
+  addEventListener('mgp:first-done', () => start(false));
+  if (QS.get('tour') && !QS.has('view')) setTimeout(() => start(true), 900);
+  T.start = start; T.step = step; T.end = end; T.seen = seen;
+  return T;
+})();
+window.TOUR = TOUR;
 // ================= Batch rooms =================
 const RI = {
   users: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/>',
