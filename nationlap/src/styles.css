@@ -2575,3 +2575,5 @@ body.touch-mode[data-state="title"] .hof-strip { width: auto !important; }
 .pn-cta .btn{display:block;width:100%;text-decoration:none;box-sizing:border-box}
 .pn-link{display:inline-block;margin-top:12px;font:800 13px var(--body);color:#ffd76a;text-decoration:none}
 .pn-small{margin-top:10px;font:700 12px var(--body);color:#bdb4ee}
+/* NationLap logo sits in the middle of the screen (desktop and phone), between the top bar and the bottom buttons */
+.title-screen .logo{margin-top:auto!important;margin-bottom:auto!important}
