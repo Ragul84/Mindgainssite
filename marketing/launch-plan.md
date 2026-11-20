@@ -15,9 +15,9 @@ Rule: no fake numbers. Use real "X in the hall" counts from the theatre, or none
 | L+1..L+14 | Daily calendar below. Reply to every comment within 2 hours on L-day. |
 
 ## Videos to record (phone, vertical, 15–30 s each)
-1. Walk into the theatre, pick a seat, other racers turn heads → "Studying alone at 11 PM? Come sit with 300 aspirants."
+1. Walk into the theatre, pick a seat, other racers turn heads → (see scripts below)
 2. Live quiz pops on screen, answer in 4 seconds, rank jumps → "Answer before all of Tamil Nadu."
-3. NationLap race: answer mid-race, boost fires → "Your syllabus is now a racing game."
+3. NationLap race: answer mid-race, boost fires → (see scripts below)
 4. Batch room: friend joins, teacher pauses video, quiz locks chat → "Your tuition batch, but online and free to join."
 5. Cut-Off Run level 1 with MIGA → "Can you beat the UPSC cut-off?"
 6. Thirukkural kural of the day card → page on mindgains.ai/thirukkural.
@@ -83,6 +83,70 @@ Read each sub's rules first; many ban self-promo. Post as "I built a free live s
 4. Thirukkural 1330 with meanings + quiz (TN audience, Pongal/Thiruvalluvar Day 16 Jan is the perfect moment)
 5. Cut-Off Run
 6. Each new theatre season (new subject) = a small launch
+
+
+## Revised with the `social` skill
+
+**Fixes to the first draft:** removed the made-up "300 aspirants" line, removed the "it's Mario Kart" caption (someone else's trademark), removed contrast hooks ("Not anymore") and engagement bait. Every hook below uses a real thing on screen.
+
+**Content pillars**
+| Pillar | Share | What |
+|---|---|---|
+| Inside the hall | 35% | Real screen recordings: seat, live quiz, chat, rank |
+| Exam help | 30% | One PYQ, one kural, one current-affairs fact per post (useful even if they never sign up) |
+| Race & play | 20% | NationLap and Cut-Off Run clips |
+| Behind the build | 10% | Founder posts: why a theatre, what students asked for |
+| Offers | 5% | ₹49 first month, refer 5 friends |
+
+**Platforms:** Instagram Reels + YouTube Shorts (same file, 9:16, 15–30 s). WhatsApp Channel + Telegram get the same clip plus the link. Captions in Tamil for TNPSC posts, English for UPSC/SSC. Burned-in subtitles always (most people watch muted): 2 lines max, 3–5 words a line.
+
+**Six Reel scripts** (visual hook + spoken hook + on-screen text, all in the first second)
+
+1. **The seat** (inside the hall)
+   - 0–3 s: phone screen, racer sits down, the row turns to look. Text: "Tonight's 10 PM class". Voice: "This is my seat for tonight's TNPSC class."
+   - 3–15 s: pan the hall, chat messages coming in, MIGA question pops up.
+   - 15–25 s: answer, rank moves on the board.
+   - End: "Free, 30 min a day. Link in bio."
+2. **4 seconds** (inside the hall)
+   - 0–3 s: live quiz card with the timer at 4. Text: "Answer before the hall does". Voice: "4 seconds. Which article covers…?"
+   - Pause 2 s so viewers guess, reveal, show % of hall who got it right (real number from the reveal).
+   - End: "Tonight 6 PM, MIGA premiere."
+3. **Read, then race** (race & play)
+   - 0–3 s: kart hits an item box, question appears mid-race. Text: "This question = speed boost".
+   - Show the 60-second read, the race, the boost.
+   - End: "Race any chapter free. mindgains.ai/nationlap"
+4. **Kural of the day** (exam help, Tamil)
+   - 0–3 s: kural centred on screen in quotes. Voice reads it in Tamil.
+   - Show the பொருள் line, then the 4-option question from the page. "Answer in the comments."
+   - End: "1330 குறள்கள், பொருளுடன். mindgains.ai/thirukkural"
+5. **Your tuition batch** (inside the hall, for teachers)
+   - 0–3 s: teacher presses pause, quiz locks every student's chat. Text: "When the teacher pauses, everyone answers".
+   - End: "Teacher plan ₹299/month, up to 60 students."
+6. **Bring 5** (offers)
+   - 0–3 s: invite button, progress 4/5, then 5/5 and "3 days Pro". Text: "5 friends = 3 days Pro free".
+   - End: "Your friend also gets 30 extra minutes."
+
+**14-day calendar (rewritten)**
+| Day | Reel | Pillar | WhatsApp/Telegram |
+|---|---|---|---|
+| 1 | Script 1 | Hall | Tonight's timetable |
+| 2 | Script 4 (kural 391) | Exam help | Kural link |
+| 3 | Script 3 | Race | Race link |
+| 4 | One TNPSC PYQ with answer | Exam help | PYQ + theatre link |
+| 5 | Script 2 | Hall | "6 PM premiere" |
+| 6 | Founder: why I built a theatre for aspirants (talking head, 30 s) | Build | Same |
+| 7 | Script 6 | Offer | Invite link |
+| 8 | Script 4 (another kural) | Exam help | Kural link |
+| 9 | Script 5 | Hall/teachers | Teacher plan |
+| 10 | Today's top current-affairs fact, then race it | Exam help + Race | Affairs race link |
+| 11 | Cut-Off Run level 1 | Race | Cut-Off Run link |
+| 12 | Weak-chapter report screen | Hall | Pro page |
+| 13 | Two friends racing NationLap | Race | Race link |
+| 14 | Real week-2 numbers: seats filled, top 3 (only if real) | Hall | Invite link |
+
+**Daily 30 minutes:** reply to every comment in the first hour; comment usefully on 5 posts from TNPSC/UPSC teacher accounts (the creators from the borrowed-channel list); post the day's clip to the WhatsApp Channel.
+
+**Weekly review:** top 3 and bottom 3 Reels by saves and shares (not likes), and which brought sign-ins (use `?src=ig` / `?src=yt` on bio links).
 
 ## Measure (daily)
 Sign-ins, theatre seats filled at 6 PM and 10 PM, invites sent, referral rewards granted, ₹49 purchases. Log wins/losses in `.agents/product-marketing.md` Learnings.
