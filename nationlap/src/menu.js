@@ -417,6 +417,7 @@ export class Menu {
     this._refreshTitleRacer();
     bus.emit('ui:confirm');
     try { this.avName.blur(); } catch (e) { /* ignore */ }
+    import('/assets/mg-profile.js').then((m) => m.pushLocal()).catch(() => {});
     this.h.onAvatarDone?.(this.draft);
   }
   _avatarBack() {
