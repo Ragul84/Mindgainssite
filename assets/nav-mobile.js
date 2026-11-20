@@ -141,6 +141,7 @@
       else header.appendChild(btn);
     }
     btn.classList.add('mg-navtoggle');
+    btn.style.marginLeft = '10px';
     btn.setAttribute('type', 'button');
     btn.setAttribute('aria-label', 'Menu');
     btn.setAttribute('aria-expanded', 'false');

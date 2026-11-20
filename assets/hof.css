@@ -57,6 +57,9 @@
   .hof-reset{align-items:flex-start}
   .hof-cd b{min-width:42px;font-size:17px}
   .hof-st.p1 .hof-ped{min-height:128px}.hof-st.p2 .hof-ped{min-height:112px}.hof-st.p3 .hof-ped{min-height:104px}
+  .hof-fig{width:min(100%,96px)!important}.hof-st.p1 .hof-fig{width:min(100%,112px)!important}
+  .hof-st.p1 .hof-ped{min-height:92px}.hof-st.p2 .hof-ped{min-height:80px}.hof-st.p3 .hof-ped{min-height:74px}
+  .hof-stage{margin-top:12px}
   .hof-nm{font-size:13px}
   .hof-ped{padding:10px 4px}
   .hof-rk{font-size:11px;padding:5px 8px}

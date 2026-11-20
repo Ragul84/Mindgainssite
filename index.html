@@ -61,7 +61,7 @@
 </script>
   <link rel="stylesheet" href="/assets/exam-hub-v2.css?v=20261017d">
   <link rel="stylesheet" href="/assets/site-footer.css?v=3">
-  <link rel="stylesheet" href="/assets/hof.css?v=4">
+  <link rel="stylesheet" href="/assets/hof.css?v=5">
 <style>@property --pa{syntax:'<angle>';inherits:false;initial-value:0deg}
 .gold-cta{position:relative;isolation:isolate;overflow:hidden;border:0!important;color:#2a1a04!important;
   background:linear-gradient(115deg,#a8742a 0%,#e9b956 22%,#fbe3a1 38%,#fff6da 50%,#fbe3a1 62%,#e9b956 78%,#a8742a 100%)!important;background-size:300% 100%!important;
@@ -149,111 +149,61 @@
     </div>
   </section>
 
+<!-- play-trio:start -->
+<section class="wrap sec ptrio" aria-labelledby="ptrio-h">
+  <div class="pt-head"><span class="pt-k">Play · study live</span><h2 id="ptrio-h">Learn it by playing it</h2></div>
+  <div class="pt-grid">
+    <a class="pt-card pt-nl" href="/nationlap/">
+      <div class="pt-img"><img src="/assets/nationlap-shots/race-640.webp" alt="NationLap 3D kart race" loading="lazy" decoding="async"><span class="pt-tag">Free game</span></div>
+      <div class="pt-body"><b class="pt-kk">NationLap</b><h3>Race the syllabus</h3><p>Read a topic, then race 7 rivals. Right answers fire a boost.</p><span class="pt-go">Play now <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+    </a>
+    <a class="pt-card pt-th" href="/play/theatre/">
+      <div class="pt-img"><img src="/assets/nationlap-shots/theatre.jpg?v=2" alt="Live Theatre 3D study hall" loading="lazy" decoding="async"><span class="pt-tag pt-live"><i></i>Live now</span></div>
+      <div class="pt-body"><b class="pt-kk">Live Theatre</b><h3>Study with all of India</h3><p>One hall, one class, live chat and quizzes. 30 min free daily.</p><span class="pt-go">Find your seat <span class="nlt-live" id="nltLive"></span> <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+    </a>
+    <a class="pt-card pt-cr" href="/play/cutoff-run/">
+      <div class="pt-img"><img src="/assets/nationlap-shots/cutoff.webp" alt="Cut-Off Run" loading="lazy" decoding="async"><span class="pt-tag pt-new">New</span></div>
+      <div class="pt-body"><b class="pt-kk">Cut-Off Run</b><h3>Beat the cut-off, level by level</h3><p>Daily paper, weekly All-India mock and a streak with MIGA.</p><span class="pt-go">Start level 1 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+    </a>
+  </div>
+</section>
+<style>
+.ptrio{padding-top:56px}
+.pt-head{text-align:center;margin:0 0 22px}.pt-k{font:700 11.5px/1 Inter,system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#64748b}
+.pt-head h2{margin:10px 0 0;font-size:clamp(26px,4vw,38px);letter-spacing:-.02em}
+.pt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pt-card{display:flex;flex-direction:column;border-radius:22px;overflow:hidden;background:#fff;border:1px solid rgba(13,27,42,.08);box-shadow:0 1px 2px rgba(13,27,42,.04),0 14px 34px -20px rgba(13,27,42,.28);color:#0d1b2a;text-decoration:none;transition:transform .22s,box-shadow .22s}
+.pt-card:hover{transform:translateY(-4px);box-shadow:0 2px 4px rgba(13,27,42,.05),0 26px 50px -24px rgba(13,27,42,.4)}
+.pt-img{position:relative;aspect-ratio:16/9;background:#0b1020;overflow:hidden}.pt-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}.pt-card:hover .pt-img img{transform:scale(1.04)}
+.pt-tag{position:absolute;left:12px;top:12px;display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:99px;background:rgba(255,255,255,.92);color:#0d1b2a;font:800 10.5px/1 Inter;letter-spacing:.1em;text-transform:uppercase;backdrop-filter:blur(6px)}
+.pt-live{background:#e11d48;color:#fff}.pt-live i{width:6px;height:6px;border-radius:50%;background:#fff;animation:nltp 1.2s infinite}@keyframes nltp{50%{opacity:.25}}
+.pt-new{background:#58cc02;color:#fff}
+.pt-body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
+.pt-kk{font:800 11px/1 Inter;letter-spacing:.14em;text-transform:uppercase;color:#0f9d74}.pt-th .pt-kk{color:#b7791f}.pt-cr .pt-kk{color:#4d9c00}
+.pt-body h3{margin:8px 0 6px;font:750 20px/1.25 'Inter Tight',Inter;letter-spacing:-.01em}
+.pt-body p{margin:0 0 16px;color:#64748b;font:400 14.5px/1.5 Inter;flex:1}
+.pt-go{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;padding:10px 16px;border-radius:12px;background:#0d1b2a;color:#fff;font:700 14px Inter}
+.pt-th .pt-go{background:linear-gradient(180deg,#f6d688,#e9b94f);color:#1a1206}.pt-cr .pt-go{background:#58cc02}
+.nlt-live:empty{display:none}
+@media(max-width:860px){.pt-grid{grid-template-columns:1fr;gap:12px}.ptrio{padding-top:40px}
+ .pt-card{flex-direction:row;align-items:stretch;border-radius:18px}
+ .pt-img{flex:0 0 38%;aspect-ratio:auto;min-height:132px}
+ .pt-tag{left:8px;top:8px;padding:4px 7px;font-size:9px}
+ .pt-body{padding:14px 14px 14px 16px}.pt-body h3{font-size:16.5px;margin:6px 0 4px}.pt-body p{font-size:13px;margin:0 0 10px}
+ .pt-go{padding:8px 12px;font-size:13px;border-radius:10px}.nlt-live{display:none}}
+</style>
+<script>
+fetch('/play/theatre/timetable.json').then(r=>r.json()).then(t=>{const d=new Date(),day=['sun','mon','tue','wed','thu','fri','sat'][d.getDay()];const s=t.halls.main.week[day].subject.split(/[ (+]/)[0];const e=document.getElementById('nltLive');if(e)e.textContent='· live now: '+s;}).catch(()=>{});
+</script>
+<!-- play-trio:end -->
+
   <!-- hof:start -->
   <section class="wrap sec hof" id="hall-of-fame" aria-labelledby="hof-h">
     <div data-hof-v2></div>
   </section>
   <!-- hof:end -->
 
-<div class="duo" id="duo" aria-roledescription="carousel">
-  <div class="duo-head wrap"><div class="duo-tabs" role="tablist"><span class="duo-pill" aria-hidden="true"></span><button role="tab" class="on" data-i="0" aria-selected="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.3 2.7A7 7 0 0 0 20 4v11a7 7 0 0 1-4.7.7C13 15 11 13 8 13a6 6 0 0 0-4 1"/></svg><span>Race the syllabus</span><b class="duo-bar"><em></em></b></button><button role="tab" data-i="1" aria-selected="false"><i></i><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="m17 2-5 5-5-5"/></svg><span>Live theatre</span><b class="duo-bar"><em></em></b></button></div></div>
-  <div class="duo-track" id="duoT">
-  <!-- nl-showcase:start -->
-<div class="duo-slide"><section class="wrap sec nls" aria-labelledby="nls-h">
-  <div class="nls-card">
-    <div class="nls-copy">
-      <span class="nls-k"><i></i>NationLap · free racing game</span>
-      <h2 id="nls-h">Race the syllabus.</h2>
-      <p class="nls-p">A 3D kart race where every item box is a question. Read a topic, race it, answer at full speed. Right answers fire a speed boost.</p>
-      <ol class="nls-steps">
-        <li><b>1</b><span><strong>Read</strong> a topic in 60 seconds</span></li>
-        <li><b>2</b><span><strong>Race</strong> 7 rivals across India</span></li>
-        <li><b>3</b><span><strong>Answer</strong> mid-race for a boost</span></li>
-      </ol>
-      <div class="nls-cta">
-        <a class="btn nls-btn" href="/nationlap/">Play NationLap <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="nls-link" href="/nationlap/?affairs=1">or race today's current affairs</a>
-      </div>
-      <p class="nls-note">Runs in your browser · phone or desktop · no download</p>
-    </div>
-    <div class="nls-art" aria-hidden="true">
-      <div class="nls-shot nls-main">
-        <picture><source media="(max-width:640px)" srcset="/assets/nationlap-shots/race-640.webp"><img src="/assets/nationlap-shots/race.webp" alt="" width="1280" height="720" loading="lazy" decoding="async"></picture>
-      </div>
-      <div class="nls-shot nls-quiz">
-        <picture><source media="(max-width:640px)" srcset="/assets/nationlap-shots/quiz-640.webp?v=2"><img src="/assets/nationlap-shots/quiz.webp?v=2" alt="" width="1280" height="720" loading="lazy" decoding="async"></picture>
-      </div>
-      <span class="nls-chip c1">Correct! +BOOST</span>
-      <span class="nls-chip c2">vs 7 rivals</span>
-    </div>
-  </div>
-</section></div>
-<!-- nl-showcase:end -->
-<div class="duo-slide"><section class="wrap sec" aria-labelledby="nlt-h">
-  <a class="nlt" href="/play/theatre/">
-    <div class="nlt-media"><img src="/assets/nationlap-shots/theatre.jpg?v=2" alt="NationLap Live theatre: a modern 3D cinema hall with a big curved screen and red seats" loading="lazy" decoding="async"><span class="nlt-pill"><i></i>LIVE NOW</span></div>
-    <div class="nlt-copy">
-      <span class="nlt-k">NationLap Live · 30 min free daily</span>
-      <h2 id="nlt-h">Study alone? Not anymore.</h2>
-      <p>Every night, lakhs of aspirants study the same chapter in separate rooms. NationLap Live puts you in one hall. Pick a seat, watch today's class with the whole country, ask your doubt in the chat, and answer MIGA's question before anyone else does.</p>
-      <div class="nlt-day">
-        <span><b>6 AM</b>Newspaper</span><span><b>7 AM</b>New episode</span><span><b>6 PM</b>MIGA premiere</span><span><b>10 PM</b>One-shot marathon</span>
-      </div>
-      <p class="nlt-sub">Bring your study partner. Sit side by side, react together, and see who tops tonight's board. English and Tamil TNPSC halls, open all night: 30 minutes a day free, unlimited with Pro.</p>
-      <span class="nlt-btn">Find your seat <span class="nlt-live" id="nltLive"></span> →</span>
-    </div>
-  </a>
-</section></div>
-  </div>
-  <div class="duo-dots"><i class="on"></i><i></i></div>
-</div>
-<style>
-.duo{position:relative;overflow:hidden;padding-top:56px}
-.duo-track{display:flex;align-items:center;transition:transform .8s cubic-bezier(.7,0,.2,1);touch-action:pan-y}.duo-slide{transition:opacity .8s,transform .8s cubic-bezier(.7,0,.2,1)}.duo-slide:not(.on){opacity:.35;transform:scale(.96)}
-.duo-slide{flex:0 0 100%;min-width:0;padding-bottom:28px}
-.duo-head{display:flex;justify-content:center;margin-bottom:6px}.duo-tabs{position:relative;display:inline-flex;padding:5px;border-radius:999px;background:rgba(20,18,31,.06);border:1px solid rgba(20,18,31,.08);box-shadow:inset 0 1px 2px rgba(20,18,31,.06)}
-.duo-tabs button{position:relative;z-index:1;border:0;background:none;color:#4a4858;font:700 14px Inter,system-ui,sans-serif;padding:11px 20px 13px;border-radius:999px;cursor:pointer;display:flex;align-items:center;gap:8px;transition:color .4s;white-space:nowrap}.duo-tabs button:hover{color:#14121f}
-.duo-tabs button.on{color:#ffd23f}.duo-pill{position:absolute;z-index:0;top:5px;bottom:5px;left:5px;border-radius:999px;background:linear-gradient(180deg,#25212f,#14121f);box-shadow:0 8px 20px -8px rgba(20,18,31,.6),inset 0 1px 0 rgba(255,255,255,.08);transition:transform .55s cubic-bezier(.6,0,.2,1.15),width .55s cubic-bezier(.6,0,.2,1.15)}
-.duo-bar{position:absolute;left:20px;right:20px;bottom:6px;height:2px;border-radius:2px;background:rgba(255,210,63,.18);overflow:hidden;opacity:0;transition:opacity .3s}.duo-tabs button.on .duo-bar{opacity:1}.duo-bar em{display:block;height:100%;width:0;background:#ffd23f;border-radius:2px}.duo.run .duo-tabs button.on .duo-bar em{animation:duoFill var(--dur,7s) linear forwards}.duo.hold .duo-tabs button.on .duo-bar em{animation-play-state:paused}@keyframes duoFill{to{width:100%}}
-@media (max-width:520px){.duo{padding-top:40px}.duo-tabs button{font-size:13px;padding:10px 14px 12px}.duo-bar{left:14px;right:14px}}@media (prefers-reduced-motion:reduce){.duo-slide,.duo-track,.duo-pill{transition:none}}
-.duo-tabs i{width:7px;height:7px;border-radius:50%;background:#ff3b5c;animation:nltp 1.2s infinite}
-.duo-dots{display:flex;justify-content:center;gap:6px;margin:0 0 24px}.duo-dots i{width:8px;height:8px;border-radius:4px;background:rgba(20,20,40,.2);transition:width .3s}.duo-dots i.on{width:24px;background:#14121f}
-</style>
-<script>
-(function(){var d=document.getElementById('duo'),t=document.getElementById('duoT'),tabs=d.querySelectorAll('.duo-tabs button'),dots=d.querySelectorAll('.duo-dots i'),sl=t.querySelectorAll('.duo-slide'),pill=d.querySelector('.duo-pill'),i=0,timer,x0=null,DUR=7000,left=DUR,t0=0;
-d.style.setProperty('--dur',DUR+'ms');
-function place(){var b=tabs[i];pill.style.width=b.offsetWidth+'px';pill.style.transform='translateX('+(b.offsetLeft-5)+'px)';}
-function go(n){i=(n+tabs.length)%tabs.length;t.style.transform='translateX('+(-100*i)+'%)';
-  tabs.forEach(function(b,k){b.classList.toggle('on',k===i);b.setAttribute('aria-selected',k===i)});dots.forEach(function(b,k){b.classList.toggle('on',k===i)});sl.forEach(function(b,k){b.classList.toggle('on',k===i)});
-  place();d.classList.remove('run');void d.offsetWidth;left=DUR;run();}
-function run(){clearTimeout(timer);if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;d.classList.add('run');d.classList.remove('hold');t0=Date.now();timer=setTimeout(function(){if(!document.hidden)go(i+1);else run();},left);}
-function hold(){clearTimeout(timer);left=Math.max(400,left-(Date.now()-t0));d.classList.add('hold');}
-tabs.forEach(function(b){b.onclick=function(){go(+b.dataset.i);}});
-t.addEventListener('mouseenter',hold);t.addEventListener('mouseleave',run);
-t.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;hold()},{passive:true});
-t.addEventListener('touchend',function(e){if(x0!==null){var dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)>40)go(i+(dx<0?1:-1));else run();}},{passive:true});
-addEventListener('resize',place);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(place);
-go(0);})();
-</script>
-<style>
-.nlt{display:grid;grid-template-columns:1.15fr 1fr;gap:0;align-items:stretch;border-radius:24px;overflow:hidden;background:#0a0a0d;color:#eee6d6;text-decoration:none;border:1px solid rgba(243,200,107,.28);box-shadow:0 30px 70px rgba(0,0,0,.35);position:relative;transition:transform .2s,box-shadow .2s}
-.nlt:hover{transform:translateY(-3px);box-shadow:0 36px 80px rgba(0,0,0,.45),0 0 0 1px rgba(243,200,107,.5)}
-.nlt::after{content:'';position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,transparent,#f3c86b,transparent)}
-.nlt-media{position:relative;min-height:260px}.nlt-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.nlt-media::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 60%,#0a0a0d)}
-.nlt-pill{position:absolute;left:16px;top:16px;z-index:1;font:800 11px/1 Inter,system-ui,sans-serif;letter-spacing:.14em;color:#fff;background:#e5294a;padding:7px 10px;border-radius:999px}.nlt-pill i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#fff;margin-right:6px;animation:nltp 1.2s infinite}
-@keyframes nltp{50%{opacity:.25}}
-.nlt-copy{padding:30px 32px}
-.nlt-k{font:700 11.5px/1 Inter,system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#f3c86b}
-.nlt h2{font-size:clamp(24px,3.2vw,34px);line-height:1.15;margin:12px 0 10px;color:#fff}.nlt p{color:#b9b2a4;line-height:1.55;margin:0 0 16px}
-.nlt-day{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0 0 14px}.nlt-day span{background:#14141a;border:1px solid rgba(243,200,107,.18);border-radius:12px;padding:9px 8px;font-size:12px;color:#cfc7b6;text-align:center;line-height:1.3}.nlt-day b{display:block;color:#f3c86b;font-size:14px}
-.nlt .nlt-sub{font-size:13.5px;color:#9a9385;margin-bottom:18px}
-.nlt-btn{display:inline-block;background:linear-gradient(180deg,#f6d688,#e9b94f);color:#1a1206;font-weight:800;padding:12px 20px;border-radius:12px}.nlt-live{font-weight:700;font-size:.85em;opacity:.75}
-@media(max-width:760px){.nlt{grid-template-columns:1fr}.nlt-media{min-height:200px;aspect-ratio:16/9}.nlt-media::after{background:linear-gradient(180deg,transparent 55%,#0a0a0d)}.nlt-copy{padding:20px}.nlt-day{grid-template-columns:repeat(2,1fr)}}
-</style>
-<script>
-fetch('/play/theatre/timetable.json').then(r=>r.json()).then(t=>{const d=new Date(),day=['sun','mon','tue','wed','thu','fri','sat'][d.getDay()];const s=t.halls.main.week[day].subject.split(/[ (+]/)[0];const e=document.getElementById('nltLive');if(e)e.textContent='· live now: '+s;}).catch(()=>{});
-</script>
+
 
   <section class="wrap sec">
     <div class="bento">
