@@ -76,6 +76,7 @@ const PAPER = (p) => ({ 'Group 4': 'Group 4 (General Studies)', 'Tamil': 'Genera
 const out = (rel, html) => { const f = path.join(ROOT, rel, 'index.html'); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, html); };
 const quizLd = (name, url, qs) => ({ '@context': 'https://schema.org', '@type': 'Quiz', name, url: SITE + url, inLanguage: 'en-IN', about: name, hasPart: qs.slice(0, 20).map((q) => ({ '@type': 'Question', name: q.q, acceptedAnswer: { '@type': 'Answer', text: q.opts[q.a] } })) });
 const NOTE = '<p class="note">Questions as they appeared in the exam paper (scanned and cleaned). Tap an option to see the answer. If you spot a wrong answer or a typo, write to <a href="mailto:contact@mindgains.ai">contact@mindgains.ai</a>.</p>';
+const NOTE24 = '<p class="note">These are questions from the TNPSC Group 4 exam held on 9 June 2024 (General Studies, Part B). The official TNPSC key is published for a different booklet version, so the answers here were worked out by MindGains; questions where the scan was unclear or the answer was uncertain are left out. Spot a mistake? Write to <a href="mailto:contact@mindgains.ai">contact@mindgains.ai</a>.</p>';
 const urls = ['/pyq/'];
 const HOME = ['Home', '/'], HUB = ['Previous year questions', '/pyq/'];
 
@@ -86,7 +87,7 @@ for (const y of years) {
   const url = `/pyq/tnpsc/${y}/`; urls.push(url);
   let i = 0;
   const body = hero('TNPSC · ' + y, `TNPSC ${y} Previous Year Questions with Answers`, `${qs.length} questions from the TNPSC ${y} papers, grouped by paper. Tap an option to check your answer instantly.`, [`${qs.length} questions`, ...papers.map(PAPER)]) +
-    papers.map((p) => { const ps = qs.filter((q) => q.paper === p); return `<h2>${esc(PAPER(p))}</h2><p class="sec-n">${ps.length} questions</p>` + ps.map((q) => qcard(q, ++i)).join(''); }).join('') + NOTE +
+    papers.map((p) => { const ps = qs.filter((q) => q.paper === p); return `<h2>${esc(PAPER(p))}</h2><p class="sec-n">${ps.length} questions</p>` + ps.map((q) => qcard(q, ++i)).join(''); }).join('') + (y === 2024 ? NOTE24 : NOTE) +
     `<h2>Other years</h2><div class="yr">${years.filter((x) => x !== y).map((x) => `<a href="/pyq/tnpsc/${x}/"><b>${x}</b><small>${tn.filter((q) => q.year === x).length} questions</small></a>`).join('')}<a href="/pyq/upsc/"><b>UPSC</b><small>Prelims GS questions</small></a></div>`;
   out(`pyq/tnpsc/${y}`, page({ url, title: `TNPSC ${y} Previous Year Questions with Answers (${qs.length} Qs) | MindGains`,
     desc: `TNPSC ${y} previous year question paper questions with answers: ${papers.map(PAPER).join(', ')}. ${qs.length} questions, tap to check each answer. Free.`,
