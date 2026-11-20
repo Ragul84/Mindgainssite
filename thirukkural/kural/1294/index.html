@@ -153,27 +153,41 @@ button.start:hover, a.start:hover {
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&display=swap">
 <link rel="stylesheet" href="/assets/inner-v2.css?v=20261017b">
 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil:wght@500;600&family=Noto+Sans+Tamil:wght@500;600&display=swap">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mindgains.ai/"},{"@type":"ListItem","position":2,"name":"திருக்குறள்","item":"https://mindgains.ai/thirukkural/"},{"@type":"ListItem","position":3,"name":"அதிகாரம் 130","item":"https://mindgains.ai/thirukkural/130/"},{"@type":"ListItem","position":4,"name":"குறள் 1294","item":"https://mindgains.ai/thirukkural/kural/1294/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Quotation","text":"இனிஅன்ன நின்னொடு சூழ்வார்யார் நெஞ்சே துனிசெய்து துவ்வாய்காண் மற்று.","inLanguage":"ta","creator":{"@type":"Person","name":"திருவள்ளுவர்"},"isPartOf":{"@type":"Book","name":"திருக்குறள்"}}</script>
 <style>
 .tk{max-width:880px;margin:0 auto}
 .tk .meta{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 0}.tk .meta span{font:600 12.5px Inter;padding:6px 12px;border-radius:99px;background:#f1f5f7;color:#334155}
-.kc{display:block;text-decoration:none;color:inherit;margin:0 0 10px}
-a.kc:hover{border-color:rgba(13,27,42,.25)!important}
-.kc .kn{font:700 11.5px Inter;letter-spacing:.08em;color:#0f9d74;text-transform:uppercase}
-.kc .ta{font:650 18px/1.65 Inter,sans-serif;color:#0d1b2a;margin:6px 0}
-.kc .tr{font:italic 400 13.5px/1.5 Inter;color:#64748b;margin:0 0 8px}
-.kc .po{font:500 15px/1.65 Inter;color:#0d1b2a;margin:0 0 8px;padding:10px 12px;border-radius:10px;background:#ecfdf5}.kc .po b{color:#047857}
-.kc .en{font:400 14.5px/1.55 Inter;color:#475569}
-.kbig .ta{font-size:clamp(21px,4.4vw,26px)}
+/* kural card: reading-first */
+.kc{position:relative;display:grid;grid-template-columns:64px 1fr;gap:0 22px;padding:28px 30px 26px;margin:0 0 16px!important;border-radius:22px;background:#fff;border:1px solid rgba(13,27,42,.07);box-shadow:0 1px 2px rgba(13,27,42,.04),0 8px 24px -14px rgba(13,27,42,.12);text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s,border-color .2s}
+a.kc:hover{transform:translateY(-2px);border-color:rgba(16,185,129,.35);box-shadow:0 2px 4px rgba(13,27,42,.05),0 18px 36px -18px rgba(13,27,42,.22)}
+.kc .kn{grid-row:1/span 5;align-self:start;display:flex;flex-direction:column;align-items:center;justify-content:center;width:64px;height:64px;border-radius:18px;background:linear-gradient(160deg,#ecfdf5,#d1fae5);color:#047857;font:800 22px/1 'Inter Tight',Inter;letter-spacing:-.02em}
+.kc .kn small{font:700 11px "Noto Sans Tamil",Inter;letter-spacing:0;color:#059669;margin-bottom:4px}
+.kc .ta{font:600 21px/1.75 'Noto Serif Tamil','Noto Sans Tamil',serif;color:#0b1320;margin:0 0 6px;letter-spacing:.005em}
+.kc .tr{font:400 13px/1.55 Inter;color:#94a3b8;margin:0 0 18px;letter-spacing:.01em}
+.kc .po{margin:0 0 14px;padding:0 0 0 16px;border-left:3px solid #10b981;font:500 16.5px/1.85 'Noto Sans Tamil',Inter;color:#1e293b}
+.kc .lbl{display:block;font:700 10.5px Inter;letter-spacing:.14em;text-transform:uppercase;color:#059669;margin:0 0 4px}.kc .po .lbl{font:700 13px "Noto Sans Tamil",Inter;letter-spacing:0;text-transform:none}
+.kc .en{padding:0 0 0 16px;border-left:3px solid #e2e8f0;font:italic 400 17px/1.6 'Instrument Serif',Georgia,serif;color:#475569}
+.kc .en .lbl{font-style:normal;color:#94a3b8}
+.kc .go{position:absolute;top:26px;right:26px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;color:#94a3b8;background:#f8fafc;transition:all .2s}
+a.kc:hover .go{background:#10b981;color:#fff}
+.kbig{padding:36px 38px}.kbig .ta{font-size:clamp(23px,4.6vw,29px)}
+@media(max-width:640px){.kc{grid-template-columns:1fr;padding:22px 20px;gap:0}.kc .kn{grid-row:auto;flex-direction:row;gap:6px;width:auto;height:auto;padding:6px 12px;border-radius:99px;justify-self:start;font-size:15px;margin:0 0 14px}.kc .kn small{margin:0}.kc .ta{font-size:19px}.kbig{padding:24px 20px}.kc .go{top:20px;right:18px}}
+.jump{display:inline-flex;align-items:center;gap:8px;margin:14px 0 0;padding:10px 16px;border-radius:12px;background:#0d1b2a;color:#fff!important;font:600 14px Inter;text-decoration:none}
+.ks-head{display:flex;align-items:baseline;justify-content:space-between;margin:34px 0 14px}.ks-head h2{margin:0!important}.ks-head span{font:500 13px Inter;color:#94a3b8}
 .tk h2{font:700 22px/1.3 'Inter Tight',Inter;color:#0d1b2a;margin:30px 0 12px}
 .paal{margin:40px 0 0!important;padding-top:28px!important;border-top:1px solid rgba(13,27,42,.1)}
 .paal:first-of-type{border-top:0;padding-top:0!important}
 .tk .paal-h{margin:4px 0 16px!important;font:800 clamp(26px,4vw,34px)/1.2 'Inter Tight',Inter!important;color:#0d1b2a}.paal-h span{color:#64748b;font-weight:600}
-.chg{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
-.chg a{display:block;padding:13px 15px;border-radius:14px;border:1px solid rgba(13,27,42,.08);background:#fff;color:#0d1b2a;text-decoration:none;font:500 13px/1.45 Inter}
-.chg a:hover{border-color:rgba(13,27,42,.25)}
-.chg a b{display:block;font:650 15px Inter;margin:2px 0}.chg a small{color:#64748b}
+.iyal{margin:22px 0 10px;display:flex;align-items:center;gap:12px;font:700 12px Inter;letter-spacing:.12em;text-transform:uppercase;color:#64748b}.iyal:after{content:"";flex:1;height:1px;background:rgba(13,27,42,.08)}.iyal b{color:#0d1b2a;letter-spacing:0;text-transform:none;font:650 15px 'Noto Sans Tamil',Inter}
+.chg{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.chg a{display:grid;grid-template-columns:44px 1fr 18px;align-items:center;gap:14px;padding:14px 16px;border-radius:16px;border:1px solid rgba(13,27,42,.07);background:#fff;color:#0d1b2a;text-decoration:none;transition:all .18s}
+.chg a:hover{border-color:rgba(16,185,129,.4);transform:translateY(-1px);box-shadow:0 12px 26px -16px rgba(13,27,42,.25)}
+.chg a i{font-style:normal;width:44px;height:44px;border-radius:13px;display:grid;place-items:center;background:#f1f5f9;color:#334155;font:800 15px 'Inter Tight',Inter}
+.chg a:hover i{background:#ecfdf5;color:#047857}
+.chg a b{display:block;font:650 15.5px/1.35 'Noto Sans Tamil',Inter}.chg a small{display:block;font:500 12.5px/1.4 Inter;color:#64748b;margin-top:2px}
+.chg a em{font-style:normal;color:#cbd5e1;font-size:18px}.chg a:hover em{color:#10b981}
 .pn{display:flex;justify-content:space-between;gap:10px;margin:24px 0}.pn a{flex:1;padding:12px 15px;border-radius:14px;border:1px solid rgba(13,27,42,.1);background:#fff;color:#0d1b2a;text-decoration:none;font:600 14px Inter}.pn a:last-child{text-align:right}
 .tkq{margin:24px 0}
 .tkq-s{font:600 13px Inter;color:#64748b;margin:0 0 6px}
@@ -202,7 +216,7 @@ a.kc:hover{border-color:rgba(13,27,42,.25)!important}
 <main><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><a href="/thirukkural/">திருக்குறள்</a><span>›</span><a href="/thirukkural/130/">அதிகாரம் 130</a><span>›</span><span>குறள் 1294</span></nav>
 <div class="tk">
 <section class="topic-hero"><div class="eyebrow-chip"><span class="dot-pulse"></span>திருக்குறள் · Thirukkural</div><h1>திருக்குறள் 1294</h1><p >அதிகாரம் 130: <a href="/thirukkural/130/" style="color:#37e0ff">நெஞ்சொடு புலத்தல்</a> (Expostulation with Oneself) · காமத்துப்பால் · கற்பியல்</p></section>
-<div class="kc mg-seo-question kbig"><div class="kn">குறள் 1294</div><div class="ta">இனிஅன்ன நின்னொடு சூழ்வார்யார் நெஞ்சே<br>துனிசெய்து துவ்வாய்காண் மற்று.</div><div class="tr">Inianna Ninnotu Soozhvaaryaar Nenje / Thuniseydhu Thuvvaaikaan Matru</div><div class="po"><b>பொருள்:</b> நெஞ்சே, முதலில் ஊடி பின் கூடி இன்பம் துய்க்க மாட்டாய்; இனி உன்னோடு அதைப் பற்றி யார் ஆலோசிப்பார்?</div><div class="en">'See, thou first show offended pride, and then submit,' I bade; Henceforth such council who will share with thee my heart</div></div>
+<article class="kc kbig"><div class="kn"><small>குறள்</small>1294</div><div class="ta">இனிஅன்ன நின்னொடு சூழ்வார்யார் நெஞ்சே<br>துனிசெய்து துவ்வாய்காண் மற்று.</div><div class="tr">Inianna Ninnotu Soozhvaaryaar Nenje · Thuniseydhu Thuvvaaikaan Matru</div><div class="po"><span class="lbl">பொருள்</span>நெஞ்சே, முதலில் ஊடி பின் கூடி இன்பம் துய்க்க மாட்டாய்; இனி உன்னோடு அதைப் பற்றி யார் ஆலோசிப்பார்?</div><div class="en"><span class="lbl">English · G.U. Pope</span>'See, thou first show offended pride, and then submit,' I bade; Henceforth such council who will share with thee my heart</div></article>
 <section class="tkq mg-seo-study" aria-label="குறள் 1294 Quiz"><p class="mg-seo-kicker">Quiz</p><h2>குறள் 1294 Quiz</h2><p class="tkq-s"><b class="tkq-sc">0</b> / 4 சரி</p><div class="mg-seo-questions">
 <article class="tkq-i mg-seo-question"><h3><b>1.</b> இந்தக் குறளின் பொருள் எது? <span class="kq">இனிஅன்ன நின்னொடு சூழ்வார்யார் நெஞ்சே / துனிசெய்து துவ்வாய்காண் மற்று.</span></h3><div class="tkq-o"><button type="button">அவரை மறக்க முடியாத, பெருமையற்ற என் மட நெஞ்சோடு சேர்ந்து, நாணத்தையும் மறந்தேன்.</button><button type="button" data-c="1">நெஞ்சே, முதலில் ஊடி பின் கூடி இன்பம் துய்க்க மாட்டாய்; இனி உன்னோடு அதைப் பற்றி யார் ஆலோசிப்பார்?</button><button type="button">நெஞ்சே, அவர் நெஞ்சு அவருக்கே துணையாக இருப்பதைக் கண்டும், நீ ஏன் எனக்குத் துணையாக இல்லை?</button><button type="button">அவரைப் பெறாவிட்டால் அஞ்சுகிறது; பெற்றால் பிரிவை அஞ்சுகிறது; என் நெஞ்சு தீராத துன்பம் உடையது.</button></div></article>
 <article class="tkq-i mg-seo-question"><h3><b>2.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">இனிஅன்ன நின்னொடு ______ நெஞ்சே / துனிசெய்து துவ்வாய்காண் மற்று.</span></h3><div class="tkq-o"><button type="button" data-c="1">சூழ்வார்யார்</button><button type="button">யாரே</button><button type="button">ஏதிலார்</button><button type="button">துன்பத்திற்கு</button></div></article>
