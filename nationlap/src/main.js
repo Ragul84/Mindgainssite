@@ -1638,6 +1638,7 @@ async function boot() {
       if (j && j.rec) { friendGhost = { name: String(j.name || 'A friend').slice(0, 20), rec: j.rec }; hud.toast?.(`Racing ${friendGhost.name}'s lap`); }
     }).catch(() => {});
   }
+  if (!hasProfile()) { try { const mg = await import('/assets/mg-profile.js'); if (await Promise.race([mg.hydrate(), new Promise((r) => setTimeout(() => r(false), 3000))])) { menu._portraits = new Map(); menu._refreshTitleRacer && menu._refreshTitleRacer(); } } catch (e) {} }
   if (!hasProfile()) menu.showAvatar({ first: true });
   else if (pendingAffairs) { pendingAffairs = false; startAffairsRace(); }
   else if (qs.has('learn')) setTimeout(() => document.querySelector('.play-btn')?.click(), 400);

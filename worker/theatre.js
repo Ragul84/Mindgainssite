@@ -10,11 +10,12 @@ import TT from '../play/theatre/timetable.json';
 import CH from '../play/theatre/chapters.json';
 import { verifyUser } from './auth.js';
 import { proUntil, addWatch, watchedToday, recordAnswers, FREE_SECS } from './pro.js';
-const PRO_SEATS = new Set(); for (const r of 'EFG') for (let n = 7; n <= 12; n++) PRO_SEATS.add(r + n);
+// PRO_SEATS, SEAT_RE and clean are shared with the engagement hooks (./theatre-hooks.js)
+import { PRO_SEATS, SEAT_RE, clean } from './theatre-shared.js';
+import { HOOKS, MGPROF } from './theatre-hooks.js';
 
 const DAY_SETS = {"main": {"mon": ["upsc/polity/constitution-features", "upsc/polity/constitutional-bodies", "upsc/polity/dpsp", "upsc/polity/executive", "upsc/polity/federalism", "upsc/polity/fundamental-rights", "upsc/polity/int-relations", "upsc/polity/judiciary", "upsc/polity/local-govt", "upsc/polity/parliament"], "tue": ["upsc/history/ancient-kingdoms", "upsc/history/indus-valley", "upsc/history/medieval-india", "upsc/history/prehistoric"], "wed": ["upsc/geography/agriculture-geo", "upsc/geography/climate", "upsc/geography/environment-eco", "upsc/geography/map-based", "upsc/geography/natural-resources", "upsc/geography/physical-india", "upsc/geography/physical-world", "upsc/geography/population", "upsc/geography/rivers-drainage", "upsc/geography/transport-infra"], "thu": ["upsc/economics/agriculture-eco", "upsc/economics/budget-fiscal", "upsc/economics/economic-reforms", "upsc/economics/industry-msme", "upsc/economics/inflation", "upsc/economics/money-banking", "upsc/economics/national-income", "upsc/economics/poverty-inclusion", "upsc/economics/trade-balance"], "fri": ["upsc/science/biology", "upsc/science/biotech", "upsc/science/chemistry", "upsc/science/defence-tech", "upsc/science/disease-health", "upsc/science/energy", "upsc/science/physics", "upsc/science/space-tech", "upsc/environment/biodiversity", "upsc/environment/climate-change", "upsc/environment/ecology-basics", "upsc/environment/env-laws", "upsc/environment/pollution", "upsc/environment/protected-areas"], "sat": ["upsc/history/1857-revolt", "upsc/history/art-culture", "upsc/history/british-conquest", "upsc/history/gandhi-era", "upsc/history/national-movement", "upsc/history/post-1947"], "sun": ["upsc/polity/constitution-features", "upsc/polity/constitutional-bodies", "upsc/polity/dpsp", "upsc/geography/agriculture-geo", "upsc/geography/climate", "upsc/geography/environment-eco", "upsc/economics/agriculture-eco", "upsc/economics/budget-fiscal", "upsc/economics/economic-reforms"]}, "tnpsc": {"mon": ["tnpsc/polity/constitution-making", "tnpsc/polity/dpsp", "tnpsc/polity/elections", "tnpsc/polity/fundamental-rights", "tnpsc/polity/governance", "tnpsc/polity/judiciary", "tnpsc/polity/local-bodies", "tnpsc/polity/parliament", "tnpsc/polity/preamble", "tnpsc/polity/president-pm", "tnpsc/polity/state-govt", "tnpsc/polity/tn-polity"], "tue": ["tnpsc/history/art-culture", "tnpsc/history/british-rule", "tnpsc/history/chola-pandya", "tnpsc/history/freedom-struggle", "tnpsc/history/gupta-post-gupta", "tnpsc/history/indus-valley", "tnpsc/history/jainism-buddhism", "tnpsc/history/maratha", "tnpsc/history/mauryan", "tnpsc/history/medieval-india", "tnpsc/history/mughal", "tnpsc/history/post-independence", "tnpsc/history/social-reform", "tnpsc/history/tamil-history", "tnpsc/history/unit-viii-tamil-nadu-history-culture", "tnpsc/history/vedic-age", "tnpsc/history/vijayanagara"], "wed": ["tnpsc/geography/earth-universe", "tnpsc/geography/india-climate", "tnpsc/geography/india-physical", "tnpsc/geography/india-resources", "tnpsc/geography/india-rivers", "tnpsc/geography/india-soils", "tnpsc/geography/tn-districts", "tnpsc/geography/tn-geography", "tnpsc/geography/transport-trade", "tnpsc/geography/world-geography", "tnpsc/geography/world-oceans"], "thu": ["tnpsc/economics/agriculture", "tnpsc/economics/banking-finance", "tnpsc/economics/budget-taxation", "tnpsc/economics/current-schemes", "tnpsc/economics/industry", "tnpsc/economics/international-trade", "tnpsc/economics/national-income", "tnpsc/economics/planning", "tnpsc/economics/poverty-welfare", "tnpsc/economics/tn-economy", "tnpsc/economics/unit-ix-development-administration"], "fri": ["tnpsc/science/biology-cells", "tnpsc/science/biology-human", "tnpsc/science/biology-plants", "tnpsc/science/chemistry-acids", "tnpsc/science/chemistry-matter", "tnpsc/science/chemistry-reactions", "tnpsc/science/computer-basics", "tnpsc/science/environment", "tnpsc/science/physics-electricity", "tnpsc/science/physics-motion", "tnpsc/science/physics-optics", "tnpsc/science/science-tech"], "sat": ["tnpsc/tamil/bhakti-literature", "tnpsc/tamil/epic-literature", "tnpsc/tamil/ezhuthu-ilakkanam", "tnpsc/tamil/modern-tamil", "tnpsc/tamil/porul-ilakkanam", "tnpsc/tamil/post-sangam", "tnpsc/tamil/sangam", "tnpsc/tamil/sol-ilakkanam", "tnpsc/tamil/thirukkural", "tnpsc/tamil/tolkappiyam"], "sun": ["tnpsc/history/art-culture", "tnpsc/history/british-rule", "tnpsc/history/chola-pandya", "tnpsc/history/freedom-struggle", "tnpsc/polity/constitution-making", "tnpsc/polity/dpsp", "tnpsc/polity/elections", "tnpsc/polity/fundamental-rights"]}};
 const QUIZ_EVERY_MS = 4 * 60 * 1000, ANSWER_MS = 15000;
-const SEAT_RE = /^[A-L]([1-9]|1[0-8])$/;
 const BAD = /\b(fuck\w*|shit\w*|bitch\w*|bastard|asshole|dick|madarchod|bhenchod|chutiya|punda|sunni|otha|thevdiya)\b/gi;
 const LB = 'https://yuntwerxahgmaoduxvqc.supabase.co/rest/v1/nationlap_scores', LBK = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl1bnR3ZXJ4YWhnbWFvZHV4dnFjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU3OTk4OTMsImV4cCI6MjA3MTM3NTg5M30.1mFUH9yp55uxN8n9tyRHLFbve36_kpaJs41nPU85S74';
 let topCache = { at: 0, ids: [] };
@@ -26,7 +27,6 @@ async function todayTop() {   // today's NationLap top 3 (best score per player)
     topCache = { at: Date.now(), ids }; } catch { topCache.at = Date.now() - 24e4; }
   return topCache.ids;
 }
-const clean = (s, n) => String(s || '').replace(/[<>]/g, '').trim().slice(0, n);
 
 export class TheatreHall extends DurableObject {
   constructor(ctx, env) {
@@ -42,9 +42,12 @@ export class TheatreHall extends DurableObject {
   top() { return Object.entries(this.board).filter(([, v]) => v.pts > 0).sort((x, y) => y[1].pts - x[1].pts || x[1].ms - y[1].ms).slice(0, 5).map(([id, v]) => ({ name: v.name, seat: v.seat, pts: v.pts })); }
   send(ws, m) { try { ws.send(JSON.stringify(m)); } catch {} }
   all(m) { const s = JSON.stringify(m); for (const ws of this.ctx.getWebSockets()) { try { ws.send(s); } catch {} } }
-  broadcastSeats() { this.all({ t: 'seats', count: this.ctx.getWebSockets().length, seats: this.seatMap(), looks: this.seatLooks(), pros: this.seatPros() }); }
+  broadcastSeats() { this.all({ t: 'seats', count: this.ctx.getWebSockets().length, seats: this.seatMap(), looks: this.seatLooks(), pros: this.seatPros(), ...HOOKS.seatExtras(this) }); }
 
   async fetch(request) {
+    // internal stores on dedicated instances of this class: Duo Streaks ("duo-v1") and the shared profile ("profile-v1")
+    if (request.method === 'POST' && new URL(request.url).pathname === '/__duo') return HOOKS.duoFetch(this, request);
+    if (request.method === 'POST' && new URL(request.url).pathname === '/__profile') return MGPROF.store(this, request);
     if (request.headers.get('Upgrade') !== 'websocket') return new Response('websocket only', { status: 426 });
     const hall = new URL(request.url).searchParams.get('hall'); if (hall) await this.ctx.storage.put('hall', hall);
     const [client, server] = Object.values(new WebSocketPair());
@@ -58,18 +61,19 @@ export class TheatreHall extends DurableObject {
     let m; try { m = JSON.parse(raw); } catch { return; }
     const a = ws.deserializeAttachment() || {};
     if (m.t === 'hello') {
-      if (Array.isArray(m.look)) a.look = [Math.max(0, Math.min(9, m.look[0] | 0)), Math.max(0, Math.min(9, m.look[1] | 0))];
+      if (Array.isArray(m.look)) a.look = [Math.max(0, Math.min(9, m.look[0] | 0)), Math.max(0, Math.min(9, m.look[1] | 0)), Math.max(0, Math.min(3, m.look[2] | 0))];   // 3rd value: gender (0 unknown, 1-3)
       a.name = clean(m.name, 20) || 'Guest'; a.pid = clean(m.pid, 64); if (a.pid) a.id = 'p:' + a.pid.slice(0, 40);
       a.host = !!(this.env.THEATRE_ADMIN && m.admin && m.admin === this.env.THEATRE_ADMIN);
       ws.serializeAttachment(a);
-      this.send(ws, { t: 'state', me: a.id, count: this.ctx.getWebSockets().length, seats: this.seatMap(), looks: this.seatLooks(), pros: this.seatPros(), top: this.top(), chat: this.chat.slice(-40), next: await this.ctx.storage.getAlarm(), quiz: this.quiz && { qid: this.quiz.qid, from: this.quiz.from, q: this.quiz.q, opts: this.quiz.opts, ends: this.quiz.ends } });
+      this.send(ws, { t: 'state', me: a.id, count: this.ctx.getWebSockets().length, seats: this.seatMap(), looks: this.seatLooks(), pros: this.seatPros(), ...HOOKS.seatExtras(this), top: this.top(), chat: this.chat.slice(-40), next: await this.ctx.storage.getAlarm(), quiz: this.quiz && { qid: this.quiz.qid, from: this.quiz.from, q: this.quiz.q, opts: this.quiz.opts, ends: this.quiz.ends } });
       this.broadcastSeats();
       // invite links: the friend who joins earns the inviter 150 points on tonight's board (once per friend per day)
-      const ref = clean(m.ref, 64), uid = m.token ? await verifyUser(String(m.token)) : null;
+      const ref = clean(m.ref, 64), uid = m.token ? await verifyUser(String(m.token)) : HOOKS.testUid(this.env, m);
       if (uid) { a.uid = uid; a.pid = uid; a.id = 'p:' + uid.slice(0, 40); a.pro = !!(await proUntil(this.env, uid)); }
       // free allowance: signed-in accounts by account, guests by their player id
       a.who = uid ? 'u:' + uid : a.pid ? 'p:' + a.pid.slice(0, 40) : 'g:' + a.id;
       ws.serializeAttachment(a);
+      await HOOKS.onHello(this, ws, a, m);
       const w = a.pro ? 0 : await watchedToday(this.env, a.who);
       this.send(ws, { t: 'pro', pro: !!a.pro, signedIn: !!uid, freeLeft: a.pro ? null : Math.max(0, FREE_SECS - w) });
       if (!a.pro && w >= FREE_SECS) this.send(ws, { t: 'wall' });
@@ -95,6 +99,7 @@ export class TheatreHall extends DurableObject {
     } else if (m.t === 'sit') {
       const seat = String(m.seat || '');
       if (!SEAT_RE.test(seat)) return;
+      if (HOOKS.sitLocked(this, ws, a, seat)) return;
       if (PRO_SEATS.has(seat) && !a.pro) return this.send(ws, { t: 'taken', seat, pro: 1 });
       if (this.peers().some((p) => p.ws !== ws && p.a.seat === seat)) return this.send(ws, { t: 'taken', seat });
       a.seat = seat; ws.serializeAttachment(a); this.broadcastSeats();
@@ -104,6 +109,8 @@ export class TheatreHall extends DurableObject {
       Q.answers[a.id] = { i, ms: Date.now() - Q.start, name: a.name, seat: a.seat, uid: a.uid || null };
       await this.save();
       this.all({ t: 'answered', qid: Q.qid, n: Object.keys(Q.answers).length });
+    } else if (HOOKS.TYPES.has(m.t)) {
+      await HOOKS.onMsg(this, ws, a, m);
     } else if (m.t === 'react') {
       const now = Date.now(); if (now - (a.lr || 0) < 700) return; a.lr = now; ws.serializeAttachment(a);
       const e = ['1f525', '1f602', '1f92f', '1f44f', '2764_fe0f', '1f4af', '1f389', '1f9e0', '1f64f', '1f62e', '1f680', '1f4a1'].includes(m.e) ? m.e : null;
@@ -139,6 +146,8 @@ export class TheatreHall extends DurableObject {
       this.quiz = { qid: 'q' + now, from: q.from || '', q: q.question, opts: q.options, correct: q.answer_index, start: now, ends: now + ANSWER_MS, answers: {}, revealed: false };
       await this.save();
       this.all({ t: 'quiz', qid: this.quiz.qid, from: this.quiz.from, q: q.question, opts: q.options, ends: this.quiz.ends });
+      HOOKS.onQuiz(this);   // live 1v1 duels between adjacent signed-in players
+      await this.save();
       await this.ctx.storage.setAlarm(now + ANSWER_MS + 500);
     } else await this.ctx.storage.setAlarm(Date.now() + QUIZ_EVERY_MS);
   }
@@ -157,6 +166,7 @@ export class TheatreHall extends DurableObject {
     // everyone's own place tonight (for the study receipt): rank among players with points
     const order = Object.entries(this.board).filter(([, v]) => v.pts > 0).sort((x, y) => y[1].pts - x[1].pts || x[1].ms - y[1].ms).map(([id]) => id);
     for (const { ws, a } of this.peers()) { const r = order.indexOf(a.id); this.send(ws, { t: 'me', rank: r >= 0 ? r + 1 : 0, of: order.length, pts: r >= 0 ? this.board[a.id].pts : 0 }); }
+    HOOKS.afterReveal(this);   // earned front-row seats + duel results
   }
   // the hall's quiz bank: the day's subject from the site's quiz data (set by the client on connect)
   async pickQuestion() {
@@ -214,6 +224,7 @@ async function latestNews() {
   return data;
 }
 export function theatreRoute(request, env, pathname) {
+  if (pathname === '/api/theatre/profile') return MGPROF.route(request, env);
   if (pathname === '/api/theatre/news') return latestNews().then((d) => new Response(JSON.stringify(d), { headers: { 'content-type': 'application/json', 'cache-control': 'public, max-age=1800' } }));
   const m = pathname.match(/^\/api\/theatre\/(main|tnpsc)\/ws$/);
   if (!m) return new Response('not found', { status: 404 });

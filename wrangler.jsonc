@@ -9,9 +9,25 @@
   "assets": {
     "directory": ".",
     "binding": "ASSETS",
-    // Only the quiz API and the (now private) bank go through the Worker; every other page
-    // is still served straight from the asset store.
-    "run_worker_first": ["/api/*", "/assets/quiz-data/*"]
+    // Paths that go through the Worker first; every other page is served straight from the asset store.
+    // Keep this list in sync with worker/index.js (same 37 paths as the live version #727, 21 Nov 2026).
+    "run_worker_first": [
+      // quiz API and the (private) bank
+      "/api/*", "/assets/quiz-data/*",
+      // growth fixes: 301s (/play/ -> /nationlap/, /play/theatre/pricing/ -> /pro/, /editorial/archive/ -> /blog/),
+      // Live Theatre page (receipt QR, fair wall, invite copy, hooks, Rank Mock entry), /pro/ FAQ, sitemap, llms.txt,
+      // and breadcrumb/link fixes on the content sections
+      "/play", "/play/", "/play/theatre", "/play/theatre/", "/play/theatre/index.html",
+      "/play/theatre/pricing", "/play/theatre/pricing/", "/pro", "/pro/", "/sitemap.xml", "/llms.txt",
+      "/tnpsc/*", "/samacheer/*", "/upsc/*", "/ncert/*", "/ssc/*", "/rrb/*", "/blog/*", "/editorial", "/editorial/*",
+      "/daily-dose/*", "/know-your-india/*", "/misa/*", "/quiz", "/quiz/*", "/study-lab/*",
+      // Teach on MindGains: pages, teacher links, footer link appended to pv.js
+      "/teach", "/teach/*", "/t/*", "/assets/pv.js",
+      // Sunday State Rank Mock page
+      "/play/theatre/mock", "/play/theatre/mock/",
+      // shared player profile client + NationLap profile hand-off
+      "/assets/mg-profile.js", "/nationlap/src/main.js", "/nationlap/src/menu.js"
+    ]
   },
   "ratelimits": [
     { "name": "QUIZ_ROUND_RL", "namespace_id": "1001", "simple": { "limit": 12, "period": 60 } },
@@ -23,6 +39,8 @@
     { "binding": "GAME_DB", "database_name": "mindgains-game", "database_id": "434ed192-05f8-4308-bd2b-727fb85a69de" }
   ],
   "durable_objects": { "bindings": [ { "name": "THEATRE", "class_name": "TheatreHall" }, { "name": "ROOM", "class_name": "StudyRoom" } ] },
+  // No new Durable Object classes: Duo Streaks ("duo-v1"), the shared profile ("profile-v1") and the Sunday Rank Mock
+  // ("rankmock:<exam>") run as named instances of TheatreHall, so no new migration is needed.
   "migrations": [ { "tag": "theatre-v1", "new_sqlite_classes": ["TheatreHall"] }, { "tag": "room-v1", "new_sqlite_classes": ["StudyRoom"] } ],
   "vars": { "ALLOW_GUEST_LEAGUE": "1" }
 }

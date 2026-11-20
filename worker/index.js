@@ -11,6 +11,7 @@
 
 import { CANARIES, canaryGroup } from './canaries.js';
 import { makeGame } from './game.js';
+import { limited } from './limits.js';
 
 const ROUND_SIZE = 20;
 const HALF = 10;
@@ -89,23 +90,7 @@ function pickRound(questions) {
   return shuffle([...shuffle(stmts).slice(0, n), ...shuffle(directs).slice(0, n)]).slice(0, ROUND_SIZE);
 }
 
-// Two layers: Cloudflare's rate-limit binding (shared across the edge, but lenient and
-// eventually consistent) and a per-isolate window that catches a burst from one client,
-// which almost always lands on the same isolate.
-const windows = new Map();
-function localLimited(key, max) {
-  const now = Date.now();
-  let w = windows.get(key);
-  if (!w || now - w.t > 60000) { w = { t: now, n: 0 }; windows.set(key, w); }
-  w.n++;
-  if (windows.size > 5000) windows.clear();
-  return w.n > max;
-}
-async function limited(binding, key, max) {
-  if (localLimited(key, max)) return true;
-  if (!binding) return false;
-  try { const { success } = await binding.limit({ key }); return !success; } catch { return false; }
-}
+// Rate limits (localLimited / limited) live in ./limits.js so the teacher programme shares them.
 
 async function round(request, env) {
   const url = new URL(request.url);
@@ -148,7 +133,15 @@ const game = makeGame({ json, hmac, loadBank, limited, usable });
 import { TheatreHall, theatreRoute } from './theatre.js';
 import { proRoute } from './pro.js';
 import { StudyRoom, roomRoute } from './room.js';
+import { teachRoute } from './teach.js';
+import { growthServe } from './growth.js';
+import { hooksServe } from './theatre-hooks.js';
+import { rmWrap, rmDelegate } from './rank-mock.js';
 export { TheatreHall, StudyRoom };
+
+// Sunday State Rank Mock: mock instances live in the existing THEATRE namespace ("rankmock:<exam>");
+// TheatreHall hands over to RankMock only on instances marked "rm:exam" in their own storage. No new DO class or migration.
+rmDelegate(TheatreHall);
 
 const SEC = {
   'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
@@ -158,7 +151,7 @@ const SEC = {
   'Referrer-Policy': 'strict-origin-when-cross-origin',
   'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), usb=()',
 };
-export default {
+const site = {
   async fetch(request, env) {
     const res = await route(request, env);
     if (res.status === 101 || res.webSocket) return res;
@@ -167,6 +160,8 @@ export default {
     return out;
   },
 };
+// rmWrap adds /api/mock/*, /play/theatre/mock/ and the Rank Mock entry on the theatre page; everything else goes to `site`.
+export default rmWrap(site);
 async function route(request, env) {
   {
     const { pathname } = new URL(request.url);
@@ -176,8 +171,16 @@ async function route(request, env) {
     if (pathname.startsWith('/api/pro/')) return proRoute(request, env, pathname);
     if (pathname.startsWith('/api/room/')) return roomRoute(request, env, pathname);
     if (pathname.startsWith('/api/theatre/')) return theatreRoute(request, env, pathname);
+    // Teach on MindGains: /teach/, /t/<code>, /api/teach/*, and the footer link added to /assets/pv.js
+    if (pathname.startsWith('/api/teach/') || pathname === '/teach' || pathname.startsWith('/teach/') || pathname.startsWith('/t/') || pathname === '/assets/pv.js') {
+      const tr = await teachRoute(request, env, pathname);
+      if (tr) return tr;
+    }
     // The raw bank is for this Worker only.
     if (pathname.startsWith('/assets/quiz-data/')) return new Response('Not found', { status: 404 });
-    return env.ASSETS.fetch(request);
+    // Static assets: growthServe (301s, SEO/theatre/pro/sitemap/llms page fixes) wrapped by hooksServe
+    // (Live Theatre hooks page patch, /assets/mg-profile.js, NationLap profile hand-off). Each page patch is
+    // anchor-checked and idempotent: a page that already carries the change is served unchanged.
+    return hooksServe(request, env, growthServe);
   }
 }

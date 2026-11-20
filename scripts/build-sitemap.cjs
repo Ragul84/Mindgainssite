@@ -71,6 +71,10 @@ for (const file of walk(ROOT)) {
   seen.set(url, stat.mtime.toISOString().slice(0, 10));
 }
 
+// Pages the Worker serves itself (no file on disk) that should still be listed.
+const WORKER_PAGES = ['/teach'];
+for (const u of WORKER_PAGES) if (!seen.has(u)) seen.set(u, new Date().toISOString().slice(0, 10));
+
 const urls = [...seen.entries()].sort(([a], [b]) => (a === '/' ? -1 : b === '/' ? 1 : a.localeCompare(b)));
 
 const body = urls

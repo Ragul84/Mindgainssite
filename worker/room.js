@@ -104,7 +104,7 @@ export class StudyRoom extends DurableObject {
       const uid = m.token ? await verifyUser(String(m.token)) : null;
       if (!uid) return this.send(ws, { t: 'err', why: 'signin' });
       a.uid = uid; a.name = clean(m.name, 20) || 'Friend';
-      if (Array.isArray(m.look)) a.look = [Math.max(0, Math.min(9, m.look[0] | 0)), Math.max(0, Math.min(9, m.look[1] | 0))];
+      if (Array.isArray(m.look)) a.look = [Math.max(0, Math.min(9, m.look[0] | 0)), Math.max(0, Math.min(9, m.look[1] | 0)), Math.max(0, Math.min(3, m.look[2] | 0))];   // 3rd value: gender (0 unknown, 1-3)
       a.pro = !!(await proUntil(this.env, uid));
       const mem = await db.prepare('SELECT role, banned FROM room_member WHERE code=? AND uid=?').bind(M.code, uid).first();
       if (mem && mem.banned) { this.send(ws, { t: 'kicked', why: 'banned' }); try { ws.close(4003, 'banned'); } catch {} return; }

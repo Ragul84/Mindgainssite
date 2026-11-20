@@ -523,49 +523,25 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mindgains.ai/quiz/rrb/general-aware/current-affairs/</loc>
+    <loc>https://mindgains.ai/rrb/general-aware/current-affairs/</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://mindgains.ai/quiz/ssc/english/cloze-test/</loc>
+    <loc>https://mindgains.ai/ssc/english/grammar/</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://mindgains.ai/quiz/ssc/english/fill-blanks/</loc>
+    <loc>https://mindgains.ai/ssc/english/vocabulary/</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://mindgains.ai/quiz/ssc/english/one-word/</loc>
-    <lastmod>2026-10-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://mindgains.ai/quiz/ssc/english/sentence-correction/</loc>
-    <lastmod>2026-10-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://mindgains.ai/quiz/ssc/english/synonyms-antonyms/</loc>
-    <lastmod>2026-10-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://mindgains.ai/quiz/upsc/csat-english/comprehension/</loc>
-    <lastmod>2026-10-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://mindgains.ai/quiz/upsc/csat-english/logical-deduction/</loc>
+    <loc>https://mindgains.ai/upsc/csat-english/</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -581,12 +557,6 @@
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://mindgains.ai/rrb/general-aware/current-affairs/</loc>
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mindgains.ai/rrb/general-aware/sports-awards/</loc>
@@ -1214,18 +1184,6 @@
   </url>
   <url>
     <loc>https://mindgains.ai/ssc/english/comprehension/</loc>
-    <lastmod>2026-10-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://mindgains.ai/ssc/english/grammar/</loc>
-    <lastmod>2026-10-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://mindgains.ai/ssc/english/vocabulary/</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -2075,12 +2033,6 @@
     <lastmod>2026-10-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mindgains.ai/upsc/csat-english/</loc>
-    <lastmod>2026-10-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://mindgains.ai/upsc/csat-quant/</loc>
@@ -3964,4 +3916,10 @@
   <url><loc>https://mindgains.ai/pyq/tnpsc/2015/</loc></url>
   <url><loc>https://mindgains.ai/pyq/upsc/</loc></url>
   <!-- PYQ_END -->
+  <url>
+    <loc>https://mindgains.ai/teach/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
