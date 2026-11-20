@@ -13,6 +13,8 @@ import { proUntil, addWatch, watchedToday, recordAnswers, FREE_SECS } from './pr
 // PRO_SEATS, SEAT_RE and clean are shared with the engagement hooks (./theatre-hooks.js)
 import { PRO_SEATS, SEAT_RE, clean } from './theatre-shared.js';
 import { HOOKS, MGPROF } from './theatre-hooks.js';
+// Sunday State Rank Mock: hold the hall quiz back around a mock for this hall's exam (weekly window + admin tests)
+import { rmHallPauseUntil } from './rank-mock.js';
 
 const DAY_SETS = {"main": {"mon": ["upsc/polity/constitution-features", "upsc/polity/constitutional-bodies", "upsc/polity/dpsp", "upsc/polity/executive", "upsc/polity/federalism", "upsc/polity/fundamental-rights", "upsc/polity/int-relations", "upsc/polity/judiciary", "upsc/polity/local-govt", "upsc/polity/parliament"], "tue": ["upsc/history/ancient-kingdoms", "upsc/history/indus-valley", "upsc/history/medieval-india", "upsc/history/prehistoric"], "wed": ["upsc/geography/agriculture-geo", "upsc/geography/climate", "upsc/geography/environment-eco", "upsc/geography/map-based", "upsc/geography/natural-resources", "upsc/geography/physical-india", "upsc/geography/physical-world", "upsc/geography/population", "upsc/geography/rivers-drainage", "upsc/geography/transport-infra"], "thu": ["upsc/economics/agriculture-eco", "upsc/economics/budget-fiscal", "upsc/economics/economic-reforms", "upsc/economics/industry-msme", "upsc/economics/inflation", "upsc/economics/money-banking", "upsc/economics/national-income", "upsc/economics/poverty-inclusion", "upsc/economics/trade-balance"], "fri": ["upsc/science/biology", "upsc/science/biotech", "upsc/science/chemistry", "upsc/science/defence-tech", "upsc/science/disease-health", "upsc/science/energy", "upsc/science/physics", "upsc/science/space-tech", "upsc/environment/biodiversity", "upsc/environment/climate-change", "upsc/environment/ecology-basics", "upsc/environment/env-laws", "upsc/environment/pollution", "upsc/environment/protected-areas"], "sat": ["upsc/history/1857-revolt", "upsc/history/art-culture", "upsc/history/british-conquest", "upsc/history/gandhi-era", "upsc/history/national-movement", "upsc/history/post-1947"], "sun": ["upsc/polity/constitution-features", "upsc/polity/constitutional-bodies", "upsc/polity/dpsp", "upsc/geography/agriculture-geo", "upsc/geography/climate", "upsc/geography/environment-eco", "upsc/economics/agriculture-eco", "upsc/economics/budget-fiscal", "upsc/economics/economic-reforms"]}, "tnpsc": {"mon": ["tnpsc/polity/constitution-making", "tnpsc/polity/dpsp", "tnpsc/polity/elections", "tnpsc/polity/fundamental-rights", "tnpsc/polity/governance", "tnpsc/polity/judiciary", "tnpsc/polity/local-bodies", "tnpsc/polity/parliament", "tnpsc/polity/preamble", "tnpsc/polity/president-pm", "tnpsc/polity/state-govt", "tnpsc/polity/tn-polity"], "tue": ["tnpsc/history/art-culture", "tnpsc/history/british-rule", "tnpsc/history/chola-pandya", "tnpsc/history/freedom-struggle", "tnpsc/history/gupta-post-gupta", "tnpsc/history/indus-valley", "tnpsc/history/jainism-buddhism", "tnpsc/history/maratha", "tnpsc/history/mauryan", "tnpsc/history/medieval-india", "tnpsc/history/mughal", "tnpsc/history/post-independence", "tnpsc/history/social-reform", "tnpsc/history/tamil-history", "tnpsc/history/unit-viii-tamil-nadu-history-culture", "tnpsc/history/vedic-age", "tnpsc/history/vijayanagara"], "wed": ["tnpsc/geography/earth-universe", "tnpsc/geography/india-climate", "tnpsc/geography/india-physical", "tnpsc/geography/india-resources", "tnpsc/geography/india-rivers", "tnpsc/geography/india-soils", "tnpsc/geography/tn-districts", "tnpsc/geography/tn-geography", "tnpsc/geography/transport-trade", "tnpsc/geography/world-geography", "tnpsc/geography/world-oceans"], "thu": ["tnpsc/economics/agriculture", "tnpsc/economics/banking-finance", "tnpsc/economics/budget-taxation", "tnpsc/economics/current-schemes", "tnpsc/economics/industry", "tnpsc/economics/international-trade", "tnpsc/economics/national-income", "tnpsc/economics/planning", "tnpsc/economics/poverty-welfare", "tnpsc/economics/tn-economy", "tnpsc/economics/unit-ix-development-administration"], "fri": ["tnpsc/science/biology-cells", "tnpsc/science/biology-human", "tnpsc/science/biology-plants", "tnpsc/science/chemistry-acids", "tnpsc/science/chemistry-matter", "tnpsc/science/chemistry-reactions", "tnpsc/science/computer-basics", "tnpsc/science/environment", "tnpsc/science/physics-electricity", "tnpsc/science/physics-motion", "tnpsc/science/physics-optics", "tnpsc/science/science-tech"], "sat": ["tnpsc/tamil/bhakti-literature", "tnpsc/tamil/epic-literature", "tnpsc/tamil/ezhuthu-ilakkanam", "tnpsc/tamil/modern-tamil", "tnpsc/tamil/porul-ilakkanam", "tnpsc/tamil/post-sangam", "tnpsc/tamil/sangam", "tnpsc/tamil/sol-ilakkanam", "tnpsc/tamil/thirukkural", "tnpsc/tamil/tolkappiyam"], "sun": ["tnpsc/history/art-culture", "tnpsc/history/british-rule", "tnpsc/history/chola-pandya", "tnpsc/history/freedom-struggle", "tnpsc/polity/constitution-making", "tnpsc/polity/dpsp", "tnpsc/polity/elections", "tnpsc/polity/fundamental-rights"]}};
 const QUIZ_EVERY_MS = 4 * 60 * 1000, ANSWER_MS = 15000;
@@ -48,6 +50,7 @@ export class TheatreHall extends DurableObject {
     // internal stores on dedicated instances of this class: Duo Streaks ("duo-v1") and the shared profile ("profile-v1")
     if (request.method === 'POST' && new URL(request.url).pathname === '/__duo') return HOOKS.duoFetch(this, request);
     if (request.method === 'POST' && new URL(request.url).pathname === '/__profile') return MGPROF.store(this, request);
+    if (request.method === 'POST' && new URL(request.url).pathname === '/__rmpause') return this.rmPauseSet(request);
     if (request.headers.get('Upgrade') !== 'websocket') return new Response('websocket only', { status: 426 });
     const hall = new URL(request.url).searchParams.get('hall'); if (hall) await this.ctx.storage.put('hall', hall);
     const [client, server] = Object.values(new WebSocketPair());
@@ -65,7 +68,8 @@ export class TheatreHall extends DurableObject {
       a.name = clean(m.name, 20) || 'Guest'; a.pid = clean(m.pid, 64); if (a.pid) a.id = 'p:' + a.pid.slice(0, 40);
       a.host = !!(this.env.THEATRE_ADMIN && m.admin && m.admin === this.env.THEATRE_ADMIN);
       ws.serializeAttachment(a);
-      this.send(ws, { t: 'state', me: a.id, count: this.ctx.getWebSockets().length, seats: this.seatMap(), looks: this.seatLooks(), pros: this.seatPros(), ...HOOKS.seatExtras(this), top: this.top(), chat: this.chat.slice(-40), next: await this.ctx.storage.getAlarm(), quiz: this.quiz && { qid: this.quiz.qid, from: this.quiz.from, q: this.quiz.q, opts: this.quiz.opts, ends: this.quiz.ends } });
+      const rmp = await this.rmPausedUntil(Date.now());
+      this.send(ws, { t: 'state', ...(rmp ? { paused: 'rankmock', until: rmp } : {}), me: a.id, count: this.ctx.getWebSockets().length, seats: this.seatMap(), looks: this.seatLooks(), pros: this.seatPros(), ...HOOKS.seatExtras(this), top: this.top(), chat: this.chat.slice(-40), next: await this.ctx.storage.getAlarm(), quiz: this.quiz && { qid: this.quiz.qid, from: this.quiz.from, q: this.quiz.q, opts: this.quiz.opts, ends: this.quiz.ends } });
       this.broadcastSeats();
       // invite links: the friend who joins earns the inviter 150 points on tonight's board (once per friend per day)
       const ref = clean(m.ref, 64), uid = m.token ? await verifyUser(String(m.token)) : HOOKS.testUid(this.env, m);
@@ -139,7 +143,14 @@ export class TheatreHall extends DurableObject {
   // alarm drives the quiz: start a round, then reveal it ANSWER_MS later
   async alarm() {
     if (!this.ctx.getWebSockets().length) { this.quiz = null; this.board = {}; await this.save(); return; }   // nobody here: sleep and reset the show
-    if (this.quiz && !this.quiz.revealed) { this.reveal(); await this.save(); const at = Date.now() + QUIZ_EVERY_MS; await this.ctx.storage.setAlarm(at); this.all({ t: 'next', at }); return; }
+    if (this.quiz && !this.quiz.revealed) {
+      this.reveal(); await this.save();
+      let at = Date.now() + QUIZ_EVERY_MS; const rmp = await this.rmPausedUntil(at); if (rmp) at = rmp;   // next round would land in a Rank Mock window
+      await this.ctx.storage.setAlarm(at); this.all({ t: 'next', at, ...(rmp ? { paused: 'rankmock', until: rmp } : {}) }); return;
+    }
+    // Rank Mock for this hall's exam about to start or running: no hall quiz until it is over, then the 4-min rounds resume
+    const rmp = await this.rmPausedUntil(Date.now());
+    if (rmp) { await this.ctx.storage.setAlarm(rmp); this.all({ t: 'next', at: rmp, paused: 'rankmock', until: rmp }); return; }
     const q = await this.pickQuestion();
     if (q) {
       const now = Date.now();
@@ -150,6 +161,27 @@ export class TheatreHall extends DurableObject {
       await this.save();
       await this.ctx.storage.setAlarm(now + ANSWER_MS + 500);
     } else await this.ctx.storage.setAlarm(Date.now() + QUIZ_EVERY_MS);
+  }
+  // Rank Mock pause: end of the current pause window for this hall at time `at`, else 0
+  async rmPausedUntil(at) {
+    const hall = (await this.ctx.storage.get('hall')) || 'main';
+    const t = (await this.ctx.storage.get('rmPause')) || 0;
+    return rmHallPauseUntil(hall, at, t);
+  }
+  // admin test mocks: the RankMock instance posts {until} (0 = test over)
+  async rmPauseSet(request) {
+    let b = {}; try { b = await request.json(); } catch {}
+    const now = Date.now(), until = Number(b.until) > now ? Math.min(Number(b.until), now + 3 * 36e5) : 0;
+    await this.ctx.storage.put('rmPause', until);
+    const live = this.ctx.getWebSockets().length, alarm = await this.ctx.storage.getAlarm(), quizOn = this.quiz && !this.quiz.revealed;
+    if (live && !quizOn) {
+      if (until && (!alarm || alarm < until)) { await this.ctx.storage.setAlarm(until); this.all({ t: 'next', at: until, paused: 'rankmock', until }); }
+      else if (!until && alarm && alarm > now + QUIZ_EVERY_MS) {   // test stopped early: back to the normal cadence
+        const rmp = await this.rmPausedUntil(now + QUIZ_EVERY_MS), at = rmp || now + QUIZ_EVERY_MS;
+        await this.ctx.storage.setAlarm(at); this.all({ t: 'next', at, ...(rmp ? { paused: 'rankmock', until: rmp } : {}) });
+      }
+    }
+    return new Response(JSON.stringify({ ok: true, until }), { headers: { 'content-type': 'application/json' } });
   }
   reveal() {
     const Q = this.quiz; Q.revealed = true;
