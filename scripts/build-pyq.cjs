@@ -90,7 +90,7 @@ for (const y of years) {
   const url = `/pyq/tnpsc/${y}/`; urls.push(url);
   let i = 0;
   const body = hero('TNPSC · ' + y, `TNPSC ${y} Previous Year Questions with Answers`, `${qs.length} questions from the TNPSC ${y} papers, grouped by paper. Tap an option to check your answer instantly.`, [`${qs.length} questions`, ...papers.map(PAPER)]) +
-    papers.map((p) => { const ps = qs.filter((q) => q.paper === p); return `<h2>${esc(PAPER(p))}</h2><p class="sec-n">${ps.length} questions</p>` + ps.map((q) => qcard(q, ++i)).join(''); }).join('') + (y === 2024 ? NOTE24 : y === 2025 ? NOTE25 : y === 2022 ? NOTE22 : y === 2021 ? NOTEG1('3 January 2021') : y === 2019 ? NOTEG1('3 March 2019') : NOTE) +
+    papers.map((p) => { const ps = qs.filter((q) => q.paper === p); return `<h2>${esc(PAPER(p))}</h2><p class="sec-n">${ps.length} questions</p>` + ps.map((q) => qcard(q, ++i)).join(''); }).join('') + (y === 2024 ? NOTE24 : y === 2025 ? NOTE25 : y === 2022 ? NOTE22 : y === 2021 ? NOTEG1('3 January 2021') : y === 2019 ? NOTEG1('3 March 2019') .replace('prelims (3 March 2019)','prelims (3 March 2019) and Group 4 (1 September 2019)') : NOTE) +
     `<h2>Other years</h2><div class="yr">${years.filter((x) => x !== y).map((x) => `<a href="/pyq/tnpsc/${x}/"><b>${x}</b><small>${tn.filter((q) => q.year === x).length} questions</small></a>`).join('')}<a href="/pyq/upsc/"><b>UPSC</b><small>Prelims GS questions</small></a></div>`;
   out(`pyq/tnpsc/${y}`, page({ url, title: `TNPSC ${y} Previous Year Questions with Answers (${qs.length} Qs) | MindGains`,
     desc: `TNPSC ${y} previous year question paper questions with answers: ${papers.map(PAPER).join(', ')}. ${qs.length} questions, tap to check each answer. Free.`,
