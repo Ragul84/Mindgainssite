@@ -2456,8 +2456,8 @@ body.touch-mode[data-state="title"] .hof-strip { width: auto !important; }
 .title-screen .title-actions{position:fixed;inset:0;transform:none!important;width:auto!important;max-width:none!important;z-index:5;pointer-events:none;display:block;margin:0;padding:0}
 .title-screen .title-actions > *{pointer-events:auto}
 .title-screen .title-tagline{display:none}
-.title-screen .play-btn{position:absolute;right:28px;bottom:28px;width:min(360px,38vw);font-size:clamp(28px,3.2vw,40px);padding:18px 26px 14px;border-radius:22px}
-.title-screen .resume-btn{position:absolute;right:28px;bottom:calc(28px + 108px);width:min(360px,38vw);font-size:17px;padding:8px 14px;border-radius:14px}
+.title-screen .play-btn{position:absolute;left:0;right:0;margin:0 auto;bottom:28px;width:min(360px,38vw);font-size:clamp(28px,3.2vw,40px);padding:18px 26px 14px;border-radius:22px}
+.title-screen .resume-btn{position:absolute;left:0;right:0;margin:0 auto;bottom:calc(28px + 108px);width:min(360px,38vw);font-size:17px;padding:8px 14px;border-radius:14px}
 .title-screen .title-row{position:absolute;left:24px;top:50%;transform:translateY(-50%);width:auto!important;flex-direction:column;flex-wrap:nowrap;gap:12px;margin:0}
 .title-screen .title-row .dock{flex:none}
 .dock{pointer-events:auto;cursor:pointer;position:relative;width:78px;height:78px;border-radius:20px;border:3px solid rgba(255,255,255,.9);background:linear-gradient(180deg,#4a5bd8,#2c35a0);
