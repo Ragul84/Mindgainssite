@@ -15,39 +15,172 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/assets/quiz-hub.css?v=20261002_mobilenav" />
 <link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
 <meta name="theme-color" content="#37e0ff" />
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<style>
+@keyframes borderGlowRotate {
+  0%   { background-position: 0% 50%; box-shadow: 0 0 18px rgba(123, 227, 176, 0.45), 0 0 35px rgba(56, 189, 248, 0.25); }
+  50%  { background-position: 100% 50%; box-shadow: 0 0 30px rgba(167, 139, 250, 0.7), 0 0 55px rgba(244, 114, 182, 0.4); }
+  100% { background-position: 0% 50%; box-shadow: 0 0 18px rgba(123, 227, 176, 0.45), 0 0 35px rgba(56, 189, 248, 0.25); }
+}
+
+@keyframes dotPulseAnim {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%      { transform: scale(1.5); opacity: 0.5; }
+}
+
+.topic-hero {
+  margin: 28px 0 24px !important;
+  padding: 40px 32px !important;
+  border-radius: 24px !important;
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.09) !important;
+  backdrop-filter: blur(28px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(160%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.12) !important;
+}
+
+.eyebrow-chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 5px 14px !important;
+  border-radius: 999px !important;
+  background: rgba(123, 227, 176, 0.08) !important;
+  border: 1px solid rgba(123, 227, 176, 0.22) !important;
+  color: #7BE3B0 !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 2.2px !important;
+  text-transform: uppercase !important;
+  width: fit-content !important;
+}
+
+.dot-pulse {
+  width: 7px !important;
+  height: 7px !important;
+  border-radius: 50% !important;
+  background: #7BE3B0 !important;
+  animation: dotPulseAnim 2s infinite ease-in-out !important;
+}
+
+.topic-features {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+  margin-top: 4px !important;
+}
+
+.feat-chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  padding: 6px 14px !important;
+  border-radius: 10px !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+}
+
+.start-wrapper {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin-top: 10px !important;
+  width: auto !important;
+}
+
+button.start, a.start {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 12px 26px !important;
+  border-radius: 999px !important;
+  background: #7BE3B0 !important;
+  background-size: auto !important;
+  border: 1px solid #7BE3B0 !important;
+  color: #07130d !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2px !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  width: auto !important;
+  max-width: 200px !important;
+  white-space: nowrap !important;
+  animation: none !important;
+  transition: transform 0.16s ease, background 0.16s ease !important;
+}
+
+button.start:hover, a.start:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: none !important;
+}
+
+.exam-stmt-row {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 14px !important;
+  margin: 12px 0 !important;
+  padding: 14px 18px !important;
+  background: rgba(255,255,255,0.035) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  border-radius: 14px !important;
+  border-left: 4px solid #7BE3B0 !important;
+}
+</style>
+<link rel="stylesheet" href="/assets/mindgains-redesign.css?v=20261002_mobilenav">
+<!-- MG_SEO_STYLE_START --><style>.mg-seo-study{margin:24px 0;padding:24px;border:1px solid rgba(255,255,255,.16);border-radius:22px;background:rgba(255,255,255,.045)}.mg-seo-kicker{margin:0 0 8px;color:#67e8f9;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}.mg-seo-study h2{margin:0 0 12px;font-size:clamp(26px,4vw,38px)}.mg-seo-study>p{max-width:860px;color:#dbeafe;line-height:1.6}.mg-seo-questions{display:grid;gap:12px;margin-top:18px}.mg-seo-question{padding:18px;border:1px solid rgba(255,255,255,.12);border-radius:16px;background:rgba(0,0,0,.16)}.mg-seo-question h3{margin:0 0 12px;font-size:18px;line-height:1.4}.mg-seo-question ol{padding-left:26px;color:#dbeafe;line-height:1.6}.mg-seo-question p{color:#cbd5e1;line-height:1.55}.mg-seo-note{font-weight:700}@media(max-width:700px){.mg-seo-study{padding:17px}.mg-seo-question{padding:14px}}</style><!-- MG_SEO_STYLE_END -->  <link rel="stylesheet" href="/assets/site-footer.css?v=3">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="/assets/inner-v2.css?v=20261017b">
+
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mindgains.ai/"},{"@type":"ListItem","position":2,"name":"திருக்குறள்","item":"https://mindgains.ai/thirukkural/"},{"@type":"ListItem","position":3,"name":"அதிகாரம் 46","item":"https://mindgains.ai/thirukkural/46/"},{"@type":"ListItem","position":4,"name":"குறள் 456","item":"https://mindgains.ai/thirukkural/kural/456/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Quotation","text":"மனந்தூயார்க் கெச்சம்நன் றாகும் இனந்தூயார்க்கு இல்லைநன் றாகா வினை.","inLanguage":"ta","creator":{"@type":"Person","name":"திருவள்ளுவர்"},"isPartOf":{"@type":"Book","name":"திருக்குறள்"}}</script>
 <style>
-.tk{max-width:860px;margin:0 auto;padding:0 16px 40px}
-.tk h1{font:400 clamp(30px,6vw,46px)/1.1 'Instrument Serif',serif;margin:18px 0 8px}
-.tk .sub{color:rgba(255,255,255,.7);font:500 15px/1.6 Inter,sans-serif;margin:0 0 18px}
-.tk .meta{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}.tk .meta span{font:600 12px Inter;padding:6px 12px;border-radius:99px;border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.8)}
-.kc{display:block;padding:18px 20px;margin:0 0 12px;border-radius:18px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);text-decoration:none;color:inherit}
-a.kc:hover{border-color:rgba(55,224,255,.5)}
-.kc .kn{font:700 12px Inter;letter-spacing:.08em;color:#37e0ff}.kc .ta{font:600 19px/1.7 'Noto Sans Tamil',Inter,sans-serif;margin:6px 0}
-.kc .tr{font:italic 400 14px/1.5 Inter;color:rgba(255,255,255,.55);margin:0 0 6px}.kc .en{font:400 15px/1.55 Inter;color:rgba(255,255,255,.82)}
-.kc .po{font:500 15.5px/1.7 'Noto Sans Tamil',Inter;color:#fff;margin:4px 0 8px}.kc .po b{color:#f3c86b}
-.kbig .ta{font-size:clamp(22px,4.6vw,28px)}
-.tk h2{font:600 20px Inter;margin:28px 0 12px}
+.tk{max-width:880px;margin:0 auto}
+.tk .meta{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 0}.tk .meta span{font:600 12.5px Inter;padding:6px 12px;border-radius:99px;background:#f1f5f7;color:#334155}
+.kc{display:block;text-decoration:none;color:inherit;margin:0 0 10px}
+a.kc:hover{border-color:rgba(13,27,42,.25)!important}
+.kc .kn{font:700 11.5px Inter;letter-spacing:.08em;color:#0f9d74;text-transform:uppercase}
+.kc .ta{font:650 18px/1.65 Inter,sans-serif;color:#0d1b2a;margin:6px 0}
+.kc .tr{font:italic 400 13.5px/1.5 Inter;color:#64748b;margin:0 0 8px}
+.kc .po{font:500 15px/1.65 Inter;color:#0d1b2a;margin:0 0 8px;padding:10px 12px;border-radius:10px;background:#ecfdf5}.kc .po b{color:#047857}
+.kc .en{font:400 14.5px/1.55 Inter;color:#475569}
+.kbig .ta{font-size:clamp(21px,4.4vw,26px)}
+.tk h2{font:700 22px/1.3 'Inter Tight',Inter;color:#0d1b2a;margin:30px 0 12px}
 .chg{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
-.chg a{display:block;padding:12px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);color:inherit;text-decoration:none;font:500 14px/1.4 Inter}
-.chg a b{display:block;font:600 15px 'Noto Sans Tamil',Inter}.chg a small{color:rgba(255,255,255,.55)}
-.pn{display:flex;justify-content:space-between;gap:10px;margin:26px 0}.pn a{flex:1;padding:12px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.12);color:inherit;text-decoration:none;font:600 14px Inter}.pn a:last-child{text-align:right}
-.tkq{margin:28px 0;padding:20px;border-radius:20px;border:1px solid rgba(55,224,255,.25);background:rgba(55,224,255,.04)}
-.tkq h2{margin:0 0 4px}.tkq-s{font:600 13px Inter;color:rgba(255,255,255,.6);margin:0 0 14px}
-.tkq-i{padding:14px 0;border-top:1px solid rgba(255,255,255,.08)}.tkq-q{font:500 15px/1.6 Inter;margin:0 0 10px}
-.kq{display:block;font:600 16px/1.7 'Noto Sans Tamil',Inter;margin-top:6px;color:#fff}.kq.en{font:italic 400 15px/1.6 Inter}
-.tkq-o{display:grid;grid-template-columns:1fr 1fr;gap:8px}@media(max-width:560px){.tkq-o{grid-template-columns:1fr}}
-.tkq-o button{padding:11px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04);color:#fff;font:500 14px/1.4 'Noto Sans Tamil',Inter;text-align:left;cursor:pointer}
-.tkq-o button.ok{background:rgba(52,211,153,.18);border-color:#34d399}.tkq-o button.no{background:rgba(248,113,113,.16);border-color:#f87171}
-.cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin:30px 0;padding:18px 20px;border-radius:18px;background:linear-gradient(90deg,rgba(243,200,107,.14),rgba(55,224,255,.08));border:1px solid rgba(243,200,107,.3)}
-.cta p{margin:0;font:500 15px/1.5 Inter}.cta a{padding:11px 18px;border-radius:12px;background:#f3c86b;color:#1a1206;font:700 14px Inter;text-decoration:none}
-.src{font:400 12px/1.6 Inter;color:rgba(255,255,255,.45);margin-top:30px}
+.chg a{display:block;padding:13px 15px;border-radius:14px;border:1px solid rgba(13,27,42,.08);background:#fff;color:#0d1b2a;text-decoration:none;font:500 13px/1.45 Inter}
+.chg a:hover{border-color:rgba(13,27,42,.25)}
+.chg a b{display:block;font:650 15px Inter;margin:2px 0}.chg a small{color:#64748b}
+.pn{display:flex;justify-content:space-between;gap:10px;margin:24px 0}.pn a{flex:1;padding:12px 15px;border-radius:14px;border:1px solid rgba(13,27,42,.1);background:#fff;color:#0d1b2a;text-decoration:none;font:600 14px Inter}.pn a:last-child{text-align:right}
+.tkq{margin:24px 0}
+.tkq-s{font:600 13px Inter;color:#64748b;margin:0 0 6px}
+.tkq-i{margin:0 0 10px}
+.kq{display:block;font:650 16px/1.6 Inter;margin-top:6px;color:#0d1b2a}.kq.en{font:italic 400 15px/1.6 Inter;color:#334155}
+.tkq-o{display:grid;gap:6px}
+.tkq-o button{padding:10px 12px;border-radius:10px;border:1px solid transparent;background:#f7f9fa;color:#0d1b2a;font:500 14.5px/1.45 Inter;text-align:left;cursor:pointer}
+.tkq-o button:hover{border-color:rgba(13,27,42,.15)}
+.tkq-o button.ok{background:#ecfdf5;border-color:#10b981;color:#065f46}.tkq-o button.no{background:#fef2f2;border-color:#f87171;color:#991b1b}
+.src{font:400 12px/1.6 Inter;color:#94a3b8;margin-top:26px}
 </style>
 </head>
 <body class="inner-v2">
@@ -65,17 +198,21 @@ a.kc:hover{border-color:rgba(55,224,255,.5)}
 </header>
 <main><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><a href="/thirukkural/">திருக்குறள்</a><span>›</span><a href="/thirukkural/46/">அதிகாரம் 46</a><span>›</span><span>குறள் 456</span></nav>
 <div class="tk">
-<h1>திருக்குறள் 456</h1><p class="sub">அதிகாரம் 46: <a href="/thirukkural/46/" style="color:#37e0ff">சிற்றினம் சேராமை</a> (Avoiding mean Associations) · பொருட்பால் · அரசியல்</p>
-<div class="kc kbig"><div class="kn">குறள் 456</div><div class="ta">மனந்தூயார்க் கெச்சம்நன் றாகும் இனந்தூயார்க்கு<br>இல்லைநன் றாகா வினை.</div><p class="tr">Manandhooyaark Kechchamnan Raakum Inandhooyaarkku / Illainan Raakaa Vinai</p><div class="po"><b>பொருள்:</b> மனம் தூய்மையானவர்களுக்கு நல்ல சந்ததி அமையும்; நல்ல கூட்டம் உடையவர்களுக்கு நன்மை தராத செயல் இல்லை.</div><div class="en">From true pure-minded men a virtuous race proceeds; To men of pure companionship belong no evil deeds</div></div>
-<section class="tkq" aria-label="குறள் 456 Quiz"><h2>குறள் 456 Quiz</h2><p class="tkq-s"><b class="tkq-sc">0</b> / 4 சரி</p>
-<div class="tkq-i"><p class="tkq-q"><b>1.</b> இந்தக் குறளின் பொருள் எது? <span class="kq">மனந்தூயார்க் கெச்சம்நன் றாகும் இனந்தூயார்க்கு / இல்லைநன் றாகா வினை.</span></p><div class="tkq-o"><button type="button">மனத் தூய்மையும் செயல் தூய்மையும், நல்ல கூட்டத்தின் தூய்மையைச் சார்ந்தே வரும்.</button><button type="button">பெரியோர் சிறியோரின் கூட்டத்திற்கு அஞ்சுவர்; சிறியோர் அவர்களையே சுற்றமாக நினைத்துச் சேர்வர்.</button><button type="button">நல்ல கூட்டத்தைவிடச் சிறந்த துணை இல்லை; தீய கூட்டத்தைவிடத் துன்பம் தருவதும் இல்லை.</button><button type="button" data-c="1">மனம் தூய்மையானவர்களுக்கு நல்ல சந்ததி அமையும்; நல்ல கூட்டம் உடையவர்களுக்கு நன்மை தராத செயல் இல்லை.</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>2.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">மனந்தூயார்க் கெச்சம்நன் றாகும் இனந்தூயார்க்கு / இல்லைநன் றாகா ______.</span></p><div class="tkq-o"><button type="button">புகழும்</button><button type="button">இனநலம்</button><button type="button">ஆகும்</button><button type="button" data-c="1">வினை</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>3.</b> இந்தக் குறள் எந்த அதிகாரத்தைச் சேர்ந்தது? <span class="kq">மனந்தூயார்க் கெச்சம்நன் றாகும் இனந்தூயார்க்கு / இல்லைநன் றாகா வினை.</span></p><div class="tkq-o"><button type="button">சுற்றந் தழால்</button><button type="button">அவை அஞ்சாமை</button><button type="button">இரவு</button><button type="button" data-c="1">சிற்றினம் சேராமை</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>4.</b> Which kural does this English translation (G.U. Pope) belong to? <span class="kq en">"From true pure-minded men a virtuous race proceeds; To men of pure companionship belong no evil deeds"</span></p><div class="tkq-o"><button type="button">மனத்தானாம் மாந்தர்க் குணர்ச்சி இனத்தானாம்</button><button type="button">மனநலம் நன்குடைய ராயினும் சான்றோர்க்கு</button><button type="button">மனத்து ளதுபோலக் காட்டி ஒருவற்கு</button><button type="button" data-c="1">மனந்தூயார்க் கெச்சம்நன் றாகும் இனந்தூயார்க்கு</button></div></div>
+<section class="topic-hero"><div class="eyebrow-chip"><span class="dot-pulse"></span>திருக்குறள் · Thirukkural</div><h1>திருக்குறள் 456</h1><p >அதிகாரம் 46: <a href="/thirukkural/46/" style="color:#37e0ff">சிற்றினம் சேராமை</a> (Avoiding mean Associations) · பொருட்பால் · அரசியல்</p></section>
+<div class="kc mg-seo-question kbig"><div class="kn">குறள் 456</div><div class="ta">மனந்தூயார்க் கெச்சம்நன் றாகும் இனந்தூயார்க்கு<br>இல்லைநன் றாகா வினை.</div><div class="tr">Manandhooyaark Kechchamnan Raakum Inandhooyaarkku / Illainan Raakaa Vinai</div><div class="po"><b>பொருள்:</b> மனம் தூய்மையானவர்களுக்கு நல்ல சந்ததி அமையும்; நல்ல கூட்டம் உடையவர்களுக்கு நன்மை தராத செயல் இல்லை.</div><div class="en">From true pure-minded men a virtuous race proceeds; To men of pure companionship belong no evil deeds</div></div>
+<section class="tkq mg-seo-study" aria-label="குறள் 456 Quiz"><p class="mg-seo-kicker">Quiz</p><h2>குறள் 456 Quiz</h2><p class="tkq-s"><b class="tkq-sc">0</b> / 4 சரி</p><div class="mg-seo-questions">
+<article class="tkq-i mg-seo-question"><h3><b>1.</b> இந்தக் குறளின் பொருள் எது? <span class="kq">மனந்தூயார்க் கெச்சம்நன் றாகும் இனந்தூயார்க்கு / இல்லைநன் றாகா வினை.</span></h3><div class="tkq-o"><button type="button">மனத் தூய்மையும் செயல் தூய்மையும், நல்ல கூட்டத்தின் தூய்மையைச் சார்ந்தே வரும்.</button><button type="button">பெரியோர் சிறியோரின் கூட்டத்திற்கு அஞ்சுவர்; சிறியோர் அவர்களையே சுற்றமாக நினைத்துச் சேர்வர்.</button><button type="button">நல்ல கூட்டத்தைவிடச் சிறந்த துணை இல்லை; தீய கூட்டத்தைவிடத் துன்பம் தருவதும் இல்லை.</button><button type="button" data-c="1">மனம் தூய்மையானவர்களுக்கு நல்ல சந்ததி அமையும்; நல்ல கூட்டம் உடையவர்களுக்கு நன்மை தராத செயல் இல்லை.</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>2.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">மனந்தூயார்க் கெச்சம்நன் றாகும் இனந்தூயார்க்கு / இல்லைநன் றாகா ______.</span></h3><div class="tkq-o"><button type="button">புகழும்</button><button type="button">இனநலம்</button><button type="button">ஆகும்</button><button type="button" data-c="1">வினை</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>3.</b> இந்தக் குறள் எந்த அதிகாரத்தைச் சேர்ந்தது? <span class="kq">மனந்தூயார்க் கெச்சம்நன் றாகும் இனந்தூயார்க்கு / இல்லைநன் றாகா வினை.</span></h3><div class="tkq-o"><button type="button">சுற்றந் தழால்</button><button type="button">அவை அஞ்சாமை</button><button type="button">இரவு</button><button type="button" data-c="1">சிற்றினம் சேராமை</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>4.</b> Which kural does this English translation (G.U. Pope) belong to? <span class="kq en">"From true pure-minded men a virtuous race proceeds; To men of pure companionship belong no evil deeds"</span></h3><div class="tkq-o"><button type="button">மனத்தானாம் மாந்தர்க் குணர்ச்சி இனத்தானாம்</button><button type="button">மனநலம் நன்குடைய ராயினும் சான்றோர்க்கு</button><button type="button">மனத்து ளதுபோலக் காட்டி ஒருவற்கு</button><button type="button" data-c="1">மனந்தூயார்க் கெச்சம்நன் றாகும் இனந்தூயார்க்கு</button></div></div>
 </section>
 <h2>இதே அதிகாரத்தின் மற்ற குறள்கள்</h2><div class="chg"><a href="/thirukkural/kural/451/"><small>குறள் 451</small><b>சிற்றினம் அஞ்சும் பெருமை சிறுமைதான்</b></a><a href="/thirukkural/kural/452/"><small>குறள் 452</small><b>நிலத்தியல்பால் நீர்திரிந் தற்றாகும் மாந்தர்க்கு</b></a><a href="/thirukkural/kural/453/"><small>குறள் 453</small><b>மனத்தானாம் மாந்தர்க் குணர்ச்சி இனத்தானாம்</b></a><a href="/thirukkural/kural/454/"><small>குறள் 454</small><b>மனத்து ளதுபோலக் காட்டி ஒருவற்கு</b></a><a href="/thirukkural/kural/455/"><small>குறள் 455</small><b>மனந்தூய்மை செய்வினை தூய்மை இரண்டும்</b></a><a href="/thirukkural/kural/457/"><small>குறள் 457</small><b>மனநலம் மன்னுயிர்க் காக்கம் இனநலம்</b></a><a href="/thirukkural/kural/458/"><small>குறள் 458</small><b>மனநலம் நன்குடைய ராயினும் சான்றோர்க்கு</b></a><a href="/thirukkural/kural/459/"><small>குறள் 459</small><b>மனநலத்தின் ஆகும் மறுமைமற் றஃதும்</b></a><a href="/thirukkural/kural/460/"><small>குறள் 460</small><b>நல்லினத்தி னூங்குந் துணையில்லை தீயினத்தின்</b></a></div>
 <div class="pn"><a href="/thirukkural/kural/455/">‹ குறள் 455</a><a href="/thirukkural/kural/457/">குறள் 457 ›</a></div>
-<div class="cta"><p><b>Race your friends on Thirukkural.</b> Answer live against aspirants across India in NationLap.</p><a href="/nationlap/">Play NationLap</a></div>
+<section class="ibento" aria-label="More ways to practise">
+  <a class="itile it-ca" href="/nationlap/?affairs=1"><b>Every morning · 5am</b><strong>Today's current affairs</strong><span>The day's exam-worthy news, each fact with its source.</span><i>Race today's affairs →</i></a>
+  <a class="itile it-nl" href="/nationlap/"><b>Game</b><strong>NationLap</strong><span>Read a topic, then race it and answer at speed.</span><i>Play free →</i></a>
+  <a class="itile it-app" href="/get/"><b>MindGains app</b><strong>Mistakes come back</strong><span>Daily Dose, revision and Quiz Rooms with friends.</span><i>Get the app →</i></a>
+</section>
 <p class="src">குறள் மூலம்: பொதுக் களம் (public domain). தமிழ்ப் பொருள்: MindGains. English translation: Rev. G.U. Pope (1886), public domain.</p>
 </div>
 </main>

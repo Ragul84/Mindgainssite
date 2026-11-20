@@ -9,6 +9,11 @@ const tpl = fs.readFileSync(path.join(ROOT, 'tnpsc/tamil/thirukkural/index.html'
 const HEADER = tpl.slice(tpl.indexOf('<header class="hh">'), tpl.indexOf('</header>') + 9);
 const FOOTER = tpl.slice(tpl.indexOf('<footer class="mg-foot">'), tpl.indexOf('</footer>') + 9);
 const SITE = 'https://mindgains.ai';
+const HEADSTY = tpl.slice(tpl.indexOf('<link rel="preconnect"'), tpl.indexOf('</head>'))
+  .replace(/<!-- MG_LEARNING_SCHEMA_START -->[\s\S]*?<!-- MG_LEARNING_SCHEMA_END -->/g, '')
+  .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, '')
+  .replace(/<link rel="canonical"[^>]*>/g, '');
+const BENTO = tpl.slice(tpl.indexOf('<section class="ibento"'), tpl.indexOf('</section>', tpl.indexOf('<section class="ibento"')) + 10);
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const PORUL = {};
 for (const f of fs.readdirSync(path.join(__dirname, 'data')).filter((f) => /^tk-porul-\d+\.txt$/.test(f)))
@@ -43,41 +48,43 @@ function qPorul(k) {
   return { q: `இந்தக் குறளின் பொருள் எது? <span class="kq">${esc(k.l1)} / ${esc(k.l2)}</span>`, opts: shuffle([PORUL[k.n], ...pick(sib, 3, []).map((x) => PORUL[x.n])]), a: PORUL[k.n] };
 }
 function quizHTML(qs, title) {
-  return `<section class="tkq" aria-label="${esc(title)}"><h2>${esc(title)}</h2><p class="tkq-s"><b class="tkq-sc">0</b> / ${qs.length} சரி</p>
-${qs.map((x, i) => `<div class="tkq-i"><p class="tkq-q"><b>${i + 1}.</b> ${x.q}</p><div class="tkq-o">${x.opts.map((o) => `<button type="button"${o === x.a ? ' data-c="1"' : ''}>${esc(o)}</button>`).join('')}</div></div>`).join('\n')}
+  return `<section class="tkq mg-seo-study" aria-label="${esc(title)}"><p class="mg-seo-kicker">Quiz</p><h2>${esc(title)}</h2><p class="tkq-s"><b class="tkq-sc">0</b> / ${qs.length} சரி</p><div class="mg-seo-questions">
+${qs.map((x, i) => `<article class="tkq-i mg-seo-question"><h3><b>${i + 1}.</b> ${x.q}</h3><div class="tkq-o">${x.opts.map((o) => `<button type="button"${o === x.a ? ' data-c="1"' : ''}>${esc(o)}</button>`).join('')}</div></div>`).join('\n')}
 </section>`;
 }
 const QJS = `<script>document.querySelectorAll('.tkq').forEach(function(s){var sc=s.querySelector('.tkq-sc'),n=0;s.querySelectorAll('.tkq-i').forEach(function(it){it.querySelectorAll('button').forEach(function(b){b.onclick=function(){if(it.dataset.d)return;it.dataset.d=1;var ok=b.dataset.c;b.classList.add(ok?'ok':'no');if(!ok){var c=it.querySelector('[data-c]');c&&c.classList.add('ok')}else{sc.textContent=++n}}})})})</script>`;
 
 const CSS = `<style>
-.tk{max-width:860px;margin:0 auto;padding:0 16px 40px}
-.tk h1{font:400 clamp(30px,6vw,46px)/1.1 'Instrument Serif',serif;margin:18px 0 8px}
-.tk .sub{color:rgba(255,255,255,.7);font:500 15px/1.6 Inter,sans-serif;margin:0 0 18px}
-.tk .meta{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}.tk .meta span{font:600 12px Inter;padding:6px 12px;border-radius:99px;border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.8)}
-.kc{display:block;padding:18px 20px;margin:0 0 12px;border-radius:18px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);text-decoration:none;color:inherit}
-a.kc:hover{border-color:rgba(55,224,255,.5)}
-.kc .kn{font:700 12px Inter;letter-spacing:.08em;color:#37e0ff}.kc .ta{font:600 19px/1.7 'Noto Sans Tamil',Inter,sans-serif;margin:6px 0}
-.kc .tr{font:italic 400 14px/1.5 Inter;color:rgba(255,255,255,.55);margin:0 0 6px}.kc .en{font:400 15px/1.55 Inter;color:rgba(255,255,255,.82)}
-.kc .po{font:500 15.5px/1.7 'Noto Sans Tamil',Inter;color:#fff;margin:4px 0 8px}.kc .po b{color:#f3c86b}
-.kbig .ta{font-size:clamp(22px,4.6vw,28px)}
-.tk h2{font:600 20px Inter;margin:28px 0 12px}
+.tk{max-width:880px;margin:0 auto}
+.tk .meta{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 0}.tk .meta span{font:600 12.5px Inter;padding:6px 12px;border-radius:99px;background:#f1f5f7;color:#334155}
+.kc{display:block;text-decoration:none;color:inherit;margin:0 0 10px}
+a.kc:hover{border-color:rgba(13,27,42,.25)!important}
+.kc .kn{font:700 11.5px Inter;letter-spacing:.08em;color:#0f9d74;text-transform:uppercase}
+.kc .ta{font:650 18px/1.65 Inter,sans-serif;color:#0d1b2a;margin:6px 0}
+.kc .tr{font:italic 400 13.5px/1.5 Inter;color:#64748b;margin:0 0 8px}
+.kc .po{font:500 15px/1.65 Inter;color:#0d1b2a;margin:0 0 8px;padding:10px 12px;border-radius:10px;background:#ecfdf5}.kc .po b{color:#047857}
+.kc .en{font:400 14.5px/1.55 Inter;color:#475569}
+.kbig .ta{font-size:clamp(21px,4.4vw,26px)}
+.tk h2{font:700 22px/1.3 'Inter Tight',Inter;color:#0d1b2a;margin:30px 0 12px}
 .chg{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
-.chg a{display:block;padding:12px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);color:inherit;text-decoration:none;font:500 14px/1.4 Inter}
-.chg a b{display:block;font:600 15px 'Noto Sans Tamil',Inter}.chg a small{color:rgba(255,255,255,.55)}
-.pn{display:flex;justify-content:space-between;gap:10px;margin:26px 0}.pn a{flex:1;padding:12px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.12);color:inherit;text-decoration:none;font:600 14px Inter}.pn a:last-child{text-align:right}
-.tkq{margin:28px 0;padding:20px;border-radius:20px;border:1px solid rgba(55,224,255,.25);background:rgba(55,224,255,.04)}
-.tkq h2{margin:0 0 4px}.tkq-s{font:600 13px Inter;color:rgba(255,255,255,.6);margin:0 0 14px}
-.tkq-i{padding:14px 0;border-top:1px solid rgba(255,255,255,.08)}.tkq-q{font:500 15px/1.6 Inter;margin:0 0 10px}
-.kq{display:block;font:600 16px/1.7 'Noto Sans Tamil',Inter;margin-top:6px;color:#fff}.kq.en{font:italic 400 15px/1.6 Inter}
-.tkq-o{display:grid;grid-template-columns:1fr 1fr;gap:8px}@media(max-width:560px){.tkq-o{grid-template-columns:1fr}}
-.tkq-o button{padding:11px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04);color:#fff;font:500 14px/1.4 'Noto Sans Tamil',Inter;text-align:left;cursor:pointer}
-.tkq-o button.ok{background:rgba(52,211,153,.18);border-color:#34d399}.tkq-o button.no{background:rgba(248,113,113,.16);border-color:#f87171}
-.cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin:30px 0;padding:18px 20px;border-radius:18px;background:linear-gradient(90deg,rgba(243,200,107,.14),rgba(55,224,255,.08));border:1px solid rgba(243,200,107,.3)}
-.cta p{margin:0;font:500 15px/1.5 Inter}.cta a{padding:11px 18px;border-radius:12px;background:#f3c86b;color:#1a1206;font:700 14px Inter;text-decoration:none}
-.src{font:400 12px/1.6 Inter;color:rgba(255,255,255,.45);margin-top:30px}
+.chg a{display:block;padding:13px 15px;border-radius:14px;border:1px solid rgba(13,27,42,.08);background:#fff;color:#0d1b2a;text-decoration:none;font:500 13px/1.45 Inter}
+.chg a:hover{border-color:rgba(13,27,42,.25)}
+.chg a b{display:block;font:650 15px Inter;margin:2px 0}.chg a small{color:#64748b}
+.pn{display:flex;justify-content:space-between;gap:10px;margin:24px 0}.pn a{flex:1;padding:12px 15px;border-radius:14px;border:1px solid rgba(13,27,42,.1);background:#fff;color:#0d1b2a;text-decoration:none;font:600 14px Inter}.pn a:last-child{text-align:right}
+.tkq{margin:24px 0}
+.tkq-s{font:600 13px Inter;color:#64748b;margin:0 0 6px}
+.tkq-i{margin:0 0 10px}
+.kq{display:block;font:650 16px/1.6 Inter;margin-top:6px;color:#0d1b2a}.kq.en{font:italic 400 15px/1.6 Inter;color:#334155}
+.tkq-o{display:grid;gap:6px}
+.tkq-o button{padding:10px 12px;border-radius:10px;border:1px solid transparent;background:#f7f9fa;color:#0d1b2a;font:500 14.5px/1.45 Inter;text-align:left;cursor:pointer}
+.tkq-o button:hover{border-color:rgba(13,27,42,.15)}
+.tkq-o button.ok{background:#ecfdf5;border-color:#10b981;color:#065f46}.tkq-o button.no{background:#fef2f2;border-color:#f87171;color:#991b1b}
+.src{font:400 12px/1.6 Inter;color:#94a3b8;margin-top:26px}
 </style>`;
 
 function page({ url, title, desc, crumbs, body, extraLd = [] }) {
+  body = body.replace(/^<h1>([\s\S]*?)<\/h1>(<p class="sub">[\s\S]*?<\/p>)(\n?<div class="meta">[\s\S]*?<\/div>)?/, (m, h, sub, meta) =>
+    `<section class="topic-hero"><div class="eyebrow-chip"><span class="dot-pulse"></span>திருக்குறள் · Thirukkural</div><h1>${h}</h1>${sub.replace('class="sub"', '')}${meta || ''}</section>`);
   const bc = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: crumbs.map(([n, u], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: SITE + u })) };
   return `<!DOCTYPE html>
 <html lang="ta">
@@ -94,13 +101,7 @@ function page({ url, title, desc, crumbs, body, extraLd = [] }) {
 <meta property="og:url" content="${SITE + url}" />
 <meta property="og:image" content="${SITE}/assets/og-home.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/assets/quiz-hub.css?v=20261002_mobilenav" />
-<link rel="icon" href="/favicon.ico" sizes="any" />
-<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-<meta name="theme-color" content="#37e0ff" />
+${HEADSTY}
 <script type="application/ld+json">${JSON.stringify(bc)}</script>
 ${extraLd.map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script>`).join('\n')}
 ${CSS}
@@ -110,7 +111,7 @@ ${HEADER}
 <main><nav class="crumbs" aria-label="Breadcrumb">${crumbs.map(([n, u], i) => i === crumbs.length - 1 ? `<span>${esc(n)}</span>` : `<a href="${u}">${esc(n)}</a><span>›</span>`).join('')}</nav>
 <div class="tk">
 ${body}
-<div class="cta"><p><b>Race your friends on Thirukkural.</b> Answer live against aspirants across India in NationLap.</p><a href="/nationlap/">Play NationLap</a></div>
+${BENTO}
 <p class="src">குறள் மூலம்: பொதுக் களம் (public domain). தமிழ்ப் பொருள்: MindGains. English translation: Rev. G.U. Pope (1886), public domain.</p>
 </div>
 </main>
@@ -123,7 +124,7 @@ ${QJS}
 `;
 }
 const out = (rel, html) => { const p = path.join(ROOT, rel, 'index.html'); fs.mkdirSync(path.dirname(p), { recursive: true }); fs.writeFileSync(p, html); };
-const kcard = (k, link, big) => `<${link ? `a href="/thirukkural/kural/${k.n}/"` : 'div'} class="kc${big ? ' kbig' : ''}"><div class="kn">குறள் ${k.n}</div><div class="ta">${esc(k.l1)}<br>${esc(k.l2)}</div><p class="tr">${esc(k.t1)} / ${esc(k.t2)}</p>${PORUL[k.n] ? `<div class="po"><b>பொருள்:</b> ${esc(PORUL[k.n])}</div>` : ''}<div class="en">${esc(k.pope)}</div></${link ? 'a' : 'div'}>`;
+const kcard = (k, link, big) => `<${link ? `a href="/thirukkural/kural/${k.n}/"` : 'div'} class="kc mg-seo-question${big ? ' kbig' : ''}"><div class="kn">குறள் ${k.n}</div><div class="ta">${esc(k.l1)}<br>${esc(k.l2)}</div><div class="tr">${esc(k.t1)} / ${esc(k.t2)}</div>${PORUL[k.n] ? `<div class="po"><b>பொருள்:</b> ${esc(PORUL[k.n])}</div>` : ''}<div class="en">${esc(k.pope)}</div></${link ? 'a' : 'div'}>`;
 const HUB = ['Home', '/'], TKH = ['திருக்குறள்', '/thirukkural/'];
 const urls = ['/thirukkural/'];
 

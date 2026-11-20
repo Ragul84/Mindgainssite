@@ -15,39 +15,172 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/assets/quiz-hub.css?v=20261002_mobilenav" />
 <link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
 <meta name="theme-color" content="#37e0ff" />
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<style>
+@keyframes borderGlowRotate {
+  0%   { background-position: 0% 50%; box-shadow: 0 0 18px rgba(123, 227, 176, 0.45), 0 0 35px rgba(56, 189, 248, 0.25); }
+  50%  { background-position: 100% 50%; box-shadow: 0 0 30px rgba(167, 139, 250, 0.7), 0 0 55px rgba(244, 114, 182, 0.4); }
+  100% { background-position: 0% 50%; box-shadow: 0 0 18px rgba(123, 227, 176, 0.45), 0 0 35px rgba(56, 189, 248, 0.25); }
+}
+
+@keyframes dotPulseAnim {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%      { transform: scale(1.5); opacity: 0.5; }
+}
+
+.topic-hero {
+  margin: 28px 0 24px !important;
+  padding: 40px 32px !important;
+  border-radius: 24px !important;
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.09) !important;
+  backdrop-filter: blur(28px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(160%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.12) !important;
+}
+
+.eyebrow-chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 5px 14px !important;
+  border-radius: 999px !important;
+  background: rgba(123, 227, 176, 0.08) !important;
+  border: 1px solid rgba(123, 227, 176, 0.22) !important;
+  color: #7BE3B0 !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 2.2px !important;
+  text-transform: uppercase !important;
+  width: fit-content !important;
+}
+
+.dot-pulse {
+  width: 7px !important;
+  height: 7px !important;
+  border-radius: 50% !important;
+  background: #7BE3B0 !important;
+  animation: dotPulseAnim 2s infinite ease-in-out !important;
+}
+
+.topic-features {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+  margin-top: 4px !important;
+}
+
+.feat-chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  padding: 6px 14px !important;
+  border-radius: 10px !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+}
+
+.start-wrapper {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin-top: 10px !important;
+  width: auto !important;
+}
+
+button.start, a.start {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 12px 26px !important;
+  border-radius: 999px !important;
+  background: #7BE3B0 !important;
+  background-size: auto !important;
+  border: 1px solid #7BE3B0 !important;
+  color: #07130d !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2px !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  width: auto !important;
+  max-width: 200px !important;
+  white-space: nowrap !important;
+  animation: none !important;
+  transition: transform 0.16s ease, background 0.16s ease !important;
+}
+
+button.start:hover, a.start:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: none !important;
+}
+
+.exam-stmt-row {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 14px !important;
+  margin: 12px 0 !important;
+  padding: 14px 18px !important;
+  background: rgba(255,255,255,0.035) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  border-radius: 14px !important;
+  border-left: 4px solid #7BE3B0 !important;
+}
+</style>
+<link rel="stylesheet" href="/assets/mindgains-redesign.css?v=20261002_mobilenav">
+<!-- MG_SEO_STYLE_START --><style>.mg-seo-study{margin:24px 0;padding:24px;border:1px solid rgba(255,255,255,.16);border-radius:22px;background:rgba(255,255,255,.045)}.mg-seo-kicker{margin:0 0 8px;color:#67e8f9;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}.mg-seo-study h2{margin:0 0 12px;font-size:clamp(26px,4vw,38px)}.mg-seo-study>p{max-width:860px;color:#dbeafe;line-height:1.6}.mg-seo-questions{display:grid;gap:12px;margin-top:18px}.mg-seo-question{padding:18px;border:1px solid rgba(255,255,255,.12);border-radius:16px;background:rgba(0,0,0,.16)}.mg-seo-question h3{margin:0 0 12px;font-size:18px;line-height:1.4}.mg-seo-question ol{padding-left:26px;color:#dbeafe;line-height:1.6}.mg-seo-question p{color:#cbd5e1;line-height:1.55}.mg-seo-note{font-weight:700}@media(max-width:700px){.mg-seo-study{padding:17px}.mg-seo-question{padding:14px}}</style><!-- MG_SEO_STYLE_END -->  <link rel="stylesheet" href="/assets/site-footer.css?v=3">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="/assets/inner-v2.css?v=20261017b">
+
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mindgains.ai/"},{"@type":"ListItem","position":2,"name":"திருக்குறள்","item":"https://mindgains.ai/thirukkural/"},{"@type":"ListItem","position":3,"name":"அதிகாரம் 6","item":"https://mindgains.ai/thirukkural/6/"}]}</script>
 
 <style>
-.tk{max-width:860px;margin:0 auto;padding:0 16px 40px}
-.tk h1{font:400 clamp(30px,6vw,46px)/1.1 'Instrument Serif',serif;margin:18px 0 8px}
-.tk .sub{color:rgba(255,255,255,.7);font:500 15px/1.6 Inter,sans-serif;margin:0 0 18px}
-.tk .meta{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}.tk .meta span{font:600 12px Inter;padding:6px 12px;border-radius:99px;border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.8)}
-.kc{display:block;padding:18px 20px;margin:0 0 12px;border-radius:18px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);text-decoration:none;color:inherit}
-a.kc:hover{border-color:rgba(55,224,255,.5)}
-.kc .kn{font:700 12px Inter;letter-spacing:.08em;color:#37e0ff}.kc .ta{font:600 19px/1.7 'Noto Sans Tamil',Inter,sans-serif;margin:6px 0}
-.kc .tr{font:italic 400 14px/1.5 Inter;color:rgba(255,255,255,.55);margin:0 0 6px}.kc .en{font:400 15px/1.55 Inter;color:rgba(255,255,255,.82)}
-.kc .po{font:500 15.5px/1.7 'Noto Sans Tamil',Inter;color:#fff;margin:4px 0 8px}.kc .po b{color:#f3c86b}
-.kbig .ta{font-size:clamp(22px,4.6vw,28px)}
-.tk h2{font:600 20px Inter;margin:28px 0 12px}
+.tk{max-width:880px;margin:0 auto}
+.tk .meta{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 0}.tk .meta span{font:600 12.5px Inter;padding:6px 12px;border-radius:99px;background:#f1f5f7;color:#334155}
+.kc{display:block;text-decoration:none;color:inherit;margin:0 0 10px}
+a.kc:hover{border-color:rgba(13,27,42,.25)!important}
+.kc .kn{font:700 11.5px Inter;letter-spacing:.08em;color:#0f9d74;text-transform:uppercase}
+.kc .ta{font:650 18px/1.65 Inter,sans-serif;color:#0d1b2a;margin:6px 0}
+.kc .tr{font:italic 400 13.5px/1.5 Inter;color:#64748b;margin:0 0 8px}
+.kc .po{font:500 15px/1.65 Inter;color:#0d1b2a;margin:0 0 8px;padding:10px 12px;border-radius:10px;background:#ecfdf5}.kc .po b{color:#047857}
+.kc .en{font:400 14.5px/1.55 Inter;color:#475569}
+.kbig .ta{font-size:clamp(21px,4.4vw,26px)}
+.tk h2{font:700 22px/1.3 'Inter Tight',Inter;color:#0d1b2a;margin:30px 0 12px}
 .chg{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
-.chg a{display:block;padding:12px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);color:inherit;text-decoration:none;font:500 14px/1.4 Inter}
-.chg a b{display:block;font:600 15px 'Noto Sans Tamil',Inter}.chg a small{color:rgba(255,255,255,.55)}
-.pn{display:flex;justify-content:space-between;gap:10px;margin:26px 0}.pn a{flex:1;padding:12px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.12);color:inherit;text-decoration:none;font:600 14px Inter}.pn a:last-child{text-align:right}
-.tkq{margin:28px 0;padding:20px;border-radius:20px;border:1px solid rgba(55,224,255,.25);background:rgba(55,224,255,.04)}
-.tkq h2{margin:0 0 4px}.tkq-s{font:600 13px Inter;color:rgba(255,255,255,.6);margin:0 0 14px}
-.tkq-i{padding:14px 0;border-top:1px solid rgba(255,255,255,.08)}.tkq-q{font:500 15px/1.6 Inter;margin:0 0 10px}
-.kq{display:block;font:600 16px/1.7 'Noto Sans Tamil',Inter;margin-top:6px;color:#fff}.kq.en{font:italic 400 15px/1.6 Inter}
-.tkq-o{display:grid;grid-template-columns:1fr 1fr;gap:8px}@media(max-width:560px){.tkq-o{grid-template-columns:1fr}}
-.tkq-o button{padding:11px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04);color:#fff;font:500 14px/1.4 'Noto Sans Tamil',Inter;text-align:left;cursor:pointer}
-.tkq-o button.ok{background:rgba(52,211,153,.18);border-color:#34d399}.tkq-o button.no{background:rgba(248,113,113,.16);border-color:#f87171}
-.cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin:30px 0;padding:18px 20px;border-radius:18px;background:linear-gradient(90deg,rgba(243,200,107,.14),rgba(55,224,255,.08));border:1px solid rgba(243,200,107,.3)}
-.cta p{margin:0;font:500 15px/1.5 Inter}.cta a{padding:11px 18px;border-radius:12px;background:#f3c86b;color:#1a1206;font:700 14px Inter;text-decoration:none}
-.src{font:400 12px/1.6 Inter;color:rgba(255,255,255,.45);margin-top:30px}
+.chg a{display:block;padding:13px 15px;border-radius:14px;border:1px solid rgba(13,27,42,.08);background:#fff;color:#0d1b2a;text-decoration:none;font:500 13px/1.45 Inter}
+.chg a:hover{border-color:rgba(13,27,42,.25)}
+.chg a b{display:block;font:650 15px Inter;margin:2px 0}.chg a small{color:#64748b}
+.pn{display:flex;justify-content:space-between;gap:10px;margin:24px 0}.pn a{flex:1;padding:12px 15px;border-radius:14px;border:1px solid rgba(13,27,42,.1);background:#fff;color:#0d1b2a;text-decoration:none;font:600 14px Inter}.pn a:last-child{text-align:right}
+.tkq{margin:24px 0}
+.tkq-s{font:600 13px Inter;color:#64748b;margin:0 0 6px}
+.tkq-i{margin:0 0 10px}
+.kq{display:block;font:650 16px/1.6 Inter;margin-top:6px;color:#0d1b2a}.kq.en{font:italic 400 15px/1.6 Inter;color:#334155}
+.tkq-o{display:grid;gap:6px}
+.tkq-o button{padding:10px 12px;border-radius:10px;border:1px solid transparent;background:#f7f9fa;color:#0d1b2a;font:500 14.5px/1.45 Inter;text-align:left;cursor:pointer}
+.tkq-o button:hover{border-color:rgba(13,27,42,.15)}
+.tkq-o button.ok{background:#ecfdf5;border-color:#10b981;color:#065f46}.tkq-o button.no{background:#fef2f2;border-color:#f87171;color:#991b1b}
+.src{font:400 12px/1.6 Inter;color:#94a3b8;margin-top:26px}
 </style>
 </head>
 <body class="inner-v2">
@@ -65,32 +198,36 @@ a.kc:hover{border-color:rgba(55,224,255,.5)}
 </header>
 <main><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><a href="/thirukkural/">திருக்குறள்</a><span>›</span><span>அதிகாரம் 6</span></nav>
 <div class="tk">
-<h1>அதிகாரம் 6: வாழ்க்கைத் துணைநலம்</h1><p class="sub">The Worth of a Wife · Vaazhkkaith Thunainalam · குறள் 51–60</p>
-<div class="meta"><span>அறத்துப்பால் · Virtue</span><span>இல்லறவியல் · Domestic Virtue</span><span>10 குறள்கள்</span></div>
-<a href="/thirukkural/kural/51/" class="kc"><div class="kn">குறள் 51</div><div class="ta">மனைக்தக்க மாண்புடையள் ஆகித்தற் கொண்டான்<br>வளத்தக்காள் வாழ்க்கைத் துணை.</div><p class="tr">Manaikdhakka Maanputaiyal Aakiththar Kontaan / Valaththakkaal Vaazhkkaith Thunai</p><div class="po"><b>பொருள்:</b> இல்லறத்திற்கு ஏற்ற நற்பண்புகளுடன், கணவனின் வருவாய்க்கு ஏற்பக் குடும்பம் நடத்துபவளே சிறந்த வாழ்க்கைத் துணை.</div><div class="en">As doth the house beseem, she shows her wifely dignity; As doth her husband's wealth befit, she spends: help - meet is she</div></a>
-<a href="/thirukkural/kural/52/" class="kc"><div class="kn">குறள் 52</div><div class="ta">மனைமாட்சி இல்லாள்கண் இல்லாயின் வாழ்க்கை<br>எனைமாட்சித் தாயினும் இல்.</div><p class="tr">Manaimaatchi Illaalkan Illaayin Vaazhkkai / Enaimaatchith Thaayinum Il</p><div class="po"><b>பொருள்:</b> இல்லறத்திற்கு ஏற்ற நற்பண்பு மனைவியிடம் இல்லையென்றால், வேறு எவ்வளவு சிறப்பு இருந்தாலும் அந்த வாழ்க்கை பயனற்றது.</div><div class="en">If household excellence be wanting in the wife, Howe'er with splendour lived, all worthless is the life</div></a>
-<a href="/thirukkural/kural/53/" class="kc"><div class="kn">குறள் 53</div><div class="ta">இல்லதென் இல்லவள் மாண்பானால் உள்ளதென்<br>இல்லவள் மாணாக் கடை?</div><p class="tr">Illadhen Illaval Maanpaanaal Ulladhen / Illaval Maanaak Katai?</p><div class="po"><b>பொருள்:</b> மனைவி நற்பண்பு உடையவளானால் இல்லாதது என்ன? அவள் நற்பண்பு இல்லாதவளானால் இருப்பது என்ன?</div><div class="en">There is no lack within the house, where wife in worth excels, There is no luck within the house, where wife dishonoured dwells</div></a>
-<a href="/thirukkural/kural/54/" class="kc"><div class="kn">குறள் 54</div><div class="ta">பெண்ணின் பெருந்தக்க யாவுள கற்பென்னும்<br>திண்மைஉண் டாகப் பெறின்.</div><p class="tr">Pennin Perundhakka Yaavula Karpennum / Thinmaiun Taakap Perin</p><div class="po"><b>பொருள்:</b> மன உறுதி என்னும் பண்பு இருந்தால், பெண்ணைவிடப் பெருமை உடையது வேறு எதுவும் இல்லை.</div><div class="en">If woman might of chastity retain, What choicer treasure doth the world contain</div></a>
-<a href="/thirukkural/kural/55/" class="kc"><div class="kn">குறள் 55</div><div class="ta">தெய்வம் தொழாஅள் கொழுநன் தொழுதெழுவாள்<br>பெய்யெனப் பெய்யும் மழை.</div><p class="tr">Theyvam Thozhaaal Kozhunan Thozhudhezhuvaal / Peyyenap Peyyum Mazhai</p><div class="po"><b>பொருள்:</b> பிற தெய்வத்தை வணங்காமல் கணவனையே போற்றி எழும் மனைவி 'பெய்' என்றால் மழையும் பெய்யும்.</div><div class="en">No God adoring, low she bends before her lord; Then rising, serves: the rain falls instant at her word</div></a>
-<a href="/thirukkural/kural/56/" class="kc"><div class="kn">குறள் 56</div><div class="ta">தற்காத்துத் தற்கொண்டாற் பேணித் தகைசான்ற<br>சொற்காத்துச் சோர்விலாள் பெண்.</div><p class="tr">Tharkaaththuth Tharkontaar Penith Thakaisaandra / Sorkaaththuch Chorvilaal Pen</p><div class="po"><b>பொருள்:</b> தன்னைக் காத்து, கணவனைப் பேணி, குடும்பத்தின் நற்பெயரைக் காத்து, சோர்வின்றி இருப்பவளே சிறந்த பெண்.</div><div class="en">Who guards herself, for husband's comfort cares, her household's fame, In perfect wise with sleepless soul preserves, -give her a woman's name</div></a>
-<a href="/thirukkural/kural/57/" class="kc"><div class="kn">குறள் 57</div><div class="ta">சிறைகாக்கும் காப்பெவன் செய்யும் மகளிர்<br>நிறைகாக்கும் காப்பே தலை.</div><p class="tr">Siraikaakkum Kaappevan Seyyum Makalir / Niraikaakkum Kaappe Thalai</p><div class="po"><b>பொருள்:</b> பெண்களைச் சிறையில் வைத்துக் காப்பதால் என்ன பயன்? அவர்கள் தங்கள் மன உறுதியால் தம்மைக் காப்பதே சிறந்த காவல்.</div><div class="en">Of what avail is watch and ward?Honour's woman's safest guard</div></a>
-<a href="/thirukkural/kural/58/" class="kc"><div class="kn">குறள் 58</div><div class="ta">பெற்றாற் பெறின்பெறுவர் பெண்டிர் பெருஞ்சிறப்புப்<br>புத்தேளிர் வாழும் உலகு.</div><p class="tr">Petraar Perinperuvar Pentir Perunjirappup / Puththelir Vaazhum Ulaku</p><div class="po"><b>பொருள்:</b> நல்ல கணவனைப் பெற்றுப் போற்றும் பெண்கள், தேவர் உலகிலும் பெரும் சிறப்பைப் பெறுவர்.</div><div class="en">If wife be wholly true to him who gained her as his bride, Great glory gains she in the world where gods bliss abide</div></a>
-<a href="/thirukkural/kural/59/" class="kc"><div class="kn">குறள் 59</div><div class="ta">புகழ்புரிந்த இல்லிலோர்க்கு இல்லை இகழ்வார்முன்<br>ஏறுபோல் பீடு நடை.</div><p class="tr">Pukazhpurindha Illilorkku Illai Ikazhvaarmun / Erupol Peetu Natai</p><div class="po"><b>பொருள்:</b> புகழுக்குரிய மனைவி இல்லாதவர்கள், தம்மை இகழ்பவர் முன் காளை போலப் பெருமிதத்துடன் நடக்க முடியாது.</div><div class="en">Who have not spouses that in virtue's praise delight, They lion-like can never walk in scorner's sight</div></a>
-<a href="/thirukkural/kural/60/" class="kc"><div class="kn">குறள் 60</div><div class="ta">மங்கலம் என்ப மனைமாட்சி மற்று அதன்<br>நன்கலம் நன்மக்கட் பேறு.</div><p class="tr">Mangalam Enpa Manaimaatchi Matru / Adhan Nankalam Nanmakkat Peru</p><div class="po"><b>பொருள்:</b> மனைவியின் நற்பண்பே குடும்பத்திற்கு மங்கலம்; நல்ல மக்களைப் பெறுவதே அதற்கு அணிகலன்.</div><div class="en">The house's 'blessing', men pronounce the house-wife excellent; The gain of blessed children is its goodly ornament</div></a>
-<section class="tkq" aria-label="அதிகாரம் 6 Quiz · வாழ்க்கைத் துணைநலம்"><h2>அதிகாரம் 6 Quiz · வாழ்க்கைத் துணைநலம்</h2><p class="tkq-s"><b class="tkq-sc">0</b> / 10 சரி</p>
-<div class="tkq-i"><p class="tkq-q"><b>1.</b> Which kural does this English translation (G.U. Pope) belong to? <span class="kq en">"As doth the house beseem, she shows her wifely dignity; As doth her husband's wealth befit, she spends: help - meet is she"</span></p><div class="tkq-o"><button type="button" data-c="1">மனைக்தக்க மாண்புடையள் ஆகித்தற் கொண்டான்</button><button type="button">பெற்றாற் பெறின்பெறுவர் பெண்டிர் பெருஞ்சிறப்புப்</button><button type="button">மனைமாட்சி இல்லாள்கண் இல்லாயின் வாழ்க்கை</button><button type="button">புகழ்புரிந்த இல்லிலோர்க்கு இல்லை இகழ்வார்முன்</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>2.</b> இந்தக் குறளின் பொருள் எது? <span class="kq">மனைமாட்சி இல்லாள்கண் இல்லாயின் வாழ்க்கை / எனைமாட்சித் தாயினும் இல்.</span></p><div class="tkq-o"><button type="button">பிற தெய்வத்தை வணங்காமல் கணவனையே போற்றி எழும் மனைவி 'பெய்' என்றால் மழையும் பெய்யும்.</button><button type="button">தன்னைக் காத்து, கணவனைப் பேணி, குடும்பத்தின் நற்பெயரைக் காத்து, சோர்வின்றி இருப்பவளே சிறந்த பெண்.</button><button type="button">புகழுக்குரிய மனைவி இல்லாதவர்கள், தம்மை இகழ்பவர் முன் காளை போலப் பெருமிதத்துடன் நடக்க முடியாது.</button><button type="button" data-c="1">இல்லறத்திற்கு ஏற்ற நற்பண்பு மனைவியிடம் இல்லையென்றால், வேறு எவ்வளவு சிறப்பு இருந்தாலும் அந்த வாழ்க்கை பயனற்றது.</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>3.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">இல்லதென் ______ மாண்பானால் உள்ளதென் / இல்லவள் மாணாக் கடை?</span></p><div class="tkq-o"><button type="button">ஆகித்தற்</button><button type="button">செய்யும்</button><button type="button">தெய்வம்</button><button type="button" data-c="1">இல்லவள்</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>4.</b> Which kural does this English translation (G.U. Pope) belong to? <span class="kq en">"If woman might of chastity retain, What choicer treasure doth the world contain"</span></p><div class="tkq-o"><button type="button" data-c="1">பெண்ணின் பெருந்தக்க யாவுள கற்பென்னும்</button><button type="button">சிறைகாக்கும் காப்பெவன் செய்யும் மகளிர்</button><button type="button">மங்கலம் என்ப மனைமாட்சி மற்று அதன்</button><button type="button">மனைமாட்சி இல்லாள்கண் இல்லாயின் வாழ்க்கை</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>5.</b> இந்தக் குறளின் பொருள் எது? <span class="kq">தெய்வம் தொழாஅள் கொழுநன் தொழுதெழுவாள் / பெய்யெனப் பெய்யும் மழை.</span></p><div class="tkq-o"><button type="button">மனைவி நற்பண்பு உடையவளானால் இல்லாதது என்ன? அவள் நற்பண்பு இல்லாதவளானால் இருப்பது என்ன?</button><button type="button">பெண்களைச் சிறையில் வைத்துக் காப்பதால் என்ன பயன்? அவர்கள் தங்கள் மன உறுதியால் தம்மைக் காப்பதே சிறந்த காவல்.</button><button type="button">இல்லறத்திற்கு ஏற்ற நற்பண்புகளுடன், கணவனின் வருவாய்க்கு ஏற்பக் குடும்பம் நடத்துபவளே சிறந்த வாழ்க்கைத் துணை.</button><button type="button" data-c="1">பிற தெய்வத்தை வணங்காமல் கணவனையே போற்றி எழும் மனைவி 'பெய்' என்றால் மழையும் பெய்யும்.</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>6.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">தற்காத்துத் தற்கொண்டாற் பேணித் ______ / சொற்காத்துச் சோர்விலாள் பெண்.</span></p><div class="tkq-o"><button type="button">மாண்புடையள்</button><button type="button">புகழ்புரிந்த</button><button type="button" data-c="1">தகைசான்ற</button><button type="button">இல்லதென்</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>7.</b> Which kural does this English translation (G.U. Pope) belong to? <span class="kq en">"Of what avail is watch and ward?Honour's woman's safest guard"</span></p><div class="tkq-o"><button type="button">மங்கலம் என்ப மனைமாட்சி மற்று அதன்</button><button type="button">மனைக்தக்க மாண்புடையள் ஆகித்தற் கொண்டான்</button><button type="button">தற்காத்துத் தற்கொண்டாற் பேணித் தகைசான்ற</button><button type="button" data-c="1">சிறைகாக்கும் காப்பெவன் செய்யும் மகளிர்</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>8.</b> இந்தக் குறளின் பொருள் எது? <span class="kq">பெற்றாற் பெறின்பெறுவர் பெண்டிர் பெருஞ்சிறப்புப் / புத்தேளிர் வாழும் உலகு.</span></p><div class="tkq-o"><button type="button">பெண்களைச் சிறையில் வைத்துக் காப்பதால் என்ன பயன்? அவர்கள் தங்கள் மன உறுதியால் தம்மைக் காப்பதே சிறந்த காவல்.</button><button type="button">இல்லறத்திற்கு ஏற்ற நற்பண்பு மனைவியிடம் இல்லையென்றால், வேறு எவ்வளவு சிறப்பு இருந்தாலும் அந்த வாழ்க்கை பயனற்றது.</button><button type="button" data-c="1">நல்ல கணவனைப் பெற்றுப் போற்றும் பெண்கள், தேவர் உலகிலும் பெரும் சிறப்பைப் பெறுவர்.</button><button type="button">தன்னைக் காத்து, கணவனைப் பேணி, குடும்பத்தின் நற்பெயரைக் காத்து, சோர்வின்றி இருப்பவளே சிறந்த பெண்.</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>9.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">புகழ்புரிந்த இல்லிலோர்க்கு ______ இகழ்வார்முன் / ஏறுபோல் பீடு நடை.</span></p><div class="tkq-o"><button type="button" data-c="1">இல்லை</button><button type="button">வாழ்க்கை</button><button type="button">துணை</button><button type="button">சோர்விலாள்</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>10.</b> Which kural does this English translation (G.U. Pope) belong to? <span class="kq en">"The house's 'blessing', men pronounce the house-wife excellent; The gain of blessed children is its goodly ornament"</span></p><div class="tkq-o"><button type="button">புகழ்புரிந்த இல்லிலோர்க்கு இல்லை இகழ்வார்முன்</button><button type="button" data-c="1">மங்கலம் என்ப மனைமாட்சி மற்று அதன்</button><button type="button">சிறைகாக்கும் காப்பெவன் செய்யும் மகளிர்</button><button type="button">மனைமாட்சி இல்லாள்கண் இல்லாயின் வாழ்க்கை</button></div></div>
+<section class="topic-hero"><div class="eyebrow-chip"><span class="dot-pulse"></span>திருக்குறள் · Thirukkural</div><h1>அதிகாரம் 6: வாழ்க்கைத் துணைநலம்</h1><p >The Worth of a Wife · Vaazhkkaith Thunainalam · குறள் 51–60</p>
+<div class="meta"><span>அறத்துப்பால் · Virtue</span><span>இல்லறவியல் · Domestic Virtue</span><span>10 குறள்கள்</span></div></section>
+<a href="/thirukkural/kural/51/" class="kc mg-seo-question"><div class="kn">குறள் 51</div><div class="ta">மனைக்தக்க மாண்புடையள் ஆகித்தற் கொண்டான்<br>வளத்தக்காள் வாழ்க்கைத் துணை.</div><div class="tr">Manaikdhakka Maanputaiyal Aakiththar Kontaan / Valaththakkaal Vaazhkkaith Thunai</div><div class="po"><b>பொருள்:</b> இல்லறத்திற்கு ஏற்ற நற்பண்புகளுடன், கணவனின் வருவாய்க்கு ஏற்பக் குடும்பம் நடத்துபவளே சிறந்த வாழ்க்கைத் துணை.</div><div class="en">As doth the house beseem, she shows her wifely dignity; As doth her husband's wealth befit, she spends: help - meet is she</div></a>
+<a href="/thirukkural/kural/52/" class="kc mg-seo-question"><div class="kn">குறள் 52</div><div class="ta">மனைமாட்சி இல்லாள்கண் இல்லாயின் வாழ்க்கை<br>எனைமாட்சித் தாயினும் இல்.</div><div class="tr">Manaimaatchi Illaalkan Illaayin Vaazhkkai / Enaimaatchith Thaayinum Il</div><div class="po"><b>பொருள்:</b> இல்லறத்திற்கு ஏற்ற நற்பண்பு மனைவியிடம் இல்லையென்றால், வேறு எவ்வளவு சிறப்பு இருந்தாலும் அந்த வாழ்க்கை பயனற்றது.</div><div class="en">If household excellence be wanting in the wife, Howe'er with splendour lived, all worthless is the life</div></a>
+<a href="/thirukkural/kural/53/" class="kc mg-seo-question"><div class="kn">குறள் 53</div><div class="ta">இல்லதென் இல்லவள் மாண்பானால் உள்ளதென்<br>இல்லவள் மாணாக் கடை?</div><div class="tr">Illadhen Illaval Maanpaanaal Ulladhen / Illaval Maanaak Katai?</div><div class="po"><b>பொருள்:</b> மனைவி நற்பண்பு உடையவளானால் இல்லாதது என்ன? அவள் நற்பண்பு இல்லாதவளானால் இருப்பது என்ன?</div><div class="en">There is no lack within the house, where wife in worth excels, There is no luck within the house, where wife dishonoured dwells</div></a>
+<a href="/thirukkural/kural/54/" class="kc mg-seo-question"><div class="kn">குறள் 54</div><div class="ta">பெண்ணின் பெருந்தக்க யாவுள கற்பென்னும்<br>திண்மைஉண் டாகப் பெறின்.</div><div class="tr">Pennin Perundhakka Yaavula Karpennum / Thinmaiun Taakap Perin</div><div class="po"><b>பொருள்:</b> மன உறுதி என்னும் பண்பு இருந்தால், பெண்ணைவிடப் பெருமை உடையது வேறு எதுவும் இல்லை.</div><div class="en">If woman might of chastity retain, What choicer treasure doth the world contain</div></a>
+<a href="/thirukkural/kural/55/" class="kc mg-seo-question"><div class="kn">குறள் 55</div><div class="ta">தெய்வம் தொழாஅள் கொழுநன் தொழுதெழுவாள்<br>பெய்யெனப் பெய்யும் மழை.</div><div class="tr">Theyvam Thozhaaal Kozhunan Thozhudhezhuvaal / Peyyenap Peyyum Mazhai</div><div class="po"><b>பொருள்:</b> பிற தெய்வத்தை வணங்காமல் கணவனையே போற்றி எழும் மனைவி 'பெய்' என்றால் மழையும் பெய்யும்.</div><div class="en">No God adoring, low she bends before her lord; Then rising, serves: the rain falls instant at her word</div></a>
+<a href="/thirukkural/kural/56/" class="kc mg-seo-question"><div class="kn">குறள் 56</div><div class="ta">தற்காத்துத் தற்கொண்டாற் பேணித் தகைசான்ற<br>சொற்காத்துச் சோர்விலாள் பெண்.</div><div class="tr">Tharkaaththuth Tharkontaar Penith Thakaisaandra / Sorkaaththuch Chorvilaal Pen</div><div class="po"><b>பொருள்:</b> தன்னைக் காத்து, கணவனைப் பேணி, குடும்பத்தின் நற்பெயரைக் காத்து, சோர்வின்றி இருப்பவளே சிறந்த பெண்.</div><div class="en">Who guards herself, for husband's comfort cares, her household's fame, In perfect wise with sleepless soul preserves, -give her a woman's name</div></a>
+<a href="/thirukkural/kural/57/" class="kc mg-seo-question"><div class="kn">குறள் 57</div><div class="ta">சிறைகாக்கும் காப்பெவன் செய்யும் மகளிர்<br>நிறைகாக்கும் காப்பே தலை.</div><div class="tr">Siraikaakkum Kaappevan Seyyum Makalir / Niraikaakkum Kaappe Thalai</div><div class="po"><b>பொருள்:</b> பெண்களைச் சிறையில் வைத்துக் காப்பதால் என்ன பயன்? அவர்கள் தங்கள் மன உறுதியால் தம்மைக் காப்பதே சிறந்த காவல்.</div><div class="en">Of what avail is watch and ward?Honour's woman's safest guard</div></a>
+<a href="/thirukkural/kural/58/" class="kc mg-seo-question"><div class="kn">குறள் 58</div><div class="ta">பெற்றாற் பெறின்பெறுவர் பெண்டிர் பெருஞ்சிறப்புப்<br>புத்தேளிர் வாழும் உலகு.</div><div class="tr">Petraar Perinperuvar Pentir Perunjirappup / Puththelir Vaazhum Ulaku</div><div class="po"><b>பொருள்:</b> நல்ல கணவனைப் பெற்றுப் போற்றும் பெண்கள், தேவர் உலகிலும் பெரும் சிறப்பைப் பெறுவர்.</div><div class="en">If wife be wholly true to him who gained her as his bride, Great glory gains she in the world where gods bliss abide</div></a>
+<a href="/thirukkural/kural/59/" class="kc mg-seo-question"><div class="kn">குறள் 59</div><div class="ta">புகழ்புரிந்த இல்லிலோர்க்கு இல்லை இகழ்வார்முன்<br>ஏறுபோல் பீடு நடை.</div><div class="tr">Pukazhpurindha Illilorkku Illai Ikazhvaarmun / Erupol Peetu Natai</div><div class="po"><b>பொருள்:</b> புகழுக்குரிய மனைவி இல்லாதவர்கள், தம்மை இகழ்பவர் முன் காளை போலப் பெருமிதத்துடன் நடக்க முடியாது.</div><div class="en">Who have not spouses that in virtue's praise delight, They lion-like can never walk in scorner's sight</div></a>
+<a href="/thirukkural/kural/60/" class="kc mg-seo-question"><div class="kn">குறள் 60</div><div class="ta">மங்கலம் என்ப மனைமாட்சி மற்று அதன்<br>நன்கலம் நன்மக்கட் பேறு.</div><div class="tr">Mangalam Enpa Manaimaatchi Matru / Adhan Nankalam Nanmakkat Peru</div><div class="po"><b>பொருள்:</b> மனைவியின் நற்பண்பே குடும்பத்திற்கு மங்கலம்; நல்ல மக்களைப் பெறுவதே அதற்கு அணிகலன்.</div><div class="en">The house's 'blessing', men pronounce the house-wife excellent; The gain of blessed children is its goodly ornament</div></a>
+<section class="tkq mg-seo-study" aria-label="அதிகாரம் 6 Quiz · வாழ்க்கைத் துணைநலம்"><p class="mg-seo-kicker">Quiz</p><h2>அதிகாரம் 6 Quiz · வாழ்க்கைத் துணைநலம்</h2><p class="tkq-s"><b class="tkq-sc">0</b> / 10 சரி</p><div class="mg-seo-questions">
+<article class="tkq-i mg-seo-question"><h3><b>1.</b> Which kural does this English translation (G.U. Pope) belong to? <span class="kq en">"As doth the house beseem, she shows her wifely dignity; As doth her husband's wealth befit, she spends: help - meet is she"</span></h3><div class="tkq-o"><button type="button" data-c="1">மனைக்தக்க மாண்புடையள் ஆகித்தற் கொண்டான்</button><button type="button">பெற்றாற் பெறின்பெறுவர் பெண்டிர் பெருஞ்சிறப்புப்</button><button type="button">மனைமாட்சி இல்லாள்கண் இல்லாயின் வாழ்க்கை</button><button type="button">புகழ்புரிந்த இல்லிலோர்க்கு இல்லை இகழ்வார்முன்</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>2.</b> இந்தக் குறளின் பொருள் எது? <span class="kq">மனைமாட்சி இல்லாள்கண் இல்லாயின் வாழ்க்கை / எனைமாட்சித் தாயினும் இல்.</span></h3><div class="tkq-o"><button type="button">பிற தெய்வத்தை வணங்காமல் கணவனையே போற்றி எழும் மனைவி 'பெய்' என்றால் மழையும் பெய்யும்.</button><button type="button">தன்னைக் காத்து, கணவனைப் பேணி, குடும்பத்தின் நற்பெயரைக் காத்து, சோர்வின்றி இருப்பவளே சிறந்த பெண்.</button><button type="button">புகழுக்குரிய மனைவி இல்லாதவர்கள், தம்மை இகழ்பவர் முன் காளை போலப் பெருமிதத்துடன் நடக்க முடியாது.</button><button type="button" data-c="1">இல்லறத்திற்கு ஏற்ற நற்பண்பு மனைவியிடம் இல்லையென்றால், வேறு எவ்வளவு சிறப்பு இருந்தாலும் அந்த வாழ்க்கை பயனற்றது.</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>3.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">இல்லதென் ______ மாண்பானால் உள்ளதென் / இல்லவள் மாணாக் கடை?</span></h3><div class="tkq-o"><button type="button">ஆகித்தற்</button><button type="button">செய்யும்</button><button type="button">தெய்வம்</button><button type="button" data-c="1">இல்லவள்</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>4.</b> Which kural does this English translation (G.U. Pope) belong to? <span class="kq en">"If woman might of chastity retain, What choicer treasure doth the world contain"</span></h3><div class="tkq-o"><button type="button" data-c="1">பெண்ணின் பெருந்தக்க யாவுள கற்பென்னும்</button><button type="button">சிறைகாக்கும் காப்பெவன் செய்யும் மகளிர்</button><button type="button">மங்கலம் என்ப மனைமாட்சி மற்று அதன்</button><button type="button">மனைமாட்சி இல்லாள்கண் இல்லாயின் வாழ்க்கை</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>5.</b> இந்தக் குறளின் பொருள் எது? <span class="kq">தெய்வம் தொழாஅள் கொழுநன் தொழுதெழுவாள் / பெய்யெனப் பெய்யும் மழை.</span></h3><div class="tkq-o"><button type="button">மனைவி நற்பண்பு உடையவளானால் இல்லாதது என்ன? அவள் நற்பண்பு இல்லாதவளானால் இருப்பது என்ன?</button><button type="button">பெண்களைச் சிறையில் வைத்துக் காப்பதால் என்ன பயன்? அவர்கள் தங்கள் மன உறுதியால் தம்மைக் காப்பதே சிறந்த காவல்.</button><button type="button">இல்லறத்திற்கு ஏற்ற நற்பண்புகளுடன், கணவனின் வருவாய்க்கு ஏற்பக் குடும்பம் நடத்துபவளே சிறந்த வாழ்க்கைத் துணை.</button><button type="button" data-c="1">பிற தெய்வத்தை வணங்காமல் கணவனையே போற்றி எழும் மனைவி 'பெய்' என்றால் மழையும் பெய்யும்.</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>6.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">தற்காத்துத் தற்கொண்டாற் பேணித் ______ / சொற்காத்துச் சோர்விலாள் பெண்.</span></h3><div class="tkq-o"><button type="button">மாண்புடையள்</button><button type="button">புகழ்புரிந்த</button><button type="button" data-c="1">தகைசான்ற</button><button type="button">இல்லதென்</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>7.</b> Which kural does this English translation (G.U. Pope) belong to? <span class="kq en">"Of what avail is watch and ward?Honour's woman's safest guard"</span></h3><div class="tkq-o"><button type="button">மங்கலம் என்ப மனைமாட்சி மற்று அதன்</button><button type="button">மனைக்தக்க மாண்புடையள் ஆகித்தற் கொண்டான்</button><button type="button">தற்காத்துத் தற்கொண்டாற் பேணித் தகைசான்ற</button><button type="button" data-c="1">சிறைகாக்கும் காப்பெவன் செய்யும் மகளிர்</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>8.</b> இந்தக் குறளின் பொருள் எது? <span class="kq">பெற்றாற் பெறின்பெறுவர் பெண்டிர் பெருஞ்சிறப்புப் / புத்தேளிர் வாழும் உலகு.</span></h3><div class="tkq-o"><button type="button">பெண்களைச் சிறையில் வைத்துக் காப்பதால் என்ன பயன்? அவர்கள் தங்கள் மன உறுதியால் தம்மைக் காப்பதே சிறந்த காவல்.</button><button type="button">இல்லறத்திற்கு ஏற்ற நற்பண்பு மனைவியிடம் இல்லையென்றால், வேறு எவ்வளவு சிறப்பு இருந்தாலும் அந்த வாழ்க்கை பயனற்றது.</button><button type="button" data-c="1">நல்ல கணவனைப் பெற்றுப் போற்றும் பெண்கள், தேவர் உலகிலும் பெரும் சிறப்பைப் பெறுவர்.</button><button type="button">தன்னைக் காத்து, கணவனைப் பேணி, குடும்பத்தின் நற்பெயரைக் காத்து, சோர்வின்றி இருப்பவளே சிறந்த பெண்.</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>9.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">புகழ்புரிந்த இல்லிலோர்க்கு ______ இகழ்வார்முன் / ஏறுபோல் பீடு நடை.</span></h3><div class="tkq-o"><button type="button" data-c="1">இல்லை</button><button type="button">வாழ்க்கை</button><button type="button">துணை</button><button type="button">சோர்விலாள்</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>10.</b> Which kural does this English translation (G.U. Pope) belong to? <span class="kq en">"The house's 'blessing', men pronounce the house-wife excellent; The gain of blessed children is its goodly ornament"</span></h3><div class="tkq-o"><button type="button">புகழ்புரிந்த இல்லிலோர்க்கு இல்லை இகழ்வார்முன்</button><button type="button" data-c="1">மங்கலம் என்ப மனைமாட்சி மற்று அதன்</button><button type="button">சிறைகாக்கும் காப்பெவன் செய்யும் மகளிர்</button><button type="button">மனைமாட்சி இல்லாள்கண் இல்லாயின் வாழ்க்கை</button></div></div>
 </section>
 <div class="pn"><a href="/thirukkural/5/">‹ 5. இல்வாழ்க்கை</a><a href="/thirukkural/7/">7. மக்கட்பேறு ›</a></div>
-<div class="cta"><p><b>Race your friends on Thirukkural.</b> Answer live against aspirants across India in NationLap.</p><a href="/nationlap/">Play NationLap</a></div>
+<section class="ibento" aria-label="More ways to practise">
+  <a class="itile it-ca" href="/nationlap/?affairs=1"><b>Every morning · 5am</b><strong>Today's current affairs</strong><span>The day's exam-worthy news, each fact with its source.</span><i>Race today's affairs →</i></a>
+  <a class="itile it-nl" href="/nationlap/"><b>Game</b><strong>NationLap</strong><span>Read a topic, then race it and answer at speed.</span><i>Play free →</i></a>
+  <a class="itile it-app" href="/get/"><b>MindGains app</b><strong>Mistakes come back</strong><span>Daily Dose, revision and Quiz Rooms with friends.</span><i>Get the app →</i></a>
+</section>
 <p class="src">குறள் மூலம்: பொதுக் களம் (public domain). தமிழ்ப் பொருள்: MindGains. English translation: Rev. G.U. Pope (1886), public domain.</p>
 </div>
 </main>

@@ -15,39 +15,172 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/assets/quiz-hub.css?v=20261002_mobilenav" />
 <link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
 <meta name="theme-color" content="#37e0ff" />
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<style>
+@keyframes borderGlowRotate {
+  0%   { background-position: 0% 50%; box-shadow: 0 0 18px rgba(123, 227, 176, 0.45), 0 0 35px rgba(56, 189, 248, 0.25); }
+  50%  { background-position: 100% 50%; box-shadow: 0 0 30px rgba(167, 139, 250, 0.7), 0 0 55px rgba(244, 114, 182, 0.4); }
+  100% { background-position: 0% 50%; box-shadow: 0 0 18px rgba(123, 227, 176, 0.45), 0 0 35px rgba(56, 189, 248, 0.25); }
+}
+
+@keyframes dotPulseAnim {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%      { transform: scale(1.5); opacity: 0.5; }
+}
+
+.topic-hero {
+  margin: 28px 0 24px !important;
+  padding: 40px 32px !important;
+  border-radius: 24px !important;
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.09) !important;
+  backdrop-filter: blur(28px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(160%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.12) !important;
+}
+
+.eyebrow-chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 5px 14px !important;
+  border-radius: 999px !important;
+  background: rgba(123, 227, 176, 0.08) !important;
+  border: 1px solid rgba(123, 227, 176, 0.22) !important;
+  color: #7BE3B0 !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 2.2px !important;
+  text-transform: uppercase !important;
+  width: fit-content !important;
+}
+
+.dot-pulse {
+  width: 7px !important;
+  height: 7px !important;
+  border-radius: 50% !important;
+  background: #7BE3B0 !important;
+  animation: dotPulseAnim 2s infinite ease-in-out !important;
+}
+
+.topic-features {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+  margin-top: 4px !important;
+}
+
+.feat-chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  padding: 6px 14px !important;
+  border-radius: 10px !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+}
+
+.start-wrapper {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin-top: 10px !important;
+  width: auto !important;
+}
+
+button.start, a.start {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 12px 26px !important;
+  border-radius: 999px !important;
+  background: #7BE3B0 !important;
+  background-size: auto !important;
+  border: 1px solid #7BE3B0 !important;
+  color: #07130d !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2px !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  width: auto !important;
+  max-width: 200px !important;
+  white-space: nowrap !important;
+  animation: none !important;
+  transition: transform 0.16s ease, background 0.16s ease !important;
+}
+
+button.start:hover, a.start:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: none !important;
+}
+
+.exam-stmt-row {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 14px !important;
+  margin: 12px 0 !important;
+  padding: 14px 18px !important;
+  background: rgba(255,255,255,0.035) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  border-radius: 14px !important;
+  border-left: 4px solid #7BE3B0 !important;
+}
+</style>
+<link rel="stylesheet" href="/assets/mindgains-redesign.css?v=20261002_mobilenav">
+<!-- MG_SEO_STYLE_START --><style>.mg-seo-study{margin:24px 0;padding:24px;border:1px solid rgba(255,255,255,.16);border-radius:22px;background:rgba(255,255,255,.045)}.mg-seo-kicker{margin:0 0 8px;color:#67e8f9;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}.mg-seo-study h2{margin:0 0 12px;font-size:clamp(26px,4vw,38px)}.mg-seo-study>p{max-width:860px;color:#dbeafe;line-height:1.6}.mg-seo-questions{display:grid;gap:12px;margin-top:18px}.mg-seo-question{padding:18px;border:1px solid rgba(255,255,255,.12);border-radius:16px;background:rgba(0,0,0,.16)}.mg-seo-question h3{margin:0 0 12px;font-size:18px;line-height:1.4}.mg-seo-question ol{padding-left:26px;color:#dbeafe;line-height:1.6}.mg-seo-question p{color:#cbd5e1;line-height:1.55}.mg-seo-note{font-weight:700}@media(max-width:700px){.mg-seo-study{padding:17px}.mg-seo-question{padding:14px}}</style><!-- MG_SEO_STYLE_END -->  <link rel="stylesheet" href="/assets/site-footer.css?v=3">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="/assets/inner-v2.css?v=20261017b">
+
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mindgains.ai/"},{"@type":"ListItem","position":2,"name":"திருக்குறள்","item":"https://mindgains.ai/thirukkural/"},{"@type":"ListItem","position":3,"name":"அதிகாரம் 81","item":"https://mindgains.ai/thirukkural/81/"}]}</script>
 
 <style>
-.tk{max-width:860px;margin:0 auto;padding:0 16px 40px}
-.tk h1{font:400 clamp(30px,6vw,46px)/1.1 'Instrument Serif',serif;margin:18px 0 8px}
-.tk .sub{color:rgba(255,255,255,.7);font:500 15px/1.6 Inter,sans-serif;margin:0 0 18px}
-.tk .meta{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}.tk .meta span{font:600 12px Inter;padding:6px 12px;border-radius:99px;border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.8)}
-.kc{display:block;padding:18px 20px;margin:0 0 12px;border-radius:18px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);text-decoration:none;color:inherit}
-a.kc:hover{border-color:rgba(55,224,255,.5)}
-.kc .kn{font:700 12px Inter;letter-spacing:.08em;color:#37e0ff}.kc .ta{font:600 19px/1.7 'Noto Sans Tamil',Inter,sans-serif;margin:6px 0}
-.kc .tr{font:italic 400 14px/1.5 Inter;color:rgba(255,255,255,.55);margin:0 0 6px}.kc .en{font:400 15px/1.55 Inter;color:rgba(255,255,255,.82)}
-.kc .po{font:500 15.5px/1.7 'Noto Sans Tamil',Inter;color:#fff;margin:4px 0 8px}.kc .po b{color:#f3c86b}
-.kbig .ta{font-size:clamp(22px,4.6vw,28px)}
-.tk h2{font:600 20px Inter;margin:28px 0 12px}
+.tk{max-width:880px;margin:0 auto}
+.tk .meta{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 0}.tk .meta span{font:600 12.5px Inter;padding:6px 12px;border-radius:99px;background:#f1f5f7;color:#334155}
+.kc{display:block;text-decoration:none;color:inherit;margin:0 0 10px}
+a.kc:hover{border-color:rgba(13,27,42,.25)!important}
+.kc .kn{font:700 11.5px Inter;letter-spacing:.08em;color:#0f9d74;text-transform:uppercase}
+.kc .ta{font:650 18px/1.65 Inter,sans-serif;color:#0d1b2a;margin:6px 0}
+.kc .tr{font:italic 400 13.5px/1.5 Inter;color:#64748b;margin:0 0 8px}
+.kc .po{font:500 15px/1.65 Inter;color:#0d1b2a;margin:0 0 8px;padding:10px 12px;border-radius:10px;background:#ecfdf5}.kc .po b{color:#047857}
+.kc .en{font:400 14.5px/1.55 Inter;color:#475569}
+.kbig .ta{font-size:clamp(21px,4.4vw,26px)}
+.tk h2{font:700 22px/1.3 'Inter Tight',Inter;color:#0d1b2a;margin:30px 0 12px}
 .chg{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
-.chg a{display:block;padding:12px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);color:inherit;text-decoration:none;font:500 14px/1.4 Inter}
-.chg a b{display:block;font:600 15px 'Noto Sans Tamil',Inter}.chg a small{color:rgba(255,255,255,.55)}
-.pn{display:flex;justify-content:space-between;gap:10px;margin:26px 0}.pn a{flex:1;padding:12px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.12);color:inherit;text-decoration:none;font:600 14px Inter}.pn a:last-child{text-align:right}
-.tkq{margin:28px 0;padding:20px;border-radius:20px;border:1px solid rgba(55,224,255,.25);background:rgba(55,224,255,.04)}
-.tkq h2{margin:0 0 4px}.tkq-s{font:600 13px Inter;color:rgba(255,255,255,.6);margin:0 0 14px}
-.tkq-i{padding:14px 0;border-top:1px solid rgba(255,255,255,.08)}.tkq-q{font:500 15px/1.6 Inter;margin:0 0 10px}
-.kq{display:block;font:600 16px/1.7 'Noto Sans Tamil',Inter;margin-top:6px;color:#fff}.kq.en{font:italic 400 15px/1.6 Inter}
-.tkq-o{display:grid;grid-template-columns:1fr 1fr;gap:8px}@media(max-width:560px){.tkq-o{grid-template-columns:1fr}}
-.tkq-o button{padding:11px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04);color:#fff;font:500 14px/1.4 'Noto Sans Tamil',Inter;text-align:left;cursor:pointer}
-.tkq-o button.ok{background:rgba(52,211,153,.18);border-color:#34d399}.tkq-o button.no{background:rgba(248,113,113,.16);border-color:#f87171}
-.cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin:30px 0;padding:18px 20px;border-radius:18px;background:linear-gradient(90deg,rgba(243,200,107,.14),rgba(55,224,255,.08));border:1px solid rgba(243,200,107,.3)}
-.cta p{margin:0;font:500 15px/1.5 Inter}.cta a{padding:11px 18px;border-radius:12px;background:#f3c86b;color:#1a1206;font:700 14px Inter;text-decoration:none}
-.src{font:400 12px/1.6 Inter;color:rgba(255,255,255,.45);margin-top:30px}
+.chg a{display:block;padding:13px 15px;border-radius:14px;border:1px solid rgba(13,27,42,.08);background:#fff;color:#0d1b2a;text-decoration:none;font:500 13px/1.45 Inter}
+.chg a:hover{border-color:rgba(13,27,42,.25)}
+.chg a b{display:block;font:650 15px Inter;margin:2px 0}.chg a small{color:#64748b}
+.pn{display:flex;justify-content:space-between;gap:10px;margin:24px 0}.pn a{flex:1;padding:12px 15px;border-radius:14px;border:1px solid rgba(13,27,42,.1);background:#fff;color:#0d1b2a;text-decoration:none;font:600 14px Inter}.pn a:last-child{text-align:right}
+.tkq{margin:24px 0}
+.tkq-s{font:600 13px Inter;color:#64748b;margin:0 0 6px}
+.tkq-i{margin:0 0 10px}
+.kq{display:block;font:650 16px/1.6 Inter;margin-top:6px;color:#0d1b2a}.kq.en{font:italic 400 15px/1.6 Inter;color:#334155}
+.tkq-o{display:grid;gap:6px}
+.tkq-o button{padding:10px 12px;border-radius:10px;border:1px solid transparent;background:#f7f9fa;color:#0d1b2a;font:500 14.5px/1.45 Inter;text-align:left;cursor:pointer}
+.tkq-o button:hover{border-color:rgba(13,27,42,.15)}
+.tkq-o button.ok{background:#ecfdf5;border-color:#10b981;color:#065f46}.tkq-o button.no{background:#fef2f2;border-color:#f87171;color:#991b1b}
+.src{font:400 12px/1.6 Inter;color:#94a3b8;margin-top:26px}
 </style>
 </head>
 <body class="inner-v2">
@@ -65,32 +198,36 @@ a.kc:hover{border-color:rgba(55,224,255,.5)}
 </header>
 <main><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><a href="/thirukkural/">திருக்குறள்</a><span>›</span><span>அதிகாரம் 81</span></nav>
 <div class="tk">
-<h1>அதிகாரம் 81: பழைமை</h1><p class="sub">Familiarity · Pazhaimai · குறள் 801–810</p>
-<div class="meta"><span>பொருட்பால் · Wealth</span><span>நட்பியல் · Friendship</span><span>10 குறள்கள்</span></div>
-<a href="/thirukkural/kural/801/" class="kc"><div class="kn">குறள் 801</div><div class="ta">பழைமை எனப்படுவது யாதெனின் யாதும்<br>கிழமையைக் கீழ்ந்திடா நட்பு.</div><p class="tr">Pazhaimai Enappatuvadhu Yaadhenin Yaadhum / Kizhamaiyaik Keezhndhitaa Natpu</p><div class="po"><b>பொருள்:</b> பழைமை என்பது எது என்றால், நண்பர் உரிமையுடன் செய்வதைச் சிறிதும் மறுக்காத நட்பே.</div><div class="en">Familiarity is friendship's silent pact, That puts restraint on no familiar act</div></a>
-<a href="/thirukkural/kural/802/" class="kc"><div class="kn">குறள் 802</div><div class="ta">நட்பிற் குறுப்புக் கெழுதகைமை மற்றதற்கு<br>உப்பாதல் சான்றோர் கடன்.</div><p class="tr">Natpir Kuruppuk Kezhudhakaimai Matradharku / Uppaadhal Saandror Katan</p><div class="po"><b>பொருள்:</b> நட்புக்கு உறுப்பு நண்பரின் உரிமைச் செயல்; அதை மகிழ்ந்து ஏற்பதே சான்றோர் கடமை.</div><div class="en">Familiar freedom friendship's very frame supplies; To be its savour sweet is duty of the wise</div></a>
-<a href="/thirukkural/kural/803/" class="kc"><div class="kn">குறள் 803</div><div class="ta">பழகிய நட்பெவன் செய்யுங் கெழுதகைமை<br>செய்தாங்கு அமையாக் கடை.</div><p class="tr">Pazhakiya Natpevan Seyyung Kezhudhakaimai / Seydhaangu Amaiyaak Katai</p><div class="po"><b>பொருள்:</b> நண்பர் உரிமையுடன் செய்ததைத் தாம் செய்ததுபோல் ஏற்காவிட்டால், நீண்ட நட்பால் என்ன பயன்?</div><div class="en">When to familiar acts men kind response refuse, What fruit from ancient friendship's use</div></a>
-<a href="/thirukkural/kural/804/" class="kc"><div class="kn">குறள் 804</div><div class="ta">விழைதகையான் வேண்டி இருப்பர் கெழுதகையாற்<br>கேளாது நட்டார் செயின்.</div><p class="tr">Vizhaidhakaiyaan Venti Iruppar Kezhudhakaiyaar / Kelaadhu Nattaar Seyin</p><div class="po"><b>பொருள்:</b> நண்பர் கேட்காமலேயே உரிமையுடன் ஒன்றைச் செய்தால், அறிவுடையவர் அதை விரும்பி ஏற்பர்.</div><div class="en">When friends unbidden do familiar acts with loving heart, Friends take the kindly deed in friendly part</div></a>
-<a href="/thirukkural/kural/805/" class="kc"><div class="kn">குறள் 805</div><div class="ta">பேதைமை ஒன்றோ பெருங்கிழமை என்றுணர்க<br>நோதக்க நட்டார் செயின்.</div><p class="tr">Pedhaimai Ondro Perungizhamai Endrunarka / Nodhakka Nattaar Seyin</p><div class="po"><b>பொருள்:</b> நண்பர் வருந்தத்தக்க செயல் செய்தால், அது அறியாமையாலோ மிகுந்த உரிமையாலோ என்று உணர வேண்டும்.</div><div class="en">Not folly merely, but familiar carelessness, Esteem it, when your friends cause you distress</div></a>
-<a href="/thirukkural/kural/806/" class="kc"><div class="kn">குறள் 806</div><div class="ta">எல்லைக்கண் நின்றார் துறவார் தொலைவிடத்தும்<br>தொல்லைக்கண் நின்றார் தொடர்பு.</div><p class="tr">Ellaikkan Nindraar Thuravaar Tholaivitaththum / Thollaikkan Nindraar Thotarpu</p><div class="po"><b>பொருள்:</b> நட்பின் எல்லையில் நிற்பவர்கள், கேடு வந்த நிலையிலும் பழைய நண்பரின் தொடர்பை விட மாட்டார்கள்.</div><div class="en">Who stand within the bounds quit not, though loss impends, Association with the old familiar friends</div></a>
-<a href="/thirukkural/kural/807/" class="kc"><div class="kn">குறள் 807</div><div class="ta">அழிவந்த செய்யினும் அன்பறார் அன்பின்<br>வழிவந்த கேண்மை யவர்.</div><p class="tr">Azhivandha Seyyinum Anparaar Anpin / Vazhivandha Kenmai Yavar</p><div class="po"><b>பொருள்:</b> அன்பின் வழியில் வந்த நட்புடையவர்கள், நண்பர் அழிவு தரும் செயல் செய்தாலும் அன்பு குறைய மாட்டார்கள்.</div><div class="en">True friends, well versed in loving ways, Cease not to love, when friend their love betrays</div></a>
-<a href="/thirukkural/kural/808/" class="kc"><div class="kn">குறள் 808</div><div class="ta">கேளிழுக்கம் கேளாக் கெழுதகைமை வல்லார்க்கு<br>நாளிழுக்கம் நட்டார் செயின்.</div><p class="tr">Kelizhukkam Kelaak Kezhudhakaimai Vallaarkku / Naalizhukkam Nattaar Seyin</p><div class="po"><b>பொருள்:</b> நண்பரின் குற்றத்தைப் பிறர் சொன்னாலும் கேட்காத உரிமையுடையவர்க்கு, நண்பர் குற்றம் செய்த நாளும் நல்ல நாளே.</div><div class="en">In strength of friendship rare of friend's disgrace who will not hear, The day his friend offends will day of grace to him appear</div></a>
-<a href="/thirukkural/kural/809/" class="kc"><div class="kn">குறள் 809</div><div class="ta">கெடாஅ வழிவந்த கேண்மையார் கேண்மை<br>விடாஅர் விழையும் உலகு.</div><p class="tr">Ketaaa Vazhivandha Kenmaiyaar Kenmai / Vitaaar Vizhaiyum Ulaku</p><div class="po"><b>பொருள்:</b> கெடாமல் பழமையாக வந்த நட்பை விடாதவர்களை உலகம் விரும்பும்.</div><div class="en">Friendship of old and faithful friends, Who ne'er forsake, the world commends</div></a>
-<a href="/thirukkural/kural/810/" class="kc"><div class="kn">குறள் 810</div><div class="ta">விழையார் விழையப் படுப பழையார்கண்<br>பண்பின் தலைப்பிரியா தார்.</div><p class="tr">Vizhaiyaar Vizhaiyap Patupa Pazhaiyaarkan / Panpin Thalaippiriyaa Thaar</p><div class="po"><b>பொருள்:</b> பழைய நண்பரிடம் பண்பு மாறாமல் நடப்பவர்கள், பகைவராலும் விரும்பப்படுவர்.</div><div class="en">Ill-wishers even wish them well, who guardFor ancient friends, their wonted kind regard</div></a>
-<section class="tkq" aria-label="அதிகாரம் 81 Quiz · பழைமை"><h2>அதிகாரம் 81 Quiz · பழைமை</h2><p class="tkq-s"><b class="tkq-sc">0</b> / 10 சரி</p>
-<div class="tkq-i"><p class="tkq-q"><b>1.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">பழைமை எனப்படுவது யாதெனின் ______ / கிழமையைக் கீழ்ந்திடா நட்பு.</span></p><div class="tkq-o"><button type="button">விடாஅர்</button><button type="button" data-c="1">யாதும்</button><button type="button">நின்றார்</button><button type="button">வேண்டி</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>2.</b> இந்தக் குறளின் பொருள் எது? <span class="kq">நட்பிற் குறுப்புக் கெழுதகைமை மற்றதற்கு / உப்பாதல் சான்றோர் கடன்.</span></p><div class="tkq-o"><button type="button">நண்பரின் குற்றத்தைப் பிறர் சொன்னாலும் கேட்காத உரிமையுடையவர்க்கு, நண்பர் குற்றம் செய்த நாளும் நல்ல நாளே.</button><button type="button" data-c="1">நட்புக்கு உறுப்பு நண்பரின் உரிமைச் செயல்; அதை மகிழ்ந்து ஏற்பதே சான்றோர் கடமை.</button><button type="button">நண்பர் உரிமையுடன் செய்ததைத் தாம் செய்ததுபோல் ஏற்காவிட்டால், நீண்ட நட்பால் என்ன பயன்?</button><button type="button">அன்பின் வழியில் வந்த நட்புடையவர்கள், நண்பர் அழிவு தரும் செயல் செய்தாலும் அன்பு குறைய மாட்டார்கள்.</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>3.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">பழகிய நட்பெவன் செய்யுங் ______ / செய்தாங்கு அமையாக் கடை.</span></p><div class="tkq-o"><button type="button" data-c="1">கெழுதகைமை</button><button type="button">நட்பு</button><button type="button">மற்றதற்கு</button><button type="button">வழிவந்த</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>4.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">விழைதகையான் ______ இருப்பர் கெழுதகையாற் / கேளாது நட்டார் செயின்.</span></p><div class="tkq-o"><button type="button">பழகிய</button><button type="button">பெருங்கிழமை</button><button type="button">விழையப்</button><button type="button" data-c="1">வேண்டி</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>5.</b> இந்தக் குறளின் பொருள் எது? <span class="kq">பேதைமை ஒன்றோ பெருங்கிழமை என்றுணர்க / நோதக்க நட்டார் செயின்.</span></p><div class="tkq-o"><button type="button">நட்புக்கு உறுப்பு நண்பரின் உரிமைச் செயல்; அதை மகிழ்ந்து ஏற்பதே சான்றோர் கடமை.</button><button type="button">நண்பர் கேட்காமலேயே உரிமையுடன் ஒன்றைச் செய்தால், அறிவுடையவர் அதை விரும்பி ஏற்பர்.</button><button type="button">அன்பின் வழியில் வந்த நட்புடையவர்கள், நண்பர் அழிவு தரும் செயல் செய்தாலும் அன்பு குறைய மாட்டார்கள்.</button><button type="button" data-c="1">நண்பர் வருந்தத்தக்க செயல் செய்தால், அது அறியாமையாலோ மிகுந்த உரிமையாலோ என்று உணர வேண்டும்.</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>6.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">எல்லைக்கண் நின்றார் துறவார் தொலைவிடத்தும் / தொல்லைக்கண் நின்றார் ______.</span></p><div class="tkq-o"><button type="button">கேளிழுக்கம்</button><button type="button" data-c="1">தொடர்பு</button><button type="button">செய்யினும்</button><button type="button">கடை</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>7.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">______ செய்யினும் அன்பறார் அன்பின் / வழிவந்த கேண்மை யவர்.</span></p><div class="tkq-o"><button type="button">நாளிழுக்கம்</button><button type="button">செயின்</button><button type="button">கடை</button><button type="button" data-c="1">அழிவந்த</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>8.</b> இந்தக் குறளின் பொருள் எது? <span class="kq">கேளிழுக்கம் கேளாக் கெழுதகைமை வல்லார்க்கு / நாளிழுக்கம் நட்டார் செயின்.</span></p><div class="tkq-o"><button type="button">அன்பின் வழியில் வந்த நட்புடையவர்கள், நண்பர் அழிவு தரும் செயல் செய்தாலும் அன்பு குறைய மாட்டார்கள்.</button><button type="button">நண்பர் கேட்காமலேயே உரிமையுடன் ஒன்றைச் செய்தால், அறிவுடையவர் அதை விரும்பி ஏற்பர்.</button><button type="button">பழைமை என்பது எது என்றால், நண்பர் உரிமையுடன் செய்வதைச் சிறிதும் மறுக்காத நட்பே.</button><button type="button" data-c="1">நண்பரின் குற்றத்தைப் பிறர் சொன்னாலும் கேட்காத உரிமையுடையவர்க்கு, நண்பர் குற்றம் செய்த நாளும் நல்ல நாளே.</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>9.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">கெடாஅ வழிவந்த கேண்மையார் கேண்மை / விடாஅர் ______ உலகு.</span></p><div class="tkq-o"><button type="button" data-c="1">விழையும்</button><button type="button">மற்றதற்கு</button><button type="button">கேளாக்</button><button type="button">விழையார்</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>10.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">விழையார் ______ படுப பழையார்கண் / பண்பின் தலைப்பிரியா தார்.</span></p><div class="tkq-o"><button type="button">துறவார்</button><button type="button">கீழ்ந்திடா</button><button type="button" data-c="1">விழையப்</button><button type="button">கேண்மையார்</button></div></div>
+<section class="topic-hero"><div class="eyebrow-chip"><span class="dot-pulse"></span>திருக்குறள் · Thirukkural</div><h1>அதிகாரம் 81: பழைமை</h1><p >Familiarity · Pazhaimai · குறள் 801–810</p>
+<div class="meta"><span>பொருட்பால் · Wealth</span><span>நட்பியல் · Friendship</span><span>10 குறள்கள்</span></div></section>
+<a href="/thirukkural/kural/801/" class="kc mg-seo-question"><div class="kn">குறள் 801</div><div class="ta">பழைமை எனப்படுவது யாதெனின் யாதும்<br>கிழமையைக் கீழ்ந்திடா நட்பு.</div><div class="tr">Pazhaimai Enappatuvadhu Yaadhenin Yaadhum / Kizhamaiyaik Keezhndhitaa Natpu</div><div class="po"><b>பொருள்:</b> பழைமை என்பது எது என்றால், நண்பர் உரிமையுடன் செய்வதைச் சிறிதும் மறுக்காத நட்பே.</div><div class="en">Familiarity is friendship's silent pact, That puts restraint on no familiar act</div></a>
+<a href="/thirukkural/kural/802/" class="kc mg-seo-question"><div class="kn">குறள் 802</div><div class="ta">நட்பிற் குறுப்புக் கெழுதகைமை மற்றதற்கு<br>உப்பாதல் சான்றோர் கடன்.</div><div class="tr">Natpir Kuruppuk Kezhudhakaimai Matradharku / Uppaadhal Saandror Katan</div><div class="po"><b>பொருள்:</b> நட்புக்கு உறுப்பு நண்பரின் உரிமைச் செயல்; அதை மகிழ்ந்து ஏற்பதே சான்றோர் கடமை.</div><div class="en">Familiar freedom friendship's very frame supplies; To be its savour sweet is duty of the wise</div></a>
+<a href="/thirukkural/kural/803/" class="kc mg-seo-question"><div class="kn">குறள் 803</div><div class="ta">பழகிய நட்பெவன் செய்யுங் கெழுதகைமை<br>செய்தாங்கு அமையாக் கடை.</div><div class="tr">Pazhakiya Natpevan Seyyung Kezhudhakaimai / Seydhaangu Amaiyaak Katai</div><div class="po"><b>பொருள்:</b> நண்பர் உரிமையுடன் செய்ததைத் தாம் செய்ததுபோல் ஏற்காவிட்டால், நீண்ட நட்பால் என்ன பயன்?</div><div class="en">When to familiar acts men kind response refuse, What fruit from ancient friendship's use</div></a>
+<a href="/thirukkural/kural/804/" class="kc mg-seo-question"><div class="kn">குறள் 804</div><div class="ta">விழைதகையான் வேண்டி இருப்பர் கெழுதகையாற்<br>கேளாது நட்டார் செயின்.</div><div class="tr">Vizhaidhakaiyaan Venti Iruppar Kezhudhakaiyaar / Kelaadhu Nattaar Seyin</div><div class="po"><b>பொருள்:</b> நண்பர் கேட்காமலேயே உரிமையுடன் ஒன்றைச் செய்தால், அறிவுடையவர் அதை விரும்பி ஏற்பர்.</div><div class="en">When friends unbidden do familiar acts with loving heart, Friends take the kindly deed in friendly part</div></a>
+<a href="/thirukkural/kural/805/" class="kc mg-seo-question"><div class="kn">குறள் 805</div><div class="ta">பேதைமை ஒன்றோ பெருங்கிழமை என்றுணர்க<br>நோதக்க நட்டார் செயின்.</div><div class="tr">Pedhaimai Ondro Perungizhamai Endrunarka / Nodhakka Nattaar Seyin</div><div class="po"><b>பொருள்:</b> நண்பர் வருந்தத்தக்க செயல் செய்தால், அது அறியாமையாலோ மிகுந்த உரிமையாலோ என்று உணர வேண்டும்.</div><div class="en">Not folly merely, but familiar carelessness, Esteem it, when your friends cause you distress</div></a>
+<a href="/thirukkural/kural/806/" class="kc mg-seo-question"><div class="kn">குறள் 806</div><div class="ta">எல்லைக்கண் நின்றார் துறவார் தொலைவிடத்தும்<br>தொல்லைக்கண் நின்றார் தொடர்பு.</div><div class="tr">Ellaikkan Nindraar Thuravaar Tholaivitaththum / Thollaikkan Nindraar Thotarpu</div><div class="po"><b>பொருள்:</b> நட்பின் எல்லையில் நிற்பவர்கள், கேடு வந்த நிலையிலும் பழைய நண்பரின் தொடர்பை விட மாட்டார்கள்.</div><div class="en">Who stand within the bounds quit not, though loss impends, Association with the old familiar friends</div></a>
+<a href="/thirukkural/kural/807/" class="kc mg-seo-question"><div class="kn">குறள் 807</div><div class="ta">அழிவந்த செய்யினும் அன்பறார் அன்பின்<br>வழிவந்த கேண்மை யவர்.</div><div class="tr">Azhivandha Seyyinum Anparaar Anpin / Vazhivandha Kenmai Yavar</div><div class="po"><b>பொருள்:</b> அன்பின் வழியில் வந்த நட்புடையவர்கள், நண்பர் அழிவு தரும் செயல் செய்தாலும் அன்பு குறைய மாட்டார்கள்.</div><div class="en">True friends, well versed in loving ways, Cease not to love, when friend their love betrays</div></a>
+<a href="/thirukkural/kural/808/" class="kc mg-seo-question"><div class="kn">குறள் 808</div><div class="ta">கேளிழுக்கம் கேளாக் கெழுதகைமை வல்லார்க்கு<br>நாளிழுக்கம் நட்டார் செயின்.</div><div class="tr">Kelizhukkam Kelaak Kezhudhakaimai Vallaarkku / Naalizhukkam Nattaar Seyin</div><div class="po"><b>பொருள்:</b> நண்பரின் குற்றத்தைப் பிறர் சொன்னாலும் கேட்காத உரிமையுடையவர்க்கு, நண்பர் குற்றம் செய்த நாளும் நல்ல நாளே.</div><div class="en">In strength of friendship rare of friend's disgrace who will not hear, The day his friend offends will day of grace to him appear</div></a>
+<a href="/thirukkural/kural/809/" class="kc mg-seo-question"><div class="kn">குறள் 809</div><div class="ta">கெடாஅ வழிவந்த கேண்மையார் கேண்மை<br>விடாஅர் விழையும் உலகு.</div><div class="tr">Ketaaa Vazhivandha Kenmaiyaar Kenmai / Vitaaar Vizhaiyum Ulaku</div><div class="po"><b>பொருள்:</b> கெடாமல் பழமையாக வந்த நட்பை விடாதவர்களை உலகம் விரும்பும்.</div><div class="en">Friendship of old and faithful friends, Who ne'er forsake, the world commends</div></a>
+<a href="/thirukkural/kural/810/" class="kc mg-seo-question"><div class="kn">குறள் 810</div><div class="ta">விழையார் விழையப் படுப பழையார்கண்<br>பண்பின் தலைப்பிரியா தார்.</div><div class="tr">Vizhaiyaar Vizhaiyap Patupa Pazhaiyaarkan / Panpin Thalaippiriyaa Thaar</div><div class="po"><b>பொருள்:</b> பழைய நண்பரிடம் பண்பு மாறாமல் நடப்பவர்கள், பகைவராலும் விரும்பப்படுவர்.</div><div class="en">Ill-wishers even wish them well, who guardFor ancient friends, their wonted kind regard</div></a>
+<section class="tkq mg-seo-study" aria-label="அதிகாரம் 81 Quiz · பழைமை"><p class="mg-seo-kicker">Quiz</p><h2>அதிகாரம் 81 Quiz · பழைமை</h2><p class="tkq-s"><b class="tkq-sc">0</b> / 10 சரி</p><div class="mg-seo-questions">
+<article class="tkq-i mg-seo-question"><h3><b>1.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">பழைமை எனப்படுவது யாதெனின் ______ / கிழமையைக் கீழ்ந்திடா நட்பு.</span></h3><div class="tkq-o"><button type="button">விடாஅர்</button><button type="button" data-c="1">யாதும்</button><button type="button">நின்றார்</button><button type="button">வேண்டி</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>2.</b> இந்தக் குறளின் பொருள் எது? <span class="kq">நட்பிற் குறுப்புக் கெழுதகைமை மற்றதற்கு / உப்பாதல் சான்றோர் கடன்.</span></h3><div class="tkq-o"><button type="button">நண்பரின் குற்றத்தைப் பிறர் சொன்னாலும் கேட்காத உரிமையுடையவர்க்கு, நண்பர் குற்றம் செய்த நாளும் நல்ல நாளே.</button><button type="button" data-c="1">நட்புக்கு உறுப்பு நண்பரின் உரிமைச் செயல்; அதை மகிழ்ந்து ஏற்பதே சான்றோர் கடமை.</button><button type="button">நண்பர் உரிமையுடன் செய்ததைத் தாம் செய்ததுபோல் ஏற்காவிட்டால், நீண்ட நட்பால் என்ன பயன்?</button><button type="button">அன்பின் வழியில் வந்த நட்புடையவர்கள், நண்பர் அழிவு தரும் செயல் செய்தாலும் அன்பு குறைய மாட்டார்கள்.</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>3.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">பழகிய நட்பெவன் செய்யுங் ______ / செய்தாங்கு அமையாக் கடை.</span></h3><div class="tkq-o"><button type="button" data-c="1">கெழுதகைமை</button><button type="button">நட்பு</button><button type="button">மற்றதற்கு</button><button type="button">வழிவந்த</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>4.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">விழைதகையான் ______ இருப்பர் கெழுதகையாற் / கேளாது நட்டார் செயின்.</span></h3><div class="tkq-o"><button type="button">பழகிய</button><button type="button">பெருங்கிழமை</button><button type="button">விழையப்</button><button type="button" data-c="1">வேண்டி</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>5.</b> இந்தக் குறளின் பொருள் எது? <span class="kq">பேதைமை ஒன்றோ பெருங்கிழமை என்றுணர்க / நோதக்க நட்டார் செயின்.</span></h3><div class="tkq-o"><button type="button">நட்புக்கு உறுப்பு நண்பரின் உரிமைச் செயல்; அதை மகிழ்ந்து ஏற்பதே சான்றோர் கடமை.</button><button type="button">நண்பர் கேட்காமலேயே உரிமையுடன் ஒன்றைச் செய்தால், அறிவுடையவர் அதை விரும்பி ஏற்பர்.</button><button type="button">அன்பின் வழியில் வந்த நட்புடையவர்கள், நண்பர் அழிவு தரும் செயல் செய்தாலும் அன்பு குறைய மாட்டார்கள்.</button><button type="button" data-c="1">நண்பர் வருந்தத்தக்க செயல் செய்தால், அது அறியாமையாலோ மிகுந்த உரிமையாலோ என்று உணர வேண்டும்.</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>6.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">எல்லைக்கண் நின்றார் துறவார் தொலைவிடத்தும் / தொல்லைக்கண் நின்றார் ______.</span></h3><div class="tkq-o"><button type="button">கேளிழுக்கம்</button><button type="button" data-c="1">தொடர்பு</button><button type="button">செய்யினும்</button><button type="button">கடை</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>7.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">______ செய்யினும் அன்பறார் அன்பின் / வழிவந்த கேண்மை யவர்.</span></h3><div class="tkq-o"><button type="button">நாளிழுக்கம்</button><button type="button">செயின்</button><button type="button">கடை</button><button type="button" data-c="1">அழிவந்த</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>8.</b> இந்தக் குறளின் பொருள் எது? <span class="kq">கேளிழுக்கம் கேளாக் கெழுதகைமை வல்லார்க்கு / நாளிழுக்கம் நட்டார் செயின்.</span></h3><div class="tkq-o"><button type="button">அன்பின் வழியில் வந்த நட்புடையவர்கள், நண்பர் அழிவு தரும் செயல் செய்தாலும் அன்பு குறைய மாட்டார்கள்.</button><button type="button">நண்பர் கேட்காமலேயே உரிமையுடன் ஒன்றைச் செய்தால், அறிவுடையவர் அதை விரும்பி ஏற்பர்.</button><button type="button">பழைமை என்பது எது என்றால், நண்பர் உரிமையுடன் செய்வதைச் சிறிதும் மறுக்காத நட்பே.</button><button type="button" data-c="1">நண்பரின் குற்றத்தைப் பிறர் சொன்னாலும் கேட்காத உரிமையுடையவர்க்கு, நண்பர் குற்றம் செய்த நாளும் நல்ல நாளே.</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>9.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">கெடாஅ வழிவந்த கேண்மையார் கேண்மை / விடாஅர் ______ உலகு.</span></h3><div class="tkq-o"><button type="button" data-c="1">விழையும்</button><button type="button">மற்றதற்கு</button><button type="button">கேளாக்</button><button type="button">விழையார்</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>10.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">விழையார் ______ படுப பழையார்கண் / பண்பின் தலைப்பிரியா தார்.</span></h3><div class="tkq-o"><button type="button">துறவார்</button><button type="button">கீழ்ந்திடா</button><button type="button" data-c="1">விழையப்</button><button type="button">கேண்மையார்</button></div></div>
 </section>
 <div class="pn"><a href="/thirukkural/80/">‹ 80. நட்பாராய்தல்</a><a href="/thirukkural/82/">82. தீ நட்பு ›</a></div>
-<div class="cta"><p><b>Race your friends on Thirukkural.</b> Answer live against aspirants across India in NationLap.</p><a href="/nationlap/">Play NationLap</a></div>
+<section class="ibento" aria-label="More ways to practise">
+  <a class="itile it-ca" href="/nationlap/?affairs=1"><b>Every morning · 5am</b><strong>Today's current affairs</strong><span>The day's exam-worthy news, each fact with its source.</span><i>Race today's affairs →</i></a>
+  <a class="itile it-nl" href="/nationlap/"><b>Game</b><strong>NationLap</strong><span>Read a topic, then race it and answer at speed.</span><i>Play free →</i></a>
+  <a class="itile it-app" href="/get/"><b>MindGains app</b><strong>Mistakes come back</strong><span>Daily Dose, revision and Quiz Rooms with friends.</span><i>Get the app →</i></a>
+</section>
 <p class="src">குறள் மூலம்: பொதுக் களம் (public domain). தமிழ்ப் பொருள்: MindGains. English translation: Rev. G.U. Pope (1886), public domain.</p>
 </div>
 </main>

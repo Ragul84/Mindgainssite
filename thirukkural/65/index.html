@@ -15,39 +15,172 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/assets/quiz-hub.css?v=20261002_mobilenav" />
 <link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
 <meta name="theme-color" content="#37e0ff" />
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<style>
+@keyframes borderGlowRotate {
+  0%   { background-position: 0% 50%; box-shadow: 0 0 18px rgba(123, 227, 176, 0.45), 0 0 35px rgba(56, 189, 248, 0.25); }
+  50%  { background-position: 100% 50%; box-shadow: 0 0 30px rgba(167, 139, 250, 0.7), 0 0 55px rgba(244, 114, 182, 0.4); }
+  100% { background-position: 0% 50%; box-shadow: 0 0 18px rgba(123, 227, 176, 0.45), 0 0 35px rgba(56, 189, 248, 0.25); }
+}
+
+@keyframes dotPulseAnim {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%      { transform: scale(1.5); opacity: 0.5; }
+}
+
+.topic-hero {
+  margin: 28px 0 24px !important;
+  padding: 40px 32px !important;
+  border-radius: 24px !important;
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.09) !important;
+  backdrop-filter: blur(28px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(160%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.12) !important;
+}
+
+.eyebrow-chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 5px 14px !important;
+  border-radius: 999px !important;
+  background: rgba(123, 227, 176, 0.08) !important;
+  border: 1px solid rgba(123, 227, 176, 0.22) !important;
+  color: #7BE3B0 !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 2.2px !important;
+  text-transform: uppercase !important;
+  width: fit-content !important;
+}
+
+.dot-pulse {
+  width: 7px !important;
+  height: 7px !important;
+  border-radius: 50% !important;
+  background: #7BE3B0 !important;
+  animation: dotPulseAnim 2s infinite ease-in-out !important;
+}
+
+.topic-features {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+  margin-top: 4px !important;
+}
+
+.feat-chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  padding: 6px 14px !important;
+  border-radius: 10px !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+}
+
+.start-wrapper {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin-top: 10px !important;
+  width: auto !important;
+}
+
+button.start, a.start {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 12px 26px !important;
+  border-radius: 999px !important;
+  background: #7BE3B0 !important;
+  background-size: auto !important;
+  border: 1px solid #7BE3B0 !important;
+  color: #07130d !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2px !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  width: auto !important;
+  max-width: 200px !important;
+  white-space: nowrap !important;
+  animation: none !important;
+  transition: transform 0.16s ease, background 0.16s ease !important;
+}
+
+button.start:hover, a.start:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: none !important;
+}
+
+.exam-stmt-row {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 14px !important;
+  margin: 12px 0 !important;
+  padding: 14px 18px !important;
+  background: rgba(255,255,255,0.035) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  border-radius: 14px !important;
+  border-left: 4px solid #7BE3B0 !important;
+}
+</style>
+<link rel="stylesheet" href="/assets/mindgains-redesign.css?v=20261002_mobilenav">
+<!-- MG_SEO_STYLE_START --><style>.mg-seo-study{margin:24px 0;padding:24px;border:1px solid rgba(255,255,255,.16);border-radius:22px;background:rgba(255,255,255,.045)}.mg-seo-kicker{margin:0 0 8px;color:#67e8f9;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}.mg-seo-study h2{margin:0 0 12px;font-size:clamp(26px,4vw,38px)}.mg-seo-study>p{max-width:860px;color:#dbeafe;line-height:1.6}.mg-seo-questions{display:grid;gap:12px;margin-top:18px}.mg-seo-question{padding:18px;border:1px solid rgba(255,255,255,.12);border-radius:16px;background:rgba(0,0,0,.16)}.mg-seo-question h3{margin:0 0 12px;font-size:18px;line-height:1.4}.mg-seo-question ol{padding-left:26px;color:#dbeafe;line-height:1.6}.mg-seo-question p{color:#cbd5e1;line-height:1.55}.mg-seo-note{font-weight:700}@media(max-width:700px){.mg-seo-study{padding:17px}.mg-seo-question{padding:14px}}</style><!-- MG_SEO_STYLE_END -->  <link rel="stylesheet" href="/assets/site-footer.css?v=3">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="/assets/inner-v2.css?v=20261017b">
+
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mindgains.ai/"},{"@type":"ListItem","position":2,"name":"திருக்குறள்","item":"https://mindgains.ai/thirukkural/"},{"@type":"ListItem","position":3,"name":"அதிகாரம் 65","item":"https://mindgains.ai/thirukkural/65/"}]}</script>
 
 <style>
-.tk{max-width:860px;margin:0 auto;padding:0 16px 40px}
-.tk h1{font:400 clamp(30px,6vw,46px)/1.1 'Instrument Serif',serif;margin:18px 0 8px}
-.tk .sub{color:rgba(255,255,255,.7);font:500 15px/1.6 Inter,sans-serif;margin:0 0 18px}
-.tk .meta{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}.tk .meta span{font:600 12px Inter;padding:6px 12px;border-radius:99px;border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.8)}
-.kc{display:block;padding:18px 20px;margin:0 0 12px;border-radius:18px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);text-decoration:none;color:inherit}
-a.kc:hover{border-color:rgba(55,224,255,.5)}
-.kc .kn{font:700 12px Inter;letter-spacing:.08em;color:#37e0ff}.kc .ta{font:600 19px/1.7 'Noto Sans Tamil',Inter,sans-serif;margin:6px 0}
-.kc .tr{font:italic 400 14px/1.5 Inter;color:rgba(255,255,255,.55);margin:0 0 6px}.kc .en{font:400 15px/1.55 Inter;color:rgba(255,255,255,.82)}
-.kc .po{font:500 15.5px/1.7 'Noto Sans Tamil',Inter;color:#fff;margin:4px 0 8px}.kc .po b{color:#f3c86b}
-.kbig .ta{font-size:clamp(22px,4.6vw,28px)}
-.tk h2{font:600 20px Inter;margin:28px 0 12px}
+.tk{max-width:880px;margin:0 auto}
+.tk .meta{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 0}.tk .meta span{font:600 12.5px Inter;padding:6px 12px;border-radius:99px;background:#f1f5f7;color:#334155}
+.kc{display:block;text-decoration:none;color:inherit;margin:0 0 10px}
+a.kc:hover{border-color:rgba(13,27,42,.25)!important}
+.kc .kn{font:700 11.5px Inter;letter-spacing:.08em;color:#0f9d74;text-transform:uppercase}
+.kc .ta{font:650 18px/1.65 Inter,sans-serif;color:#0d1b2a;margin:6px 0}
+.kc .tr{font:italic 400 13.5px/1.5 Inter;color:#64748b;margin:0 0 8px}
+.kc .po{font:500 15px/1.65 Inter;color:#0d1b2a;margin:0 0 8px;padding:10px 12px;border-radius:10px;background:#ecfdf5}.kc .po b{color:#047857}
+.kc .en{font:400 14.5px/1.55 Inter;color:#475569}
+.kbig .ta{font-size:clamp(21px,4.4vw,26px)}
+.tk h2{font:700 22px/1.3 'Inter Tight',Inter;color:#0d1b2a;margin:30px 0 12px}
 .chg{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
-.chg a{display:block;padding:12px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);color:inherit;text-decoration:none;font:500 14px/1.4 Inter}
-.chg a b{display:block;font:600 15px 'Noto Sans Tamil',Inter}.chg a small{color:rgba(255,255,255,.55)}
-.pn{display:flex;justify-content:space-between;gap:10px;margin:26px 0}.pn a{flex:1;padding:12px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.12);color:inherit;text-decoration:none;font:600 14px Inter}.pn a:last-child{text-align:right}
-.tkq{margin:28px 0;padding:20px;border-radius:20px;border:1px solid rgba(55,224,255,.25);background:rgba(55,224,255,.04)}
-.tkq h2{margin:0 0 4px}.tkq-s{font:600 13px Inter;color:rgba(255,255,255,.6);margin:0 0 14px}
-.tkq-i{padding:14px 0;border-top:1px solid rgba(255,255,255,.08)}.tkq-q{font:500 15px/1.6 Inter;margin:0 0 10px}
-.kq{display:block;font:600 16px/1.7 'Noto Sans Tamil',Inter;margin-top:6px;color:#fff}.kq.en{font:italic 400 15px/1.6 Inter}
-.tkq-o{display:grid;grid-template-columns:1fr 1fr;gap:8px}@media(max-width:560px){.tkq-o{grid-template-columns:1fr}}
-.tkq-o button{padding:11px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04);color:#fff;font:500 14px/1.4 'Noto Sans Tamil',Inter;text-align:left;cursor:pointer}
-.tkq-o button.ok{background:rgba(52,211,153,.18);border-color:#34d399}.tkq-o button.no{background:rgba(248,113,113,.16);border-color:#f87171}
-.cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin:30px 0;padding:18px 20px;border-radius:18px;background:linear-gradient(90deg,rgba(243,200,107,.14),rgba(55,224,255,.08));border:1px solid rgba(243,200,107,.3)}
-.cta p{margin:0;font:500 15px/1.5 Inter}.cta a{padding:11px 18px;border-radius:12px;background:#f3c86b;color:#1a1206;font:700 14px Inter;text-decoration:none}
-.src{font:400 12px/1.6 Inter;color:rgba(255,255,255,.45);margin-top:30px}
+.chg a{display:block;padding:13px 15px;border-radius:14px;border:1px solid rgba(13,27,42,.08);background:#fff;color:#0d1b2a;text-decoration:none;font:500 13px/1.45 Inter}
+.chg a:hover{border-color:rgba(13,27,42,.25)}
+.chg a b{display:block;font:650 15px Inter;margin:2px 0}.chg a small{color:#64748b}
+.pn{display:flex;justify-content:space-between;gap:10px;margin:24px 0}.pn a{flex:1;padding:12px 15px;border-radius:14px;border:1px solid rgba(13,27,42,.1);background:#fff;color:#0d1b2a;text-decoration:none;font:600 14px Inter}.pn a:last-child{text-align:right}
+.tkq{margin:24px 0}
+.tkq-s{font:600 13px Inter;color:#64748b;margin:0 0 6px}
+.tkq-i{margin:0 0 10px}
+.kq{display:block;font:650 16px/1.6 Inter;margin-top:6px;color:#0d1b2a}.kq.en{font:italic 400 15px/1.6 Inter;color:#334155}
+.tkq-o{display:grid;gap:6px}
+.tkq-o button{padding:10px 12px;border-radius:10px;border:1px solid transparent;background:#f7f9fa;color:#0d1b2a;font:500 14.5px/1.45 Inter;text-align:left;cursor:pointer}
+.tkq-o button:hover{border-color:rgba(13,27,42,.15)}
+.tkq-o button.ok{background:#ecfdf5;border-color:#10b981;color:#065f46}.tkq-o button.no{background:#fef2f2;border-color:#f87171;color:#991b1b}
+.src{font:400 12px/1.6 Inter;color:#94a3b8;margin-top:26px}
 </style>
 </head>
 <body class="inner-v2">
@@ -65,32 +198,36 @@ a.kc:hover{border-color:rgba(55,224,255,.5)}
 </header>
 <main><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><a href="/thirukkural/">திருக்குறள்</a><span>›</span><span>அதிகாரம் 65</span></nav>
 <div class="tk">
-<h1>அதிகாரம் 65: சொல்வன்மை</h1><p class="sub">Power of Speech · Solvanmai · குறள் 641–650</p>
-<div class="meta"><span>பொருட்பால் · Wealth</span><span>அமைச்சியல் · Minister of State</span><span>10 குறள்கள்</span></div>
-<a href="/thirukkural/kural/641/" class="kc"><div class="kn">குறள் 641</div><div class="ta">நாநலம் என்னும் நலனுடைமை அந்நலம்<br>யாநலத்து உள்ளதூஉம் அன்று.</div><p class="tr">Naanalam Ennum Nalanutaimai Annalam / Yaanalaththu Ulladhooum Andru</p><div class="po"><b>பொருள்:</b> நாவன்மை என்னும் சொல்வன்மையே சிறந்த நலம்; அது மற்ற நலங்களுள் அடங்குவது அல்ல, தனிச்சிறப்புடையது.</div><div class="en">A tongue that rightly speaks the right is greatest gain, It stands alone midst goodly things that men obtain</div></a>
-<a href="/thirukkural/kural/642/" class="kc"><div class="kn">குறள் 642</div><div class="ta">ஆக்கமுங் கேடும் அதனால் வருதலால்<br>காத்தோம்பல் சொல்லின்கட் சோர்வு.</div><p class="tr">Aakkamung Ketum Adhanaal Varudhalaal / Kaaththompal Sollinkat Sorvu</p><div class="po"><b>பொருள்:</b> ஆக்கமும் கேடும் சொல்லால் வருவதால், சொல்லில் தவறு நேராமல் காக்க வேண்டும்.</div><div class="en">Since gain and loss in life on speech depend, From careless slip in speech thyself defend</div></a>
-<a href="/thirukkural/kural/643/" class="kc"><div class="kn">குறள் 643</div><div class="ta">கேட்டார்ப் பிணிக்கும் தகையவாய்க் கேளாரும்<br>வேட்ப மொழிவதாம் சொல்.</div><p class="tr">Kettaarp Pinikkum Thakaiyavaaik Kelaarum / Vetpa Mozhivadhaam Sol</p><div class="po"><b>பொருள்:</b> கேட்டவர்களைக் கவர்ந்து, கேட்காதவர்களும் கேட்க விரும்பும்படி பேசுவதே சொல்வன்மை.</div><div class="en">'Tis speech that spell-bound holds the listening ear, While those who have not heard desire to hear</div></a>
-<a href="/thirukkural/kural/644/" class="kc"><div class="kn">குறள் 644</div><div class="ta">திறனறிந்து சொல்லுக சொல்லை அறனும்<br>பொருளும் அதனினூஉங்கு இல்.</div><p class="tr">Thiranarindhu Solluka Sollai Aranum / Porulum Adhaninooungu Il</p><div class="po"><b>பொருள்:</b> கேட்பவர் தன்மையை அறிந்து பேச வேண்டும்; அதைவிடச் சிறந்த அறமும் பொருளும் இல்லை.</div><div class="en">Speak words adapted well to various hearers' state; No higher virtue lives, no gain more surely great</div></a>
-<a href="/thirukkural/kural/645/" class="kc"><div class="kn">குறள் 645</div><div class="ta">சொல்லுக சொல்லைப் பிறிதோர்சொல் அச்சொல்லை<br>வெல்லுஞ்சொல் இன்மை அறிந்து.</div><p class="tr">Solluka Sollaip Piridhorsol Achchollai / Vellunjol Inmai Arindhu</p><div class="po"><b>பொருள்:</b> தன் சொல்லை வெல்லும் வேறு சொல் இல்லை என்று அறிந்த பிறகே அந்தச் சொல்லைச் சொல்ல வேண்டும்.</div><div class="en">Speak out your speech, when once 'tis past disputeThat none can utter speech that shall your speech refute</div></a>
-<a href="/thirukkural/kural/646/" class="kc"><div class="kn">குறள் 646</div><div class="ta">வேட்பத்தாஞ் சொல்லிப் பிறர்சொல் பயன்கோடல்<br>மாட்சியின் மாசற்றார் கோள்.</div><p class="tr">Vetpaththaanj Chollip Pirarsol Payankotal / Maatchiyin Maasatraar Kol</p><div class="po"><b>பொருள்:</b> பிறர் விரும்பும்படி பேசி, பிறர் சொல்லும் பயனுள்ளதை ஏற்பதே குற்றமற்ற சான்றோரின் கொள்கை.</div><div class="en">Charming each hearer's ear, of others' words to seize the sense, Is method wise of men of spotless excellence</div></a>
-<a href="/thirukkural/kural/647/" class="kc"><div class="kn">குறள் 647</div><div class="ta">சொலல்வல்லன் சோர்விலன் அஞ்சான் அவனை<br>இகல்வெல்லல் யார்க்கும் அரிது.</div><p class="tr">Solalvallan Sorvilan Anjaan Avanai / Ikalvellal Yaarkkum Aridhu</p><div class="po"><b>பொருள்:</b> சொல்வன்மை உடையவனாய், சோர்வும் அச்சமும் இல்லாதவனை, யாராலும் வாதில் வெல்ல முடியாது.</div><div class="en">Mighty in word, of unforgetful mind, of fearless speech,'Tis hard for hostile power such man to overreach</div></a>
-<a href="/thirukkural/kural/648/" class="kc"><div class="kn">குறள் 648</div><div class="ta">விரைந்து தொழில்கேட்கும் ஞாலம் நிரந்தினிது<br>சொல்லுதல் வல்லார்ப் பெறின்.</div><p class="tr">Viraindhu Thozhilketkum Gnaalam Nirandhinidhu / Solludhal Vallaarp Perin</p><div class="po"><b>பொருள்:</b> ஒழுங்காக இனிமையாகப் பேச வல்லவர் இருந்தால், உலகம் விரைந்து அவர் சொல்வதைக் கேட்டு நடக்கும்.</div><div class="en">Swiftly the listening world will gather round, When men of mighty speech the weighty theme propound</div></a>
-<a href="/thirukkural/kural/649/" class="kc"><div class="kn">குறள் 649</div><div class="ta">பலசொல்லக் காமுறுவர் மன்றமா சற்ற<br>சிலசொல்லல் தேற்றா தவர்.</div><p class="tr">Palasollak Kaamuruvar Mandramaa Satra / Silasollal Thetraa Thavar</p><div class="po"><b>பொருள்:</b> குற்றமற்ற சில சொற்களால் தெளிவாகச் சொல்லத் தெரியாதவர்களே பல சொற்களைப் பேச விரும்புவர்.</div><div class="en">Who have not skill ten faultless words to utter plain, Their tongues will itch with thousand words man's ears to pain</div></a>
-<a href="/thirukkural/kural/650/" class="kc"><div class="kn">குறள் 650</div><div class="ta">இணருழ்த்தும் நாறா மலரனையர் கற்றது<br>உணர விரித்துரையா தார்.</div><p class="tr">Inaruzhththum Naaraa Malaranaiyar Katradhu / Unara Viriththuraiyaa Thaar</p><div class="po"><b>பொருள்:</b> கற்றதைப் பிறர் உணரும்படி விளக்கிச் சொல்ல முடியாதவர்கள், கொத்தாக மலர்ந்தும் மணம் வீசாத மலர் போன்றவர்கள்.</div><div class="en">Like scentless flower in blooming garland boundAre men who can't their lore acquired to other's ears expound</div></a>
-<section class="tkq" aria-label="அதிகாரம் 65 Quiz · சொல்வன்மை"><h2>அதிகாரம் 65 Quiz · சொல்வன்மை</h2><p class="tkq-s"><b class="tkq-sc">0</b> / 10 சரி</p>
-<div class="tkq-i"><p class="tkq-q"><b>1.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">நாநலம் ______ நலனுடைமை அந்நலம் / யாநலத்து உள்ளதூஉம் அன்று.</span></p><div class="tkq-o"><button type="button">அறிந்து</button><button type="button">சொலல்வல்லன்</button><button type="button">இன்மை</button><button type="button" data-c="1">என்னும்</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>2.</b> இந்தக் குறளின் பொருள் எது? <span class="kq">ஆக்கமுங் கேடும் அதனால் வருதலால் / காத்தோம்பல் சொல்லின்கட் சோர்வு.</span></p><div class="tkq-o"><button type="button" data-c="1">ஆக்கமும் கேடும் சொல்லால் வருவதால், சொல்லில் தவறு நேராமல் காக்க வேண்டும்.</button><button type="button">ஒழுங்காக இனிமையாகப் பேச வல்லவர் இருந்தால், உலகம் விரைந்து அவர் சொல்வதைக் கேட்டு நடக்கும்.</button><button type="button">பிறர் விரும்பும்படி பேசி, பிறர் சொல்லும் பயனுள்ளதை ஏற்பதே குற்றமற்ற சான்றோரின் கொள்கை.</button><button type="button">தன் சொல்லை வெல்லும் வேறு சொல் இல்லை என்று அறிந்த பிறகே அந்தச் சொல்லைச் சொல்ல வேண்டும்.</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>3.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">கேட்டார்ப் பிணிக்கும் தகையவாய்க் ______ / வேட்ப மொழிவதாம் சொல்.</span></p><div class="tkq-o"><button type="button" data-c="1">கேளாரும்</button><button type="button">அரிது</button><button type="button">கோள்</button><button type="button">காத்தோம்பல்</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>4.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">திறனறிந்து ______ சொல்லை அறனும் / பொருளும் அதனினூஉங்கு இல்.</span></p><div class="tkq-o"><button type="button">மாசற்றார்</button><button type="button">ஆக்கமுங்</button><button type="button">உள்ளதூஉம்</button><button type="button" data-c="1">சொல்லுக</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>5.</b> இந்தக் குறளின் பொருள் எது? <span class="kq">சொல்லுக சொல்லைப் பிறிதோர்சொல் அச்சொல்லை / வெல்லுஞ்சொல் இன்மை அறிந்து.</span></p><div class="tkq-o"><button type="button" data-c="1">தன் சொல்லை வெல்லும் வேறு சொல் இல்லை என்று அறிந்த பிறகே அந்தச் சொல்லைச் சொல்ல வேண்டும்.</button><button type="button">கற்றதைப் பிறர் உணரும்படி விளக்கிச் சொல்ல முடியாதவர்கள், கொத்தாக மலர்ந்தும் மணம் வீசாத மலர் போன்றவர்கள்.</button><button type="button">நாவன்மை என்னும் சொல்வன்மையே சிறந்த நலம்; அது மற்ற நலங்களுள் அடங்குவது அல்ல, தனிச்சிறப்புடையது.</button><button type="button">குற்றமற்ற சில சொற்களால் தெளிவாகச் சொல்லத் தெரியாதவர்களே பல சொற்களைப் பேச விரும்புவர்.</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>6.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">வேட்பத்தாஞ் சொல்லிப் பிறர்சொல் ______ / மாட்சியின் மாசற்றார் கோள்.</span></p><div class="tkq-o"><button type="button" data-c="1">பயன்கோடல்</button><button type="button">விரித்துரையா</button><button type="button">இகல்வெல்லல்</button><button type="button">பிணிக்கும்</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>7.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">சொலல்வல்லன் சோர்விலன் அஞ்சான் அவனை / இகல்வெல்லல் ______ அரிது.</span></p><div class="tkq-o"><button type="button">பிறர்சொல்</button><button type="button">வேட்ப</button><button type="button" data-c="1">யார்க்கும்</button><button type="button">ஞாலம்</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>8.</b> இந்தக் குறளின் பொருள் எது? <span class="kq">விரைந்து தொழில்கேட்கும் ஞாலம் நிரந்தினிது / சொல்லுதல் வல்லார்ப் பெறின்.</span></p><div class="tkq-o"><button type="button" data-c="1">ஒழுங்காக இனிமையாகப் பேச வல்லவர் இருந்தால், உலகம் விரைந்து அவர் சொல்வதைக் கேட்டு நடக்கும்.</button><button type="button">ஆக்கமும் கேடும் சொல்லால் வருவதால், சொல்லில் தவறு நேராமல் காக்க வேண்டும்.</button><button type="button">கற்றதைப் பிறர் உணரும்படி விளக்கிச் சொல்ல முடியாதவர்கள், கொத்தாக மலர்ந்தும் மணம் வீசாத மலர் போன்றவர்கள்.</button><button type="button">கேட்டவர்களைக் கவர்ந்து, கேட்காதவர்களும் கேட்க விரும்பும்படி பேசுவதே சொல்வன்மை.</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>9.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">பலசொல்லக் காமுறுவர் மன்றமா ______ / சிலசொல்லல் தேற்றா தவர்.</span></p><div class="tkq-o"><button type="button">அவனை</button><button type="button">சொல்லுக</button><button type="button" data-c="1">சற்ற</button><button type="button">உள்ளதூஉம்</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>10.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">இணருழ்த்தும் ______ மலரனையர் கற்றது / உணர விரித்துரையா தார்.</span></p><div class="tkq-o"><button type="button">சொல்லுக</button><button type="button">சொல்</button><button type="button" data-c="1">நாறா</button><button type="button">நலனுடைமை</button></div></div>
+<section class="topic-hero"><div class="eyebrow-chip"><span class="dot-pulse"></span>திருக்குறள் · Thirukkural</div><h1>அதிகாரம் 65: சொல்வன்மை</h1><p >Power of Speech · Solvanmai · குறள் 641–650</p>
+<div class="meta"><span>பொருட்பால் · Wealth</span><span>அமைச்சியல் · Minister of State</span><span>10 குறள்கள்</span></div></section>
+<a href="/thirukkural/kural/641/" class="kc mg-seo-question"><div class="kn">குறள் 641</div><div class="ta">நாநலம் என்னும் நலனுடைமை அந்நலம்<br>யாநலத்து உள்ளதூஉம் அன்று.</div><div class="tr">Naanalam Ennum Nalanutaimai Annalam / Yaanalaththu Ulladhooum Andru</div><div class="po"><b>பொருள்:</b> நாவன்மை என்னும் சொல்வன்மையே சிறந்த நலம்; அது மற்ற நலங்களுள் அடங்குவது அல்ல, தனிச்சிறப்புடையது.</div><div class="en">A tongue that rightly speaks the right is greatest gain, It stands alone midst goodly things that men obtain</div></a>
+<a href="/thirukkural/kural/642/" class="kc mg-seo-question"><div class="kn">குறள் 642</div><div class="ta">ஆக்கமுங் கேடும் அதனால் வருதலால்<br>காத்தோம்பல் சொல்லின்கட் சோர்வு.</div><div class="tr">Aakkamung Ketum Adhanaal Varudhalaal / Kaaththompal Sollinkat Sorvu</div><div class="po"><b>பொருள்:</b> ஆக்கமும் கேடும் சொல்லால் வருவதால், சொல்லில் தவறு நேராமல் காக்க வேண்டும்.</div><div class="en">Since gain and loss in life on speech depend, From careless slip in speech thyself defend</div></a>
+<a href="/thirukkural/kural/643/" class="kc mg-seo-question"><div class="kn">குறள் 643</div><div class="ta">கேட்டார்ப் பிணிக்கும் தகையவாய்க் கேளாரும்<br>வேட்ப மொழிவதாம் சொல்.</div><div class="tr">Kettaarp Pinikkum Thakaiyavaaik Kelaarum / Vetpa Mozhivadhaam Sol</div><div class="po"><b>பொருள்:</b> கேட்டவர்களைக் கவர்ந்து, கேட்காதவர்களும் கேட்க விரும்பும்படி பேசுவதே சொல்வன்மை.</div><div class="en">'Tis speech that spell-bound holds the listening ear, While those who have not heard desire to hear</div></a>
+<a href="/thirukkural/kural/644/" class="kc mg-seo-question"><div class="kn">குறள் 644</div><div class="ta">திறனறிந்து சொல்லுக சொல்லை அறனும்<br>பொருளும் அதனினூஉங்கு இல்.</div><div class="tr">Thiranarindhu Solluka Sollai Aranum / Porulum Adhaninooungu Il</div><div class="po"><b>பொருள்:</b> கேட்பவர் தன்மையை அறிந்து பேச வேண்டும்; அதைவிடச் சிறந்த அறமும் பொருளும் இல்லை.</div><div class="en">Speak words adapted well to various hearers' state; No higher virtue lives, no gain more surely great</div></a>
+<a href="/thirukkural/kural/645/" class="kc mg-seo-question"><div class="kn">குறள் 645</div><div class="ta">சொல்லுக சொல்லைப் பிறிதோர்சொல் அச்சொல்லை<br>வெல்லுஞ்சொல் இன்மை அறிந்து.</div><div class="tr">Solluka Sollaip Piridhorsol Achchollai / Vellunjol Inmai Arindhu</div><div class="po"><b>பொருள்:</b> தன் சொல்லை வெல்லும் வேறு சொல் இல்லை என்று அறிந்த பிறகே அந்தச் சொல்லைச் சொல்ல வேண்டும்.</div><div class="en">Speak out your speech, when once 'tis past disputeThat none can utter speech that shall your speech refute</div></a>
+<a href="/thirukkural/kural/646/" class="kc mg-seo-question"><div class="kn">குறள் 646</div><div class="ta">வேட்பத்தாஞ் சொல்லிப் பிறர்சொல் பயன்கோடல்<br>மாட்சியின் மாசற்றார் கோள்.</div><div class="tr">Vetpaththaanj Chollip Pirarsol Payankotal / Maatchiyin Maasatraar Kol</div><div class="po"><b>பொருள்:</b> பிறர் விரும்பும்படி பேசி, பிறர் சொல்லும் பயனுள்ளதை ஏற்பதே குற்றமற்ற சான்றோரின் கொள்கை.</div><div class="en">Charming each hearer's ear, of others' words to seize the sense, Is method wise of men of spotless excellence</div></a>
+<a href="/thirukkural/kural/647/" class="kc mg-seo-question"><div class="kn">குறள் 647</div><div class="ta">சொலல்வல்லன் சோர்விலன் அஞ்சான் அவனை<br>இகல்வெல்லல் யார்க்கும் அரிது.</div><div class="tr">Solalvallan Sorvilan Anjaan Avanai / Ikalvellal Yaarkkum Aridhu</div><div class="po"><b>பொருள்:</b> சொல்வன்மை உடையவனாய், சோர்வும் அச்சமும் இல்லாதவனை, யாராலும் வாதில் வெல்ல முடியாது.</div><div class="en">Mighty in word, of unforgetful mind, of fearless speech,'Tis hard for hostile power such man to overreach</div></a>
+<a href="/thirukkural/kural/648/" class="kc mg-seo-question"><div class="kn">குறள் 648</div><div class="ta">விரைந்து தொழில்கேட்கும் ஞாலம் நிரந்தினிது<br>சொல்லுதல் வல்லார்ப் பெறின்.</div><div class="tr">Viraindhu Thozhilketkum Gnaalam Nirandhinidhu / Solludhal Vallaarp Perin</div><div class="po"><b>பொருள்:</b> ஒழுங்காக இனிமையாகப் பேச வல்லவர் இருந்தால், உலகம் விரைந்து அவர் சொல்வதைக் கேட்டு நடக்கும்.</div><div class="en">Swiftly the listening world will gather round, When men of mighty speech the weighty theme propound</div></a>
+<a href="/thirukkural/kural/649/" class="kc mg-seo-question"><div class="kn">குறள் 649</div><div class="ta">பலசொல்லக் காமுறுவர் மன்றமா சற்ற<br>சிலசொல்லல் தேற்றா தவர்.</div><div class="tr">Palasollak Kaamuruvar Mandramaa Satra / Silasollal Thetraa Thavar</div><div class="po"><b>பொருள்:</b> குற்றமற்ற சில சொற்களால் தெளிவாகச் சொல்லத் தெரியாதவர்களே பல சொற்களைப் பேச விரும்புவர்.</div><div class="en">Who have not skill ten faultless words to utter plain, Their tongues will itch with thousand words man's ears to pain</div></a>
+<a href="/thirukkural/kural/650/" class="kc mg-seo-question"><div class="kn">குறள் 650</div><div class="ta">இணருழ்த்தும் நாறா மலரனையர் கற்றது<br>உணர விரித்துரையா தார்.</div><div class="tr">Inaruzhththum Naaraa Malaranaiyar Katradhu / Unara Viriththuraiyaa Thaar</div><div class="po"><b>பொருள்:</b> கற்றதைப் பிறர் உணரும்படி விளக்கிச் சொல்ல முடியாதவர்கள், கொத்தாக மலர்ந்தும் மணம் வீசாத மலர் போன்றவர்கள்.</div><div class="en">Like scentless flower in blooming garland boundAre men who can't their lore acquired to other's ears expound</div></a>
+<section class="tkq mg-seo-study" aria-label="அதிகாரம் 65 Quiz · சொல்வன்மை"><p class="mg-seo-kicker">Quiz</p><h2>அதிகாரம் 65 Quiz · சொல்வன்மை</h2><p class="tkq-s"><b class="tkq-sc">0</b> / 10 சரி</p><div class="mg-seo-questions">
+<article class="tkq-i mg-seo-question"><h3><b>1.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">நாநலம் ______ நலனுடைமை அந்நலம் / யாநலத்து உள்ளதூஉம் அன்று.</span></h3><div class="tkq-o"><button type="button">அறிந்து</button><button type="button">சொலல்வல்லன்</button><button type="button">இன்மை</button><button type="button" data-c="1">என்னும்</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>2.</b> இந்தக் குறளின் பொருள் எது? <span class="kq">ஆக்கமுங் கேடும் அதனால் வருதலால் / காத்தோம்பல் சொல்லின்கட் சோர்வு.</span></h3><div class="tkq-o"><button type="button" data-c="1">ஆக்கமும் கேடும் சொல்லால் வருவதால், சொல்லில் தவறு நேராமல் காக்க வேண்டும்.</button><button type="button">ஒழுங்காக இனிமையாகப் பேச வல்லவர் இருந்தால், உலகம் விரைந்து அவர் சொல்வதைக் கேட்டு நடக்கும்.</button><button type="button">பிறர் விரும்பும்படி பேசி, பிறர் சொல்லும் பயனுள்ளதை ஏற்பதே குற்றமற்ற சான்றோரின் கொள்கை.</button><button type="button">தன் சொல்லை வெல்லும் வேறு சொல் இல்லை என்று அறிந்த பிறகே அந்தச் சொல்லைச் சொல்ல வேண்டும்.</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>3.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">கேட்டார்ப் பிணிக்கும் தகையவாய்க் ______ / வேட்ப மொழிவதாம் சொல்.</span></h3><div class="tkq-o"><button type="button" data-c="1">கேளாரும்</button><button type="button">அரிது</button><button type="button">கோள்</button><button type="button">காத்தோம்பல்</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>4.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">திறனறிந்து ______ சொல்லை அறனும் / பொருளும் அதனினூஉங்கு இல்.</span></h3><div class="tkq-o"><button type="button">மாசற்றார்</button><button type="button">ஆக்கமுங்</button><button type="button">உள்ளதூஉம்</button><button type="button" data-c="1">சொல்லுக</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>5.</b> இந்தக் குறளின் பொருள் எது? <span class="kq">சொல்லுக சொல்லைப் பிறிதோர்சொல் அச்சொல்லை / வெல்லுஞ்சொல் இன்மை அறிந்து.</span></h3><div class="tkq-o"><button type="button" data-c="1">தன் சொல்லை வெல்லும் வேறு சொல் இல்லை என்று அறிந்த பிறகே அந்தச் சொல்லைச் சொல்ல வேண்டும்.</button><button type="button">கற்றதைப் பிறர் உணரும்படி விளக்கிச் சொல்ல முடியாதவர்கள், கொத்தாக மலர்ந்தும் மணம் வீசாத மலர் போன்றவர்கள்.</button><button type="button">நாவன்மை என்னும் சொல்வன்மையே சிறந்த நலம்; அது மற்ற நலங்களுள் அடங்குவது அல்ல, தனிச்சிறப்புடையது.</button><button type="button">குற்றமற்ற சில சொற்களால் தெளிவாகச் சொல்லத் தெரியாதவர்களே பல சொற்களைப் பேச விரும்புவர்.</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>6.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">வேட்பத்தாஞ் சொல்லிப் பிறர்சொல் ______ / மாட்சியின் மாசற்றார் கோள்.</span></h3><div class="tkq-o"><button type="button" data-c="1">பயன்கோடல்</button><button type="button">விரித்துரையா</button><button type="button">இகல்வெல்லல்</button><button type="button">பிணிக்கும்</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>7.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">சொலல்வல்லன் சோர்விலன் அஞ்சான் அவனை / இகல்வெல்லல் ______ அரிது.</span></h3><div class="tkq-o"><button type="button">பிறர்சொல்</button><button type="button">வேட்ப</button><button type="button" data-c="1">யார்க்கும்</button><button type="button">ஞாலம்</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>8.</b> இந்தக் குறளின் பொருள் எது? <span class="kq">விரைந்து தொழில்கேட்கும் ஞாலம் நிரந்தினிது / சொல்லுதல் வல்லார்ப் பெறின்.</span></h3><div class="tkq-o"><button type="button" data-c="1">ஒழுங்காக இனிமையாகப் பேச வல்லவர் இருந்தால், உலகம் விரைந்து அவர் சொல்வதைக் கேட்டு நடக்கும்.</button><button type="button">ஆக்கமும் கேடும் சொல்லால் வருவதால், சொல்லில் தவறு நேராமல் காக்க வேண்டும்.</button><button type="button">கற்றதைப் பிறர் உணரும்படி விளக்கிச் சொல்ல முடியாதவர்கள், கொத்தாக மலர்ந்தும் மணம் வீசாத மலர் போன்றவர்கள்.</button><button type="button">கேட்டவர்களைக் கவர்ந்து, கேட்காதவர்களும் கேட்க விரும்பும்படி பேசுவதே சொல்வன்மை.</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>9.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">பலசொல்லக் காமுறுவர் மன்றமா ______ / சிலசொல்லல் தேற்றா தவர்.</span></h3><div class="tkq-o"><button type="button">அவனை</button><button type="button">சொல்லுக</button><button type="button" data-c="1">சற்ற</button><button type="button">உள்ளதூஉம்</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>10.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">இணருழ்த்தும் ______ மலரனையர் கற்றது / உணர விரித்துரையா தார்.</span></h3><div class="tkq-o"><button type="button">சொல்லுக</button><button type="button">சொல்</button><button type="button" data-c="1">நாறா</button><button type="button">நலனுடைமை</button></div></div>
 </section>
 <div class="pn"><a href="/thirukkural/64/">‹ 64. அமைச்சு</a><a href="/thirukkural/66/">66. வினைத் தூய்மை ›</a></div>
-<div class="cta"><p><b>Race your friends on Thirukkural.</b> Answer live against aspirants across India in NationLap.</p><a href="/nationlap/">Play NationLap</a></div>
+<section class="ibento" aria-label="More ways to practise">
+  <a class="itile it-ca" href="/nationlap/?affairs=1"><b>Every morning · 5am</b><strong>Today's current affairs</strong><span>The day's exam-worthy news, each fact with its source.</span><i>Race today's affairs →</i></a>
+  <a class="itile it-nl" href="/nationlap/"><b>Game</b><strong>NationLap</strong><span>Read a topic, then race it and answer at speed.</span><i>Play free →</i></a>
+  <a class="itile it-app" href="/get/"><b>MindGains app</b><strong>Mistakes come back</strong><span>Daily Dose, revision and Quiz Rooms with friends.</span><i>Get the app →</i></a>
+</section>
 <p class="src">குறள் மூலம்: பொதுக் களம் (public domain). தமிழ்ப் பொருள்: MindGains. English translation: Rev. G.U. Pope (1886), public domain.</p>
 </div>
 </main>

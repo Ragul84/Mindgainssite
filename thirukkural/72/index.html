@@ -15,39 +15,172 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/assets/quiz-hub.css?v=20261002_mobilenav" />
 <link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
 <meta name="theme-color" content="#37e0ff" />
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<style>
+@keyframes borderGlowRotate {
+  0%   { background-position: 0% 50%; box-shadow: 0 0 18px rgba(123, 227, 176, 0.45), 0 0 35px rgba(56, 189, 248, 0.25); }
+  50%  { background-position: 100% 50%; box-shadow: 0 0 30px rgba(167, 139, 250, 0.7), 0 0 55px rgba(244, 114, 182, 0.4); }
+  100% { background-position: 0% 50%; box-shadow: 0 0 18px rgba(123, 227, 176, 0.45), 0 0 35px rgba(56, 189, 248, 0.25); }
+}
+
+@keyframes dotPulseAnim {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%      { transform: scale(1.5); opacity: 0.5; }
+}
+
+.topic-hero {
+  margin: 28px 0 24px !important;
+  padding: 40px 32px !important;
+  border-radius: 24px !important;
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.09) !important;
+  backdrop-filter: blur(28px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(160%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.12) !important;
+}
+
+.eyebrow-chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 5px 14px !important;
+  border-radius: 999px !important;
+  background: rgba(123, 227, 176, 0.08) !important;
+  border: 1px solid rgba(123, 227, 176, 0.22) !important;
+  color: #7BE3B0 !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 2.2px !important;
+  text-transform: uppercase !important;
+  width: fit-content !important;
+}
+
+.dot-pulse {
+  width: 7px !important;
+  height: 7px !important;
+  border-radius: 50% !important;
+  background: #7BE3B0 !important;
+  animation: dotPulseAnim 2s infinite ease-in-out !important;
+}
+
+.topic-features {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+  margin-top: 4px !important;
+}
+
+.feat-chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  padding: 6px 14px !important;
+  border-radius: 10px !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+}
+
+.start-wrapper {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin-top: 10px !important;
+  width: auto !important;
+}
+
+button.start, a.start {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 12px 26px !important;
+  border-radius: 999px !important;
+  background: #7BE3B0 !important;
+  background-size: auto !important;
+  border: 1px solid #7BE3B0 !important;
+  color: #07130d !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2px !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  width: auto !important;
+  max-width: 200px !important;
+  white-space: nowrap !important;
+  animation: none !important;
+  transition: transform 0.16s ease, background 0.16s ease !important;
+}
+
+button.start:hover, a.start:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: none !important;
+}
+
+.exam-stmt-row {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 14px !important;
+  margin: 12px 0 !important;
+  padding: 14px 18px !important;
+  background: rgba(255,255,255,0.035) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  border-radius: 14px !important;
+  border-left: 4px solid #7BE3B0 !important;
+}
+</style>
+<link rel="stylesheet" href="/assets/mindgains-redesign.css?v=20261002_mobilenav">
+<!-- MG_SEO_STYLE_START --><style>.mg-seo-study{margin:24px 0;padding:24px;border:1px solid rgba(255,255,255,.16);border-radius:22px;background:rgba(255,255,255,.045)}.mg-seo-kicker{margin:0 0 8px;color:#67e8f9;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}.mg-seo-study h2{margin:0 0 12px;font-size:clamp(26px,4vw,38px)}.mg-seo-study>p{max-width:860px;color:#dbeafe;line-height:1.6}.mg-seo-questions{display:grid;gap:12px;margin-top:18px}.mg-seo-question{padding:18px;border:1px solid rgba(255,255,255,.12);border-radius:16px;background:rgba(0,0,0,.16)}.mg-seo-question h3{margin:0 0 12px;font-size:18px;line-height:1.4}.mg-seo-question ol{padding-left:26px;color:#dbeafe;line-height:1.6}.mg-seo-question p{color:#cbd5e1;line-height:1.55}.mg-seo-note{font-weight:700}@media(max-width:700px){.mg-seo-study{padding:17px}.mg-seo-question{padding:14px}}</style><!-- MG_SEO_STYLE_END -->  <link rel="stylesheet" href="/assets/site-footer.css?v=3">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="/assets/inner-v2.css?v=20261017b">
+
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mindgains.ai/"},{"@type":"ListItem","position":2,"name":"திருக்குறள்","item":"https://mindgains.ai/thirukkural/"},{"@type":"ListItem","position":3,"name":"அதிகாரம் 72","item":"https://mindgains.ai/thirukkural/72/"}]}</script>
 
 <style>
-.tk{max-width:860px;margin:0 auto;padding:0 16px 40px}
-.tk h1{font:400 clamp(30px,6vw,46px)/1.1 'Instrument Serif',serif;margin:18px 0 8px}
-.tk .sub{color:rgba(255,255,255,.7);font:500 15px/1.6 Inter,sans-serif;margin:0 0 18px}
-.tk .meta{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}.tk .meta span{font:600 12px Inter;padding:6px 12px;border-radius:99px;border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.8)}
-.kc{display:block;padding:18px 20px;margin:0 0 12px;border-radius:18px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);text-decoration:none;color:inherit}
-a.kc:hover{border-color:rgba(55,224,255,.5)}
-.kc .kn{font:700 12px Inter;letter-spacing:.08em;color:#37e0ff}.kc .ta{font:600 19px/1.7 'Noto Sans Tamil',Inter,sans-serif;margin:6px 0}
-.kc .tr{font:italic 400 14px/1.5 Inter;color:rgba(255,255,255,.55);margin:0 0 6px}.kc .en{font:400 15px/1.55 Inter;color:rgba(255,255,255,.82)}
-.kc .po{font:500 15.5px/1.7 'Noto Sans Tamil',Inter;color:#fff;margin:4px 0 8px}.kc .po b{color:#f3c86b}
-.kbig .ta{font-size:clamp(22px,4.6vw,28px)}
-.tk h2{font:600 20px Inter;margin:28px 0 12px}
+.tk{max-width:880px;margin:0 auto}
+.tk .meta{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 0}.tk .meta span{font:600 12.5px Inter;padding:6px 12px;border-radius:99px;background:#f1f5f7;color:#334155}
+.kc{display:block;text-decoration:none;color:inherit;margin:0 0 10px}
+a.kc:hover{border-color:rgba(13,27,42,.25)!important}
+.kc .kn{font:700 11.5px Inter;letter-spacing:.08em;color:#0f9d74;text-transform:uppercase}
+.kc .ta{font:650 18px/1.65 Inter,sans-serif;color:#0d1b2a;margin:6px 0}
+.kc .tr{font:italic 400 13.5px/1.5 Inter;color:#64748b;margin:0 0 8px}
+.kc .po{font:500 15px/1.65 Inter;color:#0d1b2a;margin:0 0 8px;padding:10px 12px;border-radius:10px;background:#ecfdf5}.kc .po b{color:#047857}
+.kc .en{font:400 14.5px/1.55 Inter;color:#475569}
+.kbig .ta{font-size:clamp(21px,4.4vw,26px)}
+.tk h2{font:700 22px/1.3 'Inter Tight',Inter;color:#0d1b2a;margin:30px 0 12px}
 .chg{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
-.chg a{display:block;padding:12px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);color:inherit;text-decoration:none;font:500 14px/1.4 Inter}
-.chg a b{display:block;font:600 15px 'Noto Sans Tamil',Inter}.chg a small{color:rgba(255,255,255,.55)}
-.pn{display:flex;justify-content:space-between;gap:10px;margin:26px 0}.pn a{flex:1;padding:12px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.12);color:inherit;text-decoration:none;font:600 14px Inter}.pn a:last-child{text-align:right}
-.tkq{margin:28px 0;padding:20px;border-radius:20px;border:1px solid rgba(55,224,255,.25);background:rgba(55,224,255,.04)}
-.tkq h2{margin:0 0 4px}.tkq-s{font:600 13px Inter;color:rgba(255,255,255,.6);margin:0 0 14px}
-.tkq-i{padding:14px 0;border-top:1px solid rgba(255,255,255,.08)}.tkq-q{font:500 15px/1.6 Inter;margin:0 0 10px}
-.kq{display:block;font:600 16px/1.7 'Noto Sans Tamil',Inter;margin-top:6px;color:#fff}.kq.en{font:italic 400 15px/1.6 Inter}
-.tkq-o{display:grid;grid-template-columns:1fr 1fr;gap:8px}@media(max-width:560px){.tkq-o{grid-template-columns:1fr}}
-.tkq-o button{padding:11px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04);color:#fff;font:500 14px/1.4 'Noto Sans Tamil',Inter;text-align:left;cursor:pointer}
-.tkq-o button.ok{background:rgba(52,211,153,.18);border-color:#34d399}.tkq-o button.no{background:rgba(248,113,113,.16);border-color:#f87171}
-.cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin:30px 0;padding:18px 20px;border-radius:18px;background:linear-gradient(90deg,rgba(243,200,107,.14),rgba(55,224,255,.08));border:1px solid rgba(243,200,107,.3)}
-.cta p{margin:0;font:500 15px/1.5 Inter}.cta a{padding:11px 18px;border-radius:12px;background:#f3c86b;color:#1a1206;font:700 14px Inter;text-decoration:none}
-.src{font:400 12px/1.6 Inter;color:rgba(255,255,255,.45);margin-top:30px}
+.chg a{display:block;padding:13px 15px;border-radius:14px;border:1px solid rgba(13,27,42,.08);background:#fff;color:#0d1b2a;text-decoration:none;font:500 13px/1.45 Inter}
+.chg a:hover{border-color:rgba(13,27,42,.25)}
+.chg a b{display:block;font:650 15px Inter;margin:2px 0}.chg a small{color:#64748b}
+.pn{display:flex;justify-content:space-between;gap:10px;margin:24px 0}.pn a{flex:1;padding:12px 15px;border-radius:14px;border:1px solid rgba(13,27,42,.1);background:#fff;color:#0d1b2a;text-decoration:none;font:600 14px Inter}.pn a:last-child{text-align:right}
+.tkq{margin:24px 0}
+.tkq-s{font:600 13px Inter;color:#64748b;margin:0 0 6px}
+.tkq-i{margin:0 0 10px}
+.kq{display:block;font:650 16px/1.6 Inter;margin-top:6px;color:#0d1b2a}.kq.en{font:italic 400 15px/1.6 Inter;color:#334155}
+.tkq-o{display:grid;gap:6px}
+.tkq-o button{padding:10px 12px;border-radius:10px;border:1px solid transparent;background:#f7f9fa;color:#0d1b2a;font:500 14.5px/1.45 Inter;text-align:left;cursor:pointer}
+.tkq-o button:hover{border-color:rgba(13,27,42,.15)}
+.tkq-o button.ok{background:#ecfdf5;border-color:#10b981;color:#065f46}.tkq-o button.no{background:#fef2f2;border-color:#f87171;color:#991b1b}
+.src{font:400 12px/1.6 Inter;color:#94a3b8;margin-top:26px}
 </style>
 </head>
 <body class="inner-v2">
@@ -65,32 +198,36 @@ a.kc:hover{border-color:rgba(55,224,255,.5)}
 </header>
 <main><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><a href="/thirukkural/">திருக்குறள்</a><span>›</span><span>அதிகாரம் 72</span></nav>
 <div class="tk">
-<h1>அதிகாரம் 72: அவை அறிதல்</h1><p class="sub">The Knowledge of the Council Chamber · Avaiyaridhal · குறள் 711–720</p>
-<div class="meta"><span>பொருட்பால் · Wealth</span><span>அமைச்சியல் · Minister of State</span><span>10 குறள்கள்</span></div>
-<a href="/thirukkural/kural/711/" class="kc"><div class="kn">குறள் 711</div><div class="ta">அவையறிநது ஆராய்ந்து சொல்லுக சொல்லின்<br>தொகையறிந்த தூய்மை யவர்.</div><p class="tr">Avaiyarinadhu Aaraaindhu Solluka Sollin / Thokaiyarindha Thooimai Yavar</p><div class="po"><b>பொருள்:</b> சொற்களின் வகைகளை அறிந்த தூய்மையானவர்கள், அவையின் தன்மையை அறிந்து ஆராய்ந்து பேச வேண்டும்.</div><div class="en">Men pure in heart, who know of words the varied force, Should to their audience known adapt their well-arranged discourse</div></a>
-<a href="/thirukkural/kural/712/" class="kc"><div class="kn">குறள் 712</div><div class="ta">இடைதெரிந்து நன்குணர்ந்து சொல்லுக சொல்லின்<br>நடைதெரிந்த நன்மை யவர்.</div><p class="tr">Itaidherindhu Nankunarndhu Solluka Sollin / Nataidherindha Nanmai Yavar</p><div class="po"><b>பொருள்:</b> சொல்லின் நடை அறிந்த நல்லவர்கள், அவையின் சூழலை அறிந்து நன்கு உணர்ந்து பேச வேண்டும்.</div><div class="en">Good men to whom the arts of eloquence are known, Should seek occasion meet, and say what well they've made their own</div></a>
-<a href="/thirukkural/kural/713/" class="kc"><div class="kn">குறள் 713</div><div class="ta">அவையறியார் சொல்லல்மேற் கொள்பவர் சொல்லின்<br>வகையறியார் வல்லதூஉம் இல்.</div><p class="tr">Avaiyariyaar Sollalmer Kolpavar Sollin / Vakaiyariyaar Valladhooum Il</p><div class="po"><b>பொருள்:</b> அவையின் தன்மை அறியாமல் பேச முற்படுபவர்கள், சொல்லின் வகையும் அறியாதவர்; அவர்களுக்குப் பேசும் வன்மையும் இல்லை.</div><div class="en">Unversed in councils, who essays to speakKnows not the way of suasive words,- and all is weak</div></a>
-<a href="/thirukkural/kural/714/" class="kc"><div class="kn">குறள் 714</div><div class="ta">ஒளியார்முன் ஒள்ளிய ராதல் வெளியார்முன்<br>வான்சுதை வண்ணம் கொளல்.</div><p class="tr">Oliyaarmun Olliya Raadhal Veliyaarmun / Vaansudhai Vannam Kolal</p><div class="po"><b>பொருள்:</b> அறிவுடையோர் முன் அறிவுடையவராகவும், அறிவில்லாதோர் முன் வெண்சுண்ணம் போல் அறியாதவராகவும் இருக்க வேண்டும்.</div><div class="en">Before the bright ones shine as doth the lightBefore the dull ones be as purest stucco white</div></a>
-<a href="/thirukkural/kural/715/" class="kc"><div class="kn">குறள் 715</div><div class="ta">நன்றென்ற வற்றுள்ளும் நன்றே முதுவருள்<br>முந்து கிளவாச் செறிவு.</div><p class="tr">Nandrendra Vatrullum Nandre Mudhuvarul / Mundhu Kilavaach Cherivu</p><div class="po"><b>பொருள்:</b> நல்லவை என்று சொல்லப்படுபவற்றுள் சிறந்தது, மூத்தவர்கள் இருக்கும் அவையில் முந்திப் பேசாத அடக்கம்.</div><div class="en">Midst all good things the best is modest grace, That speaks not first before the elders' face</div></a>
-<a href="/thirukkural/kural/716/" class="kc"><div class="kn">குறள் 716</div><div class="ta">ஆற்றின் நிலைதளர்ந் தற்றே வியன்புலம்<br>ஏற்றுணர்வார் முன்னர் இழுக்கு.</div><p class="tr">Aatrin Nilaidhalarn Thatre Viyanpulam / Etrunarvaar Munnar Izhukku</p><div class="po"><b>பொருள்:</b> பரந்த அறிவுடையவர்கள் முன் சொல்லில் தவறு செய்வது, நல்வழியில் சென்றவன் தடுமாறி விழுவது போன்றது.</div><div class="en">As in the way one tottering falls, is slip beforeThe men whose minds are filled with varied lore</div></a>
-<a href="/thirukkural/kural/717/" class="kc"><div class="kn">குறள் 717</div><div class="ta">கற்றறிந்தார் கல்வி விளங்கும் கசடறச்<br>சொல்தெரிதல் வல்லார் அகத்து.</div><p class="tr">Katrarindhaar Kalvi Vilangum Kasatarach / Choldheridhal Vallaar Akaththu</p><div class="po"><b>பொருள்:</b> குற்றமறச் சொற்களை ஆராய வல்லவர்கள் அவையில், கற்றவர்களின் கல்வி விளங்கித் தோன்றும்.</div><div class="en">The learning of the learned sage shines brightTo those whose faultless skill can value it aright</div></a>
-<a href="/thirukkural/kural/718/" class="kc"><div class="kn">குறள் 718</div><div class="ta">உணர்வ துடையார்முன் சொல்லல் வளர்வதன்<br>பாத்தியுள் நீர்சொரிந் தற்று.</div><p class="tr">Unarva Thutaiyaarmun Sollal Valarvadhan / Paaththiyul Neersorin Thatru</p><div class="po"><b>பொருள்:</b> உணரும் அறிவுடையவர்கள் முன் பேசுவது, தானே வளரும் பயிர் உள்ள பாத்தியில் நீர் பாய்ச்சுவது போன்றது.</div><div class="en">To speak where understanding hearers you obtain, Is sprinkling water on the fields of growing grain</div></a>
-<a href="/thirukkural/kural/719/" class="kc"><div class="kn">குறள் 719</div><div class="ta">புல்லவையுள் பொச்சாந்தும் சொல்லற்க நல்லவையுள்<br>நன்குசலச் சொல்லு வார்.</div><p class="tr">Pullavaiyul Pochchaandhum Sollarka Nallavaiyul / Nankusalach Chollu Vaar</p><div class="po"><b>பொருள்:</b> நல்லவர் அவையில் நன்றாகப் பேச வல்லவர்கள், அறிவில்லாதவர் அவையில் மறந்தும் பேசக் கூடாது.</div><div class="en">In councils of the good, who speak good things with penetrating power, In councils of the mean, let them say nought, e'en in oblivious hour</div></a>
-<a href="/thirukkural/kural/720/" class="kc"><div class="kn">குறள் 720</div><div class="ta">அங்கணத்துள் உக்க அமிழ்தற்றால் தங்கணத்தார்<br>அல்லார்முன் கோட்டி கொளல்.</div><p class="tr">Anganaththul Ukka Amizhdhatraal Thanganaththaar / Allaarmun Kotti Kolal</p><div class="po"><b>பொருள்:</b> தம் இனத்தவர் அல்லாதவர் முன் பேசுவது, சாக்கடையில் சிந்திய அமிழ்தம் போலப் பயனற்றது.</div><div class="en">Ambrosia in the sewer spilt, is wordSpoken in presence of the alien herd</div></a>
-<section class="tkq" aria-label="அதிகாரம் 72 Quiz · அவை அறிதல்"><h2>அதிகாரம் 72 Quiz · அவை அறிதல்</h2><p class="tkq-s"><b class="tkq-sc">0</b> / 10 சரி</p>
-<div class="tkq-i"><p class="tkq-q"><b>1.</b> Which kural does this English translation (G.U. Pope) belong to? <span class="kq en">"Men pure in heart, who know of words the varied force, Should to their audience known adapt their well-arranged discourse"</span></p><div class="tkq-o"><button type="button" data-c="1">அவையறிநது ஆராய்ந்து சொல்லுக சொல்லின்</button><button type="button">நன்றென்ற வற்றுள்ளும் நன்றே முதுவருள்</button><button type="button">ஆற்றின் நிலைதளர்ந் தற்றே வியன்புலம்</button><button type="button">ஒளியார்முன் ஒள்ளிய ராதல் வெளியார்முன்</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>2.</b> இந்தக் குறளின் பொருள் எது? <span class="kq">இடைதெரிந்து நன்குணர்ந்து சொல்லுக சொல்லின் / நடைதெரிந்த நன்மை யவர்.</span></p><div class="tkq-o"><button type="button" data-c="1">சொல்லின் நடை அறிந்த நல்லவர்கள், அவையின் சூழலை அறிந்து நன்கு உணர்ந்து பேச வேண்டும்.</button><button type="button">நல்லவை என்று சொல்லப்படுபவற்றுள் சிறந்தது, மூத்தவர்கள் இருக்கும் அவையில் முந்திப் பேசாத அடக்கம்.</button><button type="button">தம் இனத்தவர் அல்லாதவர் முன் பேசுவது, சாக்கடையில் சிந்திய அமிழ்தம் போலப் பயனற்றது.</button><button type="button">உணரும் அறிவுடையவர்கள் முன் பேசுவது, தானே வளரும் பயிர் உள்ள பாத்தியில் நீர் பாய்ச்சுவது போன்றது.</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>3.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">அவையறியார் ______ கொள்பவர் சொல்லின் / வகையறியார் வல்லதூஉம் இல்.</span></p><div class="tkq-o"><button type="button">யவர்</button><button type="button">ராதல்</button><button type="button" data-c="1">சொல்லல்மேற்</button><button type="button">தற்றே</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>4.</b> Which kural does this English translation (G.U. Pope) belong to? <span class="kq en">"Before the bright ones shine as doth the lightBefore the dull ones be as purest stucco white"</span></p><div class="tkq-o"><button type="button">நன்றென்ற வற்றுள்ளும் நன்றே முதுவருள்</button><button type="button">கற்றறிந்தார் கல்வி விளங்கும் கசடறச்</button><button type="button" data-c="1">ஒளியார்முன் ஒள்ளிய ராதல் வெளியார்முன்</button><button type="button">உணர்வ துடையார்முன் சொல்லல் வளர்வதன்</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>5.</b> இந்தக் குறளின் பொருள் எது? <span class="kq">நன்றென்ற வற்றுள்ளும் நன்றே முதுவருள் / முந்து கிளவாச் செறிவு.</span></p><div class="tkq-o"><button type="button">குற்றமறச் சொற்களை ஆராய வல்லவர்கள் அவையில், கற்றவர்களின் கல்வி விளங்கித் தோன்றும்.</button><button type="button">அறிவுடையோர் முன் அறிவுடையவராகவும், அறிவில்லாதோர் முன் வெண்சுண்ணம் போல் அறியாதவராகவும் இருக்க வேண்டும்.</button><button type="button">பரந்த அறிவுடையவர்கள் முன் சொல்லில் தவறு செய்வது, நல்வழியில் சென்றவன் தடுமாறி விழுவது போன்றது.</button><button type="button" data-c="1">நல்லவை என்று சொல்லப்படுபவற்றுள் சிறந்தது, மூத்தவர்கள் இருக்கும் அவையில் முந்திப் பேசாத அடக்கம்.</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>6.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">ஆற்றின் நிலைதளர்ந் தற்றே வியன்புலம் / ஏற்றுணர்வார் முன்னர் ______.</span></p><div class="tkq-o"><button type="button">முந்து</button><button type="button">நீர்சொரிந்</button><button type="button">அமிழ்தற்றால்</button><button type="button" data-c="1">இழுக்கு</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>7.</b> Which kural does this English translation (G.U. Pope) belong to? <span class="kq en">"The learning of the learned sage shines brightTo those whose faultless skill can value it aright"</span></p><div class="tkq-o"><button type="button">ஒளியார்முன் ஒள்ளிய ராதல் வெளியார்முன்</button><button type="button">புல்லவையுள் பொச்சாந்தும் சொல்லற்க நல்லவையுள்</button><button type="button">அங்கணத்துள் உக்க அமிழ்தற்றால் தங்கணத்தார்</button><button type="button" data-c="1">கற்றறிந்தார் கல்வி விளங்கும் கசடறச்</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>8.</b> இந்தக் குறளின் பொருள் எது? <span class="kq">உணர்வ துடையார்முன் சொல்லல் வளர்வதன் / பாத்தியுள் நீர்சொரிந் தற்று.</span></p><div class="tkq-o"><button type="button" data-c="1">உணரும் அறிவுடையவர்கள் முன் பேசுவது, தானே வளரும் பயிர் உள்ள பாத்தியில் நீர் பாய்ச்சுவது போன்றது.</button><button type="button">தம் இனத்தவர் அல்லாதவர் முன் பேசுவது, சாக்கடையில் சிந்திய அமிழ்தம் போலப் பயனற்றது.</button><button type="button">குற்றமறச் சொற்களை ஆராய வல்லவர்கள் அவையில், கற்றவர்களின் கல்வி விளங்கித் தோன்றும்.</button><button type="button">நல்லவை என்று சொல்லப்படுபவற்றுள் சிறந்தது, மூத்தவர்கள் இருக்கும் அவையில் முந்திப் பேசாத அடக்கம்.</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>9.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">புல்லவையுள் பொச்சாந்தும் சொல்லற்க நல்லவையுள் / நன்குசலச் சொல்லு ______.</span></p><div class="tkq-o"><button type="button">வல்லதூஉம்</button><button type="button" data-c="1">வார்</button><button type="button">வெளியார்முன்</button><button type="button">தூய்மை</button></div></div>
-<div class="tkq-i"><p class="tkq-q"><b>10.</b> Which kural does this English translation (G.U. Pope) belong to? <span class="kq en">"Ambrosia in the sewer spilt, is wordSpoken in presence of the alien herd"</span></p><div class="tkq-o"><button type="button">உணர்வ துடையார்முன் சொல்லல் வளர்வதன்</button><button type="button" data-c="1">அங்கணத்துள் உக்க அமிழ்தற்றால் தங்கணத்தார்</button><button type="button">கற்றறிந்தார் கல்வி விளங்கும் கசடறச்</button><button type="button">புல்லவையுள் பொச்சாந்தும் சொல்லற்க நல்லவையுள்</button></div></div>
+<section class="topic-hero"><div class="eyebrow-chip"><span class="dot-pulse"></span>திருக்குறள் · Thirukkural</div><h1>அதிகாரம் 72: அவை அறிதல்</h1><p >The Knowledge of the Council Chamber · Avaiyaridhal · குறள் 711–720</p>
+<div class="meta"><span>பொருட்பால் · Wealth</span><span>அமைச்சியல் · Minister of State</span><span>10 குறள்கள்</span></div></section>
+<a href="/thirukkural/kural/711/" class="kc mg-seo-question"><div class="kn">குறள் 711</div><div class="ta">அவையறிநது ஆராய்ந்து சொல்லுக சொல்லின்<br>தொகையறிந்த தூய்மை யவர்.</div><div class="tr">Avaiyarinadhu Aaraaindhu Solluka Sollin / Thokaiyarindha Thooimai Yavar</div><div class="po"><b>பொருள்:</b> சொற்களின் வகைகளை அறிந்த தூய்மையானவர்கள், அவையின் தன்மையை அறிந்து ஆராய்ந்து பேச வேண்டும்.</div><div class="en">Men pure in heart, who know of words the varied force, Should to their audience known adapt their well-arranged discourse</div></a>
+<a href="/thirukkural/kural/712/" class="kc mg-seo-question"><div class="kn">குறள் 712</div><div class="ta">இடைதெரிந்து நன்குணர்ந்து சொல்லுக சொல்லின்<br>நடைதெரிந்த நன்மை யவர்.</div><div class="tr">Itaidherindhu Nankunarndhu Solluka Sollin / Nataidherindha Nanmai Yavar</div><div class="po"><b>பொருள்:</b> சொல்லின் நடை அறிந்த நல்லவர்கள், அவையின் சூழலை அறிந்து நன்கு உணர்ந்து பேச வேண்டும்.</div><div class="en">Good men to whom the arts of eloquence are known, Should seek occasion meet, and say what well they've made their own</div></a>
+<a href="/thirukkural/kural/713/" class="kc mg-seo-question"><div class="kn">குறள் 713</div><div class="ta">அவையறியார் சொல்லல்மேற் கொள்பவர் சொல்லின்<br>வகையறியார் வல்லதூஉம் இல்.</div><div class="tr">Avaiyariyaar Sollalmer Kolpavar Sollin / Vakaiyariyaar Valladhooum Il</div><div class="po"><b>பொருள்:</b> அவையின் தன்மை அறியாமல் பேச முற்படுபவர்கள், சொல்லின் வகையும் அறியாதவர்; அவர்களுக்குப் பேசும் வன்மையும் இல்லை.</div><div class="en">Unversed in councils, who essays to speakKnows not the way of suasive words,- and all is weak</div></a>
+<a href="/thirukkural/kural/714/" class="kc mg-seo-question"><div class="kn">குறள் 714</div><div class="ta">ஒளியார்முன் ஒள்ளிய ராதல் வெளியார்முன்<br>வான்சுதை வண்ணம் கொளல்.</div><div class="tr">Oliyaarmun Olliya Raadhal Veliyaarmun / Vaansudhai Vannam Kolal</div><div class="po"><b>பொருள்:</b> அறிவுடையோர் முன் அறிவுடையவராகவும், அறிவில்லாதோர் முன் வெண்சுண்ணம் போல் அறியாதவராகவும் இருக்க வேண்டும்.</div><div class="en">Before the bright ones shine as doth the lightBefore the dull ones be as purest stucco white</div></a>
+<a href="/thirukkural/kural/715/" class="kc mg-seo-question"><div class="kn">குறள் 715</div><div class="ta">நன்றென்ற வற்றுள்ளும் நன்றே முதுவருள்<br>முந்து கிளவாச் செறிவு.</div><div class="tr">Nandrendra Vatrullum Nandre Mudhuvarul / Mundhu Kilavaach Cherivu</div><div class="po"><b>பொருள்:</b> நல்லவை என்று சொல்லப்படுபவற்றுள் சிறந்தது, மூத்தவர்கள் இருக்கும் அவையில் முந்திப் பேசாத அடக்கம்.</div><div class="en">Midst all good things the best is modest grace, That speaks not first before the elders' face</div></a>
+<a href="/thirukkural/kural/716/" class="kc mg-seo-question"><div class="kn">குறள் 716</div><div class="ta">ஆற்றின் நிலைதளர்ந் தற்றே வியன்புலம்<br>ஏற்றுணர்வார் முன்னர் இழுக்கு.</div><div class="tr">Aatrin Nilaidhalarn Thatre Viyanpulam / Etrunarvaar Munnar Izhukku</div><div class="po"><b>பொருள்:</b> பரந்த அறிவுடையவர்கள் முன் சொல்லில் தவறு செய்வது, நல்வழியில் சென்றவன் தடுமாறி விழுவது போன்றது.</div><div class="en">As in the way one tottering falls, is slip beforeThe men whose minds are filled with varied lore</div></a>
+<a href="/thirukkural/kural/717/" class="kc mg-seo-question"><div class="kn">குறள் 717</div><div class="ta">கற்றறிந்தார் கல்வி விளங்கும் கசடறச்<br>சொல்தெரிதல் வல்லார் அகத்து.</div><div class="tr">Katrarindhaar Kalvi Vilangum Kasatarach / Choldheridhal Vallaar Akaththu</div><div class="po"><b>பொருள்:</b> குற்றமறச் சொற்களை ஆராய வல்லவர்கள் அவையில், கற்றவர்களின் கல்வி விளங்கித் தோன்றும்.</div><div class="en">The learning of the learned sage shines brightTo those whose faultless skill can value it aright</div></a>
+<a href="/thirukkural/kural/718/" class="kc mg-seo-question"><div class="kn">குறள் 718</div><div class="ta">உணர்வ துடையார்முன் சொல்லல் வளர்வதன்<br>பாத்தியுள் நீர்சொரிந் தற்று.</div><div class="tr">Unarva Thutaiyaarmun Sollal Valarvadhan / Paaththiyul Neersorin Thatru</div><div class="po"><b>பொருள்:</b> உணரும் அறிவுடையவர்கள் முன் பேசுவது, தானே வளரும் பயிர் உள்ள பாத்தியில் நீர் பாய்ச்சுவது போன்றது.</div><div class="en">To speak where understanding hearers you obtain, Is sprinkling water on the fields of growing grain</div></a>
+<a href="/thirukkural/kural/719/" class="kc mg-seo-question"><div class="kn">குறள் 719</div><div class="ta">புல்லவையுள் பொச்சாந்தும் சொல்லற்க நல்லவையுள்<br>நன்குசலச் சொல்லு வார்.</div><div class="tr">Pullavaiyul Pochchaandhum Sollarka Nallavaiyul / Nankusalach Chollu Vaar</div><div class="po"><b>பொருள்:</b> நல்லவர் அவையில் நன்றாகப் பேச வல்லவர்கள், அறிவில்லாதவர் அவையில் மறந்தும் பேசக் கூடாது.</div><div class="en">In councils of the good, who speak good things with penetrating power, In councils of the mean, let them say nought, e'en in oblivious hour</div></a>
+<a href="/thirukkural/kural/720/" class="kc mg-seo-question"><div class="kn">குறள் 720</div><div class="ta">அங்கணத்துள் உக்க அமிழ்தற்றால் தங்கணத்தார்<br>அல்லார்முன் கோட்டி கொளல்.</div><div class="tr">Anganaththul Ukka Amizhdhatraal Thanganaththaar / Allaarmun Kotti Kolal</div><div class="po"><b>பொருள்:</b> தம் இனத்தவர் அல்லாதவர் முன் பேசுவது, சாக்கடையில் சிந்திய அமிழ்தம் போலப் பயனற்றது.</div><div class="en">Ambrosia in the sewer spilt, is wordSpoken in presence of the alien herd</div></a>
+<section class="tkq mg-seo-study" aria-label="அதிகாரம் 72 Quiz · அவை அறிதல்"><p class="mg-seo-kicker">Quiz</p><h2>அதிகாரம் 72 Quiz · அவை அறிதல்</h2><p class="tkq-s"><b class="tkq-sc">0</b> / 10 சரி</p><div class="mg-seo-questions">
+<article class="tkq-i mg-seo-question"><h3><b>1.</b> Which kural does this English translation (G.U. Pope) belong to? <span class="kq en">"Men pure in heart, who know of words the varied force, Should to their audience known adapt their well-arranged discourse"</span></h3><div class="tkq-o"><button type="button" data-c="1">அவையறிநது ஆராய்ந்து சொல்லுக சொல்லின்</button><button type="button">நன்றென்ற வற்றுள்ளும் நன்றே முதுவருள்</button><button type="button">ஆற்றின் நிலைதளர்ந் தற்றே வியன்புலம்</button><button type="button">ஒளியார்முன் ஒள்ளிய ராதல் வெளியார்முன்</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>2.</b> இந்தக் குறளின் பொருள் எது? <span class="kq">இடைதெரிந்து நன்குணர்ந்து சொல்லுக சொல்லின் / நடைதெரிந்த நன்மை யவர்.</span></h3><div class="tkq-o"><button type="button" data-c="1">சொல்லின் நடை அறிந்த நல்லவர்கள், அவையின் சூழலை அறிந்து நன்கு உணர்ந்து பேச வேண்டும்.</button><button type="button">நல்லவை என்று சொல்லப்படுபவற்றுள் சிறந்தது, மூத்தவர்கள் இருக்கும் அவையில் முந்திப் பேசாத அடக்கம்.</button><button type="button">தம் இனத்தவர் அல்லாதவர் முன் பேசுவது, சாக்கடையில் சிந்திய அமிழ்தம் போலப் பயனற்றது.</button><button type="button">உணரும் அறிவுடையவர்கள் முன் பேசுவது, தானே வளரும் பயிர் உள்ள பாத்தியில் நீர் பாய்ச்சுவது போன்றது.</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>3.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">அவையறியார் ______ கொள்பவர் சொல்லின் / வகையறியார் வல்லதூஉம் இல்.</span></h3><div class="tkq-o"><button type="button">யவர்</button><button type="button">ராதல்</button><button type="button" data-c="1">சொல்லல்மேற்</button><button type="button">தற்றே</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>4.</b> Which kural does this English translation (G.U. Pope) belong to? <span class="kq en">"Before the bright ones shine as doth the lightBefore the dull ones be as purest stucco white"</span></h3><div class="tkq-o"><button type="button">நன்றென்ற வற்றுள்ளும் நன்றே முதுவருள்</button><button type="button">கற்றறிந்தார் கல்வி விளங்கும் கசடறச்</button><button type="button" data-c="1">ஒளியார்முன் ஒள்ளிய ராதல் வெளியார்முன்</button><button type="button">உணர்வ துடையார்முன் சொல்லல் வளர்வதன்</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>5.</b> இந்தக் குறளின் பொருள் எது? <span class="kq">நன்றென்ற வற்றுள்ளும் நன்றே முதுவருள் / முந்து கிளவாச் செறிவு.</span></h3><div class="tkq-o"><button type="button">குற்றமறச் சொற்களை ஆராய வல்லவர்கள் அவையில், கற்றவர்களின் கல்வி விளங்கித் தோன்றும்.</button><button type="button">அறிவுடையோர் முன் அறிவுடையவராகவும், அறிவில்லாதோர் முன் வெண்சுண்ணம் போல் அறியாதவராகவும் இருக்க வேண்டும்.</button><button type="button">பரந்த அறிவுடையவர்கள் முன் சொல்லில் தவறு செய்வது, நல்வழியில் சென்றவன் தடுமாறி விழுவது போன்றது.</button><button type="button" data-c="1">நல்லவை என்று சொல்லப்படுபவற்றுள் சிறந்தது, மூத்தவர்கள் இருக்கும் அவையில் முந்திப் பேசாத அடக்கம்.</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>6.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">ஆற்றின் நிலைதளர்ந் தற்றே வியன்புலம் / ஏற்றுணர்வார் முன்னர் ______.</span></h3><div class="tkq-o"><button type="button">முந்து</button><button type="button">நீர்சொரிந்</button><button type="button">அமிழ்தற்றால்</button><button type="button" data-c="1">இழுக்கு</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>7.</b> Which kural does this English translation (G.U. Pope) belong to? <span class="kq en">"The learning of the learned sage shines brightTo those whose faultless skill can value it aright"</span></h3><div class="tkq-o"><button type="button">ஒளியார்முன் ஒள்ளிய ராதல் வெளியார்முன்</button><button type="button">புல்லவையுள் பொச்சாந்தும் சொல்லற்க நல்லவையுள்</button><button type="button">அங்கணத்துள் உக்க அமிழ்தற்றால் தங்கணத்தார்</button><button type="button" data-c="1">கற்றறிந்தார் கல்வி விளங்கும் கசடறச்</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>8.</b> இந்தக் குறளின் பொருள் எது? <span class="kq">உணர்வ துடையார்முன் சொல்லல் வளர்வதன் / பாத்தியுள் நீர்சொரிந் தற்று.</span></h3><div class="tkq-o"><button type="button" data-c="1">உணரும் அறிவுடையவர்கள் முன் பேசுவது, தானே வளரும் பயிர் உள்ள பாத்தியில் நீர் பாய்ச்சுவது போன்றது.</button><button type="button">தம் இனத்தவர் அல்லாதவர் முன் பேசுவது, சாக்கடையில் சிந்திய அமிழ்தம் போலப் பயனற்றது.</button><button type="button">குற்றமறச் சொற்களை ஆராய வல்லவர்கள் அவையில், கற்றவர்களின் கல்வி விளங்கித் தோன்றும்.</button><button type="button">நல்லவை என்று சொல்லப்படுபவற்றுள் சிறந்தது, மூத்தவர்கள் இருக்கும் அவையில் முந்திப் பேசாத அடக்கம்.</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>9.</b> விடுபட்ட சொல்லை நிரப்புக: <span class="kq">புல்லவையுள் பொச்சாந்தும் சொல்லற்க நல்லவையுள் / நன்குசலச் சொல்லு ______.</span></h3><div class="tkq-o"><button type="button">வல்லதூஉம்</button><button type="button" data-c="1">வார்</button><button type="button">வெளியார்முன்</button><button type="button">தூய்மை</button></div></div>
+<article class="tkq-i mg-seo-question"><h3><b>10.</b> Which kural does this English translation (G.U. Pope) belong to? <span class="kq en">"Ambrosia in the sewer spilt, is wordSpoken in presence of the alien herd"</span></h3><div class="tkq-o"><button type="button">உணர்வ துடையார்முன் சொல்லல் வளர்வதன்</button><button type="button" data-c="1">அங்கணத்துள் உக்க அமிழ்தற்றால் தங்கணத்தார்</button><button type="button">கற்றறிந்தார் கல்வி விளங்கும் கசடறச்</button><button type="button">புல்லவையுள் பொச்சாந்தும் சொல்லற்க நல்லவையுள்</button></div></div>
 </section>
 <div class="pn"><a href="/thirukkural/71/">‹ 71. குறிப்பறிதல்</a><a href="/thirukkural/73/">73. அவை அஞ்சாமை ›</a></div>
-<div class="cta"><p><b>Race your friends on Thirukkural.</b> Answer live against aspirants across India in NationLap.</p><a href="/nationlap/">Play NationLap</a></div>
+<section class="ibento" aria-label="More ways to practise">
+  <a class="itile it-ca" href="/nationlap/?affairs=1"><b>Every morning · 5am</b><strong>Today's current affairs</strong><span>The day's exam-worthy news, each fact with its source.</span><i>Race today's affairs →</i></a>
+  <a class="itile it-nl" href="/nationlap/"><b>Game</b><strong>NationLap</strong><span>Read a topic, then race it and answer at speed.</span><i>Play free →</i></a>
+  <a class="itile it-app" href="/get/"><b>MindGains app</b><strong>Mistakes come back</strong><span>Daily Dose, revision and Quiz Rooms with friends.</span><i>Get the app →</i></a>
+</section>
 <p class="src">குறள் மூலம்: பொதுக் களம் (public domain). தமிழ்ப் பொருள்: MindGains. English translation: Rev. G.U. Pope (1886), public domain.</p>
 </div>
 </main>
