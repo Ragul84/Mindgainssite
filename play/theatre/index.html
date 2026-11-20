@@ -741,7 +741,7 @@ function showGate() {   // signed out: the hall stays blurred behind a sign-in c
   const d = document.createElement('div'); d.className = 'wall'; d.id = 'wall'; d.dataset.kind = 'signin';
   d.innerHTML = `<div class="wc"><span class="wk"><i></i>${n} STUDYING LIVE NOW</span>
     <h2>${ref ? 'Your friend saved you a seat' : 'Take your seat'}<em>sign in to walk in.</em></h2>
-    <p>Free with your Google account: <b>30 minutes</b> of live class every day, the live quiz, your own seat and racer${ref ? ', and your friend gets <b>+150 pts</b>' : ''}.</p>
+    <p>Free with your Google account: <b>30 minutes</b> of live class every day, the live quiz, your own seat and racer${QS.get('inv') ? '. Joining through your friend’s invite gives you <b>+30 minutes extra today</b>' : ref ? ', and your friend gets <b>+150 pts</b>' : ''}.</p>
     <button class="wb wg" id="gateG">${GSVG}Continue with Google</button>
     <div class="wt">One tap. Same account as mindgains.ai and NationLap.</div></div>`;
   document.body.appendChild(d);
@@ -762,10 +762,12 @@ function showWall(kind) {
     <a class="wb wb2" href="/pro/?plan=month&back=${back}" id="wallM">Pro Monthly · ₹99</a>
     ${signedIn ? '' : '<button class="wb wb2" id="wallS">Already Pro? Sign in</button>'}
     <div class="wt" style="margin-top:4px;color:#b9b1a4">One-time payment · no auto-debit · 7-day refund</div>
+    <button class="wb wb2" id="wallInv" type="button">Or invite 5 friends · get 3 days Pro free</button>
     <div class="wt">Free time comes back in ${untilMidnightIST()} · <a href="/nationlap/">Race instead</a></div></div>`;
   document.body.appendChild(d);
   fetch('/api/pro/me').then((r) => r.json()).then((x) => { if (x.launch) { const a = document.getElementById('wallM'); if (a) a.textContent = 'Pro Monthly · ₹49 first month'; } }).catch(() => {});
   const sb = document.getElementById('wallS'); if (sb) sb.onclick = () => account.signInPopup();
+  const wi = document.getElementById('wallInv'); if (wi) wi.onclick = () => document.getElementById('inv').click();
 }
 function hideWall() { window.__walled = false; const w = document.getElementById('wall'); if (w) w.remove(); if (ROOM && RM.play) applyPlay(RM.play, true); }
 setInterval(() => { if ((ROOM || !PRO) && !window.__walled && document.visibilityState === 'visible' && !document.body.classList.contains('intro')) live.send({ t: 'tick' }); }, 30000);
@@ -970,7 +972,7 @@ document.getElementById('mRp').onclick = openReport; document.getElementById('rp
 try { const iv = QS.get('inv'); if (iv) localStorage.setItem('mg_inv', iv.slice(0, 12)); } catch (e) {}
 function refPaint(R) { const b = document.getElementById('invB'); if (b && R) b.textContent = R.pending + '/' + R.need + ' friends · 3 days Pro'; }
 async function refSync(t) {
-  try { const iv = localStorage.getItem('mg_inv'); if (iv) { const x = await (await fetch('/api/pro/ref/claim', { method: 'POST', headers: { 'content-type': 'application/json', Authorization: 'Bearer ' + t }, body: JSON.stringify({ code: iv }) })).json(); localStorage.removeItem('mg_inv'); if (x && x.ok) setTimeout(() => flashCard('You joined through a friend2019s invite · invite 5 friends yourself for 3 days of Pro'), 4000); } } catch (e) {}
+  try { const iv = localStorage.getItem('mg_inv'); if (iv) { const x = await (await fetch('/api/pro/ref/claim', { method: 'POST', headers: { 'content-type': 'application/json', Authorization: 'Bearer ' + t }, body: JSON.stringify({ code: iv }) })).json(); localStorage.removeItem('mg_inv'); if (x && x.ok) setTimeout(() => flashCard('+30 minutes free today for joining through a friend · invite 5 friends yourself for 3 days of Pro'), 4000); } } catch (e) {}
   try { const R = await (await fetch('/api/pro/ref', { headers: { Authorization: 'Bearer ' + t } })).json(); refPaint(R); } catch (e) {}
 }
 async function syncPro() {

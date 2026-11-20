@@ -121,7 +121,7 @@ async function launchPrice(env, uid) {
 
 
 // ---- refer-a-friend: every 5 brand-new friends who sign in through your link = 3 days of Pro
-export const REF = { need: 5, days: 3, maxPer30d: 6 };
+export const REF = { need: 5, days: 3, maxPer30d: 6, bonusSecs: 30 * 60 };
 const RCH = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
 async function refCode(env, uid) {
   const r = await env.GAME_DB.prepare('SELECT code FROM ref_code WHERE uid = ?1').bind(uid).first();
@@ -159,6 +159,7 @@ async function refClaim(env, uid, code) {
   if (!(await isNewUser(env, uid))) return { ok: false, why: 'not-new' };
   const now = Date.now(), ref = r.uid;
   await env.GAME_DB.prepare('INSERT OR IGNORE INTO ref_join (invitee, referrer, at) VALUES (?1, ?2, ?3)').bind(uid, ref, now).run();
+  await addWatch(env, 'u:' + uid, -REF.bonusSecs);   // double-sided: the friend gets extra free theatre today
   const p = await env.GAME_DB.prepare('SELECT COUNT(*) AS n FROM ref_join WHERE referrer = ?1 AND rewarded = 0').bind(ref).first();
   if (p && p.n >= REF.need) {
     const recent = await env.GAME_DB.prepare('SELECT COUNT(*) AS n FROM ref_reward WHERE uid = ?1 AND at > ?2').bind(ref, now - 30 * 864e5).first();
