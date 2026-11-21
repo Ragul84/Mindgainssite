@@ -32,6 +32,7 @@ const CSS = `<style>
 .yr a b{display:block;font:800 26px 'Inter Tight',Inter}.yr a small{color:#64748b;font:500 13px Inter}
 .gap{display:inline-block;padding:6px 10px!important;margin:8px 0 0!important}.gap summary{cursor:pointer;color:#b45309;font:600 13px Inter;list-style:none}.gap summary::-webkit-details-marker{display:none}.gap[open]{display:block}.gap p{margin:8px 0 0}
 .pq .fig{display:block;max-width:100%;height:auto;margin:10px 0 0;border-radius:8px;background:#fff}
+.pq .uo{color:#b45309;font-size:13px}
 .note{font:400 13px/1.6 Inter;color:#64748b;background:#f8fafc;border-radius:12px;padding:12px 14px;margin:18px 0 0}
 </style>`;
 const JS = `<script>document.querySelectorAll('.pq').forEach(function(q){q.querySelectorAll('.o button').forEach(function(b){b.onclick=function(){if(q.classList.contains('d'))return;q.classList.add('d');if(b.dataset.c)b.classList.add('ok');else{b.classList.add('no');q.querySelectorAll('[data-c]').forEach(function(c){c.classList.add('ok')})}}})})</script>`;
@@ -78,7 +79,7 @@ const qcard = (q, i) => {
   const ans = grace ? `${q.exam.toUpperCase()} dropped this question and gave every candidate a grace mark, so all options count.`
     : q.acc ? `${q.exam.toUpperCase()} accepted more than one answer: ${ok.map((k) => L[k] + '. ' + esc(q.opts[k])).join(' / ')}`
     : `Answer: ${L[q.a]}. ${esc(q.opts[q.a])}`;
-  return `<article class="pq mg-seo-question"><h3>${q.n || i}. ${esc(q.q)}</h3>${q.img ? `<img class="fig" src="/pyq/img/${q.img}" alt="Figure for question ${q.n || i}" loading="lazy">` : ""}<div class="o">${q.opts.map((o, k) => `<button type="button"${ok.includes(k) ? ' data-c="1"' : ''}><b>${L[k]}</b><span>${esc(o)}</span></button>`).join('')}</div><div class="ex"><b>${ans}</b></div></article>`;
+  return `<article class="pq mg-seo-question"><h3>${q.n || i}. ${esc(q.q)}${q.src === "mg" && q.part ? " <small class=\"uo\" title=\"Unofficial answer\">⚠</small>" : ""}</h3>${q.img ? `<img class="fig" src="/pyq/img/${q.img}" alt="Figure for question ${q.n || i}" loading="lazy">` : ""}<div class="o">${q.opts.map((o, k) => `<button type="button"${ok.includes(k) ? ' data-c="1"' : ''}><b>${L[k]}</b><span>${esc(o)}</span></button>`).join('')}</div><div class="ex"><b>${ans}</b></div></article>`;
 };
 const out = (rel, html) => { const f = path.join(ROOT, rel, 'index.html'); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, html); };
 const quizLd = (name, url, qs) => ({ '@context': 'https://schema.org', '@type': 'Quiz', name, url: SITE + url, inLanguage: 'en-IN', about: name, hasPart: qs.filter((q) => !q.acc).slice(0, 20).map((q) => ({ '@type': 'Question', name: q.q, acceptedAnswer: { '@type': 'Answer', text: q.opts[q.a] } })) });
@@ -115,9 +116,11 @@ function gapNote(exam, y, ps) {
   for (let i = s; i < s + full; i++) if (!have.has(i)) miss.push(i);
   if (!miss.length && !ps.some((q) => q.src === 'mg')) return '';
   if (ps.every((q) => q.src === 'mg')) return '<details class="note gap"><summary title="About these answers" aria-label="About these answers">⚠ Unofficial' + (ps.length < full ? ' · ' + ps.length + '/' + full : '') + '</summary><p>The official key for this paper was published for a different booklet version, so these answers were worked out by MindGains.' + (ps.length < full ? ' Questions we could not read clearly from the scan, or could not answer with certainty, are left out.' : '') + '</p></details>';
+  if (!miss.length) { const u = ps.filter((q) => q.src === 'mg').map((q) => 'Q' + q.n); return `<details class="note gap"><summary title="About these answers">⚠ ${u.length} unofficial</summary><p>${u.join(', ')}: TNPSC never published an official key for this paper, so these answers were worked out by MindGains. The rest come from a candidate's ticked answer booklet, cross-checked.</p></details>`; }
   return `<details class="note gap"><summary title="Why some questions are missing" aria-label="Why some questions are missing">⚠ ${ps.length}/${full}</summary><p>Missing: ${miss.map((n) => 'Q' + n).join(', ')}.</p><p>${WHY[k] || WHY[`${exam}|${y}|${ps[0].slug.replace('-english', '')}`] || DEF[exam]}</p></details>`;
 }
 function paperPage(exam, y, ps, url, crumbs, siblings) {
+  const mixed = ps.some((q) => q.src === "mg") && !ps.every((q) => q.src === "mg"); ps.forEach((q) => { q.part = mixed; });
   const name = `${exam.toUpperCase()} ${y} ${ps[0].paper}`;
   const body = hero(`${exam.toUpperCase()} · ${y}`, `${name}: Questions with Answers`, `All ${ps.length} questions from the ${name} paper, in paper order. Tap an option to check your answer instantly.`, [`${ps.length} questions`, ps.every((q) => q.src === 'mg') ? 'Unofficial answers' : ps.some((q) => q.src === 'ticked') ? 'Verified answers' : 'Official answer key']) + gapNote(exam, y, ps) +
     ps.map((q, i) => qcard(q, i + 1)).join('') + srcNote(ps) +
