@@ -22,9 +22,19 @@ missing from `pyq_verified_clean`, and label such answers clearly.
    commit `scripts/ pyq/ sitemap.xml`, push.
 
 ### Hand-fixed papers
-`scripts/data/pyq-extra.json` holds papers re-read from the scan with the official key
-because Supabase's copy was broken (currently TNPSC Group 4 2025). `import-pyq.cjs`
-applies it on top of the export, so keep it; drop an entry once Supabase is fixed.
+`scripts/data/pyq-extra.json` holds papers re-read from the official scan and marked with the
+official final key, because Supabase's copy was broken or missing: TNPSC Group 4 2025
+(General English + GS) and Group 1 2025. `import-pyq.cjs` layers it over the export
+(`replace` lists the papers it overrides), so keep it; drop an entry once Supabase has it.
+
+### Figure questions
+Rows may carry `img` (a file in `pyq/img/`), rendered inside the question card.
+Crop the figure from the official scan (PyMuPDF clip at 200 dpi, whiten the candidate's
+blue ticks), never redraw it. Options stay as text buttons.
+
+### Missing questions
+`build-pyq.cjs` shows a small ⚠ n/N on incomplete papers; tapping it lists the missing
+numbers and the reason (`WHY` map, default = deleted in the final key).
 
 ### Pages
 - `/pyq/` hub · `/pyq/tnpsc/<year>/` lists papers · `/pyq/tnpsc/<year>/<paper>/` questions
@@ -37,6 +47,4 @@ happens), then run the pipeline above. The website is a snapshot; it never reads
 Supabase live.
 
 ### Counts at last import (21 Nov 2026)
-UPSC 1,892 (GS-I 1,492 for 2011–2025 · CSAT 400 for 2021–2025) ·
-TNPSC 3,878 (Group 1 1,597 · Group 2 873 · Group 2A 100 · Group 4 1,108 · ACF 200) ·
-total 5,770.
+UPSC 1,892 (GS-I 2011–2025 · CSAT 2021–2025) · TNPSC 4,171 · total 6,063.
