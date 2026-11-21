@@ -103,6 +103,7 @@ const WHY = {
   'tnpsc|2014|group-2': 'TNPSC never published an official answer key for this paper. Answers come from a candidate\'s ticked answer booklet, checked by MindGains; questions the candidate left blank or marked unclearly could not be verified, so they are left out rather than guessed.',
   'tnpsc|2024|group-2': 'These questions are built around a diagram or figure that cannot be shown as text, so they are left out.',
   'tnpsc|2025|group-4': 'Q189 is a field-book survey diagram that cannot be shown as text, so it is left out.',
+  'tnpsc|2025|group-1': 'Q194 is a multi-level fraction and Q200 asks about pictures of a cube; neither can be shown as text, so both are left out.',
   'tnpsc|2025|group-4-english': 'Q94 refers to a reading passage that is not printed in the question booklet, so it is left out.',
 };
 const DEF = { upsc: 'These questions have no answer in the official UPSC final key — UPSC usually deletes one to three questions every year after reviewing objections.', tnpsc: 'These questions have no usable answer in the official TNPSC final key (deleted after objections), so they are left out.' };
