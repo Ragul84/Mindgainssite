@@ -86,6 +86,7 @@ export class TheatreHall extends DurableObject {
           const rid = 'p:' + ref.slice(0, 40), host = this.peers().find((p) => p.a.id === rid);
           const b = this.board[rid] || (this.board[rid] = { name: host ? host.a.name : 'Friend', seat: host ? host.a.seat : null, pts: 0, ms: 0 });
           b.pts += 150; await this.save();
+          if (this.__scrBonus) this.__scrBonus(rid, b, 150, a.name);   // auto screens: same +150 on the hall's combined board
           if (host) this.send(host.ws, { t: 'refok', name: a.name, pts: 150 });
           const msg = { name: 'NationLap', sys: 1, text: `🎉 ${a.name} joined on ${b.name}'s invite · ${b.name} +150 pts`, at: 0 };
           this.chat.push(msg); this.all({ t: 'chat', m: msg }); this.all({ t: 'board', top: this.top() });
