@@ -25,6 +25,28 @@ function rmNextStart(cfg, now) {
   return t;
 }
 function rmDuration(cfg) { return cfg.n * (cfg.qSecs + cfg.revealSecs) * 1e3; }
+// Hall quiz pause: while a Rank Mock for an exam held in this hall is about to start or running, the hall's regular
+// 4-minute quiz is held back (from RM_PAUSE_PAD before the start until RM_PAUSE_PAD after the end). Weekly windows
+// are computed from RM_EXAMS (no messages needed); admin test mocks push an explicit "until" to the hall instance.
+var RM_PAUSE_PAD = 5 * 6e4;
+// returns the time the pause ends if `at` falls inside a pause window for `hall`, else 0
+function rmHallPauseUntil(hall, at, testUntil) {
+  let until = testUntil && testUntil > at ? testUntil : 0;
+  for (const cfg of Object.values(RM_EXAMS)) {
+    if (cfg.hall !== hall) continue;
+    const dur = rmDuration(cfg), s = rmNextStart(cfg, at - RM_PAUSE_PAD);   // first start whose end + pad is still ahead of `at`
+    if (s - RM_PAUSE_PAD <= at && at < s + dur + RM_PAUSE_PAD) until = Math.max(until, s + dur + RM_PAUSE_PAD);
+  }
+  return until;
+}
+// tell the hall instance that an admin test mock is on (until > now) or over (until = 0). Best effort.
+async function rmNotifyHall(env, hall, until) {
+  try {
+    if (!env || !env.THEATRE || !hall) return;
+    const stub = env.THEATRE.get(env.THEATRE.idFromName(hall));
+    await stub.fetch(new Request("https://x/__rmpause", { method: "POST", body: JSON.stringify({ until: until > 0 ? until : 0 }) }));
+  } catch {}
+}
 function rmDay(t) { return new Date(t + RM_IST).toISOString().slice(0, 10); }
 function rmHash(s) { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
 function rmRng(seed) { let a = rmHash(String(seed)); return () => { a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
@@ -163,7 +185,7 @@ var RankMock = class {
       if (!want || got.length !== want.length || got !== want) return rmJson({ error: "forbidden" }, 403);
       let b = {}; try { b = await request.json(); } catch {}
       if (b.action === "start") return rmJson(await this.startTest(b));
-      if (b.action === "stop") { if (this.cur && this.cur.test) { this.cur.phase = "done"; this.cur.doneAt = Date.now() - RM_KEEP_DONE_MS; await this.rollover(); await this.ensure(); this.all({ t: "mreset" }); } return rmJson({ ok: true, status: this.status() }); }
+      if (b.action === "stop") { if (this.cur && this.cur.test) { this.cur.phase = "done"; this.cur.doneAt = Date.now() - RM_KEEP_DONE_MS; await this.rollover(); await this.ensure(); this.all({ t: "mreset" }); await rmNotifyHall(this.env, this.cfg().hall, 0); } return rmJson({ ok: true, status: this.status() }); }
       return rmJson({ error: "action" }, 400);
     }
     return rmJson({ error: "op" }, 404);
@@ -181,6 +203,7 @@ var RankMock = class {
     if (park) await this.ctx.storage.put("saved", park);
     await this.persist(); await this.ctx.storage.setAlarm(this.cur.startsAt);
     this.all({ t: "mstate", ...this.status() });
+    await rmNotifyHall(this.env, cfg.hall, this.cur.startsAt + n * (qSecs + revealSecs) * 1e3 + RM_PAUSE_PAD);
     return { ok: true, status: this.status() };
   }
   async identify(b) {
@@ -348,4 +371,4 @@ function rmDelegate(Cls) {
   P.webSocketError = async function (ws, e) { const r = await impl(this); return r ? r.webSocketError(ws, e) : orig.webSocketError.call(this, ws, e); };
   P.alarm = async function (...a) { const r = await impl(this); return r ? r.alarm(...a) : orig.alarm.call(this, ...a); };
 }
-export { RM_EXAMS, RankMock, rmRoute, rmPatchTheatre, rmWrap, rmDelegate };
+export { RM_EXAMS, RankMock, rmRoute, rmPatchTheatre, rmWrap, rmDelegate, rmHallPauseUntil, rmNextStart, rmDuration, rmPick, RM_PAUSE_PAD };
