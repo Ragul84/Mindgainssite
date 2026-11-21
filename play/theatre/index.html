@@ -379,13 +379,13 @@ body.quizon:not(.room) .chat{visibility:hidden!important}@media (max-width:760px
 @media (max-width:760px){.thvs{top:92px;font-size:19px}.thvs i{width:36px;height:36px;font-size:25px}.thto{top:92px}}
 @media (prefers-reduced-motion:reduce){.thf-s,.thf.ign .thf-b,.thf.mile .thf-b,.thf.st-r .thf-s,.thvs.go,.thvs.go .a,.thvs.go .b,.thvs.go i,.thd.risk .thd-f,.thd.pop .thd-n,.thd.mile .thd-f{animation:none!important}.thf.st-r .thf-s .c{animation:none;stroke-dashoffset:0;opacity:.85}.thto.in{animation:none;opacity:1;transform:translateX(-50%)}.thto.out{animation:none;opacity:0}.thvs{transition:opacity .2s}.thf-x{display:none}}
 </style>
-<style id="mg-profile-css">/* theatre-hooks-20261121: one-time profile step (name, gender, state, colour). transform/opacity animations only; reduced motion respected */
+<style id="mg-profile-css">/* theatre-hooks-20261121 + theatre-cinematic-20261121: one-time profile step (name, gender, look, state, colour). transform/opacity animations only; reduced motion respected */
 .mgp{position:fixed;inset:0;z-index:90;display:grid;place-items:center;padding:20px;background:rgba(6,4,10,.55);backdrop-filter:blur(14px) saturate(.85);-webkit-backdrop-filter:blur(14px) saturate(.85);animation:mgpFade .35s ease both}
 .mgp.out{animation:mgpFadeOut .32s ease forwards}
-.mgp-c{box-sizing:border-box;position:relative;width:min(392px,100%);background:linear-gradient(180deg,rgba(32,25,14,.97),rgba(16,13,20,.97));border:1.5px solid #f3c86b;border-radius:26px;padding:22px 20px 16px;box-shadow:0 30px 80px -20px rgba(243,200,107,.35);color:#f4efe6;font:500 14px/1.4 Inter,system-ui,sans-serif;animation:mgpRise .6s cubic-bezier(.34,1.56,.64,1) both}
+.mgp-c{box-sizing:border-box;position:relative;width:min(420px,100%);max-height:calc(100vh - 32px);overflow:auto;scrollbar-width:none;background:linear-gradient(180deg,rgba(32,25,14,.97),rgba(16,13,20,.97));border:1.5px solid #f3c86b;border-radius:26px;padding:22px 20px 16px;box-shadow:0 30px 80px -20px rgba(243,200,107,.35);color:#f4efe6;font:500 14px/1.4 Inter,system-ui,sans-serif;animation:mgpRise .6s cubic-bezier(.34,1.56,.64,1) both}
 .mgp.out .mgp-c{animation:mgpDrop .32s cubic-bezier(.5,0,.75,0) forwards}
 .mgp-x{position:absolute;right:12px;top:12px;width:32px;height:32px;border-radius:50%;border:0;background:rgba(255,255,255,.06);color:#cfc7d8;font:700 16px Inter;cursor:pointer}
-.mgp-hd{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.mgp-hd{margin-bottom:10px}
 .mgp-av{flex:0 0 58px;height:58px;border-radius:50%;background:radial-gradient(circle at 50% 35%,rgba(243,200,107,.22),rgba(243,200,107,.04));border:1px solid rgba(243,200,107,.35);display:grid;place-items:center;overflow:hidden}
 .mgp-av svg{width:54px;height:54px;transform-origin:50% 90%}
 .mgp-av.pop svg{animation:mgpBoing .5s cubic-bezier(.34,1.56,.64,1)}
@@ -435,10 +435,35 @@ body.quizon:not(.room) .chat{visibility:hidden!important}@media (max-width:760px
 @media (max-width:560px){.mgp{place-items:end center;padding:0}.mgp-c{width:100%;border-radius:24px 24px 0 0;border-width:1.5px 0 0;padding:18px 16px calc(14px + env(safe-area-inset-bottom));max-height:94vh;overflow:auto;animation-name:mgpSheet}.mgp.out .mgp-c{animation-name:mgpSheetOut}.mgp-c::before{content:"";display:block;width:40px;height:4px;border-radius:4px;background:rgba(255,255,255,.18);margin:-6px auto 12px}.mgp h2{font-size:28px}}
 @keyframes mgpSheet{from{transform:translateY(100%)}}
 @keyframes mgpSheetOut{to{transform:translateY(100%)}}
+.mgp-c::-webkit-scrollbar{display:none}
+.mgp-stage{position:relative;height:150px;margin:0 0 12px;border-radius:18px;overflow:hidden;background:radial-gradient(120% 90% at 50% 18%,rgba(255,214,140,.30),rgba(255,214,140,.06) 45%,transparent 70%),linear-gradient(180deg,#24180f,#120d14);border:1px solid rgba(243,200,107,.22)}
+.mgp-stage::after{content:"";position:absolute;left:18%;right:18%;bottom:10px;height:14px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.55),transparent);pointer-events:none}
+.mgp-stage canvas{position:absolute;inset:0;width:100%;height:100%;display:none}
+.mgp-stage.gl canvas{display:block}.mgp-stage.gl .mgp-av{display:none}
+.mgp-stage .mgp-av{position:absolute;left:50%;top:50%;width:96px;height:96px;margin:-48px 0 0 -48px;border-radius:50%;background:radial-gradient(circle at 50% 35%,rgba(243,200,107,.22),rgba(243,200,107,.04));border:1px solid rgba(243,200,107,.35);display:grid;place-items:center;overflow:hidden}
+.mgp-stage .mgp-av svg{width:88px;height:88px}
+.mgp-of{display:flex;gap:6px;overflow-x:auto;scroll-snap-type:x proximity;padding:3px 2px 6px;margin:0 -2px;scrollbar-width:none}
+.mgp-of::-webkit-scrollbar{display:none}
+.mgp-of button{position:relative;flex:1 0 56px;min-width:56px;height:64px;scroll-snap-align:start;display:grid;place-items:center;align-content:center;gap:3px;border-radius:14px;border:1.5px solid rgba(243,200,107,.2);background:rgba(0,0,0,.3);color:#e9e2d6;font:700 9.5px/1 Inter,system-ui,sans-serif;letter-spacing:-.01em;cursor:pointer;box-shadow:0 3px 0 rgba(0,0,0,.45);transition:transform .12s,box-shadow .12s,background .2s,border-color .2s,color .2s;-webkit-tap-highlight-color:transparent}
+.mgp-of button svg{width:24px;height:24px}
+.mgp-of button:active{transform:translateY(3px);box-shadow:none}
+.mgp-of button.on{background:linear-gradient(180deg,#ffe2a0,#f3c86b);border-color:#ffe2a0;color:#1a1206;box-shadow:0 3px 0 #a9822f;animation:mgpPick .42s cubic-bezier(.34,1.56,.64,1)}
+.mgp-of button.lk{opacity:.55}
+.mgp-lock{position:absolute;top:4px;right:4px;font:800 7.5px/1 Inter;letter-spacing:.08em;padding:2px 3px;border-radius:4px;background:#f3c86b;color:#1a1206}
+.mgp-hint{margin:2px 0 0;font:500 11.5px Inter,system-ui,sans-serif;color:#f3c86b}
+.mgp-row{display:grid;grid-template-columns:62px 1fr;align-items:center;gap:8px;margin-bottom:11px}
+.mgp-row .mgp-l{margin:0}
+.mgp-dots.mgp-sk button,.mgp-dots.mgp-cl button{width:27px;height:27px}
+.mgp-dots{gap:8px}
+.mgp-chips{display:flex;gap:6px;flex-wrap:wrap}
+.mgp-chips button{height:30px;padding:0 11px;border-radius:999px;border:1.5px solid rgba(243,200,107,.2);background:rgba(0,0,0,.3);color:#e9e2d6;font:700 12px/1 Inter,system-ui,sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .2s,border-color .2s,color .2s}
+.mgp-chips button.on{background:linear-gradient(180deg,#ffe2a0,#f3c86b);border-color:#ffe2a0;color:#1a1206;animation:mgpPick .42s cubic-bezier(.34,1.56,.64,1)}
+.mgp-f:nth-of-type(5){animation-delay:.3s}.mgp-f:nth-of-type(6){animation-delay:.34s}.mgp-f:nth-of-type(7){animation-delay:.38s}
+@media (max-width:560px){.mgp-stage{height:128px;margin-bottom:10px}.mgp-c{max-height:94vh}.mgp-f{margin-bottom:11px}.mgp-row{grid-template-columns:56px 1fr}}
 @media (prefers-reduced-motion:reduce){.mgp,.mgp *{animation-duration:.01ms!important;animation-delay:0s!important;transition:none!important}}
 </style>
 <script id="mg-profile">// ==== theatre-hooks-20261121: shared player profile, client (Live Theatre + NationLap, same origin) ====
-// Reuses NationLap's own keys (tkr_player_profile = name/face/colour, nl_state = state) and adds gender.
+// Reuses NationLap's own keys (tkr_player_profile = name/face/colour, nl_state = state) and adds gender + look (skin, hair, outfit).
 // The account copy lives at /api/theatre/profile; `mg_profile` is the local cache. Asked once, on either side.
 (function () {
   if (window.MGP) return;
@@ -453,6 +478,7 @@ body.quizon:not(.room) .chat{visibility:hidden!important}@media (max-width:760px
   function cache() { const c = J(ls.get('mg_profile')); return c && typeof c === 'object' ? c : null; }
   function writeLocal(p, uid, synced) {
     const c = { uid: uid || (cache() || {}).uid || '', name: cleanName(p.name), gender: G3[p.gender] ? p.gender : '', state: STATES[p.state] ? p.state : '', color: Number.isInteger(p.color) && p.color >= 0 && p.color <= 8 ? p.color : 5, avatar: Number.isInteger(p.avatar) && p.avatar >= 0 && p.avatar <= 5 ? p.avatar : ((nl() || {}).avatar | 0), at: p.at || Date.now(), synced: !!synced };
+    const prev = cache() || {}; for (const [k, hi] of [['skin', 5], ['hair', 3], ['outfit', 5]]) { const v = Number.isInteger(p[k]) && p[k] >= 0 && p[k] <= hi ? p[k] : Number.isInteger(prev[k]) && prev[k] >= 0 && prev[k] <= hi ? prev[k] : -1; c[k] = v; }
     ls.set('mg_profile', JSON.stringify(c));
     // NationLap reads these itself, so it never asks again on this device (its saver keeps 12 chars)
     const t = nl() || {};
@@ -461,7 +487,7 @@ body.quizon:not(.room) .chat{visibility:hidden!important}@media (max-width:760px
     return c;
   }
   const complete = (c) => !!(c && c.name && G3[c.gender]);
-  const view = (c) => ({ name: c.name, g: G3[c.gender] || 0, avatar: Number.isInteger(c.avatar) ? c.avatar : ((nl() || {}).avatar | 0), color: Math.min(8, Math.max(0, c.color | 0)), state: c.state, gender: c.gender });
+  const view = (c) => ({ name: c.name, g: G3[c.gender] || 0, style: c.skin >= 0 ? 1 + c.skin + 6 * Math.max(0, c.hair) + 36 * Math.max(0, c.outfit) : 0, avatar: Number.isInteger(c.avatar) ? c.avatar : ((nl() || {}).avatar | 0), color: Math.min(8, Math.max(0, c.color | 0)), state: c.state, gender: c.gender });
   async function api(method, token, body) {
     const h = { 'content-type': 'application/json' }; if (token) h.authorization = 'Bearer ' + token; else if (TU) h['x-mg-tu'] = TU;
     const ctl = new AbortController(), to = setTimeout(() => ctl.abort(), 5000);
@@ -485,36 +511,69 @@ body.quizon:not(.room) .chat{visibility:hidden!important}@media (max-width:760px
       : `<path d="M14 28c0-10 8-16 18-16s18 6 18 16c-5-4-12-5-18-5s-13 1-18 5z" fill="${hair}"/>` + (g === 'n' ? `<path d="M10 33a22 22 0 0 1 44 0" fill="none" stroke="#2a2733" stroke-width="3"/><rect x="7" y="30" width="7" height="11" rx="3" fill="${col}"/><rect x="50" y="30" width="7" height="11" rx="3" fill="${col}"/>` : '');
     return `<svg viewBox="0 0 64 64" aria-hidden="true">${back}<path d="M12 64c1-10 9-15 20-15s19 5 20 15z" fill="${col}"/><circle cx="32" cy="32" r="16" fill="${skin}"/><circle cx="26" cy="33" r="2.2" fill="#1c1a24"/><circle cx="38" cy="33" r="2.2" fill="#1c1a24"/><path d="M28 40q4 3 8 0" stroke="#7a3b30" stroke-width="1.8" fill="none" stroke-linecap="round"/>${top}</svg>`;
   };
+  // look: skin (0-5), hair (0-3, per gender), outfit (0 casual, 1 topper, 2 swag, 3 sporty, 4 traditional, 5 pro)
+  const SKINS = ['#ffe2c8', '#f8d0ac', '#efbf96', '#e0a97c', '#c68b60', '#9b6744'];
+  const HAIRS = { m: ['Crop', 'Side part', 'Curly', 'Quiff'], f: ['Ponytail', 'Bun', 'Bob', 'Open'], n: ['Neat', 'Bob', 'Curly', 'Crop'], x: ['Short', 'Side', 'Curly', 'Styled'] };
+  const ic = (p) => `<svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
+  const OUTFITS = [
+    ['Casual', ic('<path d="M11 6l-6 4 3 5 3-2v13h10V13l3 2 3-5-6-4c-1 2-3 3-5 3s-4-1-5-3z"/>')],
+    ['Topper', ic('<circle cx="10.5" cy="9" r="3.6"/><circle cx="21.5" cy="9" r="3.6"/><path d="M14.1 9h3.8M9 27l2-11h10l2 11M16 16l-3 5h6z"/>')],
+    ['Swag', ic('<path d="M8 13a8 8 0 0 1 16 0"/><path d="M6 13h20M9 27V17l-3 2M23 27V17l3 2M9 27h14"/><path d="M12 19c1 3 7 3 8 0"/>')],
+    ['Sporty', ic('<path d="M11 5l-6 4 2 6 3-1v13h12V14l3 1 2-6-6-4-5 4z"/><path d="M14 17h4v5h-4z"/>')],
+    ['Traditional', ic('<path d="M12 5h8l1 3-2 1v18h-6V9l-2-1z"/><path d="M16 9v8M9 11l-3 9M23 11l3 9"/><circle cx="16" cy="12" r=".6" fill="currentColor"/><circle cx="16" cy="15" r=".6" fill="currentColor"/>')],
+    ['Pro', ic('<path d="M6 22l-2-12 7 5 5-9 5 9 7-5-2 12z"/><path d="M6 26h20"/>')],
+  ];
+  const isPro = () => { try { return !!(window.__mgIsPro && window.__mgIsPro()); } catch (e) { return false; } };
+  const styleCode = (d) => (d.skin >= 0 ? 1 + (d.skin | 0) + 6 * (d.hair | 0) + 36 * (d.outfit | 0) : 0);
   function open(opts) {
     opts = opts || {};
     if (S.open || !document.body) return; S.open = true;
     const c = cache(), t = nl() || {}, ctx = S.ctx || {};
-    const d0 = { name: cleanName((c && c.name) || (t.name && t.name !== 'You' ? t.name : '') || ctx.name || ''), gender: (c && c.gender) || '', state: (c && STATES[c.state] && c.state) || guessState(), color: c && Number.isInteger(c.color) && c.color < 8 ? c.color : Number.isInteger(t.color) && t.color < 8 ? t.color : 5 };
+    const pro = isPro();
+    const d0 = { name: cleanName((c && c.name) || (t.name && t.name !== 'You' ? t.name : '') || ctx.name || ''), gender: (c && c.gender) || '', state: (c && STATES[c.state] && c.state) || guessState(), color: c && Number.isInteger(c.color) && c.color < 8 ? c.color : Number.isInteger(t.color) && t.color < 8 ? t.color : 5,
+      skin: c && c.skin >= 0 ? c.skin : 1, hair: c && c.hair >= 0 ? c.hair : 0, outfit: c && c.outfit >= 0 && (c.outfit !== 5 || pro) ? c.outfit : (pro ? 5 : 0) };
     const d = { ...d0 };
     const w = document.createElement('div'); w.className = 'mgp'; w.setAttribute('role', 'dialog'); w.setAttribute('aria-modal', 'true'); w.setAttribute('aria-labelledby', 'mgpT');
     w.innerHTML = `<form class="mgp-c" novalidate>${opts.first ? '' : '<button type="button" class="mgp-x" aria-label="Close">✕</button>'}
-      <div class="mgp-hd"><div class="mgp-av"></div><div><div class="mgp-k">${opts.first ? 'ONE QUICK STEP' : 'YOUR PROFILE'}</div><h2 id="mgpT">${opts.first ? 'Set up your seat' : 'Edit your seat'}<em>${opts.first ? 'Asked once. NationLap uses it too.' : 'Changes show in NationLap too.'}</em></h2></div></div>
+      <div class="mgp-hd"><div class="mgp-k">${opts.first ? 'ONE QUICK STEP' : 'YOUR PROFILE'}</div><h2 id="mgpT">${opts.first ? 'Set up your seat' : 'Edit your seat'}<em>${opts.first ? 'Asked once. NationLap uses it too.' : 'Changes show in NationLap too.'}</em></h2></div>
+      <div class="mgp-stage" aria-hidden="true"><canvas></canvas><div class="mgp-av"></div></div>
       <label class="mgp-f"><span class="mgp-l">NAME</span><input name="n" maxlength="20" autocomplete="nickname" spellcheck="false" placeholder="Your name"></label>
       <div class="mgp-f"><div class="mgp-l">I AM</div><div class="mgp-seg" role="radiogroup" aria-label="Gender"><button type="button" role="radio" data-g="m">Male</button><button type="button" role="radio" data-g="f">Female</button><button type="button" role="radio" data-g="n">Prefer not to say</button></div></div>
+      <div class="mgp-f"><div class="mgp-l">OUTFIT</div><div class="mgp-of" role="radiogroup" aria-label="Outfit">${OUTFITS.map(([n, svg], i) => `<button type="button" role="radio" data-o="${i}"${i === 5 && !pro ? ' class="lk" aria-disabled="true"' : ''}>${svg}<span>${n}</span>${i === 5 && !pro ? '<b class="mgp-lock">PRO</b>' : ''}</button>`).join('')}</div><div class="mgp-hint" hidden>The Pro look comes with mindgains Pro.</div></div>
+      <div class="mgp-f mgp-row"><div class="mgp-l">SKIN</div><div class="mgp-dots mgp-sk" role="radiogroup" aria-label="Skin tone">${SKINS.map((h, i) => `<button type="button" role="radio" aria-label="Skin tone ${i + 1}" data-s="${i}" style="background:${h}"></button>`).join('')}</div></div>
+      <div class="mgp-f mgp-row"><div class="mgp-l">HAIR</div><div class="mgp-chips" role="radiogroup" aria-label="Hairstyle"></div></div>
+      <div class="mgp-f mgp-row"><div class="mgp-l">COLOUR</div><div class="mgp-dots mgp-cl" role="radiogroup" aria-label="Colour">${COLORS.map((h, i) => `<button type="button" role="radio" aria-label="Colour ${i + 1}" data-c="${i}" style="background:${h}"></button>`).join('')}</div></div>
       <label class="mgp-f"><span class="mgp-l">STATE / UT</span><select name="s"><option value="">Choose your state</option>${Object.entries(STATES).sort((a, b) => a[1].localeCompare(b[1])).map(([k, v]) => `<option value="${k}">${v}</option>`).join('')}</select></label>
-      <div class="mgp-f"><div class="mgp-l">COLOUR <i>optional</i></div><div class="mgp-dots" role="radiogroup" aria-label="Colour">${COLORS.map((h, i) => `<button type="button" role="radio" aria-label="Colour ${i + 1}" data-c="${i}" style="background:${h}"></button>`).join('')}</div></div>
       <button type="submit" class="mgp-go">${opts.first ? 'Take my seat' : 'Save'}</button>
-      <p class="mgp-pv">We save only your name, gender, state and colour, for your character and state rank.</p></form>`;
+      <p class="mgp-pv">We save only your name, gender, state and look, for your character and state rank.</p></form>`;
     document.body.appendChild(w);
-    const $ = (q) => w.querySelector(q), $$ = (q) => [...w.querySelectorAll(q)], av = $('.mgp-av'), go = $('.mgp-go'), inp = $('input'), sel = $('select');
+    const $ = (q) => w.querySelector(q), $$ = (q) => [...w.querySelectorAll(q)], av = $('.mgp-av'), go = $('.mgp-go'), inp = $('input'), sel = $('select'), chips = $('.mgp-chips'), stage = $('.mgp-stage');
     inp.value = d.name; sel.value = d.state;
+    // live 3D preview (the theatre provides it); the drawn avatar is the fallback
+    let pv = null; try { if (window.__mgpPreview) pv = window.__mgpPreview($('.mgp-stage canvas')); } catch (e) { pv = null; }
+    stage.classList.toggle('gl', !!pv);
+    const look = () => [Number.isInteger(t.avatar) ? t.avatar : 0, d.color, G3[d.gender] || 3, styleCode(d)];
     const paint = (pop) => {
-      av.innerHTML = avSvg(d.gender || 'x', COLORS[d.color] || COLORS[5]); if (pop) { av.classList.remove('pop'); void av.offsetWidth; av.classList.add('pop'); }
+      if (pv) pv.set(look(), pro && d.outfit === 5, pop); else { av.innerHTML = avSvg(d.gender || 'x', COLORS[d.color] || COLORS[5]); if (pop) { av.classList.remove('pop'); void av.offsetWidth; av.classList.add('pop'); } }
+      const hn = HAIRS[d.gender] || HAIRS.x;
+      if (chips.dataset.g !== (d.gender || 'x')) { chips.dataset.g = d.gender || 'x'; chips.innerHTML = hn.map((n, i) => `<button type="button" role="radio" data-h="${i}">${n}</button>`).join(''); chips.querySelectorAll('button').forEach((b) => b.addEventListener('click', () => { d.hair = +b.dataset.h; paint(true); })); }
       $$('.mgp-seg button').forEach((b) => { const on = b.dataset.g === d.gender; b.classList.toggle('on', on); b.setAttribute('aria-checked', on); });
-      $$('.mgp-dots button').forEach((b) => { const on = +b.dataset.c === d.color; b.classList.toggle('on', on); b.setAttribute('aria-checked', on); });
+      $$('.mgp-cl button').forEach((b) => { const on = +b.dataset.c === d.color; b.classList.toggle('on', on); b.setAttribute('aria-checked', on); });
+      $$('.mgp-sk button').forEach((b) => { const on = +b.dataset.s === d.skin; b.classList.toggle('on', on); b.setAttribute('aria-checked', on); });
+      $$('.mgp-chips button').forEach((b) => { const on = +b.dataset.h === d.hair; b.classList.toggle('on', on); b.setAttribute('aria-checked', on); });
+      $$('.mgp-of button').forEach((b) => { const on = +b.dataset.o === d.outfit; b.classList.toggle('on', on); b.setAttribute('aria-checked', on); });
       go.setAttribute('aria-disabled', String(!(cleanName(inp.value) && d.gender)));
     };
     paint(false);
     inp.addEventListener('input', () => paint(false));
     sel.addEventListener('change', () => { d.state = sel.value; });
     $$('.mgp-seg button').forEach((b) => b.addEventListener('click', () => { d.gender = b.dataset.g; paint(true); }));
-    $$('.mgp-dots button').forEach((b) => b.addEventListener('click', () => { d.color = +b.dataset.c; paint(true); }));
-    const close = (cb) => { w.classList.add('out'); setTimeout(() => { w.remove(); S.open = false; cb && cb(); }, 330); };
+    $$('.mgp-cl button').forEach((b) => b.addEventListener('click', () => { d.color = +b.dataset.c; paint(true); }));
+    $$('.mgp-sk button').forEach((b) => b.addEventListener('click', () => { d.skin = +b.dataset.s; paint(true); }));
+    $$('.mgp-of button').forEach((b) => b.addEventListener('click', () => {
+      if (b.classList.contains('lk')) { const hnt = $('.mgp-hint'); hnt.hidden = false; b.classList.remove('shake'); void b.offsetWidth; b.classList.add('shake'); return; }
+      d.outfit = +b.dataset.o; paint(true); b.scrollIntoView && b.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'smooth' }); }));
+    const close = (cb) => { w.classList.add('out'); setTimeout(() => { try { pv && pv.dispose(); } catch (e) {} w.remove(); S.open = false; cb && cb(); }, 330); };
     if ($('.mgp-x')) $('.mgp-x').onclick = () => close();
     w.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !opts.first) close(); });
     const shake = (el) => { el.classList.remove('shake'); void el.offsetWidth; el.classList.add('shake'); };
@@ -526,13 +585,13 @@ body.quizon:not(.room) .chat{visibility:hidden!important}@media (max-width:760px
       go.disabled = true; go.classList.add('ok'); go.innerHTML = '<svg class="ck" viewBox="0 0 24 24" fill="none" stroke="#1a1206" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>' + (opts.first ? 'Seat ready' : 'Saved');
       const b = document.createElement('div'); b.className = 'mgp-burst'; b.innerHTML = Array.from({ length: 10 }, (_, i) => { const a = i / 10 * Math.PI * 2, r = 60 + (i % 3) * 14; return `<i style="--x:${Math.cos(a) * r}px;--y:${Math.sin(a) * r}px;background:${i % 2 ? '#ffe2a0' : COLORS[d.color]}"></i>`; }).join(''); go.appendChild(b);
       await save(d);
-      setTimeout(() => close(), 650);
+      setTimeout(() => close(opts.first ? () => { try { dispatchEvent(new CustomEvent('mgp:first-done')); } catch (e) {} } : null), 650);
     });
-    if (opts.first) setTimeout(() => { try { if (!inp.value) inp.focus(); } catch (e) {} }, 420);
+    if (opts.first) setTimeout(() => { try { if (!inp.value && matchMedia('(hover: hover)').matches) inp.focus(); } catch (e) {} }, 420);
   }
   async function save(d) {
     const ctx = S.ctx || {}, uid = ctx.u && ctx.u.id;
-    const t = nl() || {}, p = { name: d.name, gender: d.gender, state: d.state || '', color: d.color, avatar: Number.isInteger(t.avatar) ? t.avatar : 0 };
+    const t = nl() || {}, p = { name: d.name, gender: d.gender, state: d.state || '', color: d.color, avatar: Number.isInteger(t.avatar) ? t.avatar : 0, skin: d.skin, hair: d.hair, outfit: d.outfit };
     let c = writeLocal(p, uid, false);
     try { const r = await api('POST', ctx.token, p); if (r && r.profile) c = writeLocal({ ...r.profile, avatar: p.avatar }, uid, true); } catch (e) {}
     apply(c, true);
@@ -561,7 +620,7 @@ body.quizon:not(.room) .chat{visibility:hidden!important}@media (max-width:760px
     let r = null; try { r = await api('GET', ctx.token); } catch (e) { r = null; }
     const sp = r && r.profile;
     if (sp && G3[sp.gender]) {
-      const same = complete(c) && c.name === sp.name && c.gender === sp.gender && c.state === sp.state && c.color === sp.color;
+      const same = complete(c) && c.name === sp.name && c.gender === sp.gender && c.state === sp.state && c.color === sp.color && !(sp.skin >= 0 && (sp.skin !== c.skin || sp.hair !== c.hair || sp.outfit !== c.outfit));
       const nc = writeLocal({ ...sp, avatar: c && c.avatar }, uid, true);
       if (!same) apply(nc, true);
     } else if (complete(c)) {
@@ -589,7 +648,7 @@ body.quizon:not(.room) .chat{visibility:hidden!important}@media (max-width:760px
   // after NationLap's racer screen is saved: keep the account copy in step (gender stays as it was)
   async function pushLocal() {
     const t = nl() || {}, c = cache() || {};
-    const p = { name: cleanName(t.name && t.name !== 'You' ? (c.name && c.name.slice(0, 12) === t.name ? c.name : t.name) : c.name || ''), gender: c.gender || '', state: ls.get('nl_state') || c.state || '', color: Number.isInteger(t.color) ? t.color : c.color, avatar: t.avatar };
+    const p = { name: cleanName(t.name && t.name !== 'You' ? (c.name && c.name.slice(0, 12) === t.name ? c.name : t.name) : c.name || ''), gender: c.gender || '', state: ls.get('nl_state') || c.state || '', color: Number.isInteger(t.color) ? t.color : c.color, avatar: t.avatar, skin: c.skin, hair: c.hair, outfit: c.outfit };
     const a = await nlAccount();
     writeLocal(p, (a && a.uid) || c.uid, false);
     if (!a || !G3[p.gender] || !p.name) return false;
@@ -598,10 +657,25 @@ body.quizon:not(.room) .chat{visibility:hidden!important}@media (max-width:760px
   }
   const g = () => { const c = cache(); return c && G3[c.gender] ? G3[c.gender] : 0; };
   const name = () => { const c = cache(); return c && c.name ? c.name : ''; };
-  window.MGP = { onSignedIn, open, g, name, get: cache, hydrate, pushLocal, STATES, _writeLocal: writeLocal, _S: S };
+  const style = () => { const c = cache(); return c ? view(c).style : 0; };
+  window.MGP = { onSignedIn, open, g, name, style, get: cache, hydrate, pushLocal, STATES, _writeLocal: writeLocal, _S: S };
 })();
 </script>
 <meta name="mg-hooks" content="theatre-hooks-20261121">
+<style id="th-tour">/* theatre-cinematic-20261121: first-entry hall tour. Letterbox + one small skip hint; transform/opacity only */
+body.tour .top,body.tour .halls,body.tour .tip,body.tour .angles,body.tour .sheet,body.tour .top5,body.tour .seatcard,body.tour .chat,body.tour .mob,body.tour .qsoon,body.tour .marq,body.tour .rpause,body.tour .skip,body.tour .fpill{display:none!important}
+body.tour-out .top,body.tour-out .halls,body.tour-out .angles,body.tour-out .sheet,body.tour-out .chat,body.tour-out .mob,body.tour-out .fpill{animation:tourIn .6s cubic-bezier(.2,.7,.2,1) both}
+@keyframes tourIn{from{opacity:0}to{opacity:1}}
+.tour{position:fixed;inset:0;z-index:8;pointer-events:none}
+.tour .tb{position:absolute;left:0;right:0;height:7vh;max-height:64px;background:#000;transition:transform .7s cubic-bezier(.65,0,.35,1)}
+.tour .tb.t{top:0;transform:translateY(-101%)}.tour .tb.b{bottom:0;transform:translateY(101%)}
+.tour.on .tb{transform:none}
+.tour .tk{position:absolute;left:50%;bottom:calc(min(7vh,64px) + 14px);transform:translate(-50%,6px);opacity:0;font:600 11px/1 Inter,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(243,212,138,.78);transition:opacity .5s .9s,transform .5s .9s}
+.tour.on .tk{opacity:1;transform:translate(-50%,0)}
+.tour-fade{position:fixed;inset:0;z-index:9;background:#07040a;opacity:0;pointer-events:none;transition:opacity .25s}
+.tour-fade.in{opacity:1}
+@media (prefers-reduced-motion:reduce){.tour .tb,.tour .tk{transition:none}}
+</style>
 </head>
 <body>
 <canvas id="gl"></canvas><div id="css"></div>
@@ -1085,109 +1159,194 @@ function showWall(kind) {
 }
 function hideWall() { window.__walled = false; const w = document.getElementById('wall'); if (w) w.remove(); if (ROOM && RM.play) applyPlay(RM.play, true); }
 setInterval(() => { if ((ROOM || !PRO) && !window.__walled && document.visibilityState === 'visible' && !document.body.classList.contains('intro')) live.send({ t: 'tick' }); }, 30000);
-const MYLOOK = (() => { const g = (window.MGP && MGP.g()) | 0; try { const p = loadProfile(); return [p.avatar | 0, p.color | 0, g]; } catch (e) { return [0, 5, g]; } })();
+const MYLOOK = (() => { const g = (window.MGP && MGP.g()) | 0, st = (window.MGP && MGP.style && MGP.style()) | 0; try { const p = loadProfile(); return [p.avatar | 0, p.color | 0, g, st]; } catch (e) { return [0, 5, g, st]; } })();
 const lookCache = new Map(), occ = new Map();   // seat key -> seated racer
 const GOLD = new THREE.MeshStandardMaterial({ color: 0xe8b84a, metalness: .55, roughness: .3, emissive: 0x3a2600, emissiveIntensity: .5 });
 // ---- theatre-hooks-20261121: seated student (replaces the kart-driver clone). Man / woman / neutral variants on one rig (look[2] = profile gender). One rig, 7 meshes, vertex colours,
 // one shared material (two for Pro), geometry cached per look: a full hall stays a few hundred draw calls.
 // Faces +z in its own space (the seat turns it to the screen), origin = where the hips meet the cushion.
 const SEATED = (() => {
-  const HAIR = [0x2b1a10, 0x3b2414, 0x1a1210, 0x4a2c18, 0x5a3a20, 0x24170f];
+  // ---- theatre-cinematic-20261121: looks. Natural Indian skin tones (fair to deep; the ambient audience is weighted fair-wheatish, ~12% deep),
+  // hairstyles per gender and six outfits (Casual, Topper, Swag, Sporty, Traditional, Pro). No cheek blush.
+  // look = [face, colour, gender, style]; style = 1 + skin + 6*hair + 36*outfit (0 / missing = picked from the seat's hash, so old 3-value looks still work)
+  const SKIN = [0xffe2c8, 0xf8d0ac, 0xefbf96, 0xe0a97c, 0xc68b60, 0x9b6744];
+  const SKIN_W = [15, 24, 27, 22, 8, 4];
+  const OUTFITS = ['casual', 'topper', 'swag', 'sporty', 'traditional', 'pro'];
+  const HAIRS = { m: ['Crop', 'Side part', 'Curly', 'Quiff'], f: ['Ponytail', 'Bun', 'Bob', 'Open'], n: ['Neat', 'Bob', 'Curly', 'Crop'] };
+  const HAIR = [0x2b1a10, 0x3b2414, 0x1a1210, 0x4a2c18, 0x24170f];
   const PANTS = [0x2b3346, 0x30384d, 0x3a3328, 0x262b33, 0x34405a];
   const C = new THREE.Color();
   const mats = new Map();
-  const mat = (pro) => { const k = pro ? 'p' : 'n'; if (!mats.has(k)) mats.set(k, new THREE.MeshStandardMaterial({ vertexColors: true, roughness: pro ? .32 : .58, metalness: pro ? .38 : .02 })); return mats.get(k); };
+  const mat = (pro) => { const k = pro ? 'p' : 'n'; if (!mats.has(k)) mats.set(k, new THREE.MeshStandardMaterial({ vertexColors: true, roughness: pro ? .42 : .6, metalness: pro ? .1 : .02 })); return mats.get(k); };
   // non-indexed copy with a baked colour, transformed in place
   function part(geo, color, m) { const g = geo.index ? geo.toNonIndexed() : geo.clone(); g.deleteAttribute('uv'); if (m) g.applyMatrix4(m);
-    const n = g.attributes.position.count, col = new Float32Array(n * 3); C.set(color); C.convertSRGBToLinear && 0; for (let i = 0; i < n; i++) { col[i * 3] = C.r; col[i * 3 + 1] = C.g; col[i * 3 + 2] = C.b; }
+    const n = g.attributes.position.count, col = new Float32Array(n * 3); C.set(color); for (let i = 0; i < n; i++) { col[i * 3] = C.r; col[i * 3 + 1] = C.g; col[i * 3 + 2] = C.b; }
     g.setAttribute('color', new THREE.BufferAttribute(col, 3)); return g; }
   function merge(list) { let n = 0; for (const g of list) n += g.attributes.position.count;
     const P = new Float32Array(n * 3), N = new Float32Array(n * 3), K = new Float32Array(n * 3); let o = 0;
     for (const g of list) { P.set(g.attributes.position.array, o * 3); N.set(g.attributes.normal.array, o * 3); K.set(g.attributes.color.array, o * 3); o += g.attributes.position.count; g.dispose(); }
     const out = new THREE.BufferGeometry(); out.setAttribute('position', new THREE.BufferAttribute(P, 3)); out.setAttribute('normal', new THREE.BufferAttribute(N, 3)); out.setAttribute('color', new THREE.BufferAttribute(K, 3)); out.computeBoundingSphere(); return out; }
   const M4 = (p = [0, 0, 0], r = [0, 0, 0], s = [1, 1, 1]) => new THREE.Matrix4().compose(new THREE.Vector3(...p), new THREE.Quaternion().setFromEuler(new THREE.Euler(...r)), new THREE.Vector3(...s));
-  // capsule between two points
-  function limb(a, b, r, color) { const A = new THREE.Vector3(...a), B = new THREE.Vector3(...b), d = B.clone().sub(A), L = d.length();
-    const g = new THREE.CapsuleGeometry(r, Math.max(.001, L), 4, 10); const q = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 1, 0), d.normalize());
+  // capsule between two points (sx/sz flatten it, e.g. a sash)
+  function limb(a, b, r, color, flat) { const A = new THREE.Vector3(...a), B = new THREE.Vector3(...b), d = B.clone().sub(A), L = d.length();
+    const g = new THREE.CapsuleGeometry(r, Math.max(.001, L), 4, 10); if (flat) g.scale(1, 1, flat); const q = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 1, 0), d.normalize());
     return part(g, color, new THREE.Matrix4().compose(A.clone().add(B).multiplyScalar(.5), q, new THREE.Vector3(1, 1, 1))); }
   const shade = (hex, k) => { const c = new THREE.Color(hex); c.multiplyScalar(k); return c.getHex(); };
-  const RB = (w, h, d, r) => new THREE.BoxGeometry(w, h, d, 1, 1, 1);
+  const lighten = (hex, k) => { const c = new THREE.Color(hex); c.lerp(new THREE.Color(0xffffff), k); return c.getHex(); };
   const cache = new Map();
   // variant: look[2] is the profile gender (1 man, 2 woman, 3 prefer not to say); older 2-value looks fall back to the face (bow = woman)
   const vOf = (ch, look) => { const g = (look && look[2]) | 0; return g === 2 ? 'f' : g === 1 ? 'm' : g === 3 ? 'n' : ch.hat === 'bow' ? 'f' : 'm'; };
-  const lighten = (hex, k) => { const c = new THREE.Color(hex); c.lerp(new THREE.Color(0xffffff), k); return c.getHex(); };
+  const enc = (s) => 1 + (s.skin | 0) + 6 * (s.hair | 0) + 36 * (s.outfit | 0);
+  // a stable random look from any number (ambient audience, old clients): weighted skin, any hairstyle, outfits 0-4 (Pro is never handed out)
+  function randStyle(n) { let h = (n >>> 0) * 2654435761 >>> 0; h ^= h >>> 15; const r = h % 100; let skin = 0, acc = 0; for (let i = 0; i < SKIN_W.length; i++) { acc += SKIN_W[i]; if (r < acc) { skin = i; break; } }
+    return { skin, hair: (h >>> 8) % 4, outfit: (h >>> 12) % 5 }; }
+  function styleOf(look) { const s = (look && look[3]) | 0;
+    if (s > 0 && s <= 216) { const x = s - 1; return { skin: x % 6, hair: Math.floor(x / 6) % 6 % 4, outfit: Math.floor(x / 36) % 6, set: true }; }
+    return randStyle(((look && look[0]) | 0) * 7 + ((look && look[1]) | 0) * 13 + 101); }
   function geos(ch, look, pro) {
-    const v = vOf(ch, look);
-    const key = [ch.skin, ch.color, ch.accent, look[0], look[1], v, pro ? 1 : 0].join('-'); if (cache.has(key)) return cache.get(key);
-    const h = (look[0] * 7 + look[1] * 13) >>> 0, F = v === 'f';
-    const skin = ch.skin, top = pro ? 0xe0ac3c : ch.color, trim = pro ? 0x1a1206 : (ch.accent === 0xffffff ? shade(ch.color, .62) : ch.accent);
-    const hair = HAIR[h % HAIR.length], pants = PANTS[(h >>> 2) % PANTS.length], shoe = 0xf2efe8, sole = 0x3b3944;
-    const G = { v, shx: F ? .184 : .2 };
-    // legs: pelvis, thighs forward, shins down, sneakers (static, one mesh)
+    const v = vOf(ch, look), st = styleOf(look);
+    let O = OUTFITS[st.outfit] || 'casual'; if (O === 'pro' && !pro) O = 'casual'; if (pro && !st.set) O = 'pro';
+    const key = [ch.color, ch.accent, look[0], look[1], v, st.skin, st.hair, O, pro ? 1 : 0].join('-'); if (cache.has(key)) return cache.get(key);
+    const h = (look[0] * 7 + look[1] * 13) >>> 0, F = v === 'f', N = v === 'n';
+    const skin = SKIN[st.skin] || SKIN[2], base = ch.color, gold = 0xe0ac3c, ink = 0x1c1a24;
+    const trim0 = pro ? gold : (ch.accent === 0xffffff ? shade(base, .62) : ch.accent);
+    const hair = HAIR[h % HAIR.length];
+    // outfit palette: top (torso), sleeve (upper / lower), pants, shoes
+    let top = base, slU = base, slL = base, cuff = trim0, pants = PANTS[(h >>> 2) % PANTS.length], shoe = 0xf2efe8, sole = 0x3b3944, shortSleeve = false;
+    const saree = O === 'traditional' && F;
+    if (O === 'casual') { shortSleeve = true; pants = [0x3b5a8a, 0x2f4a75, 0x4a4f5c][h % 3]; }
+    if (O === 'topper') { top = (h & 1) ? 0xdfe9f7 : 0xf4f5f8; slU = slL = top; cuff = top; pants = [0x4a4f5c, 0x6b5f4a, 0x2b3346][h % 3]; shoe = 0x3a2a20; sole = 0x1e1612; }
+    if (O === 'swag') { pants = 0x23252b; cuff = shade(base, .7); }
+    if (O === 'sporty') { shortSleeve = true; pants = 0x262b3a; shoe = 0xffffff; }
+    if (O === 'traditional') { top = saree ? shade(base, .78) : [0xf3e6c8, lighten(base, .55), 0xfaf6ee][h % 3]; slU = slL = top; cuff = saree ? gold : shade(top, .86); pants = saree ? lighten(base, .12) : 0xf2efe6; shoe = 0xb78a54; sole = 0x5a3a20; shortSleeve = saree; }
+    if (O === 'pro') { top = gold; slU = slL = gold; cuff = 0x1a1206; }
+    if (pro && O !== 'pro') cuff = gold;
+    const G = { v, O, shx: F ? .184 : .2 };
+    // legs: pelvis, thighs forward, shins down, shoes (static, one mesh)
     const L = [part(new THREE.SphereGeometry(.17, 12, 8), pants, M4([0, .04, -.01], [0, 0, 0], [F ? 1.04 : 1.08, .55, .9]))];
     const lw = F ? .94 : 1;
     for (const s of [-1, 1]) {
       L.push(limb([s * .095, .05, 0], [s * .1, .065, .43], .082 * lw, pants), limb([s * .1, .065, .43], [s * .105, -.34, .47], .071 * lw, pants), part(new THREE.SphereGeometry(.08 * lw, 10, 8), pants, M4([s * .1, .062, .435])));
       L.push(part(new THREE.SphereGeometry(.072 * lw, 12, 8), shoe, M4([s * .105, -.385, .53], [0, 0, 0], [1, .72, 1.6])), part(new THREE.SphereGeometry(.075 * lw, 12, 6), sole, M4([s * .105, -.418, .53], [0, 0, 0], [1.02, .22, 1.63])));
+      if (O === 'sporty') L.push(limb([s * .178, .07, .05], [s * .185, .08, .4], .012, 0xffffff), limb([s * .178, .06, .44], [s * .177, -.3, .48], .011, 0xffffff));   // track-pant stripe
     }
+    if (saree) {   // saree pleats falling from the lap to the feet, with a gold border
+      L.push(part(new THREE.BoxGeometry(.36, .07, .4), pants, M4([0, .1, .23], [0, 0, 0])));
+      L.push(part(new THREE.BoxGeometry(.34, .44, .05), pants, M4([0, -.14, .535], [-.06, 0, 0])), part(new THREE.BoxGeometry(.345, .035, .055), gold, M4([0, -.35, .548], [-.06, 0, 0])));
+      for (const x of [-.1, -.035, .035, .1]) L.push(part(new THREE.BoxGeometry(.008, .4, .012), shade(pants, .8), M4([x, -.13, .563], [-.06, 0, 0])));
+    }
+    if (O === 'traditional' && !F) L.push(part(new THREE.BoxGeometry(.37, .045, .3), top, M4([0, .13, .16])));   // kurta falling over the lap
     G.legs = merge(L);
-    // torso: tapered hoodie (lathe), zip trim, hood roll (or a soft dupatta), neck. Women: a little narrower through the shoulders.
+    // torso: tapered lathe; then the outfit's own pieces. Women: a little narrower through the shoulders.
     const prof = (F ? [[0, 0], [.148, 0], [.16, .06], [.158, .18], [.17, .3], [.156, .37], [.1, .42], [0, .43]] : [[0, 0], [.15, 0], [.165, .06], [.17, .18], [.185, .3], [.17, .37], [.11, .42], [0, .43]]).map(([x, y]) => new THREE.Vector2(x, y));
-    const dupatta = F && ((h >>> 3) % 3 === 0), dup = lighten(ch.accent === 0xffffff ? 0xf2b8c6 : ch.accent, .35);
-    const T = [part(new THREE.LatheGeometry(prof, 14), top, M4([0, 0, 0], [0, 0, 0], [1, 1, .74])),
-      part(new THREE.BoxGeometry(.018, .3, .012), trim, M4([0, .2, (F ? .121 : .131)])),
-      part(new THREE.CylinderGeometry(F ? .047 : .052, F ? .053 : .058, .09, 10), skin, M4([0, .45, .005]))];
-    if (dupatta) {
-      T.push(part(new THREE.TorusGeometry(.095, .03, 6, 16), dup, M4([0, .415, -.005], [Math.PI / 2 - .2, 0, 0], [1.05, 1, .9])));
-      for (const s of [-1, 1]) T.push(limb([s * .055, .4, .085], [s * .075, .2, .128], .026, dup), part(new THREE.SphereGeometry(.03, 8, 6), dup, M4([s * .076, .19, .129], [0, 0, 0], [1, .5, .7])));
-    } else T.push(part(new THREE.TorusGeometry(F ? .098 : .105, .035, 6, 14), shade(top, .82), M4([0, .405, -.01], [Math.PI / 2 - .25, 0, 0], [1, 1, .9])));
+    const T = [part(new THREE.LatheGeometry(prof, 16), top, M4([0, 0, 0], [0, 0, 0], [1, 1, .74])), part(new THREE.CylinderGeometry(F ? .047 : .052, F ? .053 : .058, .09, 10), skin, M4([0, .45, .005]))];
+    const front = F ? .121 : .131;
+    if (O === 'casual') T.push(part(new THREE.TorusGeometry(F ? .06 : .066, .012, 6, 16), shade(top, .8), M4([0, .418, .012], [Math.PI / 2 - .25, 0, 0], [1, 1.15, 1])));
+    if (O === 'topper') {   // shirt + knitted sweater vest (V neck), collar points, a slim tie
+      const vest = [0x2b3a5c, 0x6b1f2e, 0x2f4a3a, shade(base, .7)][h % 4];
+      const vp = (F ? [[0, -.005], [.152, -.005], [.165, .06], [.163, .18], [.174, .29], [.15, .34], [0, .345]] : [[0, -.005], [.155, -.005], [.17, .06], [.175, .18], [.19, .29], [.165, .34], [0, .345]]).map(([x, y]) => new THREE.Vector2(x, y));
+      T.push(part(new THREE.LatheGeometry(vp, 16), vest, M4([0, 0, 0], [0, 0, 0], [1, 1, .76])));
+      for (const s of [-1, 1]) T.push(part(new THREE.BoxGeometry(.05, .012, .045), top, M4([s * .032, .425, .055], [.5, s * .5, s * .4])), limb([s * .002, .335, front + .002], [s * .06, .41, .07], .009, top));
+      T.push(part(new THREE.BoxGeometry(.026, .12, .01), [0x6b1f2e, 0x2b3a5c, 0x1f4a3a][h % 3], M4([0, .335, front + .012], [-.1, 0, 0])));
+    }
+    if (O === 'swag' || O === 'pro') {   // hoodie: zip, hood roll, kangaroo pocket; swag adds a chain
+      T.push(part(new THREE.BoxGeometry(.018, .3, .012), O === 'pro' ? 0x1a1206 : trim0, M4([0, .2, front])));
+      T.push(part(new THREE.TorusGeometry(F ? .098 : .105, .035, 6, 14), shade(top, .82), M4([0, .405, -.01], [Math.PI / 2 - .25, 0, 0], [1, 1, .9])));
+      T.push(part(new THREE.BoxGeometry(F ? .2 : .22, .085, .02), shade(top, .88), M4([0, .1, front - .004], [-.08, 0, 0])));
+      if (O === 'swag') { T.push(part(new THREE.TorusGeometry(.075, .007, 6, 22, Math.PI), 0xf0c75a, M4([0, .39, front - .01], [-.25, 0, Math.PI]))); T.push(part(new THREE.SphereGeometry(.018, 8, 6), 0xf0c75a, M4([0, .31, front + .012]))); }
+      if (O === 'swag' && v !== 'm') {   // headphones resting round the neck
+        T.push(part(new THREE.TorusGeometry(.085, .014, 6, 20, Math.PI), ink, M4([0, .43, .02], [Math.PI / 2, 0, 0])));
+        for (const s of [-1, 1]) T.push(part(new THREE.CylinderGeometry(.04, .04, .035, 14), cuff, M4([s * .085, .42, .05], [0, 0, Math.PI / 2])));
+      }
+    }
+    if (O === 'sporty') {   // jersey: white V collar, chest band, a number
+      for (const s of [-1, 1]) T.push(limb([s * .06, .41, .07], [0, .34, front + .003], .011, 0xffffff));
+      T.push(part(new THREE.CylinderGeometry(.188, .182, .04, 18, 1, true), 0xffffff, M4([0, .24, 0], [0, 0, 0], [1, 1, .76])));
+      T.push(part(new THREE.BoxGeometry(.055, .065, .008), 0xffffff, M4([0, .16, front + .002])));
+    }
+    if (O === 'traditional' && !F) {   // kurta: mandarin collar, placket with buttons
+      T.push(part(new THREE.CylinderGeometry(.064, .066, .04, 14, 1, true), shade(top, .9), M4([0, .432, .005])));
+      T.push(part(new THREE.BoxGeometry(.03, .2, .01), shade(top, .86), M4([0, .32, front])));
+      for (const y of [.39, .34, .29]) T.push(part(new THREE.SphereGeometry(.008, 6, 4), gold, M4([0, y, front + .008])));
+    }
+    if (saree) {   // blouse + the pallu over the left shoulder (kept close to the back)
+      const pallu = lighten(base, .12);
+      T.push(limb([.12, .03, .152], [-.095, .385, .128], .052, pallu, .3), limb([-.095, .385, .128], [-.14, .43, .01], .046, pallu, .45), limb([-.14, .43, .01], [-.15, .36, -.105], .042, pallu, .45));
+      T.push(limb([.16, .045, .168], [-.06, .405, .142], .007, gold));
+    }
     G.torso = merge(T);
-    // head: rounded face, ears, eyes with highlights, small nose + smile, then hair per variant
-    const H = [part(new THREE.SphereGeometry(.165, 16, 12), skin, M4([0, .14, 0], [0, 0, 0], F ? [.97, 1.04, .95] : [1, 1.04, .96]))];
+    // head: rounded face, ears, eyes with highlights, small nose + smile (no blush), then hair per variant + outfit headwear
+    const H = [part(new THREE.SphereGeometry(.165, 18, 14), skin, M4([0, .14, 0], [0, 0, 0], F ? [.97, 1.04, .95] : [1, 1.04, .96]))];
     for (const s of [-1, 1]) {
       H.push(part(new THREE.SphereGeometry(.034, 8, 6), shade(skin, .93), M4([s * (F ? .158 : .163), .13, -.005], [0, 0, 0], [.6, 1, 1])));
-      H.push(part(new THREE.SphereGeometry(.028, 12, 9), 0x1c1a24, M4([s * .06, .15, .147], [0, 0, 0], [1, 1.28, .6])), part(new THREE.SphereGeometry(.03, 10, 6), 0xff8f8f, M4([s * .1, .1, .128], [0, s * .5, 0], [1, .55, .3])));
+      H.push(part(new THREE.SphereGeometry(.028, 12, 9), ink, M4([s * .06, .15, .147], [0, 0, 0], [1, 1.28, .6])));
       H.push(part(new THREE.SphereGeometry(.009, 6, 4), 0xffffff, M4([s * .06 + .009, .166, .163])));
       H.push(part(new THREE.BoxGeometry(F ? .04 : .045, F ? .008 : .011, .01), hair, M4([s * .058, .197, .152], [0, 0, s * (F ? -.2 : -.12)])));
-      if (F) H.push(part(new THREE.BoxGeometry(.016, .005, .006), 0x1c1a24, M4([s * .083, .176, .146], [0, 0, s * .55])));
+      if (F) H.push(part(new THREE.BoxGeometry(.016, .005, .006), ink, M4([s * .083, .176, .146], [0, 0, s * .55])));
     }
     H.push(part(new THREE.SphereGeometry(.02, 8, 6), shade(skin, .9), M4([0, .115, .16], [0, 0, 0], F ? [.85, .75, .9] : [1, .8, 1])));
     H.push(part(new THREE.TorusGeometry(.03, .007, 4, 10, Math.PI), 0x7a3b30, M4([0, .085, .152], [0, 0, Math.PI])));
-    if (v === 'f') {
-      // long hair: full crown, volume behind the head to the nape, side locks framing the face, a soft side fringe,
-      // then a ponytail or a bun with a tie in the accent colour
-      const tie = pro ? 0x1a1206 : (ch.accent === 0xffffff ? shade(ch.color, .9) : ch.accent);
+    if (F && O === 'traditional') H.push(part(new THREE.SphereGeometry(.009, 6, 4), 0xb3202f, M4([0, .205, .158])));   // bindi
+    const crown = (r = .172, open = .52, tilt = -.22) => part(new THREE.SphereGeometry(r, 16, 10, 0, Math.PI * 2, 0, Math.PI * open), hair, M4([0, .15, -.012], [tilt, 0, 0], [1.02, 1, 1]));
+    const curls = (n, y0) => { for (let i = 0; i < n; i++) { const a = i / n * Math.PI * 2, rr = i % 2 ? .1 : .135; const x = Math.cos(a) * rr, z = Math.sin(a) * rr * .95 + .01; if (z < -.13) continue; H.push(part(new THREE.SphereGeometry(.052, 8, 6), hair, M4([x, y0 + (i % 2 ? .055 : .025), z]))); } H.push(part(new THREE.SphereGeometry(.06, 8, 6), hair, M4([0, y0 + .07, .02]))); };
+    const hs = st.hair % 4;
+    const longF = F && (hs === 0 || hs === 1 || hs === 3);
+    if (F && hs !== 2) {
+      // long hair: crown, volume behind the head to the nape, side locks framing the face, a soft side fringe
       H.push(part(new THREE.SphereGeometry(.177, 18, 12, 0, Math.PI * 2, 0, Math.PI * .55), hair, M4([0, .148, -.01], [-.24, 0, 0], [1.03, 1.02, 1.02])));
-      H.push(part(new THREE.SphereGeometry(.165, 14, 10), hair, M4([0, .1, -.05], [0, 0, 0], [1.04, 1.08, .9])));
-      for (const s of [-1, 1]) H.push(part(new THREE.SphereGeometry(.05, 10, 8), hair, M4([s * .148, .075, .025], [0, 0, s * .08], [.55, 1.85, .95])));
+      H.push(part(new THREE.SphereGeometry(.165, 14, 10), hair, M4([0, .1, -.04], [0, 0, 0], [1.04, 1.08, .8])));
+      for (const s of [-1, 1]) H.push(part(new THREE.SphereGeometry(.05, 10, 8), hair, M4([s * .148, hs === 3 ? .045 : .075, .025], [0, 0, s * .08], [.55, hs === 3 ? 2.4 : 1.85, .95])));
       H.push(part(new THREE.SphereGeometry(.1, 12, 8), hair, M4([.045, .252, .088], [.42, 0, -.3], [1.42, .4, .5])));
-      if (h % 2 === 0) {
-        H.push(part(new THREE.TorusGeometry(.03, .012, 6, 12), tie, M4([0, .2, -.175], [.5, 0, 0])));
-        H.push(limb([0, .19, -.19], [0, .06, -.225], .045, hair), limb([0, .06, -.225], [0, -.05, -.215], .036, hair), part(new THREE.SphereGeometry(.036, 10, 8), hair, M4([0, -.055, -.214], [0, 0, 0], [1, 1.3, 1])));
-      } else {
-        H.push(part(new THREE.SphereGeometry(.078, 14, 10), hair, M4([0, .29, -.115])));
-        H.push(part(new THREE.TorusGeometry(.055, .012, 6, 14), tie, M4([0, .265, -.1], [Math.PI / 2 + .5, 0, 0])));
+      const tie = pro ? 0x1a1206 : (ch.accent === 0xffffff ? shade(base, .9) : ch.accent);
+      if (hs === 0) {   // high ponytail: stays above the seat back
+        H.push(part(new THREE.TorusGeometry(.032, .012, 6, 12), tie, M4([0, .262, -.142], [1.05, 0, 0])));
+        H.push(limb([0, .262, -.15], [0, .2, -.186], .041, hair), limb([0, .2, -.186], [0, .125, -.178], .033, hair), part(new THREE.SphereGeometry(.031, 10, 8), hair, M4([0, .113, -.174], [0, 0, 0], [1, 1.3, 1])));
+      } else if (hs === 1) {
+        H.push(part(new THREE.SphereGeometry(.074, 14, 10), hair, M4([0, .305, -.085])));
+        H.push(part(new THREE.TorusGeometry(.052, .012, 6, 14), tie, M4([0, .278, -.075], [Math.PI / 2 + .6, 0, 0])));
+      } else {   // open: side-parted, falling to the jaw at the sides, kept short at the back
+        H.push(part(new THREE.SphereGeometry(.12, 12, 8), hair, M4([-.05, .245, .07], [.38, 0, .35], [1.3, .42, .6])));
       }
-    } else if (v === 'n') {
-      // prefer not to say: short neat hair with a soft fringe and over-ear study headphones (no cap, no bow)
-      const band = pro ? 0x1a1206 : 0x2a2733, cup = pro ? 0xe0ac3c : (ch.accent === 0xffffff ? shade(ch.color, .85) : ch.accent);
-      H.push(part(new THREE.SphereGeometry(.174, 16, 10, 0, Math.PI * 2, 0, Math.PI * .5), hair, M4([0, .15, -.012], [-.2, 0, 0], [1.02, 1, 1.01])));
-      H.push(part(new THREE.SphereGeometry(.1, 12, 8), hair, M4([0, .255, .086], [.45, 0, 0], [1.5, .34, .5])));
+    } else if (F || (N && hs === 1)) {   // bob: rounded, jaw length, full fringe
+      H.push(crown(.178, .56, -.2));
+      H.push(part(new THREE.SphereGeometry(.18, 16, 10), hair, M4([0, .12, -.025], [0, 0, 0], [1.06, .98, .84])));
+      for (const s of [-1, 1]) H.push(part(new THREE.SphereGeometry(.06, 10, 8), hair, M4([s * .145, .07, .035], [0, 0, s * .1], [.6, 1.4, 1])));
+      H.push(part(new THREE.SphereGeometry(.12, 12, 8), hair, M4([0, .25, .085], [.5, 0, 0], [1.35, .36, .55])));
+    } else if (N && hs === 0) {   // neat + study headphones
+      const band = pro ? 0x1a1206 : 0x2a2733, cup = pro ? gold : (ch.accent === 0xffffff ? shade(base, .85) : ch.accent);
+      H.push(crown(.174, .5, -.2), part(new THREE.SphereGeometry(.1, 12, 8), hair, M4([0, .255, .086], [.45, 0, 0], [1.5, .34, .5])));
       H.push(part(new THREE.TorusGeometry(.188, .015, 6, 22, Math.PI), band, M4([0, .15, -.01])));
       for (const s of [-1, 1]) H.push(part(new THREE.CylinderGeometry(.052, .052, .045, 14), cup, M4([s * .178, .13, -.005], [0, 0, Math.PI / 2])), part(new THREE.CylinderGeometry(.038, .038, .05, 12), band, M4([s * .184, .13, -.005], [0, 0, Math.PI / 2])));
-    } else {
-      // man: short hair under the NationLap cap
-      H.push(part(new THREE.SphereGeometry(.172, 16, 10, 0, Math.PI * 2, 0, Math.PI * .52), hair, M4([0, .15, -.012], [-.22, 0, 0], [1.02, 1, 1])));
-      H.push(part(new THREE.SphereGeometry(.178, 16, 9, 0, Math.PI * 2, 0, Math.PI * .45), top, M4([0, .16, -.01], [-.16, 0, 0], [1.02, .92, 1.02])));
-      H.push(part(new THREE.CylinderGeometry(.115, .12, .018, 16, 1, false, -Math.PI / 2, Math.PI), shade(top, .78), M4([0, .205, .12], [-.12, 0, 0], [1, 1, 1.1])));
-      H.push(part(new THREE.SphereGeometry(.022, 8, 6), trim, M4([0, .335, -.01])));
+    } else {   // men (and neutral curly / crop)
+      const capped = (O === 'swag' || O === 'pro') && v === 'm', ms = capped ? -1 : N ? (hs === 2 ? 2 : 0) : hs;
+      H.push(crown(.172, ms === 2 ? .48 : .52));
+      if (ms === 0) H.push(part(new THREE.SphereGeometry(.1, 12, 8), hair, M4([0, .262, .08], [.45, 0, 0], [1.45, .3, .5])));
+      if (ms === 1) { H.push(part(new THREE.SphereGeometry(.11, 12, 8), hair, M4([-.035, .27, .07], [.35, 0, .28], [1.45, .42, .62]))); H.push(part(new THREE.BoxGeometry(.004, .004, .1), shade(hair, .6), M4([.06, .3, .02], [0, 0, -.3]))); }
+      if (ms === 2) curls(12, .24);
+      if (ms === 3) H.push(part(new THREE.SphereGeometry(.095, 12, 8), hair, M4([0, .3, .085], [.6, 0, 0], [1.25, .7, .75])), part(new THREE.SphereGeometry(.08, 10, 8), hair, M4([0, .31, .01], [0, 0, 0], [1.4, .55, 1])));
     }
+    // outfit headwear
+    if (O === 'topper') {   // round study glasses
+      for (const s of [-1, 1]) { H.push(part(new THREE.TorusGeometry(.036, .006, 6, 18), ink, M4([s * .06, .152, .158]))); H.push(limb([s * .096, .155, .15], [s * .158, .16, .02], .004, ink)); }
+      H.push(limb([-.024, .158, .162], [.024, .158, .162], .004, ink));
+    }
+    if ((O === 'swag' || O === 'pro') && v === 'm') {   // snapback (swag) / the NationLap cap in gold (pro), sitting above the brows
+      const cc = O === 'pro' ? top : shade(base, .85);
+      H.push(part(new THREE.SphereGeometry(.178, 16, 9, 0, Math.PI * 2, 0, Math.PI * .45), cc, M4([0, .175, -.01], [-.16, 0, 0], [1.02, .92, 1.02])));
+      H.push(part(new THREE.CylinderGeometry(.115, .12, .018, 16, 1, false, -Math.PI / 2, Math.PI), shade(cc, .7), M4([0, .222, .125], [-.08, 0, 0], [1, 1, 1.15])));
+      H.push(part(new THREE.SphereGeometry(.02, 8, 6), O === 'pro' ? 0x1a1206 : 0xffffff, M4([0, .35, -.01])));
+    }
+    if (O === 'sporty') H.push(part(new THREE.TorusGeometry(.168, .02, 6, 26), (h & 1) ? 0xffffff : trim0, M4([0, .205, .004], [Math.PI / 2 + .12, 0, 0], [1.03, 1, 1])));   // sweatband round the forehead
     G.head = merge(H);
-    // arms: sleeve (upper) and sleeve + cuff + hand with fingers and thumb (lower); pivots at shoulder and elbow
+    // arms: sleeve (upper) and sleeve/forearm + cuff + hand with fingers and thumb (lower); pivots at shoulder and elbow
     const aw = F ? .9 : 1;
-    G.upper = merge([limb([0, 0, 0], [0, -.2, 0], .058 * aw, top)]);
+    G.upper = merge(shortSleeve ? [limb([0, 0, 0], [0, -.2, 0], .05 * aw, skin), limb([0, .005, 0], [0, -.1, 0], .062 * aw, slU), part(new THREE.CylinderGeometry(.064 * aw, .064 * aw, .014, 12), shade(slU, .85), M4([0, -.115, 0]))]
+      : [limb([0, 0, 0], [0, -.2, 0], .058 * aw, slU)]);
     const hand = [];
-    hand.push(limb([0, 0, 0], [0, -.17, 0], .052 * aw, top), part(new THREE.CylinderGeometry(.056 * aw, .056 * aw, .03, 10), trim, M4([0, -.18, 0])));
+    if (shortSleeve) hand.push(limb([0, 0, 0], [0, -.19, 0], .044 * aw, skin));
+    else hand.push(limb([0, 0, 0], [0, -.17, 0], .052 * aw, slL), part(new THREE.CylinderGeometry(.056 * aw, .056 * aw, .03, 10), cuff, M4([0, -.18, 0])));
+    if (O === 'sporty') hand.push(part(new THREE.CylinderGeometry(.05 * aw, .05 * aw, .04, 10), 0xffffff, M4([0, -.175, 0])));
+    if (saree) for (const y of [-.17, -.185]) hand.push(part(new THREE.TorusGeometry(.046 * aw, .006, 5, 14), gold, M4([0, y, 0], [Math.PI / 2, 0, 0])));
     hand.push(part(new THREE.SphereGeometry(.052 * aw, 10, 8), skin, M4([0, -.237, .006], [0, 0, 0], [.85, 1.05, .62])));
     // four short fingers held together and curled over the knee (palm down), thumb on the inner side
     for (let f = 0; f < 4; f++) { const x = (-.024 + f * .016) * aw, y = -.266 + Math.abs(f - 1.5) * .004;
@@ -1196,7 +1355,7 @@ const SEATED = (() => {
     G.lowerL = merge([...hand, limb([.03 * aw, -.22, .0], [.047 * aw, -.255, -.014], .0135 * aw, skin)]);
     cache.set(key, G); return G;
   }
-  const POSE = { sh: [-.32, 0, -.07], el: [-1.02, 0, 0], tx: -.06 };
+  const POSE = { sh: [-.36, 0, -.07], el: [-.98, 0, 0], tx: .06 };   // sits up, leaning a touch towards the screen (keeps the head off the seat back)
   function build(ch, look, pro) {
     const G = geos(ch, look, pro), m = mat(pro), mesh = (g, n) => { const o = new THREE.Mesh(g, m); o.name = n; o.castShadow = false; o.receiveShadow = false; return o; };
     const root = new THREE.Group(); root.add(mesh(G.legs, 'sc_legs'));
@@ -1212,13 +1371,13 @@ const SEATED = (() => {
   }
   // resolve the rig on a clone (clones share geometry + material)
   function rig(o) { const g = (n) => o.getObjectByName(n); return { torso: g('sc_torso'), head: g('__head'), nod: g('sc_nod'), shL: g('sc_shL'), shR: g('sc_shR'), elL: g('sc_elL'), elR: g('sc_elR'), POSE }; }
-  return { build, rig, POSE, variantOf: vOf };
+  return { build, rig, POSE, variantOf: vOf, styleOf, randStyle, enc, SKIN, OUTFITS, HAIRS };
 })();
 function seatedRacer(look, pro) {
   const key = look.join('-') + (pro ? '-p' : '');
   if (!lookCache.has(key)) { let d = null; try { d = SEATED.build(playerCharacter({ ...loadProfile(), avatar: look[0], color: look[1] }), look, pro); } catch (e) {} lookCache.set(key, d); }
   const base = lookCache.get(key); if (!base) return null;
-  const c = base.clone(); c.position.set(0, .5, .07); c.rotation.y = Math.PI;
+  const c = base.clone(); c.position.set(0, .5, -.04); c.rotation.y = Math.PI;   // hips forward on the cushion: head + hair clear the seat back
   c.userData.rig = SEATED.rig(c); c.userData.head = c.userData.rig.head; c.userData.hy = 0; c.userData.hx = 0; return c;
 }
 function seatRacer(s, look) {   // put (or replace / remove) the racer in seat s
@@ -1238,7 +1397,7 @@ function lookAtCamera(dt) {   // racers you are looking at turn their heads to y
     if (inView && dist > .9) { const p = h.parent.worldToLocal(cam.position.clone()); const hp = h.position, a = Math.atan2(p.x - hp.x, p.z - hp.z);
       // far racers only notice you if you're in front of them; the ones around you (your row, the rows beside) turn to you, even over the shoulder
       if (Math.abs(a) < .75 || dist < 7) { n++;
-      ty = Math.max(-1.7, Math.min(1.7, a)); tx = Math.max(-.35, Math.min(.35, -Math.atan2(p.y - hp.y - .1, Math.hypot(p.x - hp.x, p.z - hp.z)) * .6)); } }
+      ty = Math.max(-1.7, Math.min(1.7, a)); tx = Math.max(-.25, Math.min(.35, -Math.atan2(p.y - hp.y - .1, Math.hypot(p.x - hp.x, p.z - hp.z)) * .6)); } }
     const k2 = 1 - Math.pow(.004, dt); r.userData.hy += (ty - r.userData.hy) * k2; r.userData.hx += (tx - r.userData.hx) * k2;
     h.rotation.y = r.userData.hy; h.rotation.x = r.userData.hx;
   }
@@ -1254,7 +1413,7 @@ function bestSeat(map) {
 }
 // ambient audience: a stable ~40% of ordinary seats hold a racer (never reserved seats, never next to you)
 const AMB = (s) => { const k = s.row + s.n; if (ROOM || PRO_SEATS.has(k)) return null; let h = 0; for (const c of k) h = (h * 31 + c.charCodeAt(0)) >>> 0; h = (h ^ (h >>> 13)) * 2654435761 >>> 0;
-  if (h % 100 >= 30) return null; if (mine && mine.row === s.row && Math.abs(mine.n - s.n) <= 1) return null; return [h % 6, (h >>> 8) % 8]; };
+  if (h % 100 >= 30) return null; if (mine && mine.row === s.row && Math.abs(mine.n - s.n) <= 1) return null; return [h % 6, (h >>> 8) % 8, 0, SEATED.enc(SEATED.randStyle(h ^ 0x5bd1e995))]; };
 function paintSeats(map, looks = {}, pros) {
   if (pros) prosNow = new Set(pros);
   if (!autoSeated && !userSeat && !QS.get('near')) { autoSeated = true; const b = bestSeat(map); if (b && b !== mine) { markMine(b); live.sit(b.row + b.n); } }
@@ -1794,7 +1953,7 @@ chatBox.addEventListener('pointerdown', (e) => e.stopPropagation()); chatBox.add
 setTimeout(() => live.connect(), 300);
 // signed in on mindgains.ai -> same account here: real name in chat, same player id as the NationLap board (for top-3 frames)
 account.init().then(() => { const bind = async (u) => { signedIn = !!u; if (!u) { showGate(); return; } const name = account.accountName(); setAccountIdentity({ id: u.id, name }); if (name) myName = name.slice(0, 20); if (window.MGP && MGP.name()) myName = MGP.name();
-  const token = await account.accessToken(); myToken = token; syncPro(); window.__mgpRebind = () => bind(u); if (window.MGP) MGP.onSignedIn({ u, token, name: account.accountName(), apply: (p) => { MYLOOK[0] = p.avatar; MYLOOK[1] = p.color; MYLOOK[2] = p.g; if (p.name) myName = p.name; } }); live.send({ t: 'hello', tk: QS.get('t') || QS.get('tk') || '', look: MYLOOK, name: myName, token, ref: QS.get('ref') || '', duo: QS.get('duo') || '', pid: u.id, admin: (() => { try { return localStorage.getItem('mgt_admin') || ''; } catch (e) { return ''; } })() }); }; bind(account.currentUser()); account.onChange(bind); }).catch(() => showGate());
+  const token = await account.accessToken(); myToken = token; syncPro(); window.__mgpRebind = () => bind(u); if (window.MGP) MGP.onSignedIn({ u, token, name: account.accountName(), apply: (p) => { MYLOOK[0] = p.avatar; MYLOOK[1] = p.color; MYLOOK[2] = p.g; MYLOOK[3] = p.style | 0; if (p.name) myName = p.name; } }); live.send({ t: 'hello', tk: QS.get('t') || QS.get('tk') || '', look: MYLOOK, name: myName, token, ref: QS.get('ref') || '', duo: QS.get('duo') || '', pid: u.id, admin: (() => { try { return localStorage.getItem('mgt_admin') || ''; } catch (e) { return ''; } })() }); }; bind(account.currentUser()); account.onChange(bind); }).catch(() => showGate());
 // sound: browsers only allow sound after a tap, so ask once with a pulsing button
 const snd = document.getElementById('snd'); snd.classList.add('pulse');
 snd.onclick = () => { soundOn = !soundOn; if (soundOn) { if (ytP && ytP.unMute) { ytP.unMute(); ytP.setVolume(100); ytP.playVideo(); } else if (ytNow) { const id = ytNow, p = ytPos(); ytNow = ''; playOnScreen(id, p); } } else yCmd('mute'); snd.innerHTML = soundOn ? '<svg class="ico" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5Z"/><path d="M16 9a5 5 0 0 1 0 6M19.4 18.4a9 9 0 0 0 0-12.7"/></svg>' : '<svg class="ico" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5Z"/><path d="m22 9-6 6M16 9l6 6"/></svg>'; snd.classList.toggle('pulse', !soundOn); };
@@ -1902,11 +2061,110 @@ let t0 = performance.now();
   { const asp = W() / H(), base = mode === 'seat' || mode === 'spot' ? 92 : 66, h = mode === 'seat' || mode === 'spot' ? 74 : 62;
     const f = (asp < 1 ? Math.min(118, 2 * Math.atan(Math.tan(h * Math.PI / 360) / asp) * 180 / Math.PI) : base) * zoomF; if (Math.abs(cam.fov - f) > .1) { cam.fov += (f - cam.fov) * k; cam.updateProjectionMatrix(); } }
   if (INTRO.on) { introStep(now); renderer.render(scene, cam); css.render(cssScene, cam); requestAnimationFrame(frame); return; }
+  if (window.__tour && window.__tour.on) { window.__tour.step(now, dt); if (ytObj) ytObj.visible = cam.position.z > screen.position.z + .1; renderer.render(scene, cam); css.render(cssScene, cam); requestAnimationFrame(frame); return; }
   if (flying) { camPos.lerp(tgtPos, k); camLook.lerp(tgtLook, k); cam.position.copy(camPos); orbit.target.copy(camLook); cam.lookAt(camLook); if (camPos.distanceTo(tgtPos) < .05) { flying = false; setLook(); } }
   else { const b = tgtLook.clone().sub(tgtPos), by = Math.atan2(b.x, b.z) + yaw, bp = Math.atan2(b.y, Math.hypot(b.x, b.z)) + pitch, cp = Math.max(-1.45, Math.min(1.45, bp)), d = new THREE.Vector3(Math.sin(by) * Math.cos(cp), Math.sin(cp), Math.cos(by) * Math.cos(cp)); cam.position.copy(tgtPos); cam.lookAt(tgtPos.clone().add(d)); }
   if (mine) mine.m.emissiveIntensity = .7 + .3 * Math.sin(now / 250);
   lookAtCamera(dt);
   if (ytObj) ytObj.visible = cam.position.z > screen.position.z + .1; renderer.render(scene, cam); css.render(cssScene, cam); if (!frame.n) { frame.n = 1; document.getElementById('ls').textContent = 'TAKING YOU TO YOUR SEAT…'; const q = new URLSearchParams(location.search); let seen = ''; try { seen = localStorage.getItem('mgt_intro'); } catch (e) {} if (!q.has('view') && !q.has('clean') && (q.has('intro') || q.get('from') === 'nationlap' || seen !== new Date().toDateString())) { startIntro(); setTimeout(hideLoader, 300); } } requestAnimationFrame(frame); })(t0);
+// ---- theatre-cinematic-20261121: live mini 3D preview for the profile step (your student on a seat, warm light, a gentle sway)
+window.__mgIsPro = () => !!PRO;
+window.__mgpPreview = (canvas) => {
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const r = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true }); r.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
+  r.outputColorSpace = renderer.outputColorSpace; r.toneMapping = renderer.toneMapping; r.toneMappingExposure = renderer.toneMappingExposure;
+  const sc = new THREE.Scene(), cm = new THREE.PerspectiveCamera(28, 1, .1, 20);
+  sc.add(new THREE.HemisphereLight(0xfff1dc, 0x2a1a22, 1.5));
+  const key = new THREE.DirectionalLight(0xffe2b0, 2.4); key.position.set(-1.2, 2.6, -2.6); sc.add(key);
+  const rim = new THREE.DirectionalLight(0xf3c86b, 1.4); rim.position.set(1.8, 2.2, 2.2); sc.add(rim);
+  const g = new THREE.Group(); sc.add(g);
+  const sm = mat(COL.free, .55, 0, { emissive: COL.free, emissiveIntensity: .12 });
+  const b = new THREE.Mesh(base, sm); b.position.y = .25; const bk = new THREE.Mesh(backG, sm); bk.position.set(0, .7, .32); bk.rotation.x = -.12; g.add(b, bk);
+  for (const s of [-1, 1]) { const ar = new THREE.Mesh(armG, mat(0x1c1622, .6)); ar.position.set(s * .44, .45, 0); g.add(ar); }
+  cm.position.set(0, 1.08, -2.85); cm.lookAt(0, .8, 0);
+  let ch = null, raf = 0, dead = false, pop = 0, t0 = performance.now();
+  const size = () => { const w = canvas.clientWidth || canvas.parentNode.clientWidth || 360, h = canvas.clientHeight || canvas.parentNode.clientHeight || 150; r.setSize(w, h, false); cm.aspect = w / h; cm.updateProjectionMatrix(); };
+  const draw = (now) => { if (dead) return; const t = (now - t0) / 1000;
+    g.rotation.y = still ? .28 : Math.sin(t * .55) * .3 + .05;
+    if (ch) { const k = pop > 0 ? 1 + Math.sin(Math.min(1, pop) * Math.PI) * .05 : 1; ch.scale.setScalar(k); pop = Math.max(0, pop - .06); const hd = ch.userData.head; if (hd) hd.rotation.y = -g.rotation.y * .6; }
+    r.render(sc, cm); if (!still) raf = requestAnimationFrame(draw); };
+  size();
+  return {
+    set(look, pro, bounce) { if (ch) g.remove(ch); ch = seatedRacer(look.slice(0, 4), !!pro); if (ch) { ch.visible = true; g.add(ch); } if (bounce) pop = 1; if (still) draw(performance.now()); else if (!raf) raf = requestAnimationFrame(draw); },
+    dispose() { dead = true; cancelAnimationFrame(raf); try { r.dispose(); r.forceContextLoss(); } catch (e) {} },
+  };
+};
+// ---- first-entry hall tour (theatre-cinematic-20261121): right after the one-time profile step, once per device (also ?tour=1).
+// An eased 360° sweep of the hall (screen, gold decor, the audience turning to look), then a glide down into your own seat.
+// ~6.6 s, tap / click / any key skips, reduced motion gets a short fade instead, the HUD hides and comes back after.
+const TOUR = (() => {
+  const K = 'mgt_tour_v1', RMQ = matchMedia('(prefers-reduced-motion: reduce)');
+  const T = { on: false, t0: 0, ORBIT: 4.9, D: 6.7, pending: false };
+  const seen = () => { try { return !!localStorage.getItem(K); } catch (e) { return false; } };
+  const mark = () => { try { localStorage.setItem(K, String(Date.now())); } catch (e) {} };
+  const eio = (x) => x <= 0 ? 0 : x >= 1 ? 1 : x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+  const es = (x) => x <= 0 ? 0 : x >= 1 ? 1 : (1 - Math.cos(Math.PI * x)) / 2;
+  const SCREEN = new THREE.Vector3(0, 5.8, -16), CROWD = new THREE.Vector3(0, 3.6, 3);
+  const P = new THREE.Vector3(), L = new THREE.Vector3(), Q = new THREE.Vector3(), M = new THREE.Vector3();
+  const from = { p: new THREE.Vector3(), l: new THREE.Vector3() }, seatP = new THREE.Vector3(), seatL = new THREE.Vector3(), endP = new THREE.Vector3(), endL = new THREE.Vector3();
+  // the path: an ellipse inside the walls (x ±10.4 of ±13), high at the back, low by the screen looking back at the faces
+  function path(phi, p, l) { const c = Math.cos(phi); p.set(Math.sin(phi) * 10.4, 7.4 + 2.8 * c, 1.2 + 13 * c); l.copy(SCREEN).lerp(CROWD, (1 - c) / 2); }
+  function seatView() { seatP.copy(mine.eye); seatP.y += W() < H() ? .9 : .7; seatL.set(0, 7, -16); if (W() < H()) seatL.y -= seatP.distanceTo(seatL) * .42; }
+  let ui = null;
+  function chrome(on) {
+    if (!ui) { ui = document.createElement('div'); ui.className = 'tour'; ui.setAttribute('aria-hidden', 'true'); ui.innerHTML = '<i class="tb t"></i><i class="tb b"></i><span class="tk">Tap to skip</span>'; document.body.appendChild(ui); }
+    ui.classList.toggle('on', on);
+  }
+  function fade(cb) { const f = document.createElement('div'); f.className = 'tour-fade'; document.body.appendChild(f); requestAnimationFrame(() => f.classList.add('in'));
+    setTimeout(() => { cb(); f.classList.remove('in'); setTimeout(() => f.remove(), 420); }, 260); }
+  function start(force) {
+    if (T.on || ROOM || !mine) return false;
+    if (!force && seen()) return false;
+    if (INTRO.on || document.querySelector('.mgp') || document.body.classList.contains('quizon')) { if (!T.pending) { T.pending = true; const w = setInterval(() => { if (INTRO.on || document.querySelector('.mgp')) return; clearInterval(w); T.pending = false; start(force); }, 400); } return false; }
+    mark(); seatView();
+    if (RMQ.matches) { fade(() => { fly('seat'); camPos.copy(tgtPos); camLook.copy(tgtLook); cam.position.copy(tgtPos); cam.lookAt(tgtLook); }); return true; }
+    from.p.copy(cam.position); cam.getWorldDirection(Q); from.l.copy(cam.position).addScaledVector(Q, 12);
+    T.on = true; T.t0 = performance.now(); window.__tour = T; flying = false; mode = 'tour'; zoomF = 1;
+    try { orbit.enabled = false; } catch (e) {}
+    document.body.classList.add('tour'); chrome(true);
+    return true;
+  }
+  function step(now, dt) {
+    const t = window.__T != null ? window.__T : (now - T.t0) / 1000;
+    if (document.body.classList.contains('quizon')) return end(true);   // a quiz never waits for the tour
+    if (t < T.ORBIT) {
+      const u = es(t / T.ORBIT), phi = u * Math.PI * 2;   // one full turn, slow in, slow out
+      path(phi, P, L);
+      const k = eio(Math.min(1, t / 1.1)); if (k < 1) { P.lerpVectors(from.p, P, k); L.lerpVectors(from.l, L, k); }   // ease off wherever the camera was
+      endP.copy(P); endL.copy(L);
+    } else {
+      const g = eio((t - T.ORBIT) / (T.D - T.ORBIT));
+      // glide: a soft arc (a little above the straight line) from the back of the hall down into your seat
+      P.lerpVectors(endP, seatP, g); P.y += Math.sin(g * Math.PI) * .9; L.lerpVectors(endL, seatL, g);
+    }
+    cam.position.copy(P); cam.lookAt(L);
+    lookAtCamera(dt);
+    const me = mine && occ.get(mine.row + mine.n); if (me) me.visible = P.distanceTo(seatP) > 2.6;   // your own student, until the camera sits down
+    if (t >= T.D) end(false);
+  }
+  function end(skipped) {
+    if (!T.on) return; T.on = false;
+    camPos.copy(cam.position); cam.getWorldDirection(Q); camLook.copy(cam.position).addScaledVector(Q, 12);
+    fly('seat'); if (!skipped) { camPos.copy(tgtPos); camLook.copy(tgtLook); }
+    document.body.classList.remove('tour'); document.body.classList.add('tour-out'); setTimeout(() => document.body.classList.remove('tour-out'), 700);
+    chrome(false);
+  }
+  // skip: the first tap / click / key during the tour only skips (it never picks a seat or a button underneath)
+  let swallow = 0;
+  const skip = (e) => { if (!T.on) return; e.preventDefault(); e.stopPropagation(); swallow = performance.now(); end(true); };
+  addEventListener('pointerdown', skip, true); addEventListener('keydown', skip, true); addEventListener('wheel', (e) => { if (T.on) skip(e); }, { capture: true, passive: false });
+  for (const ev of ['click', 'pointerup', 'touchend', 'dblclick']) addEventListener(ev, (e) => { if (T.on || performance.now() - swallow < 500) { e.preventDefault(); e.stopPropagation(); } }, true);
+  addEventListener('mgp:first-done', () => start(false));
+  if (QS.get('tour') && !QS.has('view')) setTimeout(() => start(true), 900);
+  T.start = start; T.step = step; T.end = end; T.seen = seen;
+  return T;
+})();
+window.TOUR = TOUR;
 // ================= Batch rooms =================
 const RI = {
   users: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/>',
