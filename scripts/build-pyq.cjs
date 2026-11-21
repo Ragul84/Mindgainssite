@@ -31,6 +31,7 @@ const CSS = `<style>
 .yr a:hover{border-color:rgba(16,185,129,.4);transform:translateY(-1px)}
 .yr a b{display:block;font:800 26px 'Inter Tight',Inter}.yr a small{color:#64748b;font:500 13px Inter}
 .gap{display:inline-block;padding:6px 10px!important;margin:8px 0 0!important}.gap summary{cursor:pointer;color:#b45309;font:600 13px Inter;list-style:none}.gap summary::-webkit-details-marker{display:none}.gap[open]{display:block}.gap p{margin:8px 0 0}
+.pq .fig{display:block;max-width:100%;height:auto;margin:10px 0 0;border-radius:8px;background:#fff}
 .note{font:400 13px/1.6 Inter;color:#64748b;background:#f8fafc;border-radius:12px;padding:12px 14px;margin:18px 0 0}
 </style>`;
 const JS = `<script>document.querySelectorAll('.pq').forEach(function(q){q.querySelectorAll('.o button').forEach(function(b){b.onclick=function(){if(q.classList.contains('d'))return;q.classList.add('d');if(b.dataset.c)b.classList.add('ok');else{b.classList.add('no');q.querySelectorAll('[data-c]').forEach(function(c){c.classList.add('ok')})}}})})</script>`;
@@ -77,7 +78,7 @@ const qcard = (q, i) => {
   const ans = grace ? `${q.exam.toUpperCase()} dropped this question and gave every candidate a grace mark, so all options count.`
     : q.acc ? `${q.exam.toUpperCase()} accepted more than one answer: ${ok.map((k) => L[k] + '. ' + esc(q.opts[k])).join(' / ')}`
     : `Answer: ${L[q.a]}. ${esc(q.opts[q.a])}`;
-  return `<article class="pq mg-seo-question"><h3>${q.n || i}. ${esc(q.q)}</h3><div class="o">${q.opts.map((o, k) => `<button type="button"${ok.includes(k) ? ' data-c="1"' : ''}><b>${L[k]}</b><span>${esc(o)}</span></button>`).join('')}</div><div class="ex"><b>${ans}</b></div></article>`;
+  return `<article class="pq mg-seo-question"><h3>${q.n || i}. ${esc(q.q)}</h3>${q.img ? `<img class="fig" src="/pyq/img/${q.img}" alt="Figure for question ${q.n || i}" loading="lazy">` : ""}<div class="o">${q.opts.map((o, k) => `<button type="button"${ok.includes(k) ? ' data-c="1"' : ''}><b>${L[k]}</b><span>${esc(o)}</span></button>`).join('')}</div><div class="ex"><b>${ans}</b></div></article>`;
 };
 const out = (rel, html) => { const f = path.join(ROOT, rel, 'index.html'); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, html); };
 const quizLd = (name, url, qs) => ({ '@context': 'https://schema.org', '@type': 'Quiz', name, url: SITE + url, inLanguage: 'en-IN', about: name, hasPart: qs.filter((q) => !q.acc).slice(0, 20).map((q) => ({ '@type': 'Question', name: q.q, acceptedAnswer: { '@type': 'Answer', text: q.opts[q.a] } })) });

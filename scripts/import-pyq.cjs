@@ -25,7 +25,7 @@ const out = [], skipped = [];
 for (const r of rows) {
   if (!['UPSC', 'TNPSC'].includes(r.exam)) continue;
   const opts = Array.isArray(r.options) ? r.options.map((o) => String(o).trim()) : [];
-  if (opts.length !== 4 || (r.images && r.images.length) || r.needs_figure) { skipped.push(r.id); continue; }
+  if (opts.length !== 4) { skipped.push(r.id); continue; }
   let a = opts.findIndex((o) => norm(o) === norm(r.answer_text));
   if (a < 0) { const l = String(r.answer_text).trim().match(/^\(?([a-dA-D])\)?$/); if (l) a = 'abcd'.indexOf(l[1].toLowerCase()); }
   let acc = null;
