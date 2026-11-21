@@ -43,6 +43,13 @@ for (const r of rows) {
     src: r.answer_source === 'ticked-verified' ? 'ticked' : r.answer_source === 'official-key-ocr' ? 'key-ocr' : 'key',
   });
 }
+// Papers transcribed/fixed by hand (not yet correct in Supabase) override the export.
+const ex = path.join(__dirname, 'data', 'pyq-extra.json');
+if (fs.existsSync(ex)) {
+  const { replace, rows: extra } = JSON.parse(fs.readFileSync(ex, 'utf8'));
+  for (const [e, y, s] of replace) for (let i = out.length - 1; i >= 0; i--) if (out[i].exam === e && out[i].year === y && out[i].slug === s) out.splice(i, 1);
+  out.push(...extra);
+}
 out.sort((x, y) => x.exam.localeCompare(y.exam) || y.year - x.year || x.slug.localeCompare(y.slug) || x.n - y.n);
 fs.writeFileSync(path.join(__dirname, 'data', 'pyq.json'), JSON.stringify(out));
 console.log('imported', out.length, 'skipped', skipped.length, skipped.join(' '));
