@@ -30,6 +30,7 @@ const CSS = `<style>
 .yr a{display:block;padding:18px;border-radius:16px;border:1px solid rgba(13,27,42,.08);background:#fff;color:#0d1b2a;text-decoration:none;transition:all .18s}
 .yr a:hover{border-color:rgba(16,185,129,.4);transform:translateY(-1px)}
 .yr a b{display:block;font:800 26px 'Inter Tight',Inter}.yr a small{color:#64748b;font:500 13px Inter}
+.gap summary{cursor:pointer;color:#0d1b2a}.gap p{margin:8px 0 0}
 .note{font:400 13px/1.6 Inter;color:#64748b;background:#f8fafc;border-radius:12px;padding:12px 14px;margin:18px 0 0}
 </style>`;
 const JS = `<script>document.querySelectorAll('.pq').forEach(function(q){q.querySelectorAll('.o button').forEach(function(b){b.onclick=function(){if(q.classList.contains('d'))return;q.classList.add('d');if(b.dataset.c)b.classList.add('ok');else{b.classList.add('no');q.querySelectorAll('[data-c]').forEach(function(c){c.classList.add('ok')})}}})})</script>`;
@@ -95,9 +96,26 @@ const papersOf = (qs) => [...new Set(qs.map((q) => q.slug))].map((s) => qs.filte
 const card = (href, big, small) => `<a href="${href}"><b>${esc(big)}</b><small>${esc(small)}</small></a>`;
 const tn = Q.filter((q) => q.exam === 'tnpsc'), up = Q.filter((q) => q.exam === 'upsc'), years = yrs(tn), uy = yrs(up);
 
+// Missing-question explanations (shown in a tap-to-open note on incomplete papers)
+const FULL = { gs1: 100, csat: 80, 'group-1': 200, acf: 200 };
+const START = { 'tnpsc|2025|group-4': 101 };
+const WHY = {
+  'tnpsc|2014|group-2': 'TNPSC never published an official answer key for this paper. Answers come from a candidate\'s ticked answer booklet, checked by MindGains; questions the candidate left blank or marked unclearly could not be verified, so they are left out rather than guessed.',
+  'tnpsc|2024|group-2': 'These questions are built around a diagram or figure that cannot be shown as text, so they are left out.',
+  'tnpsc|2025|group-4': 'Q189 is a field-book survey diagram that cannot be shown as text, so it is left out.',
+  'tnpsc|2025|group-4-english': 'Q94 refers to a reading passage that is not printed in the question booklet, so it is left out.',
+};
+const DEF = { upsc: 'These questions have no answer in the official UPSC final key — UPSC usually deletes one to three questions every year after reviewing objections.', tnpsc: 'These questions have no usable answer in the official TNPSC final key (deleted after objections), so they are left out.' };
+function gapNote(exam, y, ps) {
+  const k = `${exam}|${y}|${ps[0].slug}`, full = FULL[ps[0].slug] || 100, s = START[k] || 1;
+  const have = new Set(ps.map((q) => q.n)), miss = [];
+  for (let i = s; i < s + full; i++) if (!have.has(i)) miss.push(i);
+  if (!miss.length) return '';
+  return `<details class="note gap"><summary><b>Why ${ps.length} of ${full} questions?</b> Tap to see</summary><p>Missing: ${miss.map((n) => 'Q' + n).join(', ')}.</p><p>${WHY[k] || WHY[`${exam}|${y}|${ps[0].slug.replace('-english', '')}`] || DEF[exam]}</p></details>`;
+}
 function paperPage(exam, y, ps, url, crumbs, siblings) {
   const name = `${exam.toUpperCase()} ${y} ${ps[0].paper}`;
-  const body = hero(`${exam.toUpperCase()} · ${y}`, `${name}: Questions with Answers`, `All ${ps.length} questions from the ${name} paper, in paper order. Tap an option to check your answer instantly.`, [`${ps.length} questions`, ps.some((q) => q.src === 'ticked') ? 'Verified answers' : 'Official answer key']) +
+  const body = hero(`${exam.toUpperCase()} · ${y}`, `${name}: Questions with Answers`, `All ${ps.length} questions from the ${name} paper, in paper order. Tap an option to check your answer instantly.`, [`${ps.length} questions`, ps.some((q) => q.src === 'ticked') ? 'Verified answers' : 'Official answer key']) + gapNote(exam, y, ps) +
     ps.map((q, i) => qcard(q, i + 1)).join('') + srcNote(ps) +
     (siblings.length ? `<h2>More ${exam.toUpperCase()} ${y} papers</h2><div class="yr">${siblings.join('')}</div>` : '');
   urls.push(url);
