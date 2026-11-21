@@ -21,6 +21,11 @@ missing from `pyq_verified_clean`, and label such answers clearly.
 4. `git pull` first (several agents work in this repo), then `npx wrangler deploy`,
    commit `scripts/ pyq/ sitemap.xml`, push.
 
+### Hand-fixed papers
+`scripts/data/pyq-extra.json` holds papers re-read from the scan with the official key
+because Supabase's copy was broken (currently TNPSC Group 4 2025). `import-pyq.cjs`
+applies it on top of the export, so keep it; drop an entry once Supabase is fixed.
+
 ### Pages
 - `/pyq/` hub · `/pyq/tnpsc/<year>/` lists papers · `/pyq/tnpsc/<year>/<paper>/` questions
 - `/pyq/upsc/` · `/pyq/upsc/<year>/` (GS Paper I) · `/pyq/upsc/<year>/csat/`
