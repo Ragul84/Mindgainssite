@@ -84,7 +84,13 @@ function phantom(L, k, now) {   // test-only simulated crowd: fills screens 1..m
   const full = Math.floor(s.n / SOFT), rest = s.n % SOFT;
   return k <= full ? SOFT : k === full + 1 ? rest : 0;
 }
-function realCount(L, k, now) { const e = L.sc[k]; if (!e || now - e.at > SEEN_MS) return e && e.pend && now - e.pendAt < 15e3 ? e.pend : 0; return e.n + (e.pend && now - e.pendAt < 15e3 ? e.pend : 0); }
+// live count of a screen = its last report + people the lobby sent there whose socket the screen hadn't seen yet
+// (each assignment carries a ticket number; the screen reports the highest ticket it has accepted).
+function realCount(L, k, now) {
+  const e = L.sc[k]; if (!e) return 0;
+  const pend = (e.recent || []).filter((r) => r.s > (e.tk || 0) && now - r.t < 15e3).length;
+  return (now - e.at > SEEN_MS ? 0 : e.n) + pend;
+}
 const countOf = (L, k, now) => realCount(L, k, now) + phantom(L, k, now);
 function counts(L, now) { const o = {}; const m = Math.max(L.max, simScreens(L, now)); for (let k = 1; k <= m; k++) o[k] = countOf(L, k, now); return o; }
 const simScreens = (L, now) => (L.sim && L.sim.until > now ? Math.ceil(L.sim.n / SOFT) : 0);
@@ -127,16 +133,16 @@ async function lobbyFetch(self, request) {
     if (!k) k = pickScreen(counts(L, now), Math.max(L.max, simScreens(L, now)), cap);
     if (k > L.max) L.max = k;
     const e = L.sc[k] || (L.sc[k] = { n: 0, at: 0 });
-    e.pend = (e.pendAt && now - e.pendAt < 15e3 ? e.pend || 0 : 0) + 1; e.pendAt = now;
+    e.seq = (e.seq || 0) + 1; e.recent = [...(e.recent || []).filter((r) => now - r.t < 15e3), { t: now, s: e.seq }];
     if (p) await S.put('st:' + p, { k, at: now });
     await lobbySave(self);
     if (!(await S.getAlarm())) await S.setAlarm(now + QUIZ_EVERY_MS);
-    return J({ k, why, name: screenName(L.hall, k) });
+    return J({ k, why, tk: e.seq, name: screenName(L.hall, k) });
   }
   if (b.op === 'report') {
     const k = b.k | 0; if (k < 1 || k > 500) return J({ err: 'k' });
     const e = L.sc[k] || (L.sc[k] = { n: 0, at: 0 });
-    const was = e.n; e.n = Math.max(0, b.n | 0); e.at = now; e.pend = 0;
+    const was = e.n; e.n = Math.max(0, b.n | 0); e.at = now; e.tk = Math.max(e.tk || 0, b.tk | 0); e.recent = (e.recent || []).filter((r) => now - r.t < 15e3 && r.s > e.tk);
     if (k > L.max) L.max = k;
     // a screen that just woke up mid-round gets the running question
     const Q = self.quiz, late = Q && !Q.revealed && Q.ends > now && !(Q.screens || []).includes(k);
@@ -252,7 +258,7 @@ function reportSoon(self, delay = 700) {
 }
 async function report(self) {
   const S = self.__S; if (!S) return;
-  const r = await lobbyCall(self.env, S.hall, { op: 'report', k: S.k, n: ownCount(self) });
+  const r = await lobbyCall(self.env, S.hall, { op: 'report', k: S.k, n: ownCount(self), tk: self.__tk || 0 });
   if (!r || r.err) return;
   applyTotal(self, r);
   if (r.next) self.__next = r.next;
@@ -385,6 +391,7 @@ export function installScreens(Cls) {
     if (k >= 1 && HALLS.has(hall) && request.headers.get('Upgrade') === 'websocket') {
       if (!this.__S) { const s = { hall, k }; await this.ctx.storage.put('scr', s); this.__S = s; this.__mode = 'screen'; await holdsLoad(this); this.__next = (await this.ctx.storage.get('scrNext')) || 0; }
       this.__origAll = orig.all;
+      this.__tk = Math.max(this.__tk || 0, +url.searchParams.get('tk') || 0);   // highest lobby ticket accepted (see realCount)
       const res = await orig.fetch.call(this, request);
       const al = await this.ctx.storage.getAlarm();   // heartbeat to the lobby every 30 s while anyone is here
       if (!al || al > Date.now() + HB_MS) await this.ctx.storage.setAlarm(Date.now() + HB_MS);
@@ -466,7 +473,7 @@ export async function screensRoute(request, env, pathname) {
     const r = await lobbyCall(env, hall, { op: 'assign', p: q.get('p') || '', ref: q.get('ref') || '', grp: q.get('grp') || '', scap: +q.get('scap') || 0 });
     const k = r && r.k >= 1 ? r.k : 1;
     const stub = env.THEATRE.get(env.THEATRE.idFromName(screenName(hall, k)));
-    return stub.fetch(new Request(request.url + (request.url.includes('?') ? '&' : '?') + 'hall=' + hall + '&scr=' + k + '&why=' + ((r && r.why) || 'fill'), request));
+    return stub.fetch(new Request(request.url + (request.url.includes('?') ? '&' : '?') + 'hall=' + hall + '&scr=' + k + '&tk=' + ((r && r.tk) || 0) + '&why=' + ((r && r.why) || 'fill'), request));
   }
   if (m[2] === 'group') {
     if (request.method !== 'POST') return J({ error: 'POST only' }, 405);
