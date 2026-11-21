@@ -77,7 +77,7 @@ const okSet = (q) => q.acc || [q.a];
 const qcard = (q, i) => {
   const ok = okSet(q), grace = q.acc && q.acc.length === 4;
   const ans = grace ? `${q.exam.toUpperCase()} dropped this question and gave every candidate a grace mark, so all options count.`
-    : q.acc ? `${q.exam.toUpperCase()} accepted more than one answer: ${ok.map((k) => L[k] + '. ' + esc(q.opts[k])).join(' / ')}`
+    : q.acc && q.src === 'mg' ? `More than one option is correct: ${ok.map((k) => L[k] + '. ' + esc(q.opts[k])).join(' / ')}` : q.acc ? `${q.exam.toUpperCase()} accepted more than one answer: ${ok.map((k) => L[k] + '. ' + esc(q.opts[k])).join(' / ')}`
     : `Answer: ${L[q.a]}. ${esc(q.opts[q.a])}`;
   return `<article class="pq mg-seo-question"><h3>${q.n || i}. ${esc(q.q)}${q.src === "mg" && q.part ? " <small class=\"uo\" title=\"Unofficial answer\">⚠</small>" : ""}</h3>${q.img ? `<img class="fig" src="/pyq/img/${q.img}" alt="Figure for question ${q.n || i}" loading="lazy">` : ""}<div class="o">${q.opts.map((o, k) => `<button type="button"${ok.includes(k) ? ' data-c="1"' : ''}><b>${L[k]}</b><span>${esc(o)}</span></button>`).join('')}</div><div class="ex"><b>${ans}</b></div></article>`;
 };
@@ -115,6 +115,7 @@ function gapNote(exam, y, ps) {
   const have = new Set(ps.map((q) => q.n)), miss = [];
   for (let i = s; i < s + full; i++) if (!have.has(i)) miss.push(i);
   if (!miss.length && !ps.some((q) => q.src === 'mg')) return '';
+  if (ps.every((q) => q.src === 'mg') && k === 'tnpsc|2024|group-4') return '<details class="note gap"><summary title="About these answers">⚠ Unofficial · ' + ps.length + '/' + full + '</summary><p>The official key for this paper was published for a different booklet version, so these answers were worked out by MindGains. Q136 is left out: none of its four options is correct (the swamp deer is the state animal of Uttar Pradesh and Madhya Pradesh).</p></details>';
   if (ps.every((q) => q.src === 'mg')) return '<details class="note gap"><summary title="About these answers" aria-label="About these answers">⚠ Unofficial' + (ps.length < full ? ' · ' + ps.length + '/' + full : '') + '</summary><p>The official key for this paper was published for a different booklet version, so these answers were worked out by MindGains.' + (ps.length < full ? ' Questions we could not read clearly from the scan, or could not answer with certainty, are left out' + (k === 'tnpsc|2018|group-2-tamil' ? '; the only scan we have ends at question 58.' : '.') : '') + '</p></details>';
   if (!miss.length) { const u = ps.filter((q) => q.src === 'mg').map((q) => 'Q' + q.n); return `<details class="note gap"><summary title="About these answers">⚠ ${u.length} unofficial</summary><p>${u.join(', ')}: TNPSC never published an official key for this paper, so these answers were worked out by MindGains. The rest come from a candidate's ticked answer booklet, cross-checked.</p></details>`; }
   return `<details class="note gap"><summary title="Why some questions are missing" aria-label="Why some questions are missing">⚠ ${ps.length}/${full}</summary><p>Missing: ${miss.map((n) => 'Q' + n).join(', ')}.</p><p>${WHY[k] || WHY[`${exam}|${y}|${ps[0].slug.replace('-english', '')}`] || DEF[exam]}</p></details>`;
