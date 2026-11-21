@@ -1031,7 +1031,7 @@ const SCR = { k: 1, n: 1,
   res(m) { if (!m || !m.res) return; for (const k of m.res) { const t = seatByKey.get(k); if (t && t !== mine) t.st = 'taken'; } },
   on(m) {
     if (m.t === 'count') { live.n = m.count; this.meta(m); renderCount(); return true; }
-    if (m.t === 'seatyou') { const t = seatByKey.get(m.seat); autoSeated = true; userSeat = true; if (t && t !== mine) markMine(t);
+    if (m.t === 'seatyou') { const t = seatByKey.get(m.seat); autoSeated = true; userSeat = true; if (t && t !== mine) { markMine(t); if (mode === 'seat' && !document.body.classList.contains('intro')) fly('seat'); }
       const nm = String(m.name || 'your friend').replace(/[<>&]/g, '');
       const msg = { friend: `You're next to ${nm} · ${m.seat}`, friendnear: `Seats beside ${nm} were taken · you're in ${m.seat}, close by`, friendfar: `You're in ${m.seat}, close to ${nm}`, group: `Your group's seats · you're in ${m.seat}`, groupfull: `Group seats are full · you're in ${m.seat}, right beside them`, together: `Moved · you're sitting together in ${m.seat}` }[m.why];
       if (msg) flashCard(msg); return true; }
