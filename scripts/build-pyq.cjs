@@ -100,7 +100,7 @@ const tn = Q.filter((q) => q.exam === 'tnpsc'), up = Q.filter((q) => q.exam === 
 
 // Missing-question explanations (shown in a tap-to-open note on incomplete papers)
 const FULL = { gs1: 100, csat: 80, 'group-1': 200, acf: 200 };
-const START = { 'tnpsc|2025|group-4': 101 };
+const START = { 'tnpsc|2024|group-4': 101, 'tnpsc|2025|group-4': 101 };
 const WHY = {
   'tnpsc|2014|group-2': 'TNPSC never published an official answer key for this paper. Answers come from a candidate\'s ticked answer booklet, checked by MindGains; questions the candidate left blank or marked unclearly could not be verified, so they are left out rather than guessed.',
   'tnpsc|2024|group-2': 'These questions are built around a diagram or figure that cannot be shown as text, so they are left out.',
