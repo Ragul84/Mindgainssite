@@ -61,7 +61,7 @@ export class TheatreHall extends DurableObject {
     let m; try { m = JSON.parse(raw); } catch { return; }
     const a = ws.deserializeAttachment() || {};
     if (m.t === 'hello') {
-      if (Array.isArray(m.look)) a.look = [Math.max(0, Math.min(9, m.look[0] | 0)), Math.max(0, Math.min(9, m.look[1] | 0)), Math.max(0, Math.min(3, m.look[2] | 0))];   // 3rd value: gender (0 unknown, 1-3)
+      if (Array.isArray(m.look)) a.look = [Math.max(0, Math.min(9, m.look[0] | 0)), Math.max(0, Math.min(9, m.look[1] | 0)), Math.max(0, Math.min(3, m.look[2] | 0)), Math.max(0, Math.min(216, m.look[3] | 0))];   // 3rd value: gender (0 unknown, 1-3)
       a.name = clean(m.name, 20) || 'Guest'; a.pid = clean(m.pid, 64); if (a.pid) a.id = 'p:' + a.pid.slice(0, 40);
       a.host = !!(this.env.THEATRE_ADMIN && m.admin && m.admin === this.env.THEATRE_ADMIN);
       ws.serializeAttachment(a);
