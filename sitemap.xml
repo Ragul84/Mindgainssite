@@ -3903,23 +3903,76 @@
   <url><loc>https://mindgains.ai/thirukkural/kural/1329/</loc></url>
   <url><loc>https://mindgains.ai/thirukkural/kural/1330/</loc></url>
   <!-- TK_END -->
-  <!-- PYQ_START -->
-  <url><loc>https://mindgains.ai/pyq/</loc></url>
-  <url><loc>https://mindgains.ai/pyq/tnpsc/2025/</loc></url>
-  <url><loc>https://mindgains.ai/pyq/tnpsc/2024/</loc></url>
-  <url><loc>https://mindgains.ai/pyq/tnpsc/2022/</loc></url>
-  <url><loc>https://mindgains.ai/pyq/tnpsc/2021/</loc></url>
-  <url><loc>https://mindgains.ai/pyq/tnpsc/2019/</loc></url>
-  <url><loc>https://mindgains.ai/pyq/tnpsc/2018/</loc></url>
-  <url><loc>https://mindgains.ai/pyq/tnpsc/2017/</loc></url>
-  <url><loc>https://mindgains.ai/pyq/tnpsc/2016/</loc></url>
-  <url><loc>https://mindgains.ai/pyq/tnpsc/2015/</loc></url>
-  <url><loc>https://mindgains.ai/pyq/upsc/</loc></url>
-  <!-- PYQ_END -->
   <url>
     <loc>https://mindgains.ai/teach/</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <!-- PYQ_START -->
+  <url><loc>https://mindgains.ai/pyq/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2025/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2025/group-4/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2025/group-4-tamil/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2024/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2024/group-1/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2024/group-2/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2024/group-2-tamil/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2023/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2023/acf/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2022/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2022/group-1/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2022/group-2/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2022/group-2-tamil/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2022/group-4/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2022/group-4-tamil/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2021/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2021/group-1/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2019/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2019/group-1/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2019/group-4/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2019/group-4-tamil/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2018/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2018/group-2/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2018/group-4/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2017/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2017/group-1/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2017/group-2a/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2016/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2016/group-4/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2015/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2015/group-1/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2015/group-2/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2014/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2014/group-1/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2014/group-2/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2014/group-4/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2013/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2013/group-1/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2013/group-2/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2013/group-4/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2012/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/tnpsc/2012/group-4/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/upsc/2025/csat/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/upsc/2025/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/upsc/2024/csat/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/upsc/2024/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/upsc/2023/csat/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/upsc/2023/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/upsc/2022/csat/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/upsc/2022/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/upsc/2021/csat/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/upsc/2021/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/upsc/2020/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/upsc/2019/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/upsc/2018/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/upsc/2017/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/upsc/2016/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/upsc/2015/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/upsc/2014/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/upsc/2013/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/upsc/2012/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/upsc/2011/</loc></url>
+  <url><loc>https://mindgains.ai/pyq/upsc/</loc></url>
+  <!-- PYQ_END -->
 </urlset>
