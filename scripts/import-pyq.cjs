@@ -13,6 +13,7 @@ function paperOf(id) {
   if ((m = id.match(/^upsc-csat-paper2-(\d{4})/))) return ['csat', 'Prelims CSAT (GS Paper II)'];
   if (/group1-prelims/.test(id)) return ['group-1', 'Group 1 Prelims'];
   if (/group2a-/.test(id)) return ['group-2a', 'Group 2A · General Studies'];
+  if (/group2-prelims-2014/.test(id)) return ['group-2-english', 'Group 2 Prelims · General English'];
   if (/group2-.*tamil/.test(id)) return ['group-2-tamil', 'Group 2 Prelims · General Tamil'];
   if (/group2-/.test(id)) return ['group-2', 'Group 2 Prelims · General Studies'];
   if (/group4-.*tamil/.test(id)) return ['group-4-tamil', 'Group 4 · General Tamil'];

@@ -87,7 +87,7 @@ const MAIL = ' Spot a mistake? Write to <a href="mailto:contact@mindgains.ai">co
 function srcNote(qs) {
   const body = qs[0].exam === 'upsc' ? 'UPSC' : 'TNPSC', nul = qs.filter((q) => q.acc).length;
   const mg = qs.filter((q) => q.src === 'mg').length;
-  const s = mg ? (mg === qs.length ? 'Unofficial answers: worked out by MindGains, not from an official key.' : mg + ' answers are unofficial (worked out by MindGains, marked ⚠ on the question); the rest follow the official key.') : qs.some((q) => q.src === 'ticked')
+  const s = mg ? (mg === qs.length ? 'Unofficial answers: worked out by MindGains, not from an official key.' : mg + ' answers are unofficial (worked out by MindGains, marked ⚠ on the question); the rest are verified answers.') : qs.some((q) => q.src === 'ticked')
     ? `Answers are taken from a candidate's ticked answer booklet and cross-checked by MindGains; ${body} has not published a key for this paper online.`
     : `Answers follow the official ${body} final answer key.`;
   return `<p class="note">${s}${nul ? ` ${nul} question${nul > 1 ? 's were' : ' was'} officially changed in the final key (more than one answer accepted, or a grace mark); those show every accepted option as correct.` : ''}${MAIL}</p>`;
@@ -103,7 +103,7 @@ const tn = Q.filter((q) => q.exam === 'tnpsc'), up = Q.filter((q) => q.exam === 
 const FULL = { gs1: 100, csat: 80, 'group-1': 200, acf: 200 };
 const START = { 'tnpsc|2024|group-4': 101, 'tnpsc|2025|group-4': 101 };
 const WHY = {
-  'tnpsc|2014|group-2': 'TNPSC never published an official answer key for this paper. Answers come from a candidate\'s ticked answer booklet, checked by MindGains; questions the candidate left blank or marked unclearly could not be verified, so they are left out rather than guessed.',
+  'tnpsc|2014|group-2-english': 'TNPSC never published an official answer key for this paper. Answers come from a candidate\'s ticked answer booklet, checked by MindGains; questions the candidate left blank or marked unclearly could not be verified, so they are left out rather than guessed.',
   'tnpsc|2024|group-2': 'These questions are built around a diagram or figure that cannot be shown as text, so they are left out.',
   'tnpsc|2025|group-4': 'Q189 is a field-book survey diagram that cannot be shown as text, so it is left out.',
   'tnpsc|2025|group-1': 'Q194 is a multi-level fraction and Q200 asks about pictures of a cube; neither can be shown as text, so both are left out.',
