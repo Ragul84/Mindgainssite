@@ -85,7 +85,8 @@ const quizLd = (name, url, qs) => ({ '@context': 'https://schema.org', '@type': 
 const MAIL = ' Spot a mistake? Write to <a href="mailto:contact@mindgains.ai">contact@mindgains.ai</a>.';
 function srcNote(qs) {
   const body = qs[0].exam === 'upsc' ? 'UPSC' : 'TNPSC', nul = qs.filter((q) => q.acc).length;
-  const s = qs.some((q) => q.src === 'ticked')
+  const mg = qs.filter((q) => q.src === 'mg').length;
+  const s = mg ? (mg === qs.length ? 'Unofficial answers: worked out by MindGains, not from an official key.' : mg + ' answers are unofficial (worked out by MindGains, marked ⚠ on the question); the rest follow the official key.') : qs.some((q) => q.src === 'ticked')
     ? `Answers are taken from a candidate's ticked answer booklet and cross-checked by MindGains; ${body} has not published a key for this paper online.`
     : `Answers follow the official ${body} final answer key.`;
   return `<p class="note">${s}${nul ? ` ${nul} question${nul > 1 ? 's were' : ' was'} officially changed in the final key (more than one answer accepted, or a grace mark); those show every accepted option as correct.` : ''}${MAIL}</p>`;
@@ -112,12 +113,13 @@ function gapNote(exam, y, ps) {
   const k = `${exam}|${y}|${ps[0].slug}`, full = FULL[ps[0].slug] || 100, s = START[k] || 1;
   const have = new Set(ps.map((q) => q.n)), miss = [];
   for (let i = s; i < s + full; i++) if (!have.has(i)) miss.push(i);
-  if (!miss.length) return '';
+  if (!miss.length && !ps.some((q) => q.src === 'mg')) return '';
+  if (ps.every((q) => q.src === 'mg')) return '<details class="note gap"><summary title="About these answers" aria-label="About these answers">⚠ Unofficial' + (ps.length < full ? ' · ' + ps.length + '/' + full : '') + '</summary><p>The official key for this paper was published for a different booklet version, so these answers were worked out by MindGains.' + (ps.length < full ? ' Questions we could not read clearly from the scan, or could not answer with certainty, are left out.' : '') + '</p></details>';
   return `<details class="note gap"><summary title="Why some questions are missing" aria-label="Why some questions are missing">⚠ ${ps.length}/${full}</summary><p>Missing: ${miss.map((n) => 'Q' + n).join(', ')}.</p><p>${WHY[k] || WHY[`${exam}|${y}|${ps[0].slug.replace('-english', '')}`] || DEF[exam]}</p></details>`;
 }
 function paperPage(exam, y, ps, url, crumbs, siblings) {
   const name = `${exam.toUpperCase()} ${y} ${ps[0].paper}`;
-  const body = hero(`${exam.toUpperCase()} · ${y}`, `${name}: Questions with Answers`, `All ${ps.length} questions from the ${name} paper, in paper order. Tap an option to check your answer instantly.`, [`${ps.length} questions`, ps.some((q) => q.src === 'ticked') ? 'Verified answers' : 'Official answer key']) + gapNote(exam, y, ps) +
+  const body = hero(`${exam.toUpperCase()} · ${y}`, `${name}: Questions with Answers`, `All ${ps.length} questions from the ${name} paper, in paper order. Tap an option to check your answer instantly.`, [`${ps.length} questions`, ps.every((q) => q.src === 'mg') ? 'Unofficial answers' : ps.some((q) => q.src === 'ticked') ? 'Verified answers' : 'Official answer key']) + gapNote(exam, y, ps) +
     ps.map((q, i) => qcard(q, i + 1)).join('') + srcNote(ps) +
     (siblings.length ? `<h2>More ${exam.toUpperCase()} ${y} papers</h2><div class="yr">${siblings.join('')}</div>` : '');
   urls.push(url);
