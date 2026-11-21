@@ -30,7 +30,7 @@ const CSS = `<style>
 .yr a{display:block;padding:18px;border-radius:16px;border:1px solid rgba(13,27,42,.08);background:#fff;color:#0d1b2a;text-decoration:none;transition:all .18s}
 .yr a:hover{border-color:rgba(16,185,129,.4);transform:translateY(-1px)}
 .yr a b{display:block;font:800 26px 'Inter Tight',Inter}.yr a small{color:#64748b;font:500 13px Inter}
-.gap summary{cursor:pointer;color:#0d1b2a}.gap p{margin:8px 0 0}
+.gap{display:inline-block;padding:6px 10px!important;margin:8px 0 0!important}.gap summary{cursor:pointer;color:#b45309;font:600 13px Inter;list-style:none}.gap summary::-webkit-details-marker{display:none}.gap[open]{display:block}.gap p{margin:8px 0 0}
 .note{font:400 13px/1.6 Inter;color:#64748b;background:#f8fafc;border-radius:12px;padding:12px 14px;margin:18px 0 0}
 </style>`;
 const JS = `<script>document.querySelectorAll('.pq').forEach(function(q){q.querySelectorAll('.o button').forEach(function(b){b.onclick=function(){if(q.classList.contains('d'))return;q.classList.add('d');if(b.dataset.c)b.classList.add('ok');else{b.classList.add('no');q.querySelectorAll('[data-c]').forEach(function(c){c.classList.add('ok')})}}})})</script>`;
@@ -111,7 +111,7 @@ function gapNote(exam, y, ps) {
   const have = new Set(ps.map((q) => q.n)), miss = [];
   for (let i = s; i < s + full; i++) if (!have.has(i)) miss.push(i);
   if (!miss.length) return '';
-  return `<details class="note gap"><summary><b>Why ${ps.length} of ${full} questions?</b> Tap to see</summary><p>Missing: ${miss.map((n) => 'Q' + n).join(', ')}.</p><p>${WHY[k] || WHY[`${exam}|${y}|${ps[0].slug.replace('-english', '')}`] || DEF[exam]}</p></details>`;
+  return `<details class="note gap"><summary title="Why some questions are missing" aria-label="Why some questions are missing">⚠ ${ps.length}/${full}</summary><p>Missing: ${miss.map((n) => 'Q' + n).join(', ')}.</p><p>${WHY[k] || WHY[`${exam}|${y}|${ps[0].slug.replace('-english', '')}`] || DEF[exam]}</p></details>`;
 }
 function paperPage(exam, y, ps, url, crumbs, siblings) {
   const name = `${exam.toUpperCase()} ${y} ${ps[0].paper}`;
