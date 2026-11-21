@@ -1069,8 +1069,8 @@ const seatByKey = new Map(seats.map((s) => [s.row + s.n, s]));
 let myName = (() => { try { const p = JSON.parse(localStorage.getItem('tkr_player_profile') || '{}'); return p.name || ''; } catch { return ''; } })() || 'Guest ' + Math.floor(Math.random() * 900 + 100);
 const live = { ws: null, hall: null, n: 0, quiz: null, picked: -1,
   connect() { if (this.hall === hall && this.ws && this.ws.readyState < 2) return; try { this.ws && this.ws.close(); } catch {} this.hall = hall;
-    const ws = new WebSocket((location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + (ROOM ? '/api/room/' + ROOM + '/ws' : '/api/theatre/' + hall + '/ws')); this.ws = ws;
-    ws.onopen = () => { ws.send(JSON.stringify({ t: 'hello', tk: QS.get('t') || QS.get('tk') || '', look: MYLOOK, name: myName, token: myToken, ref: QS.get('ref') || '', duo: QS.get('duo') || '', pid: (() => { try { return getPlayerId(); } catch (e) { return ''; } })(), admin: (() => { try { return localStorage.getItem('mgt_admin') || ''; } catch (e) { return ''; } })() })); if (mine) this.sit(mine.row + mine.n); };
+    const ws = new WebSocket((location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + (ROOM ? '/api/room/' + ROOM + '/ws' : '/api/theatre/' + hall + '/ws' + SCR.qs())); this.ws = ws;
+    ws.onopen = () => { ws.send(JSON.stringify({ t: 'hello', tk: QS.get('t') || QS.get('tk') || '', look: MYLOOK, name: myName, token: myToken, ref: QS.get('ref') || '', grp: QS.get('grp') || '', duo: QS.get('duo') || '', pid: (() => { try { return getPlayerId(); } catch (e) { return ''; } })(), admin: (() => { try { return localStorage.getItem('mgt_admin') || ''; } catch (e) { return ''; } })() })); if (mine) this.sit(mine.row + mine.n); };
     ws.onmessage = (e) => this.on(JSON.parse(e.data));
     ws.onclose = () => { if (this.ws === ws) setTimeout(() => this.connect(), 3000); }; },
   send(m) { if (this.ws && this.ws.readyState === 1) this.ws.send(JSON.stringify(m)); },
@@ -1079,8 +1079,9 @@ const live = { ws: null, hall: null, n: 0, quiz: null, picked: -1,
     if (ROOM && roomOn(m)) return;
     if (!ROOM && window.__TH && window.__TH.on(m)) return;
     if (m.next || m.t === 'next') quizSoon(m.at || m.next);
+    if (!ROOM && SCR.on(m)) return;
     if (m.t === 'state' && m.chat) { chatL.innerHTML = ''; m.chat.forEach(addChat); document.getElementById('chatN').textContent = ''; }
-    if (m.t === 'state' || m.t === 'seats') { this.n = m.count; paintSeats(m.seats, m.looks || {}, m.pros || []); if (m.top) paintTop(m.top); if (m.quiz) showQuiz(m.quiz); renderCount(); }
+    if (m.t === 'state' || m.t === 'seats') { this.n = m.count; paintSeats(m.seats, m.looks || {}, m.pros || []); SCR.meta(m); SCR.res(m); if (m.top) paintTop(m.top); if (m.quiz) showQuiz(m.quiz); renderCount(); }
     else if (m.t === 'taken') { const t = seatByKey.get(m.seat); if (m.pro && t) flashCard('That seat is reserved for Pro members'); if (t) { t.st = 'taken'; const n = nearestFree(t); if (n) { markMine(n); this.sit(n.row + n.n); flashCard(`${m.seat} was taken · you're in ${n.row}${n.n}`); } } }
     else if (m.t === 'pro') { PRO = !!m.pro; document.body.classList.toggle('ispro', PRO); if (m.signedIn && (PRO || m.freeLeft > 0)) hideWall(); freePill(m.freeLeft); if (mine) { seatRacer(mine, null); seatRacer(mine, MYLOOK); } }
     else if (m.t === 'free') freePill(m.left);
@@ -1089,11 +1090,43 @@ const live = { ws: null, hall: null, n: 0, quiz: null, picked: -1,
     else if (m.t === 'board') { if (m.top) paintTop(m.top); }
     else if (m.t === 'me') { RC.rank = m.rank; RC.of = m.of; saveRC(); }
     else if (m.t === 'quiz') showQuiz(m);
-    else if (m.t === 'answered') { if (this.quiz && m.qid === this.quiz.qid) document.getElementById('qn').textContent = `${m.n} of ${this.n} answered`; }
+    else if (m.t === 'answered') { if (this.quiz && m.qid === this.quiz.qid) document.getElementById('qn').textContent = `${m.n} of ${m.of || this.n} answered`; }
     else if (m.t === 'reveal') reveal(m);
     else if (m.t === 'react') reactStream(m.e);
     else if (m.t === 'chat') addChat(m.m);
     else if (m.t === 'slow') { if (m.wait) cool(m.wait); if (m.why) addChat({ name: 'MindGains', text: m.why }); }
+  } };
+// ==== theatre-screens-20261121: auto screens, friends together, group seats (client) ====
+// The hall server may put us in Screen 2, 3...: same class, same quiz and Top 5, combined viewer count; the label shows only
+// when more than one screen is open. A friend's link seats us next to them (server-side), a group link in the group's block.
+const SCR = { k: 1, n: 1,
+  qs() { const o = new URLSearchParams(); try { const p = getPlayerId(); if (p) o.set('p', p); } catch (e) {} for (const x of ['ref', 'grp', 'scap']) if (QS.get(x)) o.set(x, QS.get(x)); const s = o.toString(); return s ? '?' + s : ''; },
+  meta(m) { if (m && m.scr) { this.k = m.scr; this.n = m.scrs || 1; } },
+  res(m) { if (!m || !m.res) return; for (const k of m.res) { const t = seatByKey.get(k); if (t && t !== mine) t.st = 'taken'; } },
+  on(m) {
+    if (m.t === 'count') { live.n = m.count; this.meta(m); renderCount(); return true; }
+    if (m.t === 'seatyou') { const t = seatByKey.get(m.seat); autoSeated = true; userSeat = true; if (t && t !== mine) { markMine(t); if (mode === 'seat' && !document.body.classList.contains('intro')) fly('seat'); }
+      const nm = String(m.name || 'your friend').replace(/[<>&]/g, '');
+      const msg = { friend: `You're next to ${nm} · ${m.seat}`, friendnear: `Seats beside ${nm} were taken · you're in ${m.seat}, close by`, friendfar: `You're in ${m.seat}, close to ${nm}`, group: `Your group's seats · you're in ${m.seat}`, groupfull: `Group seats are full · you're in ${m.seat}, right beside them`, together: `Moved · you're sitting together in ${m.seat}` }[m.why];
+      if (msg) flashCard(msg); return true; }
+    if (m.t === 'pairoffer') { this.offer(m); return true; }
+    return false; },
+  offer(m) {   // a friend arrived but both seats beside us were taken: one tap moves us next to them
+    const nm = esc(m.name || 'Your friend'), { d, close } = rsheet('Sit together?', 'users', `<p class="hint">${nm} joined on your link, but the seats beside you were taken. ${nm} is in ${esc(m.friendSeat)}; seat ${esc(m.seat)} next to them is held for you for 90 seconds.</p><button class="pbtn" id="scrMv">${ri('check', 15, 2.6)}Move us together</button><button class="sbtn" id="scrNo" style="background:none">Stay in my seat</button>`);
+    d.querySelector('#scrMv').onclick = () => { live.sit(m.seat); close(); }; d.querySelector('#scrNo').onclick = close; setTimeout(close, m.ttl || 90000); },
+  inviteSheet(shareSeat) {   // invite = share my seat link (as before) or hold a block of seats for a group
+    const { d, close } = rsheet('Invite friends', 'users', `<p class="hint">Friends who open your link sit right next to you, in your screen.</p><button class="pbtn" id="scrShare">${ri('link', 15)}Share my seat link</button>
+      <div class="sec">SIT TOGETHER AS A GROUP</div><p class="hint">Hold side-by-side seats for your study group for 20 minutes. Everyone with the link lands in the same screen, in the same row.</p>
+      <select class="fld" id="scrN">${[2, 3, 4, 5, 6, 7, 8].map((n) => `<option value="${n}"${n === 4 ? ' selected' : ''}>${n} seats together</option>`).join('')}</select><button class="sbtn" id="scrGo">${ri('users', 15)}Hold seats and get the group link</button><div id="scrOut"></div>`);
+    d.querySelector('#scrShare').onclick = () => { close(); shareSeat && shareSeat(); };
+    d.querySelector('#scrGo').onclick = async (e) => { const b = e.currentTarget; b.disabled = true; let p = ''; try { p = getPlayerId(); } catch (x) {}
+      let r = null; try { r = await (await fetch('/api/theatre/' + hall + '/group', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ p, n: +d.querySelector('#scrN').value }) })).json(); } catch (x) {}
+      const out = d.querySelector('#scrOut'); b.disabled = false;
+      if (!r || !r.code) { out.innerHTML = `<p class="hint">${r && r.error === 'limit' ? 'You already have 3 group links open. Try again later.' : 'No row has that many seats free together right now. Try fewer seats.'}</p>`; return; }
+      const url = location.origin + r.url;
+      const text = `🎬 I've saved ${r.seats.length} seats together for us in the MindGains Live Theatre (row ${r.seats[0][0]}). Join before they're released in 20 min:`;
+      out.innerHTML = `<p class="hint">Held: ${r.seats.join(', ')}${r.k > 1 ? ' · Screen ' + r.k : ''}.</p><input class="fld" readonly value="${esc(url)}"><button class="pbtn" id="scrCp">${ri('link', 15)}Copy group link</button><a class="sbtn" style="text-decoration:none" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}">Share on WhatsApp</a>`;
+      out.querySelector('#scrCp').onclick = async (ev) => { try { await navigator.clipboard.writeText(text + ' ' + url); } catch (x) {} ev.currentTarget.innerHTML = ri('check', 15, 2.6) + 'Copied'; }; };
   } };
 // ---- MindGains Pro: free 30 min/day (metered by the hall server), reserved centre seats, gold seats/racers/badges
 let PRO = false; window.__walled = true;   // closed until we know who's watching (a signed-in account is required)
@@ -1423,7 +1456,7 @@ function paintSeats(map, looks = {}, pros) {
     const st = who ? 'taken' : 'free', pk = prosNow.has(k) ? 1 : 0; if (s.st === st && s.who === who && s.pk === pk && s.painted) continue; s.st = st; s.who = who; s.pk = pk; s.painted = 1;
     const gold = prosNow.has(k), res = PRO_SEATS.has(k);
     const c = gold ? COL.pro : st === 'taken' ? COL.taken : s.row < 'E' ? COL.freeB : COL.free; s.m.color.set(c); s.m.emissive.set(gold ? 0x6a4300 : st === 'taken' ? 0x000000 : c); s.m.emissiveIntensity = gold ? .6 : st === 'taken' ? 0 : .35; } }
-function renderCount() { if (ROOM) return roomHeader(); const el = document.getElementById('nowS'); if (el && !el.dataset.c) { el.dataset.c = 1; } const k = document.getElementById('nowK'); if (k) k.textContent = `NOW SHOWING · ${live.n} IN THE HALL`; }
+function renderCount() { if (ROOM) return roomHeader(); const el = document.getElementById('nowS'); if (el && !el.dataset.c) { el.dataset.c = 1; } const k = document.getElementById('nowK'); if (k) k.textContent = SCR.n > 1 ? `NOW SHOWING · SCREEN ${SCR.k} · ${live.n.toLocaleString('en-IN')} IN THE HALL` : `NOW SHOWING · ${live.n} IN THE HALL`; }
 function paintTop(top) { const el = document.getElementById('top5'); if (!top.length) { el.hidden = true; return; } el.hidden = false;
   el.innerHTML = '<b>TOP 5 TONIGHT</b>' + top.map((t, i) => `${i + 1}. ${t.name.replace(/[<>&]/g, '')}${t.seat ? ' · ' + t.seat : ''} — ${t.pts}`).join('<br>'); }
 let qTimer = null;
@@ -1928,6 +1961,7 @@ document.getElementById('inv').onclick = async () => { if (!signedIn) return ask
   try { if (navigator.share) { await navigator.share({ title: 'NationLap Live', text, url }); return; } } catch (e) { if (e && e.name === 'AbortError') return; }
   try { await navigator.clipboard.writeText(text + ' ' + url); flashCard(R && R.code ? `Invite link copied · ${R.pending ? R.pending + ' joined, waiting for their 3 quizzes · ' : ''}1 friend who answers 3 live quizzes = 3 days Pro` : 'Invite link copied'); }
   catch (e) { window.open('https://wa.me/?text=' + encodeURIComponent(text + ' ' + url), '_blank'); } };
+{ const shareSeat = document.getElementById('inv').onclick; document.getElementById('inv').onclick = (e) => (ROOM ? shareSeat(e) : SCR.inviteSheet(() => shareSeat(e))); }   // theatre-screens-20261121
 function addChat(m) { const d = document.createElement('div'); const t = m.host ? null : TIER[m.rank];
   d.className = 'cm' + (m.sys ? ' sys' : '') + (m.name === myName ? ' me' : '') + (m.host ? ' host' : '') + (t ? ' ' + t[0] : m.pro ? ' pro' : '');
   d.innerHTML = (m.re ? `<div class="cm-re">↩ <b>${esc(m.re.name)}</b> ${esc(m.re.text)}</div>` : '') +

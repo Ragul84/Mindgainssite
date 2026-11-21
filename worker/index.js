@@ -137,11 +137,15 @@ import { teachRoute } from './teach.js';
 import { growthServe } from './growth.js';
 import { hooksServe } from './theatre-hooks.js';
 import { rmWrap, rmDelegate } from './rank-mock.js';
+import { installScreens, screensRoute } from './theatre-screens.js';
 export { TheatreHall, StudyRoom };
 
 // Sunday State Rank Mock: mock instances live in the existing THEATRE namespace ("rankmock:<exam>");
 // TheatreHall hands over to RankMock only on instances marked "rm:exam" in their own storage. No new DO class or migration.
 rmDelegate(TheatreHall);
+// Auto screens: a hall is several screens ("main", "main~s2", ...) with one lobby ("lobby:main") that seats people and runs
+// one quiz for all of them. Same TheatreHall class, no migration. See ./theatre-screens.js.
+installScreens(TheatreHall);
 
 const SEC = {
   'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
@@ -170,7 +174,7 @@ async function route(request, env) {
     if (pathname.startsWith('/api/game/')) return game(request, env, pathname);
     if (pathname.startsWith('/api/pro/')) return proRoute(request, env, pathname);
     if (pathname.startsWith('/api/room/')) return roomRoute(request, env, pathname);
-    if (pathname.startsWith('/api/theatre/')) return theatreRoute(request, env, pathname);
+    if (pathname.startsWith('/api/theatre/')) return (await screensRoute(request, env, pathname)) || theatreRoute(request, env, pathname);
     // Teach on MindGains: /teach/, /t/<code>, /api/teach/*, and the footer link added to /assets/pv.js
     if (pathname.startsWith('/api/teach/') || pathname === '/teach' || pathname.startsWith('/teach/') || pathname.startsWith('/t/') || pathname === '/assets/pv.js') {
       const tr = await teachRoute(request, env, pathname);
