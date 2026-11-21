@@ -46,5 +46,11 @@ Get it into mindwhite's `pyq_verified_clean` first (that is where verification
 happens), then run the pipeline above. The website is a snapshot; it never reads
 Supabase live.
 
-### Counts at last import (21 Nov 2026)
-UPSC 1,892 (GS-I 2011–2025 · CSAT 2021–2025) · TNPSC 4,171 · total 6,063.
+### Unofficial papers (answers by MindGains)
+Rows in pyq-extra.json with src:'mg' were answered by MindGains (no official key for that
+booklet). Pages show an "⚠ Unofficial" tag. Never delete or overwrite them on a refresh;
+replace only if an official key for that exact booklet is found. Working scans/notes live in
+C:Usersagulpyqwork.
+
+### Counts (22 Nov 2026)
+UPSC 1,892 · TNPSC 5,031 · total 6,923.
