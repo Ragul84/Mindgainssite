@@ -50,7 +50,7 @@ Supabase live.
 Rows in pyq-extra.json with src:'mg' were answered by MindGains (no official key for that
 booklet). Pages show an "⚠ Unofficial" tag. Never delete or overwrite them on a refresh;
 replace only if an official key for that exact booklet is found. Working scans/notes live in
-C:Usersagulpyqwork. Before trusting an mg paper, look for TNPSC's own answer-ticked booklet
+C:/Users/ragul/pyqwork. Before trusting an mg paper, look for TNPSC's own answer-ticked booklet
 (tnpsc.gov.in/Tentative/Document/<date>_<paper>.pdf) or a coaching key, and fix mismatches.
 Checked: G2 2013/2015 Tamil, G4 2016/2018 Tamil, G4 2024 GS+Tamil.
 
