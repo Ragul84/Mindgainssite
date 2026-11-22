@@ -12,10 +12,12 @@
  *   POST /api/game/submit      {token, answers:[{id,c,ms}], lv, seed, win, score, device}
  *   GET  /api/game/league?week=ID
  *   GET  /api/game/challenge?code=CR..
+ *   POST /api/game/events      consent-gated, first-party product analytics
+ *   POST /api/game/report      question-quality report and automatic quarantine signal
  *   Daily Paper, All-India Mock, groups, Bharat Board: see game-social.js
  *
  * Bindings: QUIZ_SECRET (existing secret), GAME_DB (D1, new), GAME_ROUND_RL + GAME_SUBMIT_RL
- * (rate limit, new). Optional vars: SUPABASE_URL, SUPABASE_ANON_KEY, PROFILE_TABLE.
+ * (rate limit, new). Optional vars: SUPABASE_URL, SUPABASE_PYQ_KEY, PROFILE_TABLE.
  */
 
 import { redisReady, redisRound, redisById, examList, BANK_EXAMS } from './redisbank.js';
@@ -51,10 +53,11 @@ for (const [subj, sets] of Object.entries(SETS)) for (const s of sets) SET_OF.se
 
 const DIFF = { easy: 1, medium: 2, hard: 3 };
 
-// ---------- Previous year questions (Supabase table pyq_questions, read server-side) ----------
+// ---------- Previous year questions (Supabase view pyq_verified_clean, GET-only server-side) ----------
 // Only rows with an official or verified key, 4 options, no figure, English text, and a subject we can place.
 const PYQ_EXAMS = { upsc: 'UPSC', tnpsc: 'TNPSC' };
-const PYQ_FILTER = 'question_type=eq.objective&answer_source=in.(official-key,ticked-verified)&nullified=is.false&needs_figure=is.false';
+const PYQ_VIEW = 'pyq_verified_clean';
+const PYQ_FILTER = 'question_type=eq.objective&answer_source=in.(official-key,ticked-verified,official-key-ocr)&nullified=is.false&needs_figure=is.false';
 const PYQ_SEL = 'id,exam,year,subject,topic,question_text,options,answer_text,images';
 const PYQ_RULES = [
   ['CSAT', /csat|aptitude|reasoning|mental ability|quantitative|comprehension|numerical|data interpretation|simplification|percentage|ratio/],
@@ -98,13 +101,13 @@ async function sbGet(env, path) {
 async function pyqPool(env, exam) {
   const c = pyqCache.get(exam);
   if (c && Date.now() - c.at < 15 * 60000 && c.rows.length) return c.rows;
-  const head = await sbGet(env, `pyq_questions?select=id&exam=eq.${exam}&${PYQ_FILTER}&limit=1`);
+  const head = await sbGet(env, `${PYQ_VIEW}?select=id&exam=eq.${exam}&${PYQ_FILTER}&limit=1`);
   const total = head ? Number((head.headers.get('content-range') || '').split('/')[1]) || 0 : 0;
   if (!total) return [];
   const rows = [], seen = new Set();
   for (let k = 0; k < 3; k++) {
     const off = Math.floor(Math.random() * Math.max(1, total - 300));
-    const r = await sbGet(env, `pyq_questions?select=${PYQ_SEL}&exam=eq.${exam}&${PYQ_FILTER}&order=id&offset=${off}&limit=300`);
+    const r = await sbGet(env, `${PYQ_VIEW}?select=${PYQ_SEL}&exam=eq.${exam}&${PYQ_FILTER}&order=id&offset=${off}&limit=300`);
     if (!r) continue;
     for (const row of await r.json()) { const q = cleanPyq(row); if (q && !seen.has(q.id)) { seen.add(q.id); rows.push(q); } }
   }
@@ -128,7 +131,7 @@ async function pyqYear(env, exam, year, subjects) {
   const k = exam + year;
   let rows = yearCache.get(k);
   if (!rows || Date.now() - rows.at > 15 * 60000) {
-    const r = await sbGet(env, `pyq_questions?select=${PYQ_SEL}&exam=eq.${encodeURIComponent(exam)}&year=eq.${year}&${PYQ_FILTER}&limit=400`);
+    const r = await sbGet(env, `${PYQ_VIEW}?select=${PYQ_SEL}&exam=eq.${encodeURIComponent(exam)}&year=eq.${year}&${PYQ_FILTER}&limit=400`);
     rows = { at: Date.now(), list: r ? (await r.json()).map(cleanPyq).filter(Boolean) : [] };
     yearCache.set(k, rows);
   }
@@ -156,7 +159,7 @@ async function markSeen(env, uid, ids) {
 }
 async function pyqById(env, id) {
   for (const c of pyqCache.values()) { const q = c.rows.find((x) => x.id === id); if (q) return q; }
-  const r = await sbGet(env, `pyq_questions?select=${PYQ_SEL}&id=eq.${encodeURIComponent(id.slice(4))}&${PYQ_FILTER}&limit=1`);
+  const r = await sbGet(env, `${PYQ_VIEW}?select=${PYQ_SEL}&id=eq.${encodeURIComponent(id.slice(4))}&${PYQ_FILTER}&limit=1`);
   if (!r) return null;
   const row = (await r.json())[0];
   return row ? cleanPyq(row) : null;
@@ -174,6 +177,61 @@ const dayId = (ms) => Math.floor((ms + 5.5 * 3600000) / 86400000); // IST day fo
 const rid = () => Array.from(crypto.getRandomValues(new Uint8Array(12)), (b) => b.toString(16).padStart(2, '0')).join('');
 
 export function makeGame({ json, hmac, loadBank, limited, usable }) {
+  const analyticsEvents = new Set(['app_open', 'onboarding_complete', 'first_question', 'level_start', 'answer', 'level_end', 'event_start', 'share', 'challenge_share', 'challenge_start', 'group_create', 'group_join', 'state_set', 'install_ready', 'install_prompt', 'install_result', 'quality_low', 'error', 'question_report']);
+  let quarantineCache = { at: 0, ids: [] };
+  async function quarantined(env) {
+    if (!env.GAME_DB) return [];
+    if (Date.now() - quarantineCache.at < 5 * 60000) return quarantineCache.ids;
+    try {
+      const r = await env.GAME_DB.prepare('SELECT qid FROM game_question_report GROUP BY qid HAVING COUNT(DISTINCT reporter) >= 3').all();
+      quarantineCache = { at: Date.now(), ids: (r.results || []).map((x) => x.qid) };
+    } catch { quarantineCache = { at: Date.now(), ids: [] }; }
+    return quarantineCache.ids;
+  }
+
+  async function events(request, env) {
+    if (request.method !== 'POST') return json({ error: 'POST only' }, 405);
+    const ip = request.headers.get('cf-connecting-ip') || 'na';
+    if (await limited(env.GAME_SUBMIT_RL, 'ge:' + ip, 10)) return json({ error: 'slow down' }, 429, { 'retry-after': '60' });
+    if (!env.GAME_DB) return json({ error: 'analytics storage not configured' }, 503);
+    let body;
+    try { body = await request.json(); } catch { return json({ error: 'bad body' }, 400); }
+    const batch = Array.isArray(body && body.events) ? body.events.slice(0, 100) : [];
+    const now = Date.now(), rows = [];
+    for (const e of batch) {
+      if (!e || !analyticsEvents.has(String(e.n)) || !/^[a-z0-9]{4,16}$/i.test(String(e.sid || ''))) continue;
+      const p = e.p && typeof e.p === 'object' && !Array.isArray(e.p) ? e.p : {};
+      const safe = {};
+      for (const k of ['mode', 'kind', 'subj', 'place', 'to', 'why', 'k']) if (p[k] != null) safe[k] = String(p[k]).slice(0, 40);
+      for (const k of ['lv', 'n', 'right', 'earned', 'stars', 'secs', 'ms', 'fps']) if (Number.isFinite(Number(p[k]))) safe[k] = Math.round(Number(p[k]));
+      if (p.outcome != null) safe.outcome = String(p.outcome).slice(0, 24);
+      for (const k of ['ok', 'win', 'locked', 'skipped']) if (p[k] != null) safe[k] = !!p[k];
+      rows.push(env.GAME_DB.prepare('INSERT INTO game_analytics (event, session, at, version, exam, data) VALUES (?1,?2,?3,?4,?5,?6)')
+        .bind(String(e.n), String(e.sid), Math.max(now - 7 * 864e5, Math.min(now, Number(e.t) || now)), String(e.v || '').slice(0, 16), String(p.exam || '').slice(0, 16), JSON.stringify(safe)));
+    }
+    if (rows.length) try { await env.GAME_DB.batch(rows); } catch { return json({ error: 'analytics schema missing' }, 503); }
+    if (Math.random() < 0.02) await env.GAME_DB.prepare('DELETE FROM game_analytics WHERE at < ?1').bind(now - 365 * 86400000).run().catch(() => {});
+    return json({ accepted: rows.length });
+  }
+
+  async function reportQuestion(request, env) {
+    if (request.method !== 'POST') return json({ error: 'POST only' }, 405);
+    const ip = request.headers.get('cf-connecting-ip') || 'na';
+    if (await limited(env.GAME_SUBMIT_RL, 'gq:' + ip, 10)) return json({ error: 'slow down' }, 429, { 'retry-after': '60' });
+    if (!env.GAME_DB) return json({ error: 'storage not configured' }, 503);
+    let b;
+    try { b = await request.json(); } catch { return json({ error: 'bad body' }, 400); }
+    const qid = String((b && b.qid) || '').slice(0, 180), reason = String((b && b.reason) || 'other');
+    if (!qid || !['answer', 'wording', 'outdated', 'duplicate', 'other'].includes(reason)) return json({ error: 'bad report' }, 400);
+    const who = await identify(request, env, b).catch(() => null);
+    const reporter = who ? who.uid : 'anon:' + (await hmac(env.QUIZ_SECRET, 'report|' + ip)).slice(0, 20);
+    await env.GAME_DB.prepare('INSERT OR IGNORE INTO game_question_report (qid, reporter, reason, detail, at) VALUES (?1,?2,?3,?4,?5)')
+      .bind(qid, reporter, reason, String((b && b.detail) || '').trim().slice(0, 300), Date.now()).run();
+    if (Math.random() < 0.02) await env.GAME_DB.prepare('DELETE FROM game_question_report WHERE at < ?1').bind(Date.now() - 365 * 86400000).run().catch(() => {});
+    quarantineCache.at = 0;
+    return json({ ok: true });
+  }
+
   async function bankQ(env, id) {
     if (id.startsWith('rq:')) return redisById(env, id);
     if (id.startsWith('pyq:')) { const p = await pyqById(env, id); return p ? { q: { question: p.question, answer_index: p.answer_index, options: p.options, difficulty: 'hard' }, subj: p.subj } : null; }
@@ -227,6 +285,7 @@ export function makeGame({ json, hmac, loadBank, limited, usable }) {
     const bankExam = GAME_EXAMS.includes(exParam) ? exParam : 'all';
     const useRedis = !track && redisReady(env) && url.searchParams.get('src') !== 'legacy';
     const exclude = new Set((url.searchParams.get('exclude') || '').split(',').slice(0, 300));
+    for (const id of await quarantined(env)) exclude.add(id);
     const items = [], seen = new Set();
     // Progression (PROGRESSION_PLAN.md): level sets a difficulty band and, on Season boss stages, a PYQ year gate.
     const lv = Math.max(0, Math.min(9999, parseInt(url.searchParams.get('level') || url.searchParams.get('lv') || '0', 10) || 0));
@@ -427,6 +486,8 @@ export function makeGame({ json, hmac, loadBank, limited, usable }) {
     if (pathname === '/api/game/league') return league(request, env);
     if (pathname === '/api/game/exams') return json({ exams: redisReady(env) ? examList() : [], pyq: Object.values(PYQ_EXAMS) });
     if (pathname === '/api/game/challenge') return challenge(request, env);
+    if (pathname === '/api/game/events') return events(request, env);
+    if (pathname === '/api/game/report') return reportQuestion(request, env);
     if (social.routes[pathname]) return social.routes[pathname](request, env);
     return json({ error: 'not found' }, 404);
   };

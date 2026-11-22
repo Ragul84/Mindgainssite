@@ -34,6 +34,7 @@ const CSS = `<style>
 .pq .fig{display:block;max-width:100%;height:auto;margin:10px 0 0;border-radius:8px;background:#fff}
 .pq .uo{color:#b45309;font-size:13px}
 .note{font:400 13px/1.6 Inter;color:#64748b;background:#f8fafc;border-radius:12px;padding:12px 14px;margin:18px 0 0}
+.runcta{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:28px 0;padding:20px;border-radius:18px;background:linear-gradient(135deg,#13213d,#244f9e);color:#fff}.runcta b{display:block;font:800 19px/1.25 'Inter Tight',Inter}.runcta span{display:block;margin-top:4px;font:500 13px/1.5 Inter;color:#dbeafe}.runcta a{flex:0 0 auto;padding:11px 16px;border-radius:999px;background:#ffd23f;color:#14213d;text-decoration:none;font:800 14px Inter}@media(max-width:560px){.runcta{align-items:flex-start;flex-direction:column}.runcta a{width:100%;text-align:center}}
 </style>`;
 const JS = `<script>document.querySelectorAll('.pq').forEach(function(q){q.querySelectorAll('.o button').forEach(function(b){b.onclick=function(){if(q.classList.contains('d'))return;q.classList.add('d');if(b.dataset.c)b.classList.add('ok');else{b.classList.add('no');q.querySelectorAll('[data-c]').forEach(function(c){c.classList.add('ok')})}}})})</script>`;
 function page({ url, title, desc, crumbs, body, ld = [] }) {
@@ -84,6 +85,7 @@ const qcard = (q, i) => {
 const out = (rel, html) => { const f = path.join(ROOT, rel, 'index.html'); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, html); };
 const quizLd = (name, url, qs) => ({ '@context': 'https://schema.org', '@type': 'Quiz', name, url: SITE + url, inLanguage: 'en-IN', about: name, hasPart: qs.filter((q) => !q.acc).slice(0, 20).map((q) => ({ '@type': 'Question', name: q.q, acceptedAnswer: { '@type': 'Answer', text: q.opts[q.a] } })) });
 const MAIL = ' Spot a mistake? Write to <a href="mailto:contact@mindgains.ai">contact@mindgains.ai</a>.';
+const runCta = (exam) => `<aside class="runcta"><div><b>Turn this paper into a 3-minute race</b><span>Practise verified ${exam.toUpperCase()} questions, review mistakes, and climb the all-India board.</span></div><a href="/play/cutoff-run/?ref=pyq&amp;exam=${exam}&amp;pyq=1">Play Cut-Off Run</a></aside>`;
 function srcNote(qs) {
   const body = qs[0].exam === 'upsc' ? 'UPSC' : 'TNPSC', nul = qs.filter((q) => q.acc).length;
   const mg = qs.filter((q) => q.src === 'mg').length;
@@ -125,7 +127,7 @@ function paperPage(exam, y, ps, url, crumbs, siblings) {
   const mixed = ps.some((q) => q.src === "mg") && !ps.every((q) => q.src === "mg"); ps.forEach((q) => { q.part = mixed; });
   const name = `${exam.toUpperCase()} ${y} ${ps[0].paper}`;
   const body = hero(`${exam.toUpperCase()} · ${y}`, `${name}: Questions with Answers`, `All ${ps.length} questions from the ${name} paper, in paper order. Tap an option to check your answer instantly.`, [`${ps.length} questions`, ps.every((q) => q.src === 'mg') ? 'Unofficial answers' : ps.some((q) => q.src === 'ticked') ? 'Verified answers' : 'Official answer key']) + gapNote(exam, y, ps) +
-    ps.map((q, i) => qcard(q, i + 1)).join('') + srcNote(ps) +
+    ps.map((q, i) => qcard(q, i + 1)).join('') + srcNote(ps) + runCta(exam) +
     (siblings.length ? `<h2>More ${exam.toUpperCase()} ${y} papers</h2><div class="yr">${siblings.join('')}</div>` : '');
   urls.push(url);
   out(url.slice(1, -1), page({ url, title: `${name} Question Paper with Answers (${ps.length} Qs) | MindGains`,

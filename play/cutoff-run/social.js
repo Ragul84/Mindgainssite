@@ -7,7 +7,7 @@ const STATES={AN:'Andaman and Nicobar',AP:'Andhra Pradesh',AR:'Arunachal Pradesh
 window.STATE_NAME=c=>STATES[c]||'';
 const KIND_NAME={friends:'Study group',coaching:'Coaching centre',college:'College',creator:'Creator board'};
 const HOME=location.origin+location.pathname.replace(/[^/]*$/,'');
-const online=()=>!!CONFIG.gameApi;
+const online=()=>!!CONFIG.gameApi&&readyForOnline();
 const nf=n=>Number(n||0).toLocaleString('en-IN');
 // Percentiles mean little on a tiny field, so they show from 10 players up.
 const rankTxt=ev=>ev.rank===1?`#1 in India of ${nf(ev.total)}`:`All-India rank ${nf(ev.rank)} of ${nf(ev.total)}`+(ev.total>=10?` (top ${ev.top_pct}%)`:'');
@@ -17,7 +17,7 @@ async function api(path,body){const q=path.includes('?')?'&':'?';
 function sheet(html,back){hideAll();$('pcard').innerHTML=html;$('pop').hidden=false;$('pcard').scrollTop=0;const b=$('sbBack');if(b)b.onclick=back||(()=>{$('pop').hidden=true;openMenu()})}
 const hdr=t=>`<div class="hdr"><h2>${t}</h2><button class="x" id="sbBack">Back</button></div>`;
 const say=(t,m)=>`<div class="stage"><div class="bubble r">${esc(t)}</div>${miga(m||'point')}</div>`;
-function needOnline(){sheet(hdr('Needs internet')+say('This one runs live with players across India. Connect to the internet and try again.','think'))}
+function needOnline(){const minor=PL.consent&&!PL.consent.adult;sheet(hdr(minor?'Local practice mode':'Needs internet')+say(minor?'Live boards and remote progress stay off for under-18 players in this web session. You can keep playing local practice runs.':'This one runs live with players across India. Connect to the internet and try again.','think'))}
 
 // ---------- sharing: WhatsApp first, native share sheet second ----------
 window.shareRow=small=>`<div class="bgrid"><button class="btn sm" id="shWa" style="background:linear-gradient(#4ee07a,#1fa855)">WhatsApp</button><button class="btn blue sm" id="shNat">${small?'Share link':'Share card'}</button></div>`;
@@ -70,11 +70,11 @@ function openMock(j){const left=Math.max(0,j.starts_at-Date.now()),h=Math.floor(
 
 // ---------- profile: state (for the Bharat Board) ----------
 function openProfile(then){const opts=Object.keys(STATES).sort((a,b)=>STATES[a].localeCompare(STATES[b])).map(k=>`<option value="${k}"${PL.state===k?' selected':''}>${esc(STATES[k])}</option>`).join('');
-  const EX={'':'Mixed (general studies)',upsc:'UPSC',tnpsc:'TNPSC',ssc:'SSC',rrb:'RRB',banking:'Banking',neet:'NEET',jee:'JEE'};
+  const EX={upsc:'UPSC',tnpsc:'TNPSC',ssc:'SSC',rrb:'RRB',banking:'Banking',neet:'NEET',jee:'JEE'};
   const sel='style="text-transform:none;font-size:18px;margin-bottom:8px"';
   sheet(hdr('Your state and exam')+say('Your marks count for your state on the Bharat Board. Your exam decides the questions.','happy')+`<select class="inp" id="stIn" ${sel}><option value="">Choose your state</option>${opts}</select><select class="inp" id="exIn" ${sel}>${Object.keys(EX).map(k=>`<option value="${k}"${(PL.exam||'')===k?' selected':''}>${EX[k]}</option>`).join('')}</select><div class="err" id="stErr"></div><button class="btn" id="stGo">Save</button>`);
   $('stGo').onclick=()=>{const v=$('stIn').value,ex=$('exIn').value;if(!v){$('stErr').textContent='Choose your state first.';return}
-    const exCh=(PL.exam||'')!==ex;PL.state=v;PL.exam=ex;saveP();track('state_set',{s:v,ex});if(exCh)try{Remote.loadQuestions(subjFor(level),{})}catch(e){}
+    const exCh=(PL.exam||'')!==ex;PL.state=v;PL.exam=ex;saveP();track('state_set',{s:v,ex});if(exCh)try{Remote.loadQuestions(subjFor(level),{exam:ex})}catch(e){}
     then?then():openBharat()}}
 window.openProfile=openProfile;
 
@@ -101,7 +101,7 @@ async function openGroup(code,fresh){let j;try{j=await api('/group?code='+encode
   const rows=j.rows.map(x=>`<li class="${x.me?'me':''}"><span>#${x.rank}</span><span>${esc(x.name)}</span><span>${nf(x.score)}</span></li>`).join('');
   sheet(hdr(esc(j.name))+say(fresh?'Group ready! Send the invite link to your batch.':`${KIND_NAME[j.kind]}, ${j.members} member${j.members>1?'s':''}, ${nf(j.total)} marks this week.`,fresh?'cheer':'point')+
     `<div class="codebox">${j.code}</div>${shareRow(true)}${j.member?'':'<button class="btn" id="gJn">Join this group</button>'}<div class="eyebrow" style="margin-top:10px">This week</div><ul class="lg">${rows}</ul>${j.member?'<button class="r2link" id="gLv" style="margin-top:10px;align-self:center">Leave group</button>':''}`,()=>openGroups());
-  shareBind(null,`Join "${j.name}" on Cut-Off Run. We race the UPSC cut-off as a team every week 👇`,null,'?g='+j.code);
+  shareBind(null,`Join "${j.name}" on Cut-Off Run. We race the ${EXAM_LABEL[PL.exam]||'exam'} cut-off as a team every week 👇`,null,'?g='+j.code);
   if($('gJn'))$('gJn').onclick=async()=>{try{await api('/group/join',{code:j.code});openGroup(j.code)}catch(e){alert(e.message)}};
   if($('gLv'))$('gLv').onclick=async()=>{if(!confirm('Leave '+j.name+'?'))return;try{await api('/group/leave',{code:j.code})}catch(e){}openGroups()}}
 
@@ -139,9 +139,12 @@ function deepLink(){const p=new URLSearchParams(location.search);if(![...p.keys(
   if(p.get('g'))return joinGroup(p.get('g').toUpperCase().slice(0,6));
   if(p.get('paper'))return startEvent('paper');
   if(p.get('mock'))return startEvent('mock');
+  if(p.get('pyq'))return Remote.loadQuestions(null,{pyq:1,exam:PL.exam}).then(()=>start('pyq'));
   if(p.get('c')){openCode();const i=$('codeIn');if(i){i.value=p.get('c').toUpperCase().slice(0,40);setTimeout(()=>$('kgo')&&$('kgo').click(),50)}}}
-openMenu();deepLink();
+if(readyToPlay()){if(readyForOnline())deepLink()}else addEventListener('cutoff:onboarded',()=>{if(readyForOnline())deepLink()},{once:true});
 
-// ---------- installable: register the site service worker (push only, no offline cache) ----------
+// ---------- installable ----------
+addEventListener('beforeinstallprompt',e=>{e.preventDefault();window.__installPrompt=e;track('install_ready',{})});
+addEventListener('appinstalled',()=>{window.__installPrompt=null;track('install_result',{outcome:'installed'})});
 if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('/sw.js').catch(()=>{});
 })();

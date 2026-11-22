@@ -10,7 +10,7 @@ window.CUTOFF_CONFIG = {
     leagueTable: 'cor_league'
   },
   questionsEndpoint: '', // optional alternative to Supabase: GET -> [{question, options[], answer_index, subject, ...}] (e.g. Redis-backed API)
-  analyticsEndpoint: '', // optional: POST {events:[...]} (use a Supabase Edge Function, see HANDOFF)
+  analyticsEndpoint: '/api/game/events', // first-party, consent-gated analytics; stores no IP or advertising identifier
   tuningEndpoint: '',    // optional: GET JSON that overrides game tuning (speed, cut-off, read time)
   leagueEndpoint: '',    // optional: replaces the Supabase league table calls
   saveEndpoint: '',       // optional: replaces the Supabase progress table calls
