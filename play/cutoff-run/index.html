@@ -1074,7 +1074,7 @@ let S=null;
 const STEPS=[1.2,1.4,1.6,1.8,2,2.5,3,3.5,4,5],STEP_D=2.4;window.STEPS=STEPS;window.STEP_D=STEP_D;
 const stepStage=i=>{const s={upsc:['MAINS','INTERVIEW','LBSNAA'],tnpsc:['GROUP I','INTERVIEW','SERVICE'],ssc:['TIER II','SKILL TEST','POSTING'],rrb:['CBT 2','ABILITY TEST','POSTING'],banking:['MAINS','INTERVIEW','POSTING'],neet:['COUNSELLING','COLLEGE','MED SCHOOL'],jee:['ADVANCED','COUNSELLING','CAMPUS']}[PL.exam]||['NEXT STAGE','FINAL ROUND','GOAL'];return s[i<4?0:i<7?1:2]};
 const CAP=20; /* keep low-end phones clear and fast; the badge carries the real batch count */
-const PACE_D=28,DASH_D=5.5;
+const PACE_D=20,DASH_D=3.5;
 let paceF=store.get('cor_pace',1);
 function buildLevel(l,mode,opts={}){
   const subs=mode==='daily'?SUBJ:subjFor(l);
@@ -1125,11 +1125,11 @@ function buildLevel(l,mode,opts={}){
   }
   return{items,rivalZ:z+14,cutoff:Math.round((mode==='daily'?70:TUNE.cutBase+TUNE.cutStep*(l-1))*[1,1.2,1.4][tier]),picker,subs,tier};
 }
-function readTime(it){if(it.type==='branch')return 5.5*Math.max(1,paceF);const words=(it.q+' '+it.ans.join(' ')).split(/\s+/).filter(Boolean).length;
-  let t=TUNE.readBase+TUNE.readPerWord*words+(it.ans.length>=3?.9:0)+(it.kind==='csat'?1.5:0);if(S&&S.lv===1&&(S.qSeen||0)<=2)t+=1.2;return Math.max(4,Math.min(16,t*paceF))}
+function readTime(it){if(it.type==='branch')return 3.2*Math.max(.9,Math.min(1.1,paceF));const words=(it.q+' '+it.ans.join(' ')).split(/\s+/).filter(Boolean).length;
+  let t=Math.min(1.25,TUNE.readBase)+Math.min(.15,TUNE.readPerWord)*words+(it.ans.length>=3 ? .4 : 0)+(it.kind==='csat' ? .6 : 0);if(S&&S.lv===1&&(S.qSeen||0)<=2)t+=.5;return Math.max(2.8,Math.min(6.5,t*Math.max(.9,Math.min(1.1,paceF))))}
 function tunePace(pc,ok){if(!pc)return;if(pc.locked){const r=pc.lockedAt/pc.T;paceF=paceF*.8+.2*Math.max(.7,Math.min(1.3,r*1.2))}else if(!ok)paceF=Math.min(1.35,paceF*1.06);else paceF=paceF*.95+.05;store.set('cor_pace',paceF)}
 function lockAnswer(pickI){const pc=S&&S.pace;if(!pc||pc.locked||S.phase!=='run'||pc.it.type!=='quiz'||pc.it.done)return;pc.locked=true;pc.lockedAt=pc.el;
-  const n=pc.it.ans.length,i=pickI??laneOf(n,S.x),lw=4/n;S.tx=-2+lw*(i+.5);S.steerLock=true;$('lock').disabled=true;$('lock').textContent='LOCKED: '+'ABCD'[i]+' ⚡';sfx.power()}
+  const n=pc.it.ans.length,i=pickI??laneOf(n,S.x),lw=4/n;pc.choice=i;S.tx=-2+lw*(i+.5);$('opts').querySelectorAll('.opt').forEach((e,k)=>e.classList.toggle('on',k===i));S.steerLock=true;$('lock').disabled=true;$('lock').textContent='LOCKED: '+'ABCD'[i]+' ⚡';sfx.power()}
 function skipAnswer(){const pc=S&&S.pace;if(!pc||pc.locked||S.phase!=='run'||pc.it.type!=='quiz'||pc.it.done)return;pc.locked=true;pc.skipped=true;pc.lockedAt=pc.el;S.steerLock=true;$('lock').disabled=true;$('skip').disabled=true;$('skip').textContent='SKIPPED';sfx.tick()}
 const QUICK_MODES=['quick','review','csat','weak','pyq','paper'];
 function buildQuick(mode,subs){const picker=new Picker(subs,Math.random,true),items=[];let z=10;
@@ -1233,9 +1233,9 @@ function banner(t,sub,dur=1.8){const b=$('banner');b.innerHTML=esc(t)+(sub?`<sma
 let drag=null;
 const steerable=()=>S&&((S.phase==='run'&&!S.steerLock)||S.phase==='shoot'||(S.phase==='boss'&&S.boss&&['intro','tele','atk','counter'].includes(S.boss.st)));
 // Sideways swipes steer; upward swipes jump. Ignore cards so long questions stay scrollable.
-function dragStart(x,y,target){if(!steerable()||(target&&target.closest&&target.closest('.q,.sheet,.ov,.lock,button')))return false;drag={sx:x,sy:y,x0:S.tx,t:performance.now(),moved:false,jumped:false};return true}
-function dragMove(x,y){if(!drag||!steerable())return;const dx=x-drag.sx,dy=y-drag.sy;if(dy<-42){drag.jumped=true;jump();drag=null;return}if(Math.abs(dx)>6)drag.moved=true;S.tx=drag.x0+dx/W*5.4}
-function dragEnd(x,y){if(!drag)return;const d=drag,dx=x-d.sx,dy=y-d.sy;if(dy<-42&&!d.jumped)jump();else if(!d.moved&&!d.jumped&&Math.abs(dy)<18&&steerable()&&performance.now()-d.t<350){const r=wrap.getBoundingClientRect(),rel=(x-r.left)/r.width;if(rel<.4)S.tx-=1.2;else if(rel>.6)S.tx+=1.2}drag=null}
+function dragStart(x,y,target){if(!S||(S.phase!=='run'&&!steerable())||(target&&target.closest&&target.closest('.q,.sheet,.ov,.lock,button,input,select,textarea,a')))return false;drag={sx:x,sy:y,x0:S.tx,t:performance.now(),moved:false,jumped:false};return true}
+function dragMove(x,y){if(!drag)return;const dx=x-drag.sx,dy=y-drag.sy;if(!drag.jumped&&dy<-42&&Math.abs(dy)>Math.abs(dx)*1.15){drag.jumped=true;jump();drag=null;return}if(!steerable())return;if(Math.abs(dx)>6)drag.moved=true;S.tx=drag.x0+dx/W*5.4}
+function dragEnd(x,y){if(!drag)return;const d=drag,dx=x-d.sx,dy=y-d.sy;if(!d.jumped&&dy<-42&&Math.abs(dy)>Math.abs(dx)*1.15)jump();else if(!d.moved&&!d.jumped&&Math.abs(dy)<18&&steerable()&&performance.now()-d.t<350){const r=wrap.getBoundingClientRect(),rel=(x-r.left)/r.width;if(rel<.4)S.tx-=1.2;else if(rel>.6)S.tx+=1.2}drag=null}
 wrap.addEventListener('touchstart',e=>{const t=e.changedTouches[0];if(t&&dragStart(t.clientX,t.clientY,e.target))e.preventDefault()},{passive:false});
 wrap.addEventListener('touchmove',e=>{if(!drag)return;e.preventDefault();const t=e.touches[0];if(t)dragMove(t.clientX,t.clientY)},{passive:false});
 wrap.addEventListener('touchend',e=>{const t=e.changedTouches[0];dragEnd(t?t.clientX:0,t?t.clientY:0)});
@@ -1269,7 +1269,7 @@ function update(dt){
         if(ng.type==='branch')sfx.power();
         else if(!store.get('cor_tut',false)){store.set('cor_tut',true);{const aq=activeQ();if(!(aq&&aq.obj&&aq.obj.pyqx))banner('Steer into your answer','Tap LOCK to dash early',2.6)}}}
       const pc=S.pace;pc.el+=dt;
-      if(pc.locked||dz<DASH_D){target=S.speed*1.4;rate=8;if(!pc.dash){pc.dash=true;noise(.35,.06,1800)}}
+      if(pc.locked||dz<DASH_D){target=S.speed*1.9;rate=14;if(!pc.dash){pc.dash=true;noise(.35,.06,1800)}}
       else{const rt=Math.max(.3,pc.T-.6-pc.el);target=Math.max(1.3,Math.min(target,(dz-DASH_D)/rt));rate=pc.el<.8?2.5:4}
     }}
   for(const it of S.items)if(it.type==='ambush'&&it.fighting){target=0;rate=14}
@@ -1281,7 +1281,7 @@ function update(dt){
   S.v+=(target-S.v)*Math.min(1,dt*rate);
   if(S.phase==='run')S.dist+=S.v*dt;else if(S.phase==='climb')S.dist+=S.speed*dt;
   S.jumpT=Math.max(0,(S.jumpT||0)-dt);S.airY=S.jumpT>0?Math.sin((1-S.jumpT/1.9)*Math.PI)*2.15:0;
-  const rampAhead=S.phase==='run'&&S.gaps&&S.gaps.some(g=>g[0]-S.dist>0&&g[0]-S.dist<9);$('jumpHint').hidden=!rampAhead;
+  const rampAhead=S.phase==='run'&&S.gaps&&S.gaps.some(g=>g[0]-S.dist>0&&g[0]-S.dist<9);$('jumpHint').hidden=S.phase!=='run';$('jumpHint').classList.toggle('ready',!!rampAhead);$('jumpHint').textContent=rampAhead?'JUMP NOW ↑':'SWIPE UP TO JUMP';
   const soft=bonus.soft();if(window.storyUpdate&&S.story)storyUpdate(dt);
 
   for(const it of S.items){
@@ -1410,7 +1410,7 @@ function updateQ(dt){
   else if(q.hidden&&!it.done){q.hidden=false;q.style.animation='none';q.offsetHeight;q.style.animation=''} // card was hidden by a revive, scroll or banner pause: bring it back
   q.style.top=Math.max(92,HOR-q.offsetHeight-4)+'px';
   $('qbar').style.width=(a.shoot?Math.max(0,100-S.arena.t/14*100):(S.pace&&S.pace.it===it?Math.max(0,100-S.pace.el/S.pace.T*100):100))+'%';$('q').classList.toggle('shootq',!!a.shoot);$('lock').hidden=!!(a.shoot||a.branch);$('skip').hidden=!!(a.shoot||a.branch);
-  const side=laneOf(a.branch?2:it.ans.length,S.x);$('opts').querySelectorAll('.opt').forEach((e,i)=>e.classList.toggle('on',i===side))
+  const side=S.pace&&S.pace.it===it&&S.pace.locked&&S.pace.choice!=null?S.pace.choice:laneOf(a.branch?2:it.ans.length,S.x);$('opts').querySelectorAll('.opt').forEach((e,i)=>e.classList.toggle('on',i===side))
 }
 function qResult(it,side,ok,txt){if(qRow!==it)return;qHold=ok?0.9:side<0?1:1.25;
   const els=$('opts').querySelectorAll('.opt');els.forEach(e=>e.classList.remove('on'));
@@ -1716,7 +1716,7 @@ function quad(a,b,c,d,f){if(!a||!b||!c||!d)return;ctx.beginPath();ctx.moveTo(a[0
 function txt(t,x,y,size,fill,stroke='rgba(38,55,48,.3)',font='"Nunito",system-ui,sans-serif'){ctx.font=`800 ${size}px ${font}`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.lineJoin='round';if(stroke){ctx.lineWidth=Math.max(1,size*.06);ctx.strokeStyle=stroke;ctx.strokeText(t,x,y)}ctx.fillStyle=fill;ctx.fillText(t,x,y)}
 function wrapText(t,maxW){const w=t.split(' '),L=[];let c='';for(const x of w){const tt=c?c+' '+x:x;if(ctx.measureText(tt).width>maxW&&c){L.push(c);c=x}else c=tt}if(c)L.push(c);return L}
 /* a readable label: solid plate in the label's colour (navy for white text), white text with a dark edge */
-function plate(t,x,y,fs,col){ctx.font=`800 ${fs}px "Nunito",system-ui,sans-serif`;const w=ctx.measureText(t).width+fs*.8,h=fs*1.25,lc=String(col).toLowerCase(),bg=(lc==='#fff'||lc==='#ffffff')?'#62736c':col;ctx.fillStyle='rgba(36,49,43,.1)';rr(x-w/2,y-h/2+2,w,h,h*.42);ctx.fill();ctx.fillStyle=bg;rr(x-w/2,y-h/2,w,h,h*.42);ctx.fill();txt(t,x,y+1,fs,'#fff','rgba(38,55,48,.15)')}
+function plate(t,x,y,fs,col){ctx.font=`800 ${fs}px "Nunito",system-ui,sans-serif`;const w=ctx.measureText(t).width+fs*.9,h=fs*1.3;ctx.fillStyle='rgba(18,31,83,.24)';rr(x-w/2,y-h/2+2,w,h,h*.42);ctx.fill();ctx.fillStyle='#fffdf6';rr(x-w/2,y-h/2,w,h,h*.42);ctx.fill();ctx.lineWidth=Math.max(1,fs*.055);ctx.strokeStyle=col;rr(x-w/2,y-h/2,w,h,h*.42);ctx.stroke();txt(t,x,y+1,fs,'#202858','rgba(255,255,255,.8)')}
 function rr(x,y,w,h,r){ctx.beginPath();if(ctx.roundRect)ctx.roundRect(x,y,w,h,Math.max(0,r));else ctx.rect(x,y,w,h)}
 
 function guy(sx,sy,s,look,o){
@@ -2628,5 +2628,10 @@ body{background:radial-gradient(ellipse at 50% 12%,#385dd4 0,#17276c 44%,#111b4a
 @keyframes miga-idle{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-5px) rotate(1deg)}}@keyframes miga-cheer{0%{transform:scale(.75,.75)}55%{transform:translateY(-13px) scale(1.12,.9)}100%{transform:translateY(0) scale(1)}}@keyframes miga-wow{0%{transform:scale(.75)}70%{transform:scale(1.1)}100%{transform:scale(1)}}@keyframes miga-sad{0%,100%{transform:translateY(0)}45%{transform:translateY(4px) rotate(-4deg)}}
 @media(max-height:680px){.hm-top{padding:5px 8px}.home{gap:8px}.hm-miga,.hm-miga .miga{width:72px}.hm-row{padding:7px 9px}.hm-ic{width:34px;height:34px}.tabbar{padding-top:7px}.jump-hint{bottom:12px}}
 @media(prefers-reduced-motion:reduce){.jump-hint,.miga{animation:none!important}}
+.jump-hint{opacity:.9;transition:opacity .15s,scale .15s;background:linear-gradient(135deg,#273da9,#4b43c7)}.jump-hint.ready{opacity:1;scale:1.06;background:linear-gradient(135deg,#ff693f,#ed3765);box-shadow:0 5px 0 #a92c58,0 8px 22px rgba(200,40,90,.38)}
+.ov .card,.sheet{background:#fffdf8;color:#202858}.ov .card h1,.ov .card h2,.ov .card h3,.ov .card p,.ov .card label,.ov .card small,.ov .card .note,.ov .card .sub,.ov .card .eyebrow,.ov .card .onb-kicker,.ov .card .onb-title,.ov .card .onb-sub,.ov .card .onb-label,.ov .card .onb-legal,.ov .card .onb-permission{color:#24325a}
+.ov .card .onb-hero,.ov .card .onb-permission{background:#eef3ff;border-color:#dce4fa}.ov .card .onb-go,.ov .card .btn:not(.pink):not(.gold){color:#fff}.ov .card .btn.pink,.ov .card .btn.gold{color:#493d21}.ov .card .r2chip{color:#fff}.ov .card .r2chip.up{color:#442c00}
+.ov .card input,.ov .card select,.ov .card textarea{background:#fff;color:#202858;border-color:#b9c6e8}.ov .card input::placeholder,.ov .card textarea::placeholder{color:#6a7591;opacity:1}
+.r2sheet,.sheet{background:#fffdf8;color:#202858}.sheet .sq,.sheet .st,.sheet .fb{color:#202858}.sheet .kw{color:#3657bc}
 </style>
 </html>
