@@ -52,7 +52,7 @@ booklet). Pages show an "⚠ Unofficial" tag. Never delete or overwrite them on 
 replace only if an official key for that exact booklet is found. Working scans/notes live in
 C:/Users/ragul/pyqwork. Before trusting an mg paper, look for TNPSC's own answer-ticked booklet
 (tnpsc.gov.in/Tentative/Document/<date>_<paper>.pdf) or a coaching key, and fix mismatches.
-Checked: G2 2013/2015 Tamil, G2A 2017 Tamil, G4 2016/2018 Tamil, G4 2024 GS+Tamil.
+Checked: G2 2013/2015 Tamil, G2A 2016/2017 Tamil, G4 2016/2018 Tamil, G4 2024 GS+Tamil.
 
 ### Counts (22 Nov 2026)
 UPSC 1,892 · TNPSC 5,171 · total 7,063.
