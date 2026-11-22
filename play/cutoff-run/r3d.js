@@ -9,7 +9,7 @@ import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.j
 import { stage2 } from './r3d-stage2.js?v=3';
 import { stage3 } from './r3d-stage3.js?v=5';
 import { makeRegions } from './r3d-regions.js?v=1';
-import { makeCity, CITY } from './r3d-city.js?v=3';
+import { makeCity, CITY } from './r3d-city.js?v=4';
 
 const host = document.getElementById('wrap'), c2d = document.getElementById('c');
 const cv = document.createElement('canvas');
@@ -56,7 +56,7 @@ function noiseTex(base, spots, n, size = 512, dashes = false) {
   const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; return t;
 }
 const LEN = 160;
-const grassT = noiseTex('#abb99a', ['#9eaf8f', '#b8c2a5', '#a3b494', '#c0c6aa'], 420); grassT.repeat.set(12, LEN / 6);
+const grassT = noiseTex('#73c964', ['#55b856', '#8ad975', '#69c16a', '#a0df83'], 420); grassT.repeat.set(12, LEN / 6);
 const grass = new THREE.Mesh(new THREE.PlaneGeometry(70, LEN), new THREE.MeshStandardMaterial({ map: grassT, roughness: 1 }));
 grass.rotation.x = -Math.PI / 2; grass.position.y = -.01; grass.receiveShadow = true; grass.visible = false; scene.add(grass);
 const city = makeCity({ scene, mat });
@@ -122,8 +122,8 @@ function setRegion(k) {
   // the flyover keeps one dusk look across chapters
   sky.material.uniforms.uTop.value.set(CITY.skyTop); sky.material.uniforms.uHz.value.set(CITY.skyHz);
   scene.fog.color.set(CITY.fog);
-  retex(roadT, ['#b9b8a7', '#c6c3b1', '#b1b39f', '#c3bca9'], false);
-  kerbMat.color.set(0xd3d5c9);
+  retex(roadT, ['#ffd16b', '#f7b64b', '#ffdc82', '#eaa447'], false);
+  kerbMat.color.set(0xf8f0d8);
 }
 setRegion('village');
 
@@ -208,7 +208,7 @@ const stage2Update = stage2({ scene, mat, student, K });
 const stage3Update = stage3({ scene, mat, student, K });
 
 // ---------------------------------------------------------------- gates (one arch per lane)
-const LANE_COL = [0x789b91, 0xb6a77e, 0x91a99a, 0xb18e8a];
+const LANE_COL = [0x36afe8, 0x8a65e8, 0xf0bf43, 0xf06f82];
 const archGeo = new Map();
 function archGeometry(w) {
   const key = w.toFixed(2); if (archGeo.has(key)) return archGeo.get(key);
@@ -223,8 +223,8 @@ function gateGroup(it) {
   const n = it.type === 'branch' ? 2 : it.ans.length, lw = 4 / n, g = new THREE.Group(), lanes = [];
   for (let i = 0; i < n; i++) {
     let col = LANE_COL[i % 4];
-    if (it.type === 'math') { const o = it.ops[i]; col = (o[0] === '-' || o[0] === '÷') ? 0xc08b81 : o[0] === '×' ? 0xc0a974 : 0x819b85; }
-    if (it.type === 'branch') col = i ? 0xb49370 : 0x7c9982;
+    if (it.type === 'math') { const o = it.ops[i]; col = (o[0] === '-' || o[0] === '÷') ? 0xe67378 : o[0] === '×' ? 0xf0bf43 : 0x25b48a; }
+    if (it.type === 'branch') col = i ? 0xf06f82 : 0x6656dd;
     const c = new THREE.Color(col);
     const frame = new THREE.Mesh(archGeometry(lw - .1), mat(c.clone().lerp(new THREE.Color(0xffffff), .22), .76)); frame.castShadow = true;
     const glass = new THREE.Mesh(new THREE.PlaneGeometry(lw - .34, 1.95), new THREE.MeshStandardMaterial({ color: c, emissive: c, emissiveIntensity: .06, transparent: true, opacity: .2, roughness: .82, side: THREE.DoubleSide, depthWrite: false }));

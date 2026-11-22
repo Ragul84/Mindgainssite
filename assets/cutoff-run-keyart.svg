@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="t d">
+  <title id="t">Cut-Off Run</title><desc id="d">MIGA races through bright answer gates on the road to the exam finish.</desc>
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#39b8f4"/><stop offset="1" stop-color="#b5f1ff"/></linearGradient>
+    <linearGradient id="road" x2="0" y2="1"><stop stop-color="#ffe077"/><stop offset="1" stop-color="#ffb33f"/></linearGradient>
+    <linearGradient id="title" x2="0" y2="1"><stop stop-color="#fff36c"/><stop offset="1" stop-color="#ff9e32"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#1e2676" flood-opacity=".3"/></filter>
+    <filter id="soft"><feGaussianBlur stdDeviation="18"/></filter>
+  </defs>
+  <rect width="960" height="540" fill="url(#sky)"/>
+  <circle cx="790" cy="91" r="46" fill="#fff3a1" opacity=".95"/><circle cx="790" cy="91" r="66" fill="#fff3a1" opacity=".38" filter="url(#soft)"/>
+  <path d="M0 314Q112 241 232 304t235-5q122-80 253 13t240-18v246H0Z" fill="#62cb72"/>
+  <path d="M0 365q147-57 285 0t267-5q165-61 408 16v164H0Z" fill="#2aa86c"/>
+  <g fill="#fff" opacity=".78"><ellipse cx="142" cy="114" rx="64" ry="19"/><ellipse cx="178" cy="102" rx="35" ry="26"/><ellipse cx="213" cy="116" rx="46" ry="17"/><ellipse cx="492" cy="167" rx="51" ry="15"/><ellipse cx="521" cy="157" rx="28" ry="22"/><ellipse cx="552" cy="168" rx="39" ry="14"/></g>
+  <path d="M270 540 406 283h143L690 540Z" fill="#fff8e7"/><path d="M318 540 430 283h94l123 257Z" fill="url(#road)"/>
+  <path d="m457 516 18-76h18l25 76Zm27-128 13-53h13l19 53Zm14-90 8-31h10l11 31Z" fill="#fff8df" opacity=".92"/>
+  <g filter="url(#shadow)" stroke="#ffffff" stroke-width="9" stroke-linejoin="round">
+    <path d="M112 291v-91q0-16 16-16h107q16 0 16 16v91" fill="none" stroke="#ff5c73" stroke-width="18"/>
+    <rect x="133" y="207" width="83" height="55" rx="17" fill="#ff5576" stroke="#fff" stroke-width="6"/><text x="174" y="244" text-anchor="middle" font-family="system-ui,sans-serif" font-size="30" font-weight="900" fill="#fff" stroke="none">A</text>
+    <path d="M707 260v-95q0-16 16-16h105q16 0 16 16v95" fill="none" stroke="#6654e8" stroke-width="18"/>
+    <rect x="729" y="179" width="82" height="54" rx="17" fill="#6654e8" stroke="#fff" stroke-width="6"/><text x="770" y="216" text-anchor="middle" font-family="system-ui,sans-serif" font-size="30" font-weight="900" fill="#fff" stroke="none">B</text>
+  </g>
+  <g transform="translate(478 320) rotate(-8)" filter="url(#shadow)">
+    <ellipse cx="0" cy="122" rx="76" ry="15" fill="#16395b" opacity=".24"/>
+    <path d="M-53 4-76-47q-7-18 12-15l48 30M37-8l32-49q12-17 20 3l17 45" fill="#34c4e7" stroke="#176783" stroke-width="7" stroke-linejoin="round"/>
+    <path d="M-59 20q0-76 59-79 65 3 63 78l-5 69q-4 27-58 27-55 0-58-27Z" fill="#39c9e9" stroke="#176783" stroke-width="8"/>
+    <path d="M-50-32q8-45 50-48 42 4 51 48l-12 20q-19-17-39-9-25-10-41 8Z" fill="#8b65ef" stroke="#176783" stroke-width="6"/>
+    <ellipse cx="-23" cy="22" rx="12" ry="17" fill="#fff"/><ellipse cx="24" cy="22" rx="12" ry="17" fill="#fff"/>
+    <ellipse cx="-21" cy="25" rx="6" ry="10" fill="#172a55"/><ellipse cx="26" cy="25" rx="6" ry="10" fill="#172a55"/>
+    <ellipse cx="0" cy="50" rx="8" ry="6" fill="#173b60"/><path d="M-14 62q14 13 28 0" fill="none" stroke="#176783" stroke-width="5" stroke-linecap="round"/>
+    <path d="M-43 96q-30 21-38 44M42 92q30-3 43-26" fill="none" stroke="#176783" stroke-width="16" stroke-linecap="round"/><path d="M-39 98q-25 18-33 39M42 93q24-2 37-23" fill="none" stroke="#42d7ee" stroke-width="9" stroke-linecap="round"/>
+    <path d="M-30 126q-25 12-31 27h43M28 126q25 8 36 22H24" fill="#ff6575" stroke="#fff" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M-14 78q14 15 28 0l-3 18h-22Z" fill="#fff" opacity=".92"/>
+  </g>
+  <g transform="translate(80 390) rotate(-9)" filter="url(#shadow)"><rect width="272" height="91" rx="26" fill="url(#title)" stroke="#fff" stroke-width="7"/><text x="136" y="40" text-anchor="middle" font-family="system-ui,sans-serif" font-size="26" font-weight="1000" letter-spacing="2" fill="#26357c">CUT-OFF</text><text x="136" y="72" text-anchor="middle" font-family="system-ui,sans-serif" font-size="34" font-weight="1000" fill="#26357c">RUN!</text></g>
+  <g fill="#fff" opacity=".95"><path d="m355 180 9 21 23 2-18 14 6 22-20-12-19 12 6-22-18-14 23-2Z"/><path d="m626 314 7 16 18 1-14 11 5 17-16-9-15 9 4-17-13-11 17-1Z"/><circle cx="352" cy="273" r="7"/><circle cx="627" cy="115" r="8"/></g>
+</svg>

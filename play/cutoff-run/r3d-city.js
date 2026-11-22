@@ -4,7 +4,7 @@
 import * as THREE from 'three';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
 
-export const CITY = { ground: -16, fog: 0xcbd6c9, skyTop: 0xa9c4c2, skyHz: 0xf0ecdc, groundCol: 0x9cac8e };
+export const CITY = { ground: -16, fog: 0xd7e8df, skyTop: 0x59bce8, skyHz: 0xe7f8eb, groundCol: 0x72c66e };
 
 function windowTex(wall, lit) {
   const c = document.createElement('canvas'); c.width = 64; c.height = 128; const g = c.getContext('2d');
@@ -38,11 +38,11 @@ export function makeCity({ scene, mat }) {
   // ground far below
   const ground = new THREE.Mesh(new THREE.PlaneGeometry(900, 900), mat(CITY.groundCol, 1)); ground.rotation.x = -Math.PI / 2; ground.position.y = G; root.add(ground);
   // a river crossing now and then
-  const river = new THREE.Mesh(new THREE.PlaneGeometry(400, 14), new THREE.MeshStandardMaterial({ color: 0x9eb7b1, roughness: .82, metalness: 0 }));
+  const river = new THREE.Mesh(new THREE.PlaneGeometry(400, 14), new THREE.MeshStandardMaterial({ color: 0x75c9e7, roughness: .72, metalness: 0 }));
   river.rotation.x = -Math.PI / 2; river.position.y = G + .05; root.add(river);
 
   // buildings: a fixed pool of blocks that recycle as the camera passes
-  const WALLS = ['#9eaaa0', '#adb5a6', '#a4afa7', '#b5ada4', '#a3b1a8', '#c0b6a4', '#c7bea9'];
+  const WALLS = ['#efb7a4', '#edd58e', '#afd39d', '#a9cfe6', '#d0b6e8', '#e9a8b3', '#a7ded2'];
   const texs = WALLS.map((w) => windowTex(w, .35));
   const mats = texs.map((t) => new THREE.MeshStandardMaterial({ map: t, roughness: .92, emissive: 0xf0e8d6, emissiveMap: t, emissiveIntensity: .05 }));
   const roofM = mat(0x89958c, .96), tankM = mat(0x737c73, .82), gopM = mat(0xb6a47e, .85);
@@ -64,7 +64,7 @@ export function makeCity({ scene, mat }) {
     root.add(b); blocks.push(b);
   });
   // streets between the columns
-  const streetM = mat(0xa7aa9d, .98);
+  const streetM = mat(0x899e94, .98);
   for (const side of [-1, 1]) for (let c = 0; c < COLS.length; c++) {
     const sx = c === 0 ? 6.5 : (COLS[c - 1] + COLS[c]) / 2;
     const st = new THREE.Mesh(new THREE.PlaneGeometry(2.4, 900), streetM); st.rotation.x = -Math.PI / 2; st.position.set(side * sx, G + .03, 0); st.userData.street = true; root.add(st); blocks.push(st);
