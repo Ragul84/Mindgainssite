@@ -4,7 +4,7 @@
 import * as THREE from 'three';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
 
-export const CITY = { ground: -16, fog: 0x8f9fcf, skyTop: 0x2f4f9a, skyHz: 0xf2b98f, groundCol: 0x2c3a62 };
+export const CITY = { ground: -16, fog: 0xcbd6c9, skyTop: 0xa9c4c2, skyHz: 0xf0ecdc, groundCol: 0x9cac8e };
 
 function windowTex(wall, lit) {
   const c = document.createElement('canvas'); c.width = 64; c.height = 128; const g = c.getContext('2d');
@@ -21,7 +21,7 @@ export function makeCity({ scene, mat }) {
 
   // deck: a thick slab under the road, low walls on both edges, pillars down to the city
   const SEG = 12, NSEG = 16;
-  const slabM = mat(0x9aa3b8, .85), wallM = mat(0xc9cfdc, .7), stripeM = mat(0xffc24b, .5), pillarM = mat(0x7f889e, .9);
+  const slabM = mat(0xc4c6b8, .95), wallM = mat(0xd7d8cd, .9), stripeM = mat(0xc4b58e, .85), pillarM = mat(0xaeb5a8, .95);
   const segs = [];
   for (let i = 0; i < NSEG; i++) {
     const s = new THREE.Group();
@@ -38,22 +38,22 @@ export function makeCity({ scene, mat }) {
   // ground far below
   const ground = new THREE.Mesh(new THREE.PlaneGeometry(900, 900), mat(CITY.groundCol, 1)); ground.rotation.x = -Math.PI / 2; ground.position.y = G; root.add(ground);
   // a river crossing now and then
-  const river = new THREE.Mesh(new THREE.PlaneGeometry(400, 14), new THREE.MeshStandardMaterial({ color: 0x5f86c9, roughness: .15, metalness: .2 }));
+  const river = new THREE.Mesh(new THREE.PlaneGeometry(400, 14), new THREE.MeshStandardMaterial({ color: 0x9eb7b1, roughness: .82, metalness: 0 }));
   river.rotation.x = -Math.PI / 2; river.position.y = G + .05; root.add(river);
 
   // buildings: a fixed pool of blocks that recycle as the camera passes
-  const WALLS = ['#6f86b8', '#8d9ccc', '#5f74a6', '#a58fb8', '#7f95c4', '#c49a8a', '#d3a98c'];
+  const WALLS = ['#9eaaa0', '#adb5a6', '#a4afa7', '#b5ada4', '#a3b1a8', '#c0b6a4', '#c7bea9'];
   const texs = WALLS.map((w) => windowTex(w, .35));
-  const mats = texs.map((t) => new THREE.MeshStandardMaterial({ map: t, roughness: .8, emissive: 0xffd58a, emissiveMap: t, emissiveIntensity: .35 }));
-  const roofM = mat(0x56648c, .9), tankM = mat(0x2b2b2b, .6), gopM = mat(0xd9a05b, .7);
+  const mats = texs.map((t) => new THREE.MeshStandardMaterial({ map: t, roughness: .92, emissive: 0xf0e8d6, emissiveMap: t, emissiveIntensity: .05 }));
+  const roofM = mat(0x89958c, .96), tankM = mat(0x737c73, .82), gopM = mat(0xb6a47e, .85);
   // city blocks on a street grid: columns parallel to the bridge, a street between every block.
   // Blocks near the bridge stay well below the deck; only the far columns grow tall.
   const DEPTH = 180, ROW = 10, COLS = [12, 21, 31, 42], blocks = [];
   let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
   for (let r = 0; r < DEPTH / ROW; r++) for (const side of [-1, 1]) COLS.forEach((cx, ci) => {
-    if (rnd() < .18) return;                                         // the odd park or open plot
+    if (rnd() < .36) return;                                         // leave generous quiet space between low-rise blocks
     const w = 6.2 + rnd() * 1.2, d = 6.6 + rnd() * 1.2;
-    const cap = [9, 12, 18, 26][ci], h = Math.min(cap, 5 + rnd() * cap);
+    const cap = [8, 10, 14, 19][ci], h = Math.min(cap, 4 + rnd() * cap);
     const m = mats[(rnd() * mats.length) | 0].clone(); m.map = m.map.clone(); m.map.repeat.set(Math.max(1, Math.round(w / 2)), Math.max(1, Math.round(h / 4))); m.map.needsUpdate = true; m.emissiveMap = m.map;
     const b = new THREE.Group();
     const body = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m); body.position.y = h / 2; b.add(body);
@@ -64,7 +64,7 @@ export function makeCity({ scene, mat }) {
     root.add(b); blocks.push(b);
   });
   // streets between the columns
-  const streetM = mat(0x3a4670, .95);
+  const streetM = mat(0xa7aa9d, .98);
   for (const side of [-1, 1]) for (let c = 0; c < COLS.length; c++) {
     const sx = c === 0 ? 6.5 : (COLS[c - 1] + COLS[c]) / 2;
     const st = new THREE.Mesh(new THREE.PlaneGeometry(2.4, 900), streetM); st.rotation.x = -Math.PI / 2; st.position.set(side * sx, G + .03, 0); st.userData.street = true; root.add(st); blocks.push(st);

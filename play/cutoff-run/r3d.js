@@ -9,7 +9,7 @@ import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.j
 import { stage2 } from './r3d-stage2.js?v=3';
 import { stage3 } from './r3d-stage3.js?v=5';
 import { makeRegions } from './r3d-regions.js?v=1';
-import { makeCity, CITY } from './r3d-city.js?v=2';
+import { makeCity, CITY } from './r3d-city.js?v=3';
 
 const host = document.getElementById('wrap'), c2d = document.getElementById('c');
 const cv = document.createElement('canvas');
@@ -20,7 +20,7 @@ c2d.style.position = 'relative';
 
 const renderer = new THREE.WebGLRenderer({ canvas: cv, antialias: true, powerPreference: 'high-performance' });
 renderer.setPixelRatio(Math.min(2, devicePixelRatio || 1));
-renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.25;
+renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.08;
 renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 const scene = new THREE.Scene();
 scene.fog = new THREE.Fog(CITY.fog, 30, 250);
@@ -32,13 +32,13 @@ const mat = (c, r = .8, extra = {}) => new THREE.MeshStandardMaterial({ color: c
 // ---------------------------------------------------------------- sky + light (follow the camera)
 const SUN = new THREE.Vector3(.45, .55, -.7).normalize();
 const sky = new THREE.Mesh(new THREE.SphereGeometry(250, 32, 16), new THREE.ShaderMaterial({
-  side: THREE.BackSide, depthWrite: false, fog: false, uniforms: { uSun: { value: SUN }, uTop: { value: new THREE.Color(0x3a8fe0) }, uHz: { value: new THREE.Color(0xd6ecfb) } },
+  side: THREE.BackSide, depthWrite: false, fog: false, uniforms: { uSun: { value: SUN }, uTop: { value: new THREE.Color(0x9ab9b4) }, uHz: { value: new THREE.Color(0xe5e4d8) } },
   vertexShader: 'varying vec3 d;void main(){d=normalize(position);gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',
   fragmentShader: 'uniform vec3 uSun;uniform vec3 uTop;uniform vec3 uHz;varying vec3 d;void main(){float y=d.y;vec3 top=uTop,hz=uHz;vec3 c=mix(hz,top,pow(smoothstep(0.,.6,y),.8));float s=max(dot(normalize(d),uSun),0.);c+=vec3(1.,.93,.75)*(pow(s,80.)*.9+pow(s,6.)*.12);gl_FragColor=vec4(c,1.);}',
 }));
 sky.renderOrder = -1; scene.add(sky);
-scene.add(new THREE.HemisphereLight(0xdfe6ff, 0x6a5a70, 1.6));
-const sun = new THREE.DirectionalLight(0xffe2c4, 2.6);
+scene.add(new THREE.HemisphereLight(0xe7eee4, 0x899184, 1.25));
+const sun = new THREE.DirectionalLight(0xfff0d8, 1.8);
 // key light comes from behind the camera so the batch is lit, not silhouetted; the sky's sun glow stays ahead
 const KEY = new THREE.Vector3(.35, .8, .5).normalize();
 sun.castShadow = true; sun.shadow.mapSize.set(1024, 1024);
@@ -56,7 +56,7 @@ function noiseTex(base, spots, n, size = 512, dashes = false) {
   const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; return t;
 }
 const LEN = 160;
-const grassT = noiseTex('#8fcf63', ['#7fbf55', '#a3db74', '#86c75c', '#b3e083'], 900); grassT.repeat.set(12, LEN / 6);
+const grassT = noiseTex('#abb99a', ['#9eaf8f', '#b8c2a5', '#a3b494', '#c0c6aa'], 420); grassT.repeat.set(12, LEN / 6);
 const grass = new THREE.Mesh(new THREE.PlaneGeometry(70, LEN), new THREE.MeshStandardMaterial({ map: grassT, roughness: 1 }));
 grass.rotation.x = -Math.PI / 2; grass.position.y = -.01; grass.receiveShadow = true; grass.visible = false; scene.add(grass);
 const city = makeCity({ scene, mat });
@@ -71,7 +71,7 @@ const canopyG = new THREE.IcosahedronGeometry(1, 2);
 function tree(k, hue) {
   const g = new THREE.Group();
   const t = new THREE.Mesh(new THREE.CylinderGeometry(.18 * k, .26 * k, 2.2 * k, 8), mat(0x8a5a35)); t.position.y = 1.1 * k; t.castShadow = true; g.add(t);
-  const cols = [0x4fae55, 0x5cbf5f, 0x3f9a4c].map((c) => new THREE.Color(c).offsetHSL(hue, 0, 0));
+  const cols = [0x819b79, 0x93a886, 0x738d73].map((c) => new THREE.Color(c).offsetHSL(hue, 0, 0));
   for (const [dx, dy, dz, r] of [[0, 2.9, 0, 1.25], [-.8, 2.5, .2, .9], [.8, 2.6, -.1, .95], [.1, 3.5, .1, .85]]) {
     const c = new THREE.Mesh(canopyG, mat(cols[(dx * 3 + 3 | 0) % 3], .9)); c.position.set(dx * k, dy * k, dz * k); c.scale.setScalar(r * k); c.castShadow = true; g.add(c);
   }
@@ -80,7 +80,7 @@ function tree(k, hue) {
 function palm(k) {
   const g = new THREE.Group(); let px = 0, py = 0;
   for (let i = 0; i < 7; i++) { const s = new THREE.Mesh(new THREE.CylinderGeometry(.16 * k, .2 * k, .7 * k, 7), mat(0xa77b4f)); px += .06 * k; py += .65 * k; s.position.set(px, py, 0); s.rotation.z = -.08; s.castShadow = true; g.add(s); }
-  for (let i = 0; i < 7; i++) { const l = new THREE.Mesh(new THREE.SphereGeometry(1, 10, 6), mat(0x3f9a4c)); l.scale.set(1.5 * k, .12 * k, .38 * k); const a = i / 7 * Math.PI * 2; l.position.set(px + Math.cos(a) * 1.1 * k, py - .15 * k, Math.sin(a) * 1.1 * k); l.rotation.y = -a; l.rotation.z = -.35; l.castShadow = true; g.add(l); }
+  for (let i = 0; i < 7; i++) { const l = new THREE.Mesh(new THREE.SphereGeometry(1, 10, 6), mat(0x81977b)); l.scale.set(1.5 * k, .12 * k, .38 * k); const a = i / 7 * Math.PI * 2; l.position.set(px + Math.cos(a) * 1.1 * k, py - .15 * k, Math.sin(a) * 1.1 * k); l.rotation.y = -a; l.rotation.z = -.35; l.castShadow = true; g.add(l); }
   return g;
 }
 function house(wall, roof) {
@@ -122,8 +122,8 @@ function setRegion(k) {
   // the flyover keeps one dusk look across chapters
   sky.material.uniforms.uTop.value.set(CITY.skyTop); sky.material.uniforms.uHz.value.set(CITY.skyHz);
   scene.fog.color.set(CITY.fog);
-  retex(roadT, ['#4a5068', '#525a74', '#454b62', '#4e566e'], true);
-  kerbMat.color.set(0xe8ecf4);
+  retex(roadT, ['#b9b8a7', '#c6c3b1', '#b1b39f', '#c3bca9'], false);
+  kerbMat.color.set(0xd3d5c9);
 }
 setRegion('village');
 
@@ -208,7 +208,7 @@ const stage2Update = stage2({ scene, mat, student, K });
 const stage3Update = stage3({ scene, mat, student, K });
 
 // ---------------------------------------------------------------- gates (one arch per lane)
-const LANE_COL = [0x1cb0f6, 0x58cc02, 0xffc800, 0xff4b8b];
+const LANE_COL = [0x789b91, 0xb6a77e, 0x91a99a, 0xb18e8a];
 const archGeo = new Map();
 function archGeometry(w) {
   const key = w.toFixed(2); if (archGeo.has(key)) return archGeo.get(key);
@@ -223,11 +223,11 @@ function gateGroup(it) {
   const n = it.type === 'branch' ? 2 : it.ans.length, lw = 4 / n, g = new THREE.Group(), lanes = [];
   for (let i = 0; i < n; i++) {
     let col = LANE_COL[i % 4];
-    if (it.type === 'math') { const o = it.ops[i]; col = (o[0] === '-' || o[0] === '÷') ? 0xff4b4b : o[0] === '×' ? 0xffc800 : 0x58cc02; }
-    if (it.type === 'branch') col = i ? 0xff9f43 : 0x8b5cf6;
+    if (it.type === 'math') { const o = it.ops[i]; col = (o[0] === '-' || o[0] === '÷') ? 0xc08b81 : o[0] === '×' ? 0xc0a974 : 0x819b85; }
+    if (it.type === 'branch') col = i ? 0xb49370 : 0x7c9982;
     const c = new THREE.Color(col);
-    const frame = new THREE.Mesh(archGeometry(lw - .1), mat(c.clone().lerp(new THREE.Color(0xffffff), .15), .3)); frame.castShadow = true;
-    const glass = new THREE.Mesh(new THREE.PlaneGeometry(lw - .34, 1.95), new THREE.MeshStandardMaterial({ color: c, emissive: c, emissiveIntensity: .35, transparent: true, opacity: .32, roughness: .1, side: THREE.DoubleSide, depthWrite: false }));
+    const frame = new THREE.Mesh(archGeometry(lw - .1), mat(c.clone().lerp(new THREE.Color(0xffffff), .22), .76)); frame.castShadow = true;
+    const glass = new THREE.Mesh(new THREE.PlaneGeometry(lw - .34, 1.95), new THREE.MeshStandardMaterial({ color: c, emissive: c, emissiveIntensity: .06, transparent: true, opacity: .2, roughness: .82, side: THREE.DoubleSide, depthWrite: false }));
     glass.position.y = 1.0;
     const strip = new THREE.Mesh(new THREE.PlaneGeometry(lw - .2, .3), new THREE.MeshBasicMaterial({ color: c, transparent: true, opacity: .5 })); strip.rotation.x = -Math.PI / 2; strip.position.set(0, .02, .3);
     const lane = new THREE.Group(); lane.add(frame, glass, strip); lane.position.x = -2 + lw * (i + .5);
@@ -289,7 +289,7 @@ function frame(o) {
     live.add(it);
     let g = gateObjs.get(it); if (!g) { g = gateGroup(it); gateObjs.set(it, g); }
     g.position.z = -it.z;
-    if (it.type === 'quiz' && it.done) g.userData.lanes.forEach((l, i) => { const ok = i === it.correct; l.glass.material.color.set(ok ? 0x58cc02 : 0xff4b4b); l.glass.material.emissive.set(ok ? 0x58cc02 : 0xff4b4b); });
+    if (it.type === 'quiz' && it.done) g.userData.lanes.forEach((l, i) => { const ok = i === it.correct; l.glass.material.color.set(ok ? 0x8eab91 : 0xc69a92); l.glass.material.emissive.set(ok ? 0x8eab91 : 0xc69a92); });
   }
   for (const [it, g] of gateObjs) if (!live.has(it)) { scene.remove(g); gateObjs.delete(it); }
   // shadow camera follows the batch
