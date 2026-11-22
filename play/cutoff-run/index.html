@@ -298,7 +298,7 @@ body.rm .mnd,body.rm .mpin{animation:none}
 .setline small{display:block;font-weight:700;color:var(--muted);font-size:12px}
 .setline input[type=checkbox]{width:22px;height:22px;flex:none;accent-color:var(--blue)}
 .setline select{font:inherit;font-weight:800;padding:4px 8px;border-radius:8px;border:2px solid var(--ink);background:#fff;color:var(--ink)}
-.cons{display:flex;flex-direction:column}
+.cons{display:flex;flex-direction:column;gap:8px}.cons .onb-step{display:grid;gap:5px}.cons .onb-label{font:800 11px/1.2 var(--body);letter-spacing:.1em;text-transform:uppercase;color:#738096}.cons select{width:100%;min-height:48px;padding:0 14px;border:1.5px solid #e3e8ef;border-radius:14px;background:#fff;color:#26344b;font:700 15px var(--body);outline:none}.cons select:focus{border-color:#2684ff;box-shadow:0 0 0 3px rgba(38,132,255,.15)}.onb-hero{display:flex;align-items:center;gap:14px;padding:15px;border-radius:18px;background:linear-gradient(120deg,#e7f7ff,#f3f0ff);border:1px solid #e4edf8}.onb-hero .miga{width:68px;height:78px;flex:none}.onb-kicker{font:800 10px var(--body);letter-spacing:.14em;text-transform:uppercase;color:#536b8b}.onb-title{font:800 25px/1.05 var(--display);color:#14213d;margin:3px 0 4px}.onb-sub{font:700 12px/1.35 var(--body);color:#64748b}.onb-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.cons label.onb-choice{display:flex;align-items:center;gap:9px;min-height:48px;padding:9px 11px;border:1.5px solid #e3e8ef;border-radius:14px;background:#fff;color:#344258;font:800 13px var(--body);cursor:pointer}.cons label.onb-choice:has(input:checked){border-color:#2782f6;background:#eff7ff;color:#184d91}.cons label.onb-choice input{accent-color:#2782f6;width:17px;height:17px;margin:0}.onb-permission{display:flex;align-items:flex-start;gap:9px;padding:9px 11px;border-radius:12px;background:#f6f8fb;color:#4a5870;font:700 12px/1.35 var(--body)}.onb-permission input{accent-color:#2782f6;flex:none;margin:1px 0}.onb-legal{font:600 11px/1.4 var(--body);color:#718096}.onb-legal a{color:#285aa6;font-weight:800}.cons .eyebrow{margin-top:2px}.onb-error{min-height:16px;font:700 12px var(--body);color:#d94343}.onb-go{width:100%;min-height:52px;border-radius:16px;font-size:19px}
 .cons label{display:flex;gap:10px;align-items:flex-start;font-weight:800;font-size:14px;line-height:1.35;padding:6px 0;color:var(--ink)}
 .cons input{width:22px;height:22px;flex:none;accent-color:var(--blue);margin:0}
 .codebox{font-family:var(--display);font-size:28px;letter-spacing:.06em;text-align:center;background:var(--mist);border:3px dashed var(--ink);border-radius:14px;padding:10px;user-select:all;-webkit-user-select:all;overflow-wrap:anywhere}
@@ -955,7 +955,7 @@ addEventListener('message',e=>{if(e.origin!==location.origin)return;const d=e.da
 const Ads={async rewarded(place){track('ad_request',{place});
   if(typeof window.CutoffBridge.showRewardedAd==='function'){try{const ok=!!(await window.CutoffBridge.showRewardedAd(place));track('ad_result',{place,ok});return ok}catch(e){return false}}
   return new Promise(res=>{const pc=$('pcard');pc.innerHTML=`<div class="eyebrow">Preview build</div><h3>A rewarded ad plays here</h3><p class="note">In the MindGains app, a real ad plays here. This preview gives the reward after 2 seconds.</p><div class="adbar"><i></i></div>`;$('pop').hidden=false;setTimeout(()=>{$('pop').hidden=true;res(true)},2000)})}};
-const hasAds=()=>typeof window.CutoffBridge.showRewardedAd==='function';
+const hasAds=()=>!!(PL.consent&&PL.consent.adult)&&typeof window.CutoffBridge.showRewardedAd==='function';
 function comboUI(cm,lost){const c=$('combo');if(!c)return;if(!cm){c.hidden=true;if(lost)ftext('COMBO LOST','#ffb3c1',S.dist+2.2);return}if(cm<=1){c.hidden=true;return}
   c.hidden=false;$('comboT').textContent='COMBO x'+cm.toFixed(2).replace(/0$/,'').replace(/\.0$/,'');$('comboBar').style.width=Math.min(100,(cm-1)/.6*100)+'%';c.classList.remove('pop');void c.offsetWidth;c.classList.add('pop');if(cm>=1.45)tone(660,1320,.12,'square',.04,.1)}
 function hitFx(good){if(typeof S!=='undefined'&&S&&S.parts){const c=good?['#7ff5ff','#ffe066','#ffffff']:['#ff5a6e','#ff9a5a','#ffffff'];for(let i=0;i<22;i++){const a=rnd(0,6.283),v=rnd(3,7);S.parts.push({glow:1,x:S.x+rnd(-.4,.4),y:rnd(.4,1.4),z:S.dist+.6+rnd(-.3,.3),vx:Math.cos(a)*v*.6,vy:rnd(2,6),vz:Math.sin(a)*v*.3,life:rnd(.35,.6),col:c[i%3],sz:rnd(.035,.06)})}}const f=$('flash');if(f&&PL.settings.motion){f.className='flash '+(good?'good':'bad');requestAnimationFrame(()=>requestAnimationFrame(()=>f.className='flash'))}vib(good?15:[50,30,80])}
@@ -2445,7 +2445,7 @@ function openSettings(){hideAll();const st=PL.settings,an=!!(PL.consent&&PL.cons
       <label class="setline" for="sEx"><span>Exam<small>Questions in your runs come from this exam's bank</small></span><select id="sEx"><option value="upsc">UPSC</option><option value="tnpsc">TNPSC</option><option value="ssc">SSC</option><option value="rrb">RRB</option><option value="banking">Banking</option><option value="neet">NEET (Physics, Chemistry, Biology)</option><option value="jee">JEE (Physics, Chemistry)</option></select></label></div>
     <div class="eyebrow">Privacy</div>
     <div class="set">${row('sAn','Share gameplay data','Anonymous data about answers and levels, used to improve questions and difficulty',an)}</div>
-    <button class="more" id="sNotice">Read the privacy notice</button><p class="note ctr"><a href="/privacy/" target="_blank" rel="noopener">Full privacy policy</a> · <a href="/data-deletion/" target="_blank" rel="noopener">Data deletion</a> · <a href="/contact/" target="_blank" rel="noopener">Contact</a></p>
+    <button class="more" id="sNotice">Read the privacy notice</button><p class="note ctr"><a href="/privacy/" target="_blank" rel="noopener">Full privacy policy</a> · <a href="/children-privacy/" target="_blank" rel="noopener">Children's privacy</a> · <a href="/data-deletion/" target="_blank" rel="noopener">Data deletion</a> · <a href="/contact/" target="_blank" rel="noopener">Contact</a></p>
     <button class="btn alt sm" id="sDel">Delete my data on this device</button><div class="err" id="sDelMsg"></div>
     <p class="note ctr">Cut-Off Run ${CONFIG.version}${PL.pro?', <span class="pro">PRO</span>':''}</p>`;
   $('pop').hidden=false;$('sQ').value=st.quality;$('sEx').value=PL.exam||'upsc';$('sEx').onchange=e=>{PL.exam=e.target.value;saveP();if(readyForOnline())try{Remote.loadQuestions&&Remote.loadQuestions(null,{exam:PL.exam})}catch(_){}};
@@ -2460,29 +2460,25 @@ function openSettings(){hideAll();const st=PL.settings,an=!!(PL.consent&&PL.cons
     PL=JSON.parse(JSON.stringify(P0));level=1;bank=0;up={hostel:0,coaching:0,library:0,chai:0};owned={};daily={last:null,streak:0};cleared=0;raidDue=false;week={id:weekId(),score:0};EVQ=[];
     applySettings();openConsent(true)};
   $('sclose').onclick=()=>{$('pop').hidden=true;openMenu()}}
-function openConsent(first,after){hideAll();const c=PL.consent||{};
-  $('pcard').innerHTML=`<div class="stage"><div class="bubble r">${first?'Hi! I am MIGA. Before we play, please read this.':'Here is how we use your data.'}</div>${miga('happy')}</div>
-    <h2>${first?'Welcome to Cut-Off Run':'Privacy notice'}</h2>
-    <p>Cut-Off Run is made by MindGains Labs. It saves your game progress (levels, answers, cards and settings) on this device. If you sign in through the MindGains app, your progress is also saved to your account.</p>
-    <p>With your permission, we also collect anonymous gameplay data (which questions you answer, how long you take, and how levels end). We use it only to improve questions and difficulty, keep it for up to 12 months, and never include your name or contact details. You can turn this off or delete your device data at any time in Settings.</p>
-    ${first?`<div class="cons"><div class="eyebrow">Your exam</div><label><select id="cExam"><option value="">Choose an exam</option>${Object.entries(EXAM_LABEL).map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}</select></label>
-      <div class="eyebrow">Your state or union territory</div><label><select id="cState"><option value="">Choose your state / UT</option>${Object.entries(ONBOARD_STATES).map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}</select></label>
-      <div class="eyebrow">Your age</div>
-      <label><input type="radio" name="age" value="adult"> I am 18 or older</label>
-      <label><input type="radio" name="age" value="minor"> I am under 18</label>
-      <label id="gRow" hidden><input type="checkbox" id="cG"> My parent or guardian has read this notice and agrees</label><p id="cMinorNote" class="note" hidden>Under-18 players can practise locally on the web. Live boards, remote progress and optional analytics stay off in this web session.</p>
-      <div class="eyebrow">Permissions</div>
-      <label><input type="checkbox" id="cE"> Save my game progress (needed to play)</label>
-      <label><input type="checkbox" id="cA"> Share anonymous gameplay data to improve the game (optional)</label></div>
-      <div class="err" id="cErr"></div><button class="btn" id="cGo">Continue</button>`:'<button class="btn" id="cBack">Back</button>'}`;
+function openConsent(first,after){hideAll();
+  $('pcard').innerHTML=first?`<div class="onb-hero"><div>${miga('happy')}</div><div><div class="onb-kicker">MindGains presents</div><div class="onb-title">Cut-Off Run</div><div class="onb-sub">Pick your exam. Beat the cut-off. Review as you go.</div></div></div>
+    <div class="cons">
+      <div class="onb-step"><span class="onb-label">I’m preparing for</span><select id="cExam" aria-label="Choose your exam"><option value="">Choose an exam</option>${Object.entries(EXAM_LABEL).map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}</select></div>
+      <div class="onb-step"><span class="onb-label">I live in</span><select id="cState" aria-label="Choose your state or union territory"><option value="">Choose state / UT</option>${Object.entries(ONBOARD_STATES).map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}</select></div>
+      <div class="onb-step"><span class="onb-label">Age group</span><div class="onb-grid"><label class="onb-choice"><input type="radio" name="age" value="adult"> 18 or older</label><label class="onb-choice"><input type="radio" name="age" value="minor"> Under 18</label></div></div>
+      <div id="cMinorNote" class="onb-legal" hidden>Under-18 web play stays on this device. <a href="/children-privacy/" target="_blank" rel="noopener">How privacy works</a></div>
+      <label class="onb-permission"><input type="checkbox" id="cE"><span><b>Save my progress on this device</b><br>Required so levels and review progress are remembered.</span></label>
+      <label class="onb-permission" id="cAnalyticsRow"><input type="checkbox" id="cA"><span><b>Share anonymous gameplay data</b><br>Optional. Helps us improve questions and difficulty.</span></label>
+      <div class="onb-legal">By continuing, you agree to our <a href="/terms/" target="_blank" rel="noopener">Terms</a> and have read our <a href="/privacy/" target="_blank" rel="noopener">Privacy Notice</a>.</div>
+      <div class="onb-error" id="cErr" aria-live="polite"></div><button class="btn onb-go" id="cGo">Let’s play <span aria-hidden="true">→</span></button>
+    </div>`:`<div class="hdr"><h2>Privacy notice</h2><button class="x" id="cBack">Back</button></div><p>Cut-Off Run saves progress on this device. Adults may opt in to anonymous gameplay analytics; these events are kept for up to 12 months and do not include your name or contact details.</p><p>Under-18 web sessions use local practice. Live boards, remote progress, analytics and rewarded ads stay off. <a href="/children-privacy/" target="_blank" rel="noopener">Read the children’s privacy notice.</a></p><button class="btn" id="cBack2">Back to settings</button>`;
   $('pop').hidden=false;$('pcard').scrollTop=0;
-  if(!first){$('cBack').onclick=()=>{$('pop').hidden=true;openSettings()};return}
-  const hintedExam=new URLSearchParams(location.search).get('exam');$('cExam').value=PL.exam||EXAM_LABEL[hintedExam]&&hintedExam||'';$('cState').value=PL.state||'';const ages=[...$('pcard').querySelectorAll('input[name=age]')];ages.forEach(a=>a.onchange=()=>{const minor=a.value==='minor'&&a.checked;$('gRow').hidden=!minor;$('cMinorNote').hidden=!minor;if(minor){$('cA').checked=false;$('cA').disabled=true}else $('cA').disabled=false});
+  if(!first){$('cBack').onclick=$('cBack2').onclick=()=>{$('pop').hidden=true;openSettings()};return}
+  const hintedExam=new URLSearchParams(location.search).get('exam');$('cExam').value=PL.exam||EXAM_LABEL[hintedExam]&&hintedExam||'';$('cState').value=PL.state||'';const ages=[...$('pcard').querySelectorAll('input[name=age]')];ages.forEach(a=>a.onchange=()=>{const minor=a.value==='minor'&&a.checked;$('cMinorNote').hidden=!minor;$('cA').checked=false;$('cA').disabled=minor;$('cAnalyticsRow').hidden=minor});
   $('cGo').onclick=()=>{const age=(ages.find(a=>a.checked)||{}).value;
     if(!$('cExam').value){$('cErr').textContent='Please choose the exam you are preparing for.';return}
     if(!$('cState').value){$('cErr').textContent='Please choose your state or union territory.';return}
     if(!age){$('cErr').textContent='Please choose your age group.';return}
-    if(age==='minor'&&!$('cG').checked){$('cErr').textContent='A parent or guardian must agree before you play.';return}
     if(!$('cE').checked){$('cErr').textContent='Progress saving is needed to play the game.';return}
     PL.exam=$('cExam').value;PL.state=$('cState').value;PL.consent={v:2,ts:Date.now(),adult:age==='adult',guardian:age==='minor',essential:true,analytics:age==='adult'&&$('cA').checked};saveP();track('onboarding_complete',{analytics:PL.consent.analytics,adult:PL.consent.adult});
     $('pop').hidden=true;startRemote();dispatchEvent(new CustomEvent('cutoff:onboarded'));if(after)after();else openMenu()}}
