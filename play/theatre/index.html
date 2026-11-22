@@ -144,6 +144,21 @@ body{font-family:Inter,system-ui,sans-serif}
 .wall .wb1{background:linear-gradient(90deg,#f3c86b,#ffe2a0);color:#1a1206;box-shadow:0 8px 24px -8px rgba(243,200,107,.6)}.wall .wb1 small{display:block;font:600 12px Inter;opacity:.75;margin-top:2px}
 .wall .wb2{background:#25212c;color:#fff}
 .wall .wt{font:600 13px Inter;color:#8d8697;margin-top:12px}.wall .wt a{color:#cfc7d8}
+.nbk{position:fixed;inset:0;z-index:96;display:grid;place-items:center;padding:16px;background:rgba(5,4,8,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);animation:wf .3s}
+.nbk .bk{position:relative;width:min(440px,100%);perspective:1400px;animation:nbUp .7s cubic-bezier(.2,1.2,.3,1)}
+@keyframes nbUp{from{transform:translateY(60vh) rotate(-8deg) scale(.6);opacity:0}to{transform:none;opacity:1}}
+.nbk .pg{background:linear-gradient(180deg,#fbf6ea,#f3ead4);color:#2a2116;border-radius:6px 16px 16px 6px;box-shadow:0 30px 60px -20px rgba(0,0,0,.7),inset 6px 0 0 #e2d3b0;padding:22px 20px 18px 26px;max-height:78vh;overflow:auto}
+.nbk .cv{position:absolute;inset:0;border-radius:6px 16px 16px 6px;background:linear-gradient(135deg,#7a1f2e,#4a0f1a);border:2px solid #f3c86b;transform-origin:left center;animation:nbOpen 1s .55s cubic-bezier(.6,0,.3,1) forwards;display:grid;place-items:center;color:#f3d48a;font:400 30px/1.1 'Bebas Neue';letter-spacing:.06em;text-align:center;padding:20px;backface-visibility:hidden;z-index:2;pointer-events:none}
+@keyframes nbOpen{to{transform:rotateY(-165deg);opacity:0}}
+.nbk .k{font:800 11px Inter;letter-spacing:.14em;color:#9a6a1c;margin-bottom:6px}.nbk h3{margin:0 0 10px;font:700 19px/1.3 'Playfair Display',Georgia,serif}
+.nbk .sm{font:500 14px/1.55 Inter;color:#3b3022;margin:0 0 12px}.nbk ol{margin:0;padding-left:20px}.nbk li{font:500 13.5px/1.5 Inter;margin:0 0 7px;opacity:0;animation:nbIn .45s forwards}
+@keyframes nbIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.nbk .bk,.nbk li{animation:none;opacity:1}.nbk .cv{display:none}}
+.nbk .ai{display:inline-block;margin-top:8px;font:700 11px Inter;color:#8a7a62}.nbk .bt{display:flex;gap:8px;margin-top:14px}.nbk .bt button{flex:1;padding:12px;border-radius:12px;border:0;font:800 13px Inter;cursor:pointer}
+.nbk .go{background:#2a2116;color:#f3d48a}.nbk .lt{background:#e8dcc0;color:#2a2116}
+.nbt{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);z-index:97;background:#1d1a22;color:#f3d48a;border:1px solid rgba(243,212,138,.4);border-radius:999px;padding:10px 16px;font:700 13px Inter;animation:wf .3s}
+.rpt .nq{padding:12px;border-radius:14px;background:#1a1720;margin-bottom:8px}.rpt .nq b{display:block;font:700 14px/1.4 Inter;color:#fff;margin-bottom:8px}.rpt .nq button{display:block;width:100%;text-align:left;margin:0 0 6px;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:#1d1a22;color:#ddd;font:600 13px Inter;cursor:pointer}
+.rpt .nq button.ok{border-color:#4ade80;color:#4ade80}.rpt .nq button.no{border-color:#ff8a8a;color:#ff8a8a}.rpt .np li{color:#d6cfc4;font:500 13.5px/1.5 Inter;margin-bottom:6px}
 .rpt{position:fixed;inset:0;z-index:95;display:flex;align-items:flex-end;justify-content:center;background:rgba(5,4,8,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);animation:wf .3s}
 @media (min-width:760px){.rpt{align-items:center}}
 .rpt .rc{width:min(460px,100%);max-height:88vh;overflow:auto;background:#121017;border:1px solid rgba(255,255,255,.08);border-radius:26px 26px 0 0;padding:22px 20px calc(20px + env(safe-area-inset-bottom));animation:ru .4s cubic-bezier(.2,1,.3,1)}
@@ -707,7 +722,7 @@ body.tour-out .top,body.tour-out .halls,body.tour-out .angles,body.tour-out .she
   <form class="chat-f" id="chatF"><button type="button" class="mgp-me" id="mgpMe" aria-label="Edit your profile" hidden></button><input id="chatI" maxlength="140" placeholder="Say something…" autocomplete="off"><button id="chatS">SEND</button></form></div>
 <div class="angles"><button data-v="wide" class="on">HALL</button><button data-v="seat">MY SEAT</button><button data-v="stage">FRONT ROW</button><button data-v="balcony">BALCONY</button></div>
 <div class="sheet"><div class="tt" id="tt" hidden></div>
-  <div class="ticket"><div class="main"><div class="k" id="nowK">NOW SHOWING · SCREEN 1</div><div class="t" id="nowT">Loading…</div><div class="m" id="nowS"></div><div class="m thd" id="thDuo" hidden></div><button class="ttbtn" id="ttbtn">TIMETABLE ▾</button> <a class="ttbtn" id="rmEntry" href="/play/theatre/mock/" title="Sunday State Rank Mock" style="margin-left:14px;text-decoration:none;white-space:nowrap" hidden>SUN 7 PM RANK MOCK ›</a></div>
+  <div class="ticket"><div class="main"><div class="k" id="nowK">NOW SHOWING · SCREEN 1</div><div class="t" id="nowT">Loading…</div><div class="m" id="nowS"></div><div class="m thd" id="thDuo" hidden></div><button class="ttbtn" id="ttbtn">TIMETABLE ▾</button> <button class="ttbtn" id="nbBtn" type="button" style="margin-left:14px" hidden>MY NOTES ›</button> <a class="ttbtn" id="rmEntry" href="/play/theatre/mock/" title="Sunday State Rank Mock" style="margin-left:14px;text-decoration:none;white-space:nowrap" hidden>SUN 7 PM RANK MOCK ›</a></div>
   <button class="stub go" id="go"><span>ROW</span><b id="stubRow">G7</b><span>ADMIT ONE</span></button></div>
 </div>
 <script>
@@ -863,12 +878,12 @@ const YT_W = 1600, YT_H = 900; let ytObj = null, ytNow = '', ytEl = null, ytRead
 const ytPos = () => ytStart + (performance.now() - ytT0) / 1000;
 let ytP = null; window.__ytP = () => ytP;
 { const t = document.createElement('script'); t.src = 'https://www.youtube.com/iframe_api'; document.head.appendChild(t); }
-function bindYT(el) { ytP = null; const go = () => { try { ytP = new YT.Player(el, { events: { onError: (e) => { if ([101, 150, 100].includes(e && e.data)) embedBlocked(); }, onReady: () => { if (soundOn) { ytP.unMute(); ytP.setVolume(100); ytP.playVideo(); } else ytP.mute(); } } }); } catch (e) {} };
+function bindYT(el) { ytP = null; const go = () => { try { ytP = new YT.Player(el, { events: { onError: (e) => { if ([101, 150, 100].includes(e && e.data)) embedBlocked(); }, onStateChange: (e) => { if (e && e.data === 0 && window.__notes) window.__notes.done(ytNow); }, onReady: () => { if (soundOn) { ytP.unMute(); ytP.setVolume(100); ytP.playVideo(); } else ytP.mute(); } } }); } catch (e) {} };
   if (window.YT && YT.Player) go(); else { const prev = window.onYouTubeIframeAPIReady; window.onYouTubeIframeAPIReady = () => { prev && prev(); if (ytEl === el) go(); }; } }
 function yCmd(func, args = []) { try { if (ytP && ytP[func]) return ytP[func](...args); ytEl && ytEl.contentWindow.postMessage(JSON.stringify({ event: 'command', func, args }), '*'); } catch (e) {} }
 function playOnScreen(id, start) {
   if (window.__walled) id = '';
-  const key = id; if (key === ytNow) return; if (INTRO.on && !window.__yt_ok) { window.__ytWait = [id, start]; return; } ytNow = key;
+  const key = id; if (key === ytNow) return; if (INTRO.on && !window.__yt_ok) { window.__ytWait = [id, start]; return; } if (ytNow && window.__notes) window.__notes.done(ytNow); ytNow = key; if (key && window.__notes) window.__notes.start(key);
   if (ytObj) { cssScene.remove(ytObj); ytObj = null; }
   if (!id) { screen.visible = true; screen.material = posterMat; return; }
   const el = document.createElement('iframe'); el.className = 'yt'; el.width = YT_W; el.height = YT_H; el.style.border = '0';
@@ -2232,7 +2247,7 @@ const RI = {
   flame: '<path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.1-.2-4 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.4-2.3 1-3.2.3 1.1 1.5 2.2 2.5 2.7z"/>',
   crown: '<path d="M11.6 3.3a.5.5 0 0 1 .9 0l2.9 5.5a1 1 0 0 0 1.5.3l4.3-3.7a.5.5 0 0 1 .8.5l-2.8 10.3a1 1 0 0 1-1 .7H5.8a1 1 0 0 1-1-.7L2 5.9a.5.5 0 0 1 .8-.5l4.3 3.7a1 1 0 0 0 1.5-.3z"/><path d="M5 21h14"/>',
   ban: '<circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/>', flag: '<path d="M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.3 2.7A7 7 0 0 0 20 4v11a7 7 0 0 1-4.7.7C13 15 11 13 8 13a6 6 0 0 0-4 1"/>', rot: '<path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/>',
-  trash: '<path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>', video: '<path d="m16 13 5.2 3.1a.5.5 0 0 0 .8-.4V8.3a.5.5 0 0 0-.8-.4L16 11"/><rect x="2" y="6" width="14" height="12" rx="2"/>',
+  trash: '<path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>', book: '<path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>', video: '<path d="m16 13 5.2 3.1a.5.5 0 0 0 .8-.4V8.3a.5.5 0 0 0-.8-.4L16 11"/><rect x="2" y="6" width="14" height="12" rx="2"/>',
 };
 const ri = (n, z = 16, w = 2) => `<svg class="ico" viewBox="0 0 24 24" width="${z}" height="${z}" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round">${RI[n]}</svg>`;
 const RM = { role: 'member', room: null, play: null, list: [], locked: false, quiz: null, streak: 0, prog: null, off: 0, me: '' };
@@ -2430,6 +2445,59 @@ async function batchHub() {
 }
 document.getElementById('mRoom').onclick = batchHub; document.getElementById('rmb').onclick = batchHub;
 if (ROOM) { document.getElementById('nowT').textContent = 'Joining batch…'; document.getElementById('nowK').textContent = 'BATCH ROOM'; document.getElementById('nowS').textContent = ''; }
+// ================= Video notes: when a video finishes, a book opens with its key points; saved to "My notes" (this device) =================
+// Notes are pre-generated per video (play/theatre/notes/<id>.json); the live site never calls a model. Videos without notes are skipped silently.
+const NOTES = (() => {
+  const K = 'mgt_shelf_v1', MIN_WATCH = 180e3, since = new Map(), shown = new Set();
+  const shelf = () => { try { return JSON.parse(localStorage.getItem(K)) || []; } catch (e) { return []; } };
+  const btn = document.getElementById('nbBtn');
+  const paintBtn = () => { const n = shelf().length; btn.hidden = !n; btn.textContent = 'MY NOTES · ' + n + ' ›'; };
+  const save = (l) => { try { localStorage.setItem(K, JSON.stringify(l.slice(0, 60))); } catch (e) {} paintBtn(); };
+  const AI = 'AI summary of the lecture · check facts before you rely on them';
+  async function get(id) { try { const r = await fetch('/play/theatre/notes/' + encodeURIComponent(id) + '.json'); return r.ok ? await r.json() : null; } catch (e) { return null; } }
+  function start(id) { since.set(id, performance.now()); }
+  // called when a video ends or the screen switches to another one; only counts if you watched at least 3 minutes of it
+  async function done(id, force) {
+    if (!id || shown.has(id)) return; const t0 = since.get(id); if (!force && (!t0 || performance.now() - t0 < MIN_WATCH)) return;
+    shown.add(id); const n = await get(id); if (!n) return;
+    const l = shelf().filter((x) => x.id !== id); l.unshift({ id, at: Date.now(), n }); save(l);
+    if (document.body.classList.contains('quizon') || document.querySelector('.nbk')) { toast('Notes saved to My notes'); return; }
+    book(n);
+  }
+  function toast(t) { const d = document.createElement('div'); d.className = 'nbt'; d.textContent = t; document.body.appendChild(d); setTimeout(() => d.remove(), 2600); }
+  function book(n) {
+    const d = document.createElement('div'); d.className = 'nbk';
+    d.innerHTML = `<div class="bk"><div class="cv">CLASS NOTES<br><small style="font-size:15px">${esc(n.title || '').slice(0, 70)}</small></div><div class="pg">
+      <div class="k">THAT CLASS IN 60 SECONDS</div><h3>${esc(n.title || "Today's class")}</h3><p class="sm">${esc(n.summary || '')}</p>
+      <ol>${(n.points || []).map((p, i) => `<li style="animation-delay:${1.4 + i * .12}s">${esc(p)}</li>`).join('')}</ol>
+      <span class="ai">${AI}</span>
+      <div class="bt"><button class="go">Quick check · 3 Qs</button><button class="lt">Saved · close</button></div></div></div>`;
+    document.body.appendChild(d); const close = () => d.remove();
+    d.addEventListener('click', (e) => { if (e.target === d) close(); });
+    d.querySelector('.lt').onclick = () => { close(); toast('Saved to My notes'); };
+    d.querySelector('.go').onclick = () => { close(); open(n.id); };
+  }
+  function list() {
+    const l = shelf();
+    const { d } = rsheet('My notes', 'book', l.length ? '<p class="hint">Key points from classes you watched here, newest first. Saved on this device.</p>' + l.map((x) => `<div class="li" data-n="${esc(x.id)}"><span class="av">${ri('book', 18)}</span><div><b>${esc(x.n.title || 'Class')}</b><small>${new Date(x.at).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })} · ${(x.n.points || []).length} points</small></div></div>`).join('') : '<p class="hint">Watch a class to the end and its key points land here.</p>');
+    d.querySelectorAll('[data-n]').forEach((x) => x.onclick = () => open(x.dataset.n));
+  }
+  function open(id) {
+    const x = shelf().find((y) => y.id === id); if (!x) return; const n = x.n;
+    const qs = (n.check || []).filter((q) => q && q.q && Array.isArray(q.opts) && q.opts.length >= 2);
+    const { d } = rsheet('Revise', 'book', `<p class="hint" style="color:#fff;font-weight:700">${esc(n.title || '')}</p><p class="hint">${esc(n.summary || '')}</p><ol class="np">${(n.points || []).map((p) => '<li>' + esc(p) + '</li>').join('')}</ol>
+      ${qs.length ? '<div class="sec">QUICK CHECK</div>' + qs.map((q, i) => `<div class="nq" data-a="${q.a | 0}"><b>${i + 1}. ${esc(q.q)}</b>${q.opts.map((o, j) => `<button data-j="${j}">${esc(o)}</button>`).join('')}</div>`).join('') : ''}
+      <p class="hint" style="margin-top:12px">${AI}</p><button class="sbtn" id="nbAll">${ri('list', 15)}All my notes</button>`);
+    d.querySelectorAll('.nq').forEach((q) => q.querySelectorAll('button').forEach((b) => b.onclick = () => {
+      if (q.dataset.done) return; q.dataset.done = 1; const a = +q.dataset.a;
+      q.querySelectorAll('button').forEach((y, j) => { if (j === a) y.classList.add('ok'); else if (y === b) y.classList.add('no'); });
+    }));
+    d.querySelector('#nbAll').onclick = list;
+  }
+  btn.onclick = list; paintBtn();
+  return { start, done, list, open, book };
+})();
+window.__notes = NOTES;
 window.__room = { RM, roomOn, applyPlay, batchHub, addVideo, askQuiz, invite, members, roomQuiz };
 try { window.__mgMock = { THREE, screen, SW, SH, hall: () => hall, mine: () => mine, pro: () => PRO, streak: () => streak, pid: () => { try { return getPlayerId(); } catch (e) { return ''; } }, name: () => myName, token: async () => { try { return await account.accessToken(); } catch (e) { return ''; } }, flash: (t) => flashCard(t) }; dispatchEvent(new Event('mg:theatre')); } catch (e) {}
 </script>
