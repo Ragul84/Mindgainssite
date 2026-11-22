@@ -727,6 +727,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
 import * as THREE from 'three';
 import { CSS3DRenderer, CSS3DObject } from 'three/addons/renderers/CSS3DRenderer.js';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { createKartModel } from '/nationlap/src/models.js';
 import { playerCharacter, loadProfile } from '/nationlap/src/player.js';
@@ -951,6 +952,8 @@ const base = new RoundedBoxGeometry(.78, .5, .7, 2, .1), backG = new RoundedBoxG
 const COL = { pro: 0xe0ac3c, proFree: 0x5c4720, free: 0x9a1f33, freeB: 0x3a3f73, taken: 0x5a5566, friend: 0x2cb7ec, me: 0xffcf3f };
 let seed = 11; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
 const seats = []; const pick = [];
+// perf: one mesh per seat (cushion + back merged) and every armrest in the hall in one static mesh (was 4 meshes / 3 materials per seat, ~800 draw calls)
+const seatBodyG = mergeGeometries([base.clone().translate(0, .25, 0), backG.clone().applyMatrix4(new THREE.Matrix4().compose(new THREE.Vector3(0, .7, .32), new THREE.Quaternion().setFromEuler(new THREE.Euler(-.12, 0, 0)), new THREE.Vector3(1, 1, 1)))]); const armParts = [];
 ROWS.forEach((row, r) => {
   const y = 1.0 + r * .55, z = -8 + r * 1.55, radius = 34 + r * 1.55;
   for (let i = 0; i < PER; i++) {
@@ -961,16 +964,16 @@ ROWS.forEach((row, r) => {
     const g = new THREE.Group(); g.position.set(x, y, zz); g.rotation.y = -a;
     const c = st === 'taken' ? COL.taken : st === 'friend' ? COL.friend : vip ? COL.freeB : COL.free;
     const m = mat(c, .55, 0, { emissive: st === 'taken' ? 0 : c, emissiveIntensity: st === 'taken' ? 0 : .22 });
-    const b = new THREE.Mesh(base, m); b.position.y = .25; b.castShadow = true; g.add(b);
-    const bk = new THREE.Mesh(backG, m); bk.position.set(0, .7, .32); bk.rotation.x = -.12; bk.castShadow = true; g.add(bk);
-    for (const s of [-1, 1]) { const ar = new THREE.Mesh(armG, mat(0x1c1622, .6)); ar.position.set(s * .44, .45, 0); g.add(ar); }
+    const b = new THREE.Mesh(seatBodyG, m); g.add(b); const bk = b;
+    g.updateMatrix(); for (const s of [-1, 1]) armParts.push(armG.clone().translate(s * .44, .45, 0).applyMatrix4(g.matrix));
     if ('EFG'.includes(row) && i >= 6 && i <= 11) { const led = new THREE.Mesh(new THREE.BoxGeometry(.66, .035, .05), new THREE.MeshBasicMaterial({ color: 0xffcf6b })); led.position.set(0, 1.12, .27); led.rotation.x = -.12; g.add(led); }
     // riser step under each row
-    scene.add(g); const seat = { row, n: i + 1, st, g, m, eye: new THREE.Vector3(x, y + 1.5, zz + .6) }; seats.push(seat); pick.push(b, bk); b.userData.seat = bk.userData.seat = seat;
+    scene.add(g); const seat = { row, n: i + 1, st, g, m, eye: new THREE.Vector3(x, y + 1.5, zz + .6) }; seats.push(seat); pick.push(b); b.userData.seat = seat;
   }
   const riser = new THREE.Mesh(new THREE.BoxGeometry(HALL_W - 2, y, 1.55), mat(0x7a2434, .85, 0, { map: carpet, emissive: 0x4a1420, emissiveIntensity: .7 })); riser.position.set(0, y / 2 - .02, z + .2); riser.receiveShadow = true; scene.add(riser);
   const strip = new THREE.Mesh(new THREE.BoxGeometry(HALL_W - 2, .04, .06), new THREE.MeshBasicMaterial({ color: 0xffb347 })); strip.position.set(0, y + .01, z - .55); scene.add(strip);
 });
+{ const arms = new THREE.Mesh(mergeGeometries(armParts), mat(0x1c1622, .6)); arms.matrixAutoUpdate = false; scene.add(arms); armParts.forEach((g) => g.dispose()); }
 const QS = new URLSearchParams(location.search);
 const ROOM = /^[A-Z0-9]{6}$/.test((QS.get('room') || '').toUpperCase()) ? QS.get('room').toUpperCase() : null;   // Batch room mode
 if (ROOM) document.body.classList.add('room');
