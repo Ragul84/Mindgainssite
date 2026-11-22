@@ -1254,7 +1254,7 @@ const SEATED = (() => {
     if (O === 'traditional') { top = saree ? shade(base, .78) : [0xf3e6c8, lighten(base, .55), 0xfaf6ee][h % 3]; slU = slL = top; cuff = saree ? gold : shade(top, .86); pants = saree ? lighten(base, .12) : 0xf2efe6; shoe = 0xb78a54; sole = 0x5a3a20; shortSleeve = saree; }
     if (O === 'pro') { top = gold; slU = slL = gold; cuff = 0x1a1206; }
     if (pro && O !== 'pro') cuff = gold;
-    const G = { v, O, shx: F ? .184 : .2 };
+    const G = { v, O, shx: F ? .184 : .2, pants, shoe, sole, saree, lw: F ? .94 : 1 };
     // legs: pelvis, thighs forward, shins down, shoes (static, one mesh)
     const L = [part(new THREE.SphereGeometry(.17, 12, 8), pants, M4([0, .04, -.01], [0, 0, 0], [F ? 1.04 : 1.08, .55, .9]))];
     const lw = F ? .94 : 1;
@@ -1404,7 +1404,24 @@ const SEATED = (() => {
   }
   // resolve the rig on a clone (clones share geometry + material)
   function rig(o) { const g = (n) => o.getObjectByName(n); return { torso: g('sc_torso'), head: g('__head'), nod: g('sc_nod'), shL: g('sc_shL'), shR: g('sc_shR'), elL: g('sc_elL'), elR: g('sc_elR'), POSE }; }
-  return { build, rig, POSE, variantOf: vOf, styleOf, randStyle, enc, SKIN, OUTFITS, HAIRS };
+  // standing + walking version of the same student (arrival walk-in): seated torso/head/arms, two swinging legs instead of the seated lap
+  function stand(ch, look, pro) {
+    const root = build(ch, look, pro), G = geos(ch, look, pro), m = mat(pro);
+    root.getObjectByName('sc_legs').visible = false;
+    const torso = root.getObjectByName('sc_torso'); torso.rotation.x = 0; torso.position.set(0, .07, 0);
+    for (const n of ['sc_shL', 'sc_shR']) { const sh = root.getObjectByName(n); sh.rotation.set(0, 0, (n === 'sc_shL' ? -1 : 1) * .1); sh.children.forEach((c) => { if (c.name.startsWith('sc_el')) c.rotation.set(-.12, 0, 0); }); }
+    const legs = [];
+    const pelvis = new THREE.Mesh(merge([part(new THREE.SphereGeometry(.17, 12, 8), G.pants, M4([0, .04, 0], [0, 0, 0], [1.06, .6, .9]))]), m); root.add(pelvis);
+    for (const sx of [-1, 1]) { const hip = new THREE.Group(); hip.position.set(sx * .1, .05, 0); root.add(hip);
+      const L = [limb([0, 0, 0], [0, -.42, 0], .08 * G.lw, G.pants), limb([0, -.42, 0], [0, -.8, .01], .07 * G.lw, G.pants),
+        part(new THREE.SphereGeometry(.072 * G.lw, 12, 8), G.shoe, M4([0, -.86, .06], [0, 0, 0], [1, .72, 1.6])), part(new THREE.SphereGeometry(.075 * G.lw, 12, 6), G.sole, M4([0, -.895, .06], [0, 0, 0], [1.02, .22, 1.63]))];
+      if (G.saree) L.push(part(new THREE.CylinderGeometry(.11, .15, .8, 12), G.pants, M4([-sx * .05, -.42, 0])));
+      hip.add(new THREE.Mesh(merge(L), m)); legs.push(hip); }
+    const arms = ['sc_shL', 'sc_shR'].map((n) => root.getObjectByName(n));
+    root.userData.walk = (ph, mv) => { const a = mv ? Math.sin(ph) * .55 : 0; legs[0].rotation.x = a; legs[1].rotation.x = -a; arms[0].rotation.x = -a * .8; arms[1].rotation.x = a * .8; };
+    return root;   // origin = hips; feet at y ≈ -.92
+  }
+  return { build, stand, rig, POSE, variantOf: vOf, styleOf, randStyle, enc, SKIN, OUTFITS, HAIRS };
 })();
 function seatedRacer(look, pro) {
   const key = look.join('-') + (pro ? '-p' : '');
@@ -2061,7 +2078,9 @@ const INTRO = { on: false, t0: 0 }; window.INTRO = INTRO; window.startIntro = ()
 const ease = (x) => x < 0 ? 0 : x > 1 ? 1 : x * x * (3 - 2 * x);
 const lerpV = (a, b, t) => a.clone().lerp(b, t);
 function startIntro() { if (DRIVER.parent !== DRIVER_HOME.parent) { DRIVER_HOME.parent.add(DRIVER); DRIVER.position.copy(DRIVER_HOME.pos); DRIVER.rotation.copy(DRIVER_HOME.rot); DRIVER.scale.setScalar(1); } DRIVER.visible = true; WALKER.visible = false; INTRO.on = true; INTRO.t0 = performance.now(); document.body.classList.add('intro'); try { orbit.enabled = false; } catch (e) {} KART.position.set(-30, 0, 33.5); window.__doors.forEach((d) => d.position.x = d.userData.sx * DOOR_W / 4); }
-function endIntro() { if (!INTRO.on) return; INTRO.on = false; window.__yt_ok = 1; if (window.__ytWait) { const [i, st] = window.__ytWait; playOnScreen(i, st + (performance.now() - INTRO.t0) / 1000); } document.body.classList.remove('intro'); DRIVER.visible = false; camPos.copy(cam.position); camLook.set(0, 4, 10); fly('seat'); try { localStorage.setItem('mgt_intro', new Date().toDateString()); } catch (e) {} }
+function endIntro() { if (!INTRO.on) return; INTRO.on = false; window.__yt_ok = 1; if (window.__ytWait) { const [i, st] = window.__ytWait; playOnScreen(i, st + (performance.now() - INTRO.t0) / 1000); } document.body.classList.remove('intro'); DRIVER.visible = false; if (ME3D) ME3D.visible = false; camPos.copy(cam.position); camLook.set(0, 4, 10); fly('seat'); try { localStorage.setItem('mgt_intro', new Date().toDateString()); } catch (e) {} }
+let ME3D = null;   // the signed-in user's own student, standing (built on first use; null if anything fails -> the kart driver walks instead)
+function me3d() { if (ME3D === null) { ME3D = false; try { const h = SEATED.stand(playerCharacter({ ...loadProfile(), avatar: MYLOOK[0], color: MYLOOK[1] }), MYLOOK, PRO); h.scale.setScalar(1.55); h.visible = false; scene.add(h); ME3D = h; } catch (e) { console.warn('walker', e); } } return ME3D || null; }
 function introStep(now) {
   const t = window.__T != null ? window.__T : (now - INTRO.t0) / 1000;
   window.__bulbs.forEach((b, i) => b.material.color.setHex(((i + Math.floor(t * 10)) % 4 === 0) ? 0xffffff : 0xb88a3a));
@@ -2074,7 +2093,8 @@ function introStep(now) {
   if (t > 2.8) { DRIVER.visible = true; const hop = ease((t - 2.8) / .8); const walk = ease((t - 3.6) / 2.4);
     DRIVER.position.set(-1 + 1 * hop, .6 + .7 * Math.sin(hop * Math.PI) + (walk > 0 && walk < 1 ? Math.abs(Math.sin(t * 9)) * .06 : 0), 33.5 - .4 * hop - 7.6 * walk);
     DRIVER.rotation.set(0, Math.PI, walk > 0 && walk < 1 ? Math.sin(t * 9) * .08 : 0); const ph = t * 9, mv = walk > 0 && walk < 1; WALKER.visible = true; LEGS[0].rotation.x = mv ? Math.sin(ph) * .6 : 0; LEGS[1].rotation.x = -LEGS[0].rotation.x; ARMS[0].rotation.x = -LEGS[0].rotation.x * .9; ARMS[1].rotation.x = LEGS[0].rotation.x * .9;
-    if (t > 6.2) DRIVER.visible = false; }
+    if (t > 6.2) DRIVER.visible = false;
+    const H = me3d(); if (H) { DRIVER.visible = false; H.visible = t <= 6.2; H.position.set(DRIVER.position.x, .92 * H.scale.y + Math.max(0, DRIVER.position.y - .6), DRIVER.position.z); H.rotation.set(0, Math.PI, 0); H.userData.walk(ph, mv); } }
   // doors open as the driver arrives
   const open = ease((t - 4.9) / 1.2); window.__doors.forEach((d) => d.position.x = d.userData.sx * (DOOR_W / 4 + open * DOOR_W / 2)); window.__doorGlow.intensity = 25 * open;
   // camera: wide street shot -> follows the driver -> through the doorway into the hall
