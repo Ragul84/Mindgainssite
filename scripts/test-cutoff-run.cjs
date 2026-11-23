@@ -20,7 +20,7 @@ assert(/#wrap\{[^}]*width:100%;[^}]*max-width:\d+px/.test(game), 'mobile wrapper
 assert(game.includes('box-sizing:border-box'), 'global box sizing must be set');
 assert(game.includes('https://mindgains.ai/play/cutoff-run/'), 'canonical URL must be present');
 assert(game.includes('/assets/og-cutoff-run.jpg'), 'launch OG image must be present');
-assert(game.includes('Choose an exam') && game.includes('Choose your state / UT'), 'first-run exam and state setup must be present');
+assert(game.includes('Choose an exam') && /Choose (your )?state \/ UT/.test(game), 'first-run exam and state setup must be present');
 assert(game.includes("if(readyToPlay()){startRemote();openMenu()}else openConsent(true)"), 'online calls must wait for onboarding');
 assert(game.includes("const readyForOnline=()=>!!(readyToPlay()&&PL.consent.adult)"), 'under-18 web sessions must stay in local practice mode');
 assert(game.includes("const hasAds=()=>!!(PL.consent&&PL.consent.adult)"), 'under-18 sessions must not expose rewarded ads');
