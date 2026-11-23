@@ -4,9 +4,6 @@
 
 ## Main pages
 - [Home](https://mindgains.ai/): overview of MindGains
-- [MindGains Pro](https://mindgains.ai/pro/): plans from ₹99/month; unlimited Live Theatre, Batch rooms for friends and classmates; Teacher plans from ₹299/month
-- [NationLap](https://mindgains.ai/nationlap/): live national quiz race
-- [Live Theatre](https://mindgains.ai/play/theatre/): 3D study hall with live classes, chat and quizzes (30 minutes free daily)
 
 ## Company
 - [Contact](https://mindgains.ai/contact/)

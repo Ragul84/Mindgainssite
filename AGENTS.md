@@ -1,5 +1,11 @@
 # Notes for coding agents (Claude, Grok, etc.)
 
+## App-only products (23 Nov 2026)
+NationLap, Live Theatre, Cut-Off Run and Pro live in the MindGains app now; /pro/ is an app-Pro info page (no web checkout, set PLAY_URL on launch) (Google Play billing). Website pages must
+not link to them (a website Razorpay Pro would conflict with the app's). Their pages stay online for the app's WebView.
+After running any page generator (build-pyq, build-exam-hubs, build-sitemap, unify-footer, inject-*-cta, ...), run
+`node scripts/hide-app-links.cjs`, and keep those URLs out of sitemap.xml and llms.txt.
+
 ## Previous year questions (PYQ) — /pyq/
 
 **Source of truth:** the mindwhite app's Supabase view `pyq_verified_clean`
