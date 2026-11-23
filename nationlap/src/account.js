@@ -57,6 +57,9 @@ export function init() {
   return ready;
 }
 
+// Inside the MindGains app the APP signs in (native Google sheet) and pushes the session in via window.__mgSetSession.
+// Running web OAuth inside the WebView would end on mindgains.ai instead of returning to the app.
+function appBridge(type) { try { const rn = window.ReactNativeWebView; if (window.__MG_APP && rn) { rn.postMessage(JSON.stringify({ type })); return true; } } catch (e) {} return false; }
 export function currentUser() { return user; }
 /** The current session's access token, for calling edge functions as this user. */
 export async function accessToken() {
@@ -76,7 +79,8 @@ export function accountName() {
 /** Send the player to the site's sign-in, returning here afterwards. */
 /** Sign in without leaving the page: Google opens in a popup (a new tab on phones) and closes
     itself when done; this page picks the session up and carries on. Falls back to a redirect. */
-export async function signInPopup() {
+export async function signInPopup() {
+  if (appBridge('login')) return true;
   if (!client) return false;
   try {
     const { data } = await client.auth.signInWithOAuth({ provider: 'google',
@@ -86,7 +90,8 @@ export async function signInPopup() {
   } catch (e) { console.warn('[account] popup signIn', e); }
   signIn(); return false;
 }
-export function signIn() {
+export function signIn() {
+  if (appBridge('login')) return;
   if (!client) return;
   try { sessionStorage.setItem('mg_return_to', location.pathname); } catch (e) {}
   client.auth.signInWithOAuth({
@@ -95,7 +100,8 @@ export function signIn() {
   }).catch((e) => console.warn('[account] signIn', e));
 }
 
-export function signOut() {
+export function signOut() {
+  if (appBridge('logout')) return Promise.resolve();
   if (!client) return Promise.resolve();
   return client.auth.signOut().catch(() => {});
 }

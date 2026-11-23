@@ -159,7 +159,76 @@ body{font-family:Inter,system-ui,sans-serif}
 .nbt{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);z-index:97;background:#1d1a22;color:#f3d48a;border:1px solid rgba(243,212,138,.4);border-radius:999px;padding:10px 16px;font:700 13px Inter;animation:wf .3s}
 .rpt .nq{padding:12px;border-radius:14px;background:#1a1720;margin-bottom:8px}.rpt .nq b{display:block;font:700 14px/1.4 Inter;color:#fff;margin-bottom:8px}.rpt .nq button{display:block;width:100%;text-align:left;margin:0 0 6px;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:#1d1a22;color:#ddd;font:600 13px Inter;cursor:pointer}
 .rpt .nq button.ok{border-color:#4ade80;color:#4ade80}.rpt .nq button.no{border-color:#ff8a8a;color:#ff8a8a}.rpt .np li{color:#d6cfc4;font:500 13.5px/1.5 Inter;margin-bottom:6px}
-body.inapp .top .back{display:none}
+/* ===== In-app theme (body.inapp = inside the MindGains app's Theatre tab) =====
+   Matches the app's M3 tokens: primary teal #00D4C7 (text-safe #0F766E), surfaces white / #F8FAFC, text #0F172A / #475569,
+   outline #E2E8F0, Poppins for headings + Inter for body. Only the controls and panels change; the 3D hall stays dark. */
+body.inapp{--g:#0F766E;--g2:#5EEAD4;--app-p:#00D4C7;--app-pd:#0F766E;--app-tx:#0F172A;--app-tx2:#475569;--app-ol:#E2E8F0;--app-sf:#FFFFFF;--app-bg:#F8FAFC;--app-grad:linear-gradient(135deg,#19D3C6,#0F766E)}
+body.inapp,body.inapp button,body.inapp input,body.inapp select,body.inapp textarea{font-family:Inter,system-ui,sans-serif}
+/* top bar: hall switch, view angles, sound/fullscreen as white chips over the dark hall */
+body.inapp .halls button,body.inapp .angles button,body.inapp .ctl button,body.inapp .top .mob,body.inapp .live,body.inapp .fpill{background:rgba(255,255,255,.94)!important;color:var(--app-tx)!important;border:1px solid var(--app-ol)!important;border-radius:999px!important;box-shadow:0 4px 14px rgba(15,23,42,.18)!important;letter-spacing:.06em!important}
+body.inapp .halls button.on,body.inapp .angles button.on{background:var(--app-grad)!important;color:#fff!important;border-color:transparent!important}
+body.inapp .brand{font-family:'Poppins',Inter,sans-serif!important;letter-spacing:.04em!important}
+/* now-showing ticket */
+body.inapp .ticket{border-radius:20px!important;box-shadow:0 12px 30px rgba(15,23,42,.28)!important}
+body.inapp .ticket .main{background:var(--app-sf)!important;border:1px solid var(--app-ol)!important;border-right:2px dashed #99F6E4!important;border-radius:20px 0 0 20px!important}
+body.inapp .ticket .k{color:var(--app-pd)!important;font-family:Inter,sans-serif!important;letter-spacing:.12em!important}
+body.inapp .ticket .t{color:var(--app-tx)!important;font-family:'Poppins',Inter,sans-serif!important;font-style:normal!important;font-weight:600!important}
+body.inapp .ticket .m{color:var(--app-tx2)!important}
+body.inapp .ttbtn{color:var(--app-pd)!important;letter-spacing:.1em!important}
+body.inapp .stub{background:var(--app-grad)!important;color:#fff!important;border-radius:0 20px 20px 0!important}
+body.inapp .stub b{font-family:'Poppins',Inter,sans-serif!important;color:#fff!important}
+/* chat */
+body.inapp .chat{background:rgba(255,255,255,.96)!important;border:1px solid var(--app-ol)!important;border-radius:20px!important;color:var(--app-tx)!important;box-shadow:0 12px 30px rgba(15,23,42,.22)!important}
+body.inapp .chat-h{color:var(--app-pd)!important;border-bottom:1px solid var(--app-ol)!important;letter-spacing:.08em!important}
+body.inapp .chat-l .cm,body.inapp .cm{color:var(--app-tx)!important}
+body.inapp .chat-f input,body.inapp .chat-r input{background:var(--app-bg)!important;color:var(--app-tx)!important;border:1px solid var(--app-ol)!important;border-radius:999px!important}
+body.inapp .chat-f button,body.inapp .chat-r button{background:var(--app-grad)!important;color:#fff!important;border:0!important;border-radius:999px!important}
+body.inapp .emo button,body.inapp .reacts button{background:rgba(255,255,255,.94)!important;border:1px solid var(--app-ol)!important;border-radius:999px!important}
+/* live quiz card (main hall + batch rooms) */
+body.inapp .quizc,body.inapp .rqz .qc{background:var(--app-sf)!important;border:1px solid var(--app-ol)!important;border-radius:22px!important;color:var(--app-tx)!important;box-shadow:0 16px 40px rgba(15,23,42,.3)!important}
+body.inapp .qq,body.inapp .rqz .qt{font:600 17px/1.35 'Poppins',Inter,sans-serif!important;font-style:normal!important;color:var(--app-tx)!important}
+body.inapp .qk,body.inapp .qn,body.inapp .rqz .qh,body.inapp .rqz .qn{color:var(--app-pd)!important}
+body.inapp .qo button,body.inapp .rqz .qopt{background:var(--app-bg)!important;border:1.5px solid var(--app-ol)!important;color:var(--app-tx)!important;border-radius:14px!important}
+body.inapp .qo button.sel{background:#E5FAF8!important;border-color:var(--app-p)!important;color:var(--app-pd)!important}
+body.inapp .qb{background:var(--app-ol)!important}body.inapp .qb i,body.inapp .qb b{background:var(--app-grad)!important}
+/* bottom sheets (batch rooms, my notes, receipts, …) */
+body.inapp .rpt{background:rgba(15,23,42,.45)!important}
+body.inapp .rpt .rc{background:var(--app-sf)!important;color:var(--app-tx)!important;border:0!important;border-radius:28px 28px 0 0!important}
+body.inapp .rpt .rh b{font-family:'Poppins',Inter,sans-serif!important;font-weight:600!important;font-size:22px!important;letter-spacing:0!important;color:var(--app-tx)!important}
+body.inapp .rpt .rh button{background:var(--app-bg)!important;color:var(--app-tx)!important;border:1px solid var(--app-ol)!important}
+body.inapp .rpt .hint{color:var(--app-tx2)!important}body.inapp .rpt .sec{color:var(--app-pd)!important}
+body.inapp .rpt .li{background:var(--app-bg)!important;border:1px solid var(--app-ol)!important}
+body.inapp .rpt .li b{color:var(--app-tx)!important}body.inapp .rpt .li small{color:var(--app-tx2)!important}
+body.inapp .rpt .li .av{background:#E5FAF8!important;color:var(--app-pd)!important}
+body.inapp .rpt .li em{background:var(--app-p)!important;color:#fff!important}
+body.inapp .rpt .fld{background:var(--app-bg)!important;color:var(--app-tx)!important;border:1px solid var(--app-ol)!important}
+body.inapp .rpt .fld:focus{border-color:var(--app-p)!important}
+body.inapp .rpt .pbtn,body.inapp .rpt .go,body.inapp .gold-cta{background:var(--app-grad)!important;color:#fff!important;box-shadow:0 8px 20px -8px rgba(15,118,110,.6)!important}
+body.inapp .rpt .sbtn{background:var(--app-sf)!important;color:var(--app-tx)!important;border:1px solid var(--app-ol)!important}
+body.inapp .rpt .row2 button{background:var(--app-grad)!important;color:#fff!important}
+body.inapp .rpt .nq{background:var(--app-bg)!important;border:1px solid var(--app-ol)!important}body.inapp .rpt .nq b{color:var(--app-tx)!important}
+body.inapp .rpt .nq button{background:var(--app-sf)!important;color:var(--app-tx)!important;border-color:var(--app-ol)!important}
+body.inapp .rpt .nq button.ok{border-color:#22C55E!important;color:#15803D!important}body.inapp .rpt .nq button.no{border-color:#EF4444!important;color:#B91C1C!important}
+body.inapp .rpt .np li{color:var(--app-tx)!important}
+body.inapp .rpt .sum{background:#E5FAF8!important;border-color:#99F6E4!important}body.inapp .rpt .sum p{color:var(--app-tx2)!important}body.inapp .rpt .sum p b{color:var(--app-tx)!important}
+body.inapp .rpt h4,body.inapp .rpt .rt{color:var(--app-tx2)!important}body.inapp .rpt .bar{background:var(--app-ol)!important}
+/* notes book keeps its paper look; toast + seat card + tips in app style */
+body.inapp .nbt,body.inapp .tip,body.inapp .seatcard{background:var(--app-sf)!important;color:var(--app-tx)!important;border:1px solid var(--app-ol)!important;border-radius:16px!important;box-shadow:0 10px 26px rgba(15,23,42,.25)!important}
+body.inapp .nbk .go{background:var(--app-grad)!important;color:#fff!important}
+/* room control bar, pause pill, seek */
+body.inapp .rbar button{background:rgba(255,255,255,.94)!important;color:var(--app-tx)!important;border:1px solid var(--app-ol)!important;border-radius:999px!important}
+body.inapp .rpause{background:var(--app-sf)!important;color:var(--app-pd)!important;border-radius:999px!important}
+/* first-time profile step (character): app colours */
+body.inapp .mgp-c{background:var(--app-sf)!important;color:var(--app-tx)!important;border-color:var(--app-ol)!important}
+body.inapp .mgp h2{font-family:'Poppins',Inter,sans-serif!important;color:var(--app-tx)!important}body.inapp .mgp h2 em{color:var(--app-pd)!important}
+body.inapp .mgp-go{background:var(--app-grad)!important;color:#fff!important}
+body.inapp .mgp-chips button.on,body.inapp .mgp-seg button.on,body.inapp .mgp-of button.on{background:#E5FAF8!important;border-color:var(--app-p)!important;color:var(--app-pd)!important}
+/* phone floating actions + sound / fullscreen: white app chips */
+body.inapp .mfab button,body.inapp .ib{background:rgba(255,255,255,.95)!important;border:1px solid var(--app-ol)!important;color:var(--app-tx)!important;border-radius:50%!important;box-shadow:0 6px 16px rgba(15,23,42,.25)!important}
+body.inapp .ib.on,body.inapp #snd.on{background:var(--app-grad)!important;color:#fff!important;border-color:transparent!important}
+body.inapp .mfab b{background:var(--app-p)!important;color:#fff!important}
+/* website-only bits never show inside the app */
+body.inapp .top .back,body.inapp .soundhint .ext{display:none!important}
 .rpt{position:fixed;inset:0;z-index:95;display:flex;align-items:flex-end;justify-content:center;background:rgba(5,4,8,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);animation:wf .3s}
 @media (min-width:760px){.rpt{align-items:center}}
 .rpt .rc{width:min(460px,100%);max-height:88vh;overflow:auto;background:#121017;border:1px solid rgba(255,255,255,.08);border-radius:26px 26px 0 0;padding:22px 20px calc(20px + env(safe-area-inset-bottom));animation:ru .4s cubic-bezier(.2,1,.3,1)}
@@ -896,7 +965,12 @@ function playOnScreen(id, start) {
   screen.visible = true; screen.material = holeMat;
 }
 if (location.search.includes('clean')) document.body.classList.add('clean');
-if (window.__MG_APP || /[?&]app=1/.test(location.search)) document.body.classList.add('inapp');   // inside the MindGains app (theatre tab)
+if (window.__MG_APP || /[?&]app=1/.test(location.search)) { document.body.classList.add('inapp'); const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = 'https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap'; document.head.appendChild(l); }   // inside the MindGains app (theatre tab): app theme + Poppins
+// inside the app, pages outside the theatre are the app's job: Pro opens the app's subscription screen, the rest an in-app browser
+window.__mgOpen = (href) => { try { if (!document.body.classList.contains('inapp') || !window.ReactNativeWebView) return false; const u = new URL(href, location.href);
+  if (u.origin === location.origin && u.pathname.startsWith('/play/theatre')) return false;
+  window.ReactNativeWebView.postMessage(JSON.stringify({ type: 'open', url: u.href, pro: u.origin === location.origin && u.pathname.startsWith('/pro') })); return true; } catch (e) { return false; } };
+document.addEventListener('click', (e) => { const a = e.target.closest && e.target.closest('a[href]'); if (a && window.__mgOpen(a.href)) e.preventDefault(); }, true);
 const DAYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 const ist = () => { const d = new Date(Date.now() + (5.5 * 60 + new Date().getTimezoneOffset()) * 60000); return d; };
 const mins = (hm) => { const [h, m] = hm.split(':').map(Number); return h * 60 + m; };
@@ -2061,7 +2135,7 @@ let CHJ = null;
 document.getElementById('tt').addEventListener('click', async (e) => {
   const el = e.target.closest('.slot.past'); if (!el || !renderTT.c) return;
   e.stopPropagation();
-  if (!PRO) { location.href = '/pro/?plan=exam&back=' + encodeURIComponent(location.pathname + location.search); return; }
+  if (!PRO) { if (window.__mgOpen && window.__mgOpen('/pro/?plan=exam')) return; location.href = '/pro/?plan=exam&back=' + encodeURIComponent(location.pathname + location.search); return; }
   const c = renderTT.c, b = c.list[+el.dataset.i]; if (!b) return;
   const wk = Math.max(0, Math.floor((ist() - new Date(TT.season_start + 'T00:00:00')) / 6048e5));
   const S = SEASON && SEASON[hall] || {}, chunks = S[c.day] || [], k = b.use === 'ep_prev' ? Math.max(0, wk - 1) : wk;
