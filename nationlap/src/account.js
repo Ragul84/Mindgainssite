@@ -28,9 +28,19 @@ export function init() {
   ready = (async () => {
     try {
       const { createClient } = await import(/* @vite-ignore */ SDK);
+      // Inside the MindGains app (theatre tab WebView) the app owns the session: it alone refreshes tokens and hands
+      // them over through window.__mgSetSession. Two refreshers on one refresh token trip Supabase's reuse detection
+      // and would sign the app out.
+      const inApp = !!(window.__MG_APP || /[?&]app=1\b/.test(location.search));
       client = createClient(PROJECT, ANON, {
-        auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: false },
+        auth: { persistSession: true, autoRefreshToken: !inApp, detectSessionInUrl: false },
       });
+      if (inApp) window.__mgSetSession = async (s) => {
+        try {
+          if (s && s.access_token && s.refresh_token) await client.auth.setSession({ access_token: s.access_token, refresh_token: s.refresh_token });
+          else if (!s) await client.auth.signOut({ scope: 'local' });
+        } catch (e) { console.warn('[account] app session', e); }
+      };
       client.auth.onAuthStateChange((_e, session) => { user = session?.user || null; emit(); });
       const { data } = await client.auth.getSession();
       user = data?.session?.user || null;
