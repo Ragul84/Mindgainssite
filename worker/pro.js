@@ -49,7 +49,33 @@ export function checkLap(rec, wallMs) {
 }
 const J = (d, s = 200) => new Response(JSON.stringify(d), { status: s, headers: { 'content-type': 'application/json', 'cache-control': 'no-store' } });
 
+// One Pro for the whole product: website Pro (Razorpay -> D1 pro_sub) OR app Pro (Google Play via RevenueCat ->
+// Supabase user_profiles.subscription_tier / premium_expires_at). App lookups are cached per isolate for 10 min.
+const appProCache = new Map();
+async function appProUntil(env, uid) {
+  const key = env.SUPABASE_PYQ_KEY; // service-role key (read-only use here)
+  if (!uid || !env.SUPABASE_URL || !key || !/^[0-9a-f-]{36}$/i.test(uid)) return 0;
+  const c = appProCache.get(uid); if (c && Date.now() - c.at < 6e5) return c.v;
+  let v = 0;
+  try {
+    const r = await fetch(env.SUPABASE_URL.replace(/\/$/, '') + `/rest/v1/user_profiles?select=subscription_tier,premium_expires_at&id=eq.${uid}&limit=1`, { headers: { apikey: key, authorization: 'Bearer ' + key } });
+    const row = r.ok ? (await r.json())[0] : null;
+    if (row && row.subscription_tier && row.subscription_tier !== 'free') {
+      const exp = row.premium_expires_at ? Date.parse(row.premium_expires_at) : 0;
+      v = exp > Date.now() ? exp : (!row.premium_expires_at ? Date.now() + 864e5 : 0); // no expiry recorded = active, re-checked daily
+    }
+  } catch {}
+  appProCache.set(uid, { at: Date.now(), v }); return v;
+}
 export async function proUntil(env, uid) {
+  if (!uid) return 0;
+  let web = 0;
+  if (env.GAME_DB) try { const r = await env.GAME_DB.prepare('SELECT until FROM pro_sub WHERE uid = ?1').bind(uid).first(); web = r && r.until > Date.now() ? r.until : 0; } catch {}
+  const app = await appProUntil(env, uid);
+  return Math.max(web, app);
+}
+// website Pro until (D1 only): used when extending a Razorpay plan so app time is not double-counted
+export async function webProUntil(env, uid) {
   if (!uid || !env.GAME_DB) return 0;
   try { const r = await env.GAME_DB.prepare('SELECT until FROM pro_sub WHERE uid = ?1').bind(uid).first(); return r && r.until > Date.now() ? r.until : 0; } catch { return 0; }
 }
@@ -114,8 +140,8 @@ function passEnd(plan, base) {
 async function activate(env, orderId, paymentId) {
   const o = await env.GAME_DB.prepare('SELECT uid, plan, status FROM pro_pay WHERE order_id = ?1').bind(orderId).first();
   if (!o) return null;
-  if (o.status === 'paid') return proUntil(env, o.uid);   // verify + webhook both arrive: extend only once
-  const P = PLANS[o.plan], add = P.days * DAY, cur = await proUntil(env, o.uid), curT = await teacherUntil(env, o.uid);
+  if (o.status === 'paid') return webProUntil(env, o.uid);   // verify + webhook both arrive: extend only once
+  const P = PLANS[o.plan], add = P.days * DAY, cur = await webProUntil(env, o.uid), curT = await teacherUntil(env, o.uid);
   // Teacher includes Pro; buying Pro on top of Teacher never shortens the teacher time
   const tUntil = P.teacher ? Math.max(Date.now(), curT) + add : curT, until = Math.max(passEnd(o.plan, Math.max(Date.now(), cur)), tUntil);
   await env.GAME_DB.batch([
